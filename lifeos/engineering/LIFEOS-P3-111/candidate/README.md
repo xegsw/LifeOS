@@ -1,52 +1,7 @@
-# LIFEOS-P3-104 controlled Tauri candidate
+# LIFEOS-P3-111 本地自用受控运行时
 
-This directory is the only mutable engineering scope for P3-104. It contains a
-real Tauri 2 debug desktop candidate with local static HTML/CSS/JS, exactly
-three registered IPC commands, and a backend-owned SQLite path.
+本候选只允许 renderer 调用 `capture_record`、`get_today`、`runtime_status`。正式运行时不接收任何路径参数，只能在用户通过 UI 主动提交简短、非敏感原文时创建并原子发布到唯一获授权的 `LifeOS-Self-Use-Pilot-2/capture.sqlite`。
 
-## Frozen runtime boundary
+冻结关闭态：网络、AI、外部来源、Vault、导出、同步、Shell、进程、直接文件/数据库/通用路径 API 均未启用。P3-111 仍不是 Stage 4 准入、风险关闭或完整自用 MVP 宣称。
 
-- `capture_record`: accepts only the three fixed non-sensitive text/key probes
-  compiled into both the UI and backend. Its request object rejects unknown
-  fields. A shadow SQLite candidate is validated and atomically renamed before
-  success is returned.
-- `get_today`: accepts a strict empty request and returns validated records,
-  source/identity fields, and a minimal audit summary.
-- `runtime_status`: accepts a strict empty request and reports the explicit
-  offline/AI-disabled/capability-closed state.
-- The renderer receives no Tauri plugin permission. Unknown invoke commands are
-  absent from `generate_handler!` and therefore denied.
-- The backend requires `LIFEOS_P3_104_DB_PATH` to be an exact direct child of
-  `/private/tmp/lifeos-p3-104-*/capture.sqlite`; the renderer cannot supply or
-  observe this path.
-- `rusqlite` uses its `bundled` feature. This is disclosed in `Cargo.toml` and
-  the frozen lock inventory; SQLCipher is not enabled.
-
-No clear/delete/export/Vault/model/network/sync/updater/telemetry command or
-plugin exists. No retained pilot path or personal content is present.
-
-## Offline verification
-
-After the one-time Frozen bootstrap and programmatic `Cargo.lock` freeze:
-
-```sh
-cd lifeos/engineering/LIFEOS-P3-104
-sh scripts/offline_verify.sh
-```
-
-The script sets `CARGO_NET_OFFLINE=true`, uses the task-local target directory,
-runs deterministic static and Rust tests with `--locked`, and performs a debug
-Tauri build without creating a release bundle.
-
-## Actual app Evidence fixture
-
-```sh
-cd lifeos/engineering/LIFEOS-P3-104
-sh scripts/launch_evidence_app.sh
-```
-
-This recreates only `/private/tmp/lifeos-p3-104-app-evidence`, writes the fixed
-sentinel, and starts the already-built debug binary. The app must then be
-operated through the Mac UI; `file:`, Chrome, HTTP, localhost, mocks, and static
-accessibility exposure do not count as dynamic Evidence.
-
+包内夹具仅位于 `evidence/test-fixtures/`，用于固定非敏感的失败关闭、幂等、篡改和链接边界测试；它们不会读取或写入正式 Pilot-2 数据库。
