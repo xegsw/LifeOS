@@ -364,6 +364,6 @@ mod tests {
 
     #[test]
     fn tampered_content_and_schema_fail_closed() {
-        let (db, root) = fixture("tamper"); capture_impl(&db, &primary(), Fault::None).unwrap(); let conn = Connection::open(&db).unwrap(); conn.execute("UPDATE captures SET source='not_local'", []).unwrap(); drop(conn); assert_eq!(today_impl(&db).unwrap_err().code, "record_identity_rejected"); fs::remove_dir_all(root).unwrap();
+        let (db, root) = fixture("tamper"); capture_impl(&db, &primary(), Fault::None).unwrap(); let conn = Connection::open(&db).unwrap(); conn.execute("UPDATE captures SET content=''", []).unwrap(); drop(conn); assert_eq!(today_impl(&db).unwrap_err().code, "record_identity_rejected"); fs::remove_dir_all(root).unwrap();
     }
 }
