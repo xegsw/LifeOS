@@ -1,0 +1,127 @@
+{
+  "baseline": {
+    "gates": {
+      "export": "DENY",
+      "outbox": "DENY",
+      "read": "DENY",
+      "restore": "DENY",
+      "search": "DENY",
+      "suggest": "DENY"
+    },
+    "row": {
+      "blocked_at_ms": 1786550400000,
+      "cleanup_status": "active_blocked",
+      "command_id": "synthetic-command-001",
+      "generation": 5,
+      "reason_code": "CONTROLLED_TEST",
+      "subject_id": "synthetic-artifact-001",
+      "subject_type": "artifact",
+      "updated_at_ms": 1786550400000
+    }
+  },
+  "classification": "P1",
+  "delete_insert_commit": {
+    "committed": true,
+    "gates_after": {
+      "export": "ALLOW",
+      "outbox": "ALLOW",
+      "read": "ALLOW",
+      "restore": "ALLOW",
+      "search": "ALLOW",
+      "suggest": "ALLOW"
+    },
+    "row_after": {
+      "blocked_at_ms": 1786550400000,
+      "cleanup_status": "accepted",
+      "command_id": "synthetic-command-reinsert",
+      "generation": 4,
+      "reason_code": "CONTROLLED_TEST",
+      "subject_id": "synthetic-artifact-001",
+      "subject_type": "artifact",
+      "updated_at_ms": 1786550400000
+    },
+    "sqlite_error": null
+  },
+  "delete_insert_rollback": {
+    "after_rollback": {
+      "gates": {
+        "export": "DENY",
+        "outbox": "DENY",
+        "read": "DENY",
+        "restore": "DENY",
+        "search": "DENY",
+        "suggest": "DENY"
+      },
+      "row": {
+        "blocked_at_ms": 1786550400000,
+        "cleanup_status": "active_blocked",
+        "command_id": "synthetic-command-001",
+        "generation": 5,
+        "reason_code": "CONTROLLED_TEST",
+        "subject_id": "synthetic-artifact-001",
+        "subject_type": "artifact",
+        "updated_at_ms": 1786550400000
+      }
+    },
+    "in_transaction": {
+      "gates": {
+        "export": "ALLOW",
+        "outbox": "ALLOW",
+        "read": "ALLOW",
+        "restore": "ALLOW",
+        "search": "ALLOW",
+        "suggest": "ALLOW"
+      },
+      "row": {
+        "blocked_at_ms": 1786550400000,
+        "cleanup_status": "accepted",
+        "command_id": "synthetic-command-rollback",
+        "generation": 4,
+        "reason_code": "CONTROLLED_TEST",
+        "subject_id": "synthetic-artifact-001",
+        "subject_type": "artifact",
+        "updated_at_ms": 1786550400000
+      }
+    },
+    "rollback_ok": true
+  },
+  "insert_or_replace": {
+    "committed": true,
+    "gates_after": {
+      "export": "ALLOW",
+      "outbox": "ALLOW",
+      "read": "ALLOW",
+      "restore": "ALLOW",
+      "search": "ALLOW",
+      "suggest": "ALLOW"
+    },
+    "row_after": {
+      "blocked_at_ms": 1786550400000,
+      "cleanup_status": "accepted",
+      "command_id": "synthetic-command-replace",
+      "generation": 4,
+      "reason_code": "CONTROLLED_TEST",
+      "subject_id": "synthetic-artifact-001",
+      "subject_type": "artifact",
+      "updated_at_ms": 1786550400000
+    },
+    "sqlite_error": null
+  },
+  "ordinary_delete": {
+    "committed": true,
+    "gates_after": {
+      "export": "ALLOW",
+      "outbox": "ALLOW",
+      "read": "ALLOW",
+      "restore": "ALLOW",
+      "search": "ALLOW",
+      "suggest": "ALLOW"
+    },
+    "row_after": null,
+    "sqlite_error": null
+  },
+  "residual": "P2-2",
+  "source_unchanged": true,
+  "status": "FAIL",
+  "target_contract": "DELETE/REPLACE rejected and all six gates remain DENY"
+}

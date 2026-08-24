@@ -1,0 +1,29 @@
+{
+  "audit_snapshots": "cross_restart_audit_snapshots.json",
+  "cases": [
+    "precommit_fault_is_visible_never_saved",
+    "invalid_input_is_visible_never_saved",
+    "saved_only_after_commit",
+    "restart_reopens_committed_record",
+    "explicit_confirm_required",
+    "not_confirmed_audit_persists_across_restart",
+    "confirmed_recovery_is_idempotent",
+    "unknown_plan_has_visible_failure",
+    "source_mismatch_blocks",
+    "version_mismatch_blocks",
+    "tombstone_blocks_recovery",
+    "blocked_audit_persists_across_restart",
+    "revocation_blocks_recovery",
+    "audit_and_external_boundaries_observable",
+    "clean_cli_ready_preview_first_confirm_then_idempotent_receipt"
+  ],
+  "fail": 0,
+  "not_implemented": 0,
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "pass": 15,
+  "scope": "synthetic SQLite only; no network/Tauri/IPC/Vault/real paths/export/cloud/sync/multi-device/L3/external user",
+  "task": "LIFEOS-P3-067",
+  "unknown": 0
+}

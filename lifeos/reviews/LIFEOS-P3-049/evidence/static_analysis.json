@@ -1,0 +1,278 @@
+{
+  "candidate_sha256": "56f3c77f8fe1c4baec690b6b2fb9f849aee7a6bb9d433de61d7ea9fc317eac6d",
+  "target_trigger_present": true,
+  "target_mentions_old_authorization": true,
+  "target_mentions_new_authorization": true,
+  "update_of_has_all_six": true,
+  "nullability": {
+    "subject_type": true,
+    "subject_id": true,
+    "generation": true,
+    "command_id": true,
+    "reason_code": true,
+    "blocked_at_ms": true,
+    "cleanup_status": true,
+    "updated_at_ms": true
+  },
+  "triggers_in_sqlite_master_creation_order": [
+    {
+      "rowid": 137,
+      "name": "authorization_lifecycle_command_no_reinsert",
+      "tbl_name": "authorization_lifecycle_command",
+      "sql": "CREATE TRIGGER authorization_lifecycle_command_no_reinsert\nBEFORE INSERT ON authorization_lifecycle_command WHEN EXISTS (\n  SELECT 1 FROM authorization_lifecycle_command old\n  WHERE old.id = NEW.id OR old.idempotency_key = NEW.idempotency_key\n     OR (old.authorization_id = NEW.authorization_id\n         AND old.result_generation = NEW.result_generation)\n)\nBEGIN SELECT RAISE(ABORT, 'authorization_lifecycle_command_replay_forbidden'); END"
+    },
+    {
+      "rowid": 138,
+      "name": "authorization_lifecycle_command_insert_contract",
+      "tbl_name": "authorization_lifecycle_command",
+      "sql": "CREATE TRIGGER authorization_lifecycle_command_insert_contract\nBEFORE INSERT ON authorization_lifecycle_command\nBEGIN\n  SELECT CASE WHEN NEW.processed_at_ms <> CAST(strftime('%s','now') AS INTEGER) * 1000\n    THEN RAISE(ABORT, 'authorization_lifecycle_command_db_time_required') END;\n  SELECT CASE WHEN NEW.target_status = 'expired' AND NEW.scoped_actor_claim <> 'system:local'\n    THEN RAISE(ABORT, 'authorization_expiry_requires_local_system_claim') END;\n  SELECT CASE WHEN NOT EXISTS (\n    SELECT 1 FROM submission s\n    WHERE s.namespace = 'destruct@1'\n      AND s.idempotency_key = NEW.idempotency_key\n      AND s.canonical_request_hash = NEW.canonical_request_hash\n      AND s.command = CASE NEW.target_status\n        WHEN 'revoked' THEN 'revoke_authorization'\n        WHEN 'expired' THEN 'expire_authorization'\n        WHEN 'superseded' THEN 'supersede_authorization' END\n      AND s.result_subject_id = NEW.authorization_id\n      AND s.result_version_id IS NULL\n  ) THEN RAISE(ABORT, 'authorization_lifecycle_submission_binding_required') END;\n  SELECT CASE WHEN NOT EXISTS (\n    SELECT 1 FROM authorization a\n    WHERE a.id = NEW.authorization_id AND a.status = 'active'\n      AND a.generation = NEW.expected_generation\n  ) THEN RAISE(ABORT, 'authorization_lifecycle_command_precondition_failed') END;\nEND"
+    },
+    {
+      "rowid": 139,
+      "name": "authorization_lifecycle_command_no_update",
+      "tbl_name": "authorization_lifecycle_command",
+      "sql": "CREATE TRIGGER authorization_lifecycle_command_no_update\nBEFORE UPDATE ON authorization_lifecycle_command\nBEGIN SELECT RAISE(ABORT, 'authorization_lifecycle_command_append_only'); END"
+    },
+    {
+      "rowid": 140,
+      "name": "authorization_lifecycle_command_no_delete",
+      "tbl_name": "authorization_lifecycle_command",
+      "sql": "CREATE TRIGGER authorization_lifecycle_command_no_delete\nBEFORE DELETE ON authorization_lifecycle_command\nBEGIN SELECT RAISE(ABORT, 'authorization_lifecycle_command_append_only'); END"
+    },
+    {
+      "rowid": 141,
+      "name": "authorization_no_direct_active_insert",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_no_direct_active_insert\nBEFORE INSERT ON authorization\nWHEN NEW.status NOT IN ('proposed','granted') AND NOT EXISTS (\n  SELECT 1 FROM authorization old\n  WHERE old.status = 'active' AND (\n    old.id = NEW.id OR\n    (old.logical_key = NEW.logical_key AND old.version_no = NEW.version_no)\n  )\n)\nBEGIN SELECT RAISE(ABORT, 'authorization_must_start_inactive'); END"
+    },
+    {
+      "rowid": 142,
+      "name": "authorization_no_replace_while_active",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_no_replace_while_active\nBEFORE INSERT ON authorization WHEN EXISTS (\n  SELECT 1 FROM authorization old\n  WHERE old.status = 'active' AND (\n    old.id = NEW.id OR\n    (old.logical_key = NEW.logical_key AND old.version_no = NEW.version_no)\n  )\n)\nBEGIN SELECT RAISE(ABORT, 'active_authorization_replace_forbidden'); END"
+    },
+    {
+      "rowid": 143,
+      "name": "authorization_no_replace_while_terminal",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_no_replace_while_terminal\nBEFORE INSERT ON authorization WHEN EXISTS (\n  SELECT 1 FROM authorization old\n  WHERE old.status IN ('revoked','expired','superseded') AND (\n    old.id = NEW.id OR\n    (old.logical_key = NEW.logical_key AND old.version_no = NEW.version_no)\n  )\n)\nBEGIN SELECT RAISE(ABORT, 'terminal_authorization_replace_forbidden'); END"
+    },
+    {
+      "rowid": 144,
+      "name": "authorization_no_delete_while_active",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_no_delete_while_active\nBEFORE DELETE ON authorization WHEN OLD.status = 'active'\nBEGIN SELECT RAISE(ABORT, 'active_authorization_delete_forbidden'); END"
+    },
+    {
+      "rowid": 145,
+      "name": "authorization_no_delete_while_terminal",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_no_delete_while_terminal\nBEFORE DELETE ON authorization WHEN OLD.status IN ('revoked','expired','superseded')\nBEGIN SELECT RAISE(ABORT, 'terminal_authorization_delete_forbidden'); END"
+    },
+    {
+      "rowid": 146,
+      "name": "authorization_activation_complete",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_activation_complete\nBEFORE UPDATE OF status ON authorization WHEN NEW.status = 'active' AND OLD.status <> 'active'\nBEGIN\n  SELECT CASE WHEN NOT EXISTS (SELECT 1 FROM authorization_scope s WHERE s.authorization_id = NEW.id)\n    THEN RAISE(ABORT, 'authorization_has_no_scope') END;\n  SELECT CASE WHEN NOT EXISTS (SELECT 1 FROM authorization_action a WHERE a.authorization_id = NEW.id)\n    THEN RAISE(ABORT, 'authorization_has_no_action') END;\n  SELECT CASE WHEN NOT EXISTS (\n    SELECT 1 FROM authorization_policy p WHERE p.authorization_id = NEW.id\n      AND p.retention_mode IS NOT NULL AND p.sensitivity_rank IS NOT NULL\n      AND p.training_allowed IS NOT NULL AND p.external_send_allowed IS NOT NULL\n      AND p.recipients_json IS NOT NULL AND p.regions_json IS NOT NULL\n      AND p.disclosure_json IS NOT NULL AND p.source_license_json IS NOT NULL\n      AND p.quantity_ceiling IS NOT NULL AND p.frequency_ceiling IS NOT NULL\n  ) THEN RAISE(ABORT, 'authorization_policy_incomplete') END;\n  SELECT CASE WHEN NEW.version_no > 1 AND NEW.supersedes_id IS NULL\n    THEN RAISE(ABORT, 'authorization_new_version_requires_supersedes') END;\n  SELECT CASE WHEN NEW.version_no = 1 AND NEW.supersedes_id IS NOT NULL\n    THEN RAISE(ABORT, 'authorization_first_version_cannot_supersede') END;\n  SELECT CASE WHEN NEW.supersedes_id IS NOT NULL AND NOT EXISTS (\n    SELECT 1 FROM authorization old WHERE old.id = NEW.supersedes_id\n      AND old.logical_key = NEW.logical_key AND old.status = 'superseded'\n      AND old.version_no = NEW.version_no - 1\n  ) THEN RAISE(ABORT, 'authorization_old_version_not_superseded') END;\nEND"
+    },
+    {
+      "rowid": 147,
+      "name": "authorization_status_transition",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_status_transition\nBEFORE UPDATE OF status ON authorization WHEN NEW.status <> OLD.status\nBEGIN\n  SELECT CASE WHEN NOT (\n    (OLD.status = 'proposed' AND NEW.status IN ('granted','active')) OR\n    (OLD.status = 'granted' AND NEW.status = 'active') OR\n    (OLD.status = 'active' AND NEW.status IN ('revoked','expired','superseded'))\n  ) THEN RAISE(ABORT, 'authorization_status_transition_invalid') END;\nEND"
+    },
+    {
+      "rowid": 148,
+      "name": "authorization_active_retirement_contract",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_active_retirement_contract\nBEFORE UPDATE OF status ON authorization\nWHEN OLD.status = 'active' AND NEW.status IN ('revoked','expired','superseded')\nBEGIN\n  SELECT CASE WHEN NOT EXISTS (\n    SELECT 1 FROM authorization_lifecycle_command cmd\n    WHERE cmd.authorization_id = OLD.id\n      AND cmd.expected_generation = OLD.generation\n      AND cmd.result_generation = NEW.generation\n      AND cmd.target_status = NEW.status\n      AND cmd.processed_at_ms = NEW.updated_at_ms\n  ) THEN RAISE(ABORT, 'authorization_retirement_requires_lifecycle_command') END;\n  SELECT CASE WHEN NEW.generation <> OLD.generation + 1\n    THEN RAISE(ABORT, 'authorization_retirement_generation_invalid') END;\n  SELECT CASE WHEN NEW.created_at_ms <> OLD.created_at_ms\n    THEN RAISE(ABORT, 'authorization_created_at_immutable') END;\n  SELECT CASE WHEN NOT (\n    (NEW.status = 'revoked' AND NEW.revoked_at_ms = NEW.updated_at_ms)\n    OR (NEW.status IN ('expired','superseded') AND NEW.revoked_at_ms IS NULL)\n  ) THEN RAISE(ABORT, 'authorization_terminal_time_invalid') END;\nEND"
+    },
+    {
+      "rowid": 149,
+      "name": "authorization_generation_lifecycle_only",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_generation_lifecycle_only\nBEFORE UPDATE OF generation ON authorization WHEN NEW.generation <> OLD.generation\nBEGIN\n  SELECT CASE WHEN NOT (\n    OLD.status = 'active' AND NEW.status IN ('revoked','expired','superseded')\n    AND NEW.generation = OLD.generation + 1\n    AND EXISTS (\n      SELECT 1 FROM authorization_lifecycle_command cmd\n      WHERE cmd.authorization_id = OLD.id\n        AND cmd.expected_generation = OLD.generation\n        AND cmd.result_generation = NEW.generation\n        AND cmd.target_status = NEW.status\n        AND cmd.processed_at_ms = NEW.updated_at_ms\n    )\n  ) THEN RAISE(ABORT, 'authorization_generation_requires_lifecycle_command') END;\nEND"
+    },
+    {
+      "rowid": 150,
+      "name": "authorization_created_at_immutable",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_created_at_immutable\nBEFORE UPDATE OF created_at_ms ON authorization\nWHEN NEW.created_at_ms <> OLD.created_at_ms\nBEGIN SELECT RAISE(ABORT, 'authorization_created_at_immutable'); END"
+    },
+    {
+      "rowid": 151,
+      "name": "authorization_revoked_time_contract",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_revoked_time_contract\nBEFORE UPDATE OF revoked_at_ms ON authorization\nWHEN NEW.revoked_at_ms IS NOT OLD.revoked_at_ms\nBEGIN\n  SELECT CASE WHEN NOT (\n    OLD.status = 'active' AND NEW.status = 'revoked'\n    AND NEW.generation = OLD.generation + 1\n    AND NEW.revoked_at_ms = NEW.updated_at_ms\n    AND EXISTS (\n      SELECT 1 FROM authorization_lifecycle_command cmd\n      WHERE cmd.authorization_id = OLD.id\n        AND cmd.expected_generation = OLD.generation\n        AND cmd.target_status = 'revoked'\n        AND cmd.result_generation = NEW.generation\n        AND cmd.processed_at_ms = NEW.updated_at_ms\n    )\n  ) THEN RAISE(ABORT, 'authorization_revoked_time_requires_lifecycle_command') END;\nEND"
+    },
+    {
+      "rowid": 152,
+      "name": "authorization_terminal_immutable",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_terminal_immutable\nBEFORE UPDATE ON authorization WHEN OLD.status IN ('revoked','expired','superseded')\nBEGIN SELECT RAISE(ABORT, 'terminal_authorization_immutable'); END"
+    },
+    {
+      "rowid": 153,
+      "name": "authorization_version_identity_immutable",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_version_identity_immutable\nBEFORE UPDATE OF logical_key, version_no, supersedes_id ON authorization\nWHEN NEW.logical_key <> OLD.logical_key\n  OR NEW.version_no <> OLD.version_no\n  OR NEW.supersedes_id IS NOT OLD.supersedes_id\nBEGIN SELECT RAISE(ABORT, 'authorization_version_identity_immutable'); END"
+    },
+    {
+      "rowid": 154,
+      "name": "authorization_security_envelope_immutable_while_active",
+      "tbl_name": "authorization",
+      "sql": "CREATE TRIGGER authorization_security_envelope_immutable_while_active\nBEFORE UPDATE OF grantor_ref, processor, purpose, location, valid_from_ms,\n                 expires_mode, expires_at_ms, policy_version ON authorization\nWHEN OLD.status = 'active' AND (\n  NEW.grantor_ref IS NOT OLD.grantor_ref OR\n  NEW.processor IS NOT OLD.processor OR\n  NEW.purpose IS NOT OLD.purpose OR\n  NEW.location IS NOT OLD.location OR\n  NEW.valid_from_ms IS NOT OLD.valid_from_ms OR\n  NEW.expires_mode IS NOT OLD.expires_mode OR\n  NEW.expires_at_ms IS NOT OLD.expires_at_ms OR\n  NEW.policy_version IS NOT OLD.policy_version\n)\nBEGIN SELECT RAISE(ABORT, 'active_authorization_security_envelope_immutable'); END"
+    },
+    {
+      "rowid": 155,
+      "name": "authorization_lifecycle_command_apply",
+      "tbl_name": "authorization_lifecycle_command",
+      "sql": "CREATE TRIGGER authorization_lifecycle_command_apply\nAFTER INSERT ON authorization_lifecycle_command\nBEGIN\n  UPDATE authorization\n  SET status = NEW.target_status,\n      generation = NEW.result_generation,\n      revoked_at_ms = CASE WHEN NEW.target_status = 'revoked'\n                           THEN NEW.processed_at_ms ELSE NULL END,\n      updated_at_ms = NEW.processed_at_ms\n  WHERE id = NEW.authorization_id\n    AND status = 'active'\n    AND generation = NEW.expected_generation;\n\n  SELECT CASE WHEN NOT EXISTS (\n    SELECT 1 FROM authorization a\n    WHERE a.id = NEW.authorization_id\n      AND a.status = NEW.target_status\n      AND a.generation = NEW.result_generation\n      AND a.updated_at_ms = NEW.processed_at_ms\n      AND ((NEW.target_status = 'revoked' AND a.revoked_at_ms = NEW.processed_at_ms)\n        OR (NEW.target_status IN ('expired','superseded') AND a.revoked_at_ms IS NULL))\n  ) THEN RAISE(ABORT, 'authorization_lifecycle_command_apply_failed') END;\n\n  INSERT INTO audit_entry(\n    id, action_code, scoped_actor_ref, scoped_subject_ref,\n    authorization_version, result_code, occurred_at_ms, correlation_id\n  )\n  SELECT 'audit:' || NEW.correlation_id,\n         CASE NEW.target_status\n           WHEN 'revoked' THEN 'authorization.revoke'\n           WHEN 'expired' THEN 'authorization.expire'\n           WHEN 'superseded' THEN 'authorization.supersede'\n         END,\n         NEW.scoped_actor_claim, NEW.authorization_id, a.version_no,\n         'ok', NEW.processed_at_ms, NEW.correlation_id\n  FROM authorization a WHERE a.id = NEW.authorization_id;\n\n  INSERT INTO outbox_job(\n    id, job_type, subject_type, subject_id, subject_generation, payload_ref,\n    status, attempts, available_at_ms, lease_owner, lease_generation,\n    lease_expires_at_ms, idempotency_key, last_error_code\n  ) VALUES (\n    'outbox:' || NEW.correlation_id, 'authorization_state_change',\n    'authorization', NEW.authorization_id, NEW.result_generation,\n    NEW.target_status, 'pending', 0, NEW.processed_at_ms,\n    NULL, 0, NULL, NEW.correlation_id, NULL\n  );\n\n  INSERT INTO outbox_retention_binding(job_id, scope, retention_ms, bound_at_ms)\n  SELECT 'outbox:' || NEW.correlation_id, policy.scope,\n         policy.retention_ms, NEW.processed_at_ms\n  FROM outbox_retention_policy policy\n  WHERE policy.scope = 'authorization_lifecycle';\nEND"
+    },
+    {
+      "rowid": 156,
+      "name": "authorization_scope_no_insert_while_active",
+      "tbl_name": "authorization_scope",
+      "sql": "CREATE TRIGGER authorization_scope_no_insert_while_active\nBEFORE INSERT ON authorization_scope WHEN EXISTS (\n  SELECT 1 FROM authorization a WHERE a.id = NEW.authorization_id AND a.status = 'active'\n) BEGIN SELECT RAISE(ABORT, 'active_authorization_scope_insert_forbidden'); END"
+    },
+    {
+      "rowid": 157,
+      "name": "authorization_scope_no_update_while_active",
+      "tbl_name": "authorization_scope",
+      "sql": "CREATE TRIGGER authorization_scope_no_update_while_active\nBEFORE UPDATE ON authorization_scope WHEN EXISTS (\n  SELECT 1 FROM authorization a\n  WHERE a.id IN (OLD.authorization_id, NEW.authorization_id) AND a.status = 'active'\n) BEGIN SELECT RAISE(ABORT, 'active_authorization_scope_update_forbidden'); END"
+    },
+    {
+      "rowid": 158,
+      "name": "authorization_scope_no_delete_while_active",
+      "tbl_name": "authorization_scope",
+      "sql": "CREATE TRIGGER authorization_scope_no_delete_while_active\nBEFORE DELETE ON authorization_scope WHEN EXISTS (\n  SELECT 1 FROM authorization a WHERE a.id = OLD.authorization_id AND a.status = 'active'\n) BEGIN SELECT RAISE(ABORT, 'active_authorization_scope_delete_forbidden'); END"
+    },
+    {
+      "rowid": 159,
+      "name": "authorization_action_no_insert_while_active",
+      "tbl_name": "authorization_action",
+      "sql": "CREATE TRIGGER authorization_action_no_insert_while_active\nBEFORE INSERT ON authorization_action WHEN EXISTS (\n  SELECT 1 FROM authorization a WHERE a.id = NEW.authorization_id AND a.status = 'active'\n) BEGIN SELECT RAISE(ABORT, 'active_authorization_action_insert_forbidden'); END"
+    },
+    {
+      "rowid": 160,
+      "name": "authorization_action_no_update_while_active",
+      "tbl_name": "authorization_action",
+      "sql": "CREATE TRIGGER authorization_action_no_update_while_active\nBEFORE UPDATE ON authorization_action WHEN EXISTS (\n  SELECT 1 FROM authorization a\n  WHERE a.id IN (OLD.authorization_id, NEW.authorization_id) AND a.status = 'active'\n) BEGIN SELECT RAISE(ABORT, 'active_authorization_action_update_forbidden'); END"
+    },
+    {
+      "rowid": 161,
+      "name": "authorization_action_no_delete_while_active",
+      "tbl_name": "authorization_action",
+      "sql": "CREATE TRIGGER authorization_action_no_delete_while_active\nBEFORE DELETE ON authorization_action WHEN EXISTS (\n  SELECT 1 FROM authorization a WHERE a.id = OLD.authorization_id AND a.status = 'active'\n) BEGIN SELECT RAISE(ABORT, 'active_authorization_action_delete_forbidden'); END"
+    },
+    {
+      "rowid": 162,
+      "name": "authorization_policy_no_insert_while_active",
+      "tbl_name": "authorization_policy",
+      "sql": "CREATE TRIGGER authorization_policy_no_insert_while_active\nBEFORE INSERT ON authorization_policy WHEN EXISTS (\n  SELECT 1 FROM authorization a WHERE a.id = NEW.authorization_id AND a.status = 'active'\n) BEGIN SELECT RAISE(ABORT, 'active_authorization_policy_insert_forbidden'); END"
+    },
+    {
+      "rowid": 163,
+      "name": "authorization_policy_no_update_while_active",
+      "tbl_name": "authorization_policy",
+      "sql": "CREATE TRIGGER authorization_policy_no_update_while_active\nBEFORE UPDATE ON authorization_policy WHEN EXISTS (\n  SELECT 1 FROM authorization a\n  WHERE a.id IN (OLD.authorization_id, NEW.authorization_id) AND a.status = 'active'\n) BEGIN SELECT RAISE(ABORT, 'active_authorization_policy_update_forbidden'); END"
+    },
+    {
+      "rowid": 164,
+      "name": "authorization_policy_no_delete_while_active",
+      "tbl_name": "authorization_policy",
+      "sql": "CREATE TRIGGER authorization_policy_no_delete_while_active\nBEFORE DELETE ON authorization_policy WHEN EXISTS (\n  SELECT 1 FROM authorization a WHERE a.id = OLD.authorization_id AND a.status = 'active'\n) BEGIN SELECT RAISE(ABORT, 'active_authorization_policy_delete_forbidden'); END"
+    },
+    {
+      "rowid": 165,
+      "name": "authorization_scope_no_insert_while_terminal",
+      "tbl_name": "authorization_scope",
+      "sql": "CREATE TRIGGER authorization_scope_no_insert_while_terminal\nBEFORE INSERT ON authorization_scope WHEN EXISTS (\n  SELECT 1 FROM authorization a\n  WHERE a.id = NEW.authorization_id AND a.status IN ('revoked','expired','superseded')\n) BEGIN SELECT RAISE(ABORT, 'terminal_authorization_scope_insert_forbidden'); END"
+    },
+    {
+      "rowid": 166,
+      "name": "authorization_scope_no_update_while_terminal",
+      "tbl_name": "authorization_scope",
+      "sql": "CREATE TRIGGER authorization_scope_no_update_while_terminal\nBEFORE UPDATE ON authorization_scope WHEN EXISTS (\n  SELECT 1 FROM authorization a\n  WHERE a.id IN (OLD.authorization_id, NEW.authorization_id)\n    AND a.status IN ('revoked','expired','superseded')\n) BEGIN SELECT RAISE(ABORT, 'terminal_authorization_scope_update_forbidden'); END"
+    },
+    {
+      "rowid": 167,
+      "name": "authorization_scope_delete_terminal_contract",
+      "tbl_name": "authorization_scope",
+      "sql": "CREATE TRIGGER authorization_scope_delete_terminal_contract\nBEFORE DELETE ON authorization_scope WHEN EXISTS (\n  SELECT 1 FROM authorization a\n  WHERE a.id = OLD.authorization_id AND a.status IN ('revoked','expired','superseded')\n) AND NOT EXISTS (\n  SELECT 1 FROM authorization a\n  JOIN tombstone t ON t.subject_type = 'authorization'\n    AND t.subject_id = a.id AND t.generation = a.generation\n  JOIN audit_entry e ON e.scoped_subject_ref = a.id\n    AND e.authorization_version = a.version_no\n    AND e.action_code = 'authorization.cleanup'\n    AND e.result_code = 'redacted_by_user'\n    AND e.correlation_id = 'authorization-cleanup:' || a.id || ':' || a.generation\n  WHERE a.id = OLD.authorization_id\n    AND a.status IN ('revoked','expired','superseded')\n    AND t.cleanup_status = 'cleanup_pending'\n)\nBEGIN SELECT RAISE(ABORT, 'terminal_authorization_scope_delete_requires_cleanup'); END"
+    },
+    {
+      "rowid": 168,
+      "name": "authorization_action_no_insert_while_terminal",
+      "tbl_name": "authorization_action",
+      "sql": "CREATE TRIGGER authorization_action_no_insert_while_terminal\nBEFORE INSERT ON authorization_action WHEN EXISTS (\n  SELECT 1 FROM authorization a\n  WHERE a.id = NEW.authorization_id AND a.status IN ('revoked','expired','superseded')\n) BEGIN SELECT RAISE(ABORT, 'terminal_authorization_action_insert_forbidden'); END"
+    },
+    {
+      "rowid": 169,
+      "name": "authorization_action_no_update_while_terminal",
+      "tbl_name": "authorization_action",
+      "sql": "CREATE TRIGGER authorization_action_no_update_while_terminal\nBEFORE UPDATE ON authorization_action WHEN EXISTS (\n  SELECT 1 FROM authorization a\n  WHERE a.id IN (OLD.authorization_id, NEW.authorization_id)\n    AND a.status IN ('revoked','expired','superseded')\n) BEGIN SELECT RAISE(ABORT, 'terminal_authorization_action_update_forbidden'); END"
+    },
+    {
+      "rowid": 170,
+      "name": "authorization_action_delete_terminal_contract",
+      "tbl_name": "authorization_action",
+      "sql": "CREATE TRIGGER authorization_action_delete_terminal_contract\nBEFORE DELETE ON authorization_action WHEN EXISTS (\n  SELECT 1 FROM authorization a\n  WHERE a.id = OLD.authorization_id AND a.status IN ('revoked','expired','superseded')\n) AND NOT EXISTS (\n  SELECT 1 FROM authorization a\n  JOIN tombstone t ON t.subject_type = 'authorization'\n    AND t.subject_id = a.id AND t.generation = a.generation\n  JOIN audit_entry e ON e.scoped_subject_ref = a.id\n    AND e.authorization_version = a.version_no\n    AND e.action_code = 'authorization.cleanup'\n    AND e.result_code = 'redacted_by_user'\n    AND e.correlation_id = 'authorization-cleanup:' || a.id || ':' || a.generation\n  WHERE a.id = OLD.authorization_id\n    AND a.status IN ('revoked','expired','superseded')\n    AND t.cleanup_status = 'cleanup_pending'\n)\nBEGIN SELECT RAISE(ABORT, 'terminal_authorization_action_delete_requires_cleanup'); END"
+    },
+    {
+      "rowid": 171,
+      "name": "authorization_policy_no_insert_while_terminal",
+      "tbl_name": "authorization_policy",
+      "sql": "CREATE TRIGGER authorization_policy_no_insert_while_terminal\nBEFORE INSERT ON authorization_policy WHEN EXISTS (\n  SELECT 1 FROM authorization a\n  WHERE a.id = NEW.authorization_id AND a.status IN ('revoked','expired','superseded')\n) BEGIN SELECT RAISE(ABORT, 'terminal_authorization_policy_insert_forbidden'); END"
+    },
+    {
+      "rowid": 172,
+      "name": "authorization_policy_no_update_while_terminal",
+      "tbl_name": "authorization_policy",
+      "sql": "CREATE TRIGGER authorization_policy_no_update_while_terminal\nBEFORE UPDATE ON authorization_policy WHEN EXISTS (\n  SELECT 1 FROM authorization a\n  WHERE a.id IN (OLD.authorization_id, NEW.authorization_id)\n    AND a.status IN ('revoked','expired','superseded')\n) BEGIN SELECT RAISE(ABORT, 'terminal_authorization_policy_update_forbidden'); END"
+    },
+    {
+      "rowid": 173,
+      "name": "authorization_policy_delete_terminal_contract",
+      "tbl_name": "authorization_policy",
+      "sql": "CREATE TRIGGER authorization_policy_delete_terminal_contract\nBEFORE DELETE ON authorization_policy WHEN EXISTS (\n  SELECT 1 FROM authorization a\n  WHERE a.id = OLD.authorization_id AND a.status IN ('revoked','expired','superseded')\n) AND NOT EXISTS (\n  SELECT 1 FROM authorization a\n  JOIN tombstone t ON t.subject_type = 'authorization'\n    AND t.subject_id = a.id AND t.generation = a.generation\n  JOIN audit_entry e ON e.scoped_subject_ref = a.id\n    AND e.authorization_version = a.version_no\n    AND e.action_code = 'authorization.cleanup'\n    AND e.result_code = 'redacted_by_user'\n    AND e.correlation_id = 'authorization-cleanup:' || a.id || ':' || a.generation\n  WHERE a.id = OLD.authorization_id\n    AND a.status IN ('revoked','expired','superseded')\n    AND t.cleanup_status = 'cleanup_pending'\n)\nBEGIN SELECT RAISE(ABORT, 'terminal_authorization_policy_delete_requires_cleanup'); END"
+    },
+    {
+      "rowid": 174,
+      "name": "tombstone_insert_contract",
+      "tbl_name": "tombstone",
+      "sql": "CREATE TRIGGER tombstone_insert_contract\nBEFORE INSERT ON tombstone\nBEGIN\n  SELECT CASE WHEN NEW.cleanup_status <> 'accepted'\n    THEN RAISE(ABORT, 'tombstone_must_start_accepted') END;\n  SELECT CASE WHEN EXISTS (\n    SELECT 1 FROM tombstone old\n    WHERE old.subject_type = NEW.subject_type AND old.subject_id = NEW.subject_id\n  ) THEN RAISE(ABORT, 'tombstone_reinsert_forbidden') END;\n  SELECT CASE WHEN NEW.subject_type = 'authorization' AND NOT EXISTS (\n    SELECT 1 FROM authorization a\n    WHERE a.id = NEW.subject_id\n      AND a.status IN ('revoked','expired','superseded')\n      AND a.generation = NEW.generation\n  ) THEN RAISE(ABORT, 'authorization_tombstone_requires_terminal_generation') END;\nEND"
+    },
+    {
+      "rowid": 175,
+      "name": "tombstone_no_delete",
+      "tbl_name": "tombstone",
+      "sql": "CREATE TRIGGER tombstone_no_delete\nBEFORE DELETE ON tombstone\nBEGIN SELECT RAISE(ABORT, 'tombstone_delete_forbidden'); END"
+    },
+    {
+      "rowid": 176,
+      "name": "authorization_tombstone_control_envelope_immutable",
+      "tbl_name": "tombstone",
+      "sql": "CREATE TRIGGER authorization_tombstone_control_envelope_immutable\nBEFORE UPDATE OF subject_type, subject_id, generation, command_id,\n                 reason_code, blocked_at_ms ON tombstone\n-- Both sides are intentional: a generic row cannot enter the Authorization\n-- namespace, and an Authorization row cannot leave it or change identity.\nWHEN (OLD.subject_type = 'authorization' OR NEW.subject_type = 'authorization') AND (\n  NEW.subject_type IS NOT OLD.subject_type\n  OR NEW.subject_id IS NOT OLD.subject_id\n  OR NEW.generation IS NOT OLD.generation\n  OR NEW.command_id IS NOT OLD.command_id\n  OR NEW.reason_code IS NOT OLD.reason_code\n  OR NEW.blocked_at_ms IS NOT OLD.blocked_at_ms\n)\nBEGIN SELECT RAISE(ABORT, 'authorization_tombstone_control_envelope_immutable'); END"
+    },
+    {
+      "rowid": 177,
+      "name": "authorization_tombstone_updated_time_contract",
+      "tbl_name": "tombstone",
+      "sql": "CREATE TRIGGER authorization_tombstone_updated_time_contract\nBEFORE UPDATE OF cleanup_status, updated_at_ms ON tombstone\nWHEN OLD.subject_type = 'authorization'\nBEGIN\n  SELECT CASE WHEN NEW.cleanup_status = OLD.cleanup_status\n      AND NEW.updated_at_ms IS NOT OLD.updated_at_ms\n    THEN RAISE(ABORT, 'authorization_tombstone_time_requires_status_change') END;\n  SELECT CASE WHEN NEW.cleanup_status <> OLD.cleanup_status\n      AND NEW.updated_at_ms < OLD.updated_at_ms\n    THEN RAISE(ABORT, 'authorization_tombstone_time_must_not_decrease') END;\nEND"
+    },
+    {
+      "rowid": 178,
+      "name": "tombstone_generation_monotonic",
+      "tbl_name": "tombstone",
+      "sql": "CREATE TRIGGER tombstone_generation_monotonic\nBEFORE UPDATE OF generation ON tombstone WHEN NEW.generation < OLD.generation\nBEGIN SELECT RAISE(ABORT, 'tombstone_generation_must_not_decrease'); END"
+    },
+    {
+      "rowid": 179,
+      "name": "tombstone_status_transition",
+      "tbl_name": "tombstone",
+      "sql": "CREATE TRIGGER tombstone_status_transition\nBEFORE UPDATE OF cleanup_status ON tombstone WHEN NEW.cleanup_status <> OLD.cleanup_status\nBEGIN\n  SELECT CASE WHEN NOT (\n    (OLD.cleanup_status = 'accepted' AND NEW.cleanup_status = 'active_blocked') OR\n    (OLD.cleanup_status = 'active_blocked' AND NEW.cleanup_status IN ('cleanup_pending','no_cleanup_required')) OR\n    (OLD.cleanup_status = 'cleanup_pending' AND NEW.cleanup_status IN ('cleanup_failed','vendor_limited','cleaned')) OR\n    (OLD.cleanup_status IN ('cleanup_failed','vendor_limited') AND NEW.cleanup_status IN ('cleanup_pending','cleaned'))\n  ) THEN RAISE(ABORT, 'tombstone_status_transition_invalid') END;\n  SELECT CASE WHEN NEW.subject_type = 'authorization'\n      AND NEW.cleanup_status IN ('active_blocked','cleanup_pending','cleaned')\n      AND NOT EXISTS (\n        SELECT 1 FROM authorization a\n        JOIN audit_entry e ON e.scoped_subject_ref = a.id\n          AND e.authorization_version = a.version_no\n          AND e.action_code = 'authorization.cleanup'\n          AND e.result_code = 'redacted_by_user'\n          AND e.correlation_id = 'authorization-cleanup:' || a.id || ':' || a.generation\n        WHERE a.id = NEW.subject_id\n          AND a.status IN ('revoked','expired','superseded')\n          AND a.generation = NEW.generation\n      ) THEN RAISE(ABORT, 'authorization_cleanup_audit_required') END;\n  SELECT CASE WHEN NEW.subject_type = 'authorization'\n      AND NEW.cleanup_status = 'cleaned'\n      AND (\n        EXISTS (SELECT 1 FROM authorization_scope s WHERE s.authorization_id = NEW.subject_id)\n        OR EXISTS (SELECT 1 FROM authorization_action x WHERE x.authorization_id = NEW.subject_id)\n        OR EXISTS (SELECT 1 FROM authorization_policy p WHERE p.authorization_id = NEW.subject_id)\n      ) THEN RAISE(ABORT, 'authorization_cleanup_sensitive_projection_remains') END;\nEND"
+    }
+  ],
+  "note": "SQLite does not promise cross-trigger execution order; direct field attacks isolate the target guard."
+}

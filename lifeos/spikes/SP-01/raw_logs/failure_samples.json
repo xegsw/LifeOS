@@ -1,0 +1,22 @@
+{
+  "privacy_note": "Synthetic identifiers and hashes/status only; no original_text.",
+  "disk_full_simulation": {
+    "acknowledged": false,
+    "error": "WRITE_FAILED",
+    "action": "keep editor text and retry or copy it",
+    "database_unchanged": true
+  },
+  "io_error_simulation": {
+    "acknowledged": false,
+    "error": "WRITE_FAILED",
+    "action": "keep editor text and retry or copy it",
+    "database_unchanged": true,
+    "old_version_preserved": true
+  },
+  "idempotency_conflict": {
+    "error": "IDEMPOTENCY_CONFLICT",
+    "action": "use a new idempotency key",
+    "conflicts_rejected": 10
+  }
+}
+

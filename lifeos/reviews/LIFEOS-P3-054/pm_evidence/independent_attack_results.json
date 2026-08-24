@@ -1,0 +1,538 @@
+{
+  "task": "LIFEOS-P3-054",
+  "runner": "lifeos/reviews/LIFEOS-P3-054/evidence/independent_lifecycle_review.py",
+  "candidate_sql": "lifeos/engineering/LIFEOS-P3-031/migrations/001_candidate_schema.sql",
+  "candidate_sql_sha256": "bda3e8dbf9ffce002ed0cb3371ccc58b3aea40f819488a21c890ed14382ed9b1",
+  "independent_attack_plan_sha256": "a1939fd1ac8a83d6f054b7aa8144228c48b888feff7eed4bafa28d8be105eac7",
+  "logical_test_cases": 10,
+  "configurations": 8,
+  "instances": 80,
+  "pass": 80,
+  "fail": 0,
+  "unknown": 0,
+  "not_implemented": 0,
+  "p0": 0,
+  "p1_bypass": 0,
+  "explicit_p2_bypass": 0,
+  "file_integrity_cases": 40,
+  "file_integrity_failures": 0,
+  "p3_031_regression": {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "-B",
+      "/private/tmp/lifeos-p3054-pm.UptasY/lifeos/engineering/LIFEOS-P3-031/tests/run_contract_tests.py",
+      "--results-json",
+      "/private/tmp/lifeos-p3054-pm.UptasY/lifeos/reviews/LIFEOS-P3-054/evidence/p3_031_isolated_results.json",
+      "--matrix-results-json",
+      "/private/tmp/lifeos-p3054-pm.UptasY/lifeos/reviews/LIFEOS-P3-054/evidence/p3_031_lifecycle_matrix_results.json"
+    ],
+    "exit_code": 0,
+    "results_file": "lifeos/reviews/LIFEOS-P3-054/evidence/p3_031_isolated_results.json",
+    "matrix_file": "lifeos/reviews/LIFEOS-P3-054/evidence/p3_031_lifecycle_matrix_results.json",
+    "log_file": "lifeos/reviews/LIFEOS-P3-054/evidence/p3_031_isolated_test_run.log",
+    "result_summary": {
+      "P0": {
+        "PASS": 18,
+        "FAIL": 0,
+        "NOT_IMPLEMENTED": 0
+      },
+      "P1": {
+        "PASS": 29,
+        "FAIL": 0,
+        "NOT_IMPLEMENTED": 0
+      },
+      "P2": {
+        "PASS": 27,
+        "FAIL": 0,
+        "NOT_IMPLEMENTED": 0
+      },
+      "total": {
+        "PASS": 74,
+        "FAIL": 0,
+        "NOT_IMPLEMENTED": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "A01_forced_outbox_insert_replace_and_claim",
+      "configuration": "memory/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.51
+    },
+    {
+      "id": "A02_honest_lifecycle_revoked_provenance",
+      "configuration": "memory/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.57
+    },
+    {
+      "id": "A03_honest_lifecycle_expired_provenance",
+      "configuration": "memory/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.5
+    },
+    {
+      "id": "A04_honest_lifecycle_superseded_provenance",
+      "configuration": "memory/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.57
+    },
+    {
+      "id": "A05_runtime_claim_complete_and_cas",
+      "configuration": "memory/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 1.12
+    },
+    {
+      "id": "B01_retention_delete_and_replay_fence",
+      "configuration": "memory/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 1.11
+    },
+    {
+      "id": "B02_generic_terminal_cleanup",
+      "configuration": "memory/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.25
+    },
+    {
+      "id": "C01_initial_generation_and_replace",
+      "configuration": "memory/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.62
+    },
+    {
+      "id": "C02_activation_generation_and_time",
+      "configuration": "memory/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.3
+    },
+    {
+      "id": "D01_transaction_multirow_and_rollback",
+      "configuration": "memory/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.9
+    },
+    {
+      "id": "A01_forced_outbox_insert_replace_and_claim",
+      "configuration": "memory/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.46
+    },
+    {
+      "id": "A02_honest_lifecycle_revoked_provenance",
+      "configuration": "memory/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.59
+    },
+    {
+      "id": "A03_honest_lifecycle_expired_provenance",
+      "configuration": "memory/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.5
+    },
+    {
+      "id": "A04_honest_lifecycle_superseded_provenance",
+      "configuration": "memory/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.76
+    },
+    {
+      "id": "A05_runtime_claim_complete_and_cas",
+      "configuration": "memory/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 1.18
+    },
+    {
+      "id": "B01_retention_delete_and_replay_fence",
+      "configuration": "memory/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 1.06
+    },
+    {
+      "id": "B02_generic_terminal_cleanup",
+      "configuration": "memory/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.24
+    },
+    {
+      "id": "C01_initial_generation_and_replace",
+      "configuration": "memory/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.62
+    },
+    {
+      "id": "C02_activation_generation_and_time",
+      "configuration": "memory/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.34
+    },
+    {
+      "id": "D01_transaction_multirow_and_rollback",
+      "configuration": "memory/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.91
+    },
+    {
+      "id": "A01_forced_outbox_insert_replace_and_claim",
+      "configuration": "memory/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.41
+    },
+    {
+      "id": "A02_honest_lifecycle_revoked_provenance",
+      "configuration": "memory/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.49
+    },
+    {
+      "id": "A03_honest_lifecycle_expired_provenance",
+      "configuration": "memory/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.47
+    },
+    {
+      "id": "A04_honest_lifecycle_superseded_provenance",
+      "configuration": "memory/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.47
+    },
+    {
+      "id": "A05_runtime_claim_complete_and_cas",
+      "configuration": "memory/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 1.09
+    },
+    {
+      "id": "B01_retention_delete_and_replay_fence",
+      "configuration": "memory/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.99
+    },
+    {
+      "id": "B02_generic_terminal_cleanup",
+      "configuration": "memory/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.24
+    },
+    {
+      "id": "C01_initial_generation_and_replace",
+      "configuration": "memory/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.63
+    },
+    {
+      "id": "C02_activation_generation_and_time",
+      "configuration": "memory/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.28
+    },
+    {
+      "id": "D01_transaction_multirow_and_rollback",
+      "configuration": "memory/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 0.86
+    },
+    {
+      "id": "A01_forced_outbox_insert_replace_and_claim",
+      "configuration": "memory/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.41
+    },
+    {
+      "id": "A02_honest_lifecycle_revoked_provenance",
+      "configuration": "memory/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.5
+    },
+    {
+      "id": "A03_honest_lifecycle_expired_provenance",
+      "configuration": "memory/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.51
+    },
+    {
+      "id": "A04_honest_lifecycle_superseded_provenance",
+      "configuration": "memory/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.52
+    },
+    {
+      "id": "A05_runtime_claim_complete_and_cas",
+      "configuration": "memory/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 1.01
+    },
+    {
+      "id": "B01_retention_delete_and_replay_fence",
+      "configuration": "memory/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.95
+    },
+    {
+      "id": "B02_generic_terminal_cleanup",
+      "configuration": "memory/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.24
+    },
+    {
+      "id": "C01_initial_generation_and_replace",
+      "configuration": "memory/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.64
+    },
+    {
+      "id": "C02_activation_generation_and_time",
+      "configuration": "memory/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.3
+    },
+    {
+      "id": "D01_transaction_multirow_and_rollback",
+      "configuration": "memory/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 0.97
+    },
+    {
+      "id": "A01_forced_outbox_insert_replace_and_claim",
+      "configuration": "file/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 2.24
+    },
+    {
+      "id": "A02_honest_lifecycle_revoked_provenance",
+      "configuration": "file/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 3.91
+    },
+    {
+      "id": "A03_honest_lifecycle_expired_provenance",
+      "configuration": "file/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 2.7
+    },
+    {
+      "id": "A04_honest_lifecycle_superseded_provenance",
+      "configuration": "file/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 2.68
+    },
+    {
+      "id": "A05_runtime_claim_complete_and_cas",
+      "configuration": "file/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 6.75
+    },
+    {
+      "id": "B01_retention_delete_and_replay_fence",
+      "configuration": "file/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 6.21
+    },
+    {
+      "id": "B02_generic_terminal_cleanup",
+      "configuration": "file/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 1.07
+    },
+    {
+      "id": "C01_initial_generation_and_replace",
+      "configuration": "file/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 4.84
+    },
+    {
+      "id": "C02_activation_generation_and_time",
+      "configuration": "file/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 2.67
+    },
+    {
+      "id": "D01_transaction_multirow_and_rollback",
+      "configuration": "file/fk_off/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 5.84
+    },
+    {
+      "id": "A01_forced_outbox_insert_replace_and_claim",
+      "configuration": "file/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 1.87
+    },
+    {
+      "id": "A02_honest_lifecycle_revoked_provenance",
+      "configuration": "file/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 2.76
+    },
+    {
+      "id": "A03_honest_lifecycle_expired_provenance",
+      "configuration": "file/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 3.13
+    },
+    {
+      "id": "A04_honest_lifecycle_superseded_provenance",
+      "configuration": "file/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 2.94
+    },
+    {
+      "id": "A05_runtime_claim_complete_and_cas",
+      "configuration": "file/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 6.08
+    },
+    {
+      "id": "B01_retention_delete_and_replay_fence",
+      "configuration": "file/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 5.66
+    },
+    {
+      "id": "B02_generic_terminal_cleanup",
+      "configuration": "file/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 1.15
+    },
+    {
+      "id": "C01_initial_generation_and_replace",
+      "configuration": "file/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 4.06
+    },
+    {
+      "id": "C02_activation_generation_and_time",
+      "configuration": "file/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 2.58
+    },
+    {
+      "id": "D01_transaction_multirow_and_rollback",
+      "configuration": "file/fk_off/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 8.1
+    },
+    {
+      "id": "A01_forced_outbox_insert_replace_and_claim",
+      "configuration": "file/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 2.15
+    },
+    {
+      "id": "A02_honest_lifecycle_revoked_provenance",
+      "configuration": "file/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 2.67
+    },
+    {
+      "id": "A03_honest_lifecycle_expired_provenance",
+      "configuration": "file/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 2.69
+    },
+    {
+      "id": "A04_honest_lifecycle_superseded_provenance",
+      "configuration": "file/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 2.51
+    },
+    {
+      "id": "A05_runtime_claim_complete_and_cas",
+      "configuration": "file/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 6.01
+    },
+    {
+      "id": "B01_retention_delete_and_replay_fence",
+      "configuration": "file/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 5.95
+    },
+    {
+      "id": "B02_generic_terminal_cleanup",
+      "configuration": "file/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 1.25
+    },
+    {
+      "id": "C01_initial_generation_and_replace",
+      "configuration": "file/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 4.73
+    },
+    {
+      "id": "C02_activation_generation_and_time",
+      "configuration": "file/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 3.37
+    },
+    {
+      "id": "D01_transaction_multirow_and_rollback",
+      "configuration": "file/fk_on/recursive_off",
+      "status": "PASS",
+      "elapsed_ms": 7.54
+    },
+    {
+      "id": "A01_forced_outbox_insert_replace_and_claim",
+      "configuration": "file/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 1.87
+    },
+    {
+      "id": "A02_honest_lifecycle_revoked_provenance",
+      "configuration": "file/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 2.7
+    },
+    {
+      "id": "A03_honest_lifecycle_expired_provenance",
+      "configuration": "file/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 2.76
+    },
+    {
+      "id": "A04_honest_lifecycle_superseded_provenance",
+      "configuration": "file/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 2.64
+    },
+    {
+      "id": "A05_runtime_claim_complete_and_cas",
+      "configuration": "file/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 6.03
+    },
+    {
+      "id": "B01_retention_delete_and_replay_fence",
+      "configuration": "file/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 8.52
+    },
+    {
+      "id": "B02_generic_terminal_cleanup",
+      "configuration": "file/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 1.16
+    },
+    {
+      "id": "C01_initial_generation_and_replace",
+      "configuration": "file/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 4.25
+    },
+    {
+      "id": "C02_activation_generation_and_time",
+      "configuration": "file/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 2.91
+    },
+    {
+      "id": "D01_transaction_multirow_and_rollback",
+      "configuration": "file/fk_on/recursive_on",
+      "status": "PASS",
+      "elapsed_ms": 6.09
+    }
+  ]
+}

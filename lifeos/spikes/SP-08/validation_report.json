@@ -1,0 +1,59 @@
+{
+  "summary": {
+    "spike": "SP-08",
+    "total": 25,
+    "passed": 25,
+    "failed": 0,
+    "p0_failed": 0,
+    "result": "PASS"
+  },
+  "baseline": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "checked_versions": 48
+  },
+  "broken_cases": {
+    "tampered_checksum": {
+      "valid": false,
+      "errors": [
+        "checksum_mismatch:av-001-v1"
+      ],
+      "warnings": [],
+      "checked_versions": 48
+    },
+    "missing_file": {
+      "valid": false,
+      "errors": [
+        "content_file_missing:av-001-v1"
+      ],
+      "warnings": [],
+      "checked_versions": 48
+    },
+    "broken_reference": {
+      "valid": false,
+      "errors": [
+        "broken_derivation_reference:deriv-004"
+      ],
+      "warnings": [],
+      "checked_versions": 48
+    },
+    "incompatible_version": {
+      "valid": false,
+      "errors": [
+        "manifest_version_incompatible"
+      ],
+      "warnings": [],
+      "checked_versions": 48
+    },
+    "missing_restriction_note": {
+      "valid": false,
+      "errors": [
+        "restriction_note_missing:src-010",
+        "restriction_note_missing:src-011"
+      ],
+      "warnings": [],
+      "checked_versions": 48
+    }
+  }
+}

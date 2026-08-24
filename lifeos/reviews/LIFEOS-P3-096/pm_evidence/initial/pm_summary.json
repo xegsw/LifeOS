@@ -1,0 +1,59 @@
+{
+  "task_id": "LIFEOS-P3-096",
+  "abf_id": "ABF-P3-096-v2",
+  "conclusion": "REWORK",
+  "formal_rework_count": 1,
+  "formal_rework_limit": 2,
+  "counts": {
+    "P0": 0,
+    "P1": 1,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 0
+  },
+  "submitted_evidence": {
+    "manifest_entries_verified": 17,
+    "manifest_mismatches": 0,
+    "late_candidate_entries_verified": 10,
+    "late_candidate_mismatches": 0,
+    "historical_assets_verified": 253,
+    "historical_mismatches": 0,
+    "matrix_rows_passed": 20,
+    "matrix_rows_failed": 0,
+    "unique_executed_test_ids": 28,
+    "unique_fixture_ids": 28,
+    "unit_tests": 51,
+    "unit_exit": 0,
+    "baseline_candidate_pass": 117,
+    "baseline_pm_counterexamples_pass": 6
+  },
+  "pm_rerun": {
+    "accepted_outer_directory": "/private/tmp/pm-lifeos-p3-096-XXXXXX",
+    "runner_exit": 0,
+    "matrix_rows_passed": 20,
+    "matrix_rows_failed": 0,
+    "executed_test_ids": 28,
+    "temporary_fixture_removed": true
+  },
+  "pm_harness_observation": {
+    "description": "A first PM output directory used the runner-reserved lifeos-p3-096-* fixture prefix, so the runner correctly counted the PM output directory as residue and exited 1. Re-running in a fresh PM outer directory without that reserved prefix exited 0.",
+    "first_summary_sha256": "9bd4d972764b371e5a9809711b00f13d211bb9ed8f3faf3b1c657ca604a5c65c",
+    "classification": "PM harness naming collision; not counted as a candidate defect"
+  },
+  "pm_counterexample": {
+    "case_id": "PM-P3-096-CE-01",
+    "mapped_to": ["L1-3", "L1-4", "ABF-I-01", "ABF-I-02"],
+    "result": "FAIL",
+    "severity": "P1",
+    "failure_returned": true,
+    "protected_state_unchanged": false,
+    "sentinel_unchanged": true
+  },
+  "local_model_precheck": {
+    "used": false,
+    "reason": "High-risk final judgment for real-local data lifecycle, deletion boundary, failure atomicity, audit trust, and Evidence honesty; local precheck cannot decide this result."
+  },
+  "assets_frozen": false,
+  "r_0051": "P0 / Open",
+  "stage_4_allowed": false
+}

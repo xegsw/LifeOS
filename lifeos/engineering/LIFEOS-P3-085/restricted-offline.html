@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LifeOS｜今日｜权限受限与离线</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="site-header">
+      <p class="eyebrow">LifeOS · 纯本地演示页面</p>
+      <h1>今日</h1>
+      <p class="boundary">只显示受控说明。AI 未启用，网络未使用。</p>
+      <nav class="page-nav" aria-label="今日状态导航">
+        <a href="default-recovery.html">默认恢复</a>
+        <a href="no-reliable-suggestion.html">暂无可靠建议</a>
+        <a class="current" aria-current="page" href="restricted-offline.html">权限受限 · 离线</a>
+      </nav>
+    </header>
+
+    <section aria-labelledby="restricted-project-title">
+      <p class="label">当前 Project</p>
+      <h2 id="restricted-project-title">独立产品发布页改版</h2>
+      <article class="hero restricted">
+        <h3>权限受限 · 离线</h3>
+        <p><strong>页面会话：</strong>手动内容不会离开此页；刷新或关闭后会清除。</p>
+        <p><strong>离线状态：</strong>网络未使用，本页不联网、不同步。</p>
+        <p><strong>来源／处理边界：</strong>外部来源与处理均受限，因此不读取来源、不处理内容，也不生成建议。</p>
+      </article>
+    </section>
+
+    <section class="card" aria-labelledby="restricted-today-title">
+      <h3 id="restricted-today-title">今日安排</h3>
+      <p><strong>你已确认 · 行动：</strong>核对首屏文案（仍可见；不是 AI 已确认）。</p>
+    </section>
+
+    <section class="card ai-closed" aria-labelledby="restricted-ai-title">
+      <h3 id="restricted-ai-title">AI</h3>
+      <p><strong>AI 未启用：</strong>权限受限与离线时不生成建议。</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

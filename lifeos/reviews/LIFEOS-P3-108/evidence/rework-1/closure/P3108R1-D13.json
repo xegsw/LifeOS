@@ -1,0 +1,24 @@
+{
+  "id": "P3108R1-D13",
+  "observable_result": "Actual UI reports path/SQL/shell extra fields denied and DB/audit unchanged.",
+  "operation": "Click actual extra-fields diagnostics action.",
+  "raw_actual_app_state_and_visual_evidence": [
+    {
+      "exists": true,
+      "path": "dynamic/U12-extra-fields-denied.ax.txt",
+      "sha256": "48848c8518a8c73bdf5383e66d4149b0c4a142ccb5de77f2317f86938da56118"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/U12-extra-fields-denied.jpeg",
+      "sha256": "63c87443a27ac7194d047077e0732510c03c3c7504c367bb69bdf083dad1a11f"
+    },
+    {
+      "exists": true,
+      "path": "db-reopen-P3108R1-U12-denied-after.json",
+      "sha256": "f66f6952a701ce25ffa596c638f0571174562ff134be9510b9374fd12db24524"
+    }
+  ],
+  "status": "PASS",
+  "time": "2026-08-24T03:13:25.561626+00:00"
+}

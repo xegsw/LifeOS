@@ -1,0 +1,29 @@
+{
+  "task_id": "LIFEOS-P3-101",
+  "resume_id": "resume-1",
+  "matrix_row": "ABF-M-008",
+  "status": "PASS",
+  "selected_direction": "Recommend Separate Limited Real-Use Enablement Task",
+  "selected_count": 1,
+  "formula_branch": "The next minimum gap is limited personal real-use authorization/runtime evidence, and the proposed minimum entry point does not trigger R-0040 because it remains CLI-only with Tauri/IPC disabled.",
+  "why_not_tauri_ipc_task": "R-0040 remains Open / Conditional, but Tauri/IPC is not required for the smallest next CLI/local self-use slice. A Tauri/IPC task becomes necessary only if a future entry point uses those platform capabilities.",
+  "why_not_hold_for_smaller_gap": "No smaller non-real product or evidence gap unlocks actual self-use. Permission, recovery, instructions and Gate 5 evidence all depend on first establishing a narrowly authorized real-use boundary.",
+  "recommended_task_boundary": {
+    "purpose": "Validate one narrow, reversible, local self-use capture-to-persistence-to-today-view slice.",
+    "must_require_new_explicit_user_confirmation": true,
+    "must_name": [
+      "exact low-sensitivity user-entered data class",
+      "new dedicated self-use directory and new local DB",
+      "allowed CLI entry points",
+      "first, repeat/idempotent, restart, failure and cleanup evidence",
+      "risk reopen/equivalent-risk handling for boundaries triggered by real data/path/DB",
+      "independent review and stop conditions"
+    ],
+    "must_keep_disabled": ["Tauri/IPC", "Vault", "real file export", "network", "cloud/third-party", "sync/multi-device", "L3", "external users"],
+    "must_not": ["reuse an existing personal DB", "scan arbitrary personal paths", "freeze assets or Schema/API", "restore engineering baseline", "enter Stage 4"]
+  },
+  "execution_authorized": false,
+  "tasks_created": 0,
+  "risk_state_changed": false,
+  "stage_changed": false
+}

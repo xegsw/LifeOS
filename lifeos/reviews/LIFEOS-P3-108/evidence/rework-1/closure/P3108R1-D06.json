@@ -1,0 +1,29 @@
+{
+  "id": "P3108R1-D06",
+  "observable_result": "UI reports idempotency_conflict and DB/audit remain unchanged.",
+  "operation": "Use actual diagnostics UI for same key with different text.",
+  "raw_actual_app_state_and_visual_evidence": [
+    {
+      "exists": true,
+      "path": "dynamic/U09-conflict-rejected.ax.txt",
+      "sha256": "a7efb149ff189a604db4ea3f4231d052486c07b4e19c0c8532b1b37dc827798b"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/U09-conflict-rejected.jpeg",
+      "sha256": "47e1265573a1f768734c2516fba1ffb77ab1bc35727710f970635280793b432d"
+    },
+    {
+      "exists": true,
+      "path": "fixture-reopen-P3108R1-U09-conflict-after.json",
+      "sha256": "1b6a71c67b093e75b0fa4e1667d3b7804d966b743d9725174fd8a07142a72dab"
+    },
+    {
+      "exists": true,
+      "path": "db-reopen-P3108R1-U09-conflict-after.json",
+      "sha256": "0a8bbb900442e19a96ff5b05f27a8a39d8c15332ae444c689a3c0a644f4f1aa6"
+    }
+  ],
+  "status": "PASS",
+  "time": "2026-08-24T03:13:25.557387+00:00"
+}

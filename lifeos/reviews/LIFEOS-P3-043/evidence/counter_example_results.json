@@ -1,0 +1,370 @@
+[
+  {
+    "group": "ENV",
+    "name": "update_grantor_ref_active",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV",
+    "name": "update_processor_active",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV",
+    "name": "update_purpose_active",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV",
+    "name": "update_location_active",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV",
+    "name": "update_valid_from_active",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV",
+    "name": "update_expires_mode_active",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV",
+    "name": "update_policy_version_active",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV",
+    "name": "update_expires_at_ms_active",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV-EDGE",
+    "name": "at_to_indefinite_pair",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV-EDGE",
+    "name": "indefinite_to_at_pair",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV-EDGE",
+    "name": "expires_at_ms_value_swap",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV-EDGE",
+    "name": "compound_all_eight_fields",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV-EDGE",
+    "name": "multi_row_active_plus_granted",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV-EDGE",
+    "name": "no_op_update_stays_legal",
+    "severity": "P1",
+    "passed": true,
+    "detail": "no effective mutation (no-op or constraint held state)",
+    "sqlite_error": null
+  },
+  {
+    "group": "ENV-EDGE",
+    "name": "envelope_change_with_updated_at",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV-STATE",
+    "name": "envelope_change_while_granted",
+    "severity": "P3",
+    "passed": false,
+    "detail": "ENVELOPE BYPASSED: processor changed from 'local2' to 'pre-activation-mutation' while active",
+    "sqlite_error": null
+  },
+  {
+    "group": "ENV-STATE",
+    "name": "activation_with_envelope_mutation",
+    "severity": "P3",
+    "passed": true,
+    "detail": "allowed (by design: envelope mutable pre-activation; same exposure as S-1, no additional fence required by P3-042 scope)",
+    "sqlite_error": null
+  },
+  {
+    "group": "ENV-STATE",
+    "name": "retirement_package_with_envelope_mutation",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "ENV-STATE",
+    "name": "envelope_change_while_revoked",
+    "severity": "P2",
+    "passed": false,
+    "detail": "ENVELOPE BYPASSED: processor changed from 'local' to 'history-rewrite' while active",
+    "sqlite_error": null
+  },
+  {
+    "group": "ENV-STATE",
+    "name": "envelope_change_while_expired",
+    "severity": "P2",
+    "passed": false,
+    "detail": "ENVELOPE BYPASSED: purpose changed from 'test' to 'history-rewrite' while active",
+    "sqlite_error": null
+  },
+  {
+    "group": "ENV-STATE",
+    "name": "envelope_plus_backward_status",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable (unexpected error kind)",
+    "sqlite_error": "active_authorization_security_envelope_immutable (unexpected error kind)"
+  },
+  {
+    "group": "SQL",
+    "name": "upsert_do_update_envelope",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "SQL",
+    "name": "upsert_do_update_via_status",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "SQL",
+    "name": "upsert_do_nothing_envelope",
+    "severity": "P1",
+    "passed": true,
+    "detail": "no effective mutation (no-op or constraint held state)",
+    "sqlite_error": null
+  },
+  {
+    "group": "SQL",
+    "name": "insert_or_replace_granted_fk_on",
+    "severity": "P1",
+    "passed": false,
+    "detail": "ENVELOPE BYPASSED: processor changed from 'local' to 'evil-replace' while active",
+    "sqlite_error": null
+  },
+  {
+    "group": "SQL",
+    "name": "insert_or_replace_active_fk_on",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: authorization_must_start_inactive",
+    "sqlite_error": "authorization_must_start_inactive"
+  },
+  {
+    "group": "SQL",
+    "name": "delete_active_parent_fk_on",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: FOREIGN KEY constraint failed",
+    "sqlite_error": "FOREIGN KEY constraint failed"
+  },
+  {
+    "group": "SQL",
+    "name": "update_from_envelope",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "SQL",
+    "name": "update_via_subquery_predicate",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "SQL",
+    "name": "fk_off_replace_rebuild_then_activate",
+    "severity": "P2",
+    "passed": false,
+    "detail": "KNOWN-LIMITATION FAMILY CONFIRMED: FK OFF + INSERT OR REPLACE(granted) + activate rebuilds active auth with envelope 'evil-rebuild', generation reset to 1, no audit record; requires PRAGMA foreign_keys=OFF (writer-level action)",
+    "sqlite_error": null
+  },
+  {
+    "group": "SQL",
+    "name": "fk_off_delete_reinsert_rebuild",
+    "severity": "P2",
+    "passed": true,
+    "detail": "blocked: FOREIGN KEY constraint failed",
+    "sqlite_error": "FOREIGN KEY constraint failed"
+  },
+  {
+    "group": "SQL",
+    "name": "fk_off_replace_direct_active",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: authorization_must_start_inactive",
+    "sqlite_error": "authorization_must_start_inactive"
+  },
+  {
+    "group": "R0048",
+    "name": "prewrite_revoked_at_active",
+    "severity": "P2",
+    "passed": false,
+    "detail": "ENVELOPE BYPASSED: revoked_at_ms changed from None to 1786550395000 while active",
+    "sqlite_error": null
+  },
+  {
+    "group": "R0048",
+    "name": "prewrite_then_legal_retirement",
+    "severity": "P2",
+    "passed": false,
+    "detail": "KNOWN LIMITATION CONFIRMED (R-0048): retirement succeeds and keeps the pre-written forged revoked_at_ms=1786550395000 instead of actual retirement time",
+    "sqlite_error": null
+  },
+  {
+    "group": "R0048",
+    "name": "preset_evidence_forged_retirement",
+    "severity": "P2",
+    "passed": false,
+    "detail": "KNOWN LIMITATION CONFIRMED (R-0048 evidence-chain family): manually preset audit/outbox rows satisfy the retirement fence; evidence chain forgeable by direct table writes (same write access as the legal path)",
+    "sqlite_error": null
+  },
+  {
+    "group": "R0048",
+    "name": "rewrite_created_at_active",
+    "severity": "P2",
+    "passed": false,
+    "detail": "ENVELOPE BYPASSED: created_at_ms changed from 1786550400000 to 1786550300001 while active",
+    "sqlite_error": null
+  },
+  {
+    "group": "R0048",
+    "name": "generation_bump_active",
+    "severity": "P2",
+    "passed": false,
+    "detail": "ENVELOPE BYPASSED: generation changed from 1 to 5 while active",
+    "sqlite_error": null
+  },
+  {
+    "group": "R0048",
+    "name": "generation_bump_with_envelope",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "R0048",
+    "name": "staged_generation_climb_retire",
+    "severity": "P2",
+    "passed": false,
+    "detail": "KNOWN LIMITATION CONFIRMED: gen can be staged upward while active (R-0048 generation-fence family); retirement fence satisfied by staged gen + preset evidence",
+    "sqlite_error": null
+  },
+  {
+    "group": "R0048",
+    "name": "retirement_with_forged_revoked_at",
+    "severity": "P2",
+    "passed": false,
+    "detail": "KNOWN LIMITATION CONFIRMED: retirement statement may carry arbitrary revoked_at_ms value (time metadata unfenced, R-0048 family)",
+    "sqlite_error": null
+  },
+  {
+    "group": "R0048",
+    "name": "combo_envelope_prewrite_retire",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "TRIG",
+    "name": "recursive_triggers_envelope",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "TRIG",
+    "name": "trigger_order_envelope_vs_retirement",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "TRIG",
+    "name": "reversed_set_order",
+    "severity": "P1",
+    "passed": true,
+    "detail": "blocked: active_authorization_security_envelope_immutable",
+    "sqlite_error": "active_authorization_security_envelope_immutable"
+  },
+  {
+    "group": "TRIG",
+    "name": "legal_retirement_nonregression",
+    "severity": "P1",
+    "passed": true,
+    "detail": "legal retirement path intact (gen+1, audit, outbox)",
+    "sqlite_error": null
+  },
+  {
+    "group": "TRIG",
+    "name": "legal_granted_envelope_change",
+    "severity": "P3",
+    "passed": true,
+    "detail": "granted-state envelope change still legal (by design)",
+    "sqlite_error": null
+  }
+]

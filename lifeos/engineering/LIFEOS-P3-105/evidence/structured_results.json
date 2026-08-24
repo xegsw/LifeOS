@@ -1,0 +1,23 @@
+{
+  "task_id": "LIFEOS-P3-105",
+  "candidate_status": "BLOCKED_BEFORE_ACTUAL_APP_REPLAY",
+  "counts": {"P0": 0, "P1": 0, "P2": 0, "Unknown": 0, "Not Implemented": 15},
+  "matrix": [
+    {"row_id":"ABF-M-001","execution_id":"P3-105-M001-20260823T1650","status":"PASS","evidence":["evidence/static_results.json","evidence/blocker_report.json"]},
+    {"row_id":"ABF-M-002","execution_id":"P3-105-M002-20260823T1700","status":"NOT IMPLEMENTED","detail":"Offline locked task-local bundle built, but clean no-target actual-app replay could not start within the frozen fixture path authorization."},
+    {"row_id":"ABF-M-003","execution_id":"P3-105-M003-BLOCKED","status":"NOT IMPLEMENTED"},
+    {"row_id":"ABF-M-004","execution_id":"P3-105-M004-BLOCKED","status":"NOT IMPLEMENTED"},
+    {"row_id":"ABF-M-005","execution_id":"P3-105-M005-BLOCKED","status":"NOT IMPLEMENTED"},
+    {"row_id":"ABF-M-006","execution_id":"P3-105-M006-BLOCKED","status":"NOT IMPLEMENTED","detail":"Source-level visual contract is 34/34 PASS; actual-app screenshot verification is not implemented."},
+    {"row_id":"ABF-M-007","execution_id":"P3-105-M007-BLOCKED","status":"NOT IMPLEMENTED","detail":"Static anti-screenshot/resource scan passed; actual resource replay not completed."},
+    {"row_id":"ABF-M-008","execution_id":"P3-105-M008-BLOCKED","status":"NOT IMPLEMENTED"},
+    {"row_id":"ABF-M-009","execution_id":"P3-105-M009-BLOCKED","status":"NOT IMPLEMENTED"},
+    {"row_id":"ABF-M-010","execution_id":"P3-105-M010-BLOCKED","status":"NOT IMPLEMENTED"},
+    {"row_id":"ABF-M-011","execution_id":"P3-105-M011-BLOCKED","status":"NOT IMPLEMENTED"},
+    {"row_id":"ABF-M-012","execution_id":"P3-105-M012-BLOCKED","status":"NOT IMPLEMENTED"},
+    {"row_id":"ABF-M-013","execution_id":"P3-105-M013-BLOCKED","status":"NOT IMPLEMENTED"},
+    {"row_id":"ABF-M-014","execution_id":"P3-105-M014-BLOCKED","status":"NOT IMPLEMENTED"},
+    {"row_id":"ABF-M-015","execution_id":"P3-105-M015-BLOCKED","status":"NOT IMPLEMENTED"},
+    {"row_id":"ABF-M-016","execution_id":"P3-105-M016-BLOCKED","status":"NOT IMPLEMENTED","detail":"Frozen hashes remain intact and P3-105 temporary fixture residuals are zero; final dynamic manifest cannot be completed."}
+  ]
+}

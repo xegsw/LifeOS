@@ -1,0 +1,64 @@
+{
+  "p2_2": {
+    "baseline": {
+      "export": "DENY",
+      "outbox": "DENY",
+      "read": "DENY",
+      "restore": "DENY",
+      "search": "DENY",
+      "suggest": "DENY"
+    },
+    "commit": {
+      "export": "DENY",
+      "outbox": "DENY",
+      "read": "DENY",
+      "restore": "DENY",
+      "search": "DENY",
+      "suggest": "DENY"
+    },
+    "insert_or_replace": {
+      "export": "DENY",
+      "outbox": "DENY",
+      "read": "DENY",
+      "restore": "DENY",
+      "search": "DENY",
+      "suggest": "DENY"
+    },
+    "ordinary_delete": {
+      "export": "DENY",
+      "outbox": "DENY",
+      "read": "DENY",
+      "restore": "DENY",
+      "search": "DENY",
+      "suggest": "DENY"
+    },
+    "rollback": {
+      "export": "DENY",
+      "outbox": "DENY",
+      "read": "DENY",
+      "restore": "DENY",
+      "search": "DENY",
+      "suggest": "DENY"
+    }
+  },
+  "p2_4": {
+    "action": {
+      "after_attempt": "ALLOW",
+      "cache_recheck": "ALLOW",
+      "in_transaction": "ALLOW",
+      "queue_recheck": "ALLOW"
+    },
+    "policy": {
+      "after_attempt": "ALLOW",
+      "cache_recheck": "ALLOW",
+      "in_transaction": "ALLOW",
+      "queue_recheck": "ALLOW"
+    },
+    "scope": {
+      "after_attempt": "ALLOW",
+      "cache_recheck": "ALLOW",
+      "in_transaction": "ALLOW",
+      "queue_recheck": "ALLOW"
+    }
+  }
+}

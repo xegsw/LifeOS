@@ -1,0 +1,1743 @@
+[
+  {
+    "action": "runtime normal saved",
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 2,
+        "repeat": 0,
+        "saved": 2
+      },
+      "db_exists": true,
+      "db_sha256": "fd59b7c7f0a1a57282d9cca88efaf4453cf3a31cc417c808e07f03fc5e95722e",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page_exists": false,
+      "page_sha256": null,
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "atomic_success": true,
+      "saved": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "ed3eaad1a0622dcc1d6da764a4107d835529932e1bed0a76a8d666e78a4b1fc3",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [],
+    "execution_id": "exec-p3-097-m001-f71c8de8c8ad4f8680e858b721934908",
+    "expected": "saved",
+    "fixture_id": "fixture-p3-097-m001-35231ae137e14ebbaf184ccb1ec58490",
+    "outcome": {
+      "id": "c73a97bc-be7d-4f69-a109-3c9eaaf471df",
+      "status": "saved"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-001",
+    "severity": null,
+    "test_id": "P3-097-M001"
+  },
+  {
+    "action": "CLI normal saved",
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 2,
+        "repeat": 0,
+        "saved": 2
+      },
+      "db_exists": true,
+      "db_sha256": "e6600a2e956b0c2ceccb41a8b712913acb17f638276b47c869609114c764639e",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page_exists": false,
+      "page_sha256": null,
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "atomic_success": true,
+      "cli_exit_zero": true,
+      "saved": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "8da39e0e2ea8c1f25b42add60d1b6d6087e76c9b53fa11f440e31c8c4cf710c1",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [],
+    "execution_id": "exec-p3-097-m002-12b406bafb7a472eaf7d3b3ac59d5b90",
+    "expected": "saved",
+    "fixture_id": "fixture-p3-097-m002-c77c1debb7714c04a8c866666eac71df",
+    "outcome": {
+      "json": {
+        "id": "3f1359f9-8239-4b32-b264-f329994339cf",
+        "status": "saved"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-002",
+    "severity": null,
+    "test_id": "P3-097-M002"
+  },
+  {
+    "action": "runtime normal repeat",
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 1,
+        "repeat": 1,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "cff9a82c605adc6655347c965f44c2e301925dc598babfacac7adc094c1b804b",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "atomic_repeat": true,
+      "repeat": true,
+      "same_capture": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "705a9ac2b41e9632a8a15e7ab1f85d1f1907a0504908f4b7bf53c02727b73f26",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [],
+    "execution_id": "exec-p3-097-m003-1544aea798d647ab98b001a13af9a991",
+    "expected": "idempotent_repeat",
+    "fixture_id": "fixture-p3-097-m003-fff037b39a524f9d9646d1e31116a5ff",
+    "outcome": {
+      "created_at": "2026-08-22T14:45:05+00:00",
+      "id": "ab2f4ef7-9fca-414f-a911-9feaf1a72214",
+      "status": "idempotent_repeat"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-003",
+    "severity": null,
+    "test_id": "P3-097-M003"
+  },
+  {
+    "action": "candidate_write",
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "2c1a8c96ed7af8794ba468ea9e869c7ea55a4afb52b57caef8403be83d5fb815",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "explicit_failure": true,
+      "irreversible_completion_not_reached": true,
+      "live_state_unchanged": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "2c1a8c96ed7af8794ba468ea9e869c7ea55a4afb52b57caef8403be83d5fb815",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write"
+    ],
+    "execution_id": "exec-p3-097-m004-4d99acfce012497690753f8d0c4cb86d",
+    "expected": "fail closed",
+    "fixture_id": "fixture-p3-097-m004-6d20b2d510d4480cae8f3add111e0e35",
+    "outcome": {
+      "error": "CaptureError",
+      "message": "保存失败：未显示成功，也未保留半成品。"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-004",
+    "severity": null,
+    "test_id": "P3-097-M004"
+  },
+  {
+    "action": "candidate_close_raise",
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "1172cf6afe929a9da68cbe8495a16603c7a86660cc6aa1c3c2f566316cee7f69",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "explicit_failure": true,
+      "irreversible_completion_not_reached": true,
+      "live_state_unchanged": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "1172cf6afe929a9da68cbe8495a16603c7a86660cc6aa1c3c2f566316cee7f69",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise"
+    ],
+    "execution_id": "exec-p3-097-m005-4cf3d9f5d708481ea3536a9a5aa1e49a",
+    "expected": "fail closed",
+    "fixture_id": "fixture-p3-097-m005-fbdf9d519ef54143acbb680ebc189a9f",
+    "outcome": {
+      "error": "CaptureError",
+      "message": "保存失败：未显示成功，也未保留半成品。"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-005",
+    "severity": null,
+    "test_id": "P3-097-M005"
+  },
+  {
+    "action": "sidecar_cleanup",
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 2,
+        "repeat": 0,
+        "saved": 2
+      },
+      "db_exists": true,
+      "db_sha256": "ff3cbed95d0b8430b98a5a2471737f52833ba56f921ec3ab50d9361e06e6d31c",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page_exists": false,
+      "page_sha256": null,
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "accurate_success": true,
+      "completion_reached_once": true,
+      "published_state_matches": true,
+      "single_publish": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "c3bcc9e7889968e2f8eb9e79b36de2f6b10164ec8bf36bc21d8d20f38734228e",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "sidecar_cleanup_attempt_1",
+      "sidecar_cleanup_attempt_1",
+      "sidecar_cleanup_attempt_1",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "page_invalidate",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ],
+    "execution_id": "exec-p3-097-m006-9ccc9816c8554a5db495eb5f823ef7c5",
+    "expected": "success",
+    "fixture_id": "fixture-p3-097-m006-8f1959c69d8a442da1834f4b992fd6e0",
+    "outcome": {
+      "id": "db207edf-59a8-473a-a02c-3a0c17134a7a",
+      "status": "saved"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-006",
+    "severity": null,
+    "test_id": "P3-097-M006"
+  },
+  {
+    "action": "sidecar_retry",
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 2,
+        "repeat": 0,
+        "saved": 2
+      },
+      "db_exists": true,
+      "db_sha256": "42afb227ebc929b24c9f57bb0cced01f182776e3976f16d426eeede84dd818a0",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page_exists": false,
+      "page_sha256": null,
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "accurate_success": true,
+      "bounded_retry_observed": true,
+      "completion_reached_once": true,
+      "published_state_matches": true,
+      "single_publish": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "cec69d8b5dca032de00d26e358aeac1832c5d7bf42e8c30c30aaa48ab1584ac8",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "sidecar_cleanup_attempt_1",
+      "sidecar_cleanup_attempt_2",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "page_invalidate",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ],
+    "execution_id": "exec-p3-097-m007-e43aa2affb6f474f8750c1ebfec6d799",
+    "expected": "success",
+    "fixture_id": "fixture-p3-097-m007-a139dc6889fa4d2ea876ec72bf1c3368",
+    "outcome": {
+      "id": "4a000ab4-ce24-49dc-8242-4784097a89a5",
+      "status": "saved"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-007",
+    "severity": null,
+    "test_id": "P3-097-M007"
+  },
+  {
+    "action": "page_invalidate",
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "9dc69e0deb3e73e118567713d2010d1652791d04b068893d1b86817f57fcaada",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "explicit_failure": true,
+      "irreversible_completion_not_reached": true,
+      "live_state_unchanged": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "9dc69e0deb3e73e118567713d2010d1652791d04b068893d1b86817f57fcaada",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "page_invalidate"
+    ],
+    "execution_id": "exec-p3-097-m008-b03a10f8007a444682d4780e8274e825",
+    "expected": "fail closed",
+    "fixture_id": "fixture-p3-097-m008-9c1d7b9d9b7c4ffcb10cc593ff478dd0",
+    "outcome": {
+      "error": "CaptureError",
+      "message": "保存失败：未显示成功，也未保留半成品。"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-008",
+    "severity": null,
+    "test_id": "P3-097-M008"
+  },
+  {
+    "action": "path_stability",
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "636a3606f1ceb1686d203a6849775e545748f187ca0246fec74f30b5b54d5d29",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "explicit_failure": true,
+      "irreversible_completion_not_reached": true,
+      "live_state_unchanged": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "636a3606f1ceb1686d203a6849775e545748f187ca0246fec74f30b5b54d5d29",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability"
+    ],
+    "execution_id": "exec-p3-097-m009-e105f85430df4664892f1c29ea2df29a",
+    "expected": "fail closed",
+    "fixture_id": "fixture-p3-097-m009-353e6f1b577b4e47960ee961f8622a9f",
+    "outcome": {
+      "error": "CaptureError",
+      "message": "保存失败：未显示成功，也未保留半成品。"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-009",
+    "severity": null,
+    "test_id": "P3-097-M009"
+  },
+  {
+    "action": "candidate_validate",
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "cac3931cfa53f3f614e9893ddaa8d4ebcdaa41bceeb4555be5d998ce10bc2ad0",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "explicit_failure": true,
+      "irreversible_completion_not_reached": true,
+      "live_state_unchanged": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "cac3931cfa53f3f614e9893ddaa8d4ebcdaa41bceeb4555be5d998ce10bc2ad0",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate"
+    ],
+    "execution_id": "exec-p3-097-m010-cb4e5a9baf7540c791964187ad126843",
+    "expected": "fail closed",
+    "fixture_id": "fixture-p3-097-m010-13b839c6ca0a47278075d2a5f309ce51",
+    "outcome": {
+      "error": "CaptureError",
+      "message": "保存失败：未显示成功，也未保留半成品。"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-010",
+    "severity": null,
+    "test_id": "P3-097-M010"
+  },
+  {
+    "action": "publish",
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "b35af792129465ec16e9af6c169d5e4a44fcdf1b4c3946d9a85bfeabf34fb70c",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "explicit_failure": true,
+      "irreversible_completion_not_reached": true,
+      "live_state_unchanged": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "b35af792129465ec16e9af6c169d5e4a44fcdf1b4c3946d9a85bfeabf34fb70c",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "page_invalidate",
+      "publish"
+    ],
+    "execution_id": "exec-p3-097-m011-c20bcf1373444a51be87d7492bc0629f",
+    "expected": "fail closed",
+    "fixture_id": "fixture-p3-097-m011-4633d405bc4b4d4fb2022d98227705db",
+    "outcome": {
+      "error": "CaptureError",
+      "message": "保存失败：未显示成功，也未保留半成品。"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-011",
+    "severity": null,
+    "test_id": "P3-097-M011"
+  },
+  {
+    "action": "post_publish_connection_close",
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 2,
+        "repeat": 0,
+        "saved": 2
+      },
+      "db_exists": true,
+      "db_sha256": "981f4ffba3572a2b098344a82e882cf509f6e4df5d04a7e57098b40cc2e007c0",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page_exists": false,
+      "page_sha256": null,
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "accurate_success": true,
+      "completion_reached_once": true,
+      "failure_point_structurally_unreached": true,
+      "published_state_matches": true,
+      "single_publish": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "8f43bef742fb90ef82e6ce9a3d06fa3b7ec2d6b06a354d32bd39906fa56edd18",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "page_invalidate",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ],
+    "execution_id": "exec-p3-097-m012-1e89b6cc9655460eaca4eebe4a0df76b",
+    "expected": "success",
+    "fixture_id": "fixture-p3-097-m012-1dcdf8d2b53f493e8dee11a832c5894b",
+    "outcome": {
+      "id": "2ea2cc26-2655-4284-9288-1536b265450c",
+      "status": "saved"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-012",
+    "severity": null,
+    "test_id": "P3-097-M012"
+  },
+  {
+    "action": "post_publish_gate_fd_close",
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 2,
+        "repeat": 0,
+        "saved": 2
+      },
+      "db_exists": true,
+      "db_sha256": "649eaa85cedf495d6ac564d9a86588349047ee0f2df901b1f2f8dc968cbbc0c5",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page_exists": false,
+      "page_sha256": null,
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "accurate_success": true,
+      "completion_reached_once": true,
+      "published_state_matches": true,
+      "single_publish": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "6120bd2cb64494231281b46857718d1398f66eb5debb83d5bbf90fea61090e5f",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "page_invalidate",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ],
+    "execution_id": "exec-p3-097-m013-7c403f200be74603966b012be8d93157",
+    "expected": "success",
+    "fixture_id": "fixture-p3-097-m013-79168ec675844cffb8bc731fede35d57",
+    "outcome": {
+      "id": "e4e54030-c6d3-40a0-a150-8abae8230345",
+      "status": "saved"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-013",
+    "severity": null,
+    "test_id": "P3-097-M013"
+  },
+  {
+    "action": "final_scan",
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "d50fe6d7bafc48646d108b405527562051132c1bc52ef156054f77cd9a8a715f",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "explicit_failure": true,
+      "irreversible_completion_not_reached": true,
+      "live_state_unchanged": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "d50fe6d7bafc48646d108b405527562051132c1bc52ef156054f77cd9a8a715f",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan"
+    ],
+    "execution_id": "exec-p3-097-m014-2b7e15d4147f471ba76e9eece05445fe",
+    "expected": "fail closed",
+    "fixture_id": "fixture-p3-097-m014-30c00cb62e7d442e81c4161d14336960",
+    "outcome": {
+      "error": "CaptureError",
+      "message": "保存失败：未显示成功，也未保留半成品。"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-014",
+    "severity": null,
+    "test_id": "P3-097-M014"
+  },
+  {
+    "action": "candidate_write",
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "b7c62e6e5cd120e051aa42ce1b99c1d9d11ccb9070c98505cb10d9162dd00b74",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "explicit_failure": true,
+      "irreversible_completion_not_reached": true,
+      "live_state_unchanged": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "b7c62e6e5cd120e051aa42ce1b99c1d9d11ccb9070c98505cb10d9162dd00b74",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write"
+    ],
+    "execution_id": "exec-p3-097-m015-m004-1cf97e7e6dc04e609f5a07cec46558a2",
+    "expected": "fail closed",
+    "fixture_id": "fixture-p3-097-m015-m004-f7a1fefe2da54cbfbe7f2772e0ca2f7b",
+    "outcome": {
+      "error": "CaptureError",
+      "message": "保存失败：未显示成功，也未保留半成品。"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-015",
+    "severity": null,
+    "test_id": "P3-097-M015-M004"
+  },
+  {
+    "action": "candidate_close_raise",
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "c5f7a0f350981bb02c5a42d7e6941db24a13a57632ddf5609733a18fd26270a1",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "explicit_failure": true,
+      "irreversible_completion_not_reached": true,
+      "live_state_unchanged": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "c5f7a0f350981bb02c5a42d7e6941db24a13a57632ddf5609733a18fd26270a1",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise"
+    ],
+    "execution_id": "exec-p3-097-m015-m005-4529ea7a262544dc815af319312ad0db",
+    "expected": "fail closed",
+    "fixture_id": "fixture-p3-097-m015-m005-feaa5702b6854ec28e9287119a0d5765",
+    "outcome": {
+      "error": "CaptureError",
+      "message": "保存失败：未显示成功，也未保留半成品。"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-015",
+    "severity": null,
+    "test_id": "P3-097-M015-M005"
+  },
+  {
+    "action": "sidecar_cleanup",
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 1,
+        "repeat": 1,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "8a571b1fcd26a0c5e50b637428a74947c5a7b9776da59e2baf33f5bb14e536f7",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "accurate_success": true,
+      "completion_reached_once": true,
+      "published_state_matches": true,
+      "single_publish": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "0e6b8189a5a8e75a59f3ac927140e6e8fde896af03fc46a8dc6ece195ef3328b",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "sidecar_cleanup_attempt_1",
+      "sidecar_cleanup_attempt_1",
+      "sidecar_cleanup_attempt_1",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ],
+    "execution_id": "exec-p3-097-m015-m006-874c7e87c00c4200b8529cba10a59bfe",
+    "expected": "success",
+    "fixture_id": "fixture-p3-097-m015-m006-1345470a2dfa4e63a2f0eb84b1c0e427",
+    "outcome": {
+      "created_at": "2026-08-22T14:45:05+00:00",
+      "id": "001840ae-eab4-4908-b625-4cc08bb9954e",
+      "status": "idempotent_repeat"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-015",
+    "severity": null,
+    "test_id": "P3-097-M015-M006"
+  },
+  {
+    "action": "sidecar_retry",
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 1,
+        "repeat": 1,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "9b15913b8d46729934b40b8cc90152f3a9c1cc209b75e66d512c4a19106b7e74",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "accurate_success": true,
+      "bounded_retry_observed": true,
+      "completion_reached_once": true,
+      "published_state_matches": true,
+      "single_publish": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "77ab8736abeaa993b0a5801b28109fbea535d21fdff0cf451e0ed98f30a21a46",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "sidecar_cleanup_attempt_1",
+      "sidecar_cleanup_attempt_2",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ],
+    "execution_id": "exec-p3-097-m015-m007-8134a4c8c29a4d67a4043f70953d2bbd",
+    "expected": "success",
+    "fixture_id": "fixture-p3-097-m015-m007-4ba3c292a3a64d04a29398ae690864cd",
+    "outcome": {
+      "created_at": "2026-08-22T14:45:05+00:00",
+      "id": "9a2ad9cd-3959-4159-9581-afbe4302c7d9",
+      "status": "idempotent_repeat"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-015",
+    "severity": null,
+    "test_id": "P3-097-M015-M007"
+  },
+  {
+    "action": "page_invalidate",
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 1,
+        "repeat": 1,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "2b8530887e665fbcc87c89e36804cfb47ab89ee96016ad280da49e9ed98cae88",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "accurate_success": true,
+      "completion_reached_once": true,
+      "failure_point_structurally_unreached": true,
+      "published_state_matches": true,
+      "single_publish": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "2a45183ef68b83a080fed0a9d3d211091b50a452539960055e0a9bffd9172398",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ],
+    "execution_id": "exec-p3-097-m015-m008-cf71cd6c6fb44b3690befcbeb33525e9",
+    "expected": "success",
+    "fixture_id": "fixture-p3-097-m015-m008-f05f56bcb1a946c3be8ec6a8ee456599",
+    "outcome": {
+      "created_at": "2026-08-22T14:45:05+00:00",
+      "id": "b071b41f-d13c-44ce-acff-325527a8c2b5",
+      "status": "idempotent_repeat"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-015",
+    "severity": null,
+    "test_id": "P3-097-M015-M008"
+  },
+  {
+    "action": "path_stability",
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "82cb92cc1c2bc86c10d41bc3381596886e61f20aa61781c623974da770f0958c",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "explicit_failure": true,
+      "irreversible_completion_not_reached": true,
+      "live_state_unchanged": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "82cb92cc1c2bc86c10d41bc3381596886e61f20aa61781c623974da770f0958c",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability"
+    ],
+    "execution_id": "exec-p3-097-m015-m009-b710dcc763ea4da79a4e864045e57714",
+    "expected": "fail closed",
+    "fixture_id": "fixture-p3-097-m015-m009-ade6ca7960ab4088a91a87e56d5876a2",
+    "outcome": {
+      "error": "CaptureError",
+      "message": "保存失败：未显示成功，也未保留半成品。"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-015",
+    "severity": null,
+    "test_id": "P3-097-M015-M009"
+  },
+  {
+    "action": "candidate_validate",
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "97cb718cf72890e39d79bf10b40f7b38a1eb9d7d2ac2da9cb23a9803e0a4ad59",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "explicit_failure": true,
+      "irreversible_completion_not_reached": true,
+      "live_state_unchanged": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "97cb718cf72890e39d79bf10b40f7b38a1eb9d7d2ac2da9cb23a9803e0a4ad59",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate"
+    ],
+    "execution_id": "exec-p3-097-m015-m010-3abe749b72514d4c81fb75f4ffeb334a",
+    "expected": "fail closed",
+    "fixture_id": "fixture-p3-097-m015-m010-c9f70c3347dc427f92d9e5c68d99f86a",
+    "outcome": {
+      "error": "CaptureError",
+      "message": "保存失败：未显示成功，也未保留半成品。"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-015",
+    "severity": null,
+    "test_id": "P3-097-M015-M010"
+  },
+  {
+    "action": "publish",
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "7431ce89fb8608e180f64d2bf1508a1b411d5a850bce1c3a31c95a26e754b623",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "explicit_failure": true,
+      "irreversible_completion_not_reached": true,
+      "live_state_unchanged": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "7431ce89fb8608e180f64d2bf1508a1b411d5a850bce1c3a31c95a26e754b623",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "publish"
+    ],
+    "execution_id": "exec-p3-097-m015-m011-7d69d712f935496ebbb1758dbbee367c",
+    "expected": "fail closed",
+    "fixture_id": "fixture-p3-097-m015-m011-f7d30973740444529e746ffd30d7956b",
+    "outcome": {
+      "error": "CaptureError",
+      "message": "保存失败：未显示成功，也未保留半成品。"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-015",
+    "severity": null,
+    "test_id": "P3-097-M015-M011"
+  },
+  {
+    "action": "post_publish_connection_close",
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 1,
+        "repeat": 1,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "575eecf3f8fcf49c931019bb1a54c610efe07a3f447c1819afdb548f1d48d23a",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "accurate_success": true,
+      "completion_reached_once": true,
+      "failure_point_structurally_unreached": true,
+      "published_state_matches": true,
+      "single_publish": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "5852e595ad037a402091e568434e5abaa8ec89efe148ec227bb2bd0db2d57d48",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ],
+    "execution_id": "exec-p3-097-m015-m012-c6c6cc7de2ed4d79992b9db13c1d172f",
+    "expected": "success",
+    "fixture_id": "fixture-p3-097-m015-m012-e0952a1d5f814b2c9651a35e40f7546e",
+    "outcome": {
+      "created_at": "2026-08-22T14:45:05+00:00",
+      "id": "4e282e6c-a908-408d-9455-0639b7db0bd2",
+      "status": "idempotent_repeat"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-015",
+    "severity": null,
+    "test_id": "P3-097-M015-M012"
+  },
+  {
+    "action": "post_publish_gate_fd_close",
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 1,
+        "repeat": 1,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "1262f6a625f32e04e0b88636be8bd486930d8edd95555e753c867d652eec44e0",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "accurate_success": true,
+      "completion_reached_once": true,
+      "published_state_matches": true,
+      "single_publish": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "7cb2388ac5970fab8d49d6098fad37a54dfdc3f36e12d8ce83522287d77e59b8",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ],
+    "execution_id": "exec-p3-097-m015-m013-9a27cfabf0e6470394db7c0a8848f749",
+    "expected": "success",
+    "fixture_id": "fixture-p3-097-m015-m013-e816ee8bedda4e5a838982d1de167b3a",
+    "outcome": {
+      "created_at": "2026-08-22T14:45:05+00:00",
+      "id": "103a250f-8f10-42d6-80e0-1b68271ed7b6",
+      "status": "idempotent_repeat"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-015",
+    "severity": null,
+    "test_id": "P3-097-M015-M013"
+  },
+  {
+    "action": "final_scan",
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "b1ea02a47386727f9953f82cea5d7f90985c4de8feaf52d2845a7a08fa71156c",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "assertions": {
+      "explicit_failure": true,
+      "irreversible_completion_not_reached": true,
+      "live_state_unchanged": true
+    },
+    "before": {
+      "counts": {
+        "audit": 1,
+        "captures": 1,
+        "repeat": 0,
+        "saved": 1
+      },
+      "db_exists": true,
+      "db_sha256": "b1ea02a47386727f9953f82cea5d7f90985c4de8feaf52d2845a7a08fa71156c",
+      "directory_names": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page_exists": true,
+      "page_sha256": "6fb428825a2078ad953e09e88512cf7ddca29e28c71f964f9491207a8b7f9db9",
+      "sentinel_sha256": "ded0d243466e46bb1a10a5489e1300bd027ec026b21e05fd4b43135835f44d3a",
+      "temporary_residue": []
+    },
+    "completion_trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan"
+    ],
+    "execution_id": "exec-p3-097-m015-m014-bf8387e915654c188168a3dca133b1ab",
+    "expected": "fail closed",
+    "fixture_id": "fixture-p3-097-m015-m014-ef43667916284276875749f5769c5e91",
+    "outcome": {
+      "error": "CaptureError",
+      "message": "保存失败：未显示成功，也未保留半成品。"
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-015",
+    "severity": null,
+    "test_id": "P3-097-M015-M014"
+  },
+  {
+    "action": "negative Evidence gate",
+    "after": {
+      "gate_input_rows": 25
+    },
+    "assertions": {
+      "all_negative_gates_nonzero": true
+    },
+    "before": {
+      "gate_input_rows": 25
+    },
+    "completion_trace": [],
+    "execution_id": "exec-p3-097-m016-2091d9f2a05d46fcbc2b4bf97d606c4b",
+    "expected": "Not Implemented detected",
+    "fixture_id": "fixture-p3-097-m016-73961ed42c4f4fce88b469ea904de6f3",
+    "outcome": [
+      {
+        "case": "missing-row",
+        "detected": true,
+        "message": "missing rows: ABF-M-016,ABF-M-017; M-015 does not contain eleven independent subtests"
+      },
+      {
+        "case": "duplicate-execution-id",
+        "detected": true,
+        "message": "duplicate execution id"
+      },
+      {
+        "case": "missing-assertions",
+        "detected": true,
+        "message": "missing fixture assertions"
+      }
+    ],
+    "result": "PASS",
+    "row_id": "ABF-M-016",
+    "severity": null,
+    "test_id": "P3-097-M016"
+  },
+  {
+    "action": "complete Evidence gate",
+    "after": {},
+    "assertions": {
+      "all_execution_ids_unique": true,
+      "all_fixture_ids_unique": true,
+      "all_rows_present": true
+    },
+    "before": {},
+    "completion_trace": [],
+    "execution_id": "exec-p3-097-m017-242a07399b03473dba28477d8ddee850",
+    "expected": "complete",
+    "fixture_id": "fixture-p3-097-m017-8359d024f06f4de7bcc4e8ebfe04af71",
+    "outcome": {
+      "rows": 27,
+      "unique_execution_ids": 27,
+      "unique_fixtures": 27,
+      "unique_test_ids": 27
+    },
+    "result": "PASS",
+    "row_id": "ABF-M-017",
+    "severity": null,
+    "test_id": "P3-097-M017"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "task_id": "LIFEOS-P3-099",
+  "conclusion": "Blocked",
+  "abf_invariant": "ABF-I-01",
+  "abf_matrix_row": "ABF-M-001",
+  "evidence": {
+    "abf_hash_matches": true,
+    "declared_frozen_at": "2026-08-22 23:35:00 CST (+0800)",
+    "first_deterministic_local_timestamp_after_delivery": "2026-08-22 23:30:36 CST (+0800)",
+    "filesystem_birth_time": "2026-08-22 23:24:29 CST (+0800)",
+    "filesystem_modify_time": "2026-08-22 23:24:29 CST (+0800)",
+    "exact_runtime_configuration_verifiable": false
+  },
+  "actions_not_performed": [
+    "No P3-097 or P3-098 recursive Manifest verification",
+    "No P3-098 runner execution",
+    "No R-0051 risk-coverage adjudication",
+    "No engineering, historical Evidence, PM ledger, risk, freeze, baseline, or stage mutation",
+    "No risk-closure recommendation"
+  ],
+  "counts": {
+    "risk_basis": {
+      "P0": 0,
+      "P1": 0,
+      "P2": 0,
+      "Unknown": 2,
+      "Not Implemented": 11
+    },
+    "p3_099_delivery_quality": {
+      "P0": 0,
+      "P1": 0,
+      "P2": 0,
+      "Unknown": 0,
+      "Not Implemented": 0
+    }
+  },
+  "count_note": "ABF-M-001 was executed and produced Blocked. ABF-M-002 through ABF-M-012 were intentionally not executed after the startup stop condition; they are counted as Not Implemented for the risk basis, not hidden as PASS."
+}

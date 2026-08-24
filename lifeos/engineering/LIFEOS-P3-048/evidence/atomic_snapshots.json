@@ -1,0 +1,1418 @@
+[
+  {
+    "case": "PM-CE-06/original/memory-fk_on-rec_on",
+    "before": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ],
+    "after": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "PM-CE-06/original/memory-fk_on-rec_off",
+    "before": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ],
+    "after": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "PM-CE-06/original/memory-fk_off-rec_on",
+    "before": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ],
+    "after": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "PM-CE-06/original/memory-fk_off-rec_off",
+    "before": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ],
+    "after": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "PM-CE-06/original/file-fk_on-rec_on",
+    "before": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ],
+    "after": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "PM-CE-06/original/file-fk_on-rec_off",
+    "before": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ],
+    "after": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "PM-CE-06/original/file-fk_off-rec_on",
+    "before": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ],
+    "after": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "PM-CE-06/original/file-fk_off-rec_off",
+    "before": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ],
+    "after": [
+      "artifact",
+      "placeholder",
+      1,
+      "seed:placeholder",
+      "seed-reason",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/accepted/memory-fk_on-rec_on",
+    "state": "accepted",
+    "protected": [
+      "authorization",
+      "auth0",
+      2,
+      "cleanup:auth0",
+      "user_cleanup",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/active_blocked/memory-fk_on-rec_on",
+    "state": "active_blocked",
+    "protected": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "active_blocked",
+      1786550400001
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_pending/memory-fk_on-rec_on",
+    "state": "cleanup_pending",
+    "protected": [
+      "authorization",
+      "auth2",
+      2,
+      "cleanup:auth2",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_pending",
+      1786550400002
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_failed/memory-fk_on-rec_on",
+    "state": "cleanup_failed",
+    "protected": [
+      "authorization",
+      "auth3",
+      2,
+      "cleanup:auth3",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_failed",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/vendor_limited/memory-fk_on-rec_on",
+    "state": "vendor_limited",
+    "protected": [
+      "authorization",
+      "auth4",
+      2,
+      "cleanup:auth4",
+      "user_cleanup",
+      1786550400000,
+      "vendor_limited",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleaned/memory-fk_on-rec_on",
+    "state": "cleaned",
+    "protected": [
+      "authorization",
+      "auth5",
+      2,
+      "cleanup:auth5",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/accepted/memory-fk_on-rec_off",
+    "state": "accepted",
+    "protected": [
+      "authorization",
+      "auth0",
+      2,
+      "cleanup:auth0",
+      "user_cleanup",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/active_blocked/memory-fk_on-rec_off",
+    "state": "active_blocked",
+    "protected": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "active_blocked",
+      1786550400001
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_pending/memory-fk_on-rec_off",
+    "state": "cleanup_pending",
+    "protected": [
+      "authorization",
+      "auth2",
+      2,
+      "cleanup:auth2",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_pending",
+      1786550400002
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_failed/memory-fk_on-rec_off",
+    "state": "cleanup_failed",
+    "protected": [
+      "authorization",
+      "auth3",
+      2,
+      "cleanup:auth3",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_failed",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/vendor_limited/memory-fk_on-rec_off",
+    "state": "vendor_limited",
+    "protected": [
+      "authorization",
+      "auth4",
+      2,
+      "cleanup:auth4",
+      "user_cleanup",
+      1786550400000,
+      "vendor_limited",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleaned/memory-fk_on-rec_off",
+    "state": "cleaned",
+    "protected": [
+      "authorization",
+      "auth5",
+      2,
+      "cleanup:auth5",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/accepted/memory-fk_off-rec_on",
+    "state": "accepted",
+    "protected": [
+      "authorization",
+      "auth0",
+      2,
+      "cleanup:auth0",
+      "user_cleanup",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/active_blocked/memory-fk_off-rec_on",
+    "state": "active_blocked",
+    "protected": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "active_blocked",
+      1786550400001
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_pending/memory-fk_off-rec_on",
+    "state": "cleanup_pending",
+    "protected": [
+      "authorization",
+      "auth2",
+      2,
+      "cleanup:auth2",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_pending",
+      1786550400002
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_failed/memory-fk_off-rec_on",
+    "state": "cleanup_failed",
+    "protected": [
+      "authorization",
+      "auth3",
+      2,
+      "cleanup:auth3",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_failed",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/vendor_limited/memory-fk_off-rec_on",
+    "state": "vendor_limited",
+    "protected": [
+      "authorization",
+      "auth4",
+      2,
+      "cleanup:auth4",
+      "user_cleanup",
+      1786550400000,
+      "vendor_limited",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleaned/memory-fk_off-rec_on",
+    "state": "cleaned",
+    "protected": [
+      "authorization",
+      "auth5",
+      2,
+      "cleanup:auth5",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/accepted/memory-fk_off-rec_off",
+    "state": "accepted",
+    "protected": [
+      "authorization",
+      "auth0",
+      2,
+      "cleanup:auth0",
+      "user_cleanup",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/active_blocked/memory-fk_off-rec_off",
+    "state": "active_blocked",
+    "protected": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "active_blocked",
+      1786550400001
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_pending/memory-fk_off-rec_off",
+    "state": "cleanup_pending",
+    "protected": [
+      "authorization",
+      "auth2",
+      2,
+      "cleanup:auth2",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_pending",
+      1786550400002
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_failed/memory-fk_off-rec_off",
+    "state": "cleanup_failed",
+    "protected": [
+      "authorization",
+      "auth3",
+      2,
+      "cleanup:auth3",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_failed",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/vendor_limited/memory-fk_off-rec_off",
+    "state": "vendor_limited",
+    "protected": [
+      "authorization",
+      "auth4",
+      2,
+      "cleanup:auth4",
+      "user_cleanup",
+      1786550400000,
+      "vendor_limited",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleaned/memory-fk_off-rec_off",
+    "state": "cleaned",
+    "protected": [
+      "authorization",
+      "auth5",
+      2,
+      "cleanup:auth5",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/accepted/file-fk_on-rec_on",
+    "state": "accepted",
+    "protected": [
+      "authorization",
+      "auth0",
+      2,
+      "cleanup:auth0",
+      "user_cleanup",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/active_blocked/file-fk_on-rec_on",
+    "state": "active_blocked",
+    "protected": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "active_blocked",
+      1786550400001
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_pending/file-fk_on-rec_on",
+    "state": "cleanup_pending",
+    "protected": [
+      "authorization",
+      "auth2",
+      2,
+      "cleanup:auth2",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_pending",
+      1786550400002
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_failed/file-fk_on-rec_on",
+    "state": "cleanup_failed",
+    "protected": [
+      "authorization",
+      "auth3",
+      2,
+      "cleanup:auth3",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_failed",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/vendor_limited/file-fk_on-rec_on",
+    "state": "vendor_limited",
+    "protected": [
+      "authorization",
+      "auth4",
+      2,
+      "cleanup:auth4",
+      "user_cleanup",
+      1786550400000,
+      "vendor_limited",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleaned/file-fk_on-rec_on",
+    "state": "cleaned",
+    "protected": [
+      "authorization",
+      "auth5",
+      2,
+      "cleanup:auth5",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/accepted/file-fk_on-rec_off",
+    "state": "accepted",
+    "protected": [
+      "authorization",
+      "auth0",
+      2,
+      "cleanup:auth0",
+      "user_cleanup",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/active_blocked/file-fk_on-rec_off",
+    "state": "active_blocked",
+    "protected": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "active_blocked",
+      1786550400001
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_pending/file-fk_on-rec_off",
+    "state": "cleanup_pending",
+    "protected": [
+      "authorization",
+      "auth2",
+      2,
+      "cleanup:auth2",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_pending",
+      1786550400002
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_failed/file-fk_on-rec_off",
+    "state": "cleanup_failed",
+    "protected": [
+      "authorization",
+      "auth3",
+      2,
+      "cleanup:auth3",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_failed",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/vendor_limited/file-fk_on-rec_off",
+    "state": "vendor_limited",
+    "protected": [
+      "authorization",
+      "auth4",
+      2,
+      "cleanup:auth4",
+      "user_cleanup",
+      1786550400000,
+      "vendor_limited",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleaned/file-fk_on-rec_off",
+    "state": "cleaned",
+    "protected": [
+      "authorization",
+      "auth5",
+      2,
+      "cleanup:auth5",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/accepted/file-fk_off-rec_on",
+    "state": "accepted",
+    "protected": [
+      "authorization",
+      "auth0",
+      2,
+      "cleanup:auth0",
+      "user_cleanup",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/active_blocked/file-fk_off-rec_on",
+    "state": "active_blocked",
+    "protected": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "active_blocked",
+      1786550400001
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_pending/file-fk_off-rec_on",
+    "state": "cleanup_pending",
+    "protected": [
+      "authorization",
+      "auth2",
+      2,
+      "cleanup:auth2",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_pending",
+      1786550400002
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_failed/file-fk_off-rec_on",
+    "state": "cleanup_failed",
+    "protected": [
+      "authorization",
+      "auth3",
+      2,
+      "cleanup:auth3",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_failed",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/vendor_limited/file-fk_off-rec_on",
+    "state": "vendor_limited",
+    "protected": [
+      "authorization",
+      "auth4",
+      2,
+      "cleanup:auth4",
+      "user_cleanup",
+      1786550400000,
+      "vendor_limited",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleaned/file-fk_off-rec_on",
+    "state": "cleaned",
+    "protected": [
+      "authorization",
+      "auth5",
+      2,
+      "cleanup:auth5",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/accepted/file-fk_off-rec_off",
+    "state": "accepted",
+    "protected": [
+      "authorization",
+      "auth0",
+      2,
+      "cleanup:auth0",
+      "user_cleanup",
+      1786550400000,
+      "accepted",
+      1786550400000
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/active_blocked/file-fk_off-rec_off",
+    "state": "active_blocked",
+    "protected": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "active_blocked",
+      1786550400001
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_pending/file-fk_off-rec_off",
+    "state": "cleanup_pending",
+    "protected": [
+      "authorization",
+      "auth2",
+      2,
+      "cleanup:auth2",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_pending",
+      1786550400002
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleanup_failed/file-fk_off-rec_off",
+    "state": "cleanup_failed",
+    "protected": [
+      "authorization",
+      "auth3",
+      2,
+      "cleanup:auth3",
+      "user_cleanup",
+      1786550400000,
+      "cleanup_failed",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/vendor_limited/file-fk_off-rec_off",
+    "state": "vendor_limited",
+    "protected": [
+      "authorization",
+      "auth4",
+      2,
+      "cleanup:auth4",
+      "user_cleanup",
+      1786550400000,
+      "vendor_limited",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/fields/cleaned/file-fk_off-rec_off",
+    "state": "cleaned",
+    "protected": [
+      "authorization",
+      "auth5",
+      2,
+      "cleanup:auth5",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400003
+    ]
+  },
+  {
+    "case": "ADJACENT/multirow/memory-fk_on-rec_on",
+    "before": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ],
+    "after": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ]
+  },
+  {
+    "case": "ADJACENT/multirow/memory-fk_on-rec_off",
+    "before": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ],
+    "after": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ]
+  },
+  {
+    "case": "ADJACENT/multirow/memory-fk_off-rec_on",
+    "before": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ],
+    "after": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ]
+  },
+  {
+    "case": "ADJACENT/multirow/memory-fk_off-rec_off",
+    "before": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ],
+    "after": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ]
+  },
+  {
+    "case": "ADJACENT/multirow/file-fk_on-rec_on",
+    "before": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ],
+    "after": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ]
+  },
+  {
+    "case": "ADJACENT/multirow/file-fk_on-rec_off",
+    "before": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ],
+    "after": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ]
+  },
+  {
+    "case": "ADJACENT/multirow/file-fk_off-rec_on",
+    "before": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ],
+    "after": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ]
+  },
+  {
+    "case": "ADJACENT/multirow/file-fk_off-rec_off",
+    "before": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ],
+    "after": [
+      [
+        "artifact",
+        "legal",
+        1,
+        "seed:legal",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      [
+        "artifact",
+        "rebind",
+        1,
+        "seed:rebind",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ]
+    ]
+  },
+  {
+    "case": "LEGAL/cleanup/memory-fk_on-rec_on",
+    "legal_trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "vendor_limited",
+      "cleanup_pending",
+      "cleaned"
+    ],
+    "final": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400007
+    ]
+  },
+  {
+    "case": "LEGAL/cleanup/memory-fk_on-rec_off",
+    "legal_trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "vendor_limited",
+      "cleanup_pending",
+      "cleaned"
+    ],
+    "final": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400007
+    ]
+  },
+  {
+    "case": "LEGAL/cleanup/memory-fk_off-rec_on",
+    "legal_trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "vendor_limited",
+      "cleanup_pending",
+      "cleaned"
+    ],
+    "final": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400007
+    ]
+  },
+  {
+    "case": "LEGAL/cleanup/memory-fk_off-rec_off",
+    "legal_trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "vendor_limited",
+      "cleanup_pending",
+      "cleaned"
+    ],
+    "final": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400007
+    ]
+  },
+  {
+    "case": "LEGAL/cleanup/file-fk_on-rec_on",
+    "legal_trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "vendor_limited",
+      "cleanup_pending",
+      "cleaned"
+    ],
+    "final": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400007
+    ]
+  },
+  {
+    "case": "LEGAL/cleanup/file-fk_on-rec_off",
+    "legal_trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "vendor_limited",
+      "cleanup_pending",
+      "cleaned"
+    ],
+    "final": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400007
+    ]
+  },
+  {
+    "case": "LEGAL/cleanup/file-fk_off-rec_on",
+    "legal_trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "vendor_limited",
+      "cleanup_pending",
+      "cleaned"
+    ],
+    "final": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400007
+    ]
+  },
+  {
+    "case": "LEGAL/cleanup/file-fk_off-rec_off",
+    "legal_trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "vendor_limited",
+      "cleanup_pending",
+      "cleaned"
+    ],
+    "final": [
+      "authorization",
+      "auth1",
+      2,
+      "cleanup:auth1",
+      "user_cleanup",
+      1786550400000,
+      "cleaned",
+      1786550400007
+    ]
+  }
+]

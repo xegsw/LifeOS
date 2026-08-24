@@ -1,0 +1,39 @@
+{
+  "actions": [
+    {
+      "id": "P3108R1-D01",
+      "result": "closure/P3108R1-D01.json",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "P3108R1-D02",
+      "result": "closure/P3108R1-D02.json",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "P3108R1-D03",
+      "result": "closure/P3108R1-D03.json",
+      "status": "UNKNOWN"
+    }
+  ],
+  "id": "P3108R1-M007-visual",
+  "reason": "Three actual unique-bundle app states and all three authority images are retained, but CUA returns scaled app captures and no native window-frame API. The required 1280×1024 actual-window assertion therefore cannot be independently verified without changing display settings, which D-0441 forbids.",
+  "references": [
+    {
+      "exists": true,
+      "path": "lifeos/deliverables/evidence/LIFEOS-P1-009/01_default_recovery_preview.jpg",
+      "sha256": "7b98a48319338a238b02cb7cdeb3d18a1e7eaecf9e7ee791b5c1d18017ba3df1"
+    },
+    {
+      "exists": true,
+      "path": "lifeos/deliverables/evidence/LIFEOS-P1-011/02_no_reliable_suggestion_preview.jpg",
+      "sha256": "55344c4ef11fc561afe1aaf0eef76e83a8fa06da5b62c88955e84adec4e56697"
+    },
+    {
+      "exists": true,
+      "path": "lifeos/deliverables/evidence/LIFEOS-P1-011/03_permission_offline_preview.jpg",
+      "sha256": "9e03b7673d9b3d74828bd1ad0ea806a8a769dd6ffed17c0d6cc7c2a1c5ae0661"
+    }
+  ],
+  "status": "UNKNOWN"
+}

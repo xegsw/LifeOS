@@ -1,0 +1,30 @@
+{
+  "id": "P3108-M016-final-verifier",
+  "closure_sha256": "4915dc0788f447995e3ff28a11cad5f663a408e8e5f62578074c48a7e10b0007",
+  "matrix_sha256": "3db422fcaf7acb631b82bfff88c539c76fdc9669544c9a194d9cc850b97edb2c",
+  "required_rows": 15,
+  "nonpass_rows": [
+    {
+      "id": "ABF-M-007",
+      "status": "NOT_IMPLEMENTED",
+      "reason": "No actual 1280x1024 visual comparison permitted/available"
+    },
+    {
+      "id": "ABF-M-008",
+      "status": "NOT_IMPLEMENTED",
+      "reason": "No exact frozen viewport proof"
+    },
+    {
+      "id": "ABF-M-013",
+      "status": "NOT_IMPLEMENTED",
+      "reason": "External-path actual-app fixture has no independent row"
+    },
+    {
+      "id": "ABF-M-015",
+      "status": "NOT_IMPLEMENTED",
+      "reason": "Exact keyboard focus and reduced-motion actions not independently observable without prohibited system setting change"
+    }
+  ],
+  "pass": false,
+  "rule": "Every ABF row and every required dynamic action must be PASS; PARTIAL, NOT_IMPLEMENTED, UNKNOWN and pending cleanup fail closed."
+}

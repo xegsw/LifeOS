@@ -1,0 +1,3 @@
+# Queue pre-publication recheck report
+
+The queue is not authoritative. A visible output is published only when all six checks pass atomically at the publication gate: current object version, active Authorization and matching `auth_version`, matching `policy_version`, active object and matching `tombstone_generation`, connected Source, and current owner+generation lease. Tests T22 and T26-T30B invalidate each fence; visible output count remains zero. T30C proves a fully current envelope publishes once. A production transaction boundary, distributed clock, and queue implementation are not proven here.

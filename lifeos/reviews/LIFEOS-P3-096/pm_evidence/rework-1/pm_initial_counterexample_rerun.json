@@ -1,0 +1,32 @@
+{
+  "after": {
+    "audit": 2,
+    "captures": 2,
+    "db_sha256": "564a168d485ab78741665f51e77b7f9ccffbc75093ac4962cec263dd1dd1a62b",
+    "page_exists": false,
+    "sentinel_sha256": "4932483170786318d790531df6dc78bf7b2829a7c106316d1cd055e36f811c74"
+  },
+  "before": {
+    "audit": 1,
+    "captures": 1,
+    "db_sha256": "0f98a6cdf8a094d1df1fda1a3505022f9e54a740ee7a585cda253b6d7b9dcc6a",
+    "page_exists": true,
+    "sentinel_sha256": "4932483170786318d790531df6dc78bf7b2829a7c106316d1cd055e36f811c74"
+  },
+  "case_id": "PM-P3-096-CE-01",
+  "error": "",
+  "failure_returned": false,
+  "fixture": "fixed non-sensitive task-local SQLite and sentinel",
+  "injected_failure": "connection close raises after the real commit and close complete",
+  "mapped_to": [
+    "L1-3",
+    "L1-4",
+    "ABF-I-01",
+    "ABF-I-02"
+  ],
+  "outcome": "accepted",
+  "protected_state_unchanged": false,
+  "result": "PASS",
+  "sentinel_unchanged": true,
+  "severity": "P1"
+}

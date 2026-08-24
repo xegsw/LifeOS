@@ -1,0 +1,306 @@
+[
+  {
+    "assertion_count": 5,
+    "evidence": [
+      "state_transitions.json#P3-096-M001-transient-staging-unlink"
+    ],
+    "executed_test_ids": [
+      "P3-096-M001-transient-staging-unlink"
+    ],
+    "fixture_ids": [
+      "m001-transient-staging-unlink"
+    ],
+    "row_id": "ABF-M-001",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 6,
+    "evidence": [
+      "state_transitions.json#P3-096-M002-persistent-staging-existing"
+    ],
+    "executed_test_ids": [
+      "P3-096-M002-persistent-staging-existing"
+    ],
+    "fixture_ids": [
+      "m002-persistent-staging-existing"
+    ],
+    "row_id": "ABF-M-002",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 6,
+    "evidence": [
+      "state_transitions.json#P3-096-M003-persistent-staging-new"
+    ],
+    "executed_test_ids": [
+      "P3-096-M003-persistent-staging-new"
+    ],
+    "fixture_ids": [
+      "m003-persistent-staging-new"
+    ],
+    "row_id": "ABF-M-003",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 5,
+    "evidence": [
+      "state_transitions.json#P3-096-M004-existing-commit-failure"
+    ],
+    "executed_test_ids": [
+      "P3-096-M004-existing-commit-failure"
+    ],
+    "fixture_ids": [
+      "m004-existing-commit-failure"
+    ],
+    "row_id": "ABF-M-004",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 13,
+    "evidence": [
+      "state_transitions.json#P3-096-M005-init-failure",
+      "state_transitions.json#P3-096-M005-new-commit-failure",
+      "state_transitions.json#P3-096-M005-publish-failure"
+    ],
+    "executed_test_ids": [
+      "P3-096-M005-init-failure",
+      "P3-096-M005-new-commit-failure",
+      "P3-096-M005-publish-failure"
+    ],
+    "fixture_ids": [
+      "m005-init-failure",
+      "m005-new-commit-failure",
+      "m005-publish-failure"
+    ],
+    "row_id": "ABF-M-005",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 6,
+    "evidence": [
+      "state_transitions.json#P3-096-M006-existing-success"
+    ],
+    "executed_test_ids": [
+      "P3-096-M006-existing-success"
+    ],
+    "fixture_ids": [
+      "m006-existing-success"
+    ],
+    "row_id": "ABF-M-006",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 5,
+    "evidence": [
+      "state_transitions.json#P3-096-M007-new-success"
+    ],
+    "executed_test_ids": [
+      "P3-096-M007-new-success"
+    ],
+    "fixture_ids": [
+      "m007-new-success"
+    ],
+    "row_id": "ABF-M-007",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 4,
+    "evidence": [
+      "state_transitions.json#P3-096-M008-future-capture"
+    ],
+    "executed_test_ids": [
+      "P3-096-M008-future-capture"
+    ],
+    "fixture_ids": [
+      "m008-future-capture"
+    ],
+    "row_id": "ABF-M-008",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 4,
+    "evidence": [
+      "state_transitions.json#P3-096-M009-future-saved"
+    ],
+    "executed_test_ids": [
+      "P3-096-M009-future-saved"
+    ],
+    "fixture_ids": [
+      "m009-future-saved"
+    ],
+    "row_id": "ABF-M-009",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 4,
+    "evidence": [
+      "state_transitions.json#P3-096-M010-saved-time-mismatch"
+    ],
+    "executed_test_ids": [
+      "P3-096-M010-saved-time-mismatch"
+    ],
+    "fixture_ids": [
+      "m010-saved-time-mismatch"
+    ],
+    "row_id": "ABF-M-010",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 4,
+    "evidence": [
+      "state_transitions.json#P3-096-M011-repeat-before-saved"
+    ],
+    "executed_test_ids": [
+      "P3-096-M011-repeat-before-saved"
+    ],
+    "fixture_ids": [
+      "m011-repeat-before-saved"
+    ],
+    "row_id": "ABF-M-011",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 7,
+    "evidence": [
+      "state_transitions.json#P3-096-M012-repeat-unknown",
+      "state_transitions.json#P3-096-M012-repeat-cleared"
+    ],
+    "executed_test_ids": [
+      "P3-096-M012-repeat-unknown",
+      "P3-096-M012-repeat-cleared"
+    ],
+    "fixture_ids": [
+      "m012-repeat-unknown",
+      "m012-repeat-cleared"
+    ],
+    "row_id": "ABF-M-012",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 4,
+    "evidence": [
+      "state_transitions.json#P3-096-M013-audit-time-regression"
+    ],
+    "executed_test_ids": [
+      "P3-096-M013-audit-time-regression"
+    ],
+    "fixture_ids": [
+      "m013-audit-time-regression"
+    ],
+    "row_id": "ABF-M-013",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 6,
+    "evidence": [
+      "state_transitions.json#P3-096-M014-clear-count-large",
+      "state_transitions.json#P3-096-M014-clear-count-small"
+    ],
+    "executed_test_ids": [
+      "P3-096-M014-clear-count-large",
+      "P3-096-M014-clear-count-small"
+    ],
+    "fixture_ids": [
+      "m014-clear-count-large",
+      "m014-clear-count-small"
+    ],
+    "row_id": "ABF-M-014",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 5,
+    "evidence": [
+      "state_transitions.json#P3-096-M015-normal-clear"
+    ],
+    "executed_test_ids": [
+      "P3-096-M015-normal-clear"
+    ],
+    "fixture_ids": [
+      "m015-normal-clear"
+    ],
+    "row_id": "ABF-M-015",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 12,
+    "evidence": [
+      "state_transitions.json#P3-096-M016-source-case",
+      "state_transitions.json#P3-096-M016-source-empty",
+      "state_transitions.json#P3-096-M016-source-null",
+      "state_transitions.json#P3-096-M016-source-blob"
+    ],
+    "executed_test_ids": [
+      "P3-096-M016-source-case",
+      "P3-096-M016-source-empty",
+      "P3-096-M016-source-null",
+      "P3-096-M016-source-blob"
+    ],
+    "fixture_ids": [
+      "m016-source-case",
+      "m016-source-empty",
+      "m016-source-null",
+      "m016-source-blob"
+    ],
+    "row_id": "ABF-M-016",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 6,
+    "evidence": [
+      "state_transitions.json#P3-096-M017-duplicate-id",
+      "state_transitions.json#P3-096-M017-duplicate-idem"
+    ],
+    "executed_test_ids": [
+      "P3-096-M017-duplicate-id",
+      "P3-096-M017-duplicate-idem"
+    ],
+    "fixture_ids": [
+      "m017-duplicate-id",
+      "m017-duplicate-idem"
+    ],
+    "row_id": "ABF-M-017",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 2,
+    "evidence": [
+      "state_transitions.json#P3-096-M018-runner-missing-fields"
+    ],
+    "executed_test_ids": [
+      "P3-096-M018-runner-missing-fields"
+    ],
+    "fixture_ids": [
+      "m018-runner-missing-fields"
+    ],
+    "row_id": "ABF-M-018",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 2,
+    "evidence": [
+      "state_transitions.json#P3-096-M019-suite-pass-missing-row"
+    ],
+    "executed_test_ids": [
+      "P3-096-M019-suite-pass-missing-row"
+    ],
+    "fixture_ids": [
+      "m019-suite-pass-missing-row"
+    ],
+    "row_id": "ABF-M-019",
+    "status": "PASS"
+  },
+  {
+    "assertion_count": 4,
+    "evidence": [
+      "state_transitions.json#P3-096-M020-complete-execution"
+    ],
+    "executed_test_ids": [
+      "P3-096-M020-complete-execution"
+    ],
+    "fixture_ids": [
+      "m020-complete-execution"
+    ],
+    "row_id": "ABF-M-020",
+    "status": "PASS"
+  }
+]

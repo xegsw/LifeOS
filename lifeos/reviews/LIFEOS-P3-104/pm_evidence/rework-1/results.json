@@ -1,0 +1,63 @@
+{
+  "task": "LIFEOS-P3-104",
+  "review": "PM Rework 1/2 re-review",
+  "abf": {
+    "id": "ABF-P3-104-v1",
+    "sha256": "2672adc56174f89088c95a7909f36307b3d51add0c6fc0a6fd84e6eb7ebf8d8b",
+    "unchanged": true
+  },
+  "conclusion": "Accepted / PM Pass / Awaiting User Adoption",
+  "submitted_evidence": {
+    "rework_manifest_entries": 16,
+    "rework_manifest_verified": 16,
+    "historical_read_only_hashes_verified": 14,
+    "initial_engineering_manifest_unchanged": true,
+    "initial_pm_evidence_manifest_unchanged": true,
+    "cargo_lock_packages": 438,
+    "cargo_lock_failures": 0,
+    "dynamic_closure_passed": 17,
+    "dynamic_closure_failed": 0
+  },
+  "pm_isolated_replay": {
+    "root": "/private/tmp/lifeos-p3-104-pm-rework-M6fV9M",
+    "offline": true,
+    "static_passed": 44,
+    "static_failed": 0,
+    "rework_checks_passed": 19,
+    "rework_checks_failed": 0,
+    "rust_unit_passed": 7,
+    "rust_unit_failed": 0,
+    "locked_debug_build": "PASS",
+    "locked_actual_app_bundle": "PASS",
+    "normal_start_stop_reopen_stop": "4/4 PASS",
+    "dangling_actual_app_rejection": "PASS",
+    "runner_cleanup_residual": 0
+  },
+  "pm_counterexamples": {
+    "final_db_dangling_symlink": "PASS_FAIL_CLOSED",
+    "journal_dangling_symlink": "PASS_FAIL_CLOSED",
+    "wal_dangling_symlink": "PASS_FAIL_CLOSED",
+    "shm_dangling_symlink": "PASS_FAIL_CLOSED",
+    "link_preserved": true,
+    "missing_target_preserved": true,
+    "sentinel_unchanged": true,
+    "candidate_residual": 0
+  },
+  "honest_diagnostics": [
+    "The first offline_verify attempt stopped because the PM minimal copy omitted the 14 frozen read-only inputs; the files were copied without changing the candidate and the full run then passed.",
+    "The first PM external counterexample used a second-level /private/tmp directory and correctly received path_schema_rejected; the invalid fixture was removed and four direct task-local roots then passed."
+  ],
+  "visual_fidelity_governance": {
+    "blocks_current_abf": false,
+    "classification": "new-task candidate outside ABF-P3-104-v1",
+    "statement": "P3-104 implements the P3-091 semantic UI baseline and is not a high-fidelity implementation of the original frozen Stitch screens."
+  },
+  "counts": {
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  },
+  "temporary_cleanup": "PASS_RESIDUAL_0"
+}

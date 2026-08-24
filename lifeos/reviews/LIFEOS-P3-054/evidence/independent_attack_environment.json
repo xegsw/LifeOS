@@ -1,0 +1,16 @@
+{
+  "task": "LIFEOS-P3-054",
+  "python": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "sqlite_version": "3.51.0",
+  "candidate_sql": "lifeos/engineering/LIFEOS-P3-031/migrations/001_candidate_schema.sql",
+  "candidate_sql_sha256": "bda3e8dbf9ffce002ed0cb3371ccc58b3aea40f819488a21c890ed14382ed9b1",
+  "plan_sha256": "a1939fd1ac8a83d6f054b7aa8144228c48b888feff7eed4bafa28d8be105eac7",
+  "independence": {
+    "uses_python_standard_library_only": true,
+    "imports_p3_052_or_p3_053_runner_or_helper": false,
+    "calls_p3_052_or_p3_053_runner_or_helper": false,
+    "historical_scripts_define_cases_or_expected_results": false,
+    "temporary_database_root": "/private/tmp/lifeos-p3-054-gjwinzvc"
+  }
+}

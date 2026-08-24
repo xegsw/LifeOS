@@ -1,0 +1,19 @@
+{
+  "id": "P3108R1-D18",
+  "observable_result": "Actual runtime panel states 减少动态偏好：系统已启用; no system setting/display scaling was changed by this run.",
+  "operation": "Open diagnostics while the user-maintained macOS reduced-motion setting is on.",
+  "raw_actual_app_state_and_visual_evidence": [
+    {
+      "exists": true,
+      "path": "dynamic/U08-diagnostics-reduced-motion.ax.txt",
+      "sha256": "83dca14e31801ceff8e073f5db4d989f8ddd135804619660632023d2df2ef46d"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/U08-diagnostics-reduced-motion.jpeg",
+      "sha256": "75417e3bd19f0482a3915d1b17052f8ea4cdd953078c78fb21a35da4b9107710"
+    }
+  ],
+  "status": "PASS",
+  "time": "2026-08-24T03:13:25.563850+00:00"
+}

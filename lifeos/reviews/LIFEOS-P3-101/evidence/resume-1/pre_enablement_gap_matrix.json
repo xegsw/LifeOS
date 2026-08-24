@@ -1,0 +1,64 @@
+{
+  "task_id": "LIFEOS-P3-101",
+  "resume_id": "resume-1",
+  "matrix_row": "ABF-M-007",
+  "status": "PASS",
+  "inherited_unchanged_evidence": {
+    "candidate_capability_map": {
+      "path": "lifeos/reviews/LIFEOS-P3-101/evidence/candidate_capability_map.json",
+      "sha256": "938ae21035193a776423621c2e3f5b2f4e88132ad0ebca0ac02ccb6f17aafa44"
+    },
+    "stage_gate_matrix": {
+      "path": "lifeos/reviews/LIFEOS-P3-101/evidence/stage_gate_matrix.json",
+      "sha256": "9f8c5fa4dc2352a6e4dc4972375d687b2b843a8dc3ed675e55928495c30be623"
+    },
+    "risk_boundary_matrix": {
+      "path": "lifeos/reviews/LIFEOS-P3-101/evidence/risk_boundary_matrix.json",
+      "sha256": "4bdf26493d6b3af06e42c8228ffcf21875e7e5cb0a04d959a3cb40eb4aefef0e"
+    }
+  },
+  "gaps": [
+    {
+      "rank": 1,
+      "area": "Limited personal real-use authorization and runtime evidence",
+      "status": "Not Met",
+      "why_first": "It is the smallest missing boundary between the fixed, non-sensitive, task-local candidate and actual self-use. It also begins producing the real workflow and user-value evidence that later hard gates depend on.",
+      "existing_basis": "P3-097/P3-098 establish a fixed CLI/local completion-point candidate under single-process, offline, task-local, non-sensitive fixtures.",
+      "missing": "Explicit user confirmation for exact data class, new dedicated self-use directory/DB, user-entered content, allowed CLI entry points, cleanup, failure stop rules and evidence.",
+      "tauri_ipc_required": false,
+      "reason_tauri_not_required": "The next minimum slice can remain CLI-only with Tauri/IPC, Vault, export, network, cloud and external capabilities disabled."
+    },
+    {
+      "rank": 2,
+      "area": "Basic permission settings on an actual data flow",
+      "status": "Partial",
+      "dependency": "Depends on a separately authorized real-use data flow; controlled grant/deny/revoke evidence already exists."
+    },
+    {
+      "rank": 3,
+      "area": "Real durability and recovery evidence",
+      "status": "Partial",
+      "dependency": "Depends on an authorized real-use DB/path and must retain R-0019 fail-closed semantics."
+    },
+    {
+      "rank": 4,
+      "area": "Basic real file export",
+      "status": "Partial",
+      "dependency": "Requires separate real file/path authorization and may trigger R-0040 if implemented through Tauri/IPC; it is not part of the first CLI-only enablement slice."
+    },
+    {
+      "rank": 5,
+      "area": "Alpha instructions and Gate 5 value evidence",
+      "status": "Partial / Not Met",
+      "dependency": "Instructions must align to actually enabled behavior; Gate 5 evidence requires real self-use or Alpha behavior and counterevidence."
+    },
+    {
+      "rank": 6,
+      "area": "Real Tauri/IPC/platform validation",
+      "status": "Not Met",
+      "dependency": "Required only when a chosen entry point uses Tauri capability/IPC/WebView/platform path behavior. The selected minimum next slice does not."
+    }
+  ],
+  "unknown_as_met": false,
+  "remaining_unknowns": []
+}

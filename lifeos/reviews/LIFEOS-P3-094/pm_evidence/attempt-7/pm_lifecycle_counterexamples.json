@@ -1,0 +1,46 @@
+{
+  "fixed_non_sensitive_fixtures_only": true,
+  "items": [
+    {
+      "id": "PM-A7-01-initialized-empty-invalidates-stale",
+      "status": "PASS",
+      "render_failed": true,
+      "page_absent_after": true,
+      "db_hash_equal": true
+    },
+    {
+      "id": "PM-A7-02-corrupt-invalidates-stale",
+      "status": "PASS",
+      "render_failed": true,
+      "page_absent_after": true,
+      "db_hash_equal": true
+    },
+    {
+      "id": "PM-A7-03-missing-db-stale-page-fail-closed",
+      "status": "FAIL",
+      "render_failed": true,
+      "stale_page_exists_after": true,
+      "stale_page_hash_equal": true,
+      "db_still_missing": true
+    },
+    {
+      "id": "PM-A7-04-uninitialized-empty-db-not-mutated",
+      "status": "FAIL",
+      "render_failed": true,
+      "stale_page_absent_after": true,
+      "db_hash_changed": true,
+      "db_size_before": 0,
+      "db_size_after": 24576
+    }
+  ],
+  "summary": {
+    "pass": 2,
+    "fail": 2,
+    "p0": 0,
+    "p1_findings": 2,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  },
+  "temporary_work_cleaned": true
+}

@@ -1,0 +1,181 @@
+{
+  "summary": {
+    "fixture_version": "fixture-pack-v1-sp03",
+    "seed": 20260808,
+    "tests": 22,
+    "passed": 22,
+    "failed": 0,
+    "p0_failed": 0,
+    "derivations": 5,
+    "sources": 3,
+    "artifacts": 4,
+    "versions": 4,
+    "invalidation_missed": 0,
+    "invalidation_false_positives": 0,
+    "authorization_expansion": 0,
+    "reimport_resurrection_count": 0,
+    "privacy_matches": 0,
+    "runtime_seconds": 0.002863,
+    "environment": {
+      "python": "3.9.6",
+      "platform": "macOS-26.5.2-arm64-arm-64bit",
+      "machine": "arm64"
+    }
+  },
+  "tests": [
+    {
+      "test_id": "T01",
+      "name": "完整证据链一次查询回查",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "evidence_chain_samples.json"
+    },
+    {
+      "test_id": "T02",
+      "name": "用户/外部/AI候选/用户确认身份与权威分离",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "fixture_manifest.md"
+    },
+    {
+      "test_id": "T03",
+      "name": "AI候选编辑确认保留AI版与用户版",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "evidence_chain_samples.json"
+    },
+    {
+      "test_id": "T04",
+      "name": "完成/延期/拒绝/纠正/撤回Feedback追加历史",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "fixture_manifest.md"
+    },
+    {
+      "test_id": "T05",
+      "name": "输入版本修改依赖闭包",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "dependency_invalidation_report.md"
+    },
+    {
+      "test_id": "T06",
+      "name": "来源不可达进入stale/evidence_unavailable",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "dependency_invalidation_report.md"
+    },
+    {
+      "test_id": "T07",
+      "name": "断源传播正确",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "dependency_invalidation_report.md"
+    },
+    {
+      "test_id": "T08",
+      "name": "删除传播正确",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "dependency_invalidation_report.md"
+    },
+    {
+      "test_id": "T09",
+      "name": "撤权使Derivation退出活跃使用",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "dependency_invalidation_report.md"
+    },
+    {
+      "test_id": "T10",
+      "name": "Feedback撤回依赖闭包无越界",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "dependency_invalidation_report.md"
+    },
+    {
+      "test_id": "T11",
+      "name": "所有预期失效漏报为0且无不可解释全库误报",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "dependency_invalidation_report.md"
+    },
+    {
+      "test_id": "T12",
+      "name": "多输入继承最严格限制",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "evidence_chain_samples.json"
+    },
+    {
+      "test_id": "T13",
+      "name": "合法子集创建新Derivation并披露缺口",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "evidence_chain_samples.json"
+    },
+    {
+      "test_id": "T14",
+      "name": "无合法输入组合时拒绝生成",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "evidence_chain_samples.json"
+    },
+    {
+      "test_id": "T15",
+      "name": "Project/文件夹/标签/双链/候选Link扩权为0",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "evidence_chain_samples.json"
+    },
+    {
+      "test_id": "T16",
+      "name": "重要Link包含来源/确认/有效状态",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "evidence_chain_samples.json"
+    },
+    {
+      "test_id": "T17",
+      "name": "唯一证据失效保留确认历史并退出自动依据",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "dependency_invalidation_report.md"
+    },
+    {
+      "test_id": "T18",
+      "name": "部分导出披露成功/排除/失败范围",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "export_reimport_report.md"
+    },
+    {
+      "test_id": "T19",
+      "name": "重导入先应用墓碑/撤回且复活数为0",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "export_reimport_report.md"
+    },
+    {
+      "test_id": "T20",
+      "name": "导出保持身份/版本/来源/确认/证据状态",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "export_reimport_report.md"
+    },
+    {
+      "test_id": "T21",
+      "name": "AuditEntry/日志无真实或可还原正文",
+      "priority": "P0",
+      "status": "PASS",
+      "evidence": "audit_privacy_check.md"
+    },
+    {
+      "test_id": "T22",
+      "name": "最小映射不依赖图数据库/事件总线/固定11表",
+      "priority": "P1",
+      "status": "PASS",
+      "evidence": "SP-03_report.md"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "task": "LIFEOS-P3-106",
+  "execution": "resume-1",
+  "fixtures": [
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-final-resume1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-journal-resume1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-wal-resume1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-shm-resume1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-path-resume1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-path-target-resume1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-tamper-resume1-20260823"
+  ],
+  "rows": [
+    {
+      "id": "ACTUAL-DANGLING-FINAL",
+      "db": "/private/tmp/lifeos-p3-104-p3-106-dangling-final-resume1-20260823/capture.sqlite",
+      "returncode": 101,
+      "sentinel_before": "c49d069ba76a2c0e6c0a43db9c7373578c4020a481dca0dadbdd77e17f546d71",
+      "sentinel_after": "c49d069ba76a2c0e6c0a43db9c7373578c4020a481dca0dadbdd77e17f546d71",
+      "sentinel_unchanged": true,
+      "log": "evidence/resume-1/actual-dangling-final.log",
+      "log_sha256": "23082b935758884c7160a0afa7a0beee2a2f861a93ca2edaadf6d698f28b6147",
+      "status": "PASS",
+      "link_preserved": true,
+      "target_absent": true
+    },
+    {
+      "id": "ACTUAL-DANGLING-JOURNAL",
+      "db": "/private/tmp/lifeos-p3-104-p3-106-dangling-journal-resume1-20260823/capture.sqlite",
+      "returncode": 101,
+      "sentinel_before": "c49d069ba76a2c0e6c0a43db9c7373578c4020a481dca0dadbdd77e17f546d71",
+      "sentinel_after": "c49d069ba76a2c0e6c0a43db9c7373578c4020a481dca0dadbdd77e17f546d71",
+      "sentinel_unchanged": true,
+      "log": "evidence/resume-1/actual-dangling-journal.log",
+      "log_sha256": "0b09966e14057d78e2ed858f85c6b77ca1bf9e6270de1bca1d97ad22ec3a1ece",
+      "status": "PASS",
+      "link_preserved": true,
+      "target_absent": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "ACTUAL-DANGLING-WAL",
+      "db": "/private/tmp/lifeos-p3-104-p3-106-dangling-wal-resume1-20260823/capture.sqlite",
+      "returncode": 101,
+      "sentinel_before": "c49d069ba76a2c0e6c0a43db9c7373578c4020a481dca0dadbdd77e17f546d71",
+      "sentinel_after": "c49d069ba76a2c0e6c0a43db9c7373578c4020a481dca0dadbdd77e17f546d71",
+      "sentinel_unchanged": true,
+      "log": "evidence/resume-1/actual-dangling-wal.log",
+      "log_sha256": "6248a8de2d01732ad646b94fe97902c20f7c79f39a7d6a36bc0c9b3a8ed9a7f0",
+      "status": "PASS",
+      "link_preserved": true,
+      "target_absent": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "ACTUAL-DANGLING-SHM",
+      "db": "/private/tmp/lifeos-p3-104-p3-106-dangling-shm-resume1-20260823/capture.sqlite",
+      "returncode": 101,
+      "sentinel_before": "c49d069ba76a2c0e6c0a43db9c7373578c4020a481dca0dadbdd77e17f546d71",
+      "sentinel_after": "c49d069ba76a2c0e6c0a43db9c7373578c4020a481dca0dadbdd77e17f546d71",
+      "sentinel_unchanged": true,
+      "log": "evidence/resume-1/actual-dangling-shm.log",
+      "log_sha256": "e18dc3a50f4cc9f951518604e9cf6b6453b24c8b9972a09ec16ee90327b18f0f",
+      "status": "PASS",
+      "link_preserved": true,
+      "target_absent": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "ACTUAL-PARENT-SYMLINK",
+      "db": "/private/tmp/lifeos-p3-104-p3-106-path-resume1-20260823/capture.sqlite",
+      "returncode": 101,
+      "sentinel_before": "c49d069ba76a2c0e6c0a43db9c7373578c4020a481dca0dadbdd77e17f546d71",
+      "sentinel_after": "c49d069ba76a2c0e6c0a43db9c7373578c4020a481dca0dadbdd77e17f546d71",
+      "sentinel_unchanged": true,
+      "log": "evidence/resume-1/actual-parent-symlink.log",
+      "log_sha256": "b65af7dcfd19658f13b800c93c74fe1f6c42895f4c4ee4162d6055788a393447",
+      "status": "PASS",
+      "parent_link_preserved": true,
+      "db_absent": true
+    },
+    {
+      "id": "ACTUAL-TAMPER-CONTENT-PREPARED",
+      "db": "/private/tmp/lifeos-p3-104-p3-106-tamper-resume1-20260823/capture.sqlite",
+      "sentinel": "/private/tmp/lifeos-p3-104-p3-106-tamper-resume1-20260823/sentinel.txt",
+      "sentinel_sha256": "c49d069ba76a2c0e6c0a43db9c7373578c4020a481dca0dadbdd77e17f546d71",
+      "db_sha256": "3feea676d8c8814b527837d4f79fe9ceda3afc41780bd3d2e49d69c9ff6e150d",
+      "status": "PASS",
+      "next": "launch actual app and observe fail-closed get_today before replacing the same fixed DB with a schema-tampered variant"
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "task": "LIFEOS-P3-095",
+  "timestamp": "2026-08-22T08:51:15+08:00",
+  "conclusion": "REWORK",
+  "independence": "PASS",
+  "protected_hashes_before_after_equal": true,
+  "offline": {
+    "pass": 9,
+    "fail": 1
+  },
+  "dynamic": {
+    "pass": 0,
+    "not_implemented": 4,
+    "reason": "Mandatory stop after offline P1; not a Chrome environment Blocked condition."
+  },
+  "cleanup": {
+    "review_runtime_sqlite_html": "PASS",
+    "system_temp_all_zero": "FAIL"
+  },
+  "severity": {
+    "p0": 0,
+    "p1": 2,
+    "p2": 1,
+    "unknown": 0,
+    "not_implemented": 4
+  },
+  "p3_094_frozen": false,
+  "r_0051_closed": false,
+  "baseline_restore_allowed": false,
+  "stage_4_allowed": false
+}

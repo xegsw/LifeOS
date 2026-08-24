@@ -1,0 +1,23 @@
+{
+  "files_scanned": [
+    "results.json",
+    "test_matrix.csv",
+    "vector_costs.csv"
+  ],
+  "forbidden_categories": [
+    "real user text",
+    "real absolute path",
+    "real Vault name",
+    "complete prompt/output",
+    "embedding values"
+  ],
+  "patterns": {
+    "absolute_user_path": "/Users/[^\\s\\\"']+",
+    "private_key": "BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY",
+    "raw_original_text_field": "\\\"original_text\\\"\\s*:",
+    "raw_prompt_field": "\\\"(?:prompt|model_output|embedding)\\\"\\s*:"
+  },
+  "match_count": 0,
+  "matches": [],
+  "note": "Generator emits controlled synthetic labels and aggregate metrics only. Absolute script path is omitted from evidence payload."
+}

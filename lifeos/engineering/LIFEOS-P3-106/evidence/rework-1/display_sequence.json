@@ -1,0 +1,53 @@
+{
+  "task": "LIFEOS-P3-106",
+  "execution": "rework-1",
+  "user_manual_confirmation_before_app_actions": true,
+  "original": {
+    "tier_label": "1512 × 982（默认）",
+    "selected_tier_ordinal": 4,
+    "screenshot": "display-original.jpg",
+    "sha256": "ab072e596649b18433fec173443a77bd4dad1eb4c01ceb134280d95a3d55848b",
+    "manual_visual_check": "blue selection ring on fourth/default tier",
+    "status": "PASS"
+  },
+  "temporary": {
+    "tier_label": "1800 × 1169",
+    "selected_tier_ordinal": 5,
+    "screenshot": "display-temporary.jpg",
+    "sha256": "c12f5106ec70bd59dde19c39304c86d46d914fc3518c5f51fa6943fa7c7fd02c",
+    "manual_visual_check": "blue selection ring on fifth/more-space tier; only M004-M006",
+    "status": "PASS"
+  },
+  "restoration": {
+    "tier_label": "1512 × 982（默认）",
+    "selected_tier_ordinal": 4,
+    "same_as_original_ordinal": true,
+    "screenshot": "display-restored.jpg",
+    "sha256": "44895fdd7b288a976a5663c6809bf05c5b9ea1656e68dabfa25d789de660c34a",
+    "manual_visual_check": "blue selection ring returned to fourth/default tier",
+    "status": "PASS"
+  },
+  "responsive_after_restore": {
+    "workspace_files": {
+      "m015-workspace-1160x768-default.jpg": [
+        1160,
+        768
+      ],
+      "m015-workspace-1160x768-no-suggestion.jpg": [
+        1160,
+        768
+      ],
+      "m015-workspace-1160x768-restricted.jpg": [
+        1160,
+        768
+      ]
+    },
+    "narrow_dimensions": [
+      700,
+      760
+    ],
+    "clipping_overlap_or_unreachable_key_action": false,
+    "status": "PASS"
+  },
+  "status": "PASS"
+}

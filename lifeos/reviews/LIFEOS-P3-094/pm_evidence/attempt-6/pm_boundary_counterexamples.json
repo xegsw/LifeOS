@@ -1,0 +1,45 @@
+{
+  "fixed_non_sensitive_fixtures_only": true,
+  "items": [
+    {
+      "id": "PM-A6-01-render-outside-rejected",
+      "status": "PASS",
+      "outside_hash_equal": true,
+      "page_hash_equal": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "PM-A6-02-ancestor-chain-rejected",
+      "status": "PASS",
+      "render_rejected": true,
+      "clear_rejected": true,
+      "page_hash_equal": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "PM-A6-03-empty-db-stale-page-fail-closed",
+      "status": "FAIL",
+      "render_failed": true,
+      "stale_page_exists_after": true,
+      "stale_page_hash_equal": true,
+      "db_record_count": 0
+    },
+    {
+      "id": "PM-A6-04-corrupt-db-stale-page-fail-closed",
+      "status": "FAIL",
+      "render_failed": true,
+      "stale_page_exists_after": true,
+      "stale_page_hash_equal": true
+    }
+  ],
+  "summary": {
+    "pass": 2,
+    "fail": 2,
+    "p0": 0,
+    "p1_findings": 1,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  },
+  "temporary_work_cleaned": true
+}

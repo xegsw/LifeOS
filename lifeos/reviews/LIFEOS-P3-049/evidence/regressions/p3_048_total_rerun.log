@@ -1,0 +1,556 @@
+PM-CE-06         memory-fk_on-rec_on          PASS original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable
+PM-CE-06         memory-fk_on-rec_off         PASS original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable
+PM-CE-06         memory-fk_off-rec_on         PASS original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable
+PM-CE-06         memory-fk_off-rec_off        PASS original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable
+PM-CE-06         file-fk_on-rec_on            PASS original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable
+PM-CE-06         file-fk_on-rec_off           PASS original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable
+PM-CE-06         file-fk_off-rec_on           PASS original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable
+PM-CE-06         file-fk_off-rec_off          PASS original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    memory-fk_on-rec_on          PASS generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    memory-fk_on-rec_on          PASS authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    memory-fk_on-rec_on          PASS authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    memory-fk_on-rec_off         PASS generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    memory-fk_on-rec_off         PASS authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    memory-fk_on-rec_off         PASS authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    memory-fk_off-rec_on         PASS generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    memory-fk_off-rec_on         PASS authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    memory-fk_off-rec_on         PASS authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    memory-fk_off-rec_off        PASS generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    memory-fk_off-rec_off        PASS authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    memory-fk_off-rec_off        PASS authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    file-fk_on-rec_on            PASS generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    file-fk_on-rec_on            PASS authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    file-fk_on-rec_on            PASS authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    file-fk_on-rec_off           PASS generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    file-fk_on-rec_off           PASS authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    file-fk_on-rec_off           PASS authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    file-fk_off-rec_on           PASS generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    file-fk_off-rec_on           PASS authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    file-fk_off-rec_on           PASS authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    file-fk_off-rec_off          PASS generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    file-fk_off-rec_off          PASS authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable
+ADJ-DIRECTION    file-fk_off-rec_off          PASS authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS accepted/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS accepted/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS accepted/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_on-rec_on          PASS accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_on-rec_on          PASS active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_on-rec_on          PASS cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_on-rec_on          PASS cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_on-rec_on          PASS vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleaned/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_on          PASS cleaned/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_on-rec_on          PASS cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change
+ADJ-FIELD        memory-fk_on-rec_off         PASS accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS accepted/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS accepted/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS accepted/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_on-rec_off         PASS accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_on-rec_off         PASS active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_on-rec_off         PASS cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_on-rec_off         PASS cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_on-rec_off         PASS vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleaned/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_on-rec_off         PASS cleaned/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_on-rec_off         PASS cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change
+ADJ-FIELD        memory-fk_off-rec_on         PASS accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS accepted/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS accepted/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS accepted/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_off-rec_on         PASS accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_off-rec_on         PASS active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_off-rec_on         PASS cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_off-rec_on         PASS cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_off-rec_on         PASS vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleaned/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_on         PASS cleaned/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_off-rec_on         PASS cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change
+ADJ-FIELD        memory-fk_off-rec_off        PASS accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS accepted/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS accepted/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS accepted/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_off-rec_off        PASS accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_off-rec_off        PASS active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_off-rec_off        PASS cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_off-rec_off        PASS cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_off-rec_off        PASS vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleaned/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        memory-fk_off-rec_off        PASS cleaned/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        memory-fk_off-rec_off        PASS cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change
+ADJ-FIELD        file-fk_on-rec_on            PASS accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS accepted/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS accepted/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS accepted/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_on-rec_on            PASS accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_on-rec_on            PASS active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_on-rec_on            PASS cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_on-rec_on            PASS cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_on-rec_on            PASS vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleaned/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_on            PASS cleaned/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_on-rec_on            PASS cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change
+ADJ-FIELD        file-fk_on-rec_off           PASS accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS accepted/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS accepted/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS accepted/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_on-rec_off           PASS accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_on-rec_off           PASS active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_on-rec_off           PASS cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_on-rec_off           PASS cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_on-rec_off           PASS vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleaned/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_on-rec_off           PASS cleaned/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_on-rec_off           PASS cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change
+ADJ-FIELD        file-fk_off-rec_on           PASS accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS accepted/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS accepted/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS accepted/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_off-rec_on           PASS accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_off-rec_on           PASS active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_off-rec_on           PASS cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_off-rec_on           PASS cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_off-rec_on           PASS vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleaned/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_on           PASS cleaned/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_off-rec_on           PASS cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change
+ADJ-FIELD        file-fk_off-rec_off          PASS accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS accepted/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS accepted/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS accepted/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_off-rec_off          PASS accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_off-rec_off          PASS active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_off-rec_off          PASS cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_off-rec_off          PASS cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_off-rec_off          PASS vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleaned/generation rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable
+ADJ-FIELD        file-fk_off-rec_off          PASS cleaned/compound rejected: authorization_tombstone_control_envelope_immutable
+ADJ-COMBO        file-fk_off-rec_off          PASS cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change
+ADJ-REPLACE      memory-fk_on-rec_on          PASS insert_or_replace rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      memory-fk_on-rec_on          PASS conflict_insert rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      memory-fk_on-rec_on          PASS delete_reinsert rejected: tombstone_delete_forbidden
+ADJ-REPLACE      memory-fk_on-rec_on          PASS update_or_replace rejected: authorization_tombstone_control_envelope_immutable
+ADJ-REPLACE      memory-fk_on-rec_on          PASS upsert_update rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      memory-fk_on-rec_off         PASS insert_or_replace rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      memory-fk_on-rec_off         PASS conflict_insert rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      memory-fk_on-rec_off         PASS delete_reinsert rejected: tombstone_delete_forbidden
+ADJ-REPLACE      memory-fk_on-rec_off         PASS update_or_replace rejected: authorization_tombstone_control_envelope_immutable
+ADJ-REPLACE      memory-fk_on-rec_off         PASS upsert_update rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      memory-fk_off-rec_on         PASS insert_or_replace rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      memory-fk_off-rec_on         PASS conflict_insert rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      memory-fk_off-rec_on         PASS delete_reinsert rejected: tombstone_delete_forbidden
+ADJ-REPLACE      memory-fk_off-rec_on         PASS update_or_replace rejected: authorization_tombstone_control_envelope_immutable
+ADJ-REPLACE      memory-fk_off-rec_on         PASS upsert_update rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      memory-fk_off-rec_off        PASS insert_or_replace rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      memory-fk_off-rec_off        PASS conflict_insert rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      memory-fk_off-rec_off        PASS delete_reinsert rejected: tombstone_delete_forbidden
+ADJ-REPLACE      memory-fk_off-rec_off        PASS update_or_replace rejected: authorization_tombstone_control_envelope_immutable
+ADJ-REPLACE      memory-fk_off-rec_off        PASS upsert_update rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      file-fk_on-rec_on            PASS insert_or_replace rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      file-fk_on-rec_on            PASS conflict_insert rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      file-fk_on-rec_on            PASS delete_reinsert rejected: tombstone_delete_forbidden
+ADJ-REPLACE      file-fk_on-rec_on            PASS update_or_replace rejected: authorization_tombstone_control_envelope_immutable
+ADJ-REPLACE      file-fk_on-rec_on            PASS upsert_update rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      file-fk_on-rec_off           PASS insert_or_replace rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      file-fk_on-rec_off           PASS conflict_insert rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      file-fk_on-rec_off           PASS delete_reinsert rejected: tombstone_delete_forbidden
+ADJ-REPLACE      file-fk_on-rec_off           PASS update_or_replace rejected: authorization_tombstone_control_envelope_immutable
+ADJ-REPLACE      file-fk_on-rec_off           PASS upsert_update rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      file-fk_off-rec_on           PASS insert_or_replace rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      file-fk_off-rec_on           PASS conflict_insert rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      file-fk_off-rec_on           PASS delete_reinsert rejected: tombstone_delete_forbidden
+ADJ-REPLACE      file-fk_off-rec_on           PASS update_or_replace rejected: authorization_tombstone_control_envelope_immutable
+ADJ-REPLACE      file-fk_off-rec_on           PASS upsert_update rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      file-fk_off-rec_off          PASS insert_or_replace rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      file-fk_off-rec_off          PASS conflict_insert rejected: tombstone_reinsert_forbidden
+ADJ-REPLACE      file-fk_off-rec_off          PASS delete_reinsert rejected: tombstone_delete_forbidden
+ADJ-REPLACE      file-fk_off-rec_off          PASS update_or_replace rejected: authorization_tombstone_control_envelope_immutable
+ADJ-REPLACE      file-fk_off-rec_off          PASS upsert_update rejected: tombstone_reinsert_forbidden
+ADJ-MULTIROW     memory-fk_on-rec_on          PASS multi-row statement rolled back atomically: authorization_cleanup_audit_required
+ADJ-MULTIROW     memory-fk_on-rec_off         PASS multi-row statement rolled back atomically: authorization_cleanup_audit_required
+ADJ-MULTIROW     memory-fk_off-rec_on         PASS multi-row statement rolled back atomically: authorization_cleanup_audit_required
+ADJ-MULTIROW     memory-fk_off-rec_off        PASS multi-row statement rolled back atomically: authorization_cleanup_audit_required
+ADJ-MULTIROW     file-fk_on-rec_on            PASS multi-row statement rolled back atomically: authorization_cleanup_audit_required
+ADJ-MULTIROW     file-fk_on-rec_off           PASS multi-row statement rolled back atomically: authorization_cleanup_audit_required
+ADJ-MULTIROW     file-fk_off-rec_on           PASS multi-row statement rolled back atomically: authorization_cleanup_audit_required
+ADJ-MULTIROW     file-fk_off-rec_off          PASS multi-row statement rolled back atomically: authorization_cleanup_audit_required
+LEGAL-01         memory-fk_on-rec_on          PASS legal cleanup transition
+LEGAL-02         memory-fk_on-rec_on          PASS legal cleanup transition
+LEGAL-03         memory-fk_on-rec_on          PASS legal cleanup transition
+LEGAL-04         memory-fk_on-rec_on          PASS legal cleanup transition
+LEGAL-05         memory-fk_on-rec_on          PASS legal cleanup transition
+LEGAL-06         memory-fk_on-rec_on          PASS legal cleanup transition
+LEGAL-07         memory-fk_on-rec_on          PASS legal cleaned transition
+LEGAL-08         memory-fk_on-rec_on          PASS pre-existing generic semantics preserved
+LEGAL-09         memory-fk_on-rec_on          PASS time without status rejected: authorization_tombstone_time_requires_status_change
+LEGAL-10         memory-fk_on-rec_on          PASS decreasing status time rejected: authorization_tombstone_time_must_not_decrease
+LEGAL-11         memory-fk_on-rec_on          PASS no-op envelope update remains legal
+LEGAL-01         memory-fk_on-rec_off         PASS legal cleanup transition
+LEGAL-02         memory-fk_on-rec_off         PASS legal cleanup transition
+LEGAL-03         memory-fk_on-rec_off         PASS legal cleanup transition
+LEGAL-04         memory-fk_on-rec_off         PASS legal cleanup transition
+LEGAL-05         memory-fk_on-rec_off         PASS legal cleanup transition
+LEGAL-06         memory-fk_on-rec_off         PASS legal cleanup transition
+LEGAL-07         memory-fk_on-rec_off         PASS legal cleaned transition
+LEGAL-08         memory-fk_on-rec_off         PASS pre-existing generic semantics preserved
+LEGAL-09         memory-fk_on-rec_off         PASS time without status rejected: authorization_tombstone_time_requires_status_change
+LEGAL-10         memory-fk_on-rec_off         PASS decreasing status time rejected: authorization_tombstone_time_must_not_decrease
+LEGAL-11         memory-fk_on-rec_off         PASS no-op envelope update remains legal
+LEGAL-01         memory-fk_off-rec_on         PASS legal cleanup transition
+LEGAL-02         memory-fk_off-rec_on         PASS legal cleanup transition
+LEGAL-03         memory-fk_off-rec_on         PASS legal cleanup transition
+LEGAL-04         memory-fk_off-rec_on         PASS legal cleanup transition
+LEGAL-05         memory-fk_off-rec_on         PASS legal cleanup transition
+LEGAL-06         memory-fk_off-rec_on         PASS legal cleanup transition
+LEGAL-07         memory-fk_off-rec_on         PASS legal cleaned transition
+LEGAL-08         memory-fk_off-rec_on         PASS pre-existing generic semantics preserved
+LEGAL-09         memory-fk_off-rec_on         PASS time without status rejected: authorization_tombstone_time_requires_status_change
+LEGAL-10         memory-fk_off-rec_on         PASS decreasing status time rejected: authorization_tombstone_time_must_not_decrease
+LEGAL-11         memory-fk_off-rec_on         PASS no-op envelope update remains legal
+LEGAL-01         memory-fk_off-rec_off        PASS legal cleanup transition
+LEGAL-02         memory-fk_off-rec_off        PASS legal cleanup transition
+LEGAL-03         memory-fk_off-rec_off        PASS legal cleanup transition
+LEGAL-04         memory-fk_off-rec_off        PASS legal cleanup transition
+LEGAL-05         memory-fk_off-rec_off        PASS legal cleanup transition
+LEGAL-06         memory-fk_off-rec_off        PASS legal cleanup transition
+LEGAL-07         memory-fk_off-rec_off        PASS legal cleaned transition
+LEGAL-08         memory-fk_off-rec_off        PASS pre-existing generic semantics preserved
+LEGAL-09         memory-fk_off-rec_off        PASS time without status rejected: authorization_tombstone_time_requires_status_change
+LEGAL-10         memory-fk_off-rec_off        PASS decreasing status time rejected: authorization_tombstone_time_must_not_decrease
+LEGAL-11         memory-fk_off-rec_off        PASS no-op envelope update remains legal
+LEGAL-01         file-fk_on-rec_on            PASS legal cleanup transition
+LEGAL-02         file-fk_on-rec_on            PASS legal cleanup transition
+LEGAL-03         file-fk_on-rec_on            PASS legal cleanup transition
+LEGAL-04         file-fk_on-rec_on            PASS legal cleanup transition
+LEGAL-05         file-fk_on-rec_on            PASS legal cleanup transition
+LEGAL-06         file-fk_on-rec_on            PASS legal cleanup transition
+LEGAL-07         file-fk_on-rec_on            PASS legal cleaned transition
+LEGAL-08         file-fk_on-rec_on            PASS pre-existing generic semantics preserved
+LEGAL-09         file-fk_on-rec_on            PASS time without status rejected: authorization_tombstone_time_requires_status_change
+LEGAL-10         file-fk_on-rec_on            PASS decreasing status time rejected: authorization_tombstone_time_must_not_decrease
+LEGAL-11         file-fk_on-rec_on            PASS no-op envelope update remains legal
+LEGAL-01         file-fk_on-rec_off           PASS legal cleanup transition
+LEGAL-02         file-fk_on-rec_off           PASS legal cleanup transition
+LEGAL-03         file-fk_on-rec_off           PASS legal cleanup transition
+LEGAL-04         file-fk_on-rec_off           PASS legal cleanup transition
+LEGAL-05         file-fk_on-rec_off           PASS legal cleanup transition
+LEGAL-06         file-fk_on-rec_off           PASS legal cleanup transition
+LEGAL-07         file-fk_on-rec_off           PASS legal cleaned transition
+LEGAL-08         file-fk_on-rec_off           PASS pre-existing generic semantics preserved
+LEGAL-09         file-fk_on-rec_off           PASS time without status rejected: authorization_tombstone_time_requires_status_change
+LEGAL-10         file-fk_on-rec_off           PASS decreasing status time rejected: authorization_tombstone_time_must_not_decrease
+LEGAL-11         file-fk_on-rec_off           PASS no-op envelope update remains legal
+LEGAL-01         file-fk_off-rec_on           PASS legal cleanup transition
+LEGAL-02         file-fk_off-rec_on           PASS legal cleanup transition
+LEGAL-03         file-fk_off-rec_on           PASS legal cleanup transition
+LEGAL-04         file-fk_off-rec_on           PASS legal cleanup transition
+LEGAL-05         file-fk_off-rec_on           PASS legal cleanup transition
+LEGAL-06         file-fk_off-rec_on           PASS legal cleanup transition
+LEGAL-07         file-fk_off-rec_on           PASS legal cleaned transition
+LEGAL-08         file-fk_off-rec_on           PASS pre-existing generic semantics preserved
+LEGAL-09         file-fk_off-rec_on           PASS time without status rejected: authorization_tombstone_time_requires_status_change
+LEGAL-10         file-fk_off-rec_on           PASS decreasing status time rejected: authorization_tombstone_time_must_not_decrease
+LEGAL-11         file-fk_off-rec_on           PASS no-op envelope update remains legal
+LEGAL-01         file-fk_off-rec_off          PASS legal cleanup transition
+LEGAL-02         file-fk_off-rec_off          PASS legal cleanup transition
+LEGAL-03         file-fk_off-rec_off          PASS legal cleanup transition
+LEGAL-04         file-fk_off-rec_off          PASS legal cleanup transition
+LEGAL-05         file-fk_off-rec_off          PASS legal cleanup transition
+LEGAL-06         file-fk_off-rec_off          PASS legal cleanup transition
+LEGAL-07         file-fk_off-rec_off          PASS legal cleaned transition
+LEGAL-08         file-fk_off-rec_off          PASS pre-existing generic semantics preserved
+LEGAL-09         file-fk_off-rec_off          PASS time without status rejected: authorization_tombstone_time_requires_status_change
+LEGAL-10         file-fk_off-rec_off          PASS decreasing status time rejected: authorization_tombstone_time_must_not_decrease
+LEGAL-11         file-fk_off-rec_off          PASS no-op envelope update remains legal
+P3_048_SUMMARY {"P0": {"FAIL": 0, "NOT_IMPLEMENTED": 0, "PASS": 0, "UNKNOWN": 0}, "P1": {"FAIL": 0, "NOT_IMPLEMENTED": 0, "PASS": 0, "UNKNOWN": 0}, "P2": {"FAIL": 0, "NOT_IMPLEMENTED": 0, "PASS": 552, "UNKNOWN": 0}, "total": {"FAIL": 0, "NOT_IMPLEMENTED": 0, "PASS": 552, "UNKNOWN": 0}}
+P3_047_EQUIVALENT {"P0": {"FAIL": 0, "NOT_IMPLEMENTED": 0, "PASS": 0, "UNKNOWN": 0}, "P1": {"FAIL": 0, "NOT_IMPLEMENTED": 0, "PASS": 144, "UNKNOWN": 0}, "P2": {"FAIL": 0, "NOT_IMPLEMENTED": 0, "PASS": 153, "UNKNOWN": 0}, "total": {"FAIL": 0, "NOT_IMPLEMENTED": 0, "PASS": 297, "UNKNOWN": 0}}
+P3_031_EXIT 0
+READ_ONLY_PRESERVED True

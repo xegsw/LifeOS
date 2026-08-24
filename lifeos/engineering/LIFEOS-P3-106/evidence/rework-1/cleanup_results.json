@@ -1,0 +1,126 @@
+{
+  "task": "LIFEOS-P3-106",
+  "execution": "rework-1",
+  "method": "literal exact ledger only; no glob/find/prefix deletion",
+  "forbidden_content_access_source_scan": [
+    {
+      "path": "lifeos/engineering/LIFEOS-P3-106/evidence/rework-1/tools/legacy_metadata.py",
+      "forbidden_tokens": [],
+      "status": "PASS"
+    }
+  ],
+  "forbidden_content_access_source_scan_pass": true,
+  "before": {
+    "/private/tmp/lifeos-p3-104-p3-106-app-rework1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-replay-rework1-20260823": {
+      "lexists": false,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-final-rework1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-journal-rework1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-wal-rework1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-shm-rework1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-path-rework1-20260823": {
+      "lexists": true,
+      "is_symlink": true
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-path-target-rework1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-tamper-rework1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-a11y-rework1-20260823": {
+      "lexists": false,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-visual-rework1-20260823": {
+      "lexists": false,
+      "is_symlink": false
+    }
+  },
+  "deleted": [
+    "/private/tmp/lifeos-p3-104-p3-106-app-rework1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-final-rework1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-journal-rework1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-wal-rework1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-shm-rework1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-path-rework1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-path-target-rework1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-tamper-rework1-20260823"
+  ],
+  "after": {
+    "/private/tmp/lifeos-p3-104-p3-106-app-rework1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-replay-rework1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-final-rework1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-journal-rework1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-wal-rework1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-shm-rework1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-path-rework1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-path-target-rework1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-tamper-rework1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-a11y-rework1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-visual-rework1-20260823": {
+      "lexists": false
+    }
+  },
+  "residual_count": 0,
+  "protected_count": 144,
+  "protected_unchanged_count": 144,
+  "legacy_metadata_before": {
+    "path": "/private/tmp/lifeos-p3-104-rework-static-results.json",
+    "exists": true,
+    "type": "-",
+    "size": 2176,
+    "mtime_ns": 1787473226052920793,
+    "ctime_ns": 1787473226052920793
+  },
+  "legacy_metadata_after": {
+    "path": "/private/tmp/lifeos-p3-104-rework-static-results.json",
+    "exists": true,
+    "type": "-",
+    "size": 2176,
+    "mtime_ns": 1787473226052920793,
+    "ctime_ns": 1787473226052920793
+  },
+  "legacy_metadata_unchanged": true,
+  "legacy_content_access": "PROHIBITED_AND_NOT_PERFORMED",
+  "status": "PASS"
+}

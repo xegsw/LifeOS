@@ -1,0 +1,320 @@
+{
+  "cases": [
+    {
+      "description": "renderer has zero direct capabilities",
+      "detail": "allowed_as_expected",
+      "id": "C01",
+      "p0": "P0-1",
+      "result": "PASS"
+    },
+    {
+      "description": "whitelist has no generic dangerous command",
+      "detail": "allowed_as_expected",
+      "id": "C02",
+      "p0": "P0-1",
+      "result": "PASS"
+    },
+    {
+      "description": "unknown IPC defaults to deny",
+      "detail": "IPC_UNKNOWN",
+      "id": "C03",
+      "p0": "P0-2",
+      "result": "PASS"
+    },
+    {
+      "description": "scope-out token rejected",
+      "detail": "SCOPE_DENIED",
+      "id": "C04",
+      "p0": "P0-4",
+      "result": "PASS"
+    },
+    {
+      "description": "hostile source path rejected",
+      "detail": "PATH_TRAVERSAL",
+      "id": "C05",
+      "p0": "P0-3/4/5",
+      "result": "PASS"
+    },
+    {
+      "description": "hostile source path rejected",
+      "detail": "PATH_ABSOLUTE",
+      "id": "C06",
+      "p0": "P0-3/4/5",
+      "result": "PASS"
+    },
+    {
+      "description": "hostile source path rejected",
+      "detail": "PATH_TRAVERSAL",
+      "id": "C07",
+      "p0": "P0-3/4/5",
+      "result": "PASS"
+    },
+    {
+      "description": "hostile source path rejected",
+      "detail": "PATH_TRAVERSAL",
+      "id": "C08",
+      "p0": "P0-3/4/5",
+      "result": "PASS"
+    },
+    {
+      "description": "hostile source path rejected",
+      "detail": "PATH_ENCODING",
+      "id": "C09",
+      "p0": "P0-3/4/5",
+      "result": "PASS"
+    },
+    {
+      "description": "hostile source path rejected",
+      "detail": "PATH_NUL",
+      "id": "C10",
+      "p0": "P0-3/4/5",
+      "result": "PASS"
+    },
+    {
+      "description": "hostile source path rejected",
+      "detail": "PATH_SEPARATOR",
+      "id": "C11",
+      "p0": "P0-3/4/5",
+      "result": "PASS"
+    },
+    {
+      "description": "hostile source path rejected",
+      "detail": "PATH_SYMLINK",
+      "id": "C12",
+      "p0": "P0-3/4/5",
+      "result": "PASS"
+    },
+    {
+      "description": "hostile source path rejected",
+      "detail": "PATH_HIDDEN",
+      "id": "C13",
+      "p0": "P0-3/4/5",
+      "result": "PASS"
+    },
+    {
+      "description": "hostile source path rejected",
+      "detail": "PATH_HIDDEN",
+      "id": "C14",
+      "p0": "P0-3/4/5",
+      "result": "PASS"
+    },
+    {
+      "description": "hostile source path rejected",
+      "detail": "PATH_EXCLUDED",
+      "id": "C15",
+      "p0": "P0-3/4/5",
+      "result": "PASS"
+    },
+    {
+      "description": "hostile source path rejected",
+      "detail": "ATTACHMENT_UNAUTHORIZED",
+      "id": "C16",
+      "p0": "P0-3/4/5",
+      "result": "PASS"
+    },
+    {
+      "description": "authorized read preserves external identity",
+      "detail": "allowed_as_expected",
+      "id": "C17",
+      "p0": "P0-9",
+      "result": "PASS"
+    },
+    {
+      "description": "all five content identities retained",
+      "detail": "allowed_as_expected",
+      "id": "C18",
+      "p0": "P0-9",
+      "result": "PASS"
+    },
+    {
+      "description": "source/version/Derivation/Feedback/auth metadata retained",
+      "detail": "allowed_as_expected",
+      "id": "C19",
+      "p0": "P0-9",
+      "result": "PASS"
+    },
+    {
+      "description": "stale authorization_version rejected",
+      "detail": "RUNTIME_STATE_MISMATCH",
+      "id": "C20",
+      "p0": "P0-10",
+      "result": "PASS"
+    },
+    {
+      "description": "stale source_version rejected",
+      "detail": "RUNTIME_STATE_MISMATCH",
+      "id": "C21",
+      "p0": "P0-10",
+      "result": "PASS"
+    },
+    {
+      "description": "stale artifact_version rejected",
+      "detail": "RUNTIME_STATE_MISMATCH",
+      "id": "C22",
+      "p0": "P0-10",
+      "result": "PASS"
+    },
+    {
+      "description": "stale tombstone_generation rejected",
+      "detail": "RUNTIME_STATE_MISMATCH",
+      "id": "C23",
+      "p0": "P0-10",
+      "result": "PASS"
+    },
+    {
+      "description": "stale restriction_generation rejected",
+      "detail": "RUNTIME_STATE_MISMATCH",
+      "id": "C24",
+      "p0": "P0-10",
+      "result": "PASS"
+    },
+    {
+      "description": "stale lease rejected",
+      "detail": "RUNTIME_STATE_MISMATCH",
+      "id": "C25",
+      "p0": "P0-10",
+      "result": "PASS"
+    },
+    {
+      "description": "inactive source rejected",
+      "detail": "SOURCE_INACTIVE",
+      "id": "C26",
+      "p0": "P0-10",
+      "result": "PASS"
+    },
+    {
+      "description": "no Vault write/delete/rename commands exist",
+      "detail": "allowed_as_expected",
+      "id": "C27",
+      "p0": "P0-6",
+      "result": "PASS"
+    },
+    {
+      "description": "generic write IPC is unknown",
+      "detail": "IPC_UNKNOWN",
+      "id": "C28",
+      "p0": "P0-7",
+      "result": "PASS"
+    },
+    {
+      "description": "export with source token rejected",
+      "detail": "SCOPE_DENIED",
+      "id": "C29",
+      "p0": "P0-8",
+      "result": "PASS"
+    },
+    {
+      "description": "export traversal rejected",
+      "detail": "PATH_TRAVERSAL",
+      "id": "C30",
+      "p0": "P0-8",
+      "result": "PASS"
+    },
+    {
+      "description": "export absolute injection rejected",
+      "detail": "PATH_ABSOLUTE",
+      "id": "C31",
+      "p0": "P0-8",
+      "result": "PASS"
+    },
+    {
+      "description": "export symlink escape rejected",
+      "detail": "PATH_SYMLINK",
+      "id": "C32",
+      "p0": "P0-8",
+      "result": "PASS"
+    },
+    {
+      "description": "silent overwrite rejected",
+      "detail": "EXPORT_CONFLICT",
+      "id": "C33",
+      "p0": "P0-8",
+      "result": "PASS"
+    },
+    {
+      "description": "unconfirmed overwrite rejected",
+      "detail": "EXPORT_CONFIRMATION_REQUIRED",
+      "id": "C34",
+      "p0": "P0-8",
+      "result": "PASS"
+    },
+    {
+      "description": "unconfirmed merge rejected",
+      "detail": "EXPORT_CONFIRMATION_REQUIRED",
+      "id": "C35",
+      "p0": "P0-8",
+      "result": "PASS"
+    },
+    {
+      "description": "execution after export rejected",
+      "detail": "EXPORT_EXECUTION_DENIED",
+      "id": "C36",
+      "p0": "P0-8",
+      "result": "PASS"
+    },
+    {
+      "description": "authorized create retains identity and is not executed",
+      "detail": "allowed_as_expected",
+      "id": "C37",
+      "p0": "P0-8/9",
+      "result": "PASS"
+    },
+    {
+      "description": "explicit overwrite succeeds",
+      "detail": "allowed_as_expected",
+      "id": "C38",
+      "p0": "P0-8",
+      "result": "PASS"
+    },
+    {
+      "description": "Vault tree and hashes unchanged",
+      "detail": "allowed_as_expected",
+      "id": "C39",
+      "p0": "P0-6/7",
+      "result": "PASS"
+    },
+    {
+      "description": "Vault operation counters are zero",
+      "detail": "allowed_as_expected",
+      "id": "C40",
+      "p0": "P0-6",
+      "result": "PASS"
+    },
+    {
+      "description": "audit privacy scan has zero hits",
+      "detail": "allowed_as_expected",
+      "id": "C41",
+      "p0": "P0-11",
+      "result": "PASS"
+    },
+    {
+      "description": "audit schema contains only allowlisted keys",
+      "detail": "allowed_as_expected",
+      "id": "C42",
+      "p0": "P0-11",
+      "result": "PASS"
+    }
+  ],
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.9.6"
+  },
+  "harness_kind": "equivalent_executable_backend_renderer_boundary",
+  "identity_loss_count": 0,
+  "network_calls": 0,
+  "p0_failed": [],
+  "shell_or_process_calls": 0,
+  "summary": {
+    "failed": 0,
+    "p0_failed_count": 0,
+    "passed": 42,
+    "total": 42
+  },
+  "task": "LIFEOS-P2-015",
+  "unauthorized_success_count": 0,
+  "vault_mutation_counts": {
+    "delete": 0,
+    "rename": 0,
+    "write": 0
+  }
+}

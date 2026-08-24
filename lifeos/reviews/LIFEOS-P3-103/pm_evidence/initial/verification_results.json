@@ -1,0 +1,66 @@
+{
+  "task_id": "LIFEOS-P3-103",
+  "status": "PASS",
+  "submitted_manifest": {
+    "verified": 20,
+    "total": 20,
+    "mismatches": []
+  },
+  "fixed_inputs": {
+    "fixed": {
+      "verified": 10,
+      "total": 10,
+      "expected_total": 10
+    },
+    "engineering_manifest_entries": {
+      "verified": 17,
+      "total": 17,
+      "expected_total": 17
+    },
+    "pm_manifest_entries": {
+      "verified": 5,
+      "total": 5,
+      "expected_total": 5
+    },
+    "submitted_before_after_unchanged": true
+  },
+  "submitted_matrix": {
+    "parent_pass": 12,
+    "parent_total": 12,
+    "lifecycle_leaves": 6,
+    "boundary_leaves": 10,
+    "negative_gate_cases": 4,
+    "all_assertions_executed": true,
+    "unique_ids": {
+      "test_id": true,
+      "fixture_id": true,
+      "execution_id": true
+    }
+  },
+  "retained_metadata_contract": true,
+  "retained_metadata_unchanged": true,
+  "retained_content_read_by_pm": false,
+  "retained_content_hashed_by_pm": false,
+  "fresh_fixed_lifecycle": {
+    "saved": true,
+    "repeat": true,
+    "conflict": true,
+    "today": true,
+    "render": true,
+    "failure": true
+  },
+  "fresh_fixed_boundaries": {
+    "relative": true,
+    "dotdot": true,
+    "ancestor_symlink": true,
+    "final_db_symlink": true,
+    "final_page_symlink": true,
+    "db_hardlink": true,
+    "page_hardlink": true,
+    "fifo": true,
+    "directory": true,
+    "external_output": true
+  },
+  "clear_invoked": false,
+  "temporary_residue": []
+}

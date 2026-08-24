@@ -1,0 +1,2306 @@
+{
+  "task_id": "LIFEOS-P3-046",
+  "route": "gpt-5.6-sol+xhigh",
+  "scope": "synthetic SQLite only",
+  "summary": {
+    "P0": {
+      "PASS": 0,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "P1": {
+      "PASS": 136,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "P2": {
+      "PASS": 112,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "total": {
+      "PASS": 248,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    }
+  },
+  "p3_031_exit": 0,
+  "ac_coverage": {
+    "AC-01": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-02": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-03": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-04": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-05": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-06": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-07": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-08": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-09": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-10": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-11": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-12": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-13": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-14": {
+      "instances": 72,
+      "pass": 72,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-15": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-16": {
+      "instances": 16,
+      "pass": 16,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-17": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    },
+    "AC-18": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0,
+      "not_implemented": 0,
+      "unknown": 0
+    }
+  },
+  "results": [
+    {
+      "id": "AC-01",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-01",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-01",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-01",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-01",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-01",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-01",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-01",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-02",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-02",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-02",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-02",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-02",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-02",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-02",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-02",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-03",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-03",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-03",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-03",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-03",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-03",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-03",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-03",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-04",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-04",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-04",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-04",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-04",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-04",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-04",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-04",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-05",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-05",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-05",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-05",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-05",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-05",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-05",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-05",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-06",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-06",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-06",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-06",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-06",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-06",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-06",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-06",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-07",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-07",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-07",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-07",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-07",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-07",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-07",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-07",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-08",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-08",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-08",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-08",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-08",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-08",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-08",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-08",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-09",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-09",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-09",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-09",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-09",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-09",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-09",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-09",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-10",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-10",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-10",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-10",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-10",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-10",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-10",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-10",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-11",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-11",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-11",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-11",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-11",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-11",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-11",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-11",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-12",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-12",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-12",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-12",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-12",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-12",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-12",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-12",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-13",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-13",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-13",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-13",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-13",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-13",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-13",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-13",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-15",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-15",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-15",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-15",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-15",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-15",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-15",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-15",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-17",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-17",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-17",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-17",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-17",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-17",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-17",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-17",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-18",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-18",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-18",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-18",
+      "severity": "P2",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-18",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-18",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-18",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-18",
+      "severity": "P2",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "contract held"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "revoked",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "expired",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "autocommit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_commit"
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DB-time retirement/evidence atomic; actor remains an unverified claim",
+      "terminal": "superseded",
+      "transaction": "explicit_rollback"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "audit"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "outbox"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "audit"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "outbox"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "audit"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "outbox"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "audit"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "outbox"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "audit"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "outbox"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "audit"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "outbox"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "audit"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "outbox"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "audit"
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "group": "AC",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "fault rolled back parent/command/submission/generated evidence",
+      "fault": "outbox"
+    },
+    {
+      "id": "COMMAND-EDGES",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "direct SQL claim can request deny-terminal transition but is not authenticated or an expansion path"
+    },
+    {
+      "id": "COMMAND-EDGES",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "direct SQL claim can request deny-terminal transition but is not authenticated or an expansion path"
+    },
+    {
+      "id": "COMMAND-EDGES",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "direct SQL claim can request deny-terminal transition but is not authenticated or an expansion path"
+    },
+    {
+      "id": "COMMAND-EDGES",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "direct SQL claim can request deny-terminal transition but is not authenticated or an expansion path"
+    },
+    {
+      "id": "COMMAND-EDGES",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "direct SQL claim can request deny-terminal transition but is not authenticated or an expansion path"
+    },
+    {
+      "id": "COMMAND-EDGES",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "direct SQL claim can request deny-terminal transition but is not authenticated or an expansion path"
+    },
+    {
+      "id": "COMMAND-EDGES",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "direct SQL claim can request deny-terminal transition but is not authenticated or an expansion path"
+    },
+    {
+      "id": "COMMAND-EDGES",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "direct SQL claim can request deny-terminal transition but is not authenticated or an expansion path"
+    },
+    {
+      "id": "OUTBOX-STATE",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal/illegal transitions, renewal, terminal lock and audited queue cleanup passed"
+    },
+    {
+      "id": "OUTBOX-STATE",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal/illegal transitions, renewal, terminal lock and audited queue cleanup passed"
+    },
+    {
+      "id": "OUTBOX-STATE",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal/illegal transitions, renewal, terminal lock and audited queue cleanup passed"
+    },
+    {
+      "id": "OUTBOX-STATE",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal/illegal transitions, renewal, terminal lock and audited queue cleanup passed"
+    },
+    {
+      "id": "OUTBOX-STATE",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal/illegal transitions, renewal, terminal lock and audited queue cleanup passed"
+    },
+    {
+      "id": "OUTBOX-STATE",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal/illegal transitions, renewal, terminal lock and audited queue cleanup passed"
+    },
+    {
+      "id": "OUTBOX-STATE",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal/illegal transitions, renewal, terminal lock and audited queue cleanup passed"
+    },
+    {
+      "id": "OUTBOX-STATE",
+      "severity": "P1",
+      "group": "ADDITIONAL",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal/illegal transitions, renewal, terminal lock and audited queue cleanup passed"
+    },
+    {
+      "id": "CLEANUP-RETRY",
+      "severity": "P2",
+      "group": "ADDITIONAL",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup failure remained blocked and retry completed one-way"
+    },
+    {
+      "id": "CLEANUP-RETRY",
+      "severity": "P2",
+      "group": "ADDITIONAL",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup failure remained blocked and retry completed one-way"
+    },
+    {
+      "id": "CLEANUP-RETRY",
+      "severity": "P2",
+      "group": "ADDITIONAL",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup failure remained blocked and retry completed one-way"
+    },
+    {
+      "id": "CLEANUP-RETRY",
+      "severity": "P2",
+      "group": "ADDITIONAL",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup failure remained blocked and retry completed one-way"
+    },
+    {
+      "id": "CLEANUP-RETRY",
+      "severity": "P2",
+      "group": "ADDITIONAL",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup failure remained blocked and retry completed one-way"
+    },
+    {
+      "id": "CLEANUP-RETRY",
+      "severity": "P2",
+      "group": "ADDITIONAL",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup failure remained blocked and retry completed one-way"
+    },
+    {
+      "id": "CLEANUP-RETRY",
+      "severity": "P2",
+      "group": "ADDITIONAL",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup failure remained blocked and retry completed one-way"
+    },
+    {
+      "id": "CLEANUP-RETRY",
+      "severity": "P2",
+      "group": "ADDITIONAL",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup failure remained blocked and retry completed one-way"
+    },
+    {
+      "id": "P3-044-CURRENT",
+      "severity": "P1",
+      "group": "REGRESSION",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active parent/child/REPLACE/DELETE defenses preserved"
+    },
+    {
+      "id": "P3-044-CURRENT",
+      "severity": "P1",
+      "group": "REGRESSION",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active parent/child/REPLACE/DELETE defenses preserved"
+    },
+    {
+      "id": "P3-044-CURRENT",
+      "severity": "P1",
+      "group": "REGRESSION",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active parent/child/REPLACE/DELETE defenses preserved"
+    },
+    {
+      "id": "P3-044-CURRENT",
+      "severity": "P1",
+      "group": "REGRESSION",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active parent/child/REPLACE/DELETE defenses preserved"
+    },
+    {
+      "id": "P3-044-CURRENT",
+      "severity": "P1",
+      "group": "REGRESSION",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active parent/child/REPLACE/DELETE defenses preserved"
+    },
+    {
+      "id": "P3-044-CURRENT",
+      "severity": "P1",
+      "group": "REGRESSION",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active parent/child/REPLACE/DELETE defenses preserved"
+    },
+    {
+      "id": "P3-044-CURRENT",
+      "severity": "P1",
+      "group": "REGRESSION",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active parent/child/REPLACE/DELETE defenses preserved"
+    },
+    {
+      "id": "P3-044-CURRENT",
+      "severity": "P1",
+      "group": "REGRESSION",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active parent/child/REPLACE/DELETE defenses preserved"
+    }
+  ]
+}

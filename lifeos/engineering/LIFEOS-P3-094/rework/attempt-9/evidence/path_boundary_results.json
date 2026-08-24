@@ -1,0 +1,152 @@
+[
+  {
+    "id": "PATH-api-cli-relative-dotdot-normalization-wrong-basename-output",
+    "category": "path",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "InvariantClosureTest.test_all_public_entries_share_exact_path_gate",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "4a73ac0eeee874b4cf6a61c1fbf930caa9f1f82d41a0ed4428ef78b01ee9cd3e"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_all_public_entries_share_exact_path_gate",
+    "state_transition_id": "PATH-api-cli-relative-dotdot-normalization-wrong-basename-output"
+  },
+  {
+    "id": "PATH-db-symlink-ancestor-hardlink-directory-fifo-socket-special",
+    "category": "path",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "RuntimeTest.test_symlink_db_file_is_rejected",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "bd88065b41a35d9688c7be6624c4c3eaddbe6231694a521f542b2fa5ff900444"
+      },
+      {
+        "test_id": "RuntimeTest.test_symlink_db_parent_is_rejected",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "156451dcde768372c5646c5a71dd902740e6e14d32cbd4ad32833101562a718e"
+      },
+      {
+        "test_id": "InvariantClosureTest.test_db_and_page_hardlinks_are_rejected",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "cbd250e59e6315d8f830885e833228fc15f0b9be2ecccd53975a53adcfc35b9c"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_symlink_db_file_is_rejected; RuntimeTest.test_symlink_db_parent_is_rejected; InvariantClosureTest.test_db_and_page_hardlinks_are_rejected",
+    "state_transition_id": "PATH-db-symlink-ancestor-hardlink-directory-fifo-socket-special"
+  },
+  {
+    "id": "PATH-page-symlink-ancestor-hardlink-directory-fifo-socket-special",
+    "category": "path",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "RuntimeTest.test_symlink_today_is_rejected_without_following",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "ffc876a3c132fcef6002c70779b43ee2732615adc2c3a896f39278484429626c"
+      },
+      {
+        "test_id": "RuntimeTest.test_directory_and_special_today_are_rejected",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "f19309108b959f36f085a40ac92dff56689dfd659a7ae0470dd90ceca7963011"
+      },
+      {
+        "test_id": "InvariantClosureTest.test_db_and_page_hardlinks_are_rejected",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "cbd250e59e6315d8f830885e833228fc15f0b9be2ecccd53975a53adcfc35b9c"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_symlink_today_is_rejected_without_following; RuntimeTest.test_directory_and_special_today_are_rejected; InvariantClosureTest.test_db_and_page_hardlinks_are_rejected",
+    "state_transition_id": "PATH-page-symlink-ancestor-hardlink-directory-fifo-socket-special"
+  },
+  {
+    "id": "PATH-sentinels-unchanged",
+    "category": "path",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "RuntimeTest.test_caller_output_paths_are_rejected_before_change",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "71065dd5ff56baef40bb9a388d07a16fdc10a15733e6ada2b9f34a1587a304b4"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_caller_output_paths_are_rejected_before_change",
+    "state_transition_id": "PATH-sentinels-unchanged"
+  },
+  {
+    "id": "PATH-parent-missing-unreadable-unwritable",
+    "category": "path",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "InvariantClosureTest.test_parent_must_preexist_and_capture_leaves_nothing",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "77ac7af7db6b7f9d150fd0d30c53ca8d7b0a2a17a79d6f5407ae4ce2718a5bda"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_parent_must_preexist_and_capture_leaves_nothing",
+    "state_transition_id": "PATH-parent-missing-unreadable-unwritable"
+  },
+  {
+    "id": "PATH-page-delete-temp-create-fsync-replace-failures",
+    "category": "path",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "RuntimeTest.test_clear_page_invalidation_failure_preserves_db",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "95ea27574dcbddcc6ef005f5014e82550072989dcb9383de77b1c5b6b4481c03"
+      },
+      {
+        "test_id": "InvariantClosureTest.test_render_fsync_failure_keeps_valid_page_and_cleans_temp",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "c939b3a443b1932ecba45a998ad7ed40293723daf92ca3b69e9b8c8e546e1c33"
+      },
+      {
+        "test_id": "InvariantClosureTest.test_render_replace_failure_keeps_valid_page_and_cleans_temp",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "0fb41bec5a23c16d39a9502b0f39819fe82deff6187b618041eff6aee53f483a"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_clear_page_invalidation_failure_preserves_db; InvariantClosureTest.test_render_fsync_failure_keeps_valid_page_and_cleans_temp; InvariantClosureTest.test_render_replace_failure_keeps_valid_page_and_cleans_temp",
+    "state_transition_id": "PATH-page-delete-temp-create-fsync-replace-failures"
+  }
+]

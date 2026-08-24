@@ -1,0 +1,45 @@
+{
+  "task_id": "LIFEOS-P3-107",
+  "result": "BLOCKED",
+  "verifier_mode": "fail_closed review-completeness gate",
+  "matrix": {
+    "ABF-M-001": "PASS",
+    "ABF-M-002": "PASS",
+    "ABF-M-003": "UNKNOWN",
+    "ABF-M-004": "PASS",
+    "ABF-M-005": "PASS",
+    "ABF-M-006": "PASS",
+    "ABF-M-007": "NOT_IMPLEMENTED",
+    "ABF-M-008": "NOT_IMPLEMENTED",
+    "ABF-M-009": "NOT_IMPLEMENTED",
+    "ABF-M-010": "NOT_IMPLEMENTED",
+    "ABF-M-011": "NOT_IMPLEMENTED",
+    "ABF-M-012": "NOT_IMPLEMENTED",
+    "ABF-M-013": "NOT_IMPLEMENTED",
+    "ABF-M-014": "NOT_IMPLEMENTED",
+    "ABF-M-015": "PASS",
+    "ABF-M-016": "NOT_IMPLEMENTED"
+  },
+  "counts": {
+    "confirmed_p0_findings": 0,
+    "confirmed_p1_findings": 0,
+    "confirmed_p2_findings": 0,
+    "unknown": 1,
+    "not_implemented_matrix_rows": 9,
+    "unexecuted_dynamic_test_ids": 10
+  },
+  "failed_gate_reasons": [
+    "actual-app dynamic verification could not be operated through the approved local-app control path",
+    "P3-104 Engineering Manifest has one current hash mismatch for the later-updated PM Review; the PM Review documents that the Manifest matched before that update, but the frozen M-003 literal current rehash condition cannot be claimed as PASS",
+    "the required actual-app lifecycle, boundary, responsive and accessibility actions have no independent closure evidence",
+    "two exact task-local temporary paths remain because the attempted exact cleanup was rejected by the execution environment; no broad or substitute cleanup was attempted"
+  ],
+  "residue_ledger": [
+    "/private/tmp/lifeos-p3-107-review-work-r1",
+    "/private/tmp/lifeos-p3-107-review-work-r2",
+    "/private/tmp/lifeos-p3-104-p3-107-review-nominal-r1"
+  ],
+  "protected_legacy_lstat_after": "type=Regular File,size=2176,mtime=1787473226,ctime=1787473226",
+  "pass_formula_satisfied": false,
+  "next_authority_required": "PM must decide whether to preserve this Blocked review and arrange a new authorized actual-app-control environment; no candidate change is requested or implied."
+}

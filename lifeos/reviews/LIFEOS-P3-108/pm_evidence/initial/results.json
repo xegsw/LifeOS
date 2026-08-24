@@ -1,0 +1,62 @@
+{
+  "task": "LIFEOS-P3-108",
+  "review_round": "initial",
+  "acceptance_basis": {
+    "id": "ABF-P3-108-v1",
+    "sha256": "54cbb4a8d302a1dd4007bcdbd7c7844f0d98588f54c51d941e197a8176c1ae10",
+    "match": true,
+    "requires_material_change": false
+  },
+  "pm_verification": {
+    "submission_manifest": "31/31, no extra or missing",
+    "frozen_snapshot": "21/21",
+    "p3_106_manifest": "325/325",
+    "p3_104_manifest": "15 current matches + 1 exact PASS_TIME_QUALIFIED",
+    "test_design_precedes_runner": true,
+    "allowlist_copy_forbidden_hits": 0,
+    "offline_locked_build_returncodes": [0, 0, 0],
+    "exact_task_residue_count": 0,
+    "p3_107_protected_paths_missing": true,
+    "actual_app_rerun_by_pm": false
+  },
+  "findings": [
+    {
+      "id": "PM-P3-108-INIT-EV-01",
+      "severity": "P0",
+      "finding": "ABF-M-001 is marked PASS although the submission explicitly says the actual gpt-5.6-terra + xhigh configuration is not observable and the frozen test design's authorization.json is absent.",
+      "mapping": ["L1-7", "L1-10", "ABF-I-01", "ABF-I-12", "ABF-M-001"]
+    },
+    {
+      "id": "PM-P3-108-INIT-EV-02",
+      "severity": "P0",
+      "finding": "ABF-M-009 through M-012 and M-014 are marked PASS without the structured lifecycle, denied, negative-matrix, raw app/process log, and before/after artifacts frozen by the test design; Markdown assertions and screenshots cannot independently establish DB/audit/sentinel zero-side-effect claims after fixture cleanup.",
+      "mapping": ["L1-3", "L1-4", "L1-6", "L1-7", "L1-10", "ABF-I-09", "ABF-I-10", "ABF-I-12", "ABF-M-009", "ABF-M-010", "ABF-M-011", "ABF-M-012", "ABF-M-014"]
+    },
+    {
+      "id": "PM-P3-108-INIT-COV-03",
+      "severity": "Not Implemented",
+      "finding": "M-007, M-008, M-013 and M-015 are openly non-pass; M-007 fixed visual comparison and M-013 external-path actual-app row were executable in scope, so the submission is not a pure external Blocked case.",
+      "mapping": ["ABF-I-06", "ABF-I-07", "ABF-I-10", "ABF-I-11", "ABF-M-007", "ABF-M-008", "ABF-M-013", "ABF-M-015"]
+    }
+  ],
+  "matrix_adjustment": {
+    "submitted_nonpass_rows": ["M-007", "M-008", "M-013", "M-015"],
+    "additional_not_implemented_rows": ["M-009", "M-010", "M-011", "M-012", "M-014"],
+    "unknown_rows": ["M-001"]
+  },
+  "counts": {
+    "P0": 2,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 1,
+    "Not Implemented": 9
+  },
+  "candidate_defect_confirmed": false,
+  "formal_rework_used": "1/2",
+  "task_status": "PM_ADJUSTED_REWORK",
+  "abf_unchanged": true,
+  "local_precheck": {
+    "performed": false,
+    "reason": "P0 independence, actual Tauri/IPC, filesystem failure-closure and dynamic Evidence final judgment."
+  }
+}

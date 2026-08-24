@@ -1,0 +1,283 @@
+{
+  "runner": "LIFEOS-P3-088 independent static runner",
+  "target": "/private/tmp/lifeos-p3-088.JyCYwI/app",
+  "generated_at": "2026-08-21T14:03:29.951Z",
+  "counts": {
+    "pass": 53,
+    "fail": 0
+  },
+  "hashes": {
+    "default-recovery.html": "eaea4933dc6166590129331734f3d947483e1a6ded39c28df28597692492b95d",
+    "no-reliable-suggestion.html": "f9c47ca754b91f1d924b3f5b7fb4e9b5d4ba1b4ba98693d5cd7d2358af43f643",
+    "restricted-offline.html": "f246e2607cfc85bc01a14274358bb917f25cf800fcad6d67f17dbd0d79a58a0b",
+    "app.js": "fa50eb0e7bfa177a3ba2c6e97ec1185370506e84cc2f1d01434ac9d5ea090d0c",
+    "styles.css": "3313d07eff663e74f95897d7d05130ac7a25dee3455c38e4b772cc79f68a855c"
+  },
+  "checks": [
+    {
+      "id": "default-recovery.html:language",
+      "status": "PASS",
+      "detail": "declares Chinese document language"
+    },
+    {
+      "id": "default-recovery.html:viewport",
+      "status": "PASS",
+      "detail": "declares responsive viewport"
+    },
+    {
+      "id": "default-recovery.html:skip-link",
+      "status": "PASS",
+      "detail": "provides keyboard skip link"
+    },
+    {
+      "id": "default-recovery.html:main-landmark",
+      "status": "PASS",
+      "detail": "has main landmark matching skip link"
+    },
+    {
+      "id": "default-recovery.html:navigation",
+      "status": "PASS",
+      "detail": "labels state navigation"
+    },
+    {
+      "id": "default-recovery.html:three-local-pages",
+      "status": "PASS",
+      "detail": "only relative local page navigation"
+    },
+    {
+      "id": "default-recovery.html:boundary-copy",
+      "status": "PASS",
+      "detail": "states AI and network closed"
+    },
+    {
+      "id": "default-recovery.html:local-assets",
+      "status": "PASS",
+      "detail": "uses only local CSS and JS"
+    },
+    {
+      "id": "default-recovery.html:no-remote-url",
+      "status": "PASS",
+      "detail": "contains no remote URL"
+    },
+    {
+      "id": "no-reliable-suggestion.html:language",
+      "status": "PASS",
+      "detail": "declares Chinese document language"
+    },
+    {
+      "id": "no-reliable-suggestion.html:viewport",
+      "status": "PASS",
+      "detail": "declares responsive viewport"
+    },
+    {
+      "id": "no-reliable-suggestion.html:skip-link",
+      "status": "PASS",
+      "detail": "provides keyboard skip link"
+    },
+    {
+      "id": "no-reliable-suggestion.html:main-landmark",
+      "status": "PASS",
+      "detail": "has main landmark matching skip link"
+    },
+    {
+      "id": "no-reliable-suggestion.html:navigation",
+      "status": "PASS",
+      "detail": "labels state navigation"
+    },
+    {
+      "id": "no-reliable-suggestion.html:three-local-pages",
+      "status": "PASS",
+      "detail": "only relative local page navigation"
+    },
+    {
+      "id": "no-reliable-suggestion.html:boundary-copy",
+      "status": "PASS",
+      "detail": "states AI and network closed"
+    },
+    {
+      "id": "no-reliable-suggestion.html:local-assets",
+      "status": "PASS",
+      "detail": "uses only local CSS and JS"
+    },
+    {
+      "id": "no-reliable-suggestion.html:no-remote-url",
+      "status": "PASS",
+      "detail": "contains no remote URL"
+    },
+    {
+      "id": "restricted-offline.html:language",
+      "status": "PASS",
+      "detail": "declares Chinese document language"
+    },
+    {
+      "id": "restricted-offline.html:viewport",
+      "status": "PASS",
+      "detail": "declares responsive viewport"
+    },
+    {
+      "id": "restricted-offline.html:skip-link",
+      "status": "PASS",
+      "detail": "provides keyboard skip link"
+    },
+    {
+      "id": "restricted-offline.html:main-landmark",
+      "status": "PASS",
+      "detail": "has main landmark matching skip link"
+    },
+    {
+      "id": "restricted-offline.html:navigation",
+      "status": "PASS",
+      "detail": "labels state navigation"
+    },
+    {
+      "id": "restricted-offline.html:three-local-pages",
+      "status": "PASS",
+      "detail": "only relative local page navigation"
+    },
+    {
+      "id": "restricted-offline.html:boundary-copy",
+      "status": "PASS",
+      "detail": "states AI and network closed"
+    },
+    {
+      "id": "restricted-offline.html:local-assets",
+      "status": "PASS",
+      "detail": "uses only local CSS and JS"
+    },
+    {
+      "id": "restricted-offline.html:no-remote-url",
+      "status": "PASS",
+      "detail": "contains no remote URL"
+    },
+    {
+      "id": "default:semantic-heading-order",
+      "status": "PASS",
+      "detail": "uses h1 then h2 then h3 in main recovery content"
+    },
+    {
+      "id": "default:original-label",
+      "status": "PASS",
+      "detail": "labels user-origin text"
+    },
+    {
+      "id": "default:explicit-confirmation",
+      "status": "PASS",
+      "detail": "requires explicit confirmation"
+    },
+    {
+      "id": "default:live-status",
+      "status": "PASS",
+      "detail": "announces interaction state"
+    },
+    {
+      "id": "default:no-autosave-attribute",
+      "status": "PASS",
+      "detail": "does not imply automatic or persistent capture"
+    },
+    {
+      "id": "empty:no-fabricated-suggestion",
+      "status": "PASS",
+      "detail": "fails closed when evidence is insufficient"
+    },
+    {
+      "id": "empty:two-controlled-paths",
+      "status": "PASS",
+      "detail": "offers two manual controlled paths"
+    },
+    {
+      "id": "empty:live-status",
+      "status": "PASS",
+      "detail": "announces chosen path"
+    },
+    {
+      "id": "restricted:fail-closed-copy",
+      "status": "PASS",
+      "detail": "states restricted/offline fail-closed behavior"
+    },
+    {
+      "id": "restricted:no-network-sync",
+      "status": "PASS",
+      "detail": "states network and sync closed"
+    },
+    {
+      "id": "script:empty-input-rejected",
+      "status": "PASS",
+      "detail": "rejects empty input"
+    },
+    {
+      "id": "script:confirmation-is-explicit",
+      "status": "PASS",
+      "detail": "confirmation is click-triggered"
+    },
+    {
+      "id": "script:failure-clears-record",
+      "status": "PASS",
+      "detail": "simulated failure clears displayed record"
+    },
+    {
+      "id": "script:no-storage-or-network",
+      "status": "PASS",
+      "detail": "does not access storage, network, file, or Tauri APIs"
+    },
+    {
+      "id": "script:manual-empty-state-paths",
+      "status": "PASS",
+      "detail": "two empty-state paths do not read material"
+    },
+    {
+      "id": "css:visible-focus",
+      "status": "PASS",
+      "detail": "uses high-contrast visible focus outline"
+    },
+    {
+      "id": "css:skip-link-focus",
+      "status": "PASS",
+      "detail": "reveals skip link on focus"
+    },
+    {
+      "id": "css:narrow-layout",
+      "status": "PASS",
+      "detail": "switches action and navigation layout on narrow screens"
+    },
+    {
+      "id": "css:readable-container",
+      "status": "PASS",
+      "detail": "uses constrained readable layout"
+    },
+    {
+      "id": "css:reduced-motion",
+      "status": "PASS",
+      "detail": "honors reduced-motion preference"
+    },
+    {
+      "id": "css:no-remote-import",
+      "status": "PASS",
+      "detail": "contains no remote stylesheet or asset import"
+    },
+    {
+      "id": "closed:default-recovery.html",
+      "status": "PASS",
+      "detail": "does not contain prohibited real-capability token"
+    },
+    {
+      "id": "closed:no-reliable-suggestion.html",
+      "status": "PASS",
+      "detail": "does not contain prohibited real-capability token"
+    },
+    {
+      "id": "closed:restricted-offline.html",
+      "status": "PASS",
+      "detail": "does not contain prohibited real-capability token"
+    },
+    {
+      "id": "closed:app.js",
+      "status": "PASS",
+      "detail": "does not contain prohibited real-capability token"
+    },
+    {
+      "id": "closed:styles.css",
+      "status": "PASS",
+      "detail": "does not contain prohibited real-capability token"
+    }
+  ]
+}

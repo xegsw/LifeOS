@@ -1,0 +1,134 @@
+[
+  {
+    "case_id": "T01",
+    "description": "local read allow",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T02",
+    "description": "local parse allow",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T03",
+    "description": "local FTS/index allow",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T04",
+    "description": "local derivation allow",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T05",
+    "description": "LifeOS cloud mock allow",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 5,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T06",
+    "description": "named third party mock allow",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 5,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T07",
+    "description": "missing authorization",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_MISSING"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T08",
+    "description": "expired authorization",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_EXPIRED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T09",
+    "description": "revoked authorization",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_REVOKED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T10",
+    "description": "scope expansion to project B",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T11",
+    "description": "search purpose cannot become summary",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T12",
+    "description": "subject/workflow mismatch",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  }
+]

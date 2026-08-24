@@ -1,0 +1,28 @@
+{
+  "id": "P3108R1-M001-authorization",
+  "task_id": "LIFEOS-P3-108",
+  "attempt": "rework-1",
+  "authorization": {
+    "user_instruction": "2026-08-24 用户明确要求按 D-0440/D-0441 执行同一 P3-108 rework-1，在空 evidence/rework-1/ 全量重跑；不得调整系统显示缩放。",
+    "task_card": "lifeos/tasks/LIFEOS-P3-108_p3_104_p3_106_combined_candidate_fresh_isolated_independent_review_successor.md",
+    "abf": "lifeos/tasks/LIFEOS-P3-108_p3_104_p3_106_combined_candidate_fresh_isolated_independent_review_successor_acceptance_basis_freeze.md",
+    "abf_id": "ABF-P3-108-v1",
+    "abf_sha256": "54cbb4a8d302a1dd4007bcdbd7c7844f0d98588f54c51d941e197a8176c1ae10",
+    "task_sha256": "798b95d153861d44ae2900b821082e18f18e7aed8272fe39de556ad56c631249",
+    "pm_confirmation": {
+      "D-0440": "同一任务 rework-1 已授权；模型路由确认 gpt-5.6-terra + xhigh。",
+      "D-0441": "用户已手工开启 macOS 减少动态效果；专项不得更改、关闭或恢复此偏好，也不得调整显示缩放。"
+    }
+  },
+  "session": {
+    "type": "reused P3-108 independent-review session after initial task formally ended as PM-adjusted Rework",
+    "rework_scope": "new evidence/rework-1 only; initial P3-108 Review/Evidence remain read-only",
+    "model_and_reasoning_evidence_source": "user-confirmed and PM-recorded D-0440 metadata; no claim is made that an otherwise-unobservable internal label was self-inspected"
+  },
+  "test_design": {
+    "path": "test_design.md",
+    "sha256": "c547c51321706dd1ceeb5fd9f1622f9cafa2ee0f6be25f20580d9b851c418ed8",
+    "frozen_before_candidate_or_submitted_runner_read": true
+  },
+  "pass": true
+}

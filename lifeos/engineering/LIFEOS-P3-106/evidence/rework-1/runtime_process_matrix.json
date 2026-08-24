@@ -1,0 +1,144 @@
+{
+  "task": "LIFEOS-P3-106",
+  "execution": "rework-1",
+  "rows": [
+    {
+      "id": "RUNTIME-LIFECYCLE",
+      "test": "runtime::tests::lifecycle_saved_repeat_conflict_restart",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "test",
+        "--locked",
+        "runtime::tests::lifecycle_saved_repeat_conflict_restart",
+        "--",
+        "--exact",
+        "--nocapture"
+      ],
+      "returncode": 0,
+      "unit_paths_before": [],
+      "unit_paths_after": [],
+      "log": "evidence/rework-1/runtime-lifecycle.log",
+      "sha256": "21834c5cf7c78e63b99940b2ea1f1d5b0d5bb6cf806abbc1ffb07e2c4db59829",
+      "status": "PASS"
+    },
+    {
+      "id": "RUNTIME-ATOMIC-FAILURE",
+      "test": "runtime::tests::injected_failure_preserves_database_and_sentinel",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "test",
+        "--locked",
+        "runtime::tests::injected_failure_preserves_database_and_sentinel",
+        "--",
+        "--exact",
+        "--nocapture"
+      ],
+      "returncode": 0,
+      "unit_paths_before": [],
+      "unit_paths_after": [],
+      "log": "evidence/rework-1/runtime-atomic-failure.log",
+      "sha256": "caef4c8d512edc91cdf6504cbbf713540f5d4f107bfce46d09c5653dbc821804",
+      "status": "PASS"
+    },
+    {
+      "id": "RUNTIME-PATH-ARGUMENTS",
+      "test": "runtime::tests::path_and_argument_boundaries_fail_closed",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "test",
+        "--locked",
+        "runtime::tests::path_and_argument_boundaries_fail_closed",
+        "--",
+        "--exact",
+        "--nocapture"
+      ],
+      "returncode": 0,
+      "unit_paths_before": [],
+      "unit_paths_after": [],
+      "log": "evidence/rework-1/runtime-path-arguments.log",
+      "sha256": "431a26680f31bfaba39b9132322c63e511c7b977dfcde85f0e9fa7ab374de19d",
+      "status": "PASS"
+    },
+    {
+      "id": "RUNTIME-LINK-HARDLINK",
+      "test": "runtime::tests::symlink_and_hardlink_boundaries_fail_closed",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "test",
+        "--locked",
+        "runtime::tests::symlink_and_hardlink_boundaries_fail_closed",
+        "--",
+        "--exact",
+        "--nocapture"
+      ],
+      "returncode": 0,
+      "unit_paths_before": [],
+      "unit_paths_after": [],
+      "log": "evidence/rework-1/runtime-link-hardlink.log",
+      "sha256": "d1a9067f1a12a320c544c6b0f7db8e8f1e5b9938d330a82ae83f8b8087eaaf0c",
+      "status": "PASS"
+    },
+    {
+      "id": "RUNTIME-DANGLING-4",
+      "test": "runtime::tests::dangling_database_and_sidecar_links_fail_closed",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "test",
+        "--locked",
+        "runtime::tests::dangling_database_and_sidecar_links_fail_closed",
+        "--",
+        "--exact",
+        "--nocapture"
+      ],
+      "returncode": 0,
+      "unit_paths_before": [],
+      "unit_paths_after": [],
+      "log": "evidence/rework-1/runtime-dangling-4.log",
+      "sha256": "0ee85bb69d2b6207228a2e25419b974ff6a2a618c6d39c25773a27f71f19ed96",
+      "status": "PASS"
+    },
+    {
+      "id": "RUNTIME-TAMPER-PROCESS",
+      "test": "runtime::tests::tampered_content_and_sidecar_fail_closed",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "test",
+        "--locked",
+        "runtime::tests::tampered_content_and_sidecar_fail_closed",
+        "--",
+        "--exact",
+        "--nocapture"
+      ],
+      "returncode": 0,
+      "unit_paths_before": [],
+      "unit_paths_after": [],
+      "log": "evidence/rework-1/runtime-tamper-process.log",
+      "sha256": "456716c67504f2993f4498efa95bd1d89bf06926554a4ceff8abc94362b86525",
+      "status": "PASS"
+    },
+    {
+      "id": "RUNTIME-CAPABILITIES",
+      "test": "runtime::tests::runtime_status_closes_direct_capabilities",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "test",
+        "--locked",
+        "runtime::tests::runtime_status_closes_direct_capabilities",
+        "--",
+        "--exact",
+        "--nocapture"
+      ],
+      "returncode": 0,
+      "unit_paths_before": [],
+      "unit_paths_after": [],
+      "log": "evidence/rework-1/runtime-capabilities.log",
+      "sha256": "e7eb173b622ba23f2846d39aa1542ea9df4baabddaa6111a876c161393c4b6ff",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  }
+}

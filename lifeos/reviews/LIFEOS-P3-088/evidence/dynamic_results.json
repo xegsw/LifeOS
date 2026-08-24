@@ -1,0 +1,21 @@
+{
+  "runner": "LIFEOS-P3-088 independent Chrome file: dynamic matrix",
+  "browser": "Google Chrome (com.google.Chrome) via Computer Use @oai/sky",
+  "entry": "file:///private/tmp/lifeos-p3-088.JyCYwI/app/default-recovery.html",
+  "counts": { "pass": 13, "fail": 0, "unknown": 0, "not_implemented": 0 },
+  "results": [
+    { "id": "DYN-01", "status": "PASS", "detail": "New Chrome tab loaded task-local file: entry directly; title, boundaries, navigation, and local URL were present." },
+    { "id": "DYN-02", "status": "PASS", "detail": "Tab order began with skip link, then default navigation, then no-reliable-suggestion navigation; all targets appeared in Chrome accessibility tree." },
+    { "id": "DYN-03", "status": "PASS", "detail": "Enter on no-reliable-suggestion navigation reached the local second page with no fabricated recovery suggestion." },
+    { "id": "DYN-04", "status": "PASS", "detail": "Both manual no-suggestion paths disclosed that they do not open/read material and route only to manual actions." },
+    { "id": "DYN-05", "status": "PASS", "detail": "Empty capture confirmation was rejected with polite status disclosure and no displayed record." },
+    { "id": "DYN-06", "status": "PASS", "detail": "Fixed non-sensitive text displayed only after explicit confirmation." },
+    { "id": "DYN-07", "status": "PASS", "detail": "Repeated explicit confirmation remained idempotent: one current-session display and the same status." },
+    { "id": "DYN-08", "status": "PASS", "detail": "Simulated failure hid the displayed record and disclosed that nothing was retained/displayed; editable draft remains only in the current DOM for retry and is not persistence." },
+    { "id": "DYN-09", "status": "PASS", "detail": "Reload returned the default status and removed the fixed text." },
+    { "id": "DYN-10", "status": "PASS", "detail": "After closing the task-local tab and opening a new tab to the same file: URL, fixed text was absent and default status returned." },
+    { "id": "DYN-11", "status": "PASS", "detail": "At increased Chrome zoom, navigation, capture heading, status and content remained available; visual record confirms readable hierarchy." },
+    { "id": "DYN-12", "status": "PASS", "detail": "Restricted/offline page disclosed no reading/processing/generation, no network/sync, and AI not enabled." },
+    { "id": "DYN-13", "status": "PASS", "detail": "No navigation left the task-local file: URLs; no HTTP, network, CDP, command-line browser, persistence or security-warning bypass was used." }
+  ]
+}

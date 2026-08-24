@@ -1,0 +1,28 @@
+{
+  "task": "LIFEOS-P3-086",
+  "attempt": "attempt-3",
+  "kind": "fresh-independent-chrome-file-dynamic",
+  "browser": "Google Chrome",
+  "bundle_id": "com.google.Chrome",
+  "entry": "file:///private/tmp/lifeos-p3-086-attempt-3.lOKtlY/app/default-recovery.html",
+  "network": "not used",
+  "http_service": "not started",
+  "cdp": "not used",
+  "command_line_browser": "not used",
+  "test_text": "独立复评固定非敏感文本",
+  "pass": 11,
+  "fail": 0,
+  "results": [
+    {"id":"DYN-01","status":"PASS","detail":"新 Chrome 标签页直接加载 task-local file: 默认页；可见页面、URL 与副本 hash 对应。","evidence":"01-preflight-default.jpeg"},
+    {"id":"DYN-02","status":"PASS","detail":"默认页显式导航可进入“暂无可靠建议”和“权限受限·离线”两页。","evidence":"06-no-reliable-suggestion.jpeg, 08-restricted-offline.jpeg"},
+    {"id":"DYN-03","status":"PASS","detail":"空文本确认被拒绝，显示“请先输入原文，再明确确认”。","evidence":"02-empty-rejected.jpeg"},
+    {"id":"DYN-04","status":"PASS","detail":"固定非敏感文本仅在显式确认后显示为“你的记录／原文”。","evidence":"03-confirmed.jpeg"},
+    {"id":"DYN-05","status":"PASS","detail":"重复确认后保持单一当前会话显示，未出现重复累加。","evidence":"03-confirmed.jpeg; operation_log.md"},
+    {"id":"DYN-06","status":"PASS","detail":"模拟失败清除显示记录并披露未保留／显示。","evidence":"04-failure-cleared.jpeg"},
+    {"id":"DYN-07","status":"PASS","detail":"无可靠建议页不虚构建议；“选择 Project”和“先记录当前停点”均给出受控反馈。","evidence":"06-no-reliable-suggestion.jpeg, 07-no-suggestion-paths.jpeg"},
+    {"id":"DYN-08","status":"PASS","detail":"权限受限／离线页明确 AI 未启用、网络未使用、不读取来源、不处理内容且不生成建议。","evidence":"08-restricted-offline.jpeg"},
+    {"id":"DYN-09","status":"PASS","detail":"确认后的固定文本经 Chrome 刷新后消失，页面回到“尚未确认保存”。","evidence":"05-refresh-cleared.jpeg; operation_log.md"},
+    {"id":"DYN-10","status":"PASS","detail":"关闭已确认页面后，新 Chrome 标签页重开同一 file: 入口不含先前文本，显示初始状态。","evidence":"09-close-reopen-cleared.jpeg; operation_log.md"},
+    {"id":"DYN-11","status":"PASS","detail":"动态三态与关键交互均有 Chrome 截图记录；无截图伪造或非 Chrome 替代。","evidence":"01-09 JPEG"}
+  ]
+}

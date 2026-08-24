@@ -1,0 +1,482 @@
+[
+  {
+    "case": "AC/AC-06/memory-fk_on-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC/AC-06/memory-fk_on-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC/AC-06/memory-fk_off-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC/AC-06/memory-fk_off-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC/AC-06/file-fk_on-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC/AC-06/file-fk_on-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC/AC-06/file-fk_off-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC/AC-06/file-fk_off-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-02/memory-fk_on-rec_on",
+    "machine": "claim",
+    "trace": [
+      "future denied",
+      "boundary accepted",
+      "stale competitor denied"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-02/memory-fk_on-rec_off",
+    "machine": "claim",
+    "trace": [
+      "future denied",
+      "boundary accepted",
+      "stale competitor denied"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-02/memory-fk_off-rec_on",
+    "machine": "claim",
+    "trace": [
+      "future denied",
+      "boundary accepted",
+      "stale competitor denied"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-02/memory-fk_off-rec_off",
+    "machine": "claim",
+    "trace": [
+      "future denied",
+      "boundary accepted",
+      "stale competitor denied"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-02/file-fk_on-rec_on",
+    "machine": "claim",
+    "trace": [
+      "future denied",
+      "boundary accepted",
+      "stale competitor denied"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-02/file-fk_on-rec_off",
+    "machine": "claim",
+    "trace": [
+      "future denied",
+      "boundary accepted",
+      "stale competitor denied"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-02/file-fk_off-rec_on",
+    "machine": "claim",
+    "trace": [
+      "future denied",
+      "boundary accepted",
+      "stale competitor denied"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-02/file-fk_off-rec_off",
+    "machine": "claim",
+    "trace": [
+      "future denied",
+      "boundary accepted",
+      "stale competitor denied"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-03/memory-fk_on-rec_on",
+    "machine": "worker_cas",
+    "trace": [
+      "claim",
+      "wrong owner/gen denied",
+      "renew",
+      "complete"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-03/memory-fk_on-rec_off",
+    "machine": "worker_cas",
+    "trace": [
+      "claim",
+      "wrong owner/gen denied",
+      "renew",
+      "complete"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-03/memory-fk_off-rec_on",
+    "machine": "worker_cas",
+    "trace": [
+      "claim",
+      "wrong owner/gen denied",
+      "renew",
+      "complete"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-03/memory-fk_off-rec_off",
+    "machine": "worker_cas",
+    "trace": [
+      "claim",
+      "wrong owner/gen denied",
+      "renew",
+      "complete"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-03/file-fk_on-rec_on",
+    "machine": "worker_cas",
+    "trace": [
+      "claim",
+      "wrong owner/gen denied",
+      "renew",
+      "complete"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-03/file-fk_on-rec_off",
+    "machine": "worker_cas",
+    "trace": [
+      "claim",
+      "wrong owner/gen denied",
+      "renew",
+      "complete"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-03/file-fk_off-rec_on",
+    "machine": "worker_cas",
+    "trace": [
+      "claim",
+      "wrong owner/gen denied",
+      "renew",
+      "complete"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-03/file-fk_off-rec_off",
+    "machine": "worker_cas",
+    "trace": [
+      "claim",
+      "wrong owner/gen denied",
+      "renew",
+      "complete"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/unconfigured/memory-fk_on-rec_on",
+    "machine": "retention",
+    "trace": [
+      "unconfigured",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/before/memory-fk_on-rec_on",
+    "machine": "retention",
+    "trace": [
+      "before",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/at/memory-fk_on-rec_on",
+    "machine": "retention",
+    "trace": [
+      "at",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/generic/memory-fk_on-rec_on",
+    "machine": "retention",
+    "trace": [
+      "generic",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/unconfigured/memory-fk_on-rec_off",
+    "machine": "retention",
+    "trace": [
+      "unconfigured",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/before/memory-fk_on-rec_off",
+    "machine": "retention",
+    "trace": [
+      "before",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/at/memory-fk_on-rec_off",
+    "machine": "retention",
+    "trace": [
+      "at",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/generic/memory-fk_on-rec_off",
+    "machine": "retention",
+    "trace": [
+      "generic",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/unconfigured/memory-fk_off-rec_on",
+    "machine": "retention",
+    "trace": [
+      "unconfigured",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/before/memory-fk_off-rec_on",
+    "machine": "retention",
+    "trace": [
+      "before",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/at/memory-fk_off-rec_on",
+    "machine": "retention",
+    "trace": [
+      "at",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/generic/memory-fk_off-rec_on",
+    "machine": "retention",
+    "trace": [
+      "generic",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/unconfigured/memory-fk_off-rec_off",
+    "machine": "retention",
+    "trace": [
+      "unconfigured",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/before/memory-fk_off-rec_off",
+    "machine": "retention",
+    "trace": [
+      "before",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/at/memory-fk_off-rec_off",
+    "machine": "retention",
+    "trace": [
+      "at",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/generic/memory-fk_off-rec_off",
+    "machine": "retention",
+    "trace": [
+      "generic",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/unconfigured/file-fk_on-rec_on",
+    "machine": "retention",
+    "trace": [
+      "unconfigured",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/before/file-fk_on-rec_on",
+    "machine": "retention",
+    "trace": [
+      "before",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/at/file-fk_on-rec_on",
+    "machine": "retention",
+    "trace": [
+      "at",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/generic/file-fk_on-rec_on",
+    "machine": "retention",
+    "trace": [
+      "generic",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/unconfigured/file-fk_on-rec_off",
+    "machine": "retention",
+    "trace": [
+      "unconfigured",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/before/file-fk_on-rec_off",
+    "machine": "retention",
+    "trace": [
+      "before",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/at/file-fk_on-rec_off",
+    "machine": "retention",
+    "trace": [
+      "at",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/generic/file-fk_on-rec_off",
+    "machine": "retention",
+    "trace": [
+      "generic",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/unconfigured/file-fk_off-rec_on",
+    "machine": "retention",
+    "trace": [
+      "unconfigured",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/before/file-fk_off-rec_on",
+    "machine": "retention",
+    "trace": [
+      "before",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/at/file-fk_off-rec_on",
+    "machine": "retention",
+    "trace": [
+      "at",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/generic/file-fk_off-rec_on",
+    "machine": "retention",
+    "trace": [
+      "generic",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/unconfigured/file-fk_off-rec_off",
+    "machine": "retention",
+    "trace": [
+      "unconfigured",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/before/file-fk_off-rec_off",
+    "machine": "retention",
+    "trace": [
+      "before",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/at/file-fk_off-rec_off",
+    "machine": "retention",
+    "trace": [
+      "at",
+      "PASS"
+    ]
+  },
+  {
+    "case": "PM-CE/PM-CE-05/generic/file-fk_off-rec_off",
+    "machine": "retention",
+    "trace": [
+      "generic",
+      "PASS"
+    ]
+  }
+]

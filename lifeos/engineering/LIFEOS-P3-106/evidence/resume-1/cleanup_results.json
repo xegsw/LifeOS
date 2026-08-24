@@ -1,0 +1,105 @@
+{
+  "task": "LIFEOS-P3-106",
+  "execution": "resume-1",
+  "method": "literal ledger iteration; no glob/find/prefix deletion",
+  "before": {
+    "/private/tmp/lifeos-p3-104-p3-106-app-resume1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-replay-resume1-20260823": {
+      "lexists": false,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-final-resume1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-journal-resume1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-wal-resume1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-shm-resume1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-path-resume1-20260823": {
+      "lexists": true,
+      "is_symlink": true
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-path-target-resume1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-tamper-resume1-20260823": {
+      "lexists": true,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-a11y-resume1-20260823": {
+      "lexists": false,
+      "is_symlink": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-visual-resume1-20260823": {
+      "lexists": false,
+      "is_symlink": false
+    }
+  },
+  "deleted": [
+    "/private/tmp/lifeos-p3-104-p3-106-app-resume1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-final-resume1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-journal-resume1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-wal-resume1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-shm-resume1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-path-resume1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-path-target-resume1-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-tamper-resume1-20260823"
+  ],
+  "after": {
+    "/private/tmp/lifeos-p3-104-p3-106-app-resume1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-replay-resume1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-final-resume1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-journal-resume1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-wal-resume1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-shm-resume1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-path-resume1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-path-target-resume1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-tamper-resume1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-a11y-resume1-20260823": {
+      "lexists": false
+    },
+    "/private/tmp/lifeos-p3-104-p3-106-visual-resume1-20260823": {
+      "lexists": false
+    }
+  },
+  "residual_count": 0,
+  "history_read_only_count": 30,
+  "history_unchanged_count": 30,
+  "legacy_forbidden_metadata_after": {
+    "path": "/private/tmp/lifeos-p3-104-rework-static-results.json",
+    "lexists": true,
+    "sha256": "c0837ed9d84bb558c2f7018bb7779774602d6d1047fccfbd3504e3d61b7c58e5"
+  },
+  "status": "PASS"
+}

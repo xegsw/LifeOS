@@ -1,0 +1,60 @@
+Window: "LifeOS 今日 · 高保真受控候选", App: LifeOS P3-104 P3108R1 Lifecycle.
+0 standard window LifeOS 今日 · 高保真受控候选, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: LifeOS｜今日｜暂无可靠建议, URL: tauri://localhost/no-reliable-suggestion.html
+			3 link 跳到主要内容, Value: tauri://localhost/no-reliable-suggestion.html#main-content
+			4 container LifeOS 主导航
+				5 link 今日, Value: tauri://localhost/default-recovery.html
+				6 container 今日三态
+					7 link 默认恢复, Value: tauri://localhost/default-recovery.html
+					8 link 暂无可靠建议, Value: tauri://localhost/no-reliable-suggestion.html
+					9 link 权限受限与离线, Value: tauri://localhost/restricted-offline.html
+					10 button (collapsed) 打开本地验证, Secondary Actions: Expand
+				11 button 设置未启用
+				12 text 本地
+			13 container
+				14 heading 早安，开启新的一天。, Value: 1
+					15 text 早安，开启新的一天。
+				16 text 2026年8月23日 · 星期日 尚未选择 Project
+				17 button 搜索未启用
+				18 button 新建未启用
+			19 container
+				20 container 尚未选择 Project
+					21 heading 尚未选择 Project, Value: 2
+						22 text 尚未选择 Project
+					23 text 暂无可靠建议——选择 Project 或补充一条当前停点后再试。
+					24 button 选择 Project
+					25 button 先记到 Inbox
+					26 text AI 未启用；不会据最近痕迹跨 Project 生成恢复或建议。
+				27 container 最近留下的痕迹
+					28 heading 最近留下的痕迹, Value: 3
+						29 text 最近留下的痕迹
+					30 text 仅供你主动打开；这些固定演示不代表真实来源或当前 Project。
+					31 container
+						32 text On Liberty 你的记录 · 原文｜《论自由》第二章阅读笔记 固定中性占位 · 不接入真实内容
+					33 container
+						34 text PERSONAL PROJECT 个人 Project 入口｜个人网站项目 未选择 · 不触发建议
+					35 container
+						36 container 中性生活记录占位
+						37 text 你的记录 · 原文｜上周的生活记录 固定中性占位 · 不接入真实内容
+			38 text 已由本地 backend 耐久恢复
+			39 container 固定非敏感快速捕获
+				40 button (disabled) 附件未启用
+				41 button (disabled) 语音未启用
+				42 text 你的记录 · 原文
+				43 text P3-104 固定非敏感记录：核对今日页本地运行时。
+				44 button 明确保存固定非敏感文本
+		45 scroll bar (settable, float) 1
+	46 close button
+	47 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	48 minimize button
+	49 text LifeOS 今日 · 高保真受控候选
+50 menu bar
+	51 LifeOS P3-104 P3108R1 Lifecycle
+	52 File
+	53 Edit
+	54 View
+	55 Window
+	56 Help
+
+The focused UI element is 2 HTML content Description: LifeOS｜今日｜暂无可靠建议, URL: tauri://localhost/no-reliable-suggestion.html

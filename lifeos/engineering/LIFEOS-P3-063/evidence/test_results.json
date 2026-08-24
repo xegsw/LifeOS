@@ -1,0 +1,24 @@
+{
+  "cases": [
+    "commit_then_saved_and_identity_visible",
+    "duplicate_submit_is_idempotent",
+    "idempotency_conflict_is_visible",
+    "write_failure_never_reports_saved_or_persists",
+    "restart_preserves_committed_record",
+    "controlled_restore_and_explicit_confirmation",
+    "no_external_action_or_ai_enabled",
+    "e2e_operator_input_and_explicit_confirmation",
+    "e2e_empty_input_is_visible_and_never_saved",
+    "e2e_idempotency_conflict_is_visible_and_never_saved",
+    "e2e_precommit_failure_is_visible_and_never_saved"
+  ],
+  "fail": 0,
+  "not_implemented": 0,
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "pass": 11,
+  "scope": "synthetic SQLite only; no network/Tauri/IPC/Vault/real paths",
+  "task": "LIFEOS-P3-063",
+  "unknown": 0
+}

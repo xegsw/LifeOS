@@ -1,0 +1,1184 @@
+{
+  "task_id": "LIFEOS-P3-040",
+  "scope": "synthetic in-memory and controlled file SQLite only",
+  "summary": {
+    "P0": {
+      "PASS": 0,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "P1": {
+      "PASS": 126,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "P2": {
+      "PASS": 2,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "total": {
+      "PASS": 128,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    }
+  },
+  "results": [
+    {
+      "group": "P2-2",
+      "name": "ordinary_delete",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_delete_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "ordinary_delete",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_delete_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "insert_or_replace_lower_gen",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_reinsert_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "insert_or_replace_lower_gen",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_reinsert_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "insert_or_replace_same_gen",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_reinsert_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "insert_or_replace_same_gen",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_reinsert_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "insert_or_replace_higher_gen",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_reinsert_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "insert_or_replace_higher_gen",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_reinsert_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "delete_insert_commit",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_delete_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "delete_insert_commit",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_delete_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "delete_insert_rollback",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_delete_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "delete_insert_rollback",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_delete_forbidden"
+    },
+    {
+      "group": "P2-3",
+      "name": "direct_insert_active_blocked",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    {
+      "group": "P2-3",
+      "name": "direct_insert_active_blocked",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    {
+      "group": "P2-3",
+      "name": "direct_insert_cleaned",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    {
+      "group": "P2-3",
+      "name": "direct_insert_cleaned",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    {
+      "group": "P2-3",
+      "name": "direct_insert_cleanup_failed",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    {
+      "group": "P2-3",
+      "name": "direct_insert_cleanup_failed",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    {
+      "group": "P2-3",
+      "name": "direct_insert_vendor_limited",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    {
+      "group": "P2-3",
+      "name": "direct_insert_vendor_limited",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    {
+      "group": "P2-3",
+      "name": "accepted_start",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "P2-3",
+      "name": "accepted_start",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "P2-3",
+      "name": "legal_transitions",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "P2-3",
+      "name": "legal_transitions",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "P2-3",
+      "name": "illegal_skip_transition",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_status_transition_invalid"
+    },
+    {
+      "group": "P2-3",
+      "name": "illegal_skip_transition",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_status_transition_invalid"
+    },
+    {
+      "group": "P2-3",
+      "name": "generation_decrease",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_generation_must_not_decrease"
+    },
+    {
+      "group": "P2-3",
+      "name": "generation_decrease",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "tombstone_generation_must_not_decrease"
+    },
+    {
+      "group": "P2-4",
+      "name": "active_scope_delete",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_delete_forbidden"
+    },
+    {
+      "group": "P2-4",
+      "name": "active_scope_delete",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_delete_forbidden"
+    },
+    {
+      "group": "P2-4",
+      "name": "active_action_delete",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_delete_forbidden"
+    },
+    {
+      "group": "P2-4",
+      "name": "active_action_delete",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_delete_forbidden"
+    },
+    {
+      "group": "P2-4",
+      "name": "active_policy_delete",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_delete_forbidden"
+    },
+    {
+      "group": "P2-4",
+      "name": "active_policy_delete",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_delete_forbidden"
+    },
+    {
+      "group": "P2-4",
+      "name": "inactive_scope_delete_allowed",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "P2-4",
+      "name": "inactive_scope_delete_allowed",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJ",
+      "name": "insert_new_scope_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_insert_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "insert_new_scope_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_insert_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "insert_new_action_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_insert_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "insert_new_action_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_insert_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "update_scope_effect_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "update_scope_effect_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "update_scope_target_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "update_scope_target_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "update_policy_training_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "update_policy_training_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "update_policy_sensitivity_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "update_policy_sensitivity_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "update_policy_external_send_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "update_policy_external_send_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "update_action_value_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_update_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "update_action_value_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_update_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "insert_or_replace_scope_effect",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_insert_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "insert_or_replace_scope_effect",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_insert_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "insert_or_replace_policy",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_insert_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "insert_or_replace_policy",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_insert_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "scope_rebind_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "ADJ",
+      "name": "scope_rebind_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "EXT-CHILD",
+      "name": "scope_insert_deny",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_insert_forbidden"
+    },
+    {
+      "group": "EXT-CHILD",
+      "name": "scope_insert_deny",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_insert_forbidden"
+    },
+    {
+      "group": "EXT-CHILD",
+      "name": "scope_update_source",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "EXT-CHILD",
+      "name": "scope_update_source",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "EXT-CHILD",
+      "name": "scope_update_artifact",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "EXT-CHILD",
+      "name": "scope_update_artifact",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "EXT-CHILD",
+      "name": "action_replace",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_insert_forbidden"
+    },
+    {
+      "group": "EXT-CHILD",
+      "name": "action_replace",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_insert_forbidden"
+    },
+    {
+      "group": "EXT-CHILD",
+      "name": "policy_direct_insert",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_insert_forbidden"
+    },
+    {
+      "group": "EXT-CHILD",
+      "name": "policy_direct_insert",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_insert_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_retention",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_retention",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_recipients",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_recipients",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_regions",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_regions",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_disclosure",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_disclosure",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_license",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_license",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_quantity",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_quantity",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_frequency",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-POLICY",
+      "name": "update_frequency",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_scope_inactive_to_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_scope_inactive_to_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_scope_active_to_inactive",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_scope_active_to_inactive",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_scope_active_to_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_scope_active_to_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_action_inactive_to_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_action_inactive_to_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_action_active_to_inactive",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_action_active_to_inactive",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_action_active_to_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_action_active_to_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_action_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_policy_inactive_to_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_policy_inactive_to_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_policy_active_to_inactive",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_policy_active_to_inactive",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_policy_active_to_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-REBIND",
+      "name": "authorization_policy_active_to_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "active_authorization_policy_update_forbidden"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "active_to_proposed",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_status_transition_invalid"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "active_to_proposed",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_status_transition_invalid"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "active_to_granted",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_status_transition_invalid"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "active_to_granted",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_status_transition_invalid"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "retire_without_generation",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_retirement_generation_invalid"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "retire_without_generation",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_retirement_generation_invalid"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "retire_without_audit",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_retirement_audit_required"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "retire_without_audit",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_retirement_audit_required"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "retire_without_outbox",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_retirement_outbox_required"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "retire_without_outbox",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_retirement_outbox_required"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "revoked_mutate_then_reactivate",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_status_transition_invalid"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "revoked_mutate_then_reactivate",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_status_transition_invalid"
+    },
+    {
+      "group": "EXT-LEGAL",
+      "name": "revoked_child_cleanup",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "EXT-LEGAL",
+      "name": "revoked_child_cleanup",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "expired_mutate_then_reactivate",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_status_transition_invalid"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "expired_mutate_then_reactivate",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_status_transition_invalid"
+    },
+    {
+      "group": "EXT-LEGAL",
+      "name": "expired_child_cleanup",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "EXT-LEGAL",
+      "name": "expired_child_cleanup",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "superseded_mutate_then_reactivate",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_status_transition_invalid"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "superseded_mutate_then_reactivate",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_status_transition_invalid"
+    },
+    {
+      "group": "EXT-LEGAL",
+      "name": "superseded_child_cleanup",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "EXT-LEGAL",
+      "name": "superseded_child_cleanup",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "version_identity_update",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_version_identity_immutable"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "version_identity_update",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_version_identity_immutable"
+    },
+    {
+      "group": "EXT-LEGAL",
+      "name": "new_version_supersede_activate",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "EXT-LEGAL",
+      "name": "new_version_supersede_activate",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "new_version_without_supersedes",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_new_version_requires_supersedes"
+    },
+    {
+      "group": "EXT-STATE",
+      "name": "new_version_without_supersedes",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "attack rejected",
+      "sqlite_error": "authorization_new_version_requires_supersedes"
+    }
+  ]
+}

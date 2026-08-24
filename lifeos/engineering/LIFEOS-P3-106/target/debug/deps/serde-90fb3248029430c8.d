@@ -1,0 +1,14 @@
+/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-106/target/debug/deps/serde-90fb3248029430c8.d: /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-106/target/debug/build/serde-dec7c40455ba8fa0/out/private.rs
+
+/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-106/target/debug/deps/libserde-90fb3248029430c8.rlib: /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-106/target/debug/build/serde-dec7c40455ba8fa0/out/private.rs
+
+/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-106/target/debug/deps/libserde-90fb3248029430c8.rmeta: /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-106/target/debug/build/serde-dec7c40455ba8fa0/out/private.rs
+
+/Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs:
+/Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs:
+/Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs:
+/Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs:
+/Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs:
+/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-106/target/debug/build/serde-dec7c40455ba8fa0/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-106/target/debug/build/serde-dec7c40455ba8fa0/out

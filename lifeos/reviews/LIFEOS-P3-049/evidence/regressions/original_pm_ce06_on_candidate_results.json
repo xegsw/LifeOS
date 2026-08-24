@@ -1,0 +1,259 @@
+{
+  "task_id": "LIFEOS-P3-047",
+  "scope": "synthetic SQLite PM counterexample; no real data or capability",
+  "summary": {
+    "pass": 8,
+    "bypass": 0,
+    "p2_bypass": 0
+  },
+  "results": [
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Rebind was rejected",
+      "status": "PASS",
+      "error": "authorization_tombstone_control_envelope_immutable",
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Rebind was rejected",
+      "status": "PASS",
+      "error": "authorization_tombstone_control_envelope_immutable",
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Rebind was rejected",
+      "status": "PASS",
+      "error": "authorization_tombstone_control_envelope_immutable",
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Rebind was rejected",
+      "status": "PASS",
+      "error": "authorization_tombstone_control_envelope_immutable",
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Rebind was rejected",
+      "status": "PASS",
+      "error": "authorization_tombstone_control_envelope_immutable",
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Rebind was rejected",
+      "status": "PASS",
+      "error": "authorization_tombstone_control_envelope_immutable",
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Rebind was rejected",
+      "status": "PASS",
+      "error": "authorization_tombstone_control_envelope_immutable",
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Rebind was rejected",
+      "status": "PASS",
+      "error": "authorization_tombstone_control_envelope_immutable",
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    }
+  ]
+}

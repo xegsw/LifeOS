@@ -1,0 +1,35 @@
+{
+  "task_id": "LIFEOS-P3-107",
+  "review_method": "independent manual side-by-side inspection of the frozen source Stitch images and the fixed P3-106 1280x1024 actual-app evidence; no prior visual conclusion was reused",
+  "status": "PASS_FOR_STATIC_M006_ONLY",
+  "inputs": [
+    {
+      "state": "default-recovery",
+      "reference": "lifeos/deliverables/evidence/LIFEOS-P1-009/01_default_recovery_preview.jpg",
+      "reference_sha256": "7b98a48319338a238b02cb7cdeb3d18a1e7eaecf9e7ee791b5c1d18017ba3df1",
+      "actual_evidence": "lifeos/engineering/LIFEOS-P3-106/evidence/rework-1/m004-default-1280x1024.png",
+      "actual_sha256": "d64921229aab0bbae1fdca0c29cf107e8e11dd7aa7ade732f5a71f3d2c024c5f",
+      "anchors": ["left navigation rail", "large greeting/header and project context", "continue card with provenance hierarchy", "local capture composer", "AI/system state distinguished from user text"],
+      "observation": "The controlled candidate retains the intended desktop composition and interaction hierarchy while replacing reference imagery with labeled neutral placeholders. Its visible copy explicitly labels fixed demonstration and disabled AI/external capability; it is not a green engineering-page fallback."
+    },
+    {
+      "state": "no-reliable-suggestion",
+      "reference": "lifeos/deliverables/evidence/LIFEOS-P1-011/02_no_reliable_suggestion_preview.jpg",
+      "reference_sha256": "55344c4ef11fc561afe1aaf0eef76e83a8fa06da5b62c88955e84adec4e56697",
+      "actual_evidence": "lifeos/engineering/LIFEOS-P3-106/evidence/rework-1/m005-no-suggestion-1280x1024.png",
+      "actual_sha256": "373c16c24cb334f34de6c3d4cddb8818905814efec75e83a9fcf09a7b1187f1b",
+      "anchors": ["shared rail/header/composer", "unselected Project empty state", "explicit no-reliable-suggestion wording", "recent-context cards", "AI disabled disclosure"],
+      "observation": "The no-suggestion state is explicit and visually distinct while preserving the shared shell. It does not fabricate an AI recommendation."
+    },
+    {
+      "state": "restricted-offline",
+      "reference": "lifeos/deliverables/evidence/LIFEOS-P1-011/03_permission_offline_preview.jpg",
+      "reference_sha256": "9e03b7673d9b3d74828bd1ad0ea806a8a769dd6ffed17c0d6cc7c2a1c5ae0661",
+      "actual_evidence": "lifeos/engineering/LIFEOS-P3-106/evidence/rework-1/m006-restricted-1280x1024.png",
+      "actual_sha256": "05fa817ab31c874e8505c5c4091f6a438dab56f86b51930003bb1a68d5442da6",
+      "anchors": ["shared shell", "separate offline and source-permission restriction banners", "restricted provenance placeholder", "AI restricted overlay", "capture remains local"],
+      "observation": "The state preserves the source hierarchy and makes offline/source/AI restrictions legible rather than reporting a false success."
+    }
+  ],
+  "limitations": "This closes only ABF-M-006's fixed-image comparison. ABF-M-007 and dynamic visual/a11y actions remain unexecuted and are recorded in dynamic-blocker.json."
+}

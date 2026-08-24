@@ -1,0 +1,97 @@
+{
+  "task": "LIFEOS-P3-094-rework-attempt-4",
+  "timestamp": "2026-08-22T10:10:39.339050+00:00",
+  "fixed_non_sensitive_text_only": true,
+  "items": [
+    {
+      "id": "A4-01-first-capture",
+      "status": "PASS",
+      "record_count": 1
+    },
+    {
+      "id": "A4-02-idempotent-repeat",
+      "status": "PASS"
+    },
+    {
+      "id": "A4-03-idempotency-conflict",
+      "status": "PASS",
+      "blocked": true
+    },
+    {
+      "id": "A4-04-cross-process-read",
+      "status": "PASS",
+      "new_process_exit": 0,
+      "record_count": 1
+    },
+    {
+      "id": "A4-05-render-before-clear",
+      "status": "PASS",
+      "page_exists_before_clear": true
+    },
+    {
+      "id": "A4-06-positive-clear-invalidates-view",
+      "status": "PASS",
+      "record_count_after": 0,
+      "old_page_exists_after": false,
+      "rerender_blocked": true
+    },
+    {
+      "id": "A4-07-invalidation-failure-preserves-db",
+      "status": "PASS",
+      "operation_failed": true,
+      "record_count_after": 1,
+      "page_state_unchanged": true
+    },
+    {
+      "id": "A4-08-atomic-failure-no-partial",
+      "status": "PASS",
+      "record_count_unchanged": true
+    },
+    {
+      "id": "A4-09-corrupt-db-fail-closed",
+      "status": "PASS",
+      "failed_closed": true
+    },
+    {
+      "id": "A4-10-prohibited-capabilities-closed",
+      "status": "PASS",
+      "network": false,
+      "http": false,
+      "tauri_ipc": false,
+      "export": false
+    },
+    {
+      "id": "A4-11-unit-suite-clean-copy",
+      "status": "PASS",
+      "exit_code": 0,
+      "test_count": 6
+    },
+    {
+      "id": "A4-12-task-local-residue-zero",
+      "status": "PASS",
+      "before": 0,
+      "after": 0
+    },
+    {
+      "id": "A4-13-history-read-only-hashes",
+      "status": "PASS",
+      "file_count": 56,
+      "before_after_equal": true
+    }
+  ],
+  "summary": {
+    "pass": 13,
+    "fail": 0,
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  },
+  "runtime_cleanup": {
+    "db_exists": false,
+    "html_exists": false,
+    "cache_exists": false,
+    "task_local_residue_after": 0
+  }
+}

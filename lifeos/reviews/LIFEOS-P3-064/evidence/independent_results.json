@@ -1,0 +1,28 @@
+{
+  "candidate": "/private/tmp/lifeos-p3064-final.8kvPed/LIFEOS-P3-063",
+  "candidate_hashes": {
+    "scripts/run_demo.py": "8eaff37b5b108f7046455e9752561a590f4ff7ffa27882dfd60245df9b5e04e4",
+    "src/mvp.py": "f35f5651477d1a6fd8cc6e16339b3c63d59ada23c7d00b10ad2954bf72bb632f",
+    "tests/test_mvp.py": "dd0e464cce7becefcd6959fc2768176c6e09516853c4059330bdcc2eb3ecdcf8"
+  },
+  "cases": [
+    "operator_input_identity_confirmation_and_boundary",
+    "same_key_same_text_is_idempotent_and_restart_readable",
+    "same_key_different_text_fails_without_overwrite",
+    "empty_input_fails_without_record_or_success_receipt",
+    "missing_synthetic_ack_fails_before_runtime_write",
+    "invalid_run_id_rejected_without_path_escape",
+    "precommit_failure_is_visible_and_rolls_back",
+    "unknown_project_is_rejected",
+    "static_source_has_no_network_or_external_capability_tokens"
+  ],
+  "fail": 0,
+  "not_implemented": 0,
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "pass": 9,
+  "scope": "independent synthetic CLI assertions in an isolated temporary copy only",
+  "task": "LIFEOS-P3-064",
+  "unknown": 0
+}

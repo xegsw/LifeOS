@@ -1,0 +1,247 @@
+{
+  "artifact": {
+    "artifact_id": "artifact-unprocessed",
+    "category": "unprocessed",
+    "content_hash": "79389d53775a1a6373370bf8b666bed9d69da895fdc66ee85fcf2def63144172",
+    "generation": 1,
+    "original_text": "SYNTH_NOTE_004：待核对恢复候选是否保留来源与版本。",
+    "project_id": "project-synth-orbit",
+    "source_id": "source-unprocessed",
+    "title": "未处理材料",
+    "version_id": "artifact-unprocessed:v1",
+    "version_no": 1
+  },
+  "candidate": {
+    "evidence_identity": [
+      {
+        "artifact_generation": 1,
+        "source_generation": 1,
+        "version_id": "artifact-decision:v1"
+      },
+      {
+        "artifact_generation": 1,
+        "source_generation": 1,
+        "version_id": "artifact-unprocessed:v1"
+      }
+    ],
+    "evidence_version_id": "artifact-unprocessed:v1",
+    "evidence_version_ids": [
+      "artifact-decision:v1",
+      "artifact-unprocessed:v1"
+    ],
+    "id": "derivation:next:project-synth-orbit:f5e1feeb9a96c159",
+    "label": "规则 / AI 建议·未确认",
+    "status": "unconfirmed",
+    "text": "核对恢复候选的来源、版本与确认状态"
+  },
+  "complete_evidence_revocation": {
+    "assertions": [
+      {
+        "actual": [
+          "artifact-decision:v1",
+          "artifact-unprocessed:v1"
+        ],
+        "case": "full_evidence_persisted",
+        "expected": [
+          "artifact-decision:v1",
+          "artifact-unprocessed:v1"
+        ],
+        "passed": true
+      },
+      {
+        "actual": "stale",
+        "case": "non_primary_evidence_makes_candidate_stale",
+        "expected": "stale",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "case": "stale_derivation_export_zero",
+        "expected": false,
+        "passed": true
+      },
+      {
+        "actual": false,
+        "case": "dependent_feedback_export_zero",
+        "expected": false,
+        "passed": true
+      },
+      {
+        "actual": false,
+        "case": "dependent_link_export_zero",
+        "expected": false,
+        "passed": true
+      },
+      {
+        "actual": null,
+        "case": "suggestion_consumption_blocked",
+        "expected": null,
+        "passed": true
+      }
+    ],
+    "result": {
+      "detail": null,
+      "method": "test_T_DERIVATION_COMPLETE_EVIDENCE_REVOCATION",
+      "priority": "P0",
+      "status": "PASS",
+      "test_id": "T-DERIVATION-COMPLETE-EVIDENCE-REVOCATION"
+    }
+  },
+  "confirmation_regression": {
+    "assertions": [
+      {
+        "actual": "derivation:next:project-synth-orbit:f5e1feeb9a96c159",
+        "case": "confirm:same_identity",
+        "expected": "derivation:next:project-synth-orbit:f5e1feeb9a96c159",
+        "passed": true
+      },
+      {
+        "actual": "confirmed",
+        "case": "confirm:status_preserved",
+        "expected": "confirmed",
+        "passed": true
+      },
+      {
+        "actual": "active",
+        "case": "confirm:feedback_trace_preserved",
+        "expected": "active",
+        "passed": true
+      },
+      {
+        "actual": true,
+        "case": "confirm:new_evidence_new_identity",
+        "expected": true,
+        "passed": true
+      },
+      {
+        "actual": "confirmed",
+        "case": "confirm:old_confirmation_traceable",
+        "expected": "confirmed",
+        "passed": true
+      },
+      {
+        "actual": "derivation:next:project-synth-orbit:f5e1feeb9a96c159",
+        "case": "edit_confirm:same_identity",
+        "expected": "derivation:next:project-synth-orbit:f5e1feeb9a96c159",
+        "passed": true
+      },
+      {
+        "actual": "edited_confirmed",
+        "case": "edit_confirm:status_preserved",
+        "expected": "edited_confirmed",
+        "passed": true
+      },
+      {
+        "actual": "active",
+        "case": "edit_confirm:feedback_trace_preserved",
+        "expected": "active",
+        "passed": true
+      },
+      {
+        "actual": true,
+        "case": "edit_confirm:new_evidence_new_identity",
+        "expected": true,
+        "passed": true
+      },
+      {
+        "actual": "edited_confirmed",
+        "case": "edit_confirm:old_confirmation_traceable",
+        "expected": "edited_confirmed",
+        "passed": true
+      }
+    ],
+    "result": {
+      "detail": null,
+      "method": "test_T_ID_CONFIRMATION_REGRESSION",
+      "priority": "P0",
+      "status": "PASS",
+      "test_id": "T-ID-CONFIRMATION-REGRESSION"
+    }
+  },
+  "generation_binding": {
+    "assertions": [
+      {
+        "actual": true,
+        "case": "artifact_generation_new_identity",
+        "expected": true,
+        "passed": true
+      },
+      {
+        "actual": "stale",
+        "case": "artifact_generation_old_stale",
+        "expected": "stale",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "case": "old_generation_export_zero",
+        "expected": false,
+        "passed": true
+      },
+      {
+        "actual": false,
+        "case": "old_generation_restore_zero",
+        "expected": false,
+        "passed": true
+      },
+      {
+        "actual": 0,
+        "case": "old_generation_feedback_zero",
+        "expected": 0,
+        "passed": true
+      },
+      {
+        "actual": 0,
+        "case": "old_generation_link_zero",
+        "expected": 0,
+        "passed": true
+      },
+      {
+        "actual": false,
+        "case": "old_generation_search_zero",
+        "expected": false,
+        "passed": true
+      },
+      {
+        "actual": true,
+        "case": "source_generation_new_identity",
+        "expected": true,
+        "passed": true
+      },
+      {
+        "actual": "stale",
+        "case": "source_generation_old_stale",
+        "expected": "stale",
+        "passed": true
+      },
+      {
+        "actual": "confirm",
+        "case": "unchanged_generation_happy_path",
+        "expected": "confirm",
+        "passed": true
+      }
+    ],
+    "result": {
+      "detail": null,
+      "method": "test_T_DERIVATION_GENERATION_BINDING",
+      "priority": "P0",
+      "status": "PASS",
+      "test_id": "T-DERIVATION-GENERATION-BINDING"
+    }
+  },
+  "important_link_contract": {
+    "confirmation_status": "confirmed",
+    "source_kind": "user_explicit"
+  },
+  "semantic_counts": {
+    "artifact": 4,
+    "artifact_version": 4,
+    "audit_entry": 4,
+    "authorization": 4,
+    "derivation": 1,
+    "derivation_input": 2,
+    "feedback": 0,
+    "important_link": 0,
+    "source": 4
+  }
+}

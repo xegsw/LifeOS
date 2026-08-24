@@ -1,0 +1,20 @@
+test_01_default_deny (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_02_unique_grant_allows_synthetic_only (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_03_deny_precedes_grant (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_04_grant_after_deny_still_denies (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_05_multiple_grants_are_ambiguous (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_06_revoke_fails_closed_and_is_idempotent (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_07_expired_is_rejected (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_08_context_mismatch_denies (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_09_confirm_required (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_10_repeated_decision_is_idempotent (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_11_key_conflict_is_visible (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_12_audit_has_confirmations_and_rejections (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_13_cli_preview_is_operator_visible (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_14_atomic_failure_leaves_no_permission_row (test_permission_runtime.PermissionRuntimeTests) ... ok
+test_15_reopen_preserves_revoke_audit_and_fail_closed (test_permission_runtime.PermissionRuntimeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.059s
+
+OK

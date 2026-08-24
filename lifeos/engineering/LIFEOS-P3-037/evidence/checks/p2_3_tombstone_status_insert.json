@@ -1,0 +1,43 @@
+{
+  "accepted_start": true,
+  "classification": "P1",
+  "direct_insert_matrix": {
+    "active_blocked": {
+      "accepted_by_db": true,
+      "row_count": 1
+    },
+    "cleaned": {
+      "accepted_by_db": true,
+      "row_count": 1
+    },
+    "cleanup_failed": {
+      "accepted_by_db": true,
+      "row_count": 1
+    },
+    "vendor_limited": {
+      "accepted_by_db": true,
+      "row_count": 1
+    }
+  },
+  "invalid_accepted_to_cleaned": {
+    "rejected": true,
+    "sqlite_error": "tombstone_status_transition_invalid"
+  },
+  "legal_transitions": [
+    {
+      "accepted_by_db": true,
+      "to": "active_blocked"
+    },
+    {
+      "accepted_by_db": true,
+      "to": "cleanup_pending"
+    },
+    {
+      "accepted_by_db": true,
+      "to": "cleaned"
+    }
+  ],
+  "residual": "P2-3",
+  "status": "FAIL",
+  "target_contract": "ordinary creation only accepts initial accepted"
+}

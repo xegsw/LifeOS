@@ -1,0 +1,195 @@
+[
+  {
+    "id": "q01",
+    "category": "exact",
+    "project_id": "project-alpha",
+    "text": "onboarding checklist",
+    "gold": [
+      "cu-001"
+    ],
+    "critical": true
+  },
+  {
+    "id": "q02",
+    "category": "semantic",
+    "project_id": "project-alpha",
+    "text": "continue alpha work",
+    "gold": [
+      "cu-001"
+    ],
+    "critical": false
+  },
+  {
+    "id": "q03",
+    "category": "recent_change",
+    "project_id": "project-alpha",
+    "text": "recent change",
+    "gold": [
+      "cu-014"
+    ],
+    "filters": {
+      "kind": "event"
+    }
+  },
+  {
+    "id": "q04",
+    "category": "confirmed_decision",
+    "project_id": "project-alpha",
+    "text": "local storage",
+    "gold": [
+      "cu-002"
+    ],
+    "filters": {
+      "kind": "decision",
+      "confirmation_status": "confirmed"
+    },
+    "critical": true
+  },
+  {
+    "id": "q05",
+    "category": "open_action",
+    "project_id": "project-alpha",
+    "text": "backup restore",
+    "gold": [
+      "cu-003"
+    ],
+    "filters": {
+      "kind": "action",
+      "confirmation_status": "confirmed"
+    },
+    "critical": true
+  },
+  {
+    "id": "q06",
+    "category": "feedback_rejected",
+    "project_id": "project-alpha",
+    "text": "launch announcement",
+    "gold": [],
+    "expected_reason": "feedback_excluded"
+  },
+  {
+    "id": "q07",
+    "category": "feedback_accepted",
+    "project_id": "project-alpha",
+    "text": "onboarding copy",
+    "gold": [
+      "cu-007"
+    ]
+  },
+  {
+    "id": "q08",
+    "category": "conflict",
+    "project_id": "project-alpha",
+    "text": "pricing contradictory",
+    "gold": [
+      "cu-005"
+    ]
+  },
+  {
+    "id": "q09",
+    "category": "unreachable",
+    "project_id": "project-beta",
+    "text": "schedule unreachable",
+    "gold": [],
+    "expected_reason": "source_unreachable"
+  },
+  {
+    "id": "q10",
+    "category": "permission",
+    "project_id": "project-beta",
+    "text": "restricted roadmap",
+    "gold": [],
+    "expected_reason": "permission_restricted"
+  },
+  {
+    "id": "q11",
+    "category": "cross_project",
+    "project_id": "project-alpha",
+    "text": "onboarding checklist",
+    "gold": [
+      "cu-001"
+    ]
+  },
+  {
+    "id": "q12",
+    "category": "deleted",
+    "project_id": "project-alpha",
+    "text": "deleted hidden token",
+    "gold": [],
+    "expected_reason": "deleted_or_retracted"
+  },
+  {
+    "id": "q13",
+    "category": "retracted",
+    "project_id": "project-alpha",
+    "text": "retracted hidden memo",
+    "gold": [],
+    "expected_reason": "deleted_or_retracted"
+  },
+  {
+    "id": "q14",
+    "category": "disconnected",
+    "project_id": "project-alpha",
+    "text": "disconnected hidden source",
+    "gold": [],
+    "expected_reason": "source_disconnected"
+  },
+  {
+    "id": "q15",
+    "category": "old_queue",
+    "project_id": "project-alpha",
+    "text": "old queue obsolete",
+    "gold": [],
+    "expected_reason": "stale_generation"
+  },
+  {
+    "id": "q16",
+    "category": "exact",
+    "project_id": "project-beta",
+    "text": "release checklist",
+    "gold": [
+      "cu-018"
+    ],
+    "critical": true
+  },
+  {
+    "id": "q17",
+    "category": "confirmed_decision",
+    "project_id": "project-gamma",
+    "text": "user research interviews",
+    "gold": [
+      "cu-032"
+    ],
+    "critical": true
+  },
+  {
+    "id": "q18",
+    "category": "open_action",
+    "project_id": "project-gamma",
+    "text": "discovery interview",
+    "gold": [
+      "cu-033"
+    ],
+    "critical": true
+  },
+  {
+    "id": "q19",
+    "category": "exact",
+    "project_id": "project-delta",
+    "text": "infrastructure cost budget",
+    "gold": [
+      "cu-047"
+    ],
+    "critical": true
+  },
+  {
+    "id": "q20",
+    "category": "open_action",
+    "project_id": "project-delta",
+    "text": "pricing assumptions",
+    "gold": [
+      "cu-048"
+    ],
+    "critical": true
+  }
+]

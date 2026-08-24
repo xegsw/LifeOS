@@ -1,0 +1,128 @@
+{
+  "task": "LIFEOS-P3-074",
+  "summary": {
+    "PASS": 19,
+    "FAIL": 0,
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 0,
+    "uncovered": 0
+  },
+  "results": [
+    {
+      "id": "IC-01",
+      "name": "IC-01 synthetic boundary",
+      "status": "PASS",
+      "expected": "合成／临时沙盒"
+    },
+    {
+      "id": "IC-02",
+      "name": "IC-02 explicit confirmation",
+      "status": "PASS",
+      "expected": "精确 `CONFIRM`"
+    },
+    {
+      "id": "IC-03",
+      "name": "IC-03 fail-closed",
+      "status": "PASS",
+      "expected": "fail-closed"
+    },
+    {
+      "id": "IC-04",
+      "name": "IC-04 recovery disclosure",
+      "status": "PASS",
+      "expected": "尚未恢复"
+    },
+    {
+      "id": "IC-05",
+      "name": "IC-05 export boundary",
+      "status": "PASS",
+      "expected": "合成临时沙盒"
+    },
+    {
+      "id": "IC-06",
+      "name": "IC-06 alpha not launched",
+      "status": "PASS",
+      "expected": "未启动 Alpha"
+    },
+    {
+      "id": "IC-07",
+      "name": "IC-07 Stage 4 not admitted",
+      "status": "PASS",
+      "expected": "未准入"
+    },
+    {
+      "id": "IC-08",
+      "name": "IC-08 R-0040 retained",
+      "status": "PASS",
+      "expected": "Open / Conditional"
+    },
+    {
+      "id": "IC-09",
+      "name": "IC-09 no external action",
+      "status": "PASS",
+      "expected": "无外部动作"
+    },
+    {
+      "id": "IC-10",
+      "name": "IC-10 audit traceability",
+      "status": "PASS",
+      "expected": "可追溯审计"
+    },
+    {
+      "id": "IC-11",
+      "name": "IC-11 no silent overwrite",
+      "status": "PASS",
+      "expected": "不得静默覆盖"
+    },
+    {
+      "id": "IC-12",
+      "name": "IC-12 no half product",
+      "status": "PASS",
+      "expected": "半成品"
+    },
+    {
+      "id": "FC-01",
+      "name": "FC-01 real alpha claim",
+      "status": "PASS",
+      "forbidden": "Alpha 已启动"
+    },
+    {
+      "id": "FC-02",
+      "name": "FC-02 Stage 4 admitted claim",
+      "status": "PASS",
+      "forbidden": "已准入 Stage 4"
+    },
+    {
+      "id": "FC-03",
+      "name": "FC-03 real export claim",
+      "status": "PASS",
+      "forbidden": "真实文件已可导出"
+    },
+    {
+      "id": "FC-04",
+      "name": "FC-04 real recovery claim",
+      "status": "PASS",
+      "forbidden": "真实恢复已可用"
+    },
+    {
+      "id": "IC-13",
+      "name": "clean-copy first read",
+      "status": "PASS"
+    },
+    {
+      "id": "IC-14",
+      "name": "repeat read idempotence",
+      "status": "PASS"
+    },
+    {
+      "id": "IC-15",
+      "name": "version-update reread equivalent",
+      "status": "PASS"
+    }
+  ],
+  "source_sha256": "3f67630b41ee2c738698f75c0169eb433e4e4900cb27c3c760cc88ed6bafb2b0",
+  "temporary_copy_cleaned": true
+}

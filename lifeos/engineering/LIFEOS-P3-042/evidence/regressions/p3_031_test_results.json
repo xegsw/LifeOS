@@ -1,0 +1,339 @@
+{
+  "task_id": "LIFEOS-P3-031",
+  "scope": "synthetic empty SQLite only",
+  "python": "3.9.6",
+  "sqlite": "3.51.0",
+  "migration": "/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-031/migrations/001_candidate_schema.sql",
+  "summary": {
+    "P0": {
+      "PASS": 18,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0
+    },
+    "P1": {
+      "PASS": 18,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0
+    },
+    "P2": {
+      "PASS": 8,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0
+    },
+    "total": {
+      "PASS": 44,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0
+    }
+  },
+  "results": [
+    {
+      "id": "DB-P0-01",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 3.96,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-02",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 2.15,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-03",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 1.92,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-04",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 1.69,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-05",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 1.6,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-06",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 1.78,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-07",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 0.01,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-08",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 0.01,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-09",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 1.66,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-10",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 1.72,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-11",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 1.67,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-12",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-13",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 1.53,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-14",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 1.62,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-15",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 1.43,
+      "detail": ""
+    },
+    {
+      "id": "IPC-P0-01",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 0.01,
+      "detail": ""
+    },
+    {
+      "id": "IPC-P0-02",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 0.01,
+      "detail": ""
+    },
+    {
+      "id": "IPC-P0-03",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-01",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 1.34,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-02",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 1.71,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-03",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 1.75,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-04",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 1.95,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-05",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-06",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 1.67,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-07",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 2.04,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-08",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 1.42,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-09",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 1.56,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-10",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 1.39,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-11",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 1.68,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-12",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 6.14,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-13",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 42.32,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-14",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 14.32,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-15",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 12.32,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-16",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 10.47,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-17",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 12.48,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-18",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 11.55,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-01",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 1.47,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-02",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 0.04,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-03",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-04",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 0.01,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-05",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-06",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 1.68,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-07",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 1.39,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-08",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "detail": ""
+    }
+  ]
+}

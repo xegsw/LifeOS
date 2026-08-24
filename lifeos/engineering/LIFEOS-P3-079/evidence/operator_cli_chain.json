@@ -1,0 +1,61 @@
+[
+  {
+    "command": "save",
+    "exit_code": 0,
+    "result": {
+      "duplicate": false,
+      "ok": true,
+      "record_id": "rec-032acf997c01772a",
+      "saved": true
+    },
+    "stderr": ""
+  },
+  {
+    "command": "permission",
+    "exit_code": 0,
+    "result": {
+      "decision": "grant",
+      "ok": true,
+      "permission_id": "perm-38eeaa37bab25ed3"
+    },
+    "stderr": ""
+  },
+  {
+    "command": "preview-restore",
+    "exit_code": 0,
+    "result": {
+      "allowed": "allowed_local_synthetic",
+      "boundaries": {
+        "ai_consumption": "disabled",
+        "cloud": "disabled",
+        "export": "not_used",
+        "external_action": "none",
+        "external_user": "not_used",
+        "l3": "not_used",
+        "multi_device": "not_used",
+        "network": "disabled",
+        "real_paths": "not_used",
+        "sync": "not_used",
+        "tauri_ipc": "not_used",
+        "vault": "not_used"
+      },
+      "ok": true,
+      "record_id": "rec-032acf997c01772a",
+      "source": "operator_local_entry",
+      "status": "ready",
+      "version": 1
+    },
+    "stderr": ""
+  },
+  {
+    "command": "confirm-restore",
+    "exit_code": 0,
+    "result": {
+      "idempotent": false,
+      "ok": true,
+      "record_id": "rec-032acf997c01772a",
+      "recovered": true
+    },
+    "stderr": ""
+  }
+]

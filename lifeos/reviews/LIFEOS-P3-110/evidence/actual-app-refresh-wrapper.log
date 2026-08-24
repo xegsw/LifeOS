@@ -1,0 +1,6 @@
+runtime_start status=restricted_offline db_scope=task_local
+ipc_result command=runtime_status status=restricted_offline
+started_at_utc=2026-08-24T05:42:11.515829Z
+fixture=/private/tmp/lifeos-p3-104-p3-110-review-nominal-v1
+ipc_result command=capture_record status=saved record_count=1 repeated=false
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=1

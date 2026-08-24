@@ -1,0 +1,45 @@
+{
+  "schema_version": "p3-107-independent-test-design-v1",
+  "task_id": "LIFEOS-P3-107",
+  "abf": {
+    "id": "ABF-P3-107-v1",
+    "expected_sha256": "1088f7bcfa3a014c526ff3e13d5a9fe923053ddbc877938d362a3aa2b038acee"
+  },
+  "created_at": "2026-08-23T22:10:23+08:00",
+  "created_before_submission_runner_read": true,
+  "independence_statement": "This design was authored from the delivered P3-107 task card, frozen ABF and L1 governance only. It does not import, execute, copy or rely on P3-104/P3-106 submitted runners, test identifiers, fixture identifiers, result structures or pass conclusions.",
+  "fixture_policy": {
+    "content": "Only fixed, conspicuously non-sensitive short text created for this review.",
+    "db_and_app_paths": "Fresh direct children of /private/tmp matching the ABF regular expressions, preceded by lstat-missing and ancestor-no-link checks.",
+    "cleanup": "Only exact paths recorded in the per-run ledger; no glob, find or prefix cleanup."
+  },
+  "matrix": [
+    {"id":"IR-107-001","abf":"ABF-M-001","operation":"Verify delivery authority, ABF hash, task/ABF identity, configuration record, allowed write paths and pre-action ambiguity.","expected":"All values and contracts match; no ambiguity."},
+    {"id":"IR-107-002","abf":"ABF-M-002","operation":"Hash this independent design before reading submitted runner code or structured submitted results.","expected":"Recorded hash and time prove order; test plan remains unchanged."},
+    {"id":"IR-107-003","abf":"ABF-M-003","operation":"Recompute fixed candidate, Engineering and PM Manifest entries and detect missing, extra, bad or self-referential entries.","expected":"All protected inputs match and manifests are reproducible."},
+    {"id":"IR-107-004","abf":"ABF-M-004","operation":"Create one clean work copy without target and run locked offline test, build and bundle; collect network-negative logs.","expected":"Each command succeeds without network access or mutation of live candidate."},
+    {"id":"IR-107-005","abf":"ABF-M-005","operation":"Independently inspect renderer invokes, capability permissions, runtime provenance, path-contract literals and dependency lock inheritance.","expected":"Exactly capture_record, get_today and runtime_status; no generic file/path/DB/shell/process/network capability."},
+    {"id":"IR-107-006","abf":"ABF-M-006","operation":"Compare each supplied 1280x1024 actual-app state image with its frozen Stitch reference; inspect source for screenshot/remote-resource substitution.","expected":"Shared layout and state anchors are visible in each state; no reference-image or remote-resource fraud."},
+    {"id":"IR-107-007","abf":"ABF-M-007","operation":"Operate actual app at existing display and narrow app window; verify scrolling, composer, capture, navigation and error disclosure without changing system display settings.","expected":"All key controls remain reachable and truthful at 1160x768-equivalent and 700x760 window sizes."},
+    {"id":"IR-107-008","abf":"ABF-M-008","fixture":"lifeos-p3-104-p3-107-review-nominal-r1","operation":"First actual-app capture using fixed text; inspect backend response, today state, audit and sentinel.","expected":"Success appears only after saved backend result and matching persistent state."},
+    {"id":"IR-107-009","abf":"ABF-M-009","fixture":"lifeos-p3-104-p3-107-review-repeat-r1","operation":"Repeat the same capture and verify idempotent response/state.","expected":"No duplicate semantic write; truthful repeat receipt."},
+    {"id":"IR-107-010","abf":"ABF-M-009","fixture":"lifeos-p3-104-p3-107-review-conflict-r1","operation":"Submit a controlled conflicting capture.","expected":"Conflict is disclosed without an incorrect write."},
+    {"id":"IR-107-011","abf":"ABF-M-009","fixture":"lifeos-p3-104-p3-107-review-failure-r1","operation":"Inject an authorized controlled persistence failure before capture.","expected":"Failure is disclosed and DB/audit/sentinel show zero new committed record."},
+    {"id":"IR-107-012","abf":"ABF-M-010","fixture":"lifeos-p3-104-p3-107-review-reopen-r1","operation":"Refresh, navigate across all three states, close the actual app and reopen it.","expected":"Today state is backend-authoritative and reopening is not substituted by refresh."},
+    {"id":"IR-107-013","abf":"ABF-M-011","fixture":"lifeos-p3-104-p3-107-review-failure-r1","operation":"Invoke unknown IPC and known IPC with an additional field; operate each declared-unimplemented control.","expected":"All are rejected or explicitly inert with no DB/audit/IPC side effects."},
+    {"id":"IR-107-014","abf":"ABF-M-012","fixture":"lifeos-p3-104-p3-107-review-path-r1","operation":"Test normalization, external path, parent/final symlink, hardlink, FIFO and directory fixtures individually.","expected":"Every case fails closed before any target or DB change."},
+    {"id":"IR-107-015","abf":"ABF-M-013","operation":"Test dangling final DB, journal, WAL and SHM, then independent content and schema tamper fixtures.","expected":"Every state is rejected before writes and without changing sentinels."},
+    {"id":"IR-107-016","abf":"ABF-M-014","fixture":"lifeos-p3-104-p3-107-review-a11y-r1","operation":"Use actual Tab, Enter, skip link, focus flow and reduced-motion setting supported by the app only.","expected":"Keyboard path works; focus is visible; motion choice is respected; no system-setting change."},
+    {"id":"IR-107-017","abf":"ABF-M-015","operation":"Scan static assets, bundle metadata and screenshots for remote URLs, reference-image embedding, real data and network requests.","expected":"All prohibited-resource counts are zero."},
+    {"id":"IR-107-018","abf":"ABF-M-016","operation":"Recompute protected hashes, exact-ledger cleanup and final Evidence negative gate.","expected":"No protected drift, no task-local residue, and verifier exits nonzero for missing/failed/leaking rows."}
+  ],
+  "dynamic_closure_required": [
+    "IR-107-007", "IR-107-008", "IR-107-009", "IR-107-010", "IR-107-011", "IR-107-012", "IR-107-013", "IR-107-014", "IR-107-015", "IR-107-016"
+  ],
+  "stop_conditions": [
+    "Any action requiring a path, data type, command, capability or display-setting change outside ABF.",
+    "A fixed input hash mismatch of unknown provenance.",
+    "No safe way to operate the actual app offline in the allowed environment.",
+    "Any candidate mutation, real data access, network activity or historical-asset mutation."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "spike": "SP-02",
+  "fixture_version": "fixture-pack-v1-sp02",
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.9.6"
+  },
+  "scope": "synthetic_fixture_only",
+  "result": "PASS",
+  "checks": {
+    "readonly_windows_identical": true,
+    "readonly_content_hash_changes_zero": true,
+    "readonly_metadata_changes_zero": true,
+    "write_rename_delete_sidecar_obsidian_calls_zero": true,
+    "incremental_add_modify_delete_reconciled": true,
+    "missed_watcher_event_reconciled": true,
+    "offline_add_modify_delete_reconciled": true,
+    "explicit_moves_at_least_95_percent": true,
+    "wrong_strong_merges_zero": true,
+    "same_content_distinct_artifacts": true,
+    "copy_delete_candidate_not_merge": true,
+    "parse_failure_preserves_last_valid": true,
+    "normal_markdown_structures_parsed": true,
+    "boundary_read_index_egress_zero": true,
+    "unreachable_not_latest_and_no_reads": true,
+    "recovery_reconciles": true,
+    "disconnect_stops_watcher_and_reads": true,
+    "privacy_forbidden_hits_zero": true
+  },
+  "counts": {
+    "tests": 24,
+    "passed": 24,
+    "failed": 0,
+    "readonly_windows": 10,
+    "explicit_moves": 20,
+    "explicit_move_total": 20,
+    "wrong_strong_merges": 0,
+    "boundary_reads": 0,
+    "boundary_indexes": 0,
+    "boundary_egress": 0,
+    "disconnect_reads": 0,
+    "privacy_hits": 0
+  },
+  "readonly_call_counts": {
+    "writes": 0,
+    "renames": 0,
+    "deletes": 0,
+    "sidecars": 0,
+    "obsidian_writes": 0
+  },
+  "metadata_assertion": {
+    "strong": [
+      "relative tree",
+      "file bytes/hash",
+      "size",
+      "mtime_ns",
+      "mode",
+      "file_key within each scan window"
+    ],
+    "not_strong": [
+      "atime",
+      "birthtime",
+      "Finder metadata",
+      "cloud-provider metadata",
+      "cross-platform inode stability"
+    ]
+  }
+}

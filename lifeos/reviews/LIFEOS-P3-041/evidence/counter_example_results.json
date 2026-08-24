@@ -1,0 +1,313 @@
+{
+  "total_attacks": 38,
+  "passed": 19,
+  "failed": 19,
+  "p1_bypasses": 7,
+  "p2_bypasses": 12,
+  "results": [
+    {
+      "group": "PARENT",
+      "name": "update_processor_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "processor changed local->external-cloud while active: gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "PARENT",
+      "name": "update_purpose_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "purpose changed test->production while active: gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "PARENT",
+      "name": "update_location_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "location changed device->remote while active: gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "PARENT",
+      "name": "update_grantor_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "grantor_ref changed while active: gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "PARENT",
+      "name": "update_expiry_to_indefinite_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "expires_mode changed at->indefinite while active: gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "PARENT",
+      "name": "update_policy_version_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "policy_version changed while active: gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "PARENT",
+      "name": "compound_field_update_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "processor+purpose+location all changed while active: gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "PARENT",
+      "name": "update_valid_from_active",
+      "severity": "P2",
+      "passed": false,
+      "detail": "valid_from_ms changed while active: gen unchanged, no audit (P2: minor field)",
+      "sqlite_error": null
+    },
+    {
+      "group": "UPSERT",
+      "name": "scope_on_conflict_do_update",
+      "severity": "P1",
+      "passed": true,
+      "detail": "ON CONFLICT rejected",
+      "sqlite_error": "active_authorization_scope_insert_forbidden"
+    },
+    {
+      "group": "UPSERT",
+      "name": "action_on_conflict_do_update",
+      "severity": "P1",
+      "passed": true,
+      "detail": "ON CONFLICT rejected",
+      "sqlite_error": "active_authorization_action_insert_forbidden"
+    },
+    {
+      "group": "UPSERT",
+      "name": "policy_on_conflict_do_update",
+      "severity": "P1",
+      "passed": true,
+      "detail": "ON CONFLICT rejected",
+      "sqlite_error": "active_authorization_policy_insert_forbidden"
+    },
+    {
+      "group": "UPSERT",
+      "name": "scope_on_conflict_do_nothing",
+      "severity": "P1",
+      "passed": true,
+      "detail": "ON CONFLICT DO NOTHING rejected",
+      "sqlite_error": "active_authorization_scope_insert_forbidden"
+    },
+    {
+      "group": "MULTI",
+      "name": "multi_row_scope_effect_update",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Multi-row UPDATE rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "MULTI",
+      "name": "multi_row_rebind_all_scopes",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Multi-row rebind rejected",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "AUDIT",
+      "name": "preposition_fake_retirement",
+      "severity": "P2",
+      "passed": false,
+      "detail": "Pre-positioned audit/outbox allowed fake retirement (P2: known candidate limitation)",
+      "sqlite_error": null
+    },
+    {
+      "group": "AUDIT",
+      "name": "delete_audit_after_retirement",
+      "severity": "P2",
+      "passed": false,
+      "detail": "audit_entry deleted after retirement - evidence chain gap (P2: evidence integrity)",
+      "sqlite_error": null
+    },
+    {
+      "group": "AUDIT",
+      "name": "delete_outbox_after_retirement",
+      "severity": "P2",
+      "passed": false,
+      "detail": "outbox_job deleted after retirement - evidence chain gap (P2: evidence integrity)",
+      "sqlite_error": null
+    },
+    {
+      "group": "AUDIT",
+      "name": "update_outbox_status_after_retirement",
+      "severity": "P2",
+      "passed": false,
+      "detail": "outbox_job status modified after retirement (P2: evidence integrity)",
+      "sqlite_error": null
+    },
+    {
+      "group": "AUDIT",
+      "name": "update_audit_action_after_retirement",
+      "severity": "P2",
+      "passed": false,
+      "detail": "audit_entry action_code modified after retirement (P2: evidence integrity)",
+      "sqlite_error": null
+    },
+    {
+      "group": "GEN",
+      "name": "increase_generation_active",
+      "severity": "P2",
+      "passed": false,
+      "detail": "generation increased 1->5 while active without status change (P2: evidence integrity)",
+      "sqlite_error": null
+    },
+    {
+      "group": "GEN",
+      "name": "bump_then_retire_with_prepositioned_evidence",
+      "severity": "P2",
+      "passed": false,
+      "detail": "generation bumped then retired with pre-positioned evidence (P2: evidence integrity)",
+      "sqlite_error": null
+    },
+    {
+      "group": "TERM",
+      "name": "update_scope_effect_revoked",
+      "severity": "P2",
+      "passed": false,
+      "detail": "scope effect changed allow->deny after revocation - historical evidence altered (P2)",
+      "sqlite_error": null
+    },
+    {
+      "group": "TERM",
+      "name": "insert_scope_revoked",
+      "severity": "P2",
+      "passed": false,
+      "detail": "new scope INSERTed after revocation - historical authorization semantics changed (P2)",
+      "sqlite_error": null
+    },
+    {
+      "group": "TERM",
+      "name": "update_action_value_revoked",
+      "severity": "P2",
+      "passed": false,
+      "detail": "action value changed read->export_candidate after revocation (P2: historical integrity)",
+      "sqlite_error": null
+    },
+    {
+      "group": "TERM",
+      "name": "update_policy_training_revoked",
+      "severity": "P2",
+      "passed": false,
+      "detail": "policy training_allowed changed after revocation (P2: historical integrity)",
+      "sqlite_error": null
+    },
+    {
+      "group": "VER",
+      "name": "v2_supersede_revoked_not_superseded",
+      "severity": "P1",
+      "passed": true,
+      "detail": "v2 supersede revoked rejected",
+      "sqlite_error": "authorization_old_version_not_superseded"
+    },
+    {
+      "group": "VER",
+      "name": "v3_supersede_v1_skip_v2",
+      "severity": "P1",
+      "passed": true,
+      "detail": "v3 skip supersede rejected",
+      "sqlite_error": "authorization_old_version_not_superseded"
+    },
+    {
+      "group": "VER",
+      "name": "v2_wrong_logical_key_supersedes",
+      "severity": "P1",
+      "passed": true,
+      "detail": "wrong logical_key supersede rejected",
+      "sqlite_error": "authorization_old_version_not_superseded"
+    },
+    {
+      "group": "VER",
+      "name": "v3_supersedes_v1_wrong_version_gap",
+      "severity": "P1",
+      "passed": true,
+      "detail": "version gap supersede rejected",
+      "sqlite_error": "authorization_old_version_not_superseded"
+    },
+    {
+      "group": "VER",
+      "name": "concurrent_active_v1_v2",
+      "severity": "P1",
+      "passed": true,
+      "detail": "concurrent active rejected",
+      "sqlite_error": "authorization_old_version_not_superseded"
+    },
+    {
+      "group": "TRIG",
+      "name": "compound_status_generation_update",
+      "severity": "P2",
+      "passed": true,
+      "detail": "Compound status+generation UPDATE works correctly (legal path verified)",
+      "sqlite_error": null
+    },
+    {
+      "group": "TRIG",
+      "name": "recursive_trigger_scope_update",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Scope UPDATE rejected with recursive triggers",
+      "sqlite_error": "active_authorization_scope_update_forbidden"
+    },
+    {
+      "group": "TRIG",
+      "name": "fk_off_insert_orphan_child",
+      "severity": "P2",
+      "passed": true,
+      "detail": "Orphan child INSERT rejected",
+      "sqlite_error": "FOREIGN KEY constraint failed"
+    },
+    {
+      "group": "TRIG",
+      "name": "fk_off_trigger_bypass_orphan",
+      "severity": "P2",
+      "passed": true,
+      "detail": "Orphan INSERT rejected",
+      "sqlite_error": "FOREIGN KEY constraint failed"
+    },
+    {
+      "group": "LEGAL",
+      "name": "proposed_granted_active",
+      "severity": "P2",
+      "passed": true,
+      "detail": "proposed->granted->active legal path works",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "proposed_direct_active",
+      "severity": "P2",
+      "passed": true,
+      "detail": "proposed->active legal path works",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "supersede_new_version_activate",
+      "severity": "P2",
+      "passed": true,
+      "detail": "Legal supersede+new version activation works",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "terminal_child_cleanup_revoked",
+      "severity": "P2",
+      "passed": true,
+      "detail": "Terminal child cleanup works after revocation",
+      "sqlite_error": null
+    }
+  ]
+}

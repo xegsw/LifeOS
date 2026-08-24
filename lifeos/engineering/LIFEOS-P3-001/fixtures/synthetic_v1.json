@@ -1,0 +1,65 @@
+{
+  "fixture_id": "lifeos-p3-007-synthetic-v4",
+  "classification": "synthetic-disposable",
+  "persona": "SYNTH_PERSON_001",
+  "project": {
+    "id": "project-synth-orbit",
+    "title": "合成轨道计划"
+  },
+  "captures": [
+    {
+      "id": "capture-stop",
+      "source_id": "source-stop",
+      "artifact_id": "artifact-stop",
+      "category": "stopping_point",
+      "title": "上次停点",
+      "original_text": "SYNTH_NOTE_001：已完成离线草稿结构，下一次从校验恢复包开始。"
+    },
+    {
+      "id": "capture-change",
+      "source_id": "source-change",
+      "artifact_id": "artifact-change",
+      "category": "change",
+      "title": "近期变化",
+      "original_text": "SYNTH_NOTE_002：测试夹具版本从零版更新为一版。"
+    },
+    {
+      "id": "capture-decision",
+      "source_id": "source-decision",
+      "artifact_id": "artifact-decision",
+      "category": "decision",
+      "title": "已确认决定",
+      "original_text": "SYNTH_NOTE_003：决定先验证权威保存，再运行派生处理。"
+    },
+    {
+      "id": "capture-unprocessed",
+      "source_id": "source-unprocessed",
+      "artifact_id": "artifact-unprocessed",
+      "category": "unprocessed",
+      "title": "未处理材料",
+      "original_text": "SYNTH_NOTE_004：待核对恢复候选是否保留来源与版本。"
+    }
+  ],
+  "secondary_project": {
+    "id": "project-synth-aurora",
+    "title": "合成极光计划"
+  },
+  "secondary_captures": [
+    {
+      "id": "capture-b-decision",
+      "source_id": "source-b-decision",
+      "artifact_id": "artifact-b-decision",
+      "category": "decision",
+      "title": "另一项目决定",
+      "original_text": "SYNTH_NOTE_B001：仅属于合成极光计划的决定。"
+    },
+    {
+      "id": "capture-b-unprocessed",
+      "source_id": "source-b-unprocessed",
+      "artifact_id": "artifact-b-unprocessed",
+      "category": "unprocessed",
+      "title": "另一项目材料",
+      "original_text": "SYNTH_NOTE_B002：仅属于合成极光计划的待处理材料。"
+    }
+  ]
+}

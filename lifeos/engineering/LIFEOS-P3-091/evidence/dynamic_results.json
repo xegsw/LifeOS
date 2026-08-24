@@ -1,0 +1,29 @@
+{
+  "environment": "Google Chrome (com.google.Chrome) controlled by Computer Use @oai/sky",
+  "entry": "file:///private/tmp/lifeos-p3-091-clean-app/default-recovery.html",
+  "preflight": "PASS: new Chrome tab loaded task-local file: page and exposed the page accessibility tree",
+  "pass": 15,
+  "fail": 0,
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "unknown": 0,
+  "notImplemented": 0,
+  "results": [
+    {"id":"D-01","result":"PASS","detail":"default page visibly labels fixed non-sensitive demo text, user confirmation, synthetic state and AI off"},
+    {"id":"D-02","result":"PASS","detail":"non-sensitive text confirms into current page display only"},
+    {"id":"D-03","result":"PASS","detail":"grant plus exact CONFIRM shows synthetic-only receipt"},
+    {"id":"D-04","result":"PASS","detail":"repeat CONFIRM produces idempotent receipt"},
+    {"id":"D-05","result":"PASS","detail":"revoke clears preview and receipt, retaining fail-closed state"},
+    {"id":"D-06","result":"PASS","detail":"simulated failure clears display and discloses no real save/authorization/restore/process"},
+    {"id":"D-07","result":"PASS","detail":"reload after confirmed display returns to empty default state"},
+    {"id":"D-08","result":"PASS","detail":"no-reliable-suggestion page prevents fabricated recovery and states no processing"},
+    {"id":"D-09","result":"PASS","detail":"restricted/offline page remains default-deny and has no restore path"},
+    {"id":"D-10","result":"PASS","detail":"three-page relative navigation works in file: context"},
+    {"id":"D-11","result":"PASS","detail":"skip link and labelled landmarks are exposed in Chrome accessibility tree"},
+    {"id":"D-12","result":"PASS","detail":"controls expose focusable buttons/text areas for Tab/Enter path"},
+    {"id":"D-13","result":"PASS","detail":"wide visual record saved"},
+    {"id":"D-14","result":"PASS","detail":"narrow/zoomed visual record saved"},
+    {"id":"D-15","result":"PASS","detail":"static companion checks all prohibited real-capability markers closed"}
+  ]
+}

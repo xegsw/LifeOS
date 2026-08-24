@@ -1,0 +1,2166 @@
+[
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "saved",
+        "expected": "saved",
+        "name": "capture succeeds after bounded cleanup retry",
+        "passed": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "two captures persist",
+        "passed": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "two audits persist",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no staging or sidecar residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "return": "saved",
+      "unlink_attempts": 2
+    },
+    "ended_at": "2026-08-22T13:53:00.885515+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M001-transient-staging-unlink",
+    "fixture_id": "m001-transient-staging-unlink",
+    "row_id": "ABF-M-001",
+    "started_at": "2026-08-22T13:53:00.876810+00:00",
+    "test_id": "P3-096-M001-transient-staging-unlink"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243836,
+          "nlink": 1,
+          "sha256": "1dfdd4118ff96aea152c0afdc1e3a3d4ce3e125f46c93893eac3de6d2722e831",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243836,
+          "nlink": 1,
+          "sha256": "1dfdd4118ff96aea152c0afdc1e3a3d4ce3e125f46c93893eac3de6d2722e831",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB state unchanged or absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "audit": 1,
+          "captures": 1
+        },
+        "expected": {
+          "audit": 1,
+          "captures": 1
+        },
+        "name": "counts unchanged",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243840,
+          "nlink": 1,
+          "sha256": "a5e2a34598465258a6a7df89e050d342d38cc6f898ddd6e1e674daf568c9738b",
+          "size": 666,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243840,
+          "nlink": 1,
+          "sha256": "a5e2a34598465258a6a7df89e050d342d38cc6f898ddd6e1e674daf568c9738b",
+          "size": 666,
+          "type": "regular"
+        },
+        "name": "page restored byte-for-byte",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no staging or sidecar residue",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243835,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243835,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "name": "sentinel unchanged",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcome": "CaptureError"
+    },
+    "ended_at": "2026-08-22T13:53:00.888711+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M002-persistent-staging-existing",
+    "fixture_id": "m002-persistent-staging-existing",
+    "row_id": "ABF-M-002",
+    "started_at": "2026-08-22T13:53:00.885633+00:00",
+    "test_id": "P3-096-M002-persistent-staging-existing"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "DB state unchanged or absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "audit": null,
+          "captures": null
+        },
+        "expected": {
+          "audit": null,
+          "captures": null
+        },
+        "name": "counts unchanged",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243844,
+          "nlink": 1,
+          "sha256": "dc296369bca2534acea4d090e60cdc9025d35d47541b3fd246d6d14ab108c6fa",
+          "size": 47,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243844,
+          "nlink": 1,
+          "sha256": "dc296369bca2534acea4d090e60cdc9025d35d47541b3fd246d6d14ab108c6fa",
+          "size": 47,
+          "type": "regular"
+        },
+        "name": "page restored byte-for-byte",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no staging or sidecar residue",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243843,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243843,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "name": "sentinel unchanged",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcome": "CaptureError"
+    },
+    "ended_at": "2026-08-22T13:53:00.890631+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M003-persistent-staging-new",
+    "fixture_id": "m003-persistent-staging-new",
+    "row_id": "ABF-M-003",
+    "started_at": "2026-08-22T13:53:00.888820+00:00",
+    "test_id": "P3-096-M003-persistent-staging-new"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243851,
+          "nlink": 1,
+          "sha256": "60a84ad0e59c0e1db74fab54bf12c150f885c260eef76926ac953d07c3e53bfb",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243851,
+          "nlink": 1,
+          "sha256": "60a84ad0e59c0e1db74fab54bf12c150f885c260eef76926ac953d07c3e53bfb",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB bytes and identity unchanged or absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "audit": 1,
+          "captures": 1
+        },
+        "expected": {
+          "audit": 1,
+          "captures": 1
+        },
+        "name": "counts unchanged",
+        "passed": true
+      },
+      {
+        "actual": {
+          "exists": true,
+          "nlink": 1,
+          "sha256": "a5e2a34598465258a6a7df89e050d342d38cc6f898ddd6e1e674daf568c9738b",
+          "size": 666,
+          "type": "regular"
+        },
+        "expected": {
+          "exists": true,
+          "nlink": 1,
+          "sha256": "a5e2a34598465258a6a7df89e050d342d38cc6f898ddd6e1e674daf568c9738b",
+          "size": 666,
+          "type": "regular"
+        },
+        "name": "page observable content follows rollback contract",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no temp or sidecar residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcome": "CaptureError"
+    },
+    "ended_at": "2026-08-22T13:53:00.894179+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M004-existing-commit-failure",
+    "fixture_id": "m004-existing-commit-failure",
+    "row_id": "ABF-M-004",
+    "started_at": "2026-08-22T13:53:00.890738+00:00",
+    "test_id": "P3-096-M004-existing-commit-failure"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "new DB absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "no page",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no temp or sidecar residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcome": "CaptureError"
+    },
+    "ended_at": "2026-08-22T13:53:00.894764+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M005-init-failure",
+    "fixture_id": "m005-init-failure",
+    "row_id": "ABF-M-005",
+    "started_at": "2026-08-22T13:53:00.894281+00:00",
+    "test_id": "P3-096-M005-init-failure"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "DB bytes and identity unchanged or absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "audit": null,
+          "captures": null
+        },
+        "expected": {
+          "audit": null,
+          "captures": null
+        },
+        "name": "counts unchanged",
+        "passed": true
+      },
+      {
+        "actual": {
+          "exists": false,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "exists": false,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "page observable content follows rollback contract",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no temp or sidecar residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcome": "CaptureError"
+    },
+    "ended_at": "2026-08-22T13:53:00.896331+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M005-new-commit-failure",
+    "fixture_id": "m005-new-commit-failure",
+    "row_id": "ABF-M-005",
+    "started_at": "2026-08-22T13:53:00.894858+00:00",
+    "test_id": "P3-096-M005-new-commit-failure"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "new DB absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "no page",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no temp or sidecar residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcome": "CaptureError"
+    },
+    "ended_at": "2026-08-22T13:53:00.898003+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M005-publish-failure",
+    "fixture_id": "m005-publish-failure",
+    "row_id": "ABF-M-005",
+    "started_at": "2026-08-22T13:53:00.896439+00:00",
+    "test_id": "P3-096-M005-publish-failure"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "saved",
+        "expected": "saved",
+        "name": "returns saved",
+        "passed": true
+      },
+      {
+        "actual": "2026-08-22T13:53:00+00:00",
+        "expected": "2026-08-22T13:53:00+00:00",
+        "name": "saved audit time equals capture time",
+        "passed": true
+      },
+      {
+        "actual": [
+          "39a4b762-7c70-4f98-ad08-7ece71855963",
+          "P3-096 fixed non-sensitive capture fixture 1",
+          "2026-08-22T13:53:00+00:00",
+          "local_capture",
+          "key-1"
+        ],
+        "expected": [
+          "39a4b762-7c70-4f98-ad08-7ece71855963",
+          "P3-096 fixed non-sensitive capture fixture 1",
+          "2026-08-22T13:53:00+00:00",
+          "local_capture",
+          "key-1"
+        ],
+        "name": "existing record unchanged",
+        "passed": true
+      },
+      {
+        "actual": [
+          1,
+          "capture_saved",
+          "39a4b762-7c70-4f98-ad08-7ece71855963",
+          "2026-08-22T13:53:00+00:00",
+          "local_capture"
+        ],
+        "expected": [
+          1,
+          "capture_saved",
+          "39a4b762-7c70-4f98-ad08-7ece71855963",
+          "2026-08-22T13:53:00+00:00",
+          "local_capture"
+        ],
+        "name": "existing audit unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "return": "saved"
+    },
+    "ended_at": "2026-08-22T13:53:00.901049+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M006-existing-success",
+    "fixture_id": "m006-existing-success",
+    "row_id": "ABF-M-006",
+    "started_at": "2026-08-22T13:53:00.898117+00:00",
+    "test_id": "P3-096-M006-existing-success"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "saved",
+        "expected": "saved",
+        "name": "returns saved",
+        "passed": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "one capture",
+        "passed": true
+      },
+      {
+        "actual": [
+          "capture_saved",
+          "49bf0f75-ab58-439d-a4d8-da135173c073",
+          "2026-08-22T13:53:00+00:00"
+        ],
+        "expected": [
+          "capture_saved",
+          "49bf0f75-ab58-439d-a4d8-da135173c073",
+          "2026-08-22T13:53:00+00:00"
+        ],
+        "name": "one saved audit",
+        "passed": true
+      },
+      {
+        "actual": {
+          "indexes": {
+            "@audit": [],
+            "@captures": [
+              [
+                "sqlite_autoindex_captures_2",
+                1,
+                "u",
+                0
+              ],
+              [
+                "sqlite_autoindex_captures_1",
+                1,
+                "pk",
+                0
+              ]
+            ],
+            "sqlite_autoindex_captures_1": [
+              [
+                0,
+                0,
+                "id",
+                0,
+                "BINARY",
+                1
+              ],
+              [
+                1,
+                -1,
+                null,
+                0,
+                "BINARY",
+                0
+              ]
+            ],
+            "sqlite_autoindex_captures_2": [
+              [
+                0,
+                4,
+                "idem_key",
+                0,
+                "BINARY",
+                1
+              ],
+              [
+                1,
+                -1,
+                null,
+                0,
+                "BINARY",
+                0
+              ]
+            ]
+          },
+          "master": [
+            {
+              "name": "sqlite_autoindex_captures_1",
+              "sql": null,
+              "table": "captures",
+              "type": "index"
+            },
+            {
+              "name": "sqlite_autoindex_captures_2",
+              "sql": null,
+              "table": "captures",
+              "type": "index"
+            },
+            {
+              "name": "audit",
+              "sql": "create table audit ( id integer primary key autoincrement, event text not null, capture_id text, created_at text not null, detail text not null )",
+              "table": "audit",
+              "type": "table"
+            },
+            {
+              "name": "captures",
+              "sql": "create table captures ( id text primary key, content text not null, created_at text not null, source text not null check(source = 'local_capture'), idem_key text not null unique )",
+              "table": "captures",
+              "type": "table"
+            },
+            {
+              "name": "sqlite_sequence",
+              "sql": "create table sqlite_sequence(name,seq)",
+              "table": "sqlite_sequence",
+              "type": "table"
+            }
+          ],
+          "tables": {
+            "audit": [
+              [
+                0,
+                "id",
+                "INTEGER",
+                0,
+                null,
+                1,
+                0
+              ],
+              [
+                1,
+                "event",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                2,
+                "capture_id",
+                "TEXT",
+                0,
+                null,
+                0,
+                0
+              ],
+              [
+                3,
+                "created_at",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                4,
+                "detail",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ]
+            ],
+            "captures": [
+              [
+                0,
+                "id",
+                "TEXT",
+                0,
+                null,
+                1,
+                0
+              ],
+              [
+                1,
+                "content",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                2,
+                "created_at",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                3,
+                "source",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                4,
+                "idem_key",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ]
+            ]
+          }
+        },
+        "expected": {
+          "indexes": {
+            "@audit": [],
+            "@captures": [
+              [
+                "sqlite_autoindex_captures_2",
+                1,
+                "u",
+                0
+              ],
+              [
+                "sqlite_autoindex_captures_1",
+                1,
+                "pk",
+                0
+              ]
+            ],
+            "sqlite_autoindex_captures_1": [
+              [
+                0,
+                0,
+                "id",
+                0,
+                "BINARY",
+                1
+              ],
+              [
+                1,
+                -1,
+                null,
+                0,
+                "BINARY",
+                0
+              ]
+            ],
+            "sqlite_autoindex_captures_2": [
+              [
+                0,
+                4,
+                "idem_key",
+                0,
+                "BINARY",
+                1
+              ],
+              [
+                1,
+                -1,
+                null,
+                0,
+                "BINARY",
+                0
+              ]
+            ]
+          },
+          "master": [
+            {
+              "name": "sqlite_autoindex_captures_1",
+              "sql": null,
+              "table": "captures",
+              "type": "index"
+            },
+            {
+              "name": "sqlite_autoindex_captures_2",
+              "sql": null,
+              "table": "captures",
+              "type": "index"
+            },
+            {
+              "name": "audit",
+              "sql": "create table audit ( id integer primary key autoincrement, event text not null, capture_id text, created_at text not null, detail text not null )",
+              "table": "audit",
+              "type": "table"
+            },
+            {
+              "name": "captures",
+              "sql": "create table captures ( id text primary key, content text not null, created_at text not null, source text not null check(source = 'local_capture'), idem_key text not null unique )",
+              "table": "captures",
+              "type": "table"
+            },
+            {
+              "name": "sqlite_sequence",
+              "sql": "create table sqlite_sequence(name,seq)",
+              "table": "sqlite_sequence",
+              "type": "table"
+            }
+          ],
+          "tables": {
+            "audit": [
+              [
+                0,
+                "id",
+                "INTEGER",
+                0,
+                null,
+                1,
+                0
+              ],
+              [
+                1,
+                "event",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                2,
+                "capture_id",
+                "TEXT",
+                0,
+                null,
+                0,
+                0
+              ],
+              [
+                3,
+                "created_at",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                4,
+                "detail",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ]
+            ],
+            "captures": [
+              [
+                0,
+                "id",
+                "TEXT",
+                0,
+                null,
+                1,
+                0
+              ],
+              [
+                1,
+                "content",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                2,
+                "created_at",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                3,
+                "source",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                4,
+                "idem_key",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ]
+            ]
+          }
+        },
+        "name": "canonical schema",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "return": "saved"
+    },
+    "ended_at": "2026-08-22T13:53:00.903105+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M007-new-success",
+    "fixture_id": "m007-new-success",
+    "row_id": "ABF-M-007",
+    "started_at": "2026-08-22T13:53:00.901155+00:00",
+    "test_id": "P3-096-M007-new-success"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243889,
+          "nlink": 1,
+          "sha256": "2908b9c7a6149a1eaddef74cc7a5e16cb247fc7c9a3a25b4890b6f66576cdd62",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243889,
+          "nlink": 1,
+          "sha256": "2908b9c7a6149a1eaddef74cc7a5e16cb247fc7c9a3a25b4890b6f66576cdd62",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T13:53:00.906253+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M008-future-capture",
+    "fixture_id": "m008-future-capture",
+    "row_id": "ABF-M-008",
+    "started_at": "2026-08-22T13:53:00.903204+00:00",
+    "test_id": "P3-096-M008-future-capture"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243897,
+          "nlink": 1,
+          "sha256": "575c329ba82dfd60f4f5d4ead8b86fe6c905fad66c256665b2256dbcd9134257",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243897,
+          "nlink": 1,
+          "sha256": "575c329ba82dfd60f4f5d4ead8b86fe6c905fad66c256665b2256dbcd9134257",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T13:53:00.909223+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M009-future-saved",
+    "fixture_id": "m009-future-saved",
+    "row_id": "ABF-M-009",
+    "started_at": "2026-08-22T13:53:00.906351+00:00",
+    "test_id": "P3-096-M009-future-saved"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243905,
+          "nlink": 1,
+          "sha256": "bdeeda3501483d2cf3b7b54f4d20370ca40fc3567f3c71d18c0b886e1fd8dddb",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243905,
+          "nlink": 1,
+          "sha256": "bdeeda3501483d2cf3b7b54f4d20370ca40fc3567f3c71d18c0b886e1fd8dddb",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T13:53:00.912499+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M010-saved-time-mismatch",
+    "fixture_id": "m010-saved-time-mismatch",
+    "row_id": "ABF-M-010",
+    "started_at": "2026-08-22T13:53:00.909324+00:00",
+    "test_id": "P3-096-M010-saved-time-mismatch"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243913,
+          "nlink": 1,
+          "sha256": "e66b34d37e92766075f2e0fd79667d3deb6e3f2f73d52adffebd2316969d9ba7",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243913,
+          "nlink": 1,
+          "sha256": "e66b34d37e92766075f2e0fd79667d3deb6e3f2f73d52adffebd2316969d9ba7",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T13:53:00.915718+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M011-repeat-before-saved",
+    "fixture_id": "m011-repeat-before-saved",
+    "row_id": "ABF-M-011",
+    "started_at": "2026-08-22T13:53:00.912601+00:00",
+    "test_id": "P3-096-M011-repeat-before-saved"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243921,
+          "nlink": 1,
+          "sha256": "9b6475cfefd7f51fcd5d3dff7597d185e6f6af9a1953456b2e82113178337a47",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243921,
+          "nlink": 1,
+          "sha256": "9b6475cfefd7f51fcd5d3dff7597d185e6f6af9a1953456b2e82113178337a47",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T13:53:00.919007+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M012-repeat-unknown",
+    "fixture_id": "m012-repeat-unknown",
+    "row_id": "ABF-M-012",
+    "started_at": "2026-08-22T13:53:00.915834+00:00",
+    "test_id": "P3-096-M012-repeat-unknown"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject cleared reference",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243929,
+          "nlink": 1,
+          "sha256": "0effa44922bb5e2ba82362f51d5a5525b9aef9768587a5ead83df4b8ed00adaa",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243929,
+          "nlink": 1,
+          "sha256": "0effa44922bb5e2ba82362f51d5a5525b9aef9768587a5ead83df4b8ed00adaa",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T13:53:00.922821+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M012-repeat-cleared",
+    "fixture_id": "m012-repeat-cleared",
+    "row_id": "ABF-M-012",
+    "started_at": "2026-08-22T13:53:00.919125+00:00",
+    "test_id": "P3-096-M012-repeat-cleared"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243938,
+          "nlink": 1,
+          "sha256": "47709ceafb1be8cd110a6f880c54d00a1bc19f45ee9a11ee0e8e6f57e5df6d8a",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243938,
+          "nlink": 1,
+          "sha256": "47709ceafb1be8cd110a6f880c54d00a1bc19f45ee9a11ee0e8e6f57e5df6d8a",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T13:53:00.926242+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M013-audit-time-regression",
+    "fixture_id": "m013-audit-time-regression",
+    "row_id": "ABF-M-013",
+    "started_at": "2026-08-22T13:53:00.922945+00:00",
+    "test_id": "P3-096-M013-audit-time-regression"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject mismatched count",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243946,
+          "nlink": 1,
+          "sha256": "4e6316d5d2332286445c476e8485f91453470022c67e851832f8f33d5f6d670b",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243946,
+          "nlink": 1,
+          "sha256": "4e6316d5d2332286445c476e8485f91453470022c67e851832f8f33d5f6d670b",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "details": {
+      "declared": 3,
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T13:53:00.930144+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M014-clear-count-large",
+    "fixture_id": "m014-clear-count-large",
+    "row_id": "ABF-M-014",
+    "started_at": "2026-08-22T13:53:00.926348+00:00",
+    "test_id": "P3-096-M014-clear-count-large"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject mismatched count",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243956,
+          "nlink": 1,
+          "sha256": "0ce0d8956da92d8fd7bd909dad5cf8cb019e0dd2909649f9c3e028818d4583fe",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243956,
+          "nlink": 1,
+          "sha256": "0ce0d8956da92d8fd7bd909dad5cf8cb019e0dd2909649f9c3e028818d4583fe",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "details": {
+      "declared": 1,
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T13:53:00.934042+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M014-clear-count-small",
+    "fixture_id": "m014-clear-count-small",
+    "row_id": "ABF-M-014",
+    "started_at": "2026-08-22T13:53:00.930245+00:00",
+    "test_id": "P3-096-M014-clear-count-small"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "returns count two",
+        "passed": true
+      },
+      {
+        "actual": "count=2;today_view=invalidated",
+        "expected": "count=2;today_view=invalidated",
+        "name": "audit count two",
+        "passed": true
+      },
+      {
+        "actual": 0,
+        "expected": 0,
+        "name": "active set empty",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "page absent",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "return": {
+        "count": 2,
+        "status": "cleared",
+        "today_view": "invalidated"
+      }
+    },
+    "ended_at": "2026-08-22T13:53:00.937880+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M015-normal-clear",
+    "fixture_id": "m015-normal-clear",
+    "row_id": "ABF-M-015",
+    "started_at": "2026-08-22T13:53:00.934187+00:00",
+    "test_id": "P3-096-M015-normal-clear"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject source variant",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243975,
+          "nlink": 1,
+          "sha256": "10afb9b1e7f35917401a8299162f5360e033e3810f5de4ecc4556a492cd3cb89",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243975,
+          "nlink": 1,
+          "sha256": "10afb9b1e7f35917401a8299162f5360e033e3810f5de4ecc4556a492cd3cb89",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      },
+      "variant_type": "str"
+    },
+    "ended_at": "2026-08-22T13:53:00.940632+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M016-source-case",
+    "fixture_id": "m016-source-case",
+    "row_id": "ABF-M-016",
+    "started_at": "2026-08-22T13:53:00.937988+00:00",
+    "test_id": "P3-096-M016-source-case"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject source variant",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243983,
+          "nlink": 1,
+          "sha256": "01caf0e346e90b80388e7974c0cbf49a1859155b146ada0443cdc13d19151d00",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243983,
+          "nlink": 1,
+          "sha256": "01caf0e346e90b80388e7974c0cbf49a1859155b146ada0443cdc13d19151d00",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      },
+      "variant_type": "str"
+    },
+    "ended_at": "2026-08-22T13:53:00.943462+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M016-source-empty",
+    "fixture_id": "m016-source-empty",
+    "row_id": "ABF-M-016",
+    "started_at": "2026-08-22T13:53:00.940730+00:00",
+    "test_id": "P3-096-M016-source-empty"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject source variant",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243991,
+          "nlink": 1,
+          "sha256": "32b8fc1e25e68fafeabe13ff9a13c231991697405c5cb14529bf57ca5d8ae551",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243991,
+          "nlink": 1,
+          "sha256": "32b8fc1e25e68fafeabe13ff9a13c231991697405c5cb14529bf57ca5d8ae551",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      },
+      "variant_type": "NoneType"
+    },
+    "ended_at": "2026-08-22T13:53:00.945675+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M016-source-null",
+    "fixture_id": "m016-source-null",
+    "row_id": "ABF-M-016",
+    "started_at": "2026-08-22T13:53:00.943600+00:00",
+    "test_id": "P3-096-M016-source-null"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject source variant",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243998,
+          "nlink": 1,
+          "sha256": "69e4307a9fb9ca68fcdffe0c261e3e6dcb0d06e000cd1ca3d041919ba54bdcae",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6243998,
+          "nlink": 1,
+          "sha256": "69e4307a9fb9ca68fcdffe0c261e3e6dcb0d06e000cd1ca3d041919ba54bdcae",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      },
+      "variant_type": "memoryview"
+    },
+    "ended_at": "2026-08-22T13:53:00.948578+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M016-source-blob",
+    "fixture_id": "m016-source-blob",
+    "row_id": "ABF-M-016",
+    "started_at": "2026-08-22T13:53:00.945779+00:00",
+    "test_id": "P3-096-M016-source-blob"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject duplicate",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6244006,
+          "nlink": 1,
+          "sha256": "293e9aff415f2de1454c962ca6289eaf84bc6b8e8122457b2d6aff7a400182a3",
+          "size": 12288,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6244006,
+          "nlink": 1,
+          "sha256": "293e9aff415f2de1454c962ca6289eaf84bc6b8e8122457b2d6aff7a400182a3",
+          "size": 12288,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "details": {
+      "duplicate": "id",
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T13:53:00.950715+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M017-duplicate-id",
+    "fixture_id": "m017-duplicate-id",
+    "row_id": "ABF-M-017",
+    "started_at": "2026-08-22T13:53:00.948688+00:00",
+    "test_id": "P3-096-M017-duplicate-id"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject duplicate",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6244013,
+          "nlink": 1,
+          "sha256": "03f59fcf719a85d5eb1fe48a2a5e6670f02d87e03bfdaee84411d80fe6b99cc0",
+          "size": 12288,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6244013,
+          "nlink": 1,
+          "sha256": "03f59fcf719a85d5eb1fe48a2a5e6670f02d87e03bfdaee84411d80fe6b99cc0",
+          "size": 12288,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "details": {
+      "duplicate": "idem",
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T13:53:00.953542+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M017-duplicate-idem",
+    "fixture_id": "m017-duplicate-idem",
+    "row_id": "ABF-M-017",
+    "started_at": "2026-08-22T13:53:00.950843+00:00",
+    "test_id": "P3-096-M017-duplicate-idem"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": true,
+        "expected": true,
+        "name": "missing fields become Not Implemented",
+        "passed": true
+      },
+      {
+        "actual": "NOT PASS — DO NOT SUBMIT",
+        "expected": "NOT PASS — DO NOT SUBMIT",
+        "name": "validator blocks submission",
+        "passed": true
+      }
+    ],
+    "details": {
+      "Not Implemented": 3,
+      "conclusion": "NOT PASS — DO NOT SUBMIT",
+      "reasons": [
+        "ABF-M-018: missing fixture_id",
+        "ABF-M-018: missing assertions",
+        "ABF-M-018: missing evidence"
+      ]
+    },
+    "ended_at": "2026-08-22T13:53:00.953840+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M018-runner-missing-fields",
+    "fixture_id": "m018-runner-missing-fields",
+    "row_id": "ABF-M-018",
+    "started_at": "2026-08-22T13:53:00.953666+00:00",
+    "test_id": "P3-096-M018-runner-missing-fields"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": true,
+        "expected": true,
+        "name": "missing row remains Not Implemented",
+        "passed": true
+      },
+      {
+        "actual": "NOT PASS — DO NOT SUBMIT",
+        "expected": "NOT PASS — DO NOT SUBMIT",
+        "name": "suite pass cannot bulk-map row",
+        "passed": true
+      }
+    ],
+    "details": {
+      "Not Implemented": 1,
+      "conclusion": "NOT PASS — DO NOT SUBMIT",
+      "reasons": [
+        "ABF-M-019: missing execution"
+      ],
+      "unit_suite_pass": true
+    },
+    "ended_at": "2026-08-22T13:53:00.954117+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M019-suite-pass-missing-row",
+    "fixture_id": "m019-suite-pass-missing-row",
+    "row_id": "ABF-M-019",
+    "started_at": "2026-08-22T13:53:00.953936+00:00",
+    "test_id": "P3-096-M019-suite-pass-missing-row"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "PASS",
+        "expected": "PASS",
+        "name": "all M001-M019 complete",
+        "passed": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "all M001-M019 pass",
+        "passed": true
+      },
+      {
+        "actual": 27,
+        "expected": 27,
+        "name": "test IDs unique",
+        "passed": true
+      },
+      {
+        "actual": 27,
+        "expected": 27,
+        "name": "fixtures unique",
+        "passed": true
+      }
+    ],
+    "details": {
+      "pre_complete_validation": {
+        "Not Implemented": 0,
+        "conclusion": "PASS",
+        "reasons": []
+      }
+    },
+    "ended_at": "2026-08-22T13:53:00.954404+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M020-complete-execution",
+    "fixture_id": "m020-complete-execution",
+    "row_id": "ABF-M-020",
+    "started_at": "2026-08-22T13:53:00.954235+00:00",
+    "test_id": "P3-096-M020-complete-execution"
+  }
+]

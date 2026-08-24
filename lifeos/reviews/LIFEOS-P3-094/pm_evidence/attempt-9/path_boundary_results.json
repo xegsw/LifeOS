@@ -1,0 +1,62 @@
+[
+  {
+    "id": "PATH-api-cli-relative-dotdot-normalization-wrong-basename-output",
+    "category": "path",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_all_public_entries_share_exact_path_gate",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "PATH-db-symlink-ancestor-hardlink-directory-fifo-socket-special",
+    "category": "path",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_symlink_db_file_is_rejected; RuntimeTest.test_symlink_db_parent_is_rejected; InvariantClosureTest.test_db_and_page_hardlinks_are_rejected",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "PATH-page-symlink-ancestor-hardlink-directory-fifo-socket-special",
+    "category": "path",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_symlink_today_is_rejected_without_following; RuntimeTest.test_directory_and_special_today_are_rejected; InvariantClosureTest.test_db_and_page_hardlinks_are_rejected",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "PATH-sentinels-unchanged",
+    "category": "path",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_caller_output_paths_are_rejected_before_change",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "PATH-parent-missing-unreadable-unwritable",
+    "category": "path",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_parent_must_preexist_and_capture_leaves_nothing",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "PATH-page-delete-temp-create-fsync-replace-failures",
+    "category": "path",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_clear_page_invalidation_failure_preserves_db; InvariantClosureTest.test_render_fsync_failure_keeps_valid_page_and_cleans_temp; InvariantClosureTest.test_render_replace_failure_keeps_valid_page_and_cleans_temp",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  }
+]

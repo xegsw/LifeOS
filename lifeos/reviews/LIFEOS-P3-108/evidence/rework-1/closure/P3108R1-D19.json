@@ -1,0 +1,39 @@
+{
+  "id": "P3108R1-D19",
+  "observable_result": "Eight raw stdout/stderr logs show fail-closed codes and external target remains absent.",
+  "operation": "Run fresh clean binary against path/link/hardlink/dangling-final/external fixtures before startup.",
+  "raw_actual_app_state_and_visual_evidence": [
+    {
+      "exists": true,
+      "path": "boundary/bootstrap.json",
+      "sha256": "610625d0aeacb1419b19ac5b6f18ff8e1a9ced0748c3f56858e9aea20a2ca6a6"
+    },
+    {
+      "exists": true,
+      "path": "raw-logs/boundary-path.log",
+      "sha256": "0b52a491fed2a3c89b993187b57bdd6ac260928718a30f0ccd7986b92c75ef78"
+    },
+    {
+      "exists": true,
+      "path": "raw-logs/boundary-link.log",
+      "sha256": "1f18f60b5a0ee2ccdddd14e3065d1210f51b6868a5b2a9ddda3b9037c7084ac9"
+    },
+    {
+      "exists": true,
+      "path": "raw-logs/boundary-hardlink.log",
+      "sha256": "0eb9bfa871716b7bd65ef8fbee41cba8f6dbbdfe85ede3219412fe9471f3a72a"
+    },
+    {
+      "exists": true,
+      "path": "raw-logs/boundary-dangling-final.log",
+      "sha256": "a14381555313d9c985fe73eb7eb4cdca4736313cb96aff708a27b7ce9e6b4e68"
+    },
+    {
+      "exists": true,
+      "path": "raw-logs/boundary-external-path.log",
+      "sha256": "fb78ea1eecad84208ada64b09f261339e098d4d779d1a939e872867a47568232"
+    }
+  ],
+  "status": "PASS",
+  "time": "2026-08-24T03:13:25.564154+00:00"
+}

@@ -1,0 +1,885 @@
+{
+  "all_passed": true,
+  "results": [
+    {
+      "case": "insert_or_replace_granted_fk_on/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "insert_or_replace_granted_fk_on/file-fk_on-rec_on/explicit_commit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "insert_or_replace_granted_fk_on/file-fk_on-rec_on/explicit_rollback",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "insert_or_replace_granted_fk_on/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "insert_or_replace_granted_fk_on/file-fk_on-rec_off/explicit_commit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "insert_or_replace_granted_fk_on/file-fk_on-rec_off/explicit_rollback",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "insert_or_replace_granted_fk_on/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "insert_or_replace_granted_fk_on/file-fk_off-rec_on/explicit_commit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "insert_or_replace_granted_fk_on/file-fk_off-rec_on/explicit_rollback",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "insert_or_replace_granted_fk_on/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "insert_or_replace_granted_fk_on/file-fk_off-rec_off/explicit_commit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "insert_or_replace_granted_fk_on/file-fk_off-rec_off/explicit_rollback",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "fk_off_replace_rebuild_then_activate/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "fk_off_replace_rebuild_then_activate/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "fk_off_replace_rebuild_then_activate/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "fk_off_replace_rebuild_then_activate/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_proposed/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_proposed/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_proposed/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_proposed/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_granted/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_granted/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_granted/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_granted/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_active/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_active/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_active/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_active/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_revoked/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_revoked/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_revoked/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_same_id_to_revoked/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_version_key_different_id/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_version_key_different_id/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_version_key_different_id/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_version_key_different_id/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_both_identity_keys/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_both_identity_keys/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_both_identity_keys/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_both_identity_keys/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_id_only_conflict/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_id_only_conflict/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_id_only_conflict/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "replace_id_only_conflict/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "upsert_id_do_update/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "upsert_id_do_update/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "upsert_id_do_update/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "upsert_id_do_update/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "upsert_version_key_do_update/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "upsert_version_key_do_update/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "upsert_version_key_do_update/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "upsert_version_key_do_update/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "upsert_id_do_nothing/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "upsert_id_do_nothing/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "upsert_id_do_nothing/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "upsert_id_do_nothing/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ordinary_duplicate_insert/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ordinary_duplicate_insert/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ordinary_duplicate_insert/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ordinary_duplicate_insert/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "direct_delete_active/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "direct_delete_active/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "direct_delete_active/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "direct_delete_active/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "delete_then_insert_rebuild/file-fk_on-rec_on/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "delete_then_insert_rebuild/file-fk_on-rec_on/explicit_commit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "delete_then_insert_rebuild/file-fk_on-rec_on/explicit_rollback",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "delete_then_insert_rebuild/file-fk_on-rec_off/autocommit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "delete_then_insert_rebuild/file-fk_on-rec_off/explicit_commit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "delete_then_insert_rebuild/file-fk_on-rec_off/explicit_rollback",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "delete_then_insert_rebuild/file-fk_off-rec_on/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "delete_then_insert_rebuild/file-fk_off-rec_on/explicit_commit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "delete_then_insert_rebuild/file-fk_off-rec_on/explicit_rollback",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "delete_then_insert_rebuild/file-fk_off-rec_off/autocommit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "delete_then_insert_rebuild/file-fk_off-rec_off/explicit_commit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "delete_then_insert_rebuild/file-fk_off-rec_off/explicit_rollback",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "evidence_then_replace_transaction/file-fk_on-rec_on/explicit_commit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "evidence_then_replace_transaction/file-fk_on-rec_on/explicit_rollback",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "evidence_then_replace_transaction/file-fk_on-rec_off/explicit_commit",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "evidence_then_replace_transaction/file-fk_on-rec_off/explicit_rollback",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "evidence_then_replace_transaction/file-fk_off-rec_on/explicit_commit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "evidence_then_replace_transaction/file-fk_off-rec_on/explicit_rollback",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "evidence_then_replace_transaction/file-fk_off-rec_off/explicit_commit",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "evidence_then_replace_transaction/file-fk_off-rec_off/explicit_rollback",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "new_granted_configure_activate/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "new_granted_configure_activate/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "new_granted_configure_activate/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "new_granted_configure_activate/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "new_proposed_configure_activate/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "new_proposed_configure_activate/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "new_proposed_configure_activate/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "new_proposed_configure_activate/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "retire_then_successor_same_transaction/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "retire_then_successor_same_transaction/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "retire_then_successor_same_transaction/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "retire_then_successor_same_transaction/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "active_noop_and_updated_at/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "active_noop_and_updated_at/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "active_noop_and_updated_at/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "active_noop_and_updated_at/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "observation/envelope_change_while_revoked/file",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "observation/envelope_change_while_expired/file",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "observation/prewrite_revoked_at_active/file",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "observation/prewrite_then_legal_retirement/file",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "observation/preset_evidence_forged_retirement/file",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "observation/rewrite_created_at_active/file",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "observation/generation_bump_active/file",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "observation/staged_generation_climb_retire/file",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "observation/retirement_with_forged_revoked_at/file",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "observation/envelope_change_while_granted/file",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    }
+  ]
+}

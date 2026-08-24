@@ -1,0 +1,61 @@
+{
+  "task": "LIFEOS-P3-107",
+  "review_round": "initial",
+  "acceptance_basis": {
+    "id": "ABF-P3-107-v1",
+    "expected_sha256": "1088f7bcfa3a014c526ff3e13d5a9fe923053ddbc877938d362a3aa2b038acee",
+    "actual_sha256": "1088f7bcfa3a014c526ff3e13d5a9fe923053ddbc877938d362a3aa2b038acee",
+    "match": true,
+    "unchanged": true
+  },
+  "task_card": {
+    "expected_sha256": "214a4a64e567b0bbc84a2b6cba0660eb7e2930ecf78a6175ff14139e3cc55a82",
+    "actual_sha256": "214a4a64e567b0bbc84a2b6cba0660eb7e2930ecf78a6175ff14139e3cc55a82",
+    "match": true
+  },
+  "startup_gate": {
+    "actual_model": "gpt-5.6-sol",
+    "actual_reasoning_effort": "medium",
+    "required_model": "gpt-5.6-terra",
+    "required_reasoning_effort": "xhigh",
+    "allowed_downgrade": null,
+    "fallback": null,
+    "configuration_match": false,
+    "engineering_actions_started": false,
+    "candidate_copied": false,
+    "fixture_created": false,
+    "candidate_runner_or_structured_results_read": false,
+    "app_started": false,
+    "network_used": false,
+    "system_display_changed": false,
+    "pm_assessment": "VALID_BLOCKED_STARTUP_GATE"
+  },
+  "submitted_evidence": {
+    "manifest_entries": 3,
+    "hash_matches": 3,
+    "bad": 0,
+    "missing": 0,
+    "extra": 0,
+    "self_reference": false
+  },
+  "scope_and_cleanup": {
+    "engineering_directory_created": false,
+    "matching_private_tmp_residuals": 0,
+    "candidate_or_history_mutation_evidence": false,
+    "risk_or_freeze_mutation_evidence": false
+  },
+  "candidate_quality_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 1,
+    "Not Implemented": 15
+  },
+  "formal_rework": "0/2",
+  "local_precheck": {
+    "performed": false,
+    "reason": "P0 independent-review startup configuration and authorization gate; local model may not decide the result."
+  },
+  "conclusion": "BLOCKED",
+  "next": "After user adoption, re-deliver the unchanged task card and ABF to a brand-new independent Codex session configured as gpt-5.6-terra with xhigh reasoning."
+}

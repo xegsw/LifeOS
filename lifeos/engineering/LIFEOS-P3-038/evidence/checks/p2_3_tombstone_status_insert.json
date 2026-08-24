@@ -1,0 +1,47 @@
+{
+  "accepted_start": true,
+  "classification": null,
+  "direct_insert_matrix": {
+    "active_blocked": {
+      "accepted_by_db": false,
+      "row_count": 0,
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    "cleaned": {
+      "accepted_by_db": false,
+      "row_count": 0,
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    "cleanup_failed": {
+      "accepted_by_db": false,
+      "row_count": 0,
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    "vendor_limited": {
+      "accepted_by_db": false,
+      "row_count": 0,
+      "sqlite_error": "tombstone_must_start_accepted"
+    }
+  },
+  "invalid_accepted_to_cleaned": {
+    "rejected": true,
+    "sqlite_error": "tombstone_status_transition_invalid"
+  },
+  "legal_transitions": [
+    {
+      "accepted_by_db": true,
+      "to": "active_blocked"
+    },
+    {
+      "accepted_by_db": true,
+      "to": "cleanup_pending"
+    },
+    {
+      "accepted_by_db": true,
+      "to": "cleaned"
+    }
+  ],
+  "residual": "P2-3",
+  "status": "PASS",
+  "target_contract": "ordinary creation only accepts initial accepted"
+}

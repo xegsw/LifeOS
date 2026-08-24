@@ -1,0 +1,44 @@
+{
+  "task_id": "LIFEOS-P3-109",
+  "review_date": "2026-08-24",
+  "decision": "Closed — Acceptance Not Met / PM-Validated Blocked / Frozen ABF Conflict",
+  "task_sha256": "706a666fa40b5d7a59b95929d72945468ee3567a7de483ae8fbeb9e063f402b0",
+  "abf_sha256": "212b66b320a4ad8cc55db0e9818407368d6ccb31104f6b12a130e06bdd20ac5d",
+  "evidence_inventory": {
+    "files": 8,
+    "top_manifest_present": false,
+    "test_design_sha256": "d13055a0054f42cdd3c5ef20f332faa8535c7add08131f316752f5b25bb14bb6",
+    "test_design_hash_matches_read_order": true,
+    "runner_ast_parse": "PASS",
+    "exact_abf_temp_paths_absent": "14/14"
+  },
+  "abf_conflict": {
+    "confirmed": true,
+    "required_action": "cargo test --locked",
+    "unauthorized_candidate_test_paths": [
+      "/private/tmp/lifeos-p3-104-unit-{name}-{pid}",
+      "/private/tmp/lifeos-p3-104-unit-link-target-{pid}",
+      "/private/tmp/lifeos-p3-104-unit-link-{pid}"
+    ],
+    "resolution_requires_abf_change": true
+  },
+  "pm_adjustment": {
+    "finding": "M-001 was marked PASS without recording the frozen P3-108 PM Evidence Manifest input",
+    "missing_fixed_input": "lifeos/reviews/LIFEOS-P3-108/pm_evidence/rework-1/MANIFEST.md",
+    "expected_and_current_sha256": "7e5221a5cec16b419e432ef59c9a3f9327f57e3192d08d9c6a9feca63efe9d9f"
+  },
+  "counts": {
+    "P0": 1,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 15
+  },
+  "candidate_engineering_defect_confirmed": false,
+  "formal_rework_used": 0,
+  "same_task_resume_allowed": false,
+  "successor_created": false,
+  "risk_changed": false,
+  "assets_frozen": false,
+  "stage_4_allowed": false
+}

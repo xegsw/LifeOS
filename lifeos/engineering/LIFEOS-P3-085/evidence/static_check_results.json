@@ -1,0 +1,200 @@
+{
+  "task": "LIFEOS-P3-085",
+  "runner": "static_check.mjs",
+  "pass": 37,
+  "fail": 0,
+  "results": [
+    {
+      "name": "default-recovery.html: standalone document",
+      "status": "PASS",
+      "detail": "可单独作为 HTML 文档打开。"
+    },
+    {
+      "name": "default-recovery.html: local stylesheet",
+      "status": "PASS",
+      "detail": "仅加载相对本地样式。"
+    },
+    {
+      "name": "default-recovery.html: local script",
+      "status": "PASS",
+      "detail": "仅加载相对本地脚本。"
+    },
+    {
+      "name": "default-recovery.html: three-page navigation",
+      "status": "PASS",
+      "detail": "可见且非自动的三页导航完整。"
+    },
+    {
+      "name": "default-recovery.html: AI closed",
+      "status": "PASS",
+      "detail": "每页显式呈现 AI 关闭态。"
+    },
+    {
+      "name": "no-reliable-suggestion.html: standalone document",
+      "status": "PASS",
+      "detail": "可单独作为 HTML 文档打开。"
+    },
+    {
+      "name": "no-reliable-suggestion.html: local stylesheet",
+      "status": "PASS",
+      "detail": "仅加载相对本地样式。"
+    },
+    {
+      "name": "no-reliable-suggestion.html: local script",
+      "status": "PASS",
+      "detail": "仅加载相对本地脚本。"
+    },
+    {
+      "name": "no-reliable-suggestion.html: three-page navigation",
+      "status": "PASS",
+      "detail": "可见且非自动的三页导航完整。"
+    },
+    {
+      "name": "no-reliable-suggestion.html: AI closed",
+      "status": "PASS",
+      "detail": "每页显式呈现 AI 关闭态。"
+    },
+    {
+      "name": "restricted-offline.html: standalone document",
+      "status": "PASS",
+      "detail": "可单独作为 HTML 文档打开。"
+    },
+    {
+      "name": "restricted-offline.html: local stylesheet",
+      "status": "PASS",
+      "detail": "仅加载相对本地样式。"
+    },
+    {
+      "name": "restricted-offline.html: local script",
+      "status": "PASS",
+      "detail": "仅加载相对本地脚本。"
+    },
+    {
+      "name": "restricted-offline.html: three-page navigation",
+      "status": "PASS",
+      "detail": "可见且非自动的三页导航完整。"
+    },
+    {
+      "name": "restricted-offline.html: AI closed",
+      "status": "PASS",
+      "detail": "每页显式呈现 AI 关闭态。"
+    },
+    {
+      "name": "default: recovery narrative",
+      "status": "PASS",
+      "detail": "保留“今日从哪里继续”的主叙事。"
+    },
+    {
+      "name": "default: explicit confirmation capture",
+      "status": "PASS",
+      "detail": "捕获需显式确认。"
+    },
+    {
+      "name": "empty: no invented suggestion",
+      "status": "PASS",
+      "detail": "无建议页披露缺口。"
+    },
+    {
+      "name": "empty: two controlled paths",
+      "status": "PASS",
+      "detail": "无建议页有两条受控路径。"
+    },
+    {
+      "name": "restricted: offline boundary",
+      "status": "PASS",
+      "detail": "离线页明确网络关闭。"
+    },
+    {
+      "name": "restricted: source boundary",
+      "status": "PASS",
+      "detail": "受限页 fail-closed。"
+    },
+    {
+      "name": "closed capability: /https?:\\/\\//i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bfetch\\s*\\(/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bXMLHttpRequest\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bWebSocket\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\blocalStorage\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bsessionStorage\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bindexedDB\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bdocument\\.cookie\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bFileReader\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bshowOpenFilePicker\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bshowSaveFilePicker\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bTauri\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bipcRenderer\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bexport\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bsync\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    },
+    {
+      "name": "closed capability: /\\bmodel\\b/i",
+      "status": "PASS",
+      "detail": "工程源码未出现禁止能力标识。"
+    }
+  ],
+  "hashes": {
+    "default-recovery.html": "98241ff3ae39bd0d9b562f72700a6b7cee66dd28fb252827558182b5a6f18616",
+    "no-reliable-suggestion.html": "2d50aa2f26a0c66647d385d9426386e01081d3f964919bc1588707611cae0577",
+    "restricted-offline.html": "036d061f605367ef4087ee3ea49f2ace1bd69203370b0e4a8135160f6689ecef",
+    "app.js": "f1e0525285da80001fcc9e3ac305c3577c169bd5216b305666e90be3bc4f89e2",
+    "styles.css": "e6e91c2ca590299a1307118f8f5fff467254ecb2c0bfa36acb623b25f6bd9774"
+  }
+}

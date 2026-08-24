@@ -1,0 +1,71 @@
+{
+  "audits": [
+    {
+      "detail_json": "{\"boundaries\": {\"ai_consumption\": \"disabled\", \"cloud\": \"disabled\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"decision\": \"grant\", \"expires_at_ms\": 1787304186929, \"permission_id\": \"perm-f7fdedbf11dd0b3b\"}",
+      "event": "permission_set",
+      "record_id": null,
+      "seq": 1
+    },
+    {
+      "detail_json": "{\"boundaries\": {\"ai_consumption\": \"disabled\", \"cloud\": \"disabled\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"decision\": \"grant\", \"expires_at_ms\": 1787304186929, \"permission_id\": \"perm-1446dc571bfb8ef8\"}",
+      "event": "permission_set",
+      "record_id": null,
+      "seq": 2
+    },
+    {
+      "detail_json": "{\"boundaries\": {\"ai_consumption\": \"disabled\", \"cloud\": \"disabled\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"confirmation\": \"REVOKE\", \"key\": \"shared-revoke\", \"operation\": \"permission_revoke\", \"permission_id\": \"perm-f7fdedbf11dd0b3b\"}",
+      "event": "permission_revoked",
+      "record_id": null,
+      "seq": 3
+    },
+    {
+      "detail_json": "{\"boundaries\": {\"ai_consumption\": \"disabled\", \"cloud\": \"disabled\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"confirmation\": \"REVOKE\", \"key\": \"shared-revoke\", \"operation\": \"permission_revoke\", \"permission_id\": \"perm-f7fdedbf11dd0b3b\"}",
+      "event": "revoke_idempotent",
+      "record_id": null,
+      "seq": 4
+    },
+    {
+      "detail_json": "{\"boundaries\": {\"ai_consumption\": \"disabled\", \"cloud\": \"disabled\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"confirmation\": \"REVOKE\", \"key\": \"shared-revoke\", \"operation\": \"permission_revoke\", \"permission_id\": \"perm-1446dc571bfb8ef8\", \"reason\": \"idempotency_conflict\"}",
+      "event": "revoke_blocked",
+      "record_id": null,
+      "seq": 5
+    }
+  ],
+  "boundaries": {
+    "ai_consumption": "disabled",
+    "cloud": "disabled",
+    "export": "not_used",
+    "external_action": "none",
+    "external_user": "not_used",
+    "l3": "not_used",
+    "multi_device": "not_used",
+    "network": "disabled",
+    "real_paths": "not_used",
+    "sync": "not_used",
+    "tauri_ipc": "not_used",
+    "vault": "not_used"
+  },
+  "permissions": [
+    {
+      "decision": "grant",
+      "expires_at_ms": 1787304186929,
+      "id": "perm-1446dc571bfb8ef8",
+      "idempotency_key": "cli-second",
+      "location": "task_local_sqlite",
+      "processor": "local_synthetic_runtime",
+      "purpose": "local_synthetic_restore",
+      "status": "current"
+    },
+    {
+      "decision": "grant",
+      "expires_at_ms": 1787304186929,
+      "id": "perm-f7fdedbf11dd0b3b",
+      "idempotency_key": "cli-first",
+      "location": "task_local_sqlite",
+      "processor": "local_synthetic_runtime",
+      "purpose": "local_synthetic_restore",
+      "status": "revoked"
+    }
+  ],
+  "records": []
+}

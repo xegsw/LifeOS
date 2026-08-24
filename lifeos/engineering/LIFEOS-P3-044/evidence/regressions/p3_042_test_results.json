@@ -1,0 +1,743 @@
+{
+  "task_id": "LIFEOS-P3-042",
+  "route": "gpt-5.6-sol+xhigh",
+  "scope": "synthetic in-memory and task-local file SQLite only",
+  "summary": {
+    "P0": {
+      "PASS": 0,
+      "FAIL": 0,
+      "KNOWN_LIMITATION": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "P1": {
+      "PASS": 26,
+      "FAIL": 0,
+      "KNOWN_LIMITATION": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "P2": {
+      "PASS": 26,
+      "FAIL": 0,
+      "KNOWN_LIMITATION": 26,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "total": {
+      "PASS": 52,
+      "FAIL": 0,
+      "KNOWN_LIMITATION": 26,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    }
+  },
+  "results": [
+    {
+      "group": "ENVELOPE",
+      "name": "update_processor_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_processor_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_purpose_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_purpose_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_location_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_location_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_grantor_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_grantor_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_expiry_to_indefinite_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_expiry_to_indefinite_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_policy_version_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_policy_version_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "compound_field_update_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "compound_field_update_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_valid_from_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_valid_from_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_expires_at_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "update_expires_at_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "expires_indefinite_to_at_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "expires_indefinite_to_at_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "expires_null_to_value_active",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "expires_null_to_value_active",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "compound_retirement_and_envelope_update",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "compound_retirement_and_envelope_update",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "multirow_active_parent_update_atomic",
+      "mode": "memory",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "ENVELOPE",
+      "name": "multirow_active_parent_update_atomic",
+      "mode": "file",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "active_authorization_security_envelope_immutable"
+    },
+    {
+      "group": "LEGAL",
+      "name": "noop_security_envelope",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "noop_security_envelope",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "updated_at_only",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "updated_at_only",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "proposed_configure_then_activate",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "proposed_configure_then_activate",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "granted_configure_then_activate",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "granted_configure_then_activate",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "retire_revoked_without_envelope_change",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "retire_revoked_without_envelope_change",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "retire_expired_without_envelope_change",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "retire_expired_without_envelope_change",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "retire_superseded_without_envelope_change",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "retire_superseded_without_envelope_change",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "successor_version_changed_envelope",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "LEGAL",
+      "name": "successor_version_changed_envelope",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "legal operation succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJACENT-PROTECTED",
+      "name": "update_id_active",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "FOREIGN KEY constraint failed"
+    },
+    {
+      "group": "ADJACENT-PROTECTED",
+      "name": "update_id_active",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "FOREIGN KEY constraint failed"
+    },
+    {
+      "group": "ADJACENT-PROTECTED",
+      "name": "update_logical_key_active",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "authorization_version_identity_immutable"
+    },
+    {
+      "group": "ADJACENT-PROTECTED",
+      "name": "update_logical_key_active",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "authorization_version_identity_immutable"
+    },
+    {
+      "group": "ADJACENT-PROTECTED",
+      "name": "update_version_no_active",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "authorization_version_identity_immutable"
+    },
+    {
+      "group": "ADJACENT-PROTECTED",
+      "name": "update_version_no_active",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "authorization_version_identity_immutable"
+    },
+    {
+      "group": "ADJACENT-PROTECTED",
+      "name": "update_supersedes_id_active",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "authorization_version_identity_immutable"
+    },
+    {
+      "group": "ADJACENT-PROTECTED",
+      "name": "update_supersedes_id_active",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "authorization_version_identity_immutable"
+    },
+    {
+      "group": "ADJACENT-PROTECTED",
+      "name": "active_to_proposed",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "authorization_status_transition_invalid"
+    },
+    {
+      "group": "ADJACENT-PROTECTED",
+      "name": "active_to_proposed",
+      "mode": "file",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "operation rejected with stable contract error",
+      "sqlite_error": "authorization_status_transition_invalid"
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "preposition_fake_retirement",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "preposition_fake_retirement",
+      "mode": "file",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "delete_audit_after_retirement",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "delete_audit_after_retirement",
+      "mode": "file",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "delete_outbox_after_retirement",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "delete_outbox_after_retirement",
+      "mode": "file",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "update_outbox_status_after_retirement",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "update_outbox_status_after_retirement",
+      "mode": "file",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "update_audit_action_after_retirement",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "update_audit_action_after_retirement",
+      "mode": "file",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "increase_generation_active",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "increase_generation_active",
+      "mode": "file",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "bump_then_retire_with_prepositioned_evidence",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "bump_then_retire_with_prepositioned_evidence",
+      "mode": "file",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "update_scope_effect_revoked",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "update_scope_effect_revoked",
+      "mode": "file",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "insert_scope_revoked",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "insert_scope_revoked",
+      "mode": "file",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "update_action_value_revoked",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "update_action_value_revoked",
+      "mode": "file",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "update_policy_training_revoked",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "KNOWN-R0048-R0049",
+      "name": "update_policy_training_revoked",
+      "mode": "file",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJACENT-OBSERVATION",
+      "name": "update_created_at_active",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJACENT-OBSERVATION",
+      "name": "update_created_at_active",
+      "mode": "file",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJACENT-OBSERVATION",
+      "name": "update_revoked_at_active",
+      "mode": "memory",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJACENT-OBSERVATION",
+      "name": "update_revoked_at_active",
+      "mode": "file",
+      "severity": "P2",
+      "status": "KNOWN_LIMITATION",
+      "detail": "known non-range behavior reproduced",
+      "sqlite_error": null
+    }
+  ],
+  "regressions": {
+    "p3_031_exit": 0,
+    "p3_040_isolated_exit": 0
+  }
+}

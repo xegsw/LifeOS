@@ -1,0 +1,227 @@
+{
+  "cases": [
+    {
+      "evidence": "operator CLI accepts explicit text/key/next-step",
+      "id": "AC1",
+      "result": "PASS"
+    },
+    {
+      "evidence": "empty/confirmation/conflict/precommit failure visible and closed",
+      "id": "AC2",
+      "result": "PASS"
+    },
+    {
+      "evidence": "receipt/view exposes original/source/content/confirmation/AI/offline state",
+      "id": "AC3",
+      "result": "PASS"
+    },
+    {
+      "evidence": "repeat idempotent; conflict rejected; reopen unit test passes",
+      "id": "AC4",
+      "result": "PASS"
+    },
+    {
+      "evidence": "unknown project rejected; next step explicit/no external action",
+      "id": "AC5",
+      "result": "PASS"
+    },
+    {
+      "evidence": "static boundary constants and source scan pass",
+      "id": "AC6",
+      "result": "PASS"
+    },
+    {
+      "evidence": "report scope wording reviewed",
+      "id": "AC7",
+      "result": "PASS"
+    }
+  ],
+  "commands": {
+    "operator_first": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "scripts/runtime_cli.py",
+      "--non-sensitive-test-only",
+      "--confirm-save",
+      "--confirm-next-step",
+      "--text",
+      "操作者的非敏感测试文本",
+      "--idempotency-key",
+      "operator-key",
+      "--next-step",
+      "操作者确认的下一步",
+      "--run-id",
+      "operator"
+    ],
+    "operator_repeat": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "scripts/runtime_cli.py",
+      "--non-sensitive-test-only",
+      "--confirm-save",
+      "--confirm-next-step",
+      "--text",
+      "操作者的非敏感测试文本",
+      "--idempotency-key",
+      "operator-key",
+      "--next-step",
+      "操作者确认的下一步",
+      "--run-id",
+      "operator"
+    ],
+    "unit": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "tests/test_runtime.py"
+    ]
+  },
+  "coverage": {
+    "atomic_failure": "covered",
+    "audit_traceability": "covered for committed save/next-step; failed transaction intentionally leaves no audit half-product",
+    "fail_closed": "covered",
+    "failure_disclosure": "covered",
+    "half_product_cleanup": "covered",
+    "reject_block": "covered"
+  },
+  "failure_snapshot": {
+    "boundaries": {
+      "external_action": "none",
+      "network": "disabled"
+    },
+    "receipt": {
+      "message": "保存失败：本地事务未提交",
+      "saved": false
+    }
+  },
+  "historical_readonly_assets_unchanged": true,
+  "historical_readonly_hashes_after": {
+    "engineering/LIFEOS-P3-063/src/mvp.py": "f35f5651477d1a6fd8cc6e16339b3c63d59ada23c7d00b10ad2954bf72bb632f",
+    "engineering/LIFEOS-P3-067/src/recovery.py": "5329d725b271b340b403edfeffc2d37605c7029a9b5ae365c40031455b45f389",
+    "engineering/LIFEOS-P3-072/authorized_rerun/src/sandbox_export.py": "76997bded53f6aa1c943deb8705fb725ba03385bb423d05f5916ea3862c070fb",
+    "engineering/LIFEOS-P3-074/evidence/authorized_rerun/MANIFEST.md": "b39f5beb263a7e6e85c9253153dd5612a0c878e13c18e03d3186369a756a4f0e"
+  },
+  "historical_readonly_hashes_before": {
+    "engineering/LIFEOS-P3-063/src/mvp.py": "f35f5651477d1a6fd8cc6e16339b3c63d59ada23c7d00b10ad2954bf72bb632f",
+    "engineering/LIFEOS-P3-067/src/recovery.py": "5329d725b271b340b403edfeffc2d37605c7029a9b5ae365c40031455b45f389",
+    "engineering/LIFEOS-P3-072/authorized_rerun/src/sandbox_export.py": "76997bded53f6aa1c943deb8705fb725ba03385bb423d05f5916ea3862c070fb",
+    "engineering/LIFEOS-P3-074/evidence/authorized_rerun/MANIFEST.md": "b39f5beb263a7e6e85c9253153dd5612a0c878e13c18e03d3186369a756a4f0e"
+  },
+  "isolated_copy": "temporary clean copy",
+  "operator_first_snapshot": {
+    "boundaries": {
+      "ai_consumption": "disabled",
+      "cloud": "disabled",
+      "export": "not_used",
+      "external_action": "none",
+      "external_user": "not_used",
+      "l3": "not_used",
+      "multi_device": "not_used",
+      "network": "disabled",
+      "real_paths": "not_used",
+      "sync": "not_used",
+      "tauri_ipc": "not_used",
+      "vault": "not_used"
+    },
+    "context": {
+      "context": "仅限本任务的非敏感本地测试上下文",
+      "project_id": "p3-075-controlled-project",
+      "project_name": "P3-075 受控测试项目",
+      "restore_scope": "controlled_task_local_only"
+    },
+    "next_step": {
+      "ai_status": "disabled",
+      "confirmation_identity": "operator_confirmed",
+      "external_action": "none",
+      "next_step_id": "step-5ba41dc143cd735e"
+    },
+    "receipt": {
+      "ai_status": "disabled",
+      "content_identity": "user_original",
+      "duplicate": false,
+      "external_action": "none",
+      "message": "已保存",
+      "operator_confirmation": "explicit",
+      "record_id": "rec-c9736463f555cdb7",
+      "saved": true,
+      "source_identity": "operator_local_entry"
+    },
+    "record": {
+      "ai_status": "disabled",
+      "content_identity": "user_original",
+      "external_action": "none",
+      "original_text": "操作者的非敏感测试文本",
+      "record_id": "rec-c9736463f555cdb7",
+      "source_identity": "operator_local_entry"
+    }
+  },
+  "operator_repeat_snapshot": {
+    "boundaries": {
+      "ai_consumption": "disabled",
+      "cloud": "disabled",
+      "export": "not_used",
+      "external_action": "none",
+      "external_user": "not_used",
+      "l3": "not_used",
+      "multi_device": "not_used",
+      "network": "disabled",
+      "real_paths": "not_used",
+      "sync": "not_used",
+      "tauri_ipc": "not_used",
+      "vault": "not_used"
+    },
+    "context": {
+      "context": "仅限本任务的非敏感本地测试上下文",
+      "project_id": "p3-075-controlled-project",
+      "project_name": "P3-075 受控测试项目",
+      "restore_scope": "controlled_task_local_only"
+    },
+    "next_step": {
+      "ai_status": "disabled",
+      "confirmation_identity": "operator_confirmed",
+      "external_action": "none",
+      "next_step_id": "step-5ba41dc143cd735e"
+    },
+    "receipt": {
+      "ai_status": "disabled",
+      "content_identity": "user_original",
+      "duplicate": true,
+      "external_action": "none",
+      "message": "已保存（重复请求未重复写入）",
+      "operator_confirmation": "explicit",
+      "record_id": "rec-c9736463f555cdb7",
+      "saved": true,
+      "source_identity": "operator_local_entry"
+    },
+    "record": {
+      "ai_status": "disabled",
+      "content_identity": "user_original",
+      "external_action": "none",
+      "original_text": "操作者的非敏感测试文本",
+      "record_id": "rec-c9736463f555cdb7",
+      "source_identity": "operator_local_entry"
+    }
+  },
+  "return_codes": {
+    "conflict": 1,
+    "failure": 1,
+    "first": 0,
+    "missing_confirm": 1,
+    "repeat": 0,
+    "unit": 0
+  },
+  "self_check": "PASS",
+  "static_prohibited_tokens": {
+    "cloud_sdk": 0,
+    "export_api": 0,
+    "network_clients": 0,
+    "tauri_ipc": 0
+  },
+  "summary": {
+    "fail": 0,
+    "not_implemented": 0,
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "pass": 17,
+    "unknown": 0
+  },
+  "task": "LIFEOS-P3-075",
+  "uncovered": []
+}

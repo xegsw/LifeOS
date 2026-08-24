@@ -1,0 +1,235 @@
+{
+  "T-DEL": {
+    "detail": null,
+    "method": "test_T_DEL",
+    "priority": "P0",
+    "status": "PASS",
+    "test_id": "T-DEL"
+  },
+  "T-DEL-OLD-PACKAGE-CONTROLS": {
+    "detail": null,
+    "method": "test_T_DEL_OLD_PACKAGE_CONTROLS",
+    "priority": "P0",
+    "status": "PASS",
+    "test_id": "T-DEL-OLD-PACKAGE-CONTROLS"
+  },
+  "assertions": [
+    {
+      "actual": false,
+      "case": "revoke_processing:artifact_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "revoke_processing:derivation_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "revoke_processing:feedback_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "revoke_processing:search_zero",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "revoke_processing:queue_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "disconnect_source:artifact_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "disconnect_source:derivation_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "disconnect_source:feedback_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "disconnect_source:search_zero",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "disconnect_source:queue_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "delete_content:artifact_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "delete_content:derivation_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "delete_content:feedback_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "delete_content:search_zero",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "delete_content:queue_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "retract_feedback:feedback_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "retract_feedback:derivation_not_restored",
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "authoritative_payload_projection": [
+    {
+      "actual": {
+        "artifact_id": "artifact-change",
+        "category": "change",
+        "content_hash": "1912a340941f7e3c7da169040916752a600d596817030ab0ec776a4c65aad688",
+        "generation": 1,
+        "original_text": "SYNTH_NOTE_002：测试夹具版本从零版更新为一版。",
+        "project_id": "project-synth-orbit",
+        "source_id": "source-change",
+        "title": "近期变化",
+        "version_id": "artifact-change:v1",
+        "version_no": 1
+      },
+      "case": "artifact_payload_from_authority",
+      "expected": {
+        "artifact_id": "artifact-change",
+        "category": "change",
+        "content_hash": "1912a340941f7e3c7da169040916752a600d596817030ab0ec776a4c65aad688",
+        "generation": 1,
+        "original_text": "SYNTH_NOTE_002：测试夹具版本从零版更新为一版。",
+        "project_id": "project-synth-orbit",
+        "source_id": "source-change",
+        "title": "近期变化",
+        "version_id": "artifact-change:v1",
+        "version_no": 1
+      },
+      "passed": true
+    },
+    {
+      "actual": "核对恢复候选的来源、版本与确认状态",
+      "case": "derivation_output_from_authority",
+      "expected": "核对恢复候选的来源、版本与确认状态",
+      "passed": true
+    },
+    {
+      "actual": "deterministic-rule-v1",
+      "case": "derivation_rule_from_authority",
+      "expected": "deterministic-rule-v1",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "case": "derivation_generation_from_authority",
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "actual": {
+        "created_at": "2030-01-01T00:00:00+00:00",
+        "derivation_id": "derivation:next:project-synth-orbit:f5e1feeb9a96c159",
+        "id": "feedback:derivation:next:project-synth-orbit:f5e1feeb9a96c159:1",
+        "kind": "confirm",
+        "status": "active",
+        "user_text": "SYNTH_FEEDBACK"
+      },
+      "case": "feedback_payload_from_authority",
+      "expected": {
+        "created_at": "2030-01-01T00:00:00+00:00",
+        "derivation_id": "derivation:next:project-synth-orbit:f5e1feeb9a96c159",
+        "id": "feedback:derivation:next:project-synth-orbit:f5e1feeb9a96c159:1",
+        "kind": "confirm",
+        "status": "active",
+        "user_text": "SYNTH_FEEDBACK"
+      },
+      "passed": true
+    },
+    {
+      "actual": {
+        "confirmation_status": "confirmed",
+        "from_artifact_id": "artifact-decision",
+        "id": "link-authoritative",
+        "relation": "supports",
+        "source_kind": "user_explicit",
+        "to_artifact_id": "artifact-unprocessed"
+      },
+      "case": "link_payload_from_authority",
+      "expected": {
+        "confirmation_status": "confirmed",
+        "from_artifact_id": "artifact-decision",
+        "id": "link-authoritative",
+        "relation": "supports",
+        "source_kind": "user_explicit",
+        "to_artifact_id": "artifact-unprocessed"
+      },
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "injected_link_not_restored",
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "authoritative_restore_gate": [
+    {
+      "actual": false,
+      "case": "old_context_cannot_self_attest",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "rehashed_forged_control_state_cannot_restore",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": 2,
+      "case": "authoritative_tombstone_still_wins",
+      "expected": 2,
+      "passed": true
+    }
+  ],
+  "physical_cleanup_claimed": false
+}

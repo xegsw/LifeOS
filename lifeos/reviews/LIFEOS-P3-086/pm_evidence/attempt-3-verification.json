@@ -1,0 +1,21 @@
+{
+  "task_id": "LIFEOS-P3-086",
+  "attempt": "attempt-3",
+  "verification_type": "PM read-only independent re-review verification",
+  "date": "2026-08-21",
+  "static_rerun": {
+    "command": "/Users/xxe/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node lifeos/reviews/LIFEOS-P3-086/rework/attempt-3/evidence/independent_static_runner.mjs /private/tmp/lifeos-p3-086-attempt-3.lOKtlY/app",
+    "result": "28 PASS / 0 FAIL"
+  },
+  "integrity": {
+    "p3_085_source_hashes_match": true,
+    "p3_082_historical_hashes_match": true,
+    "runner_byte_identical_to_p3_085_runner": false,
+    "attempt_3_written_in_separate_rework_directory": true
+  },
+  "visual_spot_checks": [
+    {"evidence":"03-confirmed.jpeg", "result":"PASS", "check":"fixed non-sensitive text is visibly shown only after explicit confirmation."},
+    {"evidence":"09-close-reopen-cleared.jpeg", "result":"PASS", "check":"reopened default page visibly contains no prior fixed test text."}
+  ],
+  "conclusion": "The fresh isolated independent re-review is complete and passed within the stated local UI boundary."
+}

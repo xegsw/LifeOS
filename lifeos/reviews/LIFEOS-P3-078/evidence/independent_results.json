@@ -1,0 +1,90 @@
+{
+  "task": "LIFEOS-P3-078",
+  "runner": "independent_permission_review.py",
+  "results": [
+    {
+      "id": "IR-01",
+      "criterion": "preview 清楚声明默认拒绝、固定边界与确认 token",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-02",
+      "criterion": "无 grant 时默认拒绝并声明无外部动作",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-03",
+      "criterion": "唯一精确 grant 加 CONFIRM 才允许本地合成路径",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-04",
+      "criterion": "错误确认 fail-closed",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-05",
+      "criterion": "绑定不匹配 fail-closed",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-06",
+      "criterion": "当前 deny 在既有 grant 后仍优先",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-07",
+      "criterion": "相同幂等键重复回执，不生成第二项",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-08",
+      "criterion": "冲突幂等键 fail-closed",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-09",
+      "criterion": "撤回后即使 deny 移除也保持拒绝",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-10",
+      "criterion": "重启后撤回状态和审计仍可追溯且 fail-closed",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-11",
+      "criterion": "过期 grant 不可消费",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-12",
+      "criterion": "原子失败不留下权限半成品",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-13",
+      "criterion": "CLI preview 可理解且不需要隐式写入真实路径",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-14",
+      "criterion": "禁止网络、云、Tauri/IPC、Vault、导出、同步、多设备通道保持未实现",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-15",
+      "criterion": "候选核心输入 hash 与 P3-077 Manifest 一致",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "pass": 15,
+    "fail": 0,
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  }
+}

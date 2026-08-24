@@ -1,0 +1,81 @@
+{
+  "task": "LIFEOS-P3-104",
+  "review": "initial",
+  "reviewed_at": "2026-08-23T16:07:07+08:00",
+  "conclusion": "REWORK_1_OF_2",
+  "abf": {
+    "id": "ABF-P3-104-v1",
+    "sha256": "2672adc56174f89088c95a7909f36307b3d51add0c6fc0a6fd84e6eb7ebf8d8b",
+    "matched": true
+  },
+  "submitted": {
+    "deliverable_sha256": "406cbbea587026641a51ddc8a624fda0c24d7fa159a517d0042bf490b9ad7142",
+    "engineering_manifest_sha256": "861d0be5bc40d1ebac41cc8b5a695d154d3bf073407b5fc6e3e85e42532a3f46",
+    "manifest_entries_checked": 68,
+    "manifest_mismatches": 0,
+    "history_hashes_checked": 14,
+    "history_hash_changes": 0,
+    "cargo_lock_sha256": "430583c26b3104ff384c7ab539b0ebe79d90509a957701a2fb1ebd3b4c2026f1",
+    "cargo_lock_packages": 438,
+    "dynamic_rows_verified": 17
+  },
+  "pm_isolated_replay": {
+    "fixture_root": "/private/tmp/lifeos-p3-104-pm-20pdjCDD",
+    "network": "offline",
+    "static_pass": 44,
+    "static_fail": 0,
+    "rust_unit_pass": 6,
+    "rust_unit_fail": 0,
+    "lock_inventory_pass": 438,
+    "lock_inventory_fail": 0,
+    "debug_build_exit": 0,
+    "debug_bundle_exit": 0,
+    "pm_binary_sha256": "62056b5964ab1c5834feefa252bee32978e4bae0c653568e763b6bba0d8207a2",
+    "actual_app_actions": {
+      "first_open": "PASS",
+      "first_save": "PASS",
+      "idempotent_repeat": "PASS",
+      "conflict_denial": "PASS",
+      "atomic_failure": "PASS",
+      "unknown_ipc_denial": "PASS",
+      "extra_field_denial": "PASS",
+      "close_reopen": "PASS"
+    },
+    "negative_startup_checks": {
+      "lexical_name": "PASS",
+      "parent_symlink": "PASS",
+      "file_symlink_existing_target": "PASS",
+      "hardlink": "PASS",
+      "sidecar": "PASS",
+      "shadow": "PASS",
+      "tampered_content": "PASS",
+      "unexpected_schema": "PASS"
+    }
+  },
+  "findings": [
+    {
+      "id": "PM-P3-104-CE-01",
+      "severity": "P1",
+      "l1": ["L1-1", "L1-4", "L1-7", "L1-10"],
+      "l2": ["ABF-I-05", "ABF-I-07", "ABF-I-11", "ABF-M-008", "ABF-M-012"],
+      "summary": "A dangling final capture.sqlite symlink is treated as absent, the real app starts, and capture replaces the symlink with a regular SQLite file while reporting saved.",
+      "external_target_changed": false,
+      "sentinel_changed": false
+    },
+    {
+      "id": "PM-P3-104-EV-01",
+      "severity": "P2",
+      "l1": ["L1-10"],
+      "l2": ["ABF-I-11", "ABF-M-002", "ABF-M-012"],
+      "summary": "The submitted replay command only builds --no-bundle, while launch_evidence_app.sh requires an already-built .app; the exact offline bundle command and successful bundle log are not retained. PM independently reconstructed the command, but the submitted actual-app replay path is incomplete."
+    }
+  ],
+  "counts": {
+    "p0": 0,
+    "p1": 1,
+    "p2": 1,
+    "unknown": 0,
+    "not_implemented": 0
+  },
+  "temporary_cleanup": "PASS_RESIDUAL_0"
+}

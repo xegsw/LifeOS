@@ -1,0 +1,33 @@
+{
+  "task": "LIFEOS-P3-094",
+  "attempt": 8,
+  "pm_conclusion": "Accepted / PM Adjusted to Rework / Awaiting User Confirmation",
+  "submitted_runner": {
+    "pass": 18,
+    "fail": 0,
+    "attempt6_regression_pass": 19,
+    "attempt6_regression_fail": 0
+  },
+  "pm_counterexamples": {
+    "pass": 0,
+    "fail": 2,
+    "root_cause_count": 1
+  },
+  "severity": {
+    "p0": 0,
+    "p1": 1,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  },
+  "finding": "Read-only render validates table and column shape but not required constraints or row source; incomplete schemas are accepted and an external source value is mislabeled as local capture.",
+  "fixed_non_sensitive_fixtures_only": true,
+  "network_used": false,
+  "real_user_data_used": false,
+  "temporary_fixture_residue_count": 0,
+  "engineering_evidence_modified": false,
+  "local_model_precheck": {
+    "used": false,
+    "reason": "High-risk final judgment for local DB schema integrity, provenance, and page lifecycle; local model output cannot replace PM counterexample review."
+  }
+}

@@ -1,0 +1,45 @@
+✔ H1 T-SCOPE remains personal local single-device (2.681834ms)
+✔ H2 T-ID preserves immutable user original and distinct identities (1.386667ms)
+✔ H3 T-SAVE authoritative transaction survives derivative failure (0.525375ms)
+✔ H4 T-GATE all consumption entries fail closed on context mismatch (1.061625ms)
+✔ P0 T-GATE allow+deny conflict blocks every consumption entry (0.671417ms)
+✔ P0 T-GATE missing duplicate or unknown authorization fails closed (1.265667ms)
+✔ P1 T-ID repeated suggestion preserves confirmation and feedback trace (0.8515ms)
+✔ P1-8 suggestion ID is stable across complete evidence order (0.960333ms)
+✔ P1-8 non-primary artifact generation changes suggestion ID and stales old derivation (1.3185ms)
+✔ P1-8 non-primary source generation changes suggestion ID and stales old derivation (1.787416ms)
+✔ P1-8 complete evidence set change cannot reuse suggestion ID (0.860417ms)
+✔ P1 T-WRITE-GATE feedback rejects non-candidate derivation explicitly (0.66575ms)
+✔ P2-CLEAN-1 duplicate feedback fails closed and preserves the original record (0.713791ms)
+✔ P2-CLEAN-1 conflicting feedback cannot replace user text or status (0.683958ms)
+✔ P2-CLEAN-1 retracted feedback cannot be revived by a repeated write (0.755375ms)
+✔ P1-3 derivation records every evidence version and generation (0.648791ms)
+✔ P1-3 non-primary revoke or delete stales derivation and blocks feedback export suggest (1.350167ms)
+✔ P3-015 direct deny of non-primary input blocks existing suggestion feedback and export (1.104625ms)
+✔ P1-4 artifact generation mismatch independently stales derivation at every consumption entry (3.260416ms)
+✔ P1-4 source generation mismatch independently stales derivation at every consumption entry (2.095875ms)
+✔ P1-5 important_link writes an explicit confirmed project/source/version/evidence binding (0.665667ms)
+✔ P1-5 important_link fails closed on deny missing generation cross-project and tombstone (2.362416ms)
+✔ H5 T-DEL revoke/delete blocks revival through read search recovery export (2.011416ms)
+✔ P1-6 export carries authority projection and restore candidates are read-only (1.816291ms)
+✔ P1-6 old package cannot revive revoked or deleted artifact and derivation (1.806084ms)
+✔ P1-6 old package cannot revive old artifact generation content or derivation (0.88125ms)
+✔ P1-6 old package cannot revive old source generation content or derivation (0.755917ms)
+✔ P1-6 stale or invalid derivation is never a restorable AI suggestion (2.372333ms)
+✔ P1-7 authorization without expiry or before deterministic expiry remains consumable (0.684167ms)
+✔ P1-7 expired authorization blocks every implemented consume and write entry (1.12875ms)
+✔ P1-7 explicit feedback retraction is idempotent preserved and removes confirmation authority (1.221125ms)
+✔ P1-7 retracting correction stale or expired feedback never revives derivation (2.36725ms)
+✔ H6 T-IPC-OFF rejects real Tauri and file capabilities (0.572125ms)
+✔ H7 T-DATA fixture is deterministic synthetic-disposable (0.196ms)
+✔ H8 T-OFF denies every non-slice capability (0.462166ms)
+✔ H9 T-EXPORT enforces project closure and identity (0.563542ms)
+✔ T-ARCH SQLite FTS outbox generations and authority projection execute (0.614ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 121.058917

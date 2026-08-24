@@ -1,0 +1,311 @@
+{
+  "T-GATE": {
+    "detail": null,
+    "method": "test_T_GATE",
+    "priority": "P0",
+    "status": "PASS",
+    "test_id": "T-GATE"
+  },
+  "T-GATE-AUTH-CONTEXT": {
+    "detail": null,
+    "method": "test_T_GATE_AUTH_CONTEXT",
+    "priority": "P0",
+    "status": "PASS",
+    "test_id": "T-GATE-AUTH-CONTEXT"
+  },
+  "assertions": [
+    {
+      "actual": false,
+      "case": "location_mismatch",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "processor_mismatch",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "both_mismatch",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "unknown_location",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "unknown_processor",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "missing_authorization",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": true,
+      "case": "legal_exact_match",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "missing_context",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "missing_processor_context",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "missing_purpose_context",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "wrong_exact_version",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": true,
+      "case": "right_exact_version",
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "explicit_context_and_conflicts": [
+    {
+      "actual": null,
+      "case": "read_missing_context",
+      "expected": null,
+      "passed": true
+    },
+    {
+      "actual": [],
+      "case": "search_missing_context",
+      "expected": [],
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "recovery_missing_context_active_items",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": 4,
+      "case": "recovery_missing_context_gaps",
+      "expected": 4,
+      "passed": true
+    },
+    {
+      "actual": [],
+      "case": "export_missing_context",
+      "expected": [],
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "conflicting_allow_deny_can_consume",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": null,
+      "case": "conflicting_allow_deny_read",
+      "expected": null,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "conflicting_allow_deny_search",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "conflicting_allow_deny_recovery",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "conflicting_allow_deny_export",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "duplicate_allow_fails_closed",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "generation_context_mismatch_fails_closed",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "source_generation_context_mismatch_fails_closed",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "caller_cannot_move_policy_clock_backward",
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "feedback_and_link_write_gates": [
+    {
+      "actual": 0,
+      "case": "deny:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "deny:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "revoked:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "revoked:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "expired:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "expired:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "conflict:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "conflict:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "location_context:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "location_context:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "processor_context:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "processor_context:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "purpose_context:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "purpose_context:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "feedback_missing_context_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "link_missing_context_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "confirm",
+      "case": "feedback_happy_path",
+      "expected": "confirm",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "case": "link_happy_path",
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "case": "cross_project_link_zero",
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "deleted_endpoint_link_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "revoked_endpoint_link_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "disconnected_endpoint_link_zero",
+      "expected": 0,
+      "passed": true
+    }
+  ],
+  "unknown_policy": "deny"
+}

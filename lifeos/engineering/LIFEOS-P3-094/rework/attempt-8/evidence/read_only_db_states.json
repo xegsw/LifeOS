@@ -1,0 +1,289 @@
+[
+  {
+    "id": "missing-db",
+    "page_before": {
+      "exists": true,
+      "size": 47,
+      "sha256": "3b21ec885a8ef7c9d9492af82119334dd9038ccf415a63e73ef44ce575dabf3e"
+    },
+    "page_after": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "db_before": {
+      "exists": false
+    },
+    "db_after": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "sidecars_after": []
+  },
+  {
+    "id": "zero-byte",
+    "page_after": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "db_before": {
+      "exists": true,
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "db_after": {
+      "exists": true,
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "objects_before": [],
+    "objects_after": [],
+    "sidecars_after": []
+  },
+  {
+    "id": "no-required-schema",
+    "page_after": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "db_before": {
+      "exists": true,
+      "size": 8192,
+      "sha256": "d805e5dd9471c4e778c74cca02c3e0ca5b3e7a352bdf383b9987cfd676de78e3"
+    },
+    "db_after": {
+      "exists": true,
+      "size": 8192,
+      "sha256": "d805e5dd9471c4e778c74cca02c3e0ca5b3e7a352bdf383b9987cfd676de78e3"
+    },
+    "objects_before": [
+      {
+        "type": "table",
+        "name": "other",
+        "table": "other",
+        "sql_sha256": "c31f60649c417febae680eb974a50ad28f9f3eed3fce8c8e0ac9163438b10110"
+      }
+    ],
+    "objects_after": [
+      {
+        "type": "table",
+        "name": "other",
+        "table": "other",
+        "sql_sha256": "c31f60649c417febae680eb974a50ad28f9f3eed3fce8c8e0ac9163438b10110"
+      }
+    ],
+    "sidecars_after": []
+  },
+  {
+    "id": "partial-schema",
+    "page_after": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "db_before": {
+      "exists": true,
+      "size": 8192,
+      "sha256": "accd03193c99a6cb87a3998948f7639001206b9b0111725baba434bcb6834cc4"
+    },
+    "db_after": {
+      "exists": true,
+      "size": 8192,
+      "sha256": "accd03193c99a6cb87a3998948f7639001206b9b0111725baba434bcb6834cc4"
+    },
+    "objects_before": [
+      {
+        "type": "table",
+        "name": "captures",
+        "table": "captures",
+        "sql_sha256": "6f801f9e3d3504dcafe54b36346d51a31e6bd54178e1369e53002e4f72bf9c95"
+      }
+    ],
+    "objects_after": [
+      {
+        "type": "table",
+        "name": "captures",
+        "table": "captures",
+        "sql_sha256": "6f801f9e3d3504dcafe54b36346d51a31e6bd54178e1369e53002e4f72bf9c95"
+      }
+    ],
+    "sidecars_after": []
+  },
+  {
+    "id": "both-tables-incomplete",
+    "page_after": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "db_before": {
+      "exists": true,
+      "size": 12288,
+      "sha256": "ddb8d1506c19acb5acaeacdd4cf5275f4094337b64de6e32638ce44fe53524f4"
+    },
+    "db_after": {
+      "exists": true,
+      "size": 12288,
+      "sha256": "ddb8d1506c19acb5acaeacdd4cf5275f4094337b64de6e32638ce44fe53524f4"
+    },
+    "objects_before": [
+      {
+        "type": "table",
+        "name": "audit",
+        "table": "audit",
+        "sql_sha256": "8308d9e9b4f7152beda77395433339ae4320837fb6af944c976ddf7190da432d"
+      },
+      {
+        "type": "table",
+        "name": "captures",
+        "table": "captures",
+        "sql_sha256": "a3d8eb922a15c3ba7f66c99053f6aec0b2e88d1253a4b399b62f0a9a26e1831b"
+      }
+    ],
+    "objects_after": [
+      {
+        "type": "table",
+        "name": "audit",
+        "table": "audit",
+        "sql_sha256": "8308d9e9b4f7152beda77395433339ae4320837fb6af944c976ddf7190da432d"
+      },
+      {
+        "type": "table",
+        "name": "captures",
+        "table": "captures",
+        "sql_sha256": "a3d8eb922a15c3ba7f66c99053f6aec0b2e88d1253a4b399b62f0a9a26e1831b"
+      }
+    ],
+    "sidecars_after": []
+  },
+  {
+    "id": "initialized-empty",
+    "page_after": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "db_before": {
+      "exists": true,
+      "size": 24576,
+      "sha256": "ca6fa931c30a345ebc1c98bbf6e4638781bcfd47dad8ddb45046211b5f4d1acc"
+    },
+    "db_after": {
+      "exists": true,
+      "size": 24576,
+      "sha256": "ca6fa931c30a345ebc1c98bbf6e4638781bcfd47dad8ddb45046211b5f4d1acc"
+    },
+    "objects_before": [
+      {
+        "type": "index",
+        "name": "sqlite_autoindex_captures_1",
+        "table": "captures",
+        "sql_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "type": "index",
+        "name": "sqlite_autoindex_captures_2",
+        "table": "captures",
+        "sql_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "type": "table",
+        "name": "audit",
+        "table": "audit",
+        "sql_sha256": "d4234be38bc57853e5db60ae7e6bb74f9ec0886d171c65a5a263a1577dc5547b"
+      },
+      {
+        "type": "table",
+        "name": "captures",
+        "table": "captures",
+        "sql_sha256": "e5efb41645a5d6b17cb2c9e86bd79c30db47b3c59977e2dc6f26c774fb557738"
+      },
+      {
+        "type": "table",
+        "name": "sqlite_sequence",
+        "table": "sqlite_sequence",
+        "sql_sha256": "4cb1eaf14467f226196148cb5688569660cb290d414bae4c1c450b149b62befd"
+      }
+    ],
+    "objects_after": [
+      {
+        "type": "index",
+        "name": "sqlite_autoindex_captures_1",
+        "table": "captures",
+        "sql_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "type": "index",
+        "name": "sqlite_autoindex_captures_2",
+        "table": "captures",
+        "sql_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "type": "table",
+        "name": "audit",
+        "table": "audit",
+        "sql_sha256": "d4234be38bc57853e5db60ae7e6bb74f9ec0886d171c65a5a263a1577dc5547b"
+      },
+      {
+        "type": "table",
+        "name": "captures",
+        "table": "captures",
+        "sql_sha256": "e5efb41645a5d6b17cb2c9e86bd79c30db47b3c59977e2dc6f26c774fb557738"
+      },
+      {
+        "type": "table",
+        "name": "sqlite_sequence",
+        "table": "sqlite_sequence",
+        "sql_sha256": "4cb1eaf14467f226196148cb5688569660cb290d414bae4c1c450b149b62befd"
+      }
+    ],
+    "counts_before": {
+      "capture_count": 0,
+      "audit_count": 1
+    },
+    "counts_after": {
+      "capture_count": 0,
+      "audit_count": 1
+    }
+  },
+  {
+    "id": "corrupt",
+    "page_after": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "db_before": {
+      "exists": true,
+      "size": 42,
+      "sha256": "1581d937c399764542b7915e5201744637fc63e67832038e466d11b7c4f23969"
+    },
+    "db_after": {
+      "exists": true,
+      "size": 42,
+      "sha256": "1581d937c399764542b7915e5201744637fc63e67832038e466d11b7c4f23969"
+    }
+  },
+  {
+    "id": "unreadable",
+    "page_after": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "db_before": {
+      "exists": true,
+      "size": 24576,
+      "sha256": "e01fa10b278935c0ec1bed97b493684896747cfd4c385f5a758efad87c1cae3c"
+    },
+    "db_after": {
+      "exists": true,
+      "size": 24576,
+      "sha256": "e01fa10b278935c0ec1bed97b493684896747cfd4c385f5a758efad87c1cae3c"
+    },
+    "mode_during_render": "0o0"
+  }
+]

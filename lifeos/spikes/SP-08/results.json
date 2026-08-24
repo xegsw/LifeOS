@@ -1,0 +1,187 @@
+{
+  "summary": {
+    "spike": "SP-08",
+    "total": 25,
+    "passed": 25,
+    "failed": 0,
+    "p0_failed": 0,
+    "result": "PASS"
+  },
+  "tests": [
+    {
+      "id": "T01",
+      "name": "人可读入口与机器 manifest",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T02",
+      "name": "48 内容单元覆盖 4 Project",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T03",
+      "name": "核心身份集合存在",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T04",
+      "name": "Decision Action Link Feedback Authorization AuditEntry 存在",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T05",
+      "name": "所有正文版本含 SHA-256",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T06",
+      "name": "基线 checksum/schema/reference 校验通过",
+      "priority": "P0",
+      "passed": true,
+      "evidence": "validation_report.json"
+    },
+    {
+      "id": "T07",
+      "name": "篡改 checksum 被发现",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T08",
+      "name": "缺失文件被发现",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T09",
+      "name": "断裂引用被发现",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T10",
+      "name": "manifest 版本不兼容被发现",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T11",
+      "name": "权限/删除说明缺失被发现",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T12",
+      "name": "删除撤回断源失效与许可限制无活跃正文",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T13",
+      "name": "外部不可导出只含指针/缺口",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T14",
+      "name": "空环境重导入成功",
+      "priority": "P0",
+      "passed": true,
+      "evidence": "reimport_results.json"
+    },
+    {
+      "id": "T15",
+      "name": "重复导入幂等",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T16",
+      "name": "已有用户原文不覆盖",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T17",
+      "name": "冲突版本显式保留分支",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T18",
+      "name": "低 tombstone/restriction/auth generation 拒绝",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T19",
+      "name": "来源指针恢复但不重新授权",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T20",
+      "name": "可重建派生产物不导出",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T21",
+      "name": "日志与审计隐私扫描",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T22",
+      "name": "AI 候选未伪装确认",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T23",
+      "name": "用户确认对象 authority 为 user",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T24",
+      "name": "不使用字段级 LWW",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    },
+    {
+      "id": "T25",
+      "name": "包不依赖专有服务",
+      "priority": "P0",
+      "passed": true,
+      "evidence": ""
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+summary: {'PASS': 152, 'BYPASS': 32, 'FAIL': 0, 'UNKNOWN': 0}
+PASS memory-fk_off-rec_off A01-valid-revoke
+PASS memory-fk_off-rec_on A01-valid-revoke
+PASS memory-fk_on-rec_off A01-valid-revoke
+PASS memory-fk_on-rec_on A01-valid-revoke
+PASS file-fk_off-rec_off A01-valid-revoke
+PASS file-fk_off-rec_on A01-valid-revoke
+PASS file-fk_on-rec_off A01-valid-revoke
+PASS file-fk_on-rec_on A01-valid-revoke
+PASS memory-fk_off-rec_off A01-valid-expire
+PASS memory-fk_off-rec_on A01-valid-expire
+PASS memory-fk_on-rec_off A01-valid-expire
+PASS memory-fk_on-rec_on A01-valid-expire
+PASS file-fk_off-rec_off A01-valid-expire
+PASS file-fk_off-rec_on A01-valid-expire
+PASS file-fk_on-rec_off A01-valid-expire
+PASS file-fk_on-rec_on A01-valid-expire
+PASS memory-fk_off-rec_off A01-valid-supersede
+PASS memory-fk_off-rec_on A01-valid-supersede
+PASS memory-fk_on-rec_off A01-valid-supersede
+PASS memory-fk_on-rec_on A01-valid-supersede
+PASS file-fk_off-rec_off A01-valid-supersede
+PASS file-fk_off-rec_on A01-valid-supersede
+PASS file-fk_on-rec_off A01-valid-supersede
+PASS file-fk_on-rec_on A01-valid-supersede
+PASS memory-fk_off-rec_off A02-exact-replay
+PASS memory-fk_off-rec_on A02-exact-replay
+PASS memory-fk_on-rec_off A02-exact-replay
+PASS memory-fk_on-rec_on A02-exact-replay
+PASS file-fk_off-rec_off A02-exact-replay
+PASS file-fk_off-rec_on A02-exact-replay
+PASS file-fk_on-rec_off A02-exact-replay
+PASS file-fk_on-rec_on A02-exact-replay
+PASS memory-fk_off-rec_off A03-submission-binding
+PASS memory-fk_off-rec_on A03-submission-binding
+PASS memory-fk_on-rec_off A03-submission-binding
+PASS memory-fk_on-rec_on A03-submission-binding
+PASS file-fk_off-rec_off A03-submission-binding
+PASS file-fk_off-rec_on A03-submission-binding
+PASS file-fk_on-rec_off A03-submission-binding
+PASS file-fk_on-rec_on A03-submission-binding
+PASS memory-fk_off-rec_off A06-malformed-hash
+PASS memory-fk_off-rec_on A06-malformed-hash
+PASS memory-fk_on-rec_off A06-malformed-hash
+PASS memory-fk_on-rec_on A06-malformed-hash
+PASS file-fk_off-rec_off A06-malformed-hash
+PASS file-fk_off-rec_on A06-malformed-hash
+PASS file-fk_on-rec_off A06-malformed-hash
+PASS file-fk_on-rec_on A06-malformed-hash
+PASS memory-fk_off-rec_off A04-transaction-rollback
+PASS memory-fk_off-rec_on A04-transaction-rollback
+PASS memory-fk_on-rec_off A04-transaction-rollback
+PASS memory-fk_on-rec_on A04-transaction-rollback
+PASS file-fk_off-rec_off A04-transaction-rollback
+PASS file-fk_off-rec_on A04-transaction-rollback
+PASS file-fk_on-rec_off A04-transaction-rollback
+PASS file-fk_on-rec_on A04-transaction-rollback
+PASS memory-fk_off-rec_off A04-later-failure-rollback
+PASS memory-fk_off-rec_on A04-later-failure-rollback
+PASS memory-fk_on-rec_off A04-later-failure-rollback
+PASS memory-fk_on-rec_on A04-later-failure-rollback
+PASS file-fk_off-rec_off A04-later-failure-rollback
+PASS file-fk_off-rec_on A04-later-failure-rollback
+PASS file-fk_on-rec_off A04-later-failure-rollback
+PASS file-fk_on-rec_on A04-later-failure-rollback
+PASS memory-fk_off-rec_off A04-savepoint-rollback
+PASS memory-fk_off-rec_on A04-savepoint-rollback
+PASS memory-fk_on-rec_off A04-savepoint-rollback
+PASS memory-fk_on-rec_on A04-savepoint-rollback
+PASS file-fk_off-rec_off A04-savepoint-rollback
+PASS file-fk_off-rec_on A04-savepoint-rollback
+PASS file-fk_on-rec_off A04-savepoint-rollback
+PASS file-fk_on-rec_on A04-savepoint-rollback
+PASS memory-fk_off-rec_off B03-audit-preplacement
+PASS memory-fk_off-rec_on B03-audit-preplacement
+PASS memory-fk_on-rec_off B03-audit-preplacement
+PASS memory-fk_on-rec_on B03-audit-preplacement
+PASS file-fk_off-rec_off B03-audit-preplacement
+PASS file-fk_off-rec_on B03-audit-preplacement
+PASS file-fk_on-rec_off B03-audit-preplacement
+PASS file-fk_on-rec_on B03-audit-preplacement
+PASS memory-fk_off-rec_off B03-outbox-preplacement
+PASS memory-fk_off-rec_on B03-outbox-preplacement
+PASS memory-fk_on-rec_off B03-outbox-preplacement
+PASS memory-fk_on-rec_on B03-outbox-preplacement
+PASS file-fk_off-rec_off B03-outbox-preplacement
+PASS file-fk_off-rec_on B03-outbox-preplacement
+PASS file-fk_on-rec_off B03-outbox-preplacement
+PASS file-fk_on-rec_on B03-outbox-preplacement
+PASS memory-fk_off-rec_off B02-C01-append-only-payload
+PASS memory-fk_off-rec_on B02-C01-append-only-payload
+PASS memory-fk_on-rec_off B02-C01-append-only-payload
+PASS memory-fk_on-rec_on B02-C01-append-only-payload
+PASS file-fk_off-rec_off B02-C01-append-only-payload
+PASS file-fk_off-rec_on B02-C01-append-only-payload
+PASS file-fk_on-rec_off B02-C01-append-only-payload
+PASS file-fk_on-rec_on B02-C01-append-only-payload
+PASS memory-fk_off-rec_off D02-direct-lifecycle-and-times
+PASS memory-fk_off-rec_on D02-direct-lifecycle-and-times
+PASS memory-fk_on-rec_off D02-direct-lifecycle-and-times
+PASS memory-fk_on-rec_on D02-direct-lifecycle-and-times
+PASS file-fk_off-rec_off D02-direct-lifecycle-and-times
+PASS file-fk_off-rec_on D02-direct-lifecycle-and-times
+PASS file-fk_on-rec_off D02-direct-lifecycle-and-times
+PASS file-fk_on-rec_on D02-direct-lifecycle-and-times
+BYPASS memory-fk_off-rec_off D01-initial-generation new Authorization can become active at generation 7; contract requires generation=1
+BYPASS memory-fk_off-rec_on D01-initial-generation new Authorization can become active at generation 7; contract requires generation=1
+BYPASS memory-fk_on-rec_off D01-initial-generation new Authorization can become active at generation 7; contract requires generation=1
+BYPASS memory-fk_on-rec_on D01-initial-generation new Authorization can become active at generation 7; contract requires generation=1
+BYPASS file-fk_off-rec_off D01-initial-generation new Authorization can become active at generation 7; contract requires generation=1
+BYPASS file-fk_off-rec_on D01-initial-generation new Authorization can become active at generation 7; contract requires generation=1
+BYPASS file-fk_on-rec_off D01-initial-generation new Authorization can become active at generation 7; contract requires generation=1
+BYPASS file-fk_on-rec_on D01-initial-generation new Authorization can become active at generation 7; contract requires generation=1
+BYPASS memory-fk_off-rec_off D01-initial-revoked-time Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL
+BYPASS memory-fk_off-rec_on D01-initial-revoked-time Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL
+BYPASS memory-fk_on-rec_off D01-initial-revoked-time Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL
+BYPASS memory-fk_on-rec_on D01-initial-revoked-time Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL
+BYPASS file-fk_off-rec_off D01-initial-revoked-time Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL
+BYPASS file-fk_off-rec_on D01-initial-revoked-time Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL
+BYPASS file-fk_on-rec_off D01-initial-revoked-time Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL
+BYPASS file-fk_on-rec_on D01-initial-revoked-time Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL
+BYPASS memory-fk_off-rec_off C01-forged-lifecycle-outbox forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit
+BYPASS memory-fk_off-rec_on C01-forged-lifecycle-outbox forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit
+BYPASS memory-fk_on-rec_off C01-forged-lifecycle-outbox forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit
+BYPASS memory-fk_on-rec_on C01-forged-lifecycle-outbox forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit
+BYPASS file-fk_off-rec_off C01-forged-lifecycle-outbox forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit
+BYPASS file-fk_off-rec_on C01-forged-lifecycle-outbox forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit
+BYPASS file-fk_on-rec_off C01-forged-lifecycle-outbox forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit
+BYPASS file-fk_on-rec_on C01-forged-lifecycle-outbox forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit
+PASS memory-fk_off-rec_off C02-C04-future-and-cas
+PASS memory-fk_off-rec_on C02-C04-future-and-cas
+PASS memory-fk_on-rec_off C02-C04-future-and-cas
+PASS memory-fk_on-rec_on C02-C04-future-and-cas
+PASS file-fk_off-rec_off C02-C04-future-and-cas
+PASS file-fk_off-rec_on C02-C04-future-and-cas
+PASS file-fk_on-rec_off C02-C04-future-and-cas
+PASS file-fk_on-rec_on C02-C04-future-and-cas
+PASS memory-fk_off-rec_off C04-C06-retry-and-terminal
+PASS memory-fk_off-rec_on C04-C06-retry-and-terminal
+PASS memory-fk_on-rec_off C04-C06-retry-and-terminal
+PASS memory-fk_on-rec_on C04-C06-retry-and-terminal
+PASS file-fk_off-rec_off C04-C06-retry-and-terminal
+PASS file-fk_off-rec_on C04-C06-retry-and-terminal
+PASS file-fk_on-rec_off C04-C06-retry-and-terminal
+PASS file-fk_on-rec_on C04-C06-retry-and-terminal
+PASS memory-fk_off-rec_off C04-expired-lease
+PASS memory-fk_off-rec_on C04-expired-lease
+PASS memory-fk_on-rec_off C04-expired-lease
+PASS memory-fk_on-rec_on C04-expired-lease
+PASS file-fk_off-rec_off C04-expired-lease
+PASS file-fk_off-rec_on C04-expired-lease
+PASS file-fk_on-rec_off C04-expired-lease
+PASS file-fk_on-rec_on C04-expired-lease
+BYPASS memory-fk_off-rec_off C08-C09-retention-and-replay deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible
+BYPASS memory-fk_off-rec_on C08-C09-retention-and-replay deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible
+BYPASS memory-fk_on-rec_off C08-C09-retention-and-replay deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible
+BYPASS memory-fk_on-rec_on C08-C09-retention-and-replay deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible
+BYPASS file-fk_off-rec_off C08-C09-retention-and-replay deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible
+BYPASS file-fk_off-rec_on C08-C09-retention-and-replay deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible
+BYPASS file-fk_on-rec_off C08-C09-retention-and-replay deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible
+BYPASS file-fk_on-rec_on C08-C09-retention-and-replay deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible
+PASS memory-fk_off-rec_off C09-generic-cleanup-scope
+PASS memory-fk_off-rec_on C09-generic-cleanup-scope
+PASS memory-fk_on-rec_off C09-generic-cleanup-scope
+PASS memory-fk_on-rec_on C09-generic-cleanup-scope
+PASS file-fk_off-rec_off C09-generic-cleanup-scope
+PASS file-fk_off-rec_on C09-generic-cleanup-scope
+PASS file-fk_on-rec_off C09-generic-cleanup-scope
+PASS file-fk_on-rec_on C09-generic-cleanup-scope
+PASS memory-fk_off-rec_off PM-CE-04-tombstone-envelope
+PASS memory-fk_off-rec_on PM-CE-04-tombstone-envelope
+PASS memory-fk_on-rec_off PM-CE-04-tombstone-envelope
+PASS memory-fk_on-rec_on PM-CE-04-tombstone-envelope
+PASS file-fk_off-rec_off PM-CE-04-tombstone-envelope
+PASS file-fk_off-rec_on PM-CE-04-tombstone-envelope
+PASS file-fk_on-rec_off PM-CE-04-tombstone-envelope
+PASS file-fk_on-rec_on PM-CE-04-tombstone-envelope
+PASS memory-fk_off-rec_off D03-multirow-atomicity
+PASS memory-fk_off-rec_on D03-multirow-atomicity
+PASS memory-fk_on-rec_off D03-multirow-atomicity
+PASS memory-fk_on-rec_on D03-multirow-atomicity
+PASS file-fk_off-rec_off D03-multirow-atomicity
+PASS file-fk_off-rec_on D03-multirow-atomicity
+PASS file-fk_on-rec_off D03-multirow-atomicity
+PASS file-fk_on-rec_on D03-multirow-atomicity

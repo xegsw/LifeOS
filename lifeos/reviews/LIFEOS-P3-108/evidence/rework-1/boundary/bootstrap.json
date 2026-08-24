@@ -1,0 +1,171 @@
+{
+  "excluded": {
+    "tamper": "schema contract is validated by the actual UI read path, recorded separately"
+  },
+  "id": "P3108R1-M013-bootstrap-boundaries",
+  "pass": true,
+  "results": [
+    {
+      "case": "path",
+      "db": "/private/tmp/lifeos-p3-104-p3-108-review-path-p3108r1a1/capture.sqlite",
+      "db_lstat_after": {
+        "ctime_ns": 1787538712363097938,
+        "exists": true,
+        "is_symlink": false,
+        "kind": 16384,
+        "mode": 16877,
+        "mtime_ns": 1787538712363088313,
+        "nlink": 2,
+        "path": "/private/tmp/lifeos-p3-104-p3-108-review-path-p3108r1a1/capture.sqlite",
+        "size": 64
+      },
+      "log": "raw-logs/boundary-path.log",
+      "log_sha256": "0b52a491fed2a3c89b993187b57bdd6ac260928718a30f0ccd7986b92c75ef78",
+      "output_code": [
+        "database_type_rejected"
+      ],
+      "returncode": 101
+    },
+    {
+      "case": "link",
+      "db": "/private/tmp/lifeos-p3-104-p3-108-review-link-p3108r1a1/capture.sqlite",
+      "db_lstat_after": {
+        "ctime_ns": 1787538712363146521,
+        "exists": true,
+        "is_symlink": true,
+        "kind": 40960,
+        "mode": 41453,
+        "mtime_ns": 1787538712363135813,
+        "nlink": 1,
+        "path": "/private/tmp/lifeos-p3-104-p3-108-review-link-p3108r1a1/capture.sqlite",
+        "size": 14
+      },
+      "log": "raw-logs/boundary-link.log",
+      "log_sha256": "1f18f60b5a0ee2ccdddd14e3065d1210f51b6868a5b2a9ddda3b9037c7084ac9",
+      "output_code": [
+        "database_type_rejected"
+      ],
+      "returncode": 101
+    },
+    {
+      "case": "dangling-final",
+      "db": "/private/tmp/lifeos-p3-104-p3-108-review-dangling-final-p3108r1a1/capture.sqlite",
+      "db_lstat_after": {
+        "ctime_ns": 1787538712363188646,
+        "exists": true,
+        "is_symlink": true,
+        "kind": 40960,
+        "mode": 41453,
+        "mtime_ns": 1787538712363178146,
+        "nlink": 1,
+        "path": "/private/tmp/lifeos-p3-104-p3-108-review-dangling-final-p3108r1a1/capture.sqlite",
+        "size": 14
+      },
+      "log": "raw-logs/boundary-dangling-final.log",
+      "log_sha256": "a14381555313d9c985fe73eb7eb4cdca4736313cb96aff708a27b7ce9e6b4e68",
+      "output_code": [
+        "database_type_rejected"
+      ],
+      "returncode": 101
+    },
+    {
+      "case": "hardlink",
+      "db": "/private/tmp/lifeos-p3-104-p3-108-review-hardlink-p3108r1a1/capture.sqlite",
+      "db_lstat_after": {
+        "ctime_ns": 1787539953373549419,
+        "exists": true,
+        "is_symlink": false,
+        "kind": 32768,
+        "mode": 33188,
+        "mtime_ns": 1787539101768555394,
+        "nlink": 2,
+        "path": "/private/tmp/lifeos-p3-104-p3-108-review-hardlink-p3108r1a1/capture.sqlite",
+        "size": 24576
+      },
+      "log": "raw-logs/boundary-hardlink.log",
+      "log_sha256": "0eb9bfa871716b7bd65ef8fbee41cba8f6dbbdfe85ede3219412fe9471f3a72a",
+      "output_code": [
+        "database_type_rejected"
+      ],
+      "returncode": 101
+    },
+    {
+      "case": "dangling-journal",
+      "db": "/private/tmp/lifeos-p3-104-p3-108-review-dangling-journal-p3108r1a1/capture.sqlite",
+      "db_lstat_after": {
+        "ctime_ns": 1787539953455780280,
+        "exists": true,
+        "is_symlink": false,
+        "kind": 32768,
+        "mode": 33188,
+        "mtime_ns": 1787539101768555394,
+        "nlink": 1,
+        "path": "/private/tmp/lifeos-p3-104-p3-108-review-dangling-journal-p3108r1a1/capture.sqlite",
+        "size": 24576
+      },
+      "log": "raw-logs/boundary-dangling-journal.log",
+      "log_sha256": "43579476d458646698583ebcd3f1915631fac7a5b90a1e788a5f34400e12c7c1",
+      "output_code": [
+        "database_sidecar_rejected"
+      ],
+      "returncode": 101
+    },
+    {
+      "case": "dangling-wal",
+      "db": "/private/tmp/lifeos-p3-104-p3-108-review-dangling-wal-p3108r1a1/capture.sqlite",
+      "db_lstat_after": {
+        "ctime_ns": 1787539953489707584,
+        "exists": true,
+        "is_symlink": false,
+        "kind": 32768,
+        "mode": 33188,
+        "mtime_ns": 1787539101768555394,
+        "nlink": 1,
+        "path": "/private/tmp/lifeos-p3-104-p3-108-review-dangling-wal-p3108r1a1/capture.sqlite",
+        "size": 24576
+      },
+      "log": "raw-logs/boundary-dangling-wal.log",
+      "log_sha256": "73a123bebf5e05bb16a5be2211423f86748109777c49cb625da13f20198e5e1a",
+      "output_code": [
+        "database_sidecar_rejected"
+      ],
+      "returncode": 101
+    },
+    {
+      "case": "dangling-shm",
+      "db": "/private/tmp/lifeos-p3-104-p3-108-review-dangling-shm-p3108r1a1/capture.sqlite",
+      "db_lstat_after": {
+        "ctime_ns": 1787539953521529310,
+        "exists": true,
+        "is_symlink": false,
+        "kind": 32768,
+        "mode": 33188,
+        "mtime_ns": 1787539101768555394,
+        "nlink": 1,
+        "path": "/private/tmp/lifeos-p3-104-p3-108-review-dangling-shm-p3108r1a1/capture.sqlite",
+        "size": 24576
+      },
+      "log": "raw-logs/boundary-dangling-shm.log",
+      "log_sha256": "09df0954e8a817dc7941724e5edf4aab6ce63b6032bd4c505abee20bd186a89c",
+      "output_code": [
+        "database_sidecar_rejected"
+      ],
+      "returncode": 101
+    },
+    {
+      "case": "external-path",
+      "db": "/private/tmp/not-p3-104-p3108r1a1/capture.sqlite",
+      "db_lstat_after": {
+        "exists": false,
+        "path": "/private/tmp/not-p3-104-p3108r1a1/capture.sqlite"
+      },
+      "log": "raw-logs/boundary-external-path.log",
+      "log_sha256": "fb78ea1eecad84208ada64b09f261339e098d4d779d1a939e872867a47568232",
+      "output_code": [
+        "path_schema_rejected"
+      ],
+      "returncode": 101
+    }
+  ],
+  "time": "2026-08-24T02:55:14.223801+00:00"
+}

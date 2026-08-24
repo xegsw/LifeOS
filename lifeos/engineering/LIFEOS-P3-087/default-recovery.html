@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LifeOS｜今日｜默认恢复</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <header class="site-header" aria-label="页面标题与状态导航">
+    <div class="frame"><p class="eyebrow">LifeOS · 纯本地受控演示</p><h1>今日</h1>
+      <p class="boundary">固定非敏感演示文本仅存在于当前页面会话。AI 未启用，网络未使用；刷新或关闭后输入会清除。</p>
+      <nav class="page-nav" aria-label="今日状态导航"><a aria-current="page" href="default-recovery.html">默认恢复</a><a href="no-reliable-suggestion.html">暂无可靠建议</a><a href="restricted-offline.html">权限受限 · 离线</a></nav>
+    </div>
+  </header>
+  <main id="main-content" class="frame layout">
+    <section class="context" aria-labelledby="project-title"><p class="label">当前 Project</p><div class="title-row"><h2 id="project-title">独立产品发布页改版</h2><span>沿用你上次确认</span></div>
+      <article class="hero"><p class="label">从这里继续</p><h3>完成首屏文案的最后一轮核对</h3><p><strong>你的记录 · 原文：</strong>上次停在「价值主张与首屏说明需对齐」。</p><p><strong>你已确认 · 决定：</strong>今天先完成首屏核对，再决定是否发布。</p></article>
+    </section>
+    <section class="card" aria-labelledby="today-title"><h2 id="today-title">今日安排</h2><p class="subtle">只含你已确认的行动与承诺。</p><p><strong>你已确认 · 行动：</strong>核对首屏文案</p></section>
+    <section class="card closed" aria-labelledby="ai-title"><h2 id="ai-title">AI 状态</h2><p><strong>AI 未启用：</strong>本页不生成、推断或暗示建议。</p></section>
+    <section class="card capture" aria-labelledby="capture-title"><h2 id="capture-title">快速捕获</h2><p>输入会以“你的记录／原文”显示；只有非空文本经你明确确认后，才在本次会话显示。</p>
+      <label for="capture-text">你的记录／原文</label><textarea id="capture-text" maxlength="160" placeholder="例如：发布页还需检查移动端标题"></textarea>
+      <div class="actions"><button type="button" id="confirm-save">确认保留在本次会话</button><button type="button" class="secondary" id="simulate-failure">模拟保存失败</button></div>
+      <p id="capture-status" role="status" aria-live="polite">尚未确认保存。</p><article id="saved-record" class="saved-record" hidden><p class="label">你的记录／原文</p><p id="saved-text"></p></article>
+    </section>
+  </main><script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{
+  "task": "LIFEOS-P3-080",
+  "runner": "CLI-only independent blackbox",
+  "target": "/private/tmp/lifeos-p3-080.eLYMjd/LIFEOS-P3-079",
+  "cases": [
+    {
+      "id": "IR-01-unconfirmed-save",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-02-confirmed-save",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-03-save-same-key-replay",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-04-save-key-conflict-is-atomic",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-05-default-deny",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-06-exact-grant",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-07-deny-priority",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-08-expiry-and-binding",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-09-revoke-key-binding-and-restart",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-10-revoked-content-no-restore",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-11-preview-confirm-replay",
+      "status": "PASS"
+    },
+    {
+      "id": "IR-12-prohibited-channels-static-closed",
+      "status": "PASS"
+    }
+  ],
+  "passed": 12,
+  "failed": 0,
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "unknown": 0,
+  "not_implemented": 0
+}

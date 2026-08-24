@@ -1,0 +1,3913 @@
+{
+  "manifest_version": "1.0",
+  "schema_version": "sp08-candidate-0.1",
+  "export_metadata": {
+    "export_id": "sp08-synthetic-export-g5",
+    "created_at": "2026-08-09T14:00:00+08:00",
+    "generator": "LifeOS SP-08 deterministic local spike",
+    "package_status": "partial_with_explanations",
+    "content_units": 48,
+    "projects": 4,
+    "portable_without_proprietary_service": true,
+    "non_frozen_candidate": true
+  },
+  "identity_legend": {
+    "user_original": "用户权威原文，不被 AI 或导入覆盖",
+    "external_material": "外部来源内容，受再分发许可约束",
+    "ai_derived": "AI 派生，不是用户原文",
+    "ai_candidate": "AI 候选，未经用户确认",
+    "user_confirmed": "用户确认对象或历史"
+  },
+  "projects": [
+    {
+      "id": "project-1",
+      "name": "Synthetic Project 1"
+    },
+    {
+      "id": "project-2",
+      "name": "Synthetic Project 2"
+    },
+    {
+      "id": "project-3",
+      "name": "Synthetic Project 3"
+    },
+    {
+      "id": "project-4",
+      "name": "Synthetic Project 4"
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-001",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/001",
+      "state": "connected",
+      "authorization_id": "auth-001",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-002",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/002",
+      "state": "connected",
+      "authorization_id": "auth-002",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-003",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/003",
+      "state": "connected",
+      "authorization_id": "auth-003",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-004",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/004",
+      "state": "connected",
+      "authorization_id": "auth-004",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-005",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/005",
+      "state": "connected",
+      "authorization_id": "auth-005",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-006",
+      "kind": "external_pointer",
+      "locator": "synthetic://source/006",
+      "state": "connected",
+      "authorization_id": "auth-006",
+      "license_status": "pointer_only",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-007",
+      "kind": "external_snapshot",
+      "locator": "synthetic://source/007",
+      "state": "connected",
+      "authorization_id": "auth-007",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-008",
+      "kind": "external_pointer",
+      "locator": "synthetic://source/008",
+      "state": "connected",
+      "authorization_id": "auth-008",
+      "license_status": "pointer_only",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-009",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/009",
+      "state": "connected",
+      "authorization_id": "auth-009",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-010",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/010",
+      "state": "connected",
+      "authorization_id": "auth-010",
+      "license_status": "export_allowed",
+      "restriction_generation": 5
+    },
+    {
+      "id": "src-011",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/011",
+      "state": "disconnected",
+      "authorization_id": "auth-011",
+      "license_status": "export_allowed",
+      "restriction_generation": 5
+    },
+    {
+      "id": "src-012",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/012",
+      "state": "connected",
+      "authorization_id": "auth-012",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-013",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/013",
+      "state": "connected",
+      "authorization_id": "auth-013",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-014",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/014",
+      "state": "connected",
+      "authorization_id": "auth-014",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-015",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/015",
+      "state": "connected",
+      "authorization_id": "auth-015",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-016",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/016",
+      "state": "connected",
+      "authorization_id": "auth-016",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-017",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/017",
+      "state": "connected",
+      "authorization_id": "auth-017",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-018",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/018",
+      "state": "connected",
+      "authorization_id": "auth-018",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-019",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/019",
+      "state": "connected",
+      "authorization_id": "auth-019",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-020",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/020",
+      "state": "connected",
+      "authorization_id": "auth-020",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-021",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/021",
+      "state": "connected",
+      "authorization_id": "auth-021",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-022",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/022",
+      "state": "connected",
+      "authorization_id": "auth-022",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-023",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/023",
+      "state": "connected",
+      "authorization_id": "auth-023",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-024",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/024",
+      "state": "connected",
+      "authorization_id": "auth-024",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-025",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/025",
+      "state": "connected",
+      "authorization_id": "auth-025",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-026",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/026",
+      "state": "connected",
+      "authorization_id": "auth-026",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-027",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/027",
+      "state": "connected",
+      "authorization_id": "auth-027",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-028",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/028",
+      "state": "connected",
+      "authorization_id": "auth-028",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-029",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/029",
+      "state": "connected",
+      "authorization_id": "auth-029",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-030",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/030",
+      "state": "connected",
+      "authorization_id": "auth-030",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-031",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/031",
+      "state": "connected",
+      "authorization_id": "auth-031",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-032",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/032",
+      "state": "connected",
+      "authorization_id": "auth-032",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-033",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/033",
+      "state": "connected",
+      "authorization_id": "auth-033",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-034",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/034",
+      "state": "connected",
+      "authorization_id": "auth-034",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-035",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/035",
+      "state": "connected",
+      "authorization_id": "auth-035",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-036",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/036",
+      "state": "connected",
+      "authorization_id": "auth-036",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-037",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/037",
+      "state": "connected",
+      "authorization_id": "auth-037",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-038",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/038",
+      "state": "connected",
+      "authorization_id": "auth-038",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-039",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/039",
+      "state": "connected",
+      "authorization_id": "auth-039",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-040",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/040",
+      "state": "connected",
+      "authorization_id": "auth-040",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-041",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/041",
+      "state": "connected",
+      "authorization_id": "auth-041",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-042",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/042",
+      "state": "connected",
+      "authorization_id": "auth-042",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-043",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/043",
+      "state": "connected",
+      "authorization_id": "auth-043",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-044",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/044",
+      "state": "connected",
+      "authorization_id": "auth-044",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-045",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/045",
+      "state": "connected",
+      "authorization_id": "auth-045",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-046",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/046",
+      "state": "connected",
+      "authorization_id": "auth-046",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-047",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/047",
+      "state": "connected",
+      "authorization_id": "auth-047",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    },
+    {
+      "id": "src-048",
+      "kind": "lifeos_capture",
+      "locator": "synthetic://source/048",
+      "state": "connected",
+      "authorization_id": "auth-048",
+      "license_status": "export_allowed",
+      "restriction_generation": 1
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "art-001",
+      "project_id": "project-1",
+      "source_id": "src-001",
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-001-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-002",
+      "project_id": "project-2",
+      "source_id": "src-002",
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-002-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-003",
+      "project_id": "project-3",
+      "source_id": "src-003",
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-003-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-004",
+      "project_id": "project-4",
+      "source_id": "src-004",
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-004-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-005",
+      "project_id": "project-1",
+      "source_id": "src-005",
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-005-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-006",
+      "project_id": "project-2",
+      "source_id": "src-006",
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-006-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-007",
+      "project_id": "project-3",
+      "source_id": "src-007",
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-007-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-008",
+      "project_id": "project-4",
+      "source_id": "src-008",
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-008-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-009",
+      "project_id": "project-1",
+      "source_id": "src-009",
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-009-v1",
+      "tombstone_generation": 4
+    },
+    {
+      "id": "art-010",
+      "project_id": "project-2",
+      "source_id": "src-010",
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-010-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-011",
+      "project_id": "project-3",
+      "source_id": "src-011",
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-011-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-012",
+      "project_id": "project-4",
+      "source_id": "src-012",
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-012-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-013",
+      "project_id": "project-1",
+      "source_id": "src-013",
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-013-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-014",
+      "project_id": "project-2",
+      "source_id": "src-014",
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-014-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-015",
+      "project_id": "project-3",
+      "source_id": "src-015",
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-015-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-016",
+      "project_id": "project-4",
+      "source_id": "src-016",
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-016-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-017",
+      "project_id": "project-1",
+      "source_id": "src-017",
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-017-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-018",
+      "project_id": "project-2",
+      "source_id": "src-018",
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-018-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-019",
+      "project_id": "project-3",
+      "source_id": "src-019",
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-019-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-020",
+      "project_id": "project-4",
+      "source_id": "src-020",
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-020-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-021",
+      "project_id": "project-1",
+      "source_id": "src-021",
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-021-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-022",
+      "project_id": "project-2",
+      "source_id": "src-022",
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-022-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-023",
+      "project_id": "project-3",
+      "source_id": "src-023",
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-023-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-024",
+      "project_id": "project-4",
+      "source_id": "src-024",
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-024-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-025",
+      "project_id": "project-1",
+      "source_id": "src-025",
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-025-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-026",
+      "project_id": "project-2",
+      "source_id": "src-026",
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-026-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-027",
+      "project_id": "project-3",
+      "source_id": "src-027",
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-027-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-028",
+      "project_id": "project-4",
+      "source_id": "src-028",
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-028-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-029",
+      "project_id": "project-1",
+      "source_id": "src-029",
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-029-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-030",
+      "project_id": "project-2",
+      "source_id": "src-030",
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-030-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-031",
+      "project_id": "project-3",
+      "source_id": "src-031",
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-031-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-032",
+      "project_id": "project-4",
+      "source_id": "src-032",
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-032-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-033",
+      "project_id": "project-1",
+      "source_id": "src-033",
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-033-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-034",
+      "project_id": "project-2",
+      "source_id": "src-034",
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-034-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-035",
+      "project_id": "project-3",
+      "source_id": "src-035",
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-035-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-036",
+      "project_id": "project-4",
+      "source_id": "src-036",
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-036-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-037",
+      "project_id": "project-1",
+      "source_id": "src-037",
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-037-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-038",
+      "project_id": "project-2",
+      "source_id": "src-038",
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-038-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-039",
+      "project_id": "project-3",
+      "source_id": "src-039",
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-039-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-040",
+      "project_id": "project-4",
+      "source_id": "src-040",
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-040-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-041",
+      "project_id": "project-1",
+      "source_id": "src-041",
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-041-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-042",
+      "project_id": "project-2",
+      "source_id": "src-042",
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-042-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-043",
+      "project_id": "project-3",
+      "source_id": "src-043",
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-043-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-044",
+      "project_id": "project-4",
+      "source_id": "src-044",
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-044-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-045",
+      "project_id": "project-1",
+      "source_id": "src-045",
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "current_version_id": "av-045-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-046",
+      "project_id": "project-2",
+      "source_id": "src-046",
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-046-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-047",
+      "project_id": "project-3",
+      "source_id": "src-047",
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-047-v1",
+      "tombstone_generation": 1
+    },
+    {
+      "id": "art-048",
+      "project_id": "project-4",
+      "source_id": "src-048",
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "current_version_id": "av-048-v1",
+      "tombstone_generation": 1
+    }
+  ],
+  "artifact_versions": [
+    {
+      "id": "av-001-v1",
+      "artifact_id": "art-001",
+      "source_id": "src-001",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-1/av-001-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "8fb79c699467ec650c7958488daa4c1e939e680d19d8ba57883e0b92ecc58d82"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-002-v1",
+      "artifact_id": "art-002",
+      "source_id": "src-002",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-2/av-002-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "23c5276931cd60f0d65547b679cc04e20bf8221c47b3e311cbc0008eeef0acf2"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-003-v1",
+      "artifact_id": "art-003",
+      "source_id": "src-003",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-3/av-003-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "1cba04ea552b6a41c822462e772b82dddbc35c42b8b5185b050d8d71c0f52a86"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-004-v1",
+      "artifact_id": "art-004",
+      "source_id": "src-004",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-4/av-004-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "ee21e423e07956631d2eb15d06476166f689d042d392cf1e605e61aed564c139"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-005-v1",
+      "artifact_id": "art-005",
+      "source_id": "src-005",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-1/av-005-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "5ad0dbe5002863e9a7c9bdf6a6e8a4f77f7214c704977896d5e50818be62e0ed"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-006-v1",
+      "artifact_id": "art-006",
+      "source_id": "src-006",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": null,
+      "checksum": null,
+      "export_state": "pointer_or_gap_only",
+      "gap_id": "gap-006"
+    },
+    {
+      "id": "av-007-v1",
+      "artifact_id": "art-007",
+      "source_id": "src-007",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-3/av-007-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "71eb6a39e8028efa128ba40ce31b7477f21deefb5765676b58432f9ba44608f8"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-008-v1",
+      "artifact_id": "art-008",
+      "source_id": "src-008",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": null,
+      "checksum": null,
+      "export_state": "pointer_or_gap_only",
+      "gap_id": "gap-008"
+    },
+    {
+      "id": "av-009-v1",
+      "artifact_id": "art-009",
+      "source_id": "src-009",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": null,
+      "checksum": null,
+      "export_state": "pointer_or_gap_only",
+      "gap_id": "gap-009"
+    },
+    {
+      "id": "av-010-v1",
+      "artifact_id": "art-010",
+      "source_id": "src-010",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": null,
+      "checksum": null,
+      "export_state": "pointer_or_gap_only",
+      "gap_id": "gap-010"
+    },
+    {
+      "id": "av-011-v1",
+      "artifact_id": "art-011",
+      "source_id": "src-011",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": null,
+      "checksum": null,
+      "export_state": "pointer_or_gap_only",
+      "gap_id": "gap-011"
+    },
+    {
+      "id": "av-012-v1",
+      "artifact_id": "art-012",
+      "source_id": "src-012",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "invalid",
+      "conflict_branch": false,
+      "file": null,
+      "checksum": null,
+      "export_state": "pointer_or_gap_only",
+      "gap_id": "gap-012"
+    },
+    {
+      "id": "av-013-v1",
+      "artifact_id": "art-013",
+      "source_id": "src-013",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": true,
+      "file": "content/project-1/av-013-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "1d0e208b2b82a752c6366134a3b850788471c735bd1727aaea6710e511d56c84"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-014-v1",
+      "artifact_id": "art-014",
+      "source_id": "src-014",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-2/av-014-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "084e7af1304269a983eff37b00cf7db10e3cf91246e8647b60aba0bff14a06bc"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-015-v1",
+      "artifact_id": "art-015",
+      "source_id": "src-015",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-3/av-015-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "3b4eaf397379eb217e1f10306445d4a56c982444c63d4baf81765e8907cb1541"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-016-v1",
+      "artifact_id": "art-016",
+      "source_id": "src-016",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-4/av-016-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "1c122a27b9b119486b6b4671a761bc28dda604ccb7b6c3f23d4ae6f93ff0a266"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-017-v1",
+      "artifact_id": "art-017",
+      "source_id": "src-017",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-1/av-017-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "94537a23974b44c052cfe829e61f3dfada6d089d6013fb967faa5cdb0d2beb53"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-018-v1",
+      "artifact_id": "art-018",
+      "source_id": "src-018",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-2/av-018-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "6c5429f3cb4e58e19112b064ee0a3d616203c5736c5a6c4d72a0bfbdd40eb5b0"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-019-v1",
+      "artifact_id": "art-019",
+      "source_id": "src-019",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-3/av-019-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "d9548a1d0a60233e5b270de9e6aedfd7622fe1f865580a41d9eee15463c10212"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-020-v1",
+      "artifact_id": "art-020",
+      "source_id": "src-020",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-4/av-020-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "65419bf9be629690d157a607e044632920c8a41aac2876cda84af72c348bbe36"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-021-v1",
+      "artifact_id": "art-021",
+      "source_id": "src-021",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-1/av-021-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "28ef2fb36a2ef80c3b1c9a6d859ec2f935b9dee9192e4f7679c295398bc7ec71"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-022-v1",
+      "artifact_id": "art-022",
+      "source_id": "src-022",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-2/av-022-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "23c7d7dd377be62a02abd0d6e2e0dfafbc728156bd51778cfdf08676885a79f1"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-023-v1",
+      "artifact_id": "art-023",
+      "source_id": "src-023",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-3/av-023-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "6ea33ac69247e6d53521ef8151fdf786eb2341b65810021121802680be4ed541"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-024-v1",
+      "artifact_id": "art-024",
+      "source_id": "src-024",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-4/av-024-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "524e74bfbe3881f1f30b31f79377be145bf66f1175994c6d01688f3324dfdb6e"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-025-v1",
+      "artifact_id": "art-025",
+      "source_id": "src-025",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-1/av-025-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "59a97b1105e1536f15441852ebab473f6b5b366a8c9a0331022aeb48e8fed3ff"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-026-v1",
+      "artifact_id": "art-026",
+      "source_id": "src-026",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-2/av-026-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "a895bae75a36b5e9b34f5294b9fc127824757f7acb12ab2a27026c0d9bd887f9"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-027-v1",
+      "artifact_id": "art-027",
+      "source_id": "src-027",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-3/av-027-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "06af4d60cbb3df3741ea3d399528aa645a1b2c0d6edbaae71937a0b421c9c705"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-028-v1",
+      "artifact_id": "art-028",
+      "source_id": "src-028",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-4/av-028-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "5df8a530443037618d743444b508104e017f68ab602bb953a41febe61ca65f50"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-029-v1",
+      "artifact_id": "art-029",
+      "source_id": "src-029",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-1/av-029-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "a476729c6637c6d02357d8095dc3a62fd5e908b90f98849dd462ddcfcae7d130"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-030-v1",
+      "artifact_id": "art-030",
+      "source_id": "src-030",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-2/av-030-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "0cd27ac8086d475f4792f25463091243eb9f229f4843f6112aa0de91b4ef953e"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-031-v1",
+      "artifact_id": "art-031",
+      "source_id": "src-031",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-3/av-031-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "09c64abe40813f5dbb8eea39f24b30a3c4da1bb21a4122789be33e645d7ab08a"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-032-v1",
+      "artifact_id": "art-032",
+      "source_id": "src-032",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-4/av-032-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "f5e4b37aee068b6e8c66463eb600ce31c2ab2e468718ffd9a2de7035631fbda0"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-033-v1",
+      "artifact_id": "art-033",
+      "source_id": "src-033",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-1/av-033-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "fbb576d38872b1575241e9a8df1207d14e20663ac84e01ab38f8194b49fde26c"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-034-v1",
+      "artifact_id": "art-034",
+      "source_id": "src-034",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-2/av-034-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "0af6a2f05670914a9299db2e63a7a2211ffdf0a03d99cca868e70758bd2e4161"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-035-v1",
+      "artifact_id": "art-035",
+      "source_id": "src-035",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-3/av-035-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "d627cefe17319b7ef7e237f2a701a730d616668ca321532eeb0219407760be57"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-036-v1",
+      "artifact_id": "art-036",
+      "source_id": "src-036",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-4/av-036-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "34e5e7e557e712669ea77cd5feb3930dab7ccca1d121daaa7a3765c18dc2fc7b"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-037-v1",
+      "artifact_id": "art-037",
+      "source_id": "src-037",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-1/av-037-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "8509327d326e4098812073978fb070895b387650a66d4e6f460bed2ea7503c24"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-038-v1",
+      "artifact_id": "art-038",
+      "source_id": "src-038",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-2/av-038-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "cda7fcfe10c9495f992bd2e48ace9bf1b2a4a72c6ff6709be71963af62dbfac6"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-039-v1",
+      "artifact_id": "art-039",
+      "source_id": "src-039",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-3/av-039-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "89a6fc7f6803952d81c1ee648f648771d1e1f4b0d97021e6052143303000529d"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-040-v1",
+      "artifact_id": "art-040",
+      "source_id": "src-040",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-4/av-040-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "a3c551f9eedfd3c01d85d17cf6e762193472a195b27998e789120607e88e5c01"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-041-v1",
+      "artifact_id": "art-041",
+      "source_id": "src-041",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-1/av-041-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "6ae377fe27cd4e310ba8730fc9bd8c9a791ed5a27ee7f74234261c1629eedb39"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-042-v1",
+      "artifact_id": "art-042",
+      "source_id": "src-042",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-2/av-042-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "1f72a58a050c446feb5c0239ed6f733734191a2a33312d8b0cc7aad111b0a46f"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-043-v1",
+      "artifact_id": "art-043",
+      "source_id": "src-043",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "user_original",
+      "authority": "user",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-3/av-043-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "3cb3ac15afdadc4268b7f7c0ae24ae7503317d455d3fee261524d52e2fd5467f"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-044-v1",
+      "artifact_id": "art-044",
+      "source_id": "src-044",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "decision",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-4/av-044-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "995680df4b84cdd9d3e835717707d567bd4218a85faf18297f12fa1938b09100"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-045-v1",
+      "artifact_id": "art-045",
+      "source_id": "src-045",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "action",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-1/av-045-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "95cf1d358432ef4a1db70371c918b09a83bd97fbef1341239379d9691d9ac990"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-046-v1",
+      "artifact_id": "art-046",
+      "source_id": "src-046",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_derived",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-2/av-046-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "d759a74dbc4e835da3526af618b48313ead39218da504b0848ddc5f15164b068"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-047-v1",
+      "artifact_id": "art-047",
+      "source_id": "src-047",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "ai_candidate",
+      "authority": "ai",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-3/av-047-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "fea6e4ab985d394c7c67186b8e1dcc76110eeb7858f3e2e1f99c7faeca597b70"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    },
+    {
+      "id": "av-048-v1",
+      "artifact_id": "art-048",
+      "source_id": "src-048",
+      "version_number": 1,
+      "created_at": "2026-08-09T14:00:00+08:00",
+      "immutable": true,
+      "content_identity": "external_material",
+      "authority": "external",
+      "confirmation_status": "unconfirmed",
+      "evidence_state": "current",
+      "conflict_branch": false,
+      "file": "content/project-4/av-048-v1.md",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "0615ef524d9f5c970b5bb18ccf7c27fa7db45199e8eebdb8046665e66c64ce85"
+      },
+      "export_state": "content_included",
+      "gap_id": null
+    }
+  ],
+  "derivations": [
+    {
+      "id": "deriv-004",
+      "output_version_id": "av-004-v1",
+      "input_version_ids": [
+        "av-missing-v1"
+      ],
+      "identity": "ai_derived",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-004",
+      "status": "current"
+    },
+    {
+      "id": "deriv-005",
+      "output_version_id": "av-005-v1",
+      "input_version_ids": [
+        "av-004-v1"
+      ],
+      "identity": "ai_candidate",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-005",
+      "status": "current"
+    },
+    {
+      "id": "deriv-010",
+      "output_version_id": "av-010-v1",
+      "input_version_ids": [
+        "av-009-v1"
+      ],
+      "identity": "ai_derived",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-010",
+      "status": "invalid"
+    },
+    {
+      "id": "deriv-011",
+      "output_version_id": "av-011-v1",
+      "input_version_ids": [
+        "av-010-v1"
+      ],
+      "identity": "ai_candidate",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-011",
+      "status": "invalid"
+    },
+    {
+      "id": "deriv-014",
+      "output_version_id": "av-014-v1",
+      "input_version_ids": [
+        "av-013-v1"
+      ],
+      "identity": "ai_candidate",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-014",
+      "status": "current"
+    },
+    {
+      "id": "deriv-015",
+      "output_version_id": "av-015-v1",
+      "input_version_ids": [
+        "av-014-v1"
+      ],
+      "identity": "ai_derived",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-015",
+      "status": "current"
+    },
+    {
+      "id": "deriv-016",
+      "output_version_id": "av-016-v1",
+      "input_version_ids": [
+        "av-015-v1"
+      ],
+      "identity": "ai_derived",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-016",
+      "status": "current"
+    },
+    {
+      "id": "deriv-017",
+      "output_version_id": "av-017-v1",
+      "input_version_ids": [
+        "av-016-v1"
+      ],
+      "identity": "ai_candidate",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-017",
+      "status": "current"
+    },
+    {
+      "id": "deriv-022",
+      "output_version_id": "av-022-v1",
+      "input_version_ids": [
+        "av-021-v1"
+      ],
+      "identity": "ai_derived",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-022",
+      "status": "current"
+    },
+    {
+      "id": "deriv-023",
+      "output_version_id": "av-023-v1",
+      "input_version_ids": [
+        "av-022-v1"
+      ],
+      "identity": "ai_candidate",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-023",
+      "status": "current"
+    },
+    {
+      "id": "deriv-028",
+      "output_version_id": "av-028-v1",
+      "input_version_ids": [
+        "av-027-v1"
+      ],
+      "identity": "ai_derived",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-028",
+      "status": "current"
+    },
+    {
+      "id": "deriv-029",
+      "output_version_id": "av-029-v1",
+      "input_version_ids": [
+        "av-028-v1"
+      ],
+      "identity": "ai_candidate",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-029",
+      "status": "current"
+    },
+    {
+      "id": "deriv-034",
+      "output_version_id": "av-034-v1",
+      "input_version_ids": [
+        "av-033-v1"
+      ],
+      "identity": "ai_derived",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-034",
+      "status": "current"
+    },
+    {
+      "id": "deriv-035",
+      "output_version_id": "av-035-v1",
+      "input_version_ids": [
+        "av-034-v1"
+      ],
+      "identity": "ai_candidate",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-035",
+      "status": "current"
+    },
+    {
+      "id": "deriv-040",
+      "output_version_id": "av-040-v1",
+      "input_version_ids": [
+        "av-039-v1"
+      ],
+      "identity": "ai_derived",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-040",
+      "status": "current"
+    },
+    {
+      "id": "deriv-041",
+      "output_version_id": "av-041-v1",
+      "input_version_ids": [
+        "av-040-v1"
+      ],
+      "identity": "ai_candidate",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-041",
+      "status": "current"
+    },
+    {
+      "id": "deriv-046",
+      "output_version_id": "av-046-v1",
+      "input_version_ids": [
+        "av-045-v1"
+      ],
+      "identity": "ai_derived",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-046",
+      "status": "current"
+    },
+    {
+      "id": "deriv-047",
+      "output_version_id": "av-047-v1",
+      "input_version_ids": [
+        "av-046-v1"
+      ],
+      "identity": "ai_candidate",
+      "workflow_version": "synthetic-workflow-1",
+      "model_descriptor": "deterministic-stub",
+      "authorization_id": "auth-047",
+      "status": "current"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "decision-002",
+      "artifact_id": "art-002",
+      "version_id": "av-002-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed"
+    },
+    {
+      "id": "decision-008",
+      "artifact_id": "art-008",
+      "version_id": "av-008-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed"
+    },
+    {
+      "id": "decision-014",
+      "artifact_id": "art-014",
+      "version_id": "av-014-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed"
+    },
+    {
+      "id": "decision-016",
+      "artifact_id": "art-016",
+      "version_id": "av-016-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed"
+    },
+    {
+      "id": "decision-020",
+      "artifact_id": "art-020",
+      "version_id": "av-020-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed"
+    },
+    {
+      "id": "decision-026",
+      "artifact_id": "art-026",
+      "version_id": "av-026-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed"
+    },
+    {
+      "id": "decision-032",
+      "artifact_id": "art-032",
+      "version_id": "av-032-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed"
+    },
+    {
+      "id": "decision-038",
+      "artifact_id": "art-038",
+      "version_id": "av-038-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed"
+    },
+    {
+      "id": "decision-044",
+      "artifact_id": "art-044",
+      "version_id": "av-044-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed"
+    }
+  ],
+  "actions": [
+    {
+      "id": "action-003",
+      "artifact_id": "art-003",
+      "version_id": "av-003-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "state": "open"
+    },
+    {
+      "id": "action-009",
+      "artifact_id": "art-009",
+      "version_id": "av-009-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "state": "open"
+    },
+    {
+      "id": "action-015",
+      "artifact_id": "art-015",
+      "version_id": "av-015-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "state": "open"
+    },
+    {
+      "id": "action-021",
+      "artifact_id": "art-021",
+      "version_id": "av-021-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "state": "open"
+    },
+    {
+      "id": "action-027",
+      "artifact_id": "art-027",
+      "version_id": "av-027-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "state": "open"
+    },
+    {
+      "id": "action-033",
+      "artifact_id": "art-033",
+      "version_id": "av-033-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "state": "open"
+    },
+    {
+      "id": "action-039",
+      "artifact_id": "art-039",
+      "version_id": "av-039-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "state": "open"
+    },
+    {
+      "id": "action-045",
+      "artifact_id": "art-045",
+      "version_id": "av-045-v1",
+      "authority": "user",
+      "confirmation_status": "confirmed",
+      "state": "open"
+    }
+  ],
+  "links": [
+    {
+      "id": "link-002",
+      "from_artifact_id": "art-002",
+      "to_artifact_id": "art-001",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-003",
+      "from_artifact_id": "art-003",
+      "to_artifact_id": "art-002",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-004",
+      "from_artifact_id": "art-004",
+      "to_artifact_id": "art-003",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-005",
+      "from_artifact_id": "art-005",
+      "to_artifact_id": "art-004",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-006",
+      "from_artifact_id": "art-006",
+      "to_artifact_id": "art-005",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-007",
+      "from_artifact_id": "art-007",
+      "to_artifact_id": "art-006",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-008",
+      "from_artifact_id": "art-008",
+      "to_artifact_id": "art-007",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-009",
+      "from_artifact_id": "art-009",
+      "to_artifact_id": "art-008",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-010",
+      "from_artifact_id": "art-010",
+      "to_artifact_id": "art-009",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-011",
+      "from_artifact_id": "art-011",
+      "to_artifact_id": "art-010",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-012",
+      "from_artifact_id": "art-012",
+      "to_artifact_id": "art-011",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-013",
+      "from_artifact_id": "art-013",
+      "to_artifact_id": "art-012",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-014",
+      "from_artifact_id": "art-014",
+      "to_artifact_id": "art-013",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-015",
+      "from_artifact_id": "art-015",
+      "to_artifact_id": "art-014",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-016",
+      "from_artifact_id": "art-016",
+      "to_artifact_id": "art-015",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-017",
+      "from_artifact_id": "art-017",
+      "to_artifact_id": "art-016",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-018",
+      "from_artifact_id": "art-018",
+      "to_artifact_id": "art-017",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-019",
+      "from_artifact_id": "art-019",
+      "to_artifact_id": "art-018",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-020",
+      "from_artifact_id": "art-020",
+      "to_artifact_id": "art-019",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-021",
+      "from_artifact_id": "art-021",
+      "to_artifact_id": "art-020",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-022",
+      "from_artifact_id": "art-022",
+      "to_artifact_id": "art-021",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-023",
+      "from_artifact_id": "art-023",
+      "to_artifact_id": "art-022",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-024",
+      "from_artifact_id": "art-024",
+      "to_artifact_id": "art-023",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-025",
+      "from_artifact_id": "art-025",
+      "to_artifact_id": "art-024",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-026",
+      "from_artifact_id": "art-026",
+      "to_artifact_id": "art-025",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-027",
+      "from_artifact_id": "art-027",
+      "to_artifact_id": "art-026",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-028",
+      "from_artifact_id": "art-028",
+      "to_artifact_id": "art-027",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-029",
+      "from_artifact_id": "art-029",
+      "to_artifact_id": "art-028",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-030",
+      "from_artifact_id": "art-030",
+      "to_artifact_id": "art-029",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-031",
+      "from_artifact_id": "art-031",
+      "to_artifact_id": "art-030",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-032",
+      "from_artifact_id": "art-032",
+      "to_artifact_id": "art-031",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-033",
+      "from_artifact_id": "art-033",
+      "to_artifact_id": "art-032",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-034",
+      "from_artifact_id": "art-034",
+      "to_artifact_id": "art-033",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-035",
+      "from_artifact_id": "art-035",
+      "to_artifact_id": "art-034",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-036",
+      "from_artifact_id": "art-036",
+      "to_artifact_id": "art-035",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-037",
+      "from_artifact_id": "art-037",
+      "to_artifact_id": "art-036",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-038",
+      "from_artifact_id": "art-038",
+      "to_artifact_id": "art-037",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-039",
+      "from_artifact_id": "art-039",
+      "to_artifact_id": "art-038",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-040",
+      "from_artifact_id": "art-040",
+      "to_artifact_id": "art-039",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-041",
+      "from_artifact_id": "art-041",
+      "to_artifact_id": "art-040",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-042",
+      "from_artifact_id": "art-042",
+      "to_artifact_id": "art-041",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-043",
+      "from_artifact_id": "art-043",
+      "to_artifact_id": "art-042",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-044",
+      "from_artifact_id": "art-044",
+      "to_artifact_id": "art-043",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-045",
+      "from_artifact_id": "art-045",
+      "to_artifact_id": "art-044",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-046",
+      "from_artifact_id": "art-046",
+      "to_artifact_id": "art-045",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-047",
+      "from_artifact_id": "art-047",
+      "to_artifact_id": "art-046",
+      "kind": "supports",
+      "established_by": "user",
+      "confirmation_status": "confirmed",
+      "validity": "current"
+    },
+    {
+      "id": "link-048",
+      "from_artifact_id": "art-048",
+      "to_artifact_id": "art-047",
+      "kind": "supports",
+      "established_by": "ai_candidate",
+      "confirmation_status": "unconfirmed",
+      "validity": "current"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "feedback-003",
+      "target_id": "action-003",
+      "event": "confirm",
+      "authority": "user",
+      "effective": true,
+      "sequence": 3
+    },
+    {
+      "id": "feedback-006",
+      "target_id": "art-006",
+      "event": "reject_candidate",
+      "authority": "user",
+      "effective": true,
+      "sequence": 6
+    },
+    {
+      "id": "feedback-009",
+      "target_id": "action-009",
+      "event": "confirm",
+      "authority": "user",
+      "effective": true,
+      "sequence": 9
+    },
+    {
+      "id": "feedback-012",
+      "target_id": "art-012",
+      "event": "reject_candidate",
+      "authority": "user",
+      "effective": true,
+      "sequence": 12
+    },
+    {
+      "id": "feedback-015",
+      "target_id": "action-015",
+      "event": "reject_candidate",
+      "authority": "user",
+      "effective": true,
+      "sequence": 15
+    },
+    {
+      "id": "feedback-018",
+      "target_id": "art-018",
+      "event": "reject_candidate",
+      "authority": "user",
+      "effective": true,
+      "sequence": 18
+    },
+    {
+      "id": "feedback-021",
+      "target_id": "action-021",
+      "event": "confirm",
+      "authority": "user",
+      "effective": true,
+      "sequence": 21
+    },
+    {
+      "id": "feedback-024",
+      "target_id": "art-024",
+      "event": "reject_candidate",
+      "authority": "user",
+      "effective": true,
+      "sequence": 24
+    },
+    {
+      "id": "feedback-027",
+      "target_id": "action-027",
+      "event": "confirm",
+      "authority": "user",
+      "effective": true,
+      "sequence": 27
+    },
+    {
+      "id": "feedback-030",
+      "target_id": "art-030",
+      "event": "reject_candidate",
+      "authority": "user",
+      "effective": true,
+      "sequence": 30
+    },
+    {
+      "id": "feedback-033",
+      "target_id": "action-033",
+      "event": "confirm",
+      "authority": "user",
+      "effective": true,
+      "sequence": 33
+    },
+    {
+      "id": "feedback-036",
+      "target_id": "art-036",
+      "event": "reject_candidate",
+      "authority": "user",
+      "effective": true,
+      "sequence": 36
+    },
+    {
+      "id": "feedback-039",
+      "target_id": "action-039",
+      "event": "confirm",
+      "authority": "user",
+      "effective": true,
+      "sequence": 39
+    },
+    {
+      "id": "feedback-042",
+      "target_id": "art-042",
+      "event": "reject_candidate",
+      "authority": "user",
+      "effective": true,
+      "sequence": 42
+    },
+    {
+      "id": "feedback-045",
+      "target_id": "action-045",
+      "event": "confirm",
+      "authority": "user",
+      "effective": true,
+      "sequence": 45
+    },
+    {
+      "id": "feedback-048",
+      "target_id": "art-048",
+      "event": "reject_candidate",
+      "authority": "user",
+      "effective": true,
+      "sequence": 48
+    }
+  ],
+  "authorizations": [
+    {
+      "id": "auth-001",
+      "subject": "synthetic-user",
+      "scope_ref": "src-001",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-002",
+      "subject": "synthetic-user",
+      "scope_ref": "src-002",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-003",
+      "subject": "synthetic-user",
+      "scope_ref": "src-003",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-004",
+      "subject": "synthetic-user",
+      "scope_ref": "src-004",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-005",
+      "subject": "synthetic-user",
+      "scope_ref": "src-005",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-006",
+      "subject": "synthetic-user",
+      "scope_ref": "src-006",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "not_licensed"
+    },
+    {
+      "id": "auth-007",
+      "subject": "synthetic-user",
+      "scope_ref": "src-007",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-008",
+      "subject": "synthetic-user",
+      "scope_ref": "src-008",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "not_licensed"
+    },
+    {
+      "id": "auth-009",
+      "subject": "synthetic-user",
+      "scope_ref": "src-009",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-010",
+      "subject": "synthetic-user",
+      "scope_ref": "src-010",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "revoked",
+      "version": 3,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-011",
+      "subject": "synthetic-user",
+      "scope_ref": "src-011",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-012",
+      "subject": "synthetic-user",
+      "scope_ref": "src-012",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-013",
+      "subject": "synthetic-user",
+      "scope_ref": "src-013",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-014",
+      "subject": "synthetic-user",
+      "scope_ref": "src-014",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-015",
+      "subject": "synthetic-user",
+      "scope_ref": "src-015",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-016",
+      "subject": "synthetic-user",
+      "scope_ref": "src-016",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-017",
+      "subject": "synthetic-user",
+      "scope_ref": "src-017",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-018",
+      "subject": "synthetic-user",
+      "scope_ref": "src-018",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-019",
+      "subject": "synthetic-user",
+      "scope_ref": "src-019",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-020",
+      "subject": "synthetic-user",
+      "scope_ref": "src-020",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-021",
+      "subject": "synthetic-user",
+      "scope_ref": "src-021",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-022",
+      "subject": "synthetic-user",
+      "scope_ref": "src-022",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-023",
+      "subject": "synthetic-user",
+      "scope_ref": "src-023",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-024",
+      "subject": "synthetic-user",
+      "scope_ref": "src-024",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-025",
+      "subject": "synthetic-user",
+      "scope_ref": "src-025",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-026",
+      "subject": "synthetic-user",
+      "scope_ref": "src-026",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-027",
+      "subject": "synthetic-user",
+      "scope_ref": "src-027",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-028",
+      "subject": "synthetic-user",
+      "scope_ref": "src-028",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-029",
+      "subject": "synthetic-user",
+      "scope_ref": "src-029",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-030",
+      "subject": "synthetic-user",
+      "scope_ref": "src-030",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-031",
+      "subject": "synthetic-user",
+      "scope_ref": "src-031",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-032",
+      "subject": "synthetic-user",
+      "scope_ref": "src-032",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-033",
+      "subject": "synthetic-user",
+      "scope_ref": "src-033",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-034",
+      "subject": "synthetic-user",
+      "scope_ref": "src-034",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-035",
+      "subject": "synthetic-user",
+      "scope_ref": "src-035",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-036",
+      "subject": "synthetic-user",
+      "scope_ref": "src-036",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-037",
+      "subject": "synthetic-user",
+      "scope_ref": "src-037",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-038",
+      "subject": "synthetic-user",
+      "scope_ref": "src-038",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-039",
+      "subject": "synthetic-user",
+      "scope_ref": "src-039",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-040",
+      "subject": "synthetic-user",
+      "scope_ref": "src-040",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-041",
+      "subject": "synthetic-user",
+      "scope_ref": "src-041",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-042",
+      "subject": "synthetic-user",
+      "scope_ref": "src-042",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-043",
+      "subject": "synthetic-user",
+      "scope_ref": "src-043",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-044",
+      "subject": "synthetic-user",
+      "scope_ref": "src-044",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-045",
+      "subject": "synthetic-user",
+      "scope_ref": "src-045",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-046",
+      "subject": "synthetic-user",
+      "scope_ref": "src-046",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-047",
+      "subject": "synthetic-user",
+      "scope_ref": "src-047",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    },
+    {
+      "id": "auth-048",
+      "subject": "synthetic-user",
+      "scope_ref": "src-048",
+      "actions": [
+        "local_export"
+      ],
+      "purpose": "portable_export_spike",
+      "location": "local",
+      "expires_at": null,
+      "state": "active",
+      "version": 1,
+      "redistribution": "allowed"
+    }
+  ],
+  "audit_entries": [
+    {
+      "event_ref": "ref-ce36863f51b6",
+      "target_ref": "ref-3a9003412a4e",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-b4e3d14e7519",
+      "target_ref": "ref-8e89f24b5f96",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-1441ba5507f9",
+      "target_ref": "ref-2e14e59d104d",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-7867155e59d4",
+      "target_ref": "ref-4c87b07afe51",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-2e46e678bb4f",
+      "target_ref": "ref-fc8660fd6aa7",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-dee9b7bd6593",
+      "target_ref": "ref-adee4f38aa00",
+      "event_type": "export_evaluated",
+      "result_code": "withheld_with_note",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-5976124a1168",
+      "target_ref": "ref-0cba74607f98",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-0dbabc9cc3b7",
+      "target_ref": "ref-e9a4fa03b0c1",
+      "event_type": "export_evaluated",
+      "result_code": "withheld_with_note",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-4beef4f5053f",
+      "target_ref": "ref-b23cdd556c33",
+      "event_type": "export_evaluated",
+      "result_code": "withheld_with_note",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-ca7731e11bd5",
+      "target_ref": "ref-d29195d979c2",
+      "event_type": "export_evaluated",
+      "result_code": "withheld_with_note",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-182e682c84d7",
+      "target_ref": "ref-491e0a727cf9",
+      "event_type": "export_evaluated",
+      "result_code": "withheld_with_note",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-80179e34a2d8",
+      "target_ref": "ref-ad2a54a18044",
+      "event_type": "export_evaluated",
+      "result_code": "withheld_with_note",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-a797c16f8729",
+      "target_ref": "ref-dce9e60fae4a",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-428ba7d91bd2",
+      "target_ref": "ref-accda3c45a7b",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-c5f2b63ac29c",
+      "target_ref": "ref-290973b22731",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-4ca086f5f4bd",
+      "target_ref": "ref-83e57c0476ac",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-239cb67b21fd",
+      "target_ref": "ref-8b0c9dcef645",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-6f804f4fc5b5",
+      "target_ref": "ref-29bd7d1276fc",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-be462e46a803",
+      "target_ref": "ref-6f41164d72f8",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-7f932710e9e1",
+      "target_ref": "ref-8f845d191cec",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-f1677380344b",
+      "target_ref": "ref-d7517a3699a7",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-813380af6c3f",
+      "target_ref": "ref-626981c41ae1",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-c7ccd3381f36",
+      "target_ref": "ref-f38a4690efda",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-d9366a221ed5",
+      "target_ref": "ref-b6493d7d45d1",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-0253e14fc8a9",
+      "target_ref": "ref-90f50d790cfb",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-c624d14aad1c",
+      "target_ref": "ref-da6dc1fd4c93",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-67ebf3cf5fcc",
+      "target_ref": "ref-6d55de2a6539",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-d071eada7691",
+      "target_ref": "ref-29d6853a508a",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-84fb82ce4360",
+      "target_ref": "ref-042e29f63cc7",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-e948d9cf3120",
+      "target_ref": "ref-567e19eceef3",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-cb03b1cdaf70",
+      "target_ref": "ref-eac92b0844d9",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-cbbf5f7eb1de",
+      "target_ref": "ref-6954bcc423db",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-701cdff6a3f1",
+      "target_ref": "ref-76e9c4799489",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-307bcd3bad59",
+      "target_ref": "ref-16a8dd74393c",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-bc4208f597fc",
+      "target_ref": "ref-c4c93ca24ae9",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-54dcccf76a3b",
+      "target_ref": "ref-1293a38c6cbc",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-589baf80fde4",
+      "target_ref": "ref-b7445ad50d13",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-9da74caec4c9",
+      "target_ref": "ref-f570a7375709",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-74015f164bc4",
+      "target_ref": "ref-fd7750bea7c2",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-74dbb7e90ea4",
+      "target_ref": "ref-7148823e6eb6",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-32ea8d47d4ab",
+      "target_ref": "ref-886f8ce55c9c",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-96f205e753ea",
+      "target_ref": "ref-fc6d630e02d9",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-3a52831f0063",
+      "target_ref": "ref-911961388ddc",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-417dfb420bd5",
+      "target_ref": "ref-5435c6fb3dee",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-2e8ab91c5667",
+      "target_ref": "ref-16bca4c3687e",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-d5c24932df77",
+      "target_ref": "ref-bb63d624f006",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-7da84ddb62ed",
+      "target_ref": "ref-4ba966116b36",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    },
+    {
+      "event_ref": "ref-4b6736fcf797",
+      "target_ref": "ref-188d6d368545",
+      "event_type": "export_evaluated",
+      "result_code": "included",
+      "policy_version": "export-policy-candidate-1"
+    }
+  ],
+  "tombstones": [
+    {
+      "target_id": "art-009",
+      "generation": 4,
+      "reason": "user_delete",
+      "content_recoverable": false
+    }
+  ],
+  "restrictions": [
+    {
+      "target_id": "src-010",
+      "generation": 5,
+      "reason": "processing_revoked",
+      "active": true
+    },
+    {
+      "target_id": "src-011",
+      "generation": 5,
+      "reason": "source_disconnected",
+      "active": true
+    }
+  ],
+  "gaps": [
+    {
+      "id": "gap-006",
+      "artifact_id": "art-006",
+      "version_id": "av-006-v1",
+      "reason": "external_content_not_licensed_pointer_only",
+      "restorable": false,
+      "user_message": "外部内容无再分发许可；仅包含来源指针和缺口说明。"
+    },
+    {
+      "id": "gap-008",
+      "artifact_id": "art-008",
+      "version_id": "av-008-v1",
+      "reason": "external_content_not_licensed_pointer_only",
+      "restorable": false,
+      "user_message": "外部内容无再分发许可；仅包含来源指针和缺口说明。"
+    },
+    {
+      "id": "gap-009",
+      "artifact_id": "art-009",
+      "version_id": "av-009-v1",
+      "reason": "deleted_content_body_withheld",
+      "restorable": false,
+      "user_message": "正文已删除；仅保留不可还原说明，导入不会复活。"
+    },
+    {
+      "id": "gap-010",
+      "artifact_id": "art-010",
+      "version_id": "av-010-v1",
+      "reason": "processing_revoked_body_withheld",
+      "restorable": false,
+      "user_message": "处理授权已撤回；正文未包含，恢复时保持阻断。"
+    },
+    {
+      "id": "gap-011",
+      "artifact_id": "art-011",
+      "version_id": "av-011-v1",
+      "reason": "source_disconnected_old_read_withheld",
+      "restorable": false,
+      "user_message": "来源已断开；仅恢复指针，不自动重新授权或读取。"
+    },
+    {
+      "id": "gap-012",
+      "artifact_id": "art-012",
+      "version_id": "av-012-v1",
+      "reason": "unique_evidence_invalid_review_required",
+      "restorable": false,
+      "user_message": "唯一证据已失效；保留确认历史但需要复核。"
+    }
+  ],
+  "excluded_rebuildable_artifacts": [
+    {
+      "kind": "fts_postings",
+      "reason": "rebuildable_from_current_legal_content"
+    },
+    {
+      "kind": "vectors",
+      "reason": "rebuildable_and_model_specific"
+    },
+    {
+      "kind": "cache",
+      "reason": "ephemeral_not_user_business_asset"
+    },
+    {
+      "kind": "rerank_features",
+      "reason": "rebuildable_implementation_detail"
+    }
+  ],
+  "privacy_note": "Synthetic package. Audit/log entries omit body, real path, prompt, model output, vector, credential, and raw stable object IDs.",
+  "restore_policy": {
+    "control_state_first": true,
+    "field_level_lww": false,
+    "source_pointer_does_not_reauthorize": true,
+    "user_original_overwrite": "forbidden",
+    "conflict_behavior": "retain_explicit_branch"
+  }
+}

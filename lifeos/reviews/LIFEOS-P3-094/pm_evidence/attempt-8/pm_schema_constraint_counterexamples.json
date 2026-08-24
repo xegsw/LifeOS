@@ -1,0 +1,37 @@
+{
+  "task": "LIFEOS-P3-094 attempt-8 PM schema constraint counterexamples",
+  "fixed_non_sensitive_fixtures_only": true,
+  "network_used": false,
+  "real_user_data_used": false,
+  "cases": [
+    {
+      "id": "missing-all-constraints-external-source",
+      "expected": "reject incomplete schema and invalidate stale page",
+      "pm_status": "FAIL",
+      "render_result_status": "rendered",
+      "error_type": null,
+      "stale_page_invalidated": false,
+      "page_hash_changed": true,
+      "rendered_page_contains_fixed_fixture": true,
+      "rendered_page_claims_local_capture": true,
+      "db_bytes_unchanged": true
+    },
+    {
+      "id": "missing-idempotency-unique",
+      "expected": "reject incomplete schema and invalidate stale page",
+      "pm_status": "FAIL",
+      "render_result_status": "rendered",
+      "error_type": null,
+      "stale_page_invalidated": false,
+      "page_hash_changed": true,
+      "rendered_page_contains_fixed_fixture": true,
+      "rendered_page_claims_local_capture": true,
+      "db_bytes_unchanged": true
+    }
+  ],
+  "summary": {
+    "pass": 0,
+    "fail": 2
+  },
+  "temporary_fixture_removed": true
+}

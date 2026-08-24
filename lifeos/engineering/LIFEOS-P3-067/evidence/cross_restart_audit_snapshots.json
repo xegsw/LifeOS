@@ -1,0 +1,104 @@
+{
+  "after_blocked_restart": {
+    "audit": [
+      {
+        "detail_json": "{\"boundaries\": {\"cloud\": \"not_used\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"source\": \"synthetic-source\", \"status\": \"pending_commit\"}",
+        "event": "capture_pending",
+        "record_id": "record-1",
+        "seq": 1
+      },
+      {
+        "detail_json": "{\"boundaries\": {\"cloud\": \"not_used\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"reason\": \"explicit_confirmation_required\"}",
+        "event": "recovery_not_confirmed",
+        "record_id": "record-1",
+        "seq": 2
+      },
+      {
+        "detail_json": "{\"boundaries\": {\"cloud\": \"not_used\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"version\": 1}",
+        "event": "recovery_completed",
+        "record_id": "record-1",
+        "seq": 3
+      },
+      {
+        "detail_json": "{\"boundaries\": {\"cloud\": \"not_used\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"version\": 1}",
+        "event": "recovery_idempotent",
+        "record_id": "record-1",
+        "seq": 4
+      },
+      {
+        "detail_json": "{\"boundaries\": {\"cloud\": \"not_used\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"changed\": 1, \"state\": \"tombstoned\"}",
+        "event": "record_revoked",
+        "record_id": "record-1",
+        "seq": 5
+      },
+      {
+        "detail_json": "{\"boundaries\": {\"cloud\": \"not_used\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"reason\": \"revoked_or_tombstoned\"}",
+        "event": "recovery_blocked",
+        "record_id": "record-1",
+        "seq": 6
+      }
+    ],
+    "boundaries": {
+      "cloud": "not_used",
+      "export": "not_used",
+      "external_action": "none",
+      "external_user": "not_used",
+      "l3": "not_used",
+      "multi_device": "not_used",
+      "network": "disabled",
+      "real_paths": "not_used",
+      "sync": "not_used",
+      "tauri_ipc": "not_used",
+      "vault": "not_used"
+    },
+    "records": [
+      {
+        "body": "non-sensitive synthetic text",
+        "id": "record-1",
+        "restored": 1,
+        "source": "synthetic-source",
+        "state": "tombstoned",
+        "version": 2
+      }
+    ]
+  },
+  "after_not_confirmed_restart": {
+    "audit": [
+      {
+        "detail_json": "{\"boundaries\": {\"cloud\": \"not_used\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"source\": \"synthetic-source\", \"status\": \"pending_commit\"}",
+        "event": "capture_pending",
+        "record_id": "record-1",
+        "seq": 1
+      },
+      {
+        "detail_json": "{\"boundaries\": {\"cloud\": \"not_used\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"reason\": \"explicit_confirmation_required\"}",
+        "event": "recovery_not_confirmed",
+        "record_id": "record-1",
+        "seq": 2
+      }
+    ],
+    "boundaries": {
+      "cloud": "not_used",
+      "export": "not_used",
+      "external_action": "none",
+      "external_user": "not_used",
+      "l3": "not_used",
+      "multi_device": "not_used",
+      "network": "disabled",
+      "real_paths": "not_used",
+      "sync": "not_used",
+      "tauri_ipc": "not_used",
+      "vault": "not_used"
+    },
+    "records": [
+      {
+        "body": "non-sensitive synthetic text",
+        "id": "record-1",
+        "restored": 0,
+        "source": "synthetic-source",
+        "state": "saved",
+        "version": 1
+      }
+    ]
+  }
+}

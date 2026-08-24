@@ -1,0 +1,418 @@
+{
+  "fixture_version": "fixture-pack-v1-sp03",
+  "chain_1_obsidian_to_completed_action": {
+    "query": {
+      "type": "single_debug_query",
+      "output_id": "action-user-confirmed-v1"
+    },
+    "output": {
+      "object_id": "action-user-confirmed-v1",
+      "identity": "user_confirmed",
+      "authority_owner": "user_feedback",
+      "version_id": "action-user-version-v1",
+      "origin_candidate_id": "action-ai-candidate-v1",
+      "project_id": "project-alpha",
+      "business_state": "completed",
+      "recognition": "confirmed",
+      "evidence_state": "available",
+      "review_required": false
+    },
+    "derivation": {
+      "derivation_id": "deriv-next-v1",
+      "kind": "candidate_next_step",
+      "purpose": "next_step",
+      "location": "local",
+      "processor": "deterministic_stub",
+      "workflow_version": "next-wf-v1",
+      "model_version": "stub-v1",
+      "generated_at": "2026-08-08T09:01:00Z",
+      "output_identity": "ai_candidate",
+      "status": "valid",
+      "active": true,
+      "gap_disclosure": []
+    },
+    "precise_inputs": [
+      {
+        "version_id": "version-obs-v1",
+        "content_hash": "09ac2f753bc773c62781c6f52ced8c896584dfed2a2f89198beee67fda0cc817",
+        "artifact_id": "artifact-obs-note",
+        "artifact_identity": "external_original",
+        "source_id": "source-obsidian-synth",
+        "source_kind": "obsidian_vault",
+        "source_access": "reachable"
+      },
+      {
+        "version_id": "version-user-v1",
+        "content_hash": "fbc975863770877b45bc1458e05943a743cfa29c3d0a83b603d1d97491acb73d",
+        "artifact_id": "artifact-user-note",
+        "artifact_identity": "user_authored_original",
+        "source_id": "source-lifeos-synth",
+        "source_kind": "local_input",
+        "source_access": "reachable"
+      }
+    ],
+    "nested_outputs": [
+      "output-recovery-v1"
+    ],
+    "authorizations": [
+      {
+        "authorization_id": "auth-local-a",
+        "subject": "user-synthetic-01",
+        "scope": {
+          "projects": [
+            "project-alpha"
+          ],
+          "sources": [
+            "source-obsidian-synth",
+            "source-web-synth"
+          ],
+          "excluded": [
+            "excluded-synthetic"
+          ]
+        },
+        "actions": [
+          "read",
+          "local_derive",
+          "export"
+        ],
+        "purposes": [
+          "project_recovery",
+          "next_step"
+        ],
+        "locations": [
+          "local"
+        ],
+        "validity": {
+          "granted_at": "2026-08-08T08:00:00Z",
+          "expires_at": "2027-08-08T00:00:00Z",
+          "state": "active"
+        },
+        "policy": {
+          "policy_version": "policy-synth-v3",
+          "sensitivity": "personal",
+          "recipients": [
+            "local_runtime"
+          ],
+          "training_allowed": false,
+          "retention_days": 30,
+          "exportable": true,
+          "external_disclosure": "local_only"
+        }
+      }
+    ],
+    "feedback_history": [
+      {
+        "feedback_id": "feedback-action-edit",
+        "seq": 1,
+        "type": "edit_confirm",
+        "target_id": "action-ai-candidate-v1",
+        "target_version_id": "action-ai-version-v1",
+        "result_object_id": "action-user-confirmed-v1",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-action-complete",
+        "seq": 2,
+        "type": "complete",
+        "target_id": "action-user-confirmed-v1",
+        "target_version_id": "action-user-version-v1",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-rejected",
+        "seq": 4,
+        "type": "reject",
+        "target_id": "action-ai-candidate-v1",
+        "target_version_id": "action-ai-version-v1",
+        "active": false
+      },
+      {
+        "feedback_id": "feedback-defer-sample",
+        "seq": 7,
+        "type": "defer",
+        "target_id": "action-user-confirmed-v1",
+        "target_version_id": "action-user-version-v1",
+        "active": false
+      }
+    ]
+  },
+  "chain_2_external_material_to_confirmed_decision": {
+    "query": {
+      "type": "single_debug_query",
+      "output_id": "decision-user-confirmed-v1"
+    },
+    "output": {
+      "object_id": "decision-user-confirmed-v1",
+      "identity": "user_confirmed",
+      "authority_owner": "user_feedback",
+      "version_id": "decision-user-version-v1",
+      "origin_candidate_id": "decision-candidate-v1",
+      "project_id": "project-alpha",
+      "business_state": "active",
+      "recognition": "confirmed",
+      "evidence_state": "available",
+      "review_required": false
+    },
+    "derivation": {
+      "derivation_id": "deriv-decision-v1",
+      "kind": "decision_evidence",
+      "purpose": "decision_evidence",
+      "location": "local",
+      "processor": "deterministic_stub",
+      "workflow_version": "decision-wf-v1",
+      "model_version": "stub-v1",
+      "generated_at": "2026-08-08T09:02:00Z",
+      "output_identity": "ai_candidate",
+      "status": "valid",
+      "active": true,
+      "gap_disclosure": []
+    },
+    "precise_inputs": [
+      {
+        "version_id": "version-web-v1",
+        "content_hash": "bed1cce1377ad929052b4e4f7954fcd947f3fee667698c5e7ecb0a12d4071e52",
+        "artifact_id": "artifact-web-material",
+        "artifact_identity": "external_original",
+        "source_id": "source-web-synth",
+        "source_kind": "external_material",
+        "source_access": "reachable"
+      }
+    ],
+    "nested_outputs": [],
+    "authorizations": [
+      {
+        "authorization_id": "auth-local-b",
+        "subject": "user-synthetic-01",
+        "scope": {
+          "projects": [
+            "project-alpha",
+            "project-beta"
+          ],
+          "sources": [
+            "source-obsidian-synth",
+            "source-web-synth"
+          ],
+          "excluded": [
+            "excluded-synthetic"
+          ]
+        },
+        "actions": [
+          "read",
+          "local_derive",
+          "export"
+        ],
+        "purposes": [
+          "decision_evidence",
+          "project_recovery"
+        ],
+        "locations": [
+          "local"
+        ],
+        "validity": {
+          "granted_at": "2026-08-08T08:00:00Z",
+          "expires_at": "2027-08-08T00:00:00Z",
+          "state": "active"
+        },
+        "policy": {
+          "policy_version": "policy-synth-v3",
+          "sensitivity": "restricted",
+          "recipients": [
+            "local_runtime"
+          ],
+          "training_allowed": false,
+          "retention_days": 7,
+          "exportable": false,
+          "external_disclosure": "denied"
+        }
+      }
+    ],
+    "feedback_history": [
+      {
+        "feedback_id": "feedback-decision-confirm",
+        "seq": 3,
+        "type": "confirm",
+        "target_id": "decision-candidate-v1",
+        "target_version_id": "decision-ai-version-v1",
+        "result_object_id": "decision-user-confirmed-v1",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-correction",
+        "seq": 5,
+        "type": "correct",
+        "target_id": "decision-candidate-v1",
+        "target_version_id": "decision-ai-version-v1",
+        "active": false
+      }
+    ]
+  },
+  "multi_input_constraint_envelope": {
+    "projects": [
+      "project-alpha"
+    ],
+    "purposes": [
+      "project_recovery"
+    ],
+    "locations": [
+      "local"
+    ],
+    "recipients": [
+      "local_runtime"
+    ],
+    "actions": [
+      "export",
+      "local_derive",
+      "read"
+    ],
+    "sensitivity": "restricted",
+    "retention_days": 7,
+    "training_allowed": false,
+    "exportable": false,
+    "merge_legal": true
+  },
+  "legal_subset_new_derivation": {
+    "derivation_id": "deriv-subset-v2",
+    "kind": "recovery_package",
+    "inputs": [
+      "version-obs-v1"
+    ],
+    "authorization_ids": [
+      "auth-local-a"
+    ],
+    "purpose": "project_recovery",
+    "location": "local",
+    "processor": "deterministic_stub",
+    "workflow_version": "recovery-wf-v1",
+    "model_version": "stub-v1",
+    "generated_at": "2026-08-08T10:00:00Z",
+    "output_id": "output-subset-v2",
+    "output_identity": "ai_organized",
+    "status": "valid",
+    "active": true,
+    "gap_disclosure": [
+      "version-web-v1 excluded: authorization/policy restriction"
+    ]
+  },
+  "incompatible_input_decision": {
+    "decision": "reject_generation",
+    "reason": "empty authorization intersection",
+    "envelope": {
+      "projects": [],
+      "purposes": [],
+      "locations": [
+        "local"
+      ],
+      "recipients": [
+        "local_runtime"
+      ],
+      "actions": [
+        "read"
+      ],
+      "sensitivity": "restricted",
+      "retention_days": 7,
+      "training_allowed": false,
+      "exportable": false,
+      "merge_legal": false
+    }
+  },
+  "important_links": [
+    {
+      "link_id": "link-obs-project",
+      "from_id": "artifact-obs-note",
+      "to_id": "project-alpha",
+      "type": "project_context",
+      "source": "user_confirmed",
+      "confirmation": "confirmed",
+      "validity": "valid"
+    },
+    {
+      "link_id": "link-folder-candidate",
+      "from_id": "artifact-obs-note",
+      "to_id": "project-beta",
+      "type": "folder_candidate",
+      "source": "external_structure",
+      "confirmation": "candidate",
+      "validity": "valid"
+    },
+    {
+      "link_id": "link-tag-candidate",
+      "from_id": "artifact-excluded",
+      "to_id": "project-alpha",
+      "type": "tag_candidate",
+      "source": "external_structure",
+      "confirmation": "candidate",
+      "validity": "valid"
+    },
+    {
+      "link_id": "link-wikilink-candidate",
+      "from_id": "artifact-obs-note",
+      "to_id": "artifact-excluded",
+      "type": "wikilink",
+      "source": "external_structure",
+      "confirmation": "candidate",
+      "validity": "valid"
+    }
+  ],
+  "identity_authority_samples": [
+    [
+      "artifact-obs-note",
+      "external_original",
+      "artifact"
+    ],
+    [
+      "artifact-web-material",
+      "external_original",
+      "artifact"
+    ],
+    [
+      "artifact-user-note",
+      "user_authored_original",
+      "artifact"
+    ],
+    [
+      "artifact-excluded",
+      "external_original",
+      "artifact"
+    ],
+    [
+      "output-recovery-v1",
+      "ai_organized",
+      "derivation"
+    ],
+    [
+      "action-ai-candidate-v1",
+      "ai_candidate",
+      "derivation"
+    ],
+    [
+      "action-user-confirmed-v1",
+      "user_confirmed",
+      "user_feedback"
+    ],
+    [
+      "decision-candidate-v1",
+      "ai_candidate",
+      "derivation"
+    ],
+    [
+      "decision-user-confirmed-v1",
+      "user_confirmed",
+      "user_feedback"
+    ],
+    [
+      "external-claim-v1",
+      "external_claim",
+      "external_source"
+    ],
+    [
+      "output-multi-v1",
+      "ai_organized",
+      "derivation"
+    ],
+    [
+      "output-feedback-shaped-v1",
+      "ai_organized",
+      "derivation"
+    ]
+  ]
+}

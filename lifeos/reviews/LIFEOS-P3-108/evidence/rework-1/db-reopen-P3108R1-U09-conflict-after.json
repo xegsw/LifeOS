@@ -1,0 +1,75 @@
+{
+  "db": {
+    "ctime_ns": 1787540486991647429,
+    "exists": true,
+    "is_symlink": false,
+    "kind": 32768,
+    "mode": 33188,
+    "mtime_ns": 1787540486990479095,
+    "nlink": 1,
+    "path": "/private/tmp/lifeos-p3-104-p3-108-review-reopen-p3108r1a1/capture.sqlite",
+    "size": 24576
+  },
+  "fixture": "/private/tmp/lifeos-p3-104-p3-108-review-reopen-p3108r1a1",
+  "id": "P3108R1-U09-conflict-after",
+  "record_count": 1,
+  "rows": {
+    "audit": [
+      {
+        "capture_id": "p3-104-000001a031b6eed1-00012d19",
+        "created_at_ms": 1787540467409,
+        "detail": "local_capture",
+        "event": "capture_saved",
+        "id": 1
+      },
+      {
+        "capture_id": "p3-104-000001a031b6eed1-00012d19",
+        "created_at_ms": 1787540486987,
+        "detail": "same_idempotency_key",
+        "event": "capture_repeat",
+        "id": 2
+      }
+    ],
+    "captures": [
+      {
+        "content": "P3-104 固定非敏感记录：核对今日页本地运行时。",
+        "created_at_ms": 1787540467409,
+        "id": "p3-104-000001a031b6eed1-00012d19",
+        "idem_key": "p3-104-ui-primary",
+        "source": "local_capture"
+      }
+    ],
+    "sqlite_sequence": [
+      {
+        "name": "audit",
+        "seq": 2
+      }
+    ]
+  },
+  "schema": {
+    "audit": [
+      "id",
+      "event",
+      "capture_id",
+      "created_at_ms",
+      "detail"
+    ],
+    "captures": [
+      "id",
+      "content",
+      "created_at_ms",
+      "source",
+      "idem_key"
+    ],
+    "sqlite_sequence": [
+      "name",
+      "seq"
+    ]
+  },
+  "tables": [
+    "audit",
+    "captures",
+    "sqlite_sequence"
+  ],
+  "time": "2026-08-24T03:02:01.798034+00:00"
+}

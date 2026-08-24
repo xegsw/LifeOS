@@ -1,0 +1,21 @@
+test_01_unconfirmed_never_saves (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_02_save_and_view_source_status (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_03_save_is_idempotent (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_04_save_conflict_visible (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_05_atomic_failure_leaves_no_record (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_06_default_deny (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_07_exact_grant_allows_local_only (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_08_wrong_confirmation_fail_closed (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_09_deny_wins (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_10_expired_grant_denies (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_11_binding_mismatch_denies (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_12_restore_is_confirmed_and_idempotent (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_13_revoked_record_never_restores (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_14_permission_revoke_survives_restart (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_15_blocked_audit_survives_restart (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+test_16_boundaries_closed (test_integrated_runtime.IntegratedRuntimeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.048s
+
+OK

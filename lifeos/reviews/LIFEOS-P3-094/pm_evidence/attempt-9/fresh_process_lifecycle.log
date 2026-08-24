@@ -1,0 +1,370 @@
+[
+  {
+    "id": "first-capture",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "c2f8d6384de0d2d56551765affde2e8adaadc7c9d754a5931e81a8e83868253d"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    }
+  },
+  {
+    "id": "repeat-capture",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "c2f8d6384de0d2d56551765affde2e8adaadc7c9d754a5931e81a8e83868253d"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "70921575b32d8348e7260f5153b4b3451d4049b87c29a6f2615a8acbe3d8fe89"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    }
+  },
+  {
+    "id": "restart-read",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "70921575b32d8348e7260f5153b4b3451d4049b87c29a6f2615a8acbe3d8fe89"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "70921575b32d8348e7260f5153b4b3451d4049b87c29a6f2615a8acbe3d8fe89"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    }
+  },
+  {
+    "id": "first-render",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "70921575b32d8348e7260f5153b4b3451d4049b87c29a6f2615a8acbe3d8fe89"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "70921575b32d8348e7260f5153b4b3451d4049b87c29a6f2615a8acbe3d8fe89"
+      },
+      "page": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201013,
+        "nlink": 1,
+        "size": 672,
+        "sha256": "753eb190f2ebdab21efc9d9cc13a4b40768e89ef984547e93162f9a7b067f1ad"
+      }
+    }
+  },
+  {
+    "id": "second-capture",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "70921575b32d8348e7260f5153b4b3451d4049b87c29a6f2615a8acbe3d8fe89"
+      },
+      "page": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201013,
+        "nlink": 1,
+        "size": 672,
+        "sha256": "753eb190f2ebdab21efc9d9cc13a4b40768e89ef984547e93162f9a7b067f1ad"
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "103ccf03438b5fbdd0e98dde02674463b6c1081a95c08f13b9648cf4bc37ff63"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    }
+  },
+  {
+    "id": "second-render",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "103ccf03438b5fbdd0e98dde02674463b6c1081a95c08f13b9648cf4bc37ff63"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "103ccf03438b5fbdd0e98dde02674463b6c1081a95c08f13b9648cf4bc37ff63"
+      },
+      "page": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201015,
+        "nlink": 1,
+        "size": 874,
+        "sha256": "74d7f8645af39b5dee78ff25e01692c347f02262f24d5ac756ac26262b57b284"
+      }
+    }
+  },
+  {
+    "id": "clear",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "103ccf03438b5fbdd0e98dde02674463b6c1081a95c08f13b9648cf4bc37ff63"
+      },
+      "page": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201015,
+        "nlink": 1,
+        "size": 874,
+        "sha256": "74d7f8645af39b5dee78ff25e01692c347f02262f24d5ac756ac26262b57b284"
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "4f92928fd3ee283f477050b1961050d72e10a74824516d02388f7539be5408b3"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    }
+  },
+  {
+    "id": "post-clear-render",
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "4f92928fd3ee283f477050b1961050d72e10a74824516d02388f7539be5408b3"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6201008,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "4f92928fd3ee283f477050b1961050d72e10a74824516d02388f7539be5408b3"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    }
+  }
+]

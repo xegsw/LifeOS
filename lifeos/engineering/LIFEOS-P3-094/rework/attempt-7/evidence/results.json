@@ -1,0 +1,118 @@
+{
+  "task": "LIFEOS-P3-094-rework-attempt-7",
+  "timestamp": "2026-08-22T11:44:06.522006+00:00",
+  "message_received_at": "2026-08-22 19:39:14 CST (+0800)",
+  "session_type": "reused completed attempt-6 Codex engineering session; did not perform P3-095 independent review",
+  "model_route": "gpt-5.6-terra + high",
+  "authorization": "D-0394 narrow stale-page fail-closed remediation",
+  "fixed_non_sensitive_fixtures_only": true,
+  "items": [
+    {
+      "id": "A7-01-empty-db-stale-page-invalidated",
+      "status": "PASS",
+      "render_failed": true,
+      "stale_page_invalidated": true,
+      "db_unchanged": true,
+      "capture_count": 0
+    },
+    {
+      "id": "A7-02-corrupt-db-stale-page-invalidated",
+      "status": "PASS",
+      "render_failed": true,
+      "stale_page_invalidated": true,
+      "db_bytes_unchanged": true
+    },
+    {
+      "id": "A7-03-unreadable-db-stale-page-invalidated",
+      "status": "PASS",
+      "render_failed": true,
+      "stale_page_invalidated": true,
+      "db_bytes_unchanged": true,
+      "db_mode_unchanged_during_render": true
+    },
+    {
+      "id": "A7-04-query-failure-stale-page-invalidated",
+      "status": "PASS",
+      "render_failed": true,
+      "stale_page_invalidated": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "A7-05-stale-page-invalidation-failure-disclosed",
+      "status": "PASS",
+      "render_failed": true,
+      "failure_disclosed": true,
+      "page_hash_equal": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "A7-06-valid-nonempty-render-preserved",
+      "status": "PASS",
+      "rendered": true,
+      "record_count": 1,
+      "db_unchanged": true
+    },
+    {
+      "id": "A7-07-atomic-publish-failure-preserves-valid-page",
+      "status": "PASS",
+      "render_failed": true,
+      "valid_page_hash_equal": true,
+      "db_unchanged": true,
+      "half_product_count": 0
+    },
+    {
+      "id": "A7-08-clear-order-preserved",
+      "status": "PASS",
+      "page_invalidated": true,
+      "capture_count_after": 0,
+      "clear_success": true
+    },
+    {
+      "id": "A7-09-attempt6-full-regression",
+      "status": "PASS",
+      "exit_code": 0,
+      "attempt6_pass": 19,
+      "attempt6_fail": 0
+    },
+    {
+      "id": "A7-10-clean-copy-unit-suite",
+      "status": "PASS",
+      "exit_code": 0,
+      "test_count": 19
+    },
+    {
+      "id": "A7-11-task-local-cache-hygiene",
+      "status": "PASS",
+      "cache_count": 0,
+      "syntax_compile_count": 3,
+      "syntax_mode": "python -B and builtin compile"
+    },
+    {
+      "id": "A7-12-task-local-residue-zero",
+      "status": "PASS",
+      "before_count": 0,
+      "after_count": 0
+    },
+    {
+      "id": "A7-13-history-read-only-hashes",
+      "status": "PASS",
+      "file_count": 128,
+      "before_after_equal": true
+    }
+  ],
+  "summary": {
+    "pass": 13,
+    "fail": 0,
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  },
+  "runtime_cleanup": {
+    "db_exists": false,
+    "html_exists": false,
+    "cache_exists": false,
+    "task_local_residue_after": 0
+  }
+}

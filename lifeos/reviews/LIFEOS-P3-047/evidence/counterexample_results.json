@@ -1,0 +1,259 @@
+{
+  "task_id": "LIFEOS-P3-047",
+  "scope": "synthetic SQLite PM counterexample; no real data or capability",
+  "summary": {
+    "pass": 0,
+    "bypass": 8,
+    "p2_bypass": 8
+  },
+  "results": [
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Generic tombstone was rebound into an Authorization tombstone",
+      "status": "BYPASS",
+      "error": null,
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "authorization",
+        "auth1",
+        2,
+        "forged-cleanup",
+        "user_cleanup",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Generic tombstone was rebound into an Authorization tombstone",
+      "status": "BYPASS",
+      "error": null,
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "authorization",
+        "auth1",
+        2,
+        "forged-cleanup",
+        "user_cleanup",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Generic tombstone was rebound into an Authorization tombstone",
+      "status": "BYPASS",
+      "error": null,
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "authorization",
+        "auth1",
+        2,
+        "forged-cleanup",
+        "user_cleanup",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Generic tombstone was rebound into an Authorization tombstone",
+      "status": "BYPASS",
+      "error": null,
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "authorization",
+        "auth1",
+        2,
+        "forged-cleanup",
+        "user_cleanup",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Generic tombstone was rebound into an Authorization tombstone",
+      "status": "BYPASS",
+      "error": null,
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "authorization",
+        "auth1",
+        2,
+        "forged-cleanup",
+        "user_cleanup",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Generic tombstone was rebound into an Authorization tombstone",
+      "status": "BYPASS",
+      "error": null,
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "authorization",
+        "auth1",
+        2,
+        "forged-cleanup",
+        "user_cleanup",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Generic tombstone was rebound into an Authorization tombstone",
+      "status": "BYPASS",
+      "error": null,
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "authorization",
+        "auth1",
+        2,
+        "forged-cleanup",
+        "user_cleanup",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "expected": "A tombstone identity and control envelope are immutable from INSERT",
+      "actual": "Generic tombstone was rebound into an Authorization tombstone",
+      "status": "BYPASS",
+      "error": null,
+      "before": [
+        "artifact",
+        "placeholder",
+        1,
+        "seed-command",
+        "seed-reason",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "after": [
+        "authorization",
+        "auth1",
+        2,
+        "forged-cleanup",
+        "user_cleanup",
+        1786550400000,
+        "accepted",
+        1786550400000
+      ],
+      "integrity_check": "ok",
+      "foreign_key_check": []
+    }
+  ]
+}

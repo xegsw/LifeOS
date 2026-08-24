@@ -1,0 +1,59 @@
+{
+  "audits": [
+    {
+      "detail_json": "{\"boundaries\": {\"ai_consumption\": \"disabled\", \"cloud\": \"disabled\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"key\": \"cli-save\"}",
+      "event": "save_pending",
+      "record_id": "rec-032acf997c01772a",
+      "seq": 1
+    },
+    {
+      "detail_json": "{\"boundaries\": {\"ai_consumption\": \"disabled\", \"cloud\": \"disabled\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"decision\": \"grant\", \"expires_at_ms\": 1787303885824, \"permission_id\": \"perm-38eeaa37bab25ed3\"}",
+      "event": "permission_set",
+      "record_id": null,
+      "seq": 2
+    },
+    {
+      "detail_json": "{\"boundaries\": {\"ai_consumption\": \"disabled\", \"cloud\": \"disabled\", \"export\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"real_paths\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}}",
+      "event": "restore_completed",
+      "record_id": "rec-032acf997c01772a",
+      "seq": 3
+    }
+  ],
+  "boundaries": {
+    "ai_consumption": "disabled",
+    "cloud": "disabled",
+    "export": "not_used",
+    "external_action": "none",
+    "external_user": "not_used",
+    "l3": "not_used",
+    "multi_device": "not_used",
+    "network": "disabled",
+    "real_paths": "not_used",
+    "sync": "not_used",
+    "tauri_ipc": "not_used",
+    "vault": "not_used"
+  },
+  "permissions": [
+    {
+      "decision": "grant",
+      "expires_at_ms": 1787303885824,
+      "id": "perm-38eeaa37bab25ed3",
+      "idempotency_key": "cli-grant",
+      "location": "task_local_sqlite",
+      "processor": "local_synthetic_runtime",
+      "purpose": "local_synthetic_restore",
+      "status": "current"
+    }
+  ],
+  "records": [
+    {
+      "id": "rec-032acf997c01772a",
+      "idempotency_key": "cli-save",
+      "original_text": "非敏感测试文本：CLI 演练",
+      "restored": 1,
+      "source": "operator_local_entry",
+      "status": "saved",
+      "version": 1
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "suite": "P3-105 static and visual contract preflight",
+  "total": 35,
+  "pass": 35,
+  "fail": 0,
+  "P0": 0,
+  "P1": 0,
+  "P2": 0,
+  "Unknown": 0,
+  "Not Implemented": 0,
+  "results": [
+    {
+      "test_id": "ST-FROZEN-Cargo.lock",
+      "execution_id": "P3-105-STATIC-001",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "Cargo.lock hash=430583c26b3104ff384c7ab539b0ebe79d90509a957701a2fb1ebd3b4c2026f1"
+    },
+    {
+      "test_id": "ST-FROZEN-src/runtime.rs",
+      "execution_id": "P3-105-STATIC-002",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "src/runtime.rs hash=0ca8dbc53faf1c5b9b6c021711ebe16e4fe5102851948e5fac1c589c13ce3529"
+    },
+    {
+      "test_id": "ST-FROZEN-src/main.rs",
+      "execution_id": "P3-105-STATIC-003",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "src/main.rs hash=4d7a1e4a1eebe08ffec78a4c0cd0e7cdeabf6b92e68c003b02e3515a035e042c"
+    },
+    {
+      "test_id": "ST-FROZEN-capabilities/main.json",
+      "execution_id": "P3-105-STATIC-004",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "capabilities/main.json hash=ce407aaef4f37c9387727179aff9897f7957defdaebd42274021b8016d59050b"
+    },
+    {
+      "test_id": "ST-DEPS-01",
+      "execution_id": "P3-105-STATIC-005",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "Cargo.toml and all direct dependency versions byte-identical"
+    },
+    {
+      "test_id": "ST-CONFIG-01",
+      "execution_id": "P3-105-STATIC-006",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "only allowed window fields changed: ['height', 'minHeight', 'minWidth', 'title', 'width']"
+    },
+    {
+      "test_id": "ST-CONFIG-02",
+      "execution_id": "P3-105-STATIC-007",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "initial window is 1280x1024"
+    },
+    {
+      "test_id": "ST-PAGES-01",
+      "execution_id": "P3-105-STATIC-008",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "three HTML pages: ['default-recovery.html', 'no-reliable-suggestion.html', 'restricted-offline.html']"
+    },
+    {
+      "test_id": "ST-RAIL-default-recovery",
+      "execution_id": "P3-105-STATIC-009",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "default-recovery.html left rail"
+    },
+    {
+      "test_id": "ST-COMPOSER-default-recovery",
+      "execution_id": "P3-105-STATIC-010",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "default-recovery.html composer"
+    },
+    {
+      "test_id": "ST-A11Y-default-recovery",
+      "execution_id": "P3-105-STATIC-011",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "default-recovery.html skip link and focus target"
+    },
+    {
+      "test_id": "ST-CLOSED-default-recovery",
+      "execution_id": "P3-105-STATIC-012",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "default-recovery.html attachment and voice disabled"
+    },
+    {
+      "test_id": "ST-RAIL-no-reliable-suggestion",
+      "execution_id": "P3-105-STATIC-013",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "no-reliable-suggestion.html left rail"
+    },
+    {
+      "test_id": "ST-COMPOSER-no-reliable-suggestion",
+      "execution_id": "P3-105-STATIC-014",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "no-reliable-suggestion.html composer"
+    },
+    {
+      "test_id": "ST-A11Y-no-reliable-suggestion",
+      "execution_id": "P3-105-STATIC-015",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "no-reliable-suggestion.html skip link and focus target"
+    },
+    {
+      "test_id": "ST-CLOSED-no-reliable-suggestion",
+      "execution_id": "P3-105-STATIC-016",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "no-reliable-suggestion.html attachment and voice disabled"
+    },
+    {
+      "test_id": "ST-RAIL-restricted-offline",
+      "execution_id": "P3-105-STATIC-017",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "restricted-offline.html left rail"
+    },
+    {
+      "test_id": "ST-COMPOSER-restricted-offline",
+      "execution_id": "P3-105-STATIC-018",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "restricted-offline.html composer"
+    },
+    {
+      "test_id": "ST-A11Y-restricted-offline",
+      "execution_id": "P3-105-STATIC-019",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "restricted-offline.html skip link and focus target"
+    },
+    {
+      "test_id": "ST-CLOSED-restricted-offline",
+      "execution_id": "P3-105-STATIC-020",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "restricted-offline.html attachment and voice disabled"
+    },
+    {
+      "test_id": "ST-NO-IMG",
+      "execution_id": "P3-105-STATIC-021",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "pattern absent: <img\\b"
+    },
+    {
+      "test_id": "ST-NO-CANVAS",
+      "execution_id": "P3-105-STATIC-022",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "pattern absent: <canvas\\b"
+    },
+    {
+      "test_id": "ST-NO-BGIMG",
+      "execution_id": "P3-105-STATIC-023",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "pattern absent: background-image\\s*:"
+    },
+    {
+      "test_id": "ST-NO-REMOTE",
+      "execution_id": "P3-105-STATIC-024",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "pattern absent: https?://|//[A-Za-z0-9.-]+/"
+    },
+    {
+      "test_id": "ST-NO-DATAIMG",
+      "execution_id": "P3-105-STATIC-025",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "pattern absent: data:image"
+    },
+    {
+      "test_id": "ST-NO-REFNAME",
+      "execution_id": "P3-105-STATIC-026",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "pattern absent: 01_default_recovery_preview|02_no_reliable_suggestion_preview|03_permission_offline_preview"
+    },
+    {
+      "test_id": "ST-IPC-01",
+      "execution_id": "P3-105-STATIC-027",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "frontend references only three allowlisted IPC plus deliberate unknown probe"
+    },
+    {
+      "test_id": "ST-NETWORK-01",
+      "execution_id": "P3-105-STATIC-028",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "no frontend network API"
+    },
+    {
+      "test_id": "ST-CSP-01",
+      "execution_id": "P3-105-STATIC-029",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "CSP and capability selection unchanged"
+    },
+    {
+      "test_id": "ST-MOTION-01",
+      "execution_id": "P3-105-STATIC-030",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "reduced motion override present"
+    },
+    {
+      "test_id": "ST-NARROW-01",
+      "execution_id": "P3-105-STATIC-031",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "narrow layouts present"
+    },
+    {
+      "test_id": "ST-IDENTITY-01",
+      "execution_id": "P3-105-STATIC-032",
+      "severity": "P0",
+      "status": "PASS",
+      "detail": "content identity and fixed-demo disclosure visible"
+    },
+    {
+      "test_id": "ST-STATE-D",
+      "execution_id": "P3-105-STATIC-033",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "default recovery anchors"
+    },
+    {
+      "test_id": "ST-STATE-N",
+      "execution_id": "P3-105-STATIC-034",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "no-suggestion anchors"
+    },
+    {
+      "test_id": "ST-STATE-R",
+      "execution_id": "P3-105-STATIC-035",
+      "severity": "P1",
+      "status": "PASS",
+      "detail": "restricted/offline anchors"
+    }
+  ]
+}

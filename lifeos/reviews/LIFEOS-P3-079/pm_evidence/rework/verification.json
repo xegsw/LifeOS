@@ -1,0 +1,22 @@
+{
+  "task": "LIFEOS-P3-079 D-0328 Rework PM verification",
+  "verification_date": "2026-08-21",
+  "execution_environment": "fresh temporary copy only",
+  "runner": {
+    "test_count": 20,
+    "passed": 20,
+    "failed": 0,
+    "cli_chain_passed": true,
+    "static_boundary_passed": true
+  },
+  "direct_counterexample": {
+    "same_permission_same_key": "idempotent_repeat",
+    "different_permission_same_key": "idempotency_conflict",
+    "different_permission_after_restart": "idempotency_conflict",
+    "first_permission_state": "revoked",
+    "second_permission_state": "current"
+  },
+  "rework_manifest_hashes_verified": 10,
+  "historical_parent_evidence_p2": "D-0327 PM-side write remains documented as historical; no new parent evidence write occurred during this verification.",
+  "conclusion": "P0=0; P1=0; current Rework P2=0; Unknown=0; Not Implemented=0; awaiting fresh isolated independent re-review."
+}

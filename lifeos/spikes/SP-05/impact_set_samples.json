@@ -1,0 +1,466 @@
+[
+  {
+    "command": {
+      "id": "sample-1",
+      "kind": "revoke_processing",
+      "scope": {
+        "project": "project-a",
+        "purpose": "summary"
+      }
+    },
+    "impact": {
+      "command_kind": "revoke_processing",
+      "roots": [
+        "scope:5520c232b805a6d4",
+        "scope:81e445eb3760cf88",
+        "scope:8afcbfdc3d944734",
+        "scope:e4f5ecb04a6598ec",
+        "scope:cd7fb4a49bf3b7f0"
+      ],
+      "invalidated": [
+        "scope:593cc9efb562ddc0",
+        "scope:b93091ff34b5241a",
+        "scope:5520c232b805a6d4",
+        "scope:81e445eb3760cf88",
+        "scope:8afcbfdc3d944734",
+        "scope:4a2a44ef65c2c3f7",
+        "scope:e4f5ecb04a6598ec",
+        "scope:cd7fb4a49bf3b7f0"
+      ],
+      "retained": [],
+      "physical_cleanup": [
+        "scope:593cc9efb562ddc0",
+        "scope:b93091ff34b5241a",
+        "scope:5520c232b805a6d4",
+        "scope:81e445eb3760cf88",
+        "scope:8afcbfdc3d944734",
+        "scope:4a2a44ef65c2c3f7",
+        "scope:e4f5ecb04a6598ec",
+        "scope:cd7fb4a49bf3b7f0"
+      ],
+      "dependency_types": [
+        "ai_candidate_action",
+        "ai_candidate_decision",
+        "cache",
+        "prompt_copy",
+        "queue_payload",
+        "recovery_fragment",
+        "summary",
+        "third_party_mock_copy"
+      ]
+    }
+  },
+  {
+    "command": {
+      "id": "sample-2",
+      "kind": "disconnect_source",
+      "scope": {
+        "source": "source-a"
+      }
+    },
+    "impact": {
+      "command_kind": "disconnect_source",
+      "roots": [
+        "scope:144c660bfeaacf5c"
+      ],
+      "invalidated": [
+        "scope:144c660bfeaacf5c"
+      ],
+      "retained": [
+        "scope:5a67c402c7a2adb2",
+        "scope:6ad0dcc0a0bcd7dd",
+        "scope:92f8650bc0bb8f13",
+        "scope:2d453d928425a1ba",
+        "scope:593cc9efb562ddc0",
+        "scope:b93091ff34b5241a",
+        "scope:5520c232b805a6d4",
+        "scope:929c6109c78ef9b4",
+        "scope:ba48be7d7932baf4",
+        "scope:49888de5ace3ab93",
+        "scope:dd881c0204126d16",
+        "scope:613a953393bf6d07",
+        "scope:7e5dcdb148860453",
+        "scope:25d3512824678995",
+        "scope:36dd945aad4c55a2",
+        "scope:064bb0199cfd7daa",
+        "scope:81e445eb3760cf88",
+        "scope:69bef73d8a64172a",
+        "scope:8afcbfdc3d944734",
+        "scope:4a2a44ef65c2c3f7",
+        "scope:e4f5ecb04a6598ec",
+        "scope:c935040e24b76c81",
+        "scope:f8968a4181cfafe8",
+        "scope:cd7fb4a49bf3b7f0",
+        "scope:4d49f1f7569ce4d6",
+        "scope:5b70e10bd22fc0c3",
+        "scope:cf690daec4d40856"
+      ],
+      "physical_cleanup": [],
+      "dependency_types": [
+        "ai_candidate_action",
+        "ai_candidate_decision",
+        "artifact_version",
+        "audit_entry",
+        "backup_copy",
+        "cache",
+        "cleanup_proof",
+        "confirmed_object",
+        "content_chunk",
+        "external_original_copy_or_pointer",
+        "feedback_history",
+        "fts_posting",
+        "important_link",
+        "object_file_or_pointer",
+        "offline_copy_or_outbox",
+        "prompt_copy",
+        "queue_payload",
+        "recovery_fragment",
+        "summary",
+        "third_party_mock_copy",
+        "user_original",
+        "vector_mock"
+      ]
+    }
+  },
+  {
+    "command": {
+      "id": "sample-3",
+      "kind": "delete_content",
+      "scope": {
+        "target_type": "artifact",
+        "target_id": "artifact-a"
+      }
+    },
+    "impact": {
+      "command_kind": "delete_content",
+      "roots": [
+        "scope:5a67c402c7a2adb2"
+      ],
+      "invalidated": [
+        "scope:5a67c402c7a2adb2",
+        "scope:92f8650bc0bb8f13",
+        "scope:2d453d928425a1ba",
+        "scope:593cc9efb562ddc0",
+        "scope:b93091ff34b5241a",
+        "scope:5520c232b805a6d4",
+        "scope:929c6109c78ef9b4",
+        "scope:ba48be7d7932baf4",
+        "scope:49888de5ace3ab93",
+        "scope:dd881c0204126d16",
+        "scope:613a953393bf6d07",
+        "scope:7e5dcdb148860453",
+        "scope:25d3512824678995",
+        "scope:36dd945aad4c55a2",
+        "scope:064bb0199cfd7daa",
+        "scope:81e445eb3760cf88",
+        "scope:69bef73d8a64172a",
+        "scope:8afcbfdc3d944734",
+        "scope:4a2a44ef65c2c3f7",
+        "scope:e4f5ecb04a6598ec",
+        "scope:c935040e24b76c81",
+        "scope:f8968a4181cfafe8",
+        "scope:cd7fb4a49bf3b7f0",
+        "scope:4d49f1f7569ce4d6",
+        "scope:5b70e10bd22fc0c3"
+      ],
+      "retained": [
+        "scope:92f8650bc0bb8f13",
+        "scope:49888de5ace3ab93",
+        "scope:dd881c0204126d16",
+        "scope:69bef73d8a64172a"
+      ],
+      "physical_cleanup": [
+        "scope:5a67c402c7a2adb2",
+        "scope:2d453d928425a1ba",
+        "scope:593cc9efb562ddc0",
+        "scope:b93091ff34b5241a",
+        "scope:5520c232b805a6d4",
+        "scope:929c6109c78ef9b4",
+        "scope:ba48be7d7932baf4",
+        "scope:613a953393bf6d07",
+        "scope:7e5dcdb148860453",
+        "scope:25d3512824678995",
+        "scope:36dd945aad4c55a2",
+        "scope:064bb0199cfd7daa",
+        "scope:81e445eb3760cf88",
+        "scope:8afcbfdc3d944734",
+        "scope:4a2a44ef65c2c3f7",
+        "scope:e4f5ecb04a6598ec",
+        "scope:c935040e24b76c81",
+        "scope:f8968a4181cfafe8",
+        "scope:cd7fb4a49bf3b7f0",
+        "scope:4d49f1f7569ce4d6",
+        "scope:5b70e10bd22fc0c3"
+      ],
+      "dependency_types": [
+        "ai_candidate_action",
+        "ai_candidate_decision",
+        "artifact_version",
+        "audit_entry",
+        "backup_copy",
+        "cache",
+        "cleanup_proof",
+        "confirmed_object",
+        "content_chunk",
+        "feedback_history",
+        "fts_posting",
+        "important_link",
+        "object_file_or_pointer",
+        "offline_copy_or_outbox",
+        "prompt_copy",
+        "queue_payload",
+        "recovery_fragment",
+        "summary",
+        "third_party_mock_copy",
+        "user_original",
+        "vector_mock"
+      ]
+    }
+  },
+  {
+    "command": {
+      "id": "sample-4",
+      "kind": "delete_content",
+      "scope": {
+        "target_type": "version",
+        "target_id": "version-a1"
+      }
+    },
+    "impact": {
+      "command_kind": "delete_content",
+      "roots": [
+        "scope:4d49f1f7569ce4d6"
+      ],
+      "invalidated": [
+        "scope:92f8650bc0bb8f13",
+        "scope:2d453d928425a1ba",
+        "scope:593cc9efb562ddc0",
+        "scope:b93091ff34b5241a",
+        "scope:5520c232b805a6d4",
+        "scope:929c6109c78ef9b4",
+        "scope:ba48be7d7932baf4",
+        "scope:49888de5ace3ab93",
+        "scope:dd881c0204126d16",
+        "scope:613a953393bf6d07",
+        "scope:7e5dcdb148860453",
+        "scope:25d3512824678995",
+        "scope:36dd945aad4c55a2",
+        "scope:064bb0199cfd7daa",
+        "scope:81e445eb3760cf88",
+        "scope:69bef73d8a64172a",
+        "scope:8afcbfdc3d944734",
+        "scope:4a2a44ef65c2c3f7",
+        "scope:e4f5ecb04a6598ec",
+        "scope:c935040e24b76c81",
+        "scope:f8968a4181cfafe8",
+        "scope:cd7fb4a49bf3b7f0",
+        "scope:4d49f1f7569ce4d6"
+      ],
+      "retained": [
+        "scope:92f8650bc0bb8f13",
+        "scope:49888de5ace3ab93",
+        "scope:dd881c0204126d16",
+        "scope:69bef73d8a64172a"
+      ],
+      "physical_cleanup": [
+        "scope:2d453d928425a1ba",
+        "scope:593cc9efb562ddc0",
+        "scope:b93091ff34b5241a",
+        "scope:5520c232b805a6d4",
+        "scope:929c6109c78ef9b4",
+        "scope:ba48be7d7932baf4",
+        "scope:613a953393bf6d07",
+        "scope:7e5dcdb148860453",
+        "scope:25d3512824678995",
+        "scope:36dd945aad4c55a2",
+        "scope:064bb0199cfd7daa",
+        "scope:81e445eb3760cf88",
+        "scope:8afcbfdc3d944734",
+        "scope:4a2a44ef65c2c3f7",
+        "scope:e4f5ecb04a6598ec",
+        "scope:c935040e24b76c81",
+        "scope:f8968a4181cfafe8",
+        "scope:cd7fb4a49bf3b7f0",
+        "scope:4d49f1f7569ce4d6"
+      ],
+      "dependency_types": [
+        "ai_candidate_action",
+        "ai_candidate_decision",
+        "artifact_version",
+        "audit_entry",
+        "backup_copy",
+        "cache",
+        "cleanup_proof",
+        "confirmed_object",
+        "content_chunk",
+        "feedback_history",
+        "fts_posting",
+        "important_link",
+        "object_file_or_pointer",
+        "offline_copy_or_outbox",
+        "prompt_copy",
+        "queue_payload",
+        "recovery_fragment",
+        "summary",
+        "third_party_mock_copy",
+        "vector_mock"
+      ]
+    }
+  },
+  {
+    "command": {
+      "id": "sample-5",
+      "kind": "delete_content",
+      "scope": {
+        "target_type": "source",
+        "target_id": "source-a"
+      }
+    },
+    "impact": {
+      "command_kind": "delete_content",
+      "roots": [
+        "scope:5a67c402c7a2adb2",
+        "scope:6ad0dcc0a0bcd7dd",
+        "scope:92f8650bc0bb8f13",
+        "scope:2d453d928425a1ba",
+        "scope:593cc9efb562ddc0",
+        "scope:b93091ff34b5241a",
+        "scope:5520c232b805a6d4",
+        "scope:929c6109c78ef9b4",
+        "scope:ba48be7d7932baf4",
+        "scope:49888de5ace3ab93",
+        "scope:144c660bfeaacf5c",
+        "scope:dd881c0204126d16",
+        "scope:613a953393bf6d07",
+        "scope:7e5dcdb148860453",
+        "scope:25d3512824678995",
+        "scope:36dd945aad4c55a2",
+        "scope:064bb0199cfd7daa",
+        "scope:81e445eb3760cf88",
+        "scope:69bef73d8a64172a",
+        "scope:8afcbfdc3d944734",
+        "scope:4a2a44ef65c2c3f7",
+        "scope:e4f5ecb04a6598ec",
+        "scope:c935040e24b76c81",
+        "scope:f8968a4181cfafe8",
+        "scope:cd7fb4a49bf3b7f0",
+        "scope:4d49f1f7569ce4d6",
+        "scope:5b70e10bd22fc0c3",
+        "scope:cf690daec4d40856"
+      ],
+      "invalidated": [
+        "scope:5a67c402c7a2adb2",
+        "scope:6ad0dcc0a0bcd7dd",
+        "scope:92f8650bc0bb8f13",
+        "scope:2d453d928425a1ba",
+        "scope:593cc9efb562ddc0",
+        "scope:b93091ff34b5241a",
+        "scope:5520c232b805a6d4",
+        "scope:929c6109c78ef9b4",
+        "scope:ba48be7d7932baf4",
+        "scope:49888de5ace3ab93",
+        "scope:144c660bfeaacf5c",
+        "scope:dd881c0204126d16",
+        "scope:613a953393bf6d07",
+        "scope:7e5dcdb148860453",
+        "scope:25d3512824678995",
+        "scope:36dd945aad4c55a2",
+        "scope:064bb0199cfd7daa",
+        "scope:81e445eb3760cf88",
+        "scope:69bef73d8a64172a",
+        "scope:8afcbfdc3d944734",
+        "scope:4a2a44ef65c2c3f7",
+        "scope:e4f5ecb04a6598ec",
+        "scope:c935040e24b76c81",
+        "scope:f8968a4181cfafe8",
+        "scope:cd7fb4a49bf3b7f0",
+        "scope:4d49f1f7569ce4d6",
+        "scope:5b70e10bd22fc0c3",
+        "scope:cf690daec4d40856"
+      ],
+      "retained": [
+        "scope:92f8650bc0bb8f13",
+        "scope:49888de5ace3ab93",
+        "scope:dd881c0204126d16",
+        "scope:69bef73d8a64172a"
+      ],
+      "physical_cleanup": [
+        "scope:5a67c402c7a2adb2",
+        "scope:6ad0dcc0a0bcd7dd",
+        "scope:2d453d928425a1ba",
+        "scope:593cc9efb562ddc0",
+        "scope:b93091ff34b5241a",
+        "scope:5520c232b805a6d4",
+        "scope:929c6109c78ef9b4",
+        "scope:ba48be7d7932baf4",
+        "scope:613a953393bf6d07",
+        "scope:7e5dcdb148860453",
+        "scope:25d3512824678995",
+        "scope:36dd945aad4c55a2",
+        "scope:064bb0199cfd7daa",
+        "scope:81e445eb3760cf88",
+        "scope:8afcbfdc3d944734",
+        "scope:4a2a44ef65c2c3f7",
+        "scope:e4f5ecb04a6598ec",
+        "scope:c935040e24b76c81",
+        "scope:f8968a4181cfafe8",
+        "scope:cd7fb4a49bf3b7f0",
+        "scope:4d49f1f7569ce4d6",
+        "scope:5b70e10bd22fc0c3",
+        "scope:cf690daec4d40856"
+      ],
+      "dependency_types": [
+        "ai_candidate_action",
+        "ai_candidate_decision",
+        "artifact_version",
+        "audit_entry",
+        "backup_copy",
+        "cache",
+        "cleanup_proof",
+        "confirmed_object",
+        "content_chunk",
+        "external_original_copy_or_pointer",
+        "feedback_history",
+        "fts_posting",
+        "important_link",
+        "object_file_or_pointer",
+        "offline_copy_or_outbox",
+        "prompt_copy",
+        "queue_payload",
+        "recovery_fragment",
+        "summary",
+        "third_party_mock_copy",
+        "user_original",
+        "vector_mock"
+      ]
+    }
+  },
+  {
+    "command": {
+      "id": "sample-6",
+      "kind": "retract_feedback",
+      "scope": {
+        "feedback_id": "feedback-confirm-a1"
+      }
+    },
+    "impact": {
+      "command_kind": "retract_feedback",
+      "roots": [
+        "scope:dd881c0204126d16"
+      ],
+      "invalidated": [
+        "scope:613a953393bf6d07"
+      ],
+      "retained": [
+        "scope:dd881c0204126d16"
+      ],
+      "physical_cleanup": [
+        "scope:613a953393bf6d07"
+      ],
+      "dependency_types": [
+        "feedback_history",
+        "summary"
+      ]
+    }
+  }
+]

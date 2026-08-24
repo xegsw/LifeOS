@@ -1,0 +1,42 @@
+{
+  "task": "LIFEOS-P3-094",
+  "attempt": 3,
+  "events": [
+    {
+      "id": "D-01-chrome-preflight",
+      "status": "PASS",
+      "timestamp": "2026-08-22T00:31:30.529861+00:00",
+      "entry_url_kind": "file",
+      "observed": "new Chrome tab loaded full task-local file URL; address remained file: and success page rendered",
+      "visual_path": "evidence/visual/01-chrome-preflight.png",
+      "visual_sha256": "3bf092e588f5156e2bff7c1befbcf37c0163f3c966db9f154e2bb344f2493cfe"
+    },
+    {
+      "id": "D-02-success-today",
+      "status": "PASS",
+      "timestamp": "2026-08-22T00:31:30.566616+00:00",
+      "entry_url_kind": "file",
+      "observed": "success page visibly labels user original text, record time, local capture source, and internal local no-sync/no-export boundary",
+      "visual_path": "evidence/visual/02-success-today.png",
+      "visual_sha256": "d26abc95fc7eeef0abf75b97403198f224bed6d93c6dd41b1cd1cdce30ec5f2f"
+    },
+    {
+      "id": "D-03-empty-fail-closed",
+      "status": "PASS",
+      "timestamp": "2026-08-22T00:31:52.620517+00:00",
+      "entry_url_kind": "file",
+      "observed": "full task-local file URL remained file:; page disclosed empty input rejection and showed no success or partial record",
+      "visual_path": "evidence/visual/03-empty-fail-closed.png",
+      "visual_sha256": "53ac42afef37c9301e204d410dbbb39426c94ad65eb273a4b7fac8c64710dc38"
+    },
+    {
+      "id": "D-04-close-tab",
+      "status": "PASS",
+      "timestamp": "2026-08-22T00:31:52.659433+00:00",
+      "entry_url_kind": "closed-local-tab",
+      "observed": "the attempt-3 task-local file tab was closed and Chrome returned to the previously open unrelated local file tab",
+      "visual_path": "evidence/visual/04-after-close.png",
+      "visual_sha256": "dd95de5b275f8d60537997a53dbe467ce152c7287f874a471a9cf0b780730905"
+    }
+  ]
+}

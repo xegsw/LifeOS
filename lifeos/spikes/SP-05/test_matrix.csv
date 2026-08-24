@@ -1,0 +1,68 @@
+case_id,description,category,priority,expected,actual,status
+T01,revoke_processing keeps original physically,command_semantics,P0,True,True,PASS
+T02,revoke_processing does not disconnect source,command_semantics,P0,True,True,PASS
+T03,revoke_processing revokes matching authorization,command_semantics,P0,revoked,revoked,PASS
+T04,project revoke invalidates candidate,command_semantics,P0,False,False,PASS
+T05,revoke produces active_blocked,status_semantics,P0,True,True,PASS
+T06,disconnect stops continued source access,command_semantics,P0,False,False,PASS
+T07,disconnect retains permitted LifeOS copy,command_semantics,P0,True,True,PASS
+T08,disconnect does not create delete tombstone,command_semantics,P0,False,False,PASS
+T09,delete creates tombstone,command_semantics,P0,True,True,PASS
+T10,delete retains confirmed-object history for review,command_semantics,P0,review_required,review_required,PASS
+T11,delete schedules physical cleanup,command_semantics,P0,True,True,PASS
+T12,delete does not disconnect unrelated source semantics,command_semantics,P0,True,True,PASS
+T13,retract_feedback keeps feedback history,command_semantics,P0,True,True,PASS
+T14,retract_feedback removes current effect,command_semantics,P0,False,False,PASS
+T15,retract_feedback does not delete original,command_semantics,P0,True,True,PASS
+T16,retract_feedback invalidates dependent derivation,command_semantics,P0,False,False,PASS
+T17,retract_feedback schedules cleanup for dependent materialized derivation,status_semantics,P0,physical_cleanup_pending,physical_cleanup_pending,PASS
+T18,active path blocked: local_read,active_blocking,P0,False,False,PASS
+T19,active path blocked: fts_query,active_blocking,P0,False,False,PASS
+T20,active path blocked: vector_query,active_blocking,P0,False,False,PASS
+T21,active path blocked: recovery_pack,active_blocking,P0,False,False,PASS
+T22,active path blocked: today_suggestion,active_blocking,P0,False,False,PASS
+T23,active path blocked: candidate_generation,active_blocking,P0,False,False,PASS
+T24,active path blocked: queue_claim,active_blocking,P0,False,False,PASS
+T25,active path blocked: model_gateway_send,active_blocking,P0,False,False,PASS
+T26,active path blocked: cross_project_display,active_blocking,P0,False,False,PASS
+T27,active path blocked: rederive,active_blocking,P0,False,False,PASS
+T28,active path blocked: export,active_blocking,P0,False,False,PASS
+T29,active path blocked: reimport,active_blocking,P0,False,False,PASS
+T30,blocked gateway emits no new model call,active_blocking,P0,0,0,PASS
+T31,artifact dependency discovery covers registered local types,dependency_discovery,P0,True,True,PASS
+T32,single version delete excludes sibling version,impact_scope,P0,False,False,PASS
+T33,source delete excludes source-b,impact_scope,P0,False,False,PASS
+T34,cross-project dependent is discovered,impact_scope,P0,True,True,PASS
+T35,multi-input derivation has legal subset,derivation_rebuild,P0,['version-b1'],['version-b1'],PASS
+T36,multi-input empty legal subset refuses rebuild,derivation_rebuild,P0,[],[],PASS
+T37,physical cleanup removes fts_posting,physical_cleanup,P0,False,False,PASS
+T38,physical cleanup removes vector_mock,physical_cleanup,P0,False,False,PASS
+T39,physical cleanup removes cache,physical_cleanup,P0,False,False,PASS
+T40,physical cleanup removes prompt_copy,physical_cleanup,P0,False,False,PASS
+T41,physical cleanup removes queue_payload,physical_cleanup,P0,False,False,PASS
+T42,physical cleanup removes summary,physical_cleanup,P0,False,False,PASS
+T43,cleanup-before kill retries to cleaned,fault_recovery,P0,"(False, 'physically_cleaned')","(False, 'physically_cleaned')",PASS
+T44,duplicate cleanup is idempotent,fault_recovery,P0,physically_cleaned,physically_cleaned,PASS
+T45,crash after effect before status converges,fault_recovery,P0,"(False, 'physically_cleaned')","(False, 'physically_cleaned')",PASS
+T46,expired lease reclaim remains idempotent,fault_recovery,P0,True,True,PASS
+T47,network failure retries to cleaned,fault_recovery,P0,physically_cleaned,physically_cleaned,PASS
+T48,dead letter visible and active remains blocked,fault_recovery,P0,"(1, False)","(1, False)",PASS
+T49,vendor success is honestly disclosed,vendor_cleanup,P0,physically_cleaned,physically_cleaned,PASS
+T50,vendor delayed is honestly disclosed,vendor_cleanup,P0,physical_cleanup_pending,physical_cleanup_pending,PASS
+T51,vendor unsupported is honestly disclosed,vendor_cleanup,P0,vendor_limited,vendor_limited,PASS
+T52,vendor failure is honestly disclosed,vendor_cleanup,P0,physical_cleanup_failed,physical_cleanup_failed,PASS
+T53,backup_restore cannot revive deleted version,anti_resurrection,P0,False,False,PASS
+T54,old_import cannot revive deleted version,anti_resurrection,P0,False,False,PASS
+T55,source_reconnect cannot revive deleted version,anti_resurrection,P0,False,False,PASS
+T56,offline_replay cannot revive deleted version,anti_resurrection,P0,False,False,PASS
+T57,old_queue_retry cannot revive deleted version,anti_resurrection,P0,False,False,PASS
+T58,input version update stales prior derivation,derivation_rebuild,P0,stale,stale,PASS
+T59,feedback retraction kinds remain distinct history events,command_semantics,P0,"['complete', 'correct', 'defer', 'reject']","['complete', 'correct', 'defer', 'reject']",PASS
+T60,audit and cleanup proof privacy scan has zero forbidden hits,privacy,P0,[],[],PASS
+T61,active_blocked never equals physically_cleaned,status_semantics,P0,False,False,PASS
+T62,proof contains no raw object identifier,privacy,P0,False,False,PASS
+T63,disconnect with retained copies requires no physical cleanup,status_semantics,P0,completed_no_physical_cleanup_required,completed_no_physical_cleanup_required,PASS
+T64,aggregate dependency discovery covers all registered types,dependency_discovery,P0,True,True,PASS
+T65,purpose-scoped revoke hits search but not summary,impact_scope,P0,"(True, False)","(True, False)",PASS
+T66,location/processor revoke hits vendor path but not local FTS,impact_scope,P0,"(True, False)","(True, False)",PASS
+T67,directory exclusion has a bounded impact set,impact_scope,P0,"(True, False)","(True, False)",PASS

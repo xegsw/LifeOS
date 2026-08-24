@@ -1,0 +1,24 @@
+id,area,assertion,priority,status,evidence
+T01,corpus,50-100 synthetic content units across 3-5 projects,P0,PASS,retrieval_results.json
+T02,retrieval,Recall@20 threshold,P0,PASS,retrieval_results.json
+T03,retrieval,critical Recall@10 equals 1,P0,PASS,retrieval_results.json
+T04,security,permission/restriction leakage equals zero,P0,PASS,permission_filter_report.md
+T05,evidence,focus result evidence completeness equals 1,P0,PASS,evidence_integrity_report.md
+T06,matrix,deleted excluded,P0,PASS,retrieval_results.json
+T07,matrix,retracted excluded,P0,PASS,retrieval_results.json
+T08,matrix,disconnected excluded,P0,PASS,retrieval_results.json
+T09,matrix,unreachable degraded,P0,PASS,retrieval_results.json
+T10,matrix,permission empty explained,P0,PASS,retrieval_results.json
+T11,matrix,old queue excluded,P0,PASS,retrieval_results.json
+T12,matrix,conflict visible but not suggested,P0,PASS,retrieval_results.json
+T13,matrix,unique evidence requires review,P0,PASS,retrieval_results.json
+T14,matrix,candidate identity explicit,P0,PASS,retrieval_results.json
+T15,matrix,candidate evidence 1-3,P0,PASS,retrieval_results.json
+T16,matrix,candidate feedback entry,P0,PASS,retrieval_results.json
+T17,matrix,search only not reused for suggestions,P0,PASS,retrieval_results.json
+T18,matrix,cross project isolated,P1,PASS,retrieval_results.json
+T19,matrix,recovery package latency threshold,P1,PASS,retrieval_results.json
+T20,matrix,search latency threshold,P1,PASS,retrieval_results.json
+T21,matrix,privacy log scan,P1,PASS,retrieval_results.json
+T22,matrix,no production pgvector claim,P1,PASS,retrieval_results.json
+T23,matrix,semantic gain decision recorded,P1,PASS,retrieval_results.json

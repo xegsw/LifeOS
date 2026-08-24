@@ -1,0 +1,329 @@
+{
+  "task": "LIFEOS-P3-106",
+  "execution": "resume-1",
+  "actions": [
+    {
+      "id": "ACT-M008-FIRST",
+      "action": "首次固定 capture",
+      "observable": "backend saved 后 UI 显示保存成功；1 capture/1 audit；sentinel 不变",
+      "evidence": "m008-first-capture.jpg",
+      "sha256": "5746a97bf5b9749922841bb3c7e862cff238c92349ff208265f5895228f3ba8f",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M009-REPEAT",
+      "action": "重复 capture",
+      "observable": "backend 返回 repeat；capture 保持 1，audit 增至 2",
+      "evidence": "m009-repeat.jpg",
+      "sha256": "31862ddc261b80a7d99004caf15120e6a02b642426b5cbf291260a6f4fab9934",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M009-CONFLICT",
+      "action": "冲突 capture",
+      "observable": "backend 拒绝冲突；DB/audit 无新增",
+      "evidence": "m009-conflict.jpg",
+      "sha256": "46344fdb16ef4e9490612b0c6c00e37d7db55f0bdf7e2eaea71ee3a18e852b1d",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M009-FAILURE",
+      "action": "注入失败 capture",
+      "observable": "UI 明确失败；DB/audit 零持久化",
+      "evidence": "m009-injected-failure.jpg",
+      "sha256": "3c34ad44e200c76b91ac7694c8d6973cb3c544952373d57b042918b2b89f3345",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M010-REFRESH",
+      "action": "刷新实际 app",
+      "observable": "同一 backend today 恢复",
+      "evidence": "m010-refresh-restored.jpg",
+      "sha256": "868c3af8e341cb563e3c4cceb492af57974b4f3c394f63ef9d2767d86339de5b",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M010-REOPEN",
+      "action": "关闭并重启实际 app",
+      "observable": "独立重启后同一 today 恢复",
+      "evidence": "m010-close-reopen-restored.jpg",
+      "sha256": "8920c69a0c39106d4e1e96d382cd17082e613f9a2e401bdddd358f51fa5d6c23",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M012-UNKNOWN",
+      "action": "调用 unknown IPC",
+      "observable": "明确拒绝；未调用隐藏能力",
+      "evidence": "m012-unknown-ipc.jpg",
+      "sha256": "a0e20be8f469a25600597bf5ee93f4db83e886ef3a3e573f06d8aee27235a04b",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M012-EXTRA",
+      "action": "传入额外 path/sql/shell 字段",
+      "observable": "额外字段拒绝；renderer 无直接能力",
+      "evidence": "m012-extra-fields.jpg",
+      "sha256": "ac224cf4bc9ae216c50fc6de07a919b427529f5bc8ae1ab0793e9229ae1ee578",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M013-CONTENT",
+      "action": "内容篡改 DB 启动",
+      "observable": "实际 app 启动读取 fail-closed，无缓存成功",
+      "evidence": "m013-content-tamper-failclosed.jpg",
+      "sha256": "6c31e221e601f7dc851cf6b7c1018acdf59347b8a7d095d560104a1beb7f3506",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M013-SCHEMA",
+      "action": "Schema 篡改 DB 启动",
+      "observable": "实际 app 启动读取 fail-closed，无变更",
+      "evidence": "m013-schema-tamper-failclosed.jpg",
+      "sha256": "6c31e221e601f7dc851cf6b7c1018acdf59347b8a7d095d560104a1beb7f3506",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-TAB",
+      "action": "实际 Tab",
+      "observable": "可见焦点到继续设计",
+      "evidence": "m015-tab-focus.jpg",
+      "sha256": "45d0230388726a0d607930dee06f6d8606e28b8acc3439c885475305147b9a55",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-ENTER",
+      "action": "实际 Enter",
+      "observable": "激活聚焦控件并诚实披露未启用",
+      "evidence": "m015-enter-activation.jpg",
+      "sha256": "5eb9cdb195b861ced56a799ca5a04a837b2a6b8578456b22141e3ce19ff39f5c",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-SKIP",
+      "action": "实际 skip link",
+      "observable": "焦点进入 main-content",
+      "evidence": "m015-skip-main-focus.jpg",
+      "sha256": "938848b4eb93eaa6f807828a91487f9d56c651a54c71d3268b20aa86aaaefeea",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-NARROW",
+      "action": "700x760 窄屏",
+      "observable": "关键 capture 可见且实际可操作",
+      "evidence": "m015-narrow-capture-reachable.jpg",
+      "sha256": "82894d61f75d3f86474a85aa1b3703ceb75f118b64aef0350fd8bc6024d01d43",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-REDUCED-ON",
+      "action": "开启 reduced-motion 后重启",
+      "observable": "实际 app 诊断为系统已启用",
+      "evidence": "m015-reduced-motion-app.jpg",
+      "sha256": "5d3b838c3e73979401ff71990829f4ca58ed91ff8cf5f5b5f5b9cf7efe2b4313",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-REDUCED-RESTORE",
+      "action": "恢复 reduced-motion 关闭后重启",
+      "observable": "实际 app 诊断为系统未请求",
+      "evidence": "m015-reduced-motion-app-restored.jpg",
+      "sha256": "1f234057b838ed86534312daa38c08b29c0a8a93d00d254d4135f96475656537",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-1160-DEFAULT",
+      "action": "原显示设置 1160x768 默认页",
+      "observable": "关键操作可达，无裁切/遮挡阻断",
+      "evidence": "m015-workspace-1160x768-default.jpg",
+      "sha256": "9a8a18a19cee6edfe55b25841c8013348d94e1a04bb63b2fce6922c1ed9f8b33",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-1160-NO-SUGGESTION",
+      "action": "原显示设置 1160x768 无建议页",
+      "observable": "关键操作可达，无裁切/遮挡阻断",
+      "evidence": "m015-workspace-1160x768-no-suggestion.jpg",
+      "sha256": "fd5230e6bafacf96d19a5a75daddbf73f86ca5d48a1250ad7ef2ae6f48a78d9b",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-1160-RESTRICTED",
+      "action": "原显示设置 1160x768 受限页",
+      "observable": "关键操作可达，无裁切/遮挡阻断",
+      "evidence": "m015-workspace-1160x768-restricted.jpg",
+      "sha256": "23f2ea835c879bcf43a909f5033960220f9bef17fd2470040bb69a2347b6ddde",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-ATTACHMENT-DISABLED-JPG",
+      "action": "附件实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-attachment-disabled.jpg",
+      "sha256": "67aa02145da865dbc8379b62391ee572a8dfabcacb38697ab4c348a2d222d63e",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-VOICE-DISABLED-JPG",
+      "action": "语音实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-voice-disabled.jpg",
+      "sha256": "cacd7321006a2b04702009a479af7e34192eab2dd1bb68e2f184356f088a82b4",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-PROJECT-UNIMPLEMENTED-JPG",
+      "action": "Project 继续实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-project-unimplemented.jpg",
+      "sha256": "b08cf2773d85b59d7173fe46aa780be8a77b2831314602be0deee199269a7d1c",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-AI-CONFIRM-UNIMPLEMENTED-JPG",
+      "action": "AI 确认实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-ai-confirm-unimplemented.jpg",
+      "sha256": "72aff517b498553083bac0f0942a7e8b0c15f275a4368a51ff3868f3123bee89",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-AI-EDIT-UNIMPLEMENTED-JPG",
+      "action": "AI 编辑实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-ai-edit-unimplemented.jpg",
+      "sha256": "dbdca96de1d1d13f68a7683aab123c61f232464ec9c84c00ec41b3adadef5d40",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-AI-REJECT-UNIMPLEMENTED-JPG",
+      "action": "AI 拒绝实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-ai-reject-unimplemented.jpg",
+      "sha256": "b1ca09e4cb661653150a38e5581086a92bed98cc9277a8d5379ade8d0a404818",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-AI-IGNORE-UNIMPLEMENTED-JPG",
+      "action": "AI 忽略实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-ai-ignore-unimplemented.jpg",
+      "sha256": "bb0e285325d51b1574fe378454bd8d99447659cc747361b310ea94ac1264d84a",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-CHOOSE-PROJECT-UNIMPLEMENTED-JPG",
+      "action": "选择 Project实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-choose-project-unimplemented.jpg",
+      "sha256": "cf2777706e544a40268a45ff43e4fc451c8b8c2e6893bbaaf1e0e3bfc9603086",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-INBOX-UNIMPLEMENTED-JPG",
+      "action": "Inbox实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-inbox-unimplemented.jpg",
+      "sha256": "62c196091c964e961f2f6375ea69a11ae224f4d4315a3e3fc71252cacf38d259",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-NETWORK-IMPACT-UNIMPLEMENTED-JPG",
+      "action": "网络影响实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-network-impact-unimplemented.jpg",
+      "sha256": "b654382bdfa4f85f85f6b4066392e0914e8403a6e38df3fbc6dc55bc1e2faff6",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-SOURCE-IMPACT-UNIMPLEMENTED-JPG",
+      "action": "来源影响实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-source-impact-unimplemented.jpg",
+      "sha256": "fc245b8c767c07e75d102f07a80f8290dc39994268be2f1ec472a2c5800e444a",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-AI-IMPACT-UNIMPLEMENTED-JPG",
+      "action": "AI 影响实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-ai-impact-unimplemented.jpg",
+      "sha256": "6941951c187a2d3ea758bdab84a92f2ba52cf16b78268cbc8ba137d519dddbee",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-CONTINUE-NO-AI-UNIMPLEMENTED-JPG",
+      "action": "继续但无 AI实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-continue-no-ai-unimplemented.jpg",
+      "sha256": "772d2486aa75fd693114b0f6e1e4036f152fd9b162d701dd1019c03d03135dfd",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-RESTRICTED-PROJECT-UNIMPLEMENTED-JPG",
+      "action": "受限继续设计实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-restricted-project-unimplemented.jpg",
+      "sha256": "3401ea5366759055a4258ff3667fc5b06e3d4602d34b563d238569ea594b296d",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-PROJECT-SWITCH-UNIMPLEMENTED-JPG",
+      "action": "受限 Project 切换实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-project-switch-unimplemented.jpg",
+      "sha256": "abede7f7d531caad50f612554171122736d8107ac09896941ed0e6c5aa55ef82",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-DEFAULT-PROJECT-SWITCH-UNIMPLEMENTED-JPG",
+      "action": "默认 Project 切换实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-default-project-switch-unimplemented.jpg",
+      "sha256": "c2494fea5d9fc8164462acec2f52e98c7f9801cd96261d618bcb18d0ba94de69",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-SETTINGS-UNIMPLEMENTED-JPG",
+      "action": "设置实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-settings-unimplemented.jpg",
+      "sha256": "c3cf170deab13d47124950f543ccaf8c87bf1b4a5d7c8f16608995cafef7adce",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-SEARCH-DISABLED-JPG",
+      "action": "搜索实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-search-disabled.jpg",
+      "sha256": "c6dcdfb127fb7a6ad3386c88d22183d3ae4e7338ddd484079bbf9b941a5b198c",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-M011-NEW-DISABLED-JPG",
+      "action": "新建实际操作",
+      "observable": "disabled 或明确未启用；零假成功；DB 快照不变",
+      "evidence": "m011-new-disabled.jpg",
+      "sha256": "335586f16a2bed265f75d53e3d0572a61d4f3f12aa50f58daee48c3a9d38cfb7",
+      "status": "PASS"
+    }
+  ],
+  "supporting_structured_results": [
+    "fixture-first-capture.json",
+    "fixture-repeat.json",
+    "fixture-conflict.json",
+    "fixture-injected-failure.json",
+    "fixture-unimplemented-controls.json",
+    "fixture-denied-diagnostics.json",
+    "fixture-final-reopen.json",
+    "runtime_process_matrix.json",
+    "negative_actual_results.json"
+  ],
+  "summary": {
+    "total": 38,
+    "passed": 38,
+    "failed": 0,
+    "unknown": 0,
+    "not_implemented": 0,
+    "status": "PASS"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "contract_id": "P3-105-VISUAL-CONTRACT-v1",
+  "viewport": {"width": 1280, "height": 1024},
+  "shared": [
+    {"id": "VC-S-01", "selector": "class=\"rail\"", "description": "全高白色左侧导航轨"},
+    {"id": "VC-S-02", "selector": "class=\"app-shell\"", "description": "冷浅灰蓝主画布"},
+    {"id": "VC-S-03", "selector": "class=\"composer-wrap\"", "description": "底部居中浮动 composer"},
+    {"id": "VC-S-04", "selector": "class=\"skip-link\"", "description": "键盘跳到主要内容"},
+    {"id": "VC-S-05", "selector": "data-action=\"capture\"", "description": "唯一固定非敏感 capture 入口"},
+    {"id": "VC-S-06", "selector": "disabled aria-label=\"附件未启用\"", "description": "附件关闭态"},
+    {"id": "VC-S-07", "selector": "disabled aria-label=\"语音未启用\"", "description": "语音关闭态"}
+  ],
+  "pages": {
+    "default-recovery.html": [
+      {"id": "VC-D-01", "selector": "早安，开启新的一天。", "description": "顶部问候日期与 Project"},
+      {"id": "VC-D-02", "selector": "class=\"card recovery-card\"", "description": "大幅双栏恢复卡"},
+      {"id": "VC-D-03", "selector": "class=\"recovery-preview\"", "description": "代码生成中性线框预览"},
+      {"id": "VC-D-04", "selector": "class=\"card suggestion-card\"", "description": "独立 AI 关闭态建议卡"}
+    ],
+    "no-reliable-suggestion.html": [
+      {"id": "VC-N-01", "selector": "尚未选择 Project", "description": "无 Project 空态原因"},
+      {"id": "VC-N-02", "selector": "选择 Project", "description": "第一个明确选择"},
+      {"id": "VC-N-03", "selector": "先记到 Inbox", "description": "第二个明确选择"},
+      {"id": "VC-N-04", "selector": "class=\"trace-grid\"", "description": "三列最近痕迹"}
+    ],
+    "restricted-offline.html": [
+      {"id": "VC-R-01", "selector": "网络离线", "description": "网络离线警示"},
+      {"id": "VC-R-02", "selector": "来源权限受限", "description": "来源权限警示"},
+      {"id": "VC-R-03", "selector": "class=\"card restricted-card\"", "description": "受限恢复卡"},
+      {"id": "VC-R-04", "selector": "class=\"permission-panel\"", "description": "AI 权限受限提示"},
+      {"id": "VC-R-05", "selector": "class=\"schedule\"", "description": "今日安排"}
+    ]
+  }
+}

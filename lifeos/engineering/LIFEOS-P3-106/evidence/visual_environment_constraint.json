@@ -1,0 +1,53 @@
+{
+  "task": "LIFEOS-P3-106",
+  "source": "Computer Use screenshots of the built Tauri .app",
+  "result": "BLOCKED",
+  "rows": [
+    {
+      "id": "ABF-M-004",
+      "path": "evidence/screenshots/actual-default.jpg",
+      "sha256": "f1d7cad18730b445d741d948b8a5a0f7bc5bacd779e38987818fc1437c0cdb19",
+      "actual_pixels": [
+        1160,
+        768
+      ],
+      "required_pixels": [
+        1280,
+        1024
+      ],
+      "status": "BLOCKED",
+      "reason": "Actual app window was clamped by the current logical display workspace; no resize, upscale, browser, DOM, or mock substitute was used."
+    },
+    {
+      "id": "ABF-M-005",
+      "path": "evidence/screenshots/actual-no-suggestion.jpg",
+      "sha256": "2f5106862bffc588bd163d1513e3cc3d88dda2e3cfa32298b62987f18173ff14",
+      "actual_pixels": [
+        1160,
+        768
+      ],
+      "required_pixels": [
+        1280,
+        1024
+      ],
+      "status": "BLOCKED",
+      "reason": "Actual app window was clamped by the current logical display workspace; no resize, upscale, browser, DOM, or mock substitute was used."
+    },
+    {
+      "id": "ABF-M-006",
+      "path": "evidence/screenshots/actual-restricted.jpg",
+      "sha256": "6b23ff38fd1fb19ca006c55901710f1b77436fb4dc5c16240c48fcf358c79ce0",
+      "actual_pixels": [
+        1160,
+        768
+      ],
+      "required_pixels": [
+        1280,
+        1024
+      ],
+      "status": "BLOCKED",
+      "reason": "Actual app window was clamped by the current logical display workspace; no resize, upscale, browser, DOM, or mock substitute was used."
+    }
+  ],
+  "evidence_honesty": "The retained files preserve their actual pixel dimensions. They were not resized, padded, composited, or represented as 1280x1024."
+}

@@ -1,0 +1,24 @@
+{
+  "task_id": "LIFEOS-P3-099",
+  "result": "BLOCKER_VALIDATED",
+  "abf_invariant": "ABF-I-01",
+  "abf_matrix_row": "ABF-M-001",
+  "findings": [
+    {
+      "id": "PM-P3-099-BLOCK-01",
+      "fact": "The ABF declares 2026-08-22 23:35:00 CST, later than the specialist session's first deterministic timestamp 2026-08-22 23:30:36 CST.",
+      "classification": "Unknown / frozen startup-order conflict",
+      "pm_judgment": "The specialist session correctly refused to replace the authoritative ABF text with filesystem metadata."
+    },
+    {
+      "id": "PM-P3-099-BLOCK-02",
+      "fact": "The execution interface did not expose an independently verifiable exact model SKU and reasoning-effort label.",
+      "classification": "Unknown / required runtime-routing fact unavailable",
+      "pm_judgment": "The specialist session correctly did not assert an unobservable configuration."
+    }
+  ],
+  "abf_change_required_to_continue": true,
+  "same_task_resume_allowed": false,
+  "recommended_governance_action_after_user_adoption": "Close or supersede P3-099 and create a new task with a factually frozen timestamp and model routing treated as dispatch metadata rather than an in-session self-verification gate.",
+  "risk_state_change_authorized": false
+}

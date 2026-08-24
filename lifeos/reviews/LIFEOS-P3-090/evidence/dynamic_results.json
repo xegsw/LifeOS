@@ -1,0 +1,18 @@
+{
+  "task": "LIFEOS-P3-090",
+  "browser": "Google Chrome (com.google.Chrome) via Computer Use @oai/sky",
+  "entry": "file:///private/tmp/lifeos-p3-090-review-app/default-recovery.html",
+  "preflight": "PASS",
+  "pass": 7,
+  "fail": 0,
+  "results": [
+    {"id":"D-01","pass":true,"detail":"New Chrome tab directly loaded the task-local file: entry."},
+    {"id":"D-02","pass":true,"detail":"Default-deny blocks restore before explicit grant."},
+    {"id":"D-03","pass":true,"detail":"Fixed non-sensitive text appears only after explicit confirmation."},
+    {"id":"D-04","pass":true,"detail":"Explicit grant permits a preview but still requires exact CONFIRM."},
+    {"id":"D-05","pass":true,"detail":"Exact CONFIRM creates only a current-page synthetic receipt."},
+    {"id":"D-06","pass":true,"detail":"Revoke returns to fail-closed and clears the restore receipt."},
+    {"id":"D-07","pass":true,"detail":"No-reliable-suggestion navigation retains default-deny and no fabricated suggestion."}
+  ],
+  "counts": {"P0":0,"P1":0,"P2":0,"Unknown":0,"NotImplemented":0}
+}

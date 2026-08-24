@@ -1,0 +1,13 @@
+{
+  "task": "LIFEOS-P3-073",
+  "review_mode": "new isolated temporary copy; task tests not imported or called",
+  "target_source_sha256": "76997bded53f6aa1c943deb8705fb725ba03385bb423d05f5916ea3862c070fb",
+  "runner_sha256": "8b5b296b64714908746d4902b95b369f51273e21d75cbe1027f52961fd7ea80a",
+  "passed": 19,
+  "failed": 0,
+  "checks": [
+    "default preview and disclosure", "exact CONFIRM and preview token", "single new temporary output and bound receipt", "success audit and replay block",
+    "revocation, tombstone, conflict, unknown, source/version mismatch", "write failure and collision cleanup", "path escape and overwrite rejection",
+    "external capability static closure", "no review-run temporary export residue"
+  ]
+}

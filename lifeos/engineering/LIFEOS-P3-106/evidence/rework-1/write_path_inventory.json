@@ -1,0 +1,68 @@
+{
+  "task_id": "LIFEOS-P3-106",
+  "execution": "rework-1",
+  "abf_id": "ABF-P3-106-v1",
+  "abf_sha256": "1aa076a289173eb0dbd4e17ccfd3a1af89cbd9f815ad656d31d9318a5172a5c4",
+  "pm_review_sha256": "2d1e471316368b3ded96d507a43635ec21e340db995326af5bc90ca1fc33faa1",
+  "authorization": "User returned the PM Review path and then manually confirmed on 2026-08-23 that macOS display scaling is back at the original default tier. Rework 1/2 may proceed under unchanged ABF and scope.",
+  "created_before_rework_build_test_fixture_or_app_action": true,
+  "historical_read_only": [
+    "lifeos/engineering/LIFEOS-P3-106/evidence/* excluding evidence/rework-1/",
+    "lifeos/reviews/LIFEOS-P3-106/pm_evidence/initial/",
+    "lifeos/reviews/LIFEOS-P3-106/pm_evidence/resume-1/",
+    "lifeos/reviews/LIFEOS-P3-106_pm_review.md",
+    "lifeos/deliverables/LIFEOS-P3-106_three_frozen_stitch_pages_high_fidelity_tauri_ui_path_contract_successor.md",
+    "lifeos/deliverables/LIFEOS-P3-106_three_frozen_stitch_pages_high_fidelity_tauri_ui_path_contract_successor_resume_1.md"
+  ],
+  "workspace_writes": [
+    {
+      "expression": "lifeos/engineering/LIFEOS-P3-106/evidence/rework-1/**",
+      "created_type": "rework-only runner source, structured results, logs, screenshots, comparisons, and non-self Manifest",
+      "cleanup": "retained as rework-1 Engineering Evidence"
+    },
+    {
+      "expression": "lifeos/engineering/LIFEOS-P3-106/target/**",
+      "created_type": "Cargo/Tauri generated clean-build artifacts",
+      "cleanup": "removed exactly before offline clean build, then regenerated"
+    },
+    {
+      "expression": "lifeos/deliverables/LIFEOS-P3-106_three_frozen_stitch_pages_high_fidelity_tauri_ui_path_contract_successor_rework_1.md",
+      "created_type": "rework-1 delivery report",
+      "cleanup": "retained for PM review"
+    }
+  ],
+  "actual_app_allowlist": {
+    "regex": "^/private/tmp/lifeos-p3-104-p3-106-(app|replay|dangling-final|dangling-journal|dangling-wal|dangling-shm|path|tamper|a11y|visual)-[a-z0-9-]+$",
+    "exact_run_paths": [
+      "/private/tmp/lifeos-p3-104-p3-106-app-rework1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-replay-rework1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-dangling-final-rework1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-dangling-journal-rework1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-dangling-wal-rework1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-dangling-shm-rework1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-path-rework1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-path-target-rework1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-tamper-rework1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-a11y-rework1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-visual-rework1-20260823"
+    ],
+    "contents": ["capture.sqlite", "capture.sqlite-journal", "capture.sqlite-wal", "capture.sqlite-shm", "sentinel.txt", "task result JSON or log", "local screenshot"],
+    "selection": "literal exact ledger only; each path lstat missing before creation; no broad prefix, wildcard, glob, find-delete, or unresolved environment variable"
+  },
+  "immutable_unit_allowlist": [
+    "^/private/tmp/lifeos-p3-104-unit-(lifecycle|failure|arguments|links|dangling-final|dangling-sidecars|tamper|sidecar)-[0-9]+$",
+    "^/private/tmp/lifeos-p3-104-unit-link-target-[0-9]+$",
+    "^/private/tmp/lifeos-p3-104-unit-link-[0-9]+$"
+  ],
+  "legacy_forbidden_metadata_only": {
+    "path": "/private/tmp/lifeos-p3-104-rework-static-results.json",
+    "allowed_operations": ["lstat exists", "lstat type", "lstat size", "lstat mtime_ns", "lstat ctime_ns"],
+    "forbidden_operations": ["open", "read", "hash", "copy", "write", "delete", "cleanup"]
+  },
+  "display_sequence": {
+    "user_manual_confirmation_received": true,
+    "confirmation_text": "确认回复了",
+    "allowed_temporary_change_for": ["ABF-M-004", "ABF-M-005", "ABF-M-006"],
+    "required_after_restore": ["ABF-I-11", "ABF-M-015", "1160x768 responsive validation"]
+  }
+}

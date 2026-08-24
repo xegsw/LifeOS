@@ -1,0 +1,17 @@
+(() => {
+  const $ = (selector) => document.querySelector(selector);
+  const state = { captured: '', captureConfirmed: false, permission: '默认拒绝', restorePreview: false, restoreConfirmed: false, restoreReceipt: '' };
+  const setText = (selector, text) => { const node = $(selector); if (node) node.textContent = text; };
+  const clearDisplay = (message) => { state.captured = ''; state.captureConfirmed = false; state.restorePreview = false; state.restoreConfirmed = false; state.restoreReceipt = ''; $('#capture-text') && ($('#capture-text').value = ''); $('#saved-record') && ($('#saved-record').hidden = true); $('#restore-receipt') && ($('#restore-receipt').hidden = true); setText('#lifecycle-status', message); };
+  const renderPermission = () => { const node = $('#permission-state'); if (!node) return; node.textContent = state.permission; node.className = `pill ${state.permission === '明确 grant' ? 'allowed' : 'denied'}`; setText('#permission-detail', state.permission === '明确 grant' ? '合成 grant 仅在当前页面 DOM 中显示；撤回后立即阻断恢复。' : '默认拒绝：未取得明确 grant 时不展示恢复内容。'); };
+  const restore = () => { if (state.permission !== '明确 grant') return setText('#restore-status', '已阻断：权限未获明确 grant，恢复不会开始。'); if (!state.captureConfirmed) return setText('#restore-status', '已阻断：没有已确认的合成原文可供预览。'); state.restorePreview = true; setText('#restore-status', '恢复预览已准备：请明确输入 CONFIRM 后才显示合成回执。'); $('#restore-confirmation')?.focus(); };
+  $('#confirm-capture')?.addEventListener('click', () => { const value = $('#capture-text').value.trim(); if (!value) return clearDisplay('已拒绝空输入：没有显示或保留任何记录。'); if (state.captureConfirmed && state.captured === value) return setText('#lifecycle-status', '重复确认：幂等回执；本次页面会话没有新增记录。'); state.captured = value; state.captureConfirmed = true; $('#saved-text').textContent = value; $('#saved-record').hidden = false; setText('#lifecycle-status', '已明确确认：仅在本次页面会话显示合成原文。'); });
+  $('#grant')?.addEventListener('click', () => { state.permission = '明确 grant'; renderPermission(); setText('#restore-status', '权限已明确 grant；仍需恢复预览和 CONFIRM。'); });
+  $('#revoke')?.addEventListener('click', () => { state.permission = '已撤回／拒绝'; state.restorePreview = false; state.restoreConfirmed = false; state.restoreReceipt = ''; $('#restore-receipt') && ($('#restore-receipt').hidden = true); renderPermission(); setText('#restore-status', '已撤回／拒绝：fail-closed，恢复预览与回执已清理。'); });
+  $('#prepare-restore')?.addEventListener('click', restore);
+  $('#confirm-restore')?.addEventListener('click', () => { if (!state.restorePreview) return setText('#restore-status', '已阻断：请先在获 grant 的条件下请求恢复预览。'); if ($('#restore-confirmation').value.trim() !== 'CONFIRM') return setText('#restore-status', '未确认：请输入精确 CONFIRM；不会显示成功回执。'); if (state.restoreConfirmed) return setText('#restore-status', '重复 CONFIRM：幂等回执已存在，没有新增恢复。'); state.restoreConfirmed = true; state.restoreReceipt = '合成恢复已确认：仅显示当前页面状态，不写入任何数据。'; $('#restore-receipt').hidden = false; setText('#restore-status', '恢复确认完成：回执只在当前页面会话显示。'); });
+  $('#simulate-failure')?.addEventListener('click', () => { clearDisplay('模拟失败：未显示成功，半成品显示状态已清理；请核对后重试。'); const failure = $('#failure-disclosure'); if (failure) { failure.hidden = false; failure.textContent = '失败披露：此为合成演示，未保存、未授权、未恢复任何真实内容。'; } });
+  $('#choose-project')?.addEventListener('click', () => setText('#no-suggestion-status', '选择 Project 是受控路径；此页不读取资料，不生成建议。'));
+  $('#record-stop')?.addEventListener('click', () => setText('#no-suggestion-status', '先记录停点是受控路径；需手动输入并明确确认。'));
+  renderPermission();
+})();

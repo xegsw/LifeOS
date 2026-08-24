@@ -1,0 +1,27 @@
+{
+  "clean_temp_copy": "/var/folders/9m/92lnss312hz8kf__cs_9stcc0000gn/T/lifeos-p3-079-z83o0oj5/LIFEOS-P3-079",
+  "cli_passed": true,
+  "source_hashes": {
+    "scripts/make_manifest.py": "4177a28bae2d846242b90061d33a8cc9d7635b9160a39651b02cce2ad53b17a5",
+    "scripts/operator_cli.py": "b2c7423026a744a423d0538e9eeb739e4dac7ac844a1b35260e752ddcea6c029",
+    "scripts/run_self_check.py": "86da781792d09da5cffd64073569900783b177cefa57df3f6abba201561c6649",
+    "src/integrated_runtime.py": "3606fded3ce41f8e8bd21454ac794e6019730e56ead0ce274fe249a56f366be3",
+    "tests/test_integrated_runtime.py": "c76e87cc427b01dddf82aae641b32b9515c78bbd0ab8e4e2cc636884d76ea92b"
+  },
+  "static_boundary_passed": true,
+  "static_checks": {
+    "from requests": true,
+    "from socket": true,
+    "from urllib": true,
+    "import http": true,
+    "import requests": true,
+    "import socket": true,
+    "import urllib": true
+  },
+  "stderr": "test_01_unconfirmed_never_saves (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_02_save_and_view_source_status (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_03_save_is_idempotent (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_04_save_conflict_visible (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_05_atomic_failure_leaves_no_record (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_06_default_deny (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_07_exact_grant_allows_local_only (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_08_wrong_confirmation_fail_closed (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_09_deny_wins (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_10_expired_grant_denies (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_11_binding_mismatch_denies (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_12_restore_is_confirmed_and_idempotent (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_13_revoked_record_never_restores (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_14_permission_revoke_survives_restart (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_15_blocked_audit_survives_restart (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_16_boundaries_closed (test_integrated_runtime.IntegratedRuntimeTests) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.048s\n\nOK\n",
+  "stdout": "",
+  "task": "LIFEOS-P3-079",
+  "test_exit_code": 0,
+  "tests_passed": true,
+  "timestamp_utc": "2026-08-21T09:17:05.933101+00:00"
+}

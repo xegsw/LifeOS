@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN" data-page="default-recovery">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LifeOS｜今日｜默认恢复</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <header class="site-header">
+    <div class="frame">
+      <p class="eyebrow">LifeOS · 本地桌面候选</p>
+      <h1>今日</h1>
+      <section class="identity-boundary" aria-labelledby="identity-title">
+        <h2 id="identity-title">内容身份与处理边界</h2>
+        <dl>
+          <div><dt>用户原文</dt><dd>仅保存下方固定非敏感夹具，并由本地 backend 标记身份。</dd></div>
+          <div><dt>本地捕获</dt><dd>成功回执只在 SQLite 原子发布完成后显示。</dd></div>
+          <div><dt>系统状态</dt><dd>三页只读取 backend 权威状态，renderer 内存不冒充保存。</dd></div>
+          <div><dt>AI 状态</dt><dd>AI 未启用；不生成、推断或暗示建议。</dd></div>
+        </dl>
+      </section>
+      <nav class="page-nav" aria-label="今日状态导航">
+        <a aria-current="page" href="default-recovery.html">默认恢复</a>
+        <a href="no-reliable-suggestion.html">暂无可靠建议</a>
+        <a href="restricted-offline.html">权限受限 · 离线</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" class="frame layout" tabindex="-1">
+    <section class="hero" aria-labelledby="context-title">
+      <p class="label">本地系统状态 · 默认恢复</p>
+      <h2 id="context-title">从权威本地状态继续</h2>
+      <p>关闭并重启后，今日记录仍由 backend 的 <code>get_today</code> 读取，不依赖页面内存。</p>
+      <p class="boundary-note">固定非敏感夹具；retained pilot 与任何真实个人内容均未接入。</p>
+    </section>
+
+    <section class="card capture" aria-labelledby="capture-title">
+      <h2 id="capture-title">1. 捕获与明确确认</h2>
+      <p class="identity-note">以下文字固定、非敏感，不能编辑或替换为真实内容。</p>
+      <label for="capture-text">固定非敏感文本</label>
+      <textarea id="capture-text" readonly>P3-104 固定非敏感记录：核对今日页本地运行时。</textarea>
+      <div class="actions">
+        <button class="primary" type="button" id="confirm-capture">明确确认本地保存</button>
+        <button class="secondary" type="button" id="repeat-capture">重复同一幂等操作</button>
+      </div>
+      <div class="actions diagnostics" aria-label="受控失败验证">
+        <button class="warning" type="button" id="probe-conflict">验证同 key 异文本阻断</button>
+        <button class="danger" type="button" id="probe-failure">验证原子失败</button>
+      </div>
+      <p id="lifecycle-status" role="status" aria-live="polite">正在读取本地权威状态…</p>
+      <p id="failure-disclosure" class="failure" role="alert" hidden></p>
+    </section>
+
+    <section class="card" aria-labelledby="today-title">
+      <h2 id="today-title">2. 今日记录</h2>
+      <p id="today-summary" class="identity-note">正在通过受控 IPC 读取…</p>
+      <div id="today-records" class="record-list"></div>
+    </section>
+
+    <section class="card closed" aria-labelledby="ai-title">
+      <h2 id="ai-title">AI 状态</h2>
+      <p><strong>AI 未启用：</strong>本页不生成建议；所有成功、重复与阻断状态均来自本地 backend。</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+

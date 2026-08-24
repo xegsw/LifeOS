@@ -1,0 +1,7 @@
+ipc_result status=blocked code=path_schema_rejected
+
+thread 'main' (5064779) panicked at src/runtime.rs:678:9:
+controlled DB boundary rejected: path_schema_rejected
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+started_at_utc=2026-08-24T05:28:57.958274Z
+db=/private/tmp/lifeos-p3-104-p3-110-review-path-v1/../p3-110-outside/capture.sqlite

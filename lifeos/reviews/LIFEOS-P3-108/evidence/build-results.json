@@ -1,0 +1,51 @@
+{
+  "app_candidates": [
+    "/private/tmp/lifeos-p3-108-review-work-p3108a1/target/debug/lifeos-p3-104"
+  ],
+  "id": "P3108-M005-build",
+  "outcomes": [
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--locked"
+      ],
+      "id": "P3108-M005-cargo-test",
+      "log": "build/cargo-test.log",
+      "log_sha256": "23901783daaeb4e8b59be59c470fbb1fc4bbdf07079aae2eccc112cf4c6c5c49",
+      "network_tokens": 0,
+      "returncode": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--locked"
+      ],
+      "id": "P3108-M005-cargo-build",
+      "log": "build/cargo-build.log",
+      "log_sha256": "ea743f1a25f8e77a616f27e53b147a66663f62ba68474fec9fda69c92da21c14",
+      "network_tokens": 0,
+      "returncode": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "tauri",
+        "build",
+        "--debug",
+        "--",
+        "--locked"
+      ],
+      "id": "P3108-M005-cargo-tauri-build",
+      "log": "build/cargo-tauri-build.log",
+      "log_sha256": "3e58c79925ba61910735974355f27a743ab25facb03dc5c24db7f0001cf1c953",
+      "network_tokens": 0,
+      "returncode": 0
+    }
+  ],
+  "pass": true,
+  "time": "2026-08-24T01:26:26.811395+00:00",
+  "unit_paths_after": [],
+  "unit_paths_before": []
+}

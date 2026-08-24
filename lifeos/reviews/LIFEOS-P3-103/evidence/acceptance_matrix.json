@@ -1,0 +1,445 @@
+{
+  "rows": [
+    {
+      "row_id": "ABF-M-001",
+      "test_id": "P3-103-T-001",
+      "fixture_id": "P3-103-F-001",
+      "execution_id": "P3-103-E-001",
+      "assertion_executed": true,
+      "before_after": {
+        "abf_hash_match": true,
+        "design_hash_match": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "row_id": "ABF-M-002",
+      "test_id": "P3-103-T-002",
+      "fixture_id": "P3-103-F-002",
+      "execution_id": "P3-103-E-002",
+      "assertion_executed": true,
+      "before_after": {
+        "fixed": "10/10",
+        "engineering": "17/17",
+        "pm": "5/5",
+        "before_after_unchanged": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "row_id": "ABF-M-003",
+      "test_id": "P3-103-T-003",
+      "fixture_id": "P3-103-F-003",
+      "execution_id": "P3-103-E-003",
+      "assertion_executed": true,
+      "before_after": {
+        "metadata_contract": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "row_id": "ABF-M-004",
+      "test_id": "P3-103-T-004",
+      "fixture_id": "P3-103-F-004",
+      "execution_id": "P3-103-E-004",
+      "assertion_executed": true,
+      "before_after": {
+        "query_only": true,
+        "record_count": 1,
+        "match": true,
+        "sidecar_zero": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "row_id": "ABF-M-005",
+      "test_id": "P3-103-T-005",
+      "fixture_id": "P3-103-F-005",
+      "execution_id": "P3-103-E-005",
+      "assertion_executed": true,
+      "before_after": {
+        "canonical_schema": true,
+        "capture_count": 1,
+        "single_source": true,
+        "audit_count": 2,
+        "audit_order_valid": true,
+        "audit_linkage_valid": true,
+        "time_order_valid": true,
+        "audit_details_valid": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "row_id": "ABF-M-006",
+      "test_id": "P3-103-T-006",
+      "fixture_id": "P3-103-F-006",
+      "execution_id": "P3-103-E-006",
+      "assertion_executed": true,
+      "before_after": {
+        "page_opened": false,
+        "page_hashed": false,
+        "page_copied": false,
+        "user_visual_confirmation_evidence_present": true,
+        "submitted_confirmation_source": "P3-102 restart_matrix and PM Review",
+        "metadata_matches_p3_102_contract": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "row_id": "ABF-M-007",
+      "test_id": "P3-103-T-007",
+      "fixture_id": "P3-103-F-007",
+      "execution_id": "P3-103-E-007",
+      "assertion_executed": true,
+      "before_after": {
+        "unchanged": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "row_id": "ABF-M-008",
+      "test_id": "P3-103-T-008",
+      "fixture_id": "P3-103-F-008",
+      "execution_id": "P3-103-E-008",
+      "assertion_executed": true,
+      "before_after": {
+        "leaf_count": 6,
+        "status": "PASS"
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "row_id": "ABF-M-009",
+      "test_id": "P3-103-T-009",
+      "fixture_id": "P3-103-F-009",
+      "execution_id": "P3-103-E-009",
+      "assertion_executed": true,
+      "before_after": {
+        "leaf_count": 10,
+        "status": "PASS"
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "row_id": "ABF-M-010",
+      "test_id": "P3-103-T-010",
+      "fixture_id": "P3-103-F-010",
+      "execution_id": "P3-103-E-010",
+      "assertion_executed": true,
+      "before_after": {
+        "case_count": 4,
+        "status": "PASS"
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "row_id": "ABF-M-011",
+      "test_id": "P3-103-T-011",
+      "fixture_id": "P3-103-F-011",
+      "execution_id": "P3-103-E-011",
+      "assertion_executed": true,
+      "before_after": {
+        "clear_invocation_count": 0,
+        "commands_invoked": [
+          "capture",
+          "today",
+          "render"
+        ],
+        "network_calls": 0,
+        "tauri_ipc_vault_export_cloud_sync_multidevice_l3_external_user": false,
+        "candidate_surface_contains_clear_but_policy_forbids_invocation": true,
+        "status": "PASS"
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "row_id": "ABF-M-012",
+      "test_id": "P3-103-T-012",
+      "fixture_id": "P3-103-F-012",
+      "execution_id": "P3-103-E-012",
+      "assertion_executed": true,
+      "before_after": {
+        "hashes_unchanged": true,
+        "retained_unchanged": true,
+        "privacy_hits": 0,
+        "prohibited_artifacts": 0,
+        "temporary_residue": 0,
+        "risk_stage_unchanged": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    }
+  ],
+  "lifecycle_leaves": [
+    {
+      "test_id": "P3-103-T-008-01",
+      "fixture_id": "P3-103-F-008-01",
+      "execution_id": "P3-103-E-008-01",
+      "name": "saved",
+      "assertion_executed": true,
+      "before_after": {
+        "db_exists": true,
+        "unexpected": []
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-008-02",
+      "fixture_id": "P3-103-F-008-02",
+      "execution_id": "P3-103-E-008-02",
+      "name": "repeat",
+      "assertion_executed": true,
+      "before_after": {
+        "db_changed_for_repeat_audit": true,
+        "page_unchanged": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-008-03",
+      "fixture_id": "P3-103-F-008-03",
+      "execution_id": "P3-103-E-008-03",
+      "name": "conflict",
+      "assertion_executed": true,
+      "before_after": {
+        "state_unchanged": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-008-04",
+      "fixture_id": "P3-103-F-008-04",
+      "execution_id": "P3-103-E-008-04",
+      "name": "restart_today",
+      "assertion_executed": true,
+      "before_after": {
+        "record_count": 1,
+        "content_identity_match": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-008-05",
+      "fixture_id": "P3-103-F-008-05",
+      "execution_id": "P3-103-E-008-05",
+      "name": "restart_render",
+      "assertion_executed": true,
+      "before_after": {
+        "page_exists": true,
+        "semantic_identity_match": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-008-06",
+      "fixture_id": "P3-103-F-008-06",
+      "execution_id": "P3-103-E-008-06",
+      "name": "inject_failure",
+      "assertion_executed": true,
+      "before_after": {
+        "state_unchanged": true,
+        "runtime_residue_zero": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    }
+  ],
+  "boundary_leaves": [
+    {
+      "test_id": "P3-103-T-009-01",
+      "fixture_id": "P3-103-F-009-01",
+      "execution_id": "P3-103-E-009-01",
+      "name": "relative",
+      "assertion_executed": true,
+      "before_after": {
+        "sentinels_unchanged": true,
+        "rejected": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-009-02",
+      "fixture_id": "P3-103-F-009-02",
+      "execution_id": "P3-103-E-009-02",
+      "name": "dotdot",
+      "assertion_executed": true,
+      "before_after": {
+        "sentinels_unchanged": true,
+        "rejected": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-009-03",
+      "fixture_id": "P3-103-F-009-03",
+      "execution_id": "P3-103-E-009-03",
+      "name": "ancestor_symlink",
+      "assertion_executed": true,
+      "before_after": {
+        "sentinels_unchanged": true,
+        "rejected": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-009-04",
+      "fixture_id": "P3-103-F-009-04",
+      "execution_id": "P3-103-E-009-04",
+      "name": "final_db_symlink",
+      "assertion_executed": true,
+      "before_after": {
+        "sentinels_unchanged": true,
+        "rejected": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-009-05",
+      "fixture_id": "P3-103-F-009-05",
+      "execution_id": "P3-103-E-009-05",
+      "name": "final_page_symlink",
+      "assertion_executed": true,
+      "before_after": {
+        "sentinels_unchanged": true,
+        "rejected": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-009-06",
+      "fixture_id": "P3-103-F-009-06",
+      "execution_id": "P3-103-E-009-06",
+      "name": "db_hardlink",
+      "assertion_executed": true,
+      "before_after": {
+        "sentinels_unchanged": true,
+        "rejected": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-009-07",
+      "fixture_id": "P3-103-F-009-07",
+      "execution_id": "P3-103-E-009-07",
+      "name": "page_hardlink",
+      "assertion_executed": true,
+      "before_after": {
+        "sentinels_unchanged": true,
+        "rejected": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-009-08",
+      "fixture_id": "P3-103-F-009-08",
+      "execution_id": "P3-103-E-009-08",
+      "name": "fifo_target",
+      "assertion_executed": true,
+      "before_after": {
+        "sentinels_unchanged": true,
+        "rejected": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-009-09",
+      "fixture_id": "P3-103-F-009-09",
+      "execution_id": "P3-103-E-009-09",
+      "name": "directory_target",
+      "assertion_executed": true,
+      "before_after": {
+        "sentinels_unchanged": true,
+        "rejected": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-009-10",
+      "fixture_id": "P3-103-F-009-10",
+      "execution_id": "P3-103-E-009-10",
+      "name": "external_output",
+      "assertion_executed": true,
+      "before_after": {
+        "sentinels_unchanged": true,
+        "rejected": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    }
+  ],
+  "negative_gate_cases": [
+    {
+      "test_id": "P3-103-T-010-01",
+      "fixture_id": "P3-103-F-010-01",
+      "execution_id": "P3-103-E-010-01",
+      "name": "missing_row",
+      "assertion_executed": true,
+      "before_after": {
+        "nonzero_exit": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-010-02",
+      "fixture_id": "P3-103-F-010-02",
+      "execution_id": "P3-103-E-010-02",
+      "name": "duplicate_id",
+      "assertion_executed": true,
+      "before_after": {
+        "nonzero_exit": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-010-03",
+      "fixture_id": "P3-103-F-010-03",
+      "execution_id": "P3-103-E-010-03",
+      "name": "prohibited_field",
+      "assertion_executed": true,
+      "before_after": {
+        "nonzero_exit": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-010-04",
+      "fixture_id": "P3-103-F-010-04",
+      "execution_id": "P3-103-E-010-04",
+      "name": "unverifiable",
+      "assertion_executed": true,
+      "before_after": {
+        "nonzero_exit": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    }
+  ]
+}

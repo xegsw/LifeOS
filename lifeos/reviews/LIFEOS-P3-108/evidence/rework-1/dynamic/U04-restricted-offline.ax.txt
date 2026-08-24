@@ -1,0 +1,63 @@
+Window: "LifeOS 今日 · 高保真受控候选", App: LifeOS P3-104 P3108R1 Lifecycle.
+0 standard window LifeOS 今日 · 高保真受控候选, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: LifeOS｜今日｜权限受限与离线, URL: tauri://localhost/restricted-offline.html
+			3 link 跳到主要内容, Value: tauri://localhost/restricted-offline.html#main-content
+			4 container LifeOS 主导航
+				5 link 今日, Value: tauri://localhost/default-recovery.html
+				6 container 今日三态
+					7 link 默认恢复, Value: tauri://localhost/default-recovery.html
+					8 link 暂无可靠建议, Value: tauri://localhost/no-reliable-suggestion.html
+					9 link 权限受限与离线, Value: tauri://localhost/restricted-offline.html
+					10 button (collapsed) 打开本地验证, Secondary Actions: Expand
+				11 button 设置未启用
+				12 text 本地
+			13 container
+				14 text 当前 Project › 独立产品发布页改版 沿用你上次确认
+				15 button 切换
+			16 container
+				17 container 当前受限状态
+					18 text 网络离线
+					19 text 云同步与联网检索不可用；本地 backend 可查，可继续记录。
+					20 button 查看影响
+					21 text 来源权限受限
+					22 text 外部来源未启用，相关恢复不可用，AI 建议暂停。
+					23 button 查看影响
+				24 text 从这里继续
+				25 container 独立产品发布页改版
+					26 heading 独立产品发布页改版, Value: 2
+						27 text 独立产品发布页改版
+					28 text 你已确认 · 决定
+					29 text 移动端首屏文案应更强调场景感。该句是固定非敏感演示，不来自真实用户数据。
+					30 text 来源不可用：未连接任何外部访谈记录 昨天 18:30 编辑 · 本地记录  0  条
+					31 button 继续设计 →
+					32 container AI 助理受限
+						33 heading AI 助理受限, Value: 3
+							34 text AI 助理受限
+						35 text 无法访问外部来源，且模型能力未启用；暂不生成建议。
+						36 button 查看影响
+						37 button 继续无 AI
+				38 container 今日安排
+					39 heading 今日安排, Value: 3
+						40 text 今日安排
+					41 text 仅含你已确认的 Action / Commitment；当前固定演示不写入 backend。
+					42 text 09:00　完成首屏固定演示文案核对
+			43 text 尚未保存 · AI 与外部能力关闭
+			44 container 固定非敏感快速捕获
+				45 button (disabled) 附件未启用
+				46 button (disabled) 语音未启用
+				47 text 你的记录 · 原文
+				48 text P3-104 固定非敏感记录：核对今日页本地运行时。
+				49 button 明确保存固定非敏感文本
+		50 scroll bar (settable, float) 0
+	51 close button
+	52 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	53 minimize button
+	54 text LifeOS 今日 · 高保真受控候选
+55 menu bar
+	56 LifeOS P3-104 P3108R1 Lifecycle
+	57 File
+	58 Edit
+	59 View
+	60 Window
+	61 Help

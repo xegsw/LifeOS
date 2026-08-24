@@ -1,0 +1,3492 @@
+{
+  "metrics": {
+    "seed": 20260809,
+    "corpus_units": 60,
+    "projects": 4,
+    "queries": 20,
+    "retrieval": {
+      "fts": {
+        "recall_at_20": 1.0,
+        "critical_recall_at_10": 1.0,
+        "ndcg_at_10": 1.0,
+        "first_valid_rate": 0.7,
+        "latency_p95_ms": 0.106
+      },
+      "semantic": {
+        "recall_at_20": 1.0,
+        "critical_recall_at_10": 1.0,
+        "ndcg_at_10": 1.0,
+        "first_valid_rate": 0.7,
+        "latency_p95_ms": 0.235
+      },
+      "hybrid": {
+        "recall_at_20": 1.0,
+        "critical_recall_at_10": 1.0,
+        "ndcg_at_10": 1.0,
+        "first_valid_rate": 0.7,
+        "latency_p95_ms": 0.22
+      }
+    },
+    "hybrid_recall_gain_vs_fts": 0.0,
+    "clear_vector_gain_threshold": 0.05,
+    "clear_vector_gain": false,
+    "evidence_completeness": 1.0,
+    "permission_leaks": 0,
+    "recovery_package_p95_ms": 0.013,
+    "pgvector_production_validated": false
+  },
+  "queries": [
+    {
+      "query_id": "q01",
+      "mode": "fts",
+      "result_ids": [
+        "cu-001",
+        "cu-004",
+        "cu-014",
+        "cu-007"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-001",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 3.00017,
+          "source_id": "src-02",
+          "artifact_version_id": "av-001-v1",
+          "derivation_id": "deriv-001",
+          "link_ids": [
+            "link-001"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-004",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.20067,
+          "source_id": "src-05",
+          "artifact_version_id": "av-004-v1",
+          "derivation_id": "deriv-004",
+          "link_ids": [
+            "link-004"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.169,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-007",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 1.14402,
+          "source_id": "src-08",
+          "artifact_version_id": "av-007-v1",
+          "derivation_id": "deriv-007",
+          "link_ids": [
+            "link-007"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 2,
+        "deleted_or_retracted": 1
+      }
+    },
+    {
+      "query_id": "q02",
+      "mode": "fts",
+      "result_ids": [
+        "cu-001",
+        "cu-004",
+        "cu-005",
+        "cu-014",
+        "cu-002",
+        "cu-003",
+        "cu-015"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-001",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.50017,
+          "source_id": "src-02",
+          "artifact_version_id": "av-001-v1",
+          "derivation_id": "deriv-001",
+          "link_ids": [
+            "link-001"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-004",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.16733,
+          "source_id": "src-05",
+          "artifact_version_id": "av-004-v1",
+          "derivation_id": "deriv-004",
+          "link_ids": [
+            "link-004"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-005",
+          "project_id": "project-alpha",
+          "kind": "assertion",
+          "score": 1.14369,
+          "source_id": "src-06",
+          "artifact_version_id": "av-005-v1",
+          "derivation_id": "deriv-005",
+          "link_ids": [
+            "link-005"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "source_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.12733,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-002",
+          "project_id": "project-alpha",
+          "kind": "decision",
+          "score": 1.10033,
+          "source_id": "src-03",
+          "artifact_version_id": "av-002-v1",
+          "derivation_id": "deriv-002",
+          "link_ids": [
+            "link-002"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-003",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 1.09141,
+          "source_id": "src-04",
+          "artifact_version_id": "av-003-v1",
+          "derivation_id": "deriv-003",
+          "link_ids": [
+            "link-003"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-015",
+          "project_id": "project-alpha",
+          "kind": "link",
+          "score": 1.07942,
+          "source_id": "src-08",
+          "artifact_version_id": "av-015-v1",
+          "derivation_id": "deriv-015",
+          "link_ids": [
+            "link-015"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "deleted_or_retracted": 2,
+        "permission_restricted": 1,
+        "source_disconnected": 1,
+        "cross_project": 2
+      }
+    },
+    {
+      "query_id": "q03",
+      "mode": "fts",
+      "result_ids": [
+        "cu-014"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 3.30233,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 3
+      }
+    },
+    {
+      "query_id": "q04",
+      "mode": "fts",
+      "result_ids": [
+        "cu-002"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-002",
+          "project_id": "project-alpha",
+          "kind": "decision",
+          "score": 3.30033,
+          "source_id": "src-03",
+          "artifact_version_id": "av-002-v1",
+          "derivation_id": "deriv-002",
+          "link_ids": [
+            "link-002"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "metadata_mismatch": 1
+      }
+    },
+    {
+      "query_id": "q05",
+      "mode": "fts",
+      "result_ids": [
+        "cu-003"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-003",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 3.3005,
+          "source_id": "src-04",
+          "artifact_version_id": "av-003-v1",
+          "derivation_id": "deriv-003",
+          "link_ids": [
+            "link-003"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "metadata_mismatch": 1,
+        "permission_restricted": 1
+      }
+    },
+    {
+      "query_id": "q06",
+      "mode": "fts",
+      "result_ids": [
+        "cu-006",
+        "cu-013"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-006",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 3.001,
+          "source_id": "src-07",
+          "artifact_version_id": "av-006-v1",
+          "derivation_id": "deriv-006",
+          "link_ids": [
+            "link-006"
+          ],
+          "confirmation_status": "rejected",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-013",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.3355,
+          "source_id": "src-06",
+          "artifact_version_id": "av-013-v1",
+          "derivation_id": "deriv-013",
+          "link_ids": [
+            "link-013"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 1,
+        "source_unreachable": 1
+      }
+    },
+    {
+      "query_id": "q07",
+      "mode": "fts",
+      "result_ids": [
+        "cu-007",
+        "cu-001",
+        "cu-004",
+        "cu-014"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-007",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 3.00117,
+          "source_id": "src-08",
+          "artifact_version_id": "av-007-v1",
+          "derivation_id": "deriv-007",
+          "link_ids": [
+            "link-007"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-001",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.50017,
+          "source_id": "src-02",
+          "artifact_version_id": "av-001-v1",
+          "derivation_id": "deriv-001",
+          "link_ids": [
+            "link-001"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-004",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.334,
+          "source_id": "src-05",
+          "artifact_version_id": "av-004-v1",
+          "derivation_id": "deriv-004",
+          "link_ids": [
+            "link-004"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.25233,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 1
+      }
+    },
+    {
+      "query_id": "q08",
+      "mode": "fts",
+      "result_ids": [
+        "cu-005"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-005",
+          "project_id": "project-alpha",
+          "kind": "assertion",
+          "score": 3.00083,
+          "source_id": "src-06",
+          "artifact_version_id": "av-005-v1",
+          "derivation_id": "deriv-005",
+          "link_ids": [
+            "link-005"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "source_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 2
+      }
+    },
+    {
+      "query_id": "q09",
+      "mode": "fts",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "source_unreachable",
+      "excluded_counts": {
+        "cross_project": 1,
+        "source_unreachable": 1
+      }
+    },
+    {
+      "query_id": "q10",
+      "mode": "fts",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "permission_restricted",
+      "excluded_counts": {
+        "permission_restricted": 2
+      }
+    },
+    {
+      "query_id": "q11",
+      "mode": "fts",
+      "result_ids": [
+        "cu-001",
+        "cu-004",
+        "cu-014",
+        "cu-007"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-001",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 3.00017,
+          "source_id": "src-02",
+          "artifact_version_id": "av-001-v1",
+          "derivation_id": "deriv-001",
+          "link_ids": [
+            "link-001"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-004",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.20067,
+          "source_id": "src-05",
+          "artifact_version_id": "av-004-v1",
+          "derivation_id": "deriv-004",
+          "link_ids": [
+            "link-004"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.169,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-007",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 1.14402,
+          "source_id": "src-08",
+          "artifact_version_id": "av-007-v1",
+          "derivation_id": "deriv-007",
+          "link_ids": [
+            "link-007"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 2,
+        "deleted_or_retracted": 1
+      }
+    },
+    {
+      "query_id": "q12",
+      "mode": "fts",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "deleted_or_retracted",
+      "excluded_counts": {
+        "deleted_or_retracted": 3,
+        "source_disconnected": 1
+      }
+    },
+    {
+      "query_id": "q13",
+      "mode": "fts",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "deleted_or_retracted",
+      "excluded_counts": {
+        "deleted_or_retracted": 2,
+        "source_disconnected": 1
+      }
+    },
+    {
+      "query_id": "q14",
+      "mode": "fts",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "source_disconnected",
+      "excluded_counts": {
+        "source_unreachable": 1,
+        "deleted_or_retracted": 2,
+        "source_disconnected": 1
+      }
+    },
+    {
+      "query_id": "q15",
+      "mode": "fts",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "stale_generation",
+      "excluded_counts": {
+        "stale_generation": 1,
+        "cross_project": 1
+      }
+    },
+    {
+      "query_id": "q16",
+      "mode": "fts",
+      "result_ids": [
+        "cu-018",
+        "cu-016",
+        "cu-022",
+        "cu-024"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-018",
+          "project_id": "project-beta",
+          "kind": "action",
+          "score": 2.503,
+          "source_id": "src-03",
+          "artifact_version_id": "av-018-v1",
+          "derivation_id": "deriv-018",
+          "link_ids": [
+            "link-018"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        },
+        {
+          "content_unit_id": "cu-016",
+          "project_id": "project-beta",
+          "kind": "event",
+          "score": 1.20267,
+          "source_id": "src-01",
+          "artifact_version_id": "av-016-v1",
+          "derivation_id": "deriv-016",
+          "link_ids": [
+            "link-016"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        },
+        {
+          "content_unit_id": "cu-022",
+          "project_id": "project-beta",
+          "kind": "event",
+          "score": 1.17033,
+          "source_id": "src-07",
+          "artifact_version_id": "av-022-v1",
+          "derivation_id": "deriv-022",
+          "link_ids": [
+            "link-022"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        },
+        {
+          "content_unit_id": "cu-024",
+          "project_id": "project-beta",
+          "kind": "assertion",
+          "score": 1.14686,
+          "source_id": "src-01",
+          "artifact_version_id": "av-024-v1",
+          "derivation_id": "deriv-024",
+          "link_ids": [
+            "link-024"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "version_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 2,
+        "deleted_or_retracted": 1
+      }
+    },
+    {
+      "query_id": "q17",
+      "mode": "fts",
+      "result_ids": [
+        "cu-032",
+        "cu-031"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-032",
+          "project_id": "project-gamma",
+          "kind": "decision",
+          "score": 4.00533,
+          "source_id": "src-01",
+          "artifact_version_id": "av-032-v1",
+          "derivation_id": "deriv-032",
+          "link_ids": [
+            "link-032"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-031",
+          "project_id": "project-gamma",
+          "kind": "event",
+          "score": 1.25517,
+          "source_id": "src-08",
+          "artifact_version_id": "av-031-v1",
+          "derivation_id": "deriv-031",
+          "link_ids": [
+            "link-031"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 2
+      }
+    },
+    {
+      "query_id": "q18",
+      "mode": "fts",
+      "result_ids": [
+        "cu-033",
+        "cu-035",
+        "cu-032"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-033",
+          "project_id": "project-gamma",
+          "kind": "action",
+          "score": 3.0055,
+          "source_id": "src-02",
+          "artifact_version_id": "av-033-v1",
+          "derivation_id": "deriv-033",
+          "link_ids": [
+            "link-033"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-035",
+          "project_id": "project-gamma",
+          "kind": "event",
+          "score": 1.33917,
+          "source_id": "src-04",
+          "artifact_version_id": "av-035-v1",
+          "derivation_id": "deriv-035",
+          "link_ids": [
+            "link-035"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-032",
+          "project_id": "project-gamma",
+          "kind": "decision",
+          "score": 1.172,
+          "source_id": "src-01",
+          "artifact_version_id": "av-032-v1",
+          "derivation_id": "deriv-032",
+          "link_ids": [
+            "link-032"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "evidence_unavailable": 1,
+        "cross_project": 2
+      }
+    },
+    {
+      "query_id": "q19",
+      "mode": "fts",
+      "result_ids": [
+        "cu-047",
+        "cu-050",
+        "cu-046",
+        "cu-055"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-047",
+          "project_id": "project-delta",
+          "kind": "decision",
+          "score": 4.00783,
+          "source_id": "src-08",
+          "artifact_version_id": "av-047-v1",
+          "derivation_id": "deriv-047",
+          "link_ids": [
+            "link-047"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-050",
+          "project_id": "project-delta",
+          "kind": "event",
+          "score": 1.50833,
+          "source_id": "src-03",
+          "artifact_version_id": "av-050-v1",
+          "derivation_id": "deriv-050",
+          "link_ids": [
+            "link-050"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-046",
+          "project_id": "project-delta",
+          "kind": "event",
+          "score": 1.25767,
+          "source_id": "src-07",
+          "artifact_version_id": "av-046-v1",
+          "derivation_id": "deriv-046",
+          "link_ids": [
+            "link-046"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-055",
+          "project_id": "project-delta",
+          "kind": "action",
+          "score": 1.20917,
+          "source_id": "src-08",
+          "artifact_version_id": "av-055-v1",
+          "derivation_id": "deriv-055",
+          "link_ids": [
+            "link-055"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "version_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 1
+      }
+    },
+    {
+      "query_id": "q20",
+      "mode": "fts",
+      "result_ids": [
+        "cu-048"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-048",
+          "project_id": "project-delta",
+          "kind": "action",
+          "score": 3.008,
+          "source_id": "src-01",
+          "artifact_version_id": "av-048-v1",
+          "derivation_id": "deriv-048",
+          "link_ids": [
+            "link-048"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 1
+      }
+    },
+    {
+      "query_id": "q01",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-001",
+        "cu-014",
+        "cu-004",
+        "cu-007"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-001",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 3.30017,
+          "source_id": "src-02",
+          "artifact_version_id": "av-001-v1",
+          "derivation_id": "deriv-001",
+          "link_ids": [
+            "link-001"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.38329,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-004",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.32567,
+          "source_id": "src-05",
+          "artifact_version_id": "av-004-v1",
+          "derivation_id": "deriv-004",
+          "link_ids": [
+            "link-004"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-007",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 1.28039,
+          "source_id": "src-08",
+          "artifact_version_id": "av-007-v1",
+          "derivation_id": "deriv-007",
+          "link_ids": [
+            "link-007"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 2,
+        "deleted_or_retracted": 1
+      }
+    },
+    {
+      "query_id": "q02",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-001",
+        "cu-004",
+        "cu-014",
+        "cu-005",
+        "cu-002",
+        "cu-003",
+        "cu-015"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-001",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 2.31835,
+          "source_id": "src-02",
+          "artifact_version_id": "av-001-v1",
+          "derivation_id": "deriv-001",
+          "link_ids": [
+            "link-001"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-004",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.25557,
+          "source_id": "src-05",
+          "artifact_version_id": "av-004-v1",
+          "derivation_id": "deriv-004",
+          "link_ids": [
+            "link-004"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.25233,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-005",
+          "project_id": "project-alpha",
+          "kind": "assertion",
+          "score": 1.23744,
+          "source_id": "src-06",
+          "artifact_version_id": "av-005-v1",
+          "derivation_id": "deriv-005",
+          "link_ids": [
+            "link-005"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "source_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-002",
+          "project_id": "project-alpha",
+          "kind": "decision",
+          "score": 1.21572,
+          "source_id": "src-03",
+          "artifact_version_id": "av-002-v1",
+          "derivation_id": "deriv-002",
+          "link_ids": [
+            "link-002"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-003",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 1.18516,
+          "source_id": "src-04",
+          "artifact_version_id": "av-003-v1",
+          "derivation_id": "deriv-003",
+          "link_ids": [
+            "link-003"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-015",
+          "project_id": "project-alpha",
+          "kind": "link",
+          "score": 1.17942,
+          "source_id": "src-08",
+          "artifact_version_id": "av-015-v1",
+          "derivation_id": "deriv-015",
+          "link_ids": [
+            "link-015"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "deleted_or_retracted": 2,
+        "cross_project": 4,
+        "permission_restricted": 1,
+        "source_disconnected": 1
+      }
+    },
+    {
+      "query_id": "q03",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-014"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 3.80233,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 3
+      }
+    },
+    {
+      "query_id": "q04",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-002"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-002",
+          "project_id": "project-alpha",
+          "kind": "decision",
+          "score": 3.7289,
+          "source_id": "src-03",
+          "artifact_version_id": "av-002-v1",
+          "derivation_id": "deriv-002",
+          "link_ids": [
+            "link-002"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "metadata_mismatch": 1
+      }
+    },
+    {
+      "query_id": "q05",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-003"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-003",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 3.6005,
+          "source_id": "src-04",
+          "artifact_version_id": "av-003-v1",
+          "derivation_id": "deriv-003",
+          "link_ids": [
+            "link-003"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "metadata_mismatch": 1,
+        "permission_restricted": 1
+      }
+    },
+    {
+      "query_id": "q06",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-006",
+        "cu-013"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-006",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 3.9385,
+          "source_id": "src-07",
+          "artifact_version_id": "av-006-v1",
+          "derivation_id": "deriv-006",
+          "link_ids": [
+            "link-006"
+          ],
+          "confirmation_status": "rejected",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-013",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.88095,
+          "source_id": "src-06",
+          "artifact_version_id": "av-013-v1",
+          "derivation_id": "deriv-013",
+          "link_ids": [
+            "link-013"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 6,
+        "deleted_or_retracted": 1,
+        "source_unreachable": 1
+      }
+    },
+    {
+      "query_id": "q07",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-007",
+        "cu-001",
+        "cu-014",
+        "cu-004"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-007",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 3.30117,
+          "source_id": "src-08",
+          "artifact_version_id": "av-007-v1",
+          "derivation_id": "deriv-007",
+          "link_ids": [
+            "link-007"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-001",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.63653,
+          "source_id": "src-02",
+          "artifact_version_id": "av-001-v1",
+          "derivation_id": "deriv-001",
+          "link_ids": [
+            "link-001"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.46662,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-004",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.459,
+          "source_id": "src-05",
+          "artifact_version_id": "av-004-v1",
+          "derivation_id": "deriv-004",
+          "link_ids": [
+            "link-004"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 1
+      }
+    },
+    {
+      "query_id": "q08",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-005"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-005",
+          "project_id": "project-alpha",
+          "kind": "assertion",
+          "score": 3.75083,
+          "source_id": "src-06",
+          "artifact_version_id": "av-005-v1",
+          "derivation_id": "deriv-005",
+          "link_ids": [
+            "link-005"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "source_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 6
+      }
+    },
+    {
+      "query_id": "q09",
+      "mode": "semantic",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "source_unreachable",
+      "excluded_counts": {
+        "cross_project": 1,
+        "source_unreachable": 1
+      }
+    },
+    {
+      "query_id": "q10",
+      "mode": "semantic",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "permission_restricted",
+      "excluded_counts": {
+        "permission_restricted": 2
+      }
+    },
+    {
+      "query_id": "q11",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-001",
+        "cu-014",
+        "cu-004",
+        "cu-007"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-001",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 3.30017,
+          "source_id": "src-02",
+          "artifact_version_id": "av-001-v1",
+          "derivation_id": "deriv-001",
+          "link_ids": [
+            "link-001"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.38329,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-004",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.32567,
+          "source_id": "src-05",
+          "artifact_version_id": "av-004-v1",
+          "derivation_id": "deriv-004",
+          "link_ids": [
+            "link-004"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-007",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 1.28039,
+          "source_id": "src-08",
+          "artifact_version_id": "av-007-v1",
+          "derivation_id": "deriv-007",
+          "link_ids": [
+            "link-007"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 2,
+        "deleted_or_retracted": 1
+      }
+    },
+    {
+      "query_id": "q12",
+      "mode": "semantic",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "deleted_or_retracted",
+      "excluded_counts": {
+        "deleted_or_retracted": 3,
+        "source_disconnected": 1
+      }
+    },
+    {
+      "query_id": "q13",
+      "mode": "semantic",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "deleted_or_retracted",
+      "excluded_counts": {
+        "deleted_or_retracted": 2,
+        "source_disconnected": 1
+      }
+    },
+    {
+      "query_id": "q14",
+      "mode": "semantic",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "source_disconnected",
+      "excluded_counts": {
+        "deleted_or_retracted": 2,
+        "source_unreachable": 1,
+        "source_disconnected": 1
+      }
+    },
+    {
+      "query_id": "q15",
+      "mode": "semantic",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "stale_generation",
+      "excluded_counts": {
+        "stale_generation": 1,
+        "cross_project": 1
+      }
+    },
+    {
+      "query_id": "q16",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-018",
+        "cu-022",
+        "cu-024",
+        "cu-016",
+        "cu-017"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-018",
+          "project_id": "project-beta",
+          "kind": "action",
+          "score": 3.33633,
+          "source_id": "src-03",
+          "artifact_version_id": "av-018-v1",
+          "derivation_id": "deriv-018",
+          "link_ids": [
+            "link-018"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        },
+        {
+          "content_unit_id": "cu-022",
+          "project_id": "project-beta",
+          "kind": "event",
+          "score": 1.77033,
+          "source_id": "src-07",
+          "artifact_version_id": "av-022-v1",
+          "derivation_id": "deriv-022",
+          "link_ids": [
+            "link-022"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        },
+        {
+          "content_unit_id": "cu-024",
+          "project_id": "project-beta",
+          "kind": "assertion",
+          "score": 1.64686,
+          "source_id": "src-01",
+          "artifact_version_id": "av-024-v1",
+          "derivation_id": "deriv-024",
+          "link_ids": [
+            "link-024"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "version_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        },
+        {
+          "content_unit_id": "cu-016",
+          "project_id": "project-beta",
+          "kind": "event",
+          "score": 1.63124,
+          "source_id": "src-01",
+          "artifact_version_id": "av-016-v1",
+          "derivation_id": "deriv-016",
+          "link_ids": [
+            "link-016"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        },
+        {
+          "content_unit_id": "cu-017",
+          "project_id": "project-beta",
+          "kind": "decision",
+          "score": 0.60283,
+          "source_id": "src-02",
+          "artifact_version_id": "av-017-v1",
+          "derivation_id": "deriv-017",
+          "link_ids": [
+            "link-017"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 5,
+        "deleted_or_retracted": 1,
+        "source_unreachable": 1
+      }
+    },
+    {
+      "query_id": "q17",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-032",
+        "cu-031",
+        "cu-033",
+        "cu-035",
+        "cu-034"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-032",
+          "project_id": "project-gamma",
+          "kind": "decision",
+          "score": 4.90533,
+          "source_id": "src-01",
+          "artifact_version_id": "av-032-v1",
+          "derivation_id": "deriv-032",
+          "link_ids": [
+            "link-032"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-031",
+          "project_id": "project-gamma",
+          "kind": "event",
+          "score": 1.63017,
+          "source_id": "src-08",
+          "artifact_version_id": "av-031-v1",
+          "derivation_id": "deriv-031",
+          "link_ids": [
+            "link-031"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-033",
+          "project_id": "project-gamma",
+          "kind": "action",
+          "score": 0.6055,
+          "source_id": "src-02",
+          "artifact_version_id": "av-033-v1",
+          "derivation_id": "deriv-033",
+          "link_ids": [
+            "link-033"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-035",
+          "project_id": "project-gamma",
+          "kind": "event",
+          "score": 0.55129,
+          "source_id": "src-04",
+          "artifact_version_id": "av-035-v1",
+          "derivation_id": "deriv-035",
+          "link_ids": [
+            "link-035"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-034",
+          "project_id": "project-gamma",
+          "kind": "material",
+          "score": 0.50567,
+          "source_id": "src-03",
+          "artifact_version_id": "av-034-v1",
+          "derivation_id": "deriv-034",
+          "link_ids": [
+            "link-034"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 3,
+        "evidence_unavailable": 1
+      }
+    },
+    {
+      "query_id": "q18",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-033",
+        "cu-035",
+        "cu-032",
+        "cu-034",
+        "cu-031"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-033",
+          "project_id": "project-gamma",
+          "kind": "action",
+          "score": 3.7555,
+          "source_id": "src-02",
+          "artifact_version_id": "av-033-v1",
+          "derivation_id": "deriv-033",
+          "link_ids": [
+            "link-033"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-035",
+          "project_id": "project-gamma",
+          "kind": "event",
+          "score": 2.00583,
+          "source_id": "src-04",
+          "artifact_version_id": "av-035-v1",
+          "derivation_id": "deriv-035",
+          "link_ids": [
+            "link-035"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-032",
+          "project_id": "project-gamma",
+          "kind": "decision",
+          "score": 1.772,
+          "source_id": "src-01",
+          "artifact_version_id": "av-032-v1",
+          "derivation_id": "deriv-032",
+          "link_ids": [
+            "link-032"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-034",
+          "project_id": "project-gamma",
+          "kind": "material",
+          "score": 0.60567,
+          "source_id": "src-03",
+          "artifact_version_id": "av-034-v1",
+          "derivation_id": "deriv-034",
+          "link_ids": [
+            "link-034"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-031",
+          "project_id": "project-gamma",
+          "kind": "event",
+          "score": 0.43374,
+          "source_id": "src-08",
+          "artifact_version_id": "av-031-v1",
+          "derivation_id": "deriv-031",
+          "link_ids": [
+            "link-031"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "evidence_unavailable": 1,
+        "cross_project": 2
+      }
+    },
+    {
+      "query_id": "q19",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-047",
+        "cu-050",
+        "cu-055",
+        "cu-046",
+        "cu-049",
+        "cu-048"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-047",
+          "project_id": "project-delta",
+          "kind": "decision",
+          "score": 4.84117,
+          "source_id": "src-08",
+          "artifact_version_id": "av-047-v1",
+          "derivation_id": "deriv-047",
+          "link_ids": [
+            "link-047"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-050",
+          "project_id": "project-delta",
+          "kind": "event",
+          "score": 2.10833,
+          "source_id": "src-03",
+          "artifact_version_id": "av-050-v1",
+          "derivation_id": "deriv-050",
+          "link_ids": [
+            "link-050"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-055",
+          "project_id": "project-delta",
+          "kind": "action",
+          "score": 1.63774,
+          "source_id": "src-08",
+          "artifact_version_id": "av-055-v1",
+          "derivation_id": "deriv-055",
+          "link_ids": [
+            "link-055"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "version_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-046",
+          "project_id": "project-delta",
+          "kind": "event",
+          "score": 1.591,
+          "source_id": "src-07",
+          "artifact_version_id": "av-046-v1",
+          "derivation_id": "deriv-046",
+          "link_ids": [
+            "link-046"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-049",
+          "project_id": "project-delta",
+          "kind": "material",
+          "score": 0.60817,
+          "source_id": "src-02",
+          "artifact_version_id": "av-049-v1",
+          "derivation_id": "deriv-049",
+          "link_ids": [
+            "link-049"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-048",
+          "project_id": "project-delta",
+          "kind": "action",
+          "score": 0.46954,
+          "source_id": "src-01",
+          "artifact_version_id": "av-048-v1",
+          "derivation_id": "deriv-048",
+          "link_ids": [
+            "link-048"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 1
+      }
+    },
+    {
+      "query_id": "q20",
+      "mode": "semantic",
+      "result_ids": [
+        "cu-048",
+        "cu-050",
+        "cu-049",
+        "cu-047",
+        "cu-055",
+        "cu-046"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-048",
+          "project_id": "project-delta",
+          "kind": "action",
+          "score": 3.633,
+          "source_id": "src-01",
+          "artifact_version_id": "av-048-v1",
+          "derivation_id": "deriv-048",
+          "link_ids": [
+            "link-048"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-050",
+          "project_id": "project-delta",
+          "kind": "event",
+          "score": 0.60833,
+          "source_id": "src-03",
+          "artifact_version_id": "av-050-v1",
+          "derivation_id": "deriv-050",
+          "link_ids": [
+            "link-050"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-049",
+          "project_id": "project-delta",
+          "kind": "material",
+          "score": 0.60817,
+          "source_id": "src-02",
+          "artifact_version_id": "av-049-v1",
+          "derivation_id": "deriv-049",
+          "link_ids": [
+            "link-049"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-047",
+          "project_id": "project-delta",
+          "kind": "decision",
+          "score": 0.60783,
+          "source_id": "src-08",
+          "artifact_version_id": "av-047-v1",
+          "derivation_id": "deriv-047",
+          "link_ids": [
+            "link-047"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-055",
+          "project_id": "project-delta",
+          "kind": "action",
+          "score": 0.43774,
+          "source_id": "src-08",
+          "artifact_version_id": "av-055-v1",
+          "derivation_id": "deriv-055",
+          "link_ids": [
+            "link-055"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "version_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-046",
+          "project_id": "project-delta",
+          "kind": "event",
+          "score": 0.341,
+          "source_id": "src-07",
+          "artifact_version_id": "av-046-v1",
+          "derivation_id": "deriv-046",
+          "link_ids": [
+            "link-046"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 1
+      }
+    },
+    {
+      "query_id": "q01",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-001",
+        "cu-014",
+        "cu-004",
+        "cu-007"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-001",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 3.30017,
+          "source_id": "src-02",
+          "artifact_version_id": "av-001-v1",
+          "derivation_id": "deriv-001",
+          "link_ids": [
+            "link-001"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.38329,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-004",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.32567,
+          "source_id": "src-05",
+          "artifact_version_id": "av-004-v1",
+          "derivation_id": "deriv-004",
+          "link_ids": [
+            "link-004"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-007",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 1.28039,
+          "source_id": "src-08",
+          "artifact_version_id": "av-007-v1",
+          "derivation_id": "deriv-007",
+          "link_ids": [
+            "link-007"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 2,
+        "deleted_or_retracted": 1
+      }
+    },
+    {
+      "query_id": "q02",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-001",
+        "cu-004",
+        "cu-014",
+        "cu-005",
+        "cu-002",
+        "cu-003",
+        "cu-015"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-001",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 2.31835,
+          "source_id": "src-02",
+          "artifact_version_id": "av-001-v1",
+          "derivation_id": "deriv-001",
+          "link_ids": [
+            "link-001"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-004",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.25557,
+          "source_id": "src-05",
+          "artifact_version_id": "av-004-v1",
+          "derivation_id": "deriv-004",
+          "link_ids": [
+            "link-004"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.25233,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-005",
+          "project_id": "project-alpha",
+          "kind": "assertion",
+          "score": 1.23744,
+          "source_id": "src-06",
+          "artifact_version_id": "av-005-v1",
+          "derivation_id": "deriv-005",
+          "link_ids": [
+            "link-005"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "source_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-002",
+          "project_id": "project-alpha",
+          "kind": "decision",
+          "score": 1.21572,
+          "source_id": "src-03",
+          "artifact_version_id": "av-002-v1",
+          "derivation_id": "deriv-002",
+          "link_ids": [
+            "link-002"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-003",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 1.18516,
+          "source_id": "src-04",
+          "artifact_version_id": "av-003-v1",
+          "derivation_id": "deriv-003",
+          "link_ids": [
+            "link-003"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-015",
+          "project_id": "project-alpha",
+          "kind": "link",
+          "score": 1.17942,
+          "source_id": "src-08",
+          "artifact_version_id": "av-015-v1",
+          "derivation_id": "deriv-015",
+          "link_ids": [
+            "link-015"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "deleted_or_retracted": 2,
+        "permission_restricted": 1,
+        "cross_project": 4,
+        "source_disconnected": 1
+      }
+    },
+    {
+      "query_id": "q03",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-014"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 3.80233,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 3
+      }
+    },
+    {
+      "query_id": "q04",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-002"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-002",
+          "project_id": "project-alpha",
+          "kind": "decision",
+          "score": 3.7289,
+          "source_id": "src-03",
+          "artifact_version_id": "av-002-v1",
+          "derivation_id": "deriv-002",
+          "link_ids": [
+            "link-002"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "metadata_mismatch": 1
+      }
+    },
+    {
+      "query_id": "q05",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-003"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-003",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 3.6005,
+          "source_id": "src-04",
+          "artifact_version_id": "av-003-v1",
+          "derivation_id": "deriv-003",
+          "link_ids": [
+            "link-003"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "metadata_mismatch": 1,
+        "permission_restricted": 1
+      }
+    },
+    {
+      "query_id": "q06",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-006",
+        "cu-013"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-006",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 3.9385,
+          "source_id": "src-07",
+          "artifact_version_id": "av-006-v1",
+          "derivation_id": "deriv-006",
+          "link_ids": [
+            "link-006"
+          ],
+          "confirmation_status": "rejected",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-013",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.88095,
+          "source_id": "src-06",
+          "artifact_version_id": "av-013-v1",
+          "derivation_id": "deriv-013",
+          "link_ids": [
+            "link-013"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 6,
+        "deleted_or_retracted": 1,
+        "source_unreachable": 1
+      }
+    },
+    {
+      "query_id": "q07",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-007",
+        "cu-001",
+        "cu-014",
+        "cu-004"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-007",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 3.30117,
+          "source_id": "src-08",
+          "artifact_version_id": "av-007-v1",
+          "derivation_id": "deriv-007",
+          "link_ids": [
+            "link-007"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-001",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.63653,
+          "source_id": "src-02",
+          "artifact_version_id": "av-001-v1",
+          "derivation_id": "deriv-001",
+          "link_ids": [
+            "link-001"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.46662,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-004",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.459,
+          "source_id": "src-05",
+          "artifact_version_id": "av-004-v1",
+          "derivation_id": "deriv-004",
+          "link_ids": [
+            "link-004"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 1
+      }
+    },
+    {
+      "query_id": "q08",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-005"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-005",
+          "project_id": "project-alpha",
+          "kind": "assertion",
+          "score": 3.75083,
+          "source_id": "src-06",
+          "artifact_version_id": "av-005-v1",
+          "derivation_id": "deriv-005",
+          "link_ids": [
+            "link-005"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "source_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 6
+      }
+    },
+    {
+      "query_id": "q09",
+      "mode": "hybrid",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "source_unreachable",
+      "excluded_counts": {
+        "cross_project": 1,
+        "source_unreachable": 1
+      }
+    },
+    {
+      "query_id": "q10",
+      "mode": "hybrid",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "permission_restricted",
+      "excluded_counts": {
+        "permission_restricted": 2
+      }
+    },
+    {
+      "query_id": "q11",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-001",
+        "cu-014",
+        "cu-004",
+        "cu-007"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-001",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 3.30017,
+          "source_id": "src-02",
+          "artifact_version_id": "av-001-v1",
+          "derivation_id": "deriv-001",
+          "link_ids": [
+            "link-001"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-014",
+          "project_id": "project-alpha",
+          "kind": "event",
+          "score": 1.38329,
+          "source_id": "src-07",
+          "artifact_version_id": "av-014-v1",
+          "derivation_id": "deriv-014",
+          "link_ids": [
+            "link-014"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-004",
+          "project_id": "project-alpha",
+          "kind": "material",
+          "score": 1.32567,
+          "source_id": "src-05",
+          "artifact_version_id": "av-004-v1",
+          "derivation_id": "deriv-004",
+          "link_ids": [
+            "link-004"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        },
+        {
+          "content_unit_id": "cu-007",
+          "project_id": "project-alpha",
+          "kind": "action",
+          "score": 1.28039,
+          "source_id": "src-08",
+          "artifact_version_id": "av-007-v1",
+          "derivation_id": "deriv-007",
+          "link_ids": [
+            "link-007"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-alpha"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 2,
+        "deleted_or_retracted": 1
+      }
+    },
+    {
+      "query_id": "q12",
+      "mode": "hybrid",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "deleted_or_retracted",
+      "excluded_counts": {
+        "deleted_or_retracted": 3,
+        "source_disconnected": 1
+      }
+    },
+    {
+      "query_id": "q13",
+      "mode": "hybrid",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "deleted_or_retracted",
+      "excluded_counts": {
+        "deleted_or_retracted": 2,
+        "source_disconnected": 1
+      }
+    },
+    {
+      "query_id": "q14",
+      "mode": "hybrid",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "source_disconnected",
+      "excluded_counts": {
+        "source_unreachable": 1,
+        "deleted_or_retracted": 2,
+        "source_disconnected": 1
+      }
+    },
+    {
+      "query_id": "q15",
+      "mode": "hybrid",
+      "result_ids": [],
+      "results": [],
+      "empty_reason": "stale_generation",
+      "excluded_counts": {
+        "stale_generation": 1,
+        "cross_project": 1
+      }
+    },
+    {
+      "query_id": "q16",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-018",
+        "cu-022",
+        "cu-024",
+        "cu-016",
+        "cu-017"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-018",
+          "project_id": "project-beta",
+          "kind": "action",
+          "score": 3.33633,
+          "source_id": "src-03",
+          "artifact_version_id": "av-018-v1",
+          "derivation_id": "deriv-018",
+          "link_ids": [
+            "link-018"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        },
+        {
+          "content_unit_id": "cu-022",
+          "project_id": "project-beta",
+          "kind": "event",
+          "score": 1.77033,
+          "source_id": "src-07",
+          "artifact_version_id": "av-022-v1",
+          "derivation_id": "deriv-022",
+          "link_ids": [
+            "link-022"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        },
+        {
+          "content_unit_id": "cu-024",
+          "project_id": "project-beta",
+          "kind": "assertion",
+          "score": 1.64686,
+          "source_id": "src-01",
+          "artifact_version_id": "av-024-v1",
+          "derivation_id": "deriv-024",
+          "link_ids": [
+            "link-024"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "version_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        },
+        {
+          "content_unit_id": "cu-016",
+          "project_id": "project-beta",
+          "kind": "event",
+          "score": 1.63124,
+          "source_id": "src-01",
+          "artifact_version_id": "av-016-v1",
+          "derivation_id": "deriv-016",
+          "link_ids": [
+            "link-016"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        },
+        {
+          "content_unit_id": "cu-017",
+          "project_id": "project-beta",
+          "kind": "decision",
+          "score": 0.60283,
+          "source_id": "src-02",
+          "artifact_version_id": "av-017-v1",
+          "derivation_id": "deriv-017",
+          "link_ids": [
+            "link-017"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-beta"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 5,
+        "deleted_or_retracted": 1,
+        "source_unreachable": 1
+      }
+    },
+    {
+      "query_id": "q17",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-032",
+        "cu-031",
+        "cu-033",
+        "cu-035",
+        "cu-034"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-032",
+          "project_id": "project-gamma",
+          "kind": "decision",
+          "score": 4.90533,
+          "source_id": "src-01",
+          "artifact_version_id": "av-032-v1",
+          "derivation_id": "deriv-032",
+          "link_ids": [
+            "link-032"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-031",
+          "project_id": "project-gamma",
+          "kind": "event",
+          "score": 1.63017,
+          "source_id": "src-08",
+          "artifact_version_id": "av-031-v1",
+          "derivation_id": "deriv-031",
+          "link_ids": [
+            "link-031"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-033",
+          "project_id": "project-gamma",
+          "kind": "action",
+          "score": 0.6055,
+          "source_id": "src-02",
+          "artifact_version_id": "av-033-v1",
+          "derivation_id": "deriv-033",
+          "link_ids": [
+            "link-033"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-035",
+          "project_id": "project-gamma",
+          "kind": "event",
+          "score": 0.55129,
+          "source_id": "src-04",
+          "artifact_version_id": "av-035-v1",
+          "derivation_id": "deriv-035",
+          "link_ids": [
+            "link-035"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-034",
+          "project_id": "project-gamma",
+          "kind": "material",
+          "score": 0.50567,
+          "source_id": "src-03",
+          "artifact_version_id": "av-034-v1",
+          "derivation_id": "deriv-034",
+          "link_ids": [
+            "link-034"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 3,
+        "evidence_unavailable": 1
+      }
+    },
+    {
+      "query_id": "q18",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-033",
+        "cu-035",
+        "cu-032",
+        "cu-034",
+        "cu-031"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-033",
+          "project_id": "project-gamma",
+          "kind": "action",
+          "score": 3.7555,
+          "source_id": "src-02",
+          "artifact_version_id": "av-033-v1",
+          "derivation_id": "deriv-033",
+          "link_ids": [
+            "link-033"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-035",
+          "project_id": "project-gamma",
+          "kind": "event",
+          "score": 2.00583,
+          "source_id": "src-04",
+          "artifact_version_id": "av-035-v1",
+          "derivation_id": "deriv-035",
+          "link_ids": [
+            "link-035"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-032",
+          "project_id": "project-gamma",
+          "kind": "decision",
+          "score": 1.772,
+          "source_id": "src-01",
+          "artifact_version_id": "av-032-v1",
+          "derivation_id": "deriv-032",
+          "link_ids": [
+            "link-032"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-034",
+          "project_id": "project-gamma",
+          "kind": "material",
+          "score": 0.60567,
+          "source_id": "src-03",
+          "artifact_version_id": "av-034-v1",
+          "derivation_id": "deriv-034",
+          "link_ids": [
+            "link-034"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        },
+        {
+          "content_unit_id": "cu-031",
+          "project_id": "project-gamma",
+          "kind": "event",
+          "score": 0.43374,
+          "source_id": "src-08",
+          "artifact_version_id": "av-031-v1",
+          "derivation_id": "deriv-031",
+          "link_ids": [
+            "link-031"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-gamma"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "evidence_unavailable": 1,
+        "cross_project": 2
+      }
+    },
+    {
+      "query_id": "q19",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-047",
+        "cu-050",
+        "cu-055",
+        "cu-046",
+        "cu-049",
+        "cu-048"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-047",
+          "project_id": "project-delta",
+          "kind": "decision",
+          "score": 4.84117,
+          "source_id": "src-08",
+          "artifact_version_id": "av-047-v1",
+          "derivation_id": "deriv-047",
+          "link_ids": [
+            "link-047"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-050",
+          "project_id": "project-delta",
+          "kind": "event",
+          "score": 2.10833,
+          "source_id": "src-03",
+          "artifact_version_id": "av-050-v1",
+          "derivation_id": "deriv-050",
+          "link_ids": [
+            "link-050"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-055",
+          "project_id": "project-delta",
+          "kind": "action",
+          "score": 1.63774,
+          "source_id": "src-08",
+          "artifact_version_id": "av-055-v1",
+          "derivation_id": "deriv-055",
+          "link_ids": [
+            "link-055"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "version_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-046",
+          "project_id": "project-delta",
+          "kind": "event",
+          "score": 1.591,
+          "source_id": "src-07",
+          "artifact_version_id": "av-046-v1",
+          "derivation_id": "deriv-046",
+          "link_ids": [
+            "link-046"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-049",
+          "project_id": "project-delta",
+          "kind": "material",
+          "score": 0.60817,
+          "source_id": "src-02",
+          "artifact_version_id": "av-049-v1",
+          "derivation_id": "deriv-049",
+          "link_ids": [
+            "link-049"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-048",
+          "project_id": "project-delta",
+          "kind": "action",
+          "score": 0.46954,
+          "source_id": "src-01",
+          "artifact_version_id": "av-048-v1",
+          "derivation_id": "deriv-048",
+          "link_ids": [
+            "link-048"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 1
+      }
+    },
+    {
+      "query_id": "q20",
+      "mode": "hybrid",
+      "result_ids": [
+        "cu-048",
+        "cu-050",
+        "cu-049",
+        "cu-047",
+        "cu-055",
+        "cu-046"
+      ],
+      "results": [
+        {
+          "content_unit_id": "cu-048",
+          "project_id": "project-delta",
+          "kind": "action",
+          "score": 3.633,
+          "source_id": "src-01",
+          "artifact_version_id": "av-048-v1",
+          "derivation_id": "deriv-048",
+          "link_ids": [
+            "link-048"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-050",
+          "project_id": "project-delta",
+          "kind": "event",
+          "score": 0.60833,
+          "source_id": "src-03",
+          "artifact_version_id": "av-050-v1",
+          "derivation_id": "deriv-050",
+          "link_ids": [
+            "link-050"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-049",
+          "project_id": "project-delta",
+          "kind": "material",
+          "score": 0.60817,
+          "source_id": "src-02",
+          "artifact_version_id": "av-049-v1",
+          "derivation_id": "deriv-049",
+          "link_ids": [
+            "link-049"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-047",
+          "project_id": "project-delta",
+          "kind": "decision",
+          "score": 0.60783,
+          "source_id": "src-08",
+          "artifact_version_id": "av-047-v1",
+          "derivation_id": "deriv-047",
+          "link_ids": [
+            "link-047"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-055",
+          "project_id": "project-delta",
+          "kind": "action",
+          "score": 0.43774,
+          "source_id": "src-08",
+          "artifact_version_id": "av-055-v1",
+          "derivation_id": "deriv-055",
+          "link_ids": [
+            "link-055"
+          ],
+          "confirmation_status": "confirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "conflict",
+          "conflict_status": "version_conflict",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        },
+        {
+          "content_unit_id": "cu-046",
+          "project_id": "project-delta",
+          "kind": "event",
+          "score": 0.341,
+          "source_id": "src-07",
+          "artifact_version_id": "av-046-v1",
+          "derivation_id": "deriv-046",
+          "link_ids": [
+            "link-046"
+          ],
+          "confirmation_status": "unconfirmed",
+          "generated_at": "2026-08-09T12:00:00+08:00",
+          "evidence_status": "current",
+          "conflict_status": "none",
+          "permission_status": "allowed_current",
+          "authorization_id": "auth-project-delta"
+        }
+      ],
+      "empty_reason": "matches_found",
+      "excluded_counts": {
+        "cross_project": 1
+      }
+    }
+  ]
+}

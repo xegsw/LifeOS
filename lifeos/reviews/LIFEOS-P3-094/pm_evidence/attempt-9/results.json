@@ -1,0 +1,1097 @@
+[
+  {
+    "id": "SC-missing-db",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-missing-db",
+    "state_transition_id": "SC-missing-db"
+  },
+  {
+    "id": "SC-zero-byte",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-zero-byte",
+    "state_transition_id": "SC-zero-byte"
+  },
+  {
+    "id": "SC-random-corrupt",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-random-corrupt",
+    "state_transition_id": "SC-random-corrupt"
+  },
+  {
+    "id": "SC-no-schema",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-no-schema",
+    "state_transition_id": "SC-no-schema"
+  },
+  {
+    "id": "SC-only-captures",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-only-captures",
+    "state_transition_id": "SC-only-captures"
+  },
+  {
+    "id": "SC-only-audit",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-only-audit",
+    "state_transition_id": "SC-only-audit"
+  },
+  {
+    "id": "SC-captures-column-0-missing",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-0-missing",
+    "state_transition_id": "SC-captures-column-0-missing"
+  },
+  {
+    "id": "SC-captures-column-0-name",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-0-name",
+    "state_transition_id": "SC-captures-column-0-name"
+  },
+  {
+    "id": "SC-captures-column-0-order",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-0-order",
+    "state_transition_id": "SC-captures-column-0-order"
+  },
+  {
+    "id": "SC-captures-column-0-type",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-0-type",
+    "state_transition_id": "SC-captures-column-0-type"
+  },
+  {
+    "id": "SC-captures-column-0-notnull",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-0-notnull",
+    "state_transition_id": "SC-captures-column-0-notnull"
+  },
+  {
+    "id": "SC-captures-column-0-default",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-0-default",
+    "state_transition_id": "SC-captures-column-0-default"
+  },
+  {
+    "id": "SC-captures-column-0-pk",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-0-pk",
+    "state_transition_id": "SC-captures-column-0-pk"
+  },
+  {
+    "id": "SC-captures-column-1-missing",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-1-missing",
+    "state_transition_id": "SC-captures-column-1-missing"
+  },
+  {
+    "id": "SC-captures-column-1-name",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-1-name",
+    "state_transition_id": "SC-captures-column-1-name"
+  },
+  {
+    "id": "SC-captures-column-1-order",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-1-order",
+    "state_transition_id": "SC-captures-column-1-order"
+  },
+  {
+    "id": "SC-captures-column-1-type",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-1-type",
+    "state_transition_id": "SC-captures-column-1-type"
+  },
+  {
+    "id": "SC-captures-column-1-notnull",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-1-notnull",
+    "state_transition_id": "SC-captures-column-1-notnull"
+  },
+  {
+    "id": "SC-captures-column-1-default",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-1-default",
+    "state_transition_id": "SC-captures-column-1-default"
+  },
+  {
+    "id": "SC-captures-column-1-pk",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-1-pk",
+    "state_transition_id": "SC-captures-column-1-pk"
+  },
+  {
+    "id": "SC-captures-column-2-missing",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-2-missing",
+    "state_transition_id": "SC-captures-column-2-missing"
+  },
+  {
+    "id": "SC-captures-column-2-name",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-2-name",
+    "state_transition_id": "SC-captures-column-2-name"
+  },
+  {
+    "id": "SC-captures-column-2-order",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-2-order",
+    "state_transition_id": "SC-captures-column-2-order"
+  },
+  {
+    "id": "SC-captures-column-2-type",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-2-type",
+    "state_transition_id": "SC-captures-column-2-type"
+  },
+  {
+    "id": "SC-captures-column-2-notnull",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-2-notnull",
+    "state_transition_id": "SC-captures-column-2-notnull"
+  },
+  {
+    "id": "SC-captures-column-2-default",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-2-default",
+    "state_transition_id": "SC-captures-column-2-default"
+  },
+  {
+    "id": "SC-captures-column-2-pk",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-2-pk",
+    "state_transition_id": "SC-captures-column-2-pk"
+  },
+  {
+    "id": "SC-captures-column-3-missing",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-3-missing",
+    "state_transition_id": "SC-captures-column-3-missing"
+  },
+  {
+    "id": "SC-captures-column-3-name",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-3-name",
+    "state_transition_id": "SC-captures-column-3-name"
+  },
+  {
+    "id": "SC-captures-column-3-order",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-3-order",
+    "state_transition_id": "SC-captures-column-3-order"
+  },
+  {
+    "id": "SC-captures-column-3-type",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-3-type",
+    "state_transition_id": "SC-captures-column-3-type"
+  },
+  {
+    "id": "SC-captures-column-3-notnull",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-3-notnull",
+    "state_transition_id": "SC-captures-column-3-notnull"
+  },
+  {
+    "id": "SC-captures-column-3-default",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-3-default",
+    "state_transition_id": "SC-captures-column-3-default"
+  },
+  {
+    "id": "SC-captures-column-3-pk",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-3-pk",
+    "state_transition_id": "SC-captures-column-3-pk"
+  },
+  {
+    "id": "SC-captures-column-4-missing",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-4-missing",
+    "state_transition_id": "SC-captures-column-4-missing"
+  },
+  {
+    "id": "SC-captures-column-4-name",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-4-name",
+    "state_transition_id": "SC-captures-column-4-name"
+  },
+  {
+    "id": "SC-captures-column-4-order",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-4-order",
+    "state_transition_id": "SC-captures-column-4-order"
+  },
+  {
+    "id": "SC-captures-column-4-type",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-4-type",
+    "state_transition_id": "SC-captures-column-4-type"
+  },
+  {
+    "id": "SC-captures-column-4-notnull",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-4-notnull",
+    "state_transition_id": "SC-captures-column-4-notnull"
+  },
+  {
+    "id": "SC-captures-column-4-default",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-4-default",
+    "state_transition_id": "SC-captures-column-4-default"
+  },
+  {
+    "id": "SC-captures-column-4-pk",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-captures-column-4-pk",
+    "state_transition_id": "SC-captures-column-4-pk"
+  },
+  {
+    "id": "SC-audit-column-0-missing",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-0-missing",
+    "state_transition_id": "SC-audit-column-0-missing"
+  },
+  {
+    "id": "SC-audit-column-0-name",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-0-name",
+    "state_transition_id": "SC-audit-column-0-name"
+  },
+  {
+    "id": "SC-audit-column-0-order",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-0-order",
+    "state_transition_id": "SC-audit-column-0-order"
+  },
+  {
+    "id": "SC-audit-column-0-type",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-0-type",
+    "state_transition_id": "SC-audit-column-0-type"
+  },
+  {
+    "id": "SC-audit-column-0-notnull",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-0-notnull",
+    "state_transition_id": "SC-audit-column-0-notnull"
+  },
+  {
+    "id": "SC-audit-column-0-default",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-0-default",
+    "state_transition_id": "SC-audit-column-0-default"
+  },
+  {
+    "id": "SC-audit-column-0-pk",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-0-pk",
+    "state_transition_id": "SC-audit-column-0-pk"
+  },
+  {
+    "id": "SC-audit-column-1-missing",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-1-missing",
+    "state_transition_id": "SC-audit-column-1-missing"
+  },
+  {
+    "id": "SC-audit-column-1-name",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-1-name",
+    "state_transition_id": "SC-audit-column-1-name"
+  },
+  {
+    "id": "SC-audit-column-1-order",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-1-order",
+    "state_transition_id": "SC-audit-column-1-order"
+  },
+  {
+    "id": "SC-audit-column-1-type",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-1-type",
+    "state_transition_id": "SC-audit-column-1-type"
+  },
+  {
+    "id": "SC-audit-column-1-notnull",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-1-notnull",
+    "state_transition_id": "SC-audit-column-1-notnull"
+  },
+  {
+    "id": "SC-audit-column-1-default",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-1-default",
+    "state_transition_id": "SC-audit-column-1-default"
+  },
+  {
+    "id": "SC-audit-column-1-pk",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-1-pk",
+    "state_transition_id": "SC-audit-column-1-pk"
+  },
+  {
+    "id": "SC-audit-column-2-missing",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-2-missing",
+    "state_transition_id": "SC-audit-column-2-missing"
+  },
+  {
+    "id": "SC-audit-column-2-name",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-2-name",
+    "state_transition_id": "SC-audit-column-2-name"
+  },
+  {
+    "id": "SC-audit-column-2-order",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-2-order",
+    "state_transition_id": "SC-audit-column-2-order"
+  },
+  {
+    "id": "SC-audit-column-2-type",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-2-type",
+    "state_transition_id": "SC-audit-column-2-type"
+  },
+  {
+    "id": "SC-audit-column-2-notnull",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-2-notnull",
+    "state_transition_id": "SC-audit-column-2-notnull"
+  },
+  {
+    "id": "SC-audit-column-2-default",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-2-default",
+    "state_transition_id": "SC-audit-column-2-default"
+  },
+  {
+    "id": "SC-audit-column-2-pk",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-2-pk",
+    "state_transition_id": "SC-audit-column-2-pk"
+  },
+  {
+    "id": "SC-audit-column-3-missing",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-3-missing",
+    "state_transition_id": "SC-audit-column-3-missing"
+  },
+  {
+    "id": "SC-audit-column-3-name",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-3-name",
+    "state_transition_id": "SC-audit-column-3-name"
+  },
+  {
+    "id": "SC-audit-column-3-order",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-3-order",
+    "state_transition_id": "SC-audit-column-3-order"
+  },
+  {
+    "id": "SC-audit-column-3-type",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-3-type",
+    "state_transition_id": "SC-audit-column-3-type"
+  },
+  {
+    "id": "SC-audit-column-3-notnull",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-3-notnull",
+    "state_transition_id": "SC-audit-column-3-notnull"
+  },
+  {
+    "id": "SC-audit-column-3-default",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-3-default",
+    "state_transition_id": "SC-audit-column-3-default"
+  },
+  {
+    "id": "SC-audit-column-3-pk",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-3-pk",
+    "state_transition_id": "SC-audit-column-3-pk"
+  },
+  {
+    "id": "SC-audit-column-4-missing",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-4-missing",
+    "state_transition_id": "SC-audit-column-4-missing"
+  },
+  {
+    "id": "SC-audit-column-4-name",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-4-name",
+    "state_transition_id": "SC-audit-column-4-name"
+  },
+  {
+    "id": "SC-audit-column-4-order",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-4-order",
+    "state_transition_id": "SC-audit-column-4-order"
+  },
+  {
+    "id": "SC-audit-column-4-type",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-4-type",
+    "state_transition_id": "SC-audit-column-4-type"
+  },
+  {
+    "id": "SC-audit-column-4-notnull",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-4-notnull",
+    "state_transition_id": "SC-audit-column-4-notnull"
+  },
+  {
+    "id": "SC-audit-column-4-default",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-4-default",
+    "state_transition_id": "SC-audit-column-4-default"
+  },
+  {
+    "id": "SC-audit-column-4-pk",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-audit-column-4-pk",
+    "state_transition_id": "SC-audit-column-4-pk"
+  },
+  {
+    "id": "SC-missing-id-pk",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-missing-id-pk",
+    "state_transition_id": "SC-missing-id-pk"
+  },
+  {
+    "id": "SC-missing-idem-unique",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-missing-idem-unique",
+    "state_transition_id": "SC-missing-idem-unique"
+  },
+  {
+    "id": "SC-missing-source-check",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-missing-source-check",
+    "state_transition_id": "SC-missing-source-check"
+  },
+  {
+    "id": "SC-missing-audit-autoincrement",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-missing-audit-autoincrement",
+    "state_transition_id": "SC-missing-audit-autoincrement"
+  },
+  {
+    "id": "SC-idem-index-nonunique",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-idem-index-nonunique",
+    "state_transition_id": "SC-idem-index-nonunique"
+  },
+  {
+    "id": "SC-idem-index-wrong-column",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-idem-index-wrong-column",
+    "state_transition_id": "SC-idem-index-wrong-column"
+  },
+  {
+    "id": "SC-extra-index",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-extra-index",
+    "state_transition_id": "SC-extra-index"
+  },
+  {
+    "id": "SC-extra-trigger",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-extra-trigger",
+    "state_transition_id": "SC-extra-trigger"
+  },
+  {
+    "id": "SC-shadow-object",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-shadow-object",
+    "state_transition_id": "SC-shadow-object"
+  },
+  {
+    "id": "SC-semantic-sql-change",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-semantic-sql-change",
+    "state_transition_id": "SC-semantic-sql-change"
+  },
+  {
+    "id": "SC-views-replace-tables",
+    "category": "schema",
+    "expected": "reject; invalidate stale page; DB unchanged",
+    "actual": "rejected and state contract held",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "SC-views-replace-tables",
+    "state_transition_id": "SC-views-replace-tables"
+  },
+  {
+    "id": "PATH-api-cli-relative-dotdot-normalization-wrong-basename-output",
+    "category": "path",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_all_public_entries_share_exact_path_gate",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "PATH-db-symlink-ancestor-hardlink-directory-fifo-socket-special",
+    "category": "path",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_symlink_db_file_is_rejected; RuntimeTest.test_symlink_db_parent_is_rejected; InvariantClosureTest.test_db_and_page_hardlinks_are_rejected",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "PATH-page-symlink-ancestor-hardlink-directory-fifo-socket-special",
+    "category": "path",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_symlink_today_is_rejected_without_following; RuntimeTest.test_directory_and_special_today_are_rejected; InvariantClosureTest.test_db_and_page_hardlinks_are_rejected",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "PATH-sentinels-unchanged",
+    "category": "path",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_caller_output_paths_are_rejected_before_change",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "PATH-parent-missing-unreadable-unwritable",
+    "category": "path",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_parent_must_preexist_and_capture_leaves_nothing",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "PATH-page-delete-temp-create-fsync-replace-failures",
+    "category": "path",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_clear_page_invalidation_failure_preserves_db; InvariantClosureTest.test_render_fsync_failure_keeps_valid_page_and_cleans_temp; InvariantClosureTest.test_render_replace_failure_keeps_valid_page_and_cleans_temp",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "ROW-source-other-case-empty-null-blob",
+    "category": "row_audit",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_source_and_row_type_mutations_fail_whole_result",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "ROW-id-content-created-source-idem-null-empty-wrong-type",
+    "category": "row_audit",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_source_and_row_type_mutations_fail_whole_result",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "ROW-invalid-uuid-timezone-time",
+    "category": "row_audit",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_source_and_row_type_mutations_fail_whole_result",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "ROW-duplicate-id-idem-and-whole-result",
+    "category": "row_audit",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_source_and_row_type_mutations_fail_whole_result",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "AUDIT-missing-wrong-id-event-detail-orphan-null-blob",
+    "category": "row_audit",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_audit_mutations_fail_closed",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "ROW-html-markup-quotes-unicode-newline-long",
+    "category": "row_audit",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_html_is_escaped_unicode_newline_and_long_text_is_complete",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "LIFE-new-db-init-failure-zero-half-products",
+    "category": "failure",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_empty_and_atomic_failure",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "LIFE-existing-capture-write-audit-commit-failure-repeat-conflict",
+    "category": "failure",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_capture_success_invalidates_stale_page_and_failure_restores_it; InvariantClosureTest.test_repeat_only_appends_repeat_audit_and_conflict_changes_nothing",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "LIFE-render-read-validate-write-flush-fsync-replace-cleanup",
+    "category": "failure",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_query_failure_with_stale_page_is_invalidated_without_db_change; InvariantClosureTest.test_render_fsync_failure_keeps_valid_page_and_cleans_temp; InvariantClosureTest.test_render_replace_failure_keeps_valid_page_and_cleans_temp",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "LIFE-clear-invalidate-confirm-delete-audit-commit-rollback",
+    "category": "failure",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_clear_page_invalidation_failure_preserves_db; InvariantClosureTest.test_clear_transaction_failure_rolls_back_and_page_stays_invalidated",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "LIFE-stale-page-after-capture-clear-missing-invalid-db",
+    "category": "failure",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_capture_success_invalidates_stale_page_and_failure_restores_it; InvariantClosureTest.test_clear_untrusted_db_invalidates_page_without_db_change",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "LIFE-fresh-process-full-chain",
+    "category": "failure",
+    "expected": "first, repeat, restart, render, recapture, rerender, clear, failed rerender",
+    "actual": "all fresh-process exits and states matched",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "fresh_process_lifecycle.log",
+    "state_transition_id": "fresh-process-full-chain"
+  },
+  {
+    "id": "REG-attempt-6-7-8-precondition-adapted",
+    "category": "failure",
+    "expected": "all historical behavior matrices pass under new pre-existing-parent contract",
+    "actual": {
+      "attempt-6": {
+        "exit_code": 0,
+        "pass": 19,
+        "fail": 0,
+        "failed_items": [],
+        "harness_adjustment": "fixture parent mkdir only; historical source remained read-only"
+      },
+      "attempt-7": {
+        "exit_code": 0,
+        "pass": 13,
+        "fail": 0,
+        "failed_items": [],
+        "harness_adjustment": "fixture parent mkdir only; historical source remained read-only"
+      },
+      "attempt-8": {
+        "exit_code": 0,
+        "pass": 18,
+        "fail": 0,
+        "failed_items": [],
+        "harness_adjustment": "fixture parent mkdir only; historical source remained read-only"
+      }
+    },
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "adapted_regressions",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "REG-pm-attempt8-two-counterexamples",
+    "category": "schema",
+    "expected": "2 PASS / 0 FAIL",
+    "actual": {
+      "pass": 2,
+      "fail": 0
+    },
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "pm_schema_constraint_counterexamples",
+    "state_transition_id": "pm-attempt8"
+  }
+]

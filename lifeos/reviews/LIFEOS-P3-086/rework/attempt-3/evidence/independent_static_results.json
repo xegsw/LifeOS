@@ -1,0 +1,157 @@
+{
+  "task": "LIFEOS-P3-086",
+  "attempt": "attempt-3",
+  "kind": "fresh-independent-static",
+  "root": "/private/tmp/lifeos-p3-086-attempt-3.lOKtlY/app",
+  "pass": 28,
+  "fail": 0,
+  "results": [
+    {
+      "id": "default-recovery.html/document",
+      "status": "PASS",
+      "detail": "独立 HTML 文档具有主内容容器。"
+    },
+    {
+      "id": "default-recovery.html/local-assets",
+      "status": "PASS",
+      "detail": "仅引用相对本地 CSS 与 JavaScript。"
+    },
+    {
+      "id": "default-recovery.html/three-way-navigation",
+      "status": "PASS",
+      "detail": "页面包含通向三张本地页面的显式导航。"
+    },
+    {
+      "id": "default-recovery.html/ai-closed",
+      "status": "PASS",
+      "detail": "页面明确披露 AI 未启用。"
+    },
+    {
+      "id": "no-reliable-suggestion.html/document",
+      "status": "PASS",
+      "detail": "独立 HTML 文档具有主内容容器。"
+    },
+    {
+      "id": "no-reliable-suggestion.html/local-assets",
+      "status": "PASS",
+      "detail": "仅引用相对本地 CSS 与 JavaScript。"
+    },
+    {
+      "id": "no-reliable-suggestion.html/three-way-navigation",
+      "status": "PASS",
+      "detail": "页面包含通向三张本地页面的显式导航。"
+    },
+    {
+      "id": "no-reliable-suggestion.html/ai-closed",
+      "status": "PASS",
+      "detail": "页面明确披露 AI 未启用。"
+    },
+    {
+      "id": "restricted-offline.html/document",
+      "status": "PASS",
+      "detail": "独立 HTML 文档具有主内容容器。"
+    },
+    {
+      "id": "restricted-offline.html/local-assets",
+      "status": "PASS",
+      "detail": "仅引用相对本地 CSS 与 JavaScript。"
+    },
+    {
+      "id": "restricted-offline.html/three-way-navigation",
+      "status": "PASS",
+      "detail": "页面包含通向三张本地页面的显式导航。"
+    },
+    {
+      "id": "restricted-offline.html/ai-closed",
+      "status": "PASS",
+      "detail": "页面明确披露 AI 未启用。"
+    },
+    {
+      "id": "recovery/context-first",
+      "status": "PASS",
+      "detail": "默认页保留从项目恢复到今日安排的叙事。"
+    },
+    {
+      "id": "recovery/confirmed-action",
+      "status": "PASS",
+      "detail": "默认页仅将已确认行动写为今日安排，并关闭 AI。"
+    },
+    {
+      "id": "capture/empty-rejected",
+      "status": "PASS",
+      "detail": "空文本确认有显式拒绝与披露。"
+    },
+    {
+      "id": "capture/explicit-confirm",
+      "status": "PASS",
+      "detail": "非空文本仅在显式确认后显示。"
+    },
+    {
+      "id": "capture/repeated-confirm-idempotent",
+      "status": "PASS",
+      "detail": "重复确认替换当前会话显示，不累加记录。"
+    },
+    {
+      "id": "capture/failure-clears",
+      "status": "PASS",
+      "detail": "模拟失败清除显示记录并披露未保留。"
+    },
+    {
+      "id": "empty/no-invention",
+      "status": "PASS",
+      "detail": "无建议页不虚构重点或建议。"
+    },
+    {
+      "id": "empty/two-human-paths",
+      "status": "PASS",
+      "detail": "无建议页只提供两条人工受控路径和反馈。"
+    },
+    {
+      "id": "restricted/fail-closed",
+      "status": "PASS",
+      "detail": "受限／离线页明确关闭来源处理与建议。"
+    },
+    {
+      "id": "closed/remote-url",
+      "status": "PASS",
+      "detail": "没有远程 URL。"
+    },
+    {
+      "id": "closed/network-api",
+      "status": "PASS",
+      "detail": "没有网络 API。"
+    },
+    {
+      "id": "closed/browser-persistence",
+      "status": "PASS",
+      "detail": "没有浏览器持久化。"
+    },
+    {
+      "id": "closed/file-api",
+      "status": "PASS",
+      "detail": "没有文件 API。"
+    },
+    {
+      "id": "closed/tauri-ipc",
+      "status": "PASS",
+      "detail": "没有 Tauri／IPC。"
+    },
+    {
+      "id": "closed/export-sync",
+      "status": "PASS",
+      "detail": "没有导出或同步能力标识。"
+    },
+    {
+      "id": "closed/model-third-party",
+      "status": "PASS",
+      "detail": "没有模型调用或第三方凭据标识。"
+    }
+  ],
+  "hashes": {
+    "default-recovery.html": "98241ff3ae39bd0d9b562f72700a6b7cee66dd28fb252827558182b5a6f18616",
+    "no-reliable-suggestion.html": "2d50aa2f26a0c66647d385d9426386e01081d3f964919bc1588707611cae0577",
+    "restricted-offline.html": "036d061f605367ef4087ee3ea49f2ace1bd69203370b0e4a8135160f6689ecef",
+    "app.js": "f1e0525285da80001fcc9e3ac305c3577c169bd5216b305666e90be3bc4f89e2",
+    "styles.css": "e6e91c2ca590299a1307118f8f5fff467254ecb2c0bfa36acb623b25f6bd9774"
+  }
+}

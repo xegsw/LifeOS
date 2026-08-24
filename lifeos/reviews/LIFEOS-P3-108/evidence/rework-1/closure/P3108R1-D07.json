@@ -1,0 +1,29 @@
+{
+  "id": "P3108R1-D07",
+  "observable_result": "UI reports injected_atomic_failure; fixture has one record, two audits and no sidecars/residue.",
+  "operation": "Use actual diagnostics UI for injected atomic failure.",
+  "raw_actual_app_state_and_visual_evidence": [
+    {
+      "exists": true,
+      "path": "dynamic/U10-injected-failure.ax.txt",
+      "sha256": "4a02c78d75ed25018d08c67333f1189213376c9fe5f31a74b7b3eb44b2ef116d"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/U10-injected-failure.jpeg",
+      "sha256": "3f38b2d5491a20ec250d42cadd61eede5578eb3ea69b90a46af4af40f8cfb23f"
+    },
+    {
+      "exists": true,
+      "path": "fixture-reopen-P3108R1-U10-failure-after.json",
+      "sha256": "0df0001e2b8b98aae583269d65c933117afc06621796c3671ac3eb82dc142c9d"
+    },
+    {
+      "exists": true,
+      "path": "db-reopen-P3108R1-U10-failure-after.json",
+      "sha256": "7346e5ccdf235f06a9ce2ff1eece26fc473e1edfdaa74a50824af4750d3b6ab3"
+    }
+  ],
+  "status": "PASS",
+  "time": "2026-08-24T03:13:25.558127+00:00"
+}

@@ -1,0 +1,174 @@
+{
+  "audit_events": [
+    {
+      "authorization_id": null,
+      "decision": "deny",
+      "detail_json": "{\"ai_consumption\":\"none\",\"allowed\":false,\"external_action\":\"none\",\"reason\":\"default_deny\"}",
+      "event_type": "consumption.check",
+      "id": "audit-2fb5c225a760d2ed",
+      "occurred_at_ms": 10,
+      "operator_confirmation": "N/A"
+    },
+    {
+      "authorization_id": "auth-00d1c1c9f0bcc58c",
+      "decision": "granted",
+      "detail_json": "{\"category\":\"synthetic_note\",\"expires_at_ms\":100,\"location\":\"local_sqlite\",\"processor\":\"local_rules\",\"project_id\":\"project-synthetic-001\",\"purpose\":\"local_recovery\",\"version\":1}",
+      "event_type": "authorization.grant",
+      "id": "audit-7d28034e94b73485",
+      "occurred_at_ms": 10,
+      "operator_confirmation": "CONFIRM"
+    },
+    {
+      "authorization_id": null,
+      "decision": "allow",
+      "detail_json": "{\"ai_consumption\":\"local_decision_only\",\"allowed\":true,\"external_action\":\"none\",\"reason\":\"allowed_local_synthetic\"}",
+      "event_type": "consumption.check",
+      "id": "audit-9db2b4031d06a241",
+      "occurred_at_ms": 11,
+      "operator_confirmation": "N/A"
+    },
+    {
+      "authorization_id": "auth-00d1c1c9f0bcc58c",
+      "decision": "revoked",
+      "detail_json": "{\"idempotency_key\":\"revoke-1\",\"version\":2}",
+      "event_type": "authorization.revoke",
+      "id": "audit-176592bb1120ccae",
+      "occurred_at_ms": 20,
+      "operator_confirmation": "REVOKE"
+    },
+    {
+      "authorization_id": null,
+      "decision": "deny",
+      "detail_json": "{\"ai_consumption\":\"none\",\"allowed\":false,\"external_action\":\"none\",\"reason\":\"authorization_not_current_or_not_matching\"}",
+      "event_type": "consumption.check",
+      "id": "audit-f8219057986ebfd2",
+      "occurred_at_ms": 21,
+      "operator_confirmation": "N/A"
+    },
+    {
+      "authorization_id": null,
+      "decision": "deny",
+      "detail_json": "{\"ai_consumption\":\"none\",\"allowed\":false,\"external_action\":\"none\",\"reason\":\"default_deny\"}",
+      "event_type": "consumption.check",
+      "id": "audit-56da1ba9b56807a1",
+      "occurred_at_ms": 30,
+      "operator_confirmation": "N/A"
+    },
+    {
+      "authorization_id": "auth-14ab739549240b43",
+      "decision": "denied",
+      "detail_json": "{\"category\":\"synthetic_task\",\"expires_at_ms\":100,\"location\":\"local_sqlite\",\"processor\":\"local_rules\",\"project_id\":\"project-synthetic-001\",\"purpose\":\"local_recovery\",\"version\":1}",
+      "event_type": "authorization.deny",
+      "id": "audit-5d41c1685bb332ec",
+      "occurred_at_ms": 30,
+      "operator_confirmation": "CONFIRM"
+    },
+    {
+      "authorization_id": null,
+      "decision": "deny",
+      "detail_json": "{\"ai_consumption\":\"none\",\"allowed\":false,\"external_action\":\"none\",\"reason\":\"authorization_not_current_or_not_matching\"}",
+      "event_type": "consumption.check",
+      "id": "audit-7d7fba8b92dc7f46",
+      "occurred_at_ms": 30,
+      "operator_confirmation": "N/A"
+    },
+    {
+      "authorization_id": "auth-487b47ca94227277",
+      "decision": "granted",
+      "detail_json": "{\"category\":\"synthetic_note\",\"expires_at_ms\":40,\"location\":\"local_sqlite\",\"processor\":\"local_rules\",\"project_id\":\"project-synthetic-001\",\"purpose\":\"local_summary\",\"version\":1}",
+      "event_type": "authorization.grant",
+      "id": "audit-9428fefc845248a2",
+      "occurred_at_ms": 30,
+      "operator_confirmation": "CONFIRM"
+    },
+    {
+      "authorization_id": null,
+      "decision": "deny",
+      "detail_json": "{\"ai_consumption\":\"none\",\"allowed\":false,\"external_action\":\"none\",\"reason\":\"default_deny\"}",
+      "event_type": "consumption.check",
+      "id": "audit-f8241deac0f40e1f",
+      "occurred_at_ms": 30,
+      "operator_confirmation": "N/A"
+    },
+    {
+      "authorization_id": null,
+      "decision": "deny",
+      "detail_json": "{\"ai_consumption\":\"none\",\"allowed\":false,\"external_action\":\"none\",\"reason\":\"authorization_not_current_or_not_matching\"}",
+      "event_type": "consumption.check",
+      "id": "audit-fb6d6d614d15a054",
+      "occurred_at_ms": 30,
+      "operator_confirmation": "N/A"
+    },
+    {
+      "authorization_id": null,
+      "decision": "deny",
+      "detail_json": "{\"ai_consumption\":\"none\",\"allowed\":false,\"external_action\":\"none\",\"reason\":\"authorization_not_current_or_not_matching\"}",
+      "event_type": "consumption.check",
+      "id": "audit-2ad5aac638f9dcea",
+      "occurred_at_ms": 31,
+      "operator_confirmation": "N/A"
+    },
+    {
+      "authorization_id": null,
+      "decision": "deny",
+      "detail_json": "{\"ai_consumption\":\"none\",\"allowed\":false,\"external_action\":\"none\",\"reason\":\"authorization_not_current_or_not_matching\"}",
+      "event_type": "consumption.check",
+      "id": "audit-598953f95dc3e3a1",
+      "occurred_at_ms": 40,
+      "operator_confirmation": "N/A"
+    }
+  ],
+  "authorizations": [
+    {
+      "category": "synthetic_note",
+      "created_at_ms": 10,
+      "expires_at_ms": 100,
+      "id": "auth-00d1c1c9f0bcc58c",
+      "idempotency_key": "grant-1",
+      "location": "local_sqlite",
+      "operator_confirmation": "CONFIRM",
+      "processor": "local_rules",
+      "project_id": "project-synthetic-001",
+      "purpose": "local_recovery",
+      "status": "revoked",
+      "updated_at_ms": 20,
+      "version": 2
+    },
+    {
+      "category": "synthetic_task",
+      "created_at_ms": 30,
+      "expires_at_ms": 100,
+      "id": "auth-14ab739549240b43",
+      "idempotency_key": "deny-1",
+      "location": "local_sqlite",
+      "operator_confirmation": "CONFIRM",
+      "processor": "local_rules",
+      "project_id": "project-synthetic-001",
+      "purpose": "local_recovery",
+      "status": "denied",
+      "updated_at_ms": 30,
+      "version": 1
+    },
+    {
+      "category": "synthetic_note",
+      "created_at_ms": 30,
+      "expires_at_ms": 40,
+      "id": "auth-487b47ca94227277",
+      "idempotency_key": "expire-1",
+      "location": "local_sqlite",
+      "operator_confirmation": "CONFIRM",
+      "processor": "local_rules",
+      "project_id": "project-synthetic-001",
+      "purpose": "local_summary",
+      "status": "granted",
+      "updated_at_ms": 30,
+      "version": 1
+    }
+  ],
+  "boundaries": {
+    "external_action": "none",
+    "network": "disabled",
+    "real_paths": "not_used",
+    "tauri_ipc": "not_used"
+  }
+}

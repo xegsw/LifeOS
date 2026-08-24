@@ -1,0 +1,155 @@
+{
+  "audit_integrity_contract_met": true,
+  "cases": {
+    "action": {
+      "after_attempt": {
+        "audit_count": 1,
+        "child_count": 1,
+        "gate": "ALLOW",
+        "parent": {
+          "generation": 1,
+          "status": "active"
+        }
+      },
+      "audited_controlled_change": false,
+      "baseline": {
+        "audit_count": 1,
+        "child_count": 1,
+        "gate": "ALLOW",
+        "parent": {
+          "generation": 1,
+          "status": "active"
+        }
+      },
+      "cache_recheck": "ALLOW",
+      "direct_delete_rejected": true,
+      "in_transaction": {
+        "gate": "ALLOW",
+        "parent": {
+          "generation": 1,
+          "status": "active"
+        }
+      },
+      "incomplete_state_created": false,
+      "queue_recheck": "ALLOW",
+      "recommended_integrity_contract_met": true,
+      "rollback": {
+        "child_count": 1,
+        "gate": "ALLOW",
+        "parent": {
+          "generation": 1,
+          "status": "active"
+        }
+      },
+      "runtime_contract_safe": true,
+      "sqlite_error": "active_authorization_action_delete_forbidden",
+      "stale_cache_before_recheck": {
+        "authorization_generation": 1,
+        "decision": "ALLOW"
+      },
+      "state_unchanged_after_rejection": true
+    },
+    "policy": {
+      "after_attempt": {
+        "audit_count": 1,
+        "child_count": 1,
+        "gate": "ALLOW",
+        "parent": {
+          "generation": 1,
+          "status": "active"
+        }
+      },
+      "audited_controlled_change": false,
+      "baseline": {
+        "audit_count": 1,
+        "child_count": 1,
+        "gate": "ALLOW",
+        "parent": {
+          "generation": 1,
+          "status": "active"
+        }
+      },
+      "cache_recheck": "ALLOW",
+      "direct_delete_rejected": true,
+      "in_transaction": {
+        "gate": "ALLOW",
+        "parent": {
+          "generation": 1,
+          "status": "active"
+        }
+      },
+      "incomplete_state_created": false,
+      "queue_recheck": "ALLOW",
+      "recommended_integrity_contract_met": true,
+      "rollback": {
+        "child_count": 1,
+        "gate": "ALLOW",
+        "parent": {
+          "generation": 1,
+          "status": "active"
+        }
+      },
+      "runtime_contract_safe": true,
+      "sqlite_error": "active_authorization_policy_delete_forbidden",
+      "stale_cache_before_recheck": {
+        "authorization_generation": 1,
+        "decision": "ALLOW"
+      },
+      "state_unchanged_after_rejection": true
+    },
+    "scope": {
+      "after_attempt": {
+        "audit_count": 1,
+        "child_count": 2,
+        "gate": "ALLOW",
+        "parent": {
+          "generation": 1,
+          "status": "active"
+        }
+      },
+      "audited_controlled_change": false,
+      "baseline": {
+        "audit_count": 1,
+        "child_count": 2,
+        "gate": "ALLOW",
+        "parent": {
+          "generation": 1,
+          "status": "active"
+        }
+      },
+      "cache_recheck": "ALLOW",
+      "direct_delete_rejected": true,
+      "in_transaction": {
+        "gate": "ALLOW",
+        "parent": {
+          "generation": 1,
+          "status": "active"
+        }
+      },
+      "incomplete_state_created": false,
+      "queue_recheck": "ALLOW",
+      "recommended_integrity_contract_met": true,
+      "rollback": {
+        "child_count": 2,
+        "gate": "ALLOW",
+        "parent": {
+          "generation": 1,
+          "status": "active"
+        }
+      },
+      "runtime_contract_safe": true,
+      "sqlite_error": "active_authorization_scope_delete_forbidden",
+      "stale_cache_before_recheck": {
+        "authorization_generation": 1,
+        "decision": "ALLOW"
+      },
+      "state_unchanged_after_rejection": true
+    }
+  },
+  "classification": null,
+  "residual": "P2-4",
+  "rollback_ok": true,
+  "runtime_contract_safe": true,
+  "status": "PASS",
+  "target_contract": "reject direct child DELETE with unchanged complete state, or atomically deactivate/increment/audit and DENY when incomplete"
+}

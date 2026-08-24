@@ -1,0 +1,278 @@
+{
+  "all_passed": true,
+  "results": [
+    {
+      "case": "ENVELOPE/update_processor_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ENVELOPE/update_purpose_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ENVELOPE/update_location_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ENVELOPE/update_grantor_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ENVELOPE/update_expiry_to_indefinite_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ENVELOPE/update_policy_version_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ENVELOPE/compound_field_update_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ENVELOPE/update_valid_from_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ENVELOPE/update_expires_at_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ENVELOPE/expires_indefinite_to_at_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ENVELOPE/expires_null_to_value_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ENVELOPE/compound_retirement_and_envelope_update/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ENVELOPE/multirow_active_parent_update_atomic/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "LEGAL/noop_security_envelope/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "LEGAL/updated_at_only/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "LEGAL/proposed_configure_then_activate/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "LEGAL/granted_configure_then_activate/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "LEGAL/retire_revoked_without_envelope_change/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "LEGAL/retire_expired_without_envelope_change/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "LEGAL/retire_superseded_without_envelope_change/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "LEGAL/successor_version_changed_envelope/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT-PROTECTED/update_id_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT-PROTECTED/update_logical_key_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT-PROTECTED/update_version_no_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT-PROTECTED/update_supersedes_id_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT-PROTECTED/active_to_proposed/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "KNOWN-R0048-R0049/preposition_fake_retirement/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "KNOWN-R0048-R0049/delete_audit_after_retirement/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "KNOWN-R0048-R0049/delete_outbox_after_retirement/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "KNOWN-R0048-R0049/update_outbox_status_after_retirement/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "KNOWN-R0048-R0049/update_audit_action_after_retirement/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "KNOWN-R0048-R0049/increase_generation_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "KNOWN-R0048-R0049/bump_then_retire_with_prepositioned_evidence/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "KNOWN-R0048-R0049/update_scope_effect_revoked/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "KNOWN-R0048-R0049/insert_scope_revoked/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "KNOWN-R0048-R0049/update_action_value_revoked/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "KNOWN-R0048-R0049/update_policy_training_revoked/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT-OBSERVATION/update_created_at_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT-OBSERVATION/update_revoked_at_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    }
+  ]
+}

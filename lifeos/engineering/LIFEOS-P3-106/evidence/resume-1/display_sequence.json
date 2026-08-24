@@ -1,0 +1,33 @@
+{
+  "task": "LIFEOS-P3-106",
+  "execution": "resume-1",
+  "original": {
+    "display": "内建显示器",
+    "selected_resolution": "1512 x 982 (default)",
+    "observed_options": ["1024 x 665", "1147 x 745", "1352 x 878", "1512 x 982 (default)", "1800 x 1169"],
+    "screenshot": "display-original.jpg",
+    "status": "RECORDED"
+  },
+  "temporary": {
+    "selected_resolution": "1800 x 1169",
+    "allowed_only_for": ["ABF-M-004", "ABF-M-005", "ABF-M-006"],
+    "actual_app_window": "1280 x 1024",
+    "captures": ["m004-default-1280x1024.png", "m005-no-suggestion-1280x1024.png", "m006-restricted-1280x1024.png"],
+    "status": "PASS"
+  },
+  "restoration": {
+    "required_resolution": "1512 x 982 (default)",
+    "verified_resolution": "1512 x 982",
+    "screenshot": "display-restored.jpg",
+    "status": "PASS"
+  },
+  "responsive_after_restore": {
+    "expected_actual_app_workspace": "1160 x 768 capture at the original display setting",
+    "rows": ["ABF-I-11", "ABF-M-015"],
+    "verified_actual_app_workspace": "1160 x 768",
+    "narrow_workspace": "700 x 760",
+    "clipping_or_unreachable_key_action": false,
+    "reduced_motion_restored": "off",
+    "status": "PASS"
+  }
+}

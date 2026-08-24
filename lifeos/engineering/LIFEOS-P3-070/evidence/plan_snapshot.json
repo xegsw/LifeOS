@@ -1,0 +1,112 @@
+{
+  "ready_plan": {
+    "status": "ready",
+    "source": "synthetic_capture",
+    "content_identity": {
+      "id": "synthetic-note-001",
+      "version": 3
+    },
+    "scope": "single_record",
+    "target_category": "portable_package_candidate",
+    "confirmation_required": "CONFIRM",
+    "conflict_semantics": "blocked_on_any_conflict",
+    "failure_semantics": "fail_closed_and_audited",
+    "external_action": "none",
+    "boundaries": {
+      "network": "disabled",
+      "paths": "not_used",
+      "tauri_ipc": "not_used",
+      "vault": "not_used",
+      "real_export": "not_used",
+      "cloud": "not_used",
+      "sync": "not_used",
+      "multi_device": "not_used",
+      "l3": "not_used",
+      "external_user": "not_used",
+      "external_action": "none"
+    }
+  },
+  "confirmed_receipt": {
+    "status": "confirmed_plan",
+    "content_identity": {
+      "id": "synthetic-note-001",
+      "version": 3
+    },
+    "receipt": "local_confirmed_plan_only",
+    "external_action": "none",
+    "boundaries": {
+      "network": "disabled",
+      "paths": "not_used",
+      "tauri_ipc": "not_used",
+      "vault": "not_used",
+      "real_export": "not_used",
+      "cloud": "not_used",
+      "sync": "not_used",
+      "multi_device": "not_used",
+      "l3": "not_used",
+      "external_user": "not_used",
+      "external_action": "none"
+    }
+  },
+  "conflict_result": {
+    "status": "blocked",
+    "reason": "conflict_detected",
+    "external_action": "none",
+    "boundaries": {
+      "network": "disabled",
+      "paths": "not_used",
+      "tauri_ipc": "not_used",
+      "vault": "not_used",
+      "real_export": "not_used",
+      "cloud": "not_used",
+      "sync": "not_used",
+      "multi_device": "not_used",
+      "l3": "not_used",
+      "external_user": "not_used",
+      "external_action": "none"
+    }
+  },
+  "state": {
+    "records": [
+      {
+        "content_id": "synthetic-note-001",
+        "source": "synthetic_capture",
+        "version": 3,
+        "state": "active"
+      }
+    ],
+    "audit": [
+      {
+        "sequence": 1,
+        "event": "record_registered",
+        "content_id": "synthetic-note-001",
+        "detail_json": "{\"boundaries\": {\"cloud\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"paths\": \"not_used\", \"real_export\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"source\": \"synthetic_capture\", \"version\": 3}"
+      },
+      {
+        "sequence": 2,
+        "event": "export_plan_confirmed",
+        "content_id": "synthetic-note-001",
+        "detail_json": "{\"boundaries\": {\"cloud\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"paths\": \"not_used\", \"real_export\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"confirmation\": \"CONFIRM\", \"external_action\": \"none\"}"
+      },
+      {
+        "sequence": 3,
+        "event": "export_plan_blocked",
+        "content_id": "synthetic-note-001",
+        "detail_json": "{\"boundaries\": {\"cloud\": \"not_used\", \"external_action\": \"none\", \"external_user\": \"not_used\", \"l3\": \"not_used\", \"multi_device\": \"not_used\", \"network\": \"disabled\", \"paths\": \"not_used\", \"real_export\": \"not_used\", \"sync\": \"not_used\", \"tauri_ipc\": \"not_used\", \"vault\": \"not_used\"}, \"reason\": \"conflict_detected\"}"
+      }
+    ],
+    "boundaries": {
+      "network": "disabled",
+      "paths": "not_used",
+      "tauri_ipc": "not_used",
+      "vault": "not_used",
+      "real_export": "not_used",
+      "cloud": "not_used",
+      "sync": "not_used",
+      "multi_device": "not_used",
+      "l3": "not_used",
+      "external_user": "not_used",
+      "external_action": "none"
+    }
+  }
+}

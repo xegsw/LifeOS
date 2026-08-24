@@ -1,0 +1,557 @@
+[
+  {
+    "case_id": "T01",
+    "description": "local read allow",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T02",
+    "description": "local parse allow",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T03",
+    "description": "local FTS/index allow",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T04",
+    "description": "local derivation allow",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T05",
+    "description": "LifeOS cloud mock allow",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 5,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T06",
+    "description": "named third party mock allow",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 5,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T07",
+    "description": "missing authorization",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_MISSING"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T08",
+    "description": "expired authorization",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_EXPIRED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T09",
+    "description": "revoked authorization",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_REVOKED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T10",
+    "description": "scope expansion to project B",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T11",
+    "description": "search purpose cannot become summary",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T12",
+    "description": "subject/workflow mismatch",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T13",
+    "description": "processor policy unknown",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "INDETERMINATE",
+    "reason_codes": [
+      "PROCESSOR_POLICY_UNKNOWN"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T14",
+    "description": "policy version change",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "POLICY_VERSION_MISMATCH"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T15",
+    "description": "subprocessor unknown",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "INDETERMINATE",
+    "reason_codes": [
+      "SUBPROCESSORS_UNKNOWN"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T16",
+    "description": "region unknown",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "INDETERMINATE",
+    "reason_codes": [
+      "REGION_UNKNOWN_OR_DISALLOWED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T17",
+    "description": "training default on",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "TRAINING_DEFAULT_ON"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T18",
+    "description": "evaluation default on",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "EVALUATION_DEFAULT_ON"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T19",
+    "description": "deletion insufficient",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "DELETION_CAPABILITY_INSUFFICIENT"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T20",
+    "description": "retention exceeded",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "RETENTION_EXCEEDED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T21",
+    "description": "source forbids external disclosure",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T22",
+    "description": "credential hard block",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "CREDENTIAL_HARD_BLOCK"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T23",
+    "description": "unknown sensitivity external deny",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH",
+      "SENSITIVITY_UNKNOWN"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T24",
+    "description": "user consent cannot override unqualified processor",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "PROCESSOR_NOT_QUALIFIED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T25",
+    "description": "Project membership does not override excluded Source",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH",
+      "INPUT_EXCLUDED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T26",
+    "description": "folder/tag/wiki Link does not override excluded directory",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH",
+      "INPUT_EXCLUDED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T27",
+    "description": "candidate Link does not override excluded Artifact",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH",
+      "INPUT_EXCLUDED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T28",
+    "description": "local authorization cannot be reused for cloud",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T29",
+    "description": "cloud authorization cannot be reused for third party",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T30",
+    "description": "third party A authorization cannot be reused for B",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T31",
+    "description": "multi-input derives under strictest local constraint",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T32",
+    "description": "multi-input external empty intersection refuses generation",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T33",
+    "description": "legal subset creates new derivation and discloses gap",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T34",
+    "description": "queue allow then revocation denies execution",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_REVOKED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T35",
+    "description": "mid-task revocation stops and quarantines race output",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_REVOKED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T36",
+    "description": "policy changes immediately before external send",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "POLICY_VERSION_MISMATCH"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T37",
+    "description": "input tombstone before save output",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "INPUT_RUNTIME_STATE_INVALID"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T38",
+    "description": "expired task lease before save",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "TASK_LEASE_INVALID"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T39",
+    "description": "cross-Project display denied",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T40",
+    "description": "re-derivation rechecks purpose",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T41",
+    "description": "candidate Action write allowed only as candidate boundary",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T42",
+    "description": "candidate Link cannot disclose excluded input",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "AUTH_SIX_DIMENSION_MISMATCH",
+      "INPUT_EXCLUDED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T43",
+    "description": "non-verbatim inference still treated as disclosure",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T44",
+    "description": "negative query/ordering signal still treated as disclosure",
+    "expected": "DENY",
+    "actual": "DENY",
+    "raw_decision": "DENY",
+    "reason_codes": [
+      "INPUT_RUNTIME_STATE_INVALID"
+    ],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T45",
+    "description": "authorization cache key binds subject/project/purpose/location/versions/time",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T46",
+    "description": "remote payload exact allowlist and all denied paths zero-send",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 10,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T48",
+    "description": "evaluation requires an independent purpose grant and explicit opt-in",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T47",
+    "description": "logs/AuditEntry/manifests contain no body/path/prompt/vector/credential",
+    "expected": "ALLOW",
+    "actual": "ALLOW",
+    "raw_decision": "ALLOW",
+    "reason_codes": [],
+    "sent_field_count": 0,
+    "status": "PASS"
+  }
+]

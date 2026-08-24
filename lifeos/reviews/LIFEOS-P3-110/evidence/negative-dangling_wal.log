@@ -1,0 +1,7 @@
+ipc_result status=blocked code=database_sidecar_rejected
+
+thread 'main' (5064774) panicked at src/runtime.rs:678:9:
+controlled DB boundary rejected: database_sidecar_rejected
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+started_at_utc=2026-08-24T05:28:57.936227Z
+db=/private/tmp/lifeos-p3-104-p3-110-review-dangling-wal-v1/capture.sqlite

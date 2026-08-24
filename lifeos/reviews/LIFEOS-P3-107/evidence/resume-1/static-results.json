@@ -1,0 +1,154 @@
+{
+  "task_id": "LIFEOS-P3-107",
+  "runner": "independent_runner.py",
+  "created_at": "2026-08-23T14:30:24.766825+00:00",
+  "checks": [
+    {
+      "id": "IR-107-001-ABF",
+      "status": "PASS",
+      "detail": "ABF hash"
+    },
+    {
+      "id": "IR-107-003-fixed-hash",
+      "status": "PASS",
+      "detail": {
+        "checked": 17,
+        "bad": {}
+      }
+    },
+    {
+      "id": "IR-107-005-runtime-provenance",
+      "status": "PASS",
+      "detail": {
+        "Cargo.lock": true,
+        "Cargo.toml": true,
+        "src/runtime.rs": true,
+        "src/main.rs": true,
+        "capabilities/main.json": true
+      }
+    },
+    {
+      "id": "IR-107-003-engineering-manifest",
+      "status": "PASS",
+      "detail": {
+        "entries": 325,
+        "bad": []
+      }
+    },
+    {
+      "id": "IR-107-005-ipc-capability",
+      "status": "PASS",
+      "detail": {
+        "command_defs": [
+          "capture_record",
+          "get_today",
+          "runtime_status"
+        ],
+        "ui_invokes": [
+          "capture_record",
+          "get_today",
+          "runtime_status"
+        ],
+        "permissions": [],
+        "prohibited_capability_tokens": [
+          "plugin"
+        ]
+      }
+    },
+    {
+      "id": "IR-107-017-static-resource-scan",
+      "status": "PASS",
+      "detail": {
+        "remote": [],
+        "image_fraud": [],
+        "allowed_schema_url": 1
+      }
+    },
+    {
+      "id": "IR-107-004-work-copy",
+      "status": "PASS",
+      "detail": {
+        "path": "/private/tmp/lifeos-p3-107-review-work-r2",
+        "initial_target_absent": true
+      }
+    },
+    {
+      "id": "IR-107-004-clean-build",
+      "status": "PASS",
+      "detail": [
+        {
+          "id": "cargo-test-locked-offline",
+          "command": [
+            "cargo",
+            "test",
+            "--locked"
+          ],
+          "exit_code": 0,
+          "log": "lifeos/reviews/LIFEOS-P3-107/evidence/resume-1/logs/cargo-test-locked-offline.log"
+        },
+        {
+          "id": "cargo-build-locked-offline",
+          "command": [
+            "cargo",
+            "build",
+            "--locked"
+          ],
+          "exit_code": 0,
+          "log": "lifeos/reviews/LIFEOS-P3-107/evidence/resume-1/logs/cargo-build-locked-offline.log"
+        },
+        {
+          "id": "cargo-tauri-build-debug-locked-offline",
+          "command": [
+            "cargo",
+            "tauri",
+            "build",
+            "--debug",
+            "--",
+            "--locked"
+          ],
+          "exit_code": 0,
+          "log": "lifeos/reviews/LIFEOS-P3-107/evidence/resume-1/logs/cargo-tauri-build-debug-locked-offline.log"
+        }
+      ]
+    }
+  ],
+  "build": [
+    {
+      "id": "cargo-test-locked-offline",
+      "command": [
+        "cargo",
+        "test",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "log": "lifeos/reviews/LIFEOS-P3-107/evidence/resume-1/logs/cargo-test-locked-offline.log"
+    },
+    {
+      "id": "cargo-build-locked-offline",
+      "command": [
+        "cargo",
+        "build",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "log": "lifeos/reviews/LIFEOS-P3-107/evidence/resume-1/logs/cargo-build-locked-offline.log"
+    },
+    {
+      "id": "cargo-tauri-build-debug-locked-offline",
+      "command": [
+        "cargo",
+        "tauri",
+        "build",
+        "--debug",
+        "--",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "log": "lifeos/reviews/LIFEOS-P3-107/evidence/resume-1/logs/cargo-tauri-build-debug-locked-offline.log"
+    }
+  ],
+  "summary": {
+    "pass": 8,
+    "fail": 0
+  }
+}

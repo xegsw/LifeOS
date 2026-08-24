@@ -1,0 +1,31 @@
+{
+  "task_id": "LIFEOS-P3-105",
+  "abf_id": "ABF-P3-105-v1",
+  "status": "BLOCKED",
+  "detected_at": "2026-08-23T17:06:43+08:00",
+  "blocking_condition": {
+    "runtime_requirement": "src/runtime.rs validate_database_path requires the direct /private/tmp parent name to start with lifeos-p3-104-",
+    "frozen_authorization": "ABF-P3-105-v1 allows creating and cleaning only /private/tmp/lifeos-p3-105-* fixtures",
+    "why_incompatible": "The immutable runtime rejects every authorized P3-105 fixture path before app startup. A P3-104-prefixed fixture is outside the explicit P3-105 write authorization; changing runtime or using a symlink is prohibited.",
+    "mapped_rules": ["L1-1", "L1-8", "L1-9", "ABF-I-06", "ABF-I-09", "ABF-M-002"]
+  },
+  "actions_not_taken": [
+    "No /private/tmp/lifeos-p3-104-* fixture was created for P3-105",
+    "No actual app was launched with an out-of-scope path",
+    "No runtime, IPC, Cargo.lock, capability, dependency, ABF, or historical asset was modified",
+    "No static or build result was promoted to dynamic PASS"
+  ],
+  "pre_block_results": {
+    "static_checks": "35/35 PASS",
+    "visual_contract_source_checks": "34/34 PASS",
+    "rust_unit_tests": "7/7 PASS",
+    "offline_locked_bundle": "PASS in the task-local engineering target; actual-app replay not started",
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not_Implemented": 15
+  },
+  "temporary_fixture_residuals": 0,
+  "required_resolution": "PM must close/supersede the current task or otherwise resolve the frozen path contradiction before any actual-app Evidence run. The execution session must not edit the ABF."
+}

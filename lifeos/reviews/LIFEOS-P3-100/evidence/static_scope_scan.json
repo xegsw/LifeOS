@@ -1,0 +1,39 @@
+{
+  "files": [
+    "lifeos/engineering/LIFEOS-P3-097/src/local_capture.py",
+    "lifeos/engineering/LIFEOS-P3-097/scripts/operator_cli.py"
+  ],
+  "findings": [],
+  "imports": [
+    "__future__",
+    "argparse",
+    "datetime",
+    "hashlib",
+    "json",
+    "local_capture",
+    "os",
+    "pathlib",
+    "re",
+    "shutil",
+    "sqlite3",
+    "stat",
+    "sys",
+    "typing",
+    "uuid"
+  ],
+  "pass": true,
+  "patterns": [
+    "http://",
+    "https://",
+    "\\bsocket\\b",
+    "\\brequests\\b",
+    "\\burllib\\b",
+    "\\btauri\\b",
+    "\\bvault\\b",
+    "\\bcloud\\b",
+    "\\bsync\\b",
+    "\\bexport\\b"
+  ],
+  "scope_note": "Static closed-state check only; no production or external-capability inference.",
+  "unexpected_imports": []
+}

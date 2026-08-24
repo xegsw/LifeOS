@@ -1,0 +1,4050 @@
+[
+  {
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 2
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263846,
+        "nlink": 1,
+        "sha256": "cb00e2fc3aeb1fce0271337ed15315c0f38701742d1d6d4a1e35b6030c798f39",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263845,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "saved",
+        "expected": "saved",
+        "name": "capture succeeds after bounded cleanup retry",
+        "passed": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "two captures persist",
+        "passed": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "two audits persist",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no staging or sidecar residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263845,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m001-transient-staging-unlink",
+    "row_id": "ABF-M-001",
+    "test_id": "P3-096-M001-transient-staging-unlink"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263854,
+        "nlink": 1,
+        "sha256": "60fa5919d086094103e002b708c504df0552e110b4064c5c9903a0723f06389d",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263858,
+        "nlink": 1,
+        "sha256": "5961add7cea2cfc48f959bbf0f05cbdd4133a36df30dc22d8c180ccd3a6d2884",
+        "size": 666,
+        "type": "regular"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263853,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263854,
+          "nlink": 1,
+          "sha256": "60fa5919d086094103e002b708c504df0552e110b4064c5c9903a0723f06389d",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263854,
+          "nlink": 1,
+          "sha256": "60fa5919d086094103e002b708c504df0552e110b4064c5c9903a0723f06389d",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB state unchanged or absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "audit": 1,
+          "captures": 1
+        },
+        "expected": {
+          "audit": 1,
+          "captures": 1
+        },
+        "name": "counts unchanged",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263858,
+          "nlink": 1,
+          "sha256": "5961add7cea2cfc48f959bbf0f05cbdd4133a36df30dc22d8c180ccd3a6d2884",
+          "size": 666,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263858,
+          "nlink": 1,
+          "sha256": "5961add7cea2cfc48f959bbf0f05cbdd4133a36df30dc22d8c180ccd3a6d2884",
+          "size": 666,
+          "type": "regular"
+        },
+        "name": "page restored byte-for-byte",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no staging or sidecar residue",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263853,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263853,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "name": "sentinel unchanged",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263853,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m002-persistent-staging-existing",
+    "row_id": "ABF-M-002",
+    "test_id": "P3-096-M002-persistent-staging-existing"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263862,
+        "nlink": 1,
+        "sha256": "dc296369bca2534acea4d090e60cdc9025d35d47541b3fd246d6d14ab108c6fa",
+        "size": 47,
+        "type": "regular"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263861,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "DB state unchanged or absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "audit": null,
+          "captures": null
+        },
+        "expected": {
+          "audit": null,
+          "captures": null
+        },
+        "name": "counts unchanged",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263862,
+          "nlink": 1,
+          "sha256": "dc296369bca2534acea4d090e60cdc9025d35d47541b3fd246d6d14ab108c6fa",
+          "size": 47,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263862,
+          "nlink": 1,
+          "sha256": "dc296369bca2534acea4d090e60cdc9025d35d47541b3fd246d6d14ab108c6fa",
+          "size": 47,
+          "type": "regular"
+        },
+        "name": "page restored byte-for-byte",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no staging or sidecar residue",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263861,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263861,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "name": "sentinel unchanged",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263861,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m003-persistent-staging-new",
+    "row_id": "ABF-M-003",
+    "test_id": "P3-096-M003-persistent-staging-new"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263869,
+        "nlink": 1,
+        "sha256": "4e42e5d75a8520aec3f9c913ba4374b9389f23db7a4201af3ea846d57623e564",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263875,
+        "nlink": 1,
+        "sha256": "5961add7cea2cfc48f959bbf0f05cbdd4133a36df30dc22d8c180ccd3a6d2884",
+        "size": 666,
+        "type": "regular"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263868,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263869,
+          "nlink": 1,
+          "sha256": "4e42e5d75a8520aec3f9c913ba4374b9389f23db7a4201af3ea846d57623e564",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263869,
+          "nlink": 1,
+          "sha256": "4e42e5d75a8520aec3f9c913ba4374b9389f23db7a4201af3ea846d57623e564",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB bytes and identity unchanged or absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "audit": 1,
+          "captures": 1
+        },
+        "expected": {
+          "audit": 1,
+          "captures": 1
+        },
+        "name": "counts unchanged",
+        "passed": true
+      },
+      {
+        "actual": {
+          "exists": true,
+          "nlink": 1,
+          "sha256": "5961add7cea2cfc48f959bbf0f05cbdd4133a36df30dc22d8c180ccd3a6d2884",
+          "size": 666,
+          "type": "regular"
+        },
+        "expected": {
+          "exists": true,
+          "nlink": 1,
+          "sha256": "5961add7cea2cfc48f959bbf0f05cbdd4133a36df30dc22d8c180ccd3a6d2884",
+          "size": 666,
+          "type": "regular"
+        },
+        "name": "page observable content follows rollback contract",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no temp or sidecar residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263868,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m004-existing-commit-failure",
+    "row_id": "ABF-M-004",
+    "test_id": "P3-096-M004-existing-commit-failure"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263877,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "new DB absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "no page",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no temp or sidecar residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263877,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m005-init-failure",
+    "row_id": "ABF-M-005",
+    "test_id": "P3-096-M005-init-failure"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263880,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "DB bytes and identity unchanged or absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "audit": null,
+          "captures": null
+        },
+        "expected": {
+          "audit": null,
+          "captures": null
+        },
+        "name": "counts unchanged",
+        "passed": true
+      },
+      {
+        "actual": {
+          "exists": false,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "exists": false,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "page observable content follows rollback contract",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no temp or sidecar residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263880,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m005-new-commit-failure",
+    "row_id": "ABF-M-005",
+    "test_id": "P3-096-M005-new-commit-failure"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263886,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "new DB absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "no page",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no temp or sidecar residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263886,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m005-publish-failure",
+    "row_id": "ABF-M-005",
+    "test_id": "P3-096-M005-publish-failure"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 2
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263893,
+        "nlink": 1,
+        "sha256": "f290eb46f7d532647311261eacb3c97f930991a68772652a8ab986e62706a011",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263892,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "saved",
+        "expected": "saved",
+        "name": "returns saved",
+        "passed": true
+      },
+      {
+        "actual": "2026-08-22T14:15:26+00:00",
+        "expected": "2026-08-22T14:15:26+00:00",
+        "name": "saved audit time equals capture time",
+        "passed": true
+      },
+      {
+        "actual": [
+          "49d3e283-9176-4de0-ba58-4003069e4b46",
+          "P3-096 fixed non-sensitive capture fixture 1",
+          "2026-08-22T14:15:26+00:00",
+          "local_capture",
+          "key-1"
+        ],
+        "expected": [
+          "49d3e283-9176-4de0-ba58-4003069e4b46",
+          "P3-096 fixed non-sensitive capture fixture 1",
+          "2026-08-22T14:15:26+00:00",
+          "local_capture",
+          "key-1"
+        ],
+        "name": "existing record unchanged",
+        "passed": true
+      },
+      {
+        "actual": [
+          1,
+          "capture_saved",
+          "49d3e283-9176-4de0-ba58-4003069e4b46",
+          "2026-08-22T14:15:26+00:00",
+          "local_capture"
+        ],
+        "expected": [
+          1,
+          "capture_saved",
+          "49d3e283-9176-4de0-ba58-4003069e4b46",
+          "2026-08-22T14:15:26+00:00",
+          "local_capture"
+        ],
+        "name": "existing audit unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263892,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m006-existing-success",
+    "row_id": "ABF-M-006",
+    "test_id": "P3-096-M006-existing-success"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 2
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263901,
+        "nlink": 1,
+        "sha256": "f7285f54478ddad53c2d1abe5dd2267cdc3b1acaf7ea5ac4da116e0bf03f66b6",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263900,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": [
+          "raised"
+        ],
+        "expected": [
+          "raised"
+        ],
+        "name": "post-commit close failure was injected",
+        "passed": true
+      },
+      {
+        "actual": "saved",
+        "expected": "saved",
+        "name": "committed capture reports saved",
+        "passed": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "two captures persist",
+        "passed": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "two audits persist",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "successful capture invalidates page",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263900,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263900,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "name": "sentinel unchanged",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no staging, temp, or sidecar residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263900,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "r1-m006-existing-post-commit-close",
+    "row_id": "ABF-M-006",
+    "test_id": "P3-096-R1-M006-existing-post-commit-close"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263909,
+        "nlink": 1,
+        "sha256": "2824a90d04021465fdcf9e170e4957b6e9890ff9bd81cbf2ba6dd39ed3fa9048",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263913,
+        "nlink": 1,
+        "sha256": "d06e64535bdbce32ff154073856e375b5429aec3912f48d7566036feabee252d",
+        "size": 664,
+        "type": "regular"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263908,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": [
+          "raised"
+        ],
+        "expected": [
+          "raised"
+        ],
+        "name": "repeat post-commit close failure was injected",
+        "passed": true
+      },
+      {
+        "actual": "idempotent_repeat",
+        "expected": "idempotent_repeat",
+        "name": "committed repeat reports idempotent_repeat",
+        "passed": true
+      },
+      {
+        "actual": "3dd283d1-617e-449d-b8c8-83ca0d2fcca2",
+        "expected": "3dd283d1-617e-449d-b8c8-83ca0d2fcca2",
+        "name": "repeat returns original ID",
+        "passed": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "one capture persists",
+        "passed": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "saved plus repeat audits persist",
+        "passed": true
+      },
+      {
+        "actual": {
+          "exists": true,
+          "nlink": 1,
+          "sha256": "d06e64535bdbce32ff154073856e375b5429aec3912f48d7566036feabee252d",
+          "size": 664,
+          "type": "regular"
+        },
+        "expected": {
+          "exists": true,
+          "nlink": 1,
+          "sha256": "d06e64535bdbce32ff154073856e375b5429aec3912f48d7566036feabee252d",
+          "size": 664,
+          "type": "regular"
+        },
+        "name": "repeat preserves page",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263908,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263908,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "name": "sentinel unchanged",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no staging, temp, or sidecar residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263908,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "r1-m006-repeat-post-commit-close",
+    "row_id": "ABF-M-006",
+    "test_id": "P3-096-R1-M006-repeat-post-commit-close"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263917,
+        "nlink": 1,
+        "sha256": "43a36b35787894313cb14254f0acded299df6d60cd589d0ebe49c2b972c0ce19",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263916,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "saved",
+        "expected": "saved",
+        "name": "returns saved",
+        "passed": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "one capture",
+        "passed": true
+      },
+      {
+        "actual": [
+          "capture_saved",
+          "831383a3-f1ba-4e08-87c9-375c06808581",
+          "2026-08-22T14:15:26+00:00"
+        ],
+        "expected": [
+          "capture_saved",
+          "831383a3-f1ba-4e08-87c9-375c06808581",
+          "2026-08-22T14:15:26+00:00"
+        ],
+        "name": "one saved audit",
+        "passed": true
+      },
+      {
+        "actual": {
+          "indexes": {
+            "@audit": [],
+            "@captures": [
+              [
+                "sqlite_autoindex_captures_2",
+                1,
+                "u",
+                0
+              ],
+              [
+                "sqlite_autoindex_captures_1",
+                1,
+                "pk",
+                0
+              ]
+            ],
+            "sqlite_autoindex_captures_1": [
+              [
+                0,
+                0,
+                "id",
+                0,
+                "BINARY",
+                1
+              ],
+              [
+                1,
+                -1,
+                null,
+                0,
+                "BINARY",
+                0
+              ]
+            ],
+            "sqlite_autoindex_captures_2": [
+              [
+                0,
+                4,
+                "idem_key",
+                0,
+                "BINARY",
+                1
+              ],
+              [
+                1,
+                -1,
+                null,
+                0,
+                "BINARY",
+                0
+              ]
+            ]
+          },
+          "master": [
+            {
+              "name": "sqlite_autoindex_captures_1",
+              "sql": null,
+              "table": "captures",
+              "type": "index"
+            },
+            {
+              "name": "sqlite_autoindex_captures_2",
+              "sql": null,
+              "table": "captures",
+              "type": "index"
+            },
+            {
+              "name": "audit",
+              "sql": "create table audit ( id integer primary key autoincrement, event text not null, capture_id text, created_at text not null, detail text not null )",
+              "table": "audit",
+              "type": "table"
+            },
+            {
+              "name": "captures",
+              "sql": "create table captures ( id text primary key, content text not null, created_at text not null, source text not null check(source = 'local_capture'), idem_key text not null unique )",
+              "table": "captures",
+              "type": "table"
+            },
+            {
+              "name": "sqlite_sequence",
+              "sql": "create table sqlite_sequence(name,seq)",
+              "table": "sqlite_sequence",
+              "type": "table"
+            }
+          ],
+          "tables": {
+            "audit": [
+              [
+                0,
+                "id",
+                "INTEGER",
+                0,
+                null,
+                1,
+                0
+              ],
+              [
+                1,
+                "event",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                2,
+                "capture_id",
+                "TEXT",
+                0,
+                null,
+                0,
+                0
+              ],
+              [
+                3,
+                "created_at",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                4,
+                "detail",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ]
+            ],
+            "captures": [
+              [
+                0,
+                "id",
+                "TEXT",
+                0,
+                null,
+                1,
+                0
+              ],
+              [
+                1,
+                "content",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                2,
+                "created_at",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                3,
+                "source",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                4,
+                "idem_key",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ]
+            ]
+          }
+        },
+        "expected": {
+          "indexes": {
+            "@audit": [],
+            "@captures": [
+              [
+                "sqlite_autoindex_captures_2",
+                1,
+                "u",
+                0
+              ],
+              [
+                "sqlite_autoindex_captures_1",
+                1,
+                "pk",
+                0
+              ]
+            ],
+            "sqlite_autoindex_captures_1": [
+              [
+                0,
+                0,
+                "id",
+                0,
+                "BINARY",
+                1
+              ],
+              [
+                1,
+                -1,
+                null,
+                0,
+                "BINARY",
+                0
+              ]
+            ],
+            "sqlite_autoindex_captures_2": [
+              [
+                0,
+                4,
+                "idem_key",
+                0,
+                "BINARY",
+                1
+              ],
+              [
+                1,
+                -1,
+                null,
+                0,
+                "BINARY",
+                0
+              ]
+            ]
+          },
+          "master": [
+            {
+              "name": "sqlite_autoindex_captures_1",
+              "sql": null,
+              "table": "captures",
+              "type": "index"
+            },
+            {
+              "name": "sqlite_autoindex_captures_2",
+              "sql": null,
+              "table": "captures",
+              "type": "index"
+            },
+            {
+              "name": "audit",
+              "sql": "create table audit ( id integer primary key autoincrement, event text not null, capture_id text, created_at text not null, detail text not null )",
+              "table": "audit",
+              "type": "table"
+            },
+            {
+              "name": "captures",
+              "sql": "create table captures ( id text primary key, content text not null, created_at text not null, source text not null check(source = 'local_capture'), idem_key text not null unique )",
+              "table": "captures",
+              "type": "table"
+            },
+            {
+              "name": "sqlite_sequence",
+              "sql": "create table sqlite_sequence(name,seq)",
+              "table": "sqlite_sequence",
+              "type": "table"
+            }
+          ],
+          "tables": {
+            "audit": [
+              [
+                0,
+                "id",
+                "INTEGER",
+                0,
+                null,
+                1,
+                0
+              ],
+              [
+                1,
+                "event",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                2,
+                "capture_id",
+                "TEXT",
+                0,
+                null,
+                0,
+                0
+              ],
+              [
+                3,
+                "created_at",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                4,
+                "detail",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ]
+            ],
+            "captures": [
+              [
+                0,
+                "id",
+                "TEXT",
+                0,
+                null,
+                1,
+                0
+              ],
+              [
+                1,
+                "content",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                2,
+                "created_at",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                3,
+                "source",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ],
+              [
+                4,
+                "idem_key",
+                "TEXT",
+                1,
+                null,
+                0,
+                0
+              ]
+            ]
+          }
+        },
+        "name": "canonical schema",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263916,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m007-new-success",
+    "row_id": "ABF-M-007",
+    "test_id": "P3-096-M007-new-success"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263923,
+        "nlink": 1,
+        "sha256": "da4c31a82d2381bfe93d68dd736161ce4f7637ff94ad97d3f69b6165e358b5fa",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263922,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263923,
+          "nlink": 1,
+          "sha256": "da4c31a82d2381bfe93d68dd736161ce4f7637ff94ad97d3f69b6165e358b5fa",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263923,
+          "nlink": 1,
+          "sha256": "da4c31a82d2381bfe93d68dd736161ce4f7637ff94ad97d3f69b6165e358b5fa",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263922,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m008-future-capture",
+    "row_id": "ABF-M-008",
+    "test_id": "P3-096-M008-future-capture"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263931,
+        "nlink": 1,
+        "sha256": "fc1364d7c04e5929e862f5a91aadfe9a5edd77ec9ef75caf52a38e9caca4c8cd",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263930,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263931,
+          "nlink": 1,
+          "sha256": "fc1364d7c04e5929e862f5a91aadfe9a5edd77ec9ef75caf52a38e9caca4c8cd",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263931,
+          "nlink": 1,
+          "sha256": "fc1364d7c04e5929e862f5a91aadfe9a5edd77ec9ef75caf52a38e9caca4c8cd",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263930,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m009-future-saved",
+    "row_id": "ABF-M-009",
+    "test_id": "P3-096-M009-future-saved"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263939,
+        "nlink": 1,
+        "sha256": "da627f725b63a600163e8f9cb23940c24687542fa0b63a16b9ac26e902c0b4ab",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263938,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263939,
+          "nlink": 1,
+          "sha256": "da627f725b63a600163e8f9cb23940c24687542fa0b63a16b9ac26e902c0b4ab",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263939,
+          "nlink": 1,
+          "sha256": "da627f725b63a600163e8f9cb23940c24687542fa0b63a16b9ac26e902c0b4ab",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263938,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m010-saved-time-mismatch",
+    "row_id": "ABF-M-010",
+    "test_id": "P3-096-M010-saved-time-mismatch"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263947,
+        "nlink": 1,
+        "sha256": "ed5841d2af4fe3f9e0ebd3cbc770464311d8574d7268b7041efa2a90bddad1b7",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263946,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263947,
+          "nlink": 1,
+          "sha256": "ed5841d2af4fe3f9e0ebd3cbc770464311d8574d7268b7041efa2a90bddad1b7",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263947,
+          "nlink": 1,
+          "sha256": "ed5841d2af4fe3f9e0ebd3cbc770464311d8574d7268b7041efa2a90bddad1b7",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263946,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m011-repeat-before-saved",
+    "row_id": "ABF-M-011",
+    "test_id": "P3-096-M011-repeat-before-saved"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263955,
+        "nlink": 1,
+        "sha256": "7209de0b7adcef9a85142dd359f691e8e3874c6c6c746be632cab17dc3723504",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263954,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263955,
+          "nlink": 1,
+          "sha256": "7209de0b7adcef9a85142dd359f691e8e3874c6c6c746be632cab17dc3723504",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263955,
+          "nlink": 1,
+          "sha256": "7209de0b7adcef9a85142dd359f691e8e3874c6c6c746be632cab17dc3723504",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263954,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m012-repeat-unknown",
+    "row_id": "ABF-M-012",
+    "test_id": "P3-096-M012-repeat-unknown"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 3,
+        "captures": 0
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263963,
+        "nlink": 1,
+        "sha256": "81a1174c8b044a0d15f54fed02fddfa5e65d6ae37ef6db0688e42279ffa91f97",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263962,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject cleared reference",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263963,
+          "nlink": 1,
+          "sha256": "81a1174c8b044a0d15f54fed02fddfa5e65d6ae37ef6db0688e42279ffa91f97",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263963,
+          "nlink": 1,
+          "sha256": "81a1174c8b044a0d15f54fed02fddfa5e65d6ae37ef6db0688e42279ffa91f97",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263962,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m012-repeat-cleared",
+    "row_id": "ABF-M-012",
+    "test_id": "P3-096-M012-repeat-cleared"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263972,
+        "nlink": 1,
+        "sha256": "0f8d18870ed043bf3be5163820ac5628db3b817b2cc6634de4f9b7d20d205438",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263971,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263972,
+          "nlink": 1,
+          "sha256": "0f8d18870ed043bf3be5163820ac5628db3b817b2cc6634de4f9b7d20d205438",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263972,
+          "nlink": 1,
+          "sha256": "0f8d18870ed043bf3be5163820ac5628db3b817b2cc6634de4f9b7d20d205438",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263971,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m013-audit-time-regression",
+    "row_id": "ABF-M-013",
+    "test_id": "P3-096-M013-audit-time-regression"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 3,
+        "captures": 0
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263980,
+        "nlink": 1,
+        "sha256": "2147b7cc6c0e0e649108d1ddcf9e98c907e18662d2e58cf087c3919a42d69ed1",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263979,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject mismatched count",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263980,
+          "nlink": 1,
+          "sha256": "2147b7cc6c0e0e649108d1ddcf9e98c907e18662d2e58cf087c3919a42d69ed1",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263980,
+          "nlink": 1,
+          "sha256": "2147b7cc6c0e0e649108d1ddcf9e98c907e18662d2e58cf087c3919a42d69ed1",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263979,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m014-clear-count-large",
+    "row_id": "ABF-M-014",
+    "test_id": "P3-096-M014-clear-count-large"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 3,
+        "captures": 0
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263990,
+        "nlink": 1,
+        "sha256": "fb710da14e87b2ea243dedc4a4b548ce68ded3d607952ce46482397ae6c5e3b6",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263989,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject mismatched count",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263990,
+          "nlink": 1,
+          "sha256": "fb710da14e87b2ea243dedc4a4b548ce68ded3d607952ce46482397ae6c5e3b6",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263990,
+          "nlink": 1,
+          "sha256": "fb710da14e87b2ea243dedc4a4b548ce68ded3d607952ce46482397ae6c5e3b6",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263989,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m014-clear-count-small",
+    "row_id": "ABF-M-014",
+    "test_id": "P3-096-M014-clear-count-small"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 3,
+        "captures": 0
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264000,
+        "nlink": 1,
+        "sha256": "9808190b0e0ed16f18490fae449914021ebdf02b352ef02935482a54169ae623",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263999,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "returns count two",
+        "passed": true
+      },
+      {
+        "actual": "count=2;today_view=invalidated",
+        "expected": "count=2;today_view=invalidated",
+        "name": "audit count two",
+        "passed": true
+      },
+      {
+        "actual": 0,
+        "expected": 0,
+        "name": "active set empty",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "page absent",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6263999,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m015-normal-clear",
+    "row_id": "ABF-M-015",
+    "test_id": "P3-096-M015-normal-clear"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264009,
+        "nlink": 1,
+        "sha256": "fd3711a275fca4a1c58391042a78fa6cf5625aba6b7a70249555b91cd65c9515",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264008,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject source variant",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6264009,
+          "nlink": 1,
+          "sha256": "fd3711a275fca4a1c58391042a78fa6cf5625aba6b7a70249555b91cd65c9515",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6264009,
+          "nlink": 1,
+          "sha256": "fd3711a275fca4a1c58391042a78fa6cf5625aba6b7a70249555b91cd65c9515",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264008,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m016-source-case",
+    "row_id": "ABF-M-016",
+    "test_id": "P3-096-M016-source-case"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264017,
+        "nlink": 1,
+        "sha256": "16d470e4d0b1b99fa9e076aecb8e35d95484148c1638b4d1b096c4c44df2fa1a",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264016,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject source variant",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6264017,
+          "nlink": 1,
+          "sha256": "16d470e4d0b1b99fa9e076aecb8e35d95484148c1638b4d1b096c4c44df2fa1a",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6264017,
+          "nlink": 1,
+          "sha256": "16d470e4d0b1b99fa9e076aecb8e35d95484148c1638b4d1b096c4c44df2fa1a",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264016,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m016-source-empty",
+    "row_id": "ABF-M-016",
+    "test_id": "P3-096-M016-source-empty"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264025,
+        "nlink": 1,
+        "sha256": "ad3b9f0ed753a75f80ba52d74eaa40af724a37da8e41aceca33a4216e0ae9388",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264024,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject source variant",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6264025,
+          "nlink": 1,
+          "sha256": "ad3b9f0ed753a75f80ba52d74eaa40af724a37da8e41aceca33a4216e0ae9388",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6264025,
+          "nlink": 1,
+          "sha256": "ad3b9f0ed753a75f80ba52d74eaa40af724a37da8e41aceca33a4216e0ae9388",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264024,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m016-source-null",
+    "row_id": "ABF-M-016",
+    "test_id": "P3-096-M016-source-null"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 1,
+        "captures": 1
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264032,
+        "nlink": 1,
+        "sha256": "25a40416d4fd380bd1ae5eb38fb994bdecdd6a664ae4cfffffa59c207882b116",
+        "size": 24576,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264031,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject source variant",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6264032,
+          "nlink": 1,
+          "sha256": "25a40416d4fd380bd1ae5eb38fb994bdecdd6a664ae4cfffffa59c207882b116",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6264032,
+          "nlink": 1,
+          "sha256": "25a40416d4fd380bd1ae5eb38fb994bdecdd6a664ae4cfffffa59c207882b116",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264031,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m016-source-blob",
+    "row_id": "ABF-M-016",
+    "test_id": "P3-096-M016-source-blob"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 2
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264040,
+        "nlink": 1,
+        "sha256": "eebf66c8dcd2206a3944123cb9e9635cc3d96ff77afe16f48f923152f5d2f964",
+        "size": 12288,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264039,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject duplicate",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6264040,
+          "nlink": 1,
+          "sha256": "eebf66c8dcd2206a3944123cb9e9635cc3d96ff77afe16f48f923152f5d2f964",
+          "size": 12288,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6264040,
+          "nlink": 1,
+          "sha256": "eebf66c8dcd2206a3944123cb9e9635cc3d96ff77afe16f48f923152f5d2f964",
+          "size": 12288,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264039,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m017-duplicate-id",
+    "row_id": "ABF-M-017",
+    "test_id": "P3-096-M017-duplicate-id"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": 2,
+        "captures": 2
+      },
+      "db": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264047,
+        "nlink": 1,
+        "sha256": "ead1a6a3f5f6963ea892af420dd52989ebde769494cf1af028d5d0cffd2e2635",
+        "size": 12288,
+        "type": "regular"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264046,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject duplicate",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6264047,
+          "nlink": 1,
+          "sha256": "ead1a6a3f5f6963ea892af420dd52989ebde769494cf1af028d5d0cffd2e2635",
+          "size": 12288,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6264047,
+          "nlink": 1,
+          "sha256": "ead1a6a3f5f6963ea892af420dd52989ebde769494cf1af028d5d0cffd2e2635",
+          "size": 12288,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264046,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m017-duplicate-idem",
+    "row_id": "ABF-M-017",
+    "test_id": "P3-096-M017-duplicate-idem"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264053,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": true,
+        "expected": true,
+        "name": "missing fields become Not Implemented",
+        "passed": true
+      },
+      {
+        "actual": "NOT PASS — DO NOT SUBMIT",
+        "expected": "NOT PASS — DO NOT SUBMIT",
+        "name": "validator blocks submission",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264053,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m018-runner-missing-fields",
+    "row_id": "ABF-M-018",
+    "test_id": "P3-096-M018-runner-missing-fields"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264055,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": true,
+        "expected": true,
+        "name": "missing row remains Not Implemented",
+        "passed": true
+      },
+      {
+        "actual": "NOT PASS — DO NOT SUBMIT",
+        "expected": "NOT PASS — DO NOT SUBMIT",
+        "name": "suite pass cannot bulk-map row",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264055,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m019-suite-pass-missing-row",
+    "row_id": "ABF-M-019",
+    "test_id": "P3-096-M019-suite-pass-missing-row"
+  },
+  {
+    "after": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264057,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "PASS",
+        "expected": "PASS",
+        "name": "all M001-M019 complete",
+        "passed": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "all M001-M019 pass",
+        "passed": true
+      },
+      {
+        "actual": 29,
+        "expected": 29,
+        "name": "test IDs unique",
+        "passed": true
+      },
+      {
+        "actual": 29,
+        "expected": 29,
+        "name": "fixtures unique",
+        "passed": true
+      }
+    ],
+    "before": {
+      "counts": {
+        "audit": null,
+        "captures": null
+      },
+      "db": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "page": {
+        "device": null,
+        "exists": false,
+        "inode": null,
+        "nlink": null,
+        "sha256": null,
+        "size": null,
+        "type": "missing"
+      },
+      "residue_names": [],
+      "sentinel": {
+        "device": 16777231,
+        "exists": true,
+        "inode": 6264057,
+        "nlink": 1,
+        "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+        "size": 36,
+        "type": "regular"
+      }
+    },
+    "fixture_id": "m020-complete-execution",
+    "row_id": "ABF-M-020",
+    "test_id": "P3-096-M020-complete-execution"
+  }
+]

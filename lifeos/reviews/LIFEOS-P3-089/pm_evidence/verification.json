@@ -1,0 +1,31 @@
+{
+  "task": "LIFEOS-P3-089",
+  "reviewedAt": "2026-08-21",
+  "scope": "PM acceptance of the synthetic in-memory lifecycle UI integration capability package",
+  "staticRerun": {
+    "command": "/Users/xxe/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node lifeos/engineering/LIFEOS-P3-089/tests/static_check.mjs lifeos/engineering/LIFEOS-P3-089",
+    "exitCode": 0,
+    "pass": 87,
+    "fail": 0,
+    "resultSha256": "36a68455223f596cafb7764b824ddd221d7467d516f4ebfcedb47b98e72dc861"
+  },
+  "dynamicEvidence": {
+    "toolchain": "Google Chrome (com.google.Chrome) via Computer Use @oai/sky",
+    "preflight": "PASS",
+    "pass": 15,
+    "fail": 0,
+    "counts": {"p0": 0, "p1": 0, "p2": 0, "unknown": 0, "notImplemented": 0},
+    "pmVisualSpotChecks": ["02-confirmed-recovery.png", "03-failure-cleared.png", "08-keyboard-focus.png", "09-narrow-responsive.png"]
+  },
+  "integrity": {
+    "p3089SourceHashesMatchEngineeringManifest": true,
+    "p3079P3087P3088ReadonlyInputHashesMatch": true,
+    "p3089RunnerIdenticalToP3087Runner": false,
+    "manifestListedResultsHashesMatch": true
+  },
+  "localPrecheck": {
+    "status": "Skipped / Local Model Unavailable",
+    "report": "lifeos/local_prechecks/LIFEOS-P3-089_LIFEOS-P3-089_three_frozen_today_pages_synthetic_lifecycle_ui_integration_controlled_capability_package_local_precheck.md"
+  },
+  "conclusion": "Accepted / PM Pass / Awaiting User Adoption"
+}

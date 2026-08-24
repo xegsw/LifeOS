@@ -1,0 +1,22 @@
+{
+  "task": "LIFEOS-P3-084 rework",
+  "target": "file:///private/tmp/lifeos-p3-084-rerun/index.html",
+  "environment": "Google Chrome graphical new-tab session; local file only",
+  "summary": { "pass": 29, "fail": 0, "p0": 0, "p1": 0, "p2": 0, "unknown": 0, "not_implemented": 0 },
+  "results": [
+    { "id": "STATIC-01..16", "status": "PASS", "evidence": "independent_static_runner.mjs; 16/16 assertions" },
+    { "id": "DYN-01", "name": "new Chrome tab loads clean file copy", "status": "PASS" },
+    { "id": "DYN-02", "name": "three-state switcher", "status": "PASS" },
+    { "id": "DYN-03", "name": "nonempty text requires explicit confirmation and then displays user original", "status": "PASS" },
+    { "id": "DYN-04", "name": "empty text rejection", "status": "PASS" },
+    { "id": "DYN-05", "name": "simulated failure hides saved record", "status": "PASS" },
+    { "id": "DYN-06", "name": "no-suggestion choose-project path", "status": "PASS" },
+    { "id": "DYN-07", "name": "no-suggestion record-stop path", "status": "PASS" },
+    { "id": "DYN-08", "name": "restricted/offline state and AI disabled", "status": "PASS" },
+    { "id": "DYN-09", "name": "repeated confirmation leaves one saved-record surface", "status": "PASS" },
+    { "id": "DYN-10", "name": "refresh clears text, record, and status", "status": "PASS" },
+    { "id": "DYN-11", "name": "closing file tab and reopening clean file clears text and record", "status": "PASS" },
+    { "id": "DYN-12", "name": "visual hierarchy and session-only/AI-disabled disclosure", "status": "PASS" },
+    { "id": "BOUNDARY-01", "name": "no network/persistence/file/native/AI/export/sync surface", "status": "PASS", "evidence": "STATIC-12..16" }
+  ]
+}

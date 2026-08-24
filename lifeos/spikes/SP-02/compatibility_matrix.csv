@@ -1,0 +1,15 @@
+case,fixture,result,handling
+UTF-8 Markdown,Home.md,PASS,complete parse
+normal frontmatter,Home.md,PASS,raw plus basic values
+duplicate YAML key,Frontmatter/duplicate.md,PASS,failed; raw preserved
+malformed YAML,Frontmatter/malformed.md,PASS,failed; raw preserved
+unclosed YAML,Frontmatter/unclosed.md,PASS,failed; raw preserved
+non-UTF8,Encoding/latin1.md,PASS,failed at byte offset
+headings/tags/blocks,Home.md,PASS,positions represented by source version and token
+Markdown links,Home.md,PASS,raw target candidate only
+wikilinks,Home.md,PASS,raw target candidate only
+embeds/attachments,Links/structures.md,PASS,pointer only; target not dereferenced
+broken/ambiguous links,Broken and same-name notes,PASS,preserved unresolved/ambiguous; no strong Link
+hidden/.obsidian,.hidden/.obsidian,PASS,ignored before traversal
+excluded/withdrawn,excluded/withdrawn,PASS,ignored before traversal
+out-of-root symlink,escape-link,PASS,denied; never followed

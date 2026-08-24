@@ -1,0 +1,79 @@
+{
+  "task": "LIFEOS-P3-107",
+  "review_round": "resume-1",
+  "acceptance_basis": {
+    "id": "ABF-P3-107-v1",
+    "sha256": "1088f7bcfa3a014c526ff3e13d5a9fe923053ddbc877938d362a3aa2b038acee",
+    "match": true,
+    "requires_material_change_for_future_pass": true
+  },
+  "configuration": {
+    "actual": "gpt-5.6-terra + xhigh",
+    "required": "gpt-5.6-terra + xhigh",
+    "match": true,
+    "fresh_session_id": "01a02ef2-ac6e-7971-b1a6-6c5a40933725"
+  },
+  "independent_sequence": {
+    "test_design_sha256": "76101cd7961841163b553ced05655c599dd046232189d79560493e5a0e5956c7",
+    "checksum_valid": true,
+    "design_mtime_before_runner_and_results": true
+  },
+  "positive_evidence": {
+    "fixed_inputs": "17/17",
+    "p3_106_engineering_manifest": "325/325",
+    "resume_manifest": "13/13",
+    "offline_locked_test_build_tauri_build_exit_codes": [0, 0, 0],
+    "static_checks": "8/8",
+    "fixed_visual_states": "3/3",
+    "p3_106_runtime_provenance_equal_to_p3_104": "5/5"
+  },
+  "findings": [
+    {
+      "id": "PM-P3-107-R1-IND-01",
+      "severity": "P0",
+      "status": "OPEN",
+      "finding": "independent_runner.py copies the entire P3-106 source tree while excluding only target, thereby copying submitted Evidence and 13 submitted runner/tool files into work-r1 and work-r2; Review, delivery and Manifest falsely state that no submitted runner or Evidence was copied",
+      "mapping": ["L1-7", "L1-9", "L1-10", "ABF-I-01", "ABF-I-12", "ABF-M-002", "Evidence contract"]
+    },
+    {
+      "id": "PM-P3-107-R1-GOV-02",
+      "severity": "Unknown",
+      "status": "ABF_CONFLICT",
+      "finding": "ABF-M-003 requires current no-bad rehash, while the frozen P3-104 Engineering Manifest records the PM Review hash before that Review was updated; current literal verification necessarily has one bad entry",
+      "mapping": ["L1-7", "L1-10", "ABF-I-02", "ABF-M-003"]
+    },
+    {
+      "id": "PM-P3-107-R1-EV-03",
+      "severity": "P2",
+      "status": "OPEN",
+      "finding": "final-verifier failed_gate_reasons says two exact paths remain, while its residue_ledger and current lstat show three",
+      "mapping": ["L1-7", "L1-10", "ABF-I-12", "ABF-M-016"]
+    }
+  ],
+  "dynamic_and_cleanup": {
+    "actual_app_control_available": false,
+    "not_implemented_matrix_rows": 9,
+    "unexecuted_dynamic_test_ids": 10,
+    "exact_residual_paths": [
+      "/private/tmp/lifeos-p3-107-review-work-r1",
+      "/private/tmp/lifeos-p3-107-review-work-r2",
+      "/private/tmp/lifeos-p3-104-p3-107-review-nominal-r1"
+    ],
+    "residual_count": 3,
+    "pm_cleanup_performed": false
+  },
+  "counts": {
+    "P0": 1,
+    "P1": 0,
+    "P2": 1,
+    "Unknown": 1,
+    "Not Implemented": 9
+  },
+  "candidate_defect_confirmed": false,
+  "formal_rework_used": "1/2",
+  "task_status": "CLOSED_ACCEPTANCE_NOT_MET_FROZEN_ABF_CONFLICT",
+  "local_precheck": {
+    "performed": false,
+    "reason": "P0 independence, actual Tauri control, local deletion residue and frozen-ABF final judgment; local model may not decide."
+  }
+}

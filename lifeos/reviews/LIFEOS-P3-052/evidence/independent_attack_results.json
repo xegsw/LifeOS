@@ -1,0 +1,1961 @@
+{
+  "runner": "P3-052 independent_lifecycle_review.py",
+  "candidate": "lifeos/engineering/LIFEOS-P3-048/input/001_candidate_schema.sql",
+  "candidate_sha256": "56f3c77f8fe1c4baec690b6b2fb9f849aee7a6bb9d433de61d7ea9fc317eac6d",
+  "configuration_count": 8,
+  "case_count": 23,
+  "summary": {
+    "PASS": 152,
+    "BYPASS": 32,
+    "FAIL": 0,
+    "UNKNOWN": 0
+  },
+  "bypasses": [
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "file-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "file-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "file-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "file-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "file-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "file-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "file-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "file-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    }
+  ],
+  "results": [
+    {
+      "case": "A01-valid-revoke",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "revoked",
+        "correlation": "authorization-state:auth:valid-revoked:2:revoked"
+      }
+    },
+    {
+      "case": "A01-valid-revoke",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "revoked",
+        "correlation": "authorization-state:auth:valid-revoked:2:revoked"
+      }
+    },
+    {
+      "case": "A01-valid-revoke",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "revoked",
+        "correlation": "authorization-state:auth:valid-revoked:2:revoked"
+      }
+    },
+    {
+      "case": "A01-valid-revoke",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "revoked",
+        "correlation": "authorization-state:auth:valid-revoked:2:revoked"
+      }
+    },
+    {
+      "case": "A01-valid-revoke",
+      "severity": "P1",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "revoked",
+        "correlation": "authorization-state:auth:valid-revoked:2:revoked"
+      }
+    },
+    {
+      "case": "A01-valid-revoke",
+      "severity": "P1",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "revoked",
+        "correlation": "authorization-state:auth:valid-revoked:2:revoked"
+      }
+    },
+    {
+      "case": "A01-valid-revoke",
+      "severity": "P1",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "revoked",
+        "correlation": "authorization-state:auth:valid-revoked:2:revoked"
+      }
+    },
+    {
+      "case": "A01-valid-revoke",
+      "severity": "P1",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "revoked",
+        "correlation": "authorization-state:auth:valid-revoked:2:revoked"
+      }
+    },
+    {
+      "case": "A01-valid-expire",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "expired",
+        "correlation": "authorization-state:auth:valid-expired:2:expired"
+      }
+    },
+    {
+      "case": "A01-valid-expire",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "expired",
+        "correlation": "authorization-state:auth:valid-expired:2:expired"
+      }
+    },
+    {
+      "case": "A01-valid-expire",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "expired",
+        "correlation": "authorization-state:auth:valid-expired:2:expired"
+      }
+    },
+    {
+      "case": "A01-valid-expire",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "expired",
+        "correlation": "authorization-state:auth:valid-expired:2:expired"
+      }
+    },
+    {
+      "case": "A01-valid-expire",
+      "severity": "P1",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "expired",
+        "correlation": "authorization-state:auth:valid-expired:2:expired"
+      }
+    },
+    {
+      "case": "A01-valid-expire",
+      "severity": "P1",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "expired",
+        "correlation": "authorization-state:auth:valid-expired:2:expired"
+      }
+    },
+    {
+      "case": "A01-valid-expire",
+      "severity": "P1",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "expired",
+        "correlation": "authorization-state:auth:valid-expired:2:expired"
+      }
+    },
+    {
+      "case": "A01-valid-expire",
+      "severity": "P1",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "expired",
+        "correlation": "authorization-state:auth:valid-expired:2:expired"
+      }
+    },
+    {
+      "case": "A01-valid-supersede",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "superseded",
+        "correlation": "authorization-state:auth:valid-superseded:2:superseded"
+      }
+    },
+    {
+      "case": "A01-valid-supersede",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "superseded",
+        "correlation": "authorization-state:auth:valid-superseded:2:superseded"
+      }
+    },
+    {
+      "case": "A01-valid-supersede",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "superseded",
+        "correlation": "authorization-state:auth:valid-superseded:2:superseded"
+      }
+    },
+    {
+      "case": "A01-valid-supersede",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "superseded",
+        "correlation": "authorization-state:auth:valid-superseded:2:superseded"
+      }
+    },
+    {
+      "case": "A01-valid-supersede",
+      "severity": "P1",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "superseded",
+        "correlation": "authorization-state:auth:valid-superseded:2:superseded"
+      }
+    },
+    {
+      "case": "A01-valid-supersede",
+      "severity": "P1",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "superseded",
+        "correlation": "authorization-state:auth:valid-superseded:2:superseded"
+      }
+    },
+    {
+      "case": "A01-valid-supersede",
+      "severity": "P1",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "superseded",
+        "correlation": "authorization-state:auth:valid-superseded:2:superseded"
+      }
+    },
+    {
+      "case": "A01-valid-supersede",
+      "severity": "P1",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "terminal": "superseded",
+        "correlation": "authorization-state:auth:valid-superseded:2:superseded"
+      }
+    },
+    {
+      "case": "A02-exact-replay",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "case": "A02-exact-replay",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "case": "A02-exact-replay",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "case": "A02-exact-replay",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "case": "A02-exact-replay",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "case": "A02-exact-replay",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "case": "A02-exact-replay",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "case": "A02-exact-replay",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "case": "A03-submission-binding",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "binding": "rejected"
+      }
+    },
+    {
+      "case": "A03-submission-binding",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "binding": "rejected"
+      }
+    },
+    {
+      "case": "A03-submission-binding",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "binding": "rejected"
+      }
+    },
+    {
+      "case": "A03-submission-binding",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "binding": "rejected"
+      }
+    },
+    {
+      "case": "A03-submission-binding",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "binding": "rejected"
+      }
+    },
+    {
+      "case": "A03-submission-binding",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "binding": "rejected"
+      }
+    },
+    {
+      "case": "A03-submission-binding",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "binding": "rejected"
+      }
+    },
+    {
+      "case": "A03-submission-binding",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "binding": "rejected"
+      }
+    },
+    {
+      "case": "A06-malformed-hash",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "malformed_hash": "rejected"
+      }
+    },
+    {
+      "case": "A06-malformed-hash",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "malformed_hash": "rejected"
+      }
+    },
+    {
+      "case": "A06-malformed-hash",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "malformed_hash": "rejected"
+      }
+    },
+    {
+      "case": "A06-malformed-hash",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "malformed_hash": "rejected"
+      }
+    },
+    {
+      "case": "A06-malformed-hash",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "malformed_hash": "rejected"
+      }
+    },
+    {
+      "case": "A06-malformed-hash",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "malformed_hash": "rejected"
+      }
+    },
+    {
+      "case": "A06-malformed-hash",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "malformed_hash": "rejected"
+      }
+    },
+    {
+      "case": "A06-malformed-hash",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "malformed_hash": "rejected"
+      }
+    },
+    {
+      "case": "A04-transaction-rollback",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-transaction-rollback",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-transaction-rollback",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-transaction-rollback",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-transaction-rollback",
+      "severity": "P1",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-transaction-rollback",
+      "severity": "P1",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-transaction-rollback",
+      "severity": "P1",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-transaction-rollback",
+      "severity": "P1",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-later-failure-rollback",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "caller_rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-later-failure-rollback",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "caller_rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-later-failure-rollback",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "caller_rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-later-failure-rollback",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "caller_rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-later-failure-rollback",
+      "severity": "P1",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "caller_rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-later-failure-rollback",
+      "severity": "P1",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "caller_rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-later-failure-rollback",
+      "severity": "P1",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "caller_rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-later-failure-rollback",
+      "severity": "P1",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "caller_rollback": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-savepoint-rollback",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "savepoint": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-savepoint-rollback",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "savepoint": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-savepoint-rollback",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "savepoint": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-savepoint-rollback",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "savepoint": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-savepoint-rollback",
+      "severity": "P1",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "savepoint": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-savepoint-rollback",
+      "severity": "P1",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "savepoint": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-savepoint-rollback",
+      "severity": "P1",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "savepoint": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "A04-savepoint-rollback",
+      "severity": "P1",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "savepoint": "all evidence surfaces restored"
+      }
+    },
+    {
+      "case": "B03-audit-preplacement",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_audit": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-audit-preplacement",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_audit": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-audit-preplacement",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_audit": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-audit-preplacement",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_audit": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-audit-preplacement",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_audit": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-audit-preplacement",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_audit": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-audit-preplacement",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_audit": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-audit-preplacement",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_audit": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-outbox-preplacement",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_outbox": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-outbox-preplacement",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_outbox": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-outbox-preplacement",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_outbox": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-outbox-preplacement",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_outbox": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-outbox-preplacement",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_outbox": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-outbox-preplacement",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_outbox": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-outbox-preplacement",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_outbox": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B03-outbox-preplacement",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "preplaced_outbox": "blocked retirement and preserved active parent"
+      }
+    },
+    {
+      "case": "B02-C01-append-only-payload",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "append_only_checks": 11
+      }
+    },
+    {
+      "case": "B02-C01-append-only-payload",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "append_only_checks": 11
+      }
+    },
+    {
+      "case": "B02-C01-append-only-payload",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "append_only_checks": 11
+      }
+    },
+    {
+      "case": "B02-C01-append-only-payload",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "append_only_checks": 11
+      }
+    },
+    {
+      "case": "B02-C01-append-only-payload",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "append_only_checks": 11
+      }
+    },
+    {
+      "case": "B02-C01-append-only-payload",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "append_only_checks": 11
+      }
+    },
+    {
+      "case": "B02-C01-append-only-payload",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "append_only_checks": 11
+      }
+    },
+    {
+      "case": "B02-C01-append-only-payload",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "append_only_checks": 11
+      }
+    },
+    {
+      "case": "D02-direct-lifecycle-and-times",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "direct_lifecycle": "rejected"
+      }
+    },
+    {
+      "case": "D02-direct-lifecycle-and-times",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "direct_lifecycle": "rejected"
+      }
+    },
+    {
+      "case": "D02-direct-lifecycle-and-times",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "direct_lifecycle": "rejected"
+      }
+    },
+    {
+      "case": "D02-direct-lifecycle-and-times",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "direct_lifecycle": "rejected"
+      }
+    },
+    {
+      "case": "D02-direct-lifecycle-and-times",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "direct_lifecycle": "rejected"
+      }
+    },
+    {
+      "case": "D02-direct-lifecycle-and-times",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "direct_lifecycle": "rejected"
+      }
+    },
+    {
+      "case": "D02-direct-lifecycle-and-times",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "direct_lifecycle": "rejected"
+      }
+    },
+    {
+      "case": "D02-direct-lifecycle-and-times",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "direct_lifecycle": "rejected"
+      }
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-generation",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "new Authorization can become active at generation 7; contract requires generation=1"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "D01-initial-revoked-time",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "Authorization can become active with a prewritten revoked_at_ms; non-revoked states must have NULL"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "file-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "file-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "file-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C01-forged-lifecycle-outbox",
+      "severity": "P1",
+      "config": "file-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "forged lifecycle Outbox job can complete against an active Authorization without lifecycle command/audit"
+    },
+    {
+      "case": "C02-C04-future-and-cas",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "future_claim": "rejected",
+        "stale_cas": "rejected",
+        "future_available_at_ms": 1787276090000
+      }
+    },
+    {
+      "case": "C02-C04-future-and-cas",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "future_claim": "rejected",
+        "stale_cas": "rejected",
+        "future_available_at_ms": 1787276090000
+      }
+    },
+    {
+      "case": "C02-C04-future-and-cas",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "future_claim": "rejected",
+        "stale_cas": "rejected",
+        "future_available_at_ms": 1787276090000
+      }
+    },
+    {
+      "case": "C02-C04-future-and-cas",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "future_claim": "rejected",
+        "stale_cas": "rejected",
+        "future_available_at_ms": 1787276090000
+      }
+    },
+    {
+      "case": "C02-C04-future-and-cas",
+      "severity": "P1",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "future_claim": "rejected",
+        "stale_cas": "rejected",
+        "future_available_at_ms": 1787276090000
+      }
+    },
+    {
+      "case": "C02-C04-future-and-cas",
+      "severity": "P1",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "future_claim": "rejected",
+        "stale_cas": "rejected",
+        "future_available_at_ms": 1787276090000
+      }
+    },
+    {
+      "case": "C02-C04-future-and-cas",
+      "severity": "P1",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "future_claim": "rejected",
+        "stale_cas": "rejected",
+        "future_available_at_ms": 1787276090000
+      }
+    },
+    {
+      "case": "C02-C04-future-and-cas",
+      "severity": "P1",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "future_claim": "rejected",
+        "stale_cas": "rejected",
+        "future_available_at_ms": 1787276090000
+      }
+    },
+    {
+      "case": "C04-C06-retry-and-terminal",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "retry": "payload preserved",
+        "terminal_paths": [
+          "completed",
+          "cancelled",
+          "dead_letter"
+        ]
+      }
+    },
+    {
+      "case": "C04-C06-retry-and-terminal",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "retry": "payload preserved",
+        "terminal_paths": [
+          "completed",
+          "cancelled",
+          "dead_letter"
+        ]
+      }
+    },
+    {
+      "case": "C04-C06-retry-and-terminal",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "retry": "payload preserved",
+        "terminal_paths": [
+          "completed",
+          "cancelled",
+          "dead_letter"
+        ]
+      }
+    },
+    {
+      "case": "C04-C06-retry-and-terminal",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "retry": "payload preserved",
+        "terminal_paths": [
+          "completed",
+          "cancelled",
+          "dead_letter"
+        ]
+      }
+    },
+    {
+      "case": "C04-C06-retry-and-terminal",
+      "severity": "P1",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "retry": "payload preserved",
+        "terminal_paths": [
+          "completed",
+          "cancelled",
+          "dead_letter"
+        ]
+      }
+    },
+    {
+      "case": "C04-C06-retry-and-terminal",
+      "severity": "P1",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "retry": "payload preserved",
+        "terminal_paths": [
+          "completed",
+          "cancelled",
+          "dead_letter"
+        ]
+      }
+    },
+    {
+      "case": "C04-C06-retry-and-terminal",
+      "severity": "P1",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "retry": "payload preserved",
+        "terminal_paths": [
+          "completed",
+          "cancelled",
+          "dead_letter"
+        ]
+      }
+    },
+    {
+      "case": "C04-C06-retry-and-terminal",
+      "severity": "P1",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "retry": "payload preserved",
+        "terminal_paths": [
+          "completed",
+          "cancelled",
+          "dead_letter"
+        ]
+      }
+    },
+    {
+      "case": "C04-expired-lease",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "expired_complete_and_renew": "rejected"
+      }
+    },
+    {
+      "case": "C04-expired-lease",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "expired_complete_and_renew": "rejected"
+      }
+    },
+    {
+      "case": "C04-expired-lease",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "expired_complete_and_renew": "rejected"
+      }
+    },
+    {
+      "case": "C04-expired-lease",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "expired_complete_and_renew": "rejected"
+      }
+    },
+    {
+      "case": "C04-expired-lease",
+      "severity": "P1",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "expired_complete_and_renew": "rejected"
+      }
+    },
+    {
+      "case": "C04-expired-lease",
+      "severity": "P1",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "expired_complete_and_renew": "rejected"
+      }
+    },
+    {
+      "case": "C04-expired-lease",
+      "severity": "P1",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "expired_complete_and_renew": "rejected"
+      }
+    },
+    {
+      "case": "C04-expired-lease",
+      "severity": "P1",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "expired_complete_and_renew": "rejected"
+      }
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "file-fk_off-rec_off",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "file-fk_off-rec_on",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "file-fk_on-rec_off",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C08-C09-retention-and-replay",
+      "severity": "P1",
+      "config": "file-fk_on-rec_on",
+      "outcome": "BYPASS",
+      "message": "deleted lifecycle Outbox identity/idempotency can be reinserted after retention cleanup despite preserved binding; payload replay is possible"
+    },
+    {
+      "case": "C09-generic-cleanup-scope",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "generic_terminal_cleanup": "allowed",
+        "generic_pending_cleanup": "blocked"
+      }
+    },
+    {
+      "case": "C09-generic-cleanup-scope",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "generic_terminal_cleanup": "allowed",
+        "generic_pending_cleanup": "blocked"
+      }
+    },
+    {
+      "case": "C09-generic-cleanup-scope",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "generic_terminal_cleanup": "allowed",
+        "generic_pending_cleanup": "blocked"
+      }
+    },
+    {
+      "case": "C09-generic-cleanup-scope",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "generic_terminal_cleanup": "allowed",
+        "generic_pending_cleanup": "blocked"
+      }
+    },
+    {
+      "case": "C09-generic-cleanup-scope",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "generic_terminal_cleanup": "allowed",
+        "generic_pending_cleanup": "blocked"
+      }
+    },
+    {
+      "case": "C09-generic-cleanup-scope",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "generic_terminal_cleanup": "allowed",
+        "generic_pending_cleanup": "blocked"
+      }
+    },
+    {
+      "case": "C09-generic-cleanup-scope",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "generic_terminal_cleanup": "allowed",
+        "generic_pending_cleanup": "blocked"
+      }
+    },
+    {
+      "case": "C09-generic-cleanup-scope",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "generic_terminal_cleanup": "allowed",
+        "generic_pending_cleanup": "blocked"
+      }
+    },
+    {
+      "case": "PM-CE-04-tombstone-envelope",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "pm_ce_04": "control envelope immutable"
+      }
+    },
+    {
+      "case": "PM-CE-04-tombstone-envelope",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "pm_ce_04": "control envelope immutable"
+      }
+    },
+    {
+      "case": "PM-CE-04-tombstone-envelope",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "pm_ce_04": "control envelope immutable"
+      }
+    },
+    {
+      "case": "PM-CE-04-tombstone-envelope",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "pm_ce_04": "control envelope immutable"
+      }
+    },
+    {
+      "case": "PM-CE-04-tombstone-envelope",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "pm_ce_04": "control envelope immutable"
+      }
+    },
+    {
+      "case": "PM-CE-04-tombstone-envelope",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "pm_ce_04": "control envelope immutable"
+      }
+    },
+    {
+      "case": "PM-CE-04-tombstone-envelope",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "pm_ce_04": "control envelope immutable"
+      }
+    },
+    {
+      "case": "PM-CE-04-tombstone-envelope",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "pm_ce_04": "control envelope immutable"
+      }
+    },
+    {
+      "case": "D03-multirow-atomicity",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "multirow": "atomic rejection"
+      }
+    },
+    {
+      "case": "D03-multirow-atomicity",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "multirow": "atomic rejection"
+      }
+    },
+    {
+      "case": "D03-multirow-atomicity",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "multirow": "atomic rejection"
+      }
+    },
+    {
+      "case": "D03-multirow-atomicity",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "multirow": "atomic rejection"
+      }
+    },
+    {
+      "case": "D03-multirow-atomicity",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "multirow": "atomic rejection"
+      }
+    },
+    {
+      "case": "D03-multirow-atomicity",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "multirow": "atomic rejection"
+      }
+    },
+    {
+      "case": "D03-multirow-atomicity",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "outcome": "PASS",
+      "details": {
+        "multirow": "atomic rejection"
+      }
+    },
+    {
+      "case": "D03-multirow-atomicity",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "outcome": "PASS",
+      "details": {
+        "multirow": "atomic rejection"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "task": "LIFEOS-P3-095",
+  "timestamp": "2026-08-22T00:51:46.501266+00:00",
+  "fixed_non_sensitive_text_only": true,
+  "conclusion": "REWORK",
+  "items": [
+    {
+      "id": "O-01-first-capture",
+      "status": "PASS"
+    },
+    {
+      "id": "O-02-idempotent-repeat",
+      "status": "PASS"
+    },
+    {
+      "id": "O-03-same-key-different-text-blocked",
+      "status": "PASS"
+    },
+    {
+      "id": "O-04-empty-input-blocked",
+      "status": "PASS"
+    },
+    {
+      "id": "O-05-process-restart-read",
+      "status": "PASS"
+    },
+    {
+      "id": "O-06-today-identity-time-source",
+      "status": "PASS"
+    },
+    {
+      "id": "O-07-atomic-failure-no-partial",
+      "status": "PASS"
+    },
+    {
+      "id": "O-08-corrupt-db-fail-closed",
+      "status": "PASS"
+    },
+    {
+      "id": "O-09-cleanup-denied-without-exact-confirmation",
+      "status": "PASS"
+    },
+    {
+      "id": "O-10-exact-cleanup-and-no-display",
+      "status": "FAIL",
+      "severity": "P1",
+      "database_record_count_after": 0,
+      "render_after_clear_blocked": true,
+      "stale_today_page_exists_after_cleanup": true
+    }
+  ],
+  "summary": {
+    "pass": 9,
+    "fail": 1,
+    "p0": 0,
+    "p1": 1,
+    "p2": 1,
+    "unknown": 0,
+    "not_implemented": 4
+  },
+  "runtime": {
+    "path_category": "independent_task_local_system_temp",
+    "success_file_url": null,
+    "rejection_file_url": null
+  }
+}

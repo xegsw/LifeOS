@@ -1,0 +1,94 @@
+[
+  {
+    "id": "LIFE-new-db-init-failure-zero-half-products",
+    "category": "failure",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_empty_and_atomic_failure",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "LIFE-existing-capture-write-audit-commit-failure-repeat-conflict",
+    "category": "failure",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_capture_success_invalidates_stale_page_and_failure_restores_it; InvariantClosureTest.test_repeat_only_appends_repeat_audit_and_conflict_changes_nothing",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "LIFE-render-read-validate-write-flush-fsync-replace-cleanup",
+    "category": "failure",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_query_failure_with_stale_page_is_invalidated_without_db_change; InvariantClosureTest.test_render_fsync_failure_keeps_valid_page_and_cleans_temp; InvariantClosureTest.test_render_replace_failure_keeps_valid_page_and_cleans_temp",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "LIFE-clear-invalidate-confirm-delete-audit-commit-rollback",
+    "category": "failure",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_clear_page_invalidation_failure_preserves_db; InvariantClosureTest.test_clear_transaction_failure_rolls_back_and_page_stays_invalidated",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "LIFE-stale-page-after-capture-clear-missing-invalid-db",
+    "category": "failure",
+    "expected": "behavior and state assertions pass",
+    "actual": "isolated unittest assertions passed",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_capture_success_invalidates_stale_page_and_failure_restores_it; InvariantClosureTest.test_clear_untrusted_db_invalidates_page_without_db_change",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "LIFE-fresh-process-full-chain",
+    "category": "failure",
+    "expected": "first, repeat, restart, render, recapture, rerender, clear, failed rerender",
+    "actual": "all fresh-process exits and states matched",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "fresh_process_lifecycle.log",
+    "state_transition_id": "fresh-process-full-chain"
+  },
+  {
+    "id": "REG-attempt-6-7-8-precondition-adapted",
+    "category": "failure",
+    "expected": "all historical behavior matrices pass under new pre-existing-parent contract",
+    "actual": {
+      "attempt-6": {
+        "exit_code": 0,
+        "pass": 19,
+        "fail": 0,
+        "failed_items": [],
+        "harness_adjustment": "fixture parent mkdir only; historical source remained read-only"
+      },
+      "attempt-7": {
+        "exit_code": 0,
+        "pass": 13,
+        "fail": 0,
+        "failed_items": [],
+        "harness_adjustment": "fixture parent mkdir only; historical source remained read-only"
+      },
+      "attempt-8": {
+        "exit_code": 0,
+        "pass": 18,
+        "fail": 0,
+        "failed_items": [],
+        "harness_adjustment": "fixture parent mkdir only; historical source remained read-only"
+      }
+    },
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "adapted_regressions",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  }
+]

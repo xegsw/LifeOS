@@ -1,0 +1,7 @@
+ipc_result status=blocked code=path_symlink_rejected
+
+thread 'main' (5064765) panicked at src/runtime.rs:678:9:
+controlled DB boundary rejected: path_symlink_rejected
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+started_at_utc=2026-08-24T05:28:57.891677Z
+db=/private/tmp/lifeos-p3-104-p3-110-review-link-v1/capture.sqlite

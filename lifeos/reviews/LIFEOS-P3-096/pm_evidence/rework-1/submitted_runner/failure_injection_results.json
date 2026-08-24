@@ -1,0 +1,558 @@
+[
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "saved",
+        "expected": "saved",
+        "name": "capture succeeds after bounded cleanup retry",
+        "passed": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "two captures persist",
+        "passed": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "two audits persist",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no staging or sidecar residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "return": "saved",
+      "unlink_attempts": 2
+    },
+    "ended_at": "2026-08-22T14:18:48.287556+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M001-transient-staging-unlink",
+    "fixture_id": "m001-transient-staging-unlink",
+    "row_id": "ABF-M-001",
+    "started_at": "2026-08-22T14:18:48.279342+00:00",
+    "test_id": "P3-096-M001-transient-staging-unlink"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6268740,
+          "nlink": 1,
+          "sha256": "3faf3c5eca949e690e5754aa57f3a621664c009548260e5ea92f8b5ca21de0bc",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6268740,
+          "nlink": 1,
+          "sha256": "3faf3c5eca949e690e5754aa57f3a621664c009548260e5ea92f8b5ca21de0bc",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB state unchanged or absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "audit": 1,
+          "captures": 1
+        },
+        "expected": {
+          "audit": 1,
+          "captures": 1
+        },
+        "name": "counts unchanged",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6268744,
+          "nlink": 1,
+          "sha256": "b39091eaca1503aa627c56889123a2758eae2c496a2a54ee66369e3019d82a01",
+          "size": 666,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6268744,
+          "nlink": 1,
+          "sha256": "b39091eaca1503aa627c56889123a2758eae2c496a2a54ee66369e3019d82a01",
+          "size": 666,
+          "type": "regular"
+        },
+        "name": "page restored byte-for-byte",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no staging or sidecar residue",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6268739,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6268739,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "name": "sentinel unchanged",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcome": "CaptureError"
+    },
+    "ended_at": "2026-08-22T14:18:48.291142+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M002-persistent-staging-existing",
+    "fixture_id": "m002-persistent-staging-existing",
+    "row_id": "ABF-M-002",
+    "started_at": "2026-08-22T14:18:48.287688+00:00",
+    "test_id": "P3-096-M002-persistent-staging-existing"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "DB state unchanged or absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "audit": null,
+          "captures": null
+        },
+        "expected": {
+          "audit": null,
+          "captures": null
+        },
+        "name": "counts unchanged",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6268748,
+          "nlink": 1,
+          "sha256": "dc296369bca2534acea4d090e60cdc9025d35d47541b3fd246d6d14ab108c6fa",
+          "size": 47,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6268748,
+          "nlink": 1,
+          "sha256": "dc296369bca2534acea4d090e60cdc9025d35d47541b3fd246d6d14ab108c6fa",
+          "size": 47,
+          "type": "regular"
+        },
+        "name": "page restored byte-for-byte",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no staging or sidecar residue",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6268747,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6268747,
+          "nlink": 1,
+          "sha256": "cb9e6ee6d22881d9001b728c6eebb85bed0a4a6650fe424b9e4293f142406396",
+          "size": 36,
+          "type": "regular"
+        },
+        "name": "sentinel unchanged",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcome": "CaptureError"
+    },
+    "ended_at": "2026-08-22T14:18:48.292942+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M003-persistent-staging-new",
+    "fixture_id": "m003-persistent-staging-new",
+    "row_id": "ABF-M-003",
+    "started_at": "2026-08-22T14:18:48.291252+00:00",
+    "test_id": "P3-096-M003-persistent-staging-new"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6268755,
+          "nlink": 1,
+          "sha256": "6c7368cf7768bae54492c60c4b4e85952e55ff7da971520516b479e4c1adb52c",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6268755,
+          "nlink": 1,
+          "sha256": "6c7368cf7768bae54492c60c4b4e85952e55ff7da971520516b479e4c1adb52c",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB bytes and identity unchanged or absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "audit": 1,
+          "captures": 1
+        },
+        "expected": {
+          "audit": 1,
+          "captures": 1
+        },
+        "name": "counts unchanged",
+        "passed": true
+      },
+      {
+        "actual": {
+          "exists": true,
+          "nlink": 1,
+          "sha256": "b39091eaca1503aa627c56889123a2758eae2c496a2a54ee66369e3019d82a01",
+          "size": 666,
+          "type": "regular"
+        },
+        "expected": {
+          "exists": true,
+          "nlink": 1,
+          "sha256": "b39091eaca1503aa627c56889123a2758eae2c496a2a54ee66369e3019d82a01",
+          "size": 666,
+          "type": "regular"
+        },
+        "name": "page observable content follows rollback contract",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no temp or sidecar residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcome": "CaptureError"
+    },
+    "ended_at": "2026-08-22T14:18:48.296037+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M004-existing-commit-failure",
+    "fixture_id": "m004-existing-commit-failure",
+    "row_id": "ABF-M-004",
+    "started_at": "2026-08-22T14:18:48.293033+00:00",
+    "test_id": "P3-096-M004-existing-commit-failure"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "new DB absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "no page",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no temp or sidecar residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcome": "CaptureError"
+    },
+    "ended_at": "2026-08-22T14:18:48.296638+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M005-init-failure",
+    "fixture_id": "m005-init-failure",
+    "row_id": "ABF-M-005",
+    "started_at": "2026-08-22T14:18:48.296144+00:00",
+    "test_id": "P3-096-M005-init-failure"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "DB bytes and identity unchanged or absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "audit": null,
+          "captures": null
+        },
+        "expected": {
+          "audit": null,
+          "captures": null
+        },
+        "name": "counts unchanged",
+        "passed": true
+      },
+      {
+        "actual": {
+          "exists": false,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "exists": false,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "page observable content follows rollback contract",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no temp or sidecar residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcome": "CaptureError"
+    },
+    "ended_at": "2026-08-22T14:18:48.298266+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M005-new-commit-failure",
+    "fixture_id": "m005-new-commit-failure",
+    "row_id": "ABF-M-005",
+    "started_at": "2026-08-22T14:18:48.296737+00:00",
+    "test_id": "P3-096-M005-new-commit-failure"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "expected": "CaptureError",
+        "name": "returns CaptureError",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "new DB absent",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "expected": {
+          "device": null,
+          "exists": false,
+          "inode": null,
+          "nlink": null,
+          "sha256": null,
+          "size": null,
+          "type": "missing"
+        },
+        "name": "no page",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no temp or sidecar residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcome": "CaptureError"
+    },
+    "ended_at": "2026-08-22T14:18:48.299731+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M005-publish-failure",
+    "fixture_id": "m005-publish-failure",
+    "row_id": "ABF-M-005",
+    "started_at": "2026-08-22T14:18:48.298364+00:00",
+    "test_id": "P3-096-M005-publish-failure"
+  }
+]

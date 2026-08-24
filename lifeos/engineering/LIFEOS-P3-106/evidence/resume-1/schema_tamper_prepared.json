@@ -1,0 +1,15 @@
+{
+  "task": "LIFEOS-P3-106",
+  "execution": "resume-1",
+  "fixture": "/private/tmp/lifeos-p3-104-p3-106-tamper-resume1-20260823",
+  "db": "/private/tmp/lifeos-p3-104-p3-106-tamper-resume1-20260823/capture.sqlite",
+  "db_sha256": "dc094be058f85d255718b902de86c2ed047aabbe3b28f2173574d07fa60bf297",
+  "tables": [
+    "captures",
+    "sqlite_sequence"
+  ],
+  "expected_missing_table": "audit",
+  "sentinel_before": "c49d069ba76a2c0e6c0a43db9c7373578c4020a481dca0dadbdd77e17f546d71",
+  "sentinel_after": "c49d069ba76a2c0e6c0a43db9c7373578c4020a481dca0dadbdd77e17f546d71",
+  "status": "PASS"
+}

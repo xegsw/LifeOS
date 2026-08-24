@@ -1,0 +1,34 @@
+{
+  "after": {
+    "audit": 2,
+    "captures": 2,
+    "db_sha256": "d40d011d3a386b610db3f7af95d6d0b58a2ed8708c9035fdf1ff668322a4fa0d",
+    "page_exists": false,
+    "sentinel_sha256": "4932483170786318d790531df6dc78bf7b2829a7c106316d1cd055e36f811c74",
+    "sidecar_exists": true
+  },
+  "before": {
+    "audit": 1,
+    "captures": 1,
+    "db_sha256": "37145afa941db91c6f063ddc7e24e594bf8d318885e41538588d23cd51d1736d",
+    "page_exists": true,
+    "sentinel_sha256": "4932483170786318d790531df6dc78bf7b2829a7c106316d1cd055e36f811c74",
+    "sidecar_exists": false
+  },
+  "case_id": "PM-P3-096-R1-CE-02",
+  "error": "保存结束后存在未支持的 sidecar，未报告成功。",
+  "failure_returned": true,
+  "fixture": "fixed non-sensitive task-local SQLite, page, sidecar and sentinel",
+  "injected_failure": "connection close leaves a fixed task-local sidecar after the real commit",
+  "mapped_to": [
+    "L1-3",
+    "L1-4",
+    "ABF-I-01",
+    "ABF-I-02"
+  ],
+  "outcome": "CaptureError",
+  "protected_state_unchanged": false,
+  "result": "FAIL",
+  "sentinel_unchanged": true,
+  "severity": "P1"
+}

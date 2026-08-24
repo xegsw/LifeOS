@@ -1,0 +1,71 @@
+{
+  "execution_id": "EXEC-ABF-M-010",
+  "fixture_id": "P3-102-BOUNDARY-FIXED",
+  "rows": [
+    {
+      "detail": "relative DB path rejected",
+      "execution_id": "EXEC-ABF-M-010-RELATIVE",
+      "fixture_id": "P3-102-BOUNDARY-FIXED",
+      "status": "PASS",
+      "test_id": "ABF-M-010-RELATIVE"
+    },
+    {
+      "detail": "dot-dot DB path rejected",
+      "execution_id": "EXEC-ABF-M-010-DOTDOT",
+      "fixture_id": "P3-102-BOUNDARY-FIXED",
+      "status": "PASS",
+      "test_id": "ABF-M-010-DOTDOT"
+    },
+    {
+      "detail": "ancestor symlink rejected",
+      "execution_id": "EXEC-ABF-M-010-ANCESTOR-SYMLINK",
+      "fixture_id": "P3-102-BOUNDARY-FIXED",
+      "status": "PASS",
+      "test_id": "ABF-M-010-ANCESTOR-SYMLINK"
+    },
+    {
+      "detail": "final DB symlink rejected without target change",
+      "execution_id": "EXEC-ABF-M-010-DB-SYMLINK",
+      "fixture_id": "P3-102-BOUNDARY-FIXED",
+      "status": "PASS",
+      "test_id": "ABF-M-010-DB-SYMLINK"
+    },
+    {
+      "detail": "multi-link DB rejected without target change",
+      "execution_id": "EXEC-ABF-M-010-DB-HARDLINK",
+      "fixture_id": "P3-102-BOUNDARY-FIXED",
+      "status": "PASS",
+      "test_id": "ABF-M-010-DB-HARDLINK"
+    },
+    {
+      "detail": "special-file DB rejected",
+      "execution_id": "EXEC-ABF-M-010-DB-SPECIAL",
+      "fixture_id": "P3-102-BOUNDARY-FIXED",
+      "status": "PASS",
+      "test_id": "ABF-M-010-DB-SPECIAL"
+    },
+    {
+      "detail": "final page symlink rejected without target change",
+      "execution_id": "EXEC-ABF-M-010-PAGE-SYMLINK",
+      "fixture_id": "P3-102-BOUNDARY-FIXED",
+      "status": "PASS",
+      "test_id": "ABF-M-010-PAGE-SYMLINK"
+    },
+    {
+      "detail": "multi-link page rejected without target change",
+      "execution_id": "EXEC-ABF-M-010-PAGE-HARDLINK",
+      "fixture_id": "P3-102-BOUNDARY-FIXED",
+      "status": "PASS",
+      "test_id": "ABF-M-010-PAGE-HARDLINK"
+    },
+    {
+      "detail": "caller-selected output argument rejected by CLI",
+      "execution_id": "EXEC-ABF-M-010-CALLER-OUTPUT",
+      "fixture_id": "P3-102-BOUNDARY-FIXED",
+      "status": "PASS",
+      "test_id": "ABF-M-010-CALLER-OUTPUT"
+    }
+  ],
+  "status": "PASS",
+  "test_id": "ABF-M-010"
+}

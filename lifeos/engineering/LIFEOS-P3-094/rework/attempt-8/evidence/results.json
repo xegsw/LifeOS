@@ -1,0 +1,163 @@
+{
+  "task": "LIFEOS-P3-094-rework-attempt-8",
+  "timestamp": "2026-08-22T12:02:50.750294+00:00",
+  "message_received_at": "2026-08-22 19:56:40 CST (+0800)",
+  "session_type": "reused completed attempt-7 Codex engineering session; did not perform P3-095 independent review",
+  "model_route": "gpt-5.6-terra + high",
+  "authorization": "D-0396 missing-DB stale-page and strict read-only render remediation",
+  "fixed_non_sensitive_fixtures_only": true,
+  "items": [
+    {
+      "id": "A8-01-missing-db-stale-page-no-create",
+      "status": "PASS",
+      "render_failed": true,
+      "stale_page_invalidated": true,
+      "db_not_created": true,
+      "sidecar_count": 0
+    },
+    {
+      "id": "A8-02-zero-byte-db-read-only",
+      "status": "PASS",
+      "render_failed": true,
+      "stale_page_invalidated": true,
+      "db_bytes_unchanged": true,
+      "object_count": 0,
+      "sidecar_count": 0
+    },
+    {
+      "id": "A8-03-no-required-schema-read-only",
+      "status": "PASS",
+      "render_failed": true,
+      "stale_page_invalidated": true,
+      "db_bytes_unchanged": true,
+      "objects_unchanged": true,
+      "object_count": 1,
+      "sidecar_count": 0
+    },
+    {
+      "id": "A8-04-partial-schema-read-only",
+      "status": "PASS",
+      "render_failed": true,
+      "stale_page_invalidated": true,
+      "db_bytes_unchanged": true,
+      "objects_unchanged": true,
+      "object_count": 1,
+      "sidecar_count": 0
+    },
+    {
+      "id": "A8-05-both-tables-incomplete-read-only",
+      "status": "PASS",
+      "render_failed": true,
+      "stale_page_invalidated": true,
+      "db_bytes_unchanged": true,
+      "objects_unchanged": true,
+      "object_count": 2,
+      "sidecar_count": 0
+    },
+    {
+      "id": "A8-06-initialized-empty-contract-preserved",
+      "status": "PASS",
+      "render_failed": true,
+      "stale_page_invalidated": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "A8-07-corrupt-db-contract-preserved",
+      "status": "PASS",
+      "render_failed": true,
+      "stale_page_invalidated": true,
+      "db_bytes_unchanged": true
+    },
+    {
+      "id": "A8-08-unreadable-db-contract-preserved",
+      "status": "PASS",
+      "render_failed": true,
+      "stale_page_invalidated": true,
+      "db_bytes_unchanged": true
+    },
+    {
+      "id": "A8-09-query-failure-contract-preserved",
+      "status": "PASS",
+      "render_failed": true,
+      "stale_page_invalidated": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "A8-10-missing-db-invalidation-failure-disclosed",
+      "status": "PASS",
+      "render_failed": true,
+      "failure_disclosed": true,
+      "page_hash_equal": true,
+      "db_not_created": true
+    },
+    {
+      "id": "A8-11-valid-read-only-render",
+      "status": "PASS",
+      "rendered": true,
+      "record_count": 1,
+      "db_unchanged": true
+    },
+    {
+      "id": "A8-12-publish-failure-preserves-valid-page",
+      "status": "PASS",
+      "render_failed": true,
+      "valid_page_hash_equal": true,
+      "db_unchanged": true,
+      "half_product_count": 0
+    },
+    {
+      "id": "A8-13-clear-order-preserved",
+      "status": "PASS",
+      "page_invalidated": true,
+      "capture_count_after": 0,
+      "clear_success": true
+    },
+    {
+      "id": "A8-14-attempt6-full-regression",
+      "status": "PASS",
+      "exit_code": 0,
+      "attempt6_pass": 19,
+      "attempt6_fail": 0
+    },
+    {
+      "id": "A8-15-clean-copy-unit-suite",
+      "status": "PASS",
+      "exit_code": 0,
+      "test_count": 22
+    },
+    {
+      "id": "A8-16-task-local-cache-hygiene",
+      "status": "PASS",
+      "cache_count": 0,
+      "syntax_compile_count": 3,
+      "syntax_mode": "python -B and builtin compile"
+    },
+    {
+      "id": "A8-17-task-local-residue-zero",
+      "status": "PASS",
+      "before_count": 0,
+      "after_count": 0
+    },
+    {
+      "id": "A8-18-history-read-only-hashes",
+      "status": "PASS",
+      "file_count": 155,
+      "before_after_equal": true
+    }
+  ],
+  "summary": {
+    "pass": 18,
+    "fail": 0,
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  },
+  "runtime_cleanup": {
+    "db_exists": false,
+    "html_exists": false,
+    "cache_exists": false,
+    "task_local_residue_after": 0
+  }
+}

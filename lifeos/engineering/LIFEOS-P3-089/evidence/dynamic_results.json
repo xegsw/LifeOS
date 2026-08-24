@@ -1,0 +1,30 @@
+{
+  "task": "LIFEOS-P3-089",
+  "environment": {
+    "browser": "Google Chrome",
+    "bundleId": "com.google.Chrome",
+    "control": "Computer Use @oai/sky",
+    "entry": "file:///private/tmp/lifeos-p3-089.rcH3wY/app/default-recovery.html",
+    "preflight": "pass"
+  },
+  "pass": 15,
+  "fail": 0,
+  "results": [
+    {"id":"D-01","pass":true,"detail":"New Chrome tab loaded the task-local file: entry before dynamic matrix."},
+    {"id":"D-02","pass":true,"detail":"Default page labels the experience as synthetic; AI and network are explicitly disabled."},
+    {"id":"D-03","pass":true,"detail":"Empty capture remains rejected and does not show a record."},
+    {"id":"D-04","pass":true,"detail":"Non-sensitive text plus explicit confirmation displays only a current-page synthetic record."},
+    {"id":"D-05","pass":true,"detail":"A second identical confirmation reports an idempotent receipt without a new record."},
+    {"id":"D-06","pass":true,"detail":"Default-deny blocks restoration until explicit grant."},
+    {"id":"D-07","pass":true,"detail":"Explicit grant permits preview preparation but still requires exact CONFIRM."},
+    {"id":"D-08","pass":true,"detail":"Exact CONFIRM produces only the synthetic current-page recovery receipt; repeat is idempotent."},
+    {"id":"D-09","pass":true,"detail":"Revoke/deny clears preview and receipt and returns the UI to fail-closed."},
+    {"id":"D-10","pass":true,"detail":"Simulated failure removes partial display and states that nothing real was saved, authorized, or restored."},
+    {"id":"D-11","pass":true,"detail":"Navigation reaches no-reliable-suggestion page without fabricating a suggestion."},
+    {"id":"D-12","pass":true,"detail":"Restricted/offline page remains default-deny and says it reads, processes, and generates nothing."},
+    {"id":"D-13","pass":true,"detail":"Refresh after a confirmed capture clears both input and synthetic display."},
+    {"id":"D-14","pass":true,"detail":"Closing the task-local tab and opening the entry in a new tab starts with cleared state."},
+    {"id":"D-15","pass":true,"detail":"Tab reaches the skip link and Enter moves to main content; focus styles and 75% Chrome zoom are visible."}
+  ],
+  "counts": {"P0":0,"P1":0,"P2":0,"Unknown":0,"NotImplemented":0}
+}

@@ -1,0 +1,47 @@
+{
+  "verifier": "LIFEOS-P3-110 semantic verifier",
+  "mutation": "missing_file",
+  "passed": false,
+  "checks": [
+    {
+      "check": "fixed-input-hashes",
+      "passed": true,
+      "detail": "all fixed-input entries match their recorded hashes"
+    },
+    {
+      "check": "offline-locked-build",
+      "passed": true,
+      "detail": "three recorded commands exited zero under CARGO_NET_OFFLINE=true"
+    },
+    {
+      "check": "negative-path-rejections",
+      "passed": true,
+      "detail": "all raw negative launches fail non-zero with controlled boundary rejection"
+    },
+    {
+      "check": "lifecycle-and-sentinel",
+      "passed": true,
+      "detail": "snapshots show commit-before-success, repeat audit only, negatives unchanged, refresh/reopen persisted"
+    },
+    {
+      "check": "native-geometry",
+      "passed": true,
+      "detail": "both native APIs report 700 by 760 for all three states"
+    },
+    {
+      "check": "static-privacy-network",
+      "passed": true,
+      "detail": "code/UI scan has no network marker and exactly three Tauri commands"
+    },
+    {
+      "check": "required-raw-evidence",
+      "passed": false,
+      "detail": "fixed comparison, keyboard, content and schema tamper artifacts exist"
+    },
+    {
+      "check": "authorized-path-cleanup",
+      "passed": true,
+      "detail": "work copy, fixtures, and unit-regex residue are all absent"
+    }
+  ]
+}

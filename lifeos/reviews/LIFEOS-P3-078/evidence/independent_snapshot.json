@@ -1,0 +1,168 @@
+{
+  "permissions": [
+    {
+      "id": "perm-8c0bbc8a-a64f-4d27-b785-213fb5a0ce9c",
+      "decision": "granted",
+      "project": "project-synthetic-077",
+      "category": "non_sensitive_test_text",
+      "purpose": "local_permission_settings_demo",
+      "location": "task_local_sqlite",
+      "processor": "local_synthetic_runtime",
+      "expires_at_ms": 1787303559320,
+      "status": "revoked",
+      "confirmation": "CONFIRM",
+      "idempotency_key": "ir-grant",
+      "created_at_ms": 1787302959322,
+      "revoked_at_ms": 1787302959326
+    },
+    {
+      "id": "perm-f145de28-1d24-42f0-81c0-a9d5fa294e38",
+      "decision": "denied",
+      "project": "project-synthetic-077",
+      "category": "non_sensitive_test_text",
+      "purpose": "local_permission_settings_demo",
+      "location": "task_local_sqlite",
+      "processor": "local_synthetic_runtime",
+      "expires_at_ms": 1787303559320,
+      "status": "revoked",
+      "confirmation": "CONFIRM",
+      "idempotency_key": "ir-deny-after-grant",
+      "created_at_ms": 1787302959324,
+      "revoked_at_ms": null
+    },
+    {
+      "id": "expired",
+      "decision": "granted",
+      "project": "project-synthetic-077",
+      "category": "non_sensitive_test_text",
+      "purpose": "local_permission_settings_demo",
+      "location": "task_local_sqlite",
+      "processor": "local_synthetic_runtime",
+      "expires_at_ms": 1787302959326,
+      "status": "current",
+      "confirmation": "CONFIRM",
+      "idempotency_key": "ir-expired",
+      "created_at_ms": 1787302959327,
+      "revoked_at_ms": null
+    }
+  ],
+  "audits": [
+    {
+      "id": 1,
+      "event": "rejected",
+      "permission_id": null,
+      "reason": "default_deny",
+      "confirmation": "CONFIRM",
+      "idempotency_key": null,
+      "created_at_ms": 1787302959322
+    },
+    {
+      "id": 2,
+      "event": "decision_set",
+      "permission_id": "perm-8c0bbc8a-a64f-4d27-b785-213fb5a0ce9c",
+      "reason": "grant",
+      "confirmation": "CONFIRM",
+      "idempotency_key": "ir-grant",
+      "created_at_ms": 1787302959323
+    },
+    {
+      "id": 3,
+      "event": "consumed",
+      "permission_id": "perm-8c0bbc8a-a64f-4d27-b785-213fb5a0ce9c",
+      "reason": "allowed_local_synthetic",
+      "confirmation": "CONFIRM",
+      "idempotency_key": null,
+      "created_at_ms": 1787302959323
+    },
+    {
+      "id": 4,
+      "event": "rejected",
+      "permission_id": null,
+      "reason": "confirmation_required",
+      "confirmation": "NO",
+      "idempotency_key": null,
+      "created_at_ms": 1787302959323
+    },
+    {
+      "id": 5,
+      "event": "rejected",
+      "permission_id": null,
+      "reason": "invalid_context",
+      "confirmation": "CONFIRM",
+      "idempotency_key": null,
+      "created_at_ms": 1787302959323
+    },
+    {
+      "id": 6,
+      "event": "decision_set",
+      "permission_id": "perm-f145de28-1d24-42f0-81c0-a9d5fa294e38",
+      "reason": "deny",
+      "confirmation": "CONFIRM",
+      "idempotency_key": "ir-deny-after-grant",
+      "created_at_ms": 1787302959324
+    },
+    {
+      "id": 7,
+      "event": "rejected",
+      "permission_id": null,
+      "reason": "explicit_deny_current",
+      "confirmation": "CONFIRM",
+      "idempotency_key": null,
+      "created_at_ms": 1787302959325
+    },
+    {
+      "id": 8,
+      "event": "decision_replayed",
+      "permission_id": "perm-f145de28-1d24-42f0-81c0-a9d5fa294e38",
+      "reason": "idempotent_repeat",
+      "confirmation": "CONFIRM",
+      "idempotency_key": "ir-deny-after-grant",
+      "created_at_ms": 1787302959325
+    },
+    {
+      "id": 9,
+      "event": "rejected",
+      "permission_id": "perm-f145de28-1d24-42f0-81c0-a9d5fa294e38",
+      "reason": "idempotency_conflict",
+      "confirmation": "CONFIRM",
+      "idempotency_key": "ir-deny-after-grant",
+      "created_at_ms": 1787302959326
+    },
+    {
+      "id": 10,
+      "event": "revoked",
+      "permission_id": "perm-8c0bbc8a-a64f-4d27-b785-213fb5a0ce9c",
+      "reason": "operator_revoked",
+      "confirmation": "REVOKE",
+      "idempotency_key": "ir-revoke",
+      "created_at_ms": 1787302959326
+    },
+    {
+      "id": 11,
+      "event": "rejected",
+      "permission_id": null,
+      "reason": "default_deny",
+      "confirmation": "CONFIRM",
+      "idempotency_key": null,
+      "created_at_ms": 1787302959326
+    },
+    {
+      "id": 12,
+      "event": "rejected",
+      "permission_id": null,
+      "reason": "default_deny",
+      "confirmation": "CONFIRM",
+      "idempotency_key": null,
+      "created_at_ms": 1787302959327
+    },
+    {
+      "id": 13,
+      "event": "rejected",
+      "permission_id": null,
+      "reason": "default_deny",
+      "confirmation": "CONFIRM",
+      "idempotency_key": null,
+      "created_at_ms": 1787302959327
+    }
+  ]
+}

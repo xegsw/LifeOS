@@ -1,0 +1,479 @@
+{
+  "task_id": "LIFEOS-P3-031",
+  "scope": "synthetic empty SQLite only",
+  "python": "3.9.6",
+  "sqlite": "3.51.0",
+  "migration": "/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-031/migrations/001_candidate_schema.sql",
+  "summary": {
+    "P0": {
+      "PASS": 18,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0
+    },
+    "P1": {
+      "PASS": 25,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0
+    },
+    "P2": {
+      "PASS": 21,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0
+    },
+    "total": {
+      "PASS": 64,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0
+    }
+  },
+  "results": [
+    {
+      "id": "DB-P0-01",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 4.13,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-02",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 2.23,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-03",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 2.35,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-04",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 2.14,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-05",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 2.17,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-06",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 2.09,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-07",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 0.01,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-08",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 0.01,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-09",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 2.12,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-10",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 2.04,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-11",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 2.13,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-12",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-13",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 2.26,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-14",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 2.04,
+      "detail": ""
+    },
+    {
+      "id": "DB-P0-15",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 1.94,
+      "detail": ""
+    },
+    {
+      "id": "IPC-P0-01",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 0.01,
+      "detail": ""
+    },
+    {
+      "id": "IPC-P0-02",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "detail": ""
+    },
+    {
+      "id": "IPC-P0-03",
+      "severity": "P0",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-01",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 1.94,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-02",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 2.3,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-03",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 2.24,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-04",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 1.99,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-05",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-06",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 2.03,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-07",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 2.72,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-08",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 2.09,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-09",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 2.1,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-10",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 2.07,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-11",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 2.07,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-12",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 9.11,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-13",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 49.0,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-14",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 18.67,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-15",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 14.98,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-16",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 13.86,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-17",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 15.96,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-18",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 14.81,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-19",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 8.46,
+      "detail": ""
+    },
+    {
+      "id": "CT-P1-20",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 4.12,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-01",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 1.91,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-02",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 0.02,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-03",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-04",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 0.01,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-05",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-06",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 2.17,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-07",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 1.94,
+      "detail": ""
+    },
+    {
+      "id": "CT-P2-08",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "detail": ""
+    },
+    {
+      "id": "AC-01",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 2.22,
+      "detail": ""
+    },
+    {
+      "id": "AC-02",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 1.92,
+      "detail": ""
+    },
+    {
+      "id": "AC-03",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 2.12,
+      "detail": ""
+    },
+    {
+      "id": "AC-04",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 2.39,
+      "detail": ""
+    },
+    {
+      "id": "AC-05",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 2.24,
+      "detail": ""
+    },
+    {
+      "id": "AC-06",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 2.18,
+      "detail": ""
+    },
+    {
+      "id": "AC-07",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 2.08,
+      "detail": ""
+    },
+    {
+      "id": "AC-08",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 2.2,
+      "detail": ""
+    },
+    {
+      "id": "AC-09",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 2.08,
+      "detail": ""
+    },
+    {
+      "id": "AC-10",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 1.99,
+      "detail": ""
+    },
+    {
+      "id": "AC-11",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 6.73,
+      "detail": ""
+    },
+    {
+      "id": "AC-12",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 2.29,
+      "detail": ""
+    },
+    {
+      "id": "AC-13",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 2.29,
+      "detail": ""
+    },
+    {
+      "id": "AC-14",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 6.61,
+      "detail": ""
+    },
+    {
+      "id": "AC-15",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 2.2,
+      "detail": ""
+    },
+    {
+      "id": "AC-16",
+      "severity": "P1",
+      "status": "PASS",
+      "duration_ms": 4.62,
+      "detail": ""
+    },
+    {
+      "id": "AC-17",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 2.26,
+      "detail": ""
+    },
+    {
+      "id": "AC-18",
+      "severity": "P2",
+      "status": "PASS",
+      "duration_ms": 2.53,
+      "detail": ""
+    }
+  ]
+}

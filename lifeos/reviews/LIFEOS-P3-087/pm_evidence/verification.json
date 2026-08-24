@@ -1,0 +1,32 @@
+{
+  "task": "LIFEOS-P3-087",
+  "reviewedAt": "2026-08-21",
+  "scope": "PM read-only acceptance of the isolated local responsive/accessibility UI capability package",
+  "staticRerun": {
+    "command": "/Users/xxe/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node lifeos/engineering/LIFEOS-P3-087/tests/static_check.mjs lifeos/engineering/LIFEOS-P3-087",
+    "exitCode": 0,
+    "pass": 61,
+    "fail": 0,
+    "resultSha256": "a31d784d2ef336a9e484a50586e04df08fbcc78a7bff2d274ec9de4c14ad3780"
+  },
+  "dynamicEvidence": {
+    "claimedToolchain": "Google Chrome (com.google.Chrome) via Computer Use @oai/sky",
+    "entry": "file:///private/tmp/lifeos-p3-087.Yvv65U/app/default-recovery.html",
+    "preflight": "PASS",
+    "pass": 12,
+    "fail": 0,
+    "counts": {"p0": 0, "p1": 0, "p2": 0, "unknown": 0, "notImplemented": 0},
+    "pmVisualSpotChecks": ["02-keyboard-no-suggestion.png", "05-failure-cleared.png", "07-extra-narrow-responsive.png"]
+  },
+  "integrity": {
+    "currentSourceHashesMatchEngineeringManifest": true,
+    "historicalP3085HashesMatchRecordedReadonlyValues": true,
+    "p3085RunnerIdenticalToP3087Runner": false,
+    "p3087RunnerIsTaskLocal": true
+  },
+  "localPrecheck": {
+    "status": "Skipped / Local Model Unavailable",
+    "report": "lifeos/local_prechecks/LIFEOS-P3-087_LIFEOS-P3-087_three_frozen_today_pages_responsive_accessibility_controlled_ui_capability_package_local_precheck.md"
+  },
+  "conclusion": "Accepted / PM Pass / Awaiting User Adoption"
+}

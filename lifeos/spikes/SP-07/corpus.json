@@ -1,0 +1,2280 @@
+[
+  {
+    "id": "cu-001",
+    "project_id": "project-alpha",
+    "kind": "event",
+    "title": "Alpha checkpoint",
+    "body": "resume alpha from onboarding checklist checkpoint",
+    "source_id": "src-02",
+    "source_status": "connected",
+    "artifact_id": "art-001",
+    "artifact_version_id": "av-001-v1",
+    "derivation_id": "deriv-001",
+    "link_ids": [
+      "link-001"
+    ],
+    "feedback_ids": [
+      "fb-001"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 1,
+    "unprocessed": false,
+    "audit_entry_id": "audit-001",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-002",
+    "project_id": "project-alpha",
+    "kind": "decision",
+    "title": "Alpha storage decision",
+    "body": "confirmed decision use local first storage",
+    "source_id": "src-03",
+    "source_status": "connected",
+    "artifact_id": "art-002",
+    "artifact_version_id": "av-002-v1",
+    "derivation_id": "deriv-002",
+    "link_ids": [
+      "link-002"
+    ],
+    "feedback_ids": [
+      "fb-002"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "confirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 2,
+    "unprocessed": false,
+    "audit_entry_id": "audit-002",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-003",
+    "project_id": "project-alpha",
+    "kind": "action",
+    "title": "Alpha open action",
+    "body": "open action verify backup restore drill",
+    "source_id": "src-04",
+    "source_status": "connected",
+    "artifact_id": "art-003",
+    "artifact_version_id": "av-003-v1",
+    "derivation_id": "deriv-003",
+    "link_ids": [
+      "link-003"
+    ],
+    "feedback_ids": [
+      "fb-003"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "confirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 3,
+    "unprocessed": false,
+    "audit_entry_id": "audit-003",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-004",
+    "project_id": "project-alpha",
+    "kind": "material",
+    "title": "Alpha inbox material",
+    "body": "unprocessed interview transcript onboarding friction",
+    "source_id": "src-05",
+    "source_status": "connected",
+    "artifact_id": "art-004",
+    "artifact_version_id": "av-004-v1",
+    "derivation_id": "deriv-004",
+    "link_ids": [
+      "link-004"
+    ],
+    "feedback_ids": [
+      "fb-004"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 4,
+    "unprocessed": true,
+    "audit_entry_id": "audit-004",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-005",
+    "project_id": "project-alpha",
+    "kind": "assertion",
+    "title": "Alpha conflict",
+    "body": "pricing evidence has contradictory budget claims",
+    "source_id": "src-06",
+    "source_status": "connected",
+    "artifact_id": "art-005",
+    "artifact_version_id": "av-005-v1",
+    "derivation_id": "deriv-005",
+    "link_ids": [
+      "link-005"
+    ],
+    "feedback_ids": [
+      "fb-005"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "conflict",
+    "conflict_status": "source_conflict",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 5,
+    "unprocessed": false,
+    "audit_entry_id": "audit-005",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-006",
+    "project_id": "project-alpha",
+    "kind": "action",
+    "title": "Rejected candidate",
+    "body": "rejected candidate send launch announcement",
+    "source_id": "src-07",
+    "source_status": "connected",
+    "artifact_id": "art-006",
+    "artifact_version_id": "av-006-v1",
+    "derivation_id": "deriv-006",
+    "link_ids": [
+      "link-006"
+    ],
+    "feedback_ids": [
+      "fb-006"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "rejected",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 6,
+    "unprocessed": false,
+    "audit_entry_id": "audit-006",
+    "identity": "ai_candidate"
+  },
+  {
+    "id": "cu-007",
+    "project_id": "project-alpha",
+    "kind": "action",
+    "title": "Edited accepted action",
+    "body": "user edited accepted action review onboarding copy",
+    "source_id": "src-08",
+    "source_status": "connected",
+    "artifact_id": "art-007",
+    "artifact_version_id": "av-007-v1",
+    "derivation_id": "deriv-007",
+    "link_ids": [
+      "link-007"
+    ],
+    "feedback_ids": [
+      "fb-007"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "confirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 7,
+    "unprocessed": false,
+    "audit_entry_id": "audit-007",
+    "identity": "user_confirmed"
+  },
+  {
+    "id": "cu-008",
+    "project_id": "project-alpha",
+    "kind": "decision",
+    "title": "Evidence unavailable decision",
+    "body": "confirmed decision deprecated unique evidence",
+    "source_id": "src-01",
+    "source_status": "connected",
+    "artifact_id": "art-008",
+    "artifact_version_id": "av-008-v1",
+    "derivation_id": "deriv-008",
+    "link_ids": [
+      "link-008"
+    ],
+    "feedback_ids": [
+      "fb-008"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "confirmed",
+    "evidence_status": "unavailable",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": true,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 8,
+    "unprocessed": false,
+    "audit_entry_id": "audit-008",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-009",
+    "project_id": "project-alpha",
+    "kind": "material",
+    "title": "Deleted secret",
+    "body": "deleted hidden alpha token",
+    "source_id": "src-02",
+    "source_status": "connected",
+    "artifact_id": "art-009",
+    "artifact_version_id": "av-009-v1",
+    "derivation_id": "deriv-009",
+    "link_ids": [
+      "link-009"
+    ],
+    "feedback_ids": [
+      "fb-009"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": true,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 9,
+    "unprocessed": true,
+    "audit_entry_id": "audit-009",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-010",
+    "project_id": "project-alpha",
+    "kind": "material",
+    "title": "Retracted material",
+    "body": "retracted hidden alpha memo",
+    "source_id": "src-03",
+    "source_status": "connected",
+    "artifact_id": "art-010",
+    "artifact_version_id": "av-010-v1",
+    "derivation_id": "deriv-010",
+    "link_ids": [
+      "link-010"
+    ],
+    "feedback_ids": [
+      "fb-010"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": true,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 10,
+    "unprocessed": true,
+    "audit_entry_id": "audit-010",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-011",
+    "project_id": "project-alpha",
+    "kind": "material",
+    "title": "Disconnected source",
+    "body": "disconnected hidden alpha source",
+    "source_id": "src-04",
+    "source_status": "disconnected",
+    "artifact_id": "art-011",
+    "artifact_version_id": "av-011-v1",
+    "derivation_id": "deriv-011",
+    "link_ids": [
+      "link-011"
+    ],
+    "feedback_ids": [
+      "fb-011"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 11,
+    "unprocessed": true,
+    "audit_entry_id": "audit-011",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-012",
+    "project_id": "project-alpha",
+    "kind": "action",
+    "title": "Old queue output",
+    "body": "old queue obsolete action",
+    "source_id": "src-05",
+    "source_status": "connected",
+    "artifact_id": "art-012",
+    "artifact_version_id": "av-012-v1",
+    "derivation_id": "deriv-012",
+    "link_ids": [
+      "link-012"
+    ],
+    "feedback_ids": [
+      "fb-012"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 2,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 12,
+    "unprocessed": true,
+    "audit_entry_id": "audit-012",
+    "identity": "ai_candidate"
+  },
+  {
+    "id": "cu-013",
+    "project_id": "project-alpha",
+    "kind": "material",
+    "title": "Search only evidence",
+    "body": "local search only reference launch glossary",
+    "source_id": "src-06",
+    "source_status": "connected",
+    "artifact_id": "art-013",
+    "artifact_version_id": "av-013-v1",
+    "derivation_id": "deriv-013",
+    "link_ids": [
+      "link-013"
+    ],
+    "feedback_ids": [
+      "fb-013"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 13,
+    "unprocessed": true,
+    "audit_entry_id": "audit-013",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-014",
+    "project_id": "project-alpha",
+    "kind": "event",
+    "title": "Alpha recent change",
+    "body": "recent change onboarding scope revised",
+    "source_id": "src-07",
+    "source_status": "connected",
+    "artifact_id": "art-014",
+    "artifact_version_id": "av-014-v1",
+    "derivation_id": "deriv-014",
+    "link_ids": [
+      "link-014"
+    ],
+    "feedback_ids": [
+      "fb-014"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 14,
+    "unprocessed": false,
+    "audit_entry_id": "audit-014",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-015",
+    "project_id": "project-alpha",
+    "kind": "link",
+    "title": "Alpha key link",
+    "body": "confirmed link connects decision to backup action",
+    "source_id": "src-08",
+    "source_status": "connected",
+    "artifact_id": "art-015",
+    "artifact_version_id": "av-015-v1",
+    "derivation_id": "deriv-015",
+    "link_ids": [
+      "link-015"
+    ],
+    "feedback_ids": [
+      "fb-015"
+    ],
+    "authorization_id": "auth-project-alpha",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "confirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 15,
+    "unprocessed": false,
+    "audit_entry_id": "audit-015",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-016",
+    "project_id": "project-beta",
+    "kind": "event",
+    "title": "Beta checkpoint",
+    "body": "continue beta from release readiness checkpoint",
+    "source_id": "src-01",
+    "source_status": "connected",
+    "artifact_id": "art-016",
+    "artifact_version_id": "av-016-v1",
+    "derivation_id": "deriv-016",
+    "link_ids": [
+      "link-016"
+    ],
+    "feedback_ids": [
+      "fb-016"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 16,
+    "unprocessed": false,
+    "audit_entry_id": "audit-016",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-017",
+    "project_id": "project-beta",
+    "kind": "decision",
+    "title": "Beta launch decision",
+    "body": "confirmed decision ship desktop beta first",
+    "source_id": "src-02",
+    "source_status": "connected",
+    "artifact_id": "art-017",
+    "artifact_version_id": "av-017-v1",
+    "derivation_id": "deriv-017",
+    "link_ids": [
+      "link-017"
+    ],
+    "feedback_ids": [
+      "fb-017"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "confirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 17,
+    "unprocessed": false,
+    "audit_entry_id": "audit-017",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-018",
+    "project_id": "project-beta",
+    "kind": "action",
+    "title": "Beta open action",
+    "body": "open action prepare release checklist",
+    "source_id": "src-03",
+    "source_status": "connected",
+    "artifact_id": "art-018",
+    "artifact_version_id": "av-018-v1",
+    "derivation_id": "deriv-018",
+    "link_ids": [
+      "link-018"
+    ],
+    "feedback_ids": [
+      "fb-018"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "confirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 18,
+    "unprocessed": false,
+    "audit_entry_id": "audit-018",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-019",
+    "project_id": "project-beta",
+    "kind": "material",
+    "title": "Beta research",
+    "body": "unprocessed discovery conversation notes",
+    "source_id": "src-04",
+    "source_status": "connected",
+    "artifact_id": "art-019",
+    "artifact_version_id": "av-019-v1",
+    "derivation_id": "deriv-019",
+    "link_ids": [
+      "link-019"
+    ],
+    "feedback_ids": [
+      "fb-019"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 19,
+    "unprocessed": true,
+    "audit_entry_id": "audit-019",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-020",
+    "project_id": "project-beta",
+    "kind": "assertion",
+    "title": "Beta source warning",
+    "body": "launch schedule evidence source unreachable",
+    "source_id": "src-05",
+    "source_status": "unreachable",
+    "artifact_id": "art-020",
+    "artifact_version_id": "av-020-v1",
+    "derivation_id": "deriv-020",
+    "link_ids": [
+      "link-020"
+    ],
+    "feedback_ids": [
+      "fb-020"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "unavailable",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 20,
+    "unprocessed": false,
+    "audit_entry_id": "audit-020",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-021",
+    "project_id": "project-beta",
+    "kind": "material",
+    "title": "Beta restricted",
+    "body": "restricted beta roadmap",
+    "source_id": "src-06",
+    "source_status": "connected",
+    "artifact_id": "art-021",
+    "artifact_version_id": "av-021-v1",
+    "derivation_id": "deriv-021",
+    "link_ids": [
+      "link-021"
+    ],
+    "feedback_ids": [
+      "fb-021"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "deny",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 21,
+    "unprocessed": true,
+    "audit_entry_id": "audit-021",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-022",
+    "project_id": "project-beta",
+    "kind": "event",
+    "title": "Beta recent change",
+    "body": "recent change release date revised",
+    "source_id": "src-07",
+    "source_status": "connected",
+    "artifact_id": "art-022",
+    "artifact_version_id": "av-022-v1",
+    "derivation_id": "deriv-022",
+    "link_ids": [
+      "link-022"
+    ],
+    "feedback_ids": [
+      "fb-022"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 22,
+    "unprocessed": false,
+    "audit_entry_id": "audit-022",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-023",
+    "project_id": "project-beta",
+    "kind": "action",
+    "title": "Beta completed",
+    "body": "completed action archive old mock",
+    "source_id": "src-08",
+    "source_status": "connected",
+    "artifact_id": "art-023",
+    "artifact_version_id": "av-023-v1",
+    "derivation_id": "deriv-023",
+    "link_ids": [
+      "link-023"
+    ],
+    "feedback_ids": [
+      "fb-023"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "completed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 23,
+    "unprocessed": false,
+    "audit_entry_id": "audit-023",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-024",
+    "project_id": "project-beta",
+    "kind": "assertion",
+    "title": "Beta conflict",
+    "body": "release date conflict between two current sources",
+    "source_id": "src-01",
+    "source_status": "connected",
+    "artifact_id": "art-024",
+    "artifact_version_id": "av-024-v1",
+    "derivation_id": "deriv-024",
+    "link_ids": [
+      "link-024"
+    ],
+    "feedback_ids": [
+      "fb-024"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "conflict",
+    "conflict_status": "version_conflict",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 24,
+    "unprocessed": false,
+    "audit_entry_id": "audit-024",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-025",
+    "project_id": "project-beta",
+    "kind": "material",
+    "title": "Synthetic material 25",
+    "body": "synthetic project-beta background note 9 ordinary context",
+    "source_id": "src-02",
+    "source_status": "connected",
+    "artifact_id": "art-025",
+    "artifact_version_id": "av-025-v1",
+    "derivation_id": "deriv-025",
+    "link_ids": [
+      "link-025"
+    ],
+    "feedback_ids": [
+      "fb-025"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 25,
+    "unprocessed": true,
+    "audit_entry_id": "audit-025",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-026",
+    "project_id": "project-beta",
+    "kind": "material",
+    "title": "Synthetic material 26",
+    "body": "synthetic project-beta background note 10 ordinary context",
+    "source_id": "src-03",
+    "source_status": "connected",
+    "artifact_id": "art-026",
+    "artifact_version_id": "av-026-v1",
+    "derivation_id": "deriv-026",
+    "link_ids": [
+      "link-026"
+    ],
+    "feedback_ids": [
+      "fb-026"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 26,
+    "unprocessed": true,
+    "audit_entry_id": "audit-026",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-027",
+    "project_id": "project-beta",
+    "kind": "material",
+    "title": "Synthetic material 27",
+    "body": "synthetic project-beta background note 11 ordinary context",
+    "source_id": "src-04",
+    "source_status": "connected",
+    "artifact_id": "art-027",
+    "artifact_version_id": "av-027-v1",
+    "derivation_id": "deriv-027",
+    "link_ids": [
+      "link-027"
+    ],
+    "feedback_ids": [
+      "fb-027"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 27,
+    "unprocessed": true,
+    "audit_entry_id": "audit-027",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-028",
+    "project_id": "project-beta",
+    "kind": "material",
+    "title": "Synthetic material 28",
+    "body": "synthetic project-beta background note 12 ordinary context",
+    "source_id": "src-05",
+    "source_status": "connected",
+    "artifact_id": "art-028",
+    "artifact_version_id": "av-028-v1",
+    "derivation_id": "deriv-028",
+    "link_ids": [
+      "link-028"
+    ],
+    "feedback_ids": [
+      "fb-028"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 28,
+    "unprocessed": true,
+    "audit_entry_id": "audit-028",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-029",
+    "project_id": "project-beta",
+    "kind": "material",
+    "title": "Synthetic material 29",
+    "body": "synthetic project-beta background note 13 ordinary context",
+    "source_id": "src-06",
+    "source_status": "connected",
+    "artifact_id": "art-029",
+    "artifact_version_id": "av-029-v1",
+    "derivation_id": "deriv-029",
+    "link_ids": [
+      "link-029"
+    ],
+    "feedback_ids": [
+      "fb-029"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 29,
+    "unprocessed": true,
+    "audit_entry_id": "audit-029",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-030",
+    "project_id": "project-beta",
+    "kind": "material",
+    "title": "Synthetic material 30",
+    "body": "synthetic project-beta background note 14 ordinary context",
+    "source_id": "src-07",
+    "source_status": "connected",
+    "artifact_id": "art-030",
+    "artifact_version_id": "av-030-v1",
+    "derivation_id": "deriv-030",
+    "link_ids": [
+      "link-030"
+    ],
+    "feedback_ids": [
+      "fb-030"
+    ],
+    "authorization_id": "auth-project-beta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 30,
+    "unprocessed": true,
+    "audit_entry_id": "audit-030",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-031",
+    "project_id": "project-gamma",
+    "kind": "event",
+    "title": "Gamma checkpoint",
+    "body": "pickup gamma from customer research synthesis",
+    "source_id": "src-08",
+    "source_status": "connected",
+    "artifact_id": "art-031",
+    "artifact_version_id": "av-031-v1",
+    "derivation_id": "deriv-031",
+    "link_ids": [
+      "link-031"
+    ],
+    "feedback_ids": [
+      "fb-031"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 31,
+    "unprocessed": false,
+    "audit_entry_id": "audit-031",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-032",
+    "project_id": "project-gamma",
+    "kind": "decision",
+    "title": "Gamma interview decision",
+    "body": "confirmed decision prioritize user research interviews",
+    "source_id": "src-01",
+    "source_status": "connected",
+    "artifact_id": "art-032",
+    "artifact_version_id": "av-032-v1",
+    "derivation_id": "deriv-032",
+    "link_ids": [
+      "link-032"
+    ],
+    "feedback_ids": [
+      "fb-032"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "confirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 32,
+    "unprocessed": false,
+    "audit_entry_id": "audit-032",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-033",
+    "project_id": "project-gamma",
+    "kind": "action",
+    "title": "Gamma open action",
+    "body": "open action schedule discovery interview",
+    "source_id": "src-02",
+    "source_status": "connected",
+    "artifact_id": "art-033",
+    "artifact_version_id": "av-033-v1",
+    "derivation_id": "deriv-033",
+    "link_ids": [
+      "link-033"
+    ],
+    "feedback_ids": [
+      "fb-033"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "confirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 33,
+    "unprocessed": false,
+    "audit_entry_id": "audit-033",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-034",
+    "project_id": "project-gamma",
+    "kind": "material",
+    "title": "Gamma inbox",
+    "body": "unprocessed customer conversation recording index",
+    "source_id": "src-03",
+    "source_status": "connected",
+    "artifact_id": "art-034",
+    "artifact_version_id": "av-034-v1",
+    "derivation_id": "deriv-034",
+    "link_ids": [
+      "link-034"
+    ],
+    "feedback_ids": [
+      "fb-034"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 34,
+    "unprocessed": true,
+    "audit_entry_id": "audit-034",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-035",
+    "project_id": "project-gamma",
+    "kind": "event",
+    "title": "Gamma recent",
+    "body": "recent change interview guide revised",
+    "source_id": "src-04",
+    "source_status": "connected",
+    "artifact_id": "art-035",
+    "artifact_version_id": "av-035-v1",
+    "derivation_id": "deriv-035",
+    "link_ids": [
+      "link-035"
+    ],
+    "feedback_ids": [
+      "fb-035"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 35,
+    "unprocessed": false,
+    "audit_entry_id": "audit-035",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-036",
+    "project_id": "project-gamma",
+    "kind": "material",
+    "title": "Synthetic material 36",
+    "body": "synthetic project-gamma background note 5 ordinary context",
+    "source_id": "src-05",
+    "source_status": "connected",
+    "artifact_id": "art-036",
+    "artifact_version_id": "av-036-v1",
+    "derivation_id": "deriv-036",
+    "link_ids": [
+      "link-036"
+    ],
+    "feedback_ids": [
+      "fb-036"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 36,
+    "unprocessed": true,
+    "audit_entry_id": "audit-036",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-037",
+    "project_id": "project-gamma",
+    "kind": "material",
+    "title": "Synthetic material 37",
+    "body": "synthetic project-gamma background note 6 ordinary context",
+    "source_id": "src-06",
+    "source_status": "connected",
+    "artifact_id": "art-037",
+    "artifact_version_id": "av-037-v1",
+    "derivation_id": "deriv-037",
+    "link_ids": [
+      "link-037"
+    ],
+    "feedback_ids": [
+      "fb-037"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 37,
+    "unprocessed": true,
+    "audit_entry_id": "audit-037",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-038",
+    "project_id": "project-gamma",
+    "kind": "material",
+    "title": "Synthetic material 38",
+    "body": "synthetic project-gamma background note 7 ordinary context",
+    "source_id": "src-07",
+    "source_status": "connected",
+    "artifact_id": "art-038",
+    "artifact_version_id": "av-038-v1",
+    "derivation_id": "deriv-038",
+    "link_ids": [
+      "link-038"
+    ],
+    "feedback_ids": [
+      "fb-038"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 38,
+    "unprocessed": true,
+    "audit_entry_id": "audit-038",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-039",
+    "project_id": "project-gamma",
+    "kind": "material",
+    "title": "Synthetic material 39",
+    "body": "synthetic project-gamma background note 8 ordinary context",
+    "source_id": "src-08",
+    "source_status": "connected",
+    "artifact_id": "art-039",
+    "artifact_version_id": "av-039-v1",
+    "derivation_id": "deriv-039",
+    "link_ids": [
+      "link-039"
+    ],
+    "feedback_ids": [
+      "fb-039"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 39,
+    "unprocessed": true,
+    "audit_entry_id": "audit-039",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-040",
+    "project_id": "project-gamma",
+    "kind": "material",
+    "title": "Synthetic material 40",
+    "body": "synthetic project-gamma background note 9 ordinary context",
+    "source_id": "src-01",
+    "source_status": "connected",
+    "artifact_id": "art-040",
+    "artifact_version_id": "av-040-v1",
+    "derivation_id": "deriv-040",
+    "link_ids": [
+      "link-040"
+    ],
+    "feedback_ids": [
+      "fb-040"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 40,
+    "unprocessed": true,
+    "audit_entry_id": "audit-040",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-041",
+    "project_id": "project-gamma",
+    "kind": "material",
+    "title": "Synthetic material 41",
+    "body": "synthetic project-gamma background note 10 ordinary context",
+    "source_id": "src-02",
+    "source_status": "connected",
+    "artifact_id": "art-041",
+    "artifact_version_id": "av-041-v1",
+    "derivation_id": "deriv-041",
+    "link_ids": [
+      "link-041"
+    ],
+    "feedback_ids": [
+      "fb-041"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 41,
+    "unprocessed": true,
+    "audit_entry_id": "audit-041",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-042",
+    "project_id": "project-gamma",
+    "kind": "material",
+    "title": "Synthetic material 42",
+    "body": "synthetic project-gamma background note 11 ordinary context",
+    "source_id": "src-03",
+    "source_status": "connected",
+    "artifact_id": "art-042",
+    "artifact_version_id": "av-042-v1",
+    "derivation_id": "deriv-042",
+    "link_ids": [
+      "link-042"
+    ],
+    "feedback_ids": [
+      "fb-042"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 42,
+    "unprocessed": true,
+    "audit_entry_id": "audit-042",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-043",
+    "project_id": "project-gamma",
+    "kind": "material",
+    "title": "Synthetic material 43",
+    "body": "synthetic project-gamma background note 12 ordinary context",
+    "source_id": "src-04",
+    "source_status": "connected",
+    "artifact_id": "art-043",
+    "artifact_version_id": "av-043-v1",
+    "derivation_id": "deriv-043",
+    "link_ids": [
+      "link-043"
+    ],
+    "feedback_ids": [
+      "fb-043"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 43,
+    "unprocessed": true,
+    "audit_entry_id": "audit-043",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-044",
+    "project_id": "project-gamma",
+    "kind": "material",
+    "title": "Synthetic material 44",
+    "body": "synthetic project-gamma background note 13 ordinary context",
+    "source_id": "src-05",
+    "source_status": "connected",
+    "artifact_id": "art-044",
+    "artifact_version_id": "av-044-v1",
+    "derivation_id": "deriv-044",
+    "link_ids": [
+      "link-044"
+    ],
+    "feedback_ids": [
+      "fb-044"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 44,
+    "unprocessed": true,
+    "audit_entry_id": "audit-044",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-045",
+    "project_id": "project-gamma",
+    "kind": "material",
+    "title": "Synthetic material 45",
+    "body": "synthetic project-gamma background note 14 ordinary context",
+    "source_id": "src-06",
+    "source_status": "connected",
+    "artifact_id": "art-045",
+    "artifact_version_id": "av-045-v1",
+    "derivation_id": "deriv-045",
+    "link_ids": [
+      "link-045"
+    ],
+    "feedback_ids": [
+      "fb-045"
+    ],
+    "authorization_id": "auth-project-gamma",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 45,
+    "unprocessed": true,
+    "audit_entry_id": "audit-045",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-046",
+    "project_id": "project-delta",
+    "kind": "event",
+    "title": "Delta checkpoint",
+    "body": "restart delta from cost model review",
+    "source_id": "src-07",
+    "source_status": "connected",
+    "artifact_id": "art-046",
+    "artifact_version_id": "av-046-v1",
+    "derivation_id": "deriv-046",
+    "link_ids": [
+      "link-046"
+    ],
+    "feedback_ids": [
+      "fb-046"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 46,
+    "unprocessed": false,
+    "audit_entry_id": "audit-046",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-047",
+    "project_id": "project-delta",
+    "kind": "decision",
+    "title": "Delta budget",
+    "body": "confirmed decision cap infrastructure cost budget",
+    "source_id": "src-08",
+    "source_status": "connected",
+    "artifact_id": "art-047",
+    "artifact_version_id": "av-047-v1",
+    "derivation_id": "deriv-047",
+    "link_ids": [
+      "link-047"
+    ],
+    "feedback_ids": [
+      "fb-047"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "confirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 47,
+    "unprocessed": false,
+    "audit_entry_id": "audit-047",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-048",
+    "project_id": "project-delta",
+    "kind": "action",
+    "title": "Delta open action",
+    "body": "open action verify pricing assumptions",
+    "source_id": "src-01",
+    "source_status": "connected",
+    "artifact_id": "art-048",
+    "artifact_version_id": "av-048-v1",
+    "derivation_id": "deriv-048",
+    "link_ids": [
+      "link-048"
+    ],
+    "feedback_ids": [
+      "fb-048"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "confirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 48,
+    "unprocessed": false,
+    "audit_entry_id": "audit-048",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-049",
+    "project_id": "project-delta",
+    "kind": "material",
+    "title": "Delta inbox",
+    "body": "unprocessed spend forecast worksheet",
+    "source_id": "src-02",
+    "source_status": "connected",
+    "artifact_id": "art-049",
+    "artifact_version_id": "av-049-v1",
+    "derivation_id": "deriv-049",
+    "link_ids": [
+      "link-049"
+    ],
+    "feedback_ids": [
+      "fb-049"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 49,
+    "unprocessed": true,
+    "audit_entry_id": "audit-049",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-050",
+    "project_id": "project-delta",
+    "kind": "event",
+    "title": "Delta recent",
+    "body": "recent change cost forecast revised",
+    "source_id": "src-03",
+    "source_status": "connected",
+    "artifact_id": "art-050",
+    "artifact_version_id": "av-050-v1",
+    "derivation_id": "deriv-050",
+    "link_ids": [
+      "link-050"
+    ],
+    "feedback_ids": [
+      "fb-050"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 50,
+    "unprocessed": false,
+    "audit_entry_id": "audit-050",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-051",
+    "project_id": "project-delta",
+    "kind": "material",
+    "title": "Cross project distractor",
+    "body": "alpha onboarding checklist unrelated duplicate",
+    "source_id": "src-04",
+    "source_status": "connected",
+    "artifact_id": "art-051",
+    "artifact_version_id": "av-051-v1",
+    "derivation_id": "deriv-051",
+    "link_ids": [
+      "link-051"
+    ],
+    "feedback_ids": [
+      "fb-051"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 51,
+    "unprocessed": true,
+    "audit_entry_id": "audit-051",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-052",
+    "project_id": "project-delta",
+    "kind": "material",
+    "title": "Denied cross project",
+    "body": "restricted alpha backup restore drill duplicate",
+    "source_id": "src-05",
+    "source_status": "connected",
+    "artifact_id": "art-052",
+    "artifact_version_id": "av-052-v1",
+    "derivation_id": "deriv-052",
+    "link_ids": [
+      "link-052"
+    ],
+    "feedback_ids": [
+      "fb-052"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "deny",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 52,
+    "unprocessed": true,
+    "audit_entry_id": "audit-052",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-053",
+    "project_id": "project-delta",
+    "kind": "material",
+    "title": "Deleted cross project",
+    "body": "deleted release checklist duplicate",
+    "source_id": "src-06",
+    "source_status": "connected",
+    "artifact_id": "art-053",
+    "artifact_version_id": "av-053-v1",
+    "derivation_id": "deriv-053",
+    "link_ids": [
+      "link-053"
+    ],
+    "feedback_ids": [
+      "fb-053"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": true,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 53,
+    "unprocessed": true,
+    "audit_entry_id": "audit-053",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-054",
+    "project_id": "project-delta",
+    "kind": "material",
+    "title": "Stale cross project",
+    "body": "stale interview decision duplicate",
+    "source_id": "src-07",
+    "source_status": "connected",
+    "artifact_id": "art-054",
+    "artifact_version_id": "av-054-v1",
+    "derivation_id": "deriv-054",
+    "link_ids": [
+      "link-054"
+    ],
+    "feedback_ids": [
+      "fb-054"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "unavailable",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": true,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 54,
+    "unprocessed": true,
+    "audit_entry_id": "audit-054",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-055",
+    "project_id": "project-delta",
+    "kind": "action",
+    "title": "Conflicting action branch",
+    "body": "open action publish contradictory budget",
+    "source_id": "src-08",
+    "source_status": "connected",
+    "artifact_id": "art-055",
+    "artifact_version_id": "av-055-v1",
+    "derivation_id": "deriv-055",
+    "link_ids": [
+      "link-055"
+    ],
+    "feedback_ids": [
+      "fb-055"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "confirmed",
+    "evidence_status": "conflict",
+    "conflict_status": "version_conflict",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 55,
+    "unprocessed": false,
+    "audit_entry_id": "audit-055",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-056",
+    "project_id": "project-delta",
+    "kind": "material",
+    "title": "Synthetic material 56",
+    "body": "synthetic project-delta background note 10 ordinary context",
+    "source_id": "src-01",
+    "source_status": "connected",
+    "artifact_id": "art-056",
+    "artifact_version_id": "av-056-v1",
+    "derivation_id": "deriv-056",
+    "link_ids": [
+      "link-056"
+    ],
+    "feedback_ids": [
+      "fb-056"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 56,
+    "unprocessed": true,
+    "audit_entry_id": "audit-056",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-057",
+    "project_id": "project-delta",
+    "kind": "material",
+    "title": "Synthetic material 57",
+    "body": "synthetic project-delta background note 11 ordinary context",
+    "source_id": "src-02",
+    "source_status": "connected",
+    "artifact_id": "art-057",
+    "artifact_version_id": "av-057-v1",
+    "derivation_id": "deriv-057",
+    "link_ids": [
+      "link-057"
+    ],
+    "feedback_ids": [
+      "fb-057"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 57,
+    "unprocessed": true,
+    "audit_entry_id": "audit-057",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-058",
+    "project_id": "project-delta",
+    "kind": "material",
+    "title": "Synthetic material 58",
+    "body": "synthetic project-delta background note 12 ordinary context",
+    "source_id": "src-03",
+    "source_status": "connected",
+    "artifact_id": "art-058",
+    "artifact_version_id": "av-058-v1",
+    "derivation_id": "deriv-058",
+    "link_ids": [
+      "link-058"
+    ],
+    "feedback_ids": [
+      "fb-058"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 58,
+    "unprocessed": true,
+    "audit_entry_id": "audit-058",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-059",
+    "project_id": "project-delta",
+    "kind": "material",
+    "title": "Synthetic material 59",
+    "body": "synthetic project-delta background note 13 ordinary context",
+    "source_id": "src-04",
+    "source_status": "connected",
+    "artifact_id": "art-059",
+    "artifact_version_id": "av-059-v1",
+    "derivation_id": "deriv-059",
+    "link_ids": [
+      "link-059"
+    ],
+    "feedback_ids": [
+      "fb-059"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 59,
+    "unprocessed": true,
+    "audit_entry_id": "audit-059",
+    "identity": "external_source"
+  },
+  {
+    "id": "cu-060",
+    "project_id": "project-delta",
+    "kind": "material",
+    "title": "Synthetic material 60",
+    "body": "synthetic project-delta background note 14 ordinary context",
+    "source_id": "src-05",
+    "source_status": "connected",
+    "artifact_id": "art-060",
+    "artifact_version_id": "av-060-v1",
+    "derivation_id": "deriv-060",
+    "link_ids": [
+      "link-060"
+    ],
+    "feedback_ids": [
+      "fb-060"
+    ],
+    "authorization_id": "auth-project-delta",
+    "authorization_status": "allow",
+    "allowed_purposes": [
+      "local_search",
+      "project_recovery",
+      "next_step"
+    ],
+    "confirmation_status": "unconfirmed",
+    "evidence_status": "current",
+    "conflict_status": "none",
+    "tombstoned": false,
+    "retracted": false,
+    "stale": false,
+    "queue_generation": 3,
+    "current_generation": 3,
+    "generated_at": "2026-08-09T12:00:00+08:00",
+    "updated_seq": 60,
+    "unprocessed": true,
+    "audit_entry_id": "audit-060",
+    "identity": "external_source"
+  }
+]

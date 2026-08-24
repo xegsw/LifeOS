@@ -1,0 +1,66 @@
+{
+  "task": "LIFEOS-P3-106",
+  "execution": "rework-1",
+  "rows": [
+    {
+      "id": "ACTUAL-DANGLING-FINAL",
+      "returncode": 101,
+      "sentinel_unchanged": true,
+      "log": "evidence/rework-1/actual-dangling-final.log",
+      "log_sha256": "1ea2539d37094d494b43227ef3674cc166cdee81dd3580345091e0fa896c7a23",
+      "status": "PASS",
+      "link_preserved": true,
+      "target_absent": true
+    },
+    {
+      "id": "ACTUAL-DANGLING-JOURNAL",
+      "returncode": 101,
+      "sentinel_unchanged": true,
+      "log": "evidence/rework-1/actual-dangling-journal.log",
+      "log_sha256": "e11eb117e1b361face3e26237ddcf1cd55474a75bc21e8707f206497d481ae3a",
+      "status": "PASS",
+      "link_preserved": true,
+      "target_absent": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "ACTUAL-DANGLING-WAL",
+      "returncode": 101,
+      "sentinel_unchanged": true,
+      "log": "evidence/rework-1/actual-dangling-wal.log",
+      "log_sha256": "4c4f9e4a24ef6d6472c2f602d16727c6b826448dd0377f4305c0cfe7a41bf364",
+      "status": "PASS",
+      "link_preserved": true,
+      "target_absent": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "ACTUAL-DANGLING-SHM",
+      "returncode": 101,
+      "sentinel_unchanged": true,
+      "log": "evidence/rework-1/actual-dangling-shm.log",
+      "log_sha256": "a4aa72392e59b65bd12ec35c8a79f915198a7cffc26acf7017f13e37cf7e0966",
+      "status": "PASS",
+      "link_preserved": true,
+      "target_absent": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "ACTUAL-PARENT-SYMLINK",
+      "returncode": 101,
+      "sentinel_unchanged": true,
+      "log": "evidence/rework-1/actual-parent-symlink.log",
+      "log_sha256": "d4735ddbf44211649fb357288322aca6332f7f6b877c21e2870825b3e096135b",
+      "status": "PASS",
+      "parent_link_preserved": true,
+      "db_absent": true
+    }
+  ],
+  "tamper_prepared": {
+    "db": "/private/tmp/lifeos-p3-104-p3-106-tamper-rework1-20260823/capture.sqlite",
+    "sentinel_sha256": "47a088fa6235ce883400348b71704535c94e278ec65756b1bed05549374ea367",
+    "status": "PASS"
+  },
+  "dangling_4_passed": 4,
+  "status": "PASS"
+}

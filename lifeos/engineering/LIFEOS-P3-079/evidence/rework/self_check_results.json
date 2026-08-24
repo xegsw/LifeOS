@@ -1,0 +1,36 @@
+{
+  "clean_temp_copy": "/var/folders/9m/92lnss312hz8kf__cs_9stcc0000gn/T/lifeos-p3-079-rework-9l13sxr9/LIFEOS-P3-079",
+  "cli_passed": true,
+  "conflict_visible": true,
+  "original_evidence_read_only": true,
+  "source_hashes": {
+    "scripts/make_manifest.py": "4177a28bae2d846242b90061d33a8cc9d7635b9160a39651b02cce2ad53b17a5",
+    "scripts/make_rework_manifest.py": "1ebdf73a257e6bc9d26cd3d3b332a119314b15bce4030d0aba07d30e8ee59c9f",
+    "scripts/operator_cli.py": "a2fda42bcabfb409fa28f05d383f8308cefae496de4a2465295e4284325ae45a",
+    "scripts/run_rework_self_check.py": "e730c053f6aa220c8b64c4b90182a44da2b2b0fa018877a6c63f6d705fee9dfe",
+    "scripts/run_self_check.py": "86da781792d09da5cffd64073569900783b177cefa57df3f6abba201561c6649",
+    "src/integrated_runtime.py": "19d337a560cfa3e6098571b29a71fc121e059db1c0914e3e3f58f3f740905788",
+    "tests/test_integrated_runtime.py": "c76e87cc427b01dddf82aae641b32b9515c78bbd0ab8e4e2cc636884d76ea92b",
+    "tests/test_rework_revoke.py": "0b5e29eaa94823fb6b2f370a9d95ec926d54e87108074760713c0665e8564c87"
+  },
+  "static_boundary_passed": true,
+  "static_checks": {
+    "from requests": true,
+    "from socket": true,
+    "from urllib": true,
+    "http://": true,
+    "https://": true,
+    "import requests": true,
+    "import socket": true,
+    "import urllib": true,
+    "invoke(": true,
+    "tauri::": true
+  },
+  "stderr": "test_01_unconfirmed_never_saves (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_02_save_and_view_source_status (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_03_save_is_idempotent (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_04_save_conflict_visible (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_05_atomic_failure_leaves_no_record (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_06_default_deny (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_07_exact_grant_allows_local_only (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_08_wrong_confirmation_fail_closed (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_09_deny_wins (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_10_expired_grant_denies (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_11_binding_mismatch_denies (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_12_restore_is_confirmed_and_idempotent (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_13_revoked_record_never_restores (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_14_permission_revoke_survives_restart (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_15_blocked_audit_survives_restart (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_16_boundaries_closed (test_integrated_runtime.IntegratedRuntimeTests) ... ok\ntest_17_same_key_same_permission_is_idempotent (test_rework_revoke.RevokeIdempotencyReworkTests) ... ok\ntest_18_same_key_different_permission_is_visible_conflict (test_rework_revoke.RevokeIdempotencyReworkTests) ... ok\ntest_19_restart_replay_keeps_same_receipt (test_rework_revoke.RevokeIdempotencyReworkTests) ... ok\ntest_20_audit_binds_permission_and_request_semantics (test_rework_revoke.RevokeIdempotencyReworkTests) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.041s\n\nOK\n",
+  "stdout": "",
+  "task": "LIFEOS-P3-079 D-0328 Rework",
+  "test_count": 20,
+  "test_exit_code": 0,
+  "tests_passed": true,
+  "timestamp_utc": "2026-08-21T09:22:07.066039+00:00"
+}

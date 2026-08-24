@@ -1,0 +1,6593 @@
+[
+  {
+    "abf_row": "ABF-M-001",
+    "action": "saved_runtime",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "389530046a97f9eca2ab17c1f8b6b8c56a7551500944c7efda269ef0cfcd1cb1",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "7e6f29f8-148d-4507-9480-478d8671d2d7",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "7e6f29f8-148d-4507-9480-478d8671d2d7",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": true,
+        "expected": true,
+        "name": "public_status_allowed",
+        "pass": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "capture_count",
+        "pass": true
+      },
+      {
+        "actual": [
+          "capture_saved"
+        ],
+        "expected": [
+          "capture_saved"
+        ],
+        "name": "audit_events",
+        "pass": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "page_contract",
+        "pass": true
+      },
+      {
+        "actual": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "expected": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "name": "sentinel_unchanged",
+        "pass": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "zero_residue",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-bf848216-7838-407d-861d-85ba3c7e1b10",
+    "fixture_id": "FX-IR-P3-098-001-RUNTIME",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-001-RUNTIME",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-001",
+    "action": "saved_cli",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "c6e7add4f5094e06b6343dd112022a9dab88911b35c97f4079d72b87fd0a7531",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "11818e8c-17bc-4a5d-af96-3924400e8928",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "11818e8c-17bc-4a5d-af96-3924400e8928",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": 0,
+        "expected": 0,
+        "name": "cli_exit",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "public_status_allowed",
+        "pass": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "capture_count",
+        "pass": true
+      },
+      {
+        "actual": [
+          "capture_saved"
+        ],
+        "expected": [
+          "capture_saved"
+        ],
+        "name": "audit_events",
+        "pass": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "page_contract",
+        "pass": true
+      },
+      {
+        "actual": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "expected": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "name": "sentinel_unchanged",
+        "pass": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "zero_residue",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-a33cff09-6ea0-4c05-bf91-39e3a4e9e0b4",
+    "fixture_id": "FX-IR-P3-098-001-CLI",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-001-CLI",
+    "trace": [
+      {
+        "stderr": "",
+        "stdout": {
+          "id": "11818e8c-17bc-4a5d-af96-3924400e8928",
+          "status": "saved"
+        }
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-001",
+    "action": "reopen",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "fba38678541c91cced175b7a13202b371e4143b28299566d4a365deaf63cf3d5",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "78fe20d7-f5db-4df7-ad55-448e9a73c62e",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "78fe20d7-f5db-4df7-ad55-448e9a73c62e",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "saved",
+        "expected": "saved",
+        "name": "saved",
+        "pass": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "reopen_rows",
+        "pass": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "reopen_snapshot",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "public_status_allowed",
+        "pass": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "capture_count",
+        "pass": true
+      },
+      {
+        "actual": [
+          "capture_saved"
+        ],
+        "expected": [
+          "capture_saved"
+        ],
+        "name": "audit_events",
+        "pass": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "page_contract",
+        "pass": true
+      },
+      {
+        "actual": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "expected": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "name": "sentinel_unchanged",
+        "pass": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "zero_residue",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-7ad3427e-ae64-4b46-8fdf-193fee0512b5",
+    "fixture_id": "FX-IR-P3-098-001-REOPEN",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-001-REOPEN",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-002",
+    "action": "repeat",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "d5cf8a096d3b7543dc5fa5ff4ab2ff676be95bc03451fb8845a597c6a91c7e67",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+        "size": 627,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "4cb83f14-5077-48e8-9280-4c6f4f6d3843",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ],
+          [
+            2,
+            "capture_repeat",
+            "4cb83f14-5077-48e8-9280-4c6f4f6d3843",
+            "2026-08-22T15:58:12+00:00",
+            "same_idempotency_key"
+          ]
+        ],
+        "captures": [
+          [
+            "4cb83f14-5077-48e8-9280-4c6f4f6d3843",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "4cb83f14-5077-48e8-9280-4c6f4f6d3843",
+        "expected": "4cb83f14-5077-48e8-9280-4c6f4f6d3843",
+        "name": "same_capture_id",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "public_status_allowed",
+        "pass": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "capture_count",
+        "pass": true
+      },
+      {
+        "actual": [
+          "capture_saved",
+          "capture_repeat"
+        ],
+        "expected": [
+          "capture_saved",
+          "capture_repeat"
+        ],
+        "name": "audit_events",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "page_contract",
+        "pass": true
+      },
+      {
+        "actual": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "expected": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "name": "sentinel_unchanged",
+        "pass": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "zero_residue",
+        "pass": true
+      },
+      {
+        "actual": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+        "expected": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+        "name": "trusted_page_retained",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-2701f100-31ef-469b-897c-b9b478a8ec62",
+    "fixture_id": "FX-IR-P3-098-002-REPEAT",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-002-REPEAT",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-002",
+    "action": "conflict",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "0bcef9aded2280a60f638841c825ad08fae5254d919fd4e344cb3af630a9c405",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+        "size": 627,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "90aaef51-0a12-4b9b-905c-f00041981993",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "90aaef51-0a12-4b9b-905c-f00041981993",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "0bcef9aded2280a60f638841c825ad08fae5254d919fd4e344cb3af630a9c405",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "90aaef51-0a12-4b9b-905c-f00041981993",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "90aaef51-0a12-4b9b-905c-f00041981993",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "expected": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "0bcef9aded2280a60f638841c825ad08fae5254d919fd4e344cb3af630a9c405",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "90aaef51-0a12-4b9b-905c-f00041981993",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "90aaef51-0a12-4b9b-905c-f00041981993",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "name": "conflict_zero_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-07d14309-cbc9-47b5-8be4-40e516f305d6",
+    "fixture_id": "FX-IR-P3-098-002-CONFLICT",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-002-CONFLICT",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-003",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "1b4637389acdd3bd0df2bcac6d7408c6c172f94084d8b522ebbd365fb1b95995",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+        "size": 627,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "c789ce5b-5e5d-4e41-89b1-cc9925a3a8fe",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "c789ce5b-5e5d-4e41-89b1-cc9925a3a8fe",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "1b4637389acdd3bd0df2bcac6d7408c6c172f94084d8b522ebbd365fb1b95995",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "c789ce5b-5e5d-4e41-89b1-cc9925a3a8fe",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "c789ce5b-5e5d-4e41-89b1-cc9925a3a8fe",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "expected": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "1b4637389acdd3bd0df2bcac6d7408c6c172f94084d8b522ebbd365fb1b95995",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "c789ce5b-5e5d-4e41-89b1-cc9925a3a8fe",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "c789ce5b-5e5d-4e41-89b1-cc9925a3a8fe",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "name": "actual_replace_failure_zero_change",
+        "pass": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "one_actual_live_replace_syscall",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "actual_syscall_failed",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-3daad732-ba24-4940-9a62-0117c57ce852",
+    "fixture_id": "FX-IR-P3-098-003-SAVED-REPLACE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-003-SAVED-REPLACE",
+    "trace": [
+      {
+        "actual_source": ".p3-098-missing-source",
+        "actual_syscall_executed": true,
+        "destination": "capture.sqlite",
+        "errno": 2,
+        "error": "FileNotFoundError",
+        "source_requested": ".capture.sqlite.284b58c57fe542318468159b87b383ab.shadow",
+        "syscall": "os.replace"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-004",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "e5b3267bf057eca47ac458617ffa9e00768a8d2edd0dfc1c5bae3fe603c5523b",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+        "size": 627,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "cd640f7f-a93a-40ca-a2b6-08a7fb20885f",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "cd640f7f-a93a-40ca-a2b6-08a7fb20885f",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "e5b3267bf057eca47ac458617ffa9e00768a8d2edd0dfc1c5bae3fe603c5523b",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "cd640f7f-a93a-40ca-a2b6-08a7fb20885f",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "cd640f7f-a93a-40ca-a2b6-08a7fb20885f",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "expected": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "e5b3267bf057eca47ac458617ffa9e00768a8d2edd0dfc1c5bae3fe603c5523b",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "cd640f7f-a93a-40ca-a2b6-08a7fb20885f",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "cd640f7f-a93a-40ca-a2b6-08a7fb20885f",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "name": "actual_replace_failure_zero_change",
+        "pass": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "one_actual_live_replace_syscall",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "actual_syscall_failed",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-f35dd0ff-bd8f-41da-92d2-69d482ae779b",
+    "fixture_id": "FX-IR-P3-098-004-REPEAT-REPLACE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-004-REPEAT-REPLACE",
+    "trace": [
+      {
+        "actual_source": ".p3-098-missing-source",
+        "actual_syscall_executed": true,
+        "destination": "capture.sqlite",
+        "errno": 2,
+        "error": "FileNotFoundError",
+        "source_requested": ".capture.sqlite.7863ada78a99492581f9341403d2d98f.shadow",
+        "syscall": "os.replace"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-005",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "db": {
+            "exists": false
+          },
+          "entries": [
+            "sentinel.txt"
+          ],
+          "page": {
+            "exists": false
+          },
+          "residue": [],
+          "rows": null,
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "expected": {
+          "db": {
+            "exists": false
+          },
+          "entries": [
+            "sentinel.txt"
+          ],
+          "page": {
+            "exists": false
+          },
+          "residue": [],
+          "rows": null,
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "name": "actual_replace_failure_zero_change",
+        "pass": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "one_actual_live_replace_syscall",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "actual_syscall_failed",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-5fd38b4b-1e4c-4262-9101-5774cea51fb7",
+    "fixture_id": "FX-IR-P3-098-005-MISSING-REPLACE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-005-MISSING-REPLACE",
+    "trace": [
+      {
+        "actual_source": ".p3-098-missing-source",
+        "actual_syscall_executed": true,
+        "destination": "capture.sqlite",
+        "errno": 2,
+        "error": "FileNotFoundError",
+        "source_requested": ".capture.sqlite.4c9849ff02e94a1c8f7efc3e9e6b189e.shadow",
+        "syscall": "os.replace"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-006",
+    "action": "close_fail",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "caedbcf32f9e05bf5725bc9aad85ed6ad88aca0f873bf60c3aac535f99e4ad95",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+        "size": 627,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "0161c5df-08a7-4145-8283-9aa9aa1ad241",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "0161c5df-08a7-4145-8283-9aa9aa1ad241",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "caedbcf32f9e05bf5725bc9aad85ed6ad88aca0f873bf60c3aac535f99e4ad95",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "0161c5df-08a7-4145-8283-9aa9aa1ad241",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "0161c5df-08a7-4145-8283-9aa9aa1ad241",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "expected": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "caedbcf32f9e05bf5725bc9aad85ed6ad88aca0f873bf60c3aac535f99e4ad95",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "0161c5df-08a7-4145-8283-9aa9aa1ad241",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "0161c5df-08a7-4145-8283-9aa9aa1ad241",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "name": "candidate_close_zero_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-1e22d9e2-1a94-4487-9889-50e6d8b026f8",
+    "fixture_id": "FX-IR-P3-098-006-CANDIDATE-CLOSE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-006-CANDIDATE-CLOSE",
+    "trace": [
+      {
+        "point": "candidate_write"
+      },
+      {
+        "point": "candidate_commit"
+      },
+      {
+        "point": "candidate_close_raise"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-007",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "514fdedf789200f7b382817dc5d363b8c12c06db776584d4307e8bed2627fc88",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "7427ba04-873e-4e74-b3f8-b51585946917",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ],
+          [
+            2,
+            "capture_saved",
+            "d02da127-ee61-4556-a7d1-35dccc8bc743",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "7427ba04-873e-4e74-b3f8-b51585946917",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ],
+          [
+            "d02da127-ee61-4556-a7d1-35dccc8bc743",
+            "alpha-conflict",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-beta"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "saved",
+        "expected": "saved",
+        "name": "transient_cleanup_recovers",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "public_status_allowed",
+        "pass": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "capture_count",
+        "pass": true
+      },
+      {
+        "actual": [
+          "capture_saved",
+          "capture_saved"
+        ],
+        "expected": [
+          "capture_saved",
+          "capture_saved"
+        ],
+        "name": "audit_events",
+        "pass": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "page_contract",
+        "pass": true
+      },
+      {
+        "actual": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "expected": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "name": "sentinel_unchanged",
+        "pass": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "zero_residue",
+        "pass": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "bounded_cleanup_attempts",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-89eb6332-8d2d-4b96-95be-81ad1de91e05",
+    "fixture_id": "FX-IR-P3-098-007-SIDECAR-TRANSIENT",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-007-SIDECAR-TRANSIENT",
+    "trace": [
+      {
+        "point": "candidate_write"
+      },
+      {
+        "point": "candidate_commit"
+      },
+      {
+        "point": "candidate_close_raise"
+      },
+      {
+        "point": "candidate_close_sidecar"
+      },
+      {
+        "point": "candidate_closed"
+      },
+      {
+        "point": "sidecar_cleanup_attempt_1"
+      },
+      {
+        "point": "sidecar_cleanup_attempt_2"
+      },
+      {
+        "point": "candidate_validate"
+      },
+      {
+        "point": "final_scan"
+      },
+      {
+        "point": "path_stability"
+      },
+      {
+        "point": "page_invalidate"
+      },
+      {
+        "point": "publish"
+      },
+      {
+        "point": "completion_reached"
+      },
+      {
+        "point": "post_publish_gate_fd_close"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-007",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "c1590ce2ea2d5b3cb27e40ca2fce422b377989c75f891d95067331f52a83714d",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+        "size": 627,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "cea7e453-dd64-4c09-997c-f6050e6d3406",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "cea7e453-dd64-4c09-997c-f6050e6d3406",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "c1590ce2ea2d5b3cb27e40ca2fce422b377989c75f891d95067331f52a83714d",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "cea7e453-dd64-4c09-997c-f6050e6d3406",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "cea7e453-dd64-4c09-997c-f6050e6d3406",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "expected": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "c1590ce2ea2d5b3cb27e40ca2fce422b377989c75f891d95067331f52a83714d",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "cea7e453-dd64-4c09-997c-f6050e6d3406",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "cea7e453-dd64-4c09-997c-f6050e6d3406",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "name": "persistent_cleanup_no_publish",
+        "pass": true
+      },
+      {
+        "actual": 3,
+        "expected": 3,
+        "name": "bounded_cleanup_attempts",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-116cf7c4-bb28-4dde-97d5-15cd943eed41",
+    "fixture_id": "FX-IR-P3-098-007-SIDECAR-PERSISTENT",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-007-SIDECAR-PERSISTENT",
+    "trace": [
+      {
+        "point": "candidate_write"
+      },
+      {
+        "point": "candidate_commit"
+      },
+      {
+        "point": "candidate_close_raise"
+      },
+      {
+        "point": "candidate_close_sidecar"
+      },
+      {
+        "point": "candidate_closed"
+      },
+      {
+        "point": "sidecar_cleanup_attempt_1"
+      },
+      {
+        "point": "sidecar_cleanup_attempt_2"
+      },
+      {
+        "point": "sidecar_cleanup_attempt_3"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-008",
+    "action": "page_fail",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "df053652ef1c4abdadb9d4a05f2694bab49c1d26c7b6671a4b54a17d6ceab253",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+        "size": 627,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "f5638b81-690c-4844-b641-9af65402f7b8",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "f5638b81-690c-4844-b641-9af65402f7b8",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "df053652ef1c4abdadb9d4a05f2694bab49c1d26c7b6671a4b54a17d6ceab253",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "f5638b81-690c-4844-b641-9af65402f7b8",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "f5638b81-690c-4844-b641-9af65402f7b8",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "expected": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "df053652ef1c4abdadb9d4a05f2694bab49c1d26c7b6671a4b54a17d6ceab253",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "f5638b81-690c-4844-b641-9af65402f7b8",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "f5638b81-690c-4844-b641-9af65402f7b8",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "name": "page_failure_consistent_before",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-931a199c-02f0-4e29-b327-691a8ee757d1",
+    "fixture_id": "FX-IR-P3-098-008-PAGE-INVALIDATE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-008-PAGE-INVALIDATE",
+    "trace": [
+      {
+        "point": "candidate_write"
+      },
+      {
+        "point": "candidate_commit"
+      },
+      {
+        "point": "candidate_close_raise"
+      },
+      {
+        "point": "candidate_close_sidecar"
+      },
+      {
+        "point": "candidate_closed"
+      },
+      {
+        "point": "candidate_validate"
+      },
+      {
+        "point": "final_scan"
+      },
+      {
+        "point": "path_stability"
+      },
+      {
+        "point": "page_invalidate"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-008",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "8c415918287ee25f4e07fad5c57553444fded09b1f2549e2d1b19235897539fa",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+        "size": 627,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "ae56efd4-056f-4e6e-96c7-8aba9e7ca0b3",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "ae56efd4-056f-4e6e-96c7-8aba9e7ca0b3",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "8c415918287ee25f4e07fad5c57553444fded09b1f2549e2d1b19235897539fa",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "ae56efd4-056f-4e6e-96c7-8aba9e7ca0b3",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "ae56efd4-056f-4e6e-96c7-8aba9e7ca0b3",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "expected": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "8c415918287ee25f4e07fad5c57553444fded09b1f2549e2d1b19235897539fa",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt",
+            "today.html"
+          ],
+          "page": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+            "size": 627,
+            "type": "regular"
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "ae56efd4-056f-4e6e-96c7-8aba9e7ca0b3",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "ae56efd4-056f-4e6e-96c7-8aba9e7ca0b3",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "name": "actual_replace_failure_zero_change",
+        "pass": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "one_actual_live_replace_syscall",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "actual_syscall_failed",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-92887c6b-5a45-40ad-8f4a-5504960fd07e",
+    "fixture_id": "FX-IR-P3-098-008-PUBLISH-AFTER-PAGE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-008-PUBLISH-AFTER-PAGE",
+    "trace": [
+      {
+        "actual_source": ".p3-098-missing-source",
+        "actual_syscall_executed": true,
+        "destination": "capture.sqlite",
+        "errno": 2,
+        "error": "FileNotFoundError",
+        "source_requested": ".capture.sqlite.dd20428c581d4801b1bbfe03b54db6d1.shadow",
+        "syscall": "os.replace"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-009",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "6c0a526d7aa4d70df328d62e6f36fad049be818f9e46ac1a377c81c535ddc342",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "24b89e00-81b0-4d22-ad19-a8e5f13d2a38",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "24b89e00-81b0-4d22-ad19-a8e5f13d2a38",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": true,
+        "expected": true,
+        "name": "public_status_allowed",
+        "pass": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "capture_count",
+        "pass": true
+      },
+      {
+        "actual": [
+          "capture_saved"
+        ],
+        "expected": [
+          "capture_saved"
+        ],
+        "name": "audit_events",
+        "pass": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "page_contract",
+        "pass": true
+      },
+      {
+        "actual": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "expected": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "name": "sentinel_unchanged",
+        "pass": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "zero_residue",
+        "pass": true
+      },
+      {
+        "actual": "saved",
+        "expected": "saved",
+        "name": "accurate_success_after_fd_close",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-acf845ac-7006-4b45-b32a-68b439d99f3f",
+    "fixture_id": "FX-IR-P3-098-009-SAVED-FD-CLOSE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-009-SAVED-FD-CLOSE",
+    "trace": [
+      {
+        "point": "candidate_write"
+      },
+      {
+        "point": "candidate_commit"
+      },
+      {
+        "point": "candidate_close_raise"
+      },
+      {
+        "point": "candidate_close_sidecar"
+      },
+      {
+        "point": "candidate_closed"
+      },
+      {
+        "point": "candidate_validate"
+      },
+      {
+        "point": "final_scan"
+      },
+      {
+        "point": "path_stability"
+      },
+      {
+        "point": "publish"
+      },
+      {
+        "point": "completion_reached"
+      },
+      {
+        "point": "post_publish_gate_fd_close"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-010",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "99f701e975df9af640a9e8e9317027d7eaf67c8174a7da7bc8b07ec621d51cf1",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+        "size": 627,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "3f2483ea-4cd5-4c7a-9314-2a43943a4dbe",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ],
+          [
+            2,
+            "capture_repeat",
+            "3f2483ea-4cd5-4c7a-9314-2a43943a4dbe",
+            "2026-08-22T15:58:12+00:00",
+            "same_idempotency_key"
+          ]
+        ],
+        "captures": [
+          [
+            "3f2483ea-4cd5-4c7a-9314-2a43943a4dbe",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": true,
+        "expected": true,
+        "name": "public_status_allowed",
+        "pass": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "capture_count",
+        "pass": true
+      },
+      {
+        "actual": [
+          "capture_saved",
+          "capture_repeat"
+        ],
+        "expected": [
+          "capture_saved",
+          "capture_repeat"
+        ],
+        "name": "audit_events",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "page_contract",
+        "pass": true
+      },
+      {
+        "actual": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "expected": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "name": "sentinel_unchanged",
+        "pass": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "zero_residue",
+        "pass": true
+      },
+      {
+        "actual": "idempotent_repeat",
+        "expected": "idempotent_repeat",
+        "name": "accurate_success_after_fd_close",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-e24096f5-ab34-49db-b5bb-fe7ce3cb521a",
+    "fixture_id": "FX-IR-P3-098-010-REPEAT-FD-CLOSE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-010-REPEAT-FD-CLOSE",
+    "trace": [
+      {
+        "point": "candidate_write"
+      },
+      {
+        "point": "candidate_commit"
+      },
+      {
+        "point": "candidate_close_raise"
+      },
+      {
+        "point": "candidate_close_sidecar"
+      },
+      {
+        "point": "candidate_closed"
+      },
+      {
+        "point": "candidate_validate"
+      },
+      {
+        "point": "final_scan"
+      },
+      {
+        "point": "path_stability"
+      },
+      {
+        "point": "publish"
+      },
+      {
+        "point": "completion_reached"
+      },
+      {
+        "point": "post_publish_gate_fd_close"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-011",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "external.txt",
+        "linked",
+        "real",
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": false
+            },
+            "entries": [
+              "external.txt",
+              "linked",
+              "real",
+              "sentinel.txt"
+            ],
+            "page": {
+              "exists": false
+            },
+            "residue": [],
+            "rows": null,
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "expected": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": false
+            },
+            "entries": [
+              "external.txt",
+              "linked",
+              "real",
+              "sentinel.txt"
+            ],
+            "page": {
+              "exists": false
+            },
+            "residue": [],
+            "rows": null,
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "name": "ancestor_refused_before_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-8603198e-5b1f-4f62-a447-f5656b99ce79",
+    "fixture_id": "FX-IR-P3-098-011-ANCESTOR-DB-LINK",
+    "severity_on_failure": "P0",
+    "status": "PASS",
+    "test_id": "IR-P3-098-011-ANCESTOR-DB-LINK",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-011",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "size": 79,
+        "target": "/private/tmp/lifeos-p3-098-g4pj3olz/fx-ir-p3-098-011-final-db-link/external.txt",
+        "type": "symlink"
+      },
+      "entries": [
+        "capture.sqlite",
+        "external.txt",
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": {
+        "unreadable": true
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "size": 79,
+              "target": "/private/tmp/lifeos-p3-098-g4pj3olz/fx-ir-p3-098-011-final-db-link/external.txt",
+              "type": "symlink"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "sentinel.txt"
+            ],
+            "page": {
+              "exists": false
+            },
+            "residue": [],
+            "rows": {
+              "unreadable": true
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "expected": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "size": 79,
+              "target": "/private/tmp/lifeos-p3-098-g4pj3olz/fx-ir-p3-098-011-final-db-link/external.txt",
+              "type": "symlink"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "sentinel.txt"
+            ],
+            "page": {
+              "exists": false
+            },
+            "residue": [],
+            "rows": {
+              "unreadable": true
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "name": "db_symlink_refused_before_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-e38108d3-2122-4036-a62f-72a33950cddc",
+    "fixture_id": "FX-IR-P3-098-011-FINAL-DB-LINK",
+    "severity_on_failure": "P0",
+    "status": "PASS",
+    "test_id": "IR-P3-098-011-FINAL-DB-LINK",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-011",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "b0b38f36b1db495f40537102a0713ff66c95344782346c9eeead72cc43b70b9e",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "external.txt",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "size": 81,
+        "target": "/private/tmp/lifeos-p3-098-g4pj3olz/fx-ir-p3-098-011-final-page-link/external.txt",
+        "type": "symlink"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "1a14569a-f431-4b5d-b778-c8fbc3f31097",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "1a14569a-f431-4b5d-b778-c8fbc3f31097",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "b0b38f36b1db495f40537102a0713ff66c95344782346c9eeead72cc43b70b9e",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "sentinel.txt",
+              "today.html"
+            ],
+            "page": {
+              "exists": true,
+              "nlink": 1,
+              "size": 81,
+              "target": "/private/tmp/lifeos-p3-098-g4pj3olz/fx-ir-p3-098-011-final-page-link/external.txt",
+              "type": "symlink"
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "1a14569a-f431-4b5d-b778-c8fbc3f31097",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "1a14569a-f431-4b5d-b778-c8fbc3f31097",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "expected": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "b0b38f36b1db495f40537102a0713ff66c95344782346c9eeead72cc43b70b9e",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "sentinel.txt",
+              "today.html"
+            ],
+            "page": {
+              "exists": true,
+              "nlink": 1,
+              "size": 81,
+              "target": "/private/tmp/lifeos-p3-098-g4pj3olz/fx-ir-p3-098-011-final-page-link/external.txt",
+              "type": "symlink"
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "1a14569a-f431-4b5d-b778-c8fbc3f31097",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "1a14569a-f431-4b5d-b778-c8fbc3f31097",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "name": "page_symlink_refused_before_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-d9199704-898d-45e0-a5c8-f11f9ca24302",
+    "fixture_id": "FX-IR-P3-098-011-FINAL-PAGE-LINK",
+    "severity_on_failure": "P0",
+    "status": "PASS",
+    "test_id": "IR-P3-098-011-FINAL-PAGE-LINK",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-011",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 2,
+        "sha256": "714f6a63bfa880e6fd529d207bd03d2a283115616bea4013da8aa74ae58e0b84",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "db-hardlink",
+        "external.txt",
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "dcb50fe4-5940-48b6-8f93-0a3c4eb1e535",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "dcb50fe4-5940-48b6-8f93-0a3c4eb1e535",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 2,
+              "sha256": "714f6a63bfa880e6fd529d207bd03d2a283115616bea4013da8aa74ae58e0b84",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "db-hardlink",
+              "external.txt",
+              "sentinel.txt"
+            ],
+            "page": {
+              "exists": false
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "dcb50fe4-5940-48b6-8f93-0a3c4eb1e535",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "dcb50fe4-5940-48b6-8f93-0a3c4eb1e535",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "expected": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 2,
+              "sha256": "714f6a63bfa880e6fd529d207bd03d2a283115616bea4013da8aa74ae58e0b84",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "db-hardlink",
+              "external.txt",
+              "sentinel.txt"
+            ],
+            "page": {
+              "exists": false
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "dcb50fe4-5940-48b6-8f93-0a3c4eb1e535",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "dcb50fe4-5940-48b6-8f93-0a3c4eb1e535",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "name": "db_hardlink_refused_before_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-ecc5d3e1-c581-4d90-9f50-2fa0cc2175db",
+    "fixture_id": "FX-IR-P3-098-011-DB-HARDLINK",
+    "severity_on_failure": "P0",
+    "status": "PASS",
+    "test_id": "IR-P3-098-011-DB-HARDLINK",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-011",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "84fc8173cc1ca8e2a3ea73e8627eced406fe025853e17b05e3a8b1255397188d",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "external.txt",
+        "page-hardlink",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 2,
+        "sha256": "a9a089195c68d2adeee23beaa2c3a93b1d4cdf09046e7a9e520b3b166dff3e6a",
+        "size": 7,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "6da57c5f-eb85-4b44-bad2-8dc6fd5f24bd",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "6da57c5f-eb85-4b44-bad2-8dc6fd5f24bd",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "84fc8173cc1ca8e2a3ea73e8627eced406fe025853e17b05e3a8b1255397188d",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "page-hardlink",
+              "sentinel.txt",
+              "today.html"
+            ],
+            "page": {
+              "exists": true,
+              "nlink": 2,
+              "sha256": "a9a089195c68d2adeee23beaa2c3a93b1d4cdf09046e7a9e520b3b166dff3e6a",
+              "size": 7,
+              "type": "regular"
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "6da57c5f-eb85-4b44-bad2-8dc6fd5f24bd",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "6da57c5f-eb85-4b44-bad2-8dc6fd5f24bd",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "expected": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "84fc8173cc1ca8e2a3ea73e8627eced406fe025853e17b05e3a8b1255397188d",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "page-hardlink",
+              "sentinel.txt",
+              "today.html"
+            ],
+            "page": {
+              "exists": true,
+              "nlink": 2,
+              "sha256": "a9a089195c68d2adeee23beaa2c3a93b1d4cdf09046e7a9e520b3b166dff3e6a",
+              "size": 7,
+              "type": "regular"
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "6da57c5f-eb85-4b44-bad2-8dc6fd5f24bd",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "6da57c5f-eb85-4b44-bad2-8dc6fd5f24bd",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "name": "page_hardlink_refused_before_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-f176a1a5-1897-4930-976f-30a4ae6d2987",
+    "fixture_id": "FX-IR-P3-098-011-PAGE-HARDLINK",
+    "severity_on_failure": "P0",
+    "status": "PASS",
+    "test_id": "IR-P3-098-011-PAGE-HARDLINK",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-011",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "size": 0,
+        "type": "fifo"
+      },
+      "entries": [
+        "capture.sqlite",
+        "external.txt",
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "size": 0,
+              "type": "fifo"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "sentinel.txt"
+            ],
+            "page": {
+              "exists": false
+            },
+            "residue": [],
+            "rows": null,
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "expected": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "size": 0,
+              "type": "fifo"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "sentinel.txt"
+            ],
+            "page": {
+              "exists": false
+            },
+            "residue": [],
+            "rows": null,
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "name": "db_fifo_refused_before_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-5c8b34a2-58a1-4e8b-ba5a-7f234fc70e83",
+    "fixture_id": "FX-IR-P3-098-011-DB-FIFO",
+    "severity_on_failure": "P0",
+    "status": "PASS",
+    "test_id": "IR-P3-098-011-DB-FIFO",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-011",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 2,
+        "size": 64,
+        "type": "directory"
+      },
+      "entries": [
+        "capture.sqlite",
+        "external.txt",
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 2,
+              "size": 64,
+              "type": "directory"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "sentinel.txt"
+            ],
+            "page": {
+              "exists": false
+            },
+            "residue": [],
+            "rows": null,
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "expected": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 2,
+              "size": 64,
+              "type": "directory"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "sentinel.txt"
+            ],
+            "page": {
+              "exists": false
+            },
+            "residue": [],
+            "rows": null,
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "name": "db_dir_refused_before_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-3450ac66-5798-406a-8f00-f02209401300",
+    "fixture_id": "FX-IR-P3-098-011-DB-DIR",
+    "severity_on_failure": "P0",
+    "status": "PASS",
+    "test_id": "IR-P3-098-011-DB-DIR",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-011",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "eabe0c2171b565afe9aeec09bd00901403b8cbfa565b71a3af4ae1372f779b2d",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "external.txt",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "size": 0,
+        "type": "fifo"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "c9b0ba01-27ab-4031-875a-b8b32dcbd313",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "c9b0ba01-27ab-4031-875a-b8b32dcbd313",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "eabe0c2171b565afe9aeec09bd00901403b8cbfa565b71a3af4ae1372f779b2d",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "sentinel.txt",
+              "today.html"
+            ],
+            "page": {
+              "exists": true,
+              "nlink": 1,
+              "size": 0,
+              "type": "fifo"
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "c9b0ba01-27ab-4031-875a-b8b32dcbd313",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "c9b0ba01-27ab-4031-875a-b8b32dcbd313",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "expected": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "eabe0c2171b565afe9aeec09bd00901403b8cbfa565b71a3af4ae1372f779b2d",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "sentinel.txt",
+              "today.html"
+            ],
+            "page": {
+              "exists": true,
+              "nlink": 1,
+              "size": 0,
+              "type": "fifo"
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "c9b0ba01-27ab-4031-875a-b8b32dcbd313",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "c9b0ba01-27ab-4031-875a-b8b32dcbd313",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "name": "page_fifo_refused_before_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-5921e960-b8de-4d26-9600-5e1268981c6f",
+    "fixture_id": "FX-IR-P3-098-011-PAGE-FIFO",
+    "severity_on_failure": "P0",
+    "status": "PASS",
+    "test_id": "IR-P3-098-011-PAGE-FIFO",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-011",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "1580474c46576fa474ebd1760ead9ca5790c34e3e08649f1d45fd75102bed8c6",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "external.txt",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 2,
+        "size": 64,
+        "type": "directory"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "9704a0c9-1bf6-492d-9379-0e7e43373b5c",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "9704a0c9-1bf6-492d-9379-0e7e43373b5c",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "1580474c46576fa474ebd1760ead9ca5790c34e3e08649f1d45fd75102bed8c6",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "sentinel.txt",
+              "today.html"
+            ],
+            "page": {
+              "exists": true,
+              "nlink": 2,
+              "size": 64,
+              "type": "directory"
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "9704a0c9-1bf6-492d-9379-0e7e43373b5c",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "9704a0c9-1bf6-492d-9379-0e7e43373b5c",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "expected": {
+          "external": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "1580474c46576fa474ebd1760ead9ca5790c34e3e08649f1d45fd75102bed8c6",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "external.txt",
+              "sentinel.txt",
+              "today.html"
+            ],
+            "page": {
+              "exists": true,
+              "nlink": 2,
+              "size": 64,
+              "type": "directory"
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "9704a0c9-1bf6-492d-9379-0e7e43373b5c",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "9704a0c9-1bf6-492d-9379-0e7e43373b5c",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "name": "page_dir_refused_before_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-4ec5bc11-6e82-450d-9849-8604a5c89777",
+    "fixture_id": "FX-IR-P3-098-011-PAGE-DIR",
+    "severity_on_failure": "P0",
+    "status": "PASS",
+    "test_id": "IR-P3-098-011-PAGE-DIR",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-011",
+    "action": "db_noncanon",
+    "after": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "db": {
+            "exists": false
+          },
+          "entries": [
+            "sentinel.txt"
+          ],
+          "page": {
+            "exists": false
+          },
+          "residue": [],
+          "rows": null,
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "expected": {
+          "db": {
+            "exists": false
+          },
+          "entries": [
+            "sentinel.txt"
+          ],
+          "page": {
+            "exists": false
+          },
+          "residue": [],
+          "rows": null,
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "name": "noncanonical_db_zero_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-727b8cfa-5bf0-40b6-82d0-6a62aca57d02",
+    "fixture_id": "FX-IR-P3-098-011-DB-NONCANON",
+    "severity_on_failure": "P0",
+    "status": "PASS",
+    "test_id": "IR-P3-098-011-DB-NONCANON",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-011",
+    "action": "page_noncanon",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "ef8f3f6918f34ccbcbf184bb2869b0275e807ed818d2c9021a6f05cfcdaf68a0",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "e2ac1e16-2684-402d-84a0-e1af663b5a7e",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "e2ac1e16-2684-402d-84a0-e1af663b5a7e",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "ef8f3f6918f34ccbcbf184bb2869b0275e807ed818d2c9021a6f05cfcdaf68a0",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt"
+          ],
+          "page": {
+            "exists": false
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "e2ac1e16-2684-402d-84a0-e1af663b5a7e",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "e2ac1e16-2684-402d-84a0-e1af663b5a7e",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "expected": {
+          "db": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "ef8f3f6918f34ccbcbf184bb2869b0275e807ed818d2c9021a6f05cfcdaf68a0",
+            "size": 24576,
+            "type": "regular"
+          },
+          "entries": [
+            "capture.sqlite",
+            "sentinel.txt"
+          ],
+          "page": {
+            "exists": false
+          },
+          "residue": [],
+          "rows": {
+            "audit": [
+              [
+                1,
+                "capture_saved",
+                "e2ac1e16-2684-402d-84a0-e1af663b5a7e",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture"
+              ]
+            ],
+            "captures": [
+              [
+                "e2ac1e16-2684-402d-84a0-e1af663b5a7e",
+                "alpha",
+                "2026-08-22T15:58:12+00:00",
+                "local_capture",
+                "key-alpha"
+              ]
+            ]
+          },
+          "sentinel": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          }
+        },
+        "name": "noncanonical_output_zero_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-1a8330b4-a4a7-4e14-8b2e-4314588aa261",
+    "fixture_id": "FX-IR-P3-098-011-PAGE-NONCANON",
+    "severity_on_failure": "P0",
+    "status": "PASS",
+    "test_id": "IR-P3-098-011-PAGE-NONCANON",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-012",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "8de0bf3e245a4a5e0a2b1861c7e0e133a7b22a33704bbb39a7d2f7437598d32e",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+        "size": 627,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "2502e84d-a6c6-4918-a609-868ecde86ccc",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "2502e84d-a6c6-4918-a609-868ecde86ccc",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "outside": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "8de0bf3e245a4a5e0a2b1861c7e0e133a7b22a33704bbb39a7d2f7437598d32e",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "sentinel.txt",
+              "today.html"
+            ],
+            "page": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+              "size": 627,
+              "type": "regular"
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "2502e84d-a6c6-4918-a609-868ecde86ccc",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "2502e84d-a6c6-4918-a609-868ecde86ccc",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "expected": {
+          "outside": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "8de0bf3e245a4a5e0a2b1861c7e0e133a7b22a33704bbb39a7d2f7437598d32e",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "sentinel.txt",
+              "today.html"
+            ],
+            "page": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+              "size": 627,
+              "type": "regular"
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "2502e84d-a6c6-4918-a609-868ecde86ccc",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "2502e84d-a6c6-4918-a609-868ecde86ccc",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "name": "external_output_zero_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-ea7d3f80-539b-4b53-b6d1-08c6b4a4587a",
+    "fixture_id": "FX-IR-P3-098-012-RENDER-EXTERNAL",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-012-RENDER-EXTERNAL",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-012",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "432927d0e9319ab4b935c91d62a71ed1e2514c669457e0662fa55102a9f64d3e",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+        "size": 627,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "fbf3a061-82b1-4921-bf74-485f6dd50074",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "fbf3a061-82b1-4921-bf74-485f6dd50074",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": {
+          "outside": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "432927d0e9319ab4b935c91d62a71ed1e2514c669457e0662fa55102a9f64d3e",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "sentinel.txt",
+              "today.html"
+            ],
+            "page": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+              "size": 627,
+              "type": "regular"
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "fbf3a061-82b1-4921-bf74-485f6dd50074",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "fbf3a061-82b1-4921-bf74-485f6dd50074",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "expected": {
+          "outside": {
+            "exists": true,
+            "nlink": 1,
+            "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+            "size": 15,
+            "type": "regular"
+          },
+          "root": {
+            "db": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "432927d0e9319ab4b935c91d62a71ed1e2514c669457e0662fa55102a9f64d3e",
+              "size": 24576,
+              "type": "regular"
+            },
+            "entries": [
+              "capture.sqlite",
+              "sentinel.txt",
+              "today.html"
+            ],
+            "page": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "d71a9f7d2602dc560b4ffa749e3119add1d42db21450e9681a95e8a32db0cd27",
+              "size": 627,
+              "type": "regular"
+            },
+            "residue": [],
+            "rows": {
+              "audit": [
+                [
+                  1,
+                  "capture_saved",
+                  "fbf3a061-82b1-4921-bf74-485f6dd50074",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture"
+                ]
+              ],
+              "captures": [
+                [
+                  "fbf3a061-82b1-4921-bf74-485f6dd50074",
+                  "alpha",
+                  "2026-08-22T15:58:12+00:00",
+                  "local_capture",
+                  "key-alpha"
+                ]
+              ]
+            },
+            "sentinel": {
+              "exists": true,
+              "nlink": 1,
+              "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+              "size": 15,
+              "type": "regular"
+            }
+          }
+        },
+        "name": "external_output_zero_change",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-613eba3f-6ec5-4bce-b517-dbdb39f54dca",
+    "fixture_id": "FX-IR-P3-098-012-CLEAR-EXTERNAL",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-012-CLEAR-EXTERNAL",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-013",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "bca5e9a6cca6259803c26355080cc86789bf1669e3695e56f4eee6a6f66acd5b",
+        "size": 20480,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "a03f2386ae06b21109577020844df367857b72c2fcce384c1896fed98a89c82b",
+        "size": 5,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "b7b59546-ba33-4d9c-8593-9d2b4fce1aee",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "b7b59546-ba33-4d9c-8593-9d2b4fce1aee",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": "bca5e9a6cca6259803c26355080cc86789bf1669e3695e56f4eee6a6f66acd5b",
+        "expected": "bca5e9a6cca6259803c26355080cc86789bf1669e3695e56f4eee6a6f66acd5b",
+        "name": "mutated_schema_db_unchanged",
+        "pass": true
+      },
+      {
+        "actual": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "expected": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "name": "sentinel_unchanged",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-1a69f751-9fb4-4651-a2e7-e0c5961222d4",
+    "fixture_id": "FX-IR-P3-098-013-SCHEMA-PK",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-013-SCHEMA-PK",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-013",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "ac538509982c6420e47d2b580c2565b8f28c03a34fd7cf00dffa2278bed54b56",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "1fa870fb-d6a0-47ee-9040-a958a0543759",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "1fa870fb-d6a0-47ee-9040-a958a0543759",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": "ac538509982c6420e47d2b580c2565b8f28c03a34fd7cf00dffa2278bed54b56",
+        "expected": "ac538509982c6420e47d2b580c2565b8f28c03a34fd7cf00dffa2278bed54b56",
+        "name": "mutated_schema_db_unchanged",
+        "pass": true
+      },
+      {
+        "actual": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "expected": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "name": "sentinel_unchanged",
+        "pass": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "stale_page_invalidated_on_untrusted_render",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-d180e3b0-ede9-4b6f-9c9d-291f212e11c8",
+    "fixture_id": "FX-IR-P3-098-013-SCHEMA-NOTNULL",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-013-SCHEMA-NOTNULL",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-013",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "6b6a356cc6e8b195adddee866fd02e868100f9ab665e30d00b9bc7cf779ddf46",
+        "size": 20480,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "a03f2386ae06b21109577020844df367857b72c2fcce384c1896fed98a89c82b",
+        "size": 5,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "1f003e56-ce47-4648-9c7e-79f17aeb46ff",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "1f003e56-ce47-4648-9c7e-79f17aeb46ff",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": "6b6a356cc6e8b195adddee866fd02e868100f9ab665e30d00b9bc7cf779ddf46",
+        "expected": "6b6a356cc6e8b195adddee866fd02e868100f9ab665e30d00b9bc7cf779ddf46",
+        "name": "mutated_schema_db_unchanged",
+        "pass": true
+      },
+      {
+        "actual": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "expected": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "name": "sentinel_unchanged",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-52232b77-3179-4633-8211-ddc993dde2b4",
+    "fixture_id": "FX-IR-P3-098-013-SCHEMA-UNIQUE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-013-SCHEMA-UNIQUE",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-013",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "ef9a63b057d9f01aa75a24867ebd598bb6ee9ce3911a996f525767ae45875ad5",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "a03f2386ae06b21109577020844df367857b72c2fcce384c1896fed98a89c82b",
+        "size": 5,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "f476b989-6f4b-4da4-b4dd-449ef5160374",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "f476b989-6f4b-4da4-b4dd-449ef5160374",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "external",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": "ef9a63b057d9f01aa75a24867ebd598bb6ee9ce3911a996f525767ae45875ad5",
+        "expected": "ef9a63b057d9f01aa75a24867ebd598bb6ee9ce3911a996f525767ae45875ad5",
+        "name": "semantic_mutation_db_unchanged",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-5f185dd1-4806-4a46-9011-d5c768109585",
+    "fixture_id": "FX-IR-P3-098-013-SOURCE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-013-SOURCE",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-013",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "cf7f2423273e647035d15c0a240184de076da222a0ad51000f5ea526d770e3ab",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "e479038d-57e2-4075-adfe-f4c75dff48e6",
+            "2026-08-23T15:58:12+00:00",
+            "local_capture"
+          ]
+        ],
+        "captures": [
+          [
+            "e479038d-57e2-4075-adfe-f4c75dff48e6",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "future_audit_stale_page_invalidated",
+        "pass": true
+      },
+      {
+        "actual": "cf7f2423273e647035d15c0a240184de076da222a0ad51000f5ea526d770e3ab",
+        "expected": "cf7f2423273e647035d15c0a240184de076da222a0ad51000f5ea526d770e3ab",
+        "name": "semantic_mutation_db_unchanged",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-652d40eb-7512-44dc-a2be-aa2323a579cb",
+    "fixture_id": "FX-IR-P3-098-013-AUDIT-FUTURE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-013-AUDIT-FUTURE",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-013",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "ab5ef3e36c1f6e2c2ff8146d36416cfe762b4c0952f203dc2df6078e900b27e7",
+        "size": 24576,
+        "type": "regular"
+      },
+      "entries": [
+        "capture.sqlite",
+        "sentinel.txt",
+        "today.html"
+      ],
+      "page": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "a03f2386ae06b21109577020844df367857b72c2fcce384c1896fed98a89c82b",
+        "size": 5,
+        "type": "regular"
+      },
+      "residue": [],
+      "rows": {
+        "audit": [
+          [
+            1,
+            "capture_saved",
+            "ef8ae6a2-5fa3-4e24-a303-a098afa1c482",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture"
+          ],
+          [
+            2,
+            "capture_repeat",
+            "ef8ae6a2-5fa3-4e24-a303-a098afa1c482",
+            "2026-08-21T15:58:12+00:00",
+            "same_idempotency_key"
+          ]
+        ],
+        "captures": [
+          [
+            "ef8ae6a2-5fa3-4e24-a303-a098afa1c482",
+            "alpha",
+            "2026-08-22T15:58:12+00:00",
+            "local_capture",
+            "key-alpha"
+          ]
+        ]
+      },
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": "CaptureError",
+        "name": "explicit_candidate_failure",
+        "pass": true
+      },
+      {
+        "actual": "ab5ef3e36c1f6e2c2ff8146d36416cfe762b4c0952f203dc2df6078e900b27e7",
+        "expected": "ab5ef3e36c1f6e2c2ff8146d36416cfe762b4c0952f203dc2df6078e900b27e7",
+        "name": "semantic_mutation_db_unchanged",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-9ac9dfc3-22c2-4aeb-b691-49f3cc42ac6a",
+    "fixture_id": "FX-IR-P3-098-013-AUDIT-REVERSE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-013-AUDIT-REVERSE",
+    "trace": []
+  },
+  {
+    "abf_row": "ABF-M-014",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "negative_gate_nonzero",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "negative_gate_not_implemented",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-a0928169-46ae-430b-8b95-035e3df3302f",
+    "fixture_id": "FX-IR-P3-098-014-MISSING-ROW",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-014-MISSING-ROW",
+    "trace": [
+      {
+        "duplicate_execution_ids": [],
+        "exit_code": 1,
+        "missing_assertions": [],
+        "missing_rows": [
+          "IR-P3-098-015-RESIDUE"
+        ],
+        "not_implemented": 1,
+        "unreproducible": []
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-014",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "negative_gate_nonzero",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "negative_gate_not_implemented",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-39a7d2e8-cfd7-4f58-a120-b173fb856f2d",
+    "fixture_id": "FX-IR-P3-098-014-DUP-EXEC",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-014-DUP-EXEC",
+    "trace": [
+      {
+        "duplicate_execution_ids": [
+          "EX-0"
+        ],
+        "exit_code": 1,
+        "missing_assertions": [],
+        "missing_rows": [],
+        "not_implemented": 1,
+        "unreproducible": []
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-014",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "negative_gate_nonzero",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "negative_gate_not_implemented",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-4288d2b3-a95d-4da1-8e44-b3bfaf65dae2",
+    "fixture_id": "FX-IR-P3-098-014-MISSING-ASSERT",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-014-MISSING-ASSERT",
+    "trace": [
+      {
+        "duplicate_execution_ids": [],
+        "exit_code": 1,
+        "missing_assertions": [
+          "IR-P3-098-001-RUNTIME"
+        ],
+        "missing_rows": [],
+        "not_implemented": 1,
+        "unreproducible": []
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-014",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": 1,
+        "expected": 1,
+        "name": "negative_gate_nonzero",
+        "pass": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "name": "negative_gate_not_implemented",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-91f6f3a9-251b-4755-842d-34cebbb9ee86",
+    "fixture_id": "FX-IR-P3-098-014-UNREPRODUCIBLE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-014-UNREPRODUCIBLE",
+    "trace": [
+      {
+        "duplicate_execution_ids": [],
+        "exit_code": 1,
+        "missing_assertions": [],
+        "missing_rows": [],
+        "not_implemented": 1,
+        "unreproducible": [
+          "IR-P3-098-001-RUNTIME"
+        ]
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-015",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": true,
+        "expected": true,
+        "name": "IR-P3-098-015-HASH-PRE",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-190c69e9-907b-44e5-8b4e-f4535f928c1a",
+    "fixture_id": "FX-IR-P3-098-015-HASH-PRE",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-015-HASH-PRE",
+    "trace": [
+      {
+        "all_match": true,
+        "checks": [
+          {
+            "actual": "3355c7f3e744abfd3be392902217f8abfa02bb783a492d87e88d8a63ddb2a09f",
+            "expected": "3355c7f3e744abfd3be392902217f8abfa02bb783a492d87e88d8a63ddb2a09f",
+            "match": true,
+            "path": "lifeos/tasks/LIFEOS-P3-097_irreversible_commit_completion_boundary_closure.md"
+          },
+          {
+            "actual": "0160640bdee51436dba4da4fd1b8d4bde9a3b0e101fc09c2b0c5be79e254f048",
+            "expected": "0160640bdee51436dba4da4fd1b8d4bde9a3b0e101fc09c2b0c5be79e254f048",
+            "match": true,
+            "path": "lifeos/tasks/LIFEOS-P3-097_irreversible_commit_completion_boundary_acceptance_basis_freeze.md"
+          },
+          {
+            "actual": "a214e681ebf9449af9097edde42cd04b02dc83be2a09eec472e1a3b67c386ee1",
+            "expected": "a214e681ebf9449af9097edde42cd04b02dc83be2a09eec472e1a3b67c386ee1",
+            "match": true,
+            "path": "lifeos/deliverables/LIFEOS-P3-097_irreversible_commit_completion_boundary_closure.md"
+          },
+          {
+            "actual": "1535fd1fa45b581a042be73bdbfdde1905c2ea7ff10c3554952b53882f455453",
+            "expected": "1535fd1fa45b581a042be73bdbfdde1905c2ea7ff10c3554952b53882f455453",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/src/local_capture.py"
+          },
+          {
+            "actual": "ef7e6ba7f082e4a8b5d354dd5427835e054b188aab211c61c967174081155659",
+            "expected": "ef7e6ba7f082e4a8b5d354dd5427835e054b188aab211c61c967174081155659",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/scripts/operator_cli.py"
+          },
+          {
+            "actual": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "expected": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/scripts/run_p3_097.py"
+          },
+          {
+            "actual": "e6cb780daa9b271adce01022c95dd414f9b34c0248f6b727785e9167a75306bf",
+            "expected": "e6cb780daa9b271adce01022c95dd414f9b34c0248f6b727785e9167a75306bf",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/tests/test_runtime.py"
+          },
+          {
+            "actual": "7fa834dbb9ecaf78200af01c37c2ba8029a3c511affce9c184a3042c8cfa6adf",
+            "expected": "7fa834dbb9ecaf78200af01c37c2ba8029a3c511affce9c184a3042c8cfa6adf",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/README.md"
+          },
+          {
+            "actual": "63301b8059231130b19bafb15d6761f6b5efa89417326d327380e8c7d5ff1311",
+            "expected": "63301b8059231130b19bafb15d6761f6b5efa89417326d327380e8c7d5ff1311",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/MANIFEST.md"
+          },
+          {
+            "actual": "057cbf047f412c38cc606ef033604a9e7591de83272ad2523ab0e02d86a58fee",
+            "expected": "057cbf047f412c38cc606ef033604a9e7591de83272ad2523ab0e02d86a58fee",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097_pm_review.md"
+          },
+          {
+            "actual": "90a1072dccc841eaecb6fe7cee51a6c175aff66cede6cc393d4ddc2da8a4e183",
+            "expected": "90a1072dccc841eaecb6fe7cee51a6c175aff66cede6cc393d4ddc2da8a4e183",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/MANIFEST.md"
+          }
+        ],
+        "count": 11,
+        "phase": "pre"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-015",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": true,
+        "expected": true,
+        "name": "IR-P3-098-015-ENG-MANIFEST",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-6b8eb30c-4da7-4689-9944-b6907a0955e9",
+    "fixture_id": "FX-IR-P3-098-015-ENG-MANIFEST",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-015-ENG-MANIFEST",
+    "trace": [
+      {
+        "all_match": true,
+        "checks": [
+          {
+            "actual": "92db8e243507a636e93eb1181ab6ad3cb43f131c980b6e6510840c98bd9bf4e0",
+            "expected": "92db8e243507a636e93eb1181ab6ad3cb43f131c980b6e6510840c98bd9bf4e0",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/acceptance_matrix.json"
+          },
+          {
+            "actual": "b6fab361a65bc8363793d879104cd04f1350d808a1003607e5d4e7b2ead20b21",
+            "expected": "b6fab361a65bc8363793d879104cd04f1350d808a1003607e5d4e7b2ead20b21",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/completion_point_trace.json"
+          },
+          {
+            "actual": "395aa2a89a8ead7f28bc76b4669bdbbb47198905277b4ba6d039ca93ba807083",
+            "expected": "395aa2a89a8ead7f28bc76b4669bdbbb47198905277b4ba6d039ca93ba807083",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/executed_test_ids.json"
+          },
+          {
+            "actual": "1d32d4ca9b033612470b14c91be1603f66bcc17783e90d977a423898726bba7e",
+            "expected": "1d32d4ca9b033612470b14c91be1603f66bcc17783e90d977a423898726bba7e",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/failure_injection_results.json"
+          },
+          {
+            "actual": "d84a99c18d9bd65b42109e6aaec2a7f93e9cd3cf0301e599ca0b3542730fb00e",
+            "expected": "d84a99c18d9bd65b42109e6aaec2a7f93e9cd3cf0301e599ca0b3542730fb00e",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/forbidden_capability_scan.json"
+          },
+          {
+            "actual": "5806c07786a8b797e230cade70cbd857078dcda27d192e92b2e59a22b3069349",
+            "expected": "5806c07786a8b797e230cade70cbd857078dcda27d192e92b2e59a22b3069349",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/manifest_verification.json"
+          },
+          {
+            "actual": "e4bf5ab4d39b07363f3b3480f7b37f4a76bc22406fc88b5038ab29a7e74db1ed",
+            "expected": "e4bf5ab4d39b07363f3b3480f7b37f4a76bc22406fc88b5038ab29a7e74db1ed",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/matrix_execution.log"
+          },
+          {
+            "actual": "b0d1c0550fadc3241f71f8fb54438ba19e89a0e6c9750544b77259f1b43a8ed0",
+            "expected": "b0d1c0550fadc3241f71f8fb54438ba19e89a0e6c9750544b77259f1b43a8ed0",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/operation_log.md"
+          },
+          {
+            "actual": "f35c601983688f364c2496f66419d597543d19cf33a9890521105aaf68fc27b0",
+            "expected": "f35c601983688f364c2496f66419d597543d19cf33a9890521105aaf68fc27b0",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/regression_test.log"
+          },
+          {
+            "actual": "0fc94fe0d7f444a84e0a8e95129f02378b53a4f4da2a9a73d3e348290805a6a9",
+            "expected": "0fc94fe0d7f444a84e0a8e95129f02378b53a4f4da2a9a73d3e348290805a6a9",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/rerun.md"
+          },
+          {
+            "actual": "d7f8834a28ab4b150915d650756ccb9198f9d32e116e346f0da66f9db293d78e",
+            "expected": "d7f8834a28ab4b150915d650756ccb9198f9d32e116e346f0da66f9db293d78e",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/results.json"
+          },
+          {
+            "actual": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "expected": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/runner_source.py"
+          },
+          {
+            "actual": "127458e27064a5aab328b01244238ac56f669c73fb0656141597cc7d7da1d781",
+            "expected": "127458e27064a5aab328b01244238ac56f669c73fb0656141597cc7d7da1d781",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/source_history_hashes.json"
+          },
+          {
+            "actual": "f24156ed71c85549f5438e6bfbc3f1209dc85a40159de6590aeaaf7930f5ad98",
+            "expected": "f24156ed71c85549f5438e6bfbc3f1209dc85a40159de6590aeaaf7930f5ad98",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/state_transitions.json"
+          },
+          {
+            "actual": "ffe8bfaa4681ccb00369b6a435e2a6669f07a5902f49bf8d3067714ee38a3c94",
+            "expected": "ffe8bfaa4681ccb00369b6a435e2a6669f07a5902f49bf8d3067714ee38a3c94",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/temporary_residue.json"
+          },
+          {
+            "actual": "f35c601983688f364c2496f66419d597543d19cf33a9890521105aaf68fc27b0",
+            "expected": "f35c601983688f364c2496f66419d597543d19cf33a9890521105aaf68fc27b0",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/unit_test.log"
+          }
+        ],
+        "count": 16,
+        "manifest": "lifeos/engineering/LIFEOS-P3-097/evidence/MANIFEST.md"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-015",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": true,
+        "expected": true,
+        "name": "IR-P3-098-015-PM-MANIFEST",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-34348ada-c605-408a-a728-a7d1ff0caedb",
+    "fixture_id": "FX-IR-P3-098-015-PM-MANIFEST",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-015-PM-MANIFEST",
+    "trace": [
+      {
+        "all_match": true,
+        "checks": [
+          {
+            "actual": "59df14e3e3bbf95124955fb4ca3b6e24b301f20a0aa075487b19efe99414759d",
+            "expected": "59df14e3e3bbf95124955fb4ca3b6e24b301f20a0aa075487b19efe99414759d",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/pm_boundary_counterexamples.json"
+          },
+          {
+            "actual": "c8e3d6bf5bde58aa50e5c9be6f9b870e1abd66bddab535998ee8c0474747abff",
+            "expected": "c8e3d6bf5bde58aa50e5c9be6f9b870e1abd66bddab535998ee8c0474747abff",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/pm_boundary_counterexamples.py"
+          },
+          {
+            "actual": "dc846cdf70fce2d0fc2a666685718eb9bc40bf1bca458165a04425a6ec59413e",
+            "expected": "dc846cdf70fce2d0fc2a666685718eb9bc40bf1bca458165a04425a6ec59413e",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/pm_integrity.json"
+          },
+          {
+            "actual": "cbedef3b1f808045c2318be1d0a28e20b901fe6e9b9d57fe8f0c3941e46e9632",
+            "expected": "cbedef3b1f808045c2318be1d0a28e20b901fe6e9b9d57fe8f0c3941e46e9632",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/pm_operation_log.md"
+          },
+          {
+            "actual": "b7f5d84d6dbfed2ed2848c3322e57d9cbb9aa101dd831d51b68250d1c2c014c2",
+            "expected": "b7f5d84d6dbfed2ed2848c3322e57d9cbb9aa101dd831d51b68250d1c2c014c2",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/pm_rerun.md"
+          },
+          {
+            "actual": "c9de05005fca72664d044e8887477c922396211fab93be940c14de8715351b65",
+            "expected": "c9de05005fca72664d044e8887477c922396211fab93be940c14de8715351b65",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/pm_summary.json"
+          },
+          {
+            "actual": "0dff059a1d1147878338ff985f3a4783e65c2d2b4e41ca1560cbe8cea35ae234",
+            "expected": "0dff059a1d1147878338ff985f3a4783e65c2d2b4e41ca1560cbe8cea35ae234",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/MANIFEST.md"
+          },
+          {
+            "actual": "ea7ae4aaec9e3bf42ccec77961d180a68d202be58c1429f20ffd7c5c4e1db5cb",
+            "expected": "ea7ae4aaec9e3bf42ccec77961d180a68d202be58c1429f20ffd7c5c4e1db5cb",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/acceptance_matrix.json"
+          },
+          {
+            "actual": "b6fab361a65bc8363793d879104cd04f1350d808a1003607e5d4e7b2ead20b21",
+            "expected": "b6fab361a65bc8363793d879104cd04f1350d808a1003607e5d4e7b2ead20b21",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/completion_point_trace.json"
+          },
+          {
+            "actual": "3b17dd142d629a4182337013bb7362bbd3320c7af8e7e72bbac61339bc6bf661",
+            "expected": "3b17dd142d629a4182337013bb7362bbd3320c7af8e7e72bbac61339bc6bf661",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/executed_test_ids.json"
+          },
+          {
+            "actual": "dfbc6d289127ab04faf7c432cd48ab826b4711dbf034268724ccd8b9964fbb10",
+            "expected": "dfbc6d289127ab04faf7c432cd48ab826b4711dbf034268724ccd8b9964fbb10",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/failure_injection_results.json"
+          },
+          {
+            "actual": "d84a99c18d9bd65b42109e6aaec2a7f93e9cd3cf0301e599ca0b3542730fb00e",
+            "expected": "d84a99c18d9bd65b42109e6aaec2a7f93e9cd3cf0301e599ca0b3542730fb00e",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/forbidden_capability_scan.json"
+          },
+          {
+            "actual": "1e0ae47359b8bf89c94239d8980f01d1664b249900d8970e101178d9b3fbaead",
+            "expected": "1e0ae47359b8bf89c94239d8980f01d1664b249900d8970e101178d9b3fbaead",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/manifest_verification.json"
+          },
+          {
+            "actual": "f9b9d46ede56f0569fde08d77b7ca3b8df6c4d3e6ba16e294e37dfa12ba323dc",
+            "expected": "f9b9d46ede56f0569fde08d77b7ca3b8df6c4d3e6ba16e294e37dfa12ba323dc",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/matrix_execution.log"
+          },
+          {
+            "actual": "b0d1c0550fadc3241f71f8fb54438ba19e89a0e6c9750544b77259f1b43a8ed0",
+            "expected": "b0d1c0550fadc3241f71f8fb54438ba19e89a0e6c9750544b77259f1b43a8ed0",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/operation_log.md"
+          },
+          {
+            "actual": "e1ffc43c1c30ded8ba361271aa9c3b3a276c1b5bf797a2c864afcfa2626a40a3",
+            "expected": "e1ffc43c1c30ded8ba361271aa9c3b3a276c1b5bf797a2c864afcfa2626a40a3",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/regression_test.log"
+          },
+          {
+            "actual": "0fc94fe0d7f444a84e0a8e95129f02378b53a4f4da2a9a73d3e348290805a6a9",
+            "expected": "0fc94fe0d7f444a84e0a8e95129f02378b53a4f4da2a9a73d3e348290805a6a9",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/rerun.md"
+          },
+          {
+            "actual": "d7f8834a28ab4b150915d650756ccb9198f9d32e116e346f0da66f9db293d78e",
+            "expected": "d7f8834a28ab4b150915d650756ccb9198f9d32e116e346f0da66f9db293d78e",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/results.json"
+          },
+          {
+            "actual": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "expected": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/runner_source.py"
+          },
+          {
+            "actual": "127458e27064a5aab328b01244238ac56f669c73fb0656141597cc7d7da1d781",
+            "expected": "127458e27064a5aab328b01244238ac56f669c73fb0656141597cc7d7da1d781",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/source_history_hashes.json"
+          },
+          {
+            "actual": "8ad67a822475013d80a989b8b87781c1443f62bbe25722625f949149399bf382",
+            "expected": "8ad67a822475013d80a989b8b87781c1443f62bbe25722625f949149399bf382",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/state_transitions.json"
+          },
+          {
+            "actual": "a962e8385304e44af3acb85ad03143e03713e099b47df8108ac62b926c6ec7e4",
+            "expected": "a962e8385304e44af3acb85ad03143e03713e099b47df8108ac62b926c6ec7e4",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/temporary_residue.json"
+          },
+          {
+            "actual": "e1ffc43c1c30ded8ba361271aa9c3b3a276c1b5bf797a2c864afcfa2626a40a3",
+            "expected": "e1ffc43c1c30ded8ba361271aa9c3b3a276c1b5bf797a2c864afcfa2626a40a3",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/unit_test.log"
+          }
+        ],
+        "count": 23,
+        "manifest": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/MANIFEST.md"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-015",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": true,
+        "expected": true,
+        "name": "IR-P3-098-015-HISTORY",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-6b2e14d3-af15-4396-b655-930fb1b534c7",
+    "fixture_id": "FX-IR-P3-098-015-HISTORY",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-015-HISTORY",
+    "trace": [
+      {
+        "all_match": true,
+        "count": 310
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-015",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": true,
+        "expected": true,
+        "name": "IR-P3-098-015-FORBIDDEN-SCAN",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-d425e135-ff95-46e8-90c9-cf980b4a8868",
+    "fixture_id": "FX-IR-P3-098-015-FORBIDDEN-SCAN",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-015-FORBIDDEN-SCAN",
+    "trace": [
+      {
+        "files": [
+          "lifeos/engineering/LIFEOS-P3-097/src/local_capture.py",
+          "lifeos/engineering/LIFEOS-P3-097/scripts/operator_cli.py"
+        ],
+        "forbidden_string_findings": [],
+        "imports": [
+          "__future__",
+          "argparse",
+          "datetime",
+          "hashlib",
+          "html",
+          "json",
+          "local_capture",
+          "os",
+          "pathlib",
+          "re",
+          "shutil",
+          "sqlite3",
+          "stat",
+          "sys",
+          "typing",
+          "uuid"
+        ],
+        "pass": true,
+        "unexpected_imports": []
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-015",
+    "action": "action",
+    "after": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "assertions": [
+      {
+        "actual": true,
+        "expected": true,
+        "name": "IR-P3-098-015-HASH-POST",
+        "pass": true
+      }
+    ],
+    "before": {
+      "db": {
+        "exists": false
+      },
+      "entries": [
+        "sentinel.txt"
+      ],
+      "page": {
+        "exists": false
+      },
+      "residue": [],
+      "rows": null,
+      "sentinel": {
+        "exists": true,
+        "nlink": 1,
+        "sha256": "7906bf60551f60d3ae84d39bdfe6bbc975de9379a30df734f3d33599f027df1d",
+        "size": 15,
+        "type": "regular"
+      }
+    },
+    "error": null,
+    "execution_id": "EX-77418d61-cf0f-4dad-90f8-240baeafbd20",
+    "fixture_id": "FX-IR-P3-098-015-HASH-POST",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-015-HASH-POST",
+    "trace": [
+      {
+        "all_match": true,
+        "checks": [
+          {
+            "actual": "3355c7f3e744abfd3be392902217f8abfa02bb783a492d87e88d8a63ddb2a09f",
+            "expected": "3355c7f3e744abfd3be392902217f8abfa02bb783a492d87e88d8a63ddb2a09f",
+            "match": true,
+            "path": "lifeos/tasks/LIFEOS-P3-097_irreversible_commit_completion_boundary_closure.md"
+          },
+          {
+            "actual": "0160640bdee51436dba4da4fd1b8d4bde9a3b0e101fc09c2b0c5be79e254f048",
+            "expected": "0160640bdee51436dba4da4fd1b8d4bde9a3b0e101fc09c2b0c5be79e254f048",
+            "match": true,
+            "path": "lifeos/tasks/LIFEOS-P3-097_irreversible_commit_completion_boundary_acceptance_basis_freeze.md"
+          },
+          {
+            "actual": "a214e681ebf9449af9097edde42cd04b02dc83be2a09eec472e1a3b67c386ee1",
+            "expected": "a214e681ebf9449af9097edde42cd04b02dc83be2a09eec472e1a3b67c386ee1",
+            "match": true,
+            "path": "lifeos/deliverables/LIFEOS-P3-097_irreversible_commit_completion_boundary_closure.md"
+          },
+          {
+            "actual": "1535fd1fa45b581a042be73bdbfdde1905c2ea7ff10c3554952b53882f455453",
+            "expected": "1535fd1fa45b581a042be73bdbfdde1905c2ea7ff10c3554952b53882f455453",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/src/local_capture.py"
+          },
+          {
+            "actual": "ef7e6ba7f082e4a8b5d354dd5427835e054b188aab211c61c967174081155659",
+            "expected": "ef7e6ba7f082e4a8b5d354dd5427835e054b188aab211c61c967174081155659",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/scripts/operator_cli.py"
+          },
+          {
+            "actual": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "expected": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/scripts/run_p3_097.py"
+          },
+          {
+            "actual": "e6cb780daa9b271adce01022c95dd414f9b34c0248f6b727785e9167a75306bf",
+            "expected": "e6cb780daa9b271adce01022c95dd414f9b34c0248f6b727785e9167a75306bf",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/tests/test_runtime.py"
+          },
+          {
+            "actual": "7fa834dbb9ecaf78200af01c37c2ba8029a3c511affce9c184a3042c8cfa6adf",
+            "expected": "7fa834dbb9ecaf78200af01c37c2ba8029a3c511affce9c184a3042c8cfa6adf",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/README.md"
+          },
+          {
+            "actual": "63301b8059231130b19bafb15d6761f6b5efa89417326d327380e8c7d5ff1311",
+            "expected": "63301b8059231130b19bafb15d6761f6b5efa89417326d327380e8c7d5ff1311",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/MANIFEST.md"
+          },
+          {
+            "actual": "057cbf047f412c38cc606ef033604a9e7591de83272ad2523ab0e02d86a58fee",
+            "expected": "057cbf047f412c38cc606ef033604a9e7591de83272ad2523ab0e02d86a58fee",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097_pm_review.md"
+          },
+          {
+            "actual": "90a1072dccc841eaecb6fe7cee51a6c175aff66cede6cc393d4ddc2da8a4e183",
+            "expected": "90a1072dccc841eaecb6fe7cee51a6c175aff66cede6cc393d4ddc2da8a4e183",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/MANIFEST.md"
+          }
+        ],
+        "count": 11,
+        "phase": "post"
+      }
+    ]
+  },
+  {
+    "abf_row": "ABF-M-015",
+    "action": "system_prefix_residue_scan",
+    "after": {
+      "residue_paths": []
+    },
+    "assertions": [
+      {
+        "actual": [],
+        "expected": [],
+        "name": "system_task_prefix_residue_zero",
+        "pass": true
+      }
+    ],
+    "before": {
+      "prefix": "lifeos-p3-098-"
+    },
+    "error": null,
+    "execution_id": "EX-61abaf64-9cc1-454b-ba3b-0c3d8626335d",
+    "fixture_id": "FX-RESIDUE-SCAN",
+    "severity_on_failure": "P1",
+    "status": "PASS",
+    "test_id": "IR-P3-098-015-RESIDUE",
+    "trace": []
+  }
+]

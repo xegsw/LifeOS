@@ -1,0 +1,166 @@
+{
+  "task": "LIFEOS-P3-090",
+  "runner": "independent_static_runner.py",
+  "bundle": "/private/tmp/lifeos-p3-090-review-app",
+  "pass": 30,
+  "fail": 0,
+  "results": [
+    {
+      "id": "HASH-default-recovery.html",
+      "pass": true,
+      "detail": "task-local source hash matches reviewed P3-089 manifest"
+    },
+    {
+      "id": "HASH-no-reliable-suggestion.html",
+      "pass": true,
+      "detail": "task-local source hash matches reviewed P3-089 manifest"
+    },
+    {
+      "id": "HASH-restricted-offline.html",
+      "pass": true,
+      "detail": "task-local source hash matches reviewed P3-089 manifest"
+    },
+    {
+      "id": "HASH-styles.css",
+      "pass": true,
+      "detail": "task-local source hash matches reviewed P3-089 manifest"
+    },
+    {
+      "id": "HASH-app.js",
+      "pass": true,
+      "detail": "task-local source hash matches reviewed P3-089 manifest"
+    },
+    {
+      "id": "HIST-P3-079 integrated_runtime.py",
+      "pass": true,
+      "detail": "specified readonly historical hash remains unchanged"
+    },
+    {
+      "id": "HIST-P3-087 app.js",
+      "pass": true,
+      "detail": "specified readonly historical hash remains unchanged"
+    },
+    {
+      "id": "HIST-P3-088 manifest",
+      "pass": true,
+      "detail": "specified readonly historical hash remains unchanged"
+    },
+    {
+      "id": "UI-01",
+      "pass": true,
+      "detail": "all pages identify synthetic UI and disabled AI"
+    },
+    {
+      "id": "UI-02",
+      "pass": true,
+      "detail": "all pages retain skip link and three-page navigation"
+    },
+    {
+      "id": "UI-03",
+      "pass": true,
+      "detail": "capture is explicit and repeat-aware"
+    },
+    {
+      "id": "UI-04",
+      "pass": true,
+      "detail": "restore is default-deny"
+    },
+    {
+      "id": "UI-05",
+      "pass": true,
+      "detail": "restore requires exact confirmation and is idempotent"
+    },
+    {
+      "id": "UI-06",
+      "pass": true,
+      "detail": "revoke clears preview and receipt"
+    },
+    {
+      "id": "UI-07",
+      "pass": true,
+      "detail": "failure clears partial UI and discloses no real action"
+    },
+    {
+      "id": "CLOSED-http://",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "CLOSED-https://",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "CLOSED-fetch(",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "CLOSED-xmlhttprequest",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "CLOSED-localstorage",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "CLOSED-sessionstorage",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "CLOSED-indexeddb",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "CLOSED-navigator.sendbeacon",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "CLOSED-websocket",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "CLOSED-showopenfilepicker",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "CLOSED-sqlite",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "CLOSED-tauri",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "CLOSED-invoke(",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "CLOSED-export ",
+      "pass": true,
+      "detail": "forbidden runtime or external capability absent from UI source"
+    },
+    {
+      "id": "BOUNDARY-01",
+      "pass": true,
+      "detail": "no P3-079 Python/SQLite runtime wiring appears in UI source"
+    }
+  ],
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "NotImplemented": 0
+  }
+}

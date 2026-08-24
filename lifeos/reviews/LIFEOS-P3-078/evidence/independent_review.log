@@ -1,0 +1,15 @@
+IR-01 PASS preview 清楚声明默认拒绝、固定边界与确认 token
+IR-02 PASS 无 grant 时默认拒绝并声明无外部动作
+IR-03 PASS 唯一精确 grant 加 CONFIRM 才允许本地合成路径
+IR-04 PASS 错误确认 fail-closed
+IR-05 PASS 绑定不匹配 fail-closed
+IR-06 PASS 当前 deny 在既有 grant 后仍优先
+IR-07 PASS 相同幂等键重复回执，不生成第二项
+IR-08 PASS 冲突幂等键 fail-closed
+IR-09 PASS 撤回后即使 deny 移除也保持拒绝
+IR-10 PASS 重启后撤回状态和审计仍可追溯且 fail-closed
+IR-11 PASS 过期 grant 不可消费
+IR-12 PASS 原子失败不留下权限半成品
+IR-13 PASS CLI preview 可理解且不需要隐式写入真实路径
+IR-14 PASS 禁止网络、云、Tauri/IPC、Vault、导出、同步、多设备通道保持未实现
+IR-15 PASS 候选核心输入 hash 与 P3-077 Manifest 一致

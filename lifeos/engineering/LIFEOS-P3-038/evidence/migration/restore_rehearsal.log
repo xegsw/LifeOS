@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "backup_path": "lifeos/engineering/LIFEOS-P3-038/work/backup/source_fixture_backup.db",
+  "backup_sha256": "4d11324d76243c79b15d14b7b057a27d803297bd45096532c341fcd328bb0ca8",
+  "restore_path": "lifeos/engineering/LIFEOS-P3-038/work/restore/restored_fixture.db",
+  "restore_sha256": "4d11324d76243c79b15d14b7b057a27d803297bd45096532c341fcd328bb0ca8",
+  "table_counts": {
+    "project": {
+      "source": 1,
+      "restored": 1,
+      "matches": true
+    },
+    "source": {
+      "source": 1,
+      "restored": 1,
+      "matches": true
+    },
+    "artifact": {
+      "source": 1,
+      "restored": 1,
+      "matches": true
+    },
+    "artifact_version": {
+      "source": 1,
+      "restored": 1,
+      "matches": true
+    },
+    "tombstone": {
+      "source": 1,
+      "restored": 1,
+      "matches": true
+    },
+    "outbox_job": {
+      "source": 1,
+      "restored": 1,
+      "matches": true
+    },
+    "authorization": {
+      "source": 1,
+      "restored": 1,
+      "matches": true
+    },
+    "authorization_scope": {
+      "source": 2,
+      "restored": 2,
+      "matches": true
+    },
+    "authorization_action": {
+      "source": 1,
+      "restored": 1,
+      "matches": true
+    },
+    "authorization_policy": {
+      "source": 1,
+      "restored": 1,
+      "matches": true
+    },
+    "audit_entry": {
+      "source": 1,
+      "restored": 1,
+      "matches": true
+    }
+  },
+  "tombstone_matches": true,
+  "consumption_gates_match": true,
+  "authorization_gate_match": true,
+  "restored_checks": {
+    "integrity_check": "ok",
+    "quick_check": "ok",
+    "foreign_key_violations": [],
+    "journal_mode": "delete",
+    "foreign_keys": 1,
+    "user_version": 1
+  }
+}

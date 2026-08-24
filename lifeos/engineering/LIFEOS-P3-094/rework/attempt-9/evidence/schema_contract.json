@@ -1,0 +1,186 @@
+{
+  "contract": {
+    "master": [
+      {
+        "type": "index",
+        "name": "sqlite_autoindex_captures_1",
+        "table": "captures",
+        "sql": null
+      },
+      {
+        "type": "index",
+        "name": "sqlite_autoindex_captures_2",
+        "table": "captures",
+        "sql": null
+      },
+      {
+        "type": "table",
+        "name": "audit",
+        "table": "audit",
+        "sql": "create table audit ( id integer primary key autoincrement, event text not null, capture_id text, created_at text not null, detail text not null )"
+      },
+      {
+        "type": "table",
+        "name": "captures",
+        "table": "captures",
+        "sql": "create table captures ( id text primary key, content text not null, created_at text not null, source text not null check(source = 'local_capture'), idem_key text not null unique )"
+      },
+      {
+        "type": "table",
+        "name": "sqlite_sequence",
+        "table": "sqlite_sequence",
+        "sql": "create table sqlite_sequence(name,seq)"
+      }
+    ],
+    "tables": {
+      "captures": [
+        [
+          0,
+          "id",
+          "TEXT",
+          0,
+          null,
+          1,
+          0
+        ],
+        [
+          1,
+          "content",
+          "TEXT",
+          1,
+          null,
+          0,
+          0
+        ],
+        [
+          2,
+          "created_at",
+          "TEXT",
+          1,
+          null,
+          0,
+          0
+        ],
+        [
+          3,
+          "source",
+          "TEXT",
+          1,
+          null,
+          0,
+          0
+        ],
+        [
+          4,
+          "idem_key",
+          "TEXT",
+          1,
+          null,
+          0,
+          0
+        ]
+      ],
+      "audit": [
+        [
+          0,
+          "id",
+          "INTEGER",
+          0,
+          null,
+          1,
+          0
+        ],
+        [
+          1,
+          "event",
+          "TEXT",
+          1,
+          null,
+          0,
+          0
+        ],
+        [
+          2,
+          "capture_id",
+          "TEXT",
+          0,
+          null,
+          0,
+          0
+        ],
+        [
+          3,
+          "created_at",
+          "TEXT",
+          1,
+          null,
+          0,
+          0
+        ],
+        [
+          4,
+          "detail",
+          "TEXT",
+          1,
+          null,
+          0,
+          0
+        ]
+      ]
+    },
+    "indexes": {
+      "sqlite_autoindex_captures_2": [
+        [
+          0,
+          4,
+          "idem_key",
+          0,
+          "BINARY",
+          1
+        ],
+        [
+          1,
+          -1,
+          null,
+          0,
+          "BINARY",
+          0
+        ]
+      ],
+      "sqlite_autoindex_captures_1": [
+        [
+          0,
+          0,
+          "id",
+          0,
+          "BINARY",
+          1
+        ],
+        [
+          1,
+          -1,
+          null,
+          0,
+          "BINARY",
+          0
+        ]
+      ],
+      "@captures": [
+        [
+          "sqlite_autoindex_captures_2",
+          1,
+          "u",
+          0
+        ],
+        [
+          "sqlite_autoindex_captures_1",
+          1,
+          "pk",
+          0
+        ]
+      ],
+      "@audit": []
+    }
+  },
+  "sha256": "0c49d23118a4013c3d466d8e4cb916044937cbd42d20e8b3eab3efabece4f0c1"
+}

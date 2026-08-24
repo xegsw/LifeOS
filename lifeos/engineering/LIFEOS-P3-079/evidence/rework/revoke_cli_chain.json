@@ -1,0 +1,53 @@
+[
+  {
+    "command": "permission",
+    "exit_code": 0,
+    "result": {
+      "decision": "grant",
+      "ok": true,
+      "permission_id": "perm-f7fdedbf11dd0b3b"
+    },
+    "stderr": ""
+  },
+  {
+    "command": "permission",
+    "exit_code": 0,
+    "result": {
+      "decision": "grant",
+      "ok": true,
+      "permission_id": "perm-1446dc571bfb8ef8"
+    },
+    "stderr": ""
+  },
+  {
+    "command": "revoke-permission",
+    "exit_code": 0,
+    "result": {
+      "ok": true,
+      "permission_id": "perm-f7fdedbf11dd0b3b",
+      "reason": "revoked"
+    },
+    "stderr": ""
+  },
+  {
+    "command": "revoke-permission",
+    "exit_code": 0,
+    "result": {
+      "ok": true,
+      "permission_id": "perm-f7fdedbf11dd0b3b",
+      "reason": "idempotent_repeat"
+    },
+    "stderr": ""
+  },
+  {
+    "command": "revoke-permission",
+    "exit_code": 0,
+    "result": {
+      "external_action": "none",
+      "ok": false,
+      "reason": "idempotency_conflict",
+      "saved": false
+    },
+    "stderr": ""
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "task": "LIFEOS-P3-106",
+  "submission": "rework-1",
+  "acceptance_basis": {
+    "id": "ABF-P3-106-v1",
+    "sha256": "1aa076a289173eb0dbd4e17ccfd3a1af89cbd9f815ad656d31d9318a5172a5c4",
+    "unchanged": true
+  },
+  "submitted_evidence": {
+    "manifest_entries": 325,
+    "manifest_sha256": "7a4007791223c55f4ea8541290a2fa60d36df69f0db5ece7b9507ca64da049fe",
+    "independent_manifest_checks": 2,
+    "manifest_bad": 0,
+    "manifest_missing": 0,
+    "manifest_extra": 0,
+    "static": "40/40",
+    "runtime_process": "7/7",
+    "acceptance_matrix": "18/18",
+    "dynamic_closure": "38/38",
+    "build_return_codes": {
+      "cargo_test_locked": 0,
+      "cargo_build_locked": 0,
+      "tauri_debug_bundle_locked": 0
+    }
+  },
+  "pm_independent_checks": {
+    "protected_history_hashes": "144/144 unchanged",
+    "legacy_forbidden_file_access": "lstat metadata only; content not opened, read, hashed, copied, written, or deleted",
+    "legacy_metadata_before_after_equal": true,
+    "source_dataflow_review": "PASS",
+    "conditional_matrix_derivation_review": "PASS",
+    "display_original_tier": "ordinal 4, default",
+    "display_temporary_tier": "ordinal 5, more space",
+    "display_restored_tier": "ordinal 4, default",
+    "display_restored_matches_original": true,
+    "visual_reference_canvases": "3/3 at 1280x1024",
+    "responsive_workspace": "3/3 at 1160x768",
+    "responsive_narrow": "700x760",
+    "cleanup_residual_count": 0
+  },
+  "findings_closed": [
+    "PM-P3-106-R1-CE-01",
+    "PM-P3-106-R1-EV-02"
+  ],
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 0
+  },
+  "pm_replay": {
+    "submitted_mutating_runner_executed": false,
+    "reason": "The two rework findings can be closed through independent read-only hash, source, structured-result, pixel, and visual verification without repeating display or app mutations.",
+    "temporary_fixture_created": false,
+    "temporary_residual_count": 0
+  },
+  "local_precheck": {
+    "performed": false,
+    "reason": "High-risk final authorization and local-file-boundary judgment; local model precheck may not decide it."
+  },
+  "status": "PASS"
+}

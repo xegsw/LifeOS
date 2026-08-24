@@ -1,0 +1,120 @@
+{
+  "counts": {
+    "Not Implemented": 0,
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 2
+  },
+  "dynamic_actions": {
+    "P3108R1-D01": "UNKNOWN",
+    "P3108R1-D02": "UNKNOWN",
+    "P3108R1-D03": "UNKNOWN",
+    "P3108R1-D04": "PASS",
+    "P3108R1-D05": "PASS",
+    "P3108R1-D06": "PASS",
+    "P3108R1-D07": "PASS",
+    "P3108R1-D08": "PASS",
+    "P3108R1-D09": "PASS",
+    "P3108R1-D10": "PASS",
+    "P3108R1-D11": "PASS",
+    "P3108R1-D12": "PASS",
+    "P3108R1-D13": "PASS",
+    "P3108R1-D14": "UNKNOWN",
+    "P3108R1-D15": "UNKNOWN",
+    "P3108R1-D16": "PASS",
+    "P3108R1-D17": "PASS",
+    "P3108R1-D18": "PASS",
+    "P3108R1-D19": "PASS",
+    "P3108R1-D20": "PASS"
+  },
+  "id": "P3108R1-final-verifier",
+  "manifest_entries": 181,
+  "matrix": [
+    {
+      "id": "P3108R1-M001",
+      "row": "M-001",
+      "status": "PASS"
+    },
+    {
+      "id": "P3108R1-M002",
+      "row": "M-002",
+      "status": "PASS"
+    },
+    {
+      "id": "P3108R1-M003",
+      "row": "M-003",
+      "status": "PASS"
+    },
+    {
+      "id": "P3108R1-M004",
+      "row": "M-004",
+      "status": "PASS"
+    },
+    {
+      "id": "P3108R1-M005",
+      "row": "M-005",
+      "status": "PASS"
+    },
+    {
+      "id": "P3108R1-M006",
+      "row": "M-006",
+      "status": "PASS"
+    },
+    {
+      "id": "P3108R1-M007",
+      "row": "M-007",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "P3108R1-M008",
+      "row": "M-008",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "P3108R1-M009",
+      "row": "M-009",
+      "status": "PASS"
+    },
+    {
+      "id": "P3108R1-M010",
+      "row": "M-010",
+      "status": "PASS"
+    },
+    {
+      "id": "P3108R1-M011",
+      "row": "M-011",
+      "status": "PASS"
+    },
+    {
+      "id": "P3108R1-M012",
+      "row": "M-012",
+      "status": "PASS"
+    },
+    {
+      "id": "P3108R1-M013",
+      "row": "M-013",
+      "status": "PASS"
+    },
+    {
+      "id": "P3108R1-M014",
+      "row": "M-014",
+      "status": "PASS"
+    },
+    {
+      "id": "P3108R1-M015",
+      "row": "M-015",
+      "status": "PASS"
+    },
+    {
+      "id": "P3108R1-M016",
+      "row": "M-016",
+      "status": "PASS"
+    }
+  ],
+  "pass": false,
+  "reads_matrix_directly": true,
+  "reason": "Not Pass: M-007 and M-008 are UNKNOWN rather than being promoted from scaled CUA images to exact native-window assertions.",
+  "required_missing": [],
+  "time": "2026-08-24T03:13:25.591971+00:00"
+}

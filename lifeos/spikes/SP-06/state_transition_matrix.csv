@@ -1,0 +1,13 @@
+object,operation,precondition,result,resolution
+Artifact,edit/base matches,active@vN,append version; current→vN+1,automatic
+Artifact,edit/base stale,active@vN,retain branch + conflict,user merge
+Candidate,accept/edit/reject,available_unconfirmed@vN,append Feedback; selected state@vN+1,automatic if base matches
+Candidate,concurrent response,resolved@vN+1,append unapplied attempt + conflict,user resolve
+Action,complete/defer,confirmed@vN,append Feedback; state@vN+1,automatic if base matches
+Decision,revise,effective@vN,append revision; revised@vN+1,automatic if base matches
+Link,confirm/correct,candidate/confirmed@vN,append Feedback; state@vN+1,automatic if base matches
+Feedback,retract,effective,append retract; recompute,automatic if still effective
+Artifact,delete,any,tombstone generation++; inactive,dominates old writes
+Authorization,revoke,active@vN,revoked@vN+1; derivations invalid,dominates old jobs
+Source,disconnect,connected@gN,disconnected@gN+1; derivations stale,dominates old reads
+Queue task,execute,leased,publish only after six rechecks,reject on any mismatch

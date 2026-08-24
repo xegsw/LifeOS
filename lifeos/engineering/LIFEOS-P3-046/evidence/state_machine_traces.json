@@ -1,0 +1,338 @@
+[
+  {
+    "case": "AC-06/memory-fk_on-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC-06/memory-fk_on-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC-06/memory-fk_off-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC-06/memory-fk_off-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC-06/file-fk_on-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC-06/file-fk_on-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC-06/file-fk_off-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC-06/file-fk_off-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "completed"
+    ]
+  },
+  {
+    "case": "AC-08/memory-fk_on-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "pending(retry)"
+    ]
+  },
+  {
+    "case": "AC-08/memory-fk_on-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "pending(retry)"
+    ]
+  },
+  {
+    "case": "AC-08/memory-fk_off-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "pending(retry)"
+    ]
+  },
+  {
+    "case": "AC-08/memory-fk_off-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "pending(retry)"
+    ]
+  },
+  {
+    "case": "AC-08/file-fk_on-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "pending(retry)"
+    ]
+  },
+  {
+    "case": "AC-08/file-fk_on-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "pending(retry)"
+    ]
+  },
+  {
+    "case": "AC-08/file-fk_off-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "pending(retry)"
+    ]
+  },
+  {
+    "case": "AC-08/file-fk_off-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "pending(retry)"
+    ]
+  },
+  {
+    "case": "OUTBOX-STATE/memory-fk_on-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "leased(renew)",
+      "dead_letter",
+      "cleaned"
+    ],
+    "at": 1787229006000
+  },
+  {
+    "case": "OUTBOX-STATE/memory-fk_on-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "leased(renew)",
+      "dead_letter",
+      "cleaned"
+    ],
+    "at": 1787229006000
+  },
+  {
+    "case": "OUTBOX-STATE/memory-fk_off-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "leased(renew)",
+      "dead_letter",
+      "cleaned"
+    ],
+    "at": 1787229006000
+  },
+  {
+    "case": "OUTBOX-STATE/memory-fk_off-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "leased(renew)",
+      "dead_letter",
+      "cleaned"
+    ],
+    "at": 1787229006000
+  },
+  {
+    "case": "OUTBOX-STATE/file-fk_on-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "leased(renew)",
+      "dead_letter",
+      "cleaned"
+    ],
+    "at": 1787229006000
+  },
+  {
+    "case": "OUTBOX-STATE/file-fk_on-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "leased(renew)",
+      "dead_letter",
+      "cleaned"
+    ],
+    "at": 1787229006000
+  },
+  {
+    "case": "OUTBOX-STATE/file-fk_off-rec_on",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "leased(renew)",
+      "dead_letter",
+      "cleaned"
+    ],
+    "at": 1787229006000
+  },
+  {
+    "case": "OUTBOX-STATE/file-fk_off-rec_off",
+    "machine": "outbox",
+    "trace": [
+      "pending",
+      "leased",
+      "leased(renew)",
+      "dead_letter",
+      "cleaned"
+    ],
+    "at": 1787229006000
+  },
+  {
+    "case": "CLEANUP-RETRY/memory-fk_on-rec_on",
+    "machine": "cleanup",
+    "trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "cleaned"
+    ]
+  },
+  {
+    "case": "CLEANUP-RETRY/memory-fk_on-rec_off",
+    "machine": "cleanup",
+    "trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "cleaned"
+    ]
+  },
+  {
+    "case": "CLEANUP-RETRY/memory-fk_off-rec_on",
+    "machine": "cleanup",
+    "trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "cleaned"
+    ]
+  },
+  {
+    "case": "CLEANUP-RETRY/memory-fk_off-rec_off",
+    "machine": "cleanup",
+    "trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "cleaned"
+    ]
+  },
+  {
+    "case": "CLEANUP-RETRY/file-fk_on-rec_on",
+    "machine": "cleanup",
+    "trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "cleaned"
+    ]
+  },
+  {
+    "case": "CLEANUP-RETRY/file-fk_on-rec_off",
+    "machine": "cleanup",
+    "trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "cleaned"
+    ]
+  },
+  {
+    "case": "CLEANUP-RETRY/file-fk_off-rec_on",
+    "machine": "cleanup",
+    "trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "cleaned"
+    ]
+  },
+  {
+    "case": "CLEANUP-RETRY/file-fk_off-rec_off",
+    "machine": "cleanup",
+    "trace": [
+      "accepted",
+      "active_blocked",
+      "cleanup_pending",
+      "cleanup_failed",
+      "cleanup_pending",
+      "cleaned"
+    ]
+  }
+]

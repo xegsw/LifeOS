@@ -1,0 +1,48 @@
+{
+  "fixed_non_sensitive_fixtures_only": true,
+  "items": [
+    {
+      "id": "PM-A5-CE-01-render-api-outside-task-local",
+      "expected": "reject before file change",
+      "observed_status": "rendered",
+      "outside_file_hash_changed": true,
+      "db_record_count": 1,
+      "status": "FAIL"
+    },
+    {
+      "id": "PM-A5-CE-02-render-cli-outside-task-local",
+      "expected": "reject before file change",
+      "observed_exit": 0,
+      "outside_file_hash_changed": true,
+      "db_record_count": 1,
+      "status": "FAIL"
+    },
+    {
+      "id": "PM-A5-CE-03-render-follows-file-symlink",
+      "expected": "reject before target change",
+      "observed_status": "rendered",
+      "target_hash_changed": true,
+      "link_preserved": true,
+      "db_record_count": 1,
+      "status": "FAIL"
+    },
+    {
+      "id": "PM-A5-CE-04-clear-ancestor-directory-symlink-chain",
+      "expected": "reject before page or DB change",
+      "observed_status": "cleared",
+      "real_page_exists_after": false,
+      "real_db_record_count_after": 0,
+      "status": "FAIL"
+    }
+  ],
+  "summary": {
+    "pass": 0,
+    "fail": 4,
+    "p0_findings": 2,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  },
+  "temporary_work_cleaned": true
+}

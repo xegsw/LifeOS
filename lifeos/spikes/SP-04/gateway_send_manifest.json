@@ -1,0 +1,221 @@
+{
+  "manifests": [
+    {
+      "request_id": "r05",
+      "decision": "ALLOW",
+      "authorization_id": "cloud",
+      "purpose": "summary",
+      "processor": "lifeos-cloud-mock",
+      "policy_version": "policy-synth-v4",
+      "location": "lifeos-cloud",
+      "sent_field_names": [
+        "input_tokens",
+        "location",
+        "policy_version",
+        "processor",
+        "purpose"
+      ],
+      "sent_field_count": 5,
+      "input_count": 1,
+      "input_token_hashes": [
+        "2df35748257f648906889c51364fd28b4f8acca969c3cef42da28e9ce5db51cb"
+      ]
+    },
+    {
+      "request_id": "r06",
+      "decision": "ALLOW",
+      "authorization_id": "third_a",
+      "purpose": "summary",
+      "processor": "third-party-a-mock",
+      "policy_version": "policy-synth-v4",
+      "location": "third-party-a",
+      "sent_field_names": [
+        "input_tokens",
+        "location",
+        "policy_version",
+        "processor",
+        "purpose"
+      ],
+      "sent_field_count": 5,
+      "input_count": 1,
+      "input_token_hashes": [
+        "2df35748257f648906889c51364fd28b4f8acca969c3cef42da28e9ce5db51cb"
+      ]
+    },
+    {
+      "request_id": "r07",
+      "decision": "DENY",
+      "reason_codes": [
+        "AUTH_MISSING"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r13",
+      "decision": "DENY",
+      "reason_codes": [
+        "PROCESSOR_POLICY_UNKNOWN"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r14",
+      "decision": "DENY",
+      "reason_codes": [
+        "POLICY_VERSION_MISMATCH"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r15",
+      "decision": "DENY",
+      "reason_codes": [
+        "SUBPROCESSORS_UNKNOWN"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r16",
+      "decision": "DENY",
+      "reason_codes": [
+        "REGION_UNKNOWN_OR_DISALLOWED"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r17",
+      "decision": "DENY",
+      "reason_codes": [
+        "TRAINING_DEFAULT_ON"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r18",
+      "decision": "DENY",
+      "reason_codes": [
+        "EVALUATION_DEFAULT_ON"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r19",
+      "decision": "DENY",
+      "reason_codes": [
+        "DELETION_CAPABILITY_INSUFFICIENT"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r20",
+      "decision": "DENY",
+      "reason_codes": [
+        "RETENTION_EXCEEDED"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r21",
+      "decision": "DENY",
+      "reason_codes": [
+        "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r22",
+      "decision": "DENY",
+      "reason_codes": [
+        "CREDENTIAL_HARD_BLOCK"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r23",
+      "decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH",
+        "SENSITIVITY_UNKNOWN"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r24",
+      "decision": "DENY",
+      "reason_codes": [
+        "PROCESSOR_NOT_QUALIFIED"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r28",
+      "decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r29",
+      "decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r30",
+      "decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r32",
+      "decision": "DENY",
+      "reason_codes": [
+        "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r36",
+      "decision": "DENY",
+      "reason_codes": [
+        "POLICY_VERSION_MISMATCH"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    },
+    {
+      "request_id": "r43",
+      "decision": "DENY",
+      "reason_codes": [
+        "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+      ],
+      "sent_field_names": [],
+      "sent_field_count": 0
+    }
+  ],
+  "actual_network_sends": 0,
+  "mock_allowed_calls": 2,
+  "mock_denied_calls": 19
+}

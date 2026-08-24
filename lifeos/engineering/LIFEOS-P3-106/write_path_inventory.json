@@ -1,0 +1,64 @@
+{
+  "task_id": "LIFEOS-P3-106",
+  "abf_id": "ABF-P3-106-v1",
+  "abf_row": "ABF-M-002",
+  "created_before_copy_build_or_test": true,
+  "allowlist": {
+    "actual_app_runner_regex": "^/private/tmp/lifeos-p3-104-p3-106-(app|replay|dangling-final|dangling-journal|dangling-wal|dangling-shm|path|tamper|a11y|visual)-[a-z0-9-]+$",
+    "immutable_unit_regexes": [
+      "^/private/tmp/lifeos-p3-104-unit-(lifecycle|failure|arguments|links|dangling-final|dangling-sidecars|tamper|sidecar)-[0-9]+$",
+      "^/private/tmp/lifeos-p3-104-unit-link-target-[0-9]+$",
+      "^/private/tmp/lifeos-p3-104-unit-link-[0-9]+$"
+    ]
+  },
+  "generators": [
+    {
+      "owner": "src/runtime.rs immutable unit tests",
+      "expression": "/private/tmp/lifeos-p3-104-unit-{name}-{pid}",
+      "name_enum": ["lifecycle", "failure", "arguments", "links", "dangling-final", "dangling-sidecars", "tamper", "sidecar"],
+      "created_type": "directory",
+      "contents": ["capture.sqlite", "capture.sqlite-journal", "capture.sqlite-wal", "capture.sqlite-shm", "sentinel.txt", "test-local link objects"],
+      "cleanup": "immutable test removes its exact PathBuf root; pre/post verifier checks exact-regex residual set",
+      "abf_basis": "Precise temporary path contract / immutable Rust unit tests"
+    },
+    {
+      "owner": "src/runtime.rs immutable link-boundary unit test",
+      "expression": "/private/tmp/lifeos-p3-104-unit-link-target-{pid}",
+      "created_type": "directory",
+      "contents": ["capture.sqlite test object"],
+      "cleanup": "immutable test removes exact PathBuf target",
+      "abf_basis": "Precise temporary path contract / immutable Rust unit tests"
+    },
+    {
+      "owner": "src/runtime.rs immutable link-boundary unit test",
+      "expression": "/private/tmp/lifeos-p3-104-unit-link-{pid}",
+      "created_type": "symbolic link",
+      "contents": ["link to the paired test-local target"],
+      "cleanup": "immutable test unlinks exact PathBuf link",
+      "abf_basis": "Precise temporary path contract / immutable Rust unit tests"
+    },
+    {
+      "owner": "tests/run_negative_actual.py, tests/run_clean_replay.py, and scripts/launch_evidence_app.sh",
+      "expression": "/private/tmp/lifeos-p3-104-p3-106-{purpose}-{run_id}",
+      "purpose_enum": ["app", "replay", "dangling-final", "dangling-journal", "dangling-wal", "dangling-shm", "path", "tamper", "a11y", "visual"],
+      "run_id_regex": "^[a-z0-9-]+$",
+      "created_type": "directory, plus the exact path-purpose parent-link counterexample and its paired exact target directory",
+      "contents": ["capture.sqlite", "capture.sqlite-journal", "capture.sqlite-wal", "capture.sqlite-shm", "sentinel.txt", "task result JSON/log", "local screenshot"],
+      "cleanup": "append exact lstat-verified path to evidence/runtime_path_ledger.json; cleanup reads only that ledger and removes each exact path without globbing",
+      "abf_basis": "Precise temporary path contract / P3-106 actual app and runner"
+    }
+  ],
+  "no_temp_writes": [
+    "tests/verify_preflight.py",
+    "tests/verify_dynamic_closure.py",
+    "tests/build_evidence.py",
+    "scripts/validate_fixture_path.py"
+  ],
+  "legacy_forbidden": [
+    "/private/tmp/lifeos-p3-104-app-evidence",
+    "/private/tmp/lifeos-p3-104-rework-static-results.json",
+    "/private/tmp/lifeos-p3-104-rework-replay-*",
+    "all other /private/tmp/lifeos-p3-104-* paths not matched by the immutable unit-test regexes"
+  ],
+  "cleanup_invariant": "No broad prefix, wildcard, glob, find-delete, directory link, or unresolved environment variable may select a cleanup target."
+}

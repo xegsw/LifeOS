@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "leaves": [
+    {
+      "test_id": "P3-103-T-008-01",
+      "fixture_id": "P3-103-F-008-01",
+      "execution_id": "P3-103-E-008-01",
+      "name": "saved",
+      "assertion_executed": true,
+      "before_after": {
+        "db_exists": true,
+        "unexpected": []
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-008-02",
+      "fixture_id": "P3-103-F-008-02",
+      "execution_id": "P3-103-E-008-02",
+      "name": "repeat",
+      "assertion_executed": true,
+      "before_after": {
+        "db_changed_for_repeat_audit": true,
+        "page_unchanged": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-008-03",
+      "fixture_id": "P3-103-F-008-03",
+      "execution_id": "P3-103-E-008-03",
+      "name": "conflict",
+      "assertion_executed": true,
+      "before_after": {
+        "state_unchanged": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-008-04",
+      "fixture_id": "P3-103-F-008-04",
+      "execution_id": "P3-103-E-008-04",
+      "name": "restart_today",
+      "assertion_executed": true,
+      "before_after": {
+        "record_count": 1,
+        "content_identity_match": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-008-05",
+      "fixture_id": "P3-103-F-008-05",
+      "execution_id": "P3-103-E-008-05",
+      "name": "restart_render",
+      "assertion_executed": true,
+      "before_after": {
+        "page_exists": true,
+        "semantic_identity_match": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3-103-T-008-06",
+      "fixture_id": "P3-103-F-008-06",
+      "execution_id": "P3-103-E-008-06",
+      "name": "inject_failure",
+      "assertion_executed": true,
+      "before_after": {
+        "state_unchanged": true,
+        "runtime_residue_zero": true
+      },
+      "log_ref": "operation_log.md",
+      "status": "PASS"
+    }
+  ]
+}

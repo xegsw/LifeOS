@@ -1,0 +1,20 @@
+runtime_start status=restricted_offline db_scope=task_local
+started_at_utc=2026-08-24T05:01:34.061312Z
+fixture=/private/tmp/lifeos-p3-104-p3-110-review-nominal-v1
+ipc_result command=runtime_status status=restricted_offline
+ipc_result command=capture_record status=saved record_count=1 repeated=false
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=1
+ipc_result command=capture_record status=idempotent_repeat record_count=1 repeated=true
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=2
+ipc_result status=blocked code=idempotency_conflict
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=2
+ipc_result status=blocked code=injected_atomic_failure
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=2
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=2
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=2
+ipc_result command=runtime_status status=restricted_offline
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=2
+ipc_result command=runtime_status status=restricted_offline
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=2
+ipc_result command=runtime_status status=restricted_offline
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=2

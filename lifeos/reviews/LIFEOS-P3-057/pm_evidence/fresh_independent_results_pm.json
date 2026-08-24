@@ -1,0 +1,4502 @@
+{
+  "task_id": "LIFEOS-P3-057",
+  "scope": "fresh isolated synthetic SQLite only",
+  "independence": {
+    "imports_p3_044": false,
+    "calls_p3_044": false,
+    "copies_p3_044_attack_functions_or_scenario_table": false,
+    "runner_sha256": "8089e5c1f7d3c8f50a2abbe08fe9f8bc5139a94bc924bdbdcfc6387421a1c604"
+  },
+  "runtime": {
+    "python": "3.9.6",
+    "sqlite": "3.51.0"
+  },
+  "schema": "/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-031/migrations/001_candidate_schema.sql",
+  "hash_checks": {
+    "historical_assets": [
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-043/evidence/candidate_schema.sql",
+        "expected": "ceedad2ba731b0406c28fb5cf503130cfeda74f7fdf4ccf4db1e7809bffa5a6b",
+        "actual": "ceedad2ba731b0406c28fb5cf503130cfeda74f7fdf4ccf4db1e7809bffa5a6b",
+        "match": true
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-043/evidence/counter_example_attacks.py",
+        "expected": "400c6fcb63d3ecac76f75a54a3017a12c379055dbeec2ebcc597d9fe1c30e40a",
+        "actual": "400c6fcb63d3ecac76f75a54a3017a12c379055dbeec2ebcc597d9fe1c30e40a",
+        "match": true
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-043/evidence/counter_example_results.json",
+        "expected": "a5d283fbb14e65605d83c20f5aebfee91a4cb1007893ae8ac85e4ae3a6b46d7b",
+        "actual": "a5d283fbb14e65605d83c20f5aebfee91a4cb1007893ae8ac85e4ae3a6b46d7b",
+        "match": true
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-043/evidence/counter_example_results.txt",
+        "expected": "b6aceeb1b92f7924ace7161dc6478755f3ecc5eafcb6fc2f1842ba4d8bcde5b6",
+        "actual": "b6aceeb1b92f7924ace7161dc6478755f3ecc5eafcb6fc2f1842ba4d8bcde5b6",
+        "match": true
+      },
+      {
+        "path": "lifeos/engineering/LIFEOS-P3-044/input/001_candidate_schema.sql",
+        "expected": "0b7f33930c97f3b268e6ccca2d9b2f3fac4242d95e358b3edcf77f3d5aa0d376",
+        "actual": "0b7f33930c97f3b268e6ccca2d9b2f3fac4242d95e358b3edcf77f3d5aa0d376",
+        "match": true
+      },
+      {
+        "path": "lifeos/engineering/LIFEOS-P3-044/scripts/run_validation.py",
+        "expected": "1e297a9eaf031776b33ee978656e9aa62e477d1b05875a6c1aa9627b532774c3",
+        "actual": "1e297a9eaf031776b33ee978656e9aa62e477d1b05875a6c1aa9627b532774c3",
+        "match": true
+      },
+      {
+        "path": "lifeos/engineering/LIFEOS-P3-044/evidence/test_results.json",
+        "expected": "857c86c8212a09f35f5fdd129acda82ca4b532269158c0c4b5c9e08a8dbe439f",
+        "actual": "857c86c8212a09f35f5fdd129acda82ca4b532269158c0c4b5c9e08a8dbe439f",
+        "match": true
+      },
+      {
+        "path": "lifeos/engineering/LIFEOS-P3-044/evidence/test_run.log",
+        "expected": "b0e4f76ce3af1cd447e1dfac53823fb73894f6959dd14f1afe8bdf949adc6848",
+        "actual": "b0e4f76ce3af1cd447e1dfac53823fb73894f6959dd14f1afe8bdf949adc6848",
+        "match": true
+      },
+      {
+        "path": "lifeos/engineering/LIFEOS-P3-044/evidence/environment.json",
+        "expected": "4e851b2cb375b6049fdcda2dc301207b43f9eb6926ded83d5c1f4ddc4eca2e45",
+        "actual": "4e851b2cb375b6049fdcda2dc301207b43f9eb6926ded83d5c1f4ddc4eca2e45",
+        "match": true
+      },
+      {
+        "path": "lifeos/engineering/LIFEOS-P3-044/evidence/checks/integrity_and_fk.json",
+        "expected": "46c7cb980ee3e47e7594726ef0196d45cadcdb50231a1461d814394da954fdb5",
+        "actual": "46c7cb980ee3e47e7594726ef0196d45cadcdb50231a1461d814394da954fdb5",
+        "match": true
+      },
+      {
+        "path": "lifeos/engineering/LIFEOS-P3-044/evidence/input/source_hashes.json",
+        "expected": "cbaf6545c616892b14798255c3b818b382e566b2ae7c88d1a16ecd53ca2b5138",
+        "actual": "cbaf6545c616892b14798255c3b818b382e566b2ae7c88d1a16ecd53ca2b5138",
+        "match": true
+      },
+      {
+        "path": "lifeos/engineering/LIFEOS-P3-044/evidence/input/p3_043_preservation.json",
+        "expected": "5a57b71e4d182beb2671ad141822fddea998b74d9be95f90bf4f8212e32ccaa0",
+        "actual": "5a57b71e4d182beb2671ad141822fddea998b74d9be95f90bf4f8212e32ccaa0",
+        "match": true
+      }
+    ],
+    "all_historical_hashes_match": true,
+    "current_candidate_sha256": "bda3e8dbf9ffce002ed0cb3371ccc58b3aea40f819488a21c890ed14382ed9b1",
+    "p3_044_snapshot_sha256": "0b7f33930c97f3b268e6ccca2d9b2f3fac4242d95e358b3edcf77f3d5aa0d376",
+    "current_differs_from_p3_044_snapshot": true,
+    "current_matches_r0048_closed_boundary": true,
+    "p3_044_pm_review_observed_sha256": "18e7d0966c0c5f9c87fb74560b644033cfd398d01872487d21f258ae0ed82787",
+    "input_before_sha256": "bda3e8dbf9ffce002ed0cb3371ccc58b3aea40f819488a21c890ed14382ed9b1",
+    "input_after_sha256": "bda3e8dbf9ffce002ed0cb3371ccc58b3aea40f819488a21c890ed14382ed9b1",
+    "input_unchanged_during_p3_057_runner": true
+  },
+  "summary": {
+    "P0": {
+      "PASS": 0,
+      "FAIL": 0
+    },
+    "P1": {
+      "PASS": 312,
+      "FAIL": 0
+    },
+    "P2": {
+      "PASS": 2,
+      "FAIL": 0
+    },
+    "not_implemented": 0,
+    "unknown": 0,
+    "total": {
+      "PASS": 314,
+      "FAIL": 0
+    }
+  },
+  "results": [
+    {
+      "id": "replace_same_id",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "replace_same_id",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "replace_same_id",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "replace_same_id",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "replace_same_id",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "replace_same_id",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "replace_same_id",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "replace_same_id",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "replace_version_identity",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "replace_version_identity",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "replace_version_identity",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "replace_version_identity",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "replace_version_identity",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "replace_version_identity",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "replace_version_identity",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "replace_version_identity",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "replace_both_identity",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "replace_both_identity",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "replace_both_identity",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "replace_both_identity",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "replace_both_identity",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "replace_both_identity",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "replace_both_identity",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "replace_both_identity",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "upsert_id_do_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "upsert_id_do_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "upsert_id_do_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "upsert_id_do_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "upsert_id_do_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "upsert_id_do_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "upsert_id_do_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "upsert_id_do_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "upsert_version_do_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "upsert_version_do_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "upsert_version_do_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "upsert_version_do_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "upsert_version_do_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "upsert_version_do_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "upsert_version_do_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "upsert_version_do_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "upsert_do_nothing",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "upsert_do_nothing",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "upsert_do_nothing",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "upsert_do_nothing",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "upsert_do_nothing",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "upsert_do_nothing",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "upsert_do_nothing",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "upsert_do_nothing",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "plain_duplicate_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "plain_duplicate_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "plain_duplicate_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "plain_duplicate_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "plain_duplicate_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "plain_duplicate_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "plain_duplicate_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "plain_duplicate_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "delete_then_rebuild",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "delete_then_rebuild",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "delete_then_rebuild",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "delete_then_rebuild",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "delete_then_rebuild",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "delete_then_rebuild",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "delete_then_rebuild",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "delete_then_rebuild",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_multi_row_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_multi_row_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_multi_row_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_multi_row_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_multi_row_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_multi_row_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_multi_row_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_multi_row_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "children_multi_row",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "children_multi_row",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "children_multi_row",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "children_multi_row",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "children_multi_row",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "children_multi_row",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "children_multi_row",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "children_multi_row",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "transaction_rollback",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "transaction_rollback",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "transaction_rollback",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "transaction_rollback",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "transaction_rollback",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "transaction_rollback",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "transaction_rollback",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "transaction_rollback",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "savepoint_recovery",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "savepoint_recovery",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "savepoint_recovery",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "savepoint_recovery",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "savepoint_recovery",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "savepoint_recovery",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "savepoint_recovery",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "savepoint_recovery",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "legal_lifecycle_successor",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "legal_lifecycle_successor",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "legal_lifecycle_successor",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "legal_lifecycle_successor",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "legal_lifecycle_successor",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "legal_lifecycle_successor",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "legal_lifecycle_successor",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "legal_lifecycle_successor",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_grantor_ref",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_grantor_ref",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_grantor_ref",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_grantor_ref",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_grantor_ref",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_grantor_ref",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_grantor_ref",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_grantor_ref",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_processor",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_processor",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_processor",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_processor",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_processor",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_processor",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_processor",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_processor",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_purpose",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_purpose",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_purpose",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_purpose",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_purpose",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_purpose",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_purpose",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_purpose",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_location",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_location",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_location",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_location",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_location",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_location",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_location",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_location",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_valid_from_ms",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_valid_from_ms",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_valid_from_ms",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_valid_from_ms",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_valid_from_ms",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_valid_from_ms",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_valid_from_ms",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_valid_from_ms",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_expires_mode",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_expires_mode",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_expires_mode",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_expires_mode",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_expires_mode",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_expires_mode",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_expires_mode",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_expires_mode",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_expires_at_ms",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_expires_at_ms",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_expires_at_ms",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_expires_at_ms",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_expires_at_ms",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_expires_at_ms",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_expires_at_ms",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_expires_at_ms",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_policy_version",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_policy_version",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_policy_version",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_policy_version",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "parent_envelope_policy_version",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_policy_version",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_policy_version",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "parent_envelope_policy_version",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_delete",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_delete",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_delete",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_delete",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_delete",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_delete",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_delete",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_delete",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_replace",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_replace",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_replace",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_replace",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_replace",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_replace",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_replace",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_replace",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_from_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_from_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_from_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_from_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_from_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_from_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_from_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_from_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_into_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_into_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_into_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_into_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_into_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_into_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_into_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_scope_rebind_into_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_delete",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_delete",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_delete",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_delete",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_delete",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_delete",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_delete",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_delete",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_replace",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_replace",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_replace",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_replace",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_replace",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_replace",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_replace",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_replace",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_rebind_from_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_rebind_from_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_rebind_from_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_rebind_from_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_rebind_from_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_rebind_from_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_rebind_from_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_rebind_from_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_rebind_into_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_rebind_into_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_rebind_into_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_rebind_into_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_action_rebind_into_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_rebind_into_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_rebind_into_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_action_rebind_into_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_insert",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_insert",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_update",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_update",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_delete",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_delete",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_delete",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_delete",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_delete",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_delete",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_delete",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_delete",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_replace",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_replace",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_replace",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_replace",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_replace",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_replace",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_replace",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_replace",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_from_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_from_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_from_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_from_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_from_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_from_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_from_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_from_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_into_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_into_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_into_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_into_active",
+      "severity": "P1",
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "storage_check": "not_applicable"
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_into_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_into_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_into_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "authorization_policy_rebind_into_active",
+      "severity": "P1",
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "status": "PASS",
+      "storage_checks": {
+        "integrity_check": [
+          "ok"
+        ],
+        "quick_check": [
+          "ok"
+        ],
+        "foreign_key_check": []
+      }
+    },
+    {
+      "id": "historical_evidence_hash_preservation",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "all historical source/evidence hashes match"
+    },
+    {
+      "id": "current_r0048_hash_boundary_observation",
+      "severity": "P2",
+      "status": "PASS",
+      "detail": "current candidate matches recorded closed-boundary hash"
+    }
+  ]
+}

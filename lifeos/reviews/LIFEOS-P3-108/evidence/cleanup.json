@@ -1,0 +1,21 @@
+{
+  "id": "P3108-M016-cleanup",
+  "method": "Exact lstat/check then exact-path deletion only; no glob, find, prefix cleanup, or unrelated temporary path was used.",
+  "removed_by_this_review": [
+    "/private/tmp/lifeos-p3-108-review-work-p3108a1",
+    "/private/tmp/lifeos-p3-104-p3-108-review-nominal-p3108a1",
+    "/private/tmp/lifeos-p3-104-p3-108-review-path-p3108a1",
+    "/private/tmp/lifeos-p3-104-p3-108-review-link-p3108a1",
+    "/private/tmp/lifeos-p3-104-p3-108-review-hardlink-p3108a1",
+    "/private/tmp/lifeos-p3-104-p3-108-review-dangling-final-p3108a1",
+    "/private/tmp/lifeos-p3-104-p3-108-review-dangling-journal-p3108a1",
+    "/private/tmp/lifeos-p3-104-p3-108-review-dangling-wal-p3108a1",
+    "/private/tmp/lifeos-p3-104-p3-108-review-dangling-shm-p3108a1",
+    "/private/tmp/lifeos-p3-104-p3-108-review-tamper-p3108a1"
+  ],
+  "postcheck_all_p3108_task_paths_missing": true,
+  "protected_p3107_paths_missing": true,
+  "protected_legacy_file_checked_metadata_only": true,
+  "fixed_input_snapshot_after_cleanup": "snapshot.json",
+  "result": "PASS"
+}

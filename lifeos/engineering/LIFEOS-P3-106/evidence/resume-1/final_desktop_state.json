@@ -1,0 +1,21 @@
+{
+  "task": "LIFEOS-P3-106",
+  "execution": "resume-1",
+  "display": {
+    "original": "1512 x 982 (default)",
+    "restored": true,
+    "evidence": ["display-restored.jpg", "display_sequence.json"]
+  },
+  "reduced_motion": {
+    "original": "off (default key absent)",
+    "restored": "off",
+    "defaults_read_exit_code": 1,
+    "defaults_read_observation": "com.apple.Accessibility reduceMotion key does not exist",
+    "evidence": ["m015-reduced-motion-setting-restored.jpg", "m015-reduced-motion-app-restored.jpg"]
+  },
+  "lifeos_application": {
+    "bundle_id": "local.lifeos.p3-104",
+    "computer_use_list_apps_is_running": false
+  },
+  "status": "PASS"
+}

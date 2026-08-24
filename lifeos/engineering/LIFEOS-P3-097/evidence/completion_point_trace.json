@@ -1,0 +1,323 @@
+[
+  {
+    "test_id": "P3-097-M001",
+    "trace": []
+  },
+  {
+    "test_id": "P3-097-M002",
+    "trace": []
+  },
+  {
+    "test_id": "P3-097-M003",
+    "trace": []
+  },
+  {
+    "test_id": "P3-097-M004",
+    "trace": [
+      "candidate_write"
+    ]
+  },
+  {
+    "test_id": "P3-097-M005",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise"
+    ]
+  },
+  {
+    "test_id": "P3-097-M006",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "sidecar_cleanup_attempt_1",
+      "sidecar_cleanup_attempt_1",
+      "sidecar_cleanup_attempt_1",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "page_invalidate",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ]
+  },
+  {
+    "test_id": "P3-097-M007",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "sidecar_cleanup_attempt_1",
+      "sidecar_cleanup_attempt_2",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "page_invalidate",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ]
+  },
+  {
+    "test_id": "P3-097-M008",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "page_invalidate"
+    ]
+  },
+  {
+    "test_id": "P3-097-M009",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability"
+    ]
+  },
+  {
+    "test_id": "P3-097-M010",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate"
+    ]
+  },
+  {
+    "test_id": "P3-097-M011",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "page_invalidate",
+      "publish"
+    ]
+  },
+  {
+    "test_id": "P3-097-M012",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "page_invalidate",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ]
+  },
+  {
+    "test_id": "P3-097-M013",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "page_invalidate",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ]
+  },
+  {
+    "test_id": "P3-097-M014",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan"
+    ]
+  },
+  {
+    "test_id": "P3-097-M015-M004",
+    "trace": [
+      "candidate_write"
+    ]
+  },
+  {
+    "test_id": "P3-097-M015-M005",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise"
+    ]
+  },
+  {
+    "test_id": "P3-097-M015-M006",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "sidecar_cleanup_attempt_1",
+      "sidecar_cleanup_attempt_1",
+      "sidecar_cleanup_attempt_1",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ]
+  },
+  {
+    "test_id": "P3-097-M015-M007",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "sidecar_cleanup_attempt_1",
+      "sidecar_cleanup_attempt_2",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ]
+  },
+  {
+    "test_id": "P3-097-M015-M008",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ]
+  },
+  {
+    "test_id": "P3-097-M015-M009",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability"
+    ]
+  },
+  {
+    "test_id": "P3-097-M015-M010",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate"
+    ]
+  },
+  {
+    "test_id": "P3-097-M015-M011",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "publish"
+    ]
+  },
+  {
+    "test_id": "P3-097-M015-M012",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ]
+  },
+  {
+    "test_id": "P3-097-M015-M013",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan",
+      "path_stability",
+      "publish",
+      "completion_reached",
+      "post_publish_gate_fd_close"
+    ]
+  },
+  {
+    "test_id": "P3-097-M015-M014",
+    "trace": [
+      "candidate_write",
+      "candidate_commit",
+      "candidate_close_raise",
+      "candidate_close_sidecar",
+      "candidate_closed",
+      "candidate_validate",
+      "final_scan"
+    ]
+  },
+  {
+    "test_id": "P3-097-M016",
+    "trace": []
+  },
+  {
+    "test_id": "P3-097-M017",
+    "trace": []
+  }
+]

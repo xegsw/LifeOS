@@ -1,0 +1,172 @@
+[
+  {
+    "acceptance_id": "APP-01",
+    "precondition": "A fresh task-local fixture exists and the real debug LifeOS P3-104.app is launched through macOS LaunchServices.",
+    "operation": "Open the actual Tauri app and wait for its first backend get_today response without clicking a capture action.",
+    "observable_result": "The default-recovery page reports no records, AI disabled, and waits for explicit confirmation.",
+    "structured_result_id": "P3-104-ACTUAL-APP-FIRST-OPEN",
+    "evidence_path": "evidence/screenshots/APP-01-first-open.jpeg",
+    "sha256": "19a96cdb79ea08b181a219d7bd3b829d016addb94698f8a8b00d58bcdc03936f",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "APP-02",
+    "precondition": "The actual Tauri app is running with a backend-owned one-record state.",
+    "operation": "Click the navigation links from default recovery to no-reliable-suggestion and restricted-offline.",
+    "observable_result": "All three real pages open and show a consistent backend-owned state and explicit content/AI boundaries.",
+    "structured_result_id": "P3-104-ACTUAL-THREE-PAGE-NAVIGATION",
+    "evidence_path": "evidence/APP-02-three-page-navigation.md",
+    "sha256": "0481c01c241352796b7bbee241f91df40df4dba7e3e49306a853102ed9b53b63",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "CAP-01",
+    "precondition": "The actual app reports zero records for the fresh fixed fixture.",
+    "operation": "Click 明确确认本地保存 once.",
+    "observable_result": "Success appears only after atomic SQLite publication; today shows one user-original record and one saved audit event.",
+    "structured_result_id": "P3-104-CAPTURE-FIRST-SAVE",
+    "evidence_path": "evidence/screenshots/CAP-01-first-save.jpeg",
+    "sha256": "8830a4128a842083e47c8d340a5b9bd160bca118a61ca82438bc5e3c1e56ff4a",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "CAP-02",
+    "precondition": "The fixed primary record has already been saved once.",
+    "operation": "Click 重复同一幂等操作 with the same fixed key and text.",
+    "observable_result": "The backend returns idempotent repeat, record count remains one, and a legal repeat audit is appended.",
+    "structured_result_id": "P3-104-CAPTURE-IDEMPOTENT-REPEAT",
+    "evidence_path": "evidence/screenshots/CAP-02-idempotent-repeat.jpeg",
+    "sha256": "335224d9642b84264be3864a52445e8cbc4b52f873c1844134d4c94026150032",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "CAP-03",
+    "precondition": "The fixed primary key is bound to its original fixed text.",
+    "operation": "Click 验证同 key 异文本阻断.",
+    "observable_result": "The backend discloses idempotency_conflict; records and audit remain one and two.",
+    "structured_result_id": "P3-104-CAPTURE-CONFLICT-DENIED",
+    "evidence_path": "evidence/screenshots/CAP-03-conflict-blocked.jpeg",
+    "sha256": "ee660a9944eeac6dc51bdeebe7d701f4100706f39296148ec4b6c35b5433c3ee",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "CAP-04",
+    "precondition": "The authoritative database contains the one valid record and two valid audit events.",
+    "operation": "Click 验证原子失败 to invoke the fixed backend failure probe.",
+    "observable_result": "The backend discloses injected_atomic_failure, does not show success, and authoritative counts remain unchanged.",
+    "structured_result_id": "P3-104-CAPTURE-ATOMIC-FAILURE",
+    "evidence_path": "evidence/screenshots/CAP-04-atomic-failure.jpeg",
+    "sha256": "642d176b3bd7ac3e2b7b3e578d87b05aa217990014ccb00fc2e02f7971c27b50",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "STATE-01",
+    "precondition": "The page displays a disclosed injected failure while the backend still owns one valid record.",
+    "operation": "Activate the default-recovery navigation link to reload the page from backend state.",
+    "observable_result": "The transient failure disclosure disappears and get_today restores exactly one record and two audit events.",
+    "structured_result_id": "P3-104-PAGE-REFRESH-RECOVERY",
+    "evidence_path": "evidence/screenshots/STATE-01-refresh.jpeg",
+    "sha256": "54c28df291c76f3a527f214c8aefead1a8b0d880126c33e35f1ee73d18c5c750",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "REST-01",
+    "precondition": "The actual app has one persisted fixed record and two valid audit events.",
+    "operation": "Quit the app with super+q, confirm the process stopped, relaunch the same debug app, and read the first page.",
+    "observable_result": "After a real close/reopen, get_today restores one user-original record and two audit events from SQLite.",
+    "structured_result_id": "P3-104-ACTUAL-CLOSE-REOPEN",
+    "evidence_path": "evidence/screenshots/REST-01-close-reopen.jpeg",
+    "sha256": "3fac079bff81864c868b4ad0ac9c255f23c545bfb2ff3318a5a685a7378ceb93",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "IPC-01",
+    "precondition": "The actual app is on the restricted-offline page.",
+    "operation": "Read runtime_status in the page and inspect open sockets with lsof while the app is running.",
+    "observable_result": "The renderer reports zero direct capabilities, exact three-command allowlist, all external capabilities closed; lsof finds no app socket.",
+    "structured_result_id": "P3-104-RUNTIME-CLOSED-OFFLINE",
+    "evidence_path": "evidence/screenshots/IPC-01-runtime-closed.jpeg",
+    "sha256": "4088a8496bf1111d13a3edf47e4504d455a29405a588dc597ed77fae3b04cdd5",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "IPC-02",
+    "precondition": "The actual restricted-offline page has one record and two audit events.",
+    "operation": "Invoke an unknown command, then invoke all registered commands with extra path, SQL, and shell fields.",
+    "observable_result": "Unknown IPC and every extra field are denied; backend records and audit are unchanged.",
+    "structured_result_id": "P3-104-IPC-UNKNOWN-AND-SCHEMA-DENIAL",
+    "evidence_path": "evidence/IPC-02-denials.md",
+    "sha256": "860f1d772752ca5cf2e57a0b57f6da1e2ef7146db730dba436df1d3993b2d11e",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "UI-NS-01",
+    "precondition": "The actual no-reliable-suggestion page is open with the persisted backend record.",
+    "operation": "Click 选择 Project and then 记录停点.",
+    "observable_result": "Both actions stop locally with explicit user-control text; no suggestion or new record is generated.",
+    "structured_result_id": "P3-104-NO-SUGGESTION-USER-CONTROL",
+    "evidence_path": "evidence/UI-NS-01-actions.md",
+    "sha256": "1f57b2dcad9641eff8ae1dfeb10754ef265643b7986b2e59fbb7d4a2c9cdc444",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "A11Y-01",
+    "precondition": "The actual default-recovery page is at the top and has no pointer-focused control.",
+    "operation": "Press the physical Tab key through computer-use.",
+    "observable_result": "The skip link becomes visible with a high-contrast focus outline.",
+    "structured_result_id": "P3-104-A11Y-ACTUAL-TAB",
+    "evidence_path": "evidence/screenshots/A11Y-01-tab-visible-focus.jpeg",
+    "sha256": "06bdf44384d23e3b69cd3cbf3b7708b63d4734f5e2e264bb842eed2dd275b5ef",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "A11Y-02",
+    "precondition": "The visible skip link has focus after an actual Tab press.",
+    "operation": "Press the physical Enter key through computer-use.",
+    "observable_result": "The skip link activates and the actual app scrolls/focuses the main-content region.",
+    "structured_result_id": "P3-104-A11Y-ACTUAL-ENTER",
+    "evidence_path": "evidence/screenshots/A11Y-02-enter-activation.jpeg",
+    "sha256": "81ada694a1df7b4a426ed737784776772a5cfc9bdcc6b9184ca864fd38eaadee",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "VIS-01",
+    "precondition": "The actual app window is at its initial 1024-pixel configured width.",
+    "operation": "Return the real default page to the top and capture the wide layout.",
+    "observable_result": "Hierarchy, navigation, identity boundary, and backend state remain readable without overlap.",
+    "structured_result_id": "P3-104-VISUAL-WIDE",
+    "evidence_path": "evidence/screenshots/VIS-01-wide.jpeg",
+    "sha256": "6e88da38ac076fa6ff904cd35597ec1c7d291545a88025bdd6ab57c9c7477129",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "VIS-02",
+    "precondition": "The actual app is at its wide default size with authoritative state visible.",
+    "operation": "Use the native Window > Move & Resize > Left action to make the actual window narrow and capture it.",
+    "observable_result": "At the narrower 676-pixel captured window, content reflows without clipping and backend state is preserved.",
+    "structured_result_id": "P3-104-VISUAL-NARROW",
+    "evidence_path": "evidence/screenshots/VIS-02-narrow.jpeg",
+    "sha256": "4287592dea40e403c701a8584781a569f19e397a55c71b5fce202b2fecf80fa5",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "MOTION-01",
+    "precondition": "macOS Reduce Motion is initially off and the app reports that the system has not requested it.",
+    "operation": "Temporarily enable Reduce Motion in System Settings, navigate the actual app to restricted-offline, capture its status, then restore the setting to off.",
+    "observable_result": "The app reports 系统已启用 while the CSS reduced-motion rule disables transitions/animations; the original system preference is restored.",
+    "structured_result_id": "P3-104-ACTUAL-REDUCED-MOTION",
+    "evidence_path": "evidence/screenshots/MOTION-01-reduced-motion-enabled.jpeg",
+    "sha256": "2ab8ad9efb7ddecb847bd022c5dc724b3c041fc5640e762424e0fa1808d57d54",
+    "status": "PASS"
+  },
+  {
+    "acceptance_id": "CLEAN-01",
+    "precondition": "The actual app is stopped and the exact evidence fixture contains only capture.sqlite and sentinel.txt.",
+    "operation": "Run cleanup_evidence_fixture.sh and scan /private/tmp for lifeos-p3-104-* residue.",
+    "observable_result": "The exact app fixture is removed and no task-prefixed temporary fixture remains.",
+    "structured_result_id": "P3-104-TEMP-CLEANUP",
+    "evidence_path": "evidence/cleanup.log",
+    "sha256": "a3f17c16df05db7320dca279c9a4b1d407b40619532f045cffdf436d41da088b",
+    "status": "PASS"
+  }
+]

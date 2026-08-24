@@ -1,0 +1,91 @@
+{
+  "task_id": "LIFEOS-P3-106",
+  "submission": "resume-1",
+  "acceptance_basis": {
+    "id": "ABF-P3-106-v1",
+    "sha256": "1aa076a289173eb0dbd4e17ccfd3a1af89cbd9f815ad656d31d9318a5172a5c4",
+    "changed": false
+  },
+  "pm_conclusion": "REWORK",
+  "formal_rework": {
+    "used": 1,
+    "limit": 2
+  },
+  "counts": {
+    "P0": 1,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 1,
+    "Not Implemented": 0
+  },
+  "checks": [
+    {
+      "id": "PM-R1-001",
+      "name": "Engineering Manifest",
+      "status": "PASS",
+      "detail": "217/217 entries independently recomputed; no missing or extra live non-target file; Manifest self-excluded."
+    },
+    {
+      "id": "PM-R1-002",
+      "name": "Frozen inputs and immutable runtime",
+      "status": "PASS",
+      "detail": "22/22 fixed inputs match; P3-106 Cargo.lock, Cargo.toml, runtime.rs, main.rs and capability remain byte-identical to P3-104."
+    },
+    {
+      "id": "PM-R1-003",
+      "name": "Build and runtime regression",
+      "status": "PASS",
+      "detail": "Submitted static 40/40, runtime 7/7, cargo test/build/Tauri bundle return code 0, and unit path residue 0 are internally consistent. PM did not execute the submitted cleanup runner."
+    },
+    {
+      "id": "PM-R1-004",
+      "name": "1280x1024 reference canvases",
+      "status": "PASS",
+      "detail": "Three actual-app files independently measure 1280x1024 and visually contain the frozen structural anchors; three side-by-side files measure 2560x1024."
+    },
+    {
+      "id": "PM-R1-005",
+      "name": "Original-workspace responsive evidence",
+      "status": "PASS",
+      "detail": "Three actual-app files independently measure 1160x768 and the narrow evidence measures 700x760; visual inspection shows scrolling and key capture/composer controls remain reachable."
+    },
+    {
+      "id": "PM-P3-106-R1-CE-01",
+      "name": "Forbidden legacy-file content read and false PASS",
+      "status": "FAIL",
+      "severity": "P0",
+      "detail": "ABF line 60 permits only lstat-style metadata comparison and explicitly prohibits reading /private/tmp/lifeos-p3-104-rework-static-results.json content. run_cleanup_resume.py line 22 calls legacy.read_bytes() and hashes the content; cleanup_results.json records that SHA-256. finalize_resume.py lines 9-11 then unconditionally marks M016-M018 PASS, and its checks do not reject this authorization violation. This violates L1-7, L1-9, ABF-I-02/I-12/I-13 and M016/M018."
+    },
+    {
+      "id": "PM-P3-106-R1-EV-02",
+      "name": "Display restoration state",
+      "status": "UNKNOWN",
+      "severity": "Unknown",
+      "detail": "display_sequence.json asserts restoration to 1512x982, but PM visual inspection sees the restored screenshot highlighting a different scaling thumbnail than display-original.jpg. Read-only system_profiler does not expose the logical scale, so current restoration cannot be independently confirmed. final_desktop_state.json self-assertion is insufficient for the mandatory restoration gate."
+    },
+    {
+      "id": "PM-R1-008",
+      "name": "Initial evidence preservation and fixture cleanup",
+      "status": "PASS_WITH_EXCEPTION",
+      "detail": "30/30 initial files are hash-stable and the 11 exact allowlisted fixture paths have zero residual. The legacy content-read exception is recorded separately as P0."
+    }
+  ],
+  "pm_replay": {
+    "performed": false,
+    "reason": "Executing the submitted cleanup runner would repeat the explicit forbidden content read. PM used read-only hash, source, JSON, log, pixel and visual inspection only.",
+    "temporary_artifacts_created": false,
+    "temporary_artifacts_remaining": 0
+  },
+  "local_precheck": {
+    "performed": false,
+    "reason": "Skipped because this is a high-risk authorization, local-file-read and system-setting restoration judgment."
+  },
+  "required_rework": [
+    "Preserve resume-1 Engineering and PM Evidence read-only; create evidence/rework-1 from empty.",
+    "Remove every content read/hash of /private/tmp/lifeos-p3-104-rework-static-results.json; inspect only lstat metadata fields allowed by ABF.",
+    "Make cleanup and final verifiers fail if any forbidden-path content-read expression exists or if before/after metadata differs; do not assign PASS unconditionally.",
+    "Manually verify the current macOS display scaling is the original default before further app work. Do not modify it without a new explicit user instruction if it is not already restored.",
+    "For rework Evidence, provide unambiguous before/temporary/after selected-scale proof and a verifier that compares the selected scale, while still completing the original 1160x768 responsive check.",
+    "Rerun the full M001-M018 matrix because ABF Pass requires a clean complete run; do not patch resume-1 results in place."
+  ]
+}

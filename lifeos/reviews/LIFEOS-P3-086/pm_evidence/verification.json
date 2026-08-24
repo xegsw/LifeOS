@@ -1,0 +1,20 @@
+{
+  "task_id": "LIFEOS-P3-086",
+  "verification_type": "PM read-only independent evidence verification",
+  "date": "2026-08-21",
+  "static_rerun": {
+    "command": "/Users/xxe/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node lifeos/reviews/LIFEOS-P3-086/evidence/independent_static_runner.mjs /private/tmp/lifeos-p3-086.FHtKcm/app",
+    "result": "26 PASS / 0 FAIL"
+  },
+  "integrity": {
+    "p3_085_source_hashes_match_manifest": true,
+    "p3_082_historical_hashes_match_manifest": true,
+    "independent_runner_byte_identical_to_p3_085_runner": false
+  },
+  "pm_judgment": {
+    "dynamic_evidence_completed": false,
+    "not_implemented": 1,
+    "classification": "Rework, not Blocked",
+    "reason": "The task required a new compliant graphical local browser session. Google Chrome had already been shown by the P3-084 and P3-085 task-local file: evidence to satisfy that boundary; the review did not use that permitted path and so did not establish an external blocker."
+  }
+}

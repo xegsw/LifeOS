@@ -1,0 +1,370 @@
+[
+  {
+    "id": "first-capture",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "5c4dbc4af1c4b180b14e9aaf4b6ab37a1581d7ba260c396903b0674d1365e34d"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    }
+  },
+  {
+    "id": "repeat-capture",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "5c4dbc4af1c4b180b14e9aaf4b6ab37a1581d7ba260c396903b0674d1365e34d"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "b2fb85c3cab9d3ef9a787914f74953bdc0eb3a6c11152664f97d5cc204ae26a1"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    }
+  },
+  {
+    "id": "restart-read",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "b2fb85c3cab9d3ef9a787914f74953bdc0eb3a6c11152664f97d5cc204ae26a1"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "b2fb85c3cab9d3ef9a787914f74953bdc0eb3a6c11152664f97d5cc204ae26a1"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    }
+  },
+  {
+    "id": "first-render",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "b2fb85c3cab9d3ef9a787914f74953bdc0eb3a6c11152664f97d5cc204ae26a1"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "b2fb85c3cab9d3ef9a787914f74953bdc0eb3a6c11152664f97d5cc204ae26a1"
+      },
+      "page": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211289,
+        "nlink": 1,
+        "size": 672,
+        "sha256": "e07fb84695f8c512a81a4b76e212164e09f889b053e129d8b600589ad7791e5a"
+      }
+    }
+  },
+  {
+    "id": "second-capture",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "b2fb85c3cab9d3ef9a787914f74953bdc0eb3a6c11152664f97d5cc204ae26a1"
+      },
+      "page": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211289,
+        "nlink": 1,
+        "size": 672,
+        "sha256": "e07fb84695f8c512a81a4b76e212164e09f889b053e129d8b600589ad7791e5a"
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "fdbd4bac05cec3cde757cb80dc21445f9364c644d6ec6abb45fb820e2cdc7f8d"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    }
+  },
+  {
+    "id": "second-render",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "fdbd4bac05cec3cde757cb80dc21445f9364c644d6ec6abb45fb820e2cdc7f8d"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "fdbd4bac05cec3cde757cb80dc21445f9364c644d6ec6abb45fb820e2cdc7f8d"
+      },
+      "page": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211292,
+        "nlink": 1,
+        "size": 874,
+        "sha256": "dfc94aa56b2ae2cd045981246c3fd51cf35532d7a5d7b692269b561e8b3cbcb9"
+      }
+    }
+  },
+  {
+    "id": "clear",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "fdbd4bac05cec3cde757cb80dc21445f9364c644d6ec6abb45fb820e2cdc7f8d"
+      },
+      "page": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211292,
+        "nlink": 1,
+        "size": 874,
+        "sha256": "dfc94aa56b2ae2cd045981246c3fd51cf35532d7a5d7b692269b561e8b3cbcb9"
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "47853593cd65e331fe760af9ecada392fdd53aee4eafc9e9b79bd2962b3c6121"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    }
+  },
+  {
+    "id": "post-clear-render",
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "status": "PASS",
+    "before": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "47853593cd65e331fe760af9ecada392fdd53aee4eafc9e9b79bd2962b3c6121"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    },
+    "after": {
+      "db": {
+        "exists": true,
+        "type": "regular",
+        "device": 16777231,
+        "inode": 6211284,
+        "nlink": 1,
+        "size": 24576,
+        "sha256": "47853593cd65e331fe760af9ecada392fdd53aee4eafc9e9b79bd2962b3c6121"
+      },
+      "page": {
+        "exists": false,
+        "type": "missing",
+        "device": null,
+        "inode": null,
+        "nlink": null,
+        "size": null,
+        "sha256": null
+      }
+    }
+  }
+]

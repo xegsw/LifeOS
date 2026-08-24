@@ -1,0 +1,64 @@
+{
+  "task_id": "LIFEOS-P3-101",
+  "matrix_row": "ABF-M-007",
+  "status": "PASS",
+  "gaps": [
+    {
+      "area": "Authorization",
+      "controlled_state": "Task-card authorization exists only for read-only assessment and prior fixed non-sensitive/task-local candidates.",
+      "real_use_state": "Not authorized for personal data, personal paths, existing DB, real output files or real runtime.",
+      "status": "Not Met",
+      "needed": "A separate task, new ABF and explicit user confirmation naming data class, exact path/DB boundary, entry points, cleanup and stop conditions."
+    },
+    {
+      "area": "Runtime/capture/persistence/today display",
+      "controlled_state": "Fixed P3-097 candidate has PM and independent Pass under single-process/offline/task-local/non-sensitive fixtures.",
+      "real_use_state": "No authorized real-use execution or real-use evidence; candidate is Not Frozen.",
+      "status": "Partial",
+      "needed": "First-use, repeat/idempotence, restart, failure, cleanup, audit and user-visible state evidence on the separately authorized boundary."
+    },
+    {
+      "area": "Basic export",
+      "controlled_state": "Synthetic plan/sandbox exists.",
+      "real_use_state": "Real file/path export is disabled and unverified.",
+      "status": "Partial",
+      "needed": "Separate explicit file/path authorization; platform path-scope and R-0040 evaluation if Tauri/IPC is involved."
+    },
+    {
+      "area": "Basic permission settings",
+      "controlled_state": "Controlled default-deny/grant/deny/revoke/audit behavior is independently reviewed.",
+      "real_use_state": "No real identity/data-flow/processor/location/settings experience or real downstream revocation proof.",
+      "status": "Partial",
+      "needed": "Real-use authorization and end-to-end evidence without broadening the frozen trust model."
+    },
+    {
+      "area": "Error and recovery",
+      "controlled_state": "Synthetic restore and fixed failure-closure matrices pass.",
+      "real_use_state": "No real backup/recovery/fault exercise; crash, network FS and permanent OS denial are excluded.",
+      "status": "Partial",
+      "needed": "Separately scoped real-use durability and recovery validation."
+    },
+    {
+      "area": "Alpha instructions and value",
+      "controlled_state": "Draft/internal comprehension checks exist.",
+      "real_use_state": "No actual self-use/Alpha behavior, counterevidence or feedback.",
+      "status": "Partial",
+      "needed": "Instructions aligned to actually enabled capability, followed by authorized use evidence; Gate 5 remains Not Met meanwhile."
+    },
+    {
+      "area": "Tauri/IPC/platform",
+      "controlled_state": "Equivalent harness/back-end closure evidence exists; related real capability is disabled.",
+      "real_use_state": "Real capability/plugin/IPC/WebView/CSP/bundle/platform path behavior unverified.",
+      "status": "Not Met",
+      "needed": "Separate R-0040 validation only if the selected real-use entry point requires Tauri/IPC."
+    },
+    {
+      "area": "Governance ledger consistency",
+      "controlled_state": "CURRENT_STATUS, TASK_REGISTRY and D-0415 point to P3-101.",
+      "real_use_state": "FREEZE_STATUS still names P3-085 as the allowed next step.",
+      "status": "Unknown",
+      "needed": "PM reconciliation before a safe next-direction recommendation."
+    }
+  ],
+  "unknown_as_met": false
+}

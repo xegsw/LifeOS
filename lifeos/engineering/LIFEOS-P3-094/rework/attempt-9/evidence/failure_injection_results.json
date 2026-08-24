@@ -1,0 +1,247 @@
+[
+  {
+    "id": "LIFE-new-db-init-failure-zero-half-products",
+    "category": "failure",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "RuntimeTest.test_empty_and_atomic_failure",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "1810728530f219799f9840760c96cd8f19e0a53c596acc46367a2f4bc34b5d4e"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_empty_and_atomic_failure",
+    "state_transition_id": "LIFE-new-db-init-failure-zero-half-products"
+  },
+  {
+    "id": "LIFE-existing-capture-write-failure",
+    "category": "failure",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "InvariantClosureTest.test_capture_success_invalidates_stale_page_and_failure_restores_it",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "d999567279ca3b5f12f84aef6fa7f62e20106b29b9a26548d43a2ec61a020d99"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_capture_success_invalidates_stale_page_and_failure_restores_it",
+    "state_transition_id": "LIFE-existing-capture-write-failure"
+  },
+  {
+    "id": "LIFE-capture-commit-failure",
+    "category": "failure",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "InvariantClosureTest.test_capture_commit_failure_injected",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "edbc8971b60bc01eec278d36d70ff34d410318da28aa5e3dfa887b155ec3dbc1"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_capture_commit_failure_injected",
+    "state_transition_id": "LIFE-capture-commit-failure"
+  },
+  {
+    "id": "LIFE-capture-precommit-cleanup-failure",
+    "category": "failure",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "InvariantClosureTest.test_capture_post_commit_cleanup_failure_injected",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "d09380b389a48ca312f327a21947b1bbbb0f149d2539f32ecad873677da17c66"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_capture_post_commit_cleanup_failure_injected",
+    "state_transition_id": "LIFE-capture-precommit-cleanup-failure"
+  },
+  {
+    "id": "LIFE-repeat-conflict",
+    "category": "failure",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "InvariantClosureTest.test_repeat_only_appends_repeat_audit_and_conflict_changes_nothing",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "61e21a0d09fe07e4f9b163a30e75a7064b2f82553fef7a73454812921cb5c0fd"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_repeat_only_appends_repeat_audit_and_conflict_changes_nothing",
+    "state_transition_id": "LIFE-repeat-conflict"
+  },
+  {
+    "id": "LIFE-render-read-validate-write-flush-fsync-replace-cleanup",
+    "category": "failure",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "RuntimeTest.test_query_failure_with_stale_page_is_invalidated_without_db_change",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "022ab92fe7e6bf04491fe9419d1dab9ec855e66963683b958e27d5903ce8c882"
+      },
+      {
+        "test_id": "InvariantClosureTest.test_render_fsync_failure_keeps_valid_page_and_cleans_temp",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "5e8a1a85a767618c45247debc30331bb713a5034c43113359d04e3389cdd0f5c"
+      },
+      {
+        "test_id": "InvariantClosureTest.test_render_replace_failure_keeps_valid_page_and_cleans_temp",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "28b6ed3130e8f6c43c5a58212a720aa79b431224709df062190aa30868f773c3"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_query_failure_with_stale_page_is_invalidated_without_db_change; InvariantClosureTest.test_render_fsync_failure_keeps_valid_page_and_cleans_temp; InvariantClosureTest.test_render_replace_failure_keeps_valid_page_and_cleans_temp",
+    "state_transition_id": "LIFE-render-read-validate-write-flush-fsync-replace-cleanup"
+  },
+  {
+    "id": "LIFE-clear-invalidate-confirm-delete-audit-rollback",
+    "category": "failure",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "RuntimeTest.test_clear_page_invalidation_failure_preserves_db",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "95ea27574dcbddcc6ef005f5014e82550072989dcb9383de77b1c5b6b4481c03"
+      },
+      {
+        "test_id": "InvariantClosureTest.test_clear_transaction_failure_rolls_back_and_page_stays_invalidated",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "e4d80890dbd643f64d9f677b185032bdf18d43765736d79a35d6fc0b4ab903c7"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "RuntimeTest.test_clear_page_invalidation_failure_preserves_db; InvariantClosureTest.test_clear_transaction_failure_rolls_back_and_page_stays_invalidated",
+    "state_transition_id": "LIFE-clear-invalidate-confirm-delete-audit-rollback"
+  },
+  {
+    "id": "LIFE-clear-commit-failure",
+    "category": "failure",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "InvariantClosureTest.test_clear_commit_failure_injected",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "2a69817784ef2938a1acf716925af667f56291053b8a8c7d49665148c3717983"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_clear_commit_failure_injected",
+    "state_transition_id": "LIFE-clear-commit-failure"
+  },
+  {
+    "id": "LIFE-stale-page-after-capture-clear-missing-invalid-db",
+    "category": "failure",
+    "expected": "every named fixture is independently executed and passes",
+    "actual": [
+      {
+        "test_id": "InvariantClosureTest.test_capture_success_invalidates_stale_page_and_failure_restores_it",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "9ee09a1c86ae606b2413202a89c19053883f8ed966e5f0b365dc1114d7d1b9ad"
+      },
+      {
+        "test_id": "InvariantClosureTest.test_clear_untrusted_db_invalidates_page_without_db_change",
+        "executed": true,
+        "exit_code": 0,
+        "status": "PASS",
+        "log_sha256": "ba56dd7106d90456e11ee07bf08e1fbf62bdb26df1e843e8a0a933651ddf41c0"
+      }
+    ],
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "InvariantClosureTest.test_capture_success_invalidates_stale_page_and_failure_restores_it; InvariantClosureTest.test_clear_untrusted_db_invalidates_page_without_db_change",
+    "state_transition_id": "LIFE-stale-page-after-capture-clear-missing-invalid-db"
+  },
+  {
+    "id": "LIFE-fresh-process-full-chain",
+    "category": "failure",
+    "expected": "first, repeat, restart, render, recapture, rerender, clear, failed rerender",
+    "actual": "all fresh-process exits and states matched",
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "fresh_process_lifecycle.log",
+    "state_transition_id": "fresh-process-full-chain"
+  },
+  {
+    "id": "REG-attempt-6-7-8-precondition-adapted",
+    "category": "failure",
+    "expected": "all historical behavior matrices pass under new pre-existing-parent contract",
+    "actual": {
+      "attempt-6": {
+        "exit_code": 0,
+        "pass": 19,
+        "fail": 0,
+        "failed_items": [],
+        "harness_adjustment": "fixture parent mkdir only; historical source remained read-only"
+      },
+      "attempt-7": {
+        "exit_code": 0,
+        "pass": 13,
+        "fail": 0,
+        "failed_items": [],
+        "harness_adjustment": "fixture parent mkdir only; historical source remained read-only"
+      },
+      "attempt-8": {
+        "exit_code": 0,
+        "pass": 18,
+        "fail": 0,
+        "failed_items": [],
+        "harness_adjustment": "fixture parent mkdir only; historical source remained read-only"
+      }
+    },
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "adapted_regressions",
+    "state_transition_id": "unit-suite-isolated-fixtures"
+  },
+  {
+    "id": "REG-pm-attempt9-six-counterexamples",
+    "category": "failure",
+    "expected": "6 PASS / 0 FAIL",
+    "actual": {
+      "pass": 6,
+      "fail": 0
+    },
+    "status": "PASS",
+    "failure_stage": null,
+    "test_id": "pm_final_invariant_counterexamples",
+    "state_transition_id": "pm-attempt9"
+  }
+]

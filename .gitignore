@@ -1,0 +1,40 @@
+# OS / editor noise
+.DS_Store
+.DS_Store?
+*~
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.pyre/
+.mypy_cache/
+.venv/
+venv/
+
+# Build / runtime artifacts
+/node_modules/
+/target/
+/.tooling/target/
+/.tooling/tauri-cli-target/
+
+# Database artifacts
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.db-journal
+
+# Local runtime/test data
+/lifeos/spikes/**/work/
+/lifeos/engineering/*/work/
+/lifeos/engineering/*/runtime/
+
+# Build/packaging outputs
+/build/
+/dist/
+
+# Test screenshots/evidence that may include env paths (include selectively)
+# Keep evidence JSON/manifests/logs/source code by default. Add paths if needed.

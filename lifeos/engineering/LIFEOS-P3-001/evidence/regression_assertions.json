@@ -1,0 +1,932 @@
+{
+  "T-DEL-OLD-PACKAGE-CONTROLS": [
+    {
+      "actual": false,
+      "case": "revoke_processing:artifact_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "revoke_processing:derivation_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "revoke_processing:feedback_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "revoke_processing:search_zero",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "revoke_processing:queue_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "disconnect_source:artifact_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "disconnect_source:derivation_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "disconnect_source:feedback_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "disconnect_source:search_zero",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "disconnect_source:queue_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "delete_content:artifact_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "delete_content:derivation_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "delete_content:feedback_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "delete_content:search_zero",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "delete_content:queue_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "retract_feedback:feedback_not_restored",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "retract_feedback:derivation_not_restored",
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "T-DERIVATION-COMPLETE-EVIDENCE-REVOCATION": [
+    {
+      "actual": [
+        "artifact-decision:v1",
+        "artifact-unprocessed:v1"
+      ],
+      "case": "full_evidence_persisted",
+      "expected": [
+        "artifact-decision:v1",
+        "artifact-unprocessed:v1"
+      ],
+      "passed": true
+    },
+    {
+      "actual": "stale",
+      "case": "non_primary_evidence_makes_candidate_stale",
+      "expected": "stale",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "stale_derivation_export_zero",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "dependent_feedback_export_zero",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "dependent_link_export_zero",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": null,
+      "case": "suggestion_consumption_blocked",
+      "expected": null,
+      "passed": true
+    }
+  ],
+  "T-DERIVATION-GENERATION-BINDING": [
+    {
+      "actual": true,
+      "case": "artifact_generation_new_identity",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "actual": "stale",
+      "case": "artifact_generation_old_stale",
+      "expected": "stale",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "old_generation_export_zero",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "old_generation_restore_zero",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "old_generation_feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "old_generation_link_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "old_generation_search_zero",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": true,
+      "case": "source_generation_new_identity",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "actual": "stale",
+      "case": "source_generation_old_stale",
+      "expected": "stale",
+      "passed": true
+    },
+    {
+      "actual": "confirm",
+      "case": "unchanged_generation_happy_path",
+      "expected": "confirm",
+      "passed": true
+    }
+  ],
+  "T-EXPORT-ALL-STATE-PROJECT-CLOSURE": [
+    {
+      "actual": false,
+      "case": "project-synth-orbit:zero_leak:derivation:mixed:a-b",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "project-synth-orbit:zero_leak:feedback:mixed",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "project-synth-orbit:zero_leak:SYNTH_MIXED_FEEDBACK",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "project-synth-orbit:zero_leak:link-mixed",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "project-synth-orbit:zero_leak:artifact-b-unprocessed:v1",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "project-synth-aurora:zero_leak:derivation:mixed:a-b",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "project-synth-aurora:zero_leak:feedback:mixed",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "project-synth-aurora:zero_leak:SYNTH_MIXED_FEEDBACK",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "project-synth-aurora:zero_leak:link-mixed",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "project-synth-aurora:zero_leak:artifact-decision:v1",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": true,
+      "case": "legal_state_present",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "actual": true,
+      "case": "legal_feedback_state_present",
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "T-EXPORT-PROJECT-CLOSURE": [
+    {
+      "actual": false,
+      "case": "zero_leak:artifact-b-decision",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "zero_leak:artifact-b-unprocessed",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "zero_leak:feedback:derivation:next:project-synth-aurora:2cc46dbb909c760f:1",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "zero_leak:link-b",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "zero_leak:link-cross",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "zero_leak:project-synth-aurora",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": true,
+      "case": "a_feedback_included",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "actual": [
+        "link-a"
+      ],
+      "case": "a_link_included",
+      "expected": [
+        "link-a"
+      ],
+      "passed": true
+    },
+    {
+      "actual": [
+        "artifact-change",
+        "artifact-decision",
+        "artifact-stop",
+        "artifact-unprocessed"
+      ],
+      "case": "artifact_versions_closed",
+      "expected": [
+        "artifact-change",
+        "artifact-decision",
+        "artifact-stop",
+        "artifact-unprocessed"
+      ],
+      "passed": true
+    },
+    {
+      "actual": [
+        "artifact-change",
+        "artifact-decision",
+        "artifact-stop",
+        "artifact-unprocessed"
+      ],
+      "case": "authorizations_closed",
+      "expected": [
+        "artifact-change",
+        "artifact-decision",
+        "artifact-stop",
+        "artifact-unprocessed"
+      ],
+      "passed": true
+    },
+    {
+      "actual": [
+        "source-change",
+        "source-decision",
+        "source-stop",
+        "source-unprocessed"
+      ],
+      "case": "sources_closed",
+      "expected": [
+        "source-change",
+        "source-decision",
+        "source-stop",
+        "source-unprocessed"
+      ],
+      "passed": true
+    },
+    {
+      "actual": "package_checksum_invalid",
+      "case": "tampered_package_fail_closed",
+      "expected": "package_checksum_invalid",
+      "passed": true
+    }
+  ],
+  "T-GATE-AUTH-CONTEXT": [
+    {
+      "actual": false,
+      "case": "location_mismatch",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "processor_mismatch",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "both_mismatch",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "unknown_location",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "unknown_processor",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "missing_authorization",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": true,
+      "case": "legal_exact_match",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "missing_context",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "missing_processor_context",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "missing_purpose_context",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "wrong_exact_version",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": true,
+      "case": "right_exact_version",
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "T-GATE-EXPLICIT-CONTEXT-AND-CONFLICTS": [
+    {
+      "actual": null,
+      "case": "read_missing_context",
+      "expected": null,
+      "passed": true
+    },
+    {
+      "actual": [],
+      "case": "search_missing_context",
+      "expected": [],
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "recovery_missing_context_active_items",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": 4,
+      "case": "recovery_missing_context_gaps",
+      "expected": 4,
+      "passed": true
+    },
+    {
+      "actual": [],
+      "case": "export_missing_context",
+      "expected": [],
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "conflicting_allow_deny_can_consume",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": null,
+      "case": "conflicting_allow_deny_read",
+      "expected": null,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "conflicting_allow_deny_search",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "conflicting_allow_deny_recovery",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "conflicting_allow_deny_export",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "duplicate_allow_fails_closed",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "generation_context_mismatch_fails_closed",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "source_generation_context_mismatch_fails_closed",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "caller_cannot_move_policy_clock_backward",
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "T-ID-CONFIRMATION-REGRESSION": [
+    {
+      "actual": "derivation:next:project-synth-orbit:f5e1feeb9a96c159",
+      "case": "confirm:same_identity",
+      "expected": "derivation:next:project-synth-orbit:f5e1feeb9a96c159",
+      "passed": true
+    },
+    {
+      "actual": "confirmed",
+      "case": "confirm:status_preserved",
+      "expected": "confirmed",
+      "passed": true
+    },
+    {
+      "actual": "active",
+      "case": "confirm:feedback_trace_preserved",
+      "expected": "active",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "case": "confirm:new_evidence_new_identity",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "actual": "confirmed",
+      "case": "confirm:old_confirmation_traceable",
+      "expected": "confirmed",
+      "passed": true
+    },
+    {
+      "actual": "derivation:next:project-synth-orbit:f5e1feeb9a96c159",
+      "case": "edit_confirm:same_identity",
+      "expected": "derivation:next:project-synth-orbit:f5e1feeb9a96c159",
+      "passed": true
+    },
+    {
+      "actual": "edited_confirmed",
+      "case": "edit_confirm:status_preserved",
+      "expected": "edited_confirmed",
+      "passed": true
+    },
+    {
+      "actual": "active",
+      "case": "edit_confirm:feedback_trace_preserved",
+      "expected": "active",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "case": "edit_confirm:new_evidence_new_identity",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "actual": "edited_confirmed",
+      "case": "edit_confirm:old_confirmation_traceable",
+      "expected": "edited_confirmed",
+      "passed": true
+    }
+  ],
+  "T-RESTORE-AUTHORITATIVE-CURRENT-GATE": [
+    {
+      "actual": false,
+      "case": "old_context_cannot_self_attest",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "rehashed_forged_control_state_cannot_restore",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": 2,
+      "case": "authoritative_tombstone_still_wins",
+      "expected": 2,
+      "passed": true
+    }
+  ],
+  "T-RESTORE-AUTHORITATIVE-PAYLOAD-PROJECTION": [
+    {
+      "actual": {
+        "artifact_id": "artifact-change",
+        "category": "change",
+        "content_hash": "1912a340941f7e3c7da169040916752a600d596817030ab0ec776a4c65aad688",
+        "generation": 1,
+        "original_text": "SYNTH_NOTE_002：测试夹具版本从零版更新为一版。",
+        "project_id": "project-synth-orbit",
+        "source_id": "source-change",
+        "title": "近期变化",
+        "version_id": "artifact-change:v1",
+        "version_no": 1
+      },
+      "case": "artifact_payload_from_authority",
+      "expected": {
+        "artifact_id": "artifact-change",
+        "category": "change",
+        "content_hash": "1912a340941f7e3c7da169040916752a600d596817030ab0ec776a4c65aad688",
+        "generation": 1,
+        "original_text": "SYNTH_NOTE_002：测试夹具版本从零版更新为一版。",
+        "project_id": "project-synth-orbit",
+        "source_id": "source-change",
+        "title": "近期变化",
+        "version_id": "artifact-change:v1",
+        "version_no": 1
+      },
+      "passed": true
+    },
+    {
+      "actual": "核对恢复候选的来源、版本与确认状态",
+      "case": "derivation_output_from_authority",
+      "expected": "核对恢复候选的来源、版本与确认状态",
+      "passed": true
+    },
+    {
+      "actual": "deterministic-rule-v1",
+      "case": "derivation_rule_from_authority",
+      "expected": "deterministic-rule-v1",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "case": "derivation_generation_from_authority",
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "actual": {
+        "created_at": "2030-01-01T00:00:00+00:00",
+        "derivation_id": "derivation:next:project-synth-orbit:f5e1feeb9a96c159",
+        "id": "feedback:derivation:next:project-synth-orbit:f5e1feeb9a96c159:1",
+        "kind": "confirm",
+        "status": "active",
+        "user_text": "SYNTH_FEEDBACK"
+      },
+      "case": "feedback_payload_from_authority",
+      "expected": {
+        "created_at": "2030-01-01T00:00:00+00:00",
+        "derivation_id": "derivation:next:project-synth-orbit:f5e1feeb9a96c159",
+        "id": "feedback:derivation:next:project-synth-orbit:f5e1feeb9a96c159:1",
+        "kind": "confirm",
+        "status": "active",
+        "user_text": "SYNTH_FEEDBACK"
+      },
+      "passed": true
+    },
+    {
+      "actual": {
+        "confirmation_status": "confirmed",
+        "from_artifact_id": "artifact-decision",
+        "id": "link-authoritative",
+        "relation": "supports",
+        "source_kind": "user_explicit",
+        "to_artifact_id": "artifact-unprocessed"
+      },
+      "case": "link_payload_from_authority",
+      "expected": {
+        "confirmation_status": "confirmed",
+        "from_artifact_id": "artifact-decision",
+        "id": "link-authoritative",
+        "relation": "supports",
+        "source_kind": "user_explicit",
+        "to_artifact_id": "artifact-unprocessed"
+      },
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "injected_link_not_restored",
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "T-SAVE-CRASH-BOUNDARY": [
+    {
+      "actual": 86,
+      "case": "before_commit:process_exit",
+      "expected": 86,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "before_commit:authoritative_visibility",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "before_commit:submission_atomicity",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": 87,
+      "case": "after_commit:process_exit",
+      "expected": 87,
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "case": "after_commit:authoritative_visibility",
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "case": "after_commit:submission_atomicity",
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "actual": "SYNTH_CRASH",
+      "case": "after_commit:restart_read",
+      "expected": "SYNTH_CRASH",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "case": "after_commit:fts_failure_isolated",
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "actual": "SYNTH_CRASH",
+      "case": "after_commit:authority_survives_fts_failure",
+      "expected": "SYNTH_CRASH",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "case": "derivation_failure_injected",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "actual": "SYNTH_NOTE_004：待核对恢复候选是否保留来源与版本。",
+      "case": "authority_survives_derivation_failure",
+      "expected": "SYNTH_NOTE_004：待核对恢复候选是否保留来源与版本。",
+      "passed": true
+    }
+  ],
+  "T-WRITE-GATES-FEEDBACK-AND-LINK": [
+    {
+      "actual": 0,
+      "case": "deny:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "deny:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "revoked:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "revoked:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "expired:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "expired:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "conflict:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "conflict:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "location_context:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "location_context:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "processor_context:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "processor_context:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "purpose_context:feedback_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "unconfirmed",
+      "case": "purpose_context:status_unchanged",
+      "expected": "unconfirmed",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "feedback_missing_context_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "link_missing_context_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": "confirm",
+      "case": "feedback_happy_path",
+      "expected": "confirm",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "case": "link_happy_path",
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "case": "cross_project_link_zero",
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "deleted_endpoint_link_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "revoked_endpoint_link_zero",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "disconnected_endpoint_link_zero",
+      "expected": 0,
+      "passed": true
+    }
+  ]
+}

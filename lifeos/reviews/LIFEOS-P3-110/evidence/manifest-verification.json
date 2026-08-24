@@ -1,0 +1,22 @@
+{
+  "p3_106_manifest": {
+    "path": "lifeos/engineering/LIFEOS-P3-106/evidence/rework-1/MANIFEST.md",
+    "expected_sha256": "7a4007791223c55f4ea8541290a2fa60d36df69f0db5ece7b9507ca64da049fe",
+    "current_sha256": "7a4007791223c55f4ea8541290a2fa60d36df69f0db5ece7b9507ca64da049fe",
+    "match": true
+  },
+  "runtime_provenance": {
+    "source": "static-results.json",
+    "matched_files": ["Cargo.lock", "Cargo.toml", "src/runtime.rs", "src/main.rs", "capabilities/main.json"],
+    "all_match": true,
+    "ipc_allowlist": ["capture_record", "get_today", "runtime_status"],
+    "capability_permissions": []
+  },
+  "p3_109_history": {
+    "review_path": "lifeos/reviews/LIFEOS-P3-109_pm_review.md",
+    "expected_sha256": "9fa1c820ab030461a0c623fbf95d1a8d656d749dae1ccec65246891d5128e5a0",
+    "current_sha256": "9fa1c820ab030461a0c623fbf95d1a8d656d749dae1ccec65246891d5128e5a0",
+    "match": true,
+    "old_runner_read_or_executed": false
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "p2_2": {
+    "baseline": {
+      "export": "DENY",
+      "outbox": "DENY",
+      "read": "DENY",
+      "restore": "DENY",
+      "search": "DENY",
+      "suggest": "DENY"
+    },
+    "commit": {
+      "export": "ALLOW",
+      "outbox": "ALLOW",
+      "read": "ALLOW",
+      "restore": "ALLOW",
+      "search": "ALLOW",
+      "suggest": "ALLOW"
+    },
+    "insert_or_replace": {
+      "export": "ALLOW",
+      "outbox": "ALLOW",
+      "read": "ALLOW",
+      "restore": "ALLOW",
+      "search": "ALLOW",
+      "suggest": "ALLOW"
+    },
+    "ordinary_delete": {
+      "export": "ALLOW",
+      "outbox": "ALLOW",
+      "read": "ALLOW",
+      "restore": "ALLOW",
+      "search": "ALLOW",
+      "suggest": "ALLOW"
+    },
+    "rollback": {
+      "export": "DENY",
+      "outbox": "DENY",
+      "read": "DENY",
+      "restore": "DENY",
+      "search": "DENY",
+      "suggest": "DENY"
+    }
+  },
+  "p2_4": {
+    "action": {
+      "after_commit": "DENY_OR_AMBIGUOUS",
+      "cache_recheck": "DENY_OR_AMBIGUOUS",
+      "in_transaction": "DENY_OR_AMBIGUOUS",
+      "queue_recheck": "DENY_OR_AMBIGUOUS"
+    },
+    "policy": {
+      "after_commit": "DENY_OR_AMBIGUOUS",
+      "cache_recheck": "DENY_OR_AMBIGUOUS",
+      "in_transaction": "DENY_OR_AMBIGUOUS",
+      "queue_recheck": "DENY_OR_AMBIGUOUS"
+    },
+    "scope": {
+      "after_commit": "DENY_OR_AMBIGUOUS",
+      "cache_recheck": "DENY_OR_AMBIGUOUS",
+      "in_transaction": "DENY_OR_AMBIGUOUS",
+      "queue_recheck": "DENY_OR_AMBIGUOUS"
+    }
+  }
+}

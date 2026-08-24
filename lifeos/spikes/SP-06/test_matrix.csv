@@ -1,0 +1,40 @@
+case_id,description,category,priority,expected,actual,status
+T01,single-device online edit appends immutable version,basic_sync,P0,"('applied', 2)","('applied', 2)",PASS
+T02,offline-created operation applies on reconnect,basic_sync,P0,applied,applied,PASS
+T03,100 deliveries create one business effect and 99 explained retries,idempotency,P0,"(2, 99, 99)","(2, 99, 99)",PASS
+T04,dual offline edits retain both versions and explicit conflict,artifact_conflict,P0,"(3, 'conflict')","(3, 'conflict')",PASS
+T05,A/B/C out-of-order operations converge without loss,artifact_conflict,P0,"(1, 2, 4)","(1, 2, 4)",PASS
+T06,stale base edit is not current and is conflict-marked,artifact_conflict,P0,conflict,conflict,PASS
+T07,candidate accepts only through user feedback,candidate,P0,"('applied', True)","('applied', True)",PASS
+T08,candidate rejection remains user authority,candidate,P0,"('applied', 'rejected')","('applied', 'rejected')",PASS
+T09,accept versus reject becomes explicit conflict,candidate,P0,"('conflict', 'accepted')","('conflict', 'accepted')",PASS
+T10,edited accept versus original accept becomes explicit conflict,candidate,P0,"('conflict', 'edited_accepted')","('conflict', 'edited_accepted')",PASS
+T11,user edit concurrent with stale AI rebuild is rejected without original overwrite,candidate,P0,"('av-user', 'rejected', False)","('av-user', 'rejected', False)",PASS
+T12,complete versus defer appends both attempts and conflicts stale one,business_state,P0,"(2, 'conflict', 'completed')","(2, 'conflict', 'completed')",PASS
+T13,old-device defer after completion cannot overwrite,business_state,P0,completed,completed,PASS
+T14,decision revision appends history and rejects old restore projection,business_state,P0,"('applied', 1, False)","('applied', 1, False)",PASS
+T15,link confirm versus correction is explicit conflict,business_state,P0,"('conflict', 2)","('conflict', 2)",PASS
+T16,accept_candidate retraction appends and recomputes current state,feedback_history,P0,"('applied', 2, True, 'available_unconfirmed')","('applied', 2, True, 'available_unconfirmed')",PASS
+T17,reject_candidate retraction appends and recomputes current state,feedback_history,P0,"('applied', 2, True, 'available_unconfirmed')","('applied', 2, True, 'available_unconfirmed')",PASS
+T18,correct_link retraction appends and recomputes current state,feedback_history,P0,"('applied', 2, True, 'candidate')","('applied', 2, True, 'candidate')",PASS
+T19,complete_action retraction appends and recomputes current state,feedback_history,P0,"('applied', 2, True, 'confirmed')","('applied', 2, True, 'confirmed')",PASS
+T20,defer_action retraction appends and recomputes current state,feedback_history,P0,"('applied', 2, True, 'confirmed')","('applied', 2, True, 'confirmed')",PASS
+T21,deleted object rejects old-device upload,anti_resurrection,P0,"('rejected', 'TOMBSTONE_DOMINATES')","('rejected', 'TOMBSTONE_DOMINATES')",PASS
+T22,revocation blocks an already queued task,queue_recheck,P0,"(False, 0)","(False, 0)",PASS
+T23,disconnected source rejects old read result,anti_resurrection,P0,"('rejected', 'DERIVATION_INPUT_OR_POLICY_STALE')","('rejected', 'DERIVATION_INPUT_OR_POLICY_STALE')",PASS
+T24,tombstone-first then old version remains deleted,anti_resurrection,P0,"('rejected', False)","('rejected', False)",PASS
+T25,old version first then tombstone deactivates every version,anti_resurrection,P0,0,0,PASS
+T26,expired lease publishes no output,queue_recheck,P0,"(False, 0)","(False, 0)",PASS
+T27,stale duplicate claimant is fenced,queue_recheck,P0,False,False,PASS
+T28,auth version change blocks queued task,queue_recheck,P0,False,False,PASS
+T29,policy version change blocks queued task,queue_recheck,P0,False,False,PASS
+T30,input tombstone blocks queued task,queue_recheck,P0,"(False, False)","(False, False)",PASS
+T30A,object version change blocks queued task,queue_recheck,P0,"(False, False)","(False, False)",PASS
+T30B,source disconnect blocks queued publication,queue_recheck,P0,"(False, False)","(False, False)",PASS
+T30C,fully current queue envelope publishes exactly once,queue_recheck,P0,"(True, 1)","(True, 1)",PASS
+T31,cross-project link confirmation does not alter authorization,scope,P0,"('applied', 1)","('applied', 1)",PASS
+T32,unique evidence loss preserves history but requires review,evidence,P0,"('confirmed', 'review_required')","('confirmed', 'review_required')",PASS
+T33,field LWW demonstrably destroys concurrent user intent,strategy_counterexample,P0,rejected,rejected,PASS
+T34,finite CRDT requires extra causal/merge metadata,strategy_counterexample,P1,True,True,PASS
+T35,server authority plus append-only log preserves conflict,strategy,P0,"(3, 1)","(3, 1)",PASS
+T36,five-device replay retains all versions and logs pass privacy scan,scale_privacy,P0,"(6, 4, [])","(6, 4, [])",PASS

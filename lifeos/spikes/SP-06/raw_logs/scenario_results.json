@@ -1,0 +1,565 @@
+[
+  {
+    "case_id": "T01",
+    "description": "single-device online edit appends immutable version",
+    "category": "basic_sync",
+    "priority": "P0",
+    "expected": [
+      "applied",
+      2
+    ],
+    "actual": [
+      "applied",
+      2
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T02",
+    "description": "offline-created operation applies on reconnect",
+    "category": "basic_sync",
+    "priority": "P0",
+    "expected": "applied",
+    "actual": "applied",
+    "status": "PASS"
+  },
+  {
+    "case_id": "T03",
+    "description": "100 deliveries create one business effect and 99 explained retries",
+    "category": "idempotency",
+    "priority": "P0",
+    "expected": [
+      2,
+      99,
+      99
+    ],
+    "actual": [
+      2,
+      99,
+      99
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T04",
+    "description": "dual offline edits retain both versions and explicit conflict",
+    "category": "artifact_conflict",
+    "priority": "P0",
+    "expected": [
+      3,
+      "conflict"
+    ],
+    "actual": [
+      3,
+      "conflict"
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T05",
+    "description": "A/B/C out-of-order operations converge without loss",
+    "category": "artifact_conflict",
+    "priority": "P0",
+    "expected": [
+      1,
+      2,
+      4
+    ],
+    "actual": [
+      1,
+      2,
+      4
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T06",
+    "description": "stale base edit is not current and is conflict-marked",
+    "category": "artifact_conflict",
+    "priority": "P0",
+    "expected": "conflict",
+    "actual": "conflict",
+    "status": "PASS"
+  },
+  {
+    "case_id": "T07",
+    "description": "candidate accepts only through user feedback",
+    "category": "candidate",
+    "priority": "P0",
+    "expected": [
+      "applied",
+      true
+    ],
+    "actual": [
+      "applied",
+      true
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T08",
+    "description": "candidate rejection remains user authority",
+    "category": "candidate",
+    "priority": "P0",
+    "expected": [
+      "applied",
+      "rejected"
+    ],
+    "actual": [
+      "applied",
+      "rejected"
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T09",
+    "description": "accept versus reject becomes explicit conflict",
+    "category": "candidate",
+    "priority": "P0",
+    "expected": [
+      "conflict",
+      "accepted"
+    ],
+    "actual": [
+      "conflict",
+      "accepted"
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T10",
+    "description": "edited accept versus original accept becomes explicit conflict",
+    "category": "candidate",
+    "priority": "P0",
+    "expected": [
+      "conflict",
+      "edited_accepted"
+    ],
+    "actual": [
+      "conflict",
+      "edited_accepted"
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T11",
+    "description": "user edit concurrent with stale AI rebuild is rejected without original overwrite",
+    "category": "candidate",
+    "priority": "P0",
+    "expected": [
+      "av-user",
+      "rejected",
+      false
+    ],
+    "actual": [
+      "av-user",
+      "rejected",
+      false
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T12",
+    "description": "complete versus defer appends both attempts and conflicts stale one",
+    "category": "business_state",
+    "priority": "P0",
+    "expected": [
+      2,
+      "conflict",
+      "completed"
+    ],
+    "actual": [
+      2,
+      "conflict",
+      "completed"
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T13",
+    "description": "old-device defer after completion cannot overwrite",
+    "category": "business_state",
+    "priority": "P0",
+    "expected": "completed",
+    "actual": "completed",
+    "status": "PASS"
+  },
+  {
+    "case_id": "T14",
+    "description": "decision revision appends history and rejects old restore projection",
+    "category": "business_state",
+    "priority": "P0",
+    "expected": [
+      "applied",
+      1,
+      false
+    ],
+    "actual": [
+      "applied",
+      1,
+      false
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T15",
+    "description": "link confirm versus correction is explicit conflict",
+    "category": "business_state",
+    "priority": "P0",
+    "expected": [
+      "conflict",
+      2
+    ],
+    "actual": [
+      "conflict",
+      2
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T16",
+    "description": "accept_candidate retraction appends and recomputes current state",
+    "category": "feedback_history",
+    "priority": "P0",
+    "expected": [
+      "applied",
+      2,
+      true,
+      "available_unconfirmed"
+    ],
+    "actual": [
+      "applied",
+      2,
+      true,
+      "available_unconfirmed"
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T17",
+    "description": "reject_candidate retraction appends and recomputes current state",
+    "category": "feedback_history",
+    "priority": "P0",
+    "expected": [
+      "applied",
+      2,
+      true,
+      "available_unconfirmed"
+    ],
+    "actual": [
+      "applied",
+      2,
+      true,
+      "available_unconfirmed"
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T18",
+    "description": "correct_link retraction appends and recomputes current state",
+    "category": "feedback_history",
+    "priority": "P0",
+    "expected": [
+      "applied",
+      2,
+      true,
+      "candidate"
+    ],
+    "actual": [
+      "applied",
+      2,
+      true,
+      "candidate"
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T19",
+    "description": "complete_action retraction appends and recomputes current state",
+    "category": "feedback_history",
+    "priority": "P0",
+    "expected": [
+      "applied",
+      2,
+      true,
+      "confirmed"
+    ],
+    "actual": [
+      "applied",
+      2,
+      true,
+      "confirmed"
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T20",
+    "description": "defer_action retraction appends and recomputes current state",
+    "category": "feedback_history",
+    "priority": "P0",
+    "expected": [
+      "applied",
+      2,
+      true,
+      "confirmed"
+    ],
+    "actual": [
+      "applied",
+      2,
+      true,
+      "confirmed"
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T21",
+    "description": "deleted object rejects old-device upload",
+    "category": "anti_resurrection",
+    "priority": "P0",
+    "expected": [
+      "rejected",
+      "TOMBSTONE_DOMINATES"
+    ],
+    "actual": [
+      "rejected",
+      "TOMBSTONE_DOMINATES"
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T22",
+    "description": "revocation blocks an already queued task",
+    "category": "queue_recheck",
+    "priority": "P0",
+    "expected": [
+      false,
+      0
+    ],
+    "actual": [
+      false,
+      0
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T23",
+    "description": "disconnected source rejects old read result",
+    "category": "anti_resurrection",
+    "priority": "P0",
+    "expected": [
+      "rejected",
+      "DERIVATION_INPUT_OR_POLICY_STALE"
+    ],
+    "actual": [
+      "rejected",
+      "DERIVATION_INPUT_OR_POLICY_STALE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T24",
+    "description": "tombstone-first then old version remains deleted",
+    "category": "anti_resurrection",
+    "priority": "P0",
+    "expected": [
+      "rejected",
+      false
+    ],
+    "actual": [
+      "rejected",
+      false
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T25",
+    "description": "old version first then tombstone deactivates every version",
+    "category": "anti_resurrection",
+    "priority": "P0",
+    "expected": 0,
+    "actual": 0,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T26",
+    "description": "expired lease publishes no output",
+    "category": "queue_recheck",
+    "priority": "P0",
+    "expected": [
+      false,
+      0
+    ],
+    "actual": [
+      false,
+      0
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T27",
+    "description": "stale duplicate claimant is fenced",
+    "category": "queue_recheck",
+    "priority": "P0",
+    "expected": false,
+    "actual": false,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T28",
+    "description": "auth version change blocks queued task",
+    "category": "queue_recheck",
+    "priority": "P0",
+    "expected": false,
+    "actual": false,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T29",
+    "description": "policy version change blocks queued task",
+    "category": "queue_recheck",
+    "priority": "P0",
+    "expected": false,
+    "actual": false,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T30",
+    "description": "input tombstone blocks queued task",
+    "category": "queue_recheck",
+    "priority": "P0",
+    "expected": [
+      false,
+      false
+    ],
+    "actual": [
+      false,
+      false
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T30A",
+    "description": "object version change blocks queued task",
+    "category": "queue_recheck",
+    "priority": "P0",
+    "expected": [
+      false,
+      false
+    ],
+    "actual": [
+      false,
+      false
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T30B",
+    "description": "source disconnect blocks queued publication",
+    "category": "queue_recheck",
+    "priority": "P0",
+    "expected": [
+      false,
+      false
+    ],
+    "actual": [
+      false,
+      false
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T30C",
+    "description": "fully current queue envelope publishes exactly once",
+    "category": "queue_recheck",
+    "priority": "P0",
+    "expected": [
+      true,
+      1
+    ],
+    "actual": [
+      true,
+      1
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T31",
+    "description": "cross-project link confirmation does not alter authorization",
+    "category": "scope",
+    "priority": "P0",
+    "expected": [
+      "applied",
+      1
+    ],
+    "actual": [
+      "applied",
+      1
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T32",
+    "description": "unique evidence loss preserves history but requires review",
+    "category": "evidence",
+    "priority": "P0",
+    "expected": [
+      "confirmed",
+      "review_required"
+    ],
+    "actual": [
+      "confirmed",
+      "review_required"
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T33",
+    "description": "field LWW demonstrably destroys concurrent user intent",
+    "category": "strategy_counterexample",
+    "priority": "P0",
+    "expected": "rejected",
+    "actual": "rejected",
+    "status": "PASS"
+  },
+  {
+    "case_id": "T34",
+    "description": "finite CRDT requires extra causal/merge metadata",
+    "category": "strategy_counterexample",
+    "priority": "P1",
+    "expected": true,
+    "actual": true,
+    "status": "PASS"
+  },
+  {
+    "case_id": "T35",
+    "description": "server authority plus append-only log preserves conflict",
+    "category": "strategy",
+    "priority": "P0",
+    "expected": [
+      3,
+      1
+    ],
+    "actual": [
+      3,
+      1
+    ],
+    "status": "PASS"
+  },
+  {
+    "case_id": "T36",
+    "description": "five-device replay retains all versions and logs pass privacy scan",
+    "category": "scale_privacy",
+    "priority": "P0",
+    "expected": [
+      6,
+      4,
+      []
+    ],
+    "actual": [
+      6,
+      4,
+      []
+    ],
+    "status": "PASS"
+  }
+]

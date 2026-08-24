@@ -1,0 +1,638 @@
+[
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263923,
+          "nlink": 1,
+          "sha256": "da4c31a82d2381bfe93d68dd736161ce4f7637ff94ad97d3f69b6165e358b5fa",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263923,
+          "nlink": 1,
+          "sha256": "da4c31a82d2381bfe93d68dd736161ce4f7637ff94ad97d3f69b6165e358b5fa",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T14:15:26.090266+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M008-future-capture",
+    "fixture_id": "m008-future-capture",
+    "row_id": "ABF-M-008",
+    "started_at": "2026-08-22T14:15:26.087542+00:00",
+    "test_id": "P3-096-M008-future-capture"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263931,
+          "nlink": 1,
+          "sha256": "fc1364d7c04e5929e862f5a91aadfe9a5edd77ec9ef75caf52a38e9caca4c8cd",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263931,
+          "nlink": 1,
+          "sha256": "fc1364d7c04e5929e862f5a91aadfe9a5edd77ec9ef75caf52a38e9caca4c8cd",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T14:15:26.093040+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M009-future-saved",
+    "fixture_id": "m009-future-saved",
+    "row_id": "ABF-M-009",
+    "started_at": "2026-08-22T14:15:26.090363+00:00",
+    "test_id": "P3-096-M009-future-saved"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263939,
+          "nlink": 1,
+          "sha256": "da627f725b63a600163e8f9cb23940c24687542fa0b63a16b9ac26e902c0b4ab",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263939,
+          "nlink": 1,
+          "sha256": "da627f725b63a600163e8f9cb23940c24687542fa0b63a16b9ac26e902c0b4ab",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T14:15:26.095824+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M010-saved-time-mismatch",
+    "fixture_id": "m010-saved-time-mismatch",
+    "row_id": "ABF-M-010",
+    "started_at": "2026-08-22T14:15:26.093147+00:00",
+    "test_id": "P3-096-M010-saved-time-mismatch"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263947,
+          "nlink": 1,
+          "sha256": "ed5841d2af4fe3f9e0ebd3cbc770464311d8574d7268b7041efa2a90bddad1b7",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263947,
+          "nlink": 1,
+          "sha256": "ed5841d2af4fe3f9e0ebd3cbc770464311d8574d7268b7041efa2a90bddad1b7",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T14:15:26.098847+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M011-repeat-before-saved",
+    "fixture_id": "m011-repeat-before-saved",
+    "row_id": "ABF-M-011",
+    "started_at": "2026-08-22T14:15:26.095912+00:00",
+    "test_id": "P3-096-M011-repeat-before-saved"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263955,
+          "nlink": 1,
+          "sha256": "7209de0b7adcef9a85142dd359f691e8e3874c6c6c746be632cab17dc3723504",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263955,
+          "nlink": 1,
+          "sha256": "7209de0b7adcef9a85142dd359f691e8e3874c6c6c746be632cab17dc3723504",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T14:15:26.102049+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M012-repeat-unknown",
+    "fixture_id": "m012-repeat-unknown",
+    "row_id": "ABF-M-012",
+    "started_at": "2026-08-22T14:15:26.098989+00:00",
+    "test_id": "P3-096-M012-repeat-unknown"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject cleared reference",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263963,
+          "nlink": 1,
+          "sha256": "81a1174c8b044a0d15f54fed02fddfa5e65d6ae37ef6db0688e42279ffa91f97",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263963,
+          "nlink": 1,
+          "sha256": "81a1174c8b044a0d15f54fed02fddfa5e65d6ae37ef6db0688e42279ffa91f97",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T14:15:26.105231+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M012-repeat-cleared",
+    "fixture_id": "m012-repeat-cleared",
+    "row_id": "ABF-M-012",
+    "started_at": "2026-08-22T14:15:26.102152+00:00",
+    "test_id": "P3-096-M012-repeat-cleared"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263972,
+          "nlink": 1,
+          "sha256": "0f8d18870ed043bf3be5163820ac5628db3b817b2cc6634de4f9b7d20d205438",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263972,
+          "nlink": 1,
+          "sha256": "0f8d18870ed043bf3be5163820ac5628db3b817b2cc6634de4f9b7d20d205438",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T14:15:26.108284+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M013-audit-time-regression",
+    "fixture_id": "m013-audit-time-regression",
+    "row_id": "ABF-M-013",
+    "started_at": "2026-08-22T14:15:26.105327+00:00",
+    "test_id": "P3-096-M013-audit-time-regression"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject mismatched count",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263980,
+          "nlink": 1,
+          "sha256": "2147b7cc6c0e0e649108d1ddcf9e98c907e18662d2e58cf087c3919a42d69ed1",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263980,
+          "nlink": 1,
+          "sha256": "2147b7cc6c0e0e649108d1ddcf9e98c907e18662d2e58cf087c3919a42d69ed1",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "details": {
+      "declared": 3,
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T14:15:26.111921+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M014-clear-count-large",
+    "fixture_id": "m014-clear-count-large",
+    "row_id": "ABF-M-014",
+    "started_at": "2026-08-22T14:15:26.108392+00:00",
+    "test_id": "P3-096-M014-clear-count-large"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "expected": {
+          "list": "CaptureError",
+          "render": "CaptureError",
+          "snapshot": "CaptureError"
+        },
+        "name": "all reads reject mismatched count",
+        "passed": true
+      },
+      {
+        "actual": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263990,
+          "nlink": 1,
+          "sha256": "fb710da14e87b2ea243dedc4a4b548ce68ded3d607952ce46482397ae6c5e3b6",
+          "size": 24576,
+          "type": "regular"
+        },
+        "expected": {
+          "device": 16777231,
+          "exists": true,
+          "inode": 6263990,
+          "nlink": 1,
+          "sha256": "fb710da14e87b2ea243dedc4a4b548ce68ded3d607952ce46482397ae6c5e3b6",
+          "size": 24576,
+          "type": "regular"
+        },
+        "name": "DB unchanged",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "old page invalidated",
+        "passed": true
+      }
+    ],
+    "details": {
+      "declared": 1,
+      "outcomes": {
+        "list": "CaptureError",
+        "render": "CaptureError",
+        "snapshot": "CaptureError"
+      }
+    },
+    "ended_at": "2026-08-22T14:15:26.115540+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M014-clear-count-small",
+    "fixture_id": "m014-clear-count-small",
+    "row_id": "ABF-M-014",
+    "started_at": "2026-08-22T14:15:26.112020+00:00",
+    "test_id": "P3-096-M014-clear-count-small"
+  },
+  {
+    "actual_result": "PASS",
+    "assertions": [
+      {
+        "actual": 2,
+        "expected": 2,
+        "name": "returns count two",
+        "passed": true
+      },
+      {
+        "actual": "count=2;today_view=invalidated",
+        "expected": "count=2;today_view=invalidated",
+        "name": "audit count two",
+        "passed": true
+      },
+      {
+        "actual": 0,
+        "expected": 0,
+        "name": "active set empty",
+        "passed": true
+      },
+      {
+        "actual": false,
+        "expected": false,
+        "name": "page absent",
+        "passed": true
+      },
+      {
+        "actual": [],
+        "expected": [],
+        "name": "no residue",
+        "passed": true
+      }
+    ],
+    "details": {
+      "return": {
+        "count": 2,
+        "status": "cleared",
+        "today_view": "invalidated"
+      }
+    },
+    "ended_at": "2026-08-22T14:15:26.118511+00:00",
+    "error": null,
+    "evidence": "state_transitions.json#P3-096-M015-normal-clear",
+    "fixture_id": "m015-normal-clear",
+    "row_id": "ABF-M-015",
+    "started_at": "2026-08-22T14:15:26.115641+00:00",
+    "test_id": "P3-096-M015-normal-clear"
+  }
+]

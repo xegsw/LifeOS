@@ -1,0 +1,93 @@
+{
+  "task": "LIFEOS-P3-106",
+  "execution": "resume-1",
+  "contract": "frozen structural anchors; no pixel-identity claim",
+  "rows": [
+    {
+      "id": "VIS-M004",
+      "state": "default recovery",
+      "actual": "m004-default-1280x1024.png",
+      "actual_sha256": "6fef9ab6df6389b92e87c4fa8b38dc974929a0b624e732e0dd6ac5643226373c",
+      "actual_dimensions": [
+        1280,
+        1024
+      ],
+      "side_by_side": "m004-default-side-by-side.png",
+      "side_by_side_sha256": "2b4e20dbebac3caee8d8ee6160bc49f1336cc35798a264089833fd1702cb8321",
+      "side_by_side_dimensions": [
+        2560,
+        1024
+      ],
+      "anchors": [
+        "left rail",
+        "blue-gray main",
+        "two-column recovery card",
+        "AI suggestion card",
+        "bottom composer"
+      ],
+      "reference_used_as_ui": false,
+      "manual_visual_review": "PASS",
+      "status": "PASS"
+    },
+    {
+      "id": "VIS-M005",
+      "state": "no reliable suggestion",
+      "actual": "m005-no-suggestion-1280x1024.png",
+      "actual_sha256": "373c16c24cb334f34de6c3d4cddb8818905814efec75e83a9fcf09a7b1187f1b",
+      "actual_dimensions": [
+        1280,
+        1024
+      ],
+      "side_by_side": "m005-no-suggestion-side-by-side.png",
+      "side_by_side_sha256": "4388d66a19aee8786ba65cb5c6922b2120e717be153bd136f6a310cb9cc49114",
+      "side_by_side_dimensions": [
+        2560,
+        1024
+      ],
+      "anchors": [
+        "left rail",
+        "central empty state",
+        "two choices",
+        "three recent-trace cards",
+        "bottom composer"
+      ],
+      "reference_used_as_ui": false,
+      "manual_visual_review": "PASS",
+      "status": "PASS"
+    },
+    {
+      "id": "VIS-M006",
+      "state": "restricted/offline",
+      "actual": "m006-restricted-1280x1024.png",
+      "actual_sha256": "05fa817ab31c874e8505c5c4091f6a438dab56f86b51930003bb1a68d5442da6",
+      "actual_dimensions": [
+        1280,
+        1024
+      ],
+      "side_by_side": "m006-restricted-side-by-side.png",
+      "side_by_side_sha256": "9790c004f6f60ea9d4b3c0da064c6f325ec2958350855587187000ed5b750ac0",
+      "side_by_side_dimensions": [
+        2560,
+        1024
+      ],
+      "anchors": [
+        "left rail",
+        "offline alert",
+        "source-restricted alert",
+        "restricted recovery card",
+        "permission prompt",
+        "today schedule",
+        "bottom composer"
+      ],
+      "reference_used_as_ui": false,
+      "manual_visual_review": "PASS",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "status": "PASS"
+  }
+}

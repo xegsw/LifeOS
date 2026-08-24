@@ -1,0 +1,106 @@
+{
+  "exit_code": 0,
+  "exit_contract": "any P0/P1 FAIL, UNKNOWN, or NOT_IMPLEMENTED returns nonzero",
+  "results": [
+    {
+      "detail": "unsafe paths rejected; fixed task-local root",
+      "id": "FILE-P0-ISOLATION",
+      "severity": "P0",
+      "status": "PASS"
+    },
+    {
+      "detail": "fixture declaration contains synthetic identifiers/payload only",
+      "id": "FILE-P0-SYNTHETIC",
+      "severity": "P0",
+      "status": "PASS"
+    },
+    {
+      "detail": "stable source hashes and SQL snapshot checked",
+      "id": "FILE-P1-HASH",
+      "severity": "P1",
+      "status": "PASS"
+    },
+    {
+      "detail": "source fixture mode 0444 and before/after hash unchanged",
+      "id": "FILE-P1-SOURCE-RO",
+      "severity": "P1",
+      "status": "PASS"
+    },
+    {
+      "detail": "source before/after integrity and FK checks",
+      "id": "FILE-P1-INTEGRITY",
+      "severity": "P1",
+      "status": "PASS"
+    },
+    {
+      "detail": "SQLite backup API and separate restore rehearsal",
+      "id": "FILE-P1-RESTORE",
+      "severity": "P1",
+      "status": "PASS"
+    },
+    {
+      "detail": "P2-2 and P2-4 rollback restore authoritative state",
+      "id": "FILE-P1-ROLLBACK",
+      "severity": "P1",
+      "status": "PASS"
+    },
+    {
+      "detail": "P3-037 failure evidence hashes remain unchanged",
+      "id": "FILE-P1-P3-037-PRESERVED",
+      "severity": "P1",
+      "status": "PASS"
+    },
+    {
+      "detail": "P3-031 synthetic-empty regression snapshot has zero failures/not implemented",
+      "id": "FILE-P1-P3-031-REGRESSION",
+      "severity": "P1",
+      "status": "PASS"
+    },
+    {
+      "detail": "all bypass forms rejected",
+      "id": "FILE-P1-P2-2",
+      "severity": "P1",
+      "status": "PASS"
+    },
+    {
+      "detail": "illegal initial states rejected",
+      "id": "FILE-P1-P2-3",
+      "severity": "P1",
+      "status": "PASS"
+    },
+    {
+      "detail": "all active child DELETE attempts rejected; parent, children, generation, audit, cache and queue view unchanged",
+      "id": "FILE-P1-P2-4",
+      "severity": "P1",
+      "status": "PASS"
+    }
+  ],
+  "scope": "controlled synthetic file-backed SQLite only",
+  "summary": {
+    "P0": {
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "PASS": 2,
+      "UNKNOWN": 0
+    },
+    "P1": {
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "PASS": 10,
+      "UNKNOWN": 0
+    },
+    "P2": {
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "PASS": 0,
+      "UNKNOWN": 0
+    },
+    "total": {
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "PASS": 12,
+      "UNKNOWN": 0
+    }
+  },
+  "task_id": "LIFEOS-P3-038"
+}

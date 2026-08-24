@@ -1,0 +1,38 @@
+{
+  "task_id": "LIFEOS-P3-101",
+  "matrix_row": "ABF-M-002",
+  "status": "BLOCKED",
+  "consistent_facts": [
+    {
+      "fact": "The project remains in limited Stage 3 and Stage 4 is not admitted.",
+      "references": ["lifeos/CURRENT_STATUS.md:14-15", "lifeos/FREEZE_STATUS.md:103-105", "lifeos/DECISION_LOG.md:421"]
+    },
+    {
+      "fact": "P3-101 is Ready with ABF-P3-101-v1 frozen.",
+      "references": ["lifeos/CURRENT_STATUS.md:20-23", "lifeos/TASK_REGISTRY.md:153", "lifeos/DECISION_LOG.md:421"]
+    },
+    {
+      "fact": "R-0040 is Open / Conditional and R-0051 is Closed / Limited Controlled Boundary.",
+      "references": ["lifeos/RISK_LOG.md:46", "lifeos/RISK_LOG.md:57", "lifeos/DECISION_LOG.md:420-421"]
+    },
+    {
+      "fact": "No candidate engineering asset, Schema/API, engineering baseline, real capability, or Stage 4 state is newly frozen by P3-101.",
+      "references": ["lifeos/CURRENT_STATUS.md:27", "lifeos/DECISION_LOG.md:421"]
+    }
+  ],
+  "conflicts": [
+    {
+      "severity": "P1",
+      "unknown": true,
+      "field": "currently allowed next step",
+      "current_status": "Deliver P3-101 to a new product/stage-governance session.",
+      "task_registry_and_decision_log": "P3-101 is the current Ready task.",
+      "freeze_status": "Deliver P3-085 to a new isolated engineering session.",
+      "references": ["lifeos/CURRENT_STATUS.md:20-23", "lifeos/TASK_REGISTRY.md:153", "lifeos/DECISION_LOG.md:421", "lifeos/FREEZE_STATUS.md:109"],
+      "interpretation": "FREEZE_STATUS appears chronologically stale, but it is a primary ledger and contains no explicit supersession marker for its allowed-next-step sentence. The specialty session is not authorized to choose between conflicting primary-ledger statements.",
+      "required_resolution": "PM reconciles the current-stage summary in FREEZE_STATUS or records an explicit authoritative supersession, then P3-101 is rerun under the unchanged ABF if still applicable."
+    }
+  ],
+  "pass_formula_result": "FAIL: an unresolved primary-ledger conflict affects the next-direction decision.",
+  "state_changes_made": false
+}

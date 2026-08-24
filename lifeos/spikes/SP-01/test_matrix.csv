@@ -1,0 +1,16 @@
+test_id,assertion,result,evidence_section
+T01,1000 deterministic submissions + versions,PASS,fixture
+T02,saved acknowledgement only after COMMIT,PASS,kills
+T03,kill before write,PASS,kills
+T04,kill mid write,PASS,kills
+T05,kill post commit pre acknowledgement,PASS,kills
+T06,kill post acknowledgement,PASS,kills
+T07,disk full simulation no false acknowledgement,PASS,failures
+T08,I/O simulation no false acknowledgement,PASS,failures
+T09,idempotent duplicate and conflict,PASS,fixture
+T10,clock skew does not determine ordering,PASS,fixture
+T11,long read/background indexing capture,PASS,concurrency
+T12,consistent backup during writes and restore,PASS,backup
+T13,tombstone prevents resurrection,PASS,backup
+T14,feedback retraction remains authoritative,PASS,backup
+T15,hash and 1000 post-kill integrity checks,PASS,all

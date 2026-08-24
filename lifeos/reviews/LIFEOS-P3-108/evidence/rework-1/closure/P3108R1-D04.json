@@ -1,0 +1,29 @@
+{
+  "id": "P3108R1-D04",
+  "observable_result": "UI reports atomic save; DB shows one capture and one capture_saved audit row.",
+  "operation": "Unique empty reopen fixture: click fixed-text capture once.",
+  "raw_actual_app_state_and_visual_evidence": [
+    {
+      "exists": true,
+      "path": "dynamic/U06-first-capture.ax.txt",
+      "sha256": "e81add968b07e0f577d7ea005ec800a6e4adf0fee159b01e4e95218ce1813f85"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/U06-first-capture.jpeg",
+      "sha256": "4b16c5891ea0ee36d3769af0a651cb2f9b07a52e0db0fadfae32d145d03b3aa9"
+    },
+    {
+      "exists": true,
+      "path": "fixture-reopen-P3108R1-U06-first-after.json",
+      "sha256": "b1a9f582d7a5b89f6f8117b0ce60518766e3798dbecbbef6ff6fad06d4795ff6"
+    },
+    {
+      "exists": true,
+      "path": "db-reopen-P3108R1-U06-first-after.json",
+      "sha256": "8a3580a8529520c8a7bdd0ebce7a780557ca3d8766758df3003abd5e2272567e"
+    }
+  ],
+  "status": "PASS",
+  "time": "2026-08-24T03:13:25.556116+00:00"
+}

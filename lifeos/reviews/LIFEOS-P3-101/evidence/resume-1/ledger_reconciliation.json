@@ -1,0 +1,31 @@
+{
+  "task_id": "LIFEOS-P3-101",
+  "resume_id": "resume-1",
+  "matrix_row": "ABF-M-002",
+  "status": "PASS",
+  "prior_conflict": {
+    "status": "Resolved by PM",
+    "decision": "D-0416",
+    "pm_evidence": "lifeos/reviews/LIFEOS-P3-101/pm_evidence/initial/ledger_resolution.json"
+  },
+  "current_facts": [
+    {
+      "fact": "Limited Stage 3 continues; Stage 4 is not admitted.",
+      "references": ["lifeos/CURRENT_STATUS.md:14-15", "lifeos/FREEZE_STATUS.md:103-105", "lifeos/DECISION_LOG.md:422"]
+    },
+    {
+      "fact": "P3-101 may resume under unchanged ABF-P3-101-v1 in the original isolated specialty session.",
+      "references": ["lifeos/CURRENT_STATUS.md:20-23", "lifeos/FREEZE_STATUS.md:108-110", "lifeos/TASK_REGISTRY.md:153", "lifeos/DECISION_LOG.md:422"]
+    },
+    {
+      "fact": "R-0040 remains Open / Conditional; R-0051 remains Closed / Limited Controlled Boundary.",
+      "references": ["lifeos/RISK_LOG.md:46", "lifeos/RISK_LOG.md:57", "lifeos/DECISION_LOG.md:422"]
+    },
+    {
+      "fact": "The risk ledger contains 51 risks: 12 closed and 39 open; no risk state changed in D-0416.",
+      "references": ["lifeos/reviews/LIFEOS-P3-101_pm_review.md:28-33", "lifeos/reviews/LIFEOS-P3-101/pm_evidence/initial/ledger_resolution.json"]
+    }
+  ],
+  "unresolved_conflicts": [],
+  "state_changes_made": false
+}

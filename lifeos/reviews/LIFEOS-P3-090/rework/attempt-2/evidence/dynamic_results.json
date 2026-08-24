@@ -1,0 +1,27 @@
+{
+  "task": "LIFEOS-P3-090",
+  "attempt": "rework/attempt-2",
+  "browser": "Google Chrome (com.google.Chrome) via Computer Use @oai/sky",
+  "entry": "file:///private/tmp/lifeos-p3-090-attempt-2/app/default-recovery.html",
+  "preflight": "PASS",
+  "pass": 15,
+  "fail": 0,
+  "results": [
+    {"id":"D-01","pass":true,"detail":"New Chrome tab directly loaded task-local file: entry; URL and wide screenshot retained."},
+    {"id":"D-02","pass":true,"detail":"Tab reaches the skip link and visible focus evidence is retained."},
+    {"id":"D-03","pass":true,"detail":"Default-deny blocks restore before explicit grant."},
+    {"id":"D-04","pass":true,"detail":"Fixed non-sensitive text appears only after explicit confirmation."},
+    {"id":"D-05","pass":true,"detail":"Explicit grant permits preview but not a receipt without exact CONFIRM."},
+    {"id":"D-06","pass":true,"detail":"Exact CONFIRM creates only a current-page synthetic receipt."},
+    {"id":"D-07","pass":true,"detail":"Repeated CONFIRM reports an idempotent existing receipt without new recovery."},
+    {"id":"D-08","pass":true,"detail":"Revoke returns to fail-closed and clears the recovery receipt."},
+    {"id":"D-09","pass":true,"detail":"Simulated failure clears display state and discloses no real save, grant, or restore."},
+    {"id":"D-10","pass":true,"detail":"No-reliable-suggestion page retains default-deny and does not fabricate a suggestion."},
+    {"id":"D-11","pass":true,"detail":"Restricted/offline page remains blocked and does not read or process content."},
+    {"id":"D-12","pass":true,"detail":"Refresh after confirmed display clears text, receipt, and permission state."},
+    {"id":"D-13","pass":true,"detail":"Close and reopen task-local page starts with default-deny and no displayed record."},
+    {"id":"D-14","pass":true,"detail":"Chrome zoom interaction retained a readable responsive layout; CSS narrow-screen rule is independently checked."},
+    {"id":"D-15","pass":true,"detail":"Three-page navigation is local file: navigation only; no HTTP/network route was used."}
+  ],
+  "counts": {"P0":0,"P1":0,"P2":0,"Unknown":0,"NotImplemented":0}
+}

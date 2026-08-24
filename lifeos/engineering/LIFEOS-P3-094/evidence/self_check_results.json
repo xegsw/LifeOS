@@ -1,0 +1,79 @@
+{
+  "task": "LIFEOS-P3-094",
+  "timestamp": "2026-08-21T23:52:07.071619+00:00",
+  "items": [
+    {
+      "id": "AC-01-first-capture",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-02-restart-read",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-03-today-render",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-04-repeat-idempotent",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-05-conflict-blocked",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-06-empty-blocked",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-07-atomic-cleanup",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-08-corrupt-db-fail-closed",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-09-clear-denied",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-10-clear-confirmed",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-11-post-clear-empty",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-12-empty-render-fail-closed",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-13-static-boundary-closed",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-14-unit-suite",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "summary": {
+    "pass": 14,
+    "fail": 0,
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  },
+  "runtime": {
+    "path_category": "system_temp_task_local",
+    "created": true,
+    "record_count_before_cleanup": 1,
+    "cleared": true,
+    "final_db_exists": false
+  }
+}

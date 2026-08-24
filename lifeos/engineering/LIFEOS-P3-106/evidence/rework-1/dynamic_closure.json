@@ -1,0 +1,323 @@
+{
+  "actions": [
+    {
+      "id": "ACT-M008-FIRST",
+      "action": "首次 capture",
+      "observable": "saved; 1 capture/1 audit",
+      "evidence": "m008-first-capture.jpg",
+      "sha256": "29b2f3ec7642699e1e8b808330b877b87b73ced486903047930a33e2735c5a6d",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M009-REPEAT",
+      "action": "重复 capture",
+      "observable": "repeat; capture 1/audit 2",
+      "evidence": "m009-repeat.jpg",
+      "sha256": "e61deafefdb67c02f48ff152a0a18aa81274e8066097488d87080cde8c4dafff",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M009-CONFLICT",
+      "action": "同 key 异文本",
+      "observable": "blocked; DB unchanged",
+      "evidence": "m009-conflict.jpg",
+      "sha256": "5317c6cd1da67bda414416598edd5b4fc7f23e253dfd1a13905fb3b0aec65448",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M009-FAILURE",
+      "action": "注入失败",
+      "observable": "blocked; DB unchanged",
+      "evidence": "m009-injected-failure.jpg",
+      "sha256": "584e0d96af92a1b90eb943950a16cf0ac3ae22814a649c5629053c7ad9bea8f6",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M010-REFRESH",
+      "action": "刷新",
+      "observable": "backend today retained",
+      "evidence": "m010-refresh-restored.jpg",
+      "sha256": "3e94a6f87c7423627550760be34325a84888e365a7b0210497351eaed491db98",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M010-REOPEN",
+      "action": "关闭重开",
+      "observable": "backend today retained",
+      "evidence": "m010-close-reopen-restored.jpg",
+      "sha256": "6d1a3fea782ce611b4f76673d5eb90f3d38e381d5543009e4be1e227c03f7222",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M012-UNKNOWN",
+      "action": "unknown IPC",
+      "observable": "denied",
+      "evidence": "m012-unknown-ipc.jpg",
+      "sha256": "60051c0f9c7a3199ecca42c18205b1e63a90b1f0431b21f4b9cdfd21f1fb0166",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M012-EXTRA",
+      "action": "extra path/sql/shell",
+      "observable": "denied",
+      "evidence": "m012-extra-fields.jpg",
+      "sha256": "e04fb3cf88615c0eea40df6fc9e114f2b4c6eb76afc6e920bbf7a0c3a2ab101f",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M013-CONTENT",
+      "action": "content tamper",
+      "observable": "startup fail-closed",
+      "evidence": "m013-content-tamper-failclosed.jpg",
+      "sha256": "6c31e221e601f7dc851cf6b7c1018acdf59347b8a7d095d560104a1beb7f3506",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M013-SCHEMA",
+      "action": "schema tamper",
+      "observable": "startup fail-closed",
+      "evidence": "m013-schema-tamper-failclosed.jpg",
+      "sha256": "6c31e221e601f7dc851cf6b7c1018acdf59347b8a7d095d560104a1beb7f3506",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-TAB",
+      "action": "actual Tab",
+      "observable": "visible focus",
+      "evidence": "m015-tab-focus.jpg",
+      "sha256": "9cb505331994804b265cb80063da9733e0b06149856f54fdf520fa90b78e49bb",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-ENTER",
+      "action": "actual Enter",
+      "observable": "focused action disclosed unavailable",
+      "evidence": "m015-enter-activation.jpg",
+      "sha256": "875ce7a55dbda2be65fb820e828d56ea68961fdc25960a048672b55dae0bc801",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-SKIP",
+      "action": "actual skip",
+      "observable": "URL #main-content",
+      "evidence": "m015-skip-main-focus.jpg",
+      "sha256": "2692fb802360dc4824d3c9d8d5b4f8a2f3430a5d7293435541237ed64875005b",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-NARROW",
+      "action": "700x760 narrow",
+      "observable": "capture reachable",
+      "evidence": "m015-narrow-capture-reachable.jpg",
+      "sha256": "84888c8ef0161e15b069c33dc68965bfd4a287c4701e5dafb32314d8846cb55e",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-RM-ON",
+      "action": "reduced motion on + restart",
+      "observable": "system enabled",
+      "evidence": "m015-reduced-motion-app.jpg",
+      "sha256": "9663bf350b136f81ba6327d5d151ab8c03631872fceca3e728a01a82c43f3e5d",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-RM-OFF",
+      "action": "restore + restart",
+      "observable": "system not requested",
+      "evidence": "m015-reduced-motion-app-restored.jpg",
+      "sha256": "440eed3162a0af38a0d2827e772fecdb70f7de0c2fdf91d2b86e8ca63bc25ee0",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-ATTACHMENT",
+      "action": "attachment actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-attachment-disabled.jpg",
+      "sha256": "356428ba8c0215d90144b442aaa36140d78a6bf6bda0868b3f29a71ba4b6bb46",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-VOICE",
+      "action": "voice actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-voice-disabled.jpg",
+      "sha256": "356428ba8c0215d90144b442aaa36140d78a6bf6bda0868b3f29a71ba4b6bb46",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-PROJECT-CONTINUE",
+      "action": "project continue actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-project-unimplemented.jpg",
+      "sha256": "187e6856a1d88c0c71a4dcd2d8b036282b6d61a529526e4b8775edf2ffa5be72",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-AI-CONFIRM",
+      "action": "AI confirm actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-ai-confirm-unimplemented.jpg",
+      "sha256": "d166b6f141a715f8ba75331833babe0d721460ec3f7680224a31ea692776cac4",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-AI-EDIT",
+      "action": "AI edit actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-ai-edit-unimplemented.jpg",
+      "sha256": "920fabac169016f81b3bff062b11d9a7260d71ee85cea541f076b8646ff2ce22",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-AI-REJECT",
+      "action": "AI reject actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-ai-reject-unimplemented.jpg",
+      "sha256": "e17085a2ed386e0e6c61e5fc9e796087a2ba2e14b72da12ea9928afdc6beae34",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-AI-IGNORE",
+      "action": "AI ignore actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-ai-ignore-unimplemented.jpg",
+      "sha256": "79de6ad4e7b9cd566441204275d968f7096c9e99a2f8f58b095b580fed272c00",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-DEFAULT-PROJECT-SWITCH",
+      "action": "default project switch actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-default-project-switch-unimplemented.jpg",
+      "sha256": "087cdf835fa1a0489ffea056363740e30a26d24584c556c5655bb706259887be",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-SETTINGS",
+      "action": "settings actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-settings-unimplemented.jpg",
+      "sha256": "2952bc20a250614c772bdbf467612b537e96fff6c83990284fcc190948f55a46",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-SEARCH",
+      "action": "search actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-search-disabled.jpg",
+      "sha256": "9d5437061f43b0740aa8bd7b3d9a67730c84014eb71c8c9c1b26b000e78a800f",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-NEW",
+      "action": "new actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-new-disabled.jpg",
+      "sha256": "5796c0f2aaa747c1b652e8cd948c727a5ae67887f050c86379073a8605095fb7",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-CHOOSE-PROJECT",
+      "action": "choose project actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-choose-project-unimplemented.jpg",
+      "sha256": "c5b2df8d369ab602373f5618dc354e21b135a0cb7fb69deef6d427e42edae150",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-INBOX",
+      "action": "inbox actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-inbox-unimplemented.jpg",
+      "sha256": "68af0c366f96fa6d6a93ff17bb2d6c2545839d584a95e576bf8984551624e524",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-NETWORK-IMPACT",
+      "action": "network impact actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-network-impact-unimplemented.jpg",
+      "sha256": "eef4c2997f3bca2b2e666f85d7a07c875d69398eadc3fd3bb63ce1e4cf8b534b",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-SOURCE-IMPACT",
+      "action": "source impact actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-source-impact-unimplemented.jpg",
+      "sha256": "7a312433ff57cb9b635168bc34182d52510fc2f44f2be71d8fd56fcf31bfb1f6",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-RESTRICTED-PROJECT",
+      "action": "restricted project actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-restricted-project-unimplemented.jpg",
+      "sha256": "b499a8afb439fdfc6bcdff9e3c93937e7a193e74beb5673d53234cf5dc6c0ce3",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-AI-IMPACT",
+      "action": "AI impact actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-ai-impact-unimplemented.jpg",
+      "sha256": "9ac49d3cadc2082c7ace36f4e5f8c2c088fbd6b9259bbf3fe01a321133166377",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-CONTINUE-NO-AI",
+      "action": "continue no AI actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-continue-no-ai-unimplemented.jpg",
+      "sha256": "6002c9b5079e085f3074294e096d4962dcb7ee044469aef991dcb32d1c9df9db",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M011-RESTRICTED-PROJECT-SWITCH",
+      "action": "restricted project switch actual operation",
+      "observable": "disabled or explicit unavailable; no false success",
+      "evidence": "m011-project-switch-unimplemented.jpg",
+      "sha256": "b42aa7c61a1809269caee71456bd46e01256e79af577ff29c9c1dcc1e03a5170",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-1160-DEFAULT",
+      "action": "1160x768 default",
+      "observable": "exact screenshot; key actions reachable",
+      "evidence": "m015-workspace-1160x768-default.jpg",
+      "sha256": "46f86bdc916d68eaf55bb3c83bbb04db8a528aad371281e53e3177d73d95bdf8",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-1160-NO-SUGGESTION",
+      "action": "1160x768 no suggestion",
+      "observable": "exact screenshot; key actions reachable",
+      "evidence": "m015-workspace-1160x768-no-suggestion.jpg",
+      "sha256": "5ddf3e956f9cbe961da7fbacaf5d9b62ec1b9141e8c5bb7a1ca1ac63439700b2",
+      "status": "PASS"
+    },
+    {
+      "id": "ACT-M015-1160-RESTRICTED",
+      "action": "1160x768 restricted",
+      "observable": "exact screenshot; key actions reachable",
+      "evidence": "m015-workspace-1160x768-restricted.jpg",
+      "sha256": "2832cf9015fda510ec76c74ff41ad515964d3739bc98ebc2c54722991a41ffc5",
+      "status": "PASS"
+    }
+  ],
+  "supporting": [
+    "fixture-first-capture.json",
+    "fixture-repeat.json",
+    "fixture-conflict.json",
+    "fixture-injected-failure.json",
+    "fixture-unimplemented-controls.json",
+    "fixture-denied-diagnostics.json",
+    "fixture-final-reopen.json"
+  ],
+  "summary": {
+    "total": 38,
+    "passed": 38,
+    "failed": 0
+  },
+  "status": "PASS"
+}

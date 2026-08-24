@@ -1,0 +1,131 @@
+{
+  "count": 10,
+  "evidence_sources": [
+    "P3-094/095/096 PM Reviews",
+    "P3-098 acceptance_matrix/results/state transitions/failure injections/static scan"
+  ],
+  "pass": true,
+  "rows": [
+    {
+      "current_independent_test_ids": [
+        "IR-P3-098-015-FORBIDDEN-SCAN",
+        "IR-P3-098-015-RESIDUE"
+      ],
+      "failure_class": "浏览器误导航／网络边界与 task-local 残留",
+      "historical_source": "P3-094 attempt-1",
+      "missing_test_ids": [],
+      "risk_id": "R0051-H01",
+      "status": "PASS"
+    },
+    {
+      "current_independent_test_ids": [
+        "IR-P3-098-008-PAGE-INVALIDATE",
+        "IR-P3-098-008-PUBLISH-AFTER-PAGE"
+      ],
+      "failure_class": "clear 后旧 today.html 仍可展示",
+      "historical_source": "P3-095",
+      "missing_test_ids": [],
+      "risk_id": "R0051-H02",
+      "status": "PASS"
+    },
+    {
+      "current_independent_test_ids": [
+        "IR-P3-098-012-CLEAR-EXTERNAL",
+        "IR-P3-098-011-PAGE-NONCANON"
+      ],
+      "failure_class": "clear 任意 output、越界删除与外部哨兵",
+      "historical_source": "P3-094 attempt-4/5",
+      "missing_test_ids": [],
+      "risk_id": "R0051-H03",
+      "status": "PASS"
+    },
+    {
+      "current_independent_test_ids": [
+        "IR-P3-098-012-RENDER-EXTERNAL",
+        "IR-P3-098-011-ANCESTOR-DB-LINK",
+        "IR-P3-098-011-FINAL-PAGE-LINK",
+        "IR-P3-098-011-PAGE-FIFO"
+      ],
+      "failure_class": "render 越界、最终链接、祖先目录链接与特殊文件",
+      "historical_source": "P3-094 attempt-5/6",
+      "missing_test_ids": [],
+      "risk_id": "R0051-H04",
+      "status": "PASS"
+    },
+    {
+      "current_independent_test_ids": [
+        "IR-P3-098-005-MISSING-REPLACE",
+        "IR-P3-098-013-SCHEMA-PK",
+        "IR-P3-098-008-PAGE-INVALIDATE"
+      ],
+      "failure_class": "空、损坏、缺失或无 Schema DB 的旧页面与只读失败语义",
+      "historical_source": "P3-094 attempt-6/7/8",
+      "missing_test_ids": [],
+      "risk_id": "R0051-H05",
+      "status": "PASS"
+    },
+    {
+      "current_independent_test_ids": [
+        "IR-P3-098-013-SCHEMA-PK",
+        "IR-P3-098-013-SCHEMA-NOTNULL",
+        "IR-P3-098-013-SCHEMA-UNIQUE",
+        "IR-P3-098-013-SOURCE"
+      ],
+      "failure_class": "canonical Schema 约束与非法 source 被误标",
+      "historical_source": "P3-094 attempt-8",
+      "missing_test_ids": [],
+      "risk_id": "R0051-H06",
+      "status": "PASS"
+    },
+    {
+      "current_independent_test_ids": [
+        "IR-P3-098-003-SAVED-REPLACE",
+        "IR-P3-098-007-SIDECAR-PERSISTENT",
+        "IR-P3-098-009-SAVED-FD-CLOSE"
+      ],
+      "failure_class": "post-commit cleanup/staging 假失败",
+      "historical_source": "P3-094 final",
+      "missing_test_ids": [],
+      "risk_id": "R0051-H07",
+      "status": "PASS"
+    },
+    {
+      "current_independent_test_ids": [
+        "IR-P3-098-013-AUDIT-FUTURE",
+        "IR-P3-098-013-AUDIT-REVERSE",
+        "IR-P3-098-014-MISSING-ROW",
+        "IR-P3-098-014-DUP-EXEC",
+        "IR-P3-098-014-MISSING-ASSERT"
+      ],
+      "failure_class": "未来／逆序 audit 与逐行 Evidence 假 PASS",
+      "historical_source": "P3-094 final",
+      "missing_test_ids": [],
+      "risk_id": "R0051-H08",
+      "status": "PASS"
+    },
+    {
+      "current_independent_test_ids": [
+        "IR-P3-098-006-CANDIDATE-CLOSE",
+        "IR-P3-098-009-SAVED-FD-CLOSE",
+        "IR-P3-098-010-REPEAT-FD-CLOSE"
+      ],
+      "failure_class": "commit 后 connection close 异常把成功误报失败",
+      "historical_source": "P3-096 initial",
+      "missing_test_ids": [],
+      "risk_id": "R0051-H09",
+      "status": "PASS"
+    },
+    {
+      "current_independent_test_ids": [
+        "IR-P3-098-007-SIDECAR-TRANSIENT",
+        "IR-P3-098-007-SIDECAR-PERSISTENT",
+        "IR-P3-098-009-SAVED-FD-CLOSE"
+      ],
+      "failure_class": "commit 后 sidecar 检查把已发布成功改报失败",
+      "historical_source": "P3-096 rework-1",
+      "missing_test_ids": [],
+      "risk_id": "R0051-H10",
+      "status": "PASS"
+    }
+  ]
+}

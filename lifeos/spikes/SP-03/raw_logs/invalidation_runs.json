@@ -1,0 +1,119 @@
+{
+  "algorithm": "explicit derivation input edges; transitive walk through produced output IDs",
+  "runs": [
+    {
+      "trigger": "version_modified",
+      "target": "version-obs-v1",
+      "expected": [
+        "deriv-multi-v1",
+        "deriv-next-v1",
+        "deriv-recovery-v1"
+      ],
+      "actual": [
+        "deriv-multi-v1",
+        "deriv-next-v1",
+        "deriv-recovery-v1"
+      ],
+      "missed": [],
+      "explainable_false_positives": [],
+      "status": "PASS"
+    },
+    {
+      "trigger": "source_unreachable",
+      "target": "artifact-web-material",
+      "expected": [
+        "deriv-decision-v1",
+        "deriv-multi-v1"
+      ],
+      "actual": [
+        "deriv-decision-v1",
+        "deriv-multi-v1"
+      ],
+      "missed": [],
+      "explainable_false_positives": [],
+      "status": "PASS"
+    },
+    {
+      "trigger": "disconnect_source",
+      "target": "artifact-obs-note",
+      "expected": [
+        "deriv-multi-v1",
+        "deriv-next-v1",
+        "deriv-recovery-v1"
+      ],
+      "actual": [
+        "deriv-multi-v1",
+        "deriv-next-v1",
+        "deriv-recovery-v1"
+      ],
+      "missed": [],
+      "explainable_false_positives": [],
+      "status": "PASS"
+    },
+    {
+      "trigger": "delete_content",
+      "target": "artifact-web-material",
+      "expected": [
+        "deriv-decision-v1",
+        "deriv-multi-v1"
+      ],
+      "actual": [
+        "deriv-decision-v1",
+        "deriv-multi-v1"
+      ],
+      "missed": [],
+      "explainable_false_positives": [],
+      "status": "PASS"
+    },
+    {
+      "trigger": "revoke_processing",
+      "target": "auth-local-a",
+      "expected": [
+        "deriv-feedback-v1",
+        "deriv-multi-v1",
+        "deriv-next-v1",
+        "deriv-recovery-v1"
+      ],
+      "actual": [
+        "deriv-feedback-v1",
+        "deriv-multi-v1",
+        "deriv-next-v1",
+        "deriv-recovery-v1"
+      ],
+      "missed": [],
+      "explainable_false_positives": [],
+      "status": "PASS"
+    },
+    {
+      "trigger": "retract_feedback",
+      "target": "feedback-action-edit",
+      "expected": [
+        "deriv-feedback-v1"
+      ],
+      "actual": [
+        "deriv-feedback-v1"
+      ],
+      "missed": [],
+      "explainable_false_positives": [],
+      "status": "PASS"
+    }
+  ],
+  "expected_affected": 15,
+  "missed": 0,
+  "false_positives": 0,
+  "full_store_derivation_count": 5,
+  "unexplained_full_store_invalidation": 0,
+  "confirmed_evidence_loss": {
+    "object_id": "decision-user-confirmed-v1",
+    "identity": "user_confirmed",
+    "authority_owner": "user_feedback",
+    "version_id": "decision-user-version-v1",
+    "origin_candidate_id": "decision-candidate-v1",
+    "project_id": "project-alpha",
+    "business_state": "active",
+    "recognition": "confirmed",
+    "evidence_state": "evidence_unavailable",
+    "review_required": true,
+    "automatic_basis_active": false
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "spike": "LIFEOS-P2-014",
+  "started_at": "2026-08-09T14:45:03+0800",
+  "completed_at": "2026-08-09T14:45:32+0800",
+  "elapsed_s": 28.984,
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.9.6",
+    "sqlite": "3.51.0",
+    "fts5": true,
+    "cpu_count": 10
+  },
+  "tiers": [
+    {
+      "tier": "u100000",
+      "units": 100000,
+      "chunks": 300000,
+      "seed": 20260809,
+      "authority_setup_s": null,
+      "old_index_build": {
+        "seconds": 0.475,
+        "inserted_chunks": 300000,
+        "expected_chunks": 300000,
+        "failed": false,
+        "failure_kind": null,
+        "failure_reason": null
+      },
+      "old_index_validation": {
+        "valid": true,
+        "generation": 1,
+        "chunks": 300000,
+        "expected_chunks": 300000,
+        "fts_integrity": "ok",
+        "seconds": 0.393
+      },
+      "incremental_maintenance_capture": {
+        "samples": 150,
+        "p50_ms": 0.677,
+        "p95_ms": 0.95,
+        "p99_ms": 1.343,
+        "max_ms": 1.655,
+        "acknowledged": 150,
+        "failed": 0
+      },
+      "shadow_rebuild": {
+        "seconds": 0.542,
+        "inserted_chunks": 300000,
+        "expected_chunks": 300000,
+        "failed": false,
+        "failure_kind": null,
+        "failure_reason": null
+      },
+      "shadow_rebuild_capture": {
+        "samples": 352,
+        "p50_ms": 0.084,
+        "p95_ms": 0.607,
+        "p99_ms": 1.149,
+        "max_ms": 2.148,
+        "acknowledged": 352,
+        "failed": 0
+      },
+      "index_validation": {
+        "valid": true,
+        "generation": 2,
+        "chunks": 300000,
+        "expected_chunks": 300000,
+        "fts_integrity": "ok",
+        "seconds": 0.421
+      },
+      "index_validation_capture": {
+        "samples": 150,
+        "p50_ms": 0.725,
+        "p95_ms": 0.84,
+        "p99_ms": 0.87,
+        "max_ms": 0.9,
+        "acknowledged": 150,
+        "failed": 0
+      },
+      "combined_capture": {
+        "samples": 652,
+        "p50_ms": 0.397,
+        "p95_ms": 0.868,
+        "p99_ms": 1.139,
+        "max_ms": 2.148
+      },
+      "generation_switch": {
+        "before": [
+          1,
+          "index-g1.db"
+        ],
+        "switched": true,
+        "after": [
+          2,
+          "index-g2.db"
+        ],
+        "stale_task_overwrite_succeeded": false,
+        "after_stale_attempt": [
+          2,
+          "index-g2.db"
+        ]
+      },
+      "failed_validation_rollback": {
+        "build": {
+          "seconds": 0.004,
+          "inserted_chunks": 0,
+          "expected_chunks": 15000,
+          "failed": true,
+          "failure_kind": "simulated validation failure",
+          "failure_reason": "simulated validation failure"
+        },
+        "validation": {
+          "valid": false,
+          "generation": 3,
+          "chunks": 0,
+          "expected_chunks": 300000,
+          "fts_integrity": "ok",
+          "seconds": 0.0
+        },
+        "switch_attempted": false,
+        "active_state_after": [
+          2,
+          "index-g2.db"
+        ]
+      },
+      "faults": {
+        "space_exhaustion": {
+          "seconds": 0.004,
+          "inserted_chunks": 0,
+          "expected_chunks": 15000,
+          "failed": true,
+          "failure_kind": "simulated ENOSPC",
+          "failure_reason": "simulated ENOSPC"
+        },
+        "interruption": {
+          "seconds": 0.004,
+          "inserted_chunks": 0,
+          "expected_chunks": 15000,
+          "failed": true,
+          "failure_kind": "simulated rebuild interruption",
+          "failure_reason": "simulated rebuild interruption"
+        },
+        "capture_after_fault_acknowledged": true,
+        "capture_after_fault_ms": 0.762,
+        "authority_integrity": "ok",
+        "active_index_integrity": "ok"
+      },
+      "failed_save_injection": {
+        "attempts": 25,
+        "acknowledged": 0,
+        "committed": 0,
+        "receipts": 0,
+        "false_saved": 0
+      },
+      "leakage_probe": {
+        "permission": 0,
+        "tombstone": 0,
+        "restriction_generation": 0
+      },
+      "capture_combined_max_ms": 2.148,
+      "assertions": {
+        "authority_capture_does_not_wait_for_long_index_transaction": true,
+        "capture_max_wait_under_one_second": true,
+        "saved_only_after_durable_authority_commit": true,
+        "permission_leaks_zero": true,
+        "tombstone_leaks_zero": true,
+        "restriction_generation_leaks_zero": true,
+        "switch_only_after_validation": true,
+        "failed_switch_keeps_valid_old_index": true,
+        "space_failure_does_not_damage_authority_or_active_index": true,
+        "interruption_does_not_damage_authority_or_active_index": true,
+        "old_generation_cannot_overwrite_higher_generation": true
+      },
+      "p0_pass": true,
+      "seconds": 2.77,
+      "file_sizes": {
+        "authority.db": 5869568,
+        "index-g2.db": 42733568,
+        "index-g4-enospc.db": 28672,
+        "index-g3-invalid.db": 28672,
+        "index-g1.db": 43122688,
+        "registry.db": 8192,
+        "index-g5-interrupted.db": 28672
+      }
+    },
+    {
+      "tier": "u1000000",
+      "units": 1000000,
+      "chunks": 3000000,
+      "seed": 20260809,
+      "authority_setup_s": null,
+      "old_index_build": {
+        "seconds": 5.658,
+        "inserted_chunks": 3000000,
+        "expected_chunks": 3000000,
+        "failed": false,
+        "failure_kind": null,
+        "failure_reason": null
+      },
+      "old_index_validation": {
+        "valid": true,
+        "generation": 1,
+        "chunks": 3000000,
+        "expected_chunks": 3000000,
+        "fts_integrity": "ok",
+        "seconds": 4.501
+      },
+      "incremental_maintenance_capture": {
+        "samples": 150,
+        "p50_ms": 0.748,
+        "p95_ms": 0.984,
+        "p99_ms": 1.498,
+        "max_ms": 2.296,
+        "acknowledged": 150,
+        "failed": 0
+      },
+      "shadow_rebuild": {
+        "seconds": 6.311,
+        "inserted_chunks": 3000000,
+        "expected_chunks": 3000000,
+        "failed": false,
+        "failure_kind": null,
+        "failure_reason": null
+      },
+      "shadow_rebuild_capture": {
+        "samples": 4184,
+        "p50_ms": 0.081,
+        "p95_ms": 0.511,
+        "p99_ms": 0.865,
+        "max_ms": 2.149,
+        "acknowledged": 4184,
+        "failed": 0
+      },
+      "index_validation": {
+        "valid": true,
+        "generation": 2,
+        "chunks": 3000000,
+        "expected_chunks": 3000000,
+        "fts_integrity": "ok",
+        "seconds": 4.756
+      },
+      "index_validation_capture": {
+        "samples": 1593,
+        "p50_ms": 0.732,
+        "p95_ms": 0.882,
+        "p99_ms": 0.94,
+        "max_ms": 4.249,
+        "acknowledged": 1593,
+        "failed": 0
+      },
+      "combined_capture": {
+        "samples": 5927,
+        "p50_ms": 0.093,
+        "p95_ms": 0.841,
+        "p99_ms": 0.942,
+        "max_ms": 4.249
+      },
+      "generation_switch": {
+        "before": [
+          1,
+          "index-g1.db"
+        ],
+        "switched": true,
+        "after": [
+          2,
+          "index-g2.db"
+        ],
+        "stale_task_overwrite_succeeded": false,
+        "after_stale_attempt": [
+          2,
+          "index-g2.db"
+        ]
+      },
+      "failed_validation_rollback": {
+        "build": {
+          "seconds": 0.005,
+          "inserted_chunks": 0,
+          "expected_chunks": 15000,
+          "failed": true,
+          "failure_kind": "simulated validation failure",
+          "failure_reason": "simulated validation failure"
+        },
+        "validation": {
+          "valid": false,
+          "generation": 3,
+          "chunks": 0,
+          "expected_chunks": 3000000,
+          "fts_integrity": "ok",
+          "seconds": 0.0
+        },
+        "switch_attempted": false,
+        "active_state_after": [
+          2,
+          "index-g2.db"
+        ]
+      },
+      "faults": {
+        "space_exhaustion": {
+          "seconds": 0.004,
+          "inserted_chunks": 0,
+          "expected_chunks": 15000,
+          "failed": true,
+          "failure_kind": "simulated ENOSPC",
+          "failure_reason": "simulated ENOSPC"
+        },
+        "interruption": {
+          "seconds": 0.004,
+          "inserted_chunks": 0,
+          "expected_chunks": 15000,
+          "failed": true,
+          "failure_kind": "simulated rebuild interruption",
+          "failure_reason": "simulated rebuild interruption"
+        },
+        "capture_after_fault_acknowledged": true,
+        "capture_after_fault_ms": 0.816,
+        "authority_integrity": "ok",
+        "active_index_integrity": "ok"
+      },
+      "failed_save_injection": {
+        "attempts": 25,
+        "acknowledged": 0,
+        "committed": 0,
+        "receipts": 0,
+        "false_saved": 0
+      },
+      "leakage_probe": {
+        "permission": 0,
+        "tombstone": 0,
+        "restriction_generation": 0
+      },
+      "capture_combined_max_ms": 4.249,
+      "assertions": {
+        "authority_capture_does_not_wait_for_long_index_transaction": true,
+        "capture_max_wait_under_one_second": true,
+        "saved_only_after_durable_authority_commit": true,
+        "permission_leaks_zero": true,
+        "tombstone_leaks_zero": true,
+        "restriction_generation_leaks_zero": true,
+        "switch_only_after_validation": true,
+        "failed_switch_keeps_valid_old_index": true,
+        "space_failure_does_not_damage_authority_or_active_index": true,
+        "interruption_does_not_damage_authority_or_active_index": true,
+        "old_generation_cannot_overwrite_higher_generation": true
+      },
+      "p0_pass": true,
+      "seconds": 26.213,
+      "file_sizes": {
+        "authority.db": 60022784,
+        "index-g2.db": 425943040,
+        "index-g4-enospc.db": 28672,
+        "index-g3-invalid.db": 28672,
+        "index-g1.db": 426450944,
+        "registry.db": 8192,
+        "index-g5-interrupted.db": 28672
+      }
+    }
+  ],
+  "overall_pass": true,
+  "privacy_scan": {
+    "files_scanned": 3,
+    "forbidden_hits": [],
+    "hit_count": 0
+  }
+}

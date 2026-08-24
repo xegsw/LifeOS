@@ -1,0 +1,734 @@
+{
+  "spike": "SP-05",
+  "fixture_version": "sp05-synthetic-v1",
+  "environment": {
+    "python": "3.9.6",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "network_calls": 0,
+    "real_model_calls": 0,
+    "real_vault_reads": 0,
+    "real_cloud_calls": 0,
+    "real_third_party_calls": 0
+  },
+  "summary": {
+    "total": 67,
+    "passed": 67,
+    "failed": 0,
+    "p0_failed": 0,
+    "active_blocking_misses": 0,
+    "resurrection_count": 0,
+    "machine_result": "PASS"
+  },
+  "categories": {
+    "command_semantics": {
+      "total": 16,
+      "passed": 16,
+      "failed": 0
+    },
+    "status_semantics": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0
+    },
+    "active_blocking": {
+      "total": 13,
+      "passed": 13,
+      "failed": 0
+    },
+    "dependency_discovery": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "impact_scope": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "derivation_rebuild": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "physical_cleanup": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "fault_recovery": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "vendor_cleanup": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0
+    },
+    "anti_resurrection": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0
+    },
+    "privacy": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    }
+  },
+  "cases": [
+    {
+      "case_id": "T01",
+      "description": "revoke_processing keeps original physically",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T02",
+      "description": "revoke_processing does not disconnect source",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T03",
+      "description": "revoke_processing revokes matching authorization",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": "revoked",
+      "actual": "revoked",
+      "status": "PASS"
+    },
+    {
+      "case_id": "T04",
+      "description": "project revoke invalidates candidate",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T05",
+      "description": "revoke produces active_blocked",
+      "category": "status_semantics",
+      "priority": "P0",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T06",
+      "description": "disconnect stops continued source access",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T07",
+      "description": "disconnect retains permitted LifeOS copy",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T08",
+      "description": "disconnect does not create delete tombstone",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T09",
+      "description": "delete creates tombstone",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T10",
+      "description": "delete retains confirmed-object history for review",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": "review_required",
+      "actual": "review_required",
+      "status": "PASS"
+    },
+    {
+      "case_id": "T11",
+      "description": "delete schedules physical cleanup",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T12",
+      "description": "delete does not disconnect unrelated source semantics",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T13",
+      "description": "retract_feedback keeps feedback history",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T14",
+      "description": "retract_feedback removes current effect",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T15",
+      "description": "retract_feedback does not delete original",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T16",
+      "description": "retract_feedback invalidates dependent derivation",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T17",
+      "description": "retract_feedback schedules cleanup for dependent materialized derivation",
+      "category": "status_semantics",
+      "priority": "P0",
+      "expected": "physical_cleanup_pending",
+      "actual": "physical_cleanup_pending",
+      "status": "PASS"
+    },
+    {
+      "case_id": "T18",
+      "description": "active path blocked: local_read",
+      "category": "active_blocking",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T19",
+      "description": "active path blocked: fts_query",
+      "category": "active_blocking",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T20",
+      "description": "active path blocked: vector_query",
+      "category": "active_blocking",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T21",
+      "description": "active path blocked: recovery_pack",
+      "category": "active_blocking",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T22",
+      "description": "active path blocked: today_suggestion",
+      "category": "active_blocking",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T23",
+      "description": "active path blocked: candidate_generation",
+      "category": "active_blocking",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T24",
+      "description": "active path blocked: queue_claim",
+      "category": "active_blocking",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T25",
+      "description": "active path blocked: model_gateway_send",
+      "category": "active_blocking",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T26",
+      "description": "active path blocked: cross_project_display",
+      "category": "active_blocking",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T27",
+      "description": "active path blocked: rederive",
+      "category": "active_blocking",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T28",
+      "description": "active path blocked: export",
+      "category": "active_blocking",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T29",
+      "description": "active path blocked: reimport",
+      "category": "active_blocking",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T30",
+      "description": "blocked gateway emits no new model call",
+      "category": "active_blocking",
+      "priority": "P0",
+      "expected": 0,
+      "actual": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T31",
+      "description": "artifact dependency discovery covers registered local types",
+      "category": "dependency_discovery",
+      "priority": "P0",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T32",
+      "description": "single version delete excludes sibling version",
+      "category": "impact_scope",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T33",
+      "description": "source delete excludes source-b",
+      "category": "impact_scope",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T34",
+      "description": "cross-project dependent is discovered",
+      "category": "impact_scope",
+      "priority": "P0",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T35",
+      "description": "multi-input derivation has legal subset",
+      "category": "derivation_rebuild",
+      "priority": "P0",
+      "expected": [
+        "version-b1"
+      ],
+      "actual": [
+        "version-b1"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case_id": "T36",
+      "description": "multi-input empty legal subset refuses rebuild",
+      "category": "derivation_rebuild",
+      "priority": "P0",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case_id": "T37",
+      "description": "physical cleanup removes fts_posting",
+      "category": "physical_cleanup",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T38",
+      "description": "physical cleanup removes vector_mock",
+      "category": "physical_cleanup",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T39",
+      "description": "physical cleanup removes cache",
+      "category": "physical_cleanup",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T40",
+      "description": "physical cleanup removes prompt_copy",
+      "category": "physical_cleanup",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T41",
+      "description": "physical cleanup removes queue_payload",
+      "category": "physical_cleanup",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T42",
+      "description": "physical cleanup removes summary",
+      "category": "physical_cleanup",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T43",
+      "description": "cleanup-before kill retries to cleaned",
+      "category": "fault_recovery",
+      "priority": "P0",
+      "expected": [
+        false,
+        "physically_cleaned"
+      ],
+      "actual": [
+        false,
+        "physically_cleaned"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case_id": "T44",
+      "description": "duplicate cleanup is idempotent",
+      "category": "fault_recovery",
+      "priority": "P0",
+      "expected": "physically_cleaned",
+      "actual": "physically_cleaned",
+      "status": "PASS"
+    },
+    {
+      "case_id": "T45",
+      "description": "crash after effect before status converges",
+      "category": "fault_recovery",
+      "priority": "P0",
+      "expected": [
+        false,
+        "physically_cleaned"
+      ],
+      "actual": [
+        false,
+        "physically_cleaned"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case_id": "T46",
+      "description": "expired lease reclaim remains idempotent",
+      "category": "fault_recovery",
+      "priority": "P0",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T47",
+      "description": "network failure retries to cleaned",
+      "category": "fault_recovery",
+      "priority": "P0",
+      "expected": "physically_cleaned",
+      "actual": "physically_cleaned",
+      "status": "PASS"
+    },
+    {
+      "case_id": "T48",
+      "description": "dead letter visible and active remains blocked",
+      "category": "fault_recovery",
+      "priority": "P0",
+      "expected": [
+        1,
+        false
+      ],
+      "actual": [
+        1,
+        false
+      ],
+      "status": "PASS"
+    },
+    {
+      "case_id": "T49",
+      "description": "vendor success is honestly disclosed",
+      "category": "vendor_cleanup",
+      "priority": "P0",
+      "expected": "physically_cleaned",
+      "actual": "physically_cleaned",
+      "status": "PASS"
+    },
+    {
+      "case_id": "T50",
+      "description": "vendor delayed is honestly disclosed",
+      "category": "vendor_cleanup",
+      "priority": "P0",
+      "expected": "physical_cleanup_pending",
+      "actual": "physical_cleanup_pending",
+      "status": "PASS"
+    },
+    {
+      "case_id": "T51",
+      "description": "vendor unsupported is honestly disclosed",
+      "category": "vendor_cleanup",
+      "priority": "P0",
+      "expected": "vendor_limited",
+      "actual": "vendor_limited",
+      "status": "PASS"
+    },
+    {
+      "case_id": "T52",
+      "description": "vendor failure is honestly disclosed",
+      "category": "vendor_cleanup",
+      "priority": "P0",
+      "expected": "physical_cleanup_failed",
+      "actual": "physical_cleanup_failed",
+      "status": "PASS"
+    },
+    {
+      "case_id": "T53",
+      "description": "backup_restore cannot revive deleted version",
+      "category": "anti_resurrection",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T54",
+      "description": "old_import cannot revive deleted version",
+      "category": "anti_resurrection",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T55",
+      "description": "source_reconnect cannot revive deleted version",
+      "category": "anti_resurrection",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T56",
+      "description": "offline_replay cannot revive deleted version",
+      "category": "anti_resurrection",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T57",
+      "description": "old_queue_retry cannot revive deleted version",
+      "category": "anti_resurrection",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T58",
+      "description": "input version update stales prior derivation",
+      "category": "derivation_rebuild",
+      "priority": "P0",
+      "expected": "stale",
+      "actual": "stale",
+      "status": "PASS"
+    },
+    {
+      "case_id": "T59",
+      "description": "feedback retraction kinds remain distinct history events",
+      "category": "command_semantics",
+      "priority": "P0",
+      "expected": [
+        "complete",
+        "correct",
+        "defer",
+        "reject"
+      ],
+      "actual": [
+        "complete",
+        "correct",
+        "defer",
+        "reject"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case_id": "T60",
+      "description": "audit and cleanup proof privacy scan has zero forbidden hits",
+      "category": "privacy",
+      "priority": "P0",
+      "expected": [],
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "case_id": "T61",
+      "description": "active_blocked never equals physically_cleaned",
+      "category": "status_semantics",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T62",
+      "description": "proof contains no raw object identifier",
+      "category": "privacy",
+      "priority": "P0",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T63",
+      "description": "disconnect with retained copies requires no physical cleanup",
+      "category": "status_semantics",
+      "priority": "P0",
+      "expected": "completed_no_physical_cleanup_required",
+      "actual": "completed_no_physical_cleanup_required",
+      "status": "PASS"
+    },
+    {
+      "case_id": "T64",
+      "description": "aggregate dependency discovery covers all registered types",
+      "category": "dependency_discovery",
+      "priority": "P0",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T65",
+      "description": "purpose-scoped revoke hits search but not summary",
+      "category": "impact_scope",
+      "priority": "P0",
+      "expected": [
+        true,
+        false
+      ],
+      "actual": [
+        true,
+        false
+      ],
+      "status": "PASS"
+    },
+    {
+      "case_id": "T66",
+      "description": "location/processor revoke hits vendor path but not local FTS",
+      "category": "impact_scope",
+      "priority": "P0",
+      "expected": [
+        true,
+        false
+      ],
+      "actual": [
+        true,
+        false
+      ],
+      "status": "PASS"
+    },
+    {
+      "case_id": "T67",
+      "description": "directory exclusion has a bounded impact set",
+      "category": "impact_scope",
+      "priority": "P0",
+      "expected": [
+        true,
+        false
+      ],
+      "actual": [
+        true,
+        false
+      ],
+      "status": "PASS"
+    }
+  ]
+}

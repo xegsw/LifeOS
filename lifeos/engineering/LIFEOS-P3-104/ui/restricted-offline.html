@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN" data-page="restricted-offline">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LifeOS｜今日｜权限受限与离线</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <header class="site-header"><div class="frame">
+    <p class="eyebrow">LifeOS · 本地桌面候选</p><h1>今日</h1>
+    <section class="identity-boundary" aria-labelledby="identity-title"><h2 id="identity-title">内容身份与处理边界</h2><dl>
+      <div><dt>用户原文</dt><dd>只从三项窄 IPC 返回，不向 renderer 暴露数据库或路径。</dd></div>
+      <div><dt>本地捕获</dt><dd>backend 独占固定 task-local SQLite。</dd></div>
+      <div><dt>系统状态</dt><dd>离线、未知命令拒绝、外部能力保持关闭。</dd></div>
+      <div><dt>AI 状态</dt><dd>AI 未启用；没有模型、Vault、导出或同步。</dd></div>
+    </dl></section>
+    <nav class="page-nav" aria-label="今日状态导航"><a href="default-recovery.html">默认恢复</a><a href="no-reliable-suggestion.html">暂无可靠建议</a><a aria-current="page" href="restricted-offline.html">权限受限 · 离线</a></nav>
+  </div></header>
+  <main id="main-content" class="frame layout" tabindex="-1">
+    <section class="hero caution" aria-labelledby="restricted-title"><p class="label">本地系统状态 · 权限受限与离线</p><h2 id="restricted-title">权限受限 · 离线</h2><p>Renderer 没有直接文件、数据库、路径、shell、process 或 network 能力。</p><p class="boundary-note">只有 <code>capture_record</code>、<code>get_today</code> 与 <code>runtime_status</code>；未知命令默认拒绝。</p></section>
+    <section class="card closed" aria-labelledby="runtime-title"><h2 id="runtime-title">Runtime 关闭态</h2><div class="status-grid" id="runtime-flags" aria-live="polite"><p>正在读取 runtime 状态…</p></div><div class="actions"><button class="danger" type="button" id="probe-unknown">实际验证未知 IPC 拒绝</button><button class="warning" type="button" id="probe-schema">实际验证路径／SQL／shell 参数拒绝</button></div><p id="unknown-status" role="status" aria-live="polite">尚未执行越权命令与参数验证。</p></section>
+    <section class="card" aria-labelledby="today-title"><h2 id="today-title">同一 backend 状态</h2><p id="today-summary" class="identity-note">正在通过受控 IPC 读取…</p><div id="today-records" class="record-list"></div></section>
+    <section class="card closed" aria-labelledby="ai-title"><h2 id="ai-title">外部能力</h2><p><strong>全部关闭：</strong>clear、delete、export、Vault、模型、同步、多设备、遥测、updater 与外部 URL 均不可达。</p></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

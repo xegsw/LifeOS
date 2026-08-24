@@ -1,0 +1,182 @@
+{
+  "task": "LIFEOS-P3-106",
+  "execution": "rework-1",
+  "derivation": "conditional rules above; no unconditional row assignment",
+  "rows": [
+    {
+      "id": "ABF-M-001",
+      "execution_id": "REWORK1-M001",
+      "evidence": [
+        "fixed_input_hashes.json",
+        "preflight_results.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-002",
+      "execution_id": "REWORK1-M002",
+      "evidence": [
+        "write_path_inventory.json",
+        "preflight_results.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-003",
+      "execution_id": "REWORK1-M003",
+      "evidence": [
+        "clean_build_results.json",
+        "runtime_process_matrix.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-004",
+      "execution_id": "REWORK1-M004",
+      "evidence": [
+        "m004-default-1280x1024.png",
+        "m004-default-side-by-side.png",
+        "visual_contract.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-005",
+      "execution_id": "REWORK1-M005",
+      "evidence": [
+        "m005-no-suggestion-1280x1024.png",
+        "m005-no-suggestion-side-by-side.png",
+        "visual_contract.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-006",
+      "execution_id": "REWORK1-M006",
+      "evidence": [
+        "m006-restricted-1280x1024.png",
+        "m006-restricted-side-by-side.png",
+        "visual_contract.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-007",
+      "execution_id": "REWORK1-M007",
+      "evidence": [
+        "visual_contract.json",
+        "resource_manifest.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-008",
+      "execution_id": "REWORK1-M008",
+      "evidence": [
+        "dynamic_closure.json",
+        "fixture-first-capture.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-009",
+      "execution_id": "REWORK1-M009",
+      "evidence": [
+        "dynamic_closure.json",
+        "fixture-repeat.json",
+        "fixture-conflict.json",
+        "fixture-injected-failure.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-010",
+      "execution_id": "REWORK1-M010",
+      "evidence": [
+        "dynamic_closure.json",
+        "fixture-final-reopen.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-011",
+      "execution_id": "REWORK1-M011",
+      "evidence": [
+        "dynamic_closure.json",
+        "fixture-unimplemented-controls.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-012",
+      "execution_id": "REWORK1-M012",
+      "evidence": [
+        "denied_results.json",
+        "runtime_process_matrix.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-013",
+      "execution_id": "REWORK1-M013",
+      "evidence": [
+        "negative_results.json",
+        "tamper_results.json",
+        "runtime_process_matrix.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-014",
+      "execution_id": "REWORK1-M014",
+      "evidence": [
+        "negative_results.json",
+        "runtime_process_matrix.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-015",
+      "execution_id": "REWORK1-M015",
+      "evidence": [
+        "accessibility_results.json",
+        "display_sequence.json",
+        "dynamic_closure.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-016",
+      "execution_id": "REWORK1-M016",
+      "evidence": [
+        "cleanup_results.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-017",
+      "execution_id": "REWORK1-M017",
+      "evidence": [
+        "history_and_privacy_results.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "ABF-M-018",
+      "execution_id": "REWORK1-M018",
+      "evidence": [
+        "MANIFEST.md",
+        "final_verifier_results.json"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "total": 18,
+    "pass": 18,
+    "fail": 0,
+    "unknown": 0,
+    "not_implemented": 0,
+    "status": "PASS"
+  }
+}

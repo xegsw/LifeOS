@@ -1,0 +1,49 @@
+case_id,description,expected,actual,raw_decision,reason_codes,sent_field_count,status
+T01,local read allow,ALLOW,ALLOW,ALLOW,,0,PASS
+T02,local parse allow,ALLOW,ALLOW,ALLOW,,0,PASS
+T03,local FTS/index allow,ALLOW,ALLOW,ALLOW,,0,PASS
+T04,local derivation allow,ALLOW,ALLOW,ALLOW,,0,PASS
+T05,LifeOS cloud mock allow,ALLOW,ALLOW,ALLOW,,5,PASS
+T06,named third party mock allow,ALLOW,ALLOW,ALLOW,,5,PASS
+T07,missing authorization,DENY,DENY,DENY,AUTH_MISSING,0,PASS
+T08,expired authorization,DENY,DENY,DENY,AUTH_EXPIRED,0,PASS
+T09,revoked authorization,DENY,DENY,DENY,AUTH_REVOKED,0,PASS
+T10,scope expansion to project B,DENY,DENY,DENY,AUTH_SIX_DIMENSION_MISMATCH,0,PASS
+T11,search purpose cannot become summary,DENY,DENY,DENY,AUTH_SIX_DIMENSION_MISMATCH,0,PASS
+T12,subject/workflow mismatch,DENY,DENY,DENY,AUTH_SIX_DIMENSION_MISMATCH,0,PASS
+T13,processor policy unknown,DENY,DENY,INDETERMINATE,PROCESSOR_POLICY_UNKNOWN,0,PASS
+T14,policy version change,DENY,DENY,DENY,POLICY_VERSION_MISMATCH,0,PASS
+T15,subprocessor unknown,DENY,DENY,INDETERMINATE,SUBPROCESSORS_UNKNOWN,0,PASS
+T16,region unknown,DENY,DENY,INDETERMINATE,REGION_UNKNOWN_OR_DISALLOWED,0,PASS
+T17,training default on,DENY,DENY,DENY,TRAINING_DEFAULT_ON,0,PASS
+T18,evaluation default on,DENY,DENY,DENY,EVALUATION_DEFAULT_ON,0,PASS
+T19,deletion insufficient,DENY,DENY,DENY,DELETION_CAPABILITY_INSUFFICIENT,0,PASS
+T20,retention exceeded,DENY,DENY,DENY,RETENTION_EXCEEDED,0,PASS
+T21,source forbids external disclosure,DENY,DENY,DENY,SOURCE_EXTERNAL_DISCLOSURE_DENIED,0,PASS
+T22,credential hard block,DENY,DENY,DENY,CREDENTIAL_HARD_BLOCK,0,PASS
+T23,unknown sensitivity external deny,DENY,DENY,DENY,AUTH_SIX_DIMENSION_MISMATCH|SENSITIVITY_UNKNOWN,0,PASS
+T24,user consent cannot override unqualified processor,DENY,DENY,DENY,PROCESSOR_NOT_QUALIFIED,0,PASS
+T25,Project membership does not override excluded Source,DENY,DENY,DENY,AUTH_SIX_DIMENSION_MISMATCH|INPUT_EXCLUDED,0,PASS
+T26,folder/tag/wiki Link does not override excluded directory,DENY,DENY,DENY,AUTH_SIX_DIMENSION_MISMATCH|INPUT_EXCLUDED,0,PASS
+T27,candidate Link does not override excluded Artifact,DENY,DENY,DENY,AUTH_SIX_DIMENSION_MISMATCH|INPUT_EXCLUDED,0,PASS
+T28,local authorization cannot be reused for cloud,DENY,DENY,DENY,AUTH_SIX_DIMENSION_MISMATCH,0,PASS
+T29,cloud authorization cannot be reused for third party,DENY,DENY,DENY,AUTH_SIX_DIMENSION_MISMATCH,0,PASS
+T30,third party A authorization cannot be reused for B,DENY,DENY,DENY,AUTH_SIX_DIMENSION_MISMATCH,0,PASS
+T31,multi-input derives under strictest local constraint,ALLOW,ALLOW,ALLOW,,0,PASS
+T32,multi-input external empty intersection refuses generation,DENY,DENY,DENY,SOURCE_EXTERNAL_DISCLOSURE_DENIED,0,PASS
+T33,legal subset creates new derivation and discloses gap,ALLOW,ALLOW,ALLOW,,0,PASS
+T34,queue allow then revocation denies execution,DENY,DENY,DENY,AUTH_REVOKED,0,PASS
+T35,mid-task revocation stops and quarantines race output,DENY,DENY,DENY,AUTH_REVOKED,0,PASS
+T36,policy changes immediately before external send,DENY,DENY,DENY,POLICY_VERSION_MISMATCH,0,PASS
+T37,input tombstone before save output,DENY,DENY,DENY,INPUT_RUNTIME_STATE_INVALID,0,PASS
+T38,expired task lease before save,DENY,DENY,DENY,TASK_LEASE_INVALID,0,PASS
+T39,cross-Project display denied,DENY,DENY,DENY,AUTH_SIX_DIMENSION_MISMATCH,0,PASS
+T40,re-derivation rechecks purpose,DENY,DENY,DENY,AUTH_SIX_DIMENSION_MISMATCH,0,PASS
+T41,candidate Action write allowed only as candidate boundary,ALLOW,ALLOW,ALLOW,,0,PASS
+T42,candidate Link cannot disclose excluded input,DENY,DENY,DENY,AUTH_SIX_DIMENSION_MISMATCH|INPUT_EXCLUDED,0,PASS
+T43,non-verbatim inference still treated as disclosure,DENY,DENY,DENY,SOURCE_EXTERNAL_DISCLOSURE_DENIED,0,PASS
+T44,negative query/ordering signal still treated as disclosure,DENY,DENY,DENY,INPUT_RUNTIME_STATE_INVALID,0,PASS
+T45,authorization cache key binds subject/project/purpose/location/versions/time,ALLOW,ALLOW,ALLOW,,0,PASS
+T46,remote payload exact allowlist and all denied paths zero-send,ALLOW,ALLOW,ALLOW,,10,PASS
+T48,evaluation requires an independent purpose grant and explicit opt-in,ALLOW,ALLOW,ALLOW,,0,PASS
+T47,logs/AuditEntry/manifests contain no body/path/prompt/vector/credential,ALLOW,ALLOW,ALLOW,,0,PASS

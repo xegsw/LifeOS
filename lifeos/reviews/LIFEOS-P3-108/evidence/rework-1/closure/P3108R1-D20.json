@@ -1,0 +1,44 @@
+{
+  "id": "P3108R1-D20",
+  "observable_result": "Three raw logs reject sidecars; actual tamper UI says backend refused to read with no cached success state.",
+  "operation": "Run dangling journal/wal/shm clean-binary probes and open a unique app on schema-tamper fixture.",
+  "raw_actual_app_state_and_visual_evidence": [
+    {
+      "exists": true,
+      "path": "boundary/bootstrap.json",
+      "sha256": "610625d0aeacb1419b19ac5b6f18ff8e1a9ced0748c3f56858e9aea20a2ca6a6"
+    },
+    {
+      "exists": true,
+      "path": "raw-logs/boundary-dangling-journal.log",
+      "sha256": "43579476d458646698583ebcd3f1915631fac7a5b90a1e788a5f34400e12c7c1"
+    },
+    {
+      "exists": true,
+      "path": "raw-logs/boundary-dangling-wal.log",
+      "sha256": "73a123bebf5e05bb16a5be2211423f86748109777c49cb625da13f20198e5e1a"
+    },
+    {
+      "exists": true,
+      "path": "raw-logs/boundary-dangling-shm.log",
+      "sha256": "09df0954e8a817dc7941724e5edf4aab6ce63b6032bd4c505abee20bd186a89c"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/D19-tamper-schema-rejected.ax.txt",
+      "sha256": "1380b385cfb230170365bedc0b0d942dcca3d6bc7186d7512f8b9c581a70f918"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/D19-tamper-schema-rejected.jpeg",
+      "sha256": "363fb9085c59cda0d9e7fa36ba435c7ffebcbf5d1b8ca6190dd3cba34e8827d1"
+    },
+    {
+      "exists": true,
+      "path": "db-tamper-P3108R1-D19-tamper-after-ui.json",
+      "sha256": "f7acbd34f3c78de6f224589bdbea843b884c53bf4d1d0853677ecad71e8ccb4e"
+    }
+  ],
+  "status": "PASS",
+  "time": "2026-08-24T03:13:25.564938+00:00"
+}

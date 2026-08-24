@@ -1,0 +1,146 @@
+{
+  "task": "LIFEOS-P3-086",
+  "runner": "independent_static_runner.mjs",
+  "root": "/private/tmp/lifeos-p3-086.FHtKcm/app",
+  "pass": 26,
+  "fail": 0,
+  "results": [
+    {
+      "id": "default-recovery.html/document",
+      "status": "PASS",
+      "detail": "独立 HTML 文档具有页面主容器。"
+    },
+    {
+      "id": "default-recovery.html/local-assets",
+      "status": "PASS",
+      "detail": "只引用相对本地 CSS 与 JS。"
+    },
+    {
+      "id": "default-recovery.html/explicit-navigation",
+      "status": "PASS",
+      "detail": "可见导航覆盖三张本地页面。"
+    },
+    {
+      "id": "default-recovery.html/ai-closed",
+      "status": "PASS",
+      "detail": "页面明确标注 AI 未启用。"
+    },
+    {
+      "id": "no-reliable-suggestion.html/document",
+      "status": "PASS",
+      "detail": "独立 HTML 文档具有页面主容器。"
+    },
+    {
+      "id": "no-reliable-suggestion.html/local-assets",
+      "status": "PASS",
+      "detail": "只引用相对本地 CSS 与 JS。"
+    },
+    {
+      "id": "no-reliable-suggestion.html/explicit-navigation",
+      "status": "PASS",
+      "detail": "可见导航覆盖三张本地页面。"
+    },
+    {
+      "id": "no-reliable-suggestion.html/ai-closed",
+      "status": "PASS",
+      "detail": "页面明确标注 AI 未启用。"
+    },
+    {
+      "id": "restricted-offline.html/document",
+      "status": "PASS",
+      "detail": "独立 HTML 文档具有页面主容器。"
+    },
+    {
+      "id": "restricted-offline.html/local-assets",
+      "status": "PASS",
+      "detail": "只引用相对本地 CSS 与 JS。"
+    },
+    {
+      "id": "restricted-offline.html/explicit-navigation",
+      "status": "PASS",
+      "detail": "可见导航覆盖三张本地页面。"
+    },
+    {
+      "id": "restricted-offline.html/ai-closed",
+      "status": "PASS",
+      "detail": "页面明确标注 AI 未启用。"
+    },
+    {
+      "id": "recovery/context-first",
+      "status": "PASS",
+      "detail": "默认页表达项目恢复到今日行动。"
+    },
+    {
+      "id": "recovery/confirmed-action",
+      "status": "PASS",
+      "detail": "今日安排只声明已确认行动。"
+    },
+    {
+      "id": "capture/explicit-confirm",
+      "status": "PASS",
+      "detail": "空输入与显式确认路径均存在。"
+    },
+    {
+      "id": "capture/failure-clears",
+      "status": "PASS",
+      "detail": "模拟失败会清除已显示记录并披露失败。"
+    },
+    {
+      "id": "empty/no-invention",
+      "status": "PASS",
+      "detail": "无建议页不虚构恢复建议。"
+    },
+    {
+      "id": "empty/two-paths",
+      "status": "PASS",
+      "detail": "无建议页只给出两条人工受控路径。"
+    },
+    {
+      "id": "restricted/fail-closed",
+      "status": "PASS",
+      "detail": "受限／离线页明确关闭来源处理与建议。"
+    },
+    {
+      "id": "closed/network URL",
+      "status": "PASS",
+      "detail": "受评源码未包含此关闭能力的调用或标识。"
+    },
+    {
+      "id": "closed/network API",
+      "status": "PASS",
+      "detail": "受评源码未包含此关闭能力的调用或标识。"
+    },
+    {
+      "id": "closed/browser persistence",
+      "status": "PASS",
+      "detail": "受评源码未包含此关闭能力的调用或标识。"
+    },
+    {
+      "id": "closed/file API",
+      "status": "PASS",
+      "detail": "受评源码未包含此关闭能力的调用或标识。"
+    },
+    {
+      "id": "closed/Tauri or IPC",
+      "status": "PASS",
+      "detail": "受评源码未包含此关闭能力的调用或标识。"
+    },
+    {
+      "id": "closed/real export or sync",
+      "status": "PASS",
+      "detail": "受评源码未包含此关闭能力的调用或标识。"
+    },
+    {
+      "id": "closed/model invocation",
+      "status": "PASS",
+      "detail": "受评源码未包含此关闭能力的调用或标识。"
+    }
+  ],
+  "hashes": {
+    "default-recovery.html": "98241ff3ae39bd0d9b562f72700a6b7cee66dd28fb252827558182b5a6f18616",
+    "no-reliable-suggestion.html": "2d50aa2f26a0c66647d385d9426386e01081d3f964919bc1588707611cae0577",
+    "restricted-offline.html": "036d061f605367ef4087ee3ea49f2ace1bd69203370b0e4a8135160f6689ecef",
+    "app.js": "f1e0525285da80001fcc9e3ac305c3577c169bd5216b305666e90be3bc4f89e2",
+    "styles.css": "e6e91c2ca590299a1307118f8f5fff467254ecb2c0bfa36acb623b25f6bd9774"
+  }
+}

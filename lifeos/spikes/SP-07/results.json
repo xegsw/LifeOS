@@ -1,0 +1,44 @@
+{
+  "conclusion": "PASS",
+  "tests_total": 23,
+  "passed": 23,
+  "failed": 0,
+  "p0_failed": 0,
+  "metrics": {
+    "seed": 20260809,
+    "corpus_units": 60,
+    "projects": 4,
+    "queries": 20,
+    "retrieval": {
+      "fts": {
+        "recall_at_20": 1.0,
+        "critical_recall_at_10": 1.0,
+        "ndcg_at_10": 1.0,
+        "first_valid_rate": 0.7,
+        "latency_p95_ms": 0.106
+      },
+      "semantic": {
+        "recall_at_20": 1.0,
+        "critical_recall_at_10": 1.0,
+        "ndcg_at_10": 1.0,
+        "first_valid_rate": 0.7,
+        "latency_p95_ms": 0.235
+      },
+      "hybrid": {
+        "recall_at_20": 1.0,
+        "critical_recall_at_10": 1.0,
+        "ndcg_at_10": 1.0,
+        "first_valid_rate": 0.7,
+        "latency_p95_ms": 0.22
+      }
+    },
+    "hybrid_recall_gain_vs_fts": 0.0,
+    "clear_vector_gain_threshold": 0.05,
+    "clear_vector_gain": false,
+    "evidence_completeness": 1.0,
+    "permission_leaks": 0,
+    "recovery_package_p95_ms": 0.013,
+    "pgvector_production_validated": false
+  },
+  "privacy_scan_hits": []
+}

@@ -1,0 +1,26 @@
+{
+  "browser": "Google Chrome (com.google.Chrome) via Computer Use @oai/sky",
+  "entry": "file:///private/tmp/lifeos-p3-087.Yvv65U/app/default-recovery.html",
+  "preflight": "PASS",
+  "pass": 12,
+  "fail": 0,
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "unknown": 0,
+  "notImplemented": 0,
+  "cases": [
+    {"id":"DY-01","result":"PASS","detail":"new Chrome tab loaded the task-local file: entry"},
+    {"id":"DY-02","result":"PASS","detail":"Tab reached the skip link and navigation in source order"},
+    {"id":"DY-03","result":"PASS","detail":"keyboard Tab/Enter navigated among the three local state pages"},
+    {"id":"DY-04","result":"PASS","detail":"no-reliable-suggestion controlled path disclosed its non-reading boundary"},
+    {"id":"DY-05","result":"PASS","detail":"non-sensitive text displayed only after explicit confirmation"},
+    {"id":"DY-06","result":"PASS","detail":"repeated confirmation did not append a second record"},
+    {"id":"DY-07","result":"PASS","detail":"simulated failure cleared the displayed record and disclosed failure"},
+    {"id":"DY-08","result":"PASS","detail":"refresh cleared input and display"},
+    {"id":"DY-09","result":"PASS","detail":"closing the task tab and opening a new tab cleared session content"},
+    {"id":"DY-10","result":"PASS","detail":"wide visual record retained hierarchy and state boundaries"},
+    {"id":"DY-11","result":"PASS","detail":"150% and 200% Chrome zoom records exercised the narrow responsive layout"},
+    {"id":"DY-12","result":"PASS","detail":"restricted/offline page remained visible and explicitly fail-closed"}
+  ]
+}

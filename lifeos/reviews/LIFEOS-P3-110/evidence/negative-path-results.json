@@ -1,0 +1,139 @@
+{
+  "started_at_utc": "2026-08-24T05:28:57.969047Z",
+  "prepared": {
+    "directory_object": {
+      "db": "/private/tmp/lifeos-p3-104-p3-110-review-path-v1/capture.sqlite",
+      "path": "/private/tmp/lifeos-p3-104-p3-110-review-path-v1/sentinel.txt",
+      "sha256": "5c1147befb828ccab30f3ae5c9355dda5ad5abd3ce3216584f490e4d5ffe7069"
+    },
+    "parent_symlink": {
+      "db": "/private/tmp/lifeos-p3-104-p3-110-review-link-v1/capture.sqlite",
+      "link_target": "/private/tmp/lifeos-p3-104-p3-110-review-path-v1"
+    },
+    "hardlink": {
+      "db": "/private/tmp/lifeos-p3-104-p3-110-review-hardlink-v1/capture.sqlite",
+      "nlink": 2,
+      "path": "/private/tmp/lifeos-p3-104-p3-110-review-hardlink-v1/sentinel.txt",
+      "sha256": "5c1147befb828ccab30f3ae5c9355dda5ad5abd3ce3216584f490e4d5ffe7069"
+    },
+    "dangling_final": {
+      "db": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-final-v1/capture.sqlite",
+      "link_target": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-final-v1/missing.sqlite",
+      "path": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-final-v1/sentinel.txt",
+      "sha256": "5c1147befb828ccab30f3ae5c9355dda5ad5abd3ce3216584f490e4d5ffe7069"
+    },
+    "dangling-journal": {
+      "db": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-journal-v1/capture.sqlite",
+      "sidecar": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-journal-v1/capture.sqlite-journal",
+      "sidecar_target": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-journal-v1/missing-journal",
+      "source": "/private/tmp/lifeos-p3-104-p3-110-review-nominal-v1/capture.sqlite",
+      "source_sha256": "619b68de965a9247628e834901a96c0cf6c8387e6a846f374e5ef271bede53a1",
+      "target_sha256": "619b68de965a9247628e834901a96c0cf6c8387e6a846f374e5ef271bede53a1",
+      "path": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-journal-v1/sentinel.txt",
+      "sha256": "5c1147befb828ccab30f3ae5c9355dda5ad5abd3ce3216584f490e4d5ffe7069"
+    },
+    "dangling-wal": {
+      "db": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-wal-v1/capture.sqlite",
+      "sidecar": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-wal-v1/capture.sqlite-wal",
+      "sidecar_target": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-wal-v1/missing-wal",
+      "source": "/private/tmp/lifeos-p3-104-p3-110-review-nominal-v1/capture.sqlite",
+      "source_sha256": "619b68de965a9247628e834901a96c0cf6c8387e6a846f374e5ef271bede53a1",
+      "target_sha256": "619b68de965a9247628e834901a96c0cf6c8387e6a846f374e5ef271bede53a1",
+      "path": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-wal-v1/sentinel.txt",
+      "sha256": "5c1147befb828ccab30f3ae5c9355dda5ad5abd3ce3216584f490e4d5ffe7069"
+    },
+    "dangling-shm": {
+      "db": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-shm-v1/capture.sqlite",
+      "sidecar": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-shm-v1/capture.sqlite-shm",
+      "sidecar_target": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-shm-v1/missing-shm",
+      "source": "/private/tmp/lifeos-p3-104-p3-110-review-nominal-v1/capture.sqlite",
+      "source_sha256": "619b68de965a9247628e834901a96c0cf6c8387e6a846f374e5ef271bede53a1",
+      "target_sha256": "619b68de965a9247628e834901a96c0cf6c8387e6a846f374e5ef271bede53a1",
+      "path": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-shm-v1/sentinel.txt",
+      "sha256": "5c1147befb828ccab30f3ae5c9355dda5ad5abd3ce3216584f490e4d5ffe7069"
+    },
+    "tampered_content": {
+      "db": "/private/tmp/lifeos-p3-104-p3-110-review-tamper-v1/capture.sqlite",
+      "source": "/private/tmp/lifeos-p3-104-p3-110-review-nominal-v1/capture.sqlite",
+      "source_sha256": "619b68de965a9247628e834901a96c0cf6c8387e6a846f374e5ef271bede53a1",
+      "target_sha256": "619b68de965a9247628e834901a96c0cf6c8387e6a846f374e5ef271bede53a1",
+      "post_tamper_sha256": "5243e6e7ed2d0cd28553874954753a3803fd9c9c9ab864f1dd21b1aaff8181e1",
+      "path": "/private/tmp/lifeos-p3-104-p3-110-review-tamper-v1/sentinel.txt",
+      "sha256": "5c1147befb828ccab30f3ae5c9355dda5ad5abd3ce3216584f490e4d5ffe7069"
+    }
+  },
+  "startup_rejections": {
+    "directory_object": {
+      "label": "directory_object",
+      "database": "/private/tmp/lifeos-p3-104-p3-110-review-path-v1/capture.sqlite",
+      "pid": 94527,
+      "exit_code": 101,
+      "log": "lifeos/reviews/LIFEOS-P3-110/evidence/negative-directory_object.log",
+      "panic_boundary_rejected": true,
+      "log_tail": "ipc_result status=blocked code=database_type_rejected\n\nthread 'main' (5064762) panicked at src/runtime.rs:678:9:\ncontrolled DB boundary rejected: database_type_rejected\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\nstarted_at_utc=2026-08-24T05:28:57.881091Z\ndb=/private/tmp/lifeos-p3-104-p3-110-review-path-v1/capture.sqlite\n"
+    },
+    "parent_symlink": {
+      "label": "parent_symlink",
+      "database": "/private/tmp/lifeos-p3-104-p3-110-review-link-v1/capture.sqlite",
+      "pid": 94528,
+      "exit_code": 101,
+      "log": "lifeos/reviews/LIFEOS-P3-110/evidence/negative-parent_symlink.log",
+      "panic_boundary_rejected": true,
+      "log_tail": "ipc_result status=blocked code=path_symlink_rejected\n\nthread 'main' (5064765) panicked at src/runtime.rs:678:9:\ncontrolled DB boundary rejected: path_symlink_rejected\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\nstarted_at_utc=2026-08-24T05:28:57.891677Z\ndb=/private/tmp/lifeos-p3-104-p3-110-review-link-v1/capture.sqlite\n"
+    },
+    "hardlink": {
+      "label": "hardlink",
+      "database": "/private/tmp/lifeos-p3-104-p3-110-review-hardlink-v1/capture.sqlite",
+      "pid": 94529,
+      "exit_code": 101,
+      "log": "lifeos/reviews/LIFEOS-P3-110/evidence/negative-hardlink.log",
+      "panic_boundary_rejected": true,
+      "log_tail": "ipc_result status=blocked code=database_type_rejected\n\nthread 'main' (5064767) panicked at src/runtime.rs:678:9:\ncontrolled DB boundary rejected: database_type_rejected\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\nstarted_at_utc=2026-08-24T05:28:57.902542Z\ndb=/private/tmp/lifeos-p3-104-p3-110-review-hardlink-v1/capture.sqlite\n"
+    },
+    "dangling_final": {
+      "label": "dangling_final",
+      "database": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-final-v1/capture.sqlite",
+      "pid": 94530,
+      "exit_code": 101,
+      "log": "lifeos/reviews/LIFEOS-P3-110/evidence/negative-dangling_final.log",
+      "panic_boundary_rejected": true,
+      "log_tail": "ipc_result status=blocked code=database_type_rejected\n\nthread 'main' (5064769) panicked at src/runtime.rs:678:9:\ncontrolled DB boundary rejected: database_type_rejected\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\nstarted_at_utc=2026-08-24T05:28:57.913859Z\ndb=/private/tmp/lifeos-p3-104-p3-110-review-dangling-final-v1/capture.sqlite\n"
+    },
+    "dangling_journal": {
+      "label": "dangling_journal",
+      "database": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-journal-v1/capture.sqlite",
+      "pid": 94531,
+      "exit_code": 101,
+      "log": "lifeos/reviews/LIFEOS-P3-110/evidence/negative-dangling_journal.log",
+      "panic_boundary_rejected": true,
+      "log_tail": "ipc_result status=blocked code=database_sidecar_rejected\n\nthread 'main' (5064772) panicked at src/runtime.rs:678:9:\ncontrolled DB boundary rejected: database_sidecar_rejected\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\nstarted_at_utc=2026-08-24T05:28:57.925135Z\ndb=/private/tmp/lifeos-p3-104-p3-110-review-dangling-journal-v1/capture.sqlite\n"
+    },
+    "dangling_wal": {
+      "label": "dangling_wal",
+      "database": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-wal-v1/capture.sqlite",
+      "pid": 94532,
+      "exit_code": 101,
+      "log": "lifeos/reviews/LIFEOS-P3-110/evidence/negative-dangling_wal.log",
+      "panic_boundary_rejected": true,
+      "log_tail": "ipc_result status=blocked code=database_sidecar_rejected\n\nthread 'main' (5064774) panicked at src/runtime.rs:678:9:\ncontrolled DB boundary rejected: database_sidecar_rejected\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\nstarted_at_utc=2026-08-24T05:28:57.936227Z\ndb=/private/tmp/lifeos-p3-104-p3-110-review-dangling-wal-v1/capture.sqlite\n"
+    },
+    "dangling_shm": {
+      "label": "dangling_shm",
+      "database": "/private/tmp/lifeos-p3-104-p3-110-review-dangling-shm-v1/capture.sqlite",
+      "pid": 94533,
+      "exit_code": 101,
+      "log": "lifeos/reviews/LIFEOS-P3-110/evidence/negative-dangling_shm.log",
+      "panic_boundary_rejected": true,
+      "log_tail": "ipc_result status=blocked code=database_sidecar_rejected\n\nthread 'main' (5064777) panicked at src/runtime.rs:678:9:\ncontrolled DB boundary rejected: database_sidecar_rejected\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\nstarted_at_utc=2026-08-24T05:28:57.947501Z\ndb=/private/tmp/lifeos-p3-104-p3-110-review-dangling-shm-v1/capture.sqlite\n"
+    },
+    "external_path_schema": {
+      "label": "external_path_schema",
+      "database": "/private/tmp/lifeos-p3-104-p3-110-review-path-v1/../p3-110-outside/capture.sqlite",
+      "pid": 94535,
+      "exit_code": 101,
+      "log": "lifeos/reviews/LIFEOS-P3-110/evidence/negative-external_path_schema.log",
+      "panic_boundary_rejected": true,
+      "log_tail": "ipc_result status=blocked code=path_schema_rejected\n\nthread 'main' (5064779) panicked at src/runtime.rs:678:9:\ncontrolled DB boundary rejected: path_schema_rejected\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\nstarted_at_utc=2026-08-24T05:28:57.958274Z\ndb=/private/tmp/lifeos-p3-104-p3-110-review-path-v1/../p3-110-outside/capture.sqlite\n"
+    }
+  }
+}

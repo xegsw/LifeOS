@@ -1,0 +1,65 @@
+{
+  "task": "LIFEOS-P3-106",
+  "execution": "resume-1",
+  "network_mode": "CARGO_NET_OFFLINE=true",
+  "target_existed_before_authorized_clean": true,
+  "target_absent_before_build": true,
+  "unit_paths_before": [],
+  "unit_paths_after": [],
+  "commands": [
+    {
+      "id": "cargo_test",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "test",
+        "--locked"
+      ],
+      "returncode": 0,
+      "log": "evidence/resume-1/cargo_test.log",
+      "sha256": "6871ffca2456bb247a00de7d51e45e9e4fcb8cb323f715fce9ba1dde6a6b2c44",
+      "status": "PASS"
+    },
+    {
+      "id": "cargo_build",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "build",
+        "--locked"
+      ],
+      "returncode": 0,
+      "log": "evidence/resume-1/cargo_build.log",
+      "sha256": "5d0fc732d5aad1fd942ea71be20624b7ce4fafcef6cb4a47a8d4e893b798acae",
+      "status": "PASS"
+    },
+    {
+      "id": "cargo_tauri_bundle",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "tauri",
+        "build",
+        "--debug",
+        "--bundles",
+        "app",
+        "--no-sign",
+        "--config",
+        "{\"bundle\":{\"active\":true,\"targets\":[\"app\"]}}",
+        "--",
+        "--locked"
+      ],
+      "returncode": 0,
+      "log": "evidence/resume-1/cargo_tauri_bundle.log",
+      "sha256": "fe691690ff668ce5b6b5b169053359f6eab4cb2524342eafddd197166b172c97",
+      "status": "PASS"
+    }
+  ],
+  "artifacts": {
+    "source_main_sha256": "4d7a1e4a1eebe08ffec78a4c0cd0e7cdeabf6b92e68c003b02e3515a035e042c",
+    "source_runtime_sha256": "0ca8dbc53faf1c5b9b6c021711ebe16e4fe5102851948e5fac1c589c13ce3529",
+    "cargo_lock_sha256": "430583c26b3104ff384c7ab539b0ebe79d90509a957701a2fb1ebd3b4c2026f1",
+    "binary": "target/debug/lifeos-p3-104",
+    "binary_sha256": "e4a606ce3ea7e6fa0a25a7a57f4795c6d1b603c1c20d3601534334bae1b0d63f",
+    "bundle_binary": "target/debug/bundle/macos/LifeOS P3-104.app/Contents/MacOS/lifeos-p3-104",
+    "bundle_binary_sha256": "e4a606ce3ea7e6fa0a25a7a57f4795c6d1b603c1c20d3601534334bae1b0d63f"
+  },
+  "status": "PASS"
+}

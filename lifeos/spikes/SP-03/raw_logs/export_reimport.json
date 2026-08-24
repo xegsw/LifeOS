@@ -1,0 +1,445 @@
+{
+  "old_package": {
+    "manifest_version": "sp03-export-candidate-v1",
+    "status": "partial",
+    "included": [
+      {
+        "artifact_id": "artifact-obs-note",
+        "identity": "external_original",
+        "source_id": "source-obsidian-synth",
+        "version_id": "version-obs-v1",
+        "content_hash": "09ac2f753bc773c62781c6f52ced8c896584dfed2a2f89198beee67fda0cc817"
+      },
+      {
+        "artifact_id": "artifact-user-note",
+        "identity": "user_authored_original",
+        "source_id": "source-lifeos-synth",
+        "version_id": "version-user-v1",
+        "content_hash": "fbc975863770877b45bc1458e05943a743cfa29c3d0a83b603d1d97491acb73d"
+      }
+    ],
+    "excluded": [
+      {
+        "id": "artifact-web-material",
+        "reason": "source_policy_non_exportable",
+        "pointer_only": true
+      }
+    ],
+    "failed": [
+      {
+        "id": "artifact-excluded",
+        "reason": "authorization_revoked"
+      }
+    ],
+    "objects": [
+      {
+        "object_id": "output-recovery-v1",
+        "identity": "ai_organized",
+        "version_id": "output-recovery-version-v1",
+        "origin_candidate_id": null,
+        "recognition": null,
+        "business_state": null,
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "action-ai-candidate-v1",
+        "identity": "ai_candidate",
+        "version_id": "action-ai-version-v1",
+        "origin_candidate_id": null,
+        "recognition": "unconfirmed",
+        "business_state": "candidate",
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "action-user-confirmed-v1",
+        "identity": "user_confirmed",
+        "version_id": "action-user-version-v1",
+        "origin_candidate_id": "action-ai-candidate-v1",
+        "recognition": "confirmed",
+        "business_state": "completed",
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "decision-candidate-v1",
+        "identity": "ai_candidate",
+        "version_id": "decision-ai-version-v1",
+        "origin_candidate_id": null,
+        "recognition": "unconfirmed",
+        "business_state": "proposed",
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "decision-user-confirmed-v1",
+        "identity": "user_confirmed",
+        "version_id": "decision-user-version-v1",
+        "origin_candidate_id": "decision-candidate-v1",
+        "recognition": "confirmed",
+        "business_state": "active",
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "external-claim-v1",
+        "identity": "external_claim",
+        "version_id": "external-claim-version-v1",
+        "origin_candidate_id": null,
+        "recognition": "unconfirmed",
+        "business_state": null,
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "output-multi-v1",
+        "identity": "ai_organized",
+        "version_id": "output-multi-version-v1",
+        "origin_candidate_id": null,
+        "recognition": null,
+        "business_state": null,
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "output-feedback-shaped-v1",
+        "identity": "ai_organized",
+        "version_id": "output-feedback-version-v1",
+        "origin_candidate_id": null,
+        "recognition": null,
+        "business_state": null,
+        "evidence_state": "available",
+        "review_required": false
+      }
+    ],
+    "feedback": [
+      {
+        "feedback_id": "feedback-action-edit",
+        "seq": 1,
+        "type": "edit_confirm",
+        "target_id": "action-ai-candidate-v1",
+        "target_version_id": "action-ai-version-v1",
+        "result_object_id": "action-user-confirmed-v1",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-action-complete",
+        "seq": 2,
+        "type": "complete",
+        "target_id": "action-user-confirmed-v1",
+        "target_version_id": "action-user-version-v1",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-decision-confirm",
+        "seq": 3,
+        "type": "confirm",
+        "target_id": "decision-candidate-v1",
+        "target_version_id": "decision-ai-version-v1",
+        "result_object_id": "decision-user-confirmed-v1",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-rejected",
+        "seq": 4,
+        "type": "reject",
+        "target_id": "action-ai-candidate-v1",
+        "target_version_id": "action-ai-version-v1",
+        "active": false
+      },
+      {
+        "feedback_id": "feedback-correction",
+        "seq": 5,
+        "type": "correct",
+        "target_id": "decision-candidate-v1",
+        "target_version_id": "decision-ai-version-v1",
+        "active": false
+      },
+      {
+        "feedback_id": "feedback-retract-rejected",
+        "seq": 6,
+        "type": "retract",
+        "target_id": "feedback-rejected",
+        "target_version_id": "feedback-rejected:seq4",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-defer-sample",
+        "seq": 7,
+        "type": "defer",
+        "target_id": "action-user-confirmed-v1",
+        "target_version_id": "action-user-version-v1",
+        "active": false
+      }
+    ],
+    "tombstones": [],
+    "feedback_retractions": [],
+    "audit_summary": [
+      {
+        "action_code": "export",
+        "result_code": "partial",
+        "included_count": 2,
+        "excluded_count": 1,
+        "failed_count": 1
+      }
+    ]
+  },
+  "current_partial_package": {
+    "manifest_version": "sp03-export-candidate-v1",
+    "status": "partial",
+    "included": [
+      {
+        "artifact_id": "artifact-obs-note",
+        "identity": "external_original",
+        "source_id": "source-obsidian-synth",
+        "version_id": "version-obs-v1",
+        "content_hash": "09ac2f753bc773c62781c6f52ced8c896584dfed2a2f89198beee67fda0cc817"
+      }
+    ],
+    "excluded": [
+      {
+        "id": "artifact-user-note",
+        "reason": "tombstoned"
+      },
+      {
+        "id": "artifact-web-material",
+        "reason": "source_policy_non_exportable",
+        "pointer_only": true
+      }
+    ],
+    "failed": [
+      {
+        "id": "artifact-excluded",
+        "reason": "authorization_revoked"
+      }
+    ],
+    "objects": [
+      {
+        "object_id": "output-recovery-v1",
+        "identity": "ai_organized",
+        "version_id": "output-recovery-version-v1",
+        "origin_candidate_id": null,
+        "recognition": null,
+        "business_state": null,
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "action-ai-candidate-v1",
+        "identity": "ai_candidate",
+        "version_id": "action-ai-version-v1",
+        "origin_candidate_id": null,
+        "recognition": "unconfirmed",
+        "business_state": "candidate",
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "action-user-confirmed-v1",
+        "identity": "user_confirmed",
+        "version_id": "action-user-version-v1",
+        "origin_candidate_id": "action-ai-candidate-v1",
+        "recognition": "confirmed",
+        "business_state": "completed",
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "decision-candidate-v1",
+        "identity": "ai_candidate",
+        "version_id": "decision-ai-version-v1",
+        "origin_candidate_id": null,
+        "recognition": "unconfirmed",
+        "business_state": "proposed",
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "decision-user-confirmed-v1",
+        "identity": "user_confirmed",
+        "version_id": "decision-user-version-v1",
+        "origin_candidate_id": "decision-candidate-v1",
+        "recognition": "confirmed",
+        "business_state": "active",
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "external-claim-v1",
+        "identity": "external_claim",
+        "version_id": "external-claim-version-v1",
+        "origin_candidate_id": null,
+        "recognition": "unconfirmed",
+        "business_state": null,
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "output-multi-v1",
+        "identity": "ai_organized",
+        "version_id": "output-multi-version-v1",
+        "origin_candidate_id": null,
+        "recognition": null,
+        "business_state": null,
+        "evidence_state": "available",
+        "review_required": false
+      },
+      {
+        "object_id": "output-feedback-shaped-v1",
+        "identity": "ai_organized",
+        "version_id": "output-feedback-version-v1",
+        "origin_candidate_id": null,
+        "recognition": null,
+        "business_state": null,
+        "evidence_state": "available",
+        "review_required": false
+      }
+    ],
+    "feedback": [
+      {
+        "feedback_id": "feedback-action-edit",
+        "seq": 1,
+        "type": "edit_confirm",
+        "target_id": "action-ai-candidate-v1",
+        "target_version_id": "action-ai-version-v1",
+        "result_object_id": "action-user-confirmed-v1",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-action-complete",
+        "seq": 2,
+        "type": "complete",
+        "target_id": "action-user-confirmed-v1",
+        "target_version_id": "action-user-version-v1",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-decision-confirm",
+        "seq": 3,
+        "type": "confirm",
+        "target_id": "decision-candidate-v1",
+        "target_version_id": "decision-ai-version-v1",
+        "result_object_id": "decision-user-confirmed-v1",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-rejected",
+        "seq": 4,
+        "type": "reject",
+        "target_id": "action-ai-candidate-v1",
+        "target_version_id": "action-ai-version-v1",
+        "active": false
+      },
+      {
+        "feedback_id": "feedback-correction",
+        "seq": 5,
+        "type": "correct",
+        "target_id": "decision-candidate-v1",
+        "target_version_id": "decision-ai-version-v1",
+        "active": false
+      },
+      {
+        "feedback_id": "feedback-retract-rejected",
+        "seq": 6,
+        "type": "retract",
+        "target_id": "feedback-rejected",
+        "target_version_id": "feedback-rejected:seq4",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-defer-sample",
+        "seq": 7,
+        "type": "defer",
+        "target_id": "action-user-confirmed-v1",
+        "target_version_id": "action-user-version-v1",
+        "active": false
+      }
+    ],
+    "tombstones": [
+      "artifact-user-note"
+    ],
+    "feedback_retractions": [
+      "feedback-action-edit"
+    ],
+    "audit_summary": [
+      {
+        "action_code": "export",
+        "result_code": "partial",
+        "included_count": 1,
+        "excluded_count": 2,
+        "failed_count": 1
+      }
+    ]
+  },
+  "reimport_result": {
+    "control_phase_first": true,
+    "restored_artifacts": [
+      {
+        "artifact_id": "artifact-obs-note",
+        "identity": "external_original",
+        "source_id": "source-obsidian-synth",
+        "version_id": "version-obs-v1",
+        "content_hash": "09ac2f753bc773c62781c6f52ced8c896584dfed2a2f89198beee67fda0cc817"
+      }
+    ],
+    "restored_feedback": [
+      {
+        "feedback_id": "feedback-action-complete",
+        "seq": 2,
+        "type": "complete",
+        "target_id": "action-user-confirmed-v1",
+        "target_version_id": "action-user-version-v1",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-decision-confirm",
+        "seq": 3,
+        "type": "confirm",
+        "target_id": "decision-candidate-v1",
+        "target_version_id": "decision-ai-version-v1",
+        "result_object_id": "decision-user-confirmed-v1",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-rejected",
+        "seq": 4,
+        "type": "reject",
+        "target_id": "action-ai-candidate-v1",
+        "target_version_id": "action-ai-version-v1",
+        "active": false
+      },
+      {
+        "feedback_id": "feedback-correction",
+        "seq": 5,
+        "type": "correct",
+        "target_id": "decision-candidate-v1",
+        "target_version_id": "decision-ai-version-v1",
+        "active": false
+      },
+      {
+        "feedback_id": "feedback-retract-rejected",
+        "seq": 6,
+        "type": "retract",
+        "target_id": "feedback-rejected",
+        "target_version_id": "feedback-rejected:seq4",
+        "active": true
+      },
+      {
+        "feedback_id": "feedback-defer-sample",
+        "seq": 7,
+        "type": "defer",
+        "target_id": "action-user-confirmed-v1",
+        "target_version_id": "action-user-version-v1",
+        "active": false
+      }
+    ],
+    "blocked_artifact_ids": [
+      "artifact-user-note"
+    ],
+    "blocked_feedback_ids": [
+      "feedback-action-edit"
+    ]
+  },
+  "resurrection_count": 0
+}

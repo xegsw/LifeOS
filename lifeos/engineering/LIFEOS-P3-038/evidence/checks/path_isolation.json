@@ -1,0 +1,17 @@
+{
+  "all_unsafe_rejected": true,
+  "allowed_probe": "lifeos/engineering/LIFEOS-P3-038/work/allowed_synthetic.db",
+  "fixed_root": "lifeos/engineering/LIFEOS-P3-038",
+  "no_cli_path_arguments": true,
+  "rejected": {
+    "broad_work_dir": true,
+    "filesystem_root": true,
+    "home_tilde": true,
+    "network_scheme": true,
+    "network_unc": true,
+    "project_root": true,
+    "symlink_outside": true,
+    "user_db_like": true,
+    "vault_like": true
+  }
+}

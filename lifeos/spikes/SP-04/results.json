@@ -1,0 +1,1476 @@
+{
+  "spike": "SP-04",
+  "fixture_version": "sp04-fixtures-v1",
+  "environment": {
+    "python": "3.9.6",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "network_calls": 0,
+    "real_model_calls": 0,
+    "real_vault_reads": 0
+  },
+  "summary": {
+    "total": 48,
+    "passed": 48,
+    "failed": 0,
+    "p0_failed": 0,
+    "machine_result": "PASS"
+  },
+  "cases": [
+    {
+      "case_id": "T01",
+      "description": "local read allow",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "raw_decision": "ALLOW",
+      "reason_codes": [],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T02",
+      "description": "local parse allow",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "raw_decision": "ALLOW",
+      "reason_codes": [],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T03",
+      "description": "local FTS/index allow",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "raw_decision": "ALLOW",
+      "reason_codes": [],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T04",
+      "description": "local derivation allow",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "raw_decision": "ALLOW",
+      "reason_codes": [],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T05",
+      "description": "LifeOS cloud mock allow",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "raw_decision": "ALLOW",
+      "reason_codes": [],
+      "sent_field_count": 5,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T06",
+      "description": "named third party mock allow",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "raw_decision": "ALLOW",
+      "reason_codes": [],
+      "sent_field_count": 5,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T07",
+      "description": "missing authorization",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_MISSING"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T08",
+      "description": "expired authorization",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_EXPIRED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T09",
+      "description": "revoked authorization",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_REVOKED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T10",
+      "description": "scope expansion to project B",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T11",
+      "description": "search purpose cannot become summary",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T12",
+      "description": "subject/workflow mismatch",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T13",
+      "description": "processor policy unknown",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "INDETERMINATE",
+      "reason_codes": [
+        "PROCESSOR_POLICY_UNKNOWN"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T14",
+      "description": "policy version change",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "POLICY_VERSION_MISMATCH"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T15",
+      "description": "subprocessor unknown",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "INDETERMINATE",
+      "reason_codes": [
+        "SUBPROCESSORS_UNKNOWN"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T16",
+      "description": "region unknown",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "INDETERMINATE",
+      "reason_codes": [
+        "REGION_UNKNOWN_OR_DISALLOWED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T17",
+      "description": "training default on",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "TRAINING_DEFAULT_ON"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T18",
+      "description": "evaluation default on",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "EVALUATION_DEFAULT_ON"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T19",
+      "description": "deletion insufficient",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "DELETION_CAPABILITY_INSUFFICIENT"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T20",
+      "description": "retention exceeded",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "RETENTION_EXCEEDED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T21",
+      "description": "source forbids external disclosure",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T22",
+      "description": "credential hard block",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "CREDENTIAL_HARD_BLOCK"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T23",
+      "description": "unknown sensitivity external deny",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH",
+        "SENSITIVITY_UNKNOWN"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T24",
+      "description": "user consent cannot override unqualified processor",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "PROCESSOR_NOT_QUALIFIED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T25",
+      "description": "Project membership does not override excluded Source",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH",
+        "INPUT_EXCLUDED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T26",
+      "description": "folder/tag/wiki Link does not override excluded directory",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH",
+        "INPUT_EXCLUDED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T27",
+      "description": "candidate Link does not override excluded Artifact",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH",
+        "INPUT_EXCLUDED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T28",
+      "description": "local authorization cannot be reused for cloud",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T29",
+      "description": "cloud authorization cannot be reused for third party",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T30",
+      "description": "third party A authorization cannot be reused for B",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T31",
+      "description": "multi-input derives under strictest local constraint",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "raw_decision": "ALLOW",
+      "reason_codes": [],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T32",
+      "description": "multi-input external empty intersection refuses generation",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T33",
+      "description": "legal subset creates new derivation and discloses gap",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "raw_decision": "ALLOW",
+      "reason_codes": [],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T34",
+      "description": "queue allow then revocation denies execution",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_REVOKED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T35",
+      "description": "mid-task revocation stops and quarantines race output",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_REVOKED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T36",
+      "description": "policy changes immediately before external send",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "POLICY_VERSION_MISMATCH"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T37",
+      "description": "input tombstone before save output",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "INPUT_RUNTIME_STATE_INVALID"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T38",
+      "description": "expired task lease before save",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "TASK_LEASE_INVALID"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T39",
+      "description": "cross-Project display denied",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T40",
+      "description": "re-derivation rechecks purpose",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T41",
+      "description": "candidate Action write allowed only as candidate boundary",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "raw_decision": "ALLOW",
+      "reason_codes": [],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T42",
+      "description": "candidate Link cannot disclose excluded input",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH",
+        "INPUT_EXCLUDED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T43",
+      "description": "non-verbatim inference still treated as disclosure",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T44",
+      "description": "negative query/ordering signal still treated as disclosure",
+      "expected": "DENY",
+      "actual": "DENY",
+      "raw_decision": "DENY",
+      "reason_codes": [
+        "INPUT_RUNTIME_STATE_INVALID"
+      ],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T45",
+      "description": "authorization cache key binds subject/project/purpose/location/versions/time",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "raw_decision": "ALLOW",
+      "reason_codes": [],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T46",
+      "description": "remote payload exact allowlist and all denied paths zero-send",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "raw_decision": "ALLOW",
+      "reason_codes": [],
+      "sent_field_count": 10,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T48",
+      "description": "evaluation requires an independent purpose grant and explicit opt-in",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "raw_decision": "ALLOW",
+      "reason_codes": [],
+      "sent_field_count": 0,
+      "status": "PASS"
+    },
+    {
+      "case_id": "T47",
+      "description": "logs/AuditEntry/manifests contain no body/path/prompt/vector/credential",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "raw_decision": "ALLOW",
+      "reason_codes": [],
+      "sent_field_count": 0,
+      "status": "PASS"
+    }
+  ],
+  "constraint_inheritance": {
+    "strictest": {
+      "derivation_id": "derivation-multi-v1",
+      "input_ids": [
+        "artifact-user",
+        "artifact-client"
+      ],
+      "sensitivity": "client_secret",
+      "allowed_locations": [
+        "local"
+      ],
+      "external_disclosure": false,
+      "retention_days": 7,
+      "decision": "ALLOW"
+    },
+    "legal_subset": {
+      "derivation_id": "derivation-subset-v2",
+      "supersedes": "derivation-multi-v1",
+      "included_input_ids": [
+        "artifact-user"
+      ],
+      "excluded_input_ids": [
+        "artifact-client"
+      ],
+      "gap_disclosure": [
+        "1 restricted input omitted"
+      ],
+      "decision": "ALLOW"
+    },
+    "empty_intersection": {
+      "request_id": "r32",
+      "decision": "DENY",
+      "output_created": false
+    }
+  },
+  "long_task": [
+    {
+      "stage": "enqueue",
+      "decision": "DENY",
+      "output_state": "quarantined"
+    },
+    {
+      "stage": "execute",
+      "decision": "DENY",
+      "output_state": "quarantined"
+    },
+    {
+      "stage": "derive_segment_1",
+      "decision": "ALLOW",
+      "output_state": "ephemeral_not_published"
+    },
+    {
+      "stage": "derive_segment_2",
+      "decision": "DENY",
+      "output_state": "quarantined"
+    },
+    {
+      "stage": "publish",
+      "decision": "DENY",
+      "output_state": "quarantined"
+    },
+    {
+      "stage": "index",
+      "decision": "DENY",
+      "output_state": "quarantined"
+    },
+    {
+      "stage": "recovery_package",
+      "decision": "DENY",
+      "output_state": "quarantined"
+    }
+  ],
+  "gateway": {
+    "manifests": [
+      {
+        "request_id": "r05",
+        "decision": "ALLOW",
+        "authorization_id": "cloud",
+        "purpose": "summary",
+        "processor": "lifeos-cloud-mock",
+        "policy_version": "policy-synth-v4",
+        "location": "lifeos-cloud",
+        "sent_field_names": [
+          "input_tokens",
+          "location",
+          "policy_version",
+          "processor",
+          "purpose"
+        ],
+        "sent_field_count": 5,
+        "input_count": 1,
+        "input_token_hashes": [
+          "2df35748257f648906889c51364fd28b4f8acca969c3cef42da28e9ce5db51cb"
+        ]
+      },
+      {
+        "request_id": "r06",
+        "decision": "ALLOW",
+        "authorization_id": "third_a",
+        "purpose": "summary",
+        "processor": "third-party-a-mock",
+        "policy_version": "policy-synth-v4",
+        "location": "third-party-a",
+        "sent_field_names": [
+          "input_tokens",
+          "location",
+          "policy_version",
+          "processor",
+          "purpose"
+        ],
+        "sent_field_count": 5,
+        "input_count": 1,
+        "input_token_hashes": [
+          "2df35748257f648906889c51364fd28b4f8acca969c3cef42da28e9ce5db51cb"
+        ]
+      },
+      {
+        "request_id": "r07",
+        "decision": "DENY",
+        "reason_codes": [
+          "AUTH_MISSING"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r13",
+        "decision": "DENY",
+        "reason_codes": [
+          "PROCESSOR_POLICY_UNKNOWN"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r14",
+        "decision": "DENY",
+        "reason_codes": [
+          "POLICY_VERSION_MISMATCH"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r15",
+        "decision": "DENY",
+        "reason_codes": [
+          "SUBPROCESSORS_UNKNOWN"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r16",
+        "decision": "DENY",
+        "reason_codes": [
+          "REGION_UNKNOWN_OR_DISALLOWED"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r17",
+        "decision": "DENY",
+        "reason_codes": [
+          "TRAINING_DEFAULT_ON"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r18",
+        "decision": "DENY",
+        "reason_codes": [
+          "EVALUATION_DEFAULT_ON"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r19",
+        "decision": "DENY",
+        "reason_codes": [
+          "DELETION_CAPABILITY_INSUFFICIENT"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r20",
+        "decision": "DENY",
+        "reason_codes": [
+          "RETENTION_EXCEEDED"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r21",
+        "decision": "DENY",
+        "reason_codes": [
+          "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r22",
+        "decision": "DENY",
+        "reason_codes": [
+          "CREDENTIAL_HARD_BLOCK"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r23",
+        "decision": "DENY",
+        "reason_codes": [
+          "AUTH_SIX_DIMENSION_MISMATCH",
+          "SENSITIVITY_UNKNOWN"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r24",
+        "decision": "DENY",
+        "reason_codes": [
+          "PROCESSOR_NOT_QUALIFIED"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r28",
+        "decision": "DENY",
+        "reason_codes": [
+          "AUTH_SIX_DIMENSION_MISMATCH"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r29",
+        "decision": "DENY",
+        "reason_codes": [
+          "AUTH_SIX_DIMENSION_MISMATCH"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r30",
+        "decision": "DENY",
+        "reason_codes": [
+          "AUTH_SIX_DIMENSION_MISMATCH"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r32",
+        "decision": "DENY",
+        "reason_codes": [
+          "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r36",
+        "decision": "DENY",
+        "reason_codes": [
+          "POLICY_VERSION_MISMATCH"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      },
+      {
+        "request_id": "r43",
+        "decision": "DENY",
+        "reason_codes": [
+          "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+        ],
+        "sent_field_names": [],
+        "sent_field_count": 0
+      }
+    ],
+    "actual_network_sends": 0,
+    "mock_allowed_calls": 2,
+    "mock_denied_calls": 19
+  },
+  "privacy_scan": {
+    "patterns": [
+      "/Users/",
+      "/home/",
+      "BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY",
+      "recovery[ _-]?code",
+      "api[_-]?key",
+      "prompt_text",
+      "embedding",
+      "SYNTH_CONTENT_"
+    ],
+    "hits": [],
+    "status": "PASS"
+  },
+  "audit_entries": [
+    {
+      "audit_id": "audit-t01",
+      "action_code": "authorize_boundary",
+      "result_code": "ALLOW",
+      "reason_codes": [],
+      "subject_ref": "subj-1b98de9a",
+      "object_set_digest": "572e93040ceaefb90876d8719f072304493150f51abad6ceb60dad47b4d1bf9a",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 1
+    },
+    {
+      "audit_id": "audit-t02",
+      "action_code": "authorize_boundary",
+      "result_code": "ALLOW",
+      "reason_codes": [],
+      "subject_ref": "subj-24d9b674",
+      "object_set_digest": "cb693838323da9dbdd14879284d6bdd5dbea3131c1ae6acbe35e116b4308d2e5",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 2
+    },
+    {
+      "audit_id": "audit-t03",
+      "action_code": "authorize_boundary",
+      "result_code": "ALLOW",
+      "reason_codes": [],
+      "subject_ref": "subj-27588521",
+      "object_set_digest": "64b5c8a063edd0fc376acdff1fe33cfd9482495450f6918c10aa6e52838ca8c8",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 3
+    },
+    {
+      "audit_id": "audit-t04",
+      "action_code": "authorize_boundary",
+      "result_code": "ALLOW",
+      "reason_codes": [],
+      "subject_ref": "subj-0d1d76b3",
+      "object_set_digest": "ba5b96eeb2ab498b3703e6efdf704ced3bdef742806138514ab4ccb1f805f68e",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 4
+    },
+    {
+      "audit_id": "audit-t05",
+      "action_code": "authorize_boundary",
+      "result_code": "ALLOW",
+      "reason_codes": [],
+      "subject_ref": "subj-8a414823",
+      "object_set_digest": "247293cbee079d0e385a0d9811b1408954f69ff6113f8cff68ff4671a7203128",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 5
+    },
+    {
+      "audit_id": "audit-t06",
+      "action_code": "authorize_boundary",
+      "result_code": "ALLOW",
+      "reason_codes": [],
+      "subject_ref": "subj-51c7e654",
+      "object_set_digest": "f7aaca1448ce142e0da1677cb8b2fd85d2bea1a2a2086cdc3269ef02b456655d",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 6
+    },
+    {
+      "audit_id": "audit-t07",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_MISSING"
+      ],
+      "subject_ref": "subj-4a811a9b",
+      "object_set_digest": "e2c0f58f1cebc6f79aa4a57958f1f49ce89765eea72a4f929bddb2f1343d0f99",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 7
+    },
+    {
+      "audit_id": "audit-t08",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_EXPIRED"
+      ],
+      "subject_ref": "subj-ca430045",
+      "object_set_digest": "5800468aa7e1d251f9d270810f90864feb2836450f75f844871d83609663f548",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 8
+    },
+    {
+      "audit_id": "audit-t09",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_REVOKED"
+      ],
+      "subject_ref": "subj-15ae8c86",
+      "object_set_digest": "55b8cc6bbf377718254191739074471ce0636eba2e03eb156df561807e137159",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 9
+    },
+    {
+      "audit_id": "audit-t10",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "subject_ref": "subj-f7ef0de3",
+      "object_set_digest": "36af3be0736a4aae0e0902c64296876a654ad550b1d097a7b0c39ba9a8c9c73c",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 10
+    },
+    {
+      "audit_id": "audit-t11",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "subject_ref": "subj-691802e8",
+      "object_set_digest": "edd9a256c0834eae1b9db6f1ea8494cacdd382d6b2737ce906e9db34b2f7dc6b",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 11
+    },
+    {
+      "audit_id": "audit-t12",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "subject_ref": "subj-8fd4b56e",
+      "object_set_digest": "c1ae03697262e393665c1290f0dc1cd1095bbc7cf1edfb500c55c43760b8484d",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 12
+    },
+    {
+      "audit_id": "audit-t13",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "PROCESSOR_POLICY_UNKNOWN"
+      ],
+      "subject_ref": "subj-43d5d400",
+      "object_set_digest": "65d03ba24de8205e33057ce6e539399af8b9704e479395d14989ccad0d9ed4f4",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 13
+    },
+    {
+      "audit_id": "audit-t14",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "POLICY_VERSION_MISMATCH"
+      ],
+      "subject_ref": "subj-7fe51a27",
+      "object_set_digest": "b638285f2a537d08dd7110efbd2f082f4808577a38e96eddab9409ede6e48de6",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 14
+    },
+    {
+      "audit_id": "audit-t15",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "SUBPROCESSORS_UNKNOWN"
+      ],
+      "subject_ref": "subj-984a7f44",
+      "object_set_digest": "a1134869f0e7ae53a3d95b037b1a36dff9245d028f8518e5f8845147fbd49dde",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 15
+    },
+    {
+      "audit_id": "audit-t16",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "REGION_UNKNOWN_OR_DISALLOWED"
+      ],
+      "subject_ref": "subj-9990475c",
+      "object_set_digest": "a6b48389c0f7b297d4f5ca8fd618b2effa2153dc4e8c397c569c2f5797586a62",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 16
+    },
+    {
+      "audit_id": "audit-t17",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "TRAINING_DEFAULT_ON"
+      ],
+      "subject_ref": "subj-9c7393f1",
+      "object_set_digest": "f56eb302c26bf1aa8cf03c4bf18a989b6af7216450845e1addc94eb6c5492999",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 17
+    },
+    {
+      "audit_id": "audit-t18",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "EVALUATION_DEFAULT_ON"
+      ],
+      "subject_ref": "subj-3c72b39b",
+      "object_set_digest": "97f0f0a995a059d0b351e640189e91c7e4ce8c4d1bc8c6ced800faaf06cffdf3",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 18
+    },
+    {
+      "audit_id": "audit-t19",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "DELETION_CAPABILITY_INSUFFICIENT"
+      ],
+      "subject_ref": "subj-fb02525d",
+      "object_set_digest": "f02e9b182bf6e8160df0c5ba500c56ba4cacee6af16d0d316dfc318bf079abdb",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 19
+    },
+    {
+      "audit_id": "audit-t20",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "RETENTION_EXCEEDED"
+      ],
+      "subject_ref": "subj-aa6fa6f1",
+      "object_set_digest": "e07238629e965d942f0f7f1667eeb722ad19fef8d5074b2cc63d3e662dcee543",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 20
+    },
+    {
+      "audit_id": "audit-t21",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+      ],
+      "subject_ref": "subj-64214504",
+      "object_set_digest": "50fe543c25834d2ec87170e26049a4bc68fb8e850826ff80e2f989c8c0061b15",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 21
+    },
+    {
+      "audit_id": "audit-t22",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "CREDENTIAL_HARD_BLOCK"
+      ],
+      "subject_ref": "subj-a1902af5",
+      "object_set_digest": "92325a94530b9b8adddf0b27c18cbe7e7d9f5e07a097249be40148283d55f188",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 22
+    },
+    {
+      "audit_id": "audit-t23",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH",
+        "SENSITIVITY_UNKNOWN"
+      ],
+      "subject_ref": "subj-769fb0b1",
+      "object_set_digest": "212978313c95471f3eaa964c7c4d7da28af57525868d85d3e2814af7e33b61d4",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 23
+    },
+    {
+      "audit_id": "audit-t24",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "PROCESSOR_NOT_QUALIFIED"
+      ],
+      "subject_ref": "subj-d7ddc8dc",
+      "object_set_digest": "a71027e7e515223cd197e400b81e99a911346b945c57113eb1808f9d2b781df0",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 24
+    },
+    {
+      "audit_id": "audit-t25",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH",
+        "INPUT_EXCLUDED"
+      ],
+      "subject_ref": "subj-29cc2a7d",
+      "object_set_digest": "b294a40d5f7c3de51acb9286f601ee20f1fd07e516e6fae32991de2c6befd2b8",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 25
+    },
+    {
+      "audit_id": "audit-t26",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH",
+        "INPUT_EXCLUDED"
+      ],
+      "subject_ref": "subj-cc77328d",
+      "object_set_digest": "579ffda54a1e7c68d72cda64e98bd2fe48090df536b70c3b28201a647b5a4337",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 26
+    },
+    {
+      "audit_id": "audit-t27",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH",
+        "INPUT_EXCLUDED"
+      ],
+      "subject_ref": "subj-c2360ae8",
+      "object_set_digest": "df27df815bfa26267ca77c844bd615560ab9a7d54c6ca34f93517810a6533160",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 27
+    },
+    {
+      "audit_id": "audit-t28",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "subject_ref": "subj-46d15211",
+      "object_set_digest": "63f13e620fb7ba952be2f2df3b25d761aacac5c8659541544453f0615c429e53",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 28
+    },
+    {
+      "audit_id": "audit-t29",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "subject_ref": "subj-1fa54d68",
+      "object_set_digest": "d19d50478b54cd5a54ec9dffbc9e139546b03a4d982e6531f2b7245dffcfb33c",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 29
+    },
+    {
+      "audit_id": "audit-t30",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "subject_ref": "subj-3879a3a4",
+      "object_set_digest": "c2a92c3a259e8bb1e8fc45c819def71d8543595270278580c6a81a3ae86ea5c9",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 30
+    },
+    {
+      "audit_id": "audit-t31",
+      "action_code": "authorize_boundary",
+      "result_code": "ALLOW",
+      "reason_codes": [],
+      "subject_ref": "subj-6707edc2",
+      "object_set_digest": "0c356e76ca157b8731f0b8be8ae6f122c741d40e48447ad35b1761181335b609",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 31
+    },
+    {
+      "audit_id": "audit-t32",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+      ],
+      "subject_ref": "subj-c037a21c",
+      "object_set_digest": "6742fb38bf2d147a5a512b234a98c568cb9dcaa613ac52f4c3b6b1018518ee08",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 32
+    },
+    {
+      "audit_id": "audit-t33",
+      "action_code": "authorize_boundary",
+      "result_code": "ALLOW",
+      "reason_codes": [],
+      "subject_ref": "subj-d36c7be4",
+      "object_set_digest": "70d5436ec4e6d6234a308d83f480ef2a6f44ba19516f5d91c496016d52759bb4",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 33
+    },
+    {
+      "audit_id": "audit-t34",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_REVOKED"
+      ],
+      "subject_ref": "subj-4d6d2ca1",
+      "object_set_digest": "8216c48f4d2f1e7d89cd9918b8250267cacb2eab1e9c351f74733220f76ad835",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 34
+    },
+    {
+      "audit_id": "audit-t35",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_REVOKED"
+      ],
+      "subject_ref": "subj-ac11467b",
+      "object_set_digest": "1ee329c9ddfe409e9e0bce0004bea9f367ff93be6bed534f30cc873ae338ce22",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 35
+    },
+    {
+      "audit_id": "audit-t36",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "POLICY_VERSION_MISMATCH"
+      ],
+      "subject_ref": "subj-a9d6b6fc",
+      "object_set_digest": "73e52a09dd462ff7382b6253f68e567637f36e6fb4941b79c1280ddc2d19ab3e",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 36
+    },
+    {
+      "audit_id": "audit-t37",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "INPUT_RUNTIME_STATE_INVALID"
+      ],
+      "subject_ref": "subj-2a9d37ce",
+      "object_set_digest": "8ef1106912fc849fe032326a942769f127c723822ab734f5375529e49720d9e7",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 37
+    },
+    {
+      "audit_id": "audit-t38",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "TASK_LEASE_INVALID"
+      ],
+      "subject_ref": "subj-a2f0bac5",
+      "object_set_digest": "d261990a2f06b712871be00cc17e5f3933f986f0785b33e87768b9db7d7a6c62",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 38
+    },
+    {
+      "audit_id": "audit-t39",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "subject_ref": "subj-a3c46c88",
+      "object_set_digest": "74e187ebe7b38de05076929ee668045eb9501194e712fd00869bddbf9aa3e887",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 39
+    },
+    {
+      "audit_id": "audit-t40",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH"
+      ],
+      "subject_ref": "subj-aadb349f",
+      "object_set_digest": "edbf75cf4df0cc2af7dcf5ac2755fd929f95079c76f3b701aa9b46c8da3e84c6",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 40
+    },
+    {
+      "audit_id": "audit-t41",
+      "action_code": "authorize_boundary",
+      "result_code": "ALLOW",
+      "reason_codes": [],
+      "subject_ref": "subj-0c9a0487",
+      "object_set_digest": "b2ae62a3e803f6b05f8e25b6c1230c01bb9be06ff6330eb4d201e0ae925e90e4",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 41
+    },
+    {
+      "audit_id": "audit-t42",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "AUTH_SIX_DIMENSION_MISMATCH",
+        "INPUT_EXCLUDED"
+      ],
+      "subject_ref": "subj-0952408f",
+      "object_set_digest": "a973325c226a1380e9bd60b9873e6a73a3729d48ad538c648154a4b5a1dec900",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 42
+    },
+    {
+      "audit_id": "audit-t43",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "SOURCE_EXTERNAL_DISCLOSURE_DENIED"
+      ],
+      "subject_ref": "subj-83cdd881",
+      "object_set_digest": "721fe4f137ffcc965237100cdea6a3ad0988a46f98aa6637ee5cb6ea0259424f",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 43
+    },
+    {
+      "audit_id": "audit-t44",
+      "action_code": "authorize_boundary",
+      "result_code": "DENY",
+      "reason_codes": [
+        "INPUT_RUNTIME_STATE_INVALID"
+      ],
+      "subject_ref": "subj-c60d0144",
+      "object_set_digest": "7c74975ff2a7cb1f14f4e5a290cb23d430e6eea7073d5fcdf63eb19740597908",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 44
+    },
+    {
+      "audit_id": "audit-t45",
+      "action_code": "authorize_boundary",
+      "result_code": "ALLOW",
+      "reason_codes": [],
+      "subject_ref": "subj-48d58f58",
+      "object_set_digest": "82ab6596a1ed58761115428fbfd18ca4bcbbd197c1fe3d9662963c751706b20c",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 45
+    },
+    {
+      "audit_id": "audit-t46",
+      "action_code": "authorize_boundary",
+      "result_code": "ALLOW",
+      "reason_codes": [],
+      "subject_ref": "subj-4122e04f",
+      "object_set_digest": "c057cbae4387da9f85dd89ce65f5a07f63495eba67d2b556cfd614604c270963",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 46
+    },
+    {
+      "audit_id": "audit-t48",
+      "action_code": "authorize_boundary",
+      "result_code": "ALLOW",
+      "reason_codes": [],
+      "subject_ref": "subj-755b72b8",
+      "object_set_digest": "8a85868df41fc99c1315534d33ccccef37a689004392ad9d6a5b2d345d32b323",
+      "authorization_set_version": "auth-set-synth-v7",
+      "policy_version": "policy-synth-v4",
+      "sequence": 47
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "task": "LIFEOS-P3-092 attempt-2",
+  "browser": "Google Chrome (com.google.Chrome) via Computer Use @oai/sky",
+  "entry": "file:///private/tmp/lifeos-p3-092-attempt-2-app/default-recovery.html",
+  "pass": 13,
+  "fail": 0,
+  "results": [
+    {"id":"D-01","result":"PASS","detail":"new-tab file preflight"},
+    {"id":"D-02","result":"PASS","detail":"empty input denied"},
+    {"id":"D-03","result":"PASS","detail":"explicit confirmation"},
+    {"id":"D-04","result":"PASS","detail":"repeat confirmation idempotent"},
+    {"id":"D-05","result":"PASS","detail":"grant and preview remain synthetic"},
+    {"id":"D-06","result":"PASS","detail":"non-exact confirmation denied"},
+    {"id":"D-07","result":"PASS","detail":"exact confirmation receipt"},
+    {"id":"D-08","result":"PASS","detail":"failure cleanup"},
+    {"id":"D-09","result":"PASS","detail":"revoke fail-closed"},
+    {"id":"D-10","result":"PASS","detail":"refresh clears state"},
+    {"id":"D-11","result":"PASS","detail":"close/reopen clears state"},
+    {"id":"D-12","result":"PASS","detail":"actual Tab and Enter skip-link path"},
+    {"id":"D-13","result":"PASS","detail":"all pages and narrow responsive window"}
+  ]
+}

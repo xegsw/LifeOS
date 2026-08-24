@@ -1,0 +1,38 @@
+[
+  {
+    "case": "tampered_checksum",
+    "valid": false,
+    "error_codes": [
+      "checksum_mismatch:av-001-v1"
+    ]
+  },
+  {
+    "case": "missing_file",
+    "valid": false,
+    "error_codes": [
+      "content_file_missing:av-001-v1"
+    ]
+  },
+  {
+    "case": "broken_reference",
+    "valid": false,
+    "error_codes": [
+      "broken_derivation_reference:deriv-004"
+    ]
+  },
+  {
+    "case": "incompatible_version",
+    "valid": false,
+    "error_codes": [
+      "manifest_version_incompatible"
+    ]
+  },
+  {
+    "case": "missing_restriction_note",
+    "valid": false,
+    "error_codes": [
+      "restriction_note_missing:src-010",
+      "restriction_note_missing:src-011"
+    ]
+  }
+]

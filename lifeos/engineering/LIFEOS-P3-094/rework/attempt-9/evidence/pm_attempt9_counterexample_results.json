@@ -1,0 +1,90 @@
+{
+  "task": "LIFEOS-P3-094 final invariant closure PM counterexamples",
+  "fixed_non_sensitive_fixtures_only": true,
+  "network_used": false,
+  "real_user_data_used": false,
+  "cases": [
+    {
+      "id": "PM-A9-01-existing-capture-post-commit-cleanup",
+      "expected": "reported failure leaves DB/page unchanged and no staging residue",
+      "outcome": "CaptureError",
+      "before": {
+        "db_hash": "c5031ef06e439b2251e7e7f33594dfa12bb58712ce8a1753194a819c89d92a99",
+        "counts": {
+          "captures": 1,
+          "audit": 1
+        },
+        "page_hash": "591186a913ec53d843e93693f5212222a720ca7e81acd6a25de10b9cf9d01f26"
+      },
+      "after": {
+        "db_hash": "c5031ef06e439b2251e7e7f33594dfa12bb58712ce8a1753194a819c89d92a99",
+        "counts": {
+          "captures": 1,
+          "audit": 1
+        },
+        "page_exists": true,
+        "staged_count": 0
+      },
+      "pm_status": "PASS"
+    },
+    {
+      "id": "PM-A9-02-new-capture-post-publish-cleanup",
+      "expected": "reported initialization failure leaves no DB and restores page",
+      "outcome": "CaptureError",
+      "before": {
+        "db_exists": false,
+        "page_hash": "67f704bca40d34740a0220db1242145cc086b8a60c133152e8e28b3a97fd2417"
+      },
+      "after": {
+        "db_exists": false,
+        "db_hash": null,
+        "counts": {
+          "captures": null,
+          "audit": null
+        },
+        "page_hash": "67f704bca40d34740a0220db1242145cc086b8a60c133152e8e28b3a97fd2417",
+        "staged_count": 0
+      },
+      "pm_status": "PASS"
+    },
+    {
+      "id": "PM-A9-03-future-capture-saved-audit",
+      "expected": "forged future audit is rejected as semantically inconsistent",
+      "list_outcome": "rejected",
+      "render_outcome": "rejected",
+      "record_count_if_accepted": 0,
+      "page_exists": false,
+      "db_unchanged": true,
+      "pm_status": "PASS"
+    },
+    {
+      "id": "PM-A9-04-repeat-before-save-audit",
+      "expected": "repeat audit earlier than saved capture is rejected",
+      "outcome": "rejected",
+      "pm_status": "PASS"
+    },
+    {
+      "id": "PM-A9-05-clear-count-semantic-mismatch",
+      "expected": "forged clear count is rejected",
+      "outcome": "rejected",
+      "pm_status": "PASS"
+    },
+    {
+      "id": "PM-A9-06-evidence-row-execution-coverage",
+      "expected": "each claimed mandatory mutation/failure row has an independently executed fixture",
+      "checks": {
+        "source_case_empty_null_blob_independently_executed": true,
+        "duplicate_id_and_idem_independently_executed": true,
+        "capture_commit_failure_injected": true,
+        "capture_post_commit_cleanup_failure_injected": true,
+        "clear_commit_failure_injected": true
+      },
+      "pm_status": "PASS"
+    }
+  ],
+  "summary": {
+    "pass": 6,
+    "fail": 0
+  },
+  "temporary_fixture_removed": true
+}

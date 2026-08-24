@@ -1,0 +1,259 @@
+{
+  "abf": "ABF-P3-097-v1",
+  "cases": {
+    "ancestor_directory_symlink": {
+      "after": {
+        "counts": {
+          "audit": 1,
+          "captures": 1
+        },
+        "db_exists": true,
+        "db_sha256": "2958ebb3778d36e72bc1801139822e20030fef8537c704f699e9b655d9ad8c65",
+        "page_exists": true,
+        "page_sha256": "42df320bf01af5ce5d4cde0be60f93ea02b5b3e5e417345a3970d7f9347e09d1",
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "before": {
+        "counts": {
+          "audit": 1,
+          "captures": 1
+        },
+        "db_exists": true,
+        "db_sha256": "2958ebb3778d36e72bc1801139822e20030fef8537c704f699e9b655d9ad8c65",
+        "page_exists": true,
+        "page_sha256": "42df320bf01af5ce5d4cde0be60f93ea02b5b3e5e417345a3970d7f9347e09d1",
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "error": "CaptureError",
+      "pass": true
+    },
+    "existing_saved_actual_replace_failure": {
+      "after": {
+        "counts": {
+          "audit": 1,
+          "captures": 1
+        },
+        "db_exists": true,
+        "db_sha256": "312fcac23043024dcfa4980abe29e93290fcf00856a7a660207bc6d08d56299e",
+        "page_exists": true,
+        "page_sha256": "42df320bf01af5ce5d4cde0be60f93ea02b5b3e5e417345a3970d7f9347e09d1",
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "before": {
+        "counts": {
+          "audit": 1,
+          "captures": 1
+        },
+        "db_exists": true,
+        "db_sha256": "312fcac23043024dcfa4980abe29e93290fcf00856a7a660207bc6d08d56299e",
+        "page_exists": true,
+        "page_sha256": "42df320bf01af5ce5d4cde0be60f93ea02b5b3e5e417345a3970d7f9347e09d1",
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "error": "CaptureError",
+      "observed": [
+        "live_replace_failed"
+      ],
+      "pass": true
+    },
+    "external_render_clear_targets": {
+      "after": {
+        "counts": {
+          "audit": 1,
+          "captures": 1
+        },
+        "db_exists": true,
+        "db_sha256": "8e92790250844e67b1876a16f6ba44f327023593fac9666a643b812753265383",
+        "page_exists": true,
+        "page_sha256": "42df320bf01af5ce5d4cde0be60f93ea02b5b3e5e417345a3970d7f9347e09d1",
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "before": {
+        "counts": {
+          "audit": 1,
+          "captures": 1
+        },
+        "db_exists": true,
+        "db_sha256": "8e92790250844e67b1876a16f6ba44f327023593fac9666a643b812753265383",
+        "page_exists": true,
+        "page_sha256": "42df320bf01af5ce5d4cde0be60f93ea02b5b3e5e417345a3970d7f9347e09d1",
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "errors": [
+        "CaptureError",
+        "CaptureError"
+      ],
+      "outside_unchanged": true,
+      "pass": true
+    },
+    "final_db_and_page_symlinks": {
+      "db_error": "CaptureError",
+      "outside_unchanged": true,
+      "page_error": "CaptureError",
+      "pass": true
+    },
+    "missing_db_actual_replace_failure": {
+      "after": {
+        "counts": null,
+        "db_exists": false,
+        "db_sha256": null,
+        "page_exists": false,
+        "page_sha256": null,
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "before": {
+        "counts": null,
+        "db_exists": false,
+        "db_sha256": null,
+        "page_exists": false,
+        "page_sha256": null,
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "error": "CaptureError",
+      "observed": [
+        "live_replace_failed"
+      ],
+      "pass": true
+    },
+    "persistent_candidate_sidecar_failure": {
+      "after": {
+        "counts": {
+          "audit": 1,
+          "captures": 1
+        },
+        "db_exists": true,
+        "db_sha256": "3e125c3874499283ff23f15262be52a09741d99cd1d14d978e77727ca6cbe689",
+        "page_exists": true,
+        "page_sha256": "42df320bf01af5ce5d4cde0be60f93ea02b5b3e5e417345a3970d7f9347e09d1",
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "before": {
+        "counts": {
+          "audit": 1,
+          "captures": 1
+        },
+        "db_exists": true,
+        "db_sha256": "3e125c3874499283ff23f15262be52a09741d99cd1d14d978e77727ca6cbe689",
+        "page_exists": true,
+        "page_sha256": "42df320bf01af5ce5d4cde0be60f93ea02b5b3e5e417345a3970d7f9347e09d1",
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "error": "CaptureError",
+      "pass": true
+    },
+    "repeat_actual_replace_failure": {
+      "after": {
+        "counts": {
+          "audit": 1,
+          "captures": 1
+        },
+        "db_exists": true,
+        "db_sha256": "2f59ac84a238f43b0408bae09da872bc69a4fc533704265f5f9a0ba56b4b345e",
+        "page_exists": true,
+        "page_sha256": "42df320bf01af5ce5d4cde0be60f93ea02b5b3e5e417345a3970d7f9347e09d1",
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "before": {
+        "counts": {
+          "audit": 1,
+          "captures": 1
+        },
+        "db_exists": true,
+        "db_sha256": "2f59ac84a238f43b0408bae09da872bc69a4fc533704265f5f9a0ba56b4b345e",
+        "page_exists": true,
+        "page_sha256": "42df320bf01af5ce5d4cde0be60f93ea02b5b3e5e417345a3970d7f9347e09d1",
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "error": "CaptureError",
+      "observed": [
+        "live_replace_failed"
+      ],
+      "pass": true
+    },
+    "repeat_post_publish_fd_close": {
+      "after": {
+        "counts": {
+          "audit": 2,
+          "captures": 1
+        },
+        "db_exists": true,
+        "db_sha256": "a47a092701b8c41d0481bdd660b3098532d88408c7297e21045101393b310654",
+        "page_exists": true,
+        "page_sha256": "42df320bf01af5ce5d4cde0be60f93ea02b5b3e5e417345a3970d7f9347e09d1",
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "before": {
+        "counts": {
+          "audit": 1,
+          "captures": 1
+        },
+        "db_exists": true,
+        "db_sha256": "acbed684d3e3f402dd87245443f9f75111c58432d772a1be0a1c45040aed6708",
+        "page_exists": true,
+        "page_sha256": "42df320bf01af5ce5d4cde0be60f93ea02b5b3e5e417345a3970d7f9347e09d1",
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "observed": [
+        "post_publish_gate_fd_close"
+      ],
+      "pass": true,
+      "result": {
+        "created_at": "2026-08-22T14:50:18+00:00",
+        "id": "1cd339c4-a01f-43ec-9cdf-348a34e237f0",
+        "status": "idempotent_repeat"
+      }
+    },
+    "saved_post_publish_fd_close": {
+      "after": {
+        "counts": {
+          "audit": 2,
+          "captures": 2
+        },
+        "db_exists": true,
+        "db_sha256": "75f6236b2484e4e4a3adc530738e0ab6664a5b6a77261f098a04fdc992857d09",
+        "page_exists": false,
+        "page_sha256": null,
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "before": {
+        "counts": {
+          "audit": 1,
+          "captures": 1
+        },
+        "db_exists": true,
+        "db_sha256": "d324fa0c8f6f000cdea8012ef17304a179304207c0a43397dc646caf53b790c3",
+        "page_exists": true,
+        "page_sha256": "42df320bf01af5ce5d4cde0be60f93ea02b5b3e5e417345a3970d7f9347e09d1",
+        "residue": [],
+        "sentinel_sha256": "8bb6b194a44747a8235d90280639cb913fe873246e5413997171782c8d382309"
+      },
+      "observed": [
+        "post_publish_gate_fd_close"
+      ],
+      "pass": true,
+      "result": {
+        "id": "2f8f71c3-0940-4066-b25b-e5b32254cb6f",
+        "status": "saved"
+      }
+    }
+  },
+  "fail_count": 0,
+  "fixed_non_sensitive_only": true,
+  "pass_count": 9,
+  "task_id": "LIFEOS-P3-097"
+}

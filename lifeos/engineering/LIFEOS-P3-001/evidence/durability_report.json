@@ -1,0 +1,85 @@
+{
+  "T-SAVE": {
+    "detail": null,
+    "method": "test_T_SAVE",
+    "priority": "P0",
+    "status": "PASS",
+    "test_id": "T-SAVE"
+  },
+  "T-SAVE-CRASH-BOUNDARY": {
+    "detail": null,
+    "method": "test_T_SAVE_CRASH_BOUNDARY",
+    "priority": "P1",
+    "status": "PASS",
+    "test_id": "T-SAVE-CRASH-BOUNDARY"
+  },
+  "assertions": [
+    {
+      "actual": 86,
+      "case": "before_commit:process_exit",
+      "expected": 86,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "before_commit:authoritative_visibility",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "before_commit:submission_atomicity",
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "actual": 87,
+      "case": "after_commit:process_exit",
+      "expected": 87,
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "case": "after_commit:authoritative_visibility",
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "case": "after_commit:submission_atomicity",
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "actual": "SYNTH_CRASH",
+      "case": "after_commit:restart_read",
+      "expected": "SYNTH_CRASH",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "case": "after_commit:fts_failure_isolated",
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "actual": "SYNTH_CRASH",
+      "case": "after_commit:authority_survives_fts_failure",
+      "expected": "SYNTH_CRASH",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "case": "derivation_failure_injected",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "actual": "SYNTH_NOTE_004：待核对恢复候选是否保留来源与版本。",
+      "case": "authority_survives_derivation_failure",
+      "expected": "SYNTH_NOTE_004：待核对恢复候选是否保留来源与版本。",
+      "passed": true
+    }
+  ],
+  "physical_process_exit_used": true
+}

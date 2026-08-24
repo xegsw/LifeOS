@@ -1,0 +1,45 @@
+{
+  "in_transaction": {
+    "attack_rejected": true,
+    "sqlite_error": "tombstone_delete_forbidden",
+    "row": {
+      "subject_type": "artifact",
+      "subject_id": "synthetic-artifact-001",
+      "generation": 5,
+      "command_id": "synthetic-command-001",
+      "reason_code": "CONTROLLED_TEST",
+      "blocked_at_ms": 1786550400000,
+      "cleanup_status": "active_blocked",
+      "updated_at_ms": 1786550400000
+    },
+    "gates": {
+      "read": "DENY",
+      "search": "DENY",
+      "suggest": "DENY",
+      "outbox": "DENY",
+      "export": "DENY",
+      "restore": "DENY"
+    }
+  },
+  "after_rollback": {
+    "row": {
+      "subject_type": "artifact",
+      "subject_id": "synthetic-artifact-001",
+      "generation": 5,
+      "command_id": "synthetic-command-001",
+      "reason_code": "CONTROLLED_TEST",
+      "blocked_at_ms": 1786550400000,
+      "cleanup_status": "active_blocked",
+      "updated_at_ms": 1786550400000
+    },
+    "gates": {
+      "read": "DENY",
+      "search": "DENY",
+      "suggest": "DENY",
+      "outbox": "DENY",
+      "export": "DENY",
+      "restore": "DENY"
+    }
+  },
+  "rollback_ok": true
+}

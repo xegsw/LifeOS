@@ -1,0 +1,34 @@
+{
+  "id": "P3108R1-D15",
+  "observable_result": "Actual narrow screenshots and scroll-bar state are retained, but CUA does not expose an independently verifiable native content/window rect for the exact 700×760 assertion.",
+  "operation": "Drag bottom-right window edge to screen coordinate 700×760 and exercise default/no-suggestion/restricted scrolling.",
+  "raw_actual_app_state_and_visual_evidence": [
+    {
+      "exists": true,
+      "path": "dynamic/U17-window-700x760-target.ax.txt",
+      "sha256": "bdc7e45376415cc6697ed9db9f8bdd15f7cb6f72269af6f235288ba85086c9e0"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/U17-window-700x760-target.jpeg",
+      "sha256": "d6bf454e13e7175fd48c922336012d6dc4aea687812e2f5b6fe314983701ce33"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/U20-narrow-no-suggestion.ax.txt",
+      "sha256": "06c13b257534864e30eac040ed0715bff695289c78d6a3a0a57c078f34abef0a"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/U21-narrow-no-suggestion-scroll.ax.txt",
+      "sha256": "1655e93d28e7a38a078880a578544ba5dbc5828f920ff0fe59300ab0cd14b1c3"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/U22-narrow-restricted-scroll.ax.txt",
+      "sha256": "a0fb5edb703d711f2b2da98138cb75e5575882e73587be391048f22baa4c0956"
+    }
+  ],
+  "status": "UNKNOWN",
+  "time": "2026-08-24T03:13:25.562108+00:00"
+}

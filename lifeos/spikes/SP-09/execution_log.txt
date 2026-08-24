@@ -1,0 +1,13 @@
+Command: /usr/bin/time -l python3 lifeos/spikes/SP-09/run_spike.py --tiers 10000,100000 --full --keep-work
+
+SP-09 tier start: 10000 units / 30000 chunks
+SP-09 tier done: 10000; pass=True; db=10190848
+SP-09 tier start: 100000 units / 300000 chunks
+SP-09 tier done: 100000; pass=True; db=95047680
+SP-09 tier start: 1000000 units / 3000000 chunks
+SP-09 tier done: 1000000; pass=False; db=948178944
+77.65 real; 38.44 user; 17.97 sys
+312475648 maximum resident set size
+28 page faults; 0 swaps
+
+The non-zero exit is the expected machine result for the full-tier concurrent-maintenance condition; see evidence/failure_samples.json and failure_samples.md.

@@ -1,0 +1,289 @@
+{
+  "binary": "/private/tmp/lifeos-p3-108-review-work-p3108r1a1/target/debug/lifeos-p3-104",
+  "binary_sha256": "72c9f147ef8aaa2b15cea41576fe71fc8abea373c831b5f5625ade63deee0bf7",
+  "id": "P3108R1-M005-build",
+  "outcomes": [
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--locked"
+      ],
+      "log": "build/cargo-test.log",
+      "log_sha256": "4d8f062fb298478deb5146eb1a8aae1e21fd602cdd8f37e96b6cae9a34e350fd",
+      "network_tokens": 0,
+      "returncode": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--locked"
+      ],
+      "log": "build/cargo-build.log",
+      "log_sha256": "d3c4dc032dba87d41bd9150ea5b0618f1e85528c94f38bc0b98348cf553e5e52",
+      "network_tokens": 0,
+      "returncode": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "tauri",
+        "build",
+        "--debug",
+        "--",
+        "--locked"
+      ],
+      "log": "build/cargo-tauri-build.log",
+      "log_sha256": "ffb36f41fc4d684e44145e0e6a8e63aa1da6e7e5f308fdd05b5f408995734cfa",
+      "network_tokens": 0,
+      "returncode": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "tauri",
+        "bundle",
+        "--debug",
+        "--bundles",
+        "app",
+        "--no-sign"
+      ],
+      "log": "build/cargo-tauri-bundle-app.log",
+      "log_sha256": "503c0d297005b18d881c3daaea8eacfdac05d16bb95f70feba6d7f31da5bf6d8",
+      "network_tokens": 0,
+      "returncode": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "tauri",
+        "bundle",
+        "--debug",
+        "--bundles",
+        "app",
+        "--no-sign",
+        "--config",
+        "{\"identifier\":\"local.lifeos.p3-104.p3108r1\"}"
+      ],
+      "log": "build/cargo-tauri-bundle-unique-id.log",
+      "log_sha256": "503c0d297005b18d881c3daaea8eacfdac05d16bb95f70feba6d7f31da5bf6d8",
+      "network_tokens": 0,
+      "returncode": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "tauri",
+        "bundle",
+        "--debug",
+        "--bundles",
+        "app",
+        "--no-sign",
+        "--config",
+        "{\"identifier\":\"local.lifeos.p3-104.p3108r1.ui\",\"productName\":\"LifeOS P3-104 P3108R1 UI\"}"
+      ],
+      "log": "build/cargo-tauri-bundle-ui-isolated.log",
+      "log_sha256": "a52c6568b6efb248ee4a7f2583d86bef0d2eaacb76d7d710b60831e2ae902a95",
+      "network_tokens": 0,
+      "returncode": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "tauri",
+        "bundle",
+        "--debug",
+        "--bundles",
+        "app",
+        "--no-sign",
+        "--config",
+        "{\"identifier\":\"local.lifeos.p3-104.p3108r1.lifecycle\",\"productName\":\"LifeOS P3-104 P3108R1 Lifecycle\"}"
+      ],
+      "log": "build/cargo-tauri-bundle-lifecycle-isolated.log",
+      "log_sha256": "ec8c440acadf094c46470ac66b425f5cfff27dbd0e3e87b8ddfe0605959e1c85",
+      "network_tokens": 0,
+      "returncode": 0
+    }
+  ],
+  "pass": true,
+  "preexisting_temp": [
+    {
+      "ctime_ns": 1787539342358286541,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787539342358286541,
+      "nlink": 17,
+      "path": "/private/tmp/lifeos-p3-108-review-work-p3108r1a1",
+      "size": 544
+    },
+    {
+      "ctime_ns": 1787539177740196485,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787539177740196485,
+      "nlink": 4,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-nominal-p3108r1a1",
+      "size": 128
+    },
+    {
+      "ctime_ns": 1787538712362549227,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787538712362535477,
+      "nlink": 2,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-repeat-p3108r1a1",
+      "size": 64
+    },
+    {
+      "ctime_ns": 1787538712362586144,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787538712362574436,
+      "nlink": 2,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-conflict-p3108r1a1",
+      "size": 64
+    },
+    {
+      "ctime_ns": 1787538712362644270,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787538712362611144,
+      "nlink": 2,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-failure-p3108r1a1",
+      "size": 64
+    },
+    {
+      "ctime_ns": 1787538712362690686,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787538712362676145,
+      "nlink": 2,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-reopen-p3108r1a1",
+      "size": 64
+    },
+    {
+      "ctime_ns": 1787538712363178980,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787538712363178980,
+      "nlink": 3,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-dangling-final-p3108r1a1",
+      "size": 96
+    },
+    {
+      "ctime_ns": 1787539953455807739,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787539953455807739,
+      "nlink": 4,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-dangling-journal-p3108r1a1",
+      "size": 128
+    },
+    {
+      "ctime_ns": 1787539953489735626,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787539953489735626,
+      "nlink": 4,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-dangling-wal-p3108r1a1",
+      "size": 128
+    },
+    {
+      "ctime_ns": 1787539953521558394,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787539953521558394,
+      "nlink": 4,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-dangling-shm-p3108r1a1",
+      "size": 128
+    },
+    {
+      "ctime_ns": 1787538712363089396,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787538712363089396,
+      "nlink": 3,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-path-p3108r1a1",
+      "size": 96
+    },
+    {
+      "ctime_ns": 1787538712363136729,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787538712363136729,
+      "nlink": 3,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-link-p3108r1a1",
+      "size": 96
+    },
+    {
+      "ctime_ns": 1787539953373549669,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787539953373549669,
+      "nlink": 4,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-hardlink-p3108r1a1",
+      "size": 128
+    },
+    {
+      "ctime_ns": 1787539953555366779,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787539953555366779,
+      "nlink": 3,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-tamper-p3108r1a1",
+      "size": 96
+    },
+    {
+      "ctime_ns": 1787538712363020187,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787538712363010979,
+      "nlink": 2,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-a11y-p3108r1a1",
+      "size": 64
+    },
+    {
+      "ctime_ns": 1787538712363057688,
+      "exists": true,
+      "is_symlink": false,
+      "kind": 16384,
+      "mode": 16832,
+      "mtime_ns": 1787538712363047312,
+      "nlink": 2,
+      "path": "/private/tmp/lifeos-p3-104-p3-108-review-narrow-p3108r1a1",
+      "size": 64
+    }
+  ],
+  "time": "2026-08-24T02:59:17.727853+00:00"
+}

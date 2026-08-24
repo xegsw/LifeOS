@@ -1,0 +1,4834 @@
+{
+  "task_id": "LIFEOS-P3-049",
+  "scope": "isolated synthetic SQLite independent counterexamples",
+  "independence": "does not import/call P3-048 or P3-047 runners",
+  "summary": {
+    "total": {
+      "PASS": 488,
+      "FAIL": 0,
+      "BYPASS": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "categories": {
+      "atomicity": {
+        "PASS": 16,
+        "FAIL": 0,
+        "BYPASS": 0,
+        "NOT_IMPLEMENTED": 0,
+        "UNKNOWN": 0,
+        "instances": 16
+      },
+      "field_state": {
+        "PASS": 288,
+        "FAIL": 0,
+        "BYPASS": 0,
+        "NOT_IMPLEMENTED": 0,
+        "UNKNOWN": 0,
+        "instances": 288
+      },
+      "legal": {
+        "PASS": 8,
+        "FAIL": 0,
+        "BYPASS": 0,
+        "NOT_IMPLEMENTED": 0,
+        "UNKNOWN": 0,
+        "instances": 8
+      },
+      "nullability": {
+        "PASS": 48,
+        "FAIL": 0,
+        "BYPASS": 0,
+        "NOT_IMPLEMENTED": 0,
+        "UNKNOWN": 0,
+        "instances": 48
+      },
+      "old_new": {
+        "PASS": 24,
+        "FAIL": 0,
+        "BYPASS": 0,
+        "NOT_IMPLEMENTED": 0,
+        "UNKNOWN": 0,
+        "instances": 24
+      },
+      "replace_upsert_delete": {
+        "PASS": 56,
+        "FAIL": 0,
+        "BYPASS": 0,
+        "NOT_IMPLEMENTED": 0,
+        "UNKNOWN": 0,
+        "instances": 56
+      },
+      "status_time_combo": {
+        "PASS": 48,
+        "FAIL": 0,
+        "BYPASS": 0,
+        "NOT_IMPLEMENTED": 0,
+        "UNKNOWN": 0,
+        "instances": 48
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected by target guard",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected by target guard",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected by target guard",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "accepted"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "active_blocked"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_pending"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_failed"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "vendor_limited"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleaned"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "generation"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "insert_or_replace_authorization rejected",
+      "attack": "insert_or_replace_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "plain_conflict_authorization rejected",
+      "attack": "plain_conflict_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "upsert_authorization rejected",
+      "attack": "upsert_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "upsert_generic_to_authorization rejected",
+      "attack": "upsert_generic_to_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "update_or_replace rejected",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "delete_authorization rejected",
+      "attack": "delete_authorization"
+    },
+    {
+      "id": "IND-DELETE-REINSERT",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DELETE rejected before reinsert: tombstone_delete_forbidden"
+    },
+    {
+      "id": "IND-MULTIROW",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically; first guard=authorization_tombstone_time_requires_status_change"
+    },
+    {
+      "id": "IND-TRANSACTION",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "ABORT kept prior statement pending; explicit rollback restored baseline"
+    },
+    {
+      "id": "IND-LEGAL",
+      "category": "legal",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal generic/no-op/cleanup paths preserved",
+      "checks": [
+        [
+          "generic_existing_semantics",
+          true
+        ],
+        [
+          "authorization_noop",
+          true
+        ],
+        [
+          "authorization_cleanup_trace",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected by target guard",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected by target guard",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected by target guard",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "accepted"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "active_blocked"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_pending"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_failed"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "vendor_limited"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleaned"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "generation"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "insert_or_replace_authorization rejected",
+      "attack": "insert_or_replace_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "plain_conflict_authorization rejected",
+      "attack": "plain_conflict_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "upsert_authorization rejected",
+      "attack": "upsert_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "upsert_generic_to_authorization rejected",
+      "attack": "upsert_generic_to_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "update_or_replace rejected",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "delete_authorization rejected",
+      "attack": "delete_authorization"
+    },
+    {
+      "id": "IND-DELETE-REINSERT",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DELETE rejected before reinsert: tombstone_delete_forbidden"
+    },
+    {
+      "id": "IND-MULTIROW",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically; first guard=authorization_tombstone_time_requires_status_change"
+    },
+    {
+      "id": "IND-TRANSACTION",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "ABORT kept prior statement pending; explicit rollback restored baseline"
+    },
+    {
+      "id": "IND-LEGAL",
+      "category": "legal",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal generic/no-op/cleanup paths preserved",
+      "checks": [
+        [
+          "generic_existing_semantics",
+          true
+        ],
+        [
+          "authorization_noop",
+          true
+        ],
+        [
+          "authorization_cleanup_trace",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected by target guard",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected by target guard",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected by target guard",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "accepted"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "active_blocked"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_pending"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_failed"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "vendor_limited"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleaned"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "generation"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "insert_or_replace_authorization rejected",
+      "attack": "insert_or_replace_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "plain_conflict_authorization rejected",
+      "attack": "plain_conflict_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "upsert_authorization rejected",
+      "attack": "upsert_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "upsert_generic_to_authorization rejected",
+      "attack": "upsert_generic_to_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "update_or_replace rejected",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "delete_authorization rejected",
+      "attack": "delete_authorization"
+    },
+    {
+      "id": "IND-DELETE-REINSERT",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DELETE rejected before reinsert: tombstone_delete_forbidden"
+    },
+    {
+      "id": "IND-MULTIROW",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically; first guard=authorization_tombstone_time_requires_status_change"
+    },
+    {
+      "id": "IND-TRANSACTION",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "ABORT kept prior statement pending; explicit rollback restored baseline"
+    },
+    {
+      "id": "IND-LEGAL",
+      "category": "legal",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal generic/no-op/cleanup paths preserved",
+      "checks": [
+        [
+          "generic_existing_semantics",
+          true
+        ],
+        [
+          "authorization_noop",
+          true
+        ],
+        [
+          "authorization_cleanup_trace",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected by target guard",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected by target guard",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected by target guard",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "accepted"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "active_blocked"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_pending"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_failed"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "vendor_limited"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleaned"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "generation"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "insert_or_replace_authorization rejected",
+      "attack": "insert_or_replace_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "plain_conflict_authorization rejected",
+      "attack": "plain_conflict_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "upsert_authorization rejected",
+      "attack": "upsert_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "upsert_generic_to_authorization rejected",
+      "attack": "upsert_generic_to_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "update_or_replace rejected",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "delete_authorization rejected",
+      "attack": "delete_authorization"
+    },
+    {
+      "id": "IND-DELETE-REINSERT",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DELETE rejected before reinsert: tombstone_delete_forbidden"
+    },
+    {
+      "id": "IND-MULTIROW",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically; first guard=authorization_tombstone_time_requires_status_change"
+    },
+    {
+      "id": "IND-TRANSACTION",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "ABORT kept prior statement pending; explicit rollback restored baseline"
+    },
+    {
+      "id": "IND-LEGAL",
+      "category": "legal",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal generic/no-op/cleanup paths preserved",
+      "checks": [
+        [
+          "generic_existing_semantics",
+          true
+        ],
+        [
+          "authorization_noop",
+          true
+        ],
+        [
+          "authorization_cleanup_trace",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected by target guard",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected by target guard",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected by target guard",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "accepted"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "active_blocked"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_pending"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_failed"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "vendor_limited"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleaned"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "generation"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "insert_or_replace_authorization rejected",
+      "attack": "insert_or_replace_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "plain_conflict_authorization rejected",
+      "attack": "plain_conflict_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "upsert_authorization rejected",
+      "attack": "upsert_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "upsert_generic_to_authorization rejected",
+      "attack": "upsert_generic_to_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "update_or_replace rejected",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "delete_authorization rejected",
+      "attack": "delete_authorization"
+    },
+    {
+      "id": "IND-DELETE-REINSERT",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "DELETE rejected before reinsert: tombstone_delete_forbidden"
+    },
+    {
+      "id": "IND-MULTIROW",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically; first guard=authorization_tombstone_time_requires_status_change"
+    },
+    {
+      "id": "IND-TRANSACTION",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "ABORT kept prior statement pending; explicit rollback restored baseline"
+    },
+    {
+      "id": "IND-LEGAL",
+      "category": "legal",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal generic/no-op/cleanup paths preserved",
+      "checks": [
+        [
+          "generic_existing_semantics",
+          true
+        ],
+        [
+          "authorization_noop",
+          true
+        ],
+        [
+          "authorization_cleanup_trace",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected by target guard",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected by target guard",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected by target guard",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "accepted"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "active_blocked"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_pending"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_failed"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "vendor_limited"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleaned"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "generation"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "insert_or_replace_authorization rejected",
+      "attack": "insert_or_replace_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "plain_conflict_authorization rejected",
+      "attack": "plain_conflict_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "upsert_authorization rejected",
+      "attack": "upsert_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "upsert_generic_to_authorization rejected",
+      "attack": "upsert_generic_to_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "update_or_replace rejected",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "delete_authorization rejected",
+      "attack": "delete_authorization"
+    },
+    {
+      "id": "IND-DELETE-REINSERT",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "DELETE rejected before reinsert: tombstone_delete_forbidden"
+    },
+    {
+      "id": "IND-MULTIROW",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically; first guard=authorization_tombstone_time_requires_status_change"
+    },
+    {
+      "id": "IND-TRANSACTION",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "ABORT kept prior statement pending; explicit rollback restored baseline"
+    },
+    {
+      "id": "IND-LEGAL",
+      "category": "legal",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal generic/no-op/cleanup paths preserved",
+      "checks": [
+        [
+          "generic_existing_semantics",
+          true
+        ],
+        [
+          "authorization_noop",
+          true
+        ],
+        [
+          "authorization_cleanup_trace",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected by target guard",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected by target guard",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected by target guard",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "accepted"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "active_blocked"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_pending"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_failed"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "vendor_limited"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generation immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "command_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleaned"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "generation"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "insert_or_replace_authorization rejected",
+      "attack": "insert_or_replace_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "plain_conflict_authorization rejected",
+      "attack": "plain_conflict_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "upsert_authorization rejected",
+      "attack": "upsert_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "upsert_generic_to_authorization rejected",
+      "attack": "upsert_generic_to_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "update_or_replace rejected",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "delete_authorization rejected",
+      "attack": "delete_authorization"
+    },
+    {
+      "id": "IND-DELETE-REINSERT",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "DELETE rejected before reinsert: tombstone_delete_forbidden"
+    },
+    {
+      "id": "IND-MULTIROW",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically; first guard=authorization_tombstone_time_requires_status_change"
+    },
+    {
+      "id": "IND-TRANSACTION",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "ABORT kept prior statement pending; explicit rollback restored baseline"
+    },
+    {
+      "id": "IND-LEGAL",
+      "category": "legal",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal generic/no-op/cleanup paths preserved",
+      "checks": [
+        [
+          "generic_existing_semantics",
+          true
+        ],
+        [
+          "authorization_noop",
+          true
+        ],
+        [
+          "authorization_cleanup_trace",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected by target guard",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected by target guard",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "IND-DIRECTION",
+      "category": "old_new",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected by target guard",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in accepted",
+      "cleanup_status": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "accepted"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in active_blocked",
+      "cleanup_status": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "active_blocked"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_pending",
+      "cleanup_status": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_pending"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleanup_failed",
+      "cleanup_status": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleanup_failed"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in vendor_limited",
+      "cleanup_status": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "vendor_limited"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_type immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "subject_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generation immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "command_id immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "reason_code immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-FIELD",
+      "category": "field_state",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "blocked_at_ms immutable in cleaned",
+      "cleanup_status": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-COMBO",
+      "category": "status_time_combo",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "field/status/time compound rejected",
+      "cleanup_status": "cleaned"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_type"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "subject_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "generation"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "command_id"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "reason_code"
+    },
+    {
+      "id": "IND-NULL",
+      "category": "nullability",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "NULL rejected: authorization_tombstone_control_envelope_immutable",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "insert_or_replace_authorization rejected",
+      "attack": "insert_or_replace_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "plain_conflict_authorization rejected",
+      "attack": "plain_conflict_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "upsert_authorization rejected",
+      "attack": "upsert_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "upsert_generic_to_authorization rejected",
+      "attack": "upsert_generic_to_authorization"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "update_or_replace rejected",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "IND-REPLACE",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "delete_authorization rejected",
+      "attack": "delete_authorization"
+    },
+    {
+      "id": "IND-DELETE-REINSERT",
+      "category": "replace_upsert_delete",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "DELETE rejected before reinsert: tombstone_delete_forbidden"
+    },
+    {
+      "id": "IND-MULTIROW",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically; first guard=authorization_tombstone_time_requires_status_change"
+    },
+    {
+      "id": "IND-TRANSACTION",
+      "category": "atomicity",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "ABORT kept prior statement pending; explicit rollback restored baseline"
+    },
+    {
+      "id": "IND-LEGAL",
+      "category": "legal",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal generic/no-op/cleanup paths preserved",
+      "checks": [
+        [
+          "generic_existing_semantics",
+          true
+        ],
+        [
+          "authorization_noop",
+          true
+        ],
+        [
+          "authorization_cleanup_trace",
+          true
+        ]
+      ]
+    }
+  ]
+}

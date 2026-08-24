@@ -1,0 +1,98 @@
+{
+  "candidate": "LIFEOS-P3-075",
+  "candidate_hashes_before": {
+    "lifeos/engineering/LIFEOS-P3-075/README.md": "4dbcae60cd9703b10835b83d8546971fcd1703cc0a6d42a30a09fdd527ca5c57",
+    "lifeos/engineering/LIFEOS-P3-075/evidence/MANIFEST.md": "deb870d3bd808a1cb5965bb33365f7417bf3f3a057d9f62f7a13ff3e678fde36",
+    "lifeos/engineering/LIFEOS-P3-075/evidence/self_check.log": "b43a834e1d34d94b2fe1794b1c5ff78e2c9d947fa9b55d64911afe74b9ab60d7",
+    "lifeos/engineering/LIFEOS-P3-075/evidence/self_check_results.json": "e5a1029979c28fb4c72253dc1b01d1c7be1e9f25d74aeb78f93dfdb1edebc2b2",
+    "lifeos/engineering/LIFEOS-P3-075/scripts/make_manifest.py": "0bed5f3fb02bb0ce629ae0b47b12bf09996fa2d8044707d07acf72814d229752",
+    "lifeos/engineering/LIFEOS-P3-075/scripts/run_self_check.py": "296fc36fbb7cb2dd75e6e3cbd39ac92094c9840a5c46dc01450472af3b0cdf9a",
+    "lifeos/engineering/LIFEOS-P3-075/scripts/runtime_cli.py": "5d344c7108b44e77a4103e0ed6d936d18a477c12c0e15b19dabcd25123eee0f7",
+    "lifeos/engineering/LIFEOS-P3-075/src/local_runtime.py": "e12db7191753bde937f328ea59704021ba339fc291de94e4c3a574b136d758d6",
+    "lifeos/engineering/LIFEOS-P3-075/tests/test_runtime.py": "8725029f87b1badbef5da58bb327ae23e610839e886c8ba048dde0bca6f42182"
+  },
+  "counts": {
+    "Not Implemented": 0,
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0
+  },
+  "historical_hashes": {
+    "lifeos/deliverables/LIFEOS-P3-075_minimal_local_mvp_controlled_runtime_capability_package.md": "cee19b21b5800094553eb52efc0ce1608db3239a4b5d2ca18e712bee0148cb44",
+    "lifeos/engineering/LIFEOS-P3-075/evidence/MANIFEST.md": "deb870d3bd808a1cb5965bb33365f7417bf3f3a057d9f62f7a13ff3e678fde36",
+    "lifeos/reviews/LIFEOS-P3-075_pm_review.md": "dcfe0f69efebb806df8fde789003c143578dd181f17b36d1e3dc47de50a4fe60"
+  },
+  "results": [
+    {
+      "detail": "every P3-075 execution-manifest SHA-256 entry matches its current read-only file",
+      "name": "candidate_execution_manifest_matches_current_hash",
+      "status": "PASS"
+    },
+    {
+      "detail": "CLI succeeds only with explicit confirmations; identities and closure state are visible",
+      "name": "first_explicit_confirmed_submission",
+      "status": "PASS"
+    },
+    {
+      "detail": "same key and same text returns duplicate without a second record",
+      "name": "idempotent_repeat",
+      "status": "PASS"
+    },
+    {
+      "detail": "fresh SQLite connection reads only the committed record",
+      "name": "close_reopen_persistence",
+      "status": "PASS"
+    },
+    {
+      "detail": "empty text is visibly rejected with no record, audit, or next step",
+      "name": "empty_input_fail_closed",
+      "status": "PASS"
+    },
+    {
+      "detail": "missing save confirmation leaves no record, audit, or next step",
+      "name": "missing_save_confirmation_fail_closed",
+      "status": "PASS"
+    },
+    {
+      "detail": "save remains committed because it had its own confirmation; unconfirmed next step is absent",
+      "name": "missing_next_step_confirmation_blocked",
+      "status": "PASS"
+    },
+    {
+      "detail": "conflicting replay is visible and cannot overwrite original text",
+      "name": "same_key_different_text_rejected_without_overwrite",
+      "status": "PASS"
+    },
+    {
+      "detail": "injected pre-commit failure discloses failure and removes pending artifacts",
+      "name": "precommit_failure_atomic_rollback",
+      "status": "PASS"
+    },
+    {
+      "detail": "public restore interface rejects an unknown project",
+      "name": "unknown_project_restore_rejected",
+      "status": "PASS"
+    },
+    {
+      "detail": "no URL/network client import; declared network/Tauri/external-action boundaries remain closed",
+      "name": "prohibited_external_channels_static_closed",
+      "status": "PASS"
+    },
+    {
+      "detail": "fresh copied candidate sources match original pre-run hashes",
+      "name": "candidate_copy_matches_original_hash",
+      "status": "PASS"
+    },
+    {
+      "detail": "candidate, P3-075 delivery, PM review, and manifest hashes unchanged after review",
+      "name": "historical_assets_preserved",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "FAIL": 0,
+    "PASS": 13
+  },
+  "task": "LIFEOS-P3-076"
+}

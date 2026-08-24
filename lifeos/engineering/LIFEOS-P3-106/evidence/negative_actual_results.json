@@ -1,0 +1,104 @@
+{
+  "task": "LIFEOS-P3-106",
+  "binary": "/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-106/target/debug/lifeos-p3-104",
+  "source_db": "/private/tmp/lifeos-p3-104-p3-106-app-main-20260823/capture.sqlite",
+  "fixtures": [
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-final-main-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-journal-main-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-wal-main-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-dangling-shm-main-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-path-main-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-path-target-20260823",
+    "/private/tmp/lifeos-p3-104-p3-106-tamper-main-20260823"
+  ],
+  "results": [
+    {
+      "id": "NEG-DANGLING-FINAL",
+      "db_path": "/private/tmp/lifeos-p3-104-p3-106-dangling-final-main-20260823/capture.sqlite",
+      "timed_out": false,
+      "returncode": 101,
+      "stdout": "",
+      "stderr": "ipc_result status=blocked code=database_type_rejected\n\nthread 'main' (4358419) panicked at src/runtime.rs:678:9:\ncontrolled DB boundary rejected: database_type_rejected\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n",
+      "sentinel_before": "b3455c4450172474cef4d8b8c312e905dbb4d17f1a313ec9f98132ff96f4d964",
+      "sentinel_after": "b3455c4450172474cef4d8b8c312e905dbb4d17f1a313ec9f98132ff96f4d964",
+      "sentinel_unchanged": true,
+      "pass": true,
+      "link_preserved": true,
+      "missing_target_absent": true
+    },
+    {
+      "id": "NEG-DANGLING-JOURNAL",
+      "db_path": "/private/tmp/lifeos-p3-104-p3-106-dangling-journal-main-20260823/capture.sqlite",
+      "timed_out": false,
+      "returncode": 101,
+      "stdout": "",
+      "stderr": "ipc_result status=blocked code=database_sidecar_rejected\n\nthread 'main' (4358422) panicked at src/runtime.rs:678:9:\ncontrolled DB boundary rejected: database_sidecar_rejected\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n",
+      "sentinel_before": "b3455c4450172474cef4d8b8c312e905dbb4d17f1a313ec9f98132ff96f4d964",
+      "sentinel_after": "b3455c4450172474cef4d8b8c312e905dbb4d17f1a313ec9f98132ff96f4d964",
+      "sentinel_unchanged": true,
+      "pass": true,
+      "link_preserved": true,
+      "missing_target_absent": true
+    },
+    {
+      "id": "NEG-DANGLING-WAL",
+      "db_path": "/private/tmp/lifeos-p3-104-p3-106-dangling-wal-main-20260823/capture.sqlite",
+      "timed_out": false,
+      "returncode": 101,
+      "stdout": "",
+      "stderr": "ipc_result status=blocked code=database_sidecar_rejected\n\nthread 'main' (4358424) panicked at src/runtime.rs:678:9:\ncontrolled DB boundary rejected: database_sidecar_rejected\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n",
+      "sentinel_before": "b3455c4450172474cef4d8b8c312e905dbb4d17f1a313ec9f98132ff96f4d964",
+      "sentinel_after": "b3455c4450172474cef4d8b8c312e905dbb4d17f1a313ec9f98132ff96f4d964",
+      "sentinel_unchanged": true,
+      "pass": true,
+      "link_preserved": true,
+      "missing_target_absent": true
+    },
+    {
+      "id": "NEG-DANGLING-SHM",
+      "db_path": "/private/tmp/lifeos-p3-104-p3-106-dangling-shm-main-20260823/capture.sqlite",
+      "timed_out": false,
+      "returncode": 101,
+      "stdout": "",
+      "stderr": "ipc_result status=blocked code=database_sidecar_rejected\n\nthread 'main' (4358426) panicked at src/runtime.rs:678:9:\ncontrolled DB boundary rejected: database_sidecar_rejected\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n",
+      "sentinel_before": "b3455c4450172474cef4d8b8c312e905dbb4d17f1a313ec9f98132ff96f4d964",
+      "sentinel_after": "b3455c4450172474cef4d8b8c312e905dbb4d17f1a313ec9f98132ff96f4d964",
+      "sentinel_unchanged": true,
+      "pass": true,
+      "link_preserved": true,
+      "missing_target_absent": true
+    },
+    {
+      "id": "NEG-PARENT-SYMLINK",
+      "db_path": "/private/tmp/lifeos-p3-104-p3-106-path-main-20260823/capture.sqlite",
+      "timed_out": false,
+      "returncode": 101,
+      "stdout": "",
+      "stderr": "ipc_result status=blocked code=path_symlink_rejected\n\nthread 'main' (4358428) panicked at src/runtime.rs:678:9:\ncontrolled DB boundary rejected: path_symlink_rejected\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n",
+      "sentinel_before": "b3455c4450172474cef4d8b8c312e905dbb4d17f1a313ec9f98132ff96f4d964",
+      "sentinel_after": "b3455c4450172474cef4d8b8c312e905dbb4d17f1a313ec9f98132ff96f4d964",
+      "sentinel_unchanged": true,
+      "pass": true,
+      "parent_link_preserved": true,
+      "db_absent": true
+    },
+    {
+      "id": "NEG-TAMPERED-CONTENT",
+      "db_path": "/private/tmp/lifeos-p3-104-p3-106-tamper-main-20260823/capture.sqlite",
+      "timed_out": true,
+      "returncode": null,
+      "stdout": "",
+      "stderr": "runtime_start status=restricted_offline db_scope=task_local\n2026-08-23 17:58:48.822 lifeos-p3-104[38279:4358430] Failure on line 688 in function id scheduleApplicationNotification(LSNotificationCode, NSWorkspaceNotificationCenter *): noErr == _LSModifyNotification(notificationID, 1, &code, 0, NULL, NULL, NULL)\n2026-08-23 17:58:48.839 lifeos-p3-104[38279:4358430] Error received in message reply handler: Connection invalid\n2026-08-23 17:58:48.839 lifeos-p3-104[38279:4358433] Connection Invalid error for service com.apple.hiservices-xpcservice.\n2026-08-23 17:58:48.887 lifeos-p3-104[38279:4358430] Error received in message reply handler: Connection invalid\n",
+      "sentinel_before": "b3455c4450172474cef4d8b8c312e905dbb4d17f1a313ec9f98132ff96f4d964",
+      "sentinel_after": "b3455c4450172474cef4d8b8c312e905dbb4d17f1a313ec9f98132ff96f4d964",
+      "sentinel_unchanged": true,
+      "pass": false,
+      "tampered_content_retained": true
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "passed": 5,
+    "failed": 1
+  }
+}

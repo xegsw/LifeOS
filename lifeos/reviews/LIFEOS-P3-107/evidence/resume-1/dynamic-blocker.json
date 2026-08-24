@@ -1,0 +1,35 @@
+{
+  "task_id": "LIFEOS-P3-107",
+  "recorded_at": "2026-08-23T22:24:00+08:00",
+  "status": "BLOCKED",
+  "phase": "actual-local-app dynamic verification",
+  "authorized_fixture": "/private/tmp/lifeos-p3-104-p3-107-review-nominal-r1/capture.sqlite",
+  "fresh_build_binary": "/private/tmp/lifeos-p3-107-review-work-r1/target/debug/lifeos-p3-104",
+  "observations": [
+    {
+      "id": "DYN-107-001",
+      "action": "launch freshly built binary with the authorized fixture",
+      "result": "started and reported runtime_start status=restricted_offline db_scope=task_local; the process remained active until intentionally interrupted after Computer Use could not resolve it as an app",
+      "terminal_session": "4744"
+    },
+    {
+      "id": "DYN-107-002",
+      "action": "attach Computer Use to the freshly built raw binary",
+      "result": "not available: the Computer Use service rejected the raw executable as an invalid app identifier; no UI action was taken"
+    },
+    {
+      "id": "DYN-107-003",
+      "action": "prepare a temporary app wrapper without modifying candidate source or configuration",
+      "result": "not sufficient: launching the wrapper or a copied existing app bundle with the fresh binary exited 134 after the same runtime_start line; no dynamic assertion claimed"
+    },
+    {
+      "id": "DYN-107-004",
+      "action": "request the approved GUI launcher for the existing local app bundle with the exact authorized fixture",
+      "result": "execution environment rejected the escalation for usage-limit reasons. Per the rejection instruction, no workaround or indirect launch was attempted."
+    }
+  ],
+  "unexecuted_required_actions": [
+    "first capture", "repeat capture", "conflict/atomic failure", "failure disclosure and cleanup", "unknown IPC rejection", "navigation and state variants", "Tab/Enter/skip-link/focus-visible/reduced-motion", "close and reopen", "negative path and static dynamic-action closure"
+  ],
+  "conclusion": "No submitted screenshot, prior runner, or static result is substituted for the required independent dynamic action evidence. This is a fail-closed BLOCKED record, not a candidate defect finding."
+}

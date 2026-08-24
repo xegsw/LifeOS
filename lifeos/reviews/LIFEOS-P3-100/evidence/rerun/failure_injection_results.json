@@ -1,0 +1,804 @@
+[
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-001-CLI",
+    "trace": [
+      {
+        "stderr": "",
+        "stdout": {
+          "id": "c2d90969-9272-45f8-b901-74fc3e2d4975",
+          "status": "saved"
+        }
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-003-SAVED-REPLACE",
+    "trace": [
+      {
+        "actual_source": ".p3-098-missing-source",
+        "actual_syscall_executed": true,
+        "destination": "capture.sqlite",
+        "errno": 2,
+        "error": "FileNotFoundError",
+        "source_requested": ".capture.sqlite.75d0c6009622413b9e1f00bb5bf6a91d.shadow",
+        "syscall": "os.replace"
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-004-REPEAT-REPLACE",
+    "trace": [
+      {
+        "actual_source": ".p3-098-missing-source",
+        "actual_syscall_executed": true,
+        "destination": "capture.sqlite",
+        "errno": 2,
+        "error": "FileNotFoundError",
+        "source_requested": ".capture.sqlite.66ec4916674a44058a38705f1e116084.shadow",
+        "syscall": "os.replace"
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-005-MISSING-REPLACE",
+    "trace": [
+      {
+        "actual_source": ".p3-098-missing-source",
+        "actual_syscall_executed": true,
+        "destination": "capture.sqlite",
+        "errno": 2,
+        "error": "FileNotFoundError",
+        "source_requested": ".capture.sqlite.aad56b642b1f4f5aa973ee4e31fadd52.shadow",
+        "syscall": "os.replace"
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-006-CANDIDATE-CLOSE",
+    "trace": [
+      {
+        "point": "candidate_write"
+      },
+      {
+        "point": "candidate_commit"
+      },
+      {
+        "point": "candidate_close_raise"
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-007-SIDECAR-TRANSIENT",
+    "trace": [
+      {
+        "point": "candidate_write"
+      },
+      {
+        "point": "candidate_commit"
+      },
+      {
+        "point": "candidate_close_raise"
+      },
+      {
+        "point": "candidate_close_sidecar"
+      },
+      {
+        "point": "candidate_closed"
+      },
+      {
+        "point": "sidecar_cleanup_attempt_1"
+      },
+      {
+        "point": "sidecar_cleanup_attempt_2"
+      },
+      {
+        "point": "candidate_validate"
+      },
+      {
+        "point": "final_scan"
+      },
+      {
+        "point": "path_stability"
+      },
+      {
+        "point": "page_invalidate"
+      },
+      {
+        "point": "publish"
+      },
+      {
+        "point": "completion_reached"
+      },
+      {
+        "point": "post_publish_gate_fd_close"
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-007-SIDECAR-PERSISTENT",
+    "trace": [
+      {
+        "point": "candidate_write"
+      },
+      {
+        "point": "candidate_commit"
+      },
+      {
+        "point": "candidate_close_raise"
+      },
+      {
+        "point": "candidate_close_sidecar"
+      },
+      {
+        "point": "candidate_closed"
+      },
+      {
+        "point": "sidecar_cleanup_attempt_1"
+      },
+      {
+        "point": "sidecar_cleanup_attempt_2"
+      },
+      {
+        "point": "sidecar_cleanup_attempt_3"
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-008-PAGE-INVALIDATE",
+    "trace": [
+      {
+        "point": "candidate_write"
+      },
+      {
+        "point": "candidate_commit"
+      },
+      {
+        "point": "candidate_close_raise"
+      },
+      {
+        "point": "candidate_close_sidecar"
+      },
+      {
+        "point": "candidate_closed"
+      },
+      {
+        "point": "candidate_validate"
+      },
+      {
+        "point": "final_scan"
+      },
+      {
+        "point": "path_stability"
+      },
+      {
+        "point": "page_invalidate"
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-008-PUBLISH-AFTER-PAGE",
+    "trace": [
+      {
+        "actual_source": ".p3-098-missing-source",
+        "actual_syscall_executed": true,
+        "destination": "capture.sqlite",
+        "errno": 2,
+        "error": "FileNotFoundError",
+        "source_requested": ".capture.sqlite.7887d30f36084a5cb085c4bd0f56a064.shadow",
+        "syscall": "os.replace"
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-009-SAVED-FD-CLOSE",
+    "trace": [
+      {
+        "point": "candidate_write"
+      },
+      {
+        "point": "candidate_commit"
+      },
+      {
+        "point": "candidate_close_raise"
+      },
+      {
+        "point": "candidate_close_sidecar"
+      },
+      {
+        "point": "candidate_closed"
+      },
+      {
+        "point": "candidate_validate"
+      },
+      {
+        "point": "final_scan"
+      },
+      {
+        "point": "path_stability"
+      },
+      {
+        "point": "publish"
+      },
+      {
+        "point": "completion_reached"
+      },
+      {
+        "point": "post_publish_gate_fd_close"
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-010-REPEAT-FD-CLOSE",
+    "trace": [
+      {
+        "point": "candidate_write"
+      },
+      {
+        "point": "candidate_commit"
+      },
+      {
+        "point": "candidate_close_raise"
+      },
+      {
+        "point": "candidate_close_sidecar"
+      },
+      {
+        "point": "candidate_closed"
+      },
+      {
+        "point": "candidate_validate"
+      },
+      {
+        "point": "final_scan"
+      },
+      {
+        "point": "path_stability"
+      },
+      {
+        "point": "publish"
+      },
+      {
+        "point": "completion_reached"
+      },
+      {
+        "point": "post_publish_gate_fd_close"
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-014-MISSING-ROW",
+    "trace": [
+      {
+        "duplicate_execution_ids": [],
+        "exit_code": 1,
+        "missing_assertions": [],
+        "missing_rows": [
+          "IR-P3-098-015-RESIDUE"
+        ],
+        "not_implemented": 1,
+        "unreproducible": []
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-014-DUP-EXEC",
+    "trace": [
+      {
+        "duplicate_execution_ids": [
+          "EX-0"
+        ],
+        "exit_code": 1,
+        "missing_assertions": [],
+        "missing_rows": [],
+        "not_implemented": 1,
+        "unreproducible": []
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-014-MISSING-ASSERT",
+    "trace": [
+      {
+        "duplicate_execution_ids": [],
+        "exit_code": 1,
+        "missing_assertions": [
+          "IR-P3-098-001-RUNTIME"
+        ],
+        "missing_rows": [],
+        "not_implemented": 1,
+        "unreproducible": []
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-014-UNREPRODUCIBLE",
+    "trace": [
+      {
+        "duplicate_execution_ids": [],
+        "exit_code": 1,
+        "missing_assertions": [],
+        "missing_rows": [],
+        "not_implemented": 1,
+        "unreproducible": [
+          "IR-P3-098-001-RUNTIME"
+        ]
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-015-HASH-PRE",
+    "trace": [
+      {
+        "all_match": true,
+        "checks": [
+          {
+            "actual": "3355c7f3e744abfd3be392902217f8abfa02bb783a492d87e88d8a63ddb2a09f",
+            "expected": "3355c7f3e744abfd3be392902217f8abfa02bb783a492d87e88d8a63ddb2a09f",
+            "match": true,
+            "path": "lifeos/tasks/LIFEOS-P3-097_irreversible_commit_completion_boundary_closure.md"
+          },
+          {
+            "actual": "0160640bdee51436dba4da4fd1b8d4bde9a3b0e101fc09c2b0c5be79e254f048",
+            "expected": "0160640bdee51436dba4da4fd1b8d4bde9a3b0e101fc09c2b0c5be79e254f048",
+            "match": true,
+            "path": "lifeos/tasks/LIFEOS-P3-097_irreversible_commit_completion_boundary_acceptance_basis_freeze.md"
+          },
+          {
+            "actual": "a214e681ebf9449af9097edde42cd04b02dc83be2a09eec472e1a3b67c386ee1",
+            "expected": "a214e681ebf9449af9097edde42cd04b02dc83be2a09eec472e1a3b67c386ee1",
+            "match": true,
+            "path": "lifeos/deliverables/LIFEOS-P3-097_irreversible_commit_completion_boundary_closure.md"
+          },
+          {
+            "actual": "1535fd1fa45b581a042be73bdbfdde1905c2ea7ff10c3554952b53882f455453",
+            "expected": "1535fd1fa45b581a042be73bdbfdde1905c2ea7ff10c3554952b53882f455453",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/src/local_capture.py"
+          },
+          {
+            "actual": "ef7e6ba7f082e4a8b5d354dd5427835e054b188aab211c61c967174081155659",
+            "expected": "ef7e6ba7f082e4a8b5d354dd5427835e054b188aab211c61c967174081155659",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/scripts/operator_cli.py"
+          },
+          {
+            "actual": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "expected": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/scripts/run_p3_097.py"
+          },
+          {
+            "actual": "e6cb780daa9b271adce01022c95dd414f9b34c0248f6b727785e9167a75306bf",
+            "expected": "e6cb780daa9b271adce01022c95dd414f9b34c0248f6b727785e9167a75306bf",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/tests/test_runtime.py"
+          },
+          {
+            "actual": "7fa834dbb9ecaf78200af01c37c2ba8029a3c511affce9c184a3042c8cfa6adf",
+            "expected": "7fa834dbb9ecaf78200af01c37c2ba8029a3c511affce9c184a3042c8cfa6adf",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/README.md"
+          },
+          {
+            "actual": "63301b8059231130b19bafb15d6761f6b5efa89417326d327380e8c7d5ff1311",
+            "expected": "63301b8059231130b19bafb15d6761f6b5efa89417326d327380e8c7d5ff1311",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/MANIFEST.md"
+          },
+          {
+            "actual": "057cbf047f412c38cc606ef033604a9e7591de83272ad2523ab0e02d86a58fee",
+            "expected": "057cbf047f412c38cc606ef033604a9e7591de83272ad2523ab0e02d86a58fee",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097_pm_review.md"
+          },
+          {
+            "actual": "90a1072dccc841eaecb6fe7cee51a6c175aff66cede6cc393d4ddc2da8a4e183",
+            "expected": "90a1072dccc841eaecb6fe7cee51a6c175aff66cede6cc393d4ddc2da8a4e183",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/MANIFEST.md"
+          }
+        ],
+        "count": 11,
+        "phase": "pre"
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-015-ENG-MANIFEST",
+    "trace": [
+      {
+        "all_match": true,
+        "checks": [
+          {
+            "actual": "92db8e243507a636e93eb1181ab6ad3cb43f131c980b6e6510840c98bd9bf4e0",
+            "expected": "92db8e243507a636e93eb1181ab6ad3cb43f131c980b6e6510840c98bd9bf4e0",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/acceptance_matrix.json"
+          },
+          {
+            "actual": "b6fab361a65bc8363793d879104cd04f1350d808a1003607e5d4e7b2ead20b21",
+            "expected": "b6fab361a65bc8363793d879104cd04f1350d808a1003607e5d4e7b2ead20b21",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/completion_point_trace.json"
+          },
+          {
+            "actual": "395aa2a89a8ead7f28bc76b4669bdbbb47198905277b4ba6d039ca93ba807083",
+            "expected": "395aa2a89a8ead7f28bc76b4669bdbbb47198905277b4ba6d039ca93ba807083",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/executed_test_ids.json"
+          },
+          {
+            "actual": "1d32d4ca9b033612470b14c91be1603f66bcc17783e90d977a423898726bba7e",
+            "expected": "1d32d4ca9b033612470b14c91be1603f66bcc17783e90d977a423898726bba7e",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/failure_injection_results.json"
+          },
+          {
+            "actual": "d84a99c18d9bd65b42109e6aaec2a7f93e9cd3cf0301e599ca0b3542730fb00e",
+            "expected": "d84a99c18d9bd65b42109e6aaec2a7f93e9cd3cf0301e599ca0b3542730fb00e",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/forbidden_capability_scan.json"
+          },
+          {
+            "actual": "5806c07786a8b797e230cade70cbd857078dcda27d192e92b2e59a22b3069349",
+            "expected": "5806c07786a8b797e230cade70cbd857078dcda27d192e92b2e59a22b3069349",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/manifest_verification.json"
+          },
+          {
+            "actual": "e4bf5ab4d39b07363f3b3480f7b37f4a76bc22406fc88b5038ab29a7e74db1ed",
+            "expected": "e4bf5ab4d39b07363f3b3480f7b37f4a76bc22406fc88b5038ab29a7e74db1ed",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/matrix_execution.log"
+          },
+          {
+            "actual": "b0d1c0550fadc3241f71f8fb54438ba19e89a0e6c9750544b77259f1b43a8ed0",
+            "expected": "b0d1c0550fadc3241f71f8fb54438ba19e89a0e6c9750544b77259f1b43a8ed0",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/operation_log.md"
+          },
+          {
+            "actual": "f35c601983688f364c2496f66419d597543d19cf33a9890521105aaf68fc27b0",
+            "expected": "f35c601983688f364c2496f66419d597543d19cf33a9890521105aaf68fc27b0",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/regression_test.log"
+          },
+          {
+            "actual": "0fc94fe0d7f444a84e0a8e95129f02378b53a4f4da2a9a73d3e348290805a6a9",
+            "expected": "0fc94fe0d7f444a84e0a8e95129f02378b53a4f4da2a9a73d3e348290805a6a9",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/rerun.md"
+          },
+          {
+            "actual": "d7f8834a28ab4b150915d650756ccb9198f9d32e116e346f0da66f9db293d78e",
+            "expected": "d7f8834a28ab4b150915d650756ccb9198f9d32e116e346f0da66f9db293d78e",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/results.json"
+          },
+          {
+            "actual": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "expected": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/runner_source.py"
+          },
+          {
+            "actual": "127458e27064a5aab328b01244238ac56f669c73fb0656141597cc7d7da1d781",
+            "expected": "127458e27064a5aab328b01244238ac56f669c73fb0656141597cc7d7da1d781",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/source_history_hashes.json"
+          },
+          {
+            "actual": "f24156ed71c85549f5438e6bfbc3f1209dc85a40159de6590aeaaf7930f5ad98",
+            "expected": "f24156ed71c85549f5438e6bfbc3f1209dc85a40159de6590aeaaf7930f5ad98",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/state_transitions.json"
+          },
+          {
+            "actual": "ffe8bfaa4681ccb00369b6a435e2a6669f07a5902f49bf8d3067714ee38a3c94",
+            "expected": "ffe8bfaa4681ccb00369b6a435e2a6669f07a5902f49bf8d3067714ee38a3c94",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/temporary_residue.json"
+          },
+          {
+            "actual": "f35c601983688f364c2496f66419d597543d19cf33a9890521105aaf68fc27b0",
+            "expected": "f35c601983688f364c2496f66419d597543d19cf33a9890521105aaf68fc27b0",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/unit_test.log"
+          }
+        ],
+        "count": 16,
+        "manifest": "lifeos/engineering/LIFEOS-P3-097/evidence/MANIFEST.md"
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-015-PM-MANIFEST",
+    "trace": [
+      {
+        "all_match": true,
+        "checks": [
+          {
+            "actual": "59df14e3e3bbf95124955fb4ca3b6e24b301f20a0aa075487b19efe99414759d",
+            "expected": "59df14e3e3bbf95124955fb4ca3b6e24b301f20a0aa075487b19efe99414759d",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/pm_boundary_counterexamples.json"
+          },
+          {
+            "actual": "c8e3d6bf5bde58aa50e5c9be6f9b870e1abd66bddab535998ee8c0474747abff",
+            "expected": "c8e3d6bf5bde58aa50e5c9be6f9b870e1abd66bddab535998ee8c0474747abff",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/pm_boundary_counterexamples.py"
+          },
+          {
+            "actual": "dc846cdf70fce2d0fc2a666685718eb9bc40bf1bca458165a04425a6ec59413e",
+            "expected": "dc846cdf70fce2d0fc2a666685718eb9bc40bf1bca458165a04425a6ec59413e",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/pm_integrity.json"
+          },
+          {
+            "actual": "cbedef3b1f808045c2318be1d0a28e20b901fe6e9b9d57fe8f0c3941e46e9632",
+            "expected": "cbedef3b1f808045c2318be1d0a28e20b901fe6e9b9d57fe8f0c3941e46e9632",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/pm_operation_log.md"
+          },
+          {
+            "actual": "b7f5d84d6dbfed2ed2848c3322e57d9cbb9aa101dd831d51b68250d1c2c014c2",
+            "expected": "b7f5d84d6dbfed2ed2848c3322e57d9cbb9aa101dd831d51b68250d1c2c014c2",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/pm_rerun.md"
+          },
+          {
+            "actual": "c9de05005fca72664d044e8887477c922396211fab93be940c14de8715351b65",
+            "expected": "c9de05005fca72664d044e8887477c922396211fab93be940c14de8715351b65",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/pm_summary.json"
+          },
+          {
+            "actual": "0dff059a1d1147878338ff985f3a4783e65c2d2b4e41ca1560cbe8cea35ae234",
+            "expected": "0dff059a1d1147878338ff985f3a4783e65c2d2b4e41ca1560cbe8cea35ae234",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/MANIFEST.md"
+          },
+          {
+            "actual": "ea7ae4aaec9e3bf42ccec77961d180a68d202be58c1429f20ffd7c5c4e1db5cb",
+            "expected": "ea7ae4aaec9e3bf42ccec77961d180a68d202be58c1429f20ffd7c5c4e1db5cb",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/acceptance_matrix.json"
+          },
+          {
+            "actual": "b6fab361a65bc8363793d879104cd04f1350d808a1003607e5d4e7b2ead20b21",
+            "expected": "b6fab361a65bc8363793d879104cd04f1350d808a1003607e5d4e7b2ead20b21",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/completion_point_trace.json"
+          },
+          {
+            "actual": "3b17dd142d629a4182337013bb7362bbd3320c7af8e7e72bbac61339bc6bf661",
+            "expected": "3b17dd142d629a4182337013bb7362bbd3320c7af8e7e72bbac61339bc6bf661",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/executed_test_ids.json"
+          },
+          {
+            "actual": "dfbc6d289127ab04faf7c432cd48ab826b4711dbf034268724ccd8b9964fbb10",
+            "expected": "dfbc6d289127ab04faf7c432cd48ab826b4711dbf034268724ccd8b9964fbb10",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/failure_injection_results.json"
+          },
+          {
+            "actual": "d84a99c18d9bd65b42109e6aaec2a7f93e9cd3cf0301e599ca0b3542730fb00e",
+            "expected": "d84a99c18d9bd65b42109e6aaec2a7f93e9cd3cf0301e599ca0b3542730fb00e",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/forbidden_capability_scan.json"
+          },
+          {
+            "actual": "1e0ae47359b8bf89c94239d8980f01d1664b249900d8970e101178d9b3fbaead",
+            "expected": "1e0ae47359b8bf89c94239d8980f01d1664b249900d8970e101178d9b3fbaead",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/manifest_verification.json"
+          },
+          {
+            "actual": "f9b9d46ede56f0569fde08d77b7ca3b8df6c4d3e6ba16e294e37dfa12ba323dc",
+            "expected": "f9b9d46ede56f0569fde08d77b7ca3b8df6c4d3e6ba16e294e37dfa12ba323dc",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/matrix_execution.log"
+          },
+          {
+            "actual": "b0d1c0550fadc3241f71f8fb54438ba19e89a0e6c9750544b77259f1b43a8ed0",
+            "expected": "b0d1c0550fadc3241f71f8fb54438ba19e89a0e6c9750544b77259f1b43a8ed0",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/operation_log.md"
+          },
+          {
+            "actual": "e1ffc43c1c30ded8ba361271aa9c3b3a276c1b5bf797a2c864afcfa2626a40a3",
+            "expected": "e1ffc43c1c30ded8ba361271aa9c3b3a276c1b5bf797a2c864afcfa2626a40a3",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/regression_test.log"
+          },
+          {
+            "actual": "0fc94fe0d7f444a84e0a8e95129f02378b53a4f4da2a9a73d3e348290805a6a9",
+            "expected": "0fc94fe0d7f444a84e0a8e95129f02378b53a4f4da2a9a73d3e348290805a6a9",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/rerun.md"
+          },
+          {
+            "actual": "d7f8834a28ab4b150915d650756ccb9198f9d32e116e346f0da66f9db293d78e",
+            "expected": "d7f8834a28ab4b150915d650756ccb9198f9d32e116e346f0da66f9db293d78e",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/results.json"
+          },
+          {
+            "actual": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "expected": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/runner_source.py"
+          },
+          {
+            "actual": "127458e27064a5aab328b01244238ac56f669c73fb0656141597cc7d7da1d781",
+            "expected": "127458e27064a5aab328b01244238ac56f669c73fb0656141597cc7d7da1d781",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/source_history_hashes.json"
+          },
+          {
+            "actual": "8ad67a822475013d80a989b8b87781c1443f62bbe25722625f949149399bf382",
+            "expected": "8ad67a822475013d80a989b8b87781c1443f62bbe25722625f949149399bf382",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/state_transitions.json"
+          },
+          {
+            "actual": "a962e8385304e44af3acb85ad03143e03713e099b47df8108ac62b926c6ec7e4",
+            "expected": "a962e8385304e44af3acb85ad03143e03713e099b47df8108ac62b926c6ec7e4",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/temporary_residue.json"
+          },
+          {
+            "actual": "e1ffc43c1c30ded8ba361271aa9c3b3a276c1b5bf797a2c864afcfa2626a40a3",
+            "expected": "e1ffc43c1c30ded8ba361271aa9c3b3a276c1b5bf797a2c864afcfa2626a40a3",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/submitted_runner/unit_test.log"
+          }
+        ],
+        "count": 23,
+        "manifest": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/MANIFEST.md"
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-015-HISTORY",
+    "trace": [
+      {
+        "all_match": true,
+        "count": 310
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-015-FORBIDDEN-SCAN",
+    "trace": [
+      {
+        "files": [
+          "lifeos/engineering/LIFEOS-P3-097/src/local_capture.py",
+          "lifeos/engineering/LIFEOS-P3-097/scripts/operator_cli.py"
+        ],
+        "forbidden_string_findings": [],
+        "imports": [
+          "__future__",
+          "argparse",
+          "datetime",
+          "hashlib",
+          "html",
+          "json",
+          "local_capture",
+          "os",
+          "pathlib",
+          "re",
+          "shutil",
+          "sqlite3",
+          "stat",
+          "sys",
+          "typing",
+          "uuid"
+        ],
+        "pass": true,
+        "unexpected_imports": []
+      }
+    ]
+  },
+  {
+    "status": "PASS",
+    "test_id": "IR-P3-098-015-HASH-POST",
+    "trace": [
+      {
+        "all_match": true,
+        "checks": [
+          {
+            "actual": "3355c7f3e744abfd3be392902217f8abfa02bb783a492d87e88d8a63ddb2a09f",
+            "expected": "3355c7f3e744abfd3be392902217f8abfa02bb783a492d87e88d8a63ddb2a09f",
+            "match": true,
+            "path": "lifeos/tasks/LIFEOS-P3-097_irreversible_commit_completion_boundary_closure.md"
+          },
+          {
+            "actual": "0160640bdee51436dba4da4fd1b8d4bde9a3b0e101fc09c2b0c5be79e254f048",
+            "expected": "0160640bdee51436dba4da4fd1b8d4bde9a3b0e101fc09c2b0c5be79e254f048",
+            "match": true,
+            "path": "lifeos/tasks/LIFEOS-P3-097_irreversible_commit_completion_boundary_acceptance_basis_freeze.md"
+          },
+          {
+            "actual": "a214e681ebf9449af9097edde42cd04b02dc83be2a09eec472e1a3b67c386ee1",
+            "expected": "a214e681ebf9449af9097edde42cd04b02dc83be2a09eec472e1a3b67c386ee1",
+            "match": true,
+            "path": "lifeos/deliverables/LIFEOS-P3-097_irreversible_commit_completion_boundary_closure.md"
+          },
+          {
+            "actual": "1535fd1fa45b581a042be73bdbfdde1905c2ea7ff10c3554952b53882f455453",
+            "expected": "1535fd1fa45b581a042be73bdbfdde1905c2ea7ff10c3554952b53882f455453",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/src/local_capture.py"
+          },
+          {
+            "actual": "ef7e6ba7f082e4a8b5d354dd5427835e054b188aab211c61c967174081155659",
+            "expected": "ef7e6ba7f082e4a8b5d354dd5427835e054b188aab211c61c967174081155659",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/scripts/operator_cli.py"
+          },
+          {
+            "actual": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "expected": "9cc727e7510a4a269f5c8cb1f41e95662b84fc48311a7f229e47ab8bd395d986",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/scripts/run_p3_097.py"
+          },
+          {
+            "actual": "e6cb780daa9b271adce01022c95dd414f9b34c0248f6b727785e9167a75306bf",
+            "expected": "e6cb780daa9b271adce01022c95dd414f9b34c0248f6b727785e9167a75306bf",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/tests/test_runtime.py"
+          },
+          {
+            "actual": "7fa834dbb9ecaf78200af01c37c2ba8029a3c511affce9c184a3042c8cfa6adf",
+            "expected": "7fa834dbb9ecaf78200af01c37c2ba8029a3c511affce9c184a3042c8cfa6adf",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/README.md"
+          },
+          {
+            "actual": "63301b8059231130b19bafb15d6761f6b5efa89417326d327380e8c7d5ff1311",
+            "expected": "63301b8059231130b19bafb15d6761f6b5efa89417326d327380e8c7d5ff1311",
+            "match": true,
+            "path": "lifeos/engineering/LIFEOS-P3-097/evidence/MANIFEST.md"
+          },
+          {
+            "actual": "057cbf047f412c38cc606ef033604a9e7591de83272ad2523ab0e02d86a58fee",
+            "expected": "057cbf047f412c38cc606ef033604a9e7591de83272ad2523ab0e02d86a58fee",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097_pm_review.md"
+          },
+          {
+            "actual": "90a1072dccc841eaecb6fe7cee51a6c175aff66cede6cc393d4ddc2da8a4e183",
+            "expected": "90a1072dccc841eaecb6fe7cee51a6c175aff66cede6cc393d4ddc2da8a4e183",
+            "match": true,
+            "path": "lifeos/reviews/LIFEOS-P3-097/pm_evidence/initial/MANIFEST.md"
+          }
+        ],
+        "count": 11,
+        "phase": "post"
+      }
+    ]
+  }
+]

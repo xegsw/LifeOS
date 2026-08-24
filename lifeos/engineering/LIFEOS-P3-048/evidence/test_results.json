@@ -1,0 +1,5358 @@
+{
+  "task_id": "LIFEOS-P3-048",
+  "route": "gpt-5.6-sol+xhigh",
+  "scope": "synthetic SQLite only",
+  "summary": {
+    "P0": {
+      "PASS": 0,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "P1": {
+      "PASS": 0,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "P2": {
+      "PASS": 552,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "total": {
+      "PASS": 552,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    }
+  },
+  "categories": {
+    "direction": {
+      "instances": 24,
+      "pass": 24,
+      "fail": 0
+    },
+    "field": {
+      "instances": 336,
+      "pass": 336,
+      "fail": 0
+    },
+    "legal": {
+      "instances": 72,
+      "pass": 72,
+      "fail": 0
+    },
+    "multirow": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0
+    },
+    "original": {
+      "instances": 8,
+      "pass": 8,
+      "fail": 0
+    },
+    "replace": {
+      "instances": 40,
+      "pass": 40,
+      "fail": 0
+    },
+    "status_time_combo": {
+      "instances": 48,
+      "pass": 48,
+      "fail": 0
+    },
+    "time": {
+      "instances": 16,
+      "pass": 16,
+      "fail": 0
+    }
+  },
+  "p3_047_equivalent_summary": {
+    "P0": {
+      "PASS": 0,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "P1": {
+      "PASS": 144,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "P2": {
+      "PASS": 153,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    },
+    "total": {
+      "PASS": 297,
+      "FAIL": 0,
+      "NOT_IMPLEMENTED": 0,
+      "UNKNOWN": 0
+    }
+  },
+  "p3_031_exit": 0,
+  "results": [
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "original"
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "original"
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "original"
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "original"
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "original"
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "original"
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "original"
+    },
+    {
+      "id": "PM-CE-06",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "original PM-CE-06 rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "original"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "generic_to_authorization rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "generic_to_authorization"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "authorization_to_generic rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_to_generic"
+    },
+    {
+      "id": "ADJ-DIRECTION",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "authorization_a_to_b rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "direction",
+      "attack": "authorization_a_to_b"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "accepted"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "active_blocked"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_pending"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_failed"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "vendor_limited"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change",
+      "category": "status_time_combo",
+      "cleanup_state": "cleaned"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "accepted"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "active_blocked"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_pending"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_failed"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "vendor_limited"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change",
+      "category": "status_time_combo",
+      "cleanup_state": "cleaned"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "accepted"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "active_blocked"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_pending"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_failed"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "vendor_limited"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change",
+      "category": "status_time_combo",
+      "cleanup_state": "cleaned"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "accepted"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "active_blocked"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_pending"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_failed"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "vendor_limited"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change",
+      "category": "status_time_combo",
+      "cleanup_state": "cleaned"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "accepted"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "active_blocked"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_pending"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_failed"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "vendor_limited"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change",
+      "category": "status_time_combo",
+      "cleanup_state": "cleaned"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "accepted"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "active_blocked"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_pending"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_failed"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "vendor_limited"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change",
+      "category": "status_time_combo",
+      "cleanup_state": "cleaned"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "accepted"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "active_blocked"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_pending"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_failed"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "vendor_limited"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change",
+      "category": "status_time_combo",
+      "cleanup_state": "cleaned"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "accepted",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "accepted identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "accepted"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "active_blocked",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "active_blocked identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "active_blocked"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_pending",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_pending identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_pending"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleanup_failed",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleanup_failed identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "cleanup_failed"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "vendor_limited",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "vendor_limited identity/status/time combination rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "status_time_combo",
+      "cleanup_state": "vendor_limited"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/subject_type rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_type"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/subject_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "subject_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/generation rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "generation"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/command_id rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "command_id"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/reason_code rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "reason_code"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/blocked_at_ms rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "blocked_at_ms"
+    },
+    {
+      "id": "ADJ-FIELD",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned/compound rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "field",
+      "cleanup_state": "cleaned",
+      "field": "compound"
+    },
+    {
+      "id": "ADJ-COMBO",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "cleaned identity/status/time combination rejected: authorization_tombstone_time_requires_status_change",
+      "category": "status_time_combo",
+      "cleanup_state": "cleaned"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "insert_or_replace rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "insert_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "conflict_insert rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "conflict_insert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "delete_reinsert rejected: tombstone_delete_forbidden",
+      "category": "replace",
+      "attack": "delete_reinsert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "update_or_replace rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "replace",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "upsert_update rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "upsert_update"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "insert_or_replace rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "insert_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "conflict_insert rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "conflict_insert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "delete_reinsert rejected: tombstone_delete_forbidden",
+      "category": "replace",
+      "attack": "delete_reinsert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "update_or_replace rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "replace",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "upsert_update rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "upsert_update"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "insert_or_replace rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "insert_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "conflict_insert rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "conflict_insert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "delete_reinsert rejected: tombstone_delete_forbidden",
+      "category": "replace",
+      "attack": "delete_reinsert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "update_or_replace rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "replace",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "upsert_update rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "upsert_update"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "insert_or_replace rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "insert_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "conflict_insert rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "conflict_insert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "delete_reinsert rejected: tombstone_delete_forbidden",
+      "category": "replace",
+      "attack": "delete_reinsert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "update_or_replace rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "replace",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "upsert_update rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "upsert_update"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "insert_or_replace rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "insert_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "conflict_insert rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "conflict_insert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "delete_reinsert rejected: tombstone_delete_forbidden",
+      "category": "replace",
+      "attack": "delete_reinsert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "update_or_replace rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "replace",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "upsert_update rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "upsert_update"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "insert_or_replace rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "insert_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "conflict_insert rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "conflict_insert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "delete_reinsert rejected: tombstone_delete_forbidden",
+      "category": "replace",
+      "attack": "delete_reinsert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "update_or_replace rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "replace",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "upsert_update rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "upsert_update"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "insert_or_replace rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "insert_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "conflict_insert rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "conflict_insert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "delete_reinsert rejected: tombstone_delete_forbidden",
+      "category": "replace",
+      "attack": "delete_reinsert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "update_or_replace rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "replace",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "upsert_update rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "upsert_update"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "insert_or_replace rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "insert_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "conflict_insert rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "conflict_insert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "delete_reinsert rejected: tombstone_delete_forbidden",
+      "category": "replace",
+      "attack": "delete_reinsert"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "update_or_replace rejected: authorization_tombstone_control_envelope_immutable",
+      "category": "replace",
+      "attack": "update_or_replace"
+    },
+    {
+      "id": "ADJ-REPLACE",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "upsert_update rejected: tombstone_reinsert_forbidden",
+      "category": "replace",
+      "attack": "upsert_update"
+    },
+    {
+      "id": "ADJ-MULTIROW",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically: authorization_cleanup_audit_required",
+      "category": "multirow"
+    },
+    {
+      "id": "ADJ-MULTIROW",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically: authorization_cleanup_audit_required",
+      "category": "multirow"
+    },
+    {
+      "id": "ADJ-MULTIROW",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically: authorization_cleanup_audit_required",
+      "category": "multirow"
+    },
+    {
+      "id": "ADJ-MULTIROW",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically: authorization_cleanup_audit_required",
+      "category": "multirow"
+    },
+    {
+      "id": "ADJ-MULTIROW",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically: authorization_cleanup_audit_required",
+      "category": "multirow"
+    },
+    {
+      "id": "ADJ-MULTIROW",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically: authorization_cleanup_audit_required",
+      "category": "multirow"
+    },
+    {
+      "id": "ADJ-MULTIROW",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically: authorization_cleanup_audit_required",
+      "category": "multirow"
+    },
+    {
+      "id": "ADJ-MULTIROW",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "multi-row statement rolled back atomically: authorization_cleanup_audit_required",
+      "category": "multirow"
+    },
+    {
+      "id": "LEGAL-01",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "active_blocked"
+    },
+    {
+      "id": "LEGAL-02",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-03",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_failed"
+    },
+    {
+      "id": "LEGAL-04",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-05",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "vendor_limited"
+    },
+    {
+      "id": "LEGAL-06",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-07",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleaned transition",
+      "category": "legal",
+      "target": "cleaned"
+    },
+    {
+      "id": "LEGAL-08",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "pre-existing generic semantics preserved",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-09",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "time without status rejected: authorization_tombstone_time_requires_status_change",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-10",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "decreasing status time rejected: authorization_tombstone_time_must_not_decrease",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-11",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "no-op envelope update remains legal",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-01",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "active_blocked"
+    },
+    {
+      "id": "LEGAL-02",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-03",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_failed"
+    },
+    {
+      "id": "LEGAL-04",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-05",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "vendor_limited"
+    },
+    {
+      "id": "LEGAL-06",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-07",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleaned transition",
+      "category": "legal",
+      "target": "cleaned"
+    },
+    {
+      "id": "LEGAL-08",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "pre-existing generic semantics preserved",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-09",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "time without status rejected: authorization_tombstone_time_requires_status_change",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-10",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "decreasing status time rejected: authorization_tombstone_time_must_not_decrease",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-11",
+      "severity": "P2",
+      "config": "memory-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "no-op envelope update remains legal",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-01",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "active_blocked"
+    },
+    {
+      "id": "LEGAL-02",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-03",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_failed"
+    },
+    {
+      "id": "LEGAL-04",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-05",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "vendor_limited"
+    },
+    {
+      "id": "LEGAL-06",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-07",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleaned transition",
+      "category": "legal",
+      "target": "cleaned"
+    },
+    {
+      "id": "LEGAL-08",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "pre-existing generic semantics preserved",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-09",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "time without status rejected: authorization_tombstone_time_requires_status_change",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-10",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "decreasing status time rejected: authorization_tombstone_time_must_not_decrease",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-11",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "no-op envelope update remains legal",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-01",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "active_blocked"
+    },
+    {
+      "id": "LEGAL-02",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-03",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_failed"
+    },
+    {
+      "id": "LEGAL-04",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-05",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "vendor_limited"
+    },
+    {
+      "id": "LEGAL-06",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-07",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleaned transition",
+      "category": "legal",
+      "target": "cleaned"
+    },
+    {
+      "id": "LEGAL-08",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "pre-existing generic semantics preserved",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-09",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "time without status rejected: authorization_tombstone_time_requires_status_change",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-10",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "decreasing status time rejected: authorization_tombstone_time_must_not_decrease",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-11",
+      "severity": "P2",
+      "config": "memory-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "no-op envelope update remains legal",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-01",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "active_blocked"
+    },
+    {
+      "id": "LEGAL-02",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-03",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_failed"
+    },
+    {
+      "id": "LEGAL-04",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-05",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "vendor_limited"
+    },
+    {
+      "id": "LEGAL-06",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-07",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "legal cleaned transition",
+      "category": "legal",
+      "target": "cleaned"
+    },
+    {
+      "id": "LEGAL-08",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "pre-existing generic semantics preserved",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-09",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "time without status rejected: authorization_tombstone_time_requires_status_change",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-10",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "decreasing status time rejected: authorization_tombstone_time_must_not_decrease",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-11",
+      "severity": "P2",
+      "config": "file-fk_on-rec_on",
+      "status": "PASS",
+      "detail": "no-op envelope update remains legal",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-01",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "active_blocked"
+    },
+    {
+      "id": "LEGAL-02",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-03",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_failed"
+    },
+    {
+      "id": "LEGAL-04",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-05",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "vendor_limited"
+    },
+    {
+      "id": "LEGAL-06",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-07",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "legal cleaned transition",
+      "category": "legal",
+      "target": "cleaned"
+    },
+    {
+      "id": "LEGAL-08",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "pre-existing generic semantics preserved",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-09",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "time without status rejected: authorization_tombstone_time_requires_status_change",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-10",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "decreasing status time rejected: authorization_tombstone_time_must_not_decrease",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-11",
+      "severity": "P2",
+      "config": "file-fk_on-rec_off",
+      "status": "PASS",
+      "detail": "no-op envelope update remains legal",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-01",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "active_blocked"
+    },
+    {
+      "id": "LEGAL-02",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-03",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_failed"
+    },
+    {
+      "id": "LEGAL-04",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-05",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "vendor_limited"
+    },
+    {
+      "id": "LEGAL-06",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-07",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "legal cleaned transition",
+      "category": "legal",
+      "target": "cleaned"
+    },
+    {
+      "id": "LEGAL-08",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "pre-existing generic semantics preserved",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-09",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "time without status rejected: authorization_tombstone_time_requires_status_change",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-10",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "decreasing status time rejected: authorization_tombstone_time_must_not_decrease",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-11",
+      "severity": "P2",
+      "config": "file-fk_off-rec_on",
+      "status": "PASS",
+      "detail": "no-op envelope update remains legal",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-01",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "active_blocked"
+    },
+    {
+      "id": "LEGAL-02",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-03",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_failed"
+    },
+    {
+      "id": "LEGAL-04",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-05",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "vendor_limited"
+    },
+    {
+      "id": "LEGAL-06",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleanup transition",
+      "category": "legal",
+      "target": "cleanup_pending"
+    },
+    {
+      "id": "LEGAL-07",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "legal cleaned transition",
+      "category": "legal",
+      "target": "cleaned"
+    },
+    {
+      "id": "LEGAL-08",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "pre-existing generic semantics preserved",
+      "category": "legal"
+    },
+    {
+      "id": "LEGAL-09",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "time without status rejected: authorization_tombstone_time_requires_status_change",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-10",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "decreasing status time rejected: authorization_tombstone_time_must_not_decrease",
+      "category": "time"
+    },
+    {
+      "id": "LEGAL-11",
+      "severity": "P2",
+      "config": "file-fk_off-rec_off",
+      "status": "PASS",
+      "detail": "no-op envelope update remains legal",
+      "category": "legal"
+    }
+  ]
+}

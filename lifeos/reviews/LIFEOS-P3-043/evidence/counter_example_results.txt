@@ -1,0 +1,80 @@
+P3-043 independent counter-example attacks (post P3-042 remediation)
+schema: candidate_schema.sql
+
+ENV            update_grantor_ref_active                      P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV            update_processor_active                        P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV            update_purpose_active                          P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV            update_location_active                         P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV            update_valid_from_active                       P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV            update_expires_mode_active                     P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV            update_policy_version_active                   P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV            update_expires_at_ms_active                    P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV-EDGE       at_to_indefinite_pair                          P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV-EDGE       indefinite_to_at_pair                          P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV-EDGE       expires_at_ms_value_swap                       P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV-EDGE       compound_all_eight_fields                      P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV-EDGE       multi_row_active_plus_granted                  P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV-EDGE       no_op_update_stays_legal                       P1     PASS   no effective mutation (no-op or constraint held state)
+ENV-EDGE       envelope_change_with_updated_at                P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV-STATE      envelope_change_while_granted                  P3     BYPASS ENVELOPE BYPASSED: processor changed from 'local2' to 'pre-activation-mutation' while active
+ENV-STATE      activation_with_envelope_mutation              P3     PASS   allowed (by design: envelope mutable pre-activation; same exposure as S-1, no additional fence required by P3-042 scope)
+ENV-STATE      retirement_package_with_envelope_mutation      P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+ENV-STATE      envelope_change_while_revoked                  P2     BYPASS ENVELOPE BYPASSED: processor changed from 'local' to 'history-rewrite' while active
+ENV-STATE      envelope_change_while_expired                  P2     BYPASS ENVELOPE BYPASSED: purpose changed from 'test' to 'history-rewrite' while active
+ENV-STATE      envelope_plus_backward_status                  P1     PASS   blocked: active_authorization_security_envelope_immutable (unexpected error kind)
+                                                                              sqlite_error=active_authorization_security_envelope_immutable (unexpected error kind)
+SQL            upsert_do_update_envelope                      P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+SQL            upsert_do_update_via_status                    P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+SQL            upsert_do_nothing_envelope                     P1     PASS   no effective mutation (no-op or constraint held state)
+SQL            insert_or_replace_granted_fk_on                P1     BYPASS ENVELOPE BYPASSED: processor changed from 'local' to 'evil-replace' while active
+SQL            insert_or_replace_active_fk_on                 P1     PASS   blocked: authorization_must_start_inactive
+                                                                              sqlite_error=authorization_must_start_inactive
+SQL            delete_active_parent_fk_on                     P1     PASS   blocked: FOREIGN KEY constraint failed
+                                                                              sqlite_error=FOREIGN KEY constraint failed
+SQL            update_from_envelope                           P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+SQL            update_via_subquery_predicate                  P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+SQL            fk_off_replace_rebuild_then_activate           P2     BYPASS KNOWN-LIMITATION FAMILY CONFIRMED: FK OFF + INSERT OR REPLACE(granted) + activate rebuilds active auth with envelope 'evil-rebuild', generation reset to 1, no audit record; requires PRAGMA foreign_keys=OFF (writer-level action)
+SQL            fk_off_delete_reinsert_rebuild                 P2     PASS   blocked: FOREIGN KEY constraint failed
+                                                                              sqlite_error=FOREIGN KEY constraint failed
+SQL            fk_off_replace_direct_active                   P1     PASS   blocked: authorization_must_start_inactive
+                                                                              sqlite_error=authorization_must_start_inactive
+R0048          prewrite_revoked_at_active                     P2     BYPASS ENVELOPE BYPASSED: revoked_at_ms changed from None to 1786550395000 while active
+R0048          prewrite_then_legal_retirement                 P2     BYPASS KNOWN LIMITATION CONFIRMED (R-0048): retirement succeeds and keeps the pre-written forged revoked_at_ms=1786550395000 instead of actual retirement time
+R0048          preset_evidence_forged_retirement              P2     BYPASS KNOWN LIMITATION CONFIRMED (R-0048 evidence-chain family): manually preset audit/outbox rows satisfy the retirement fence; evidence chain forgeable by direct table writes (same write access as the legal path)
+R0048          rewrite_created_at_active                      P2     BYPASS ENVELOPE BYPASSED: created_at_ms changed from 1786550400000 to 1786550300001 while active
+R0048          generation_bump_active                         P2     BYPASS ENVELOPE BYPASSED: generation changed from 1 to 5 while active
+R0048          generation_bump_with_envelope                  P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+R0048          staged_generation_climb_retire                 P2     BYPASS KNOWN LIMITATION CONFIRMED: gen can be staged upward while active (R-0048 generation-fence family); retirement fence satisfied by staged gen + preset evidence
+R0048          retirement_with_forged_revoked_at              P2     BYPASS KNOWN LIMITATION CONFIRMED: retirement statement may carry arbitrary revoked_at_ms value (time metadata unfenced, R-0048 family)
+R0048          combo_envelope_prewrite_retire                 P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+TRIG           recursive_triggers_envelope                    P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+TRIG           trigger_order_envelope_vs_retirement           P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+TRIG           reversed_set_order                             P1     PASS   blocked: active_authorization_security_envelope_immutable
+                                                                              sqlite_error=active_authorization_security_envelope_immutable
+TRIG           legal_retirement_nonregression                 P1     PASS   legal retirement path intact (gen+1, audit, outbox)
+TRIG           legal_granted_envelope_change                  P3     PASS   granted-state envelope change still legal (by design)
+
+SUMMARY total=46 pass=34 bypass=12 bypass_by_severity={"P1": 1, "P2": 10, "P3": 1}

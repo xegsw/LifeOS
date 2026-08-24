@@ -1,0 +1,100 @@
+[
+  {
+    "id": "empty-db",
+    "page_before": {
+      "exists": true,
+      "sha256": "e9c56cb42c3fe7dbc4e50b72cd76bd686a16d30880ba3c280bed66e2bc2ad89d"
+    },
+    "page_after": {
+      "exists": false,
+      "sha256": null
+    },
+    "db_before": {
+      "capture_count": 0,
+      "audit_count": 1,
+      "sha256": "ca34f175e9793b25d0853b897e08926a4988ca811fbfb52931788f9b82b9fde8"
+    },
+    "db_after": {
+      "capture_count": 0,
+      "audit_count": 1,
+      "sha256": "ca34f175e9793b25d0853b897e08926a4988ca811fbfb52931788f9b82b9fde8"
+    }
+  },
+  {
+    "id": "corrupt-db",
+    "page_before": {
+      "exists": true,
+      "sha256": "be8fe27c572f6869a73742ed62a76940485e7e1dfcaa14618ffb28f338fa625f"
+    },
+    "page_after": {
+      "exists": false,
+      "sha256": null
+    },
+    "db_before": {
+      "sha256": "1581d937c399764542b7915e5201744637fc63e67832038e466d11b7c4f23969",
+      "size": 42,
+      "state": "corrupt"
+    },
+    "db_after": {
+      "sha256": "1581d937c399764542b7915e5201744637fc63e67832038e466d11b7c4f23969",
+      "size": 42,
+      "state": "corrupt"
+    }
+  },
+  {
+    "id": "unreadable-db",
+    "page_before": {
+      "exists": true,
+      "sha256": "be8fe27c572f6869a73742ed62a76940485e7e1dfcaa14618ffb28f338fa625f"
+    },
+    "page_after": {
+      "exists": false,
+      "sha256": null
+    },
+    "db_sha256_before": "79fec798774d86f645e4976b66a1055242a7df8ce58f1889a3d77b3a8e5176f6",
+    "db_sha256_after": "79fec798774d86f645e4976b66a1055242a7df8ce58f1889a3d77b3a8e5176f6",
+    "mode_during_render": "0o0"
+  },
+  {
+    "id": "query-failure",
+    "page_before": {
+      "exists": true,
+      "sha256": "be8fe27c572f6869a73742ed62a76940485e7e1dfcaa14618ffb28f338fa625f"
+    },
+    "page_after": {
+      "exists": false,
+      "sha256": null
+    },
+    "db_before": {
+      "capture_count": 1,
+      "audit_count": 1,
+      "sha256": "fbb49e02caf3a7780509501d96d462d242e9aaaf846a09b8fc4866499be0a922"
+    },
+    "db_after": {
+      "capture_count": 1,
+      "audit_count": 1,
+      "sha256": "fbb49e02caf3a7780509501d96d462d242e9aaaf846a09b8fc4866499be0a922"
+    }
+  },
+  {
+    "id": "invalidation-failure",
+    "page_before": {
+      "exists": true,
+      "sha256": "be8fe27c572f6869a73742ed62a76940485e7e1dfcaa14618ffb28f338fa625f"
+    },
+    "page_after": {
+      "exists": true,
+      "sha256": "be8fe27c572f6869a73742ed62a76940485e7e1dfcaa14618ffb28f338fa625f"
+    },
+    "db_before": {
+      "capture_count": 0,
+      "audit_count": 1,
+      "sha256": "984f95b1e0a49c626e62495f0de593edaee7719029e6abbd4bca6081e923fe59"
+    },
+    "db_after": {
+      "capture_count": 0,
+      "audit_count": 1,
+      "sha256": "984f95b1e0a49c626e62495f0de593edaee7719029e6abbd4bca6081e923fe59"
+    }
+  }
+]

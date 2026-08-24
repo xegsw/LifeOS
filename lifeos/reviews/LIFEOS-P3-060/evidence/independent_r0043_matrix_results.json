@@ -1,0 +1,582 @@
+{
+  "task_id": "LIFEOS-P3-060",
+  "scope": "standalone synthetic SQLite R-0043 adjacency matrix",
+  "candidate_sql": "/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-031/migrations/001_candidate_schema.sql",
+  "matrix": [
+    {
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "cases": [
+        {
+          "id": "generation_downgrade",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        },
+        {
+          "id": "delete_reinsert",
+          "pass": true,
+          "detail": {
+            "delete": {
+              "rejected": true,
+              "error": "tombstone_delete_forbidden"
+            },
+            "reinsert": {
+              "rejected": true,
+              "error": "tombstone_reinsert_forbidden"
+            }
+          }
+        },
+        {
+          "id": "ordinary_to_authorization_rebind_with_forged_envelope",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_control_envelope_immutable"
+          }
+        },
+        {
+          "id": "forged_authorization_insert",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_requires_terminal_generation"
+          }
+        },
+        {
+          "id": "legal_monotonic_successor",
+          "pass": true,
+          "detail": {
+            "row": [
+              "artifact",
+              "a1",
+              6,
+              "cmd-6",
+              "retry",
+              1786550400002,
+              "accepted",
+              1786550400002
+            ]
+          }
+        },
+        {
+          "id": "savepoint_rollback_then_legal_write",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        }
+      ],
+      "pass": true,
+      "db_file": null
+    },
+    {
+      "storage": "memory",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "cases": [
+        {
+          "id": "generation_downgrade",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        },
+        {
+          "id": "delete_reinsert",
+          "pass": true,
+          "detail": {
+            "delete": {
+              "rejected": true,
+              "error": "tombstone_delete_forbidden"
+            },
+            "reinsert": {
+              "rejected": true,
+              "error": "tombstone_reinsert_forbidden"
+            }
+          }
+        },
+        {
+          "id": "ordinary_to_authorization_rebind_with_forged_envelope",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_control_envelope_immutable"
+          }
+        },
+        {
+          "id": "forged_authorization_insert",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_requires_terminal_generation"
+          }
+        },
+        {
+          "id": "legal_monotonic_successor",
+          "pass": true,
+          "detail": {
+            "row": [
+              "artifact",
+              "a1",
+              6,
+              "cmd-6",
+              "retry",
+              1786550400002,
+              "accepted",
+              1786550400002
+            ]
+          }
+        },
+        {
+          "id": "savepoint_rollback_then_legal_write",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        }
+      ],
+      "pass": true,
+      "db_file": null
+    },
+    {
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "cases": [
+        {
+          "id": "generation_downgrade",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        },
+        {
+          "id": "delete_reinsert",
+          "pass": true,
+          "detail": {
+            "delete": {
+              "rejected": true,
+              "error": "tombstone_delete_forbidden"
+            },
+            "reinsert": {
+              "rejected": true,
+              "error": "tombstone_reinsert_forbidden"
+            }
+          }
+        },
+        {
+          "id": "ordinary_to_authorization_rebind_with_forged_envelope",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_control_envelope_immutable"
+          }
+        },
+        {
+          "id": "forged_authorization_insert",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_requires_terminal_generation"
+          }
+        },
+        {
+          "id": "legal_monotonic_successor",
+          "pass": true,
+          "detail": {
+            "row": [
+              "artifact",
+              "a1",
+              6,
+              "cmd-6",
+              "retry",
+              1786550400002,
+              "accepted",
+              1786550400002
+            ]
+          }
+        },
+        {
+          "id": "savepoint_rollback_then_legal_write",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        }
+      ],
+      "pass": true,
+      "db_file": null
+    },
+    {
+      "storage": "memory",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "cases": [
+        {
+          "id": "generation_downgrade",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        },
+        {
+          "id": "delete_reinsert",
+          "pass": true,
+          "detail": {
+            "delete": {
+              "rejected": true,
+              "error": "tombstone_delete_forbidden"
+            },
+            "reinsert": {
+              "rejected": true,
+              "error": "tombstone_reinsert_forbidden"
+            }
+          }
+        },
+        {
+          "id": "ordinary_to_authorization_rebind_with_forged_envelope",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_control_envelope_immutable"
+          }
+        },
+        {
+          "id": "forged_authorization_insert",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_requires_terminal_generation"
+          }
+        },
+        {
+          "id": "legal_monotonic_successor",
+          "pass": true,
+          "detail": {
+            "row": [
+              "artifact",
+              "a1",
+              6,
+              "cmd-6",
+              "retry",
+              1786550400002,
+              "accepted",
+              1786550400002
+            ]
+          }
+        },
+        {
+          "id": "savepoint_rollback_then_legal_write",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        }
+      ],
+      "pass": true,
+      "db_file": null
+    },
+    {
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": false,
+      "cases": [
+        {
+          "id": "generation_downgrade",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        },
+        {
+          "id": "delete_reinsert",
+          "pass": true,
+          "detail": {
+            "delete": {
+              "rejected": true,
+              "error": "tombstone_delete_forbidden"
+            },
+            "reinsert": {
+              "rejected": true,
+              "error": "tombstone_reinsert_forbidden"
+            }
+          }
+        },
+        {
+          "id": "ordinary_to_authorization_rebind_with_forged_envelope",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_control_envelope_immutable"
+          }
+        },
+        {
+          "id": "forged_authorization_insert",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_requires_terminal_generation"
+          }
+        },
+        {
+          "id": "legal_monotonic_successor",
+          "pass": true,
+          "detail": {
+            "row": [
+              "artifact",
+              "a1",
+              6,
+              "cmd-6",
+              "retry",
+              1786550400002,
+              "accepted",
+              1786550400002
+            ]
+          }
+        },
+        {
+          "id": "savepoint_rollback_then_legal_write",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        }
+      ],
+      "pass": true,
+      "db_file": "/var/folders/9m/92lnss312hz8kf__cs_9stcc0000gn/T/lifeos-p3-060-ttv4ids5.db"
+    },
+    {
+      "storage": "file",
+      "foreign_keys": false,
+      "recursive_triggers": true,
+      "cases": [
+        {
+          "id": "generation_downgrade",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        },
+        {
+          "id": "delete_reinsert",
+          "pass": true,
+          "detail": {
+            "delete": {
+              "rejected": true,
+              "error": "tombstone_delete_forbidden"
+            },
+            "reinsert": {
+              "rejected": true,
+              "error": "tombstone_reinsert_forbidden"
+            }
+          }
+        },
+        {
+          "id": "ordinary_to_authorization_rebind_with_forged_envelope",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_control_envelope_immutable"
+          }
+        },
+        {
+          "id": "forged_authorization_insert",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_requires_terminal_generation"
+          }
+        },
+        {
+          "id": "legal_monotonic_successor",
+          "pass": true,
+          "detail": {
+            "row": [
+              "artifact",
+              "a1",
+              6,
+              "cmd-6",
+              "retry",
+              1786550400002,
+              "accepted",
+              1786550400002
+            ]
+          }
+        },
+        {
+          "id": "savepoint_rollback_then_legal_write",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        }
+      ],
+      "pass": true,
+      "db_file": "/var/folders/9m/92lnss312hz8kf__cs_9stcc0000gn/T/lifeos-p3-060-4t4fjfsw.db"
+    },
+    {
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": false,
+      "cases": [
+        {
+          "id": "generation_downgrade",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        },
+        {
+          "id": "delete_reinsert",
+          "pass": true,
+          "detail": {
+            "delete": {
+              "rejected": true,
+              "error": "tombstone_delete_forbidden"
+            },
+            "reinsert": {
+              "rejected": true,
+              "error": "tombstone_reinsert_forbidden"
+            }
+          }
+        },
+        {
+          "id": "ordinary_to_authorization_rebind_with_forged_envelope",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_control_envelope_immutable"
+          }
+        },
+        {
+          "id": "forged_authorization_insert",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_requires_terminal_generation"
+          }
+        },
+        {
+          "id": "legal_monotonic_successor",
+          "pass": true,
+          "detail": {
+            "row": [
+              "artifact",
+              "a1",
+              6,
+              "cmd-6",
+              "retry",
+              1786550400002,
+              "accepted",
+              1786550400002
+            ]
+          }
+        },
+        {
+          "id": "savepoint_rollback_then_legal_write",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        }
+      ],
+      "pass": true,
+      "db_file": "/var/folders/9m/92lnss312hz8kf__cs_9stcc0000gn/T/lifeos-p3-060-njj0kqzx.db"
+    },
+    {
+      "storage": "file",
+      "foreign_keys": true,
+      "recursive_triggers": true,
+      "cases": [
+        {
+          "id": "generation_downgrade",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        },
+        {
+          "id": "delete_reinsert",
+          "pass": true,
+          "detail": {
+            "delete": {
+              "rejected": true,
+              "error": "tombstone_delete_forbidden"
+            },
+            "reinsert": {
+              "rejected": true,
+              "error": "tombstone_reinsert_forbidden"
+            }
+          }
+        },
+        {
+          "id": "ordinary_to_authorization_rebind_with_forged_envelope",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_control_envelope_immutable"
+          }
+        },
+        {
+          "id": "forged_authorization_insert",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "authorization_tombstone_requires_terminal_generation"
+          }
+        },
+        {
+          "id": "legal_monotonic_successor",
+          "pass": true,
+          "detail": {
+            "row": [
+              "artifact",
+              "a1",
+              6,
+              "cmd-6",
+              "retry",
+              1786550400002,
+              "accepted",
+              1786550400002
+            ]
+          }
+        },
+        {
+          "id": "savepoint_rollback_then_legal_write",
+          "pass": true,
+          "detail": {
+            "rejected": true,
+            "error": "tombstone_generation_must_not_decrease"
+          }
+        }
+      ],
+      "pass": true,
+      "db_file": "/var/folders/9m/92lnss312hz8kf__cs_9stcc0000gn/T/lifeos-p3-060-4n1f35dg.db"
+    }
+  ],
+  "summary": {
+    "PASS": 48,
+    "FAIL": 0,
+    "Unknown": 0,
+    "Not Implemented": 0,
+    "total": 48
+  }
+}

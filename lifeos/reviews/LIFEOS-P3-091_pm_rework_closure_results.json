@@ -1,0 +1,42 @@
+{
+  "pass": 2,
+  "fail": 0,
+  "results": [
+    {
+      "id": "D-REOPEN",
+      "pass": true,
+      "verified": [
+        {
+          "file": "01-confirmed-before-close.jpeg",
+          "expectedHash": "c19cbb26e0477f11cf7b03226915272fa4d864baccf2a85b34b3d64af78c3559",
+          "actualHash": "c19cbb26e0477f11cf7b03226915272fa4d864baccf2a85b34b3d64af78c3559",
+          "pass": true
+        },
+        {
+          "file": "02-reopened-cleared.jpeg",
+          "expectedHash": "ad7bb860324db8f30093130e2b62631400856e39d7a7d4e33f7da68d44bc5be6",
+          "actualHash": "ad7bb860324db8f30093130e2b62631400856e39d7a7d4e33f7da68d44bc5be6",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "D-TAB-ENTER",
+      "pass": true,
+      "verified": [
+        {
+          "file": "03-tab-skip-link-focus.jpeg",
+          "expectedHash": "848f2b056488b74e65c05d22f676ccbd591875b52214379e63ac9b1074761282",
+          "actualHash": "848f2b056488b74e65c05d22f676ccbd591875b52214379e63ac9b1074761282",
+          "pass": true
+        },
+        {
+          "file": "04-enter-skip-link.jpeg",
+          "expectedHash": "8194ae6a9b6de108d14f3f95a651b79d8b8380bbf6a95eaf774f9255ac01b47c",
+          "actualHash": "8194ae6a9b6de108d14f3f95a651b79d8b8380bbf6a95eaf774f9255ac01b47c",
+          "pass": true
+        }
+      ]
+    }
+  ]
+}

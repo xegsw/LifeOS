@@ -1,0 +1,34 @@
+{
+  "id": "P3108R1-D11",
+  "observable_result": "Both controls remain disabled in raw AX state and no data mutation is observable.",
+  "operation": "Click attachment and voice controls in actual unique app instances.",
+  "raw_actual_app_state_and_visual_evidence": [
+    {
+      "exists": true,
+      "path": "dynamic/D11-disabled-attachment.ax.txt",
+      "sha256": "1e73a0e4583648b52571426cb06c0dba800aefe859bc9f14e1471a2cdb87ccb7"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/D11-disabled-attachment.jpeg",
+      "sha256": "835b775bc5ede20e1da59644fa66fc723f4842bcd96d519ccd8e4b3c3d3abf15"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/U18-disabled-voice.ax.txt",
+      "sha256": "35e03560badfd4f0435644c9ffbfcb179f92174135d9013e612d48ef649f284a"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/U18-disabled-voice.jpeg",
+      "sha256": "50f4d6600860ad7847db9cf14fd67a37f6dc8e5117769e108a8dd125d1e5cefa"
+    },
+    {
+      "exists": true,
+      "path": "db-reopen-P3108R1-U12-denied-after.json",
+      "sha256": "f66f6952a701ce25ffa596c638f0571174562ff134be9510b9374fd12db24524"
+    }
+  ],
+  "status": "PASS",
+  "time": "2026-08-24T03:13:25.560457+00:00"
+}

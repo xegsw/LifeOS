@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LifeOS｜今日（本地 UI 前置验证）</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">LifeOS · 最小本地 UI 前置验证</p>
+      <h1>今日</h1>
+      <p class="boundary">仅当前浏览器页面会话；刷新或关闭后手动内容会丢弃。AI 未启用。</p>
+      <nav aria-label="本地状态切换" class="state-switcher">
+        <button type="button" data-state="recovery" aria-pressed="true">默认恢复态</button>
+        <button type="button" data-state="no-suggestion" aria-pressed="false">暂无可靠建议</button>
+        <button type="button" data-state="restricted" aria-pressed="false">权限受限 · 离线</button>
+      </nav>
+    </header>
+
+    <section id="recovery" class="page-state" aria-labelledby="recovery-title">
+      <p class="label">当前 Project</p>
+      <div class="project-row"><h2 id="recovery-title">独立产品发布页改版</h2><span>沿用你上次确认</span></div>
+      <article class="hero"><p class="label">从这里继续</p><h3>完成首屏文案的最后一轮核对</h3><p>你的记录 · 原文：上次停在「价值主张与首屏说明需对齐」。</p><p class="subtle">你已确认 · 决定：今天先完成首屏核对，再决定是否发布。</p></article>
+      <section class="card"><h3>今日安排</h3><p class="subtle">只含你已确认的行动与承诺。</p><p><strong>你已确认 · 行动</strong>：核对首屏文案</p></section>
+      <section class="card ai-closed"><h3>AI</h3><p><strong>AI 未启用</strong>：此本地验证不生成、推断或暗示建议。</p></section>
+      <section class="card capture"><h3>快速捕获</h3><p>输入会作为“你的记录／原文”显示；只有显式确认且文本非空时才显示本次会话已保存。</p>
+        <label for="capture-text">你的记录／原文</label>
+        <textarea id="capture-text" maxlength="160" placeholder="例如：发布页还需检查移动端标题"></textarea>
+        <div class="actions"><button type="button" id="confirm-save">确认保留在本次会话</button><button type="button" id="simulate-failure" class="secondary">模拟保存失败</button></div>
+        <p id="capture-status" role="status" aria-live="polite">尚未确认保存。</p>
+        <article id="saved-record" hidden><p class="label">你的记录／原文</p><p id="saved-text"></p></article>
+      </section>
+    </section>
+
+    <section id="no-suggestion" class="page-state" hidden aria-labelledby="no-suggestion-title">
+      <p class="label">Project 状态</p><h2 id="no-suggestion-title">尚未选择 Project</h2>
+      <article class="hero empty"><h3>暂无可靠建议</h3><p>缺口：尚未确定当前 Project，也没有足够的当前停点证据。</p><p>不会据最近痕迹生成恢复或建议。</p></article>
+      <section class="card"><h3>继续路径</h3><div class="actions"><button type="button" id="choose-project">选择 Project</button><button type="button" id="record-stop" class="secondary">先记录当前停点</button></div><p id="no-suggestion-status" role="status">请选择一条路径；本页不会虚构重点或建议。</p></section>
+      <section class="card ai-closed"><h3>AI</h3><p><strong>AI 未启用</strong>：没有建议可供确认。</p></section>
+    </section>
+
+    <section id="restricted" class="page-state" hidden aria-labelledby="restricted-title">
+      <p class="label">当前 Project</p><h2 id="restricted-title">独立产品发布页改版</h2>
+      <article class="hero"><h3>权限受限 · 离线</h3><p>本地会话保存：<strong>仅当前页面会话</strong>；刷新或关闭后不会遗留手动内容。</p><p>离线状态：网络未使用；本页不联网、不同步。</p><p>来源／处理边界：外部来源与处理均受限，故不读取来源、不处理内容，也不生成建议。</p></article>
+      <section class="card"><h3>今日安排</h3><p><strong>你已确认 · 行动</strong>：核对首屏文案（仍可见；不是 AI 已确认）。</p></section>
+      <section class="card ai-closed"><h3>AI</h3><p><strong>AI 未启用</strong>：权限受限与离线时不生成建议。</p></section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

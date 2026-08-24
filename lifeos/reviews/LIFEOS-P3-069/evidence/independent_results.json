@@ -1,0 +1,94 @@
+{
+  "candidate_copy": "/private/tmp/lifeos-p3069-independent/candidate-bunmd7xm",
+  "cases": [
+    {
+      "detail": "{'status': 'failed', 'saved': False, 'reason': 'injected_before_commit', 'record_id': 'fault', 'boundaries': {'network': 'disabled', 'tauri_ipc': 'not_used', 'vault': 'not_used', 'real_paths': 'not_used', 'export': 'not_used', 'cloud': 'not_used', 'sync': 'not_used', 'multi_device': 'not_used', 'l3': 'not_used', 'external_user': 'not_used', 'external_action': 'none'}}",
+      "name": "capture_fault_never_claims_saved",
+      "status": "PASS"
+    },
+    {
+      "detail": "{'status': 'failed', 'reason': 'invalid_synthetic_input', 'saved': False, 'boundaries': {'network': 'disabled', 'tauri_ipc': 'not_used', 'vault': 'not_used', 'real_paths': 'not_used', 'export': 'not_used', 'cloud': 'not_used', 'sync': 'not_used', 'multi_device': 'not_used', 'l3': 'not_used', 'external_user': 'not_used', 'external_action': 'none'}}",
+      "name": "capture_invalid_never_claims_saved",
+      "status": "PASS"
+    },
+    {
+      "detail": "{'status': 'saved', 'saved': True, 'record_id': 'saved', 'version': 1, 'boundaries': {'network': 'disabled', 'tauri_ipc': 'not_used', 'vault': 'not_used', 'real_paths': 'not_used', 'export': 'not_used', 'cloud': 'not_used', 'sync': 'not_used', 'multi_device': 'not_used', 'l3': 'not_used', 'external_user': 'not_used', 'external_action': 'none'}}",
+      "name": "saved_only_after_committed_reopen",
+      "status": "PASS"
+    },
+    {
+      "detail": "ready preview",
+      "name": "cli_ready_preview_before_confirmation",
+      "status": "PASS"
+    },
+    {
+      "detail": "first recovery",
+      "name": "cli_first_confirm_is_non_idempotent",
+      "status": "PASS"
+    },
+    {
+      "detail": "second receipt",
+      "name": "cli_second_confirm_is_idempotent",
+      "status": "PASS"
+    },
+    {
+      "detail": "audit sequence",
+      "name": "cli_audit_order",
+      "status": "PASS"
+    },
+    {
+      "detail": "['capture_pending', 'recovery_not_confirmed']",
+      "name": "not_confirmed_audit_durable_across_restart",
+      "status": "PASS"
+    },
+    {
+      "detail": "['capture_pending', 'recovery_not_confirmed', 'record_revoked', 'recovery_blocked']",
+      "name": "blocked_audit_durable_and_ordered_across_restart",
+      "status": "PASS"
+    },
+    {
+      "detail": "[('source', 'blocked', 'source_mismatch', 0), ('version', 'blocked', 'version_mismatch', 0), ('revoked', 'blocked', 'revoked_or_tombstoned', 0), ('tombstone', 'blocked', 'revoked_or_tombstoned', 0)]",
+      "name": "source_version_revocation_tombstone_fail_closed",
+      "status": "PASS"
+    },
+    {
+      "detail": "[]",
+      "name": "external_capabilities_staticly_closed",
+      "status": "PASS"
+    },
+    {
+      "detail": "task-local run-id only",
+      "name": "cli_accepts_no_database_path",
+      "status": "PASS"
+    },
+    {
+      "detail": "checked=7",
+      "name": "p3_067_current_evidence_hashes",
+      "status": "PASS"
+    },
+    {
+      "detail": "historical runner/results hashes unchanged",
+      "name": "p3_068_historical_evidence_preserved",
+      "status": "PASS"
+    },
+    {
+      "detail": "current candidate differs from P3-068 pre-rework source hash",
+      "name": "p3_068_historic_hash_not_reused_as_current",
+      "status": "PASS"
+    }
+  ],
+  "evidence": {
+    "current_source_sha256": "5329d725b271b340b403edfeffc2d37605c7029a9b5ae365c40031455b45f389",
+    "p3_067_manifest_entries": 7,
+    "p3_068_historic_source_sha256": "b0a15c08ab01f9eeda6cc41f2466dc5da68b3c1fa55f66e7d3f4b3a5465e78bc"
+  },
+  "fail": 0,
+  "not_implemented": 0,
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "pass": 15,
+  "scope": "fresh temporary copy; synthetic SQLite only",
+  "task": "LIFEOS-P3-069",
+  "unknown": 0
+}

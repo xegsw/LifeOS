@@ -1,0 +1,60 @@
+{
+  "task_id": "LIFEOS-P3-096",
+  "abf_id": "ABF-P3-096-v2",
+  "conclusion": "CLOSED — ACCEPTANCE NOT MET",
+  "formal_rework_count": 2,
+  "formal_rework_limit": 2,
+  "counts": {
+    "P0": 0,
+    "P1": 1,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 0
+  },
+  "submitted_rework_evidence": {
+    "manifest_entries_verified": 17,
+    "manifest_mismatches": 0,
+    "initial_engineering_evidence_unchanged": true,
+    "initial_pm_evidence_unchanged": true,
+    "historical_assets_verified": 253,
+    "historical_mismatches": 0,
+    "matrix_rows_passed": 20,
+    "matrix_rows_failed": 0,
+    "unique_executed_test_ids": 30,
+    "unique_fixture_ids": 30,
+    "unit_tests": 53,
+    "unit_exit": 0,
+    "runner_exit": 0,
+    "temporary_fixture_removed": true
+  },
+  "initial_pm_counterexample_rerun": {
+    "case_id": "PM-P3-096-CE-01",
+    "result": "PASS",
+    "runner_exit": 0,
+    "failure_returned": false
+  },
+  "new_pm_counterexample": {
+    "case_id": "PM-P3-096-R1-CE-02",
+    "mapped_to": ["L1-3", "L1-4", "ABF-I-01", "ABF-I-02"],
+    "result": "FAIL",
+    "runner_exit": 1,
+    "severity": "P1",
+    "failure_returned": true,
+    "protected_state_unchanged": false,
+    "sentinel_unchanged": true
+  },
+  "governance": {
+    "abf_changed": false,
+    "rework_limit_reached_while_not_passed": true,
+    "same_task_may_continue": false,
+    "successor_task_required_to_continue": true,
+    "successor_task_created": false
+  },
+  "local_model_precheck": {
+    "used": false,
+    "reason": "High-risk final judgment for real-local data lifecycle, deletion boundary, failure atomicity, audit trust, and Evidence honesty."
+  },
+  "assets_frozen": false,
+  "r_0051": "P0 / Open",
+  "stage_4_allowed": false
+}

@@ -1,0 +1,24 @@
+{
+  "task": "LIFEOS-P3-094",
+  "attempt": "final-invariant-closure-attempt-9",
+  "pm_conclusion": "Accepted / PM Adjusted to Rework / Awaiting User Confirmation",
+  "submitted_runner": {
+    "pass": 107,
+    "fail": 0,
+    "unit_pass": 41,
+    "historical_regressions": {"attempt_6": 19, "attempt_7": 13, "attempt_8": 18}
+  },
+  "pm_counterexamples": {"pass": 0, "fail": 6, "root_cause_count": 3},
+  "severity": {"p0": 0, "p1": 3, "p2": 0, "unknown": 0, "not_implemented": 1},
+  "findings": [
+    "Post-commit staging cleanup failure returns CaptureError after DB state has already committed or published.",
+    "Audit validation accepts forged future saved timestamps, repeat events before save, and false clear counts.",
+    "The runner bulk-maps a whole unit-suite pass to mandatory matrix rows that were not independently executed."
+  ],
+  "fixed_non_sensitive_fixtures_only": true,
+  "network_used": false,
+  "real_user_data_used": false,
+  "temporary_fixture_residue_count": 0,
+  "engineering_evidence_modified": false,
+  "local_model_precheck": {"used": false, "reason": "High-risk final judgment for local DB deletion, atomicity, provenance, audit semantics, and evidence integrity."}
+}

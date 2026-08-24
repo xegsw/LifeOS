@@ -1,0 +1,453 @@
+{
+  "all_passed": true,
+  "results": [
+    {
+      "case": "P2-2/ordinary_delete/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-2/insert_or_replace_lower_gen/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-2/insert_or_replace_same_gen/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-2/insert_or_replace_higher_gen/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-2/delete_insert_commit/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-2/delete_insert_rollback/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-3/direct_insert_active_blocked/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-3/direct_insert_cleaned/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-3/direct_insert_cleanup_failed/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-3/direct_insert_vendor_limited/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-3/accepted_start/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-3/legal_transitions/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-3/illegal_skip_transition/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-3/generation_decrease/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-4/active_scope_delete/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-4/active_action_delete/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-4/active_policy_delete/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "P2-4/inactive_scope_delete_allowed/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJ/insert_new_scope_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJ/insert_new_action_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJ/update_scope_effect_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJ/update_scope_target_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJ/update_policy_training_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJ/update_policy_sensitivity_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJ/update_policy_external_send_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJ/update_action_value_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJ/insert_or_replace_scope_effect/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJ/insert_or_replace_policy/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJ/scope_rebind_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-CHILD/scope_insert_deny/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-CHILD/scope_update_source/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-CHILD/scope_update_artifact/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-CHILD/action_replace/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-CHILD/policy_direct_insert/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-POLICY/update_retention/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-POLICY/update_recipients/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-POLICY/update_regions/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-POLICY/update_disclosure/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-POLICY/update_license/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-POLICY/update_quantity/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-POLICY/update_frequency/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-REBIND/authorization_scope_inactive_to_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-REBIND/authorization_scope_active_to_inactive/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-REBIND/authorization_scope_active_to_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-REBIND/authorization_action_inactive_to_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-REBIND/authorization_action_active_to_inactive/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-REBIND/authorization_action_active_to_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-REBIND/authorization_policy_inactive_to_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-REBIND/authorization_policy_active_to_inactive/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-REBIND/authorization_policy_active_to_active/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-STATE/active_to_proposed/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-STATE/active_to_granted/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-STATE/retire_without_generation/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-STATE/retire_without_audit/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-STATE/retire_without_outbox/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-STATE/revoked_mutate_then_reactivate/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-LEGAL/revoked_child_cleanup/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-STATE/expired_mutate_then_reactivate/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-LEGAL/expired_child_cleanup/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-STATE/superseded_mutate_then_reactivate/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-LEGAL/superseded_child_cleanup/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-STATE/version_identity_update/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-LEGAL/new_version_supersede_activate/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "EXT-STATE/new_version_without_supersedes/file",
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    }
+  ]
+}

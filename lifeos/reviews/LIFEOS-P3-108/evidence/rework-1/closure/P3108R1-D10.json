@@ -1,0 +1,24 @@
+{
+  "id": "P3108R1-D10",
+  "observable_result": "The new actual app instance displays the persisted backend record and explicit backend restoration disclosure.",
+  "operation": "Click the native close control, confirm the unique app is absent, then open the same unique bundle using the same reopen fixture.",
+  "raw_actual_app_state_and_visual_evidence": [
+    {
+      "exists": true,
+      "path": "dynamic/U13-close-reopen-restored.ax.txt",
+      "sha256": "d74930edf2f80363f8d2324d2df8eb33a2b1cbfe4f0426853cfb933a29307bb3"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/U13-close-reopen-restored.jpeg",
+      "sha256": "172549bffda6a6f9084f3efc6f3862664d34ca45b47c498d830f41b2f92404b1"
+    },
+    {
+      "exists": true,
+      "path": "db-reopen-P3108R1-U12-denied-after.json",
+      "sha256": "f66f6952a701ce25ffa596c638f0571174562ff134be9510b9374fd12db24524"
+    }
+  ],
+  "status": "PASS",
+  "time": "2026-08-24T03:13:25.559811+00:00"
+}

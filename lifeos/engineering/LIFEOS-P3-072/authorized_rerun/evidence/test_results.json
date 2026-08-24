@@ -1,0 +1,42 @@
+{
+  "task": "LIFEOS-P3-072",
+  "run": "authorized_rerun",
+  "test_count": 8,
+  "passed": 8,
+  "failed": 0,
+  "cases": [
+    {
+      "id": "test_confirmation_and_preview_token_must_be_exact",
+      "result": "PASS"
+    },
+    {
+      "id": "test_escape_and_existing_destination_are_rejected_without_overwrite",
+      "result": "PASS"
+    },
+    {
+      "id": "test_exact_confirmation_creates_one_new_temp_file_with_matching_receipt",
+      "result": "PASS"
+    },
+    {
+      "id": "test_preview_is_default_no_write_with_required_disclosure",
+      "result": "PASS"
+    },
+    {
+      "id": "test_source_version_unknown_conflict_revocation_and_tombstone_fail_closed",
+      "result": "PASS"
+    },
+    {
+      "id": "test_state_changed_after_preview_cannot_be_exported",
+      "result": "PASS"
+    },
+    {
+      "id": "test_static_capability_boundary_is_closed",
+      "result": "PASS"
+    },
+    {
+      "id": "test_write_failure_and_collision_leave_no_visible_output_and_are_audited",
+      "result": "PASS"
+    }
+  ],
+  "boundary": "synthetic records + newly created system temporary sandbox only"
+}

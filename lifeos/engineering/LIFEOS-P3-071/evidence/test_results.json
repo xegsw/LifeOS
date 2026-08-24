@@ -1,0 +1,93 @@
+{
+  "task": "LIFEOS-P3-071",
+  "runner": "independent_runner.py",
+  "subject": "LIFEOS-P3-070",
+  "subject_tests_imported_called_or_copied": false,
+  "temporary_subject_copy_only": true,
+  "test_count": 13,
+  "passed": 13,
+  "failed": 0,
+  "cases": [
+    {
+      "id": "IR-01-default-plan-does-not-execute",
+      "result": "PASS",
+      "detail": "preview remains a plan"
+    },
+    {
+      "id": "IR-02-required-disclosure-visible",
+      "result": "PASS",
+      "detail": "all required plan semantics are visible"
+    },
+    {
+      "id": "IR-03-only-confirm-produces-local-receipt",
+      "result": "PASS",
+      "detail": "confirmation only returns local receipt"
+    },
+    {
+      "id": "IR-04-missing-confirm-fails-closed-and-audits",
+      "result": "PASS",
+      "detail": "case-sensitive confirmation is required"
+    },
+    {
+      "id": "IR-05-source-mismatch-fails-closed-and-audits",
+      "result": "PASS",
+      "detail": "source mismatch is blocked"
+    },
+    {
+      "id": "IR-06-version-mismatch-fails-closed-and-audits",
+      "result": "PASS",
+      "detail": "identity/version mismatch is blocked"
+    },
+    {
+      "id": "IR-07-conflict-fails-closed-and-audits",
+      "result": "PASS",
+      "detail": "conflict is blocked"
+    },
+    {
+      "id": "IR-08-revocation-fails-closed-and-audits",
+      "result": "PASS",
+      "detail": "revoked record is blocked"
+    },
+    {
+      "id": "IR-09-tombstone-fails-closed-and-audits",
+      "result": "PASS",
+      "detail": "tombstoned record is blocked"
+    },
+    {
+      "id": "IR-10-unknown-fails-closed-and-audits",
+      "result": "PASS",
+      "detail": "unknown record is blocked"
+    },
+    {
+      "id": "IR-11-invalid-input-fails-closed-and-audits",
+      "result": "PASS",
+      "detail": "untyped input is blocked"
+    },
+    {
+      "id": "IR-12-all-boundaries-closed",
+      "result": "PASS",
+      "detail": "all prohibited capabilities remain closed"
+    },
+    {
+      "id": "IR-13-static-source-has-no-external-capability-import",
+      "result": "PASS",
+      "detail": "AST import scan and file-write scan find no external capability"
+    }
+  ],
+  "subject_hashes_before": {
+    "lifeos/engineering/LIFEOS-P3-070/src/export_plan.py": "da761e412fb174cbb170ee87695995a27f7cd12aed7ceaa47db9adf44a1bd828",
+    "lifeos/engineering/LIFEOS-P3-070/evidence/MANIFEST.md": "2822eac34b5f1babf4bd6d9c405a82146afc381c20d921dda129d32a5f535ce9",
+    "lifeos/engineering/LIFEOS-P3-070/evidence/test_results.json": "61c98d3d28c679a7ebb9922cdc0806fab218c7b73a19ee73a6096a93a5072d3d",
+    "lifeos/engineering/LIFEOS-P3-070/evidence/plan_snapshot.json": "6bf556e17a05a4fee301ee75e30a21c4f393b7fd01144198a44f8a83e0d99c83",
+    "lifeos/engineering/LIFEOS-P3-070/evidence/test_run.log": "db6336dc01f6f9b3b771b8ddffc826ab800726ef49987c6768b9e7faaec3550f"
+  },
+  "subject_hashes_after": {
+    "lifeos/engineering/LIFEOS-P3-070/src/export_plan.py": "da761e412fb174cbb170ee87695995a27f7cd12aed7ceaa47db9adf44a1bd828",
+    "lifeos/engineering/LIFEOS-P3-070/evidence/MANIFEST.md": "2822eac34b5f1babf4bd6d9c405a82146afc381c20d921dda129d32a5f535ce9",
+    "lifeos/engineering/LIFEOS-P3-070/evidence/test_results.json": "61c98d3d28c679a7ebb9922cdc0806fab218c7b73a19ee73a6096a93a5072d3d",
+    "lifeos/engineering/LIFEOS-P3-070/evidence/plan_snapshot.json": "6bf556e17a05a4fee301ee75e30a21c4f393b7fd01144198a44f8a83e0d99c83",
+    "lifeos/engineering/LIFEOS-P3-070/evidence/test_run.log": "db6336dc01f6f9b3b771b8ddffc826ab800726ef49987c6768b9e7faaec3550f"
+  },
+  "subject_hashes_unchanged": true,
+  "external_action": "none"
+}

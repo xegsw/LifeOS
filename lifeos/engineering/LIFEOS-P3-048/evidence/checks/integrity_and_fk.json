@@ -1,0 +1,549 @@
+{
+  "all_passed": true,
+  "results": [
+    {
+      "case": "PM-CE-06/original/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "PM-CE-06/original/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "PM-CE-06/original/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "PM-CE-06/original/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/direction/generic_to_authorization/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/direction/authorization_to_generic/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/direction/authorization_a_to_b/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/direction/generic_to_authorization/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/direction/authorization_to_generic/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/direction/authorization_a_to_b/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/direction/generic_to_authorization/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/direction/authorization_to_generic/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/direction/authorization_a_to_b/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/direction/generic_to_authorization/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/direction/authorization_to_generic/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/direction/authorization_a_to_b/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/accepted/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/active_blocked/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/cleanup_pending/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/cleanup_failed/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/vendor_limited/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/cleaned/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/accepted/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/active_blocked/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/cleanup_pending/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/cleanup_failed/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/vendor_limited/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/cleaned/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/accepted/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/active_blocked/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/cleanup_pending/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/cleanup_failed/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/vendor_limited/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/cleaned/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/accepted/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/active_blocked/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/cleanup_pending/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/cleanup_failed/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/vendor_limited/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/fields/cleaned/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/insert_or_replace/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/conflict_insert/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/delete_reinsert/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/update_or_replace/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/upsert_update/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/insert_or_replace/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/conflict_insert/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/delete_reinsert/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/update_or_replace/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/upsert_update/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/insert_or_replace/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/conflict_insert/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/delete_reinsert/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/update_or_replace/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/upsert_update/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/insert_or_replace/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/conflict_insert/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/delete_reinsert/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/update_or_replace/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/replace/upsert_update/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/multirow/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/multirow/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/multirow/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "ADJACENT/multirow/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "LEGAL/cleanup/file-fk_on-rec_on",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "LEGAL/cleanup/file-fk_on-rec_off",
+      "foreign_keys_enabled": true,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "LEGAL/cleanup/file-fk_off-rec_on",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    },
+    {
+      "case": "LEGAL/cleanup/file-fk_off-rec_off",
+      "foreign_keys_enabled": false,
+      "integrity_check": "ok",
+      "quick_check": "ok",
+      "foreign_key_check": [],
+      "passed": true
+    }
+  ]
+}

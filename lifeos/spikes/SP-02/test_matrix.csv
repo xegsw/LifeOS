@@ -1,0 +1,25 @@
+test_id,priority,scenario,result
+T01,P0,Initial synthetic Vault scan,PASS
+T02,P0,Incremental add/modify/delete,PASS
+T03,P0,Missed watcher event reconciliation,PASS
+T04,P0,Offline add/modify/delete,PASS
+T05,P0,Same-directory rename,PASS
+T06,P0,Cross-directory move,PASS
+T07,P0,Copy then delete candidate,PASS
+T08,P0,Same-content distinct files,PASS
+T09,P0,Concurrent modify/delete,PASS
+T10,P0,Normal YAML frontmatter,PASS
+T11,P0,Malformed/duplicate YAML,PASS
+T12,P0,Tags/headings/block reference,PASS
+T13,P0,Markdown/wikilink/embed/attachment,PASS
+T14,P0,Broken links preserved as pointers,PASS
+T15,P0,Non-UTF8 explicit failure,PASS
+T16,P0,Excluded and withdrawn roots zero access,PASS
+T17,P0,Traversal/absolute/symlink denied,PASS
+T18,P0,.obsidian and hidden roots ignored,PASS
+T19,P0,Temporarily unreachable,PASS
+T20,P0,Recovery reconciliation,PASS
+T21,P0,Disconnect stops watcher/read,PASS
+T22,P0,Source pointers and gap,PASS
+T23,P0,Read-only tree/hash/metadata,PASS
+T24,P0,Log/Audit privacy scan,PASS

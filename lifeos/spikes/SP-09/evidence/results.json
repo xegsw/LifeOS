@@ -1,0 +1,805 @@
+{
+  "run_at_local": "2026-08-09 12:50:09 +0800",
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "processor": "Apple M5",
+    "cpu_count": 10,
+    "memory_bytes": 25769803776,
+    "disk_total_bytes": 994610155520,
+    "disk_free_bytes_at_start": 895874490368,
+    "python": "3.9.6",
+    "sqlite": "3.51.0",
+    "fts5": true,
+    "postgresql": "not tested: docker, psql and local PostgreSQL service unavailable",
+    "data_policy": "deterministic synthetic identifiers/text only; no real paths, Vaults, prompts, outputs, vectors or user data"
+  },
+  "tiers": [
+    {
+      "tier": "u10000",
+      "units": 10000,
+      "chunks": 30000,
+      "seed": 20260809,
+      "projects": 16,
+      "sources": 64,
+      "counts_before_mutation": {
+        "project": 16,
+        "source": 64,
+        "content_unit": 10000,
+        "chunk": 30000,
+        "link": 2000,
+        "derivation": 1428,
+        "feedback": 909,
+        "audit_entry": 500,
+        "tombstone": 100
+      },
+      "phase": {
+        "generate_import": {
+          "wall_s": 0.094,
+          "cpu_s": 0.087,
+          "inner_import_s": 0.094,
+          "units_per_s": 106383.0
+        },
+        "fts_initial_build": {
+          "wall_s": 0.021,
+          "cpu_s": 0.02,
+          "chunks_per_s": 1428571.4
+        },
+        "wal_checkpoint": {
+          "wall_s": 0.002,
+          "result": [
+            0,
+            0,
+            0
+          ]
+        },
+        "integrity_check": {
+          "wall_s": 0.033,
+          "result": "ok"
+        }
+      },
+      "queries": {
+        "keyword_project_permission": [
+          {
+            "samples": 120,
+            "p50_ms": 0.074,
+            "p95_ms": 0.085,
+            "p99_ms": 0.112,
+            "max_ms": 0.144
+          },
+          [
+            9,
+            9,
+            9
+          ]
+        ],
+        "metadata_project_time": [
+          {
+            "samples": 120,
+            "p50_ms": 0.008,
+            "p95_ms": 0.012,
+            "p99_ms": 0.059,
+            "max_ms": 0.066
+          },
+          [
+            43,
+            43,
+            43
+          ]
+        ],
+        "authorization_high_selectivity": [
+          {
+            "samples": 120,
+            "p50_ms": 0.003,
+            "p95_ms": 0.047,
+            "p99_ms": 0.049,
+            "max_ms": 0.05
+          },
+          [
+            100,
+            100,
+            100
+          ]
+        ],
+        "authorization_low_selectivity": [
+          {
+            "samples": 120,
+            "p50_ms": 0.02,
+            "p95_ms": 0.021,
+            "p99_ms": 0.022,
+            "max_ms": 0.022
+          },
+          [
+            100,
+            100,
+            100
+          ]
+        ],
+        "project_recovery_package": [
+          {
+            "samples": 80,
+            "p50_ms": 0.287,
+            "p95_ms": 0.324,
+            "p99_ms": 0.347,
+            "max_ms": 0.379
+          },
+          [
+            240,
+            240,
+            240
+          ]
+        ]
+      },
+      "capture_incremental": {
+        "samples": 100,
+        "p50_ms": 0.128,
+        "p95_ms": 0.801,
+        "p99_ms": 5.428,
+        "max_ms": 6.256
+      },
+      "deletion": {
+        "single_count": 1,
+        "single_block_s": 0.001,
+        "source_count": 158,
+        "source_block_s": 0.003,
+        "batch_1pct_count": 100,
+        "batch_1pct_block_s": 0.002,
+        "active_leaks": 0,
+        "physical_cleanup_s": 0.015,
+        "recoverable_controlled_originals_after_cleanup": 0,
+        "fts_rebuild_s": 0.028,
+        "fts_integrity_s": 0.01,
+        "active_deleted_fts_hits_after_rebuild": 0
+      },
+      "backup_restore": {
+        "backup_s": 0.011,
+        "backup_bytes": 10190848,
+        "restore_copy_s": 0.001,
+        "integrity": "ok",
+        "tombstone_replay_s": 0.006,
+        "post_replay_active_leaks": 0
+      },
+      "concurrent_maintenance_probe": {
+        "rebuild_s": 0.022,
+        "capture_wait_s": 0.023,
+        "capture_under_1s": true
+      },
+      "export_checksum_scan": {
+        "rows": 10100,
+        "manifest_bytes": 838300,
+        "seconds": 0.003,
+        "rows_per_s": 3229287.4,
+        "digest": "c24a96663a6b4d40745d672dd159346969c806b8c6d20bf2a6a40d158b194396"
+      },
+      "sizes": {
+        "sp09.db": 10190848,
+        "sp09.db-wal": 0,
+        "sp09.db-shm": 32768,
+        "backup.db": 10190848,
+        "restored.db": 10190848
+      },
+      "peak_rss_bytes_process": 47153152,
+      "query_plans": {
+        "metadata": [
+          [
+            4,
+            0,
+            52,
+            "SEARCH content_unit USING COVERING INDEX idx_content_project_state (project_id=? AND active=? AND authorization_state=? AND evidence_state=?)"
+          ]
+        ],
+        "fts": [
+          [
+            5,
+            0,
+            132,
+            "SCAN chunk_fts VIRTUAL TABLE INDEX 0:M1"
+          ],
+          [
+            10,
+            0,
+            45,
+            "SEARCH ch USING INTEGER PRIMARY KEY (rowid=?)"
+          ],
+          [
+            13,
+            0,
+            45,
+            "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+          ]
+        ]
+      },
+      "assertions": {
+        "integrity_ok": true,
+        "content_count": true,
+        "chunk_count": true,
+        "single_delete_immediate_block": true,
+        "tombstone_active_leaks_zero": true,
+        "physical_cleanup_removed_controlled_originals": true,
+        "restore_replay_active_leaks_zero": true,
+        "restored_integrity_ok": true,
+        "wal_checkpoint_ok": true,
+        "keyword_p95_under_spike_budget": true,
+        "recovery_p95_under_spike_budget": true,
+        "capture_p95_under_one_second": true,
+        "capture_during_full_fts_rebuild_under_one_second": true,
+        "audit_minimal_shape": true,
+        "old_generation_not_active": true
+      },
+      "pass": true
+    },
+    {
+      "tier": "u100000",
+      "units": 100000,
+      "chunks": 300000,
+      "seed": 20260809,
+      "projects": 40,
+      "sources": 200,
+      "counts_before_mutation": {
+        "project": 40,
+        "source": 200,
+        "content_unit": 100000,
+        "chunk": 300000,
+        "link": 20000,
+        "derivation": 14285,
+        "feedback": 9090,
+        "audit_entry": 5000,
+        "tombstone": 1000
+      },
+      "phase": {
+        "generate_import": {
+          "wall_s": 1.305,
+          "cpu_s": 1.061,
+          "inner_import_s": 1.304,
+          "units_per_s": 76628.4
+        },
+        "fts_initial_build": {
+          "wall_s": 0.331,
+          "cpu_s": 0.324,
+          "chunks_per_s": 906344.4
+        },
+        "wal_checkpoint": {
+          "wall_s": 0.0,
+          "result": [
+            0,
+            0,
+            0
+          ]
+        },
+        "integrity_check": {
+          "wall_s": 0.37,
+          "result": "ok"
+        }
+      },
+      "queries": {
+        "keyword_project_permission": [
+          {
+            "samples": 120,
+            "p50_ms": 0.646,
+            "p95_ms": 0.757,
+            "p99_ms": 0.826,
+            "max_ms": 0.836
+          },
+          [
+            20,
+            20,
+            20
+          ]
+        ],
+        "metadata_project_time": [
+          {
+            "samples": 120,
+            "p50_ms": 0.015,
+            "p95_ms": 0.018,
+            "p99_ms": 0.02,
+            "max_ms": 0.021
+          },
+          [
+            100,
+            100,
+            100
+          ]
+        ],
+        "authorization_high_selectivity": [
+          {
+            "samples": 120,
+            "p50_ms": 0.062,
+            "p95_ms": 0.072,
+            "p99_ms": 0.093,
+            "max_ms": 0.116
+          },
+          [
+            100,
+            100,
+            100
+          ]
+        ],
+        "authorization_low_selectivity": [
+          {
+            "samples": 120,
+            "p50_ms": 0.018,
+            "p95_ms": 0.024,
+            "p99_ms": 0.035,
+            "max_ms": 0.039
+          },
+          [
+            100,
+            100,
+            100
+          ]
+        ],
+        "project_recovery_package": [
+          {
+            "samples": 80,
+            "p50_ms": 1.146,
+            "p95_ms": 1.356,
+            "p99_ms": 1.654,
+            "max_ms": 2.166
+          },
+          [
+            240,
+            240,
+            240
+          ]
+        ]
+      },
+      "capture_incremental": {
+        "samples": 100,
+        "p50_ms": 0.132,
+        "p95_ms": 0.91,
+        "p99_ms": 4.912,
+        "max_ms": 5.266
+      },
+      "deletion": {
+        "single_count": 1,
+        "single_block_s": 0.001,
+        "source_count": 501,
+        "source_block_s": 0.029,
+        "batch_1pct_count": 1000,
+        "batch_1pct_block_s": 0.047,
+        "active_leaks": 0,
+        "physical_cleanup_s": 0.075,
+        "recoverable_controlled_originals_after_cleanup": 0,
+        "fts_rebuild_s": 0.324,
+        "fts_integrity_s": 0.103,
+        "active_deleted_fts_hits_after_rebuild": 0
+      },
+      "backup_restore": {
+        "backup_s": 0.094,
+        "backup_bytes": 95047680,
+        "restore_copy_s": 0.013,
+        "integrity": "ok",
+        "tombstone_replay_s": 0.062,
+        "post_replay_active_leaks": 0
+      },
+      "concurrent_maintenance_probe": {
+        "rebuild_s": 0.315,
+        "capture_wait_s": 0.366,
+        "capture_under_1s": true
+      },
+      "export_checksum_scan": {
+        "rows": 100100,
+        "manifest_bytes": 8308400,
+        "seconds": 0.034,
+        "rows_per_s": 2954988.9,
+        "digest": "28193feef7f2c95ccfcfb8be284b022e2155448fca63159e692052adeabdedff"
+      },
+      "sizes": {
+        "sp09.db": 95047680,
+        "sp09.db-wal": 0,
+        "sp09.db-shm": 65536,
+        "backup.db": 95047680,
+        "restored.db": 95285248
+      },
+      "peak_rss_bytes_process": 231489536,
+      "query_plans": {
+        "metadata": [
+          [
+            4,
+            0,
+            52,
+            "SEARCH content_unit USING COVERING INDEX idx_content_project_state (project_id=? AND active=? AND authorization_state=? AND evidence_state=?)"
+          ]
+        ],
+        "fts": [
+          [
+            5,
+            0,
+            132,
+            "SCAN chunk_fts VIRTUAL TABLE INDEX 0:M1"
+          ],
+          [
+            10,
+            0,
+            45,
+            "SEARCH ch USING INTEGER PRIMARY KEY (rowid=?)"
+          ],
+          [
+            13,
+            0,
+            45,
+            "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+          ]
+        ]
+      },
+      "assertions": {
+        "integrity_ok": true,
+        "content_count": true,
+        "chunk_count": true,
+        "single_delete_immediate_block": true,
+        "tombstone_active_leaks_zero": true,
+        "physical_cleanup_removed_controlled_originals": true,
+        "restore_replay_active_leaks_zero": true,
+        "restored_integrity_ok": true,
+        "wal_checkpoint_ok": true,
+        "keyword_p95_under_spike_budget": true,
+        "recovery_p95_under_spike_budget": true,
+        "capture_p95_under_one_second": true,
+        "capture_during_full_fts_rebuild_under_one_second": true,
+        "audit_minimal_shape": true,
+        "old_generation_not_active": true
+      },
+      "pass": true
+    },
+    {
+      "tier": "u1000000",
+      "units": 1000000,
+      "chunks": 3000000,
+      "seed": 20260809,
+      "projects": 128,
+      "sources": 2000,
+      "counts_before_mutation": {
+        "project": 128,
+        "source": 2000,
+        "content_unit": 1000000,
+        "chunk": 3000000,
+        "link": 200000,
+        "derivation": 142857,
+        "feedback": 90909,
+        "audit_entry": 50000,
+        "tombstone": 10000
+      },
+      "phase": {
+        "generate_import": {
+          "wall_s": 38.432,
+          "cpu_s": 24.369,
+          "inner_import_s": 38.429,
+          "units_per_s": 26020.0
+        },
+        "fts_initial_build": {
+          "wall_s": 4.207,
+          "cpu_s": 4.165,
+          "chunks_per_s": 713097.2
+        },
+        "wal_checkpoint": {
+          "wall_s": 0.002,
+          "result": [
+            0,
+            0,
+            0
+          ]
+        },
+        "integrity_check": {
+          "wall_s": 5.352,
+          "result": "ok"
+        }
+      },
+      "queries": {
+        "keyword_project_permission": [
+          {
+            "samples": 120,
+            "p50_ms": 6.778,
+            "p95_ms": 7.068,
+            "p99_ms": 7.114,
+            "max_ms": 7.218
+          },
+          [
+            20,
+            20,
+            20
+          ]
+        ],
+        "metadata_project_time": [
+          {
+            "samples": 120,
+            "p50_ms": 0.016,
+            "p95_ms": 0.018,
+            "p99_ms": 0.019,
+            "max_ms": 0.02
+          },
+          [
+            100,
+            100,
+            100
+          ]
+        ],
+        "authorization_high_selectivity": [
+          {
+            "samples": 120,
+            "p50_ms": 0.07,
+            "p95_ms": 0.08,
+            "p99_ms": 0.113,
+            "max_ms": 0.157
+          },
+          [
+            100,
+            100,
+            100
+          ]
+        ],
+        "authorization_low_selectivity": [
+          {
+            "samples": 120,
+            "p50_ms": 0.019,
+            "p95_ms": 0.021,
+            "p99_ms": 0.035,
+            "max_ms": 0.043
+          },
+          [
+            100,
+            100,
+            100
+          ]
+        ],
+        "project_recovery_package": [
+          {
+            "samples": 80,
+            "p50_ms": 6.519,
+            "p95_ms": 6.957,
+            "p99_ms": 7.203,
+            "max_ms": 7.217
+          },
+          [
+            240,
+            240,
+            240
+          ]
+        ]
+      },
+      "capture_incremental": {
+        "samples": 100,
+        "p50_ms": 0.124,
+        "p95_ms": 0.333,
+        "p99_ms": 3.36,
+        "max_ms": 14.787
+      },
+      "deletion": {
+        "single_count": 1,
+        "single_block_s": 0.001,
+        "source_count": 500,
+        "source_block_s": 0.062,
+        "batch_1pct_count": 10000,
+        "batch_1pct_block_s": 0.534,
+        "active_leaks": 0,
+        "physical_cleanup_s": 0.749,
+        "recoverable_controlled_originals_after_cleanup": 0,
+        "fts_rebuild_s": 4.228,
+        "fts_integrity_s": 1.066,
+        "active_deleted_fts_hits_after_rebuild": 0
+      },
+      "backup_restore": {
+        "backup_s": 0.906,
+        "backup_bytes": 948178944,
+        "restore_copy_s": 0.444,
+        "integrity": "ok",
+        "tombstone_replay_s": 0.548,
+        "post_replay_active_leaks": 0
+      },
+      "concurrent_maintenance_probe": {
+        "capture_wait_s": 4.012,
+        "rebuild_s": 4.115,
+        "capture_under_1s": false
+      },
+      "export_checksum_scan": {
+        "rows": 1000100,
+        "manifest_bytes": 83008500,
+        "seconds": 0.356,
+        "rows_per_s": 2809029.7,
+        "digest": "ad6e95622c86dd51326b33492113c74ac53dc85b9826b41898815d4701660759"
+      },
+      "sizes": {
+        "sp09.db": 948178944,
+        "sp09.db-wal": 0,
+        "sp09.db-shm": 360448,
+        "backup.db": 948178944,
+        "restored.db": 949501952
+      },
+      "peak_rss_bytes_process": 311869440,
+      "query_plans": {
+        "metadata": [
+          [
+            4,
+            0,
+            52,
+            "SEARCH content_unit USING COVERING INDEX idx_content_project_state (project_id=? AND active=? AND authorization_state=? AND evidence_state=?)"
+          ]
+        ],
+        "fts": [
+          [
+            5,
+            0,
+            132,
+            "SCAN chunk_fts VIRTUAL TABLE INDEX 0:M1"
+          ],
+          [
+            10,
+            0,
+            45,
+            "SEARCH ch USING INTEGER PRIMARY KEY (rowid=?)"
+          ],
+          [
+            13,
+            0,
+            45,
+            "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+          ]
+        ]
+      },
+      "assertions": {
+        "integrity_ok": true,
+        "content_count": true,
+        "chunk_count": true,
+        "single_delete_immediate_block": true,
+        "tombstone_active_leaks_zero": true,
+        "physical_cleanup_removed_controlled_originals": true,
+        "restore_replay_active_leaks_zero": true,
+        "restored_integrity_ok": true,
+        "wal_checkpoint_ok": true,
+        "keyword_p95_under_spike_budget": true,
+        "recovery_p95_under_spike_budget": true,
+        "capture_p95_under_one_second": true,
+        "capture_during_full_fts_rebuild_under_one_second": false,
+        "audit_minimal_shape": true,
+        "old_generation_not_active": true
+      },
+      "pass": false
+    }
+  ],
+  "vector_cost_estimates": [
+    {
+      "dimension": 384,
+      "coverage": 1.0,
+      "precision": "float32",
+      "vectors": 3000000,
+      "raw_bytes": 4608000000,
+      "pgvalue_bytes_estimate": 4632000000
+    },
+    {
+      "dimension": 384,
+      "coverage": 1.0,
+      "precision": "float16",
+      "vectors": 3000000,
+      "raw_bytes": 2304000000,
+      "pgvalue_bytes_estimate": 2328000000
+    },
+    {
+      "dimension": 384,
+      "coverage": 0.25,
+      "precision": "float32",
+      "vectors": 750000,
+      "raw_bytes": 1152000000,
+      "pgvalue_bytes_estimate": 1158000000
+    },
+    {
+      "dimension": 384,
+      "coverage": 0.25,
+      "precision": "float16",
+      "vectors": 750000,
+      "raw_bytes": 576000000,
+      "pgvalue_bytes_estimate": 582000000
+    },
+    {
+      "dimension": 384,
+      "coverage": 0.1,
+      "precision": "float32",
+      "vectors": 300000,
+      "raw_bytes": 460800000,
+      "pgvalue_bytes_estimate": 463200000
+    },
+    {
+      "dimension": 384,
+      "coverage": 0.1,
+      "precision": "float16",
+      "vectors": 300000,
+      "raw_bytes": 230400000,
+      "pgvalue_bytes_estimate": 232800000
+    },
+    {
+      "dimension": 768,
+      "coverage": 1.0,
+      "precision": "float32",
+      "vectors": 3000000,
+      "raw_bytes": 9216000000,
+      "pgvalue_bytes_estimate": 9240000000
+    },
+    {
+      "dimension": 768,
+      "coverage": 1.0,
+      "precision": "float16",
+      "vectors": 3000000,
+      "raw_bytes": 4608000000,
+      "pgvalue_bytes_estimate": 4632000000
+    },
+    {
+      "dimension": 768,
+      "coverage": 0.25,
+      "precision": "float32",
+      "vectors": 750000,
+      "raw_bytes": 2304000000,
+      "pgvalue_bytes_estimate": 2310000000
+    },
+    {
+      "dimension": 768,
+      "coverage": 0.25,
+      "precision": "float16",
+      "vectors": 750000,
+      "raw_bytes": 1152000000,
+      "pgvalue_bytes_estimate": 1158000000
+    },
+    {
+      "dimension": 768,
+      "coverage": 0.1,
+      "precision": "float32",
+      "vectors": 300000,
+      "raw_bytes": 921600000,
+      "pgvalue_bytes_estimate": 924000000
+    },
+    {
+      "dimension": 768,
+      "coverage": 0.1,
+      "precision": "float16",
+      "vectors": 300000,
+      "raw_bytes": 460800000,
+      "pgvalue_bytes_estimate": 463200000
+    },
+    {
+      "dimension": 1536,
+      "coverage": 1.0,
+      "precision": "float32",
+      "vectors": 3000000,
+      "raw_bytes": 18432000000,
+      "pgvalue_bytes_estimate": 18456000000
+    },
+    {
+      "dimension": 1536,
+      "coverage": 1.0,
+      "precision": "float16",
+      "vectors": 3000000,
+      "raw_bytes": 9216000000,
+      "pgvalue_bytes_estimate": 9240000000
+    },
+    {
+      "dimension": 1536,
+      "coverage": 0.25,
+      "precision": "float32",
+      "vectors": 750000,
+      "raw_bytes": 4608000000,
+      "pgvalue_bytes_estimate": 4614000000
+    },
+    {
+      "dimension": 1536,
+      "coverage": 0.25,
+      "precision": "float16",
+      "vectors": 750000,
+      "raw_bytes": 2304000000,
+      "pgvalue_bytes_estimate": 2310000000
+    },
+    {
+      "dimension": 1536,
+      "coverage": 0.1,
+      "precision": "float32",
+      "vectors": 300000,
+      "raw_bytes": 1843200000,
+      "pgvalue_bytes_estimate": 1845600000
+    },
+    {
+      "dimension": 1536,
+      "coverage": 0.1,
+      "precision": "float16",
+      "vectors": 300000,
+      "raw_bytes": 921600000,
+      "pgvalue_bytes_estimate": 924000000
+    }
+  ],
+  "overall_pass": false
+}

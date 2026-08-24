@@ -1,0 +1,108 @@
+{
+  "task": "LIFEOS-P3-104",
+  "attempt": "rework-1",
+  "passed": 19,
+  "failed": 0,
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "unknown": 0,
+  "not_implemented": 0,
+  "results": [
+    {
+      "id": "RW-STATIC-01",
+      "status": "PASS",
+      "detail": "error-aware lstat helper exists"
+    },
+    {
+      "id": "RW-STATIC-02",
+      "status": "PASS",
+      "detail": "final objects use symlink_metadata"
+    },
+    {
+      "id": "RW-STATIC-03",
+      "status": "PASS",
+      "detail": "only true NotFound is treated as absent"
+    },
+    {
+      "id": "RW-STATIC-04",
+      "status": "PASS",
+      "detail": "final DB type is always validated"
+    },
+    {
+      "id": "RW-STATIC-05",
+      "status": "PASS",
+      "detail": "all sidecar directory objects are rejected"
+    },
+    {
+      "id": "RW-STATIC-06",
+      "status": "PASS",
+      "detail": "dangling DB and sidecar regression exists"
+    },
+    {
+      "id": "RW-STATIC-SIDECAR-JOURNAL",
+      "status": "PASS",
+      "detail": "-journal variant covered"
+    },
+    {
+      "id": "RW-STATIC-SIDECAR-WAL",
+      "status": "PASS",
+      "detail": "-wal variant covered"
+    },
+    {
+      "id": "RW-STATIC-SIDECAR-SHM",
+      "status": "PASS",
+      "detail": "-shm variant covered"
+    },
+    {
+      "id": "RW-RUNNER-01",
+      "status": "PASS",
+      "detail": "actual-app replay is offline"
+    },
+    {
+      "id": "RW-RUNNER-02",
+      "status": "PASS",
+      "detail": "exact locked app bundle command exists"
+    },
+    {
+      "id": "RW-RUNNER-CLEAN",
+      "status": "PASS",
+      "detail": "task-local clean rebuild is explicit"
+    },
+    {
+      "id": "RW-RUNNER-03",
+      "status": "PASS",
+      "detail": "launch, stop, reopen lifecycle exists"
+    },
+    {
+      "id": "RW-RUNNER-04",
+      "status": "PASS",
+      "detail": "actual-app dangling rejection is verified"
+    },
+    {
+      "id": "RW-RUNNER-NO-UI",
+      "status": "PASS",
+      "detail": "dangling startup cannot render success UI"
+    },
+    {
+      "id": "RW-RUNNER-05",
+      "status": "PASS",
+      "detail": "exact cleanup gate exists"
+    },
+    {
+      "id": "RW-LOCK-01",
+      "status": "PASS",
+      "detail": "Frozen Cargo.lock unchanged"
+    },
+    {
+      "id": "RW-ABF-01",
+      "status": "PASS",
+      "detail": "Frozen ABF unchanged"
+    },
+    {
+      "id": "RW-OLD-EVIDENCE-01",
+      "status": "PASS",
+      "detail": "initial Engineering Manifest unchanged"
+    }
+  ]
+}

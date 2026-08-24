@@ -1,0 +1,149 @@
+{
+  "task": "LIFEOS-P3-094-rework-attempt-6",
+  "timestamp": "2026-08-22T12:02:50.563538+00:00",
+  "fixed_non_sensitive_fixtures_only": true,
+  "items": [
+    {
+      "id": "A6-01-forced-internal-render",
+      "status": "PASS",
+      "record_count": 1,
+      "path_is_exact_internal_today": true
+    },
+    {
+      "id": "A6-02-idempotent-and-cross-process-read",
+      "status": "PASS",
+      "idempotent": true,
+      "new_process_exit": 0
+    },
+    {
+      "id": "A6-03-render-api-outside-rejected",
+      "status": "PASS",
+      "operation_failed": true,
+      "sentinel_hash_equal": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "A6-04-render-cli-output-capability-removed",
+      "status": "PASS",
+      "cli_exit_nonzero": true,
+      "sentinel_hash_equal": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "A6-05-render-final-symlink-no-follow",
+      "status": "PASS",
+      "link_preserved": true,
+      "target_hash_equal": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "A6-06-render-directory-fifo-rejected",
+      "status": "PASS",
+      "directory_rejected": true,
+      "fifo_rejected": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "A6-07-render-ancestor-link-chain-rejected",
+      "status": "PASS",
+      "ancestor_link_rejected": true,
+      "target_page_absent": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "A6-08-clear-ancestor-link-chain-rejected",
+      "status": "PASS",
+      "ancestor_link_rejected": true,
+      "page_hash_equal": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "A6-09-relative-dotdot-normalization-rejected",
+      "status": "PASS",
+      "rejected_operations": 4,
+      "page_unchanged": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "A6-10-valid-render-clear-rerender-closed",
+      "status": "PASS",
+      "page_invalidated": true,
+      "record_count_after": 0,
+      "rerender_blocked": true
+    },
+    {
+      "id": "A6-11-clear-invalidation-failure-preserves-db",
+      "status": "PASS",
+      "operation_failed": true,
+      "page_hash_equal": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "A6-12-db-final-symlink-rejected",
+      "status": "PASS",
+      "db_link_rejected_twice": true,
+      "page_hash_equal": true,
+      "db_unchanged": true
+    },
+    {
+      "id": "A6-13-render-publish-failure-no-half-product",
+      "status": "PASS",
+      "operation_failed": true,
+      "existing_page_hash_equal": true,
+      "db_unchanged": true,
+      "half_product_count": 0
+    },
+    {
+      "id": "A6-14-atomic-capture-no-partial",
+      "status": "PASS",
+      "record_count_after": 0
+    },
+    {
+      "id": "A6-15-corrupt-db-fail-closed",
+      "status": "PASS",
+      "render_and_clear_failed_closed": true
+    },
+    {
+      "id": "A6-16-prohibited-capabilities-closed",
+      "status": "PASS",
+      "network": false,
+      "http": false,
+      "tauri_ipc": false,
+      "export": false
+    },
+    {
+      "id": "A6-17-clean-copy-unit-suite",
+      "status": "PASS",
+      "exit_code": 0,
+      "test_count": 15
+    },
+    {
+      "id": "A6-18-task-local-residue-zero",
+      "status": "PASS",
+      "before": 0,
+      "after": 0
+    },
+    {
+      "id": "A6-19-history-read-only-hashes",
+      "status": "PASS",
+      "file_count": 155,
+      "before_after_equal": true
+    }
+  ],
+  "summary": {
+    "pass": 19,
+    "fail": 0,
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  },
+  "runtime_cleanup": {
+    "db_exists": false,
+    "html_exists": false,
+    "sentinel_exists": false,
+    "cache_exists": false,
+    "task_local_residue_after": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "P3108-acceptance-matrix",
+  "basis": "ABF-P3-108-v1",
+  "rows": [
+    {"id": "ABF-M-001", "status": "PASS", "evidence": "snapshot.json"},
+    {"id": "ABF-M-002", "status": "PASS", "evidence": "test_design.md"},
+    {"id": "ABF-M-003", "status": "PASS", "evidence": "manifest-verification.json"},
+    {"id": "ABF-M-004", "status": "PASS", "evidence": "copy-inventory.json"},
+    {"id": "ABF-M-005", "status": "PASS", "evidence": "build-results.json"},
+    {"id": "ABF-M-006", "status": "PASS", "evidence": "static-results.json"},
+    {"id": "ABF-M-007", "status": "NOT_IMPLEMENTED", "reason": "No actual 1280x1024 visual comparison permitted/available", "evidence": "dynamic_closure.md"},
+    {"id": "ABF-M-008", "status": "NOT_IMPLEMENTED", "reason": "No exact frozen viewport proof", "evidence": "dynamic_closure.md"},
+    {"id": "ABF-M-009", "status": "PASS", "evidence": "dynamic_closure.md"},
+    {"id": "ABF-M-010", "status": "PASS", "evidence": "dynamic_closure.md"},
+    {"id": "ABF-M-011", "status": "PASS", "evidence": "dynamic_closure.md"},
+    {"id": "ABF-M-012", "status": "PASS", "evidence": "dynamic_closure.md"},
+    {"id": "ABF-M-013", "status": "NOT_IMPLEMENTED", "reason": "External-path actual-app fixture has no independent row", "evidence": "dynamic_closure.md"},
+    {"id": "ABF-M-014", "status": "PASS", "evidence": "dynamic_closure.md"},
+    {"id": "ABF-M-015", "status": "NOT_IMPLEMENTED", "reason": "Exact keyboard focus and reduced-motion actions not independently observable without prohibited system setting change", "evidence": "dynamic_closure.md"},
+    {"id": "ABF-M-016", "status": "PASS", "evidence": "cleanup.json, final-verifier.json"}
+  ],
+  "counts_before_cleanup": {"P0": 0, "P1": 0, "P2": 0, "Unknown": 0, "Not Implemented": 4},
+  "pass": false,
+  "conclusion": "Blocked pending an environment/ABF route that can produce the frozen viewports and an authorized reduced-motion observation; no candidate P0/P1 Rework is asserted."
+}

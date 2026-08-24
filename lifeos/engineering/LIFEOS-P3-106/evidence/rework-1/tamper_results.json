@@ -1,0 +1,41 @@
+{
+  "content_actual_app": {
+    "screenshot": "m013-content-tamper-failclosed.jpg",
+    "sha256": "6c31e221e601f7dc851cf6b7c1018acdf59347b8a7d095d560104a1beb7f3506",
+    "status": "PASS"
+  },
+  "schema_actual_app": {
+    "screenshot": "m013-schema-tamper-failclosed.jpg",
+    "sha256": "6c31e221e601f7dc851cf6b7c1018acdf59347b8a7d095d560104a1beb7f3506",
+    "prepared": {
+      "source_db": "/private/tmp/lifeos-p3-104-p3-106-app-rework1-20260823/capture.sqlite",
+      "tamper_db": "/private/tmp/lifeos-p3-104-p3-106-tamper-rework1-20260823/capture.sqlite",
+      "operation": "DROP TABLE audit on fixed non-sensitive copy",
+      "sentinel_before": "47a088fa6235ce883400348b71704535c94e278ec65756b1bed05549374ea367",
+      "sentinel_after": "47a088fa6235ce883400348b71704535c94e278ec65756b1bed05549374ea367",
+      "sentinel_unchanged": true,
+      "status": "PASS"
+    },
+    "status": "PASS"
+  },
+  "process_probe": {
+    "id": "RUNTIME-TAMPER-PROCESS",
+    "test": "runtime::tests::tampered_content_and_sidecar_fail_closed",
+    "command": [
+      "/Users/xxe/.cargo/bin/cargo",
+      "test",
+      "--locked",
+      "runtime::tests::tampered_content_and_sidecar_fail_closed",
+      "--",
+      "--exact",
+      "--nocapture"
+    ],
+    "returncode": 0,
+    "unit_paths_before": [],
+    "unit_paths_after": [],
+    "log": "evidence/rework-1/runtime-tamper-process.log",
+    "sha256": "456716c67504f2993f4498efa95bd1d89bf06926554a4ceff8abc94362b86525",
+    "status": "PASS"
+  },
+  "status": "PASS"
+}

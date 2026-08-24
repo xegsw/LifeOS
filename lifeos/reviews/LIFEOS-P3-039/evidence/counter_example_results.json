@@ -1,0 +1,241 @@
+{
+  "total_attacks": 29,
+  "passed": 18,
+  "failed": 11,
+  "p1_bypasses": 11,
+  "p2_bypasses": 0,
+  "results": [
+    {
+      "group": "P2-2",
+      "name": "ordinary_delete",
+      "severity": "P1",
+      "passed": true,
+      "detail": "DELETE rejected",
+      "sqlite_error": "tombstone_delete_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "insert_or_replace_lower_gen",
+      "severity": "P1",
+      "passed": true,
+      "detail": "INSERT OR REPLACE rejected",
+      "sqlite_error": "tombstone_reinsert_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "insert_or_replace_same_gen",
+      "severity": "P1",
+      "passed": true,
+      "detail": "INSERT OR REPLACE same gen rejected",
+      "sqlite_error": "tombstone_reinsert_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "insert_or_replace_higher_gen",
+      "severity": "P1",
+      "passed": true,
+      "detail": "INSERT OR REPLACE higher gen rejected",
+      "sqlite_error": "tombstone_reinsert_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "delete_insert_commit",
+      "severity": "P1",
+      "passed": true,
+      "detail": "DELETE+INSERT commit rejected",
+      "sqlite_error": "tombstone_delete_forbidden"
+    },
+    {
+      "group": "P2-2",
+      "name": "delete_insert_rollback",
+      "severity": "P1",
+      "passed": true,
+      "detail": "DELETE+INSERT rejected and row unchanged after rollback: True",
+      "sqlite_error": "tombstone_delete_forbidden"
+    },
+    {
+      "group": "P2-3",
+      "name": "direct_insert_active_blocked",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Non-accepted initial INSERT active_blocked rejected",
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    {
+      "group": "P2-3",
+      "name": "direct_insert_cleaned",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Non-accepted initial INSERT cleaned rejected",
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    {
+      "group": "P2-3",
+      "name": "direct_insert_cleanup_failed",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Non-accepted initial INSERT cleanup_failed rejected",
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    {
+      "group": "P2-3",
+      "name": "direct_insert_vendor_limited",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Non-accepted initial INSERT vendor_limited rejected",
+      "sqlite_error": "tombstone_must_start_accepted"
+    },
+    {
+      "group": "P2-3",
+      "name": "accepted_start",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Accepted initial INSERT succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "P2-3",
+      "name": "legal_transitions",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Legal transition chain succeeded",
+      "sqlite_error": null
+    },
+    {
+      "group": "P2-3",
+      "name": "illegal_skip_transition",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Illegal accepted->cleaned rejected",
+      "sqlite_error": "tombstone_status_transition_invalid"
+    },
+    {
+      "group": "P2-3",
+      "name": "generation_decrease",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Generation decrease via UPDATE rejected",
+      "sqlite_error": "tombstone_generation_must_not_decrease"
+    },
+    {
+      "group": "P2-4",
+      "name": "active_scope_delete",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Active scope DELETE rejected, state unchanged: True",
+      "sqlite_error": "active_authorization_scope_delete_forbidden"
+    },
+    {
+      "group": "P2-4",
+      "name": "active_action_delete",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Active action DELETE rejected, state unchanged: True",
+      "sqlite_error": "active_authorization_action_delete_forbidden"
+    },
+    {
+      "group": "P2-4",
+      "name": "active_policy_delete",
+      "severity": "P1",
+      "passed": true,
+      "detail": "Active policy DELETE rejected, state unchanged: True",
+      "sqlite_error": "active_authorization_policy_delete_forbidden"
+    },
+    {
+      "group": "P2-4",
+      "name": "inactive_scope_delete_allowed",
+      "severity": "P2",
+      "passed": true,
+      "detail": "Inactive scope DELETE allowed (cleanup path)",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJ",
+      "name": "insert_new_scope_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "New allow scope INSERTed while active: parent gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJ",
+      "name": "insert_new_action_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "New action INSERTed while active: parent gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJ",
+      "name": "update_scope_effect_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "Scope effect allow->deny UPDATE while active: parent gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJ",
+      "name": "update_scope_target_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "Scope project_id swap while active: parent gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJ",
+      "name": "scope_rebind_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "Scope authorization_id rebind while active: parent gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJ",
+      "name": "update_policy_training_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "Policy training_allowed UPDATE while active: parent gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJ",
+      "name": "update_policy_sensitivity_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "Policy sensitivity_rank UPDATE while active: parent gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJ",
+      "name": "update_policy_external_send_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "Policy external_send_allowed UPDATE while active: parent gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJ",
+      "name": "update_action_value_active",
+      "severity": "P1",
+      "passed": false,
+      "detail": "Action value read->export_candidate UPDATE while active: parent gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJ",
+      "name": "insert_or_replace_scope_effect",
+      "severity": "P1",
+      "passed": false,
+      "detail": "INSERT OR REPLACE scope changed allow->deny while active: parent gen unchanged, no audit",
+      "sqlite_error": null
+    },
+    {
+      "group": "ADJ",
+      "name": "insert_or_replace_policy",
+      "severity": "P1",
+      "passed": false,
+      "detail": "INSERT OR REPLACE policy changed training/external_send/sensitivity while active: parent gen unchanged, no audit",
+      "sqlite_error": null
+    }
+  ]
+}

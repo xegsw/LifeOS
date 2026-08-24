@@ -1,0 +1,38 @@
+{
+  "task": "LIFEOS-P3-072",
+  "test_count": 7,
+  "passed": 7,
+  "failed": 0,
+  "cases": [
+    {
+      "id": "test_collision_and_escaped_path_are_blocked_without_overwrite_or_visible_output",
+      "result": "PASS"
+    },
+    {
+      "id": "test_exact_confirm_writes_once_to_new_temporary_sandbox_with_matching_receipt",
+      "result": "PASS"
+    },
+    {
+      "id": "test_missing_or_mismatched_confirmation_or_preview_token_fails_closed",
+      "result": "PASS"
+    },
+    {
+      "id": "test_preview_discloses_confirmation_and_temporary_target",
+      "result": "PASS"
+    },
+    {
+      "id": "test_source_version_unknown_conflict_revoked_and_tombstoned_fail_closed_and_audit",
+      "result": "PASS"
+    },
+    {
+      "id": "test_static_boundary_contract_and_source_imports_are_closed",
+      "result": "PASS"
+    },
+    {
+      "id": "test_write_failure_is_audited_and_leaves_no_visible_output",
+      "result": "PASS"
+    }
+  ],
+  "boundary": "synthetic records + newly created system temporary sandbox only",
+  "prohibited_capabilities": "network,Tauri/IPC,Vault,real DB,cloud,sync,multi-device,L3,external user,non-temporary paths"
+}

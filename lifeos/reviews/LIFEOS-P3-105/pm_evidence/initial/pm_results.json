@@ -1,0 +1,59 @@
+{
+  "task_id": "LIFEOS-P3-105",
+  "review_round": "initial",
+  "reviewed_at": "2026-08-23T17:14:09+08:00",
+  "conclusion": "BLOCKED_PM_VALIDATED_CLOSED_ACCEPTANCE_NOT_MET",
+  "formal_rework": {"current": 0, "limit": 2, "counted_this_review": false},
+  "counts": {"P0": 1, "P1": 0, "P2": 1, "Unknown": 0, "Not Implemented": 15},
+  "submitted_evidence": {
+    "manifest_entries_verified": 28,
+    "manifest_mismatches": 0,
+    "frozen_visual_inputs_verified": 3,
+    "p3_104_fixed_inputs_pm_verified": 9,
+    "p3_105_immutable_runtime_files_verified": 4,
+    "submitted_static": {"passed": 35, "failed": 0},
+    "submitted_source_visual_contract": {"passed": 34, "failed": 0},
+    "submitted_matrix": {"passed": 1, "not_implemented": 15}
+  },
+  "pm_isolated_replay": {
+    "temporary_root": "/private/tmp/lifeos-p3-105-pm-initial-WKmCIB",
+    "temporary_root_removed": true,
+    "residual_roots": 0,
+    "static_checks": {"passed": 35, "failed": 0},
+    "source_visual_contract": {"passed": 34, "failed": 0},
+    "offline_locked_build_no_run": "PASS",
+    "rust_unit_tests": "NOT_RUN_BY_PM_BECAUSE_THEY_CREATE_UNAUTHORIZED_LIFEOS_P3_104_PREFIX_FIXTURES",
+    "actual_app_replay": "NOT_RUN_BECAUSE_IMMUTABLE_RUNTIME_REJECTS_EVERY_AUTHORIZED_LIFEOS_P3_105_FIXTURE",
+    "network": 0,
+    "real_data": 0
+  },
+  "findings": [
+    {
+      "id": "PM-P3-105-P0-01",
+      "severity": "P0",
+      "mapped_rules": ["L1-7", "L1-9", "L1-10", "ABF-I-11", "ABF-I-12", "ABF-M-001"],
+      "summary": "The report claims 7/7 Rust unit tests ran and also claims no lifeos-p3-104-prefixed fixture was created. The immutable test source creates such directories in every stateful unit test. If the tests ran, the path authorization drifted; if they did not run, the 7/7 claim is unsupported. In addition, ABF-M-001 was marked PASS while the submitted Manifest hashes only four of the nine frozen P3-104 inputs."
+    },
+    {
+      "id": "PM-P3-105-P2-01",
+      "severity": "P2",
+      "mapped_rules": ["L1-8", "L1-10", "ABF-I-11"],
+      "summary": "The P3-105 evidence directory contains inherited P3-104 logs, screenshots and matrices outside the P3-105 Manifest, so the task evidence namespace is not cleanly independent."
+    }
+  ],
+  "blocking_contract": {
+    "runtime_required_prefix": "/private/tmp/lifeos-p3-104-*",
+    "abf_authorized_prefix": "/private/tmp/lifeos-p3-105-*",
+    "same_task_resolution_possible": false,
+    "reason": "Resolving the contradiction requires a substantive directory/authorization ABF change or a runtime change, both explicit new-task triggers."
+  },
+  "risk_state": {
+    "R-0040": "Open / Conditional",
+    "R-0051": "Closed / Limited Controlled Boundary (unchanged)",
+    "R-0052": "Open / Authorized Controlled Execution Boundary"
+  },
+  "asset_state": "NOT_FROZEN",
+  "stage_4_allowed": false,
+  "independent_review_allowed": false,
+  "local_model_precheck": "SKIPPED_HIGH_RISK_TAURI_AUTHORIZATION_AND_EVIDENCE_FINAL_JUDGMENT"
+}

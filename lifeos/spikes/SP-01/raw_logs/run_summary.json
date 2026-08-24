@@ -1,0 +1,132 @@
+{
+  "backup": {
+    "backup_bytes": 774144,
+    "concurrent_writes_completed": 50,
+    "counts_after": {
+      "artifacts": 1492,
+      "authorizations": 4,
+      "feedback_events": 2,
+      "submissions": 1592,
+      "tombstones": 3,
+      "versions": 1592
+    },
+    "counts_equal": true,
+    "deleted_active_after_replay": 0,
+    "deleted_active_before_replay": 0,
+    "floor_preserved": true,
+    "hash_mismatches": 0,
+    "integrity": "ok",
+    "live_counts_after_backup": {
+      "artifacts": 1541,
+      "authorizations": 4,
+      "feedback_events": 2,
+      "submissions": 1641,
+      "tombstones": 3,
+      "versions": 1641
+    },
+    "method": "sqlite3 Online Backup API during active writes",
+    "pending_sync_after_restore": 400,
+    "pre_backup_floor": {
+      "artifacts": 1491,
+      "authorizations": 4,
+      "feedback_events": 2,
+      "submissions": 1591,
+      "tombstones": 3,
+      "versions": 1591
+    },
+    "retracted_feedback_active_after_restore": 0,
+    "snapshot_counts": {
+      "artifacts": 1492,
+      "authorizations": 4,
+      "feedback_events": 2,
+      "submissions": 1592,
+      "tombstones": 3,
+      "versions": 1592
+    },
+    "writer_errors": []
+  },
+  "concurrency": {
+    "captures": 100,
+    "errors": 0,
+    "index_errors": [],
+    "max_ms": 1.118333,
+    "p95_ms": 0.0684979,
+    "p99_ms": 0.18839333,
+    "passive_checkpoint_result": [
+      0,
+      678,
+      0
+    ]
+  },
+  "duration_seconds": 32.96507811546326,
+  "environment": {
+    "cpu_count": 10,
+    "journal_mode": "wal",
+    "machine": "arm64",
+    "memory_bytes": null,
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.9.6",
+    "sqlite": "3.51.0",
+    "synchronous": "FULL"
+  },
+  "failures": {
+    "cases": {
+      "disk_full": {
+        "acknowledged": false,
+        "action": "keep editor text and retry or copy it",
+        "db_unchanged": true,
+        "error": "WRITE_FAILED"
+      },
+      "io_error": {
+        "acknowledged": false,
+        "action": "keep editor text and retry or copy it",
+        "db_unchanged": true,
+        "error": "WRITE_FAILED"
+      },
+      "old_version_preserved": true
+    },
+    "false_ack_count": 0
+  },
+  "fixture": {
+    "conflicts_rejected": 10,
+    "exact_duplicate_deliveries": 20,
+    "exact_duplicates_reused": 20,
+    "fixture_submissions": 1000,
+    "hash_mismatches": 0,
+    "integrity": "ok",
+    "max_ms": 5.724875,
+    "p50_ms": 0.059458,
+    "p95_ms": 0.07825204999999999,
+    "p99_ms": 1.7743015800000002,
+    "pending_sync_rows": 250,
+    "retracted_feedback_active_rows": 0,
+    "tombstones": 3,
+    "two_version_artifacts": 100,
+    "unique_artifacts": 900,
+    "version_rows": 1000
+  },
+  "kills": {
+    "ack_hash_mismatch": 0,
+    "acknowledged": 242,
+    "acknowledged_missing": 0,
+    "committed_kill_rows": 491,
+    "cycles": 1000,
+    "duplicate_idempotency_rows": 0,
+    "half_or_corrupt_rows": 0,
+    "integrity": "ok",
+    "integrity_checks": 1000,
+    "integrity_failures": 0,
+    "stage_counts": {
+      "BEFORE_WRITE": 270,
+      "MID_WRITE": 239,
+      "POST_ACK": 242,
+      "POST_COMMIT": 249
+    }
+  },
+  "resources": {
+    "live_db_bytes": 790528,
+    "main_process_max_rss_platform_units": 20987904
+  },
+  "seed": 20260808,
+  "started_epoch": 1786196464.87248
+}

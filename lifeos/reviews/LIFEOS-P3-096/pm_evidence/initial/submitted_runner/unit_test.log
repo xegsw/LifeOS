@@ -1,0 +1,66 @@
+test_all_public_entries_share_exact_path_gate (test_runtime.InvariantClosureTest) ... ok
+test_audit_mutations_fail_closed (test_runtime.InvariantClosureTest) ... ok
+test_capture_commit_failure_injected (test_runtime.InvariantClosureTest)
+capture-commit-failure ... ok
+test_capture_post_commit_cleanup_failure_injected (test_runtime.InvariantClosureTest)
+post-commit-cleanup is now ordered before commit. ... ok
+test_capture_success_invalidates_stale_page_and_failure_restores_it (test_runtime.InvariantClosureTest) ... ok
+test_clear_commit_failure_injected (test_runtime.InvariantClosureTest)
+clear-commit-failure ... ok
+test_clear_transaction_failure_rolls_back_and_page_stays_invalidated (test_runtime.InvariantClosureTest) ... ok
+test_clear_untrusted_db_invalidates_page_without_db_change (test_runtime.InvariantClosureTest) ... ok
+test_db_and_page_hardlinks_are_rejected (test_runtime.InvariantClosureTest) ... ok
+test_db_and_page_socket_fifo_directory_objects_are_rejected (test_runtime.InvariantClosureTest) ... ok
+test_duplicate_id_independent_fixture (test_runtime.InvariantClosureTest)
+duplicate-id ... ok
+test_duplicate_idem_independent_fixture (test_runtime.InvariantClosureTest)
+duplicate-idem ... ok
+test_existing_invalid_db_rejected_before_capture_write (test_runtime.InvariantClosureTest) ... ok
+test_extra_schema_objects_and_shape_changes_rejected (test_runtime.InvariantClosureTest) ... ok
+test_full_lifecycle_across_fresh_processes (test_runtime.InvariantClosureTest) ... ok
+test_html_is_escaped_unicode_newline_and_long_text_is_complete (test_runtime.InvariantClosureTest) ... ok
+test_parent_must_preexist_and_capture_leaves_nothing (test_runtime.InvariantClosureTest) ... ok
+test_parent_permissions_and_temp_create_failure_fail_closed (test_runtime.InvariantClosureTest) ... ok
+test_read_entries_never_create_missing_db_or_sidecar (test_runtime.InvariantClosureTest) ... ok
+test_render_fsync_failure_keeps_valid_page_and_cleans_temp (test_runtime.InvariantClosureTest) ... ok
+test_render_replace_failure_keeps_valid_page_and_cleans_temp (test_runtime.InvariantClosureTest) ... ok
+test_repeat_only_appends_repeat_audit_and_conflict_changes_nothing (test_runtime.InvariantClosureTest) ... ok
+test_sidecars_fail_closed_by_entry_semantics (test_runtime.InvariantClosureTest) ... ok
+test_source_and_row_type_mutations_fail_whole_result (test_runtime.InvariantClosureTest) ... ok
+test_source_blob_independent_fixture (test_runtime.InvariantClosureTest)
+source-blob ... ok
+test_source_case_independent_fixture (test_runtime.InvariantClosureTest)
+source-case ... ok
+test_source_empty_independent_fixture (test_runtime.InvariantClosureTest)
+source-empty ... ok
+test_source_null_independent_fixture (test_runtime.InvariantClosureTest)
+source-null ... ok
+test_source_other_independent_fixture (test_runtime.InvariantClosureTest)
+source-other ... ok
+test_caller_output_paths_are_rejected_before_change (test_runtime.RuntimeTest) ... ok
+test_clear_confirmation_and_clean (test_runtime.RuntimeTest) ... ok
+test_clear_page_invalidation_failure_preserves_db (test_runtime.RuntimeTest) ... ok
+test_cli_has_no_output_path_capability (test_runtime.RuntimeTest) ... ok
+test_corrupt_db_with_stale_page_is_invalidated_without_db_change (test_runtime.RuntimeTest) ... ok
+test_directory_and_special_today_are_rejected (test_runtime.RuntimeTest) ... ok
+test_empty_and_atomic_failure (test_runtime.RuntimeTest) ... ok
+test_empty_db_with_stale_page_is_invalidated_without_db_change (test_runtime.RuntimeTest) ... ok
+test_empty_render_is_closed (test_runtime.RuntimeTest) ... ok
+test_first_restart_and_render (test_runtime.RuntimeTest) ... ok
+test_missing_and_partial_schema_are_not_initialized_by_render (test_runtime.RuntimeTest) ... ok
+test_missing_db_with_stale_page_is_invalidated_without_creation (test_runtime.RuntimeTest) ... ok
+test_query_failure_with_stale_page_is_invalidated_without_db_change (test_runtime.RuntimeTest) ... ok
+test_render_and_clear_reject_ancestor_symlink_chain (test_runtime.RuntimeTest) ... ok
+test_render_and_clear_reject_relative_and_dotdot_db_paths (test_runtime.RuntimeTest) ... ok
+test_render_caller_path_and_final_types_are_rejected (test_runtime.RuntimeTest) ... ok
+test_repeat_and_conflict (test_runtime.RuntimeTest) ... ok
+test_stale_page_invalidation_failure_is_disclosed_and_db_unchanged (test_runtime.RuntimeTest) ... ok
+test_symlink_db_file_is_rejected (test_runtime.RuntimeTest) ... ok
+test_symlink_db_parent_is_rejected (test_runtime.RuntimeTest) ... ok
+test_symlink_today_is_rejected_without_following (test_runtime.RuntimeTest) ... ok
+test_zero_byte_db_with_stale_page_is_invalidated_without_db_change (test_runtime.RuntimeTest) ... ok
+
+----------------------------------------------------------------------
+Ran 51 tests in 0.554s
+
+OK

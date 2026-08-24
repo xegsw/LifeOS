@@ -1,0 +1,257 @@
+{
+  "task": "LIFEOS-P3-090",
+  "attempt": "rework/attempt-2",
+  "runner": "independent_static_runner.py",
+  "app": "/private/tmp/lifeos-p3-090-attempt-2/app",
+  "pass": 48,
+  "fail": 0,
+  "results": [
+    {
+      "id": "HASH-default-recovery.html",
+      "pass": true,
+      "detail": "task-local source hash matches P3-089 manifest"
+    },
+    {
+      "id": "HASH-no-reliable-suggestion.html",
+      "pass": true,
+      "detail": "task-local source hash matches P3-089 manifest"
+    },
+    {
+      "id": "HASH-restricted-offline.html",
+      "pass": true,
+      "detail": "task-local source hash matches P3-089 manifest"
+    },
+    {
+      "id": "HASH-app.js",
+      "pass": true,
+      "detail": "task-local source hash matches P3-089 manifest"
+    },
+    {
+      "id": "HASH-styles.css",
+      "pass": true,
+      "detail": "task-local source hash matches P3-089 manifest"
+    },
+    {
+      "id": "HIST-P3-079 integrated_runtime.py",
+      "pass": true,
+      "detail": "specified read-only historical hash unchanged"
+    },
+    {
+      "id": "HIST-P3-087 app.js",
+      "pass": true,
+      "detail": "specified read-only historical hash unchanged"
+    },
+    {
+      "id": "HIST-P3-088 independent runner",
+      "pass": true,
+      "detail": "specified read-only historical hash unchanged"
+    },
+    {
+      "id": "PAGE-default-recovery.html-local",
+      "pass": true,
+      "detail": "only relative local CSS/JS resources"
+    },
+    {
+      "id": "PAGE-default-recovery.html-skip",
+      "pass": true,
+      "detail": "skip link targets main content"
+    },
+    {
+      "id": "PAGE-default-recovery.html-boundary",
+      "pass": true,
+      "detail": "synthetic and AI/network boundary is visible"
+    },
+    {
+      "id": "PAGE-default-recovery.html-nav",
+      "pass": true,
+      "detail": "three-page navigation is present"
+    },
+    {
+      "id": "PAGE-no-reliable-suggestion.html-local",
+      "pass": true,
+      "detail": "only relative local CSS/JS resources"
+    },
+    {
+      "id": "PAGE-no-reliable-suggestion.html-skip",
+      "pass": true,
+      "detail": "skip link targets main content"
+    },
+    {
+      "id": "PAGE-no-reliable-suggestion.html-boundary",
+      "pass": true,
+      "detail": "synthetic and AI/network boundary is visible"
+    },
+    {
+      "id": "PAGE-no-reliable-suggestion.html-nav",
+      "pass": true,
+      "detail": "three-page navigation is present"
+    },
+    {
+      "id": "PAGE-restricted-offline.html-local",
+      "pass": true,
+      "detail": "only relative local CSS/JS resources"
+    },
+    {
+      "id": "PAGE-restricted-offline.html-skip",
+      "pass": true,
+      "detail": "skip link targets main content"
+    },
+    {
+      "id": "PAGE-restricted-offline.html-boundary",
+      "pass": true,
+      "detail": "synthetic and AI/network boundary is visible"
+    },
+    {
+      "id": "PAGE-restricted-offline.html-nav",
+      "pass": true,
+      "detail": "three-page navigation is present"
+    },
+    {
+      "id": "LIFE-default-deny",
+      "pass": true,
+      "detail": "default-deny is explicit in UI and state"
+    },
+    {
+      "id": "LIFE-capture-confirm",
+      "pass": true,
+      "detail": "capture needs explicit confirmation"
+    },
+    {
+      "id": "LIFE-grant-revoke",
+      "pass": true,
+      "detail": "grant and revoke controls are distinct"
+    },
+    {
+      "id": "LIFE-confirm-exact",
+      "pass": true,
+      "detail": "restore requires exact CONFIRM"
+    },
+    {
+      "id": "LIFE-failure-clear",
+      "pass": true,
+      "detail": "failure clears display and discloses failure"
+    },
+    {
+      "id": "LIFE-session-only",
+      "pass": true,
+      "detail": "session-only disclosure is explicit"
+    },
+    {
+      "id": "STATE-no-suggestion",
+      "pass": true,
+      "detail": "no fabricated suggestion"
+    },
+    {
+      "id": "STATE-restricted",
+      "pass": true,
+      "detail": "restricted/offline remains fail-closed"
+    },
+    {
+      "id": "A11Y-focus",
+      "pass": true,
+      "detail": "visible focus styling exists"
+    },
+    {
+      "id": "A11Y-responsive",
+      "pass": true,
+      "detail": "narrow-screen layout exists"
+    },
+    {
+      "id": "A11Y-reduced-motion",
+      "pass": true,
+      "detail": "reduced-motion override exists"
+    },
+    {
+      "id": "CLOSED-http://",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-https://",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-fetch(",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-XMLHttpRequest",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-localStorage",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-sessionStorage",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-indexedDB",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-navigator.storage",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-showOpenFilePicker",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-FileReader",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-sqlite",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-tauri",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-invoke(",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-vault",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-export",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-WebSocket",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    },
+    {
+      "id": "CLOSED-OpenAI",
+      "pass": true,
+      "detail": "forbidden capability token is absent"
+    }
+  ],
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "NotImplemented": 0
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "task": "LIFEOS-P3-074",
+  "scope": "document-only authorized rerun",
+  "source_sha256": "e31e7eeead2a8db0a6e1fb8be9ff74cb70ee3b0233ffe26b50357875c429f6b7",
+  "temporary_copy_strategy": "first/repeat/version-update reread",
+  "results": [
+    {
+      "id": "C-01",
+      "status": "PASS",
+      "check": "required boundary phrase"
+    },
+    {
+      "id": "C-02",
+      "status": "PASS",
+      "check": "required boundary phrase"
+    },
+    {
+      "id": "C-03",
+      "status": "PASS",
+      "check": "required boundary phrase"
+    },
+    {
+      "id": "C-04",
+      "status": "PASS",
+      "check": "required boundary phrase"
+    },
+    {
+      "id": "C-05",
+      "status": "PASS",
+      "check": "required boundary phrase"
+    },
+    {
+      "id": "C-06",
+      "status": "PASS",
+      "check": "required boundary phrase"
+    },
+    {
+      "id": "C-07",
+      "status": "PASS",
+      "check": "required boundary phrase"
+    },
+    {
+      "id": "C-08",
+      "status": "PASS",
+      "check": "required boundary phrase"
+    },
+    {
+      "id": "C-09",
+      "status": "PASS",
+      "check": "required boundary phrase"
+    },
+    {
+      "id": "C-10",
+      "status": "PASS",
+      "check": "required boundary phrase"
+    },
+    {
+      "id": "C-11",
+      "status": "PASS",
+      "check": "required boundary phrase"
+    },
+    {
+      "id": "C-12",
+      "status": "PASS",
+      "check": "required boundary phrase"
+    },
+    {
+      "id": "F-13",
+      "status": "PASS",
+      "check": "forbidden claim: 本草案已经启动 Alpha"
+    },
+    {
+      "id": "F-14",
+      "status": "PASS",
+      "check": "forbidden claim: 本草案确认真实文件已导出"
+    },
+    {
+      "id": "F-15",
+      "status": "PASS",
+      "check": "forbidden claim: 本草案确认真实恢复已验证"
+    },
+    {
+      "id": "F-16",
+      "status": "PASS",
+      "check": "forbidden claim: 本草案确认 Stage 4 已准入"
+    },
+    {
+      "id": "R-01",
+      "status": "PASS",
+      "check": "first clean-copy read matches source"
+    },
+    {
+      "id": "R-02",
+      "status": "PASS",
+      "check": "repeat read is idempotent"
+    },
+    {
+      "id": "R-03",
+      "status": "PASS",
+      "check": "version-update reread retains boundaries"
+    },
+    {
+      "id": "S-01",
+      "status": "PASS",
+      "check": "historical task assets are input-only; runner writes only authorized evidence"
+    },
+    {
+      "id": "S-02",
+      "status": "PASS",
+      "check": "document contains explicit real-capability closed-state list"
+    },
+    {
+      "id": "S-03",
+      "status": "PASS",
+      "check": "temporary copies cleaned after result capture"
+    }
+  ],
+  "summary": {
+    "pass": 22,
+    "fail": 0,
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  }
+}

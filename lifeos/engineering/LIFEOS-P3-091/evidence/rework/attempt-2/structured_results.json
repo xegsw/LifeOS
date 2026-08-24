@@ -1,0 +1,16 @@
+{
+  "attempt": 2,
+  "environment": "Google Chrome (com.google.Chrome) through Computer Use @oai/sky",
+  "entry": "file:///private/tmp/lifeos-p3-091-rework-attempt-2-app/default-recovery.html",
+  "pass": 2,
+  "fail": 0,
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "unknown": 0,
+  "notImplemented": 0,
+  "results": [
+    {"id":"RW-D-01","requirement":"close and reopen","result":"PASS","observable":"confirmed page was closed; a new tab opened same task-local file with default deny, blank input, no saved record, no preview and no receipt"},
+    {"id":"RW-D-02","requirement":"actual Tab and Enter","result":"PASS","observable":"Tab focused skip link; Enter changed local file URL to #main-content while default deny and blank input remained"}
+  ]
+}

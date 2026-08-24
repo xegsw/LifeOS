@@ -1,0 +1,68 @@
+Window: "LifeOS 今日 · 高保真受控候选", App: LifeOS P3-104 P3108R1 Lifecycle.
+0 standard window LifeOS 今日 · 高保真受控候选, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: LifeOS｜今日｜默认恢复, URL: tauri://localhost/default-recovery.html
+			3 link 跳到主要内容, Value: tauri://localhost/default-recovery.html#main-content
+			4 container LifeOS 主导航
+				5 link 今日, Value: tauri://localhost/default-recovery.html
+				6 container 今日三态
+					7 link 默认恢复, Value: tauri://localhost/default-recovery.html
+					8 link 暂无可靠建议, Value: tauri://localhost/no-reliable-suggestion.html
+					9 link 权限受限与离线, Value: tauri://localhost/restricted-offline.html
+					10 button (collapsed) 打开本地验证, Secondary Actions: Expand
+				11 button 设置未启用
+				12 container 固定演示身份
+					13 text 本地
+			14 container
+				15 heading 早安，开启新的一天。, Value: 1
+					16 text 早安，开启新的一天。
+				17 text 2026年8月23日 · 星期日 当前 Project：独立产品发布页改版 沿用你上次确认
+				18 button 切换
+				19 button 搜索未启用
+				20 button 新建未启用
+			21 container
+				22 text 从这里继续
+				23 container 独立产品发布页改版
+					24 text 个人 Project · 固定演示 AI 整理 · 已关闭
+					25 heading 独立产品发布页改版, Value: 2
+						26 text 独立产品发布页改版
+					27 text 上次停留在“确定首屏价值主张”，并决定将核心功能区改为网格布局。当前页面只展示固定非敏感演示；下方用户原文由 backend 权威恢复。
+					28 text 查看 3 条关键信息
+					29 container
+						30 text 你的记录 · 原文： P3-104 固定非敏感记录：核对今日页本地运行时。
+					31 text 外部来源：未启用，未读取任何访谈或远程内容
+					32 text 你已确认 · 决定：固定演示中的页面结构选择
+					33 text 昨天 18:30 停止 · 本地记录  1  条
+					34 button 继续设计 →
+					35 container 本地代码生成的中性线框预览
+						36 text 中性线框占位 · 非真实来源
+				37 container 当前不会生成、确认或保存 AI 建议
+					38 text AI 建议 · 未启用
+					39 text 系统关闭态
+					40 heading 当前不会生成、确认或保存 AI 建议, Value: 3
+						41 text 当前不会生成、确认或保存 AI 建议
+					42 text 固定页面保留参考图的信息层级，但 runtime 明确报告 AI 与外部能力关闭；不会把设计占位内容冒充真实建议。
+					43 button 确认
+					44 button 编辑
+					45 button 拒绝
+					46 button 忽略
+			47 text 已由本地 backend 耐久恢复
+			48 container 固定非敏感快速捕获
+				49 button (disabled) 附件未启用
+				50 button (disabled) 语音未启用
+				51 text 你的记录 · 原文
+				52 text P3-104 固定非敏感记录：核对今日页本地运行时。
+				53 button 明确保存固定非敏感文本
+			54 text 幂等重复：记录未增加，backend 追加了合法重复审计。
+		55 scroll bar (settable, float) 0
+	56 close button
+	57 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	58 minimize button
+	59 text LifeOS 今日 · 高保真受控候选
+60 menu bar
+	61 LifeOS P3-104 P3108R1 Lifecycle
+	62 File
+	63 Edit
+	64 View
+	65 Window
+	66 Help

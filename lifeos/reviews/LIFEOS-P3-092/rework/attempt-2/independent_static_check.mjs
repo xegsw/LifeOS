@@ -1,0 +1,11 @@
+import { readFile, readdir } from 'node:fs/promises';
+import { join } from 'node:path';
+const root = process.argv[2];
+const pages = ['default-recovery.html','no-reliable-suggestion.html','restricted-offline.html'];
+const src = Object.fromEntries(await Promise.all([...pages,'styles.css','app.js'].map(async f=>[f,await readFile(join(root,f),'utf8')])));
+const all = Object.values(src).join('\n').toLowerCase();
+const checks=[]; const add=(id, pass)=>checks.push({id,pass});
+for (const page of pages) for (const marker of ['内容身份与处理边界','固定非敏感演示文本','用户明确确认动作','合成系统状态','AI 未启用','未发生真实保存、授权、恢复或处理','skip-link','main-content']) add(`${page}:${marker}`,src[page].includes(marker));
+for (const forbidden of ['fetch(','xmlhttprequest','localstorage','sessionstorage','indexeddb','document.cookie','filereader','sqlite','tauri','ipc','websocket','navigator.sendbeacon']) add(`closed:${forbidden}`,!all.includes(forbidden));
+add('dependencies:none',!(await readdir(root)).includes('node_modules'));
+const result={pass:checks.filter(x=>x.pass).length,fail:checks.filter(x=>!x.pass).length,checks}; console.log(JSON.stringify(result,null,2)); process.exitCode=result.fail?1:0;

@@ -1,0 +1,644 @@
+[
+  {
+    "task_card_requirement": "SC-missing-db",
+    "test_id": "SC-missing-db",
+    "structured_result": "results.json#SC-missing-db",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-zero-byte",
+    "test_id": "SC-zero-byte",
+    "structured_result": "results.json#SC-zero-byte",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-random-corrupt",
+    "test_id": "SC-random-corrupt",
+    "structured_result": "results.json#SC-random-corrupt",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-no-schema",
+    "test_id": "SC-no-schema",
+    "structured_result": "results.json#SC-no-schema",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-only-captures",
+    "test_id": "SC-only-captures",
+    "structured_result": "results.json#SC-only-captures",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-only-audit",
+    "test_id": "SC-only-audit",
+    "structured_result": "results.json#SC-only-audit",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-0-missing",
+    "test_id": "SC-captures-column-0-missing",
+    "structured_result": "results.json#SC-captures-column-0-missing",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-0-name",
+    "test_id": "SC-captures-column-0-name",
+    "structured_result": "results.json#SC-captures-column-0-name",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-0-order",
+    "test_id": "SC-captures-column-0-order",
+    "structured_result": "results.json#SC-captures-column-0-order",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-0-type",
+    "test_id": "SC-captures-column-0-type",
+    "structured_result": "results.json#SC-captures-column-0-type",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-0-notnull",
+    "test_id": "SC-captures-column-0-notnull",
+    "structured_result": "results.json#SC-captures-column-0-notnull",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-0-default",
+    "test_id": "SC-captures-column-0-default",
+    "structured_result": "results.json#SC-captures-column-0-default",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-0-pk",
+    "test_id": "SC-captures-column-0-pk",
+    "structured_result": "results.json#SC-captures-column-0-pk",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-1-missing",
+    "test_id": "SC-captures-column-1-missing",
+    "structured_result": "results.json#SC-captures-column-1-missing",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-1-name",
+    "test_id": "SC-captures-column-1-name",
+    "structured_result": "results.json#SC-captures-column-1-name",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-1-order",
+    "test_id": "SC-captures-column-1-order",
+    "structured_result": "results.json#SC-captures-column-1-order",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-1-type",
+    "test_id": "SC-captures-column-1-type",
+    "structured_result": "results.json#SC-captures-column-1-type",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-1-notnull",
+    "test_id": "SC-captures-column-1-notnull",
+    "structured_result": "results.json#SC-captures-column-1-notnull",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-1-default",
+    "test_id": "SC-captures-column-1-default",
+    "structured_result": "results.json#SC-captures-column-1-default",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-1-pk",
+    "test_id": "SC-captures-column-1-pk",
+    "structured_result": "results.json#SC-captures-column-1-pk",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-2-missing",
+    "test_id": "SC-captures-column-2-missing",
+    "structured_result": "results.json#SC-captures-column-2-missing",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-2-name",
+    "test_id": "SC-captures-column-2-name",
+    "structured_result": "results.json#SC-captures-column-2-name",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-2-order",
+    "test_id": "SC-captures-column-2-order",
+    "structured_result": "results.json#SC-captures-column-2-order",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-2-type",
+    "test_id": "SC-captures-column-2-type",
+    "structured_result": "results.json#SC-captures-column-2-type",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-2-notnull",
+    "test_id": "SC-captures-column-2-notnull",
+    "structured_result": "results.json#SC-captures-column-2-notnull",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-2-default",
+    "test_id": "SC-captures-column-2-default",
+    "structured_result": "results.json#SC-captures-column-2-default",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-2-pk",
+    "test_id": "SC-captures-column-2-pk",
+    "structured_result": "results.json#SC-captures-column-2-pk",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-3-missing",
+    "test_id": "SC-captures-column-3-missing",
+    "structured_result": "results.json#SC-captures-column-3-missing",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-3-name",
+    "test_id": "SC-captures-column-3-name",
+    "structured_result": "results.json#SC-captures-column-3-name",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-3-order",
+    "test_id": "SC-captures-column-3-order",
+    "structured_result": "results.json#SC-captures-column-3-order",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-3-type",
+    "test_id": "SC-captures-column-3-type",
+    "structured_result": "results.json#SC-captures-column-3-type",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-3-notnull",
+    "test_id": "SC-captures-column-3-notnull",
+    "structured_result": "results.json#SC-captures-column-3-notnull",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-3-default",
+    "test_id": "SC-captures-column-3-default",
+    "structured_result": "results.json#SC-captures-column-3-default",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-3-pk",
+    "test_id": "SC-captures-column-3-pk",
+    "structured_result": "results.json#SC-captures-column-3-pk",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-4-missing",
+    "test_id": "SC-captures-column-4-missing",
+    "structured_result": "results.json#SC-captures-column-4-missing",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-4-name",
+    "test_id": "SC-captures-column-4-name",
+    "structured_result": "results.json#SC-captures-column-4-name",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-4-order",
+    "test_id": "SC-captures-column-4-order",
+    "structured_result": "results.json#SC-captures-column-4-order",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-4-type",
+    "test_id": "SC-captures-column-4-type",
+    "structured_result": "results.json#SC-captures-column-4-type",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-4-notnull",
+    "test_id": "SC-captures-column-4-notnull",
+    "structured_result": "results.json#SC-captures-column-4-notnull",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-4-default",
+    "test_id": "SC-captures-column-4-default",
+    "structured_result": "results.json#SC-captures-column-4-default",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-captures-column-4-pk",
+    "test_id": "SC-captures-column-4-pk",
+    "structured_result": "results.json#SC-captures-column-4-pk",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-0-missing",
+    "test_id": "SC-audit-column-0-missing",
+    "structured_result": "results.json#SC-audit-column-0-missing",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-0-name",
+    "test_id": "SC-audit-column-0-name",
+    "structured_result": "results.json#SC-audit-column-0-name",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-0-order",
+    "test_id": "SC-audit-column-0-order",
+    "structured_result": "results.json#SC-audit-column-0-order",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-0-type",
+    "test_id": "SC-audit-column-0-type",
+    "structured_result": "results.json#SC-audit-column-0-type",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-0-notnull",
+    "test_id": "SC-audit-column-0-notnull",
+    "structured_result": "results.json#SC-audit-column-0-notnull",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-0-default",
+    "test_id": "SC-audit-column-0-default",
+    "structured_result": "results.json#SC-audit-column-0-default",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-0-pk",
+    "test_id": "SC-audit-column-0-pk",
+    "structured_result": "results.json#SC-audit-column-0-pk",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-1-missing",
+    "test_id": "SC-audit-column-1-missing",
+    "structured_result": "results.json#SC-audit-column-1-missing",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-1-name",
+    "test_id": "SC-audit-column-1-name",
+    "structured_result": "results.json#SC-audit-column-1-name",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-1-order",
+    "test_id": "SC-audit-column-1-order",
+    "structured_result": "results.json#SC-audit-column-1-order",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-1-type",
+    "test_id": "SC-audit-column-1-type",
+    "structured_result": "results.json#SC-audit-column-1-type",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-1-notnull",
+    "test_id": "SC-audit-column-1-notnull",
+    "structured_result": "results.json#SC-audit-column-1-notnull",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-1-default",
+    "test_id": "SC-audit-column-1-default",
+    "structured_result": "results.json#SC-audit-column-1-default",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-1-pk",
+    "test_id": "SC-audit-column-1-pk",
+    "structured_result": "results.json#SC-audit-column-1-pk",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-2-missing",
+    "test_id": "SC-audit-column-2-missing",
+    "structured_result": "results.json#SC-audit-column-2-missing",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-2-name",
+    "test_id": "SC-audit-column-2-name",
+    "structured_result": "results.json#SC-audit-column-2-name",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-2-order",
+    "test_id": "SC-audit-column-2-order",
+    "structured_result": "results.json#SC-audit-column-2-order",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-2-type",
+    "test_id": "SC-audit-column-2-type",
+    "structured_result": "results.json#SC-audit-column-2-type",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-2-notnull",
+    "test_id": "SC-audit-column-2-notnull",
+    "structured_result": "results.json#SC-audit-column-2-notnull",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-2-default",
+    "test_id": "SC-audit-column-2-default",
+    "structured_result": "results.json#SC-audit-column-2-default",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-2-pk",
+    "test_id": "SC-audit-column-2-pk",
+    "structured_result": "results.json#SC-audit-column-2-pk",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-3-missing",
+    "test_id": "SC-audit-column-3-missing",
+    "structured_result": "results.json#SC-audit-column-3-missing",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-3-name",
+    "test_id": "SC-audit-column-3-name",
+    "structured_result": "results.json#SC-audit-column-3-name",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-3-order",
+    "test_id": "SC-audit-column-3-order",
+    "structured_result": "results.json#SC-audit-column-3-order",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-3-type",
+    "test_id": "SC-audit-column-3-type",
+    "structured_result": "results.json#SC-audit-column-3-type",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-3-notnull",
+    "test_id": "SC-audit-column-3-notnull",
+    "structured_result": "results.json#SC-audit-column-3-notnull",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-3-default",
+    "test_id": "SC-audit-column-3-default",
+    "structured_result": "results.json#SC-audit-column-3-default",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-3-pk",
+    "test_id": "SC-audit-column-3-pk",
+    "structured_result": "results.json#SC-audit-column-3-pk",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-4-missing",
+    "test_id": "SC-audit-column-4-missing",
+    "structured_result": "results.json#SC-audit-column-4-missing",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-4-name",
+    "test_id": "SC-audit-column-4-name",
+    "structured_result": "results.json#SC-audit-column-4-name",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-4-order",
+    "test_id": "SC-audit-column-4-order",
+    "structured_result": "results.json#SC-audit-column-4-order",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-4-type",
+    "test_id": "SC-audit-column-4-type",
+    "structured_result": "results.json#SC-audit-column-4-type",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-4-notnull",
+    "test_id": "SC-audit-column-4-notnull",
+    "structured_result": "results.json#SC-audit-column-4-notnull",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-4-default",
+    "test_id": "SC-audit-column-4-default",
+    "structured_result": "results.json#SC-audit-column-4-default",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-audit-column-4-pk",
+    "test_id": "SC-audit-column-4-pk",
+    "structured_result": "results.json#SC-audit-column-4-pk",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-missing-id-pk",
+    "test_id": "SC-missing-id-pk",
+    "structured_result": "results.json#SC-missing-id-pk",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-missing-idem-unique",
+    "test_id": "SC-missing-idem-unique",
+    "structured_result": "results.json#SC-missing-idem-unique",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-missing-source-check",
+    "test_id": "SC-missing-source-check",
+    "structured_result": "results.json#SC-missing-source-check",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-missing-audit-autoincrement",
+    "test_id": "SC-missing-audit-autoincrement",
+    "structured_result": "results.json#SC-missing-audit-autoincrement",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-idem-index-nonunique",
+    "test_id": "SC-idem-index-nonunique",
+    "structured_result": "results.json#SC-idem-index-nonunique",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-idem-index-wrong-column",
+    "test_id": "SC-idem-index-wrong-column",
+    "structured_result": "results.json#SC-idem-index-wrong-column",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-extra-index",
+    "test_id": "SC-extra-index",
+    "structured_result": "results.json#SC-extra-index",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-extra-trigger",
+    "test_id": "SC-extra-trigger",
+    "structured_result": "results.json#SC-extra-trigger",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-shadow-object",
+    "test_id": "SC-shadow-object",
+    "structured_result": "results.json#SC-shadow-object",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-semantic-sql-change",
+    "test_id": "SC-semantic-sql-change",
+    "structured_result": "results.json#SC-semantic-sql-change",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "SC-views-replace-tables",
+    "test_id": "SC-views-replace-tables",
+    "structured_result": "results.json#SC-views-replace-tables",
+    "evidence_file": "schema_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "PATH-api-cli-relative-dotdot-normalization-wrong-basename-output",
+    "test_id": "InvariantClosureTest.test_all_public_entries_share_exact_path_gate",
+    "structured_result": "results.json#PATH-api-cli-relative-dotdot-normalization-wrong-basename-output",
+    "evidence_file": "path_boundary_results.json"
+  },
+  {
+    "task_card_requirement": "PATH-db-symlink-ancestor-hardlink-directory-fifo-socket-special",
+    "test_id": "RuntimeTest.test_symlink_db_file_is_rejected; RuntimeTest.test_symlink_db_parent_is_rejected; InvariantClosureTest.test_db_and_page_hardlinks_are_rejected",
+    "structured_result": "results.json#PATH-db-symlink-ancestor-hardlink-directory-fifo-socket-special",
+    "evidence_file": "path_boundary_results.json"
+  },
+  {
+    "task_card_requirement": "PATH-page-symlink-ancestor-hardlink-directory-fifo-socket-special",
+    "test_id": "RuntimeTest.test_symlink_today_is_rejected_without_following; RuntimeTest.test_directory_and_special_today_are_rejected; InvariantClosureTest.test_db_and_page_hardlinks_are_rejected",
+    "structured_result": "results.json#PATH-page-symlink-ancestor-hardlink-directory-fifo-socket-special",
+    "evidence_file": "path_boundary_results.json"
+  },
+  {
+    "task_card_requirement": "PATH-sentinels-unchanged",
+    "test_id": "RuntimeTest.test_caller_output_paths_are_rejected_before_change",
+    "structured_result": "results.json#PATH-sentinels-unchanged",
+    "evidence_file": "path_boundary_results.json"
+  },
+  {
+    "task_card_requirement": "PATH-parent-missing-unreadable-unwritable",
+    "test_id": "InvariantClosureTest.test_parent_must_preexist_and_capture_leaves_nothing",
+    "structured_result": "results.json#PATH-parent-missing-unreadable-unwritable",
+    "evidence_file": "path_boundary_results.json"
+  },
+  {
+    "task_card_requirement": "PATH-page-delete-temp-create-fsync-replace-failures",
+    "test_id": "RuntimeTest.test_clear_page_invalidation_failure_preserves_db; InvariantClosureTest.test_render_fsync_failure_keeps_valid_page_and_cleans_temp; InvariantClosureTest.test_render_replace_failure_keeps_valid_page_and_cleans_temp",
+    "structured_result": "results.json#PATH-page-delete-temp-create-fsync-replace-failures",
+    "evidence_file": "path_boundary_results.json"
+  },
+  {
+    "task_card_requirement": "ROW-source-other-case-empty-null-blob",
+    "test_id": "InvariantClosureTest.test_source_and_row_type_mutations_fail_whole_result",
+    "structured_result": "results.json#ROW-source-other-case-empty-null-blob",
+    "evidence_file": "row_audit_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "ROW-id-content-created-source-idem-null-empty-wrong-type",
+    "test_id": "InvariantClosureTest.test_source_and_row_type_mutations_fail_whole_result",
+    "structured_result": "results.json#ROW-id-content-created-source-idem-null-empty-wrong-type",
+    "evidence_file": "row_audit_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "ROW-invalid-uuid-timezone-time",
+    "test_id": "InvariantClosureTest.test_source_and_row_type_mutations_fail_whole_result",
+    "structured_result": "results.json#ROW-invalid-uuid-timezone-time",
+    "evidence_file": "row_audit_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "ROW-duplicate-id-idem-and-whole-result",
+    "test_id": "InvariantClosureTest.test_source_and_row_type_mutations_fail_whole_result",
+    "structured_result": "results.json#ROW-duplicate-id-idem-and-whole-result",
+    "evidence_file": "row_audit_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "AUDIT-missing-wrong-id-event-detail-orphan-null-blob",
+    "test_id": "InvariantClosureTest.test_audit_mutations_fail_closed",
+    "structured_result": "results.json#AUDIT-missing-wrong-id-event-detail-orphan-null-blob",
+    "evidence_file": "row_audit_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "ROW-html-markup-quotes-unicode-newline-long",
+    "test_id": "InvariantClosureTest.test_html_is_escaped_unicode_newline_and_long_text_is_complete",
+    "structured_result": "results.json#ROW-html-markup-quotes-unicode-newline-long",
+    "evidence_file": "row_audit_mutation_results.json"
+  },
+  {
+    "task_card_requirement": "LIFE-new-db-init-failure-zero-half-products",
+    "test_id": "RuntimeTest.test_empty_and_atomic_failure",
+    "structured_result": "results.json#LIFE-new-db-init-failure-zero-half-products",
+    "evidence_file": "failure_injection_results.json"
+  },
+  {
+    "task_card_requirement": "LIFE-existing-capture-write-audit-commit-failure-repeat-conflict",
+    "test_id": "InvariantClosureTest.test_capture_success_invalidates_stale_page_and_failure_restores_it; InvariantClosureTest.test_repeat_only_appends_repeat_audit_and_conflict_changes_nothing",
+    "structured_result": "results.json#LIFE-existing-capture-write-audit-commit-failure-repeat-conflict",
+    "evidence_file": "failure_injection_results.json"
+  },
+  {
+    "task_card_requirement": "LIFE-render-read-validate-write-flush-fsync-replace-cleanup",
+    "test_id": "RuntimeTest.test_query_failure_with_stale_page_is_invalidated_without_db_change; InvariantClosureTest.test_render_fsync_failure_keeps_valid_page_and_cleans_temp; InvariantClosureTest.test_render_replace_failure_keeps_valid_page_and_cleans_temp",
+    "structured_result": "results.json#LIFE-render-read-validate-write-flush-fsync-replace-cleanup",
+    "evidence_file": "failure_injection_results.json"
+  },
+  {
+    "task_card_requirement": "LIFE-clear-invalidate-confirm-delete-audit-commit-rollback",
+    "test_id": "RuntimeTest.test_clear_page_invalidation_failure_preserves_db; InvariantClosureTest.test_clear_transaction_failure_rolls_back_and_page_stays_invalidated",
+    "structured_result": "results.json#LIFE-clear-invalidate-confirm-delete-audit-commit-rollback",
+    "evidence_file": "failure_injection_results.json"
+  },
+  {
+    "task_card_requirement": "LIFE-stale-page-after-capture-clear-missing-invalid-db",
+    "test_id": "InvariantClosureTest.test_capture_success_invalidates_stale_page_and_failure_restores_it; InvariantClosureTest.test_clear_untrusted_db_invalidates_page_without_db_change",
+    "structured_result": "results.json#LIFE-stale-page-after-capture-clear-missing-invalid-db",
+    "evidence_file": "failure_injection_results.json"
+  },
+  {
+    "task_card_requirement": "LIFE-fresh-process-full-chain",
+    "test_id": "fresh_process_lifecycle.log",
+    "structured_result": "results.json#LIFE-fresh-process-full-chain",
+    "evidence_file": "failure_injection_results.json"
+  },
+  {
+    "task_card_requirement": "REG-attempt-6-7-8-precondition-adapted",
+    "test_id": "adapted_regressions",
+    "structured_result": "results.json#REG-attempt-6-7-8-precondition-adapted",
+    "evidence_file": "failure_injection_results.json"
+  },
+  {
+    "task_card_requirement": "REG-pm-attempt8-two-counterexamples",
+    "test_id": "pm_schema_constraint_counterexamples",
+    "structured_result": "results.json#REG-pm-attempt8-two-counterexamples",
+    "evidence_file": "schema_mutation_results.json"
+  }
+]

@@ -1,0 +1,106 @@
+{
+  "task_id": "LIFEOS-P3-106",
+  "acceptance_basis": {
+    "id": "ABF-P3-106-v1",
+    "sha256": "1aa076a289173eb0dbd4e17ccfd3a1af89cbd9f815ad656d31d9318a5172a5c4",
+    "frozen_before_execution": true,
+    "changed_during_review": false
+  },
+  "pm_conclusion": "BLOCKED",
+  "classification": "PM-Validated external display-workspace blocker; Acceptance Not Met; same ABF may resume after explicit user authorization",
+  "formal_rework": {
+    "used": 0,
+    "limit": 2,
+    "consumed_by_this_review": false
+  },
+  "counts": {
+    "p0": 0,
+    "p1": 3,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 10
+  },
+  "checks": [
+    {
+      "id": "PM-001",
+      "check": "Task-card and ABF identity",
+      "status": "PASS",
+      "detail": "Task SHA-256 97c2ab9aed6b158ec274a09d76b4729d57fa0eac60cc0b028e2c8b4a13701fac; ABF SHA-256 1aa076a289173eb0dbd4e17ccfd3a1af89cbd9f815ad656d31d9318a5172a5c4."
+    },
+    {
+      "id": "PM-002",
+      "check": "Engineering Manifest recomputation",
+      "status": "PASS",
+      "detail": "116 of 116 listed live files independently recomputed with SHA-256 and matched. Manifest self-excluded."
+    },
+    {
+      "id": "PM-003",
+      "check": "Frozen visual and historical inputs",
+      "status": "PASS",
+      "detail": "22 of 22 ABF fixed inputs independently recomputed and matched."
+    },
+    {
+      "id": "PM-004",
+      "check": "Immutable P3-104 runtime candidate",
+      "status": "PASS",
+      "detail": "P3-106 Cargo.lock, Cargo.toml, src/runtime.rs, src/main.rs and capabilities/main.json match P3-104 byte-for-byte."
+    },
+    {
+      "id": "PM-005",
+      "check": "Submitted static, build and unit evidence",
+      "status": "PASS",
+      "detail": "Static preflight 39/39; Cargo unit tests 7/7; offline locked build and Tauri bundle exited successfully; unit temp paths absent before and after."
+    },
+    {
+      "id": "PM-006",
+      "check": "Actual-app required viewport: default recovery",
+      "status": "BLOCKED",
+      "detail": "actual-default.jpg independently measured 1160x768; ABF-M-004 requires actual-app full-canvas 1280x1024."
+    },
+    {
+      "id": "PM-007",
+      "check": "Actual-app required viewport: no reliable suggestion",
+      "status": "BLOCKED",
+      "detail": "actual-no-suggestion.jpg independently measured 1160x768; ABF-M-005 requires actual-app full-canvas 1280x1024."
+    },
+    {
+      "id": "PM-008",
+      "check": "Actual-app required viewport: restricted/offline",
+      "status": "BLOCKED",
+      "detail": "actual-restricted.jpg independently measured 1160x768; ABF-M-006 requires actual-app full-canvas 1280x1024."
+    },
+    {
+      "id": "PM-009",
+      "check": "Negative and cleanup evidence",
+      "status": "PARTIAL",
+      "detail": "Dangling final/journal/wal/shm and parent symlink 5/5 fail-closed with sentinels unchanged. Tampered-content process probe timed out and remains honestly non-PASS. Eight ledgered fixtures were removed, residuals zero, legacy temp metadata unchanged."
+    },
+    {
+      "id": "PM-010",
+      "check": "Full ABF matrix closure",
+      "status": "NOT_IMPLEMENTED",
+      "detail": "ABF-M-007 through M-013, M-015, M-017 and M-018 do not have final clean-replay closure because execution stopped at the viewport blocker."
+    }
+  ],
+  "pm_replay": {
+    "performed": false,
+    "reason": "A fresh replay under the unchanged current display workspace cannot produce the missing 1280x1024 actual-app evidence. Changing macOS display scaling is an external system-setting mutation not covered by the existing execution authorization. PM therefore performed read-only independent hash, pixel, log, path-residue and metadata verification and did not overwrite Engineering Evidence.",
+    "temporary_artifacts_created": false,
+    "temporary_artifacts_remaining": 0
+  },
+  "local_precheck": {
+    "performed": false,
+    "reason": "Skipped for a high-risk Tauri/data-boundary final judgment; the dispositive blocker is independently measurable pixel evidence. Engineering also recorded the local model as unavailable."
+  },
+  "assets": {
+    "p3_106": "Not Frozen",
+    "p3_104": "User Adopted / Technical Runtime Base / unchanged",
+    "p3_105": "User Adopted / Closed / read-only unchanged"
+  },
+  "risks": {
+    "R-0040": "Open / Conditional unchanged",
+    "R-0051": "Closed / Limited Controlled Boundary unchanged",
+    "R-0052": "Open / Authorized Controlled Execution Boundary unchanged"
+  },
+  "next_action": "Await explicit user authorization for temporary display-scaling change and mandatory restoration. If authorized, resume LIFEOS-P3-106 under unchanged ABF in a fresh evidence/resume-1 namespace and rerun all 18 matrix rows."
+}

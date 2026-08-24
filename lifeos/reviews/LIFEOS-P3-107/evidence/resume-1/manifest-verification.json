@@ -1,0 +1,33 @@
+{
+  "task_id": "LIFEOS-P3-107",
+  "method": "P3-106 Engineering 325-entry rehash is independently recorded in static-results.json; this verifier covers the remaining P3-104 Engineering/PM and P3-106 PM inventories without importing submitted runners.",
+  "results": [
+    {
+      "manifest": "lifeos/engineering/LIFEOS-P3-104/evidence/rework/attempt-1/MANIFEST.md",
+      "entries": 16,
+      "bad": [
+        "../../../../../reviews/LIFEOS-P3-104_pm_review.md"
+      ],
+      "self_refs": [],
+      "status": "FAIL"
+    },
+    {
+      "manifest": "lifeos/reviews/LIFEOS-P3-104/pm_evidence/rework-1/MANIFEST.md",
+      "entries": 8,
+      "bad": [],
+      "self_refs": [],
+      "status": "PASS"
+    },
+    {
+      "manifest": "lifeos/reviews/LIFEOS-P3-106/pm_evidence/rework-1/MANIFEST.md",
+      "entries": 2,
+      "bad": [],
+      "self_refs": [],
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "pass": 2,
+    "fail": 1
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "task_id": "LIFEOS-P3-106",
+  "execution": "resume-1",
+  "abf_id": "ABF-P3-106-v1",
+  "abf_sha256": "1aa076a289173eb0dbd4e17ccfd3a1af89cbd9f815ad656d31d9318a5172a5c4",
+  "authorization": "User authorized resume-1 on 2026-08-23; temporary display scaling is limited to ABF-M-004 through M-006, must be restored before ABF-I-11 and M-015, and the full M001-M018 matrix must be rerun.",
+  "created_before_resume_copy_build_test_or_app_action": true,
+  "historical_read_only": [
+    "lifeos/engineering/LIFEOS-P3-106/evidence/* excluding evidence/resume-1/",
+    "lifeos/reviews/LIFEOS-P3-106/pm_evidence/initial/",
+    "lifeos/reviews/LIFEOS-P3-106_pm_review.md",
+    "lifeos/deliverables/LIFEOS-P3-106_three_frozen_stitch_pages_high_fidelity_tauri_ui_path_contract_successor.md"
+  ],
+  "workspace_writes": [
+    {
+      "expression": "lifeos/engineering/LIFEOS-P3-106/evidence/resume-1/**",
+      "created_type": "resume-only runner source, JSON, logs, screenshots, side-by-side comparisons, and non-self Manifest",
+      "cleanup": "retained as resume-1 Engineering Evidence; never overwrite initial Evidence"
+    },
+    {
+      "expression": "lifeos/engineering/LIFEOS-P3-106/target/**",
+      "created_type": "Cargo/Tauri generated clean build artifacts",
+      "cleanup": "not Evidence; exact target directory is removed before the clean build, then regenerated offline"
+    },
+    {
+      "expression": "lifeos/deliverables/LIFEOS-P3-106_three_frozen_stitch_pages_high_fidelity_tauri_ui_path_contract_successor_resume_1.md",
+      "created_type": "resume-1 delivery report",
+      "cleanup": "retained for PM review"
+    }
+  ],
+  "actual_app_allowlist": {
+    "regex": "^/private/tmp/lifeos-p3-104-p3-106-(app|replay|dangling-final|dangling-journal|dangling-wal|dangling-shm|path|tamper|a11y|visual)-[a-z0-9-]+$",
+    "exact_run_paths": [
+      "/private/tmp/lifeos-p3-104-p3-106-app-resume1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-replay-resume1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-dangling-final-resume1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-dangling-journal-resume1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-dangling-wal-resume1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-dangling-shm-resume1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-path-resume1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-path-target-resume1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-tamper-resume1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-a11y-resume1-20260823",
+      "/private/tmp/lifeos-p3-104-p3-106-visual-resume1-20260823"
+    ],
+    "contents": [
+      "capture.sqlite",
+      "capture.sqlite-journal",
+      "capture.sqlite-wal",
+      "capture.sqlite-shm",
+      "sentinel.txt",
+      "task result JSON or log",
+      "local screenshot"
+    ],
+    "selection": "literal exact ledger only; each path must lstat missing before creation; no broad prefix, wildcard, glob, find-delete, or unresolved environment variable"
+  },
+  "immutable_unit_allowlist": [
+    "^/private/tmp/lifeos-p3-104-unit-(lifecycle|failure|arguments|links|dangling-final|dangling-sidecars|tamper|sidecar)-[0-9]+$",
+    "^/private/tmp/lifeos-p3-104-unit-link-target-[0-9]+$",
+    "^/private/tmp/lifeos-p3-104-unit-link-[0-9]+$"
+  ],
+  "display_setting_write": {
+    "scope": "macOS display scaling only",
+    "allowed_for": ["ABF-M-004", "ABF-M-005", "ABF-M-006"],
+    "required_sequence": ["record original", "temporary change", "capture three native 1280x1024 actual-app canvases", "restore original", "verify restored", "perform ABF-I-11 and ABF-M-015 at original 1160x768 workspace"],
+    "prohibited_use": "must not conceal responsive clipping, overlap, or unreachable controls"
+  },
+  "legacy_forbidden": [
+    "/private/tmp/lifeos-p3-104-app-evidence",
+    "/private/tmp/lifeos-p3-104-rework-replay-*",
+    "/private/tmp/lifeos-p3-104-rework-static-results.json",
+    "all other /private/tmp/lifeos-p3-104-* paths not matched by the immutable unit-test regexes"
+  ]
+}

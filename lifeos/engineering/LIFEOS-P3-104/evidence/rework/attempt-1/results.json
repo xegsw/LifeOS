@@ -1,0 +1,70 @@
+{
+  "task": "LIFEOS-P3-104",
+  "attempt": "rework-1-of-2",
+  "review_sha256": "da83f2adbe4aff8449d153c9eb32a6000a2b9dce54c24a218ab4e89b2b0d8aba",
+  "abf": {
+    "id": "ABF-P3-104-v1",
+    "sha256": "2672adc56174f89088c95a7909f36307b3d51add0c6fc0a6fd84e6eb7ebf8d8b",
+    "unchanged": true
+  },
+  "remediation": [
+    {
+      "finding": "PM-P3-104-CE-01",
+      "prior_severity": "P1",
+      "status": "PASS",
+      "implementation": "Final DB and journal/wal/shm objects use error-aware symlink_metadata; only true NotFound is absent.",
+      "unit_regression": "runtime::tests::dangling_database_and_sidecar_links_fail_closed",
+      "actual_app_observation": {
+        "bundle_binary_sha256": "4d7d54c5ac5ca1f71277e8718e5e22b22a977414bb955e82cb211f6f5f916da0",
+        "app_process_after_launch": 0,
+        "success_ui": "not_rendered",
+        "error": "database_type_rejected",
+        "dangling_link_preserved": true,
+        "missing_target_preserved": true,
+        "sentinel_unchanged": true,
+        "candidate_or_sidecar_residual": 0
+      }
+    },
+    {
+      "finding": "PM-P3-104-EV-01",
+      "prior_severity": "P2",
+      "status": "PASS",
+      "implementation": "offline_actual_app_replay.sh performs task-local cargo clean, exact offline locked app bundle build, launch, TERM stop, reopen, dangling rejection, hashes, and exact cleanup.",
+      "authoritative_log": "offline_actual_app_replay_pass.log"
+    }
+  ],
+  "verification": {
+    "existing_static": {"passed": 44, "failed": 0},
+    "rework_static": {"passed": 19, "failed": 0},
+    "rust_unit": {"passed": 7, "failed": 0},
+    "actual_app_replay": {
+      "clean_build": "PASS",
+      "normal_first_start": "PASS",
+      "normal_first_stop": "PASS",
+      "normal_reopen": "PASS",
+      "normal_reopen_stop": "PASS",
+      "dangling_final_symlink_rejected": "PASS",
+      "cleanup_residual": 0
+    },
+    "cargo_lock_sha256": "430583c26b3104ff384c7ab539b0ebe79d90509a957701a2fb1ebd3b4c2026f1",
+    "initial_engineering_manifest_sha256": "861d0be5bc40d1ebac41cc8b5a695d154d3bf073407b5fc6e3e85e42532a3f46",
+    "initial_engineering_manifest_unchanged": true,
+    "initial_pm_evidence_manifest_sha256": "dbce89510ea161181b9e997579ff92da0019bb93a2e9857ae415ba5484faf9c6",
+    "initial_pm_evidence_unchanged": true,
+    "temporary_cleanup": "PASS_RESIDUAL_0"
+  },
+  "diagnostics": [
+    {
+      "id": "RUSTFMT-NOT-IN-FROZEN-MINIMAL-TOOLCHAIN",
+      "status": "SKIPPED_NON_ABF_DIAGNOSTIC",
+      "detail": "cargo fmt --check was unavailable because rustfmt is not installed; no network or component expansion was attempted. Compiler and all required tests passed."
+    }
+  ],
+  "counts": {
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  }
+}

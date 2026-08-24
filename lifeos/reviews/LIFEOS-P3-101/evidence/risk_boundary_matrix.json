@@ -1,0 +1,38 @@
+{
+  "task_id": "LIFEOS-P3-101",
+  "matrix_row": "ABF-M-006",
+  "status": "PASS",
+  "risks": [
+    {"id": "R-0013", "severity": "P0", "status": "Open", "boundary": "Revocation/delete propagation across derived stores and third parties remains unclosed."},
+    {"id": "R-0014", "severity": "P0", "status": "Open", "boundary": "Coarse authorization/data-flow risk remains open."},
+    {"id": "R-0015", "severity": "P1", "status": "Open", "boundary": "Consent-fatigue/user-experience risk remains open."},
+    {"id": "R-0019", "severity": "P0", "status": "Open", "boundary": "Saved-versus-durable semantic risk remains open outside controlled candidates."},
+    {"id": "R-0021", "severity": "P0", "status": "Open", "boundary": "Revoke/disconnect/delete/retract semantic-confusion risk remains open."},
+    {
+      "id": "R-0040",
+      "severity": "P0",
+      "status": "Open / Conditional",
+      "boundary": "Real Tauri capability, plugins, IPC, WebView/CSP, debug/release bundles and platform path behavior are unverified. All related capabilities must remain disabled until a separate authorized validation.",
+      "reference": "lifeos/RISK_LOG.md:46"
+    },
+    {
+      "id": "R-0051",
+      "severity": "P0",
+      "status": "Closed / Limited Controlled Boundary",
+      "boundary": "Only fixed P3-097 hashes/current P3-097/P3-098 evidence, single-process, offline, task-local, fixed non-sensitive fixtures. Any real data/path/DB, behavior/hash change or external capability triggers reopen/equivalent risk.",
+      "reference": "lifeos/RISK_LOG.md:57"
+    }
+  ],
+  "r0040_r0051_independence": {
+    "pass": true,
+    "finding": "R-0051 limited closure neither closes nor offsets R-0040. Non-Tauri candidate evidence is not Tauri/IPC evidence."
+  },
+  "named_risk_fact_counts": {
+    "P0": 6,
+    "P1": 1,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 0,
+    "note": "Counts include status-known open and limited-closed risks; five P0 are open/open-conditional and one P0 is limited-closed."
+  }
+}

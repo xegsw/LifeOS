@@ -1,0 +1,81 @@
+{
+  "task_id": "LIFEOS-P3-108",
+  "review_round": "rework-1 / formal Rework 2 of 2",
+  "review_date": "2026-08-24",
+  "decision": "Closed — Acceptance Not Met",
+  "acceptance_basis": {
+    "id": "ABF-P3-108-v1",
+    "sha256": "54cbb4a8d302a1dd4007bcdbd7c7844f0d98588f54c51d941e197a8176c1ae10",
+    "changed": false
+  },
+  "submitted_evidence": {
+    "root": "lifeos/reviews/LIFEOS-P3-108/evidence/rework-1",
+    "manifest_non_self_entries": 181,
+    "actual_non_manifest_files": 181,
+    "manifest_full_match": true,
+    "cleanup_exact_paths_checked": 16,
+    "cleanup_exact_paths_present": 0,
+    "protected_p3_107_paths_checked": 3,
+    "protected_p3_107_paths_present": 0,
+    "frozen_snapshot_inputs": 21,
+    "frozen_snapshot_mismatches": 0
+  },
+  "accepted_subresults": [
+    "authorization and model metadata recorded",
+    "test design ordering recorded",
+    "P3-106 Manifest 325/325 and P3-104 time-qualified Manifest rule recorded as passing",
+    "positive allowlist copy, static checks, offline locked test/build/bundle recorded as passing",
+    "lifecycle, denied, boundary, negative, accessibility, reduced-motion and scan raw assets are present",
+    "task-local and protected temporary paths are absent after exact cleanup"
+  ],
+  "findings": [
+    {
+      "id": "PM-P3-108-R1-EV-01",
+      "severity": "P0",
+      "status": "Open",
+      "mapping": ["L1-7", "L1-10", "ABF-I-12", "ABF-M-016"],
+      "fact": "finalize_rework.py final_verify checks required-file existence and trusts preassigned row/action status strings. It does not independently validate asset hashes, semantic predicates, cleanup contents, negative-gate nonzero behavior, DB/audit/sentinel invariants, or the stable final Manifest. The Manifest is regenerated after final-verifier.json is written.",
+      "effect": "The submitted final verifier cannot establish the frozen Evidence-integrity gate even though it honestly returns pass=false."
+    },
+    {
+      "id": "PM-P3-108-R1-COV-02",
+      "severity": "Not Implemented",
+      "status": "Open",
+      "mapping": ["ABF-I-06", "ABF-M-007"],
+      "fact": "M-007 requires independent comparison of the already frozen P3-106 1280x1024 actual-app Evidence with the three Stitch authorities. The rework instead attempted new current-window captures and classified native window measurement as UNKNOWN. It contains no row-level structural comparison judgment against the fixed P3-106 evidence.",
+      "effect": "M-007 is not implemented; no display-setting change or new native-window measurement was required by this row."
+    },
+    {
+      "id": "PM-P3-108-R1-UNK-03",
+      "severity": "Unknown",
+      "status": "Open",
+      "mapping": ["ABF-I-07", "ABF-M-008"],
+      "fact": "Narrow interactions and scroll states are retained, but the actual native window/content rectangle was not recorded. The submitted evidence therefore cannot establish the frozen exact 700x760 condition.",
+      "effect": "M-008 remains UNKNOWN; scaled CUA captures cannot be promoted to an exact geometry fact."
+    },
+    {
+      "id": "PM-P3-108-R1-DOC-04",
+      "severity": "P2",
+      "status": "Open",
+      "mapping": ["L1-7", "ABF Evidence contract"],
+      "fact": "The current independent Review path remains the initial Blocked review and does not contain the rework-1 result; the execution report was appended to the PM Review instead.",
+      "effect": "The review chain is understandable but not cleanly normalized at the frozen Review path."
+    }
+  ],
+  "counts": {
+    "P0": 1,
+    "P1": 0,
+    "P2": 1,
+    "Unknown": 1,
+    "Not Implemented": 1
+  },
+  "candidate_engineering_defect_confirmed": false,
+  "formal_rework_used": 2,
+  "formal_rework_limit": 2,
+  "same_task_rework_allowed": false,
+  "successor_created": false,
+  "risk_state_changed": false,
+  "assets_frozen": false,
+  "stage_4_allowed": false,
+  "local_precheck": "Skipped: high-risk Tauri/IPC, local-file fail-closed and Evidence-integrity final judgment; local model may not decide the outcome."
+}

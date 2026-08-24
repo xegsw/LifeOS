@@ -1,0 +1,51 @@
+{
+  "task": "LIFEOS-P3-022",
+  "migrated_engineering_asset": "LIFEOS-P3-009",
+  "run_at": "2026-08-13T04:44:06.081Z",
+  "command": "node scripts/validate.mjs",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "sqlite": "node:sqlite built-in"
+  },
+  "fixture": "lifeos-p3-009-synthetic-v1",
+  "snapshot_id": "4d28b22d29c412fa335e30919d552c294405d313c1314a9d4837e88afe269159",
+  "summary": {
+    "pass": 37,
+    "fail": 0,
+    "total_fail": 0,
+    "p0_fail": 0,
+    "p1_fail": 0,
+    "p2_fail": 0,
+    "unclassified_fail": 0,
+    "existing_regression_expected": 34,
+    "existing_regression_pass": 34,
+    "p1_migration_expected": 4,
+    "p1_migration_pass": 4,
+    "p3_015_regression_expected": 1,
+    "p3_015_regression_pass": 1,
+    "p1_4_expected": 2,
+    "p1_4_pass": 2,
+    "p1_8_expected": 4,
+    "p1_8_pass": 4,
+    "p1_6_expected": 5,
+    "p1_6_pass": 5,
+    "p1_7_expected": 4,
+    "p1_7_pass": 4,
+    "p2_cleanup_expected": 3,
+    "p2_cleanup_pass": 3
+  },
+  "hashes": {
+    "package.json": "f953a284ef488b50909b844400924f62de10fcb2d2ec5c880ca0587f2406391c",
+    "fixtures/synthetic_v1.json": "1e3287f8f666884e5bce2bf1d490973fce2d2e5ca0db7c521184186ae0ebaf96",
+    "src/types.ts": "f43aeabf330ee6bb120a62e2dd7ee4e144dcc2d9de8d47b771984868e2897e01",
+    "src/capability-policy.ts": "f6f4c1ea1220ed6c38ef3fc939ff168b423578ffa7884a5cad7456905e65bdce",
+    "src/content-identity.ts": "7875f62bea2ed046380ab89ac3cc39468a2c6488b345a7134ec54446e62fc296",
+    "src/store.ts": "0b4fc947d5f8db91d0fa3f67b86ff150f02c745d25481aa474233e15ab5e1a09",
+    "src/consumption-gate.ts": "2116e1a256441bc730b76c81b79307561f679e0754659fac4622acbfc20c3111",
+    "src/lifeos.ts": "d5aaef1cbfe795c03e48bf9adbefe42d6a88d2f6e5d1365ece16e4c1b935b471",
+    "tests/invariants.test.ts": "bd7a11a4f0a79fa4778630fab978e6594a1de11c5c73e7b383ffc17122e52c84",
+    "scripts/validate.mjs": "9db635f95c242fe06f527f8273372ca1344c75b3f25afe2afe0a4efec317e4c0"
+  }
+}

@@ -1,0 +1,66 @@
+=== P3-041 Independent Counter-Example Attacks ===
+
+Total attacks: 38
+Passed (fail-closed or legal verified): 19
+Failed (bypass found): 19
+P1 bypasses: 7
+P2 bypasses: 12
+
+  [P1] PARENT/update_processor_active: FAIL
+    DETAIL: processor changed local->external-cloud while active: gen unchanged, no audit
+  [P1] PARENT/update_purpose_active: FAIL
+    DETAIL: purpose changed test->production while active: gen unchanged, no audit
+  [P1] PARENT/update_location_active: FAIL
+    DETAIL: location changed device->remote while active: gen unchanged, no audit
+  [P1] PARENT/update_grantor_active: FAIL
+    DETAIL: grantor_ref changed while active: gen unchanged, no audit
+  [P1] PARENT/update_expiry_to_indefinite_active: FAIL
+    DETAIL: expires_mode changed at->indefinite while active: gen unchanged, no audit
+  [P1] PARENT/update_policy_version_active: FAIL
+    DETAIL: policy_version changed while active: gen unchanged, no audit
+  [P1] PARENT/compound_field_update_active: FAIL
+    DETAIL: processor+purpose+location all changed while active: gen unchanged, no audit
+  [P2] PARENT/update_valid_from_active: FAIL
+    DETAIL: valid_from_ms changed while active: gen unchanged, no audit (P2: minor field)
+  [P1] UPSERT/scope_on_conflict_do_update: PASS
+  [P1] UPSERT/action_on_conflict_do_update: PASS
+  [P1] UPSERT/policy_on_conflict_do_update: PASS
+  [P1] UPSERT/scope_on_conflict_do_nothing: PASS
+  [P1] MULTI/multi_row_scope_effect_update: PASS
+  [P1] MULTI/multi_row_rebind_all_scopes: PASS
+  [P2] AUDIT/preposition_fake_retirement: FAIL
+    DETAIL: Pre-positioned audit/outbox allowed fake retirement (P2: known candidate limitation)
+  [P2] AUDIT/delete_audit_after_retirement: FAIL
+    DETAIL: audit_entry deleted after retirement - evidence chain gap (P2: evidence integrity)
+  [P2] AUDIT/delete_outbox_after_retirement: FAIL
+    DETAIL: outbox_job deleted after retirement - evidence chain gap (P2: evidence integrity)
+  [P2] AUDIT/update_outbox_status_after_retirement: FAIL
+    DETAIL: outbox_job status modified after retirement (P2: evidence integrity)
+  [P2] AUDIT/update_audit_action_after_retirement: FAIL
+    DETAIL: audit_entry action_code modified after retirement (P2: evidence integrity)
+  [P2] GEN/increase_generation_active: FAIL
+    DETAIL: generation increased 1->5 while active without status change (P2: evidence integrity)
+  [P2] GEN/bump_then_retire_with_prepositioned_evidence: FAIL
+    DETAIL: generation bumped then retired with pre-positioned evidence (P2: evidence integrity)
+  [P2] TERM/update_scope_effect_revoked: FAIL
+    DETAIL: scope effect changed allow->deny after revocation - historical evidence altered (P2)
+  [P2] TERM/insert_scope_revoked: FAIL
+    DETAIL: new scope INSERTed after revocation - historical authorization semantics changed (P2)
+  [P2] TERM/update_action_value_revoked: FAIL
+    DETAIL: action value changed read->export_candidate after revocation (P2: historical integrity)
+  [P2] TERM/update_policy_training_revoked: FAIL
+    DETAIL: policy training_allowed changed after revocation (P2: historical integrity)
+  [P1] VER/v2_supersede_revoked_not_superseded: PASS
+  [P1] VER/v3_supersede_v1_skip_v2: PASS
+  [P1] VER/v2_wrong_logical_key_supersedes: PASS
+  [P1] VER/v3_supersedes_v1_wrong_version_gap: PASS
+  [P1] VER/concurrent_active_v1_v2: PASS
+  [P2] TRIG/compound_status_generation_update: PASS
+  [P1] TRIG/recursive_trigger_scope_update: PASS
+  [P2] TRIG/fk_off_insert_orphan_child: PASS
+  [P2] TRIG/fk_off_trigger_bypass_orphan: PASS
+  [P2] LEGAL/proposed_granted_active: PASS
+  [P2] LEGAL/proposed_direct_active: PASS
+  [P2] LEGAL/supersede_new_version_activate: PASS
+  [P2] LEGAL/terminal_child_cleanup_revoked: PASS
+

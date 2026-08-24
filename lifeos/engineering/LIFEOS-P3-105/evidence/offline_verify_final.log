@@ -1,0 +1,35 @@
+^D{"passed": 44, "failed": 0, "p0": 0, "unknown": 0, "not_implemented": 0}
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.26s
+     Running unittests src/main.rs (.tooling/target/debug/deps/lifeos_p3_104-490d4ffef2a7b142)
+
+running 6 tests
+test runtime::tests::runtime_status_closes_direct_capabilities ... ok
+test runtime::tests::path_and_argument_boundaries_fail_closed ... ok
+test runtime::tests::symlink_and_hardlink_boundaries_fail_closed ... ok
+test runtime::tests::injected_failure_preserves_database_and_sentinel ... ok
+test runtime::tests::lifecycle_saved_repeat_conflict_restart ... ok
+test runtime::tests::tampered_content_and_sidecar_fail_closed ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+        Info Looking up installed tauri packages to check mismatched versions...
+   Compiling objc2-exception-helper v0.1.1
+   Compiling libsqlite3-sys v0.38.2
+   Compiling lifeos-p3-104 v0.1.0 (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-104)
+   Compiling objc2 v0.6.4
+   Compiling objc2-core-foundation v0.3.2
+   Compiling block2 v0.6.2
+   Compiling dispatch2 v0.3.1
+   Compiling rusqlite v0.40.2
+   Compiling objc2-foundation v0.3.2
+   Compiling objc2-app-kit v0.3.2
+   Compiling objc2-web-kit v0.3.2
+   Compiling tao v0.35.3
+   Compiling muda v0.19.3
+   Compiling window-vibrancy v0.6.0
+   Compiling tauri-runtime v2.11.3
+   Compiling wry v0.55.1
+   Compiling tauri-runtime-wry v2.11.4
+   Compiling tauri v2.11.5
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 9.05s
+       Built application at: /Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-104/.tooling/target/debug/lifeos-p3-104

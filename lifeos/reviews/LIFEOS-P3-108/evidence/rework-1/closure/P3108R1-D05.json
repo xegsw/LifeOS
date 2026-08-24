@@ -1,0 +1,29 @@
+{
+  "id": "P3108R1-D05",
+  "observable_result": "UI reports idempotent repeat; DB remains one record while audit records capture_repeat.",
+  "operation": "Click the same fixed-text capture a second time.",
+  "raw_actual_app_state_and_visual_evidence": [
+    {
+      "exists": true,
+      "path": "dynamic/U07-repeat-idempotent.ax.txt",
+      "sha256": "6d89641ac8769398b9a661331f14235dbf9e8956912b65a849852049cf4e5728"
+    },
+    {
+      "exists": true,
+      "path": "dynamic/U07-repeat-idempotent.jpeg",
+      "sha256": "3396bd6948b3a7582119c72e22c9b164ab95a20f4ac4bf055b2b3807b32516f7"
+    },
+    {
+      "exists": true,
+      "path": "fixture-reopen-P3108R1-U07-repeat-after.json",
+      "sha256": "caf7d1ba04436b0f72a4cc7b2cf225b3fbb654296a132895fca396eafb8e13ad"
+    },
+    {
+      "exists": true,
+      "path": "db-reopen-P3108R1-U07-repeat-after.json",
+      "sha256": "a5630f1468d6e13d185357e1a5f89ab426e8dfb903bc687a11701132b1a114e5"
+    }
+  ],
+  "status": "PASS",
+  "time": "2026-08-24T03:13:25.556739+00:00"
+}

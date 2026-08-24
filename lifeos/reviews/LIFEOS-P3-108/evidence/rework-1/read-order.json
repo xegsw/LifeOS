@@ -1,0 +1,10 @@
+{
+  "id": "P3108R1-M002-read-order",
+  "events": [
+    {"order": 1, "artifact": "test_design.md", "sha256": "c547c51321706dd1ceeb5fd9f1622f9cafa2ee0f6be25f20580d9b851c418ed8", "fact": "created and hashed before any P3-104/P3-106/P3-107 submitted runner, test, tool, structured result, Evidence, or P3-106 candidate source was read for rework-1"},
+    {"order": 2, "artifact": "authorization.json", "fact": "recorded D-0440/D-0441 user and PM metadata before candidate read"},
+    {"order": 3, "artifact": "candidate source and direct inputs", "fact": "read-only inspection began only after events 1 and 2"},
+    {"order": 4, "artifact": "independent_runner.py", "fact": "newly authored by rework-1; does not import, copy, or execute submitted runners/tools/Evidence"}
+  ],
+  "pass": true
+}
