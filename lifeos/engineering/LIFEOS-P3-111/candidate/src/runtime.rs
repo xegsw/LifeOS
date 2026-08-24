@@ -338,7 +338,7 @@ mod tests {
 
     #[test]
     fn path_and_argument_boundaries_fail_closed() {
-        assert_eq!(validate_database_path(Path::new("/private/tmp/escape/capture.sqlite"), false).unwrap_err().code, "path_schema_rejected");
+        assert_eq!(validate_database_path(Path::new("/Users/xxe/Documents/not-pilot/capture.sqlite"), false).unwrap_err().code, "path_schema_rejected");
         let (db, root) = fixture("arguments"); assert_eq!(capture_impl(&db, &request("", "p3-111-test-primary"), Fault::None).unwrap_err().code, "argument_schema_rejected"); assert!(!db.exists()); fs::remove_dir_all(root).unwrap();
     }
 
