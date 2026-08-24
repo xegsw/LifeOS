@@ -1,0 +1,27 @@
+{
+  "evidence_id": "P3-114-home-advice-contract-review-v1",
+  "status": "PASS",
+  "checks": [
+    {
+      "criterion": "home is Person's today and does not force Project selection",
+      "result": "PASS"
+    },
+    {
+      "criterion": "advice is limited to 1-3 and questions to 0-1 only when the answer materially affects safety, inclusion, ranking or next step",
+      "result": "PASS"
+    },
+    {
+      "criterion": "each advice exposes next step, why now, source/artifact/derivation basis, freshness, certainty, scope, safety degradation, evidence access and feedback/pause controls",
+      "result": "PASS"
+    },
+    {
+      "criterion": "advice neither creates nor executes an action automatically",
+      "result": "PASS"
+    },
+    {
+      "criterion": "home-level controls distinguish accept, modify, reject, ignore, defer, answer, execution/result report, correct and revoke/pause",
+      "result": "PASS"
+    }
+  ],
+  "conclusion": "The candidate supplies a visible, bounded advice-and-question contract rather than an opaque task wall or automated agent contract."
+}

@@ -1,0 +1,35 @@
+{
+  "evidence_id": "P3-113-M001-session-start",
+  "status": "PASS",
+  "recorded_at": "2026-08-24T19:54:04+0800",
+  "authorization": {
+    "received_task_card": "lifeos/tasks/LIFEOS-P3-113_human_centered_dual_domain_self_use_mvp_product_rebaseline.md",
+    "session_type": "new specialist product-definition session",
+    "authorization_basis": "User delivered the explicit task-card path; D-0319 scope authorization applies only to this task card."
+  },
+  "acceptance_basis": {
+    "path": "lifeos/tasks/LIFEOS-P3-113_human_centered_dual_domain_self_use_mvp_product_rebaseline_acceptance_basis_freeze.md",
+    "id": "ABF-P3-113-v1",
+    "status": "Frozen",
+    "sha256": "a64c87840b4526aab816a3186b3e63a43f33afcad183a4b4cfec2531f22b7d6d"
+  },
+  "model_routing": {
+    "task_card_required_model": "gpt-5.6-terra",
+    "task_card_required_reasoning_effort": "xhigh",
+    "runtime_metadata_observable": false,
+    "assessment": "No contradictory routing metadata was exposed. Per D-0412, task routing is PM/system dispatch metadata and this delivery does not claim direct observation of an unavailable runtime label."
+  },
+  "scope_guard": {
+    "allowed_writes": [
+      "lifeos/deliverables/LIFEOS-P3-113_human_centered_dual_domain_self_use_mvp_product_rebaseline.md",
+      "lifeos/reviews/LIFEOS-P3-113/evidence/"
+    ],
+    "forbidden_actions_not_performed": [
+      "engineering changes",
+      "ledger, risk, freeze, decision, task-card or ABF edits",
+      "apps, databases, models, network or real-data access",
+      "Pilot-2 path discovery or access"
+    ]
+  },
+  "classification": "fact and execution record; the product definition remains a candidate pending P3-114"
+}

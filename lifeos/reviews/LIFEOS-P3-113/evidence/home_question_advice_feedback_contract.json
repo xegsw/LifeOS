@@ -1,0 +1,19 @@
+{
+  "evidence_id": "P3-113-M007-home-question-advice-feedback",
+  "status": "PASS",
+  "home_contract": {
+    "focus": "Person's today; no required initial Project selection and no fixed Project-first hierarchy",
+    "advice_count": "1-3",
+    "question_count": "0-1",
+    "advice_required_fields": ["next step", "why now", "source/content identity", "time/freshness", "certainty", "scope", "safety/degrade", "view evidence", "feedback/pause"],
+    "question_threshold": "ask only if an answer materially changes safety, inclusion, rank or next step",
+    "missing_information": "show insufficient information or degrade; do not imply knowledge or press for an answer"
+  },
+  "feedback_contract": {
+    "allowed": ["helpful", "not applicable", "skip", "correct evidence", "pause/revoke this advice type"],
+    "recording": "append Feedback and preserve reasoning/evidence chain",
+    "generalization": "only an explicitly confirmed, scoped, revocable rule may influence later contexts",
+    "automation": "no suggestion automatically creates or executes an action"
+  },
+  "classification": "candidate interaction contract pending P3-114"
+}

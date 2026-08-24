@@ -1,0 +1,28 @@
+{
+  "frozen_abf": "ABF-P3-112-v1",
+  "rows": [
+    {"id": "M-001", "result": "PASS", "evidence": ["../authorization.md", "../session-boundary.md"]},
+    {"id": "M-002", "result": "PASS", "evidence": ["../test_design.md", "../read-order.md", "../test-design.sha256"]},
+    {"id": "M-003", "result": "PASS", "evidence": ["fixed-inputs.json"]},
+    {"id": "M-004", "result": "PASS", "evidence": ["copy-inventory.json"]},
+    {"id": "M-005", "result": "PASS", "evidence": ["toolchain.json", "offline-results.json", "cargo-test.log", "cargo-build.log"]},
+    {"id": "M-006", "result": "PASS", "evidence": ["static-results.json"]},
+    {"id": "M-007", "result": "PASS", "evidence": ["dynamic-privacy-audit.json"]},
+    {"id": "M-008", "result": "PASS", "evidence": ["dynamic-privacy-audit.json"]},
+    {"id": "M-009", "result": "PASS", "evidence": ["independent-verifier-results.json"]},
+    {"id": "M-010", "result": "PASS", "evidence": ["unchanged-control.json"]},
+    {"id": "M-011", "result": "PASS", "evidence": ["mutation-matrix.json"]},
+    {"id": "M-012", "result": "PASS", "evidence": ["submitted-verifier-cross-check.json"]},
+    {"id": "M-013", "result": "PASS", "evidence": ["fixed-inputs.json", "history_after.json", "governance-result.json"]},
+    {"id": "M-014", "result": "PASS", "evidence": ["run-boundary.json", "cleanup-before.json", "cleanup-after.json"]},
+    {"id": "M-015", "result": "PASS", "evidence": ["governance-result.json"]}
+  ],
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not_Implemented": 0
+  },
+  "all_rows_pass": true
+}

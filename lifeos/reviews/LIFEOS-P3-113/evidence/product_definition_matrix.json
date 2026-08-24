@@ -1,0 +1,20 @@
+{
+  "evidence_id": "P3-113-M005-M010-product-definition",
+  "status": "PASS",
+  "candidate_one_liner": "LifeOS is a user-controlled, traceable and correctable long-term external brain centered on a person; it connects work and health/fitness long memory with today's state, asks few judgment-changing questions and offers few explainable, feedbackable suggestions.",
+  "first_user_result": "Open a person-centered home without first choosing a Project; see 1-3 worthwhile record/answer/decide/action items with evidence, uncertainty and controls.",
+  "loop": ["multi-source perception", "long-term memory", "current understanding", "proactive question", "personalized advice", "user feedback", "memory/understanding update"],
+  "scope": {
+    "must": ["single self-user", "work plus health/fitness", "traceable long memory", "home 1-3 advice and 0-1 question", "advice explanation and feedback", "synthetic cross-domain fixture", "safe health stop/degrade", "confirm/correct/expire/delete semantics"],
+    "should": ["user-configurable frequency/pause", "work Project as context", "low-risk fitness suggestion bounded by confirmed constraints/time"],
+    "not_now": ["real data", "connectors/cloud/models/network", "sync/multi-device/mobile/external users", "diagnosis/treatment/high-impact automation/L3-L5", "complete Project system", "heavy knowledge graph/microservices/multi-agent"]
+  },
+  "gate_status": [
+    {"gate": "G1 real product problem", "status": "candidate pass", "limit": "not user-validated"},
+    {"gate": "G2 minimum usable loop", "status": "candidate pass", "limit": "no schema or implementation"},
+    {"gate": "G3 AI trust/authorization", "status": "candidate pass", "limit": "no real AI call or safety validation"},
+    {"gate": "G4 technical feasibility", "status": "conditional pass", "limit": "P3-111 is only bounded future input; no architecture freeze"},
+    {"gate": "G5 sustainable-use hypothesis", "status": "hypothesis only", "limit": "requires later controlled self-use testing"}
+  ],
+  "classification": "candidate product definition; G5 is explicitly not a pass"
+}

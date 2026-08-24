@@ -1,0 +1,60 @@
+{
+  "task": "LIFEOS-P3-112",
+  "review_scope": "PM initial counterexample and submitted Evidence recomputation",
+  "submitted_evidence": {
+    "manifest_entries": 17,
+    "manifest_bad_hash_or_bytes": 0,
+    "evidence_files_including_manifest": 18,
+    "fixed_inputs_matching": 12,
+    "fixed_inputs_total": 12,
+    "candidate_ordinary_files": 72,
+    "candidate_tree_sha256": "cc1ff0f05d5d3993c8b113dae80a043b3d7f535a05a8236771b980a4892718a3"
+  },
+  "tool_availability_counterexample": {
+    "path_lookup_cargo_on_default_path": false,
+    "exact_cargo_path": "/Users/xxe/.cargo/bin/cargo",
+    "exact_cargo_executable": true,
+    "cargo_version": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+    "exact_rustc_path": "/Users/xxe/.cargo/bin/rustc",
+    "exact_rustc_executable": true,
+    "rustc_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+    "installation_performed": false,
+    "network_used": false
+  },
+  "pm_rerun": {
+    "initial_harness_workdir_error_exit": 101,
+    "initial_harness_workdir_error_changed_candidate": false,
+    "cargo_test_exit": 0,
+    "cargo_test_passed": 8,
+    "cargo_test_failed": 0,
+    "cargo_build_exit": 0,
+    "cargo_offline": true,
+    "cargo_target_inside_pm_root": true,
+    "tmpdir_inside_pm_root": true,
+    "external_lifeos_p3_104_unit_residue": 0
+  },
+  "cleanup": {
+    "submitted_review_root_exists_after": false,
+    "pm_root_exists_after": false,
+    "pm_root_removed_bytes_human": "1.1G",
+    "pilot_2_accesses": 0,
+    "p3_111_writes": 0,
+    "submitted_p3_112_evidence_writes": 0
+  },
+  "finding": {
+    "id": "PM-CE-001",
+    "severity": "P0",
+    "classification": "Rework",
+    "summary": "The submitted runner checked only the process PATH and declared Cargo unavailable even though the pre-existing exact Cargo and Rustc paths were executable and completed the frozen offline test/build gate.",
+    "additional_runner_requirement": "The rework must place TMPDIR under the unique P3-112 temporary root before running candidate tests, in addition to CARGO_TARGET_DIR, so candidate unit-test paths cannot escape the frozen temporary root.",
+    "abf_mapping": ["ABF-I-05", "M-005", "M-006-M-013", "Pass formula"],
+    "l1_mapping": ["L1-7", "L1-9", "L1-10"]
+  },
+  "counts": {
+    "P0": 1,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 9
+  }
+}

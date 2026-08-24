@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>LifeOS · Today（P3-115 原型）</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到今日重点</a>
+    <div class="app-shell" data-motion="full">
+      <aside class="rail" aria-label="主导航">
+        <a class="brand" href="#today" aria-label="LifeOS Today" data-nav="today"><span>✦</span></a>
+        <nav class="rail-nav" aria-label="主要位置">
+          <button class="nav-item active" type="button" data-nav="today" aria-current="page"><span aria-hidden="true">◷</span><span>Today</span></button>
+          <button class="nav-item" type="button" data-nav="memory"><span aria-hidden="true">⌁</span><span>Memory</span></button>
+          <button class="nav-item" type="button" data-nav="domains"><span aria-hidden="true">◌</span><span>Domains</span></button>
+        </nav>
+        <button class="rail-help" type="button" data-open="about-dialog" aria-label="原型边界说明">?</button>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <div class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span>LifeOS · 人本双领域原型</div>
+          <div class="top-actions">
+            <button class="quiet-button compact" type="button" data-action="toggle-motion" aria-pressed="false">低动态预览</button>
+            <button class="capture-button" type="button" data-action="capture" aria-haspopup="dialog"><span aria-hidden="true">＋</span><span>记录</span></button>
+          </div>
+        </header>
+
+        <main id="main" tabindex="-1">
+          <section class="today-view view active" id="today-view" aria-labelledby="today-title">
+            <header class="welcome">
+              <p class="overline">TODAY · SYNTHETIC PROTOTYPE</p>
+              <h1 id="today-title">晚上好，<span data-fixture="person-name">你</span>。</h1>
+              <div class="meta-row">
+                <span data-fixture="date">2026 年 8 月 24 日 · 周一</span>
+                <span class="status-chip quiet">不是运行时 · 不保存输入</span>
+                <span class="status-chip quiet" id="viewport-readout" aria-live="polite">视口：读取中</span>
+              </div>
+            </header>
+
+            <section class="focus-summary" aria-labelledby="focus-title">
+              <div>
+                <p class="overline">TODAY’S FOCUS</p>
+                <h2 id="focus-title">今天值得花注意力的 3 件事</h2>
+              </div>
+              <p>工作与健康／健身并列；Project 只作为工作项目的上下文。</p>
+            </section>
+
+            <div class="focus-grid">
+              <article class="priority-card work-card" aria-labelledby="work-title">
+                <div class="card-topline">
+                  <span class="domain-tag work">工作</span>
+                  <span class="identity-tag source">Source · 固定合成</span>
+                </div>
+                <h3 id="work-title">收束产品演示的开场主张</h3>
+                <p class="context">工作语境：<strong>产品演示准备</strong> · 10:00–16:00 的两段准备时间</p>
+                <p>先写下“观众离开时要记住什么”。这是一条可选建议，不会替你创建行动。</p>
+                <div class="card-footer">
+                  <span class="certainty">中等确定性 · 仅今天</span>
+                  <button class="text-button" type="button" data-open="evidence-dialog" data-advice="work">Why now / 依据 <span aria-hidden="true">→</span></button>
+                </div>
+              </article>
+
+              <article class="question-card" aria-labelledby="question-title">
+                <div class="card-topline">
+                  <span class="domain-tag health">健康／健身</span>
+                  <span class="identity-tag interaction">0–1 个问题</span>
+                </div>
+                <h3 id="question-title">先确认一个会改变安全边界的问题</h3>
+                <p id="question-copy">今天的膝部不适是否比已确认限制明显加重，或出现无法承重、明显肿胀、受伤后恶化？</p>
+                <p class="small-note">未回答前不显示训练型建议；跳过也不等于“没有风险”。</p>
+                <div class="choice-row" id="question-actions" role="group" aria-label="回答健康问题">
+                  <button class="primary-button" type="button" data-action="answer-safe">没有加重／无警示</button>
+                  <button class="quiet-button" type="button" data-action="answer-skip">今天跳过</button>
+                  <button class="danger-button" type="button" data-action="answer-warning">有警示信号</button>
+                </div>
+              </article>
+
+              <article class="priority-card reflection-card" aria-labelledby="reflect-title">
+                <div class="card-topline">
+                  <span class="domain-tag reflection">理解</span>
+                  <span class="identity-tag derivation">Derivation · 待形成</span>
+                </div>
+                <h3 id="reflect-title">让今天的结果保持可撤回</h3>
+                <p>反馈、实际执行、结果和理解更新分别记录；一次结果最多形成待确认的 Memory candidate。</p>
+                <button class="text-button" type="button" data-open="lifecycle-dialog">查看生命周期 <span aria-hidden="true">→</span></button>
+              </article>
+            </div>
+
+            <section class="health-stage" aria-live="polite" aria-labelledby="health-stage-title">
+              <div class="section-heading">
+                <div>
+                  <p class="overline">HEALTH / FITNESS</p>
+                  <h2 id="health-stage-title">等待你的安全回答</h2>
+                </div>
+                <span class="state-pill waiting" id="health-state-pill">未回答 · 停止训练型建议</span>
+              </div>
+              <div class="safety-panel" id="health-panel">
+                <div class="safety-icon" aria-hidden="true">⊘</div>
+                <div>
+                  <h3>先保守，再行动</h3>
+                  <p>你可以休息、记录状态或跳过。此原型不会给出诊断、治疗、保证或训练处方。</p>
+                </div>
+                <button class="text-button" type="button" data-open="evidence-dialog" data-advice="health">查看来源与停止条件 <span aria-hidden="true">→</span></button>
+              </div>
+            </section>
+
+            <section class="advice-stage hidden" id="advice-stage" aria-labelledby="advice-title">
+              <div class="section-heading">
+                <div>
+                  <p class="overline">OPTIONAL ADVICE · SYNTHETIC</p>
+                  <h2 id="advice-title">一个可选的低风险恢复选项</h2>
+                </div>
+                <span class="state-pill ready">Advice · 未执行</span>
+              </div>
+              <article class="advice-card">
+                <div class="identity-stack" aria-label="内容身份">
+                  <span class="identity-tag source">Source</span><span class="identity-tag artifact">Artifact</span><span class="identity-tag derivation">Derivation</span><span class="identity-tag advice">Advice</span>
+                </div>
+                <h3 id="advice-text">如你自觉舒适，可选择最多 10 分钟低强度、非冲击的熟悉恢复活动。</h3>
+                <p id="advice-safety">不做跳跃或跑步；出现不适立即停止。它不是诊断、治疗或训练处方。</p>
+                <div class="advice-actions" id="advice-actions" role="group" aria-label="建议处置">
+                  <button class="primary-button" type="button" data-action="accept">认可为可选项</button>
+                  <button class="quiet-button" type="button" data-action="modify">调整后接受</button>
+                  <button class="quiet-button" type="button" data-action="reject">不适用</button>
+                  <button class="quiet-button" type="button" data-action="defer">延后</button>
+                  <button class="text-button" type="button" data-open="evidence-dialog" data-advice="health">Why now / 依据 <span aria-hidden="true">→</span></button>
+                </div>
+                <div class="modify-panel hidden" id="modify-panel">
+                  <label for="modified-choice">你的修改（固定合成选项）</label>
+                  <select id="modified-choice"><option>5 分钟熟悉的轻柔恢复动作</option></select>
+                  <button class="primary-button" type="button" data-action="confirm-modify">确认修改后接受</button>
+                </div>
+              </article>
+            </section>
+
+            <section class="lifecycle-stage" aria-labelledby="timeline-title">
+              <div class="section-heading">
+                <div>
+                  <p class="overline">FEEDBACK → UNDERSTANDING</p>
+                  <h2 id="timeline-title">反馈不等于执行，执行不等于结果</h2>
+                </div>
+                <button class="text-button" type="button" data-open="lifecycle-dialog">完整合同 <span aria-hidden="true">→</span></button>
+              </div>
+              <ol class="timeline" id="timeline" aria-label="反馈生命周期">
+                <li class="timeline-step done"><span>1</span><strong>Source / Artifact</strong><small>固定合成输入</small></li>
+                <li class="timeline-step current"><span>2</span><strong>Q / ANS</strong><small>尚未回答</small></li>
+                <li class="timeline-step"><span>3</span><strong>FDB</strong><small>尚无处置</small></li>
+                <li class="timeline-step"><span>4</span><strong>EXE</strong><small>未执行</small></li>
+                <li class="timeline-step"><span>5</span><strong>RES</strong><small>无结果</small></li>
+                <li class="timeline-step"><span>6</span><strong>理解更新</strong><small>尚未形成</small></li>
+              </ol>
+              <div class="lifecycle-controls hidden" id="lifecycle-controls" aria-live="polite"></div>
+            </section>
+
+            <section class="source-controls" aria-labelledby="source-controls-title">
+              <div>
+                <p class="overline">SYNTHETIC FAILURE SCENARIOS</p>
+                <h2 id="source-controls-title">来源异常时，建议必须关闭</h2>
+                <p>这些是可见的原型测试情境，不会写入任何数据。</p>
+              </div>
+              <div class="scenario-actions" role="group" aria-label="来源异常原型情境">
+                <button type="button" class="scenario-button" data-action="source-failure" data-failure="missing">来源缺失</button>
+                <button type="button" class="scenario-button" data-action="source-failure" data-failure="stale">已过期</button>
+                <button type="button" class="scenario-button" data-action="source-failure" data-failure="conflict">输入冲突</button>
+                <button type="button" class="scenario-button" data-action="source-failure" data-failure="unauthorized">授权失效</button>
+                <button type="button" class="quiet-button" data-action="reset">回到初始原型状态</button>
+              </div>
+            </section>
+          </section>
+
+          <section class="view" id="memory-view" aria-labelledby="memory-title" hidden>
+            <header class="subpage-header"><p class="overline">MEMORY</p><h1 id="memory-title">长期记忆必须经过再次确认</h1><p>此处只呈现固定合成候选；未确认前不影响未来日期。</p></header>
+            <div id="memory-content" class="empty-memory"><p>还没有待确认的 Memory candidate。</p></div>
+          </section>
+
+          <section class="view" id="domains-view" aria-labelledby="domains-title" hidden>
+            <header class="subpage-header"><p class="overline">DOMAINS</p><h1 id="domains-title">工作与健康／健身，是并列的生活语境</h1><p>Project 只在工作语境中出现，不作为首页的全局入口。</p></header>
+            <div class="domain-grid">
+              <article><span class="domain-tag work">工作</span><h2>产品演示准备</h2><p>Source：SRC-SYN-WORK-001<br />Artifact：ART-SYN-WORK-001@v1</p></article>
+              <article><span class="domain-tag health">健康／健身</span><h2>疲劳与非冲击限制</h2><p>Source：SRC-SYN-HEALTH-001<br />Artifact：ART-SYN-HEALTH-001@v1</p></article>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <dialog id="evidence-dialog" class="dialog evidence-dialog" aria-labelledby="evidence-title">
+      <div class="dialog-header"><div><p class="overline">WHY NOW / EVIDENCE</p><h2 id="evidence-title">建议的可见依据</h2></div><button class="icon-button" type="button" data-close="evidence-dialog" aria-label="关闭依据详情">×</button></div>
+      <div id="evidence-content"></div>
+      <div class="dialog-footer"><button class="quiet-button" type="button" data-close="evidence-dialog">返回 Today</button></div>
+    </dialog>
+
+    <dialog id="lifecycle-dialog" class="dialog" aria-labelledby="lifecycle-dialog-title">
+      <div class="dialog-header"><div><p class="overline">INTERACTION CONTRACT</p><h2 id="lifecycle-dialog-title">每个身份都独立存在</h2></div><button class="icon-button" type="button" data-close="lifecycle-dialog" aria-label="关闭生命周期详情">×</button></div>
+      <dl class="contract-list"><div><dt>ADV</dt><dd>系统提出的可选 Advice；不会自动成为行动。</dd></div><div><dt>FDB</dt><dd>认可、修改后接受、拒绝、忽略或延后；不证明执行。</dd></div><div><dt>EXE</dt><dd>用户明确报告的实际执行状态；不推定效果。</dd></div><div><dt>RES</dt><dd>用户报告的结果；不是医学评估。</dd></div><div><dt>DER / MEM-CAND</dt><dd>当天理解更新与待确认 Memory candidate；未来影响需要再次确认。</dd></div></dl>
+      <div class="dialog-footer"><button class="quiet-button" type="button" data-close="lifecycle-dialog">关闭</button></div>
+    </dialog>
+
+    <dialog id="capture-dialog" class="dialog" aria-labelledby="capture-title">
+      <div class="dialog-header"><div><p class="overline">GLOBAL CAPTURE</p><h2 id="capture-title">这只是原型入口</h2></div><button class="icon-button" type="button" data-close="capture-dialog" aria-label="关闭捕获说明">×</button></div>
+      <p>此处不收集、不保存、不发送任何内容。未来是否持久化、如何授权与如何显示回执，必须由独立 runtime 任务决定。</p>
+      <label for="capture-preview">仅供界面预览的文本框</label><textarea id="capture-preview" placeholder="输入不会离开这个浏览器页面，也不会被保存。"></textarea>
+      <p class="small-note">关闭或刷新后，所有输入都会丢失。</p>
+      <div class="dialog-footer"><button class="quiet-button" type="button" data-close="capture-dialog">知道了</button></div>
+    </dialog>
+
+    <dialog id="about-dialog" class="dialog" aria-labelledby="about-title">
+      <div class="dialog-header"><div><p class="overline">PROTOTYPE BOUNDARY</p><h2 id="about-title">P3-115 不是产品运行时</h2></div><button class="icon-button" type="button" data-close="about-dialog" aria-label="关闭原型边界说明">×</button></div>
+      <p>所有内容都是固定、非敏感的 synthetic fixture。无网络、无模型、无数据库、无文件读写、无 Tauri/IPC，也没有真实健康建议。</p>
+      <div class="dialog-footer"><button class="quiet-button" type="button" data-close="about-dialog">关闭</button></div>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="fixtures.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

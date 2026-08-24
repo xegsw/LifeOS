@@ -1,0 +1,15 @@
+{
+  "evidence_id": "P3-113-rework-1-start",
+  "status": "PASS",
+  "recorded_at": "2026-08-24T20:16:40+0800",
+  "authorization": {
+    "delivered_review": "lifeos/reviews/LIFEOS-P3-113_pm_review.md",
+    "user_adoption_and_authorization": "D-0459 / CURRENT_STATUS: Rework 1/2 adopted; same-task narrow remediation authorized.",
+    "scope": ["PM-CE-001", "PM-CE-002"],
+    "allowed_writes": ["lifeos/deliverables/LIFEOS-P3-113_human_centered_dual_domain_self_use_mvp_product_rebaseline_rework_1.md", "lifeos/reviews/LIFEOS-P3-113/evidence/rework-1/"],
+    "forbidden": ["initial asset overwrite", "P3-114", "real data/model/network", "engineering", "Schema/API", "risk/freeze/stage changes"]
+  },
+  "abf": {"id": "ABF-P3-113-v1", "sha256": "a64c87840b4526aab816a3186b3e63a43f33afcad183a4b4cfec2531f22b7d6d", "unchanged": true},
+  "routing": {"required": "gpt-5.6-terra / xhigh", "runtime_metadata_observable": false, "assessment": "Same specialist session; no contradictory routing metadata exposed. D-0412 permits recording non-exposed internal labels."},
+  "classification": "execution fact; final acceptance remains with PM"
+}

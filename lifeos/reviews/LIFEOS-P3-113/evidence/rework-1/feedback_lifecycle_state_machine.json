@@ -1,0 +1,21 @@
+{
+  "evidence_id": "P3-113-rework-1-M007-feedback-lifecycle",
+  "status": "PASS",
+  "identity_rules": ["Feedback is append-only evidence and never overwrites Source/Artifact/Advice.", "Acknowledgement, modified acceptance, rejection, ignore, defer, question answer, execution and result are distinct records.", "Only explicit user confirmation may create a scoped, revocable future-date memory/preference; silence and one-off events cannot."],
+  "states": [
+    {"id": "ADV", "meaning": "candidate advice", "target": "current context", "affects_current_understanding": "no", "affects_future_date": "no"},
+    {"id": "FDB-ACCEPT", "meaning": "advice acknowledged suitable", "target": "ADV", "affects_current_understanding": "records acknowledgement only", "affects_future_date": "no"},
+    {"id": "FDB-MODIFIED-ACCEPT", "meaning": "user changes then accepts advice", "target": "ADV", "affects_current_understanding": "records selected modified disposition, not execution", "affects_future_date": "no"},
+    {"id": "FDB-REJECT", "meaning": "user declines advice", "target": "ADV", "affects_current_understanding": "close this advice; optional reason is evidence", "affects_future_date": "only after explicit scope confirmation"},
+    {"id": "FDB-IGNORED", "meaning": "advice expires without response", "target": "ADV", "affects_current_understanding": "unanswered only", "affects_future_date": "no"},
+    {"id": "FDB-DEFER", "meaning": "user explicitly postpones", "target": "ADV", "affects_current_understanding": "pending until update/expiry", "affects_future_date": "no automatic prompt/action"},
+    {"id": "ANS", "meaning": "answer to a specific question", "target": "Q", "affects_current_understanding": "yes, when valid", "affects_future_date": "no unless explicitly confirmed"},
+    {"id": "EXE", "meaning": "user-reported actual execution state", "target": "accepted or modified disposition", "affects_current_understanding": "yes, actual executed/not-executed state only", "affects_future_date": "no"},
+    {"id": "RES", "meaning": "user-reported execution result/effectiveness", "target": "EXE", "affects_current_understanding": "yes, scoped result evidence", "affects_future_date": "MEM-CAND only until explicit confirmation"},
+    {"id": "MEM-CAND", "meaning": "candidate long-term memory", "target": "valid evidence chain", "affects_current_understanding": "does not replace current facts", "affects_future_date": "blocked until explicit confirmation, scope and freshness are supplied"}
+  ],
+  "required_event_fields": ["content_identity", "event_time", "source_and_artifact", "target_identity", "scope", "confirmation_state", "revoke_or_expiry_state", "effect_on_current_understanding", "effect_on_future_dates"],
+  "withdrawal_rule": "Revoking ANS/FDB/EXE/RES stales or recomputes dependent DER/ADV. It preserves historical identities and cannot rewrite the original advice, work source or health source.",
+  "close_reopen_rule": "Reopen reconstructs Source/Artifact, Q/ANS, original ADV, feedback/disposition, EXE, RES, each DER and MEM-CAND separately. It must not turn a completed action into acceptance, a result into a medical fact, or a candidate memory into an approved preference.",
+  "classification": "candidate lifecycle contract; no real feedback or preference was collected"
+}

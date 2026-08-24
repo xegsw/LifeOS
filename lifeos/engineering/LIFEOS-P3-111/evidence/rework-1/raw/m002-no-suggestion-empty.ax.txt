@@ -1,0 +1,65 @@
+Window: "LifeOS 今日 · 本地自用受控运行时", App: LifeOS P3-111.
+0 standard window LifeOS 今日 · 本地自用受控运行时, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: LifeOS｜今日｜暂无可靠建议, URL: tauri://localhost/no-reliable-suggestion.html
+			3 link 跳到主要内容, Value: tauri://localhost/no-reliable-suggestion.html#main-content
+			4 container LifeOS 主导航
+				5 link 今日, Value: tauri://localhost/default-recovery.html
+				6 container 今日三态
+					7 link 默认恢复, Value: tauri://localhost/default-recovery.html
+					8 link 暂无可靠建议, Value: tauri://localhost/no-reliable-suggestion.html
+					9 link 权限受限与离线, Value: tauri://localhost/restricted-offline.html
+				10 button 设置未启用
+				11 text 本地
+			12 container
+				13 heading 早安，开启新的一天。, Value: 1
+					14 text 早安，开启新的一天。
+				15 text 2026年8月23日 · 星期日 尚未选择 Project
+				16 button 搜索未启用
+				17 button 新建未启用
+			18 container
+				19 container 尚未选择 Project
+					20 heading 尚未选择 Project, Value: 2
+						21 text 尚未选择 Project
+					22 text 暂无可靠建议——选择 Project 或补充一条当前停点后再试。
+					23 button 选择 Project
+					24 button 先记到 Inbox
+					25 text AI 未启用；不会据最近痕迹跨 Project 生成恢复或建议。
+				26 container 最近留下的痕迹
+					27 heading 最近留下的痕迹, Value: 3
+						28 text 最近留下的痕迹
+					29 text 仅供你主动打开；这些固定演示不代表真实来源或当前 Project。
+					30 container
+						31 text On Liberty 你的记录 · 原文｜《论自由》第二章阅读笔记 固定中性占位 · 不接入真实内容
+					32 container
+						33 text PERSONAL PROJECT 个人 Project 入口｜个人网站项目 未选择 · 不触发建议
+					34 container
+						35 container 中性生活记录占位
+						36 text 你的记录 · 原文｜上周的生活记录 固定中性占位 · 不接入真实内容
+				37 text 本地 backend 当前记录 
+				38 text 0
+				39 text  条，审计 
+				40 text 0
+				41 text  项。
+			42 text 尚未保存 · AI 与外部能力关闭
+			43 container 本地快速捕获
+				44 button (disabled) 附件未启用
+				45 button (disabled) 语音未启用
+				46 container
+					47 text 你的记录 · 原文
+					48 text entry area (settable) 手工输入本地原文, Placeholder: 手工输入一条简短、非敏感的本地记录
+						49 text 手工输入一条简短、非敏感的本地记录
+				50 button 保存本地原文
+			51 text 离线本地模式；AI、网络、导出、同步与外部来源关闭
+		52 scroll bar (settable, float) 0
+	53 close button
+	54 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	55 minimize button
+	56 text LifeOS 今日 · 本地自用受控运行时
+57 menu bar
+	58 LifeOS P3-111
+	59 File
+	60 Edit
+	61 View
+	62 Window
+	63 Help

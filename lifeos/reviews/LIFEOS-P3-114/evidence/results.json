@@ -1,0 +1,26 @@
+{
+  "evidence_id": "P3-114-independent-review-results-v1",
+  "status": "PASS",
+  "independent_conclusion": "Pass — Awaiting PM Acceptance; candidate only, not Frozen",
+  "acceptance_matrix": [
+    {"id": "M-001", "result": "PASS", "evidence": "session_boundary.json, read_order.json"},
+    {"id": "M-002", "result": "PASS", "evidence": "frozen_asset_impact_review.json"},
+    {"id": "M-003", "result": "PASS", "evidence": "input_integrity.json"},
+    {"id": "M-004", "result": "PASS", "evidence": "product_center_review.json"},
+    {"id": "M-005", "result": "PASS", "evidence": "source_memory_counterexamples.json"},
+    {"id": "M-006", "result": "PASS", "evidence": "source_memory_counterexamples.json, feedback_lifecycle_counterexamples.json"},
+    {"id": "M-007", "result": "PASS", "evidence": "home_advice_contract_review.json"},
+    {"id": "M-008", "result": "PASS", "evidence": "cross_domain_replay.json"},
+    {"id": "M-009", "result": "PASS", "evidence": "health_safety_review.json"},
+    {"id": "M-010", "result": "PASS", "evidence": "gate_and_route_review.json"},
+    {"id": "M-011", "result": "PASS", "evidence": "frozen_asset_impact_review.json, gate_and_route_review.json"},
+    {"id": "M-012", "result": "PASS", "evidence": "test_design.md, independent_counterexamples.json"},
+    {"id": "M-013", "result": "PASS", "evidence": "input_integrity.json, temporary_residue.json, MANIFEST.md"}
+  ],
+  "counts": {"P0": 0, "P1": 0, "P2": 0, "Unknown": 0, "Not Implemented": 0},
+  "limits": [
+    "No recommendation, model, app, database, network, external or real-user activity was executed.",
+    "The P3-113 candidate is not Frozen and this review does not freeze it.",
+    "R-0040/R-0052, technical baseline, real capability and Stage 4 remain outside this conclusion."
+  ]
+}

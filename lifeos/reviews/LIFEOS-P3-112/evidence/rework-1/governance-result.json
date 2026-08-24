@@ -1,0 +1,25 @@
+{
+  "task_id": "LIFEOS-P3-112",
+  "frozen_abf": "ABF-P3-112-v1",
+  "formal_rework": "1/2",
+  "independent_rework_result": "PASS_PENDING_PM_ACCEPTANCE",
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not_Implemented": 0
+  },
+  "pm_ce_001": {
+    "scope": "P3-112 runner tool discovery and root-local TMPDIR",
+    "result": "remediated and independently rerun",
+    "does_not_assert": [
+      "risk closure",
+      "asset freeze",
+      "baseline restoration",
+      "Stage 4 admission"
+    ]
+  },
+  "risk_freeze_stage_ledger_writes": 0,
+  "pass": true
+}

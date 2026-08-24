@@ -1,0 +1,32 @@
+{
+  "cargo_network_mode": "--offline with CARGO_NET_OFFLINE=true",
+  "cargo_target_dir": "/private/tmp/lifeos-p3-112-review-v1/cargo-target",
+  "tmpdir": "/private/tmp/lifeos-p3-112-review-v1/tmp",
+  "results": [
+    {
+      "id": "cargo-test",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "test",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reported_passed_tests": 8
+    },
+    {
+      "id": "cargo-build",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "build",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reported_passed_tests": null
+    }
+  ],
+  "fixture_children_after_test": [],
+  "outside_root_test_artifacts": [],
+  "pass": true
+}

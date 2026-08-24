@@ -1,0 +1,10 @@
+{
+  "exact_authorized_temp_root": "/private/tmp/lifeos-p3-112-review-v1",
+  "absence_check_before_final_rerun": {
+    "command": "test ! -e /private/tmp/lifeos-p3-112-review-v1",
+    "exit_code": 0
+  },
+  "runner_precondition": "review_runner.py raises temporary-root-preexists if the root exists or is a symlink",
+  "temporary_root_created_by_final_runner": true,
+  "pass": true
+}

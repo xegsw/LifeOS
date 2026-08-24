@@ -1,0 +1,31 @@
+{
+  "evidence_id": "P3-114-input-integrity-v1",
+  "status": "PASS",
+  "mode": "read-only SHA-256, byte-count and JSON parsing review; no application, database, model, network, external-source or real-data access",
+  "candidate_package": {
+    "initial_manifest": "lifeos/reviews/LIFEOS-P3-113/evidence/MANIFEST.md",
+    "initial_entries_verified": 14,
+    "rework_manifest": "lifeos/reviews/LIFEOS-P3-113/evidence/rework-1/MANIFEST.md",
+    "rework_entries_verified": 12,
+    "rework_json_verified": 10,
+    "rework_json_status_pass": 10,
+    "hash_and_byte_mismatch": 0
+  },
+  "protected_initial_assets": {
+    "initial_deliverable_sha256": "a81d5dd92d826e277f347f5f761a149e93839528c2c3352674b192ff0121dc85",
+    "initial_evidence_manifest_sha256": "e32880a878e06777f0d08f0bae7ccc04f57c82119ebf9acc8ee76142160e4440",
+    "initial_pm_evidence_manifest_sha256": "6a3c1e1429903b81d14a2cee8d1768efbaafe2df30226b13e2f987f542cda254",
+    "rework_deliverable_sha256": "c5fdcd30e3886a2f00e260346991714c9b0193e7ddd69abffd9d7bb3fd308ece",
+    "rework_evidence_manifest_sha256": "710500aa06557cae01654996e5bb707c14f6ed3c2f35a0bca9ba09dfb8dce1dc"
+  },
+  "post_adoption_ledger_followup": {
+    "current_pm_review_sha256": "fc387595ec31db54aaa58daf293c18e1602365f23c2f8a210d924b98f4ec1512",
+    "historical_pm_evidence_manifest_reference_sha256": "84fb8a698030b73fdc95b50bcaf354dc558975940c7cbe909746955f360292fd",
+    "classification": "expected post-PM-pass user-adoption update recorded by task card D-0461; disclosed as a ledger-followup difference, not P3-113 candidate or submitted-evidence drift"
+  },
+  "commands": [
+    "python3 lifeos/reviews/LIFEOS-P3-114/evidence/tools/verify_candidate_integrity.py",
+    "python3 -m json.tool lifeos/reviews/LIFEOS-P3-113/evidence/rework-1/source_identity_and_provenance_matrix.json"
+  ],
+  "conclusion": "The protected initial package and Rework 1 candidate package are internally reproducible. The current PM-review hash change is transparently explained by the subsequent user-adoption ledger update and does not alter a protected candidate asset."
+}

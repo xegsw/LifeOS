@@ -1,0 +1,19 @@
+{
+  "verifier": "LIFEOS-P3-111 raw semantic verifier",
+  "passed": false,
+  "manifest_file_count": 31,
+  "missing": [],
+  "extra": [],
+  "hash_or_bytes_drift": [
+    {
+      "path": "raw/geometry.json",
+      "expected_bytes": 452,
+      "actual_bytes": 414,
+      "expected_sha256": "ddd68839967a7fd675054effe1912156f875ade6b584f2cf0958c9a9a1a1a7ae",
+      "actual_sha256": "21f2fb67ec5effc4a2fd937672785630eabac77a761e2a5756144d6de88881fb"
+    }
+  ],
+  "semantic_errors": [
+    "geometry"
+  ]
+}

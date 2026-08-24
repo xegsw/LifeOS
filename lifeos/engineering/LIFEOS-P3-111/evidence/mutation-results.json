@@ -1,0 +1,49 @@
+{
+  "runner": "same semantic verifier on six actual disposable copies",
+  "all_detected": true,
+  "results": [
+    {
+      "mutation": "missing_file",
+      "actual_copy": "disposable/missing_file",
+      "exit_code": 1,
+      "detected": true,
+      "output": "mutations/missing_file.json"
+    },
+    {
+      "mutation": "hash_changed",
+      "actual_copy": "disposable/hash_changed",
+      "exit_code": 1,
+      "detected": true,
+      "output": "mutations/hash_changed.json"
+    },
+    {
+      "mutation": "cleanup_residue",
+      "actual_copy": "disposable/cleanup_residue",
+      "exit_code": 1,
+      "detected": true,
+      "output": "mutations/cleanup_residue.json"
+    },
+    {
+      "mutation": "negative_exit_zero",
+      "actual_copy": "disposable/negative_exit_zero",
+      "exit_code": 1,
+      "detected": true,
+      "output": "mutations/negative_exit_zero.json"
+    },
+    {
+      "mutation": "db_count_wrong",
+      "actual_copy": "disposable/db_count_wrong",
+      "exit_code": 1,
+      "detected": true,
+      "output": "mutations/db_count_wrong.json"
+    },
+    {
+      "mutation": "geometry_wrong",
+      "actual_copy": "disposable/geometry_wrong",
+      "exit_code": 1,
+      "detected": true,
+      "output": "mutations/geometry_wrong.json"
+    }
+  ],
+  "disposable_residue": false
+}

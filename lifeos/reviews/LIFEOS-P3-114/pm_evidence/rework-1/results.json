@@ -1,0 +1,17 @@
+{
+  "task_id": "LIFEOS-P3-114",
+  "review_round": "rework-1",
+  "checked_at": "2026-08-24T21:35:00+0800",
+  "abf": {"id": "ABF-P3-114-v1", "sha256": "22d1b5f89ce608e72cdf42d3e08fe3adf11f57b10f23a64d2cf7b1273f27b96d", "unchanged": true},
+  "checks": [
+    {"id": "PM-R1-001", "status": "PASS", "result": "D-0463 authorization, same independent-review session, unchanged ABF, allowed successor paths and prohibited scope are recorded."},
+    {"id": "PM-R1-002", "status": "PASS", "result": "Rework Manifest matches 9/9 by SHA-256 and bytes."},
+    {"id": "PM-R1-003", "status": "PASS", "result": "Successor runner exits 0 and directly parses the Frozen ABF: 13/13 matrix rows and 13/13 result rows match action, test ID, required Evidence names, actual paths and PASS result."},
+    {"id": "PM-R1-004", "status": "PASS", "result": "Original P3-114 Manifest remains 21/21; P3-113 initial and Rework Manifests remain 14/14 and 12/12."},
+    {"id": "PM-R1-005", "status": "PASS", "result": "PM-CE-001 is closed: M-002 binds pre-read design, M-005 binds historical asset impact, M-008 binds feedback lifecycle and M-010 binds cross-domain replay."},
+    {"id": "PM-R1-006", "status": "PASS", "result": "Submitted and PM exact temporary roots are absent; no real data, app, database, model, network or external target was accessed."}
+  ],
+  "counts": {"P0": 0, "P1": 0, "P2": 0, "Unknown": 0, "Not Implemented": 0},
+  "conclusion": "Accepted / PM Pass / Independent Pass / Awaiting User Adoption / Rework 1/2 Used / Not Frozen",
+  "next_boundary": "No product freeze, prototype task, engineering, risk action or Stage 4 admission until separate user adoption and authorization."
+}

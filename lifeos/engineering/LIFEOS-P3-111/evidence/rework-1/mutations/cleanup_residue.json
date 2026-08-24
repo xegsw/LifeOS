@@ -1,0 +1,19 @@
+{
+  "verifier": "LIFEOS-P3-111 raw semantic verifier",
+  "passed": false,
+  "manifest_file_count": 31,
+  "missing": [],
+  "extra": [],
+  "hash_or_bytes_drift": [
+    {
+      "path": "raw/cleanup.json",
+      "expected_bytes": 406,
+      "actual_bytes": 376,
+      "expected_sha256": "d7e6ed130161e352aa623ad22fcac0a3a422c2c4db682a5f84c7c2f679a105fc",
+      "actual_sha256": "dada8c9202a1aaa414ca9527d1b87dcc1f53b82c4a731ffe25c1709548c58e32"
+    }
+  ],
+  "semantic_errors": [
+    "cleanup"
+  ]
+}

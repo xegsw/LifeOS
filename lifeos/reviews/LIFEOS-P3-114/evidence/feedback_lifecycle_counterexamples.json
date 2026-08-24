@@ -1,0 +1,26 @@
+{
+  "evidence_id": "P3-114-feedback-lifecycle-counterexamples-v1",
+  "status": "PASS",
+  "states_reviewed": ["ADV", "FDB-ACCEPT", "FDB-MODIFIED-ACCEPT", "FDB-REJECT", "FDB-IGNORED", "FDB-DEFER", "ANS", "EXE", "RES", "MEM-CAND"],
+  "counterexamples": [
+    {
+      "id": "CE-FEEDBACK-001",
+      "claim_rejected": "accept or modified accept proves execution",
+      "observed_contract": "both record disposition only; execution has its own EXE identity",
+      "result": "PASS"
+    },
+    {
+      "id": "CE-FEEDBACK-002",
+      "claim_rejected": "execution/result silently becomes a lasting preference",
+      "observed_contract": "RES is scoped evidence and only a separately confirmed MEM-CAND with scope, expiry and revoke control may affect a later date",
+      "result": "PASS"
+    },
+    {
+      "id": "CE-FEEDBACK-003",
+      "claim_rejected": "revoking feedback rewrites source/advice history",
+      "observed_contract": "the candidate preserves event history and stales/recomputes dependent understanding/advice",
+      "result": "PASS"
+    }
+  ],
+  "conclusion": "The Rework 1 lifecycle closes the initial feedback-to-understanding P0 without treating a click, silence, execution or result as an implicit long-term memory grant."
+}

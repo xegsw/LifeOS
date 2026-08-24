@@ -1,0 +1,45 @@
+{
+  "machine_id": "P3-115-person-first-prototype-state-machine-v1",
+  "scope": "In-memory, fixed synthetic prototype state only; page reload intentionally returns to initial state.",
+  "initial_state": {
+    "answer": "unanswered",
+    "feedback": "none",
+    "execution": "not_executed",
+    "result": "none",
+    "memory": "none",
+    "source_failure": null
+  },
+  "state_dimensions": {
+    "answer": ["unanswered", "safe", "skip", "warning"],
+    "feedback": ["none", "accepted", "modified", "rejected", "deferred"],
+    "execution": ["not_executed", "executed"],
+    "result": ["none", "reported"],
+    "memory": ["none", "pending", "confirmed", "rejected_memory"],
+    "source_failure": [null, "missing", "stale", "conflict", "unauthorized"]
+  },
+  "transitions": [
+    {"event": "ANS_SAFE", "precondition": "answer=unanswered and source_failure=null", "postcondition": "answer=safe; health Advice may be shown", "visible_receipt": "无警示：出现一个低风险、可停止的候选"},
+    {"event": "ANS_SKIP", "precondition": "answer=unanswered", "postcondition": "answer=skip; health Advice hidden", "visible_receipt": "跳过不是安全回答；保持保守"},
+    {"event": "ANS_WARNING", "precondition": "answer=unanswered", "postcondition": "answer=warning; health Advice hidden", "visible_receipt": "停止相关建议并建议适当专业支持"},
+    {"event": "FDB_ACCEPT", "precondition": "answer=safe", "postcondition": "feedback=accepted; execution=not_executed", "visible_receipt": "认可为可选项；未执行"},
+    {"event": "FDB_MODIFIED_ACCEPT", "precondition": "answer=safe", "postcondition": "feedback=modified; original Advice remains visible; execution=not_executed", "visible_receipt": "修改后接受；原 Advice 未被改写"},
+    {"event": "FDB_REJECT", "precondition": "answer=safe", "postcondition": "feedback=rejected; execution=not_executed", "visible_receipt": "不适用；不推定执行"},
+    {"event": "FDB_DEFER", "precondition": "answer=safe", "postcondition": "feedback=deferred; execution=not_executed", "visible_receipt": "延后；不自动排程或提醒"},
+    {"event": "EXE_NOT_EXECUTED", "precondition": "feedback=modified", "postcondition": "execution=not_executed", "visible_receipt": "明确尚未执行"},
+    {"event": "EXE_REPORTED", "precondition": "feedback=modified", "postcondition": "execution=executed", "visible_receipt": "EXE 是用户报告，不代表结果"},
+    {"event": "RES_REPORTED", "precondition": "execution=executed", "postcondition": "result=reported; memory=none", "visible_receipt": "仅当日理解更新：今晚不再追加训练型建议"},
+    {"event": "MEM_CANDIDATE", "precondition": "result=reported", "postcondition": "memory=pending", "visible_receipt": "待确认、有限范围、不会影响未来日期"},
+    {"event": "MEM_CONFIRM", "precondition": "memory=pending", "postcondition": "memory=confirmed", "visible_receipt": "原型内确认有限范围；不产生真实持久化"},
+    {"event": "MEM_REJECT", "precondition": "memory=pending", "postcondition": "memory=rejected_memory", "visible_receipt": "候选被拒绝；结果历史未删除"},
+    {"event": "SOURCE_FAILURE", "precondition": "any", "postcondition": "source_failure in {missing,stale,conflict,unauthorized}; all health Advice hidden", "visible_receipt": "来源条件不成立：关闭个性化建议"},
+    {"event": "REVOKE_ANS_FDB_EXE_RES", "precondition": "any completed chain", "postcondition": "answer=unanswered; feedback/result/memory reset; dependent derivation/advice stale", "visible_receipt": "已撤销本次链路；原 Source 身份未被改写"},
+    {"event": "REFRESH_OR_CLOSE_REOPEN", "precondition": "any", "postcondition": "return to initial in-memory state; no persistence", "visible_receipt": "刷新后只显示初始合成原型状态"}
+  ],
+  "invariants": [
+    "Person is the only top-level subject; Project appears only as work context.",
+    "Health training-style Advice is never visible for unanswered, skip, warning, or source-failure states.",
+    "Advice, Feedback, Execution, Result, Derivation, and Memory candidate remain visibly distinct.",
+    "Memory candidate is pending and limited by default; it cannot affect a future date before confirmation.",
+    "No event writes storage, calls a network, invokes a model, database, file system, Tauri, or IPC."
+  ]
+}

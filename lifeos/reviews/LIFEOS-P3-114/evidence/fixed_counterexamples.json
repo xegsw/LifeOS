@@ -1,0 +1,37 @@
+{
+  "fixture_id": "P3-114-fixed-product-counterexamples-v1",
+  "classification": "fictional, synthetic, non-sensitive product-definition fixture; no personal, health, external, database, application, model or network data",
+  "person": "林澈（虚构）",
+  "cases": [
+    {
+      "id": "CE-PROV-001",
+      "given": "工作 Source 有效、健康/健身 Source 缺失",
+      "expected": "不得生成个性化健康/健身建议；仅显示信息不足或停止/降级"
+    },
+    {
+      "id": "CE-PROV-002",
+      "given": "任一 Advice basis 已过期、冲突或被撤回",
+      "expected": "相关 Derivation/Advice stale 或 exclude/degrade，不能作为当前个性化依据"
+    },
+    {
+      "id": "CE-FEEDBACK-001",
+      "given": "用户仅 accept 或 modify-then-accept Advice",
+      "expected": "只记录处置；不等于实际执行、结果、长期偏好或未来自动行为"
+    },
+    {
+      "id": "CE-FEEDBACK-002",
+      "given": "用户报告执行与结果，但未确认记忆候选的范围、时效与撤销",
+      "expected": "MEM-CAND 仍不得影响后续日期"
+    },
+    {
+      "id": "CE-HEALTH-001",
+      "given": "出现明确 warning signal 或专业限制",
+      "expected": "停止健康/健身建议，建议适当专业支持；不得诊断、治疗或保证安全"
+    },
+    {
+      "id": "CE-IDENTITY-001",
+      "given": "关闭后重新打开同一建议链",
+      "expected": "Advice、Feedback、Execution、Result 与候选记忆保持不同身份，不重写为诊断或已确认长期偏好"
+    }
+  ]
+}

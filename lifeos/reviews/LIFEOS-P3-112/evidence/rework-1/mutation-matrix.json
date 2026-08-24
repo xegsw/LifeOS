@@ -1,0 +1,544 @@
+{
+  "initial": {
+    "passed": true,
+    "manifest_file_count": 37,
+    "actual_file_count": 37,
+    "missing": [],
+    "extra": [],
+    "drift_paths": [],
+    "semantic_errors": [],
+    "dynamic_privacy": {
+      "dynamic_row_count": 12,
+      "all_rows_pass": true,
+      "screenshot_metadata": {
+        "screenshots/m001-default-empty.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 1036",
+            "  pixelHeight: 768"
+          ]
+        },
+        "screenshots/m002-no-suggestion-empty.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 1035",
+            "  pixelHeight: 768"
+          ]
+        },
+        "screenshots/m003-restricted-empty.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 1035",
+            "  pixelHeight: 768"
+          ]
+        },
+        "screenshots/m007-no-suggestion-after-user-save.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 138",
+            "  pixelHeight: 178"
+          ]
+        },
+        "screenshots/m009-no-suggestion-after-reopen.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 138",
+            "  pixelHeight: 178"
+          ]
+        },
+        "screenshots/m010-restricted-after-reopen.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 1035",
+            "  pixelHeight: 768"
+          ]
+        }
+      },
+      "json_with_content_or_key_field": [],
+      "pass": true
+    }
+  },
+  "rework": {
+    "passed": true,
+    "manifest_file_count": 38,
+    "actual_file_count": 38,
+    "missing": [],
+    "extra": [],
+    "drift_paths": [],
+    "semantic_errors": [],
+    "dynamic_privacy": {
+      "dynamic_row_count": 12,
+      "all_rows_pass": true,
+      "screenshot_metadata": {
+        "screenshots/m001-default-empty.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 1036",
+            "  pixelHeight: 768"
+          ]
+        },
+        "screenshots/m002-no-suggestion-empty.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 1035",
+            "  pixelHeight: 768"
+          ]
+        },
+        "screenshots/m003-restricted-empty.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 1035",
+            "  pixelHeight: 768"
+          ]
+        },
+        "screenshots/m007-no-suggestion-after-user-save.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 138",
+            "  pixelHeight: 178"
+          ]
+        },
+        "screenshots/m009-no-suggestion-after-reopen.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 138",
+            "  pixelHeight: 178"
+          ]
+        },
+        "screenshots/m010-restricted-after-reopen.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 1035",
+            "  pixelHeight: 768"
+          ]
+        }
+      },
+      "json_with_content_or_key_field": [],
+      "pass": true
+    }
+  },
+  "unchanged_control": {
+    "passed": true,
+    "manifest_file_count": 38,
+    "actual_file_count": 38,
+    "missing": [],
+    "extra": [],
+    "drift_paths": [],
+    "semantic_errors": [],
+    "dynamic_privacy": {
+      "dynamic_row_count": 12,
+      "all_rows_pass": true,
+      "screenshot_metadata": {
+        "screenshots/m001-default-empty.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 1036",
+            "  pixelHeight: 768"
+          ]
+        },
+        "screenshots/m002-no-suggestion-empty.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 1035",
+            "  pixelHeight: 768"
+          ]
+        },
+        "screenshots/m003-restricted-empty.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 1035",
+            "  pixelHeight: 768"
+          ]
+        },
+        "screenshots/m007-no-suggestion-after-user-save.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 138",
+            "  pixelHeight: 178"
+          ]
+        },
+        "screenshots/m009-no-suggestion-after-reopen.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 138",
+            "  pixelHeight: 178"
+          ]
+        },
+        "screenshots/m010-restricted-after-reopen.png": {
+          "exit_code": 0,
+          "metadata": [
+            "  pixelWidth: 1035",
+            "  pixelHeight: 768"
+          ]
+        }
+      },
+      "json_with_content_or_key_field": [],
+      "pass": true
+    }
+  },
+  "mutations": [
+    {
+      "mutation": "missing_file",
+      "own_exit_code": 1,
+      "own_exact_expected_failure": true,
+      "own": {
+        "passed": false,
+        "manifest_file_count": 38,
+        "actual_file_count": 37,
+        "missing": [
+          "raw/geometry.json"
+        ],
+        "extra": [],
+        "drift_paths": [],
+        "semantic_errors": [
+          "raw-missing"
+        ],
+        "dynamic_privacy": {
+          "pass": false
+        }
+      }
+    },
+    {
+      "mutation": "hash_changed",
+      "own_exit_code": 1,
+      "own_exact_expected_failure": true,
+      "own": {
+        "passed": false,
+        "manifest_file_count": 38,
+        "actual_file_count": 38,
+        "missing": [],
+        "extra": [],
+        "drift_paths": [
+          "raw/static-results.json"
+        ],
+        "semantic_errors": [],
+        "dynamic_privacy": {
+          "dynamic_row_count": 12,
+          "all_rows_pass": true,
+          "screenshot_metadata": {
+            "screenshots/m001-default-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1036",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m002-no-suggestion-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m003-restricted-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m007-no-suggestion-after-user-save.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 138",
+                "  pixelHeight: 178"
+              ]
+            },
+            "screenshots/m009-no-suggestion-after-reopen.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 138",
+                "  pixelHeight: 178"
+              ]
+            },
+            "screenshots/m010-restricted-after-reopen.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            }
+          },
+          "json_with_content_or_key_field": [],
+          "pass": true
+        }
+      }
+    },
+    {
+      "mutation": "cleanup_residue",
+      "own_exit_code": 1,
+      "own_exact_expected_failure": true,
+      "own": {
+        "passed": false,
+        "manifest_file_count": 38,
+        "actual_file_count": 38,
+        "missing": [],
+        "extra": [],
+        "drift_paths": [
+          "raw/cleanup.json"
+        ],
+        "semantic_errors": [
+          "dynamic-hash:raw/cleanup.json",
+          "cleanup"
+        ],
+        "dynamic_privacy": {
+          "dynamic_row_count": 12,
+          "all_rows_pass": true,
+          "screenshot_metadata": {
+            "screenshots/m001-default-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1036",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m002-no-suggestion-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m003-restricted-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m007-no-suggestion-after-user-save.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 138",
+                "  pixelHeight: 178"
+              ]
+            },
+            "screenshots/m009-no-suggestion-after-reopen.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 138",
+                "  pixelHeight: 178"
+              ]
+            },
+            "screenshots/m010-restricted-after-reopen.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            }
+          },
+          "json_with_content_or_key_field": [],
+          "pass": false
+        }
+      }
+    },
+    {
+      "mutation": "negative_exit_zero",
+      "own_exit_code": 1,
+      "own_exact_expected_failure": true,
+      "own": {
+        "passed": false,
+        "manifest_file_count": 38,
+        "actual_file_count": 38,
+        "missing": [],
+        "extra": [],
+        "drift_paths": [
+          "raw/negative-results.json"
+        ],
+        "semantic_errors": [
+          "dynamic-hash:raw/negative-results.json",
+          "negative"
+        ],
+        "dynamic_privacy": {
+          "dynamic_row_count": 12,
+          "all_rows_pass": true,
+          "screenshot_metadata": {
+            "screenshots/m001-default-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1036",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m002-no-suggestion-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m003-restricted-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m007-no-suggestion-after-user-save.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 138",
+                "  pixelHeight: 178"
+              ]
+            },
+            "screenshots/m009-no-suggestion-after-reopen.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 138",
+                "  pixelHeight: 178"
+              ]
+            },
+            "screenshots/m010-restricted-after-reopen.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            }
+          },
+          "json_with_content_or_key_field": [],
+          "pass": false
+        }
+      }
+    },
+    {
+      "mutation": "db_count_wrong",
+      "own_exit_code": 1,
+      "own_exact_expected_failure": true,
+      "own": {
+        "passed": false,
+        "manifest_file_count": 38,
+        "actual_file_count": 38,
+        "missing": [],
+        "extra": [],
+        "drift_paths": [
+          "raw/fixed-lifecycle.json"
+        ],
+        "semantic_errors": [
+          "dynamic-hash:raw/fixed-lifecycle.json",
+          "lifecycle"
+        ],
+        "dynamic_privacy": {
+          "dynamic_row_count": 12,
+          "all_rows_pass": true,
+          "screenshot_metadata": {
+            "screenshots/m001-default-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1036",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m002-no-suggestion-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m003-restricted-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m007-no-suggestion-after-user-save.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 138",
+                "  pixelHeight: 178"
+              ]
+            },
+            "screenshots/m009-no-suggestion-after-reopen.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 138",
+                "  pixelHeight: 178"
+              ]
+            },
+            "screenshots/m010-restricted-after-reopen.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            }
+          },
+          "json_with_content_or_key_field": [],
+          "pass": false
+        }
+      }
+    },
+    {
+      "mutation": "geometry_wrong",
+      "own_exit_code": 1,
+      "own_exact_expected_failure": true,
+      "own": {
+        "passed": false,
+        "manifest_file_count": 38,
+        "actual_file_count": 38,
+        "missing": [],
+        "extra": [],
+        "drift_paths": [
+          "raw/geometry.json"
+        ],
+        "semantic_errors": [
+          "geometry"
+        ],
+        "dynamic_privacy": {
+          "dynamic_row_count": 12,
+          "all_rows_pass": true,
+          "screenshot_metadata": {
+            "screenshots/m001-default-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1036",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m002-no-suggestion-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m003-restricted-empty.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            },
+            "screenshots/m007-no-suggestion-after-user-save.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 138",
+                "  pixelHeight: 178"
+              ]
+            },
+            "screenshots/m009-no-suggestion-after-reopen.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 138",
+                "  pixelHeight: 178"
+              ]
+            },
+            "screenshots/m010-restricted-after-reopen.png": {
+              "exit_code": 0,
+              "metadata": [
+                "  pixelWidth: 1035",
+                "  pixelHeight: 768"
+              ]
+            }
+          },
+          "json_with_content_or_key_field": [],
+          "pass": true
+        }
+      }
+    }
+  ],
+  "pass": true
+}

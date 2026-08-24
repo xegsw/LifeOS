@@ -1,0 +1,18 @@
+{
+  "operation": "offline locked tool availability gate",
+  "required_commands": [
+    ["cargo", "test", "--locked", "--offline"],
+    ["cargo", "build", "--locked", "--offline"]
+  ],
+  "cargo_command_on_path_exit_code": 1,
+  "rustc_command_on_path_exit_code": 1,
+  "cargo_available": false,
+  "rustc_available": false,
+  "test_executed": false,
+  "build_executed": false,
+  "network_used": false,
+  "real_app_started": false,
+  "result": "Blocked",
+  "abf_mapping": ["ABF-I-05", "M-005", "Blocked exit rule"],
+  "reason": "The required offline Rust/Cargo toolchain is unavailable in this isolated session. No tool installation, network access, model change, real-app launch, or Pilot-2 access was attempted."
+}

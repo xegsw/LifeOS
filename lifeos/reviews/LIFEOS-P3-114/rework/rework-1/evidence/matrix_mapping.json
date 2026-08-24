@@ -1,0 +1,112 @@
+{
+  "evidence_id": "P3-114-rework-1-frozen-matrix-mapping",
+  "status": "PASS",
+  "abf_id": "ABF-P3-114-v1",
+  "mapping_rule": "Each row copies the Frozen ABF action and test ID, then points to the exact original independent Evidence file(s) that performed that action. Rework 1 only corrects the row-to-evidence mapping; it does not alter an original test result or candidate input.",
+  "rows": [
+    {
+      "row_id": "ABF-M-001",
+      "frozen_action": "核验投递、全新会话、模型、ABF hash、授权与临时根不存在",
+      "test_id": "IR-001",
+      "abf_evidence": ["session_boundary.json"],
+      "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/session_boundary.json"],
+      "conclusion": "PASS — original new-session/ABF/authorization boundary was recorded before candidate review; Rework authorization is separately recorded."
+    },
+    {
+      "row_id": "ABF-M-002",
+      "frozen_action": "在候选读取前写独立问题、反例和判定法并封存 hash／时间",
+      "test_id": "IR-002",
+      "abf_evidence": ["test_design.md", "read_order.json"],
+      "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/test_design.md", "lifeos/reviews/LIFEOS-P3-114/evidence/read_order.json"],
+      "conclusion": "PASS — original independent design and read order, not a frozen-asset review, prove candidate-reading precedence."
+    },
+    {
+      "row_id": "ABF-M-003",
+      "frozen_action": "复算 P3-113 初次／Rework／PM Manifest 与任务指定输入",
+      "test_id": "IR-003",
+      "abf_evidence": ["input_integrity.json"],
+      "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/input_integrity.json"],
+      "conclusion": "PASS — initial/Rework candidate hashes, counts and the disclosed post-adoption PM-review lineage were independently checked."
+    },
+    {
+      "row_id": "ABF-M-004",
+      "frozen_action": "攻击 Person／Project、用户结果、范围和产品定位一致性",
+      "test_id": "IR-004",
+      "abf_evidence": ["product_center_review.json"],
+      "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/product_center_review.json"],
+      "conclusion": "PASS — Person-first candidate scope remains distinct from Project-manager, medical-product and omniscient-AI drift."
+    },
+    {
+      "row_id": "ABF-M-005",
+      "frozen_action": "逐项验证旧状态、适用性和未来替代关卡",
+      "test_id": "IR-005",
+      "abf_evidence": ["frozen_asset_impact_review.json"],
+      "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/frozen_asset_impact_review.json"],
+      "conclusion": "PASS — historical Frozen assets remain preserved and the candidate is not presented as a replacement freeze."
+    },
+    {
+      "row_id": "ABF-M-006",
+      "frozen_action": "追踪 Source→Artifact→Derivation／Memory→Advice，注入缺失／冲突／过期／失权",
+      "test_id": "IR-006",
+      "abf_evidence": ["source_memory_counterexamples.json"],
+      "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/source_memory_counterexamples.json"],
+      "conclusion": "PASS — independent Source/memory counterexamples bind identity, stale/degrade and future-memory controls."
+    },
+    {
+      "row_id": "ABF-M-007",
+      "frozen_action": "核对数量、问题阈值、basis、不确定性、用户控制和不自动执行",
+      "test_id": "IR-007",
+      "abf_evidence": ["home_advice_contract_review.json"],
+      "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/home_advice_contract_review.json"],
+      "conclusion": "PASS — home question/advice contract is bounded, source-visible and non-automating."
+    },
+    {
+      "row_id": "ABF-M-008",
+      "frozen_action": "独立走认可／修改／拒绝／忽略／延后／未执行／执行／结果／撤销／重开",
+      "test_id": "IR-008",
+      "abf_evidence": ["feedback_lifecycle_counterexamples.json"],
+      "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/feedback_lifecycle_counterexamples.json"],
+      "conclusion": "PASS — feedback, execution, result and future-memory effects stay distinct through revoke/close/reopen counterexamples."
+    },
+    {
+      "row_id": "ABF-M-009",
+      "frozen_action": "核对停止、降级、非医疗边界及专业支持措辞",
+      "test_id": "IR-009",
+      "abf_evidence": ["health_safety_review.json"],
+      "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/health_safety_review.json"],
+      "conclusion": "PASS — information insufficiency and warning signals stop/degrade without diagnosis, treatment or safety guarantee."
+    },
+    {
+      "row_id": "ABF-M-010",
+      "frozen_action": "独立重演完整闭环及关闭重开，比较初次与 Rework 候选",
+      "test_id": "IR-010",
+      "abf_evidence": ["cross_domain_replay.json"],
+      "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/cross_domain_replay.json"],
+      "conclusion": "PASS — fixed synthetic cross-domain replay keeps seven stages and identities traceable."
+    },
+    {
+      "row_id": "ABF-M-011",
+      "frozen_action": "逐问 Gate 1–5，核对原型→复评→工程→Pilot 单线与授权",
+      "test_id": "IR-011",
+      "abf_evidence": ["gate_and_route_review.json"],
+      "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/gate_and_route_review.json"],
+      "conclusion": "PASS — Gate 1-3 candidate review passes while Gate 4 stays conditional and Gate 5 stays a hypothesis; no route authorization is inferred."
+    },
+    {
+      "row_id": "ABF-M-012",
+      "frozen_action": "执行预先冻结的反例并记录支持／反驳／Unknown",
+      "test_id": "IR-012",
+      "abf_evidence": ["independent_counterexamples.json"],
+      "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/independent_counterexamples.json"],
+      "conclusion": "PASS — 10 fixed, predesigned, non-sensitive counterexample checks have individual outcomes."
+    },
+    {
+      "row_id": "ABF-M-013",
+      "frozen_action": "汇总计数、Review、Manifest、复跑与精确临时根清理",
+      "test_id": "IR-013",
+      "abf_evidence": ["results.json", "temporary_residue.json", "MANIFEST.md"],
+      "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/rework/rework-1/evidence/results.json", "lifeos/reviews/LIFEOS-P3-114/rework/rework-1/evidence/temporary_residue.json", "lifeos/reviews/LIFEOS-P3-114/rework/rework-1/evidence/MANIFEST.md"],
+      "conclusion": "PASS — Rework 1's own counts, review, non-self-referential manifest, rerun path and exact temporary-root absence are recorded."
+    }
+  ]
+}

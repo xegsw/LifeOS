@@ -1,0 +1,32 @@
+{
+  "task_id": "LIFEOS-P3-113",
+  "review_round": "rework-1",
+  "checked_at": "2026-08-24T20:36:43+0800",
+  "acceptance_basis": {
+    "id": "ABF-P3-113-v1",
+    "sha256": "a64c87840b4526aab816a3186b3e63a43f33afcad183a4b4cfec2531f22b7d6d",
+    "unchanged": true
+  },
+  "checks": [
+    {"id": "PM-R1-001", "status": "PASS", "result": "Rework authorization, same specialist session, unchanged ABF, allowed write paths and forbidden scope are recorded without contradiction."},
+    {"id": "PM-R1-002", "status": "PASS", "result": "Submitted rework Manifest matches 12/12 files by SHA-256; all 11 files with byte declarations also match byte counts."},
+    {"id": "PM-R1-003", "status": "PASS", "result": "All 10 rework JSON files parse and report PASS."},
+    {"id": "PM-R1-004", "status": "PASS", "result": "Initial Evidence Manifest still matches 14/14 protected submitted files."},
+    {"id": "PM-R1-005", "status": "PASS", "result": "Initial deliverable, initial Evidence Manifest and initial PM Evidence Manifest retain hashes a81d5d..., e32880... and 6a3c1e...; pre-review-update PM Review retains the D-0459 hash fa80b2...."},
+    {"id": "PM-R1-006", "status": "PASS", "result": "PM-CE-001 is closed: four distinct synthetic Source identities, Artifact mappings, authorization, time/freshness, stale/revoke semantics and basis binding are explicit; formal Gate 2 is answered under its correct name."},
+    {"id": "PM-R1-007", "status": "PASS", "result": "PM-CE-002 is closed: acknowledgement, modified acceptance, rejection, ignore, defer, answer, execution, result, current understanding and candidate long-term memory are identity-separated with required event fields, future-use confirmation and revoke/reopen rules."},
+    {"id": "PM-R1-008", "status": "PASS", "result": "The fixed synthetic scenario completes question, advice, modified disposition, execution, result, updated understanding, unconfirmed memory candidate and close/reopen traceability without medical or future-preference extrapolation."},
+    {"id": "PM-R1-009", "status": "PASS", "result": "The submitted task temporary root and the exact PM temporary root were absent after verification; no app, database, model, network, real data or restricted retained asset was accessed."}
+  ],
+  "submitted_hashes": {
+    "rework_deliverable": "c5fdcd30e3886a2f00e260346991714c9b0193e7ddd69abffd9d7bb3fd308ece",
+    "rework_manifest": "710500aa06557cae01654996e5bb707c14f6ed3c2f35a0bca9ba09dfb8dce1dc",
+    "initial_deliverable": "a81d5dd92d826e277f347f5f761a149e93839528c2c3352674b192ff0121dc85",
+    "initial_evidence_manifest": "e32880a878e06777f0d08f0bae7ccc04f57c82119ebf9acc8ee76142160e4440",
+    "initial_pm_evidence_manifest": "6a3c1e1429903b81d14a2cee8d1768efbaafe2df30226b13e2f987f542cda254",
+    "pm_review_before_rework_acceptance_update": "fa80b258de7d4878cd6fbf643b9197b0d0043221b404350e6f6d70ae6137fc5f"
+  },
+  "counts": {"P0": 0, "P1": 0, "P2": 0, "Unknown": 0, "Not Implemented": 0},
+  "conclusion": "Accepted / PM Pass / Awaiting User Adoption / Rework 1 of 2 Used / Not Frozen",
+  "next_boundary": "No P3-114 creation or task execution until the user adopts this PM Pass and separately authorizes creation. No Stage 4 admission."
+}

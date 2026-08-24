@@ -1,0 +1,61 @@
+{
+  "task_id": "LIFEOS-P3-113",
+  "review_stage": "initial_pm_acceptance",
+  "acceptance_basis": {
+    "id": "ABF-P3-113-v1",
+    "sha256": "a64c87840b4526aab816a3186b3e63a43f33afcad183a4b4cfec2531f22b7d6d",
+    "status": "Frozen",
+    "changed": false
+  },
+  "integrity": {
+    "submitted_manifest_entries": 14,
+    "submitted_manifest_hashes_matching": 14,
+    "fixed_inputs": 28,
+    "fixed_input_hashes_matching_current_files": 28,
+    "submitted_manifest_sha256": "e32880a878e06777f0d08f0bae7ccc04f57c82119ebf9acc8ee76142160e4440",
+    "deliverable_sha256": "a81d5dd92d826e277f347f5f761a149e93839528c2c3352674b192ff0121dc85",
+    "temporary_root_absent": true,
+    "historical_read_only_preserved": true
+  },
+  "findings": [
+    {
+      "id": "PM-CE-001",
+      "severity": "P0",
+      "title": "Multi-source perception has no minimum Source contract",
+      "mapping": ["L1-2", "L1-7", "L1-10", "ABF-I-04", "ABF-I-05", "ABF-M-005", "ABF-M-008", "ABF-M-010"],
+      "facts": [
+        "The frozen activation input requires at least two clearly identified Sources even when both are synthetic or de-identified manual inputs.",
+        "The submitted contract only says authorized records, explicit user input, or a future authorized source; it does not freeze a minimum count, distinct Source identities, provenance separation, or evidence binding.",
+        "The fixed work-plus-health fixture contains values but no Source identities or rule showing which Source supports which memory, question, or advice.",
+        "The formal Gate 2 Data and Source review was relabeled as minimum usable loop, so the required source review was not actually performed."
+      ],
+      "required_closure": "Define at least two distinct fixed non-sensitive Source identities, their Artifact/memory mapping, authorization and freshness rules, and advice-evidence binding; then assess the formal Gate 2 Data and Source questions without renaming the gate."
+    },
+    {
+      "id": "PM-CE-002",
+      "severity": "P0",
+      "title": "Feedback-to-understanding lifecycle is incomplete",
+      "mapping": ["L1-3", "L1-6", "L1-7", "ABF-I-04", "ABF-I-09", "ABF-M-007", "ABF-M-008", "ABF-M-010"],
+      "facts": [
+        "The frozen activation input separates acceptance, execution, outcome, contextual preference, and candidate long-term memory, and requires accepted, modified-accepted, rejected, ignored, delayed, question-answer, execution, and result feedback.",
+        "The submitted allowed feedback set is helpful, not applicable, skip, correct evidence, and pause/revoke; it does not define acceptance versus execution, modified acceptance, delay, question answer, actual outcome, or effectiveness.",
+        "The synthetic scenario records one same-day rest preference but does not show the required state transition from question answer to advice disposition, execution/outcome, updated understanding, and a later reconstructed decision after close/reopen."
+      ],
+      "required_closure": "Add a complete feedback state/identity matrix and extend the fixed scenario through question answer, advice disposition, executed/not-executed, outcome, scoped memory-candidate decision, subsequent-understanding change, and close/reopen reconstruction without overwriting the original advice."
+    }
+  ],
+  "counts": {
+    "P0": 2,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not_Implemented": 0
+  },
+  "conclusion": "Rework 1/2",
+  "same_task_rework_allowed": true,
+  "new_task_required": false,
+  "p3_114_allowed": false,
+  "asset_frozen": false,
+  "stage_4_allowed": false,
+  "risk_status_changed": false
+}

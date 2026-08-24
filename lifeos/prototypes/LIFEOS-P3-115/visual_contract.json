@@ -1,0 +1,30 @@
+{
+  "contract_id": "P3-115-visual-contract-v1",
+  "intent": "Calm, human, evidence-legible interface. Historical Project-first prototypes are referenced only for restraint and readability, never for IA or pixels.",
+  "tokens": {
+    "canvas": "#f6f8fd",
+    "ink": "#16213b",
+    "primary": "#455ff0",
+    "health_safe": "#147b73",
+    "warning": "#a64d5a",
+    "radius": "24px",
+    "font": "system-ui / local system fonts only"
+  },
+  "hierarchy": {
+    "first_screen": "One Person-first greeting, one 3-item focus summary, two equal domains, one conditional safety question.",
+    "progressive_disclosure": "Evidence and lifecycle details live in keyboard-dismissible dialogs; the primary screen does not turn into a Project dashboard.",
+    "identity": "Content identity is always conveyed with text labels, not color alone."
+  },
+  "responsive": {
+    "1280x1024": "Three priority cards in one row; all dialog actions remain reachable.",
+    "1160x768": "Cards retain hierarchy without clipping; navigation remains labeled.",
+    "700x760": "Rail condenses, priority cards stack, buttons wrap, and no essential action becomes hover-only or horizontally hidden."
+  },
+  "accessibility": {
+    "semantic": ["skip link", "main", "nav", "section headings", "dialog", "aria-live status", "visible focus"],
+    "keyboard": ["Tab", "Shift+Tab", "Enter", "Escape"],
+    "motion": "prefers-reduced-motion is honored; the visible low-motion preview uses the same non-vestibular transition contract for testability.",
+    "contrast": "Text labels, border and icon changes accompany all color states."
+  },
+  "forbidden_visuals": ["remote images", "remote fonts", "embedded reference screenshots", "full-page static image masquerading as UI", "Project-first dashboard layout"]
+}

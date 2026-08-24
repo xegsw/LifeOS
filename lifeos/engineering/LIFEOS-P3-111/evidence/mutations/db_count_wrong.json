@@ -1,0 +1,85 @@
+{
+  "verifier": "LIFEOS-P3-111 raw semantic verifier",
+  "passed": false,
+  "manifest_file_count": 37,
+  "missing": [
+    "UI_DYNAMIC_EVIDENCE_CLOSURE.md",
+    "mutation-results.json",
+    "mutations/cleanup_residue.json",
+    "mutations/db_count_wrong.json",
+    "mutations/geometry_wrong.json",
+    "mutations/hash_changed.json",
+    "mutations/missing_file.json",
+    "mutations/negative_exit_zero.json",
+    "raw/actual-pilot-metadata.json",
+    "raw/bundle-result.json",
+    "raw/cargo-tauri-bundle.log",
+    "raw/cargo-test.log",
+    "raw/cleanup.json",
+    "raw/fixed-lifecycle.json",
+    "raw/fixed-selfcheck-summary.json",
+    "raw/geometry.json",
+    "raw/m001-default-empty.ax.txt",
+    "raw/m002-no-suggestion-empty.ax.txt",
+    "raw/m003-restricted-empty.ax.txt",
+    "raw/m004-keyboard-tab.ax.txt",
+    "raw/m005-user-save-redacted.json",
+    "raw/m006-refresh-redacted.json",
+    "raw/m007-no-suggestion-after-user-save.ax.txt",
+    "raw/m007-refresh-navigation-redacted.json",
+    "raw/m008-close-reopen-redacted.json",
+    "raw/m009-no-suggestion-after-reopen.ax.txt",
+    "raw/m010-restricted-after-reopen.ax.txt",
+    "raw/m011-keyboard-tab-enter-redacted.json",
+    "raw/m011-keyboard-tab-enter.ax.txt",
+    "raw/negative-results.json",
+    "raw/static-results.json",
+    "screenshots/m001-default-empty.png",
+    "screenshots/m002-no-suggestion-empty.png",
+    "screenshots/m003-restricted-empty.png",
+    "screenshots/m007-no-suggestion-after-user-save.png",
+    "screenshots/m009-no-suggestion-after-reopen.png",
+    "screenshots/m010-restricted-after-reopen.png"
+  ],
+  "extra": [],
+  "hash_or_bytes_drift": [
+    {
+      "path": "mutations/cleanup_residue.json",
+      "expected_bytes": 1677,
+      "actual_bytes": 2565,
+      "expected_sha256": "3154385b47488eab66ecea181fa22e733a2932addad9b5f167a720a4f45d2db8",
+      "actual_sha256": "9a11fbc01a96c52de3704cfad2f30e013bcfa36e0674ff2c877e3a13ec9e1c4d"
+    },
+    {
+      "path": "mutations/hash_changed.json",
+      "expected_bytes": 1667,
+      "actual_bytes": 2256,
+      "expected_sha256": "e9c770543481f461e8774172cbaa4cb3c9a1e65a28afb5037f394f7ee7f4eae7",
+      "actual_sha256": "77c58e6118c7fd6b7c472b4a2f5486451e9c3b1f4c775e1f629fedf40fd000df"
+    },
+    {
+      "path": "mutations/missing_file.json",
+      "expected_bytes": 1428,
+      "actual_bytes": 1718,
+      "expected_sha256": "c8ac278fea65812ec11ecb8d2fc81c1dfcb88abef00bc9f051c774e5a3d72d1e",
+      "actual_sha256": "246af14c253b9839e5c802c093ed6e9d494cc833a1ee77712c07e6e8183c2909"
+    },
+    {
+      "path": "mutations/negative_exit_zero.json",
+      "expected_bytes": 1687,
+      "actual_bytes": 2877,
+      "expected_sha256": "31a729d8eede982c62adf018a41c8303c59143fcb6741671bfd88e49131fdbad",
+      "actual_sha256": "8a5cc2152fd0212b737932890117cf9f8627c6c297f01de37e1f7094f12071e5"
+    },
+    {
+      "path": "raw/fixed-lifecycle.json",
+      "expected_bytes": 122,
+      "actual_bytes": 112,
+      "expected_sha256": "f1e0d288dec1d57b7b2e79a1d4d6278c9bf03eacdfdee232df4294924c46d2cc",
+      "actual_sha256": "a410fba2ef0cab8389b15f0c015681a50283b4b00138f8be0eb1fa62054d0d1e"
+    }
+  ],
+  "semantic_errors": [
+    "lifecycle"
+  ]
+}

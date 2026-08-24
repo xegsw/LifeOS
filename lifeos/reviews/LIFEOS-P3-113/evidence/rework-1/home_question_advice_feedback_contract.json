@@ -1,0 +1,10 @@
+{
+  "evidence_id": "P3-113-rework-1-M007-home-contract",
+  "status": "PASS",
+  "home_contract": {"focus": "Person's today, never forced Project selection", "advice_limit": "1-3", "question_limit": "0-1", "question_threshold": "answer materially changes safety, inclusion, rank or next step"},
+  "advice_identity_contract": {"advice_id": "ADV-SYN-001@v1", "required_visible_fields": ["next step", "why now", "basis Source/Artifact/Derivation IDs", "time/freshness", "certainty", "scope", "safety stop/degrade", "evidence access", "feedback and pause controls"], "non_automation": "Advice never creates or executes an action."},
+  "feedback_controls": ["accept", "modify then accept", "reject", "ignore/expiry disclosure", "defer", "answer question", "report executed/not executed", "report result", "correct", "revoke/pause"],
+  "future_influence": "Only explicitly confirmed MEM-CAND with declared scope, expiry and revocation can influence a later date. A click, silence, acknowledgement, execution or result alone is insufficient.",
+  "missing_or_unsafe_information": "Do not create health/fitness advice when high-value safety input is missing, conflicting, expired or unauthorized. Stop or degrade to rest/record/professional support, without diagnosis/treatment.",
+  "classification": "candidate UX and trust contract; no page or runtime implementation is frozen"
+}

@@ -1,0 +1,13 @@
+{
+  "fixture_id": "P3-115-SYN-001",
+  "classification": "synthetic_non_sensitive_prototype_fixture",
+  "data_boundary": "No personal, health, work, runtime, network, database, model, file-system or retained-Pilot data.",
+  "sources": [
+    {"id": "SRC-SYN-WORK-001", "artifact": "ART-SYN-WORK-001@v1", "domain": "work", "freshness": "today"},
+    {"id": "SRC-SYN-HEALTH-001", "artifact": "ART-SYN-HEALTH-001@v1", "domain": "health_fitness", "freshness": "today"},
+    {"id": "SRC-SYN-INTERACTION-001", "artifact": "ART-SYN-ANSWER-001@v1", "domain": "current_context", "freshness": "today"},
+    {"id": "SRC-SYN-FEEDBACK-001", "artifact": "ART-SYN-FEEDBACK-001@v1", "domain": "feedback_result", "freshness": "today"}
+  ],
+  "question": "Today knee discomfort escalation / warning-signal question",
+  "health_boundary": "Synthetic, non-medical, stop-on-warning demonstration only."
+}

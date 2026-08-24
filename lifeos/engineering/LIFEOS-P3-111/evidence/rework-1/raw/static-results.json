@@ -1,0 +1,31 @@
+{
+  "check": "P3-111 static contract",
+  "passed": true,
+  "ipc_commands": [
+    "capture_record",
+    "get_today",
+    "runtime_status"
+  ],
+  "frontend_invokes": [
+    "capture_record",
+    "get_today",
+    "runtime_status"
+  ],
+  "checks": {
+    "legacy_path": true,
+    "private_tmp": true,
+    "new_ipc": true,
+    "new_dependency": true,
+    "permissions": true,
+    "network_csp": true,
+    "pilot_path": true,
+    "schema_unchanged": true,
+    "no_clear_or_export": true
+  },
+  "candidate_hashes": {
+    "candidate/capabilities/main.json": "80f2ac54d5b9ab2bf4c48b6e4a333f83480c34accd3041ce270e37f071277ea1",
+    "candidate/src/runtime.rs": "86c4a238def01e2b82dd7405ae299ee7593a35fbc2e30da80209a0c739f85ee6",
+    "candidate/tauri.conf.json": "38b44dac199aab648fb12d5d7cd3e5909ca7f4ab2e33436bd31c9dc8b727b2b6",
+    "candidate/ui/app.js": "9e56de930031b42e48e33e215110743868a5e7eca12753217ce8e18ea3cccfd2"
+  }
+}

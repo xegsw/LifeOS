@@ -1,0 +1,20 @@
+{
+  "evidence_id": "P3-114-cross-domain-replay-v1",
+  "status": "PASS",
+  "fixture": "fictional synthetic person Y / fixed same-day values only",
+  "replay": [
+    {"step": 1, "identity": "work and self-report Source/Artifact inputs", "result": "PASS"},
+    {"step": 2, "identity": "DER-SYN-UNDERSTANDING-001", "result": "PASS", "note": "insufficient safety information prevents initial fitness advice"},
+    {"step": 3, "identity": "Q-SYN-001 then ANS-SYN-001", "result": "PASS", "note": "question is candidate and answer is separately scoped evidence"},
+    {"step": 4, "identity": "ADV-SYN-001", "result": "PASS", "note": "conditional low-risk non-medical option with full basis"},
+    {"step": 5, "identity": "FDB-SYN-001 modified acceptance", "result": "PASS", "note": "not execution"},
+    {"step": 6, "identity": "EXE-SYN-001 and RES-SYN-001", "result": "PASS", "note": "user reports remain distinct from advice and clinical judgment"},
+    {"step": 7, "identity": "DER-SYN-UNDERSTANDING-003 and MEM-CAND-SYN-001", "result": "PASS", "note": "same-evening rest/record direction; future memory stays blocked"}
+  ],
+  "negative_paths": [
+    {"condition": "unanswered question", "expected": "no training suggestion; rest/record or professional support only", "result": "PASS"},
+    {"condition": "warning signal", "expected": "stop health/fitness advice and suggest appropriate professional support", "result": "PASS"},
+    {"condition": "revoked feedback", "expected": "preserve history and stale/recompute dependents", "result": "PASS"}
+  ],
+  "non_claim": "This static replay checks a proposal's lifecycle oracle. It does not execute a user flow, produce an actual recommendation or establish user value."
+}

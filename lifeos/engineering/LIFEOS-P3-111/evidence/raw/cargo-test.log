@@ -1,0 +1,16 @@
+
+running 8 tests
+test runtime::tests::runtime_status_closes_direct_capabilities ... ok
+test runtime::tests::ipc_extra_fields_are_rejected_before_runtime_logic ... ok
+test runtime::tests::path_and_argument_boundaries_fail_closed ... ok
+test runtime::tests::symlink_and_hardlink_boundaries_fail_closed ... ok
+test runtime::tests::dangling_database_and_sidecar_links_fail_closed ... ok
+test runtime::tests::tampered_content_and_schema_fail_closed ... ok
+test runtime::tests::injected_failure_preserves_database_and_sentinel ... ok
+test runtime::tests::lifecycle_saved_repeat_conflict_restart ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Compiling lifeos-p3-111 v0.1.0 (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-111/candidate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.72s
+     Running unittests src/main.rs (/private/tmp/lifeos-p3-111-build-output/debug/deps/lifeos_p3_111-c57051002d081669)

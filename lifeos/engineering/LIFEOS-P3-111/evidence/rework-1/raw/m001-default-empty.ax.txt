@@ -1,0 +1,70 @@
+Window: "LifeOS 今日 · 本地自用受控运行时", App: LifeOS P3-111.
+0 standard window LifeOS 今日 · 本地自用受控运行时, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: LifeOS｜今日｜默认恢复, URL: tauri://localhost/default-recovery.html
+			3 link 跳到主要内容, Value: tauri://localhost/default-recovery.html#main-content
+			4 container LifeOS 主导航
+				5 link 今日, Value: tauri://localhost/default-recovery.html
+				6 container 今日三态
+					7 link 默认恢复, Value: tauri://localhost/default-recovery.html
+					8 link 暂无可靠建议, Value: tauri://localhost/no-reliable-suggestion.html
+					9 link 权限受限与离线, Value: tauri://localhost/restricted-offline.html
+				10 button 设置未启用
+				11 container 固定演示身份
+					12 text 本地
+			13 container
+				14 heading 早安，开启新的一天。, Value: 1
+					15 text 早安，开启新的一天。
+				16 text 2026年8月23日 · 星期日 当前 Project：独立产品发布页改版 沿用你上次确认
+				17 button 切换
+				18 button 搜索未启用
+				19 button 新建未启用
+			20 container
+				21 text 从这里继续
+				22 container 独立产品发布页改版
+					23 text 个人 Project · 固定演示 AI 整理 · 已关闭
+					24 heading 独立产品发布页改版, Value: 2
+						25 text 独立产品发布页改版
+					26 text 上次停留在“确定首屏价值主张”，并决定将核心功能区改为网格布局。当前页面只展示固定非敏感演示；下方用户原文由 backend 权威恢复。
+					27 text 你的本地记录
+					28 text 尚无本地记录；请手工输入一条简短、非敏感的原文。
+					29 text 外部来源：未启用，未读取任何访谈或远程内容
+					30 text 你已确认 · 决定：固定演示中的页面结构选择
+					31 text 昨天 18:30 停止 · 本地记录  0  条
+					32 button 继续设计 →
+					33 container 本地代码生成的中性线框预览
+						34 text 中性线框占位 · 非真实来源
+				35 container 当前不会生成、确认或保存 AI 建议
+					36 text AI 建议 · 未启用
+					37 text 系统关闭态
+					38 heading 当前不会生成、确认或保存 AI 建议, Value: 3
+						39 text 当前不会生成、确认或保存 AI 建议
+					40 text 固定页面保留参考图的信息层级，但 runtime 明确报告 AI 与外部能力关闭；不会把设计占位内容冒充真实建议。
+					41 button 确认
+					42 button 编辑
+					43 button 拒绝
+					44 button 忽略
+			45 text 尚未保存 · AI 与外部能力关闭
+			46 container 本地快速捕获
+				47 button (disabled) 附件未启用
+				48 button (disabled) 语音未启用
+				49 container
+					50 text 你的记录 · 原文
+					51 text entry area (settable) 手工输入本地原文, Placeholder: 手工输入一条简短、非敏感的本地记录
+						52 text 手工输入一条简短、非敏感的本地记录
+				53 button 保存本地原文
+			54 text 离线本地模式；AI、网络、导出、同步与外部来源关闭
+		55 scroll bar (settable, float) 0
+	56 close button
+	57 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	58 minimize button
+	59 text LifeOS 今日 · 本地自用受控运行时
+60 menu bar
+	61 LifeOS P3-111
+	62 File
+	63 Edit
+	64 View
+	65 Window
+	66 Help
+
+The focused UI element is 2 HTML content Description: LifeOS｜今日｜默认恢复, URL: tauri://localhost/default-recovery.html

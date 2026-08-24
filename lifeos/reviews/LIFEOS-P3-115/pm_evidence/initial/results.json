@@ -1,0 +1,30 @@
+{
+  "task_id": "LIFEOS-P3-115",
+  "review_round": "initial",
+  "checked_at": "2026-08-24T23:10:00+0800",
+  "abf": {
+    "id": "ABF-P3-115-v2",
+    "sha256": "3dee373444132933bb927a6b8bf39550981663d3f9420d4bdbce5eb7a620f9f2",
+    "frozen_before_execution": true,
+    "unchanged": true
+  },
+  "checks": [
+    {"id": "PM-I-001", "status": "PASS", "result": "Authorization, new isolated Codex session, gpt-5.6-terra + xhigh route, v2 ABF re-read and allowed/prohibited boundaries are recorded."},
+    {"id": "PM-I-002", "status": "PASS", "result": "Seven Frozen historical inputs match current SHA-256 values; P3-113/P3-114 and governance history remained read-only."},
+    {"id": "PM-I-003", "status": "PASS", "result": "Submitted non-self Manifest verifies 167 entries; copied verifier reports 16/16 matrix rows and 44/44 closure rows PASS."},
+    {"id": "PM-I-004", "status": "PASS", "result": "Static verifier reports eight required files, sixteen state events and network/storage closed."},
+    {"id": "PM-I-005", "status": "PASS", "result": "Mutation verifier control exits 0; matrix-status and raw-Evidence-hash mutations both fail closed with exit 1 and exact reasons."},
+    {"id": "PM-I-006", "status": "PASS", "result": "PM actual Google Chrome file: renders at 1280x1024 and 700x760 show Person-first Today, three focus items, dual domains, safety gate and responsive stacking."},
+    {"id": "PM-I-007", "status": "PASS", "result": "Submitted per-action Chrome screenshots/logs/hashes cover health answers, feedback, EXE/RES, Memory candidate, four source failures, revoke, refresh, close-reopen, navigation, keyboard and reduced motion."},
+    {"id": "PM-I-008", "status": "PASS", "result": "No runtime, real data, database, model, network, Tauri/IPC, persistence, risk, freeze or stage action was introduced; exact submitted and PM temporary roots are absent after cleanup."}
+  ],
+  "pm_chrome": {
+    "version": "Google Chrome 151.0.7922.172",
+    "mode": "headless actual Chrome, local file:, offline flags, no script injection",
+    "screenshots": ["pm_chrome_1280x1024.png", "pm_chrome_700x760.png"]
+  },
+  "computer_use_note": "Chrome accessibility tree exposed the complete prototype, but the Computer Use pixel capture layer returned a blank canvas and AX clicks did not mutate state. It was not counted as positive dynamic Evidence; actual Chrome headless rendering and submitted raw per-action Evidence were used instead.",
+  "counts": {"P0": 0, "P1": 0, "P2": 0, "Unknown": 0, "Not Implemented": 0},
+  "conclusion": "Accepted / PM Pass / Awaiting User Adoption / Not Frozen",
+  "next_boundary": "User adoption and explicit authorization are required before creating a fresh isolated critical-prototype independent-review task. No freeze, runtime engineering, risk action or Stage 4 admission."
+}

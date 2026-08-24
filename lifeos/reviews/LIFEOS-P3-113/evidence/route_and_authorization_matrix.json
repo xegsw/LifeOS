@@ -1,0 +1,15 @@
+{
+  "evidence_id": "P3-113-M011-route-and-authorization",
+  "status": "PASS",
+  "single_future_route": [
+    {"step": "P3-113", "state": "current candidate delivery only", "authorization": "current task-card scope only"},
+    {"step": "P3-114", "state": "fresh isolated independent product review after PM ABF pass", "authorization": "new review task; this session may not self-review"},
+    {"step": "high-fidelity prototype", "state": "only if P3-114 passes and user adopts", "authorization": "separate task and any external-system write needs explicit confirmation"},
+    {"step": "independent prototype review", "state": "after prototype", "authorization": "fresh isolated review"},
+    {"step": "controlled synthetic engineering vertical slice", "state": "only after prototype acceptance", "authorization": "separate task; real Tauri/IPC, Schema/API changes need explicit separate authority"},
+    {"step": "independent engineering review", "state": "after vertical slice", "authorization": "fresh isolated review"},
+    {"step": "N=1 Pilot authorization decision", "state": "last and separate", "authorization": "explicit recorded approval for real data/model/network/third-party/health boundary; not inferred from any earlier step"}
+  ],
+  "not_created_or_authorized": ["P3-114 and later tasks", "asset freezes", "risk closure/reopen", "Stage 4", "implementation", "real-world data or service access"],
+  "classification": "candidate route; only PM and user can advance its decision points"
+}

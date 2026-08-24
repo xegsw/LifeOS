@@ -1,0 +1,30 @@
+{
+  "task_id": "LIFEOS-P3-114",
+  "recorded_at": "2026-08-24T20:54:41+0800",
+  "execution_authorization": {
+    "evidence": "/Users/xxe/Documents/No.2/lifeos/tasks/LIFEOS-P3-114_p3_113_human_centered_dual_domain_product_rebaseline_fresh_isolated_independent_review.md was delivered directly by the user to this session",
+    "session_type": "New Codex isolated independent product-review session",
+    "received_on": "2026-08-24"
+  },
+  "model_route": {
+    "required": "gpt-5.6-terra + xhigh",
+    "actual": "gpt-5.6-terra + xhigh",
+    "evidence_boundary": "PM/system task-routing metadata; no repository-side model interface was used as evidence"
+  },
+  "independence": {
+    "reviewer_did_not_participate_in": ["P3-113 product definition", "P3-113 Rework 1", "P3-113 PM acceptance"],
+    "candidate_material_read_before_test_design": false,
+    "self_review_or_engineering_changes": false
+  },
+  "abf": {
+    "id": "ABF-P3-114-v1",
+    "status": "Frozen",
+    "sha256": "22d1b5f89ce608e72cdf42d3e08fe3adf11f57b10f23a64d2cf7b1273f27b96d"
+  },
+  "temporary_root": {
+    "path": "/private/tmp/lifeos-p3-114-product-review-v1",
+    "existed_before_review": false,
+    "status_at_recording": "not_created"
+  },
+  "prohibited_capabilities": ["real personal data", "retained Pilot", "application execution", "database execution", "model invocation", "network", "cloud", "external targets", "candidate modification", "ledger/risk/freeze/stage modification"]
+}

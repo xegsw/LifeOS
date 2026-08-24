@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT / "evidence"
 MANIFEST = EVIDENCE / "PAYLOAD_MANIFEST.json"
-EXCLUDE = {"PAYLOAD_MANIFEST.json", "MANIFEST.md"}
+EXCLUDE = {"PAYLOAD_MANIFEST.json", "MANIFEST.md", "semantic-verifier-result.json"}
 
 def digest(path: Path) -> dict[str, object]:
     data = path.read_bytes()

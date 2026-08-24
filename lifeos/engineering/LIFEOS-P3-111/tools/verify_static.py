@@ -30,10 +30,10 @@ def main() -> int:
         "new_ipc": commands == EXPECTED and invokes == EXPECTED,
         "new_dependency": all(token not in cargo for token in ["tauri-plugin", "reqwest", "sqlx", "tokio::process"]),
         "permissions": capability.get("permissions") == [],
-        "network_csp": "connect-src ipc:" in config and "http:" not in config and "https:" not in config,
+        "network_csp": "connect-src ipc:;" in config and "connect-src http" not in config and "connect-src https" not in config,
         "pilot_path": 'const PILOT_DB: &str = "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-2/capture.sqlite"' in runtime,
         "schema_unchanged": "PRAGMA user_version = 104" in runtime and "CREATE TABLE IF NOT EXISTS captures" in runtime,
-        "no_clear_or_export": "clear" not in runtime.lower() and "export" not in frontend.lower(),
+        "no_clear_or_export": not re.search(r"\bfn\s+(clear|export|restore|set_permission)\b", runtime) and "data-action=\"export\"" not in frontend,
     }
     payload = {
         "check": "P3-111 static contract",

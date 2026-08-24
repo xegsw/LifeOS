@@ -1,0 +1,62 @@
+{
+  "verifier": "LIFEOS-P3-111 raw semantic verifier",
+  "passed": false,
+  "manifest_file_count": 37,
+  "missing": [
+    "UI_DYNAMIC_EVIDENCE_CLOSURE.md",
+    "mutation-results.json",
+    "mutations/cleanup_residue.json",
+    "mutations/db_count_wrong.json",
+    "mutations/geometry_wrong.json",
+    "mutations/hash_changed.json",
+    "mutations/missing_file.json",
+    "mutations/negative_exit_zero.json",
+    "raw/actual-pilot-metadata.json",
+    "raw/bundle-result.json",
+    "raw/cargo-tauri-bundle.log",
+    "raw/cargo-test.log",
+    "raw/cleanup.json",
+    "raw/fixed-lifecycle.json",
+    "raw/fixed-selfcheck-summary.json",
+    "raw/geometry.json",
+    "raw/m001-default-empty.ax.txt",
+    "raw/m002-no-suggestion-empty.ax.txt",
+    "raw/m003-restricted-empty.ax.txt",
+    "raw/m004-keyboard-tab.ax.txt",
+    "raw/m005-user-save-redacted.json",
+    "raw/m006-refresh-redacted.json",
+    "raw/m007-no-suggestion-after-user-save.ax.txt",
+    "raw/m007-refresh-navigation-redacted.json",
+    "raw/m008-close-reopen-redacted.json",
+    "raw/m009-no-suggestion-after-reopen.ax.txt",
+    "raw/m010-restricted-after-reopen.ax.txt",
+    "raw/m011-keyboard-tab-enter-redacted.json",
+    "raw/m011-keyboard-tab-enter.ax.txt",
+    "raw/negative-results.json",
+    "raw/static-results.json",
+    "screenshots/m001-default-empty.png",
+    "screenshots/m002-no-suggestion-empty.png",
+    "screenshots/m003-restricted-empty.png",
+    "screenshots/m007-no-suggestion-after-user-save.png",
+    "screenshots/m009-no-suggestion-after-reopen.png",
+    "screenshots/m010-restricted-after-reopen.png"
+  ],
+  "extra": [],
+  "hash_or_bytes_drift": [
+    {
+      "path": "mutations/missing_file.json",
+      "expected_bytes": 1428,
+      "actual_bytes": 1718,
+      "expected_sha256": "c8ac278fea65812ec11ecb8d2fc81c1dfcb88abef00bc9f051c774e5a3d72d1e",
+      "actual_sha256": "246af14c253b9839e5c802c093ed6e9d494cc833a1ee77712c07e6e8183c2909"
+    },
+    {
+      "path": "raw/static-results.json",
+      "expected_bytes": 917,
+      "actual_bytes": 918,
+      "expected_sha256": "728cd2f3bc76c412646bcd74fa68e069e6d04cf25002b4b4d52da85fd7c73f17",
+      "actual_sha256": "4aca68303b55cb19f14b4d87df2b8d000696c67f8fa1fbf248d586540135e1fa"
+    }
+  ],
+  "semantic_errors": []
+}

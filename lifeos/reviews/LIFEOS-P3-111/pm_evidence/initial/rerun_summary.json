@@ -1,0 +1,47 @@
+{
+  "task": "LIFEOS-P3-111",
+  "review_round": "initial",
+  "workspace_evidence_verifier": {
+    "exit_code": 0,
+    "manifest_file_count": 37,
+    "missing": 0,
+    "extra": 0,
+    "hash_or_bytes_drift": 0,
+    "semantic_errors": 0
+  },
+  "isolated_fixed_selfcheck": {
+    "location": "/private/tmp/lifeos-p3-111-pm-acceptance-initial",
+    "cargo_test_exit": 0,
+    "passed_tests": 8,
+    "fixture_residue_count": 0,
+    "candidate_shadow_residue_count": 0,
+    "pilot2_touched": false
+  },
+  "isolated_mutation_runner": {
+    "location": "/private/tmp/lifeos-p3-111-pm-mutation-initial",
+    "reported_all_detected": true,
+    "reported_mutations": 6,
+    "disposable_residue": false,
+    "independent_interpretation": "not valid proof because an unchanged copy under a path containing /disposable/ also exits nonzero"
+  },
+  "retained_pilot_metadata_only": {
+    "directory_type": "Directory",
+    "database_type": "Regular File",
+    "database_bytes": 24576,
+    "journal_absent": true,
+    "wal_absent": true,
+    "shm_absent": true,
+    "database_content_read": false,
+    "database_hash_computed": false
+  },
+  "temporary_cleanup": {
+    "exact_paths_removed": [
+      "/private/tmp/lifeos-p3-111-pm-acceptance-initial",
+      "/private/tmp/lifeos-p3-111-pm-mutation-initial",
+      "/private/tmp/lifeos-p3-111-pm-noop",
+      "/private/tmp/lifeos-p3-111-build-output"
+    ],
+    "all_absent_after_cleanup": true,
+    "pilot2_preserved": true
+  }
+}

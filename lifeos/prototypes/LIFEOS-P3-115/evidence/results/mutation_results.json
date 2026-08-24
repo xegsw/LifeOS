@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "control": {
+    "exit_code": 0,
+    "output": "{\"status\": \"PASS\", \"matrix_rows\": 16, \"closure_rows\": 44, \"manifest_entries\": 165}"
+  },
+  "mutations": [
+    {
+      "id": "matrix-status-tamper",
+      "status": "PASS",
+      "exit_code": 1,
+      "output": "{\"status\": \"FAIL\", \"reason\": \"matrix PASS rows missing: ['ABF-M-001']\"}"
+    },
+    {
+      "id": "raw-evidence-hash-tamper",
+      "status": "PASS",
+      "exit_code": 1,
+      "output": "{\"status\": \"FAIL\", \"reason\": \"closure Evidence hash mismatch: P115-M001-01\"}"
+    }
+  ],
+  "temporary_root": "/private/tmp/lifeos-p3-115-prototype-v1"
+}

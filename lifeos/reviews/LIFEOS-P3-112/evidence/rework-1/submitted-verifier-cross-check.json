@@ -1,0 +1,89 @@
+{
+  "baseline": {
+    "exit_code": 0,
+    "passed": true,
+    "missing": [],
+    "drift_paths": [],
+    "semantic_errors": []
+  },
+  "unchanged_control": {
+    "exit_code": 0,
+    "passed": true,
+    "missing": [],
+    "drift_paths": [],
+    "semantic_errors": []
+  },
+  "mutations": [
+    {
+      "mutation": "missing_file",
+      "exit_code": 1,
+      "passed": false,
+      "missing": [
+        "raw/geometry.json"
+      ],
+      "drift_paths": [],
+      "semantic_errors": [
+        "unreadable:raw/geometry.json:FileNotFoundError"
+      ]
+    },
+    {
+      "mutation": "hash_changed",
+      "exit_code": 1,
+      "passed": false,
+      "missing": [],
+      "drift_paths": [
+        "raw/static-results.json"
+      ],
+      "semantic_errors": []
+    },
+    {
+      "mutation": "cleanup_residue",
+      "exit_code": 1,
+      "passed": false,
+      "missing": [],
+      "drift_paths": [
+        "raw/cleanup.json"
+      ],
+      "semantic_errors": [
+        "cleanup"
+      ]
+    },
+    {
+      "mutation": "negative_exit_zero",
+      "exit_code": 1,
+      "passed": false,
+      "missing": [],
+      "drift_paths": [
+        "raw/negative-results.json"
+      ],
+      "semantic_errors": [
+        "negative"
+      ]
+    },
+    {
+      "mutation": "db_count_wrong",
+      "exit_code": 1,
+      "passed": false,
+      "missing": [],
+      "drift_paths": [
+        "raw/fixed-lifecycle.json"
+      ],
+      "semantic_errors": [
+        "lifecycle"
+      ]
+    },
+    {
+      "mutation": "geometry_wrong",
+      "exit_code": 1,
+      "passed": false,
+      "missing": [],
+      "drift_paths": [
+        "raw/geometry.json"
+      ],
+      "semantic_errors": [
+        "geometry"
+      ]
+    }
+  ],
+  "pass": true
+}

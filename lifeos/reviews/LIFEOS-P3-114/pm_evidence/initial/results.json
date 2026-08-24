@@ -1,0 +1,18 @@
+{
+  "task_id": "LIFEOS-P3-114",
+  "review_round": "initial",
+  "checked_at": "2026-08-24T21:20:00+0800",
+  "abf": {"id": "ABF-P3-114-v1", "sha256": "22d1b5f89ce608e72cdf42d3e08fe3adf11f57b10f23a64d2cf7b1273f27b96d", "unchanged": true},
+  "checks": [
+    {"id": "PM-001", "status": "PASS", "result": "Authorization, fresh session, model route, Frozen ABF and candidate-reading-preceding design are supported."},
+    {"id": "PM-002", "status": "PASS", "result": "Submitted Manifest matches 21/21 by SHA-256 and bytes."},
+    {"id": "PM-003", "status": "PASS", "result": "Candidate integrity runner exits 0: initial 14/14, Rework 12/12 and Rework JSON 10/10."},
+    {"id": "PM-004", "status": "PASS", "result": "Fixed synthetic counterexample runner exits 0 with 10 PASS and 0 FAIL."},
+    {"id": "PM-005", "status": "PASS", "result": "No product-candidate P0/P1 found across Person, history, Source, feedback, home, health and Gate boundaries."},
+    {"id": "PM-006", "status": "FAIL", "severity": "P1", "finding": "PM-CE-001", "result": "results.json reorders the Frozen matrix evidence mapping: M-002, M-005, M-008 and M-010 point to evidence for different ABF actions, so line-level PASS is not machine-reproducible."},
+    {"id": "PM-007", "status": "PASS", "result": "Submitted and PM exact temporary roots are absent after verification; no real data, app, database, model, network or external target was accessed."}
+  ],
+  "counts": {"P0": 0, "P1": 1, "P2": 0, "Unknown": 0, "Not Implemented": 0},
+  "conclusion": "Rework 1/2 / Awaiting User Adoption / Acceptance Basis Unchanged / Not Frozen",
+  "scope": "P3-114 review-Evidence mapping defect only; no P3-113 product-candidate defect confirmed"
+}

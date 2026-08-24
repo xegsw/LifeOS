@@ -1,0 +1,31 @@
+{
+  "evidence_id": "P3-114-rework-1-results",
+  "status": "PASS",
+  "conclusion": "Evidence-mapping Rework Pass — Awaiting PM Re-Acceptance; not a PM Pass, candidate freeze or stage decision",
+  "scope": "Only correct the P3-114 Evidence row mapping under unchanged ABF-P3-114-v1. Original candidate/product judgment is read-only and not re-authored.",
+  "rows": [
+    {"row_id": "ABF-M-001", "frozen_action": "核验投递、全新会话、模型、ABF hash、授权与临时根不存在", "test_id": "IR-001", "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/session_boundary.json", "rework_authorization.json"], "result": "PASS"},
+    {"row_id": "ABF-M-002", "frozen_action": "在候选读取前写独立问题、反例和判定法并封存 hash／时间", "test_id": "IR-002", "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/test_design.md", "lifeos/reviews/LIFEOS-P3-114/evidence/read_order.json"], "result": "PASS"},
+    {"row_id": "ABF-M-003", "frozen_action": "复算 P3-113 初次／Rework／PM Manifest 与任务指定输入", "test_id": "IR-003", "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/input_integrity.json", "original_asset_integrity.json"], "result": "PASS"},
+    {"row_id": "ABF-M-004", "frozen_action": "攻击 Person／Project、用户结果、范围和产品定位一致性", "test_id": "IR-004", "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/product_center_review.json"], "result": "PASS"},
+    {"row_id": "ABF-M-005", "frozen_action": "逐项验证旧状态、适用性和未来替代关卡", "test_id": "IR-005", "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/frozen_asset_impact_review.json"], "result": "PASS"},
+    {"row_id": "ABF-M-006", "frozen_action": "追踪 Source→Artifact→Derivation／Memory→Advice，注入缺失／冲突／过期／失权", "test_id": "IR-006", "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/source_memory_counterexamples.json"], "result": "PASS"},
+    {"row_id": "ABF-M-007", "frozen_action": "核对数量、问题阈值、basis、不确定性、用户控制和不自动执行", "test_id": "IR-007", "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/home_advice_contract_review.json"], "result": "PASS"},
+    {"row_id": "ABF-M-008", "frozen_action": "独立走认可／修改／拒绝／忽略／延后／未执行／执行／结果／撤销／重开", "test_id": "IR-008", "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/feedback_lifecycle_counterexamples.json"], "result": "PASS"},
+    {"row_id": "ABF-M-009", "frozen_action": "核对停止、降级、非医疗边界及专业支持措辞", "test_id": "IR-009", "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/health_safety_review.json"], "result": "PASS"},
+    {"row_id": "ABF-M-010", "frozen_action": "独立重演完整闭环及关闭重开，比较初次与 Rework 候选", "test_id": "IR-010", "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/cross_domain_replay.json"], "result": "PASS"},
+    {"row_id": "ABF-M-011", "frozen_action": "逐问 Gate 1–5，核对原型→复评→工程→Pilot 单线与授权", "test_id": "IR-011", "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/gate_and_route_review.json"], "result": "PASS"},
+    {"row_id": "ABF-M-012", "frozen_action": "执行预先冻结的反例并记录支持／反驳／Unknown", "test_id": "IR-012", "actual_evidence": ["lifeos/reviews/LIFEOS-P3-114/evidence/independent_counterexamples.json"], "result": "PASS"},
+    {"row_id": "ABF-M-013", "frozen_action": "汇总计数、Review、Manifest、复跑与精确临时根清理", "test_id": "IR-013", "actual_evidence": ["results.json", "temporary_residue.json", "MANIFEST.md"], "result": "PASS"}
+  ],
+  "self_check_counts": {"P0": 0, "P1": 0, "P2": 0, "Unknown": 0, "Not Implemented": 0},
+  "p1_closure": {
+    "pm_finding": "PM-CE-001 / P1 — original results.json associated M-002/M-005/M-008/M-010 with adjacent Evidence actions",
+    "rework_resolution": "All 13 rows now reproduce their exact frozen action and test ID. M-002 binds independent pre-read design; M-005 binds historical asset impact; M-008 binds feedback lifecycle; M-010 binds cross-domain replay."
+  },
+  "non_claims": [
+    "No P3-113 candidate file, product conclusion, risk, freeze, stage or ledger was changed.",
+    "This self-check does not replace required PM re-acceptance.",
+    "No real data, app, database, model, network or external source was accessed."
+  ]
+}

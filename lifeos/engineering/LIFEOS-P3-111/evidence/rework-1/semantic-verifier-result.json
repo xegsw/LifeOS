@@ -1,0 +1,147 @@
+{
+  "verifier": "LIFEOS-P3-111 raw semantic verifier",
+  "rework": "1/2",
+  "final_payload_manifest_sha256": "16dbe0f05d825bca4f7e08f723dd5c3b7b90606bad0a4af1d9feaaea34641d22",
+  "final_payload": {
+    "passed": true,
+    "missing": [],
+    "extra": [],
+    "drift_paths": [],
+    "semantic_errors": []
+  },
+  "unchanged_disposable_copy": {
+    "copy": "disposable/noop-final",
+    "exit_code": 0,
+    "result": {
+      "passed": true,
+      "missing": [],
+      "extra": [],
+      "drift_paths": [],
+      "semantic_errors": []
+    },
+    "verifier_result": {
+      "verifier": "LIFEOS-P3-111 raw semantic verifier",
+      "passed": true,
+      "manifest_file_count": 38,
+      "missing": [],
+      "extra": [],
+      "hash_or_bytes_drift": [],
+      "semantic_errors": []
+    }
+  },
+  "six_final_mutations_exact": [
+    {
+      "mutation": "missing_file",
+      "copy": "disposable/final-missing_file",
+      "exit_code": 1,
+      "result": {
+        "passed": false,
+        "missing": [
+          "raw/geometry.json"
+        ],
+        "extra": [],
+        "drift_paths": [],
+        "semantic_errors": [
+          "unreadable:raw/geometry.json:FileNotFoundError"
+        ]
+      }
+    },
+    {
+      "mutation": "hash_changed",
+      "copy": "disposable/final-hash_changed",
+      "exit_code": 1,
+      "result": {
+        "passed": false,
+        "missing": [],
+        "extra": [],
+        "drift_paths": [
+          "raw/static-results.json"
+        ],
+        "semantic_errors": []
+      }
+    },
+    {
+      "mutation": "cleanup_residue",
+      "copy": "disposable/final-cleanup_residue",
+      "exit_code": 1,
+      "result": {
+        "passed": false,
+        "missing": [],
+        "extra": [],
+        "drift_paths": [
+          "raw/cleanup.json"
+        ],
+        "semantic_errors": [
+          "cleanup"
+        ]
+      }
+    },
+    {
+      "mutation": "negative_exit_zero",
+      "copy": "disposable/final-negative_exit_zero",
+      "exit_code": 1,
+      "result": {
+        "passed": false,
+        "missing": [],
+        "extra": [],
+        "drift_paths": [
+          "raw/negative-results.json"
+        ],
+        "semantic_errors": [
+          "negative"
+        ]
+      }
+    },
+    {
+      "mutation": "db_count_wrong",
+      "copy": "disposable/final-db_count_wrong",
+      "exit_code": 1,
+      "result": {
+        "passed": false,
+        "missing": [],
+        "extra": [],
+        "drift_paths": [
+          "raw/fixed-lifecycle.json"
+        ],
+        "semantic_errors": [
+          "lifecycle"
+        ]
+      }
+    },
+    {
+      "mutation": "geometry_wrong",
+      "copy": "disposable/final-geometry_wrong",
+      "exit_code": 1,
+      "result": {
+        "passed": false,
+        "missing": [],
+        "extra": [],
+        "drift_paths": [
+          "raw/geometry.json"
+        ],
+        "semantic_errors": [
+          "geometry"
+        ]
+      }
+    }
+  ],
+  "all_final_mutations_exact": true,
+  "disposable_residue": false,
+  "initial_evidence_modified": false,
+  "pilot2_accessed": false,
+  "network_used": false,
+  "source_snapshot": {
+    "rework": "LIFEOS-P3-111 Rework 1/2 Evidence-only mutation specificity",
+    "initial_evidence_read_only": true,
+    "source_payload_manifest_sha256": "0c8f1fcea3fb756c1974243d3d20315854ceada28fd73bd4c65652d3afd3bb7b",
+    "source_semantic_result_sha256": "52a75c16a8b56d2fa03340d13b5a581d31d7982ce7263c4e02aaa7827546fb2a",
+    "copied_inputs": [
+      "raw/",
+      "screenshots/",
+      "UI_DYNAMIC_EVIDENCE_CLOSURE.md"
+    ],
+    "candidate_runtime_or_ui_modified": false,
+    "pilot2_accessed": false,
+    "network_used": false
+  }
+}

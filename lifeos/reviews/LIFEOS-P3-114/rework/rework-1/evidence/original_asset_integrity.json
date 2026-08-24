@@ -1,0 +1,24 @@
+{
+  "evidence_id": "P3-114-rework-1-original-asset-integrity",
+  "status": "PASS",
+  "mode": "read-only hash/byte verification",
+  "original_p3_114": {
+    "manifest_path": "lifeos/reviews/LIFEOS-P3-114/evidence/MANIFEST.md",
+    "manifest_sha256": "89983ca8ab70698e90d8fff44ff9bdaf040107c310199d58a3e408c6cb0b16b3",
+    "manifest_entries_verified": 21,
+    "hash_and_byte_mismatch": 0,
+    "delivery_sha256": "13428149f96cd3146fbbc22413addf4b596734a5fa619d80c83f80db1c3944d0",
+    "independent_review_sha256": "16525f9a8e2dd62ca04f121c267d3493da69928122333018b2ba242f434015b1"
+  },
+  "p3_113_candidate": {
+    "initial_manifest_entries_verified": 14,
+    "rework_manifest_entries_verified": 12,
+    "hash_and_byte_mismatch": 0
+  },
+  "basis_and_authorization": {
+    "task_card_sha256": "bf5cec522552a954b42feebac7f63e1b2caa52f41374ce1dda77cd675d941888",
+    "abf_sha256": "22d1b5f89ce608e72cdf42d3e08fe3adf11f57b10f23a64d2cf7b1273f27b96d",
+    "pm_review_sha256": "9b7946c0e5684ffefdbdb371f87dccdd41ea9a500c3e2b541df261806baa63d2"
+  },
+  "conclusion": "All original P3-114 assets and P3-113 candidate inputs used by Rework 1 remain byte-identical to the reviewed source records. Rework 1 adds only its own mapping/Evidence package."
+}

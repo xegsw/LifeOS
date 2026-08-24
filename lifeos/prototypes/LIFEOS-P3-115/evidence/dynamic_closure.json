@@ -1,0 +1,771 @@
+{
+  "template": "UI_DYNAMIC_EVIDENCE_CLOSURE_TEMPLATE equivalent",
+  "rows": [
+    {
+      "id": "P115-M001-01",
+      "matrix_id": "ABF-M-001",
+      "status": "PASS",
+      "dynamic": false,
+      "operation": "Recompute seven Frozen input hashes",
+      "result_id": "P115-M001",
+      "precondition": "v2 ABF startup",
+      "observable": "All fixed hashes match",
+      "evidence_path": "raw/m001-fixed-inputs.json",
+      "sha256": "b7eb9b9f126c16a77fb81982a264b69ffe5bb1825fae1eb95c1166896a470e92"
+    },
+    {
+      "id": "P115-M002-01",
+      "matrix_id": "ABF-M-002",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Fresh Chrome file URL load",
+      "result_id": "P115-M002-01",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "file:///private/tmp/lifeos-p3-115-prototype-v1/index.html",
+        "LifeOS · Today（P3-115 原型）"
+      ],
+      "evidence_path": "raw/m001-default-1512x861.ax.txt",
+      "sha256": "78709b9558132c83af33729121b45e54b2caaa3a9fe840755797f64d01b7fd43",
+      "screenshot_path": "screenshots/m001-default-1512x861.png",
+      "screenshot_sha256": "b230aee8e573770f488fcf3a15e20467f593795328f48ca878e34a0c2be6fbd0"
+    },
+    {
+      "id": "P115-M003-01",
+      "matrix_id": "ABF-M-003",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Observe default Today",
+      "result_id": "P115-M003-01",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "今天值得花注意力的 3 件事",
+        "0–1 个问题",
+        "Project 只作为工作项目的上下文"
+      ],
+      "evidence_path": "raw/m001-default-1512x861.ax.txt",
+      "sha256": "78709b9558132c83af33729121b45e54b2caaa3a9fe840755797f64d01b7fd43",
+      "screenshot_path": "screenshots/m001-default-1512x861.png",
+      "screenshot_sha256": "b230aee8e573770f488fcf3a15e20467f593795328f48ca878e34a0c2be6fbd0"
+    },
+    {
+      "id": "P115-M004-01",
+      "matrix_id": "ABF-M-004",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Click work Why now / evidence",
+      "result_id": "P115-M004-01",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "SOURCE",
+        "ARTIFACT",
+        "确定性",
+        "停止条件",
+        "Advice candidate"
+      ],
+      "evidence_path": "raw/m004-work-evidence.ax.txt",
+      "sha256": "906a9f3a76dc4ab6971b3a4bf6470ec84b82f51ef0aa31b5c2258e59bdaf135c",
+      "screenshot_path": "screenshots/m004-work-evidence.png",
+      "screenshot_sha256": "f592c7d84c9a7054d6b6a10e14a6c8bda4001503c9dbb8724c1d937d08058135"
+    },
+    {
+      "id": "P115-M005-01",
+      "matrix_id": "ABF-M-005",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Observe unanswered health gate",
+      "result_id": "P115-M005-01",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "未回答 · 停止训练型建议",
+        "先保守，再行动"
+      ],
+      "evidence_path": "raw/m005-health-gate-default.ax.txt",
+      "sha256": "92ec55fe494df8aaa5b890b63560af57a2a5eb7b8f6a0c9b0a6c127b3a45e74e",
+      "screenshot_path": "screenshots/m005-health-gate-default.png",
+      "screenshot_sha256": "971225dfedc247b4d4d9e4fe22eb4f4f87d939cfa156f7d2d33dbd450fd8287f"
+    },
+    {
+      "id": "P115-M006-01",
+      "matrix_id": "ABF-M-006",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Answer 无加重／无警示",
+      "result_id": "P115-M006-01",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "无警示 · 低风险候选",
+        "一个可选的低风险恢复选项",
+        "不是诊断、治疗或训练处方"
+      ],
+      "evidence_path": "raw/m006-answer-safe.ax.txt",
+      "sha256": "d55457c1269025115989d64d617813f8faef7657248c2e3aad51a9632b401e0f",
+      "screenshot_path": "screenshots/m006-answer-safe.png",
+      "screenshot_sha256": "9fa45dfe3d6a6b3c4857ea2d69416b2cc6a4e2f5cf95334760bb7da885aaaf95"
+    },
+    {
+      "id": "P115-M006-02",
+      "matrix_id": "ABF-M-006",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Answer 今天跳过",
+      "result_id": "P115-M006-02",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "跳过 · 降级",
+        "不把跳过当成安全回答"
+      ],
+      "evidence_path": "raw/m006-answer-skip.ax.txt",
+      "sha256": "9674d8a412bcf1383cb91847457f554dbfad1fe0a2535c67bc64dccf1db17c99",
+      "screenshot_path": "screenshots/m006-answer-skip.png",
+      "screenshot_sha256": "6bbe4d202309ac51924e7f1d0cc11052328d906e62251ef3cd16cfd560bad022"
+    },
+    {
+      "id": "P115-M006-03",
+      "matrix_id": "ABF-M-006",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Answer 有警示信号",
+      "result_id": "P115-M006-03",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "警示信号 · 已停止",
+        "专业人士"
+      ],
+      "evidence_path": "raw/m006-answer-warning.ax.txt",
+      "sha256": "9f85d18df9a35efb6c2f21c170893e5197b96ca338e556eb6be0b035e8c29de0",
+      "screenshot_path": "screenshots/m006-answer-warning.png",
+      "screenshot_sha256": "b80a37ec502d9167041cb13766e9ce14a629a1fc17c5106ec5d360794eaa0555"
+    },
+    {
+      "id": "P115-M007-01",
+      "matrix_id": "ABF-M-007",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Click 认可为可选项",
+      "result_id": "P115-M007-01",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "FDB 已认可",
+        "EXE 未执行"
+      ],
+      "evidence_path": "raw/m007-feedback-accept.ax.txt",
+      "sha256": "82c92c2cc92118090ef06b25a9c081aa945a28a907df852788eeec3efb9ddc17",
+      "screenshot_path": "screenshots/m007-feedback-accept.png",
+      "screenshot_sha256": "b45daca22d263144b72724a9d77876d823062c7d468b535ec6fee4cc1d701909"
+    },
+    {
+      "id": "P115-M007-02",
+      "matrix_id": "ABF-M-007",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Confirm 修改后接受",
+      "result_id": "P115-M007-02",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "FDB 修改后接受",
+        "EXE 未执行"
+      ],
+      "evidence_path": "raw/m007-feedback-modified.ax.txt",
+      "sha256": "b6a8bed03d541115c1c405d116c81d5eef00b71e25b94ee15ba7cb8571b7b3eb",
+      "screenshot_path": "screenshots/m007-feedback-modified.png",
+      "screenshot_sha256": "7e9ab1963c5c0470fecbb8fc34e52060f64d76fec0db8e0e4a3b7121a68deaf2"
+    },
+    {
+      "id": "P115-M007-03",
+      "matrix_id": "ABF-M-007",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Click 不适用",
+      "result_id": "P115-M007-03",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "FDB 已拒绝",
+        "EXE 未执行"
+      ],
+      "evidence_path": "raw/m007-feedback-reject.ax.txt",
+      "sha256": "1d395226db4ffc247635898c8bd42f36dd7b6b48d422fd2d6affc766c9a1ed1f",
+      "screenshot_path": "screenshots/m007-feedback-reject.png",
+      "screenshot_sha256": "74abc2e46458483d961b222a43bf7606d6b582c285f0feca49be423b7855bcee"
+    },
+    {
+      "id": "P115-M007-04",
+      "matrix_id": "ABF-M-007",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Click 延后",
+      "result_id": "P115-M007-04",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "FDB 已延后",
+        "EXE 未执行"
+      ],
+      "evidence_path": "raw/m007-feedback-defer.ax.txt",
+      "sha256": "0d2b754edb203164cafe36cd5a8e939618a50bd5d745be03bff875d65e0f9e10",
+      "screenshot_path": "screenshots/m007-feedback-defer.png",
+      "screenshot_sha256": "50ee9a39e01ce45407ddc51a5395d3e408133ebdfd9c09d8be2baf25c7ee60be"
+    },
+    {
+      "id": "P115-M008-01",
+      "matrix_id": "ABF-M-008",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Record not executed",
+      "result_id": "P115-M008-01",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "EXE 未执行",
+        "RES 尚无"
+      ],
+      "evidence_path": "raw/m008-execution-not-executed.ax.txt",
+      "sha256": "2a940c887504ee899671c1dd408d8eb753bc2e38dc742479db8252b5b7a55d63",
+      "screenshot_path": "screenshots/m008-execution-not-executed.png",
+      "screenshot_sha256": "55c82f2d7bf4a3a5e23740a589e15321c1ee75605240ba10b3975a21bc1be342"
+    },
+    {
+      "id": "P115-M008-02",
+      "matrix_id": "ABF-M-008",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Record executed",
+      "result_id": "P115-M008-02",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "EXE 已执行",
+        "RES 尚无"
+      ],
+      "evidence_path": "raw/m008-execution-reported.ax.txt",
+      "sha256": "59ef721593236792fb83eea44949952b8c0204cb31a7523d7429cce0b832960f",
+      "screenshot_path": "screenshots/m008-execution-reported.png",
+      "screenshot_sha256": "a4584c8985d81ad7b62cb9ccdd844019c52c5554b5f26d372f03bd2c16ce17a9"
+    },
+    {
+      "id": "P115-M008-03",
+      "matrix_id": "ABF-M-008",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Record result",
+      "result_id": "P115-M008-03",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "RES 已报告结果",
+        "今晚不再追加训练型建议"
+      ],
+      "evidence_path": "raw/m008-result-reported.ax.txt",
+      "sha256": "cd3cff86d619c0117a26419e7154d6530e944343122f4f3f61eb15f7430c7e5c",
+      "screenshot_path": "screenshots/m008-result-reported.png",
+      "screenshot_sha256": "cebc99ebddcc778d52823a3296548448b4e121f5f93895cf6d7d809f4ac32233"
+    },
+    {
+      "id": "P115-M009-01",
+      "matrix_id": "ABF-M-009",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Show pending Memory candidate",
+      "result_id": "P115-M009-01",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "MEM-CAND · 待确认",
+        "不会影响未来日期"
+      ],
+      "evidence_path": "raw/m009-memory-pending.ax.txt",
+      "sha256": "8d77eca6fbfcd1bc7868ef570da7977507838608f62a48c646fa29edf5047ebe",
+      "screenshot_path": "screenshots/m009-memory-pending.png",
+      "screenshot_sha256": "071886e69de111405ca6d3a58992414944606a39cd8f0c0017500039dc33046b"
+    },
+    {
+      "id": "P115-M009-02",
+      "matrix_id": "ABF-M-009",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Reject candidate then return Today",
+      "result_id": "P115-M009-02",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "已拒绝",
+        "RES 已报告结果",
+        "Source / Artifact 固定合成输入"
+      ],
+      "evidence_path": "raw/m009-rejected-preserves-result.ax.txt",
+      "sha256": "3c7f2950cc40dfa6429d0d88d979aa15b5ed4fe56da15599291faee4c125c64c",
+      "screenshot_path": "screenshots/m009-rejected-preserves-result.png",
+      "screenshot_sha256": "24c251ea48180b6c3647f78d49381f93625de0b14855f59fcfe6746f63e2067b"
+    },
+    {
+      "id": "P115-M009-03",
+      "matrix_id": "ABF-M-009",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Confirm limited Memory candidate",
+      "result_id": "P115-M009-03",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "MEM-CAND · 已确认"
+      ],
+      "evidence_path": "raw/m009-memory-confirmed.ax.txt",
+      "sha256": "fbf417b263816292d01b6e802864070f07ef4a6513a196f8fbbb0b0d4e9ee648",
+      "screenshot_path": "screenshots/m009-memory-confirmed.png",
+      "screenshot_sha256": "a56213236aa4ebf8a78997c674bc8952f4f9d57f0fc9bf0574ec783fb89222c1"
+    },
+    {
+      "id": "P115-M010-01",
+      "matrix_id": "ABF-M-010",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Inject missing source",
+      "result_id": "P115-M010-01",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "missing · fail-closed"
+      ],
+      "evidence_path": "raw/m010-source-missing.ax.txt",
+      "sha256": "5a496fc87fdd9ea903a314903ded385b0c4dd918333fa0a339eb98c43c065305",
+      "screenshot_path": "screenshots/m010-source-missing.png",
+      "screenshot_sha256": "efaaa383d859a4c98e235dccd467f661f567e36ad8fc2945266784cb4a027d29"
+    },
+    {
+      "id": "P115-M010-02",
+      "matrix_id": "ABF-M-010",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Inject stale source",
+      "result_id": "P115-M010-02",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "stale · fail-closed"
+      ],
+      "evidence_path": "raw/m010-source-stale.ax.txt",
+      "sha256": "68334029ab9b87eb26438e631e30c94ae8dd79252f55e8ff418b164a00fc3e7f",
+      "screenshot_path": "screenshots/m010-source-stale.png",
+      "screenshot_sha256": "da2eb76eba51e1f677c601d777a730ab9f63748de436d194eec7d24e020b7afa"
+    },
+    {
+      "id": "P115-M010-03",
+      "matrix_id": "ABF-M-010",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Inject conflicting source",
+      "result_id": "P115-M010-03",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "conflict · fail-closed"
+      ],
+      "evidence_path": "raw/m010-source-conflict.ax.txt",
+      "sha256": "ca5aaa6d03d0028959c91b10ba872fb902b75af6d611ad965a1df50bf838e198",
+      "screenshot_path": "screenshots/m010-source-conflict.png",
+      "screenshot_sha256": "72259b7b57bc9e8b64dd77fcd72a52628f7227e60bd00faf6c293c0a14879991"
+    },
+    {
+      "id": "P115-M010-04",
+      "matrix_id": "ABF-M-010",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Inject unauthorized source",
+      "result_id": "P115-M010-04",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "unauthorized · fail-closed"
+      ],
+      "evidence_path": "raw/m010-source-unauthorized.ax.txt",
+      "sha256": "6bcd4002316c36a280157f6102468967a1acc3c20ef6f4549b32841188dd2da3",
+      "screenshot_path": "screenshots/m010-source-unauthorized.png",
+      "screenshot_sha256": "45df546445aebe790dd81c4e1ca22ca5eb9c8698e6b743a484e1b751cc14eb01"
+    },
+    {
+      "id": "P115-M011-01",
+      "matrix_id": "ABF-M-011",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Create modified feedback before revocation",
+      "result_id": "P115-M011-01",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "FDB 修改后接受"
+      ],
+      "evidence_path": "raw/m011-revoke-path-modified.ax.txt",
+      "sha256": "38ac28671cb2f4427c5757d9d9e7b8a870bd0ce603119d09a02ce35cac345f55",
+      "screenshot_path": "screenshots/m011-revoke-path-modified.png",
+      "screenshot_sha256": "fd6bcb00efc1ff24d94d5cbe7909a640a0be50b42688fbd4c8208e1eae5dc636"
+    },
+    {
+      "id": "P115-M011-02",
+      "matrix_id": "ABF-M-011",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Report execution before revocation",
+      "result_id": "P115-M011-02",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "EXE 已执行"
+      ],
+      "evidence_path": "raw/m011-revoke-path-executed.ax.txt",
+      "sha256": "49baa62674b979a095bcfa3ceeb085c42ba2e935167f36221ff36d48e5482f95",
+      "screenshot_path": "screenshots/m011-revoke-path-executed.png",
+      "screenshot_sha256": "a4584c8985d81ad7b62cb9ccdd844019c52c5554b5f26d372f03bd2c16ce17a9"
+    },
+    {
+      "id": "P115-M011-03",
+      "matrix_id": "ABF-M-011",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Report result before revocation",
+      "result_id": "P115-M011-03",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "RES 已报告结果"
+      ],
+      "evidence_path": "raw/m011-revoke-path-result.ax.txt",
+      "sha256": "d37d2ca00276a00f7952cf06b93900c63e1ac746bee08382636e7eeab62ee074",
+      "screenshot_path": "screenshots/m011-revoke-path-result.png",
+      "screenshot_sha256": "38b3ad23770c8e46d6025d943646dfcb9d4c69aad4f0c2445f8188d4050dd92b"
+    },
+    {
+      "id": "P115-M011-04",
+      "matrix_id": "ABF-M-011",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Create pending candidate before revocation",
+      "result_id": "P115-M011-04",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "MEM-CAND · 待确认"
+      ],
+      "evidence_path": "raw/m011-revoke-path-memory-pending.ax.txt",
+      "sha256": "8aca06bf3ce47327ef304084463d1ee36193e8d6ef002f31e575197577a42787",
+      "screenshot_path": "screenshots/m011-revoke-path-memory-pending.png",
+      "screenshot_sha256": "071886e69de111405ca6d3a58992414944606a39cd8f0c0017500039dc33046b"
+    },
+    {
+      "id": "P115-M011-05",
+      "matrix_id": "ABF-M-011",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Revoke answer/feedback/execution/result chain",
+      "result_id": "P115-M011-05",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "等待你的安全回答",
+        "Source / Artifact 固定合成输入"
+      ],
+      "evidence_path": "raw/m011-revoke-ans-fdb-exe-res.ax.txt",
+      "sha256": "ba1c4c6ba48c9cddf634ebab9203834f03f0c8263b22875cee6ebc8d575b7387",
+      "screenshot_path": "screenshots/m011-revoke-ans-fdb-exe-res.png",
+      "screenshot_sha256": "8a543c0c64228e088592b04a1e9e5afb372d0004fbd4f54dfd73583858104ce1"
+    },
+    {
+      "id": "P115-M011-06",
+      "matrix_id": "ABF-M-011",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Chrome refresh",
+      "result_id": "P115-M011-06",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "等待你的安全回答",
+        "不是运行时 · 不保存输入"
+      ],
+      "evidence_path": "raw/m011-refresh-reset.ax.txt",
+      "sha256": "0f426abded7ba4fad2e15b508749f35588c1df6045d204dc519891d75ac80418",
+      "screenshot_path": "screenshots/m011-refresh-reset.png",
+      "screenshot_sha256": "ba764cee9b55b84d57914bf00aeb11c4d449987c2d4ec37d38f06692ab856e33"
+    },
+    {
+      "id": "P115-M011-07",
+      "matrix_id": "ABF-M-011",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Close task tab and reopen direct file URL",
+      "result_id": "P115-M011-07",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "file:///private/tmp/lifeos-p3-115-prototype-v1/index.html",
+        "等待你的安全回答"
+      ],
+      "evidence_path": "raw/m011-close-reopen-reset.ax.txt",
+      "sha256": "b3b1b29a4b1fd8eca1b4546f232f0189ebfdd054c8762e6c69d90c6d108593c1",
+      "screenshot_path": "screenshots/m011-close-reopen-reset.png",
+      "screenshot_sha256": "b230aee8e573770f488fcf3a15e20467f593795328f48ca878e34a0c2be6fbd0"
+    },
+    {
+      "id": "P115-M012-01",
+      "matrix_id": "ABF-M-012",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Navigate Memory",
+      "result_id": "P115-M012-01",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "长期记忆必须经过再次确认",
+        "固定合成候选"
+      ],
+      "evidence_path": "raw/m012-navigation-memory.ax.txt",
+      "sha256": "edf9bb818107c5acc61aa33e92aef8e926daf10002dc4d56378e1270a1284af4",
+      "screenshot_path": "screenshots/m012-navigation-memory.png",
+      "screenshot_sha256": "1d88027e26930daf494dd83c28b45aa01b826ac76c191b55fd998a4dcdee2378"
+    },
+    {
+      "id": "P115-M012-02",
+      "matrix_id": "ABF-M-012",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Navigate Domains",
+      "result_id": "P115-M012-02",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "工作与健康／健身，是并列的生活语境",
+        "Project 只在工作语境中出现"
+      ],
+      "evidence_path": "raw/m012-navigation-domains.ax.txt",
+      "sha256": "a702bfbd1e8bc9c1109a9a1ffc1284994f38bee0232dd56d261f88d0fc5608bf",
+      "screenshot_path": "screenshots/m012-navigation-domains.png",
+      "screenshot_sha256": "af3261c86541c22411a3e9bf54e67a810efcdf57901e944c0a113c1a862dd0e4"
+    },
+    {
+      "id": "P115-M012-03",
+      "matrix_id": "ABF-M-012",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Navigate Today",
+      "result_id": "P115-M012-03",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "今天值得花注意力的 3 件事",
+        "Project 只作为工作项目的上下文"
+      ],
+      "evidence_path": "raw/m012-navigation-today.ax.txt",
+      "sha256": "825959b99333328d56704ea1d8b4a08b4cbf4a7917cb79c5f3578aee1599c24d",
+      "screenshot_path": "screenshots/m012-navigation-today.png",
+      "screenshot_sha256": "b230aee8e573770f488fcf3a15e20467f593795328f48ca878e34a0c2be6fbd0"
+    },
+    {
+      "id": "P115-M012-04",
+      "matrix_id": "ABF-M-012",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Open global capture boundary",
+      "result_id": "P115-M012-04",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "这只是原型入口",
+        "不收集、不保存、不发送"
+      ],
+      "evidence_path": "raw/m012-capture-boundary.ax.txt",
+      "sha256": "2fc69b4d00c51200a594822c0a21efa68be9e751bd74f1284738aad380c1da87",
+      "screenshot_path": "screenshots/m012-capture-boundary.png",
+      "screenshot_sha256": "f7688cb5f909ae92b90d6432293c4d211371f9b1ef74d55c8fd082581313817a"
+    },
+    {
+      "id": "P115-M013-01",
+      "matrix_id": "ABF-M-013",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Chrome device toolbar 1280x1024",
+      "result_id": "P115-M013-01",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "视口：1280 × 1024",
+        "今天值得花注意力的 3 件事"
+      ],
+      "evidence_path": "raw/m013-viewport-1280x1024.ax.txt",
+      "sha256": "fd2dad69337db59f2a205cb65f2f418e94204e13d46125585fc21da573b3e1af",
+      "screenshot_path": "screenshots/m013-viewport-1280x1024.png",
+      "screenshot_sha256": "19ab1c28e5691ba6cc3e0da8053134f7bba148fe01ba03004b5cb961b33b1957"
+    },
+    {
+      "id": "P115-M013-02",
+      "matrix_id": "ABF-M-013",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Chrome device toolbar 1160x768",
+      "result_id": "P115-M013-02",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "视口：1160 × 768",
+        "让今天的结果保持可撤回"
+      ],
+      "evidence_path": "raw/m013-viewport-1160x768.ax.txt",
+      "sha256": "033e7bde8f8f55e40c9affd13d9d90a4906604c33449c289a9e296a1e1811162",
+      "screenshot_path": "screenshots/m013-viewport-1160x768.png",
+      "screenshot_sha256": "0569b7ddeaa65aba1466d31b66b237be9bf6d2897a3b81fc1f2bb03eae0dde2a"
+    },
+    {
+      "id": "P115-M013-03",
+      "matrix_id": "ABF-M-013",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Chrome device toolbar 700x760",
+      "result_id": "P115-M013-03",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "视口：700 × 760",
+        "0–1 个问题"
+      ],
+      "evidence_path": "raw/m013-viewport-700x760.ax.txt",
+      "sha256": "dbc3658ae36422ba2a8757bc4866eb603a4e12cac56056662f16f3466d9d3b1f",
+      "screenshot_path": "screenshots/m013-viewport-700x760.png",
+      "screenshot_sha256": "cec7d4a7885c7b47a46084aff1279a454ba13f7898d2498d1eba29645f59dd1c"
+    },
+    {
+      "id": "P115-M014-01",
+      "matrix_id": "ABF-M-014",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Tab to skip link",
+      "result_id": "P115-M014-01",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "focused UI element is 5 link Description: 跳到今日重点"
+      ],
+      "evidence_path": "raw/m014-keyboard-tab-skip.ax.txt",
+      "sha256": "be78b0d24a22058636c8b24f05d507d5d56d6a3f217ccd1f8bafaca372ce6aaf",
+      "screenshot_path": "screenshots/m014-keyboard-tab-skip.png",
+      "screenshot_sha256": "41f190f124ea5b385c0c076f6c9b0ed18f3393a1e288c10706531619dc3646a5"
+    },
+    {
+      "id": "P115-M014-02",
+      "matrix_id": "ABF-M-014",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Enter on skip link",
+      "result_id": "P115-M014-02",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "focused UI element is 17 container"
+      ],
+      "evidence_path": "raw/m014-keyboard-enter-skip.ax.txt",
+      "sha256": "0b57d24cf1f0cd9b9623400a81f0e91e2a08ae6033c116c6a7d7ece800225b38",
+      "screenshot_path": "screenshots/m014-keyboard-enter-skip.png",
+      "screenshot_sha256": "7547719fb73e054d0669f39465d6ffb48ad092091fe7b010edb6308b63463f21"
+    },
+    {
+      "id": "P115-M014-03",
+      "matrix_id": "ABF-M-014",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Shift+Tab after skip",
+      "result_id": "P115-M014-03",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "focused UI element is 16 弹出式按钮 记录"
+      ],
+      "evidence_path": "raw/m014-keyboard-shift-tab.ax.txt",
+      "sha256": "785b6345314e8ad889ef8b6bdf06d8049a8240229a367e9745700d86b5875e0b",
+      "screenshot_path": "screenshots/m014-keyboard-shift-tab.png",
+      "screenshot_sha256": "faa0f90cf0357aff5091f5e40814501d673d393bbe33979043a2d5e00cca5ff0"
+    },
+    {
+      "id": "P115-M014-04",
+      "matrix_id": "ABF-M-014",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Enter on capture",
+      "result_id": "P115-M014-04",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "这只是原型入口",
+        "不收集、不保存、不发送"
+      ],
+      "evidence_path": "raw/m014-keyboard-enter-capture.ax.txt",
+      "sha256": "50744a5924600edd4bbe72295e0fd5951d7877a0811abe2002a511a06dcf3d4e",
+      "screenshot_path": "screenshots/m014-keyboard-enter-capture.png",
+      "screenshot_sha256": "91655ba3768dd0ab4c29655407ed565d0e1cac227620dd77f5c25960bedb61ba"
+    },
+    {
+      "id": "P115-M014-05",
+      "matrix_id": "ABF-M-014",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Escape close capture dialog",
+      "result_id": "P115-M014-05",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "今天值得花注意力的 3 件事"
+      ],
+      "evidence_path": "raw/m014-keyboard-escape-capture.ax.txt",
+      "sha256": "3224a3329a79b787754fc932dd25aa4f264b4f54a157cd6133451e14e844befc",
+      "screenshot_path": "screenshots/m014-keyboard-escape-capture.png",
+      "screenshot_sha256": "3b5e342c4ad2f053ab57b409e4e739d19bba8c4bacffe217f10f12c5a8e475f4"
+    },
+    {
+      "id": "P115-M014-06",
+      "matrix_id": "ABF-M-014",
+      "status": "PASS",
+      "dynamic": true,
+      "operation": "Enable low-motion preview",
+      "result_id": "P115-M014-06",
+      "precondition": "Recorded Chrome file: state",
+      "observable": "All expected AX terms present",
+      "expected_terms": [
+        "已启用低动态"
+      ],
+      "evidence_path": "raw/m014-low-motion-toggle.ax.txt",
+      "sha256": "04be66ba59b5fda19d363968cb60299b650b3f59e6e6dc5908c2a201b50ac3e1",
+      "screenshot_path": "screenshots/m014-low-motion-toggle.png",
+      "screenshot_sha256": "44d3bd4d991a705150e65936e5ae3162fdd90bc5cb1ebd43c2f97dda9b527e76"
+    },
+    {
+      "id": "P115-M015-01",
+      "matrix_id": "ABF-M-015",
+      "status": "PASS",
+      "dynamic": false,
+      "operation": "Run static closure scan and mutation verifier",
+      "result_id": "P115-M015",
+      "precondition": "Source and evidence present",
+      "observable": "Static scan and mutation verifier PASS",
+      "evidence_path": "results/static_scan.json",
+      "sha256": "ca113f36be7b14bef2f35e7626d508d9e4ca8cfa51da71bef45f995364c25f72"
+    },
+    {
+      "id": "P115-M016-01",
+      "matrix_id": "ABF-M-016",
+      "status": "PASS",
+      "dynamic": false,
+      "operation": "Verify exact task-local temporary root cleanup",
+      "result_id": "P115-M016",
+      "precondition": "All dynamic tests complete",
+      "observable": "Exact temporary root absent",
+      "evidence_path": "results/cleanup.json",
+      "sha256": "eacd6a1ca7a0d6d384f551dca1a0fab4edeb364f154ee7b25ae5b89333a568a4"
+    }
+  ]
+}

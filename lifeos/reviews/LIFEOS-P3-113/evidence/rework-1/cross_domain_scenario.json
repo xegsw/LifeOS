@@ -1,0 +1,18 @@
+{
+  "evidence_id": "P3-113-rework-1-M008-cross-domain-lifecycle",
+  "status": "PASS",
+  "fixture_notice": "Fictional synthetic person Y only. This is not health data and contains no diagnosis, treatment, real user input, or real recommendation execution.",
+  "source_inputs": ["SRC-SYN-WORK-001 / ART-SYN-WORK-001@v1", "SRC-SYN-HEALTH-001 / ART-SYN-HEALTH-001@v1"],
+  "initial_current_understanding": {"id": "DER-SYN-UNDERSTANDING-001@v1", "result": "high work demand plus self-reported fatigue and impact constraint; insufficient safety information for a fitness suggestion."},
+  "question": {"id": "Q-SYN-001@v1", "kind": "candidate question / not a Source fact", "text": "Is knee discomfort clearly worse than the confirmed limit, or is there inability to bear weight, marked swelling, or worsening after injury? If yes, do not plan training and consider an appropriate professional.", "basis": ["ART-SYN-HEALTH-001@v1", "DER-SYN-UNDERSTANDING-001@v1"]},
+  "answer": {"id": "ANS-SYN-001@v1", "artifact": "ART-SYN-ANSWER-001@v1", "value": "no worsening/no warning and no professional restriction", "scope": "same question and same day only"},
+  "advice": {"id": "ADV-SYN-001@v1", "basis": ["ART-SYN-WORK-001@v1", "ART-SYN-HEALTH-001@v1", "ART-SYN-ANSWER-001@v1", "DER-SYN-UNDERSTANDING-002@v1"], "value": "Optional, non-medical choice: if personally comfortable, do up to 10 minutes of familiar low-intensity non-impact recovery; avoid jumping/running and stop if discomfort occurs.", "not_allowed": ["diagnosis", "treatment", "safety guarantee", "automatic action"]},
+  "disposition": {"id": "FDB-SYN-001@v1", "kind": "modified_accept", "value": "replace the option with 5 minutes of familiar gentle recovery; not yet executed", "separates_from": ["original advice", "actual execution", "result"]},
+  "execution": {"id": "EXE-SYN-001@v1", "value": "user-reported completed 5 minutes", "does_not_imply": ["medical benefit", "permanent preference"]},
+  "result": {"id": "RES-SYN-001@v1", "value": "user reports no worsening during the activity and ongoing fatigue", "classification": "user report, not clinical assessment"},
+  "updated_understanding": {"id": "DER-SYN-UNDERSTANDING-003@v1", "value": "for this evening only, do not add further training-type suggestions; prioritize rest or state recording", "inputs": ["work/health sources", "answer", "modified disposition", "execution", "result"], "expiry": "end of day"},
+  "memory_candidate": {"id": "MEM-CAND-SYN-001@v1", "value": "possible scoped preference for short familiar non-impact recovery on high-workload/fatigue days", "confirmation": "not confirmed", "future_use": "blocked until explicit user confirmation, scope, expiry and revocation are supplied"},
+  "close_reopen": "All listed identities remain separately traceable. Reopen must not rewrite ADV into FDB/EXE/RES, infer a diagnosis, or activate MEM-CAND by default.",
+  "negative_paths": {"unanswered": "no training suggestion; rest/record or professional support only", "warning_signal": "stop health/fitness advice and suggest appropriate professional support", "revoked_feedback": "stale/recompute dependent DER/ADV, preserve history"},
+  "classification": "candidate scenario and test oracle, not real data or clinical guidance"
+}

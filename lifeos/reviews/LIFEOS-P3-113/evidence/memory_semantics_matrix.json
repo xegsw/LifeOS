@@ -1,0 +1,17 @@
+{
+  "evidence_id": "P3-113-M006-memory-semantics",
+  "status": "PASS",
+  "semantic_mapping": [
+    {"term": "Person", "candidate_meaning": "the single person LifeOS serves, not an auth account or database root", "existing_basis": "Authorization plus Source/Artifact user control"},
+    {"term": "Life domain", "candidate_meaning": "user-named enduring context; this candidate uses work and health/fitness", "existing_basis": "Project is only a work-context / goal organizer; Link relates contexts"},
+    {"term": "Goal", "candidate_meaning": "user-desired outcome", "existing_basis": "may link Project, Action, Decision, Assertion and Link"},
+    {"term": "State", "candidate_meaning": "time-bound confirmed observation, user report or marked inference", "existing_basis": "Assertion/Event provenance and Derivation"},
+    {"term": "Constraint", "candidate_meaning": "confirmed time/scope-bound limit affecting advice", "existing_basis": "sourced Assertion plus Authorization"},
+    {"term": "Preference", "candidate_meaning": "user-expressed or explicitly confirmed scoped preference", "existing_basis": "user input or Feedback, with auditability"},
+    {"term": "Memory", "candidate_meaning": "retrievable, revisable long-term understanding view", "existing_basis": "Source/Artifact/Derivation/Feedback/Link and content identity"}
+  ],
+  "required_memory_identity": ["content identity", "source", "recorded/observed time", "confirmation status", "fact_or_inference", "validity", "scope", "freshness", "related Feedback/Derivation", "available user controls"],
+  "allowed_transitions": ["candidate record or inference", "user views", "confirm", "correct with a traceable successor", "mark expired", "explicit delete under existing authorization/audit/cleanup rules"],
+  "prohibitions": ["inference overwriting original content", "one click or silence becoming a permanent preference", "feedback silently generalizing across domains/dates", "new schema/API/table/page freeze"],
+  "classification": "candidate semantic mapping, not implementation or data-model freeze"
+}

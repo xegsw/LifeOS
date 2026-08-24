@@ -1,0 +1,28 @@
+{
+  "finding_id": "PM-CE-001",
+  "severity": "P0",
+  "maps_to": [
+    "L1-7",
+    "L1-10",
+    "ABF-I-11",
+    "ABF-M-011"
+  ],
+  "test": "Run the submitted semantic_verifier.py on two byte-identical, unmodified copies of the submitted Evidence payload.",
+  "baseline_copy": {
+    "path_shape": "/private/tmp/lifeos-p3-111-pm-noop/baseline",
+    "exit_code": 0,
+    "missing_count": 0,
+    "result": "PASS"
+  },
+  "unchanged_disposable_copy": {
+    "path_shape": "/private/tmp/lifeos-p3-111-pm-noop/disposable/noop",
+    "exit_code": 1,
+    "missing_count": 37,
+    "result": "FAIL"
+  },
+  "cause": "semantic_verifier.py filters actual files with an absolute-path substring test: '/disposable/' not in path.as_posix(). When the Evidence root itself is below a directory named disposable, every payload file is excluded.",
+  "impact": "The six submitted mutation runs fail regardless of the requested mutation. Their nonzero exits do not demonstrate semantic detection of the six mutation classes.",
+  "required_rework": "Make exclusion relative to the supplied Evidence root, prove an unchanged disposable copy exits 0, then prove each of the six independently mutated copies exits nonzero for the intended mutation reason. Regenerate Evidence, Payload Manifest and delivery counts without changing the Frozen ABF or real-use boundary.",
+  "engineering_evidence_modified": false,
+  "pilot2_touched": false
+}

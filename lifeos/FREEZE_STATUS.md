@@ -1,6 +1,6 @@
 # LifeOS Freeze Status
 
-更新时间：2026-08-13
+更新时间：2026-08-24
 
 本文件用于区分“任务完成”“资产可用”“资产冻结”“允许进入下一阶段”。  
 状态变化必须由 PM 主会话更新。
@@ -105,6 +105,7 @@
 - 当前阶段：**有限 Stage 3 已完成受控工程线收口，Stage 4 未准入。** 技术架构 V0.1 及既有核心产品／信任资产的 Frozen 状态不变；Schema/API、工程基线、真实能力和 Stage 4 本身均未冻结。
 - 事实来源：当前阶段、风险与任务状态以 `DECISION_LOG.md`、`RISK_LOG.md`、`TASK_REGISTRY.md` 为准。P3-061 已被 PM 验收为 `Accepted / Blocked / Awaiting User Confirmation`：Stage 3→4 所需的真实可用 MVP、基础导出、基础权限设置、错误／数据恢复策略与 Alpha 用户使用说明均未具备可验收 Evidence。
 - 风险摘要：52 项风险中 12 项已在严格有限受控范围关闭（4 项 `Closed`、8 项 `Closed / Limited Controlled Boundary`），40 项仍开放；R-0040 保持 `Open / Conditional`，R-0051 保持 `Closed / Limited Controlled Boundary`，R-0052 为 `Open / Authorized Controlled Execution Boundary`。所有有限关闭仅在各自固定边界内成立，不构成真实能力、工程基线恢复或阶段许可。
-- 当前工程状态：P3-104/P3-106 组合候选继续 Not Frozen；P3-110 暂停。P3-111 真实使用边界已由用户确认，`ABF-P3-111-v1` Frozen，任务 Ready；这只启动 Stage 4 第一硬门候选，不代表资产冻结或阶段准入。
-- 允许的下一步：将 P3-111 任务卡投递至新 `gpt-5.6-terra + xhigh` Codex 工程／真实能力会话；用户在专项主动输入最多 3 条低敏感文本。不得执行 clear/export/权限/恢复/网络，不得修改风险、冻结、基线或阶段。
-- 不允许的下一步：直接散开写工程代码；直接联系外部用户或处理真实敏感项目材料；启用真实 DB、Vault、Tauri/IPC、文件导出、云／第三方模型、向量、同步、多设备、L3 或外部用户；把有限风险关闭或合成测试误读为无条件正式开发、Alpha、Beta、商业化验证或 Stage 4 准入。
+- 当前工程／产品状态：P3-111 至 P3-114 均已完成并获用户采纳，候选仍 Not Frozen；P3-110 暂停。P3-115 已获 PM Pass，等待用户采纳；`ABF-P3-115-v2` 只冻结验收依据，关键原型仍 Not Frozen，尚未执行全新隔离独立评审。
+- 冻结适用性叠加：历史 Frozen 记录不删除。产品宪法、AI 信任原则、Source／Artifact／Derivation／Feedback／Authorization／AuditEntry 信任基础及技术架构 V0.1 继续有效；Project 中心的 V1 第一场景、价值排序、V1 范围、首页／今日页 PRD、三张静态原型和 IA 仅作为工作领域历史基线。P3-113/P3-114 已形成获采纳但 Not Frozen 的全局替代候选；新关键原型须经 P3-115、全新隔离独立评审、PM 验收和用户单独冻结确认后才可能形成新 Frozen 版本。
+- 允许的下一步：等待用户采纳 P3-115；采纳并明确授权后，由 PM 创建全新任务、新 Frozen ABF，并投递给未参与本候选的全新隔离关键原型独立评审会话。独立评审、PM 验收和用户单独决定后，才可能讨论新关键原型冻结。
+- 不允许的下一步：在用户采纳前创建独立评审；直接进入 runtime／工程或冻结；直接联系外部用户或处理真实健康／敏感工作材料；启用真实 DB、Vault、连接器、Tauri/IPC 新能力、文件导出、云／第三方模型、向量、同步、多设备、L3 或外部用户；把 P3-115 PM Pass 误读为关键原型 Frozen、真实自用价值、Alpha/Beta、商业化验证或 Stage 4 准入。

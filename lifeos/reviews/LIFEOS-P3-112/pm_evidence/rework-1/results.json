@@ -1,0 +1,58 @@
+{
+  "task": "LIFEOS-P3-112",
+  "review": "PM Rework 1 verification",
+  "submitted_rework_evidence": {
+    "manifest_payload_files": 25,
+    "manifest_bad_hash_or_bytes": 0,
+    "manifest_sha256": "0a9500654ad5db486efc6ebdba5d6a741f8a233faefb9c9dea6fdacd3c4ba03a",
+    "initial_evidence_manifest_sha256": "8b89d329a7eb109b5a3bd21084eedd5ea0e5c906f73140bf249b293ef172692d",
+    "initial_evidence_unchanged": true,
+    "runner_sha256": "e2215ac5f18b8815b42993a28579bc87b645e19095be18d626a5697e3102e0d5"
+  },
+  "pm_isolated_rerun": {
+    "runner_exit_code": 0,
+    "fixed": true,
+    "toolchain": true,
+    "copy": true,
+    "offline": true,
+    "static": true,
+    "evidence": true,
+    "cross_check": true,
+    "cargo_test_exit": 0,
+    "cargo_test_passed": 8,
+    "cargo_build_exit": 0,
+    "network_used": false,
+    "deterministic_json_hash_matches": 10,
+    "deterministic_json_total": 10,
+    "runner_summary_difference": "created_at_utc only"
+  },
+  "semantic_specificity": {
+    "initial_payload_pass": true,
+    "initial_manifest_file_count": 37,
+    "rework_payload_pass": true,
+    "rework_manifest_file_count": 38,
+    "unchanged_disposable_ancestor_control_pass": true,
+    "own_mutations_exact_expected_failure": 6,
+    "own_mutations_total": 6,
+    "submitted_verifier_baseline_exit": 0,
+    "submitted_verifier_control_exit": 0,
+    "submitted_verifier_mutation_exit_one": 6
+  },
+  "cleanup": {
+    "submitted_review_root_exists_after": false,
+    "pm_root_exists_after": false,
+    "external_lifeos_p3_104_unit_residue": 0,
+    "pilot_2_accesses": 0,
+    "real_app_launches": 0,
+    "p3_111_writes": 0,
+    "submitted_p3_112_evidence_writes_by_pm": 0
+  },
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 0
+  },
+  "pm_conclusion": "Pass pending user adoption"
+}

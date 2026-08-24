@@ -1,0 +1,13 @@
+{
+  "runner": "tools/independent_verifier.py",
+  "purpose": "independent copy, offline test/build, static audit, raw payload verifier, unchanged control, six mutations, and submitted-verifier comparison",
+  "started": true,
+  "stopped_at": "offline cargo availability",
+  "exception_class": "FileNotFoundError",
+  "exception_target": "cargo",
+  "candidate_copy_created": true,
+  "candidate_copy_file_count": 72,
+  "no_candidate_test_or_build_ran": true,
+  "no_evidence_verifier_or_mutation_ran": true,
+  "result": "Blocked rather than a candidate-quality finding"
+}

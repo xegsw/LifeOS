@@ -1,0 +1,39 @@
+{
+  "evidence_id": "P3-114-rework-1-authorization",
+  "status": "PASS",
+  "authorization": {
+    "pm_review_path": "/Users/xxe/Documents/No.2/lifeos/reviews/LIFEOS-P3-114_pm_review.md",
+    "pm_review_sha256": "9b7946c0e5684ffefdbdb371f87dccdd41ea9a500c3e2b541df261806baa63d2",
+    "user_adoption_record": "D-0463 / PM Review: Rework 1/2 adopted; same original P3-114 independent-review session may perform Evidence-only narrow remediation",
+    "received_by_original_session_on": "2026-08-24"
+  },
+  "unchanged_basis": {
+    "task_card_sha256": "bf5cec522552a954b42feebac7f63e1b2caa52f41374ce1dda77cd675d941888",
+    "abf_id": "ABF-P3-114-v1",
+    "abf_sha256": "22d1b5f89ce608e72cdf42d3e08fe3adf11f57b10f23a64d2cf7b1273f27b96d",
+    "candidate_inputs": "P3-113 initial/Rework 1 package remains strictly read-only",
+    "original_p3_114_assets": "original delivery, independent review and evidence remain strictly read-only"
+  },
+  "rework_scope": {
+    "allowed_writes": [
+      "lifeos/deliverables/LIFEOS-P3-114_p3_113_human_centered_dual_domain_product_rebaseline_fresh_isolated_independent_review_rework_1.md",
+      "lifeos/reviews/LIFEOS-P3-114/rework/rework-1/independent_review.md",
+      "lifeos/reviews/LIFEOS-P3-114/rework/rework-1/evidence/"
+    ],
+    "required_change": "Rebuild every M-001 through M-013 row as frozen action -> exact test ID -> actual evidence -> conclusion; do not substitute adjacent-row evidence, totals or PM explanation.",
+    "prohibited": [
+      "candidate change",
+      "ABF change",
+      "original P3-114 asset change",
+      "ledger/risk/freeze/stage change",
+      "real data, application, database, model, network or external access",
+      "next task or prototype creation"
+    ]
+  },
+  "session": {
+    "type": "reused original P3-114 isolated independent-review session, permitted only for same-task Rework 1/2",
+    "original_independence": "reviewer did not participate in P3-113 definition, Rework 1 or PM acceptance",
+    "model_route": "gpt-5.6-terra + xhigh, as recorded by task/system routing metadata",
+    "original_temp_root_absent_at_rework_start": true
+  }
+}

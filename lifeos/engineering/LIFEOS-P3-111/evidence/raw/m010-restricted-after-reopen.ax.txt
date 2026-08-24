@@ -1,0 +1,65 @@
+Window: "LifeOS 今日 · 本地自用受控运行时", App: LifeOS P3-111.
+0 standard window LifeOS 今日 · 本地自用受控运行时, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: LifeOS｜今日｜权限受限与离线, URL: tauri://localhost/restricted-offline.html
+			3 link 跳到主要内容, Value: tauri://localhost/restricted-offline.html#main-content
+			4 container LifeOS 主导航
+				5 link 今日, Value: tauri://localhost/default-recovery.html
+				6 container 今日三态
+					7 link 默认恢复, Value: tauri://localhost/default-recovery.html
+					8 link 暂无可靠建议, Value: tauri://localhost/no-reliable-suggestion.html
+					9 link 权限受限与离线, Value: tauri://localhost/restricted-offline.html
+				10 button 设置未启用
+				11 text 本地
+			12 container
+				13 text 当前 Project › 独立产品发布页改版 沿用你上次确认
+				14 button 切换
+			15 container
+				16 container 当前受限状态
+					17 text 网络离线
+					18 text 云同步与联网检索不可用；本地 backend 可查，可继续记录。
+					19 button 查看影响
+					20 text 来源权限受限
+					21 text 外部来源未启用，相关恢复不可用，AI 建议暂停。
+					22 button 查看影响
+				23 text 从这里继续
+				24 container 独立产品发布页改版
+					25 heading 独立产品发布页改版, Value: 2
+						26 text 独立产品发布页改版
+					27 text 你已确认 · 决定
+					28 text 移动端首屏文案应更强调场景感。该句是固定非敏感演示，不来自真实用户数据。
+					29 text 来源不可用：未连接任何外部访谈记录 昨天 18:30 编辑 · 本地记录  2  条
+					30 button 继续设计 →
+					31 container AI 助理受限
+						32 heading AI 助理受限, Value: 3
+							33 text AI 助理受限
+						34 text 无法访问外部来源，且模型能力未启用；暂不生成建议。
+						35 button 查看影响
+						36 button 继续无 AI
+				37 container 今日安排
+					38 heading 今日安排, Value: 3
+						39 text 今日安排
+					40 text 仅含你已确认的 Action / Commitment；当前固定演示不写入 backend。
+					41 text 09:00　完成首屏固定演示文案核对
+			42 text 已由本地 SQLite backend 耐久恢复 · AI 与外部能力关闭
+			43 container 本地快速捕获
+				44 button (disabled) 附件未启用
+				45 button (disabled) 语音未启用
+				46 container
+					47 text 你的记录 · 原文
+					48 text entry area (settable) 手工输入本地原文, Placeholder: 手工输入一条简短、非敏感的本地记录
+						49 text 手工输入一条简短、非敏感的本地记录
+				50 button 保存本地原文
+			51 text 离线本地模式；AI、网络、导出、同步与外部来源关闭
+		52 scroll bar (settable, float) 0
+	53 close button
+	54 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	55 minimize button
+	56 text LifeOS 今日 · 本地自用受控运行时
+57 menu bar
+	58 LifeOS P3-111
+	59 File
+	60 Edit
+	61 View
+	62 Window
+	63 Help

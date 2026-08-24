@@ -1,0 +1,53 @@
+{
+  "task": "LIFEOS-P3-111",
+  "review_round": "rework-1",
+  "conclusion": "PASS",
+  "submitted_payload": {
+    "manifest_file_count": 38,
+    "independent_hash_and_bytes_mismatches": 0,
+    "missing": 0,
+    "extra": 0,
+    "hash_or_bytes_drift": 0,
+    "semantic_errors": 0
+  },
+  "isolated_from_zero_rerun": {
+    "temporary_root": "/private/tmp/lifeos-p3-111-pm-rework1-acceptance",
+    "runner_exit_code": 0,
+    "root_verifier_exit_code": 0,
+    "file_count": 38,
+    "unchanged_disposable_copy_exit_code": 0,
+    "six_mutations_exact": 6,
+    "unexpected_mutation_reasons": 0,
+    "disposable_residue": false,
+    "payload_manifest_sha256": "16dbe0f05d825bca4f7e08f723dd5c3b7b90606bad0a4af1d9feaaea34641d22",
+    "semantic_result_sha256": "d3afbc9e13a1a3bfc3b81b83cc878dfa3a2f2bb228ec6a4088b3fa8f5443f011",
+    "mutation_results_sha256": "1d9594b50a9570bfb536009cabc332f6778d046295803e5031cd7ef0f0595d8c"
+  },
+  "historical_read_only": {
+    "initial_payload_manifest_sha256": "0c8f1fcea3fb756c1974243d3d20315854ceada28fd73bd4c65652d3afd3bb7b",
+    "initial_semantic_result_sha256": "52a75c16a8b56d2fa03340d13b5a581d31d7982ce7263c4e02aaa7827546fb2a",
+    "initial_mutation_results_sha256": "c5df02374827f1ca2dd21076fdeb4f5b8d123df43e45763a824e4c462003390c",
+    "raw_difference": "only rework-source-snapshot.json exists additionally in rework-1",
+    "screenshots_identical": true,
+    "dynamic_closure_identical": true
+  },
+  "candidate_protection": {
+    "four_core_hashes_match_initial_static_results": true,
+    "candidate_runtime_or_ui_modified_in_rework": false
+  },
+  "safety": {
+    "pilot2_accessed": false,
+    "pilot2_database_opened": false,
+    "pilot2_database_hashed": false,
+    "network_used": false,
+    "engineering_evidence_overwritten_by_pm": false,
+    "pm_temporary_root_absent_after_cleanup": true
+  },
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 0
+  }
+}

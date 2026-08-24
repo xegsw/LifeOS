@@ -1,0 +1,90 @@
+operation: Reset before source failure scenarios
+
+Window: "LifeOS · Today（P3-115 原型）", App: Google Chrome.
+0 标准窗口 LifeOS · Today（P3-115 原型） - Google Chrome, URL: file:///private/tmp/lifeos-p3-115-prototype-v1/index.html, Secondary Actions: Raise
+	1 container LifeOS · Today（P3-115 原型） - Google Chrome, URL: file:///private/tmp/lifeos-p3-115-prototype-v1/index.html
+		2 container
+			3 container
+				4 HTML 内容 LifeOS · Today（P3-115 原型）, URL: file:///private/tmp/lifeos-p3-115-prototype-v1/index.html
+					5 container 建议的可见依据
+						6 文本 WHY NOW / EVIDENCE
+						7 标题 建议的可见依据, Value: 2
+							8 文本 建议的可见依据
+						9 按钮 关闭依据详情
+						10 container
+							11 text ADVICE 如你自觉舒适，可选择最多 10 分钟低强度、非冲击的熟悉恢复活动。 WHY NOW 回答无警示后，才允许呈现低风险、可停止的选项。 SOURCE SRC-SYN-HEALTH-001 + SRC-SYN-INTERACTION-001 ARTIFACT ART-SYN-HEALTH-001@v1 + ART-SYN-ANSWER-001@v1 时间 / 时效 2026-08-24 · 当天有效 确定性 信息有限；不作医学判断 范围 仅此固定合成情境 停止条件 警示、未答、跳过、来源缺失／冲突／失权／过期时停止训练型建议 身份 Derivation / Advice candidate；用户处置与执行独立
+						12 按钮 返回 Today
+		13 container
+			14 container
+				15 工具栏
+					16 按钮 返回
+					17 按钮 (disabled) 前进
+					18 按钮 重新加载
+					19 container
+						20 弹出式按钮 文件
+						21 文本栏 (settable) Description: 地址和搜索栏, Value: /private/tmp/lifeos-p3-115-prototype-v1/index.html, Placeholder: 问问 Google 或输入网址
+						22 按钮 为此标签页添加书签
+					23 弹出式按钮 扩展程序
+					24 按钮 Shiwang
+					25 弹出式按钮 完成更新
+			26 container
+				27 弹出式按钮 标签页搜索
+				28 标签组
+					29 标签 (settable, boolean) Description: 企业微信, Value: off
+					30 标签 (settable, boolean) Description: 企业微信, Value: off
+					31 标签 (settable, boolean) Description: 运维 - 排查光猫卡顿问题, Value: off
+					32 标签 (settable, boolean) Description: Release Aivy OS v2.1.1 · Bo1202/Aivy-OS · GitHub, Value: off
+					33 标签 (settable, boolean) Description: Apple 账户：登录与管理, Value: off
+					34 标签 (settable, boolean) Description: 美国免税地址生成器 - 立即获取您的免税美国地址 - 美国地址生成器 | US Address Generator, Value: off
+					35 标签 (settable, boolean) Description: 机器 - 尾部规模, Value: off
+					36 标签 (settable, boolean) Description: Add rule - Tailscale - 内存用量 - 59.3 MB, Value: off
+					37 标签 (settable, boolean) Description: 查询中和街道邮编 - 内存用量 - 246 MB, Value: off
+					38 标签 (settable, boolean) Description: Here's your Gift Card! - gg1132014531@gmail.com - Gmail - 内存用量 - 301 MB, Value: off
+					39 标签 (settable, boolean) Description: Pockyt Shop | 苹果商店,亚马逊礼品卡,安全正规,超值折扣,快速发货, Value: off
+					40 标签 (settable, boolean) Description: Pockyt Shop | 苹果商店,亚马逊礼品卡,安全正规,超值折扣,快速发货, Value: off
+					41 标签 (settable, boolean) Description: WorkBuddy - 个人中心, Value: off
+					42 标签 (settable, boolean) Description: 新标签页, Value: off
+					43 标签 (settable, boolean) Description: WorkBuddy - 个人中心 - 内存用量 - 205 MB, Value: off
+					44 标签 (settable, boolean) Description: 登录 - 腾讯云, Value: off
+					45 标签 (settable, boolean) Description: WorkBuddy - 个人中心 - 内存用量 - 108 MB, Value: off
+					46 标签 (settable, boolean) Description: Pockyt Shop | 苹果商店,亚马逊礼品卡,安全正规,超值折扣,快速发货, Value: off
+					47 标签 (settable, boolean) Description: Pockyt Shop | 苹果商店,亚马逊礼品卡,安全正规,超值折扣,快速发货, Value: off
+					48 标签 (settable, boolean) Description: LifeOS｜今日（本地 UI 前置验证）, Value: off
+					49 标签 (settable, boolean) Description: LifeOS｜今日（本地 UI 前置验证）, Value: off
+					50 标签 (settable, boolean) Description: LifeOS｜今日（本地 UI 前置验证）, Value: off
+					51 标签 (settable, boolean) Description: LifeOS｜今日｜默认恢复, Value: off
+					52 标签 (settable, boolean) Description: LifeOS｜今日｜默认恢复, Value: off
+					53 标签 (settable, boolean) Description: LifeOS｜今日｜暂无可靠建议, Value: off
+					54 标签 (settable, boolean) Description: LifeOS｜今日｜默认恢复, Value: off
+					55 标签 (settable, boolean) Description: LifeOS｜合成生命周期｜默认恢复, Value: off
+					56 标签 (settable, boolean) Description: LifeOS｜合成生命周期｜暂无可靠建议, Value: off
+					57 标签 (settable, boolean) Description: LifeOS｜合成生命周期｜默认恢复, Value: off
+					58 标签 (settable, boolean) Description: LifeOS｜今日｜默认恢复, Value: off
+					59 标签 (settable, boolean) Description: LifeOS｜今日｜默认恢复, Value: off
+					60 标签 (settable, boolean) Description: ChatGPT, Value: off
+					61 标签 (settable, boolean) Description: LifeOS｜今日｜默认恢复, Value: off
+					62 标签 (settable, boolean) Description: DeepSeek | 深度求索, Value: off
+					63 标签 (settable, boolean) Description: DeepSeek Harness 开发者预览版：一切皆插件, Value: off
+					64 标签 (settable, boolean) Description: 已安装 GitHub 应用 - ChatGPT Codex 连接器, Value: off
+					65 标签 (settable, boolean) Description: ChatGPT, Value: off
+					66 标签 (settable, boolean) Description: 新标签页, Value: off
+					67 标签 (selected, settable, boolean) Description: LifeOS · Today（P3-115 原型）, Value: on
+						68 按钮 关闭
+				69 按钮 新标签页
+				70 按钮 打开 Chrome 中的 Gemini
+	71 container
+		72 关闭按钮
+		73 缩放按钮
+74 menu bar
+	75 Chrome
+	76 文件
+	77 编辑
+	78 显示
+	79 历史记录
+	80 书签
+	81 个人资料
+	82 标签页
+	83 窗口
+	84 帮助
+
+The focused UI element is 9 按钮 关闭依据详情

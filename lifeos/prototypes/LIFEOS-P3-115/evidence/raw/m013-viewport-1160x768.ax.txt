@@ -1,0 +1,666 @@
+operation: Chrome device toolbar actual Width 1160 and Height 768
+
+Window: "LifeOS · Today（P3-115 原型）", App: Google Chrome.
+0 标准窗口 LifeOS · Today（P3-115 原型） - Google Chrome, URL: file:///private/tmp/lifeos-p3-115-prototype-v1/index.html#main, Secondary Actions: Raise
+	1 container LifeOS · Today（P3-115 原型） - Google Chrome, URL: file:///private/tmp/lifeos-p3-115-prototype-v1/index.html#main
+		2 container
+			3 工具栏
+				4 按钮 返回
+				5 按钮 (disabled) 前进
+				6 按钮 重新加载
+				7 container
+					8 弹出式按钮 文件
+					9 文本栏 (settable) Description: 地址和搜索栏, Value: /private/tmp/lifeos-p3-115-prototype-v1/index.html#main, Placeholder: 问问 Google 或输入网址
+					10 按钮 为此标签页添加书签
+				11 弹出式按钮 扩展程序
+				12 按钮 Shiwang
+				13 弹出式按钮 完成更新
+			14 container
+				15 HTML 内容 DevTools, URL: devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@41fa82442390a4d4456c78f2d69a832d5720cb27/&targetType=tab&can_dock=true
+					16 container
+						17 container
+							18 container
+								19 工具栏
+									20 文本 Dimensions:
+									21 弹出式按钮 Description: Device type, Value: Responsive
+										22 (selected) Responsive
+									23 步进器 (settable, float) Description: Width, Value: 1160
+									24 文本 ×
+									25 步进器 (settable, float) Description: Height (leave empty for full), Value: 768
+									26 弹出式按钮 Description: Zoom, Value: 75%
+										27 (selected) 75%
+									28 切换按钮 Description: Auto-adjust zoom, Value: 1
+									29 弹出式按钮 Description: Throttling, Value: Disabled: No throttling
+										30 (selected) Disabled: No throttling
+									31 弹出式按钮 'Save-Data': default
+										32 (selected) 'Save-Data': default
+									33 按钮 Rotate
+								34 工具栏
+									35 按钮 More options
+								36 container
+							37 container
+								38 container DevTools is now available in Chinese
+									39 文本 DevTools is now available in Chinese
+									40 按钮 Don't show again
+									41 按钮 Always match Chrome's language
+									42 按钮 Switch DevTools to Chinese
+									43 container Close
+										44 按钮 Close
+								45 container
+									46 container Main toolbar
+										47 工具栏
+											48 container Description: Select an element in the page to inspect it, Help: Select an element in the page to inspect it - ⌘ ⇧ C
+												49 切换按钮 Description: Select an element in the page to inspect it - ⌘ ⇧ C, Value: 0
+											50 container Description: Toggle device toolbar, Help: Toggle device toolbar - ⌘ ⇧ M
+												51 切换按钮 Description: Toggle device toolbar - ⌘ ⇧ M, Value: 1
+										52 container
+											53 标签组 Panels
+												54 标签 (selected) Description: Elements, Value: 1
+												55 标签 (settable, integer) Description: Console, Value: 0
+												56 标签 (settable, integer) Description: Sources, Value: 0
+												57 标签 (settable, integer) Description: Network, Value: 0
+											58 弹出式按钮 More tabs
+										59 工具栏
+											60 container Open Console to view 1 error
+												61 按钮 Open Console to view 1 error
+											62 按钮  AI assistance, Help: Open AI assistance panel
+											63 container Description: Settings, Help: Settings - F1 - ⇧ ?
+												64 按钮 Settings - F1 - ⇧ ?
+											65 弹出式按钮 Customize and control DevTools
+												66 按钮 Customize and control DevTools
+											67 container Close
+												68 按钮 Close
+									69 container Elements panel
+										70 container elements
+											71 container
+												72 container
+													73 container DOM tree explorer
+														74 外框 Page DOM
+															75 row <!DOCTYPE html>
+																76 container
+																	77 文本 <!DOCTYPE html>
+															78 row <html lang=​"zh-CN"> ​ View source code This element has a scrollable overflow
+																79 container
+																	80 container <html lang=​"zh-CN">
+																		81 text < html lang =​" zh-CN " >
+																	82 container View source code
+																		83 文本 view-source
+																	84 container This element has a scrollable overflow
+																		85 文本 scroll
+															86 container
+																87 row    <head> ​ Expand …​ </head> ​
+																	88 container
+																		89 container <head>
+																			90 text < head >
+																		91 按钮 Expand
+																		92 text …
+																		93 container </head>
+																			94 text < /head >
+																95 row (selected)    <body> ​
+																	96 container
+																		97 container <body>
+																			98 text < body >
+																99 row <a class=​"skip-link" href=​"#main"> ​跳到今日重点​ </a> ​
+																	100 container
+																		101 container <a class=​"skip-link" href=​"#main">
+																			102 text < a class =​" skip-link " href =​"
+																			103 链接 Description: #main, Help: file:///private/tmp/lifeos-p3-115-prototype-v1/index.html#main
+																				104 文本 #main
+																			105 text " >
+																		106 text 跳到今日重点
+																		107 container </a>
+																			108 text < /a >
+																109 row    <div class=​"app-shell" data-motion=​"reduce"> ​ Expand …​ </div> ​ Enable grid mode
+																	110 container
+																		111 container <div class=​"app-shell" data-motion=​"reduce">
+																			112 text < div class =​" app-shell " data-motion =​" reduce " >
+																		113 按钮 Expand
+																		114 text …
+																		115 container </div>
+																			116 text < /div >
+																		117 切换按钮 Description: Enable grid mode, Value: 0
+																			118 文本 grid
+																119 row    <dialog id=​"evidence-dialog" class=​"dialog evidence-dialog" aria-labelledby=​"evidence-title"> ​ Expand …​ </dialog> ​
+																	120 container
+																		121 container <dialog id=​"evidence-dialog" class=​"dialog evidence-dialog" aria-labelledby=​"evidence-title">
+																			122 text < dialog id =​" evidence-dialog " class =​" dialog evidence-dialog " aria-labelledby =​" evidence-title " >
+																		123 按钮 Expand
+																		124 text …
+																		125 container </dialog>
+																			126 text < /dialog >
+																127 row    <dialog id=​"lifecycle-dialog" class=​"dialog" aria-labelledby=​"lifecycle-dialog-title"> ​ Expand …​ </dialog> ​
+																	128 container
+																		129 container <dialog id=​"lifecycle-dialog" class=​"dialog" aria-labelledby=​"lifecycle-dialog-title">
+																			130 text < dialog id =​" lifecycle-dialog " class =​" dialog " aria-labelledby =​" lifecycle-dialog-title " >
+																		131 按钮 Expand
+																		132 text …
+																		133 container </dialog>
+																			134 text < /dialog >
+																135 row    <dialog id=​"capture-dialog" class=​"dialog" aria-labelledby=​"capture-title"> ​ Expand …​ </dialog> ​
+																	136 container
+																		137 container <dialog id=​"capture-dialog" class=​"dialog" aria-labelledby=​"capture-title">
+																			138 text < dialog id =​" capture-dialog " class =​" dialog " aria-labelledby =​" capture-title " >
+																		139 按钮 Expand
+																		140 text …
+																		141 container </dialog>
+																			142 text < /dialog >
+																143 row    <dialog id=​"about-dialog" class=​"dialog" aria-labelledby=​"about-title"> ​ Expand …​ </dialog> ​
+																	144 container
+																		145 container <dialog id=​"about-dialog" class=​"dialog" aria-labelledby=​"about-title">
+																			146 text < dialog id =​" about-dialog " class =​" dialog " aria-labelledby =​" about-title " >
+																		147 按钮 Expand
+																		148 text …
+																		149 container </dialog>
+																			150 text < /dialog >
+																151 row <div id=​"toast" class=​"toast" role=​"status" aria-live=​"polite"> ​低动态预览已启用：动效改为即时、非位移反馈。​ </div> ​
+																	152 container
+																		153 container <div id=​"toast" class=​"toast" role=​"status" aria-live=​"polite">
+																			154 text < div id =​" toast " class =​" toast " role =​" status " aria-live =​" polite " >
+																		155 text 低动态预览已启用：动效改为即时、非位移反馈。
+																		156 container </div>
+																			157 text < /div >
+																158 row <script src=​"fixtures.js"> ​ </script> ​
+																	159 container
+																		160 container <script src=​"fixtures.js">
+																			161 text < script src =​" fixtures.js " >
+																		162 container </script>
+																			163 text < /script >
+																164 row <script src=​"app.js"> ​ </script> ​
+																	165 container
+																		166 container <script src=​"app.js">
+																			167 text < script src =​" app.js " >
+																		168 container </script>
+																			169 text < /script >
+																170 row </body> ​
+																	171 container
+																		172 container </body>
+																			173 text < /body >
+																174 row </html> ​
+																	175 container
+																		176 container </html>
+																			177 text < /html >
+													178 container DOM tree breadcrumbs
+														179 内容列表
+															180 link Description: html, Value: devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@41fa82442390a4d4456c78f2d69a832d5720cb27/&targetType=tab&can_dock=true#
+															181 link Description: body, Value: devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@41fa82442390a4d4456c78f2d69a832d5720cb27/&targetType=tab&can_dock=true#
+												182 container
+													183 container Side panel toolbar
+														184 container
+															185 标签组
+																186 标签 (selected) Description: Styles, Value: 1
+																187 标签 (settable, integer) Description: Computed, Value: 0
+																188 标签 (settable, integer) Description: Layout, Value: 0
+																189 标签 (settable, integer) Description: Event Listeners, Value: 0
+																190 标签 (settable, integer) Description: DOM Breakpoints, Value: 0
+																191 标签 (settable, integer) Description: Properties, Value: 0
+															192 弹出式按钮 More tabs
+													193 container Side panel content
+														194 container Styles panel
+															195 container
+																196 container
+																	197 工具栏
+																		198 container
+																			199 文本输入区 (settable) Filter
+																				200 文本 Filter
+																			201 container Use regular expression
+																				202 切换按钮 Description: Use regular expression, Value: 0
+																			203 container Toggle Element State
+																				204 切换按钮 Description: Toggle Element State, Value: 0
+																			205 container Element Classes
+																				206 切换按钮 Description: Element Classes, Value: 0
+																			207 container New Style Rule
+																				208 按钮 New Style Rule
+																			209 container Toggle common rendering emulations
+																				210 切换按钮 Description: Toggle common rendering emulations, Value: 0
+																			211 container Show Computed Styles sidebar
+																				212 按钮 Show Computed Styles sidebar
+																	213 内容列表
+																		214 container element.style, css selector
+																			215 container
+																				216 container CSS selector
+																					217 文本 element.style
+																				218 文本  {
+																			219 container
+																				220 文本 }
+																		221 container body, css selector
+																			222 链接 Description: styles.css:26, Help: file:///private/tmp/lifeos-p3-115-prototype-v1/styles.css:26
+																				223 文本 styles.css:26
+																			224 container
+																				225 container CSS selector
+																					226 文本 body
+																				227 文本  {
+																			228 外框
+																				229 row  CSS property name: margin : CSS property value: 0 ;
+																					230 container CSS property name: margin
+																						231 文本 margin
+																					232 文本 : 
+																					233 container CSS property value: 0
+																						234 文本 0
+																					235 文本 ;
+																				236 row  CSS property name: min-width : CSS property value: 320px ;
+																					237 container CSS property name: min-width
+																						238 文本 min-width
+																					239 文本 : 
+																					240 container CSS property value: 320px
+																						241 文本 320px
+																					242 文本 ;
+																				243 row  CSS property name: background : CSS property value: radial-gradient(circle at 88% 4%, #e8edff 0, transparent 27rem), var(--canvas) ;
+																					244 container CSS property name: background
+																						245 文本 background
+																					246 文本 : 
+																					247 container CSS property value: radial-gradient(circle at 88% 4%, #e8edff 0, transparent 27rem), var(--canvas)
+																						248 文本 radial-gradient
+																						249 文本 (
+																						250 文本 circle
+																						251 文本 at
+																						252 文本 88%
+																						253 文本 4%
+																						254 文本 ,
+																						255 文本 #e8edff
+																						256 文本 0
+																						257 文本 ,
+																						258 文本 transparent
+																						259 文本 27rem
+																						260 文本 )
+																						261 文本 ,
+																						262 container
+																							263 text var (
+																							264 链接 --canvas
+																								265 文本 --canvas
+																							266 文本 )
+																					267 文本 ;
+																			268 container
+																				269 文本 }
+																		270 container *, css selector
+																			271 链接 Description: styles.css:24, Help: file:///private/tmp/lifeos-p3-115-prototype-v1/styles.css:24
+																				272 文本 styles.css:24
+																			273 container
+																				274 container CSS selector
+																					275 文本 *
+																				276 文本  {
+																			277 外框
+																				278 row  CSS property name: box-sizing : CSS property value: border-box ;
+																					279 container CSS property name: box-sizing
+																						280 文本 box-sizing
+																					281 文本 : 
+																					282 container CSS property value: border-box
+																						283 文本 border-box
+																					284 文本 ;
+																			285 container
+																				286 文本 }
+																		287 container body, css selector
+																			288 文本 user agent stylesheet
+																			289 container
+																				290 container CSS selector
+																					291 文本 body
+																				292 文本  {
+																			293 外框
+																				294 row  CSS property name: display : CSS property value: block ;
+																					295 container CSS property name: display
+																						296 文本 display
+																					297 文本 : 
+																					298 container CSS property value: block
+																						299 文本 block
+																					300 文本 ;
+																				301 row  CSS property name: margin : CSS property value: 8px ;
+																					302 container CSS property name: margin
+																						303 文本 margin
+																					304 文本 : 
+																					305 container CSS property value: 8px
+																						306 文本 8px
+																					307 文本 ;
+																			308 container
+																				309 文本 }
+																		310 container
+																			311 文本 Inherited from 
+																			312 按钮 html
+																		313 container :root, css selector
+																			314 链接 Description: styles.css:1, Help: file:///private/tmp/lifeos-p3-115-prototype-v1/styles.css:1
+																				315 文本 styles.css:1
+																			316 container
+																				317 container CSS selector
+																					318 文本 :root
+																				319 文本  {
+																			320 外框
+																				321 row  CSS property name: --ink : CSS property value: #16213b ;
+																					322 container CSS property name: --ink
+																						323 文本 --ink
+																					324 文本 : 
+																					325 container CSS property value: #16213b
+																						326 文本 #16213b
+																					327 文本 ;
+																				328 row  CSS property name: --muted : CSS property value: #63708a ;
+																					329 container CSS property name: --muted
+																						330 文本 --muted
+																					331 文本 : 
+																					332 container CSS property value: #63708a
+																						333 文本 #63708a
+																					334 文本 ;
+																				335 row  CSS property name: --line : CSS property value: #dfe6f3 ;
+																					336 container CSS property name: --line
+																						337 文本 --line
+																					338 文本 : 
+																					339 container CSS property value: #dfe6f3
+																						340 文本 #dfe6f3
+																					341 文本 ;
+																				342 row  CSS property name: --canvas : CSS property value: #f6f8fd ;
+																					343 container CSS property name: --canvas
+																						344 文本 --canvas
+																					345 文本 : 
+																					346 container CSS property value: #f6f8fd
+																						347 文本 #f6f8fd
+																					348 文本 ;
+																				349 row  CSS property name: --surface : CSS property value: #ffffff ;
+																					350 container CSS property name: --surface
+																						351 文本 --surface
+																					352 文本 : 
+																					353 container CSS property value: #ffffff
+																						354 文本 #ffffff
+																					355 文本 ;
+																				356 row  CSS property name: --primary : CSS property value: #455ff0 ;
+																					357 container CSS property name: --primary
+																						358 文本 --primary
+																					359 文本 : 
+																					360 container CSS property value: #455ff0
+																						361 文本 #455ff0
+																					362 文本 ;
+																				363 row  CSS property name: --primary-dark : CSS property value: #2f45c7 ;
+																					364 container CSS property name: --primary-dark
+																						365 文本 --primary-dark
+																					366 文本 : 
+																					367 container CSS property value: #2f45c7
+																						368 文本 #2f45c7
+																					369 文本 ;
+																				370 row  CSS property name: --teal : CSS property value: #147b73 ;
+																					371 container CSS property name: --teal
+																						372 文本 --teal
+																					373 文本 : 
+																					374 container CSS property value: #147b73
+																						375 文本 #147b73
+																					376 文本 ;
+																				377 row  CSS property name: --teal-soft : CSS property value: #e4f6f2 ;
+																					378 container CSS property name: --teal-soft
+																						379 文本 --teal-soft
+																					380 文本 : 
+																					381 container CSS property value: #e4f6f2
+																						382 文本 #e4f6f2
+																					383 文本 ;
+																				384 row  CSS property name: --rose : CSS property value: #a64d5a ;
+																					385 container CSS property name: --rose
+																						386 文本 --rose
+																					387 文本 : 
+																					388 container CSS property value: #a64d5a
+																						389 文本 #a64d5a
+																					390 文本 ;
+																				391 row  CSS property name: --rose-soft : CSS property value: #fff0f2 ;
+																					392 container CSS property name: --rose-soft
+																						393 文本 --rose-soft
+																					394 文本 : 
+																					395 container CSS property value: #fff0f2
+																						396 文本 #fff0f2
+																					397 文本 ;
+																				398 row  CSS property name: --amber : CSS property value: #a66916 ;
+																					399 container CSS property name: --amber
+																						400 文本 --amber
+																					401 文本 : 
+																					402 container CSS property value: #a66916
+																						403 文本 #a66916
+																					404 文本 ;
+																				405 row  CSS property name: --amber-soft : CSS property value: #fff6e4 ;
+																					406 container CSS property name: --amber-soft
+																						407 文本 --amber-soft
+																					408 文本 : 
+																					409 container CSS property value: #fff6e4
+																						410 文本 #fff6e4
+																					411 文本 ;
+																				412 row  CSS property name: --lavender : CSS property value: #eef0ff ;
+																					413 container CSS property name: --lavender
+																						414 文本 --lavender
+																					415 文本 : 
+																					416 container CSS property value: #eef0ff
+																						417 文本 #eef0ff
+																					418 文本 ;
+																				419 row  CSS property name: --shadow : CSS property value: 0 18px 55px rgba(32, 49, 95, .10) ;
+																					420 container CSS property name: --shadow
+																						421 文本 --shadow
+																					422 文本 : 
+																					423 container CSS property value: 0 18px 55px rgba(32, 49, 95, .10)
+																						424 文本 0
+																						425 文本 18px
+																						426 文本 55px
+																						427 文本 rgba
+																						428 文本 (
+																						429 文本 32
+																						430 文本 ,
+																						431 文本 49
+																						432 文本 ,
+																						433 文本 95
+																						434 文本 ,
+																						435 文本 .10
+																						436 文本 )
+																					437 文本 ;
+																				438 row  CSS property name: --radius : CSS property value: 24px ;
+																					439 container CSS property name: --radius
+																						440 文本 --radius
+																					441 文本 : 
+																					442 container CSS property value: 24px
+																						443 文本 24px
+																					444 文本 ;
+																				445 row  CSS property name: font : CSS property value: 100%/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif ;
+																					446 container CSS property name: font
+																						447 文本 font
+																					448 文本 : 
+																					449 container CSS property value: 100%/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif
+																						450 文本 100%
+																						451 文本 /
+																						452 文本 1.55
+																						453 文本 -apple-system
+																						454 文本 ,
+																						455 文本 BlinkMacSystemFont
+																						456 文本 ,
+																						457 文本 "SF Pro Text"
+																						458 文本 ,
+																						459 文本 "PingFang SC"
+																						460 文本 ,
+																						461 文本 "Microsoft YaHei"
+																						462 文本 ,
+																						463 文本 system-ui
+																						464 文本 ,
+																						465 文本 sans-serif
+																					466 文本 ;
+																				467 row  CSS property name: color : CSS property value: var(--ink) ;
+																					468 container CSS property name: color
+																						469 文本 color
+																					470 文本 : 
+																					471 container CSS property value: var(--ink)
+																						472 container
+																							473 text var (
+																							474 链接 --ink
+																								475 文本 --ink
+																							476 文本 )
+																					477 文本 ;
+																				478 row  CSS property name: background : CSS property value: var(--canvas) ;
+																					479 container CSS property name: background
+																						480 文本 background
+																					481 文本 : 
+																					482 container CSS property value: var(--canvas)
+																						483 container
+																							484 text var (
+																							485 链接 --canvas
+																								486 文本 --canvas
+																							487 文本 )
+																					488 文本 ;
+																				489 row  CSS property name: font-optical-sizing : CSS property value: auto ;
+																					490 container CSS property name: font-optical-sizing
+																						491 文本 font-optical-sizing
+																					492 文本 : 
+																					493 container CSS property value: auto
+																						494 文本 auto
+																					495 文本 ;
+																			496 container
+																				497 文本 }
+																498 container
+																	499 text margin 0 0
+																	500 文本 border
+																	501 文本 0
+																	502 文本 0
+																	503 container
+																		504 text padding 0 0
+																		505 文本 1160
+																		506 文本 ×
+																		507 文本 1395.410
+																		508 text 0 0
+																	509 文本 0
+																	510 文本 0
+																	511 text 0 0
+						512 文本 DevTools is docked to right 
+				513 HTML 内容 LifeOS · Today（P3-115 原型）, URL: file:///private/tmp/lifeos-p3-115-prototype-v1/index.html#main
+					514 link Description: 跳到今日重点, Value: file:///private/tmp/lifeos-p3-115-prototype-v1/index.html#main
+					515 container 主导航
+						516 link Description: LifeOS Today, Value: file:///private/tmp/lifeos-p3-115-prototype-v1/index.html#today
+						517 container 主要位置
+							518 按钮 Today
+							519 按钮 Memory
+							520 按钮 Domains
+						521 按钮 原型边界说明
+					522 container
+						523 文本 LIFEOS · 人本双领域原型
+						524 切换按钮 已启用低动态, Value: 1
+						525 弹出式按钮 记录
+					526 container 晚上好，你。
+						527 container
+							528 文本 TODAY · SYNTHETIC PROTOTYPE
+							529 标题 晚上好，你。, Value: 1
+								530 text 晚上好， 你 。
+							531 text 2026 年 8 月 24 日 · 周一 不是运行时 · 不保存输入 视口：1160 × 768
+						532 container 今天值得花注意力的 3 件事
+							533 文本 TODAY’S FOCUS
+							534 标题 今天值得花注意力的 3 件事, Value: 2
+								535 文本 今天值得花注意力的 3 件事
+							536 文本 工作与健康／健身并列；Project 只作为工作项目的上下文。
+						537 container 收束产品演示的开场主张
+							538 text 工作 Source · 固定合成
+							539 标题 收束产品演示的开场主张, Value: 3
+								540 文本 收束产品演示的开场主张
+							541 container
+								542 text 工作语境： 产品演示准备  · 10:00–16:00 的两段准备时间
+							543 文本 先写下“观众离开时要记住什么”。这是一条可选建议，不会替你创建行动。
+							544 文本 中等确定性 · 仅今天
+							545 按钮 Why now / 依据 
+						546 container 先确认一个会改变安全边界的问题
+							547 text 健康／健身 0–1 个问题
+							548 标题 先确认一个会改变安全边界的问题, Value: 3
+								549 文本 先确认一个会改变安全边界的问题
+							550 文本 今天的膝部不适是否比已确认限制明显加重，或出现无法承重、明显肿胀、受伤后恶化？
+							551 文本 未回答前不显示训练型建议；跳过也不等于“没有风险”。
+							552 container 回答健康问题
+								553 按钮 没有加重／无警示
+								554 按钮 今天跳过
+								555 按钮 有警示信号
+						556 container 让今天的结果保持可撤回
+							557 text 理解 Derivation · 待形成
+							558 标题 让今天的结果保持可撤回, Value: 3
+								559 文本 让今天的结果保持可撤回
+							560 文本 反馈、实际执行、结果和理解更新分别记录；一次结果最多形成待确认的 Memory candidate。
+							561 按钮 查看生命周期 
+						562 container 等待你的安全回答
+							563 文本 HEALTH / FITNESS
+							564 标题 等待你的安全回答, Value: 2
+								565 文本 等待你的安全回答
+							566 文本 未回答 · 停止训练型建议
+							567 container
+								568 标题 先保守，再行动, Value: 3
+									569 文本 先保守，再行动
+								570 文本 你可以休息、记录状态或跳过。此原型不会给出诊断、治疗、保证或训练处方。
+								571 按钮 查看来源与停止条件 
+						572 container 反馈不等于执行，执行不等于结果
+							573 文本 FEEDBACK → UNDERSTANDING
+							574 标题 反馈不等于执行，执行不等于结果, Value: 2
+								575 文本 反馈不等于执行，执行不等于结果
+							576 按钮 完整合同 
+							577 内容列表 反馈生命周期
+								578 container
+									579 text 1 Source / Artifact 固定合成输入
+								580 container
+									581 text 2 Q / ANS 尚未回答
+								582 container
+									583 text 3 FDB 尚无
+								584 container
+									585 text 4 EXE 未执行
+								586 container
+									587 text 5 RES 尚无
+								588 container
+									589 text 6 理解更新 尚无
+						590 container 来源异常时，建议必须关闭
+							591 文本 SYNTHETIC FAILURE SCENARIOS
+							592 标题 来源异常时，建议必须关闭, Value: 2
+								593 文本 来源异常时，建议必须关闭
+							594 文本 这些是可见的原型测试情境，不会写入任何数据。
+							595 container 来源异常原型情境
+								596 按钮 来源缺失
+								597 按钮 已过期
+								598 按钮 输入冲突
+								599 按钮 授权失效
+								600 按钮 回到初始原型状态
+					601 文本 低动态预览已启用：动效改为即时、非位移反馈。
+			602 弹出式按钮 标签页搜索
+			603 container
+				604 标签组
+					605 标签 (settable, boolean) Description: 企业微信, Value: off
+					606 标签 (settable, boolean) Description: 企业微信, Value: off
+					607 标签 (settable, boolean) Description: 运维 - 排查光猫卡顿问题, Value: off
+					608 标签 (settable, boolean) Description: Release Aivy OS v2.1.1 · Bo1202/Aivy-OS · GitHub, Value: off
+					609 标签 (settable, boolean) Description: Apple 账户：登录与管理, Value: off
+					610 标签 (settable, boolean) Description: 美国免税地址生成器 - 立即获取您的免税美国地址 - 美国地址生成器 | US Address Generator, Value: off
+					611 标签 (settable, boolean) Description: 机器 - 尾部规模, Value: off
+					612 标签 (settable, boolean) Description: Add rule - Tailscale - 内存用量 - 59.3 MB, Value: off
+					613 标签 (settable, boolean) Description: 查询中和街道邮编 - 内存用量 - 246 MB, Value: off
+					614 标签 (settable, boolean) Description: Here's your Gift Card! - gg1132014531@gmail.com - Gmail - 内存用量 - 301 MB, Value: off
+					615 标签 (settable, boolean) Description: Pockyt Shop | 苹果商店,亚马逊礼品卡,安全正规,超值折扣,快速发货, Value: off
+					616 标签 (settable, boolean) Description: Pockyt Shop | 苹果商店,亚马逊礼品卡,安全正规,超值折扣,快速发货, Value: off
+					617 标签 (settable, boolean) Description: WorkBuddy - 个人中心, Value: off
+					618 标签 (settable, boolean) Description: 新标签页, Value: off
+					619 标签 (settable, boolean) Description: WorkBuddy - 个人中心 - 内存用量 - 205 MB, Value: off
+					620 标签 (settable, boolean) Description: 登录 - 腾讯云, Value: off
+					621 标签 (settable, boolean) Description: WorkBuddy - 个人中心 - 内存用量 - 108 MB, Value: off
+					622 标签 (settable, boolean) Description: Pockyt Shop | 苹果商店,亚马逊礼品卡,安全正规,超值折扣,快速发货, Value: off
+					623 标签 (settable, boolean) Description: Pockyt Shop | 苹果商店,亚马逊礼品卡,安全正规,超值折扣,快速发货, Value: off
+					624 标签 (settable, boolean) Description: LifeOS｜今日（本地 UI 前置验证）, Value: off
+					625 标签 (settable, boolean) Description: LifeOS｜今日（本地 UI 前置验证）, Value: off
+					626 标签 (settable, boolean) Description: LifeOS｜今日（本地 UI 前置验证）, Value: off
+					627 标签 (settable, boolean) Description: LifeOS｜今日｜默认恢复, Value: off
+					628 标签 (settable, boolean) Description: LifeOS｜今日｜默认恢复, Value: off
+					629 标签 (settable, boolean) Description: LifeOS｜今日｜暂无可靠建议, Value: off
+					630 标签 (settable, boolean) Description: LifeOS｜今日｜默认恢复, Value: off
+					631 标签 (settable, boolean) Description: LifeOS｜合成生命周期｜默认恢复, Value: off
+					632 标签 (settable, boolean) Description: LifeOS｜合成生命周期｜暂无可靠建议, Value: off
+					633 标签 (settable, boolean) Description: LifeOS｜合成生命周期｜默认恢复, Value: off
+					634 标签 (settable, boolean) Description: LifeOS｜今日｜默认恢复, Value: off
+					635 标签 (settable, boolean) Description: LifeOS｜今日｜默认恢复, Value: off
+					636 标签 (settable, boolean) Description: ChatGPT, Value: off
+					637 标签 (settable, boolean) Description: LifeOS｜今日｜默认恢复, Value: off
+					638 标签 (settable, boolean) Description: DeepSeek | 深度求索, Value: off
+					639 标签 (settable, boolean) Description: DeepSeek Harness 开发者预览版：一切皆插件, Value: off
+					640 标签 (settable, boolean) Description: 已安装 GitHub 应用 - ChatGPT Codex 连接器, Value: off
+					641 标签 (settable, boolean) Description: ChatGPT, Value: off
+					642 标签 (settable, boolean) Description: 新标签页, Value: off
+					643 标签 (selected, settable, boolean) Description: LifeOS · Today（P3-115 原型）, Value: on
+						644 按钮 关闭
+			645 按钮 新标签页
+			646 按钮 打开 Chrome 中的 Gemini
+	647 关闭按钮
+	648 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	649 最小化按钮
+650 menu bar
+	651 Chrome
+	652 文件
+	653 编辑
+	654 显示
+	655 历史记录
+	656 书签
+	657 个人资料
+	658 标签页
+	659 窗口
+	660 帮助
+
+The focused UI element is 25 步进器 (settable, float) Description: Height (leave empty for full), Value: 768

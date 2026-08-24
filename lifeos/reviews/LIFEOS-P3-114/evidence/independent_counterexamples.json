@@ -1,0 +1,31 @@
+{
+  "evidence_id": "P3-114-independent-counterexamples-v1",
+  "status": "PASS",
+  "runner": "lifeos/reviews/LIFEOS-P3-114/evidence/tools/verify_counterexamples.py",
+  "temporary_fixture": "/private/tmp/lifeos-p3-114-product-review-v1/fixed_counterexamples.json",
+  "canonical_fixture": "lifeos/reviews/LIFEOS-P3-114/evidence/fixed_counterexamples.json",
+  "fixture_sha256_before_cleanup": "04df88130cc04f98fed479405e5134246f83a815c7325dff0b6d654ae5af1e6a",
+  "fixture_contract": {
+    "fixture_id": "P3-114-fixed-product-counterexamples-v1",
+    "classification": "fictional, synthetic, non-sensitive product-definition fixture",
+    "case_ids": ["CE-PROV-001", "CE-PROV-002", "CE-FEEDBACK-001", "CE-FEEDBACK-002", "CE-HEALTH-001", "CE-IDENTITY-001"],
+    "recreation_rule": "The canonical source fixture is retained under this Evidence directory and has the same SHA-256 as the temporary copy used in the run. No person, health record, external source or application data belongs in either fixture."
+  },
+  "execution": {
+    "first_run": {"passed": 10, "failed": 0},
+    "idempotent_second_run": {"passed": 10, "failed": 0}
+  },
+  "checks": [
+    "four independent synthetic Source identities",
+    "missing/revoked health source degradation",
+    "any missing/conflicting/expired/unauthorized Advice basis stales/degrades Advice",
+    "accept is not execution",
+    "result does not become future memory without explicit confirmation",
+    "1-3 advice, 0-1 question and no automation",
+    "warning-signal health stop/degrade",
+    "close/reopen preserves identities",
+    "formal Gate 1-5 names and Gate 5 hypothesis limit",
+    "all six fixed counterexample cases are present"
+  ],
+  "classification": "static candidate-contract verifier; no runtime, application, database, model, network, external source or real person accessed"
+}

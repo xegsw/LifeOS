@@ -1,0 +1,13 @@
+{
+  "evidence_id": "P3-113-M009-safety-degradation",
+  "status": "PASS",
+  "rows": [
+    {"trigger": "missing source, content identity, authorization or freshness", "must_do": "exclude from personalized judgment; disclose missing input"},
+    {"trigger": "unconfirmed inference, conflict or stale memory", "must_do": "lower certainty; do not make high-impact advice; at most ask one decision-changing question"},
+    {"trigger": "health warning, unknown professional restriction, or unanswered safety question", "must_do": "stop training advice or degrade to rest/record/professional support; no diagnosis"},
+    {"trigger": "user pause, revoke, delete or correct", "must_do": "stop affected inference/advice and preserve authorization/audit/correction chain"},
+    {"trigger": "real model, third party, network or real data", "must_do": "deny in this task; require separate scope and explicit recorded user authorization"},
+    {"trigger": "feedback conflicts with earlier inference", "must_do": "record Feedback as new evidence, mark impact/scope and do not overwrite original content"}
+  ],
+  "classification": "candidate fail-closed/degrade contract; not clinical validation"
+}

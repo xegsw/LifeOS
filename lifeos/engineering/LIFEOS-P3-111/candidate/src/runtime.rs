@@ -343,6 +343,12 @@ mod tests {
     }
 
     #[test]
+    fn ipc_extra_fields_are_rejected_before_runtime_logic() {
+        assert!(serde_json::from_str::<CaptureRequest>(r#"{"text":"fixed","key":"p3-111-test-primary","path":"/escape"}"#).is_err());
+        assert!(serde_json::from_str::<EmptyRequest>(r#"{"sql":"SELECT 1"}"#).is_err());
+    }
+
+    #[test]
     fn symlink_and_hardlink_boundaries_fail_closed() {
         use std::os::unix::fs::symlink;
         let (db, root) = fixture("links"); let outside = root.join("outside.txt"); fs::write(&outside, b"P3-111-OUTSIDE-SENTINEL").unwrap(); symlink(&outside, &db).unwrap();

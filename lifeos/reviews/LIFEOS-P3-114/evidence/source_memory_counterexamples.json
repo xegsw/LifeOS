@@ -1,0 +1,31 @@
+{
+  "evidence_id": "P3-114-source-memory-counterexamples-v1",
+  "status": "PASS",
+  "source_identity_checks": [
+    "SRC-SYN-WORK-001 / ART-SYN-WORK-001@v1 is a same-day synthetic work source",
+    "SRC-SYN-HEALTH-001 / ART-SYN-HEALTH-001@v1 is a same-day synthetic self-report and is distinct from work",
+    "SRC-SYN-INTERACTION-001 / ART-SYN-ANSWER-001@v1 is scoped only to the concrete question and same day",
+    "SRC-SYN-FEEDBACK-001 plus result artifact preserves feedback/execution/result separately"
+  ],
+  "counterexamples": [
+    {
+      "id": "CE-PROV-001",
+      "injected_condition": "health/fitness source is missing",
+      "required_candidate_response": "no personalized health/fitness advice; stop/degrade to information-insufficient handling",
+      "result": "PASS"
+    },
+    {
+      "id": "CE-PROV-002",
+      "injected_condition": "a required basis is missing, conflicting, expired or unauthorized",
+      "required_candidate_response": "advice is excluded or degraded and dependent derivation/advice becomes stale",
+      "result": "PASS"
+    },
+    {
+      "id": "CE-MEM-001",
+      "injected_condition": "a result exists without explicit future-memory confirmation, scope, expiry and revoke control",
+      "required_candidate_response": "MEM-CAND is blocked from later-date influence",
+      "result": "PASS"
+    }
+  ],
+  "non_claim": "These are static fixed-fixture contract checks. They do not demonstrate runtime persistence, medical validity, model behavior or user value."
+}

@@ -1,0 +1,21 @@
+{
+  "evidence_id": "P3-114-temporary-residue-v1",
+  "status": "PASS",
+  "temporary_root": "/private/tmp/lifeos-p3-114-product-review-v1",
+  "existed_before_review": false,
+  "created_for": "one fixed synthetic counterexample fixture only",
+  "fixture_filename": "fixed_counterexamples.json",
+  "fixture_sha256_before_cleanup": "04df88130cc04f98fed479405e5134246f83a815c7325dff0b6d654ae5af1e6a",
+  "canonical_review_fixture": "lifeos/reviews/LIFEOS-P3-114/evidence/fixed_counterexamples.json",
+  "cleanup": {
+    "validated_contents_before_cleanup": ["fixed_counterexamples.json"],
+    "commands": [
+      "rm /private/tmp/lifeos-p3-114-product-review-v1/fixed_counterexamples.json",
+      "rmdir /private/tmp/lifeos-p3-114-product-review-v1",
+      "test ! -e /private/tmp/lifeos-p3-114-product-review-v1"
+    ],
+    "root_exists_after_cleanup": false,
+    "residual_files": 0
+  },
+  "boundary": "Only an identical, non-sensitive fixture source remains in this task's allowed Evidence directory. No candidate, historical asset, ledger, risk, freeze, application, database, model, network, external source or real-data path was created, modified or removed."
+}

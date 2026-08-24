@@ -1,0 +1,29 @@
+{
+  "evidence_id": "P3-113-rework-1-M005-source-provenance",
+  "status": "PASS",
+  "fixture_notice": "All records are fixed synthetic, non-sensitive product-definition fixtures. No personal, health, external, database or live application data was accessed.",
+  "authorization_id": "AZ-SYN-P3-113-ONLY",
+  "sources": [
+    {"source_id": "SRC-SYN-WORK-001", "kind": "synthetic manual work plan", "domain": "work", "artifact": "ART-SYN-WORK-001@v1", "facts": ["high workload", "demo preparation 10:00-11:00 and 15:00-16:00"], "recorded_at": "2026-08-24", "freshness": "same calendar day", "on_expiry_or_revoke": "stale dependent Derivation/Advice and exclude from personalization"},
+    {"source_id": "SRC-SYN-HEALTH-001", "kind": "synthetic manual health/fitness self-report", "domain": "health_fitness", "artifact": "ART-SYN-HEALTH-001@v1", "facts": ["sleep 5.5 hours", "self-reported fatigue 7/10", "avoid impact/jumping", "20 minutes available at 18:30"], "recorded_at": "2026-08-24", "freshness": "same calendar day", "on_expiry_or_revoke": "no personalized health/fitness suggestion; show insufficient information or stop/degrade"},
+    {"source_id": "SRC-SYN-INTERACTION-001", "kind": "synthetic user interaction", "domain": "current_context", "artifact": "ART-SYN-ANSWER-001@v1", "facts": ["answer to Q-SYN-001: no worsening/no warning, no professional restriction"], "recorded_at": "2026-08-24", "freshness": "only for Q-SYN-001 and same day", "on_expiry_or_revoke": "stale dependent current understanding and Advice"},
+    {"source_id": "SRC-SYN-FEEDBACK-001", "kind": "synthetic feedback/execution/result", "domain": "feedback", "artifact": "ART-SYN-FEEDBACK-001@v1 and ART-SYN-RESULT-001@v1", "facts": ["modified acceptance", "execution status", "user-reported result"], "recorded_at": "event-time scoped", "freshness": "event and its declared scope", "on_expiry_or_revoke": "preserve event history; recompute dependent understanding without rewriting advice or sources"}
+  ],
+  "provenance_chain": {
+    "initial_understanding": {"id": "DER-SYN-UNDERSTANDING-001@v1", "inputs": ["ART-SYN-WORK-001@v1", "ART-SYN-HEALTH-001@v1"]},
+    "answered_understanding": {"id": "DER-SYN-UNDERSTANDING-002@v1", "inputs": ["DER-SYN-UNDERSTANDING-001@v1", "ART-SYN-ANSWER-001@v1"]},
+    "advice": {"id": "ADV-SYN-001@v1", "basis": ["ART-SYN-WORK-001@v1", "ART-SYN-HEALTH-001@v1", "ART-SYN-ANSWER-001@v1", "DER-SYN-UNDERSTANDING-002@v1"], "scope": "synthetic person Y, 2026-08-24 only", "certainty": "conditional / low-risk non-medical", "stale_rule": "any missing, conflicting, expired or unauthorized basis excludes or degrades advice"},
+    "result_understanding": {"id": "DER-SYN-UNDERSTANDING-003@v1", "inputs": ["ADV-SYN-001@v1", "ART-SYN-FEEDBACK-001@v1", "ART-SYN-RESULT-001@v1", "ART-SYN-WORK-001@v1", "ART-SYN-HEALTH-001@v1"], "scope": "same day only"}
+  },
+  "gate_2_answers": {
+    "user_original": "Future user input must remain a user-visible Source/Artifact; this task uses explicitly synthetic fixtures instead.",
+    "external_source": "none in scope; future external/Vault input requires distinct provenance, version, permission and read-only authorization.",
+    "ai_derivation": "DER-SYN-* and ADV-SYN-* are marked derived/advice and never reclassified as source facts.",
+    "confirmed_facts": "only explicitly confirmed Artifacts/Feedback may be treated as confirmed; response, execution and result remain separate.",
+    "decisions_actions_feedback": "ADV, FDB, EXE and RES have distinct identities and effects.",
+    "version_permission_delete_export": "identity includes Source/Artifact version, authorization, scope and stale/revoke semantics; export is not authorized.",
+    "obsidian_vault": "not accessed or implied; any future use is a separately authorized, distinct read-only external Source.",
+    "derivation_rebuild": "input change/revoke/expiry stales dependents; derived views can be rebuilt from currently valid identities."
+  },
+  "classification": "candidate Source/Artifact/Derivation contract, not an implementation or schema freeze"
+}
