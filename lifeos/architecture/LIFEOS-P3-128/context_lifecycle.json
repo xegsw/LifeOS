@@ -1,0 +1,45 @@
+{
+  "task_id": "LIFEOS-P3-128",
+  "context_identity": {
+    "field": "context_id",
+    "rule": "stable, opaque application identifier; for a Project-backed Context use a deterministic namespaced form such as ctx:project:<project-id>; for non-Project Context allocate only after explicit user confirmation.",
+    "required_fields": ["context_id", "owner_person_ref", "context_type", "state", "display_name", "created_basis", "updated_at", "backing_refs"],
+    "prohibited_meanings": ["database-table name", "implicit Project replacement", "authorization grant", "AI profile", "silent domain activation"]
+  },
+  "types": {
+    "project": "Backed by the Frozen Project semantic object; the only Fast Track implementation type.",
+    "program": "A sustained Context assembled through existing objects/links; deferred from implementation.",
+    "goal_related": "A bounded Context view; deferred from implementation.",
+    "life_event": "A user-confirmed Context anchored by Event/Artifact evidence; deferred from implementation.",
+    "observed": "A candidate or watching Context based on explicit evidence; deferred from implementation and never silently durable."
+  },
+  "states": [
+    {"state": "candidate", "meaning": "Proposed by user or system; no durable Context exists until user confirms."},
+    {"state": "confirmed", "meaning": "User has confirmed identity/type/name/backing reference; an immediate transition may continue to active or watching."},
+    {"state": "active", "meaning": "Person is currently progressing or experiencing it; may supply a visible page context after authorization."},
+    {"state": "watching", "meaning": "Still relevant but not an active commitment; it cannot manufacture a next Action."},
+    {"state": "closed", "meaning": "No longer current; history/evidence remains governed by core-object lifecycle and authorization."}
+  ],
+  "transitions": [
+    {"from": "candidate", "event": "user_confirms_identity_and_scope", "to": "confirmed", "evidence": ["Feedback or explicit confirmation command", "typed backing_refs"], "forbidden": "AI-only confirmation"},
+    {"from": "confirmed", "event": "user_selects_current_progress", "to": "active", "evidence": ["user confirmation", "valid backing refs"], "forbidden": "automatic Action creation"},
+    {"from": "confirmed", "event": "user_selects_monitoring", "to": "watching", "evidence": ["user confirmation"], "forbidden": "automatic recommendation"},
+    {"from": "active", "event": "user_marks_monitoring", "to": "watching", "evidence": ["Feedback or explicit state command"], "forbidden": "discarding prior history"},
+    {"from": "active", "event": "user_closes", "to": "closed", "evidence": ["Feedback or explicit state command"], "forbidden": "deleting artifacts or source links"},
+    {"from": "watching", "event": "user_resumes", "to": "active", "evidence": ["user confirmation"], "forbidden": "using stale/unauthorized evidence"},
+    {"from": "watching", "event": "user_closes", "to": "closed", "evidence": ["user confirmation"], "forbidden": "erasing Feedback"},
+    {"from": "closed", "event": "user_reopens_with_current_basis", "to": "active", "evidence": ["explicit user action", "revalidated backing refs"], "forbidden": "old package or tombstoned evidence resurrection"}
+  ],
+  "project_compatibility": {
+    "rule": "Every Project can be represented as one Project-backed Context without changing Project identity or lifecycle. Context is a navigation/recovery composition; Project remains a Frozen core object.",
+    "projection": {"project_draft": "candidate_or_confirmed", "project_active": "active", "project_paused": "watching", "project_completed_or_archived_or_cancelled": "closed"},
+    "non_project_guard": "Program, life event, observed, and goal-related types do not reuse Project identity and cannot become an all-life Project container."
+  },
+  "counterexamples": [
+    {"case": "AI detects a pattern", "expected": "create a candidate only; no durable ContextId until user confirmation"},
+    {"case": "Context links an excluded Source", "expected": "do not read, include, or expand authorization"},
+    {"case": "Closed Context has an old Action", "expected": "preserve Action/Feedback history; do not reopen Context automatically"},
+    {"case": "Evidence becomes stale or revoked", "expected": "keep Context identity but mark dependent understanding unavailable or review-required"}
+  ],
+  "result": "PASS"
+}

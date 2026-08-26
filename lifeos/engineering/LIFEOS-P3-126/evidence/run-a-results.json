@@ -1,0 +1,100 @@
+{
+  "actual_ui_actions": [
+    {
+      "action": "launch",
+      "id": "A0",
+      "observed_ui": "restricted_offline; 0 records; 0 audit",
+      "screenshot": {
+        "bytes": 86895,
+        "path": "lifeos/engineering/LIFEOS-P3-126/evidence/run-a-initial.jpeg",
+        "sha256": "ab84beeef84c2fbd5d41f01f476f41b8324ecf659929d5cb7c1597b96fa59a1f"
+      }
+    },
+    {
+      "action": "open Quick Capture then Confirm association",
+      "id": "A1",
+      "observed_ui": "saved receipt; 1 record; 1 audit",
+      "screenshot": {
+        "bytes": 90499,
+        "path": "lifeos/engineering/LIFEOS-P3-126/evidence/run-a-first.jpeg",
+        "sha256": "5c829084f56735e8dc297178856a2f8368283ed44c2dc525b237824313430593"
+      }
+    },
+    {
+      "action": "repeat the same Confirm association",
+      "id": "A2",
+      "observed_ui": "idempotent_repeat receipt; 1 record; 2 audit",
+      "screenshot": {
+        "bytes": 90075,
+        "path": "lifeos/engineering/LIFEOS-P3-126/evidence/run-a-repeat.jpeg",
+        "sha256": "118345784ecdf21e9b80869997c7fb580f05a3a257ad3bbac1e4aa6670d963d3"
+      }
+    },
+    {
+      "action": "quit the App, reopen the same bundle",
+      "id": "A3",
+      "observed_ui": "restricted_offline; persisted 1 record; 2 audit",
+      "screenshot": {
+        "bytes": 89383,
+        "path": "lifeos/engineering/LIFEOS-P3-126/evidence/run-a-reopen.jpeg",
+        "sha256": "cfc6d82b1d945bc301eeb0dd214b8fc0c5452ddf7533d0901345b1670d4ea579"
+      }
+    }
+  ],
+  "build": {
+    "bundle": "/private/tmp/lifeos-p3-126-clean-closure-v1/cache/cargo-target/release/bundle/macos/LifeOS P3-122 Native Viewport Runtime.app",
+    "bundle_exists": true,
+    "command": [
+      "/Users/xxe/.cargo/bin/cargo-tauri",
+      "build",
+      "--bundles",
+      "app",
+      "--config",
+      "tauri.conf.json"
+    ],
+    "exit_code": 0,
+    "label": "bundle-run-a",
+    "log": "lifeos/engineering/LIFEOS-P3-126/logs/bundle-run-a.log",
+    "log_sha256": "10e308c2e1d895cad2b34559b116cc777a0f3961fb88c79f5c18fa5251a83663",
+    "runtime_root": "/private/tmp/lifeos-p3-126-clean-closure-v1/run-a",
+    "status": "PASS",
+    "test_id": "P126-M005"
+  },
+  "database": {
+    "audit_events": 2,
+    "captures": 1,
+    "db": "/private/tmp/lifeos-p3-126-clean-closure-v1/run-a/capture.sqlite",
+    "db_sha256": "c1acb52e5a97dfc898df432f69a8c0f128766a14ddf2ebe15a9b47d0727b2ab0",
+    "events": [
+      "capture_saved",
+      "capture_repeat"
+    ]
+  },
+  "generated_at": "2026-08-26T12:01:12+08:00",
+  "geometry": {
+    "all_actual_native_1280x1024": true,
+    "entries": 2,
+    "path": "/private/tmp/lifeos-p3-126-clean-closure-v1/run-a/native-geometry-1280x1024.jsonl",
+    "sha256": "0941e46f7cac6cfdba28e22c179c1e0d4850732e29493a5e0dafe42ecd82e4d9"
+  },
+  "ipc": {
+    "capture_record": [
+      "saved",
+      "idempotent_repeat"
+    ],
+    "get_today": [
+      "initial empty",
+      "post-save refresh",
+      "post-repeat refresh",
+      "reopen load"
+    ],
+    "runtime_status": "restricted_offline"
+  },
+  "process": {
+    "bundle_pid_path_verified": true,
+    "evidence": "ps -p captured while run-a was live",
+    "pid": 97679
+  },
+  "status": "PASS",
+  "test_id": "P126-M005"
+}

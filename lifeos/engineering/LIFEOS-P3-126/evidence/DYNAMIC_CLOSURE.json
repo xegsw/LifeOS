@@ -1,0 +1,189 @@
+{
+  "task": "LIFEOS-P3-126",
+  "abf": "ABF-P3-126-v1",
+  "status": "NOT_PASS_MODEL_SOURCE_UNKNOWN",
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 1,
+    "Not Implemented": 0,
+    "pass_rows": 11
+  },
+  "frozen_formula_result": "NOT_PASS: ABF-M-001 requires platform-exposed actual model/effort; user confirmation is recorded but does not create platform evidence or amend the Frozen ABF.",
+  "rows": [
+    {
+      "abf_row": "ABF-M-001",
+      "test_id": "P126-M001",
+      "status": "Unknown",
+      "evidence": [
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/preflight.json",
+          "sha256": "a3dcc4c0669a9117be3c32b0e33ee8a01ec83a013d0eca7edf02d19fdc8a8d5a"
+        }
+      ],
+      "observed": "User confirmed gpt-5.6-terra + xhigh; platform direct model/effort metadata was not exposed."
+    },
+    {
+      "abf_row": "ABF-M-002",
+      "test_id": "P126-M002",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/source-lineage.json",
+          "sha256": "6d4a7dc3548843e983a844a52a16eea35e369c23426554bce70d50d6cfe45397"
+        }
+      ],
+      "observed": "P3-125 candidate 75/75 exact and fixed inputs unchanged."
+    },
+    {
+      "abf_row": "ABF-M-003",
+      "test_id": "P126-M003",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/static-contract.json",
+          "sha256": "383b0c702ee383f87a3a7958abd2d755146bb8e9372546b93f733149f4487a26"
+        }
+      ],
+      "observed": "Static closure contract passed."
+    },
+    {
+      "abf_row": "ABF-M-004",
+      "test_id": "P126-M004",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/config-negatives.json",
+          "sha256": "1ff1acb8dc9b58fa669c25edccbde31e085e2e8192dcbe89f395d37d126055c9"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/unit-tests.json",
+          "sha256": "a52673b9e523dceb293a1880a1b9fa68daa4834c2fd45b669c858d026b20287c"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/run-a-build.json",
+          "sha256": "572c9901adb906eed226cff53a20eae03c1af92c34fde84a6482d4e80b11f702"
+        }
+      ],
+      "observed": "Configuration negatives, unit tests, and fresh bundle build passed."
+    },
+    {
+      "abf_row": "ABF-M-005",
+      "test_id": "P126-M005",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/run-a-results.json",
+          "sha256": "a66a6ff85b6f484d599b0e9af93d7ae7610ef6ab26f2cd99ed11c91a5525fc67"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/run-a-initial.jpeg",
+          "sha256": "ab84beeef84c2fbd5d41f01f476f41b8324ecf659929d5cb7c1597b96fa59a1f"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/run-a-first.jpeg",
+          "sha256": "5c829084f56735e8dc297178856a2f8368283ed44c2dc525b237824313430593"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/run-a-repeat.jpeg",
+          "sha256": "118345784ecdf21e9b80869997c7fb580f05a3a257ad3bbac1e4aa6670d963d3"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/run-a-reopen.jpeg",
+          "sha256": "cfc6d82b1d945bc301eeb0dd214b8fc0c5452ddf7533d0901345b1670d4ea579"
+        }
+      ],
+      "observed": "Actual bundled app: 0/0 -> 1/1 -> 1/2 -> reopen 1/2."
+    },
+    {
+      "abf_row": "ABF-M-006",
+      "test_id": "P126-M006",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/run-b-results.json",
+          "sha256": "f07383d4b9115fc9c11074a9bf526890e3022c5e22e61ddfa8f1bad511d50332"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/run-b-first.jpeg",
+          "sha256": "f384aee49024e999303beeaf44523b914b9858e04f61694d7ed11c2c9e8f9436"
+        }
+      ],
+      "observed": "Fresh Run-B created an independent 1/1 root."
+    },
+    {
+      "abf_row": "ABF-M-007",
+      "test_id": "P126-M007",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/ipc-lifecycle.json",
+          "sha256": "760127eff74c745ad71a8b3672a8ddc455e80b3c5d35054235c6665a7fa37909"
+        }
+      ],
+      "observed": "Observed allowed IPC lifecycle evidence."
+    },
+    {
+      "abf_row": "ABF-M-008",
+      "test_id": "P126-M008",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/failure-closure.json",
+          "sha256": "e6f374f016f636efd366e0221032666392ba6b6eef7b6abe4ce236a0023a79e4"
+        }
+      ],
+      "observed": "Failure and blocked-root closure evidence passed."
+    },
+    {
+      "abf_row": "ABF-M-009",
+      "test_id": "P126-M009",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/boundary.json",
+          "sha256": "274a514b8c906a3fe874ff1b2ff02a18422b7aed003b2dff528d3cd1b1b20f45"
+        }
+      ],
+      "observed": "No product source, network, model, or new IPC drift."
+    },
+    {
+      "abf_row": "ABF-M-010",
+      "test_id": "P126-M010",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/history-integrity.json",
+          "sha256": "685ecbdb35d731a190a301d2f026a1f386bf8fcf0b66537375dfa4148c1c00fe"
+        }
+      ],
+      "observed": "P3-125 direct inputs remained byte-identical."
+    },
+    {
+      "abf_row": "ABF-M-011",
+      "test_id": "P126-M011",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/mutation-results.json",
+          "sha256": "af2eeff582f15a4b04d6a22284e92153f8b9d29c2d257e0e6c4f61cc027182fd"
+        }
+      ],
+      "observed": "All eight disposable negative mutations were rejected."
+    },
+    {
+      "abf_row": "ABF-M-012",
+      "test_id": "P126-M012",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-126/evidence/cleanup.json",
+          "sha256": "1d404e989d3b4b2e60adc90c526aef746d451bd95ac182c975a223f3bd6a7f11"
+        }
+      ],
+      "observed": "Exact task temporary root was removed after app closure."
+    }
+  ],
+  "generated_at": "2026-08-26T04:07:11.907681+00:00"
+}

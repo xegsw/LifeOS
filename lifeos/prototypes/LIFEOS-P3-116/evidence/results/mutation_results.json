@@ -1,0 +1,44 @@
+{
+  "runner": "tests/run_mutations.py",
+  "baseline_exit": 0,
+  "restored_exit": 0,
+  "cases": [
+    {
+      "mutation": "missing_closure_row",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "status": "PASS"
+    },
+    {
+      "mutation": "matrix_status",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "status": "PASS"
+    },
+    {
+      "mutation": "raw_log_hash",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "status": "PASS"
+    },
+    {
+      "mutation": "unknown_action_link",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "status": "PASS"
+    },
+    {
+      "mutation": "unsafe_evidence_path",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "status": "PASS"
+    },
+    {
+      "mutation": "preflight_status",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "status": "PASS"
+    }
+  ],
+  "overall": "PASS"
+}

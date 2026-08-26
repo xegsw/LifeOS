@@ -1,0 +1,43 @@
+{
+  "schema": "lifeos-p3-120/negative-results-v1",
+  "generated_at_utc": "2026-08-25T08:09:13.778859+00:00",
+  "checks": [
+    {
+      "id": "P120-M011-A",
+      "test": "runtime_path_is_exact_and_other_paths_are_rejected",
+      "result": "PASS",
+      "evidence": "build-test.log"
+    },
+    {
+      "id": "P120-M011-B",
+      "test": "link_hardlink_and_sidecar_boundaries_fail_closed",
+      "result": "PASS",
+      "evidence": "build-test.log"
+    },
+    {
+      "id": "P120-M011-C",
+      "test": "tampered_content_and_schema_fail_closed",
+      "result": "PASS",
+      "evidence": "build-test.log"
+    },
+    {
+      "id": "P120-M012-A",
+      "test": "invalid_or_unpaired_input_is_rejected_before_storage",
+      "result": "PASS",
+      "evidence": "build-test.log"
+    },
+    {
+      "id": "P120-M012-B",
+      "test": "extra_ipc_fields_are_rejected_before_runtime_logic",
+      "result": "PASS",
+      "evidence": "build-test.log"
+    },
+    {
+      "id": "P120-M012-C",
+      "test": "injected_failure_preserves_database_and_sentinel",
+      "result": "PASS",
+      "evidence": "build-test.log"
+    }
+  ],
+  "result": "PASS"
+}

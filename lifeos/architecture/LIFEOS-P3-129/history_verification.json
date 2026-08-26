@@ -1,0 +1,22 @@
+{
+  "schema": "lifeos.p3-129.history-verification.v1",
+  "method": "SHA-256 before candidate write and after candidate write; both observations are recorded in fixed_inputs.json and rechecked by verifier.py.",
+  "records": [
+    {"id": "FI-TASK", "sha256_before": "2fa9ae33705b5f57f9045b508547d0180932dd23d23a043a1b2df1b93904fc09", "sha256_after": "2fa9ae33705b5f57f9045b508547d0180932dd23d23a043a1b2df1b93904fc09", "result": "MATCH"},
+    {"id": "FI-ABF", "sha256_before": "df3c4e9879a624e05ef8f7eb5b71d1a5835422db0eea278e2fc88404032b40fb", "sha256_after": "df3c4e9879a624e05ef8f7eb5b71d1a5835422db0eea278e2fc88404032b40fb", "result": "MATCH"},
+    {"id": "FI-V1", "sha256_before": "2db0cbeda30eea2a56d965220363fb6af6622acf413dfb4ee8c11ec867009a32", "sha256_after": "2db0cbeda30eea2a56d965220363fb6af6622acf413dfb4ee8c11ec867009a32", "result": "MATCH"},
+    {"id": "FI-FREEZE", "sha256_before": "3d32e56876175636c00cf36b26e18bc284ff3d13123e291bce9f28f9e8f74a10", "sha256_after": "3d32e56876175636c00cf36b26e18bc284ff3d13123e291bce9f28f9e8f74a10", "result": "MATCH"},
+    {"id": "FI-P2-016", "sha256_before": "3ab2cece5252c7d982683d1a1cae9c9106f6fa707e6a308e86d27667e4aff8fa", "sha256_after": "3ab2cece5252c7d982683d1a1cae9c9106f6fa707e6a308e86d27667e4aff8fa", "result": "MATCH"},
+    {"id": "FI-P2-016-REVIEW", "sha256_before": "348b038cb01bde3eea27605d04c714c153ecb798131281dc08f2e859eb86152b", "sha256_after": "348b038cb01bde3eea27605d04c714c153ecb798131281dc08f2e859eb86152b", "result": "MATCH"},
+    {"id": "FI-P0-003", "sha256_before": "e7c0b03ba0b9844cc9b515eaf42f88a844502e0ad3481ee01dff88e001d3cf29", "sha256_after": "e7c0b03ba0b9844cc9b515eaf42f88a844502e0ad3481ee01dff88e001d3cf29", "result": "MATCH"},
+    {"id": "FI-P0-009", "sha256_before": "1c6759df1da2f9a95d6b1072c157eda023b9a985439290599dfae19577f90305", "sha256_after": "1c6759df1da2f9a95d6b1072c157eda023b9a985439290599dfae19577f90305", "result": "MATCH"},
+    {"id": "FI-P3-128", "sha256_before": "c385beb8267724945c7665f7a419e1358b5f1571a389055d7642fb660fca1a6b", "sha256_after": "c385beb8267724945c7665f7a419e1358b5f1571a389055d7642fb660fca1a6b", "result": "MATCH"},
+    {"id": "FI-P3-128-REVIEW", "sha256_before": "490ad63606597724465f594c63a49f2d370a9a8aebd236ad1f0ec819cda3dab3", "sha256_after": "490ad63606597724465f594c63a49f2d370a9a8aebd236ad1f0ec819cda3dab3", "result": "MATCH"},
+    {"id": "FI-GOVERNANCE", "sha256_before": "5c971d8b2089ed22d5a0f49a75ece498aff7dd05f92cb5abd69e9bad5b1ee913", "sha256_after": "5c971d8b2089ed22d5a0f49a75ece498aff7dd05f92cb5abd69e9bad5b1ee913", "result": "MATCH"},
+    {"id": "FI-PM", "sha256_before": "fe5034a3464d47d6990592aea4b2f21aca9c02f1326eb4c83a0586618ad1cee1", "sha256_after": "fe5034a3464d47d6990592aea4b2f21aca9c02f1326eb4c83a0586618ad1cee1", "result": "MATCH"},
+    {"id": "FI-ROLE", "sha256_before": "e0cec1e4f17d9daf738c1ed8c4ee607ef2a9a15da758565e2eae99f4b094eb94", "sha256_after": "e0cec1e4f17d9daf738c1ed8c4ee607ef2a9a15da758565e2eae99f4b094eb94", "result": "MATCH"},
+    {"id": "FI-GATES", "sha256_before": "a7c96a75c805b96b5ceb2604fade645b8fcc0beb9ae0bcfa122825f23f233699", "sha256_after": "a7c96a75c805b96b5ceb2604fade645b8fcc0beb9ae0bcfa122825f23f233699", "result": "MATCH"},
+    {"id": "FI-REVIEW-TEMPLATE", "sha256_before": "da90e9bd113c9f07721755ae766bcbaf92474b171e573bfe30d22dce1bb4efd3", "sha256_after": "da90e9bd113c9f07721755ae766bcbaf92474b171e573bfe30d22dce1bb4efd3", "result": "MATCH"}
+  ],
+  "summary": {"records": 15, "matches": 15, "mismatches": 0, "canonical_promotion_executed": false, "temporary_directory_used": false}
+}

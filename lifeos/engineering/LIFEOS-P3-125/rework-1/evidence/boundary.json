@@ -1,0 +1,29 @@
+{
+  "bundle_checks": {
+    "run_a": {
+      "binary_sha256": "b671c497918f9d259b5d98d7ab751121adabf1afb7c317544903d975fdca3c7c",
+      "legacy_root_absent": true
+    },
+    "run_b": {
+      "binary_sha256": "f03f69646436841111be99d0ab6741201e262d7778ff2b14f0eacc6436d859a7",
+      "legacy_root_absent": true
+    }
+  },
+  "fixture_literals_excluded_from_production_scan": true,
+  "result": "PASS",
+  "row": "ABF-M-009",
+  "static_contract": {
+    "db_derived": true,
+    "geometry_derived": true,
+    "legacy_root_absent_from_active_source": true,
+    "no_new_path_selection": true,
+    "no_root_fallback": true,
+    "production_fixed_parent_absent": true,
+    "single_build_time_configuration": true,
+    "three_ipc_unchanged": true,
+    "ui_ipc_schema_capability_unchanged": true,
+    "validation_precedes_write": true,
+    "viewport_derived": true
+  },
+  "task_id": "LIFEOS-P3-125"
+}

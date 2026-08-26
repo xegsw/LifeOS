@@ -1,0 +1,26 @@
+{
+  "test_id": "P127-M005",
+  "candidate_copy": "/private/tmp/lifeos-p3-127-independent-review-v1/candidate",
+  "build_time_runtime_authority": "LIFEOS_RUNTIME_ROOT",
+  "runs": [
+    {
+      "id": "run-a",
+      "runtime_root": "/private/tmp/lifeos-p3-127-independent-review-v1/run-a/runtime-app",
+      "bundle_log": "evidence/run-a-bundle.log",
+      "initial_ui": "evidence/run-a-ui-initial.jpeg",
+      "database_evidence": "evidence/run-a-sqlite.json",
+      "process_evidence": "evidence/run-a-process.txt",
+      "result": "PASS"
+    },
+    {
+      "id": "run-b",
+      "runtime_root": "/private/tmp/lifeos-p3-127-independent-review-v1/run-b/runtime-app",
+      "bundle_log": "evidence/run-b-bundle.log",
+      "initial_ui": "evidence/run-b-ui-initial.jpeg",
+      "database_evidence": "evidence/run-b-sqlite.json",
+      "process_evidence": "evidence/run-b-process.txt",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}

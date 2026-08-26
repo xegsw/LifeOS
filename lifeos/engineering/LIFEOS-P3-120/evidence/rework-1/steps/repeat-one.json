@@ -1,0 +1,67 @@
+{
+  "schema": "lifeos-p3-120/rework-1-manual-step-v1",
+  "step": "repeat-one",
+  "structured_result_id": "R1-repeat-one",
+  "captured_at_utc": "2026-08-25T09:01:53.957045+00:00",
+  "operator": "user-manual",
+  "attestation": "User manually selected the same fixed synthetic capture one a second time in Today, then observed the deterministic idempotent result; delayed capture allowed the user to restore that already-open window after approval.",
+  "capture_delay_seconds": 12,
+  "automation_excluded": [
+    "Computer Use",
+    "AppleScript",
+    "AX",
+    "CDP",
+    "HTTP",
+    "WebDriver",
+    "browser control"
+  ],
+  "app": {
+    "pid": 24181,
+    "running": true,
+    "launch_count": 1
+  },
+  "db": {
+    "exists": true,
+    "type": "regular",
+    "bytes": 24576,
+    "sha256": "dbe85034d6ada6791a3152f237e5a552eb9f72b6a39afdacaebfd3c2e94de5c3",
+    "quick_check": "ok",
+    "user_version": 104,
+    "captures": [
+      {
+        "id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "content": "P3-120 synthetic capture one",
+        "created_at_ms": 1787648390196,
+        "source": "local_capture",
+        "idem_key": "p3-120-synthetic-one"
+      }
+    ],
+    "audit": [
+      {
+        "id": 1,
+        "event": "capture_saved",
+        "capture_id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "created_at_ms": 1787648390196,
+        "detail": "local_capture"
+      },
+      {
+        "id": 2,
+        "event": "capture_repeat",
+        "capture_id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "created_at_ms": 1787648475867,
+        "detail": "same_idempotency_key"
+      }
+    ]
+  },
+  "log_snapshot": {
+    "path": "logs/repeat-one.app.log",
+    "sha256": "8e61c8f1abf42d6c50beef23bd0b95e8b0bbe7f31da89ac8a0a0ea614baa8af3",
+    "missing_expected_lines": []
+  },
+  "screenshot": {
+    "path": "screenshots/repeat-one.png",
+    "sha256": "0802cb1e31766e956e31b84542a0b8f4e5cebd90ccad58a73e19eb05986bf0c1",
+    "bytes": 1975994
+  },
+  "result": "PASS"
+}

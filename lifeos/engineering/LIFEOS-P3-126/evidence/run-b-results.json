@@ -1,0 +1,74 @@
+{
+  "actual_ui_actions": [
+    {
+      "action": "launch",
+      "id": "B0",
+      "observed_ui": "restricted_offline; 0 records; 0 audit"
+    },
+    {
+      "action": "open Quick Capture then Confirm association",
+      "id": "B1",
+      "observed_ui": "saved receipt; 1 record; 1 audit",
+      "screenshot": {
+        "bytes": 90557,
+        "path": "lifeos/engineering/LIFEOS-P3-126/evidence/run-b-first.jpeg",
+        "sha256": "f384aee49024e999303beeaf44523b914b9858e04f61694d7ed11c2c9e8f9436"
+      }
+    }
+  ],
+  "build": {
+    "bundle": "/private/tmp/lifeos-p3-126-clean-closure-v1/cache/cargo-target/release/bundle/macos/LifeOS P3-122 Native Viewport Runtime.app",
+    "bundle_exists": true,
+    "command": [
+      "/Users/xxe/.cargo/bin/cargo-tauri",
+      "build",
+      "--bundles",
+      "app",
+      "--config",
+      "tauri.conf.json"
+    ],
+    "exit_code": 0,
+    "label": "bundle-run-b",
+    "log": "lifeos/engineering/LIFEOS-P3-126/logs/bundle-run-b.log",
+    "log_sha256": "ab95783239ac99551ce3747f99f1792331fcbd6391f6e8d7ddee258d4165a7a3",
+    "runtime_root": "/private/tmp/lifeos-p3-126-clean-closure-v1/run-b",
+    "status": "PASS",
+    "test_id": "P126-M006"
+  },
+  "cross_root_assertions": {
+    "only_each_own_db_and_geometry_exist": true,
+    "run_a_counts_remain": {
+      "audits": 2,
+      "captures": 1
+    },
+    "run_b_started_empty": true
+  },
+  "database": {
+    "audit_events": 1,
+    "captures": 1,
+    "db": "/private/tmp/lifeos-p3-126-clean-closure-v1/run-b/capture.sqlite",
+    "db_sha256": "00411af16327810c316dc1018d726eac420610a15b5d7b8494f2d42ad7fe6799",
+    "events": [
+      "capture_saved"
+    ]
+  },
+  "generated_at": "2026-08-26T12:01:12+08:00",
+  "geometry": {
+    "all_actual_native_1280x1024": true,
+    "entries": 1,
+    "path": "/private/tmp/lifeos-p3-126-clean-closure-v1/run-b/native-geometry-1280x1024.jsonl",
+    "sha256": "5dcff9db472fa518b22806a4cdc937e47228d59aa9955e57744567a4911f42f0"
+  },
+  "ipc": {
+    "capture_record": [
+      "saved"
+    ],
+    "get_today": [
+      "initial empty",
+      "post-save refresh"
+    ],
+    "runtime_status": "restricted_offline"
+  },
+  "status": "PASS",
+  "test_id": "P126-M006"
+}

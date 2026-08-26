@@ -1,4 +1,6 @@
-# LifeOS 独立评审模板
+# LifeOS 风险触发独立评审模板 V2
+
+仅用于 L3/Gate，或 PM 已记录具体触发事实的 L1/L2。普通任务不得仅因 P0、Tauri/IPC、任务编号或历史惯例自动使用本模板。
 
 ## 评审信息
 
@@ -11,8 +13,10 @@
 - 评审关卡：
 - 独立评审路径：
 - 评审结论：Pass / Pass with Conditions / Rework / Blocked
+- 风险等级：L1 / L2 / L3 / Gate
+- 独立评审触发事实：强制关卡 / Evidence不可复算 / 污染或越权 / 长期冻结基线 / Closure后争议 / 用户要求
 
-## 能力包独立性与回流规则（适用时）
+## 独立性与回流规则
 
 - 执行侧与评审侧是否隔离：
 - 是否只评审能力包的最终 Evidence／hash：
@@ -34,7 +38,7 @@ P3-074 起，独立 Review 的 Evidence 必须保留 task-local runner 源码、
 - 动态矩阵是否只在 Chrome 预检通过后开始：Yes / No。
 - 若候选 Blocked：两次 Chrome 正常加载失败是否均有记录，且未使用 HTTP／网络／CDP／命令行浏览器／策略绕过：Yes / No / N/A。
 
-若本任务为 Rework：原 Review 与 Evidence 是否只读保留：Yes / No；本轮目录 `rework/{attempt}/`：。
+若本任务来自 Closure Cycle：原 Review 与 Evidence 是否只读保留：Yes / No；本轮目录：。
 
 ## 评审摘要
 
@@ -48,9 +52,11 @@ P3-074 起，独立 Review 的 Evidence 必须保留 task-local runner 源码、
 
 列出影响冻结、进入下一阶段或开发实现的问题。
 
-## 必须整改项
+## Closure List
 
 列出冻结前必须修改或补充的内容。
+
+同一 Task Contract 内的问题回到原任务 Closure Cycle；只有合同或边界必须变化时才建议新任务。
 
 ## 条件通过项
 

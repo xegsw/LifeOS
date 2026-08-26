@@ -1,0 +1,105 @@
+{
+  "task": "LIFEOS-P3-123",
+  "runner": "P3-123-owned review_runner.py",
+  "test_design_sha256": "66c5af61f76b3b33613cb15d151b3c16689494823f3a2e873fb5daa0fd4c6aa2",
+  "fixed_inputs": {
+    "task_card": {
+      "path": "lifeos/tasks/LIFEOS-P3-123_p3_122_combined_candidate_fresh_isolated_independent_review.md",
+      "exists": true,
+      "sha256": "f12190852161dffa414deb6871d766e2c790ba8790de8210ec2e00ef4a385ccb",
+      "expected_sha256": "f12190852161dffa414deb6871d766e2c790ba8790de8210ec2e00ef4a385ccb",
+      "status": "PASS"
+    },
+    "frozen_abf": {
+      "path": "lifeos/tasks/LIFEOS-P3-123_p3_122_combined_candidate_fresh_isolated_independent_review_acceptance_basis_freeze.md",
+      "exists": true,
+      "sha256": "7b5f67152c9c50187999d11900d2efc44efe79d2b87e2e33173be0a13dc2302b",
+      "expected_sha256": "7b5f67152c9c50187999d11900d2efc44efe79d2b87e2e33173be0a13dc2302b",
+      "status": "PASS"
+    },
+    "authorization_manifest": {
+      "path": "lifeos/reviews/LIFEOS-P3-122/pm_evidence/p3-123-authorization/MANIFEST.md",
+      "exists": true,
+      "sha256": "c8c804de0c596e2ca210a46a81618716a8b9589ec99b46d0ab0e75a3519f3b21",
+      "expected_sha256": "c8c804de0c596e2ca210a46a81618716a8b9589ec99b46d0ab0e75a3519f3b21",
+      "status": "PASS"
+    },
+    "candidate_allowlist": {
+      "path": "lifeos/tasks/LIFEOS-P3-123_candidate_source_allowlist.md",
+      "exists": true,
+      "sha256": "a5b8bd56114fd1091996b2fb0094ebb7a7f5c9ee4f9e3ddbfbe11780f9e437b7",
+      "expected_sha256": "a5b8bd56114fd1091996b2fb0094ebb7a7f5c9ee4f9e3ddbfbe11780f9e437b7",
+      "status": "PASS"
+    },
+    "pm_review": {
+      "path": "lifeos/reviews/LIFEOS-P3-122_pm_review.md",
+      "exists": true,
+      "sha256": "1f921a55dec6ebb9b518a1ee3a8bf83ae6ec450a9d78d399e533abedb8f55efe",
+      "expected_sha256": "1f921a55dec6ebb9b518a1ee3a8bf83ae6ec450a9d78d399e533abedb8f55efe",
+      "status": "PASS"
+    },
+    "engineering_final_manifest": {
+      "path": "lifeos/engineering/LIFEOS-P3-122/evidence/final-manifest.json",
+      "exists": true,
+      "sha256": "b555e657ba3b44d855b7885c24714face84e640daee73525be98003506f69a6c",
+      "expected_sha256": "b555e657ba3b44d855b7885c24714face84e640daee73525be98003506f69a6c",
+      "status": "PASS"
+    },
+    "pm_acceptance_manifest": {
+      "path": "lifeos/reviews/LIFEOS-P3-122/pm_evidence/acceptance/MANIFEST.md",
+      "exists": true,
+      "sha256": "c8fac52c00df7fa1308bb6f6143c8a13fec83568e19b31afb6bd17dd9b1a7966",
+      "expected_sha256": "c8fac52c00df7fa1308bb6f6143c8a13fec83568e19b31afb6bd17dd9b1a7966",
+      "status": "PASS"
+    },
+    "final_adoption_manifest": {
+      "path": "lifeos/reviews/LIFEOS-P3-122/pm_evidence/final-adoption/MANIFEST.md",
+      "exists": true,
+      "sha256": "fc65335b73280b64888c5803bcacf4402771c5b9cb69eaeac7117c20076adecc",
+      "expected_sha256": "fc65335b73280b64888c5803bcacf4402771c5b9cb69eaeac7117c20076adecc",
+      "status": "PASS"
+    }
+  },
+  "execution_model": {
+    "status": "UNKNOWN",
+    "reason": "The task-local execution surface does not expose a verifiable model identifier or reasoning-effort value. The Frozen route cannot be independently attested from the task card alone."
+  },
+  "allowlist_format": {
+    "physical_line_count": 1,
+    "raw_markdown_row_count": 0,
+    "literal_backslash_n_present": true,
+    "decoded_row_count_for_diagnostic_only": 75,
+    "decoded_rows_match_engineering_manifest": true,
+    "conclusion": "FAIL_CLOSED_FORMAT_NOT_MACHINE_READABLE"
+  },
+  "engineering_manifest": {
+    "current_candidate_row_count": 75,
+    "candidate_check_pass_count": 75,
+    "candidate_check_total": 75,
+    "actual_candidate_file_count": 75,
+    "manifest_candidate_file_count": 75,
+    "extra_files": [],
+    "missing_files": []
+  },
+  "matrix": {
+    "ABF-M-001": {
+      "test_id": "P123-M001",
+      "frozen_action": "Recompute authorization, ABF and 75/75 candidate source allowlist before creation.",
+      "status": "FAIL",
+      "reason": "The frozen .md allowlist contains literal \\n escapes and one physical line; it has zero raw Markdown table rows. Although an ad-hoc unescape yields 75 rows matching the Engineering manifest, the ABF does not authorize inventing that decoder. The actual model/effort is also not independently observable in this task-local execution surface."
+    },
+    "ABF-M-002": {
+      "test_id": "P123-M002",
+      "frozen_action": "Prove independent runner without copying/calling P3-122 runner.",
+      "status": "PASS",
+      "reason": "P3-123-owned review_runner.py was created after the hashed test design and contains no P3-122 tool import/call path."
+    },
+    "ABF-M-003": {
+      "test_id": "P123-M003",
+      "frozen_action": "Recompute source lineage and candidate tree.",
+      "status": "NOT_IMPLEMENTED",
+      "reason": "Fail-closed after ABF-M-001; candidate copy/execution was not authorized to begin."
+    }
+  },
+  "stop_condition": "ABF-M-001 failed; no temporary root, candidate copy, build, app, DB, mutation or cleanup action was started."
+}

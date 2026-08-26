@@ -1,0 +1,36 @@
+{
+  "authored_artifacts": [
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-124/rework-1/rework_runner.py",
+      "sha256": "042e2d0c7d5c6495433d24ae25c12ff80a5823ab55db48902aaec6105ac94f74"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-124/rework-1/native_probe.swift",
+      "sha256": "6959043384223fa24b44e880e7fdc90da7ccd52bf9c641fc8398ca251a749a8b"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-124/rework-1/test_design.md",
+      "sha256": "95511ab3eeae8591e688c38c32dacfa5dcca241edae70a58e5a723362ecd700b"
+    }
+  ],
+  "disallowed_dynamic_imports": [],
+  "generated_at": "2026-08-26T01:23:13.350201+00:00",
+  "historical_runner_policy": "The Rework runner has no Python runner subprocess, no dynamic Python import, and no reference to a P3-122/P3-123/initial-P3-124 runner as an input path.",
+  "pass": true,
+  "runner_imports": [
+    "__future__",
+    "argparse",
+    "ast",
+    "datetime",
+    "hashlib",
+    "json",
+    "os",
+    "pathlib",
+    "re",
+    "shutil",
+    "subprocess",
+    "sys"
+  ],
+  "subprocess_policy": "Only task-local cargo, task-local native_probe, and plutil are invoked; no historical runner/tool is a subprocess target.",
+  "test_id": "P124R-M002"
+}

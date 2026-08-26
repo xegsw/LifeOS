@@ -1,0 +1,272 @@
+{
+  "schema": "lifeos-p3-120/abf-matrix-v1",
+  "abf_id": "ABF-P3-120-v1",
+  "generated_at_utc": "2026-08-25T08:09:21.265633+00:00",
+  "rows": [
+    {
+      "row_id": "ABF-M-001",
+      "action": "复算 Frozen 输入、ABF 与 72/72 positive source allowlist。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/fixed-inputs.json",
+          "sha256": "145d24f42c771ce1a4108ac7d388c5a5e83d6192e5c60a1a9b6e0262f5c010c5"
+        },
+        {
+          "path": "evidence/candidate-inventory.json",
+          "sha256": "fe4690b0677063390596283bcf7df6070dd94c853a69469c12c4db8d4e773c3e"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-002",
+      "action": "执行 locked/offline Cargo test、release build 与 macOS app bundle。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/build-results.json",
+          "sha256": "5d0d66647a05a1900151d072935ebe1afdbe90dd2ef4dc31f8133917adb1f2a2"
+        },
+        {
+          "path": "evidence/build-test.log",
+          "sha256": "3fac624908ec75124a5ef38ecc0e7c142e180d22519f9a0c3f8defd03dc451c9"
+        },
+        {
+          "path": "evidence/build-binary.log",
+          "sha256": "d7c33a10f5067d2058317c89cde8d6639957bf1ceb45541be93ee8109b4f10da"
+        },
+        {
+          "path": "evidence/build-bundle.log",
+          "sha256": "0a3ccbf29105d48e36ac0afccf4433b087f93841a8ad7496411c95b83af0f9e6"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-003",
+      "action": "扫描 Rust IPC、capability、renderer 与 CSP 边界。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/static-results.json",
+          "sha256": "75a29fd42d9e47de0b8f0ba1d04b01aa06bb5f984b029f605c88d38ffdf313fa"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-004",
+      "action": "实际启动/停止/重开 `.app`；将核心页面可达性按无 GUI 注入的 source-state contract 单独核对。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/actual-app-results.json",
+          "sha256": "61be06cc0280893c67a4a769d0bdfc08a7ef6c7afa95de75ec65e2f3cf1e4e7e"
+        },
+        {
+          "path": "evidence/actual-app-launch.log",
+          "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661"
+        },
+        {
+          "path": "evidence/actual-app-reopen.log",
+          "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661"
+        },
+        {
+          "path": "evidence/actual-app-process.trace",
+          "sha256": "7ab55ecf37383f8bd1fd8619d72b4b6c7bab119a5be3a20218583a518edfda8b"
+        },
+        {
+          "path": "evidence/support-images/actual-app-today.png",
+          "sha256": "07bb3a1585ee12a28290c863f439396ae93a17776175a72a0785e2d214a001da"
+        },
+        {
+          "path": "evidence/ui-state-contract-results.json",
+          "sha256": "7ed184cb0656c01fa6da9bd94245b2bbbb9b6357e0d656854dca6824a0b61c94"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-005",
+      "action": "核对 actual-app 的 runtime_status 日志与结构化 Runtime status。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/actual-app-results.json",
+          "sha256": "61be06cc0280893c67a4a769d0bdfc08a7ef6c7afa95de75ec65e2f3cf1e4e7e"
+        },
+        {
+          "path": "evidence/runtime-results.json",
+          "sha256": "fdae899606efdf02f37040ee71793812fa5ba56f1ce825f634ef5764b73b1b15"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-006",
+      "action": "从空合成 DB 显式提交 capture one，再从 Today 找回。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/runtime-results.json",
+          "sha256": "fdae899606efdf02f37040ee71793812fa5ba56f1ce825f634ef5764b73b1b15"
+        },
+        {
+          "path": "evidence/runtime-test.log",
+          "sha256": "65ffe8982dcd5597c907a21945e3e1e5c7bfca29204f0b9e735c98974f8a6b1a"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-007",
+      "action": "重复提交 capture one，并核对幂等身份与回执。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/runtime-results.json",
+          "sha256": "fdae899606efdf02f37040ee71793812fa5ba56f1ce825f634ef5764b73b1b15"
+        },
+        {
+          "path": "evidence/runtime-test.log",
+          "sha256": "65ffe8982dcd5597c907a21945e3e1e5c7bfca29204f0b9e735c98974f8a6b1a"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-008",
+      "action": "提交 capture two，并核对两条固定合成原文的顺序。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/runtime-results.json",
+          "sha256": "fdae899606efdf02f37040ee71793812fa5ba56f1ce825f634ef5764b73b1b15"
+        },
+        {
+          "path": "evidence/runtime-test.log",
+          "sha256": "65ffe8982dcd5597c907a21945e3e1e5c7bfca29204f0b9e735c98974f8a6b1a"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-009",
+      "action": "刷新 Today，并核对 DB SHA、行数与身份不漂移。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/runtime-results.json",
+          "sha256": "fdae899606efdf02f37040ee71793812fa5ba56f1ce825f634ef5764b73b1b15"
+        },
+        {
+          "path": "evidence/runtime-test.log",
+          "sha256": "65ffe8982dcd5597c907a21945e3e1e5c7bfca29204f0b9e735c98974f8a6b1a"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-010",
+      "action": "同一 synthetic DB 的关闭重开读取，核对两条记录。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/runtime-results.json",
+          "sha256": "fdae899606efdf02f37040ee71793812fa5ba56f1ce825f634ef5764b73b1b15"
+        },
+        {
+          "path": "evidence/runtime-test.log",
+          "sha256": "65ffe8982dcd5597c907a21945e3e1e5c7bfca29204f0b9e735c98974f8a6b1a"
+        },
+        {
+          "path": "evidence/actual-app-results.json",
+          "sha256": "61be06cc0280893c67a4a769d0bdfc08a7ef6c7afa95de75ec65e2f3cf1e4e7e"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-011",
+      "action": "验证路径逃逸、链接/硬链接/sidecar 与篡改 schema/content 的拒绝。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/negative-results.json",
+          "sha256": "926a2c023d9681991e63e51aa0dcac94d102ae278eae7bd7fbbdbd8f41c8c8d5"
+        },
+        {
+          "path": "evidence/build-test.log",
+          "sha256": "3fac624908ec75124a5ef38ecc0e7c142e180d22519f9a0c3f8defd03dc451c9"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-012",
+      "action": "验证非法输入、额外 IPC 字段与注入 DB 失败均在变更前 fail-closed。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/negative-results.json",
+          "sha256": "926a2c023d9681991e63e51aa0dcac94d102ae278eae7bd7fbbdbd8f41c8c8d5"
+        },
+        {
+          "path": "evidence/runtime-results.json",
+          "sha256": "fdae899606efdf02f37040ee71793812fa5ba56f1ce825f634ef5764b73b1b15"
+        },
+        {
+          "path": "evidence/runtime-test.log",
+          "sha256": "65ffe8982dcd5597c907a21945e3e1e5c7bfca29204f0b9e735c98974f8a6b1a"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-013",
+      "action": "核对 Person-centered 页面/展开态与 runtime、fixture、AI candidate、confirmed identity。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/static-results.json",
+          "sha256": "75a29fd42d9e47de0b8f0ba1d04b01aa06bb5f984b029f605c88d38ffdf313fa"
+        },
+        {
+          "path": "evidence/ui-state-contract-results.json",
+          "sha256": "7ed184cb0656c01fa6da9bd94245b2bbbb9b6357e0d656854dca6824a0b61c94"
+        },
+        {
+          "path": "evidence/support-images/actual-app-today.png",
+          "sha256": "07bb3a1585ee12a28290c863f439396ae93a17776175a72a0785e2d214a001da"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-014",
+      "action": "核对 clear/export/permission/recovery/file/network/model/new IPC 关闭态。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/static-results.json",
+          "sha256": "75a29fd42d9e47de0b8f0ba1d04b01aa06bb5f984b029f605c88d38ffdf313fa"
+        },
+        {
+          "path": "evidence/negative-results.json",
+          "sha256": "926a2c023d9681991e63e51aa0dcac94d102ae278eae7bd7fbbdbd8f41c8c8d5"
+        }
+      ]
+    },
+    {
+      "row_id": "ABF-M-015",
+      "action": "复核不可变输入并精确清理唯一临时根。",
+      "result": "PASS",
+      "evidence": [
+        {
+          "path": "evidence/fixed-inputs.json",
+          "sha256": "145d24f42c771ce1a4108ac7d388c5a5e83d6192e5c60a1a9b6e0262f5c010c5"
+        },
+        {
+          "path": "evidence/cleanup.json",
+          "sha256": "592d5b91e95f87dfb7119500fbad0715241ae045959f4d6ddd9f4ba34720f48d"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 0
+  },
+  "result": "PASS"
+}

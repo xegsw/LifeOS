@@ -1,0 +1,24 @@
+{
+  "schema": "lifeos.p3-129.canonical-promotion-patch.v1",
+  "state": "Proposed only / not executed",
+  "canonical_path": "lifeos/architecture/LifeOS架构基线V1.0.md",
+  "pre_sha256": "2db0cbeda30eea2a56d965220363fb6af6622acf413dfb4ee8c11ec867009a32",
+  "allowed_line_change": {
+    "line_number": 3,
+    "before": "> 状态：Architecture Baseline Draft",
+    "after": "> 状态：Architecture Baseline Frozen / V1.0 — supersedes V0.1 for forward technical architecture authority; V0.1 history and Evidence remain preserved."
+  },
+  "prohibited": [
+    "Any V1.0 body, heading, architecture, scope or implementation semantic edit.",
+    "Any freeze of Schema/API/IPC/capability, Runtime, product IA, risk, engineering baseline, real capability or Stage 4.",
+    "Any V0.1 history deletion, rewrite or change of historical acceptance facts.",
+    "Any promotion before mandatory independent-review Pass, PM Pass and final user confirmation."
+  ],
+  "required_pm_actions_after_final_user_gate": [
+    "Apply this exact one-line canonical status/supersession replacement and verify the post hash.",
+    "Update FREEZE_STATUS, CURRENT_STATUS, TASK_REGISTRY and DECISION_LOG in the same PM-controlled promotion operation.",
+    "Record V1.0 as forward architecture authority and V0.1 as superseded for forward authority only, retaining V0.1 history/Evidence and reconciliation obligations."
+  ],
+  "post_sha256": "1d7d82d2afcf7ac52b15730f4f8d3effc08f8965d0b085c6a53bbd2611ad7236",
+  "proof_rule": "The verifier constructs the proposed post bytes from the actual fixed preimage and permits exactly line 3 to differ. Any other changed line is a blocked non-authorized body change."
+}

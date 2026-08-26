@@ -1,0 +1,36 @@
+{
+  "schema": "lifeos.p3-129.pm-re-review-1-verification.v1",
+  "task_id": "LIFEOS-P3-129",
+  "conclusion": "PM_PASS_AWAITING_FINAL_USER_FREEZE_CONFIRMATION",
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not_Implemented": 0
+  },
+  "checks": {
+    "candidate_verifier": "PASS",
+    "independent_re_review_audit": "PASS",
+    "independent_manifest_entries": 5,
+    "independent_manifest_mismatches": 0,
+    "fixed_inputs": 15,
+    "fixed_input_mismatches": 0,
+    "mutations_rejected": "4/4",
+    "attempt_1_temp_path_absent": true,
+    "canonical_still_draft": true,
+    "promotion_executed": false
+  },
+  "hashes": {
+    "canonical_v1": "2db0cbeda30eea2a56d965220363fb6af6622acf413dfb4ee8c11ec867009a32",
+    "freeze_status": "3d32e56876175636c00cf36b26e18bc284ff3d13123e291bce9f28f9e8f74a10",
+    "attempt_1_review": "513b75624090d32c28f3dd0d233a97fc5b0dbf2d773154e40897b75ac4a5f1c1",
+    "attempt_1_manifest": "9156e5e8ddb5bdcb0e68c1debc97c8f71593f7b0e5d3b988db6260fb57e91026",
+    "attempt_1_exception": "0197c22a531c85d39650bf27f5e5e68aaee72265fd86cd3ee11c6b0541030521",
+    "attempt_1_pm_review": "cf968bd9a3a041673ada116f9ab5d5c46f40b8f9b7fb39470f3eb4da95c4208e",
+    "attempt_1_pm_evidence_manifest": "1b1e830f3500321a559ae71133b97d2eebb3597c9d4d1c08f1db041c002fcf89"
+  },
+  "risk_change": false,
+  "stage_4_allowed": false,
+  "final_user_confirmation_required": true
+}

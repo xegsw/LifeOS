@@ -1,0 +1,12 @@
+{
+  "schema": "lifeos.p3-129.mutation-receipt.v1",
+  "command": "python3 -B lifeos/architecture/LIFEOS-P3-129/verifier.py mutations",
+  "command_result": {"status": "PASS", "total": 4, "rejected": 4},
+  "results": [
+    {"id": "MUT-HASH", "mutation": "replace FI-V1 SHA-256 with 64 zeroes in an in-memory copy", "expected": "REJECT", "actual": "REJECT", "reason": "FI-V1 SHA-256 mismatch"},
+    {"id": "MUT-LEGACY-OMISSION", "mutation": "omit V0-04 outbox/job safety norm in an in-memory copy", "expected": "REJECT", "actual": "REJECT", "reason": "omitted or duplicate V0.1 norm row"},
+    {"id": "MUT-SCOPE-EXPANSION", "mutation": "add SQLite Schema to the proposed frozen list in an in-memory copy", "expected": "REJECT", "actual": "REJECT", "reason": "scope expansion freezes SQLite Schema"},
+    {"id": "MUT-BODY-CHANGE", "mutation": "permit canonical promotion on line 20 rather than the status line in an in-memory copy", "expected": "REJECT", "actual": "REJECT", "reason": "promotion allows a non-metadata line"}
+  ],
+  "isolation": "All mutations are parsed JSON copies in memory. No source, canonical, history asset, temporary directory or product Runtime was modified."
+}

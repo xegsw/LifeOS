@@ -1,0 +1,32 @@
+{
+  "app_exists": true,
+  "app_path": "/private/tmp/lifeos-p3-124-independent-review-v1/target/release/bundle/macos/LifeOS P3-122 Native Viewport Runtime.app",
+  "bundle": {
+    "command": [
+      "/Users/xxe/.cargo/bin/cargo",
+      "tauri",
+      "build",
+      "--bundles",
+      "app"
+    ],
+    "cwd": "/private/tmp/lifeos-p3-124-independent-review-v1/candidate",
+    "exit_code": 0,
+    "log": "evidence/logs/tauri-build.log",
+    "log_sha256": "b7713aea34c9d69d4454925fdf2c53198f16e763812277ec188a55bc238ce231"
+  },
+  "generated_at": "2026-08-26T01:17:39.326393+00:00",
+  "pass": true,
+  "test": {
+    "command": [
+      "/Users/xxe/.cargo/bin/cargo",
+      "test",
+      "--locked",
+      "--offline"
+    ],
+    "cwd": "/private/tmp/lifeos-p3-124-independent-review-v1/candidate",
+    "exit_code": 0,
+    "log": "evidence/logs/cargo-test.log",
+    "log_sha256": "645029d03f3052fd75b4a18c0a0ff1ec94adeb60c5ceaa3e7d9f869e062fda16"
+  },
+  "test_id": "P124R-M004"
+}

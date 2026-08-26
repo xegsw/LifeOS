@@ -1,0 +1,17 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.43s
+     Running unittests src/main.rs (/private/tmp/lifeos-p3-120-runtime-mvp-v1/cargo-target/debug/deps/lifeos_p3_120-248039eabb343343)
+
+running 1 test
+ipc_result command=capture_record status=saved record_count=1 audit_event_count=1 repeated=false
+ipc_result command=capture_record status=idempotent_repeat record_count=1 audit_event_count=2 repeated=true
+ipc_result command=capture_record status=saved record_count=2 audit_event_count=3 repeated=false
+ipc_result command=get_today status=loaded record_count=2 audit_event_count=3
+ipc_result command=get_today status=loaded record_count=2 audit_event_count=3
+ipc_result command=capture_record status=saved record_count=1 audit_event_count=1 repeated=false
+ipc_result status=blocked code=injected_atomic_failure
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=1
+P3-120-RUNTIME-TRACE {"atomic_failure":{"after_db_sha256":"222e878ce07d4d489d027f815d7861de610269ad4e84e2e3f6a8ba47cdcf4a1d","after_sentinel_sha256":"0bd71ec34c9a35c4b841be82de23fa10770982588c72b4a21aaba21763783b0e","before_db_sha256":"222e878ce07d4d489d027f815d7861de610269ad4e84e2e3f6a8ba47cdcf4a1d","before_sentinel_sha256":"0bd71ec34c9a35c4b841be82de23fa10770982588c72b4a21aaba21763783b0e","code":"injected_atomic_failure","records_after_failure":1},"lifecycle":{"after_first_sha256":"1d7f316f7998cc53fcec2a015ef47d26355424e9229d5f8d69f4212fb51f3d9f","after_repeat_sha256":"4d16b04a76882c46f6c85dac223ac3bba50c0b493d89477a79cfc68be836a545","before_refresh_sha256":"021c7a25209190b3b0b0345aaeccde6bc164651f30b05fd738758d077bb6d1a7","first_record_id":"p3-120-000001a037f2d631-p3-120-synthetic-one","first_status":"saved","initial_status":"empty","refresh_contents":["P3-120 synthetic capture one","P3-120 synthetic capture two"],"refresh_status":"loaded","reopen_contents":["P3-120 synthetic capture one","P3-120 synthetic capture two"],"reopen_status":"loaded","repeat_record_id":"p3-120-000001a037f2d631-p3-120-synthetic-one","repeat_status":"idempotent_repeat","second_status":"saved"},"runtime_status":{"ai_enabled":false,"ipc_allowlist":["capture_record","get_today","runtime_status"],"offline":true,"renderer_direct_capabilities":[],"status":"restricted_offline","unknown_ipc":"deny"}}
+test runtime::tests::evidence_trace_covers_status_lifecycle_and_atomic_failure ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 8 filtered out; finished in 0.02s
+

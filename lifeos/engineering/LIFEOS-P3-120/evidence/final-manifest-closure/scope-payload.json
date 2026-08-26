@@ -1,0 +1,1693 @@
+{
+  "schema": "lifeos-p3-120/final-retained-manifest-v1",
+  "manifest_phase": "draft",
+  "generated_at_utc": "2026-08-25T09:38:20.168480+00:00",
+  "non_self_exclusions": [
+    "FINAL_MANIFEST.json",
+    "mutation-results.json",
+    "scope-payload.json",
+    "verification-results.json"
+  ],
+  "layers": {
+    "current_candidate": {
+      "inventory_file": {
+        "path": "lifeos/engineering/LIFEOS-P3-120/evidence/candidate-inventory.json",
+        "type": "regular",
+        "bytes": 13392,
+        "sha256": "fe4690b0677063390596283bcf7df6070dd94c853a69469c12c4db8d4e773c3e"
+      },
+      "entries": [
+        {
+          "path": ".gitignore",
+          "type": "regular",
+          "bytes": 54,
+          "sha256": "c72c9ae2191ce55866638da7ff6f1724ec24c0310019261565ec2fd1b1e9c31c",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "Cargo.lock",
+          "type": "regular",
+          "bytes": 111954,
+          "sha256": "c05e1f8ae01f0f283998574fe4a52eee15a8b6e0662a903bf15b6361e09b8eb7",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "Cargo.toml",
+          "type": "regular",
+          "bytes": 524,
+          "sha256": "553c74e2d577accee8b667e31a37b4dd21ee8ff393f008af644c0c8ca4d039c8",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "README.md",
+          "type": "regular",
+          "bytes": 1140,
+          "sha256": "f2e41141cddc8a57e73c0b0bba087410aa8b3df3d3483d5cfae45a9f949522cf",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "build.rs",
+          "type": "regular",
+          "bytes": 40,
+          "sha256": "62343b39726897a2c190d7ffe52bfd5ef85236f1f08a9f7d4595ee5993e02c74",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "capabilities/main.json",
+          "type": "regular",
+          "bytes": 201,
+          "sha256": "08ca47ee40704d4d7cd8257a3dbf653f9b4aedec0ac7b348663dc2724ad90cfe",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "gen/schemas/acl-manifests.json",
+          "type": "regular",
+          "bytes": 65934,
+          "sha256": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "gen/schemas/capabilities.json",
+          "type": "regular",
+          "bytes": 154,
+          "sha256": "c79eeaed35bfde73841c7a525db3328deb9c72218470be447cfbea5dda0368d6",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "gen/schemas/desktop-schema.json",
+          "type": "regular",
+          "bytes": 116049,
+          "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "gen/schemas/macOS-schema.json",
+          "type": "regular",
+          "bytes": 116049,
+          "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/128x128.png",
+          "type": "regular",
+          "bytes": 1227,
+          "sha256": "39572c12160197611428210db2eeb800e37dbd41860ba8e9a669166114f4a76b",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/128x128@2x.png",
+          "type": "regular",
+          "bytes": 2488,
+          "sha256": "d92aa427d4dd01feba7b03c0a321f5c4bef1f47e9a7e6e17ffeb0186b1e5f5f1",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/32x32.png",
+          "type": "regular",
+          "bytes": 441,
+          "sha256": "79bc6828196ed3e2403a53463914eff4c0c0efce5f8b6e7e0b139114e11a5e59",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/64x64.png",
+          "type": "regular",
+          "bytes": 643,
+          "sha256": "3e3ece76332b640d374bbeff1a09b8813f7fee0a4b653c9a38415062d996de59",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/Square107x107Logo.png",
+          "type": "regular",
+          "bytes": 1065,
+          "sha256": "58c82e4e0e8272eaa122b6bcb756c12c76910ffa6e95256e44448bfa634267c4",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/Square142x142Logo.png",
+          "type": "regular",
+          "bytes": 1405,
+          "sha256": "05be4e8894bca70ea4b8099b3373090f51a0f5c3eb9f72c49e893eed1b1861e3",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/Square150x150Logo.png",
+          "type": "regular",
+          "bytes": 1587,
+          "sha256": "5e9085cc59b404169906b999a9de0c389c118d3ace1696e8787700b030b8dee5",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/Square284x284Logo.png",
+          "type": "regular",
+          "bytes": 2791,
+          "sha256": "28fdbcc829c7edbf94416276db345b5d9335391087e435831b412e745edb4de8",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/Square30x30Logo.png",
+          "type": "regular",
+          "bytes": 453,
+          "sha256": "579111e7e722cf3303c6309b8d4357b4ce5da7e28ba25734bc1cf672394ab3f5",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/Square310x310Logo.png",
+          "type": "regular",
+          "bytes": 2901,
+          "sha256": "9ded936b77aebe3f6d4affc3557c0baacad5a12886c30c85c46daf2067927955",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/Square44x44Logo.png",
+          "type": "regular",
+          "bytes": 582,
+          "sha256": "3afc300fde82670e6ec6760addea1b03ccd6979424715802c8c767c42fcc5944",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/Square71x71Logo.png",
+          "type": "regular",
+          "bytes": 779,
+          "sha256": "13d8fa01f25817d346c11d28a2a63ea7285586ae005f372825f905ad8749da12",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/Square89x89Logo.png",
+          "type": "regular",
+          "bytes": 927,
+          "sha256": "4d65f163ed7dc62255f246ddb8bbc71de33f02a632af49be75ccd1de96a569f5",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/StoreLogo.png",
+          "type": "regular",
+          "bytes": 564,
+          "sha256": "60bad4ad4470f1cad766e0082a6dace73b48619d032af700aaabb3e971df28cc",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-anydpi-v26/ic_launcher.xml",
+          "type": "regular",
+          "bytes": 261,
+          "sha256": "760d4b8a06bf7163dd010c33ad2cac9e4a75fa0177afaba042f83e311eef0c3e",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-hdpi/ic_launcher.png",
+          "type": "regular",
+          "bytes": 1337,
+          "sha256": "0514a04799bc23d608ef68fc0786a11a1bea7b3e7930485469444c5964a6cf9f",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-hdpi/ic_launcher_foreground.png",
+          "type": "regular",
+          "bytes": 1625,
+          "sha256": "e3adb898f0d807abc85bb75774e6b5e55b3f09627eee11e70844100f6ee8bef9",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-hdpi/ic_launcher_round.png",
+          "type": "regular",
+          "bytes": 956,
+          "sha256": "d30ea18205f233e5791b912e4a9f89979805b825d45101b5e2612ae03dfbf497",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-mdpi/ic_launcher.png",
+          "type": "regular",
+          "bytes": 1251,
+          "sha256": "9ac96d6e24ee47813b82b9044b22c84055428e808aba48d3d32dd47dfdea09e7",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-mdpi/ic_launcher_foreground.png",
+          "type": "regular",
+          "bytes": 1173,
+          "sha256": "d5925ec91058b5f59575bcbad8dc38b66c4ca18e79d8e625ddd05704ff103120",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-mdpi/ic_launcher_round.png",
+          "type": "regular",
+          "bytes": 953,
+          "sha256": "606ffd6da8ecaf7550673140f379eaf85cc838e320dfd6a33ee335654de6318c",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-xhdpi/ic_launcher.png",
+          "type": "regular",
+          "bytes": 2206,
+          "sha256": "4aa5cd9b19fab966cf734af011232cb6f1a48322dfc3c8e2a1f3c0054cf8cc6c",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-xhdpi/ic_launcher_foreground.png",
+          "type": "regular",
+          "bytes": 2093,
+          "sha256": "4ae6b883cdda5f2ca78e3ec3067687e2efcc47e751c89e1b7b03ca6a3fc5d55d",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-xhdpi/ic_launcher_round.png",
+          "type": "regular",
+          "bytes": 1249,
+          "sha256": "1f410423954eb7cf62e9963bb8f6656ef9159b602adbfabd72a0e03a6c0abf42",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-xxhdpi/ic_launcher.png",
+          "type": "regular",
+          "bytes": 3030,
+          "sha256": "53d8316fd25ed535731a4863decb0280abb3d6fc68a32025da6593c9801a5df4",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-xxhdpi/ic_launcher_foreground.png",
+          "type": "regular",
+          "bytes": 3051,
+          "sha256": "e9b95791588f1d650c74ea403c27e5758386b1f55cecb9b41ca18104989ad195",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-xxhdpi/ic_launcher_round.png",
+          "type": "regular",
+          "bytes": 1583,
+          "sha256": "1d8c11c6c4145060e2f6532ffb3d98343fcbcd62b1bf1d8da7acaf44e82c995c",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-xxxhdpi/ic_launcher.png",
+          "type": "regular",
+          "bytes": 3891,
+          "sha256": "acd57fb2317d236f78c21c7e31bef48fd55227cdbdf9efb6484fa01b7d44240f",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png",
+          "type": "regular",
+          "bytes": 4148,
+          "sha256": "6fbf0152677a925d70883c170bc05b7967eab5992ce09ce47618999507d97d60",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/mipmap-xxxhdpi/ic_launcher_round.png",
+          "type": "regular",
+          "bytes": 2078,
+          "sha256": "6fbf756b41cf06d977ec2a40c216b6faf28c65cff9c28fd041e05d5da7d5452a",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/android/values/ic_launcher_background.xml",
+          "type": "regular",
+          "bytes": 115,
+          "sha256": "0687336f0ccc6f7ee09c7c95110667c63b75931238df779a21af401fb864cd34",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/icon.icns",
+          "type": "regular",
+          "bytes": 31641,
+          "sha256": "e6e7eae0a6060cb21ace32751adb2bd9da6b2527374a4daae79c9aad505d11ed",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/icon.ico",
+          "type": "regular",
+          "bytes": 5650,
+          "sha256": "1a14889bc10f824f3a072c1835b5561f3c576fb697ba4aa44839d55889116f0b",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/icon.png",
+          "type": "regular",
+          "bytes": 4982,
+          "sha256": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/icon.svg",
+          "type": "regular",
+          "bytes": 232,
+          "sha256": "bf69a17326cffb6405dcd732a814778042a8a02df8e13938b698570f80ba6c66",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-20x20@1x.png",
+          "type": "regular",
+          "bytes": 350,
+          "sha256": "76bfc33979b0171e8229eb2e370d01b74fa18aae7fdeca9a2c156e2b9253ed64",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-20x20@2x-1.png",
+          "type": "regular",
+          "bytes": 529,
+          "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-20x20@2x.png",
+          "type": "regular",
+          "bytes": 529,
+          "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-20x20@3x.png",
+          "type": "regular",
+          "bytes": 684,
+          "sha256": "1079318d510e167cf2156dcaebd0dc9b4ea4b3a36f072b02ee7d3946de55d554",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-29x29@1x.png",
+          "type": "regular",
+          "bytes": 420,
+          "sha256": "f5a5f21fc384c9ab27cb1329e38be5e4b806e72e1d6eed5a5edc49deed3212ba",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-29x29@2x-1.png",
+          "type": "regular",
+          "bytes": 667,
+          "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-29x29@2x.png",
+          "type": "regular",
+          "bytes": 667,
+          "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-29x29@3x.png",
+          "type": "regular",
+          "bytes": 945,
+          "sha256": "c89ad8db8ebb8b7bb035ae9024ea7f9f6e754d6e8efd8481de00d35d5be53446",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-40x40@1x.png",
+          "type": "regular",
+          "bytes": 529,
+          "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-40x40@2x-1.png",
+          "type": "regular",
+          "bytes": 882,
+          "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-40x40@2x.png",
+          "type": "regular",
+          "bytes": 882,
+          "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-40x40@3x.png",
+          "type": "regular",
+          "bytes": 1222,
+          "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-512@2x.png",
+          "type": "regular",
+          "bytes": 12199,
+          "sha256": "743e79bd29fa8035295bfc510e3aa42acef7ac922edf642c4e9bebe152a95929",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-60x60@2x.png",
+          "type": "regular",
+          "bytes": 1222,
+          "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-60x60@3x.png",
+          "type": "regular",
+          "bytes": 1835,
+          "sha256": "afe8ea3eca3ec76dee2f9f1b61e79f0755239378b6fda84c9dec63309375a804",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-76x76@1x.png",
+          "type": "regular",
+          "bytes": 873,
+          "sha256": "29e682960dc2ebbef7f40fb64204d0422f56dfe7af3e2938e16ec93af21b20ae",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-76x76@2x.png",
+          "type": "regular",
+          "bytes": 1536,
+          "sha256": "8188dddb316617937ee9b7151bdd75cc33602b46eee2bbff7d82e638030f39cd",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "icons/ios/AppIcon-83.5x83.5@2x.png",
+          "type": "regular",
+          "bytes": 1652,
+          "sha256": "aa9d183c4b09055de09361471c6bb3353e0a1640e8368e75cc431308ddb29539",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "rust-toolchain.toml",
+          "type": "regular",
+          "bytes": 52,
+          "sha256": "54231ca6bea6a491dfa45c5c1e12cc7485ae94c16a374e52933ee1a7cb48248f",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "src/main.rs",
+          "type": "regular",
+          "bytes": 117,
+          "sha256": "4d7a1e4a1eebe08ffec78a4c0cd0e7cdeabf6b92e68c003b02e3515a035e042c",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "src/runtime.rs",
+          "type": "regular",
+          "bytes": 28394,
+          "sha256": "d37484f1c2b4460f19e025ddcc018d8f39f9f4e42bf63a005d521daf38c8a95e",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "tauri.conf.json",
+          "type": "regular",
+          "bytes": 1013,
+          "sha256": "63d27245b191038ce9bb5eb80db21b3546fc6eb5b0641b23a12549e729a1f6f7",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "ui/app.js",
+          "type": "regular",
+          "bytes": 21034,
+          "sha256": "88cdbff9283726d2cca725890ecff24b50d160992d53943c36722b6cc64a9140",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "ui/index.html",
+          "type": "regular",
+          "bytes": 480,
+          "sha256": "d47bc9124196d7e5870d83f6a65af7f77e4343b297a28c1097f3cce1eacc989d",
+          "lineage": "current_candidate"
+        },
+        {
+          "path": "ui/styles.css",
+          "type": "regular",
+          "bytes": 9739,
+          "sha256": "02e93ccd216bdf420ecc39469e332b9f0a9cf3d02346561c17d1f606a59456c6",
+          "lineage": "current_candidate"
+        }
+      ]
+    },
+    "initial_historical": {
+      "manifest_file": {
+        "path": "lifeos/engineering/LIFEOS-P3-120/evidence/MANIFEST.md",
+        "type": "regular",
+        "bytes": 15986,
+        "sha256": "56f27d9e144f59b8e73cc24a398882fa6c7c6ec9750b84ff4572a5c3c99a70b0"
+      },
+      "entries": [
+        {
+          "path": "lifeos/deliverables/LIFEOS-P3-120_person_centered_product_runtime_mvp_implementation.md",
+          "type": "regular",
+          "bytes": 5188,
+          "sha256": "ef644706a21976053b81fe1019ff9294dce89099e4ab9d199b52df13fda5bdec",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/REPRODUCE.md",
+          "type": "regular",
+          "bytes": 1795,
+          "sha256": "31331fad6c554a2caaac21f9edf87f06da06a076ee8d0ebd5f8b59efa52232e1",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/.gitignore",
+          "type": "regular",
+          "bytes": 54,
+          "sha256": "c72c9ae2191ce55866638da7ff6f1724ec24c0310019261565ec2fd1b1e9c31c",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/Cargo.lock",
+          "type": "regular",
+          "bytes": 111954,
+          "sha256": "c05e1f8ae01f0f283998574fe4a52eee15a8b6e0662a903bf15b6361e09b8eb7",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/Cargo.toml",
+          "type": "regular",
+          "bytes": 524,
+          "sha256": "553c74e2d577accee8b667e31a37b4dd21ee8ff393f008af644c0c8ca4d039c8",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/README.md",
+          "type": "regular",
+          "bytes": 1140,
+          "sha256": "f2e41141cddc8a57e73c0b0bba087410aa8b3df3d3483d5cfae45a9f949522cf",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/build.rs",
+          "type": "regular",
+          "bytes": 40,
+          "sha256": "62343b39726897a2c190d7ffe52bfd5ef85236f1f08a9f7d4595ee5993e02c74",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/capabilities/main.json",
+          "type": "regular",
+          "bytes": 201,
+          "sha256": "08ca47ee40704d4d7cd8257a3dbf653f9b4aedec0ac7b348663dc2724ad90cfe",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/gen/schemas/acl-manifests.json",
+          "type": "regular",
+          "bytes": 65934,
+          "sha256": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/gen/schemas/capabilities.json",
+          "type": "regular",
+          "bytes": 154,
+          "sha256": "c79eeaed35bfde73841c7a525db3328deb9c72218470be447cfbea5dda0368d6",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/gen/schemas/desktop-schema.json",
+          "type": "regular",
+          "bytes": 116049,
+          "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/gen/schemas/macOS-schema.json",
+          "type": "regular",
+          "bytes": 116049,
+          "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/128x128.png",
+          "type": "regular",
+          "bytes": 1227,
+          "sha256": "39572c12160197611428210db2eeb800e37dbd41860ba8e9a669166114f4a76b",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/128x128@2x.png",
+          "type": "regular",
+          "bytes": 2488,
+          "sha256": "d92aa427d4dd01feba7b03c0a321f5c4bef1f47e9a7e6e17ffeb0186b1e5f5f1",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/32x32.png",
+          "type": "regular",
+          "bytes": 441,
+          "sha256": "79bc6828196ed3e2403a53463914eff4c0c0efce5f8b6e7e0b139114e11a5e59",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/64x64.png",
+          "type": "regular",
+          "bytes": 643,
+          "sha256": "3e3ece76332b640d374bbeff1a09b8813f7fee0a4b653c9a38415062d996de59",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/Square107x107Logo.png",
+          "type": "regular",
+          "bytes": 1065,
+          "sha256": "58c82e4e0e8272eaa122b6bcb756c12c76910ffa6e95256e44448bfa634267c4",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/Square142x142Logo.png",
+          "type": "regular",
+          "bytes": 1405,
+          "sha256": "05be4e8894bca70ea4b8099b3373090f51a0f5c3eb9f72c49e893eed1b1861e3",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/Square150x150Logo.png",
+          "type": "regular",
+          "bytes": 1587,
+          "sha256": "5e9085cc59b404169906b999a9de0c389c118d3ace1696e8787700b030b8dee5",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/Square284x284Logo.png",
+          "type": "regular",
+          "bytes": 2791,
+          "sha256": "28fdbcc829c7edbf94416276db345b5d9335391087e435831b412e745edb4de8",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/Square30x30Logo.png",
+          "type": "regular",
+          "bytes": 453,
+          "sha256": "579111e7e722cf3303c6309b8d4357b4ce5da7e28ba25734bc1cf672394ab3f5",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/Square310x310Logo.png",
+          "type": "regular",
+          "bytes": 2901,
+          "sha256": "9ded936b77aebe3f6d4affc3557c0baacad5a12886c30c85c46daf2067927955",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/Square44x44Logo.png",
+          "type": "regular",
+          "bytes": 582,
+          "sha256": "3afc300fde82670e6ec6760addea1b03ccd6979424715802c8c767c42fcc5944",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/Square71x71Logo.png",
+          "type": "regular",
+          "bytes": 779,
+          "sha256": "13d8fa01f25817d346c11d28a2a63ea7285586ae005f372825f905ad8749da12",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/Square89x89Logo.png",
+          "type": "regular",
+          "bytes": 927,
+          "sha256": "4d65f163ed7dc62255f246ddb8bbc71de33f02a632af49be75ccd1de96a569f5",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/StoreLogo.png",
+          "type": "regular",
+          "bytes": 564,
+          "sha256": "60bad4ad4470f1cad766e0082a6dace73b48619d032af700aaabb3e971df28cc",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-anydpi-v26/ic_launcher.xml",
+          "type": "regular",
+          "bytes": 261,
+          "sha256": "760d4b8a06bf7163dd010c33ad2cac9e4a75fa0177afaba042f83e311eef0c3e",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-hdpi/ic_launcher.png",
+          "type": "regular",
+          "bytes": 1337,
+          "sha256": "0514a04799bc23d608ef68fc0786a11a1bea7b3e7930485469444c5964a6cf9f",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-hdpi/ic_launcher_foreground.png",
+          "type": "regular",
+          "bytes": 1625,
+          "sha256": "e3adb898f0d807abc85bb75774e6b5e55b3f09627eee11e70844100f6ee8bef9",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-hdpi/ic_launcher_round.png",
+          "type": "regular",
+          "bytes": 956,
+          "sha256": "d30ea18205f233e5791b912e4a9f89979805b825d45101b5e2612ae03dfbf497",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-mdpi/ic_launcher.png",
+          "type": "regular",
+          "bytes": 1251,
+          "sha256": "9ac96d6e24ee47813b82b9044b22c84055428e808aba48d3d32dd47dfdea09e7",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-mdpi/ic_launcher_foreground.png",
+          "type": "regular",
+          "bytes": 1173,
+          "sha256": "d5925ec91058b5f59575bcbad8dc38b66c4ca18e79d8e625ddd05704ff103120",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-mdpi/ic_launcher_round.png",
+          "type": "regular",
+          "bytes": 953,
+          "sha256": "606ffd6da8ecaf7550673140f379eaf85cc838e320dfd6a33ee335654de6318c",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-xhdpi/ic_launcher.png",
+          "type": "regular",
+          "bytes": 2206,
+          "sha256": "4aa5cd9b19fab966cf734af011232cb6f1a48322dfc3c8e2a1f3c0054cf8cc6c",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-xhdpi/ic_launcher_foreground.png",
+          "type": "regular",
+          "bytes": 2093,
+          "sha256": "4ae6b883cdda5f2ca78e3ec3067687e2efcc47e751c89e1b7b03ca6a3fc5d55d",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-xhdpi/ic_launcher_round.png",
+          "type": "regular",
+          "bytes": 1249,
+          "sha256": "1f410423954eb7cf62e9963bb8f6656ef9159b602adbfabd72a0e03a6c0abf42",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-xxhdpi/ic_launcher.png",
+          "type": "regular",
+          "bytes": 3030,
+          "sha256": "53d8316fd25ed535731a4863decb0280abb3d6fc68a32025da6593c9801a5df4",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-xxhdpi/ic_launcher_foreground.png",
+          "type": "regular",
+          "bytes": 3051,
+          "sha256": "e9b95791588f1d650c74ea403c27e5758386b1f55cecb9b41ca18104989ad195",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-xxhdpi/ic_launcher_round.png",
+          "type": "regular",
+          "bytes": 1583,
+          "sha256": "1d8c11c6c4145060e2f6532ffb3d98343fcbcd62b1bf1d8da7acaf44e82c995c",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-xxxhdpi/ic_launcher.png",
+          "type": "regular",
+          "bytes": 3891,
+          "sha256": "acd57fb2317d236f78c21c7e31bef48fd55227cdbdf9efb6484fa01b7d44240f",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png",
+          "type": "regular",
+          "bytes": 4148,
+          "sha256": "6fbf0152677a925d70883c170bc05b7967eab5992ce09ce47618999507d97d60",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/mipmap-xxxhdpi/ic_launcher_round.png",
+          "type": "regular",
+          "bytes": 2078,
+          "sha256": "6fbf756b41cf06d977ec2a40c216b6faf28c65cff9c28fd041e05d5da7d5452a",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/android/values/ic_launcher_background.xml",
+          "type": "regular",
+          "bytes": 115,
+          "sha256": "0687336f0ccc6f7ee09c7c95110667c63b75931238df779a21af401fb864cd34",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/icon.icns",
+          "type": "regular",
+          "bytes": 31641,
+          "sha256": "e6e7eae0a6060cb21ace32751adb2bd9da6b2527374a4daae79c9aad505d11ed",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/icon.ico",
+          "type": "regular",
+          "bytes": 5650,
+          "sha256": "1a14889bc10f824f3a072c1835b5561f3c576fb697ba4aa44839d55889116f0b",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/icon.png",
+          "type": "regular",
+          "bytes": 4982,
+          "sha256": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/icon.svg",
+          "type": "regular",
+          "bytes": 232,
+          "sha256": "bf69a17326cffb6405dcd732a814778042a8a02df8e13938b698570f80ba6c66",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-20x20@1x.png",
+          "type": "regular",
+          "bytes": 350,
+          "sha256": "76bfc33979b0171e8229eb2e370d01b74fa18aae7fdeca9a2c156e2b9253ed64",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-20x20@2x-1.png",
+          "type": "regular",
+          "bytes": 529,
+          "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-20x20@2x.png",
+          "type": "regular",
+          "bytes": 529,
+          "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-20x20@3x.png",
+          "type": "regular",
+          "bytes": 684,
+          "sha256": "1079318d510e167cf2156dcaebd0dc9b4ea4b3a36f072b02ee7d3946de55d554",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-29x29@1x.png",
+          "type": "regular",
+          "bytes": 420,
+          "sha256": "f5a5f21fc384c9ab27cb1329e38be5e4b806e72e1d6eed5a5edc49deed3212ba",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-29x29@2x-1.png",
+          "type": "regular",
+          "bytes": 667,
+          "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-29x29@2x.png",
+          "type": "regular",
+          "bytes": 667,
+          "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-29x29@3x.png",
+          "type": "regular",
+          "bytes": 945,
+          "sha256": "c89ad8db8ebb8b7bb035ae9024ea7f9f6e754d6e8efd8481de00d35d5be53446",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-40x40@1x.png",
+          "type": "regular",
+          "bytes": 529,
+          "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-40x40@2x-1.png",
+          "type": "regular",
+          "bytes": 882,
+          "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-40x40@2x.png",
+          "type": "regular",
+          "bytes": 882,
+          "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-40x40@3x.png",
+          "type": "regular",
+          "bytes": 1222,
+          "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-512@2x.png",
+          "type": "regular",
+          "bytes": 12199,
+          "sha256": "743e79bd29fa8035295bfc510e3aa42acef7ac922edf642c4e9bebe152a95929",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-60x60@2x.png",
+          "type": "regular",
+          "bytes": 1222,
+          "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-60x60@3x.png",
+          "type": "regular",
+          "bytes": 1835,
+          "sha256": "afe8ea3eca3ec76dee2f9f1b61e79f0755239378b6fda84c9dec63309375a804",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-76x76@1x.png",
+          "type": "regular",
+          "bytes": 873,
+          "sha256": "29e682960dc2ebbef7f40fb64204d0422f56dfe7af3e2938e16ec93af21b20ae",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-76x76@2x.png",
+          "type": "regular",
+          "bytes": 1536,
+          "sha256": "8188dddb316617937ee9b7151bdd75cc33602b46eee2bbff7d82e638030f39cd",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/icons/ios/AppIcon-83.5x83.5@2x.png",
+          "type": "regular",
+          "bytes": 1652,
+          "sha256": "aa9d183c4b09055de09361471c6bb3353e0a1640e8368e75cc431308ddb29539",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/rust-toolchain.toml",
+          "type": "regular",
+          "bytes": 52,
+          "sha256": "54231ca6bea6a491dfa45c5c1e12cc7485ae94c16a374e52933ee1a7cb48248f",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/src/main.rs",
+          "type": "regular",
+          "bytes": 117,
+          "sha256": "4d7a1e4a1eebe08ffec78a4c0cd0e7cdeabf6b92e68c003b02e3515a035e042c",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/src/runtime.rs",
+          "type": "regular",
+          "bytes": 28394,
+          "sha256": "d37484f1c2b4460f19e025ddcc018d8f39f9f4e42bf63a005d521daf38c8a95e",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/tauri.conf.json",
+          "type": "regular",
+          "bytes": 1013,
+          "sha256": "63d27245b191038ce9bb5eb80db21b3546fc6eb5b0641b23a12549e729a1f6f7",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/ui/app.js",
+          "type": "regular",
+          "bytes": 21034,
+          "sha256": "88cdbff9283726d2cca725890ecff24b50d160992d53943c36722b6cc64a9140",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/ui/index.html",
+          "type": "regular",
+          "bytes": 480,
+          "sha256": "d47bc9124196d7e5870d83f6a65af7f77e4343b297a28c1097f3cce1eacc989d",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/candidate/ui/styles.css",
+          "type": "regular",
+          "bytes": 9739,
+          "sha256": "02e93ccd216bdf420ecc39469e332b9f0a9cf3d02346561c17d1f606a59456c6",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/actual-app-launch.log",
+          "type": "regular",
+          "bytes": 130,
+          "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/actual-app-process.trace",
+          "type": "regular",
+          "bytes": 82,
+          "sha256": "7ab55ecf37383f8bd1fd8619d72b4b6c7bab119a5be3a20218583a518edfda8b",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/actual-app-reopen.log",
+          "type": "regular",
+          "bytes": 130,
+          "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/actual-app-results.json",
+          "type": "regular",
+          "bytes": 1958,
+          "sha256": "61be06cc0280893c67a4a769d0bdfc08a7ef6c7afa95de75ec65e2f3cf1e4e7e",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/build-binary.log",
+          "type": "regular",
+          "bytes": 774,
+          "sha256": "d7c33a10f5067d2058317c89cde8d6639957bf1ceb45541be93ee8109b4f10da",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/build-bundle.log",
+          "type": "regular",
+          "bytes": 1229,
+          "sha256": "0a3ccbf29105d48e36ac0afccf4433b087f93841a8ad7496411c95b83af0f9e6",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/build-results.json",
+          "type": "regular",
+          "bytes": 1309,
+          "sha256": "5d0d66647a05a1900151d072935ebe1afdbe90dd2ef4dc31f8133917adb1f2a2",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/build-test.log",
+          "type": "regular",
+          "bytes": 1039,
+          "sha256": "3fac624908ec75124a5ef38ecc0e7c142e180d22519f9a0c3f8defd03dc451c9",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/candidate-inventory.json",
+          "type": "regular",
+          "bytes": 13392,
+          "sha256": "fe4690b0677063390596283bcf7df6070dd94c853a69469c12c4db8d4e773c3e",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/cleanup.json",
+          "type": "regular",
+          "bytes": 282,
+          "sha256": "592d5b91e95f87dfb7119500fbad0715241ae045959f4d6ddd9f4ba34720f48d",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/fixed-inputs.json",
+          "type": "regular",
+          "bytes": 35238,
+          "sha256": "145d24f42c771ce1a4108ac7d388c5a5e83d6192e5c60a1a9b6e0262f5c010c5",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/matrix-results.json",
+          "type": "regular",
+          "bytes": 9120,
+          "sha256": "68bf59499aae369520d4b001a3f1ae700a73406aa9618e5b7ff590e1eaf654e0",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/negative-results.json",
+          "type": "regular",
+          "bytes": 1137,
+          "sha256": "926a2c023d9681991e63e51aa0dcac94d102ae278eae7bd7fbbdbd8f41c8c8d5",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/runtime-results.json",
+          "type": "regular",
+          "bytes": 4739,
+          "sha256": "fdae899606efdf02f37040ee71793812fa5ba56f1ce825f634ef5764b73b1b15",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/runtime-test.log",
+          "type": "regular",
+          "bytes": 2487,
+          "sha256": "65ffe8982dcd5597c907a21945e3e1e5c7bfca29204f0b9e735c98974f8a6b1a",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/static-results.json",
+          "type": "regular",
+          "bytes": 5394,
+          "sha256": "75a29fd42d9e47de0b8f0ba1d04b01aa06bb5f984b029f605c88d38ffdf313fa",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/support-images/actual-app-today.png",
+          "type": "regular",
+          "bytes": 1735923,
+          "sha256": "07bb3a1585ee12a28290c863f439396ae93a17776175a72a0785e2d214a001da",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/evidence/ui-state-contract-results.json",
+          "type": "regular",
+          "bytes": 1209,
+          "sha256": "7ed184cb0656c01fa6da9bd94245b2bbbb9b6357e0d656854dca6824a0b61c94",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/tests/actual_app_replay.sh",
+          "type": "regular",
+          "bytes": 1081,
+          "sha256": "f0d23f9f3845c7f89b7d82b9e65e03cb3c530a631181d3d1f0ac8142c9e886da",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/tools/build_bundle.py",
+          "type": "regular",
+          "bytes": 2811,
+          "sha256": "c5cbb2d7bb37a59ab4314ccca65eddc163e8b86aa703a44fee5959afe7a8e9f2",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/tools/build_matrix.py",
+          "type": "regular",
+          "bytes": 5467,
+          "sha256": "92392247b7b58d1ca7807d31922adac0140ad08b36ea617d04c48760412a91fc",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/tools/cleanup_temp_root.py",
+          "type": "regular",
+          "bytes": 1860,
+          "sha256": "ef4e6a153b30a117f1015a551e13c8196f2d2c0580bd72f9789dc10373765b73",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/tools/collect_actual_app_evidence.py",
+          "type": "regular",
+          "bytes": 3734,
+          "sha256": "be88525c326cacc9d65def88f5758272a487de919de3d8ee838eed8663724f3b",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/tools/collect_negative_results.py",
+          "type": "regular",
+          "bytes": 1802,
+          "sha256": "f0a0f707a43b915071128a372253e5b22cf8a23f839ce363dc7a4e7938150ebd",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/tools/run_runtime_evidence.py",
+          "type": "regular",
+          "bytes": 4723,
+          "sha256": "e0c9e4e839bc972cfc2b3dacc58c5ba40978ed521cb413ab46f4e422c68707d4",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/tools/verify_preflight.py",
+          "type": "regular",
+          "bytes": 6835,
+          "sha256": "3e1bd16df07429be5c7868bb1274f6a633e90aa234e808630d027377ddea9ed1",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/tools/verify_static.py",
+          "type": "regular",
+          "bytes": 6381,
+          "sha256": "4433ad75e2219452c785659495b81b63ddd7e765130e118844733c27345b51ba",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/tools/verify_ui_state_contract.py",
+          "type": "regular",
+          "bytes": 2681,
+          "sha256": "076fa39f37e82304aee1c8dcb965fdbe15efa567a85e8075626a20f0e505d86a",
+          "lineage": "historical_initial"
+        },
+        {
+          "path": "lifeos/engineering/LIFEOS-P3-120/tools/write_manifest.py",
+          "type": "regular",
+          "bytes": 3253,
+          "sha256": "2c64b69d438e9644ca26296a24c8c77fd6313db69283f653732f8cf416df9172",
+          "lineage": "historical_initial"
+        }
+      ]
+    },
+    "rework_1": {
+      "manifest_file": {
+        "path": "lifeos/engineering/LIFEOS-P3-120/evidence/rework-1/MANIFEST.md",
+        "type": "regular",
+        "bytes": 7308,
+        "sha256": "f639a969f72172aaf215c04bc809d117f1e4f2b261a19ff94e1f02c8cf52f0f6"
+      },
+      "entries": [
+        {
+          "path": "DYNAMIC_CLOSURE.json",
+          "type": "regular",
+          "bytes": 13830,
+          "sha256": "825418122dc8563b6ba6c5c2659ff06c5073b3313edf04d5a3f797011094944f",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "TEST_DESIGN.md",
+          "type": "regular",
+          "bytes": 3950,
+          "sha256": "467d849b229e56e0e82abdc44b5fe64039487affd543f556127258ccf68054c6",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "actual-app.log",
+          "type": "regular",
+          "bytes": 952,
+          "sha256": "2c7aca0d293a6c2ab7a0996103d4cc2dfe9059c0954ac59e4e0726d6a3d8c6e2",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "build-bundle.log",
+          "type": "regular",
+          "bytes": 8163,
+          "sha256": "bdca51abdb6b4916507b76236fcec78fd36204f5671dc46de463247b7ce3866d",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "cleanup.json",
+          "type": "regular",
+          "bytes": 302,
+          "sha256": "e54707acde9c8bec681a197c3aceb4c212186215be899facb91d51b05d25c0d7",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/ai-workspace.app.log",
+          "type": "regular",
+          "bytes": 130,
+          "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/capture-one.app.log",
+          "type": "regular",
+          "bytes": 305,
+          "sha256": "d373ee9014ee0b12839715de108828167ba8fcd01f6c42457c1227ec1262b64f",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/capture-two.app.log",
+          "type": "regular",
+          "bytes": 666,
+          "sha256": "b0723a7c0ae079e210f968c60d2d75853e0eabefb6d46327f0a4510f338165f1",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/closed.app.log",
+          "type": "regular",
+          "bytes": 744,
+          "sha256": "2eeae9f463727526afcb15a3f4c1170a5c54e028f4122eb146b0bbf17e1ecb61",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/context-detail.app.log",
+          "type": "regular",
+          "bytes": 130,
+          "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/contexts.app.log",
+          "type": "regular",
+          "bytes": 130,
+          "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/global-ai.app.log",
+          "type": "regular",
+          "bytes": 130,
+          "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/me.app.log",
+          "type": "regular",
+          "bytes": 130,
+          "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/memory-detail.app.log",
+          "type": "regular",
+          "bytes": 130,
+          "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/memory.app.log",
+          "type": "regular",
+          "bytes": 130,
+          "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/refresh.app.log",
+          "type": "regular",
+          "bytes": 744,
+          "sha256": "2eeae9f463727526afcb15a3f4c1170a5c54e028f4122eb146b0bbf17e1ecb61",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/reopen-today.app.log",
+          "type": "regular",
+          "bytes": 952,
+          "sha256": "2c7aca0d293a6c2ab7a0996103d4cc2dfe9059c0954ac59e4e0726d6a3d8c6e2",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/repeat-one.app.log",
+          "type": "regular",
+          "bytes": 491,
+          "sha256": "8e61c8f1abf42d6c50beef23bd0b95e8b0bbe7f31da89ac8a0a0ea614baa8af3",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/settings.app.log",
+          "type": "regular",
+          "bytes": 130,
+          "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "logs/today-empty.app.log",
+          "type": "regular",
+          "bytes": 130,
+          "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "preflight.json",
+          "type": "regular",
+          "bytes": 2614,
+          "sha256": "b6f6798dd9f69eb9b6ea0e1702ab6256c45593fdc2e3c207384814b80513c192",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "rework-results.json",
+          "type": "regular",
+          "bytes": 2368,
+          "sha256": "0466c519b4eb8b68a66cbc937c8ee14d938e03047c82c9a7a5995cf1055a1bfc",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/ai-workspace.png",
+          "type": "regular",
+          "bytes": 1243522,
+          "sha256": "79660cda4d1aea0e6e9cd34a54fa3772efbdee4035813a896015d4b0b1bc5370",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/capture-one.png",
+          "type": "regular",
+          "bytes": 1983237,
+          "sha256": "e90a37b2db3459254a43cf0bf2a34d8b82fc97a6de9f7fbfda8b89bf581cb588",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/capture-two.png",
+          "type": "regular",
+          "bytes": 1986402,
+          "sha256": "6bc8bfcc4869295a2ebf8baf1a4bde0035638fc9628f0d79b507206ff413d529",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/context-detail.png",
+          "type": "regular",
+          "bytes": 1072027,
+          "sha256": "625d9ac91e0eaf354894dacfa7ed08a56b86617a6e081e80b0a5f5f7d023ea60",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/contexts.png",
+          "type": "regular",
+          "bytes": 938644,
+          "sha256": "96fdf750440fdad9604ad596f460ca39779ab3ccf1e7b6746382540b427c2d3f",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/global-ai.png",
+          "type": "regular",
+          "bytes": 1283670,
+          "sha256": "90077ddf16549a6c5b4139a89d9db419615127572dd1bd59b87305ea9ed10732",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/me.png",
+          "type": "regular",
+          "bytes": 1106161,
+          "sha256": "87a334e194524f3de2cbe73b3df74e40538ebf1f2e3991875948f52300cbd52d",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/memory-detail.png",
+          "type": "regular",
+          "bytes": 1065355,
+          "sha256": "93a5f01256b36e8c8064affdea1b9fc4fb19736a18c4912df98505961347eda2",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/memory.png",
+          "type": "regular",
+          "bytes": 973056,
+          "sha256": "1462bd3a33ae00d2fd498fe26fa99035fbe82d8e2586ac96d89edea8af983987",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/refresh.png",
+          "type": "regular",
+          "bytes": 1971353,
+          "sha256": "46f1c3d8a92156e58e4f7996f3f61b08aab0efcdcb702d69fe707600e79d6814",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/reopen-today.png",
+          "type": "regular",
+          "bytes": 1456133,
+          "sha256": "e21e6c16aac14e4414d9d72afe170e8f36c873a2bd75ebc293f412d50e48a9e1",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/repeat-one.png",
+          "type": "regular",
+          "bytes": 1975994,
+          "sha256": "0802cb1e31766e956e31b84542a0b8f4e5cebd90ccad58a73e19eb05986bf0c1",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/settings.png",
+          "type": "regular",
+          "bytes": 1173283,
+          "sha256": "15863c811922df97ec707f8e5a39a0dc3623b0f7bc21eb9e0a841e4158a26785",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "screenshots/today-empty.png",
+          "type": "regular",
+          "bytes": 1921579,
+          "sha256": "98dac31fe462ac912efce5b615901ca353f9424c071d9d86bcf4fb40b65ce486",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "session.json",
+          "type": "regular",
+          "bytes": 941,
+          "sha256": "520797e33db9a1d8dabd9812171a50f6b57f0ff52634c2da6da1667a625795d4",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/ai-workspace.json",
+          "type": "regular",
+          "bytes": 1100,
+          "sha256": "be56f30eed1bf6d29de3b05c9956b9119e79c189f1e264d536a222941774b498",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/capture-one.json",
+          "type": "regular",
+          "bytes": 1772,
+          "sha256": "7531024d472fc15822e39e8b8ef6d5ee4db79009687ae1b7d02b4c0dd852bfb3",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/capture-two.json",
+          "type": "regular",
+          "bytes": 2453,
+          "sha256": "fbaf0e46e85e23c31e2072b6e4c972d30fa3f58c2b9c6cfcb48bc551b5524014",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/closed.json",
+          "type": "regular",
+          "bytes": 2195,
+          "sha256": "866dc0631ca6ffff4c8e4dc9151ceb1025f7fa3d64588213f1d692a8b8b705a9",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/context-detail.json",
+          "type": "regular",
+          "bytes": 1139,
+          "sha256": "d64e49d00b6da5cc88f2ee42409883962e45c4dd233782e782ad1001fb22385e",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/contexts.json",
+          "type": "regular",
+          "bytes": 961,
+          "sha256": "6eecbb174865c911250db334edc0ed6fadf57fff77a7b4031b13dcd7a79ad981",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/global-ai.json",
+          "type": "regular",
+          "bytes": 1128,
+          "sha256": "432ef916c0bfcbf01b7cdd9e9bbd7b1c6ce286f93d3c249d875d6e750b5cb5f4",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/me.json",
+          "type": "regular",
+          "bytes": 932,
+          "sha256": "0df2296f45df8b5b451c1b53989446061bb76d43027844fdd1a4ffa07ddc5bfe",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/memory-detail.json",
+          "type": "regular",
+          "bytes": 1125,
+          "sha256": "01c9f5228e2562f355dc506a18d730a2f11421f750ec6d8fa838665c8b05bc88",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/memory.json",
+          "type": "regular",
+          "bytes": 1067,
+          "sha256": "6dfbde06207e702b8faacaf47812f47e1bc9bf44574e6dca575de8a0628bda1c",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/refresh.json",
+          "type": "regular",
+          "bytes": 2397,
+          "sha256": "c8a86352b07fe4029e2c4023a25b8c6ed4875d2d5c53a3ccf0ff180b3ca802f1",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/reopen-today.json",
+          "type": "regular",
+          "bytes": 2444,
+          "sha256": "02cfb8264e77df8fec84a218f5f35e54f9c793611bd6af01888efe044f651adc",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/repeat-one.json",
+          "type": "regular",
+          "bytes": 2001,
+          "sha256": "9880e06ccb87e82545714c29f4bea5bd207285ab527b2cbe2b0033356d6f5389",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/settings.json",
+          "type": "regular",
+          "bytes": 1078,
+          "sha256": "57feac1e2633d4078eeb13de85ffa7001f0698d4a9e1efe7411e32272656a7ce",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "steps/today-empty.json",
+          "type": "regular",
+          "bytes": 994,
+          "sha256": "c6f1b01520d7c78a26b0899f4aebfef49662e25c69d045d599d2aa44862491f8",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "tools/build_manifest.py",
+          "type": "regular",
+          "bytes": 6894,
+          "sha256": "9770438cfbc98909c5a323d4cd84ebc29186a857fe7248602ed83c49ca4a68a5",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "tools/cleanup_temp.py",
+          "type": "regular",
+          "bytes": 2098,
+          "sha256": "8fc2c6a0084b621bcd4770e3b096173b06d8d62068b3b1309a643d3a027031b1",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "tools/record_manual_step.py",
+          "type": "regular",
+          "bytes": 8884,
+          "sha256": "91146c0038620aa67d6c21e8e78508aa6e6b043bea117f2393ef020efc76dfb3",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "tools/reopen_manual_session.py",
+          "type": "regular",
+          "bytes": 1918,
+          "sha256": "8b2d404ef07fe6db0bc6e7b0475a3776909d550c6548cef087d8cb45935f82cf",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "tools/rework_preflight.py",
+          "type": "regular",
+          "bytes": 3276,
+          "sha256": "a8f574c52902f0411793562e481d723dd2701232e5d7af0eaf05b29e7184543b",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "tools/start_manual_session.py",
+          "type": "regular",
+          "bytes": 3108,
+          "sha256": "a194f3daa6fd1eb05e568d51c638e3c42f4c2830ca015b17c2b303e9b9c230c1",
+          "lineage": "rework_1"
+        },
+        {
+          "path": "tools/verify_rework1.py",
+          "type": "regular",
+          "bytes": 13507,
+          "sha256": "607a0089529171ae6054ccd46dd784a893f213c05c923286d67d4db9ac6c2b88",
+          "lineage": "rework_1"
+        }
+      ]
+    },
+    "current_delivery": {
+      "path": "lifeos/deliverables/LIFEOS-P3-120_person_centered_product_runtime_mvp_implementation.md",
+      "type": "regular",
+      "bytes": 8274,
+      "sha256": "92abb291545a380a89cae97f0650391f5075959cb93a24d0bad9f5d2146a4c95"
+    },
+    "authority_pm_review": {
+      "path": "lifeos/reviews/LIFEOS-P3-120_pm_review.md",
+      "type": "regular",
+      "bytes": 13779,
+      "sha256": "5763c96bfb720c38f66973161ecd4142fe51598fa028f8dd1ffb97afe79aa345"
+    },
+    "final_closure": {
+      "entries": [
+        {
+          "path": "TEST_DESIGN.md",
+          "type": "regular",
+          "bytes": 3328,
+          "sha256": "eb650825ab53184af693daca7db7b7cf637019ac2c8109f5f2383e48a554f7b7"
+        },
+        {
+          "path": "tools/build_final_manifest.py",
+          "type": "regular",
+          "bytes": 2912,
+          "sha256": "d0a98a3c459856dfc196e3530d6f9b2983e6f525e4fd3f2af27a7f814fd5df39"
+        },
+        {
+          "path": "tools/run_disposable_mutations.py",
+          "type": "regular",
+          "bytes": 4341,
+          "sha256": "679efeb562abd5a9adf0ae88aee3f97c81144688b83732f728319582062399a9"
+        },
+        {
+          "path": "tools/verify_final_manifest.py",
+          "type": "regular",
+          "bytes": 11147,
+          "sha256": "c7ad692f18121323b3ebee9ecaf0b5f97fbc41889c65bf83e9eebc6ee291c6ed"
+        }
+      ]
+    }
+  }
+}

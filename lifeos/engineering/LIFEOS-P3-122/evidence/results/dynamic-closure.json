@@ -1,0 +1,207 @@
+{
+  "counts": {
+    "Not Implemented": 0,
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0
+  },
+  "invariants": [
+    {
+      "conclusion": "PASS",
+      "row_id": "ABF-I-01"
+    },
+    {
+      "conclusion": "PASS",
+      "row_id": "ABF-I-02"
+    },
+    {
+      "conclusion": "PASS",
+      "row_id": "ABF-I-03"
+    },
+    {
+      "conclusion": "PASS",
+      "row_id": "ABF-I-04"
+    },
+    {
+      "conclusion": "PASS",
+      "row_id": "ABF-I-05"
+    },
+    {
+      "conclusion": "PASS",
+      "row_id": "ABF-I-06"
+    },
+    {
+      "conclusion": "PASS",
+      "row_id": "ABF-I-07"
+    },
+    {
+      "conclusion": "PASS",
+      "row_id": "ABF-I-08"
+    },
+    {
+      "conclusion": "PASS",
+      "row_id": "ABF-I-09"
+    },
+    {
+      "conclusion": "PASS",
+      "row_id": "ABF-I-10"
+    },
+    {
+      "conclusion": "PASS",
+      "row_id": "ABF-I-11"
+    }
+  ],
+  "matrix": [
+    {
+      "actual_evidence": [
+        "preflight.json"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-001",
+      "test_id": "P122-M001"
+    },
+    {
+      "actual_evidence": [
+        "source-lineage.json",
+        "history-integrity.json"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-002",
+      "test_id": "P122-M002"
+    },
+    {
+      "actual_evidence": [
+        "source-lineage.json",
+        "page-matrix.json"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-003",
+      "test_id": "P122-M003"
+    },
+    {
+      "actual_evidence": [
+        "build-result.json",
+        "../logs/cargo-test.log",
+        "../logs/tauri-build.log"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-004",
+      "test_id": "P122-M004"
+    },
+    {
+      "actual_evidence": [
+        "page-matrix.json"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-005",
+      "test_id": "P122-M005"
+    },
+    {
+      "actual_evidence": [
+        "viewport-results.json",
+        "../native-traces"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-006",
+      "test_id": "P122-M006"
+    },
+    {
+      "actual_evidence": [
+        "viewport-results.json#1280x1024"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-007",
+      "test_id": "P122-M007"
+    },
+    {
+      "actual_evidence": [
+        "viewport-results.json#1160x768"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-008",
+      "test_id": "P122-M008"
+    },
+    {
+      "actual_evidence": [
+        "viewport-results.json#700x760"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-009",
+      "test_id": "P122-M009"
+    },
+    {
+      "actual_evidence": [
+        "page-matrix.json"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-010",
+      "test_id": "P122-M010"
+    },
+    {
+      "actual_evidence": [
+        "runtime-lifecycle.json"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-011",
+      "test_id": "P122-M011"
+    },
+    {
+      "actual_evidence": [
+        "runtime-lifecycle.json",
+        "static-boundary.json",
+        "../logs/cargo-test.log"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-012",
+      "test_id": "P122-M012"
+    },
+    {
+      "actual_evidence": [
+        "page-matrix.json",
+        "viewport-results.json",
+        "final-manifest.json",
+        "mutation-results.json"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-013",
+      "test_id": "P122-M013"
+    },
+    {
+      "actual_evidence": [
+        "final-manifest.json",
+        "manifest-verification.json",
+        "mutation-results.json"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-014",
+      "test_id": "P122-M014"
+    },
+    {
+      "actual_evidence": [
+        "cleanup-proof.json",
+        "history-integrity.json"
+      ],
+      "conclusion": "PASS",
+      "frozen_action": "execute the exact ABF matrix row",
+      "row_id": "ABF-M-015",
+      "test_id": "P122-M015"
+    }
+  ],
+  "result": "PASS",
+  "silent_na": 0
+}

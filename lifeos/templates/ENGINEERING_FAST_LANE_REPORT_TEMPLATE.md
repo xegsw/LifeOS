@@ -1,6 +1,6 @@
-# LifeOS P3 Engineering Fast Lane Report Template
+# LifeOS L0/L1 Engineering Report Template V2
 
-适用范围：仅用于有限 Stage 3、合成数据、单进程、受控测试包、本地 evidence 范围内的 P1 / P2 窄工程补丁。  
+适用范围：L0/L1 合成数据、本地非破坏性工程任务。
 正文建议 800-1500 字；详细日志必须写入 evidence，不粘贴到报告正文。
 
 ## 任务信息
@@ -61,14 +61,13 @@
 - 是否触发：Yes / No
 - 原因：
 
-若触发用户确认，应说明是否涉及 P0、风险关闭、工程基线恢复、真实能力启用、阶段切换或关键边界变化。
+普通 L0/L1 PM Pass 后自动 Complete。只有新增真实数据／不可逆动作、风险关闭、关键冻结、真实能力或 Stage 切换才触发用户确认。
 
-## 是否需要独立复评
+## 是否需要独立评审
 
-- 是否需要：Yes / No / Conditional
-- 原因：
+- 是否需要：默认 No / Conditional
+- 具体触发事实（不得仅写 P0、Tauri/IPC 或历史惯例）：
 
 ## 下一步建议
 
 用 1-3 条说明建议 PM 如何推进。专项会话不得自行启动后续任务或修改项目账本。
-

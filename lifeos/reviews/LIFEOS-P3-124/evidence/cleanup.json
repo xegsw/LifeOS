@@ -1,0 +1,10 @@
+{
+  "test_id": "P124-M013",
+  "temporary_root": "/private/tmp/lifeos-p3-124-independent-review-v1",
+  "pre_delete_inventory_file_count": 3855,
+  "cleanup_method": "rm -rf on the one exact Frozen temporary-root path; no glob, find, or prefix selection",
+  "post_cleanup_temp_root_exists": false,
+  "post_cleanup_fixed_input_recheck": "PASS: 11 fixed hashes and 75/75 candidate files match evidence/preflight.json",
+  "result": "PARTIAL / NOT PASS",
+  "reason": "The root was removed exactly, but ABF-M-013 cannot pass because the required actual-App review did not complete."
+}

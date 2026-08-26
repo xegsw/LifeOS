@@ -1,0 +1,78 @@
+{
+  "runner": "tests/verify_static.py",
+  "overall": "PASS",
+  "results": [
+    {
+      "test_id": "P116-S-001",
+      "label": "required prototype files",
+      "status": "PASS",
+      "detail": "index.html, styles.css, fixtures.js, app.js, interaction_contract.md, state_machine.json, visual_contract.json, ia_reconciliation.md"
+    },
+    {
+      "test_id": "P116-S-002",
+      "label": "no remote/runtime/storage capability",
+      "status": "PASS",
+      "detail": "scanned HTML/CSS/JS entry sources"
+    },
+    {
+      "test_id": "P116-S-003",
+      "label": "primary IA is constrained",
+      "status": "PASS",
+      "detail": "Today/Me/Contexts/Memory only"
+    },
+    {
+      "test_id": "P116-S-004",
+      "label": "person and context semantics are explicit",
+      "status": "PASS",
+      "detail": "reconciliation and UI copy"
+    },
+    {
+      "test_id": "P116-S-005",
+      "label": "semantic accessibility hooks",
+      "status": "PASS",
+      "detail": "skip/focus/keyboard/motion hooks"
+    },
+    {
+      "test_id": "P116-S-006",
+      "label": "all required product views are coded",
+      "status": "PASS",
+      "detail": "nine required view states"
+    },
+    {
+      "test_id": "P116-S-007",
+      "label": "explicit synthetic and no-persistence disclosure",
+      "status": "PASS",
+      "detail": "visible product boundary copy"
+    },
+    {
+      "test_id": "P116-S-008",
+      "label": "no shell violations in implementation",
+      "status": "PASS",
+      "detail": "no prohibited shell feature is implemented"
+    },
+    {
+      "test_id": "P116-S-009",
+      "label": "machine-readable contracts parse",
+      "status": "PASS",
+      "detail": "state machine and visual contract"
+    },
+    {
+      "test_id": "P116-S-010",
+      "label": "seven fixed inputs match ABF",
+      "status": "PASS",
+      "detail": "fixed_inputs.json"
+    },
+    {
+      "test_id": "P116-S-011",
+      "label": "Global AI bar and side panel are one entry",
+      "status": "PASS",
+      "detail": "bar opens contextual panel; Quick Capture remains a secondary action"
+    },
+    {
+      "test_id": "P116-S-012",
+      "label": "Me, Memory, and Workspace share the visual shell",
+      "status": "PASS",
+      "detail": "three reference views use the same shell without changing primary IA or Future Agent disclosure"
+    }
+  ]
+}

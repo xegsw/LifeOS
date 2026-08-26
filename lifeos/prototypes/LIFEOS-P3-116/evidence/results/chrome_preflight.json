@@ -1,0 +1,19 @@
+{
+  "attempt": 1,
+  "status": "PASS",
+  "browser": "Google Chrome",
+  "open_method": "new tab + direct file URL",
+  "candidate_url": "file:///private/tmp/lifeos-p3-116-prototype-v1/index.html",
+  "observed": "本地文件候选正常渲染，未启用网络或服务端。",
+  "evidence": {
+    "action_id": "D-000",
+    "action": "在 Chrome 新标签页地址栏直接键入任务卡指定 file: URL 并打开",
+    "expected": "载入本地 Person-centered 原型，标题、Today 首屏及合成数据提示均可见",
+    "observed": "Chrome 当前窗口标题为 LifeOS — Person-centered prototype；地址为 file:///private/tmp/lifeos-p3-116-prototype-v1/index.html；Today 首屏可见。",
+    "status": "PASS",
+    "raw_log": "evidence/raw/D-000.ax.txt",
+    "raw_log_sha256": "1715746a03a80e264cf38be1cfae4af3c5839ffc0a2b3749166b6231c365172a",
+    "screenshot": "evidence/screenshots/D-000.jpg",
+    "screenshot_sha256": "de39df260951a123e0f930a1e194cdb73b23e684afc8250e3f26f631bc51fbd6"
+  }
+}

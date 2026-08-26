@@ -1,0 +1,25 @@
+{
+  "schema": "lifeos.p3-129.final-manifest.v1",
+  "task_id": "LIFEOS-P3-129",
+  "state": "Execution-side candidate complete / Not Frozen / Independent Review pending",
+  "self_reference": "excluded",
+  "candidate_entries": [
+    {"path": "README.md", "sha256": "94bda5c5d025172dd57a9719be41a2e4a4e87eb909983cb919c9d0065c948cda"},
+    {"path": "fixed_inputs.json", "sha256": "cb7c3338b0f2b854b99c56e5711b2663b09199dd809f312181d91c623aa141c1"},
+    {"path": "v0_to_v1_reconciliation.json", "sha256": "fa13e7aa7f38bad1e68db6e48eeb72b9a879f3ab041228d9e46819f5887dbbbf"},
+    {"path": "cross_baseline_compatibility.json", "sha256": "ce574d69226323bb86a169e3f2a5d7780a47e47300e86308dd1d844137b283f2"},
+    {"path": "freeze_scope.json", "sha256": "86f52a8214fc6e5a148a3d4260050e2ec944d728286cec25a288c1e3d94e67b9"},
+    {"path": "runtime_transition.json", "sha256": "dbe1975e14ecac29bfe61d559b2446341b32a5d53f0d61332fb14a8bc66c9676"},
+    {"path": "canonical_promotion_patch.json", "sha256": "7866423d1aa33f55b3e3110f17138de240515c46237a071d8143a639cfbbce74"},
+    {"path": "verifier.py", "sha256": "f7ba05938eba7c60794de84e551e7b06dd247ceae2e7da4a5e0898bd64dec07b"},
+    {"path": "verification.json", "sha256": "2386f9d141771725a375596ea843f11f7f4f773715272ff9ffceafb770315cc0"},
+    {"path": "mutation_results.json", "sha256": "8b22af3ccad785b93fb9673b70144f9fbf3e08d601cae8ebbf2f8f1a0d9c9886"},
+    {"path": "history_verification.json", "sha256": "dbc7df520d396da4b4512f32aaff3ce4801061f3386729e65d88ecfc24673e67"}
+  ],
+  "protected_history": "The 15 read-only inputs and their before/after SHA-256 values are recorded in fixed_inputs.json and history_verification.json. This manifest does not embed their bytes or supersede their historical meanings.",
+  "replay": [
+    "python3 -B lifeos/architecture/LIFEOS-P3-129/verifier.py verify",
+    "python3 -B lifeos/architecture/LIFEOS-P3-129/verifier.py mutations"
+  ],
+  "final_gate": "A fresh isolated independent review, PM Pass and a final user confirmation remain mandatory before the proposed one-line canonical promotion may be applied."
+}

@@ -1,0 +1,11 @@
+{
+  "test_ids": ["P124-M005", "P124-M006", "P124-M007", "P124-M008", "P124-M009"],
+  "bundle_build": "PASS",
+  "computer_use_initial_state": "Computer Use server error -10005: timeoutReached",
+  "launch_command": "open -n <task-local bundle>",
+  "launch_exit_code": 0,
+  "post_launch_app_inventory": ["local.lifeos.p3-121", "local.lifeos.p3-104"],
+  "required_target": "local.lifeos.p3-122",
+  "result": "BLOCKED",
+  "reason": "No independently targetable native task-local App/window was exposed to Computer Use. No geometry, screenshot, UI action, IPC lifecycle, or failure-path claim was generated."
+}

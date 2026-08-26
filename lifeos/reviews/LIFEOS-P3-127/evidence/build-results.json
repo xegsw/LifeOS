@@ -1,0 +1,24 @@
+{
+  "test_id": "P127-M004",
+  "candidate_copy": "/private/tmp/lifeos-p3-127-independent-review-v1/candidate (removed after cleanup)",
+  "offline_controls": {
+    "CARGO_NET_OFFLINE": true,
+    "CARGO_TARGET_DIR": "/private/tmp/lifeos-p3-127-independent-review-v1/cargo-target",
+    "TMPDIR": "/private/tmp/lifeos-p3-127-independent-review-v1/cargo-tmp"
+  },
+  "serial_test": {
+    "log": "evidence/run-a-cargo-test-serial.log",
+    "exit_code": 0,
+    "tests": "4 passed; 0 failed"
+  },
+  "bundles": [
+    {"log": "evidence/run-a-bundle.log", "exit_code": 0},
+    {"log": "evidence/run-b-bundle.log", "exit_code": 0}
+  ],
+  "retained_diagnostic": {
+    "log": "evidence/run-a-cargo-test.log",
+    "default_parallel_exit_code": 101,
+    "classification": "test-fixture cleanup race; not used as positive Evidence and not a candidate Runtime defect under the frozen serial test invocation"
+  },
+  "result": "PASS"
+}

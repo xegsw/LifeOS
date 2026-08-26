@@ -1,0 +1,11 @@
+{
+  "test_id": "P127-M008",
+  "static_ipc_scan": "evidence/static-ipc-scan.txt",
+  "static_boundary_scan": "evidence/static-boundary-scan.txt",
+  "static_result": "only capture_record, get_today and runtime_status occur in generate_handler; status closes filesystem, raw_database, generic_path_api, shell, process_spawn, network, vault, export and sync",
+  "dynamic_result": "both actual-App initial screenshots display Offline · 3 IPC and their AX attestations report restricted_offline",
+  "prohibited_old_runtime_root_access": false,
+  "network_model_cloud_operation": false,
+  "extra_ipc_or_capability": false,
+  "result": "PASS"
+}

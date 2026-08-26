@@ -1,0 +1,4 @@
+runtime_start status=restricted_offline db_scope=synthetic_task_local
+ipc_result command=runtime_status status=restricted_offline
+ipc_result command=capture_record status=saved record_count=1 audit_event_count=1 repeated=false
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=1

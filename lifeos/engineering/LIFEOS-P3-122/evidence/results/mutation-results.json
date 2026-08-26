@@ -1,0 +1,94 @@
+{
+  "mutation_count": 9,
+  "mutations": [
+    {
+      "detected": true,
+      "errors": [
+        "hash_mismatch:current_candidate:lifeos/engineering/LIFEOS-P3-122/candidate/ui/styles.css"
+      ],
+      "expected_failure": "hash_mismatch",
+      "mutation": "visual_css_drift",
+      "result": "PASS"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "p3_121_ui_visual_contamination",
+        "visual_source_count"
+      ],
+      "expected_failure": "p3_121_ui_visual_contamination",
+      "mutation": "p3_121_ui_visual_contamination",
+      "result": "PASS"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "authorization_missing",
+        "empty_layer:authorization"
+      ],
+      "expected_failure": "authorization_missing",
+      "mutation": "authorization_omitted",
+      "result": "PASS"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "empty_layer:pm_inputs",
+        "pm_evidence_missing"
+      ],
+      "expected_failure": "pm_evidence_missing",
+      "mutation": "pm_evidence_omitted",
+      "result": "PASS"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "logical_viewport_set_mismatch"
+      ],
+      "expected_failure": "logical_viewport_set_mismatch",
+      "mutation": "wrong_logical_viewport",
+      "result": "PASS"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "screenshot_semantics_mismatch"
+      ],
+      "expected_failure": "screenshot_semantics_mismatch",
+      "mutation": "wrong_screenshot_semantics",
+      "result": "PASS"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "hash_mismatch:current_candidate:lifeos/engineering/LIFEOS-P3-122/candidate/Cargo.toml"
+      ],
+      "expected_failure": "hash_mismatch",
+      "mutation": "candidate_drift",
+      "result": "PASS"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "candidate_inventory_mismatch"
+      ],
+      "expected_failure": "candidate_inventory_mismatch",
+      "mutation": "extra_or_missing_candidate_file",
+      "result": "PASS"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "hash_mismatch:history:lifeos/deliverables/LIFEOS-P3-121_p3_116_design_faithful_p3_120_runtime_combined_closure.md"
+      ],
+      "expected_failure": "hash_mismatch",
+      "mutation": "history_drift",
+      "result": "PASS"
+    }
+  ],
+  "pristine_control": {
+    "errors": [],
+    "result": "PASS"
+  },
+  "result": "PASS"
+}

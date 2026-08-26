@@ -1,0 +1,208 @@
+{
+  "schema": "lifeos.p3-129.independent-verification.v1",
+  "task_id": "LIFEOS-P3-129",
+  "independence": {
+    "candidate_verifier_imported": false,
+    "candidate_verifier_executed": false,
+    "mutation_mode": "in-memory only",
+    "temporary_directory_used": false,
+    "write_scope_deviation": true,
+    "temporary_stdout_file_cleanup": "completed; the deviation remains disqualifying for ABF-M-013"
+  },
+  "command": "python3 -B lifeos/reviews/LIFEOS-P3-129/independent_verifier.py --write",
+  "fixed_contract": {
+    "abf_sha256": "df3c4e9879a624e05ef8f7eb5b71d1a5835422db0eea278e2fc88404032b40fb",
+    "canonical_v1_pre_sha256": "2db0cbeda30eea2a56d965220363fb6af6622acf413dfb4ee8c11ec867009a32",
+    "candidate_final_manifest_sha256": "7242064657e8c6d464bdf0d18b04b3ca4f3f2e2b7ca7d098ea88920bfe831a86"
+  },
+  "independent_checks": [
+    {
+      "id": "ABF-M-001",
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "id": "ABF-M-002",
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "id": "ABF-M-003",
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "id": "ABF-M-004",
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "id": "ABF-M-005",
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "id": "ABF-M-006",
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "id": "ABF-M-007",
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "id": "ABF-M-012",
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "id": "ABF-M-013",
+      "result": "FAIL",
+      "errors": [
+        "review session made an unauthorized temporary stdout write; see execution_exception.json"
+      ]
+    },
+    {
+      "id": "INDEPENDENT-MANIFEST",
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "id": "STATE-GUARD",
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "id": "MUT-HASH",
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "id": "MUT-LEGACY-OMISSION",
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "id": "MUT-SCOPE-EXPANSION",
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "id": "MUT-BODY-CHANGE",
+      "result": "PASS",
+      "errors": []
+    }
+  ],
+  "abf_matrix": [
+    {
+      "id": "ABF-M-001",
+      "result": "PASS",
+      "evidence": "independent fixed-input recomputation"
+    },
+    {
+      "id": "ABF-M-002",
+      "result": "PASS",
+      "evidence": "independent 16-row V0.1 reconciliation check"
+    },
+    {
+      "id": "ABF-M-003",
+      "result": "PASS",
+      "evidence": "independent compatibility and Gate 1-5 check"
+    },
+    {
+      "id": "ABF-M-004",
+      "result": "PASS",
+      "evidence": "independent normative/exclusion scope check"
+    },
+    {
+      "id": "ABF-M-005",
+      "result": "PASS",
+      "evidence": "independent preserve/adapt/defer check"
+    },
+    {
+      "id": "ABF-M-006",
+      "result": "PASS",
+      "evidence": "independent byte-level promotion construction"
+    },
+    {
+      "id": "ABF-M-007",
+      "result": "PASS",
+      "evidence": "independent pristine verifier"
+    },
+    {
+      "id": "ABF-M-008",
+      "result": "PASS",
+      "evidence": "MUT-HASH"
+    },
+    {
+      "id": "ABF-M-009",
+      "result": "PASS",
+      "evidence": "MUT-LEGACY-OMISSION"
+    },
+    {
+      "id": "ABF-M-010",
+      "result": "PASS",
+      "evidence": "MUT-SCOPE-EXPANSION"
+    },
+    {
+      "id": "ABF-M-011",
+      "result": "PASS",
+      "evidence": "MUT-BODY-CHANGE"
+    },
+    {
+      "id": "ABF-M-012",
+      "result": "PASS",
+      "evidence": "independent before/after history hash check"
+    },
+    {
+      "id": "ABF-M-013",
+      "result": "NOT_PASS_UNAUTHORIZED_TEMP_WRITE",
+      "evidence": "execution_exception.json; a new fresh isolated review is required"
+    },
+    {
+      "id": "ABF-M-014",
+      "result": "PENDING_PM_GATE_CLOSURE",
+      "evidence": "PM must combine candidate and this review, then obtain final user Gate confirmation"
+    }
+  ],
+  "mutations": [
+    {
+      "id": "MUT-HASH",
+      "mutation": "replace FI-V1 SHA-256 in an in-memory fixed-input copy",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "reason": "FI-V1 SHA-256 mismatch"
+    },
+    {
+      "id": "MUT-LEGACY-OMISSION",
+      "mutation": "remove V0-04 from an in-memory reconciliation copy",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "reason": "V0.1 reconciliation rows are incomplete or reordered"
+    },
+    {
+      "id": "MUT-SCOPE-EXPANSION",
+      "mutation": "add SQLite Schema to in-memory proposed frozen scope",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "reason": "scope expands to implementation detail"
+    },
+    {
+      "id": "MUT-BODY-CHANGE",
+      "mutation": "allow line 4 rather than line 3 in in-memory promotion patch",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "reason": "promotion allows a non-metadata line"
+    }
+  ],
+  "result": "STATIC_CANDIDATE_CHECK_PASS_REVIEW_INVALID",
+  "review_finding_counts": {
+    "P0": 1,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 1
+  },
+  "gate_status_after_independent_review": "ABF-M-013 NOT PASS due to unauthorized temporary write; ABF-M-014 remains unimplemented; V1.0 remains Draft / Not Frozen"
+}

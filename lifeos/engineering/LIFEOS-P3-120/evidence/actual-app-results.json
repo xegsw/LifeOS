@@ -1,0 +1,55 @@
+{
+  "schema": "lifeos-p3-120/actual-app-results-v1",
+  "generated_at_utc": "2026-08-25T08:09:13.760870+00:00",
+  "method": "direct macOS app process launch and controlled termination; no GUI injection, AppleScript, AX, CDP, WebDriver, browser control, or screenshot-as-function-proof.",
+  "copied_logs": {
+    "actual-app-launch.log": {
+      "source": "/private/tmp/lifeos-p3-120-runtime-mvp-v1/app-launch.stdout.log",
+      "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+      "bytes": 130
+    },
+    "actual-app-reopen.log": {
+      "source": "/private/tmp/lifeos-p3-120-runtime-mvp-v1/app-reopen.stdout.log",
+      "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+      "bytes": 130
+    },
+    "actual-app-process.trace": {
+      "source": "/private/tmp/lifeos-p3-120-runtime-mvp-v1/actual-app-process.trace",
+      "sha256": "7ab55ecf37383f8bd1fd8619d72b4b6c7bab119a5be3a20218583a518edfda8b",
+      "bytes": 82
+    }
+  },
+  "checks": [
+    {
+      "id": "P120-M004",
+      "result": "PASS",
+      "actual": {
+        "process_trace": [
+          "app-launch pid=19324 alive_after_5s=true",
+          "app-reopen pid=19333 alive_after_5s=true"
+        ],
+        "screenshot": {
+          "path": "support-images/actual-app-today.png",
+          "width": 2500,
+          "height": 1800,
+          "sha256": "07bb3a1585ee12a28290c863f439396ae93a17776175a72a0785e2d214a001da"
+        }
+      }
+    },
+    {
+      "id": "P120-M005-actual-app",
+      "result": "PASS",
+      "actual": {
+        "launch": [
+          "runtime_start status=restricted_offline db_scope=synthetic_task_local",
+          "ipc_result command=runtime_status status=restricted_offline"
+        ],
+        "reopen": [
+          "runtime_start status=restricted_offline db_scope=synthetic_task_local",
+          "ipc_result command=runtime_status status=restricted_offline"
+        ]
+      }
+    }
+  ],
+  "result": "PASS"
+}

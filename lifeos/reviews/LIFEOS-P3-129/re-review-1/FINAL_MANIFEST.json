@@ -1,0 +1,32 @@
+{
+  "entries": [
+    {
+      "path": "README.md",
+      "sha256": "a7c4b7686409fbf5e32be91732fbf71a42727c84691836f308d4660c9d246a61"
+    },
+    {
+      "path": "independent_mutation_results.json",
+      "sha256": "cb60fee527f056fdf9c12aa8868f9465e4911ab05cd82783092248fb36e15ada"
+    },
+    {
+      "path": "independent_review.md",
+      "sha256": "7982769157d21a57661ecba016a69418ec54d48a03d51e737fe0dacfed06b5dd"
+    },
+    {
+      "path": "independent_verification.json",
+      "sha256": "d5f6da3329a44d91c5e2304c1baf1d3da8052d6e8665377a575338e24320028e"
+    },
+    {
+      "path": "review_runner.py",
+      "sha256": "30ecfc6cbe31e1fbee3a87c4a7d0ea68a4ec7d49c1d9bfee0a23a0bcd239e83b"
+    }
+  ],
+  "replay": [
+    "python3 -B lifeos/reviews/LIFEOS-P3-129/re-review-1/review_runner.py audit"
+  ],
+  "schema": "lifeos.p3-129.re-review-1.final-manifest.v1",
+  "scope": "No candidate, ABF, canonical, historical asset or PM ledger was changed.",
+  "self_reference": "excluded",
+  "state": "Independent re-review complete / Pass / Not Frozen / PM and final user Gate pending",
+  "task_id": "LIFEOS-P3-129"
+}

@@ -1,0 +1,102 @@
+{
+  "task_id": "LIFEOS-P3-128",
+  "core_objects": ["Project", "Artifact", "Source", "Assertion", "Decision", "Action", "Event", "Derivation", "Feedback", "Authorization", "AuditEntry", "Link"],
+  "concepts": [
+    {
+      "concept": "Person",
+      "identity_authority": "A local owner reference and scope root, not Source, account Profile, Artifact, or AI inference.",
+      "lifecycle": "Created only by explicit local setup or migration; owner identity is never inferred from records; it may be deactivated only by an authorized account-level lifecycle outside this Fast Track.",
+      "core_mapping": {
+        "Project": "person is the owner/participant scope of a Project; Project remains independently identified.",
+        "Artifact": "person may be author, recorder, or subject reference, while an Artifact keeps its own content identity.",
+        "Source": "person owns or authorizes a Source but is never collapsed into the Source identity.",
+        "Assertion": "person can assert or confirm a fact; an AI inference about a person remains an Assertion with AI identity.",
+        "Decision": "person is the confirmer/decision-maker; decision rationale and evidence stay on Decision and Link.",
+        "Action": "person can create, commit to, or confirm an Action; this does not make all Actions confirmed.",
+        "Event": "person may be the affected subject or observer; Event retains occurrence versus capture time.",
+        "Derivation": "person is a visible scope input, never an AI-generated profile payload or unbounded data grant.",
+        "Feedback": "person is the explicit feedback actor; Feedback remains append-only and target-specific.",
+        "Authorization": "person is the grantor/subject reference under six-dimensional authorization.",
+        "AuditEntry": "person may be a scoped actor reference without writing identifying profile data into audit detail.",
+        "Link": "person-related links retain source, confirmation, and validity; they do not grant processing access."
+      }
+    },
+    {
+      "concept": "Domain",
+      "identity_authority": "A controlled long-term life view and read-classification policy, not an App root, a permission scope shortcut, or a replacement for Project.",
+      "lifecycle": "A domain may be configured as unenabled, enabled-for-reading, or deep-intelligence eligible only after separate data/value/feedback/safety gates; P3-128 creates none.",
+      "core_mapping": {
+        "Project": "a Project may be viewed through one or more Domains but retains Project recovery semantics.",
+        "Artifact": "an Artifact can be tagged or linked to a Domain as a view; its source and content identity remain authoritative.",
+        "Source": "a Source can be categorized for display but Domain never expands its read or processing authorization.",
+        "Assertion": "a Domain can filter an Assertion for reading; it cannot convert a claim into a fact.",
+        "Decision": "a Decision can be displayed in a Domain view without changing its Project/evidence links.",
+        "Action": "an Action can be visible in a Domain view; confirmation and commitment stay Action/Feedback semantics.",
+        "Event": "an Event may contribute to a Domain timeline without becoming a new domain-owned event type.",
+        "Derivation": "a Domain is a declared processing/read scope in a Derivation constraint, never an implicit authorization.",
+        "Feedback": "feedback about a Domain recommendation remains feedback on its concrete target and does not train a hidden person profile.",
+        "Authorization": "a Domain may narrow a requested scope but cannot substitute for Source/Artifact/Project authorization.",
+        "AuditEntry": "audit records the authorized operation and scope, not a broad Domain-derived data inventory.",
+        "Link": "Domain links are typed views with confirmation/validity; a link cannot grant cross-domain access."
+      }
+    },
+    {
+      "concept": "Context",
+      "identity_authority": "An application-level, Person-owned context container with stable ContextId; it is composed from existing core objects and is not a new core entity or database-table mandate.",
+      "lifecycle": "candidate -> confirmed -> active -> watching -> closed; a Project-backed Context projects a Project lifecycle, while non-Project Contexts require explicit user confirmation before any durable creation.",
+      "core_mapping": {
+        "Project": "Project is the canonical backing object for context_type=project; ContextId is deterministically derived or explicitly linked, never a replacement Project.",
+        "Artifact": "related Artifacts are evidence members selected through typed Links and current authorization checks.",
+        "Source": "Context may display Sources through related evidence but does not own, read, or authorize them.",
+        "Assertion": "current understanding includes Assertions with their confirmation/evidence status; it never treats them as Context fields of truth.",
+        "Decision": "Context recovery shows confirmed or candidate Decisions with reasons and status.",
+        "Action": "Context Next shows only Action role/status; an AI proposal remains candidate until Feedback confirms it.",
+        "Event": "Context recent history is a projection of meaningful Events, preserving actual occurrence time.",
+        "Derivation": "Context understanding is a Derivation-backed view and becomes unavailable/stale when its evidence or authorization fails.",
+        "Feedback": "confirmation, correction, rejection, completion, and retraction are read from Feedback, not silently written by Context UI.",
+        "Authorization": "every Context read and optional Resolver input is rechecked against current Authorization and source/evidence state.",
+        "AuditEntry": "Context read, candidate confirmation, and authorized consumption are audit-worthy actions with minimized scoped references.",
+        "Link": "typed Links bind Context backing objects and evidence; candidates remain visibly candidate and cannot expand permissions."
+      }
+    },
+    {
+      "concept": "Memory",
+      "identity_authority": "A long-term evidence and understanding read model, not a parallel authoritative original-content store or a new core object.",
+      "lifecycle": "A MemoryItem is materialized from current core objects; it becomes stale, unavailable, or hidden when provenance, tombstone, source, evidence, or authorization checks fail, and is rebuildable from remaining lawful inputs.",
+      "core_mapping": {
+        "Project": "Memory can index Project recovery context but Project remains the recovery boundary.",
+        "Artifact": "original and external content are displayed by reference to Artifact/version; Memory never copies them as its own authority.",
+        "Source": "Memory exposes Source identity and availability for every evidence-bearing item.",
+        "Assertion": "confirmed facts, external claims, and AI inferences stay distinct Assertion identities in the read model.",
+        "Decision": "Memory answers why by prioritizing Decision, rationale, and linked original evidence.",
+        "Action": "Memory may expose an Action history but never turns a proposal into a commitment.",
+        "Event": "Memory timeline entries reference Events with their correct occurrence/capture semantics.",
+        "Derivation": "all AI understanding, observation, inference, summary, or index entry points back to Derivation and exact inputs.",
+        "Feedback": "confirmation/correction/retraction is rendered from Feedback history and current effect, never overwritten as text.",
+        "Authorization": "every Memory query and detail projection rechecks authorization, purpose, location, and active-use eligibility.",
+        "AuditEntry": "Memory consumption yields minimum audit metadata when required; audit is not a Memory data source.",
+        "Link": "Memory traversal uses typed Links with provenance, confirmation, and validity to form an evidence graph."
+      }
+    },
+    {
+      "concept": "Global AI Context",
+      "identity_authority": "An ephemeral request-scoped resolver result consisting of Person Context + Page Context + Selection Context, not a persisted profile, authority, or Agent task.",
+      "lifecycle": "assembled on each request -> shown for review/removal -> authorization rechecked -> consumed or refused -> discarded; no component becomes durable merely by appearing in the resolver.",
+      "core_mapping": {
+        "Project": "Page/selection may reference a Project-backed Context only after current read authorization.",
+        "Artifact": "selected Artifact versions are explicit resolver references and cannot be replaced by summaries.",
+        "Source": "each resolver reference includes source availability/permission state; no hidden source expansion is allowed.",
+        "Assertion": "Assertions enter only with identity and confirmation state visible to the user.",
+        "Decision": "a Decision can be included as evidence; the resolver cannot confirm or alter it.",
+        "Action": "an Action may be displayed as confirmed or candidate; AI cannot change its state through context assembly.",
+        "Event": "Events are bounded page/selection evidence with correct temporal identity.",
+        "Derivation": "any AI output must record this exact resolver input set as a new Derivation, never a durable global memory by default.",
+        "Feedback": "Feedback can constrain what remains effective, but the resolver cannot fabricate feedback.",
+        "Authorization": "every included ref is checked for subject, scope, action, purpose, location, and time; unknown/ambiguous denies.",
+        "AuditEntry": "resolver assembly and authorized model consumption require minimized audit correlation, not raw content logging.",
+        "Link": "Links may supply related evidence only when typed, valid, confirmed as required, and independently authorized."
+      }
+    }
+  ],
+  "coverage": {"concept_count": 5, "core_object_count": 12, "expected_cells": 60, "result": "PASS"}
+}

@@ -1,0 +1,187 @@
+{
+  "schema": "lifeos-p3-120/static-results-v1",
+  "generated_at_utc": "2026-08-25T08:09:13.720047+00:00",
+  "candidate_files": [
+    {
+      "path": "Cargo.toml",
+      "sha256": "553c74e2d577accee8b667e31a37b4dd21ee8ff393f008af644c0c8ca4d039c8"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f2e41141cddc8a57e73c0b0bba087410aa8b3df3d3483d5cfae45a9f949522cf"
+    },
+    {
+      "path": "build.rs",
+      "sha256": "62343b39726897a2c190d7ffe52bfd5ef85236f1f08a9f7d4595ee5993e02c74"
+    },
+    {
+      "path": "capabilities/main.json",
+      "sha256": "08ca47ee40704d4d7cd8257a3dbf653f9b4aedec0ac7b348663dc2724ad90cfe"
+    },
+    {
+      "path": "gen/schemas/acl-manifests.json",
+      "sha256": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e"
+    },
+    {
+      "path": "gen/schemas/capabilities.json",
+      "sha256": "c79eeaed35bfde73841c7a525db3328deb9c72218470be447cfbea5dda0368d6"
+    },
+    {
+      "path": "gen/schemas/desktop-schema.json",
+      "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78"
+    },
+    {
+      "path": "gen/schemas/macOS-schema.json",
+      "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78"
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "54231ca6bea6a491dfa45c5c1e12cc7485ae94c16a374e52933ee1a7cb48248f"
+    },
+    {
+      "path": "src/main.rs",
+      "sha256": "4d7a1e4a1eebe08ffec78a4c0cd0e7cdeabf6b92e68c003b02e3515a035e042c"
+    },
+    {
+      "path": "src/runtime.rs",
+      "sha256": "d37484f1c2b4460f19e025ddcc018d8f39f9f4e42bf63a005d521daf38c8a95e"
+    },
+    {
+      "path": "tauri.conf.json",
+      "sha256": "63d27245b191038ce9bb5eb80db21b3546fc6eb5b0641b23a12549e729a1f6f7"
+    },
+    {
+      "path": "ui/app.js",
+      "sha256": "88cdbff9283726d2cca725890ecff24b50d160992d53943c36722b6cc64a9140"
+    },
+    {
+      "path": "ui/index.html",
+      "sha256": "d47bc9124196d7e5870d83f6a65af7f77e4343b297a28c1097f3cce1eacc989d"
+    },
+    {
+      "path": "ui/styles.css",
+      "sha256": "02e93ccd216bdf420ecc39469e332b9f0a9cf3d02346561c17d1f606a59456c6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "S-001",
+      "result": "PASS",
+      "actual": [
+        "capture_record",
+        "get_today",
+        "runtime_status"
+      ],
+      "expectation": "exactly the three frozen Rust IPC commands"
+    },
+    {
+      "id": "S-002",
+      "result": "PASS",
+      "actual": [
+        "capture_record",
+        "get_today",
+        "runtime_status"
+      ],
+      "expectation": "exactly the three frozen commands in generate_handler"
+    },
+    {
+      "id": "S-003",
+      "result": "PASS",
+      "actual": {
+        "used": [
+          "get_today",
+          "capture_record",
+          "runtime_status"
+        ],
+        "other": []
+      },
+      "expectation": "renderer invokes only the three frozen command names"
+    },
+    {
+      "id": "S-004",
+      "result": "PASS",
+      "actual": [],
+      "expectation": "capability grants no direct permissions"
+    },
+    {
+      "id": "S-005",
+      "result": "PASS",
+      "actual": {
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src ipc:; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'",
+        "capabilities": [
+          "main"
+        ]
+      },
+      "expectation": "local index.html and IPC-only connect CSP"
+    },
+    {
+      "id": "S-006",
+      "result": "PASS",
+      "actual": {
+        "renderer_fetch": [],
+        "renderer_xhr": [],
+        "renderer_websocket": [],
+        "renderer_storage": [],
+        "renderer_file_shell": [],
+        "rust_network": [],
+        "rust_plugin": [],
+        "prohibited_entry": []
+      },
+      "expectation": "no renderer direct storage/file/shell/network, Rust network/plugin, or prohibited entry"
+    },
+    {
+      "id": "S-007",
+      "result": "PASS",
+      "actual": [
+        "todayPage",
+        "mePage",
+        "contextsPage",
+        "contextDetailPage",
+        "memoryPage",
+        "memoryDetailPage",
+        "workspacePage",
+        "aiPanel",
+        "settingsPage"
+      ],
+      "expectation": "Today, Me, Contexts, both details, Memory, AI panel/workspace and weak Settings exist"
+    },
+    {
+      "id": "S-008",
+      "result": "PASS",
+      "actual": [
+        "Runtime data",
+        "read-only synthetic fixture",
+        "AI Observation",
+        "Decision Candidate",
+        "用户确认",
+        "模型未启用"
+      ],
+      "expectation": "runtime, fixture, AI candidate and confirmed identities are visibly distinct"
+    },
+    {
+      "id": "S-009",
+      "result": "PASS",
+      "actual": "fixed two samples; no free-text input",
+      "expectation": "only the two frozen synthetic capture texts are offered"
+    },
+    {
+      "id": "S-010",
+      "result": "PASS",
+      "actual": "legacy/Pilot markers absent from executable source",
+      "expectation": "candidate contains no legacy Pilot runtime target"
+    },
+    {
+      "id": "S-011",
+      "result": "PASS",
+      "actual": "synthetic P3-120 path and inherited schema version",
+      "expectation": "exact task-local DB path and frozen SQLite schema"
+    },
+    {
+      "id": "S-012",
+      "result": "PASS",
+      "actual": "Tauri executable entry point",
+      "expectation": "app entry point remains present"
+    }
+  ],
+  "result": "PASS"
+}

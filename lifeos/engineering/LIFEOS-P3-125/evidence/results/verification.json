@@ -1,0 +1,263 @@
+{
+  "task": "LIFEOS-P3-125",
+  "result": "PASS",
+  "checks": [
+    {
+      "id": "hash:LIFEOS-P3-125_runtime_root_configurable_fail_closed_closure_acceptance_basis_freeze.md",
+      "pass": true,
+      "actual": "4ab5ed8a0c1349041d1d9b13452be5059abf510f4d2ecae386e23283c1956057",
+      "expected": "4ab5ed8a0c1349041d1d9b13452be5059abf510f4d2ecae386e23283c1956057"
+    },
+    {
+      "id": "hash:LIFEOS-P3-125_source_allowlist.md",
+      "pass": true,
+      "actual": "807ff8e1dd565eed4fec4c1b6bf5c6bca133861a9dffdbae1ca2bac60293dc4b",
+      "expected": "807ff8e1dd565eed4fec4c1b6bf5c6bca133861a9dffdbae1ca2bac60293dc4b"
+    },
+    {
+      "id": "hash:final-manifest.json",
+      "pass": true,
+      "actual": "b555e657ba3b44d855b7885c24714face84e640daee73525be98003506f69a6c",
+      "expected": "b555e657ba3b44d855b7885c24714face84e640daee73525be98003506f69a6c"
+    },
+    {
+      "id": "hash:LIFEOS-P3-122_pm_review.md",
+      "pass": true,
+      "actual": "1f921a55dec6ebb9b518a1ee3a8bf83ae6ec450a9d78d399e533abedb8f55efe",
+      "expected": "1f921a55dec6ebb9b518a1ee3a8bf83ae6ec450a9d78d399e533abedb8f55efe"
+    },
+    {
+      "id": "hash:independent_review.md",
+      "pass": true,
+      "actual": "224b568e643ca7c3ba4f1468bfd01e4f3d3c0c529dd75d7d5c9ec8dc9d02221a",
+      "expected": "224b568e643ca7c3ba4f1468bfd01e4f3d3c0c529dd75d7d5c9ec8dc9d02221a"
+    },
+    {
+      "id": "allowlist_rows",
+      "pass": true,
+      "actual": 75,
+      "expected": 75
+    },
+    {
+      "id": "allowlist_hash",
+      "pass": true,
+      "actual": "807ff8e1dd565eed4fec4c1b6bf5c6bca133861a9dffdbae1ca2bac60293dc4b",
+      "expected": "807ff8e1dd565eed4fec4c1b6bf5c6bca133861a9dffdbae1ca2bac60293dc4b"
+    },
+    {
+      "id": "build_time_root_embedded",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "build_time_root_required",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "single_root_db_derivation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "single_root_viewport_derivation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "single_root_geometry_derivation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "no_legacy_runtime_root_literal",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "no_independent_viewport_environment",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "symlink_fail_closed",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "three_ipc_unchanged",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "fail_closed_log:build-empty.log",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "fail_closed_log:build-relative.log",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "fail_closed_log:build-traversal.log",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "fail_closed_log:build-symlink.log",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "fail_closed_log:build-root-file.log",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "unit_test_final",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "final_snapshot_capture_count",
+      "pass": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "id": "final_snapshot_audit",
+      "pass": true,
+      "actual": [
+        {
+          "event": "capture_saved",
+          "detail": "local_capture"
+        },
+        {
+          "event": "capture_repeat",
+          "detail": "same_idempotency_key"
+        }
+      ],
+      "expected": [
+        {
+          "event": "capture_saved",
+          "detail": "local_capture"
+        },
+        {
+          "event": "capture_repeat",
+          "detail": "same_idempotency_key"
+        }
+      ]
+    },
+    {
+      "id": "final_snapshot_record",
+      "pass": true,
+      "actual": {
+        "content": "明天先把发布页的第一屏文字读一遍，再决定是否继续做视觉细节。",
+        "source": "local_capture",
+        "idem_key": "p3-122-synthetic-one"
+      },
+      "expected": {
+        "content": "明天先把发布页的第一屏文字读一遍，再决定是否继续做视觉细节。",
+        "source": "local_capture",
+        "idem_key": "p3-122-synthetic-one"
+      }
+    },
+    {
+      "id": "reopened_snapshot_capture_count",
+      "pass": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "id": "reopened_snapshot_audit",
+      "pass": true,
+      "actual": [
+        {
+          "event": "capture_saved",
+          "detail": "local_capture"
+        },
+        {
+          "event": "capture_repeat",
+          "detail": "same_idempotency_key"
+        }
+      ],
+      "expected": [
+        {
+          "event": "capture_saved",
+          "detail": "local_capture"
+        },
+        {
+          "event": "capture_repeat",
+          "detail": "same_idempotency_key"
+        }
+      ]
+    },
+    {
+      "id": "reopened_snapshot_record",
+      "pass": true,
+      "actual": {
+        "content": "明天先把发布页的第一屏文字读一遍，再决定是否继续做视觉细节。",
+        "source": "local_capture",
+        "idem_key": "p3-122-synthetic-one"
+      },
+      "expected": {
+        "content": "明天先把发布页的第一屏文字读一遍，再决定是否继续做视觉细节。",
+        "source": "local_capture",
+        "idem_key": "p3-122-synthetic-one"
+      }
+    },
+    {
+      "id": "native_geometry_has_actual_tauri_rows",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "native_geometry_task",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "id": "actual_app_screenshots_present",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    }
+  ],
+  "sha256": {
+    "runtime_rs": "a71fda5bde69bd7179fbc9037e4a6e02b6465bb7649ce7a06a60af849e1d3495",
+    "build_rs": "901c6971b8c31a3013fddbcaad688f38467e0374ed9e5d3c2511635597ded086",
+    "final_capture_snapshot": "38ad0293665fed5a71153fd6b92285ac49ee62e8c35c08f0d2e133ec0de01f3b",
+    "final_reopened_capture_snapshot": "38ad0293665fed5a71153fd6b92285ac49ee62e8c35c08f0d2e133ec0de01f3b",
+    "final_geometry_snapshot": "ac5895db1a5087c6d718cb936bc15c62d214e01ca9f4f17459b8e83ec812aa45"
+  },
+  "actual_app": {
+    "run_a": "first capture plus idempotent repeat, then close/reopen",
+    "run_b": "fresh compiled root begins empty then saves one fixed synthetic record",
+    "final": "final source build captured once, repeated once, and retained the same database state after reopen"
+  },
+  "build_fail_closed_cases": {
+    "empty": "root is empty or contains a NUL byte",
+    "relative": "root must be an absolute normalized path",
+    "traversal": "root must be an absolute normalized path",
+    "symlink": "root or an ancestor is not a real directory"
+  },
+  "model_effort_attestation": "Unknown: task runtime did not expose an independent session model/effort attestation API."
+}

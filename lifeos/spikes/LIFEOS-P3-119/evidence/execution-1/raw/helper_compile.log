@@ -1,0 +1,89 @@
+/Users/xxe/Documents/No.2/lifeos/spikes/LIFEOS-P3-119/tools/pid_gui_helper.swift:92:33: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect. [#DeprecatedDeclaration]
+ 90 |         emit(command: command, pass: false, status: "EXECUTABLE_HASH_MISMATCH", pid: pid, eventID: eventID, code: 4)
+ 91 |     }
+ 92 |     _ = app.activate(options: [.activateIgnoringOtherApps])
+    |                                 `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect. [#DeprecatedDeclaration]
+ 93 |     RunLoop.current.run(until: Date(timeIntervalSinceNow: 0.2))
+ 94 |     guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid_t(pid) else {
+
+/Users/xxe/Documents/No.2/lifeos/spikes/LIFEOS-P3-119/tools/pid_gui_helper.swift:147:5: error: 'CGEventPostToPid' has been replaced by instance method 'CGEvent.postToPid(_:)'
+145 |         emit(command: command, pass: false, status: "EVENT_CONSTRUCTION_FAILED", pid: pid, eventID: eventID, window: window, code: 11)
+146 |     }
+147 |     CGEventPostToPid(pid_t(pid), move)
+    |     `- error: 'CGEventPostToPid' has been replaced by instance method 'CGEvent.postToPid(_:)'
+148 |     CGEventPostToPid(pid_t(pid), down)
+149 |     CGEventPostToPid(pid_t(pid), up)
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGEvent.h:372:16: note: 'CGEventPostToPid' was obsoleted in Swift 3
+370 |     API_AVAILABLE(macos(10.4));
+371 | 
+372 | CG_EXTERN void CGEventPostToPid( pid_t pid,
+    |                `- note: 'CGEventPostToPid' was obsoleted in Swift 3
+373 |     CGEventRef __nullable event)
+374 |     API_AVAILABLE(macos(10.11));
+
+/Users/xxe/Documents/No.2/lifeos/spikes/LIFEOS-P3-119/tools/pid_gui_helper.swift:148:5: error: 'CGEventPostToPid' has been replaced by instance method 'CGEvent.postToPid(_:)'
+146 |     }
+147 |     CGEventPostToPid(pid_t(pid), move)
+148 |     CGEventPostToPid(pid_t(pid), down)
+    |     `- error: 'CGEventPostToPid' has been replaced by instance method 'CGEvent.postToPid(_:)'
+149 |     CGEventPostToPid(pid_t(pid), up)
+150 |     emit(command: command, pass: true, status: "PID_CLICK_POSTED", pid: pid, eventID: eventID, window: window, code: 0)
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGEvent.h:372:16: note: 'CGEventPostToPid' was obsoleted in Swift 3
+370 |     API_AVAILABLE(macos(10.4));
+371 | 
+372 | CG_EXTERN void CGEventPostToPid( pid_t pid,
+    |                `- note: 'CGEventPostToPid' was obsoleted in Swift 3
+373 |     CGEventRef __nullable event)
+374 |     API_AVAILABLE(macos(10.11));
+
+/Users/xxe/Documents/No.2/lifeos/spikes/LIFEOS-P3-119/tools/pid_gui_helper.swift:149:5: error: 'CGEventPostToPid' has been replaced by instance method 'CGEvent.postToPid(_:)'
+147 |     CGEventPostToPid(pid_t(pid), move)
+148 |     CGEventPostToPid(pid_t(pid), down)
+149 |     CGEventPostToPid(pid_t(pid), up)
+    |     `- error: 'CGEventPostToPid' has been replaced by instance method 'CGEvent.postToPid(_:)'
+150 |     emit(command: command, pass: true, status: "PID_CLICK_POSTED", pid: pid, eventID: eventID, window: window, code: 0)
+151 | }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGEvent.h:372:16: note: 'CGEventPostToPid' was obsoleted in Swift 3
+370 |     API_AVAILABLE(macos(10.4));
+371 | 
+372 | CG_EXTERN void CGEventPostToPid( pid_t pid,
+    |                `- note: 'CGEventPostToPid' was obsoleted in Swift 3
+373 |     CGEventRef __nullable event)
+374 |     API_AVAILABLE(macos(10.11));
+
+/Users/xxe/Documents/No.2/lifeos/spikes/LIFEOS-P3-119/tools/pid_gui_helper.swift:162:5: error: 'CGEventPostToPid' has been replaced by instance method 'CGEvent.postToPid(_:)'
+160 |         emit(command: command, pass: false, status: "EVENT_CONSTRUCTION_FAILED", pid: pid, eventID: eventID, window: window, code: 13)
+161 |     }
+162 |     CGEventPostToPid(pid_t(pid), down)
+    |     `- error: 'CGEventPostToPid' has been replaced by instance method 'CGEvent.postToPid(_:)'
+163 |     CGEventPostToPid(pid_t(pid), up)
+164 |     emit(command: command, pass: true, status: "PID_KEY_POSTED_\(key.uppercased())", pid: pid, eventID: eventID, window: window, code: 0)
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGEvent.h:372:16: note: 'CGEventPostToPid' was obsoleted in Swift 3
+370 |     API_AVAILABLE(macos(10.4));
+371 | 
+372 | CG_EXTERN void CGEventPostToPid( pid_t pid,
+    |                `- note: 'CGEventPostToPid' was obsoleted in Swift 3
+373 |     CGEventRef __nullable event)
+374 |     API_AVAILABLE(macos(10.11));
+
+/Users/xxe/Documents/No.2/lifeos/spikes/LIFEOS-P3-119/tools/pid_gui_helper.swift:163:5: error: 'CGEventPostToPid' has been replaced by instance method 'CGEvent.postToPid(_:)'
+161 |     }
+162 |     CGEventPostToPid(pid_t(pid), down)
+163 |     CGEventPostToPid(pid_t(pid), up)
+    |     `- error: 'CGEventPostToPid' has been replaced by instance method 'CGEvent.postToPid(_:)'
+164 |     emit(command: command, pass: true, status: "PID_KEY_POSTED_\(key.uppercased())", pid: pid, eventID: eventID, window: window, code: 0)
+165 | }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGEvent.h:372:16: note: 'CGEventPostToPid' was obsoleted in Swift 3
+370 |     API_AVAILABLE(macos(10.4));
+371 | 
+372 | CG_EXTERN void CGEventPostToPid( pid_t pid,
+    |                `- note: 'CGEventPostToPid' was obsoleted in Swift 3
+373 |     CGEventRef __nullable event)
+374 |     API_AVAILABLE(macos(10.11));
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>

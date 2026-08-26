@@ -1,0 +1,39 @@
+{
+  "schema": "lifeos-p3-120/rework-1-manual-step-v1",
+  "step": "contexts",
+  "structured_result_id": "R1-contexts",
+  "captured_at_utc": "2026-08-25T08:46:43.017786+00:00",
+  "operator": "user-manual",
+  "attestation": "User manually opened Contexts in the foreground packaged app.",
+  "automation_excluded": [
+    "Computer Use",
+    "AppleScript",
+    "AX",
+    "CDP",
+    "HTTP",
+    "WebDriver",
+    "browser control"
+  ],
+  "app": {
+    "pid": 24181,
+    "running": true,
+    "launch_count": 1
+  },
+  "db": {
+    "exists": false,
+    "captures": [],
+    "audit": [],
+    "sha256": null
+  },
+  "log_snapshot": {
+    "path": "logs/contexts.app.log",
+    "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+    "missing_expected_lines": []
+  },
+  "screenshot": {
+    "path": "screenshots/contexts.png",
+    "sha256": "96fdf750440fdad9604ad596f460ca39779ab3ccf1e7b6746382540b427c2d3f",
+    "bytes": 938644
+  },
+  "result": "PASS"
+}

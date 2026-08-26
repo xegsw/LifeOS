@@ -1,0 +1,54 @@
+{
+  "schema": "lifeos-p3-120/pm-rework1-assessment-v1",
+  "task_id": "LIFEOS-P3-120",
+  "abf_id": "ABF-P3-120-v1",
+  "assessment_date": "2026-08-25",
+  "result": "REWORK",
+  "formal_rework": "2/2",
+  "functional_closure": {
+    "actual_app_steps": 15,
+    "screenshots": 14,
+    "unique_screenshot_hashes": 14,
+    "strict_timestamp_order": true,
+    "launch_pids": [24181, 27597],
+    "capture_count_sequence": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 2],
+    "audit_count_sequence": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 3, 3],
+    "submitted_verifier_pm_isolated_rerun": "PASS",
+    "submitted_verifier_error_count": 0,
+    "M-004": "PASS",
+    "M-006": "PASS",
+    "M-007": "PASS",
+    "M-008": "PASS",
+    "M-009": "PASS",
+    "M-010": "PASS"
+  },
+  "hash_verification": {
+    "rework_manifest_rows": 59,
+    "rework_manifest_rows_matching": 59,
+    "initial_manifest_rows": 101,
+    "initial_manifest_rows_matching_current_paths": 100,
+    "initial_manifest_mismatch": "lifeos/deliverables/LIFEOS-P3-120_person_centered_product_runtime_mvp_implementation.md",
+    "initial_manifest_expected_delivery_sha256": "ef644706a21976053b81fe1019ff9294dce89099e4ab9d199b52df13fda5bdec",
+    "current_delivery_sha256": "0f5ff548c9414a95fe64c559f948d2d1def47319af6da4773ed905f5c984d914",
+    "rework_manifest_includes_current_delivery": false
+  },
+  "finding": {
+    "id": "PM-R1-P0-001",
+    "severity": "P0",
+    "mapping": ["L1-7", "L1-8", "L1-10", "ABF-I-10", "ABF-M-015"],
+    "result": "NOT_IMPLEMENTED",
+    "reason": "The updated delivery is not included in the Rework-1 Manifest. The initial Manifest still records the historical delivery hash and therefore currently recomputes as 100/101. A final manifest layer covering the updated delivery and all retained rework assets is missing."
+  },
+  "counts": {
+    "P0": 1,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 1
+  },
+  "cleanup": {
+    "engineering_runtime_root_absent": true,
+    "pm_reverify_root_absent": true
+  },
+  "visual_conformance_gap": "unchanged; outside current ABF and remains a required successor product task before combined-candidate freeze or Stage 4"
+}

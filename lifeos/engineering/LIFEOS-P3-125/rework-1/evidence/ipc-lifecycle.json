@@ -1,0 +1,116 @@
+{
+  "actual_app_actions": {
+    "actions": [
+      {
+        "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-a-initial.jpeg",
+        "id": "D-001",
+        "observable_result": "P3_122_ATTESTATION rt=[restricted_offline,0,0,null]; Recent says no Runtime capture",
+        "operation": "launch then inspect initial rendered Tauri window",
+        "root": "run-a",
+        "sha256": "ab84beeef84c2fbd5d41f01f476f41b8324ecf659929d5cb7c1597b96fa59a1f"
+      },
+      {
+        "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-a-capture-modal.jpeg",
+        "id": "D-002",
+        "observable_result": "dialog shows only the Frozen synthetic input and Confirm association action",
+        "operation": "click Open Quick Capture",
+        "root": "run-a",
+        "sha256": "9a45d98ab4ff85c838d2f0ab52f09f12b1c28c8507a3db881bf8fb72b8076cb7"
+      },
+      {
+        "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-a-after-first.jpeg",
+        "id": "D-003",
+        "observable_result": "P3_122_ATTESTATION rt=[restricted_offline,1,1,null] and UI reports saved user original",
+        "operation": "click Confirm association for the first capture",
+        "root": "run-a",
+        "sha256": "7dade8b7033548098f30ac77c91b297eadeea78c556a94259fbe229a4c8b6ece"
+      },
+      {
+        "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-a-after-repeat.jpeg",
+        "id": "D-004",
+        "observable_result": "P3_122_ATTESTATION rt=[restricted_offline,1,2,null] and UI reports idempotent repeat with no duplicate record",
+        "operation": "repeat the identical Quick Capture confirmation",
+        "root": "run-a",
+        "sha256": "1f9d5b4c7778c286b2a74f2f77e0794755096981fb908d894fcab5572dfcf4f3"
+      },
+      {
+        "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-a-reopened.jpeg",
+        "id": "D-005",
+        "observable_result": "P3_122_ATTESTATION remains [restricted_offline,1,2,null] after reopen",
+        "operation": "close the App and launch the same task-local bundle again",
+        "root": "run-a",
+        "sha256": "cfc6d82b1d945bc301eeb0dd214b8fc0c5452ddf7533d0901345b1670d4ea579"
+      },
+      {
+        "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-b-initial.jpeg",
+        "id": "D-006",
+        "observable_result": "P3_122_ATTESTATION rt=[restricted_offline,0,0,null], proving the second configured root starts empty",
+        "operation": "launch independently built run-b bundle and inspect its initial state",
+        "root": "run-b",
+        "sha256": "ab84beeef84c2fbd5d41f01f476f41b8324ecf659929d5cb7c1597b96fa59a1f"
+      },
+      {
+        "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-b-after-first.jpeg",
+        "id": "D-007",
+        "observable_result": "P3_122_ATTESTATION rt=[restricted_offline,1,1,null] and UI reports saved user original",
+        "operation": "confirm the Frozen synthetic capture",
+        "root": "run-b",
+        "sha256": "2cc52be0b8aea4aec431beec132e0a9ae100571364c778d3c4fe0ab98af8bd1a"
+      }
+    ],
+    "app_identifier": "local.lifeos.p3-122",
+    "postcondition": "Computer Use app inventory contains no running local.lifeos.p3-122 process before collection.",
+    "result": "PASS",
+    "task_id": "LIFEOS-P3-125",
+    "tool": "Computer Use @oai/sky"
+  },
+  "result": "PASS",
+  "row": "ABF-M-006",
+  "run_a": {
+    "path": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/runtime-snapshots/run-a-capture.sqlite",
+    "sha256": "db5d91022e8e09ee3de80a47a6291bc2583beedb2621e1589072f9c6a588bf2b",
+    "summary": {
+      "audit": [
+        {
+          "detail": "local_capture",
+          "event": "capture_saved"
+        },
+        {
+          "detail": "same_idempotency_key",
+          "event": "capture_repeat"
+        }
+      ],
+      "capture_count": 1,
+      "captures": [
+        {
+          "content": "明天先把发布页的第一屏文字读一遍，再决定是否继续做视觉细节。",
+          "id": "p3-122-000001a03c111bb6-p3-122-synthetic-one",
+          "idem_key": "p3-122-synthetic-one",
+          "source": "local_capture"
+        }
+      ]
+    }
+  },
+  "run_b": {
+    "path": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/runtime-snapshots/run-b-capture.sqlite",
+    "sha256": "adfd20f3c8a8f58ca939782461e8a529c31d6dc371ca8f9dd1820b6782285835",
+    "summary": {
+      "audit": [
+        {
+          "detail": "local_capture",
+          "event": "capture_saved"
+        }
+      ],
+      "capture_count": 1,
+      "captures": [
+        {
+          "content": "明天先把发布页的第一屏文字读一遍，再决定是否继续做视觉细节。",
+          "id": "p3-122-000001a03c1250f3-p3-122-synthetic-one",
+          "idem_key": "p3-122-synthetic-one",
+          "source": "local_capture"
+        }
+      ]
+    }
+  },
+  "task_id": "LIFEOS-P3-125"
+}

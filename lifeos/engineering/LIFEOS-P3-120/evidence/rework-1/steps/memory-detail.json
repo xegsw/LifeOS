@@ -1,0 +1,40 @@
+{
+  "schema": "lifeos-p3-120/rework-1-manual-step-v1",
+  "step": "memory-detail",
+  "structured_result_id": "R1-memory-detail",
+  "captured_at_utc": "2026-08-25T08:51:49.343979+00:00",
+  "operator": "user-manual",
+  "attestation": "User manually opened the first user-source Memory Detail in the foreground packaged app; delayed capture allowed the user to restore that already-open window after approval.",
+  "capture_delay_seconds": 12,
+  "automation_excluded": [
+    "Computer Use",
+    "AppleScript",
+    "AX",
+    "CDP",
+    "HTTP",
+    "WebDriver",
+    "browser control"
+  ],
+  "app": {
+    "pid": 24181,
+    "running": true,
+    "launch_count": 1
+  },
+  "db": {
+    "exists": false,
+    "captures": [],
+    "audit": [],
+    "sha256": null
+  },
+  "log_snapshot": {
+    "path": "logs/memory-detail.app.log",
+    "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+    "missing_expected_lines": []
+  },
+  "screenshot": {
+    "path": "screenshots/memory-detail.png",
+    "sha256": "93a5f01256b36e8c8064affdea1b9fc4fb19736a18c4912df98505961347eda2",
+    "bytes": 1065355
+  },
+  "result": "PASS"
+}

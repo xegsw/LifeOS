@@ -1,0 +1,47 @@
+{
+  "schema": "lifeos-p3-120/pm-final-assessment-v1",
+  "task_id": "LIFEOS-P3-120",
+  "abf_id": "ABF-P3-120-v1",
+  "assessment_date": "2026-08-25",
+  "result": "PASS",
+  "formal_rework_used": "2/2",
+  "final_manifest": {
+    "path": "lifeos/engineering/LIFEOS-P3-120/evidence/final-manifest-closure/FINAL_MANIFEST.json",
+    "sha256": "b766c79063caa5e170fe87d88f9642ed2a5e549b1bedf93a6946529647b4d1d2",
+    "phase": "final",
+    "non_self_exclusions": ["FINAL_MANIFEST.json"],
+    "candidate_entries": 70,
+    "initial_historical_entries": 101,
+    "rework_1_entries": 59,
+    "final_closure_entries": 7,
+    "current_delivery_sha256": "92abb291545a380a89cae97f0650391f5075959cb93a24d0bad9f5d2146a4c95",
+    "authorization_review_snapshot_sha256": "5763c96bfb720c38f66973161ecd4142fe51598fa028f8dd1ffb97afe79aa345"
+  },
+  "pm_verification": {
+    "submitted_final_verifier": "PASS",
+    "error_count": 0,
+    "mutation_control": "PASS",
+    "mutation_cases_passed": 4,
+    "runtime_root_absent": true,
+    "disposable_root_absent": true
+  },
+  "previous_findings": {
+    "actual_app_navigation_and_lifecycle": "CLOSED by Rework-1",
+    "model_routing_unknown": "CLOSED by user confirmation and structured record",
+    "final_manifest_lineage": "CLOSED by Rework-2"
+  },
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 0
+  },
+  "asset_status": "Accepted / PM Pass / Awaiting User Adoption / Not Frozen",
+  "visual_conformance_gap": "OPEN successor product gap; P3-120 Pass is runtime-only and does not establish faithful P3-116 visual implementation",
+  "risk_status": {
+    "R-0051": "Closed / Limited Controlled Boundary — unchanged",
+    "R-0052": "Open — unchanged",
+    "R-0040": "Open / Conditional — unchanged"
+  }
+}

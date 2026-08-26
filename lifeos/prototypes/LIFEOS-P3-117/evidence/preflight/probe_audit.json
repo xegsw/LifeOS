@@ -1,0 +1,28 @@
+{
+  "task": "LIFEOS-P3-117",
+  "checked_at_utc": "2026-08-25T05:07:38.190534+00:00",
+  "probe": "evidence_probe.js",
+  "probe_sha256": "873db0eaa3eb5dc2b986ce14116bad14213a6ea9dfe26d1feb65c70c10974fec",
+  "candidate_probe_sha256": "873db0eaa3eb5dc2b986ce14116bad14213a6ea9dfe26d1feb65c70c10974fec",
+  "required_tokens": [
+    "P117-PROBE-V1",
+    "location.protocol",
+    "window.innerWidth",
+    "window.devicePixelRatio",
+    "Alt+Shift+P",
+    "data-action"
+  ],
+  "forbidden_tokens": [
+    "fetch(",
+    "XMLHttpRequest",
+    "WebSocket",
+    "localStorage",
+    "sessionStorage",
+    "indexedDB",
+    "document.cookie",
+    "navigator.sendBeacon"
+  ],
+  "forbidden_hits": [],
+  "result": "PASS",
+  "contract": "display-only; fixed overlay; no network, storage, browser-chrome reads, or product-state mutation"
+}

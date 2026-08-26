@@ -1,0 +1,24 @@
+        Info Looking up installed tauri packages to check mismatched versions...
+warning: stripping debug info with `rust-objcopy` failed: signal: 6 (SIGABRT)
+  |
+  = note: dyld[53349]: Library not loaded: @rpath/libLLVM.dylib
+            Referenced from: <AC0D75A8-23BF-301F-B7CE-3E5CC0C1BC06> /Users/xxe/.rustup/toolchains/1.98.0-aarch64-apple-darwin/lib/rustlib/aarch64-apple-darwin/bin/rust-objcopy
+            Reason: tried: '/Users/xxe/.rustup/toolchains/1.98.0-aarch64-apple-darwin/lib/rustlib/aarch64-apple-darwin/bin/../lib/libLLVM.dylib' (no such file), '/Users/xxe/.rustup/toolchains/1.98.0-aarch64-apple-darwin/lib/rustlib/aarch64-apple-darwin/bin/../lib/libLLVM.dylib' (no such file), '/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-122/.cargo-target/release/deps/libLLVM.dylib' (no such file), '/Users/xxe/lib/libLLVM.dylib' (no such file), '/usr/local/lib/libLLVM.dylib' (no such file), '/usr/lib/libLLVM.dylib' (no such file, not in dyld cache)
+          
+
+warning: `lifeos-p3-122` (build script) generated 1 warning
+   Compiling lifeos-p3-122 v0.1.0 (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-122/candidate)
+warning: stripping debug info with `rust-objcopy` failed: signal: 6 (SIGABRT)
+  |
+  = note: dyld[56655]: Library not loaded: @rpath/libLLVM.dylib
+            Referenced from: <AC0D75A8-23BF-301F-B7CE-3E5CC0C1BC06> /Users/xxe/.rustup/toolchains/1.98.0-aarch64-apple-darwin/lib/rustlib/aarch64-apple-darwin/bin/rust-objcopy
+            Reason: tried: '/Users/xxe/.rustup/toolchains/1.98.0-aarch64-apple-darwin/lib/rustlib/aarch64-apple-darwin/bin/../lib/libLLVM.dylib' (no such file), '/Users/xxe/.rustup/toolchains/1.98.0-aarch64-apple-darwin/lib/rustlib/aarch64-apple-darwin/bin/../lib/libLLVM.dylib' (no such file), '/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-122/.cargo-target/release/deps/libLLVM.dylib' (no such file), '/Users/xxe/lib/libLLVM.dylib' (no such file), '/usr/local/lib/libLLVM.dylib' (no such file), '/usr/lib/libLLVM.dylib' (no such file, not in dyld cache)
+          
+
+warning: `lifeos-p3-122` (bin "lifeos-p3-122") generated 1 warning
+    Finished `release` profile [optimized] target(s) in 9.61s
+       Built application at: /Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-122/.cargo-target/release/lifeos-p3-122
+    Bundling LifeOS P3-122 Native Viewport Runtime.app (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-122/.cargo-target/release/bundle/macos/LifeOS P3-122 Native Viewport Runtime.app)
+    Finished 1 bundle at:
+        /Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-122/.cargo-target/release/bundle/macos/LifeOS P3-122 Native Viewport Runtime.app
+

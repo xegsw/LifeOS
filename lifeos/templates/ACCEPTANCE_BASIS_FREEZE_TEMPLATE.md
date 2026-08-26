@@ -1,4 +1,6 @@
-# LifeOS Acceptance Basis Freeze Template
+# LifeOS L3 / Gate Acceptance Basis Freeze Template V2
+
+仅用于 L3 或 Gate 任务。L0/L1/L2 使用任务卡内嵌 Task Contract，不创建独立 ABF。
 
 ## 冻结信息
 
@@ -65,12 +67,12 @@
 - Pass 公式：
 - 允许的 N/A：
 
-## Rework 预算与退出规则
+## Closure Cycle 与退出规则
 
-- 正式 Rework 上限：2。
-- 当前正式 Rework 次数：0。
-- 同任务 Rework 条件：
-- 必须新建任务条件：引用 `lifeos/ACCEPTANCE_GOVERNANCE.md`，并列本任务额外触发器。
+- 首次 PM 不通过时的完整 Closure List：
+- 同任务 Closure Cycle 条件：结果、风险、目录、数据、入口、权限、架构与本 ABF 均不变。
+- 必须新建任务条件：本 ABF 或上述任一边界需要实质变化，或历史已污染且无法可信恢复。
+- 不使用统一两轮 Rework 上限作为机械终止条件。
 - Blocked 条件：
 
 ## 候选基线与只读保全

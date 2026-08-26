@@ -1,0 +1,92 @@
+{
+  "mutations": [
+    {
+      "actual": {
+        "exit_code": 0,
+        "output": "{\"result\": \"PASS\", \"entries\": 301, \"roles\": 18}"
+      },
+      "expected": "PASS",
+      "id": "pristine",
+      "pass": true
+    },
+    {
+      "actual": {
+        "exit_code": 1,
+        "output": "{\"result\": \"FAIL\", \"reason\": \"production_fixed_parent\", \"detail\": \"build.rs has a task-ID parent restriction\"}"
+      },
+      "expected": "REJECT",
+      "id": "fixed-parent",
+      "pass": true
+    },
+    {
+      "actual": {
+        "exit_code": 1,
+        "output": "{\"result\": \"FAIL\", \"reason\": \"runtime_root_fallback\", \"detail\": \"single build-time root has a fallback\"}"
+      },
+      "expected": "REJECT",
+      "id": "fallback",
+      "pass": true
+    },
+    {
+      "actual": {
+        "exit_code": 1,
+        "output": "{\"result\": \"FAIL\", \"reason\": \"runtime_derivation\", \"detail\": \"DB, viewport, or geometry no longer derives from the one root\"}"
+      },
+      "expected": "REJECT",
+      "id": "derive",
+      "pass": true
+    },
+    {
+      "actual": {
+        "exit_code": 1,
+        "output": "{\"result\": \"FAIL\", \"reason\": \"validation_order\", \"detail\": \"validation or builder marker is absent\"}"
+      },
+      "expected": "REJECT",
+      "id": "order",
+      "pass": true
+    },
+    {
+      "actual": {
+        "exit_code": 1,
+        "output": "{\"result\": \"FAIL\", \"reason\": \"manifest_hash_mismatch\", \"detail\": \"lifeos/deliverables/LIFEOS-P3-125_runtime_root_configurable_fail_closed_closure.md\"}"
+      },
+      "expected": "REJECT",
+      "id": "history",
+      "pass": true
+    },
+    {
+      "actual": {
+        "exit_code": 1,
+        "output": "{\"result\": \"FAIL\", \"reason\": \"manifest_path\", \"detail\": \"entry 0 path is not repository-relative and safe\"}"
+      },
+      "expected": "REJECT",
+      "id": "manifest-path",
+      "pass": true
+    },
+    {
+      "actual": {
+        "exit_code": 1,
+        "output": "{\"result\": \"FAIL\", \"reason\": \"manifest_required_role_omission\", \"detail\": \"task_card\"}"
+      },
+      "expected": "REJECT",
+      "id": "manifest-omission",
+      "pass": true
+    },
+    {
+      "actual": {
+        "exit_code": 1,
+        "output": "{\"result\": \"FAIL\", \"reason\": \"manifest_extra_file\", \"detail\": \"lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/mutation-extra-disposable.txt\"}"
+      },
+      "expected": "REJECT",
+      "id": "extra-file",
+      "pass": true
+    }
+  ],
+  "pristine_first": {
+    "exit_code": 0,
+    "output": "{\"result\": \"PASS\", \"entries\": 301, \"roles\": 18}"
+  },
+  "result": "PASS",
+  "row": "ABF-M-011",
+  "task_id": "LIFEOS-P3-125"
+}

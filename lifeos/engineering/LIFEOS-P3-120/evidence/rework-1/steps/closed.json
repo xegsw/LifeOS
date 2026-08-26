@@ -1,0 +1,77 @@
+{
+  "schema": "lifeos-p3-120/rework-1-manual-step-v1",
+  "step": "closed",
+  "structured_result_id": "R1-closed",
+  "captured_at_utc": "2026-08-25T09:05:55.269381+00:00",
+  "operator": "user-manual",
+  "attestation": "User manually closed the packaged Tauri app through its window control after the refresh evidence was captured.",
+  "capture_delay_seconds": 0,
+  "automation_excluded": [
+    "Computer Use",
+    "AppleScript",
+    "AX",
+    "CDP",
+    "HTTP",
+    "WebDriver",
+    "browser control"
+  ],
+  "app": {
+    "pid": 24181,
+    "running": false,
+    "launch_count": 1
+  },
+  "db": {
+    "exists": true,
+    "type": "regular",
+    "bytes": 24576,
+    "sha256": "b7a1dbcf63fae64beb0129624d656aed120cbff665c9a8b25695728c67eb4f2a",
+    "quick_check": "ok",
+    "user_version": 104,
+    "captures": [
+      {
+        "id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "content": "P3-120 synthetic capture one",
+        "created_at_ms": 1787648390196,
+        "source": "local_capture",
+        "idem_key": "p3-120-synthetic-one"
+      },
+      {
+        "id": "p3-120-000001a038280c09-p3-120-synthetic-two",
+        "content": "P3-120 synthetic capture two",
+        "created_at_ms": 1787648543753,
+        "source": "local_capture",
+        "idem_key": "p3-120-synthetic-two"
+      }
+    ],
+    "audit": [
+      {
+        "id": 1,
+        "event": "capture_saved",
+        "capture_id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "created_at_ms": 1787648390196,
+        "detail": "local_capture"
+      },
+      {
+        "id": 2,
+        "event": "capture_repeat",
+        "capture_id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "created_at_ms": 1787648475867,
+        "detail": "same_idempotency_key"
+      },
+      {
+        "id": 3,
+        "event": "capture_saved",
+        "capture_id": "p3-120-000001a038280c09-p3-120-synthetic-two",
+        "created_at_ms": 1787648543753,
+        "detail": "local_capture"
+      }
+    ]
+  },
+  "log_snapshot": {
+    "path": "logs/closed.app.log",
+    "sha256": "2eeae9f463727526afcb15a3f4c1170a5c54e028f4122eb146b0bbf17e1ecb61",
+    "missing_expected_lines": []
+  },
+  "screenshot": null,
+  "result": "PASS"
+}

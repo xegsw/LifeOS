@@ -1,0 +1,43 @@
+{
+  "task_id": "LIFEOS-P3-116",
+  "kind": "ia_contract_correction",
+  "timestamp_local": "2026-08-25",
+  "authority": {
+    "document": "lifeos/architecture/LifeOS高保真原型IA-V1.0.md",
+    "sections": ["3. 一级信息架构", "4. Global Shell", "4. Global AI 原则", "10. 页面集合"],
+    "finding": "Global AI Bar is permanently reachable; simple conversation progressively opens a right-side panel. Quick Capture is a related but separate flow."
+  },
+  "implementation": [
+    {
+      "id": "P116-GA-001",
+      "action": "Click the Global AI sparkle or submit the bottom Global AI Bar",
+      "expected": "Open the same contextual Global AI side panel; retain Person, Page, Selection, and removable Health context",
+      "source_evidence": "app.js:124-128,143-145,182,203-211",
+      "status": "PASS"
+    },
+    {
+      "id": "P116-GA-002",
+      "action": "Use the plus button in the Global AI Bar",
+      "expected": "Open the distinct Quick Capture modal; it does not masquerade as a submitted AI question",
+      "source_evidence": "app.js:143-145,187",
+      "status": "PASS"
+    },
+    {
+      "id": "P116-GA-003",
+      "action": "Run the fail-closed static test suite",
+      "expected": "Global AI Bar/side-panel contract passes alongside primary-IA, no-runtime, and fixed-input checks",
+      "command": "python3 -B lifeos/prototypes/LIFEOS-P3-116/tests/verify_static.py",
+      "result": "11/11 PASS",
+      "status": "PASS"
+    }
+  ],
+  "source_sha256": {
+    "app.js": "6b147ba74d59912d7b882317b18e23978b665d81b9024a7be3707bea3250b726",
+    "styles.css": "cebb87c373277917dcfb44f0c1ce56f3e3d9f091b296c9b85df77e33c1232faf",
+    "interaction_contract.md": "b346fce72c8e3fa8fa2e39cdf749f3779681453a739ced6fadd371639ddaae13",
+    "state_machine.json": "2bd66cf76dff4a0289e7c5b0b6a40ced22a0a765753a79c2c98075e8aa866cdc",
+    "visual_contract.json": "5065fef8a5af86fd55d955a21d73fd048901c16185aaf35243b9b4476d763a0d",
+    "tests/verify_static.py": "85d75fbec3853e5a1a363046dc9b22d6c9b730d3fc0de823bc8d92c66f8faa11"
+  },
+  "limit": "The browser automation policy blocked a fresh file: tab for a dynamic recapture. This record is intentionally static and does not replace the historical dynamic closure."
+}

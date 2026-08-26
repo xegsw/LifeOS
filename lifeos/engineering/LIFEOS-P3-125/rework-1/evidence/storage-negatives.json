@@ -1,0 +1,20 @@
+{
+  "task_id": "LIFEOS-P3-125",
+  "row": "ABF-M-008",
+  "result": "PASS",
+  "evidence_created_after_cleanup_from_retained_raw_execution": true,
+  "executed_tests": [
+    "runtime::p3_125_tests::input_and_storage_type_failures_preserve_the_root",
+    "runtime::p3_125_tests::non_sqlite_sidecar_and_unwritable_failures_preserve_existing_data"
+  ],
+  "raw_log": "lifeos/engineering/LIFEOS-P3-125/rework-1/logs/unit-tests.log",
+  "raw_log_sha256": "93fd05a32057bfa4edfc02e0b16457b336c3ad7afa5ce1c66f003d8e97802098",
+  "covered_objects": [
+    "DB symlink",
+    "geometry directory conflict",
+    "non-SQLite DB bytes",
+    "DB sidecar",
+    "unwritable root"
+  ],
+  "before_after": "The executed tests assert DB and sentinel bytes are unchanged on rejected storage failures; both test names are present with ok in the retained raw log."
+}

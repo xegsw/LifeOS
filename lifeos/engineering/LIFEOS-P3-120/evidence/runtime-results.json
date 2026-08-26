@@ -1,0 +1,161 @@
+{
+  "schema": "lifeos-p3-120/runtime-results-v1",
+  "generated_at_utc": "2026-08-25T08:04:16.586179+00:00",
+  "command": [
+    "/Users/xxe/.cargo/bin/cargo",
+    "test",
+    "--locked",
+    "--offline",
+    "evidence_trace_covers_status_lifecycle_and_atomic_failure",
+    "--",
+    "--nocapture"
+  ],
+  "exit_code": 0,
+  "trace": {
+    "atomic_failure": {
+      "after_db_sha256": "222e878ce07d4d489d027f815d7861de610269ad4e84e2e3f6a8ba47cdcf4a1d",
+      "after_sentinel_sha256": "0bd71ec34c9a35c4b841be82de23fa10770982588c72b4a21aaba21763783b0e",
+      "before_db_sha256": "222e878ce07d4d489d027f815d7861de610269ad4e84e2e3f6a8ba47cdcf4a1d",
+      "before_sentinel_sha256": "0bd71ec34c9a35c4b841be82de23fa10770982588c72b4a21aaba21763783b0e",
+      "code": "injected_atomic_failure",
+      "records_after_failure": 1
+    },
+    "lifecycle": {
+      "after_first_sha256": "1d7f316f7998cc53fcec2a015ef47d26355424e9229d5f8d69f4212fb51f3d9f",
+      "after_repeat_sha256": "4d16b04a76882c46f6c85dac223ac3bba50c0b493d89477a79cfc68be836a545",
+      "before_refresh_sha256": "021c7a25209190b3b0b0345aaeccde6bc164651f30b05fd738758d077bb6d1a7",
+      "first_record_id": "p3-120-000001a037f2d631-p3-120-synthetic-one",
+      "first_status": "saved",
+      "initial_status": "empty",
+      "refresh_contents": [
+        "P3-120 synthetic capture one",
+        "P3-120 synthetic capture two"
+      ],
+      "refresh_status": "loaded",
+      "reopen_contents": [
+        "P3-120 synthetic capture one",
+        "P3-120 synthetic capture two"
+      ],
+      "reopen_status": "loaded",
+      "repeat_record_id": "p3-120-000001a037f2d631-p3-120-synthetic-one",
+      "repeat_status": "idempotent_repeat",
+      "second_status": "saved"
+    },
+    "runtime_status": {
+      "ai_enabled": false,
+      "ipc_allowlist": [
+        "capture_record",
+        "get_today",
+        "runtime_status"
+      ],
+      "offline": true,
+      "renderer_direct_capabilities": [],
+      "status": "restricted_offline",
+      "unknown_ipc": "deny"
+    }
+  },
+  "checks": [
+    {
+      "id": "P120-M005",
+      "result": "PASS",
+      "actual": {
+        "ai_enabled": false,
+        "ipc_allowlist": [
+          "capture_record",
+          "get_today",
+          "runtime_status"
+        ],
+        "offline": true,
+        "renderer_direct_capabilities": [],
+        "status": "restricted_offline",
+        "unknown_ipc": "deny"
+      },
+      "evidence": [
+        "runtime-test.log"
+      ]
+    },
+    {
+      "id": "P120-M006",
+      "result": "PASS",
+      "actual": {
+        "initial_status": "empty",
+        "first_status": "saved",
+        "first_record_id": "p3-120-000001a037f2d631-p3-120-synthetic-one"
+      },
+      "evidence": [
+        "runtime-test.log"
+      ]
+    },
+    {
+      "id": "P120-M007",
+      "result": "PASS",
+      "actual": {
+        "repeat_status": "idempotent_repeat",
+        "first_record_id": "p3-120-000001a037f2d631-p3-120-synthetic-one",
+        "repeat_record_id": "p3-120-000001a037f2d631-p3-120-synthetic-one"
+      },
+      "evidence": [
+        "runtime-test.log"
+      ]
+    },
+    {
+      "id": "P120-M008",
+      "result": "PASS",
+      "actual": {
+        "second_status": "saved",
+        "refresh_contents": [
+          "P3-120 synthetic capture one",
+          "P3-120 synthetic capture two"
+        ]
+      },
+      "evidence": [
+        "runtime-test.log"
+      ]
+    },
+    {
+      "id": "P120-M009",
+      "result": "PASS",
+      "actual": {
+        "refresh_status": "loaded",
+        "refresh_contents": [
+          "P3-120 synthetic capture one",
+          "P3-120 synthetic capture two"
+        ],
+        "before_refresh_sha256": "021c7a25209190b3b0b0345aaeccde6bc164651f30b05fd738758d077bb6d1a7"
+      },
+      "evidence": [
+        "runtime-test.log"
+      ]
+    },
+    {
+      "id": "P120-M010",
+      "result": "PASS",
+      "actual": {
+        "reopen_status": "loaded",
+        "reopen_contents": [
+          "P3-120 synthetic capture one",
+          "P3-120 synthetic capture two"
+        ]
+      },
+      "evidence": [
+        "runtime-test.log"
+      ]
+    },
+    {
+      "id": "P120-M012",
+      "result": "PASS",
+      "actual": {
+        "after_db_sha256": "222e878ce07d4d489d027f815d7861de610269ad4e84e2e3f6a8ba47cdcf4a1d",
+        "after_sentinel_sha256": "0bd71ec34c9a35c4b841be82de23fa10770982588c72b4a21aaba21763783b0e",
+        "before_db_sha256": "222e878ce07d4d489d027f815d7861de610269ad4e84e2e3f6a8ba47cdcf4a1d",
+        "before_sentinel_sha256": "0bd71ec34c9a35c4b841be82de23fa10770982588c72b4a21aaba21763783b0e",
+        "code": "injected_atomic_failure",
+        "records_after_failure": 1
+      },
+      "evidence": [
+        "runtime-test.log"
+      ]
+    }
+  ],
+  "result": "PASS"
+}

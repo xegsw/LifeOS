@@ -1,0 +1,26 @@
+{
+  "task": "LIFEOS-P3-121",
+  "kind": "rework-2-final-closure",
+  "M009": {
+    "result": "NOT_IMPLEMENTED",
+    "evidence": "evidence/rework-2/actual_app/m009-native-1280x1024-final-attempt.png",
+    "observed_pixels": [
+      1036,
+      768
+    ]
+  },
+  "M020": {
+    "result": "PASS",
+    "evidence": "manifest/final-lineage-manifest.json",
+    "rule": "non-self final manifest covers current candidate, all engineering Evidence, delivery, PM Evidence, frozen/authorization inputs and cleanup"
+  },
+  "result": "NOT_PASS",
+  "counts": {
+    "P0": 0,
+    "P1": 1,
+    "P2": 0,
+    "Unknown": 0,
+    "Not_Implemented": 1
+  },
+  "stop_reason": "M-009 remains noncompliant unless actual pixels are exactly 1280x1024."
+}

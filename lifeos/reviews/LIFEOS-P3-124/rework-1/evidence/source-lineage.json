@@ -1,0 +1,548 @@
+{
+  "candidate_frozen_hashes_match": true,
+  "generated_at": "2026-08-26T01:15:35.325771+00:00",
+  "p3_121_ui_contamination": [],
+  "pass": true,
+  "runtime_adapted_paths": [
+    "Cargo.lock",
+    "Cargo.toml",
+    "capabilities/main.json",
+    "gen/schemas/capabilities.json",
+    "src/runtime.rs",
+    "tauri.conf.json"
+  ],
+  "runtime_checks": [
+    {
+      "candidate_sha256": "33086126043562d4e2c79d3b7183af3998986e65c1cdcf962a010351cef92843",
+      "exact": false,
+      "expected_source_sha256": "d7d545bb76fd45dae6654c041e363aea8cb348de15f7c032db162e45a24b96ee",
+      "relative_path": "Cargo.lock",
+      "source_sha256": "d7d545bb76fd45dae6654c041e363aea8cb348de15f7c032db162e45a24b96ee"
+    },
+    {
+      "candidate_sha256": "77f45562bf48239f16fd30c5d2dfcddf5b3dc81da9c0b52fc139f975cd080a2a",
+      "exact": false,
+      "expected_source_sha256": "ef1b2a90de10c429638e1daa956168c0c8c1b1abec4db284a109a5d203cea039",
+      "relative_path": "Cargo.toml",
+      "source_sha256": "ef1b2a90de10c429638e1daa956168c0c8c1b1abec4db284a109a5d203cea039"
+    },
+    {
+      "candidate_sha256": "62343b39726897a2c190d7ffe52bfd5ef85236f1f08a9f7d4595ee5993e02c74",
+      "exact": true,
+      "expected_source_sha256": "62343b39726897a2c190d7ffe52bfd5ef85236f1f08a9f7d4595ee5993e02c74",
+      "relative_path": "build.rs",
+      "source_sha256": "62343b39726897a2c190d7ffe52bfd5ef85236f1f08a9f7d4595ee5993e02c74"
+    },
+    {
+      "candidate_sha256": "61cd30c03da85ee4955e5e9375aeff18eb4be0262e789bc56d27428bbe034d1b",
+      "exact": false,
+      "expected_source_sha256": "add8b3fb88cf5362c200e566bdd2a81bd32b92871c7ff27e9e364d6721f7b24b",
+      "relative_path": "capabilities/main.json",
+      "source_sha256": "add8b3fb88cf5362c200e566bdd2a81bd32b92871c7ff27e9e364d6721f7b24b"
+    },
+    {
+      "candidate_sha256": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e",
+      "exact": true,
+      "expected_source_sha256": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e",
+      "relative_path": "gen/schemas/acl-manifests.json",
+      "source_sha256": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e"
+    },
+    {
+      "candidate_sha256": "acbafaa5dd8fbd3cb93206cd7c1e4e17dc104275bc835684e6cbd68bb736acf1",
+      "exact": false,
+      "expected_source_sha256": "2098f77baeaf3ffe21d14ab6bf018aafd5337821f3644ad25b93671bb986dabd",
+      "relative_path": "gen/schemas/capabilities.json",
+      "source_sha256": "2098f77baeaf3ffe21d14ab6bf018aafd5337821f3644ad25b93671bb986dabd"
+    },
+    {
+      "candidate_sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "exact": true,
+      "expected_source_sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "relative_path": "gen/schemas/desktop-schema.json",
+      "source_sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78"
+    },
+    {
+      "candidate_sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "exact": true,
+      "expected_source_sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "relative_path": "gen/schemas/macOS-schema.json",
+      "source_sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78"
+    },
+    {
+      "candidate_sha256": "39572c12160197611428210db2eeb800e37dbd41860ba8e9a669166114f4a76b",
+      "exact": true,
+      "expected_source_sha256": "39572c12160197611428210db2eeb800e37dbd41860ba8e9a669166114f4a76b",
+      "relative_path": "icons/128x128.png",
+      "source_sha256": "39572c12160197611428210db2eeb800e37dbd41860ba8e9a669166114f4a76b"
+    },
+    {
+      "candidate_sha256": "d92aa427d4dd01feba7b03c0a321f5c4bef1f47e9a7e6e17ffeb0186b1e5f5f1",
+      "exact": true,
+      "expected_source_sha256": "d92aa427d4dd01feba7b03c0a321f5c4bef1f47e9a7e6e17ffeb0186b1e5f5f1",
+      "relative_path": "icons/128x128@2x.png",
+      "source_sha256": "d92aa427d4dd01feba7b03c0a321f5c4bef1f47e9a7e6e17ffeb0186b1e5f5f1"
+    },
+    {
+      "candidate_sha256": "79bc6828196ed3e2403a53463914eff4c0c0efce5f8b6e7e0b139114e11a5e59",
+      "exact": true,
+      "expected_source_sha256": "79bc6828196ed3e2403a53463914eff4c0c0efce5f8b6e7e0b139114e11a5e59",
+      "relative_path": "icons/32x32.png",
+      "source_sha256": "79bc6828196ed3e2403a53463914eff4c0c0efce5f8b6e7e0b139114e11a5e59"
+    },
+    {
+      "candidate_sha256": "3e3ece76332b640d374bbeff1a09b8813f7fee0a4b653c9a38415062d996de59",
+      "exact": true,
+      "expected_source_sha256": "3e3ece76332b640d374bbeff1a09b8813f7fee0a4b653c9a38415062d996de59",
+      "relative_path": "icons/64x64.png",
+      "source_sha256": "3e3ece76332b640d374bbeff1a09b8813f7fee0a4b653c9a38415062d996de59"
+    },
+    {
+      "candidate_sha256": "58c82e4e0e8272eaa122b6bcb756c12c76910ffa6e95256e44448bfa634267c4",
+      "exact": true,
+      "expected_source_sha256": "58c82e4e0e8272eaa122b6bcb756c12c76910ffa6e95256e44448bfa634267c4",
+      "relative_path": "icons/Square107x107Logo.png",
+      "source_sha256": "58c82e4e0e8272eaa122b6bcb756c12c76910ffa6e95256e44448bfa634267c4"
+    },
+    {
+      "candidate_sha256": "05be4e8894bca70ea4b8099b3373090f51a0f5c3eb9f72c49e893eed1b1861e3",
+      "exact": true,
+      "expected_source_sha256": "05be4e8894bca70ea4b8099b3373090f51a0f5c3eb9f72c49e893eed1b1861e3",
+      "relative_path": "icons/Square142x142Logo.png",
+      "source_sha256": "05be4e8894bca70ea4b8099b3373090f51a0f5c3eb9f72c49e893eed1b1861e3"
+    },
+    {
+      "candidate_sha256": "5e9085cc59b404169906b999a9de0c389c118d3ace1696e8787700b030b8dee5",
+      "exact": true,
+      "expected_source_sha256": "5e9085cc59b404169906b999a9de0c389c118d3ace1696e8787700b030b8dee5",
+      "relative_path": "icons/Square150x150Logo.png",
+      "source_sha256": "5e9085cc59b404169906b999a9de0c389c118d3ace1696e8787700b030b8dee5"
+    },
+    {
+      "candidate_sha256": "28fdbcc829c7edbf94416276db345b5d9335391087e435831b412e745edb4de8",
+      "exact": true,
+      "expected_source_sha256": "28fdbcc829c7edbf94416276db345b5d9335391087e435831b412e745edb4de8",
+      "relative_path": "icons/Square284x284Logo.png",
+      "source_sha256": "28fdbcc829c7edbf94416276db345b5d9335391087e435831b412e745edb4de8"
+    },
+    {
+      "candidate_sha256": "579111e7e722cf3303c6309b8d4357b4ce5da7e28ba25734bc1cf672394ab3f5",
+      "exact": true,
+      "expected_source_sha256": "579111e7e722cf3303c6309b8d4357b4ce5da7e28ba25734bc1cf672394ab3f5",
+      "relative_path": "icons/Square30x30Logo.png",
+      "source_sha256": "579111e7e722cf3303c6309b8d4357b4ce5da7e28ba25734bc1cf672394ab3f5"
+    },
+    {
+      "candidate_sha256": "9ded936b77aebe3f6d4affc3557c0baacad5a12886c30c85c46daf2067927955",
+      "exact": true,
+      "expected_source_sha256": "9ded936b77aebe3f6d4affc3557c0baacad5a12886c30c85c46daf2067927955",
+      "relative_path": "icons/Square310x310Logo.png",
+      "source_sha256": "9ded936b77aebe3f6d4affc3557c0baacad5a12886c30c85c46daf2067927955"
+    },
+    {
+      "candidate_sha256": "3afc300fde82670e6ec6760addea1b03ccd6979424715802c8c767c42fcc5944",
+      "exact": true,
+      "expected_source_sha256": "3afc300fde82670e6ec6760addea1b03ccd6979424715802c8c767c42fcc5944",
+      "relative_path": "icons/Square44x44Logo.png",
+      "source_sha256": "3afc300fde82670e6ec6760addea1b03ccd6979424715802c8c767c42fcc5944"
+    },
+    {
+      "candidate_sha256": "13d8fa01f25817d346c11d28a2a63ea7285586ae005f372825f905ad8749da12",
+      "exact": true,
+      "expected_source_sha256": "13d8fa01f25817d346c11d28a2a63ea7285586ae005f372825f905ad8749da12",
+      "relative_path": "icons/Square71x71Logo.png",
+      "source_sha256": "13d8fa01f25817d346c11d28a2a63ea7285586ae005f372825f905ad8749da12"
+    },
+    {
+      "candidate_sha256": "4d65f163ed7dc62255f246ddb8bbc71de33f02a632af49be75ccd1de96a569f5",
+      "exact": true,
+      "expected_source_sha256": "4d65f163ed7dc62255f246ddb8bbc71de33f02a632af49be75ccd1de96a569f5",
+      "relative_path": "icons/Square89x89Logo.png",
+      "source_sha256": "4d65f163ed7dc62255f246ddb8bbc71de33f02a632af49be75ccd1de96a569f5"
+    },
+    {
+      "candidate_sha256": "60bad4ad4470f1cad766e0082a6dace73b48619d032af700aaabb3e971df28cc",
+      "exact": true,
+      "expected_source_sha256": "60bad4ad4470f1cad766e0082a6dace73b48619d032af700aaabb3e971df28cc",
+      "relative_path": "icons/StoreLogo.png",
+      "source_sha256": "60bad4ad4470f1cad766e0082a6dace73b48619d032af700aaabb3e971df28cc"
+    },
+    {
+      "candidate_sha256": "760d4b8a06bf7163dd010c33ad2cac9e4a75fa0177afaba042f83e311eef0c3e",
+      "exact": true,
+      "expected_source_sha256": "760d4b8a06bf7163dd010c33ad2cac9e4a75fa0177afaba042f83e311eef0c3e",
+      "relative_path": "icons/android/mipmap-anydpi-v26/ic_launcher.xml",
+      "source_sha256": "760d4b8a06bf7163dd010c33ad2cac9e4a75fa0177afaba042f83e311eef0c3e"
+    },
+    {
+      "candidate_sha256": "0514a04799bc23d608ef68fc0786a11a1bea7b3e7930485469444c5964a6cf9f",
+      "exact": true,
+      "expected_source_sha256": "0514a04799bc23d608ef68fc0786a11a1bea7b3e7930485469444c5964a6cf9f",
+      "relative_path": "icons/android/mipmap-hdpi/ic_launcher.png",
+      "source_sha256": "0514a04799bc23d608ef68fc0786a11a1bea7b3e7930485469444c5964a6cf9f"
+    },
+    {
+      "candidate_sha256": "e3adb898f0d807abc85bb75774e6b5e55b3f09627eee11e70844100f6ee8bef9",
+      "exact": true,
+      "expected_source_sha256": "e3adb898f0d807abc85bb75774e6b5e55b3f09627eee11e70844100f6ee8bef9",
+      "relative_path": "icons/android/mipmap-hdpi/ic_launcher_foreground.png",
+      "source_sha256": "e3adb898f0d807abc85bb75774e6b5e55b3f09627eee11e70844100f6ee8bef9"
+    },
+    {
+      "candidate_sha256": "d30ea18205f233e5791b912e4a9f89979805b825d45101b5e2612ae03dfbf497",
+      "exact": true,
+      "expected_source_sha256": "d30ea18205f233e5791b912e4a9f89979805b825d45101b5e2612ae03dfbf497",
+      "relative_path": "icons/android/mipmap-hdpi/ic_launcher_round.png",
+      "source_sha256": "d30ea18205f233e5791b912e4a9f89979805b825d45101b5e2612ae03dfbf497"
+    },
+    {
+      "candidate_sha256": "9ac96d6e24ee47813b82b9044b22c84055428e808aba48d3d32dd47dfdea09e7",
+      "exact": true,
+      "expected_source_sha256": "9ac96d6e24ee47813b82b9044b22c84055428e808aba48d3d32dd47dfdea09e7",
+      "relative_path": "icons/android/mipmap-mdpi/ic_launcher.png",
+      "source_sha256": "9ac96d6e24ee47813b82b9044b22c84055428e808aba48d3d32dd47dfdea09e7"
+    },
+    {
+      "candidate_sha256": "d5925ec91058b5f59575bcbad8dc38b66c4ca18e79d8e625ddd05704ff103120",
+      "exact": true,
+      "expected_source_sha256": "d5925ec91058b5f59575bcbad8dc38b66c4ca18e79d8e625ddd05704ff103120",
+      "relative_path": "icons/android/mipmap-mdpi/ic_launcher_foreground.png",
+      "source_sha256": "d5925ec91058b5f59575bcbad8dc38b66c4ca18e79d8e625ddd05704ff103120"
+    },
+    {
+      "candidate_sha256": "606ffd6da8ecaf7550673140f379eaf85cc838e320dfd6a33ee335654de6318c",
+      "exact": true,
+      "expected_source_sha256": "606ffd6da8ecaf7550673140f379eaf85cc838e320dfd6a33ee335654de6318c",
+      "relative_path": "icons/android/mipmap-mdpi/ic_launcher_round.png",
+      "source_sha256": "606ffd6da8ecaf7550673140f379eaf85cc838e320dfd6a33ee335654de6318c"
+    },
+    {
+      "candidate_sha256": "4aa5cd9b19fab966cf734af011232cb6f1a48322dfc3c8e2a1f3c0054cf8cc6c",
+      "exact": true,
+      "expected_source_sha256": "4aa5cd9b19fab966cf734af011232cb6f1a48322dfc3c8e2a1f3c0054cf8cc6c",
+      "relative_path": "icons/android/mipmap-xhdpi/ic_launcher.png",
+      "source_sha256": "4aa5cd9b19fab966cf734af011232cb6f1a48322dfc3c8e2a1f3c0054cf8cc6c"
+    },
+    {
+      "candidate_sha256": "4ae6b883cdda5f2ca78e3ec3067687e2efcc47e751c89e1b7b03ca6a3fc5d55d",
+      "exact": true,
+      "expected_source_sha256": "4ae6b883cdda5f2ca78e3ec3067687e2efcc47e751c89e1b7b03ca6a3fc5d55d",
+      "relative_path": "icons/android/mipmap-xhdpi/ic_launcher_foreground.png",
+      "source_sha256": "4ae6b883cdda5f2ca78e3ec3067687e2efcc47e751c89e1b7b03ca6a3fc5d55d"
+    },
+    {
+      "candidate_sha256": "1f410423954eb7cf62e9963bb8f6656ef9159b602adbfabd72a0e03a6c0abf42",
+      "exact": true,
+      "expected_source_sha256": "1f410423954eb7cf62e9963bb8f6656ef9159b602adbfabd72a0e03a6c0abf42",
+      "relative_path": "icons/android/mipmap-xhdpi/ic_launcher_round.png",
+      "source_sha256": "1f410423954eb7cf62e9963bb8f6656ef9159b602adbfabd72a0e03a6c0abf42"
+    },
+    {
+      "candidate_sha256": "53d8316fd25ed535731a4863decb0280abb3d6fc68a32025da6593c9801a5df4",
+      "exact": true,
+      "expected_source_sha256": "53d8316fd25ed535731a4863decb0280abb3d6fc68a32025da6593c9801a5df4",
+      "relative_path": "icons/android/mipmap-xxhdpi/ic_launcher.png",
+      "source_sha256": "53d8316fd25ed535731a4863decb0280abb3d6fc68a32025da6593c9801a5df4"
+    },
+    {
+      "candidate_sha256": "e9b95791588f1d650c74ea403c27e5758386b1f55cecb9b41ca18104989ad195",
+      "exact": true,
+      "expected_source_sha256": "e9b95791588f1d650c74ea403c27e5758386b1f55cecb9b41ca18104989ad195",
+      "relative_path": "icons/android/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "source_sha256": "e9b95791588f1d650c74ea403c27e5758386b1f55cecb9b41ca18104989ad195"
+    },
+    {
+      "candidate_sha256": "1d8c11c6c4145060e2f6532ffb3d98343fcbcd62b1bf1d8da7acaf44e82c995c",
+      "exact": true,
+      "expected_source_sha256": "1d8c11c6c4145060e2f6532ffb3d98343fcbcd62b1bf1d8da7acaf44e82c995c",
+      "relative_path": "icons/android/mipmap-xxhdpi/ic_launcher_round.png",
+      "source_sha256": "1d8c11c6c4145060e2f6532ffb3d98343fcbcd62b1bf1d8da7acaf44e82c995c"
+    },
+    {
+      "candidate_sha256": "acd57fb2317d236f78c21c7e31bef48fd55227cdbdf9efb6484fa01b7d44240f",
+      "exact": true,
+      "expected_source_sha256": "acd57fb2317d236f78c21c7e31bef48fd55227cdbdf9efb6484fa01b7d44240f",
+      "relative_path": "icons/android/mipmap-xxxhdpi/ic_launcher.png",
+      "source_sha256": "acd57fb2317d236f78c21c7e31bef48fd55227cdbdf9efb6484fa01b7d44240f"
+    },
+    {
+      "candidate_sha256": "6fbf0152677a925d70883c170bc05b7967eab5992ce09ce47618999507d97d60",
+      "exact": true,
+      "expected_source_sha256": "6fbf0152677a925d70883c170bc05b7967eab5992ce09ce47618999507d97d60",
+      "relative_path": "icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "source_sha256": "6fbf0152677a925d70883c170bc05b7967eab5992ce09ce47618999507d97d60"
+    },
+    {
+      "candidate_sha256": "6fbf756b41cf06d977ec2a40c216b6faf28c65cff9c28fd041e05d5da7d5452a",
+      "exact": true,
+      "expected_source_sha256": "6fbf756b41cf06d977ec2a40c216b6faf28c65cff9c28fd041e05d5da7d5452a",
+      "relative_path": "icons/android/mipmap-xxxhdpi/ic_launcher_round.png",
+      "source_sha256": "6fbf756b41cf06d977ec2a40c216b6faf28c65cff9c28fd041e05d5da7d5452a"
+    },
+    {
+      "candidate_sha256": "0687336f0ccc6f7ee09c7c95110667c63b75931238df779a21af401fb864cd34",
+      "exact": true,
+      "expected_source_sha256": "0687336f0ccc6f7ee09c7c95110667c63b75931238df779a21af401fb864cd34",
+      "relative_path": "icons/android/values/ic_launcher_background.xml",
+      "source_sha256": "0687336f0ccc6f7ee09c7c95110667c63b75931238df779a21af401fb864cd34"
+    },
+    {
+      "candidate_sha256": "e6e7eae0a6060cb21ace32751adb2bd9da6b2527374a4daae79c9aad505d11ed",
+      "exact": true,
+      "expected_source_sha256": "e6e7eae0a6060cb21ace32751adb2bd9da6b2527374a4daae79c9aad505d11ed",
+      "relative_path": "icons/icon.icns",
+      "source_sha256": "e6e7eae0a6060cb21ace32751adb2bd9da6b2527374a4daae79c9aad505d11ed"
+    },
+    {
+      "candidate_sha256": "1a14889bc10f824f3a072c1835b5561f3c576fb697ba4aa44839d55889116f0b",
+      "exact": true,
+      "expected_source_sha256": "1a14889bc10f824f3a072c1835b5561f3c576fb697ba4aa44839d55889116f0b",
+      "relative_path": "icons/icon.ico",
+      "source_sha256": "1a14889bc10f824f3a072c1835b5561f3c576fb697ba4aa44839d55889116f0b"
+    },
+    {
+      "candidate_sha256": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293",
+      "exact": true,
+      "expected_source_sha256": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293",
+      "relative_path": "icons/icon.png",
+      "source_sha256": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293"
+    },
+    {
+      "candidate_sha256": "bf69a17326cffb6405dcd732a814778042a8a02df8e13938b698570f80ba6c66",
+      "exact": true,
+      "expected_source_sha256": "bf69a17326cffb6405dcd732a814778042a8a02df8e13938b698570f80ba6c66",
+      "relative_path": "icons/icon.svg",
+      "source_sha256": "bf69a17326cffb6405dcd732a814778042a8a02df8e13938b698570f80ba6c66"
+    },
+    {
+      "candidate_sha256": "76bfc33979b0171e8229eb2e370d01b74fa18aae7fdeca9a2c156e2b9253ed64",
+      "exact": true,
+      "expected_source_sha256": "76bfc33979b0171e8229eb2e370d01b74fa18aae7fdeca9a2c156e2b9253ed64",
+      "relative_path": "icons/ios/AppIcon-20x20@1x.png",
+      "source_sha256": "76bfc33979b0171e8229eb2e370d01b74fa18aae7fdeca9a2c156e2b9253ed64"
+    },
+    {
+      "candidate_sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "exact": true,
+      "expected_source_sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "relative_path": "icons/ios/AppIcon-20x20@2x-1.png",
+      "source_sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+    },
+    {
+      "candidate_sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "exact": true,
+      "expected_source_sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "relative_path": "icons/ios/AppIcon-20x20@2x.png",
+      "source_sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+    },
+    {
+      "candidate_sha256": "1079318d510e167cf2156dcaebd0dc9b4ea4b3a36f072b02ee7d3946de55d554",
+      "exact": true,
+      "expected_source_sha256": "1079318d510e167cf2156dcaebd0dc9b4ea4b3a36f072b02ee7d3946de55d554",
+      "relative_path": "icons/ios/AppIcon-20x20@3x.png",
+      "source_sha256": "1079318d510e167cf2156dcaebd0dc9b4ea4b3a36f072b02ee7d3946de55d554"
+    },
+    {
+      "candidate_sha256": "f5a5f21fc384c9ab27cb1329e38be5e4b806e72e1d6eed5a5edc49deed3212ba",
+      "exact": true,
+      "expected_source_sha256": "f5a5f21fc384c9ab27cb1329e38be5e4b806e72e1d6eed5a5edc49deed3212ba",
+      "relative_path": "icons/ios/AppIcon-29x29@1x.png",
+      "source_sha256": "f5a5f21fc384c9ab27cb1329e38be5e4b806e72e1d6eed5a5edc49deed3212ba"
+    },
+    {
+      "candidate_sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+      "exact": true,
+      "expected_source_sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+      "relative_path": "icons/ios/AppIcon-29x29@2x-1.png",
+      "source_sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09"
+    },
+    {
+      "candidate_sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+      "exact": true,
+      "expected_source_sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+      "relative_path": "icons/ios/AppIcon-29x29@2x.png",
+      "source_sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09"
+    },
+    {
+      "candidate_sha256": "c89ad8db8ebb8b7bb035ae9024ea7f9f6e754d6e8efd8481de00d35d5be53446",
+      "exact": true,
+      "expected_source_sha256": "c89ad8db8ebb8b7bb035ae9024ea7f9f6e754d6e8efd8481de00d35d5be53446",
+      "relative_path": "icons/ios/AppIcon-29x29@3x.png",
+      "source_sha256": "c89ad8db8ebb8b7bb035ae9024ea7f9f6e754d6e8efd8481de00d35d5be53446"
+    },
+    {
+      "candidate_sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "exact": true,
+      "expected_source_sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "relative_path": "icons/ios/AppIcon-40x40@1x.png",
+      "source_sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+    },
+    {
+      "candidate_sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+      "exact": true,
+      "expected_source_sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+      "relative_path": "icons/ios/AppIcon-40x40@2x-1.png",
+      "source_sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c"
+    },
+    {
+      "candidate_sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+      "exact": true,
+      "expected_source_sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+      "relative_path": "icons/ios/AppIcon-40x40@2x.png",
+      "source_sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c"
+    },
+    {
+      "candidate_sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+      "exact": true,
+      "expected_source_sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+      "relative_path": "icons/ios/AppIcon-40x40@3x.png",
+      "source_sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b"
+    },
+    {
+      "candidate_sha256": "743e79bd29fa8035295bfc510e3aa42acef7ac922edf642c4e9bebe152a95929",
+      "exact": true,
+      "expected_source_sha256": "743e79bd29fa8035295bfc510e3aa42acef7ac922edf642c4e9bebe152a95929",
+      "relative_path": "icons/ios/AppIcon-512@2x.png",
+      "source_sha256": "743e79bd29fa8035295bfc510e3aa42acef7ac922edf642c4e9bebe152a95929"
+    },
+    {
+      "candidate_sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+      "exact": true,
+      "expected_source_sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+      "relative_path": "icons/ios/AppIcon-60x60@2x.png",
+      "source_sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b"
+    },
+    {
+      "candidate_sha256": "afe8ea3eca3ec76dee2f9f1b61e79f0755239378b6fda84c9dec63309375a804",
+      "exact": true,
+      "expected_source_sha256": "afe8ea3eca3ec76dee2f9f1b61e79f0755239378b6fda84c9dec63309375a804",
+      "relative_path": "icons/ios/AppIcon-60x60@3x.png",
+      "source_sha256": "afe8ea3eca3ec76dee2f9f1b61e79f0755239378b6fda84c9dec63309375a804"
+    },
+    {
+      "candidate_sha256": "29e682960dc2ebbef7f40fb64204d0422f56dfe7af3e2938e16ec93af21b20ae",
+      "exact": true,
+      "expected_source_sha256": "29e682960dc2ebbef7f40fb64204d0422f56dfe7af3e2938e16ec93af21b20ae",
+      "relative_path": "icons/ios/AppIcon-76x76@1x.png",
+      "source_sha256": "29e682960dc2ebbef7f40fb64204d0422f56dfe7af3e2938e16ec93af21b20ae"
+    },
+    {
+      "candidate_sha256": "8188dddb316617937ee9b7151bdd75cc33602b46eee2bbff7d82e638030f39cd",
+      "exact": true,
+      "expected_source_sha256": "8188dddb316617937ee9b7151bdd75cc33602b46eee2bbff7d82e638030f39cd",
+      "relative_path": "icons/ios/AppIcon-76x76@2x.png",
+      "source_sha256": "8188dddb316617937ee9b7151bdd75cc33602b46eee2bbff7d82e638030f39cd"
+    },
+    {
+      "candidate_sha256": "aa9d183c4b09055de09361471c6bb3353e0a1640e8368e75cc431308ddb29539",
+      "exact": true,
+      "expected_source_sha256": "aa9d183c4b09055de09361471c6bb3353e0a1640e8368e75cc431308ddb29539",
+      "relative_path": "icons/ios/AppIcon-83.5x83.5@2x.png",
+      "source_sha256": "aa9d183c4b09055de09361471c6bb3353e0a1640e8368e75cc431308ddb29539"
+    },
+    {
+      "candidate_sha256": "54231ca6bea6a491dfa45c5c1e12cc7485ae94c16a374e52933ee1a7cb48248f",
+      "exact": true,
+      "expected_source_sha256": "54231ca6bea6a491dfa45c5c1e12cc7485ae94c16a374e52933ee1a7cb48248f",
+      "relative_path": "rust-toolchain.toml",
+      "source_sha256": "54231ca6bea6a491dfa45c5c1e12cc7485ae94c16a374e52933ee1a7cb48248f"
+    },
+    {
+      "candidate_sha256": "4d7a1e4a1eebe08ffec78a4c0cd0e7cdeabf6b92e68c003b02e3515a035e042c",
+      "exact": true,
+      "expected_source_sha256": "4d7a1e4a1eebe08ffec78a4c0cd0e7cdeabf6b92e68c003b02e3515a035e042c",
+      "relative_path": "src/main.rs",
+      "source_sha256": "4d7a1e4a1eebe08ffec78a4c0cd0e7cdeabf6b92e68c003b02e3515a035e042c"
+    },
+    {
+      "candidate_sha256": "4c04007df124ded22aa3ff0adb7be1708dff4707d2592a9fda824d59f1e1770c",
+      "exact": false,
+      "expected_source_sha256": "165589045a6cd031208f3e3b1ee19b918b5d2b3afe76d2f0315a50cf124541c0",
+      "relative_path": "src/runtime.rs",
+      "source_sha256": "165589045a6cd031208f3e3b1ee19b918b5d2b3afe76d2f0315a50cf124541c0"
+    },
+    {
+      "candidate_sha256": "fda28148e6b291d0ebf7d6aec08e68c453c7a44e0e73e993b2ed1a0a51fa497f",
+      "exact": false,
+      "expected_source_sha256": "cb68a9bb05e2c4d29858b93234a4d6eb5e1a825f4c9b8eb1d8c71cca5a66f53e",
+      "relative_path": "tauri.conf.json",
+      "source_sha256": "cb68a9bb05e2c4d29858b93234a4d6eb5e1a825f4c9b8eb1d8c71cca5a66f53e"
+    }
+  ],
+  "runtime_exact_count": 59,
+  "test_id": "P124R-M003",
+  "unexpected_runtime_adaptations": [],
+  "visual_checks": [
+    {
+      "candidate_derived_bytes": 527,
+      "candidate_derived_sha256": "d9283e3f0a0366ef350d8b11fe094a4f3fbebabef30511353b0b007b5de0b28b",
+      "expected_sha256": "d9283e3f0a0366ef350d8b11fe094a4f3fbebabef30511353b0b007b5de0b28b",
+      "pass": true,
+      "relative_path": "index.html",
+      "source_bytes": 527,
+      "source_sha256": "d9283e3f0a0366ef350d8b11fe094a4f3fbebabef30511353b0b007b5de0b28b"
+    },
+    {
+      "candidate_derived_bytes": 40190,
+      "candidate_derived_sha256": "cf9f800c8c30f75e05e0b58345807128b8a11d0c31ea11f076e8ff7a5a02d8d3",
+      "expected_sha256": "cf9f800c8c30f75e05e0b58345807128b8a11d0c31ea11f076e8ff7a5a02d8d3",
+      "pass": true,
+      "relative_path": "styles.css",
+      "source_bytes": 40190,
+      "source_sha256": "cf9f800c8c30f75e05e0b58345807128b8a11d0c31ea11f076e8ff7a5a02d8d3"
+    },
+    {
+      "candidate_derived_bytes": 42702,
+      "candidate_derived_sha256": "c1db2926e04f83e26d787f75f922fa562070db560bc8fbac661f82492b9a451f",
+      "expected_sha256": "c1db2926e04f83e26d787f75f922fa562070db560bc8fbac661f82492b9a451f",
+      "pass": true,
+      "relative_path": "app.js",
+      "source_bytes": 42702,
+      "source_sha256": "c1db2926e04f83e26d787f75f922fa562070db560bc8fbac661f82492b9a451f"
+    },
+    {
+      "candidate_derived_bytes": 2994,
+      "candidate_derived_sha256": "a7b01ba8e176d80ae172ddd8acd2ed3a8c9b755b046159b190a2272195af3d93",
+      "expected_sha256": "a7b01ba8e176d80ae172ddd8acd2ed3a8c9b755b046159b190a2272195af3d93",
+      "pass": true,
+      "relative_path": "fixtures.js",
+      "source_bytes": 2994,
+      "source_sha256": "a7b01ba8e176d80ae172ddd8acd2ed3a8c9b755b046159b190a2272195af3d93"
+    },
+    {
+      "candidate_derived_bytes": 1825,
+      "candidate_derived_sha256": "c77435e281cbd9bbb447d7b081e055216afc18ff67f82b703cf9cb9acab8da49",
+      "expected_sha256": "c77435e281cbd9bbb447d7b081e055216afc18ff67f82b703cf9cb9acab8da49",
+      "pass": true,
+      "relative_path": "visual_contract.json",
+      "source_bytes": 1825,
+      "source_sha256": "c77435e281cbd9bbb447d7b081e055216afc18ff67f82b703cf9cb9acab8da49"
+    },
+    {
+      "candidate_derived_bytes": 3728,
+      "candidate_derived_sha256": "584189e7fee5a3e3d712ae4e1e7bf2e90e90a80e17c9f3eef1a61fdc88bf6393",
+      "expected_sha256": "584189e7fee5a3e3d712ae4e1e7bf2e90e90a80e17c9f3eef1a61fdc88bf6393",
+      "pass": true,
+      "relative_path": "interaction_contract.md",
+      "source_bytes": 3728,
+      "source_sha256": "584189e7fee5a3e3d712ae4e1e7bf2e90e90a80e17c9f3eef1a61fdc88bf6393"
+    },
+    {
+      "candidate_derived_bytes": 3432,
+      "candidate_derived_sha256": "bcedecafe5b068d05e5391c7de69aff2daa11aa6716851f5d2af1277f522b467",
+      "expected_sha256": "bcedecafe5b068d05e5391c7de69aff2daa11aa6716851f5d2af1277f522b467",
+      "pass": true,
+      "relative_path": "ia_reconciliation.md",
+      "source_bytes": 3432,
+      "source_sha256": "bcedecafe5b068d05e5391c7de69aff2daa11aa6716851f5d2af1277f522b467"
+    },
+    {
+      "candidate_derived_bytes": 2660,
+      "candidate_derived_sha256": "2bd66cf76dff4a0289e7c5b0b6a40ced22a0a765753a79c2c98075e8aa866cdc",
+      "expected_sha256": "2bd66cf76dff4a0289e7c5b0b6a40ced22a0a765753a79c2c98075e8aa866cdc",
+      "pass": true,
+      "relative_path": "state_machine.json",
+      "source_bytes": 2660,
+      "source_sha256": "2bd66cf76dff4a0289e7c5b0b6a40ced22a0a765753a79c2c98075e8aa866cdc"
+    }
+  ]
+}

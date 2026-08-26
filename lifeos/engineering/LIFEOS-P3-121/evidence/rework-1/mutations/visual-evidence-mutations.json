@@ -1,0 +1,20 @@
+{
+  "control": {
+    "result": "PASS",
+    "failures": []
+  },
+  "missing_700_viewport": {
+    "result": "PASS",
+    "failures": [
+      "missing_or_empty_actual_image"
+    ]
+  },
+  "duplicate_viewport_screenshot": {
+    "result": "PASS",
+    "failures": [
+      "duplicate_actual_screenshot_hash",
+      "viewport_record_changed:m009-native-700x760.png:(1160, 768)"
+    ]
+  },
+  "exact_disposable_cleanup": "PASS"
+}

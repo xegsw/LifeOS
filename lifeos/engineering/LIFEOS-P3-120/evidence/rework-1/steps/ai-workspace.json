@@ -1,0 +1,40 @@
+{
+  "schema": "lifeos-p3-120/rework-1-manual-step-v1",
+  "step": "ai-workspace",
+  "structured_result_id": "R1-ai-workspace",
+  "captured_at_utc": "2026-08-25T08:55:57.738794+00:00",
+  "operator": "user-manual",
+  "attestation": "User manually expanded AI Workspace in the foreground packaged app; delayed capture allowed the user to restore that already-open window after approval.",
+  "capture_delay_seconds": 12,
+  "automation_excluded": [
+    "Computer Use",
+    "AppleScript",
+    "AX",
+    "CDP",
+    "HTTP",
+    "WebDriver",
+    "browser control"
+  ],
+  "app": {
+    "pid": 24181,
+    "running": true,
+    "launch_count": 1
+  },
+  "db": {
+    "exists": false,
+    "captures": [],
+    "audit": [],
+    "sha256": null
+  },
+  "log_snapshot": {
+    "path": "logs/ai-workspace.app.log",
+    "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+    "missing_expected_lines": []
+  },
+  "screenshot": {
+    "path": "screenshots/ai-workspace.png",
+    "sha256": "79660cda4d1aea0e6e9cd34a54fa3772efbdee4035813a896015d4b0b1bc5370",
+    "bytes": 1243522
+  },
+  "result": "PASS"
+}

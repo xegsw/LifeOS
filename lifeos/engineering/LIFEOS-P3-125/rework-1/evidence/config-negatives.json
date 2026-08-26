@@ -1,0 +1,96 @@
+{
+  "result": "PASS",
+  "rows": [
+    {
+      "args": [
+        "/Users/xxe/.rustup/toolchains/1.98.0-aarch64-apple-darwin/bin/cargo",
+        "check",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 101,
+      "expected_rejection": "missing required build-time root",
+      "id": "config-missing",
+      "log": "lifeos/engineering/LIFEOS-P3-125/rework-1/logs/config-missing.log",
+      "log_sha256": "ca91e2bb2f47d02b978de06ca67a59e83b05d9e71ad533ffefbe9de5843e2115",
+      "rejected_before_runtime": true,
+      "sentinel_unchanged": true
+    },
+    {
+      "args": [
+        "/Users/xxe/.rustup/toolchains/1.98.0-aarch64-apple-darwin/bin/cargo",
+        "check",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 101,
+      "expected_rejection": "root is empty or contains a NUL byte",
+      "id": "config-empty",
+      "log": "lifeos/engineering/LIFEOS-P3-125/rework-1/logs/config-empty.log",
+      "log_sha256": "558110a441c2deb7460a5c9eac6a6f0ecdf782edc8e3b11be958d158bae4ae86",
+      "rejected_before_runtime": true,
+      "sentinel_unchanged": true
+    },
+    {
+      "args": [
+        "/Users/xxe/.rustup/toolchains/1.98.0-aarch64-apple-darwin/bin/cargo",
+        "check",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 101,
+      "expected_rejection": "root must be an absolute normalized path",
+      "id": "config-relative",
+      "log": "lifeos/engineering/LIFEOS-P3-125/rework-1/logs/config-relative.log",
+      "log_sha256": "ffd957aee9f1f54307d846fa69c018d930016ed26b675ff4372cf75c6448e2fe",
+      "rejected_before_runtime": true,
+      "sentinel_unchanged": true
+    },
+    {
+      "args": [
+        "/Users/xxe/.rustup/toolchains/1.98.0-aarch64-apple-darwin/bin/cargo",
+        "check",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 101,
+      "expected_rejection": "root must be an absolute normalized path",
+      "id": "config-traversal",
+      "log": "lifeos/engineering/LIFEOS-P3-125/rework-1/logs/config-traversal.log",
+      "log_sha256": "731c7c0bb40b5e93255b8ab864e4777932030b5603a500200e2ef805f09b29a9",
+      "rejected_before_runtime": true,
+      "sentinel_unchanged": true
+    },
+    {
+      "args": [
+        "/Users/xxe/.rustup/toolchains/1.98.0-aarch64-apple-darwin/bin/cargo",
+        "check",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 101,
+      "expected_rejection": "root or an ancestor is not a real directory",
+      "id": "config-symlink",
+      "log": "lifeos/engineering/LIFEOS-P3-125/rework-1/logs/config-symlink.log",
+      "log_sha256": "d2917c9c078ef40a9f37a552b3a8f328cdf7a8c175725454382c03b98931d7ed",
+      "rejected_before_runtime": true,
+      "sentinel_unchanged": true
+    },
+    {
+      "args": [
+        "/Users/xxe/.rustup/toolchains/1.98.0-aarch64-apple-darwin/bin/cargo",
+        "check",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 101,
+      "expected_rejection": "root or an ancestor is not a real directory",
+      "id": "config-root-file",
+      "log": "lifeos/engineering/LIFEOS-P3-125/rework-1/logs/config-root-file.log",
+      "log_sha256": "b24996d38c7ad4487a60d8253a3a78191557181f0f797ba002ab8d8ca1745bd8",
+      "rejected_before_runtime": true,
+      "sentinel_unchanged": true
+    }
+  ],
+  "task_id": "LIFEOS-P3-125"
+}

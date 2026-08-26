@@ -1,0 +1,38 @@
+{
+  "schema": "lifeos.p3-129.freeze-scope.v1",
+  "state_before_final_user_gate": "V1.0 is a Freeze Candidate only. This JSON declares the proposed scope; it does not freeze anything.",
+  "proposed_frozen_normative_scope": [
+    "Local-first modular monolith with ports/adapters and domain/infrastructure separation.",
+    "Interaction, Application, Orchestrator, Core Domain/Capabilities, Ports, Adapters and Infrastructure responsibility boundaries; Orchestrator does not own core data.",
+    "The 11 existing core-domain objects plus Link remain the semantic core; V1.0 does not create a second core model.",
+    "Model and Agent are distinct; Model has no execution authority and Agent authorization follows a bounded task.",
+    "TypeScript Core direction, Tauri 2 desktop direction and React/TypeScript UI direction.",
+    "SQLite as V1 local authority, FTS-first search, and rebuildable/deletable derivatives.",
+    "External capability is accessed through Ports/Adapters; core must not become vendor-bound.",
+    "Authorization is required on important consumption and execution paths, with all retained V0.1 recheck/fail-closed constraints from reconciliation.",
+    "P3-129 reconciliation's retained V0.1 safety invariants and forward-only V0.1 supersession semantics."
+  ],
+  "explicitly_not_frozen": [
+    "SQLite Schema and domain-to-table mapping",
+    "IPC command signatures and Tauri capability configuration",
+    "FTS table structure, PRAGMA, worker implementation and scheduling",
+    "final Adapter API/function signatures",
+    "specific Model/Agent provider or framework",
+    "Vector DB, Redis, Temporal, Fastify, PostgreSQL, cloud/sync protocol, smart-home or AR stack",
+    "production SLA, capacity commitment, export format, backup/recovery implementation or deletion/cleanup SLA",
+    "P3-126/P3-127 Runtime candidate, product IA, real capability enablement, risk closure, engineering baseline restoration or Stage 4"
+  ],
+  "scope_guards": [
+    {"id": "SCOPE-01", "guard": "No Schema/API/IPC/capability signature is Frozen by this task."},
+    {"id": "SCOPE-02", "guard": "No actual Tauri packaging, filesystem/Vault/export capability, network/cloud/model or product Runtime is validated or enabled."},
+    {"id": "SCOPE-03", "guard": "No core-domain, V1-scope or AI-trust semantic change is made; existing frozen baselines are inherited."},
+    {"id": "SCOPE-04", "guard": "V0.1 forward authority moves only after final Gate. Its history, Evidence and retained safety constraints remain."},
+    {"id": "SCOPE-05", "guard": "No risk is closed/reopened and Stage 4 is not entered."}
+  ],
+  "negative_scope_cases": [
+    {"id": "NEG-SCOPE-SCHEMA", "attempt": "Add SQLite Schema to frozen scope", "expected": "FAIL"},
+    {"id": "NEG-SCOPE-API", "attempt": "Add an IPC signature or Tauri capability to frozen scope", "expected": "FAIL"},
+    {"id": "NEG-SCOPE-RUNTIME", "attempt": "Declare P3-126 Runtime or real capability Frozen", "expected": "FAIL"},
+    {"id": "NEG-SCOPE-STAGE", "attempt": "Treat architectural freeze as Stage 4 or risk-closure authorization", "expected": "FAIL"}
+  ]
+}

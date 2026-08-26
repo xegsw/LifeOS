@@ -1,0 +1,39 @@
+{
+  "schema": "lifeos-p3-120/rework-1-manual-step-v1",
+  "step": "today-empty",
+  "structured_result_id": "R1-today-empty",
+  "captured_at_utc": "2026-08-25T08:43:24.869909+00:00",
+  "operator": "actual-app-start",
+  "attestation": "User confirmed the packaged Tauri app was foregrounded on Today empty state.",
+  "automation_excluded": [
+    "Computer Use",
+    "AppleScript",
+    "AX",
+    "CDP",
+    "HTTP",
+    "WebDriver",
+    "browser control"
+  ],
+  "app": {
+    "pid": 24181,
+    "running": true,
+    "launch_count": 1
+  },
+  "db": {
+    "exists": false,
+    "captures": [],
+    "audit": [],
+    "sha256": null
+  },
+  "log_snapshot": {
+    "path": "logs/today-empty.app.log",
+    "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+    "missing_expected_lines": []
+  },
+  "screenshot": {
+    "path": "screenshots/today-empty.png",
+    "sha256": "98dac31fe462ac912efce5b615901ca353f9424c071d9d86bcf4fb40b65ce486",
+    "bytes": 1921579
+  },
+  "result": "PASS"
+}

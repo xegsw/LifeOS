@@ -1,0 +1,84 @@
+{
+  "task": "LIFEOS-P3-125",
+  "abf": "ABF-P3-125-v1",
+  "result": "PASS — task-local self-check only; PM acceptance and user adoption remain pending.",
+  "build": {
+    "runtime_root": "/private/tmp/lifeos-p3-125-runtime-root-config-v1/run-final",
+    "runtime_rs_sha256": "a71fda5bde69bd7179fbc9037e4a6e02b6465bb7649ce7a06a60af849e1d3495",
+    "build_rs_sha256": "901c6971b8c31a3013fddbcaad688f38467e0374ed9e5d3c2511635597ded086",
+    "app_binary_sha256": "5ed3bb0e10cee926f7b4e64ab9ce4ac6322010d7b1079e7450891790f51276d4"
+  },
+  "rows": [
+    {
+      "id": "M001",
+      "action": "复算冻结 ABF、75 行 source allowlist、P3-122/P3-124 指定历史输入 hash。",
+      "observable_result": "5 个历史/冻结 hash 与 allowlist 行数均通过。实际会话 model/effort 无独立 attestation API，按事实保留 Unknown。",
+      "structured_result": "verification.json: hash:*; allowlist_rows; model_effort_attestation",
+      "evidence": "evidence/results/verification.json",
+      "sha256": "513cbe1d1ba845ed38178e322e00cbe4f913f3b309b15e48399545ec0092eed2",
+      "status": "PASS_WITH_ROUTE_ATTESTATION_UNKNOWN"
+    },
+    {
+      "id": "M002-M004",
+      "action": "以 frozen allowlist 复制 P3-122 candidate 至 P3-125 隔离目录，并检查唯一构建期根派生 DB、viewport 请求与 native geometry。",
+      "observable_result": "75/75 allowlist 行复制且校验；runtime.rs 仅由 LIFEOS_RUNTIME_ROOT 派生三个运行时路径。",
+      "structured_result": "source-lineage.json; verification.json: single_root_*",
+      "evidence": "evidence/results/source-lineage.json; evidence/results/verification.json",
+      "sha256": "runtime.rs=a71fda5bde69bd7179fbc9037e4a6e02b6465bb7649ce7a06a60af849e1d3495",
+      "status": "PASS"
+    },
+    {
+      "id": "M005",
+      "action": "以空、相对、含 ..、符号链接与普通文件五类 LIFEOS_RUNTIME_ROOT 运行构建检查。",
+      "observable_result": "每一类均在 build.rs、任何 app/runtime 输出前失败；日志含固定拒绝理由。",
+      "structured_result": "verification.json: fail_closed_log:*",
+      "evidence": "evidence/logs/build-empty.log; evidence/logs/build-relative.log; evidence/logs/build-traversal.log; evidence/logs/build-symlink.log; evidence/logs/build-root-file.log",
+      "sha256": "62a2c1ae50524223ea089373ed4f010d7c306179cbb6fea6eab1ddb1b56757d4;323e76bb4097b08f7cc9129b82588d2228a06ee1fd51e0eee7729687187f3c0b;0884bb8536dc815dd2884f5a6482ef4f30a1e42df1ab56ba8da934a40e00457f;2449de3c9495ece83f6c4d8e94c97d0224bb6f0221a35dc53e4fd4305f4feaf6;ef8eec4a38c51503ab09cb84e9550584dc087af38b285ec826ea5b9f2e90538f",
+      "status": "PASS"
+    },
+    {
+      "id": "M006-M007",
+      "action": "以两个不同构建期根启动实际 Tauri app；final 根执行首次、重复、关闭后重开。",
+      "observable_result": "run-b 初始 UI 显示尚无 Runtime capture，首次操作后 UI 显示固定原文；final SQLite 在重开后仍为 1 capture、capture_saved + capture_repeat，geometry 为 actual-tauri-native-window。",
+      "structured_result": "verification.json: final_snapshot_*; reopened_snapshot_*; native_geometry_*",
+      "evidence": "evidence/actual-app/run-b-initial.jpeg; evidence/actual-app/run-b-after-first.jpeg; evidence/actual-app/final-runtime-loaded.jpeg; evidence/runtime-snapshots/final-capture.sqlite; evidence/runtime-snapshots/final-reopened-capture.sqlite; evidence/runtime-snapshots/final-geometry.jsonl",
+      "sha256": "run-b-initial=ab84beeef84c2fbd5d41f01f476f41b8324ecf659929d5cb7c1597b96fa59a1f;run-b-after-first=c0dd53895e7f0b39d3f1843e067f987a31cce33884697ccc5fe8a493514134ff;final-runtime-loaded=9a64212d5d0d6656601fc02e2090290e47468a853e1bc3652cf75f1eaeacd292;final-db=38ad0293665fed5a71153fd6b92285ac49ee62e8c35c08f0d2e133ec0de01f3b;final-geometry=ac5895db1a5087c6d718cb936bc15c62d214e01ca9f4f17459b8e83ec812aa45",
+      "status": "PASS"
+    },
+    {
+      "id": "M008",
+      "action": "运行任务内单测的 injected atomic failure，比较 DB 与 sentinel 的前后 hash。",
+      "observable_result": "4/4 单测通过；覆盖原子失败、非 SQLite、sidecar、链接/类型冲突与不可写根，均保持 DB/sentinel 不变并清理候选 shadow。",
+      "structured_result": "cargo test --locked --offline -- --test-threads=1",
+      "evidence": "evidence/logs/unit-test-final.log",
+      "sha256": "4b35d0d296d12c321d824f4a720266fced3e6254c0f9e0c5d10079892a0dc987",
+      "status": "PASS"
+    },
+    {
+      "id": "M009-M010",
+      "action": "静态检查 legacy hard-coded root/独立 viewport env 已移除，且 IPC allowlist 仍为 capture_record、get_today、runtime_status。",
+      "observable_result": "29 项 verifier 全部 PASS；不存在旧根 literal 或独立 viewport 环境变量。",
+      "structured_result": "verification.json: no_legacy_runtime_root_literal; no_independent_viewport_environment; three_ipc_unchanged",
+      "evidence": "evidence/results/verification.json",
+      "sha256": "513cbe1d1ba845ed38178e322e00cbe4f913f3b309b15e48399545ec0092eed2",
+      "status": "PASS"
+    },
+    {
+      "id": "M011",
+      "action": "Computer Use 在 PID/bundle-path 绑定的实际 Tauri app 中打开 Quick Capture 并确认固定 synthetic 输入。",
+      "observable_result": "final UI attestation 显示 restricted_offline、1 record、2 audit；同一时刻 final SQLite snapshot 为一条固定原文及 save/repeat 审计。",
+      "structured_result": "final UI attestation rt=[restricted_offline,1,2,null]; verification.json: final_snapshot_*",
+      "evidence": "evidence/actual-app/final-runtime-loaded.jpeg; evidence/runtime-snapshots/final-capture.sqlite",
+      "sha256": "ui=9a64212d5d0d6656601fc02e2090290e47468a853e1bc3652cf75f1eaeacd292;db=38ad0293665fed5a71153fd6b92285ac49ee62e8c35c08f0d2e133ec0de01f3b",
+      "status": "PASS"
+    }
+  ],
+  "p0_p1_p2_unknown_not_implemented": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 1,
+    "Not_Implemented": 0,
+    "unknown_detail": "The platform did not expose an independent current-session model/effort attestation API; no model identity is fabricated."
+  }
+}

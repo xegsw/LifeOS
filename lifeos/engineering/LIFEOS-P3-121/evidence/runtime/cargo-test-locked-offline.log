@@ -1,0 +1,26 @@
+
+running 9 tests
+test runtime::tests::runtime_status_closes_direct_capabilities_and_keeps_three_ipc ... ok
+test runtime::tests::runtime_path_is_exact_and_other_paths_are_rejected ... ok
+test runtime::tests::extra_ipc_fields_are_rejected_before_runtime_logic ... ok
+test runtime::tests::invalid_or_unpaired_input_is_rejected_before_storage ... ok
+test runtime::tests::link_hardlink_and_sidecar_boundaries_fail_closed ... ok
+test runtime::tests::tampered_content_and_schema_fail_closed ... ok
+test runtime::tests::injected_failure_preserves_database_and_sentinel ... ok
+test runtime::tests::first_repeat_second_refresh_and_reopen_are_consistent ... ok
+test runtime::tests::evidence_trace_covers_status_lifecycle_and_atomic_failure ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+warning: output of `xcrun` while finding MacOSX.sdk
+  |
+  = note: xcrun: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+
+warning: linker stderr: cc: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+  |
+  = note: `#[warn(linker_messages)]` on by default
+
+warning: `lifeos-p3-121` (build script) generated 2 warnings
+warning: `lifeos-p3-121` (bin "lifeos-p3-121" test) generated 2 warnings (2 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.29s
+     Running unittests src/main.rs (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-121/build/cargo-target/debug/deps/lifeos_p3_121-6b19890d85783a9d)

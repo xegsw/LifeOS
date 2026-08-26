@@ -1,0 +1,10 @@
+{
+  "test_id": "P124-M004",
+  "command": "/Users/xxe/.cargo/bin/cargo test --locked --offline; CARGO_NET_OFFLINE=true cargo tauri build --bundles app",
+  "candidate_copy": "/private/tmp/lifeos-p3-124-independent-review-v1/candidate",
+  "result": "PASS",
+  "tests": {"passed": 9, "failed": 0},
+  "bundle": "/private/tmp/lifeos-p3-124-independent-review-v1/target/release/bundle/macos/LifeOS P3-122 Native Viewport Runtime.app",
+  "bundle_exit_code": 0,
+  "disclosure": "macOS xcrun/cc reported DARWIN_USER_TEMP_DIR and cache-directory fallback warnings. Task-local TMPDIR, Cargo target and compiler-cache paths were set; the tool output does not independently prove or enumerate any OS-managed fallback cache writes."
+}

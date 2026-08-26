@@ -1,0 +1,55 @@
+{
+  "task_id": "LIFEOS-P3-127",
+  "reviewed_abf": "ABF-P3-127-v1",
+  "pm_result": "PASS",
+  "manifest": {
+    "path": "lifeos/reviews/LIFEOS-P3-127/FINAL_MANIFEST.json",
+    "declared_entries": 59,
+    "entries_recomputed": 59,
+    "hash_or_size_errors": 0,
+    "self_excluded": true
+  },
+  "frozen_inputs": {
+    "task_sha256": "3504a3e2a6f642df8dbe32f65c7a880d18d6ed0670785f01caa0832fd764e988",
+    "abf_sha256": "f44199a28d023d94e9bd5a4150f9e83b67e4919ea1a7b349756f34f51c049666",
+    "allowlist_sha256": "5d45d86656cc60f7d13d8a5b9851dfeea969814f9f22eb571365d1ae712ef72e",
+    "allowlist_rows": 75,
+    "candidate_matches": 75,
+    "candidate_failures": 0
+  },
+  "matrix": {
+    "rows": 12,
+    "pass": 12,
+    "fail": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  },
+  "history": {
+    "entries_recomputed": 123,
+    "failures": 0
+  },
+  "actual_tauri": {
+    "authorized_runtime_roots": 2,
+    "ipc_count": 3,
+    "run_a_lifecycle": "0/0 -> 1/1 -> 1/2 -> reopen 1/2",
+    "run_b_lifecycle": "0/0 -> 1/1 -> 1/2",
+    "screenshots_visually_sampled": 3
+  },
+  "mutations": {
+    "classes": 3,
+    "all_rejected": true
+  },
+  "cleanup": {
+    "temp_root": "/private/tmp/lifeos-p3-127-independent-review-v1",
+    "post_cleanup_absent": true
+  },
+  "non_blocking_diagnostic": "Default parallel cargo test exposed a shared-fixture cleanup race. Frozen serial invocation passed twice at 4/4; the diagnostic is not used as positive evidence and does not demonstrate a Runtime product failure.",
+  "counts": {
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  }
+}
+

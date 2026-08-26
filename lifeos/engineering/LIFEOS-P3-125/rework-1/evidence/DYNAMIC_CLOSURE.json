@@ -1,0 +1,95 @@
+{
+  "not_pass_rows": [
+    "ABF-M-001"
+  ],
+  "rework": "1/1",
+  "rows": [
+    {
+      "conclusion": "Frozen inputs and model matched, but the disclosed prohibited old-root existence check prevents a clean preflight pass.",
+      "row": "ABF-M-001",
+      "sha256": "7e17b26dbd58fd1f14ca55509a068f5b99d28191f13a634bf5310410c82c9a77",
+      "status": "NOT_PASS",
+      "structured_result": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/preflight.json"
+    },
+    {
+      "conclusion": "75-row source lineage and permitted two-file P3-122 delta are structured.",
+      "row": "ABF-M-002",
+      "sha256": "b11e7d83fc8a993f3d78f522be45582f1e519c2eee367ce6f44e263cde07b590",
+      "status": "PASS",
+      "structured_result": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/source-lineage.json"
+    },
+    {
+      "conclusion": "missing, empty, relative, traversal, symlink, and file roots reject before runtime.",
+      "row": "ABF-M-003",
+      "sha256": "61307fc6154b4fc86fded090f46a051b0c22bd6dcd6adccc23706660c42815bb",
+      "status": "PASS",
+      "structured_result": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/config-negatives.json"
+    },
+    {
+      "conclusion": "run-a actual App only wrote its configured root.",
+      "row": "ABF-M-004",
+      "sha256": "e76499999718672fab5039e5b2d58da1c0ca4a91d6c8d89299e7f11d24a7ea5b",
+      "status": "PASS",
+      "structured_result": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/run-a-results.json"
+    },
+    {
+      "conclusion": "run-b actual App started empty and wrote only its configured root.",
+      "row": "ABF-M-005",
+      "sha256": "21b8ddf4c589932250354a4d6d6643ce688d554e1142a2baded631880bd181ef",
+      "status": "PASS",
+      "structured_result": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/run-b-results.json"
+    },
+    {
+      "conclusion": "actual status, first, repeat, and close/reopen match DB/audit state.",
+      "row": "ABF-M-006",
+      "sha256": "26137651fc3a7b89eb24fb5d65184566fbb5737fd5d4be94e3ca6f75461f87c5",
+      "status": "PASS",
+      "structured_result": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/ipc-lifecycle.json"
+    },
+    {
+      "conclusion": "root path negatives were independently structured.",
+      "row": "ABF-M-007",
+      "sha256": "256e0393d073d11e2c34014d319d141087e114e7418ddd51c1204e977809882b",
+      "status": "PASS",
+      "structured_result": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/path-negatives.json"
+    },
+    {
+      "conclusion": "DB/sidecar/geometry/unwritable failures preserve the tested state.",
+      "row": "ABF-M-008",
+      "sha256": "4c845b4647d59fb7c29c7f199a6c1f19a5e918fb62ce4ff7738f40dfdba0af15",
+      "status": "PASS",
+      "structured_result": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/storage-negatives.json"
+    },
+    {
+      "conclusion": "production source, bundle, IPC, UI/schema/capability checks are closed.",
+      "row": "ABF-M-009",
+      "sha256": "684316c8f40da4c5683bfb7d0d2440c84daa68ade4797b744dbff6594f4c2656",
+      "status": "PASS",
+      "structured_result": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/boundary.json"
+    },
+    {
+      "conclusion": "protected input hashes match before and after.",
+      "row": "ABF-M-010",
+      "sha256": "bf8aba04c9c7bca24012bb28cbf0a7f1cb4a03c6af47d507a3f7c652685e4d2d",
+      "status": "PASS",
+      "structured_result": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/history-integrity.json"
+    },
+    {
+      "conclusion": "pristine verifier passed before real fixed-parent/fallback/derive/order/history/extra/path/omission mutations rejected.",
+      "row": "ABF-M-011",
+      "sha256": "265bb35ae68c90dee601f5eb58a9e7db3082170ab2749a66afb7b57be59e656e",
+      "status": "PASS",
+      "structured_result": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/mutation-results.json"
+    },
+    {
+      "conclusion": "only the exact task temp root was deleted and is absent.",
+      "row": "ABF-M-012",
+      "sha256": "9e944c8cc6259380e29c42a208a0b7c321898821ba667c8aa5da5877ca32cda5",
+      "status": "PASS",
+      "structured_result": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/cleanup.json"
+    }
+  ],
+  "self_check_result": "NOT_PASS_DISCLOSED_PRECHECK_DEVIATION",
+  "task_id": "LIFEOS-P3-125",
+  "technical_rows_pass": 11
+}

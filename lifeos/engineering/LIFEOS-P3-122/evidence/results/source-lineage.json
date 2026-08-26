@@ -1,0 +1,745 @@
+{
+  "candidate_only_adapters": [
+    "ui/runtime-adapter.js",
+    "ui/viewport-adapter.css"
+  ],
+  "p3_121_ui_contamination": false,
+  "result": "PASS",
+  "runtime_checks": [
+    {
+      "bytes": 111954,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/Cargo.lock",
+      "exact_required": false,
+      "relative_path": "Cargo.lock",
+      "sha256": "d7d545bb76fd45dae6654c041e363aea8cb348de15f7c032db162e45a24b96ee",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/Cargo.lock"
+    },
+    {
+      "bytes": 540,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/Cargo.toml",
+      "exact_required": false,
+      "relative_path": "Cargo.toml",
+      "sha256": "ef1b2a90de10c429638e1daa956168c0c8c1b1abec4db284a109a5d203cea039",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/Cargo.toml"
+    },
+    {
+      "bytes": 40,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/build.rs",
+      "exact_required": true,
+      "relative_path": "build.rs",
+      "sha256": "62343b39726897a2c190d7ffe52bfd5ef85236f1f08a9f7d4595ee5993e02c74",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/build.rs"
+    },
+    {
+      "bytes": 201,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/capabilities/main.json",
+      "exact_required": false,
+      "relative_path": "capabilities/main.json",
+      "sha256": "add8b3fb88cf5362c200e566bdd2a81bd32b92871c7ff27e9e364d6721f7b24b",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/capabilities/main.json"
+    },
+    {
+      "bytes": 65934,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/gen/schemas/acl-manifests.json",
+      "exact_required": true,
+      "relative_path": "gen/schemas/acl-manifests.json",
+      "sha256": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/gen/schemas/acl-manifests.json"
+    },
+    {
+      "bytes": 154,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/gen/schemas/capabilities.json",
+      "exact_required": false,
+      "relative_path": "gen/schemas/capabilities.json",
+      "sha256": "2098f77baeaf3ffe21d14ab6bf018aafd5337821f3644ad25b93671bb986dabd",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/gen/schemas/capabilities.json"
+    },
+    {
+      "bytes": 116049,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/gen/schemas/desktop-schema.json",
+      "exact_required": true,
+      "relative_path": "gen/schemas/desktop-schema.json",
+      "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/gen/schemas/desktop-schema.json"
+    },
+    {
+      "bytes": 116049,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/gen/schemas/macOS-schema.json",
+      "exact_required": true,
+      "relative_path": "gen/schemas/macOS-schema.json",
+      "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/gen/schemas/macOS-schema.json"
+    },
+    {
+      "bytes": 1227,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/128x128.png",
+      "exact_required": true,
+      "relative_path": "icons/128x128.png",
+      "sha256": "39572c12160197611428210db2eeb800e37dbd41860ba8e9a669166114f4a76b",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/128x128.png"
+    },
+    {
+      "bytes": 2488,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/128x128@2x.png",
+      "exact_required": true,
+      "relative_path": "icons/128x128@2x.png",
+      "sha256": "d92aa427d4dd01feba7b03c0a321f5c4bef1f47e9a7e6e17ffeb0186b1e5f5f1",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/128x128@2x.png"
+    },
+    {
+      "bytes": 441,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/32x32.png",
+      "exact_required": true,
+      "relative_path": "icons/32x32.png",
+      "sha256": "79bc6828196ed3e2403a53463914eff4c0c0efce5f8b6e7e0b139114e11a5e59",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/32x32.png"
+    },
+    {
+      "bytes": 643,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/64x64.png",
+      "exact_required": true,
+      "relative_path": "icons/64x64.png",
+      "sha256": "3e3ece76332b640d374bbeff1a09b8813f7fee0a4b653c9a38415062d996de59",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/64x64.png"
+    },
+    {
+      "bytes": 1065,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/Square107x107Logo.png",
+      "exact_required": true,
+      "relative_path": "icons/Square107x107Logo.png",
+      "sha256": "58c82e4e0e8272eaa122b6bcb756c12c76910ffa6e95256e44448bfa634267c4",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/Square107x107Logo.png"
+    },
+    {
+      "bytes": 1405,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/Square142x142Logo.png",
+      "exact_required": true,
+      "relative_path": "icons/Square142x142Logo.png",
+      "sha256": "05be4e8894bca70ea4b8099b3373090f51a0f5c3eb9f72c49e893eed1b1861e3",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/Square142x142Logo.png"
+    },
+    {
+      "bytes": 1587,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/Square150x150Logo.png",
+      "exact_required": true,
+      "relative_path": "icons/Square150x150Logo.png",
+      "sha256": "5e9085cc59b404169906b999a9de0c389c118d3ace1696e8787700b030b8dee5",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/Square150x150Logo.png"
+    },
+    {
+      "bytes": 2791,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/Square284x284Logo.png",
+      "exact_required": true,
+      "relative_path": "icons/Square284x284Logo.png",
+      "sha256": "28fdbcc829c7edbf94416276db345b5d9335391087e435831b412e745edb4de8",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/Square284x284Logo.png"
+    },
+    {
+      "bytes": 453,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/Square30x30Logo.png",
+      "exact_required": true,
+      "relative_path": "icons/Square30x30Logo.png",
+      "sha256": "579111e7e722cf3303c6309b8d4357b4ce5da7e28ba25734bc1cf672394ab3f5",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/Square30x30Logo.png"
+    },
+    {
+      "bytes": 2901,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/Square310x310Logo.png",
+      "exact_required": true,
+      "relative_path": "icons/Square310x310Logo.png",
+      "sha256": "9ded936b77aebe3f6d4affc3557c0baacad5a12886c30c85c46daf2067927955",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/Square310x310Logo.png"
+    },
+    {
+      "bytes": 582,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/Square44x44Logo.png",
+      "exact_required": true,
+      "relative_path": "icons/Square44x44Logo.png",
+      "sha256": "3afc300fde82670e6ec6760addea1b03ccd6979424715802c8c767c42fcc5944",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/Square44x44Logo.png"
+    },
+    {
+      "bytes": 779,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/Square71x71Logo.png",
+      "exact_required": true,
+      "relative_path": "icons/Square71x71Logo.png",
+      "sha256": "13d8fa01f25817d346c11d28a2a63ea7285586ae005f372825f905ad8749da12",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/Square71x71Logo.png"
+    },
+    {
+      "bytes": 927,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/Square89x89Logo.png",
+      "exact_required": true,
+      "relative_path": "icons/Square89x89Logo.png",
+      "sha256": "4d65f163ed7dc62255f246ddb8bbc71de33f02a632af49be75ccd1de96a569f5",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/Square89x89Logo.png"
+    },
+    {
+      "bytes": 564,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/StoreLogo.png",
+      "exact_required": true,
+      "relative_path": "icons/StoreLogo.png",
+      "sha256": "60bad4ad4470f1cad766e0082a6dace73b48619d032af700aaabb3e971df28cc",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/StoreLogo.png"
+    },
+    {
+      "bytes": 261,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-anydpi-v26/ic_launcher.xml",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-anydpi-v26/ic_launcher.xml",
+      "sha256": "760d4b8a06bf7163dd010c33ad2cac9e4a75fa0177afaba042f83e311eef0c3e",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+      "bytes": 1337,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-hdpi/ic_launcher.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-hdpi/ic_launcher.png",
+      "sha256": "0514a04799bc23d608ef68fc0786a11a1bea7b3e7930485469444c5964a6cf9f",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+      "bytes": 1625,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-hdpi/ic_launcher_foreground.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-hdpi/ic_launcher_foreground.png",
+      "sha256": "e3adb898f0d807abc85bb75774e6b5e55b3f09627eee11e70844100f6ee8bef9",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+      "bytes": 956,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-hdpi/ic_launcher_round.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-hdpi/ic_launcher_round.png",
+      "sha256": "d30ea18205f233e5791b912e4a9f89979805b825d45101b5e2612ae03dfbf497",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+      "bytes": 1251,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-mdpi/ic_launcher.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-mdpi/ic_launcher.png",
+      "sha256": "9ac96d6e24ee47813b82b9044b22c84055428e808aba48d3d32dd47dfdea09e7",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+      "bytes": 1173,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-mdpi/ic_launcher_foreground.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-mdpi/ic_launcher_foreground.png",
+      "sha256": "d5925ec91058b5f59575bcbad8dc38b66c4ca18e79d8e625ddd05704ff103120",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+      "bytes": 953,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-mdpi/ic_launcher_round.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-mdpi/ic_launcher_round.png",
+      "sha256": "606ffd6da8ecaf7550673140f379eaf85cc838e320dfd6a33ee335654de6318c",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+      "bytes": 2206,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-xhdpi/ic_launcher.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-xhdpi/ic_launcher.png",
+      "sha256": "4aa5cd9b19fab966cf734af011232cb6f1a48322dfc3c8e2a1f3c0054cf8cc6c",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+      "bytes": 2093,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-xhdpi/ic_launcher_foreground.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-xhdpi/ic_launcher_foreground.png",
+      "sha256": "4ae6b883cdda5f2ca78e3ec3067687e2efcc47e751c89e1b7b03ca6a3fc5d55d",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+      "bytes": 1249,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-xhdpi/ic_launcher_round.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-xhdpi/ic_launcher_round.png",
+      "sha256": "1f410423954eb7cf62e9963bb8f6656ef9159b602adbfabd72a0e03a6c0abf42",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+      "bytes": 3030,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-xxhdpi/ic_launcher.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-xxhdpi/ic_launcher.png",
+      "sha256": "53d8316fd25ed535731a4863decb0280abb3d6fc68a32025da6593c9801a5df4",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+      "bytes": 3051,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "sha256": "e9b95791588f1d650c74ea403c27e5758386b1f55cecb9b41ca18104989ad195",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+      "bytes": 1583,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-xxhdpi/ic_launcher_round.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-xxhdpi/ic_launcher_round.png",
+      "sha256": "1d8c11c6c4145060e2f6532ffb3d98343fcbcd62b1bf1d8da7acaf44e82c995c",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+      "bytes": 3891,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-xxxhdpi/ic_launcher.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-xxxhdpi/ic_launcher.png",
+      "sha256": "acd57fb2317d236f78c21c7e31bef48fd55227cdbdf9efb6484fa01b7d44240f",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+      "bytes": 4148,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "sha256": "6fbf0152677a925d70883c170bc05b7967eab5992ce09ce47618999507d97d60",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+      "bytes": 2078,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/mipmap-xxxhdpi/ic_launcher_round.png",
+      "exact_required": true,
+      "relative_path": "icons/android/mipmap-xxxhdpi/ic_launcher_round.png",
+      "sha256": "6fbf756b41cf06d977ec2a40c216b6faf28c65cff9c28fd041e05d5da7d5452a",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+      "bytes": 115,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/android/values/ic_launcher_background.xml",
+      "exact_required": true,
+      "relative_path": "icons/android/values/ic_launcher_background.xml",
+      "sha256": "0687336f0ccc6f7ee09c7c95110667c63b75931238df779a21af401fb864cd34",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/android/values/ic_launcher_background.xml"
+    },
+    {
+      "bytes": 31641,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/icon.icns",
+      "exact_required": true,
+      "relative_path": "icons/icon.icns",
+      "sha256": "e6e7eae0a6060cb21ace32751adb2bd9da6b2527374a4daae79c9aad505d11ed",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/icon.icns"
+    },
+    {
+      "bytes": 5650,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/icon.ico",
+      "exact_required": true,
+      "relative_path": "icons/icon.ico",
+      "sha256": "1a14889bc10f824f3a072c1835b5561f3c576fb697ba4aa44839d55889116f0b",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/icon.ico"
+    },
+    {
+      "bytes": 4982,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/icon.png",
+      "exact_required": true,
+      "relative_path": "icons/icon.png",
+      "sha256": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/icon.png"
+    },
+    {
+      "bytes": 232,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/icon.svg",
+      "exact_required": true,
+      "relative_path": "icons/icon.svg",
+      "sha256": "bf69a17326cffb6405dcd732a814778042a8a02df8e13938b698570f80ba6c66",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/icon.svg"
+    },
+    {
+      "bytes": 350,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-20x20@1x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-20x20@1x.png",
+      "sha256": "76bfc33979b0171e8229eb2e370d01b74fa18aae7fdeca9a2c156e2b9253ed64",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-20x20@1x.png"
+    },
+    {
+      "bytes": 529,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-20x20@2x-1.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-20x20@2x-1.png",
+      "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-20x20@2x-1.png"
+    },
+    {
+      "bytes": 529,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-20x20@2x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-20x20@2x.png",
+      "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-20x20@2x.png"
+    },
+    {
+      "bytes": 684,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-20x20@3x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-20x20@3x.png",
+      "sha256": "1079318d510e167cf2156dcaebd0dc9b4ea4b3a36f072b02ee7d3946de55d554",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-20x20@3x.png"
+    },
+    {
+      "bytes": 420,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-29x29@1x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-29x29@1x.png",
+      "sha256": "f5a5f21fc384c9ab27cb1329e38be5e4b806e72e1d6eed5a5edc49deed3212ba",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-29x29@1x.png"
+    },
+    {
+      "bytes": 667,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-29x29@2x-1.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-29x29@2x-1.png",
+      "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-29x29@2x-1.png"
+    },
+    {
+      "bytes": 667,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-29x29@2x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-29x29@2x.png",
+      "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-29x29@2x.png"
+    },
+    {
+      "bytes": 945,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-29x29@3x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-29x29@3x.png",
+      "sha256": "c89ad8db8ebb8b7bb035ae9024ea7f9f6e754d6e8efd8481de00d35d5be53446",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-29x29@3x.png"
+    },
+    {
+      "bytes": 529,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-40x40@1x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-40x40@1x.png",
+      "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-40x40@1x.png"
+    },
+    {
+      "bytes": 882,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-40x40@2x-1.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-40x40@2x-1.png",
+      "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-40x40@2x-1.png"
+    },
+    {
+      "bytes": 882,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-40x40@2x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-40x40@2x.png",
+      "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-40x40@2x.png"
+    },
+    {
+      "bytes": 1222,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-40x40@3x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-40x40@3x.png",
+      "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-40x40@3x.png"
+    },
+    {
+      "bytes": 12199,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-512@2x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-512@2x.png",
+      "sha256": "743e79bd29fa8035295bfc510e3aa42acef7ac922edf642c4e9bebe152a95929",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-512@2x.png"
+    },
+    {
+      "bytes": 1222,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-60x60@2x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-60x60@2x.png",
+      "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-60x60@2x.png"
+    },
+    {
+      "bytes": 1835,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-60x60@3x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-60x60@3x.png",
+      "sha256": "afe8ea3eca3ec76dee2f9f1b61e79f0755239378b6fda84c9dec63309375a804",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-60x60@3x.png"
+    },
+    {
+      "bytes": 873,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-76x76@1x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-76x76@1x.png",
+      "sha256": "29e682960dc2ebbef7f40fb64204d0422f56dfe7af3e2938e16ec93af21b20ae",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-76x76@1x.png"
+    },
+    {
+      "bytes": 1536,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-76x76@2x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-76x76@2x.png",
+      "sha256": "8188dddb316617937ee9b7151bdd75cc33602b46eee2bbff7d82e638030f39cd",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-76x76@2x.png"
+    },
+    {
+      "bytes": 1652,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/icons/ios/AppIcon-83.5x83.5@2x.png",
+      "exact_required": true,
+      "relative_path": "icons/ios/AppIcon-83.5x83.5@2x.png",
+      "sha256": "aa9d183c4b09055de09361471c6bb3353e0a1640e8368e75cc431308ddb29539",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/icons/ios/AppIcon-83.5x83.5@2x.png"
+    },
+    {
+      "bytes": 52,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/rust-toolchain.toml",
+      "exact_required": true,
+      "relative_path": "rust-toolchain.toml",
+      "sha256": "54231ca6bea6a491dfa45c5c1e12cc7485ae94c16a374e52933ee1a7cb48248f",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/rust-toolchain.toml"
+    },
+    {
+      "bytes": 117,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/src/main.rs",
+      "exact_required": true,
+      "relative_path": "src/main.rs",
+      "sha256": "4d7a1e4a1eebe08ffec78a4c0cd0e7cdeabf6b92e68c003b02e3515a035e042c",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/src/main.rs"
+    },
+    {
+      "bytes": 28388,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/src/runtime.rs",
+      "exact_required": false,
+      "relative_path": "src/runtime.rs",
+      "sha256": "165589045a6cd031208f3e3b1ee19b918b5d2b3afe76d2f0315a50cf124541c0",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/src/runtime.rs"
+    },
+    {
+      "bytes": 1001,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/tauri.conf.json",
+      "exact_required": false,
+      "relative_path": "tauri.conf.json",
+      "sha256": "cb68a9bb05e2c4d29858b93234a4d6eb5e1a825f4c9b8eb1d8c71cca5a66f53e",
+      "source_ok": true,
+      "source_path": "lifeos/engineering/LIFEOS-P3-121/candidate/tauri.conf.json"
+    }
+  ],
+  "runtime_source": "P3-121 runtime allowlist only",
+  "viewport_adapter_scope": "one inherited narrow Workspace grid-column reset; original styles.css remains byte-exact",
+  "visual_checks": [
+    {
+      "bytes": 527,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/ui/index.html",
+      "inheritance_mode": "source exact after removal of two explicit adapter tags",
+      "relative_path": "index.html",
+      "sha256": "d9283e3f0a0366ef350d8b11fe094a4f3fbebabef30511353b0b007b5de0b28b",
+      "source_ok": true,
+      "source_path": "lifeos/prototypes/LIFEOS-P3-116/index.html"
+    },
+    {
+      "bytes": 40190,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/ui/styles.css",
+      "inheritance_mode": "byte-exact",
+      "relative_path": "styles.css",
+      "sha256": "cf9f800c8c30f75e05e0b58345807128b8a11d0c31ea11f076e8ff7a5a02d8d3",
+      "source_ok": true,
+      "source_path": "lifeos/prototypes/LIFEOS-P3-116/styles.css"
+    },
+    {
+      "bytes": 42702,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/ui/app.js",
+      "inheritance_mode": "byte-exact",
+      "relative_path": "app.js",
+      "sha256": "c1db2926e04f83e26d787f75f922fa562070db560bc8fbac661f82492b9a451f",
+      "source_ok": true,
+      "source_path": "lifeos/prototypes/LIFEOS-P3-116/app.js"
+    },
+    {
+      "bytes": 2994,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/ui/fixtures.js",
+      "inheritance_mode": "byte-exact",
+      "relative_path": "fixtures.js",
+      "sha256": "a7b01ba8e176d80ae172ddd8acd2ed3a8c9b755b046159b190a2272195af3d93",
+      "source_ok": true,
+      "source_path": "lifeos/prototypes/LIFEOS-P3-116/fixtures.js"
+    },
+    {
+      "bytes": 1825,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/ui/visual_contract.json",
+      "inheritance_mode": "byte-exact",
+      "relative_path": "visual_contract.json",
+      "sha256": "c77435e281cbd9bbb447d7b081e055216afc18ff67f82b703cf9cb9acab8da49",
+      "source_ok": true,
+      "source_path": "lifeos/prototypes/LIFEOS-P3-116/visual_contract.json"
+    },
+    {
+      "bytes": 3728,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/ui/interaction_contract.md",
+      "inheritance_mode": "byte-exact",
+      "relative_path": "interaction_contract.md",
+      "sha256": "584189e7fee5a3e3d712ae4e1e7bf2e90e90a80e17c9f3eef1a61fdc88bf6393",
+      "source_ok": true,
+      "source_path": "lifeos/prototypes/LIFEOS-P3-116/interaction_contract.md"
+    },
+    {
+      "bytes": 3432,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/ui/ia_reconciliation.md",
+      "inheritance_mode": "byte-exact",
+      "relative_path": "ia_reconciliation.md",
+      "sha256": "bcedecafe5b068d05e5391c7de69aff2daa11aa6716851f5d2af1277f522b467",
+      "source_ok": true,
+      "source_path": "lifeos/prototypes/LIFEOS-P3-116/ia_reconciliation.md"
+    },
+    {
+      "bytes": 2660,
+      "candidate_ok": true,
+      "candidate_path": "lifeos/engineering/LIFEOS-P3-122/candidate/ui/state_machine.json",
+      "inheritance_mode": "byte-exact",
+      "relative_path": "state_machine.json",
+      "sha256": "2bd66cf76dff4a0289e7c5b0b6a40ced22a0a765753a79c2c98075e8aa866cdc",
+      "source_ok": true,
+      "source_path": "lifeos/prototypes/LIFEOS-P3-116/state_machine.json"
+    }
+  ],
+  "visual_source": "P3-116 actual visual allowlist only"
+}

@@ -1,0 +1,68 @@
+{
+  "schema": "lifeos-p3-120/pm-assessment-v1",
+  "task_id": "LIFEOS-P3-120",
+  "abf_id": "ABF-P3-120-v1",
+  "assessment_date": "2026-08-25",
+  "result": "REWORK",
+  "formal_rework": "1/2",
+  "hash_verification": {
+    "task_sha256": "d61a1cd92924c70c5b83121d78911b90c289d0b27280e752182a19d72cb2902f",
+    "abf_sha256": "e18c463ffb59f1bb80ba55d48a61009792cbd36190d998867d6f08a7aaebe219",
+    "source_allowlist_sha256": "4965260513f63f37dd1d5eba969440a30863a9d5574be0ca06464edccef25e94",
+    "deliverable_sha256": "ef644706a21976053b81fe1019ff9294dce89099e4ab9d199b52df13fda5bdec",
+    "engineering_manifest_sha256": "56f27d9e144f59b8e73cc24a398882fa6c7c6ec9750b84ff4572a5c3c99a70b0",
+    "matrix_results_sha256": "68bf59499aae369520d4b001a3f1ae700a73406aa9618e5b7ff590e1eaf654e0",
+    "manifest_rows": 101,
+    "manifest_rows_matching": 101,
+    "source_allowlist_rows": 72,
+    "source_allowlist_rows_matching": 72
+  },
+  "pm_rerun": {
+    "command_class": "cargo test --locked --offline",
+    "candidate": "lifeos/engineering/LIFEOS-P3-120/candidate",
+    "cargo": "1.98.0",
+    "rustc": "1.98.0",
+    "tests_passed": 9,
+    "tests_failed": 0,
+    "temporary_root": "/private/tmp/lifeos-p3-120-runtime-mvp-v1",
+    "temporary_root_absent_after_cleanup": true
+  },
+  "findings": [
+    {
+      "id": "PM-P0-001",
+      "severity": "P0",
+      "mapping": ["L1-7", "L1-10", "ABF-I-04", "ABF-I-05", "ABF-M-006", "ABF-M-007", "ABF-M-008", "ABF-M-009", "ABF-M-010"],
+      "result": "NOT_IMPLEMENTED",
+      "reason": "The submitted matrix uses a Rust lifecycle unit test for capture, repeat, second capture, refresh and reopen. It does not execute those operations through the packaged app renderer, Tauri IPC and visible UI, so the frozen three-layer actual-app result is not evidenced."
+    },
+    {
+      "id": "PM-P1-001",
+      "severity": "P1",
+      "mapping": ["L1-7", "L1-10", "ABF-I-07", "ABF-M-004"],
+      "result": "NOT_IMPLEMENTED",
+      "reason": "The actual-app replay only proves launch, five-second process survival, termination and reopen. Core-page navigation is substituted by a source-state contract and one Today screenshot."
+    },
+    {
+      "id": "PM-U-001",
+      "severity": "Unknown",
+      "mapping": ["L1-9", "L1-10", "ABF-I-01", "ABF-M-001"],
+      "result": "NOT_IMPLEMENTED",
+      "reason": "The session report identifies a fresh Codex engineering session but does not attest the actual gpt-5.6-terra + xhigh execution configuration, and fixed-inputs.json contains no model/session configuration field. PM cannot independently establish the frozen model route from retained task assets."
+    }
+  ],
+  "counts": {
+    "P0": 1,
+    "P1": 1,
+    "P2": 0,
+    "Unknown": 1,
+    "Not Implemented": 7
+  },
+  "visual_note": {
+    "blocking": false,
+    "reason": "The current app is visibly different from the P3-116 reference, but ABF-P3-120-v1 explicitly does not freeze visual design and contains no pixel or exact-layout formula. This may be a successor/backlog decision, not a retroactive P3-120 failure criterion."
+  },
+  "risk_status": {
+    "R-0051": "Closed / Limited Controlled Boundary — unchanged",
+    "R-0052": "Open — unchanged"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "task_id": "LIFEOS-P3-116",
+  "kind": "user_requested_multi_page_visual_alignment",
+  "timestamp_local": "2026-08-25",
+  "scope": ["Me", "Memory", "AI Workspace", "shared shell chrome"],
+  "preserved_contracts": [
+    "Primary IA remains Today, Me, Contexts, Memory; AI Workspace remains a Global AI deep state.",
+    "Memory remains an evidence browser with identity, source, scope, and derivation paths; it is not a file manager or a real KPI view.",
+    "Me keeps user facts, observations, inferences, correction paths, and two-domain boundary visible.",
+    "No model, network, storage, database, file, Tauri, IPC, real calendar, notification centre, account profile, or other runtime capability was added."
+  ],
+  "checks": [
+    {
+      "id": "P116-VA-001",
+      "view": "Me",
+      "result": "PASS",
+      "observed": "Current Self, current Contexts, long-term Work/Health perspectives, and traceable understandings use the shared quiet card system and visible identity labels.",
+      "source_evidence": "app.js:80-85; styles.css:196"
+    },
+    {
+      "id": "P116-VA-002",
+      "view": "Memory",
+      "result": "PASS",
+      "observed": "Search/filter, recent memory, relationship presentation, and review candidates retain source-identity navigation and Memory Detail links.",
+      "source_evidence": "app.js:102-110; styles.css:198"
+    },
+    {
+      "id": "P116-VA-003",
+      "view": "AI Workspace",
+      "result": "PASS",
+      "observed": "The deep AI working view uses the same rail and date chrome, and keeps Context Inspector, removable Health context, and the Global AI form visible.",
+      "source_evidence": "app.js:124-125,164-167; styles.css:200"
+    },
+    {
+      "id": "P116-VA-004",
+      "view": "static and parser checks",
+      "result": "PASS",
+      "observed": "P116-S-001 through P116-S-012 passed; app.js parsed successfully in the local JavaScript runtime before its expected browser-global ReferenceError.",
+      "command": "python3 -B lifeos/prototypes/LIFEOS-P3-116/tests/verify_static.py"
+    }
+  ],
+  "source_sha256": {
+    "app.js": "c1db2926e04f83e26d787f75f922fa562070db560bc8fbac661f82492b9a451f",
+    "styles.css": "cf9f800c8c30f75e05e0b58345807128b8a11d0c31ea11f076e8ff7a5a02d8d3",
+    "interaction_contract.md": "584189e7fee5a3e3d712ae4e1e7bf2e90e90a80e17c9f3eef1a61fdc88bf6393",
+    "visual_contract.json": "c77435e281cbd9bbb447d7b081e055216afc18ff67f82b703cf9cb9acab8da49",
+    "tests/verify_static.py": "0250b021bdc0b46e5f2c2b8e6dd460cdcdef94c53b55ac417234717b78df4d35"
+  },
+  "limit": "Browser policy blocked a fresh file: tab for a new visual capture. This is intentionally static, parse, and source-hash evidence; it does not replace the historical dynamic closure."
+}

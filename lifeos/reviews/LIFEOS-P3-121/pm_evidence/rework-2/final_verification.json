@@ -1,0 +1,41 @@
+{
+  "task": "LIFEOS-P3-121",
+  "review": "pm-final-rework-2-verification",
+  "result": "CLOSED_ACCEPTANCE_NOT_MET",
+  "submitted_final_manifest": {
+    "path": "lifeos/engineering/LIFEOS-P3-121/evidence/rework-2/manifest/final-lineage-manifest.json",
+    "sha256": "efd27d96b9831edf60fc6bbe46beebf841ac77d06f60c085da4b615ed63c4516",
+    "declared_result": "NOT_PASS",
+    "records_listed": 138,
+    "records_matched": 138,
+    "hash_errors": []
+  },
+  "viewport": {
+    "required": [1280, 1024],
+    "observed": [1036, 768],
+    "image_sha256": "d60b194effec6f7727f35cf3a556f31b83a7c8804c2238f335053af37f5327ed",
+    "result": "NOT_IMPLEMENTED"
+  },
+  "m020": {
+    "submitted_result": "PASS",
+    "pm_result": "FAIL",
+    "listed_records_match": true,
+    "missing_required_inputs": [
+      "reviews/LIFEOS-P3-121/pm_evidence/rework-1/MANIFEST.md",
+      "reviews/LIFEOS-P3-121/pm_evidence/rework-2/authorization.md",
+      "reviews/LIFEOS-P3-121/pm_evidence/rework-2/AUTHORIZATION_MANIFEST.md"
+    ],
+    "mapping": ["L1-6", "L1-7", "L1-8", "L1-10", "ABF-I-12", "ABF-I-13", "ABF-M-020"]
+  },
+  "counts": {
+    "P0": 1,
+    "P1": 1,
+    "P2": 0,
+    "Unknown": 0,
+    "Not_Implemented": 2
+  },
+  "rework_budget": "2/2 exhausted",
+  "third_rework_allowed": false,
+  "runtime_root_absent": true,
+  "pm_temporary_root_created": false
+}

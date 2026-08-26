@@ -1,0 +1,124 @@
+{
+  "task_id": "LIFEOS-P3-128",
+  "evidence_kind": "fixed-input-impact",
+  "generated_from": "direct task-card inputs only; no runtime, network, database, model, or personal-data access",
+  "precedence": [
+    "Frozen core semantic and trust invariants",
+    "Frozen technical architecture contract",
+    "Frozen product constitution and V1 boundary",
+    "Accepted but Not Frozen person-centered product candidates",
+    "Accepted current Runtime implementation facts",
+    "This P3-128 candidate contract"
+  ],
+  "inputs": [
+    {
+      "id": "F-CORE-001",
+      "path": "lifeos/deliverables/LIFEOS-P0-003_core_domain_model_research.md",
+      "status": "Frozen with P0-009",
+      "authority": "Core semantic baseline",
+      "impact": "Retain Project, Artifact, Source, Assertion, Decision, Action, Event, Derivation, Feedback, Authorization, AuditEntry, and Link as the only core semantic set.",
+      "non_overridable": ["Source/Artifact separation", "AI derivation provenance", "Feedback history", "Project is a recovery boundary, not a system root"]
+    },
+    {
+      "id": "F-CORE-002",
+      "path": "lifeos/deliverables/LIFEOS-P0-009_core_domain_model_freeze_patch.md",
+      "status": "Frozen with P0-003",
+      "authority": "Core semantic invariant patch",
+      "impact": "Keep four commands distinct, preserve orthogonal identity/confirmation/business/evidence/derivation states, and prevent tombstone/export resurrection.",
+      "non_overridable": ["No identity rewrite by Feedback", "derivation constraint inheritance", "active-use blocking before physical cleanup", "minimal non-reidentifying audit"]
+    },
+    {
+      "id": "F-TRUST-001",
+      "path": "lifeos/PROJECT_CONTEXT.md",
+      "status": "Frozen principles cited by current status",
+      "authority": "Product constitution and AI trust boundary",
+      "impact": "Person cannot be an AI profile; every AI input remains visible, removable, authorized, and unable to confirm facts, actions, decisions, or long-term memory.",
+      "non_overridable": ["user original protection", "human confirmation", "six-dimensional authorization", "no high-risk automated action"]
+    },
+    {
+      "id": "F-ARCH-001",
+      "path": "lifeos/architecture/LifeOS架构基线V1.0.md",
+      "status": "Frozen technical architecture V0.1 contract per FREEZE_STATUS",
+      "authority": "Architecture boundary",
+      "impact": "Use UI -> Application -> Domain -> Ports -> Adapters; business code never reaches SQL directly; Model and Agent stay separate from the domain.",
+      "non_overridable": ["local-first modular monolith", "hexagonal ports", "SQLite authority through repositories", "authorization at consumption and execution"]
+    },
+    {
+      "id": "F-PRODUCT-001",
+      "path": "lifeos/FREEZE_STATUS.md",
+      "status": "Frozen-status authority",
+      "authority": "Asset applicability and exclusions",
+      "impact": "Core semantics and architecture remain Frozen; IA, Schema/API details, Runtime, and P3-113 product candidate remain Not Frozen.",
+      "non_overridable": ["do not silently freeze candidate output", "do not treat a task pass as Stage 4 admission"]
+    },
+    {
+      "id": "F-GATE-001",
+      "path": "lifeos/STAGE_GATES.md",
+      "status": "Governance baseline",
+      "authority": "Gate 1-4 and Stage 3-to-4 boundary",
+      "impact": "This L2 contract may define an engineering handoff but cannot claim Stage 4; a Fast Track must remain an evidence-backed implementation task rather than a stage decision.",
+      "non_overridable": ["Stage 4 requires usable MVP, export, permissions, recovery, Alpha guidance", "Gate 1/3/4 remain separate"]
+    },
+    {
+      "id": "N-IA-001",
+      "path": "lifeos/architecture/LifeOS高保真原型IA-V1.0.md",
+      "status": "Accepted candidate / Not Frozen",
+      "authority": "Person-centered product-direction input",
+      "impact": "Adopt Person, Domain, Context, Memory, and Global AI interaction meaning only where it does not override Frozen semantics.",
+      "non_overridable": ["none; conflicts yield to Frozen inputs"]
+    },
+    {
+      "id": "N-PRODUCT-001",
+      "path": "lifeos/deliverables/LIFEOS-P3-113_human_centered_dual_domain_self_use_mvp_product_rebaseline_rework_1.md",
+      "status": "Accepted candidate / Not Frozen",
+      "authority": "Work/Health source and feedback-lifecycle candidate",
+      "impact": "Use its identity separation and feedback-to-understanding distinction; do not promote its fixtures or health assumptions into real data or a Frozen rule.",
+      "non_overridable": ["none; requires current authorization and evidence in implementation"]
+    },
+    {
+      "id": "N-REVIEW-001",
+      "path": "lifeos/reviews/LIFEOS-P3-114_pm_review.md",
+      "status": "Accepted / Independent Pass / Not Frozen",
+      "authority": "Independent candidate review fact",
+      "impact": "P3-113 has no assessed P0/P1 at its candidate boundary, but Gate 4/5 and product freezing were explicitly not passed.",
+      "non_overridable": ["none; no automatic implementation or freeze"]
+    },
+    {
+      "id": "N-SCHEMA-001",
+      "path": "lifeos/deliverables/LIFEOS-P3-025_production_schema_api_design.md",
+      "status": "Accepted but Not Frozen",
+      "authority": "Schema/API design input",
+      "impact": "Use its repository, transaction, generation, and read-model direction as a candidate only; do not freeze tables, commands, or DTOs.",
+      "non_overridable": ["no direct SQL from UI or Orchestrator", "current-state rechecks before consumption"]
+    },
+    {
+      "id": "N-SCHEMA-002",
+      "path": "lifeos/deliverables/LIFEOS-P3-027_schema_api_condition_remediation.md",
+      "status": "Accepted but Not Frozen",
+      "authority": "Stricter candidate API conditions",
+      "impact": "Carry deny-first authorization, strict DTOs, append-only feedback, and schema aggregation split triggers into the handoff without deciding a final API.",
+      "non_overridable": ["deny cannot be overridden by a narrower allow", "unknown command fields fail closed"]
+    },
+    {
+      "id": "N-RUNTIME-001",
+      "path": "lifeos/engineering/LIFEOS-P3-126/candidate/",
+      "status": "Accepted candidate / Read-only / Not Frozen",
+      "authority": "Current implementation facts only",
+      "impact": "Preserve the three existing IPC names, synthetic/offline fail-closed posture, runtime-root derivation, and UI DOM/CSS separation while replacing no historical candidate in place.",
+      "non_overridable": ["historical candidate is read-only", "no generic filesystem, SQL, network, export, sync, vault, or model capability"]
+    },
+    {
+      "id": "N-REVIEW-002",
+      "path": "lifeos/reviews/LIFEOS-P3-127_pm_review.md",
+      "status": "Accepted / PM Pass / User Adopted / Not Frozen",
+      "authority": "P3-126 evidence-lineage fact",
+      "impact": "The three-IPC synthetic Runtime has accepted evidence; that fact is not a product-model, schema, or Stage 4 freeze.",
+      "non_overridable": ["no extrapolation to real data or Stage 4"]
+    }
+  ],
+  "conflict_policy": {
+    "resolution": "A candidate that requires a new core object, weakens a Frozen invariant, changes V1 scope, changes AI authorization meaning, freezes Schema/API, or changes technical architecture is rejected from this contract and must return to PM for a new L3/Gate task.",
+    "result": "No such conflict was found in the recommended mapping. Context is an application/read-model composition, not a twelfth core domain object; Memory is an evidence read model, not a second source-of-truth store."
+  },
+  "result": "PASS"
+}

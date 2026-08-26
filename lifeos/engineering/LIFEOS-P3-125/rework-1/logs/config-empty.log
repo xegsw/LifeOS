@@ -1,0 +1,10 @@
+   Compiling lifeos-p3-122 v0.1.0 (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-125/rework-1/candidate)
+error: failed to run custom build command for `lifeos-p3-122 v0.1.0 (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-125/rework-1/candidate)`
+
+Caused by:
+  process didn't exit successfully: `/private/tmp/lifeos-p3-125-runtime-root-config-v1/negative-target/debug/build/lifeos-p3-122-c98ae1dcc7c2b716/build-script-build` (exit status: 101)
+  --- stderr
+
+  thread 'main' (7316251) panicked at build.rs:6:5:
+  LIFEOS_RUNTIME_ROOT rejected before build output: root is empty or contains a NUL byte
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

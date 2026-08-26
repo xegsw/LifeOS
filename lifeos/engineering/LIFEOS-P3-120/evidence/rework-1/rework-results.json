@@ -1,0 +1,86 @@
+{
+  "schema": "lifeos-p3-120/rework-1-verifier-v1",
+  "verification_phase": "post-cleanup",
+  "automation": "manual packaged-app operation; verifier reads only recorded evidence",
+  "preflight_model": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "xhigh"
+  },
+  "rows": {
+    "M-001": {
+      "result": "PASS",
+      "evidence": [
+        "preflight.json"
+      ],
+      "details": "Initial assets were hashed before rework; model is recorded as gpt-5.6-terra + xhigh."
+    },
+    "M-004": {
+      "result": "PASS",
+      "evidence": [
+        "steps/today-empty.json",
+        "steps/me.json",
+        "steps/contexts.json",
+        "steps/context-detail.json",
+        "steps/memory.json",
+        "steps/memory-detail.json",
+        "steps/global-ai.json",
+        "steps/ai-workspace.json",
+        "steps/settings.json"
+      ],
+      "details": "Manual navigation screenshots and structured results cover the specified pages."
+    },
+    "M-005": {
+      "result": "PASS",
+      "evidence": [
+        "actual-app.log",
+        "steps/today-empty.json"
+      ],
+      "details": "Packaged runtime reported restricted offline status."
+    },
+    "M-006": {
+      "result": "PASS",
+      "evidence": [
+        "steps/capture-one.json"
+      ],
+      "details": "Manual first capture verifies saved then get_today at 1/1."
+    },
+    "M-007": {
+      "result": "PASS",
+      "evidence": [
+        "steps/repeat-one.json"
+      ],
+      "details": "Manual repeat verifies deterministic idempotence at 1/2."
+    },
+    "M-008": {
+      "result": "PASS",
+      "evidence": [
+        "steps/capture-two.json"
+      ],
+      "details": "Manual second capture verifies ordered two-record lifecycle at 2/3."
+    },
+    "M-009": {
+      "result": "PASS",
+      "evidence": [
+        "steps/refresh.json"
+      ],
+      "details": "Manual refresh used get_today while DB hash remained identical."
+    },
+    "M-010": {
+      "result": "PASS",
+      "evidence": [
+        "steps/closed.json",
+        "steps/reopen-today.json"
+      ],
+      "details": "User closed then reopened the same packaged runtime and data remained 2/3."
+    },
+    "M-015": {
+      "result": "PASS",
+      "evidence": [
+        "cleanup.json"
+      ],
+      "details": "Exact temporary root is absent after the final user close and cleanup."
+    }
+  },
+  "errors": [],
+  "result": "PASS"
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "lifeos.p3-129.verification-receipt.v1",
+  "command": "python3 -B lifeos/architecture/LIFEOS-P3-129/verifier.py verify --skip-manifest",
+  "command_result": {"status": "PASS", "error_count": 0, "errors": []},
+  "candidate_side_rows": [
+    {"id": "ABF-M-001", "result": "PASS", "evidence": "fixed_inputs.json; all listed SHA-256 values rechecked"},
+    {"id": "ABF-M-002", "result": "PASS", "evidence": "v0_to_v1_reconciliation.json; V0-01..V0-16 complete"},
+    {"id": "ABF-M-003", "result": "PASS", "evidence": "cross_baseline_compatibility.json; CB-01..CB-12 and five counterexamples"},
+    {"id": "ABF-M-004", "result": "PASS", "evidence": "freeze_scope.json; fixed and excluded lists plus negative cases"},
+    {"id": "ABF-M-005", "result": "PASS", "evidence": "runtime_transition.json; preserve/adapt/defer coverage"},
+    {"id": "ABF-M-006", "result": "PASS", "evidence": "canonical_promotion_patch.json; exact one-line pre/post construct"},
+    {"id": "ABF-M-007", "result": "PASS", "evidence": "pristine verifier result recorded above"},
+    {"id": "ABF-M-008", "result": "PASS", "evidence": "mutation_results.json / MUT-HASH"},
+    {"id": "ABF-M-009", "result": "PASS", "evidence": "mutation_results.json / MUT-LEGACY-OMISSION"},
+    {"id": "ABF-M-010", "result": "PASS", "evidence": "mutation_results.json / MUT-SCOPE-EXPANSION"},
+    {"id": "ABF-M-011", "result": "PASS", "evidence": "mutation_results.json / MUT-BODY-CHANGE"},
+    {"id": "ABF-M-012", "result": "PASS", "evidence": "history_verification.json"},
+    {"id": "ABF-M-013", "result": "PENDING_MANDATORY_INDEPENDENT_REVIEW", "evidence": "must be produced by another fresh isolated read-only session; execution session cannot satisfy it"},
+    {"id": "ABF-M-014", "result": "PENDING_GATE_CLOSURE", "evidence": "candidate Final Manifest is ready, but Gate closure awaits ABF-M-013, PM Pass and final user confirmation"}
+  ],
+  "counts_for_candidate_side": {"P0": 0, "P1": 0, "P2": 0, "Unknown": 0, "Not_Implemented": 0},
+  "overall_state": "Candidate static verification PASS / Not Frozen / Not final Gate Pass"
+}

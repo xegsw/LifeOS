@@ -1,0 +1,19 @@
+        Warn --no-sign flag detected: Signing will be skipped.
+        Info Looking up installed tauri packages to check mismatched versions...
+warning: output of `xcrun` while finding MacOSX.sdk
+  |
+  = note: xcrun: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+
+warning: linker stderr: cc: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+  |
+  = note: `#[warn(linker_messages)]` on by default
+
+warning: `lifeos-p3-121` (build script) generated 2 warnings
+   Compiling lifeos-p3-121 v0.1.0 (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-121/candidate)
+    Finished `release` profile [optimized] target(s) in 10.01s
+       Built application at: /Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-121/build/cargo-target/release/lifeos-p3-121
+    Bundling LifeOS P3-121 Person-centered Runtime.app (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-121/build/cargo-target/release/bundle/macos/LifeOS P3-121 Person-centered Runtime.app)
+        Warn Skipping signing due to --no-sign flag.
+    Finished 1 bundle at:
+        /Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-121/build/cargo-target/release/bundle/macos/LifeOS P3-121 Person-centered Runtime.app
+

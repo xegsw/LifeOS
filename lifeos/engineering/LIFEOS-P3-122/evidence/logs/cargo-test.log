@@ -1,0 +1,42 @@
+   Compiling lifeos-p3-122 v0.1.0 (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-122/candidate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.68s
+     Running unittests src/main.rs (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-122/.cargo-target/debug/deps/lifeos_p3_122-fb2a9ad6e01f24f5)
+
+running 9 tests
+ipc_result status=blocked code=path_schema_rejected
+ipc_result status=blocked code=argument_schema_rejected
+ipc_result status=blocked code=database_type_rejected
+test runtime::tests::runtime_status_closes_direct_capabilities_and_keeps_three_ipc ... ok
+test runtime::tests::runtime_path_is_exact_and_other_paths_are_rejected ... ok
+test runtime::tests::extra_ipc_fields_are_rejected_before_runtime_logic ... ok
+test runtime::tests::invalid_or_unpaired_input_is_rejected_before_storage ... ok
+ipc_result command=capture_record status=saved record_count=1 audit_event_count=1 repeated=false
+ipc_result command=capture_record status=saved record_count=1 audit_event_count=1 repeated=false
+ipc_result command=capture_record status=saved record_count=1 audit_event_count=1 repeated=false
+ipc_result command=capture_record status=saved record_count=1 audit_event_count=1 repeated=false
+ipc_result command=capture_record status=saved record_count=1 audit_event_count=1 repeated=false
+ipc_result status=blocked code=database_type_rejected
+ipc_result status=blocked code=database_sidecar_rejected
+test runtime::tests::link_hardlink_and_sidecar_boundaries_fail_closed ... ok
+ipc_result status=blocked code=record_identity_rejected
+test runtime::tests::tampered_content_and_schema_fail_closed ... ok
+ipc_result status=blocked code=injected_atomic_failure
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=1
+ipc_result command=capture_record status=idempotent_repeat record_count=1 audit_event_count=2 repeated=true
+ipc_result command=capture_record status=idempotent_repeat record_count=1 audit_event_count=2 repeated=true
+test runtime::tests::injected_failure_preserves_database_and_sentinel ... ok
+ipc_result command=capture_record status=saved record_count=2 audit_event_count=3 repeated=false
+ipc_result command=get_today status=loaded record_count=2 audit_event_count=3
+ipc_result command=capture_record status=saved record_count=2 audit_event_count=3 repeated=false
+ipc_result command=get_today status=loaded record_count=2 audit_event_count=3
+test runtime::tests::first_repeat_second_refresh_and_reopen_are_consistent ... ok
+ipc_result command=get_today status=loaded record_count=2 audit_event_count=3
+ipc_result command=get_today status=loaded record_count=2 audit_event_count=3
+ipc_result command=capture_record status=saved record_count=1 audit_event_count=1 repeated=false
+ipc_result status=blocked code=injected_atomic_failure
+ipc_result command=get_today status=loaded record_count=1 audit_event_count=1
+P3-122-RUNTIME-TRACE {"atomic_failure":{"after_db_sha256":"cf3cf820c0d85ab5290b207ca215bf9eb2029a0dbdb3ae2a6106392de86fb319","after_sentinel_sha256":"40a4fd9537ab75b066df998fa717b3699546bedc02b2a2bb6bc0c0515253fa3c","before_db_sha256":"cf3cf820c0d85ab5290b207ca215bf9eb2029a0dbdb3ae2a6106392de86fb319","before_sentinel_sha256":"40a4fd9537ab75b066df998fa717b3699546bedc02b2a2bb6bc0c0515253fa3c","code":"injected_atomic_failure","records_after_failure":1},"lifecycle":{"after_first_sha256":"2f93ce97421fb3abf413b23cf8c17ce0c92efe10245fb454b28e524b25332311","after_repeat_sha256":"20c559357c47da06fdbddba61219bdd55154c21171700227709fafdd49e7d147","before_refresh_sha256":"085588a657c32945e6fa00ac423b060005c17aaf5bed160ce52afc961c3efe0c","first_record_id":"p3-122-000001a03999ac85-p3-122-synthetic-one","first_status":"saved","initial_status":"empty","refresh_contents":["明天先把发布页的第一屏文字读一遍，再决定是否继续做视觉细节。","P3-122 synthetic capture two"],"refresh_status":"loaded","reopen_contents":["明天先把发布页的第一屏文字读一遍，再决定是否继续做视觉细节。","P3-122 synthetic capture two"],"reopen_status":"loaded","repeat_record_id":"p3-122-000001a03999ac85-p3-122-synthetic-one","repeat_status":"idempotent_repeat","second_status":"saved"},"runtime_status":{"ai_enabled":false,"ipc_allowlist":["capture_record","get_today","runtime_status"],"offline":true,"renderer_direct_capabilities":[],"status":"restricted_offline","unknown_ipc":"deny"}}
+test runtime::tests::evidence_trace_covers_status_lifecycle_and_atomic_failure ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+

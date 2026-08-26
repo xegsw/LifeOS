@@ -1,0 +1,40 @@
+{
+  "schema": "lifeos-p3-120/rework-1-manual-step-v1",
+  "step": "settings",
+  "structured_result_id": "R1-settings",
+  "captured_at_utc": "2026-08-25T08:58:51.592932+00:00",
+  "operator": "user-manual",
+  "attestation": "User manually opened Settings in the foreground packaged app; delayed capture allowed the user to restore that already-open window after approval.",
+  "capture_delay_seconds": 12,
+  "automation_excluded": [
+    "Computer Use",
+    "AppleScript",
+    "AX",
+    "CDP",
+    "HTTP",
+    "WebDriver",
+    "browser control"
+  ],
+  "app": {
+    "pid": 24181,
+    "running": true,
+    "launch_count": 1
+  },
+  "db": {
+    "exists": false,
+    "captures": [],
+    "audit": [],
+    "sha256": null
+  },
+  "log_snapshot": {
+    "path": "logs/settings.app.log",
+    "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+    "missing_expected_lines": []
+  },
+  "screenshot": {
+    "path": "screenshots/settings.png",
+    "sha256": "15863c811922df97ec707f8e5a39a0dc3623b0f7bc21eb9e0a841e4158a26785",
+    "bytes": 1173283
+  },
+  "result": "PASS"
+}

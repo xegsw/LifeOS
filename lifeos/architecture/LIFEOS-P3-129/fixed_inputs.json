@@ -1,0 +1,23 @@
+{
+  "schema": "lifeos.p3-129.fixed-inputs.v1",
+  "task_id": "LIFEOS-P3-129",
+  "candidate_state": "Freeze Candidate / Not Frozen / Read-only inputs",
+  "inputs": [
+    {"id": "FI-TASK", "path": "lifeos/tasks/LIFEOS-P3-129_architecture_v1_authority_rebaseline_and_freeze_closure.md", "sha256": "2fa9ae33705b5f57f9045b508547d0180932dd23d23a043a1b2df1b93904fc09", "role": "Task Contract"},
+    {"id": "FI-ABF", "path": "lifeos/tasks/LIFEOS-P3-129_architecture_v1_authority_rebaseline_and_freeze_closure_acceptance_basis_freeze.md", "sha256": "df3c4e9879a624e05ef8f7eb5b71d1a5835422db0eea278e2fc88404032b40fb", "role": "Frozen Acceptance Basis"},
+    {"id": "FI-V1", "path": "lifeos/architecture/LifeOS架构基线V1.0.md", "sha256": "2db0cbeda30eea2a56d965220363fb6af6622acf413dfb4ee8c11ec867009a32", "role": "unique V1.0 canonical candidate"},
+    {"id": "FI-FREEZE", "path": "lifeos/FREEZE_STATUS.md", "sha256": "3d32e56876175636c00cf36b26e18bc284ff3d13123e291bce9f28f9e8f74a10", "role": "V0.1 frozen authority and current applicability"},
+    {"id": "FI-P2-016", "path": "lifeos/deliverables/LIFEOS-P2-016_technical_architecture_freeze_decision_package.md", "sha256": "3ab2cece5252c7d982683d1a1cae9c9106f6fa707e6a308e86d27667e4aff8fa", "role": "V0.1 architecture contract source"},
+    {"id": "FI-P2-016-REVIEW", "path": "lifeos/reviews/LIFEOS-P2-016_pm_review.md", "sha256": "348b038cb01bde3eea27605d04c714c153ecb798131281dc08f2e859eb86152b", "role": "V0.1 acceptance limits"},
+    {"id": "FI-P0-003", "path": "lifeos/deliverables/LIFEOS-P0-003_core_domain_model_research.md", "sha256": "e7c0b03ba0b9844cc9b515eaf42f88a844502e0ad3481ee01dff88e001d3cf29", "role": "core-domain semantics"},
+    {"id": "FI-P0-009", "path": "lifeos/deliverables/LIFEOS-P0-009_core_domain_model_freeze_patch.md", "sha256": "1c6759df1da2f9a95d6b1072c157eda023b9a985439290599dfae19577f90305", "role": "frozen domain safeguards"},
+    {"id": "FI-P3-128", "path": "lifeos/deliverables/LIFEOS-P3-128_person_context_memory_core_domain_mapping_and_fast_track_engineering_contract.md", "sha256": "c385beb8267724945c7665f7a419e1358b5f1571a389055d7642fb660fca1a6b", "role": "current mapping and handoff candidate"},
+    {"id": "FI-P3-128-REVIEW", "path": "lifeos/reviews/LIFEOS-P3-128_pm_review.md", "sha256": "490ad63606597724465f594c63a49f2d370a9a8aebd236ad1f0ec819cda3dab3", "role": "P3-128 authority clarification"},
+    {"id": "FI-GOVERNANCE", "path": "lifeos/ACCEPTANCE_GOVERNANCE.md", "sha256": "5c971d8b2089ed22d5a0f49a75ece498aff7dd05f92cb5abd69e9bad5b1ee913", "role": "Gate process"},
+    {"id": "FI-PM", "path": "lifeos/PM_OPERATING_MODEL.md", "sha256": "fe5034a3464d47d6990592aea4b2f21aca9c02f1326eb4c83a0586618ad1cee1", "role": "independent review and freeze rules"},
+    {"id": "FI-ROLE", "path": "lifeos/ROLE_MATRIX.md", "sha256": "e0cec1e4f17d9daf738c1ed8c4ee607ef2a9a15da758565e2eae99f4b094eb94", "role": "architecture and review roles"},
+    {"id": "FI-GATES", "path": "lifeos/STAGE_GATES.md", "sha256": "a7c96a75c805b96b5ceb2604fade645b8fcc0beb9ae0bcfa122825f23f233699", "role": "Gate 1-5 criteria"},
+    {"id": "FI-REVIEW-TEMPLATE", "path": "lifeos/templates/INDEPENDENT_REVIEW_TEMPLATE.md", "sha256": "da90e9bd113c9f07721755ae766bcbaf92474b171e573bfe30d22dce1bb4efd3", "role": "mandatory independent-review format"}
+  ],
+  "integrity_rule": "Every listed file is read-only for P3-129. A hash mismatch is Blocked / no promotion; the V1.0 canonical hash must be referenced unchanged by every candidate artifact."
+}

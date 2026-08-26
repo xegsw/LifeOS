@@ -1,0 +1,74 @@
+{
+  "cases": [
+    {
+      "case": "pristine",
+      "errors": [],
+      "pass": true
+    },
+    {
+      "case": "root",
+      "errors": [
+        "candidate_hash_mismatch:build.rs"
+      ],
+      "mutation": "build.rs",
+      "rejected": true
+    },
+    {
+      "case": "fallback",
+      "errors": [
+        "candidate_hash_mismatch:src/runtime.rs"
+      ],
+      "mutation": "src/runtime.rs",
+      "rejected": true
+    },
+    {
+      "case": "derive",
+      "errors": [
+        "candidate_hash_mismatch:src/runtime.rs"
+      ],
+      "mutation": "src/runtime.rs",
+      "rejected": true
+    },
+    {
+      "case": "order",
+      "errors": [
+        "candidate_hash_mismatch:src/runtime.rs"
+      ],
+      "mutation": "src/runtime.rs",
+      "rejected": true
+    },
+    {
+      "case": "extra",
+      "errors": [
+        "candidate_set_mismatch"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "history",
+      "errors": [
+        "protected_history_mismatch"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "path",
+      "errors": [
+        "invalid_self_exclusion",
+        "manifest_missing_or_extra_path"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "omission",
+      "errors": [
+        "invalid_self_exclusion",
+        "missing_roles:delivery",
+        "manifest_missing_or_extra_path"
+      ],
+      "rejected": true
+    }
+  ],
+  "status": "PASS",
+  "test_id": "P126-M011"
+}

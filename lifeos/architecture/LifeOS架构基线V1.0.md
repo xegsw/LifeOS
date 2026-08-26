@@ -1,6 +1,6 @@
 # LifeOS 架构基线 V1.0
 
-> 状态：Architecture Baseline Draft
+> 状态：Architecture Baseline Frozen / V1.0 — supersedes V0.1 for forward technical architecture authority; V0.1 history and Evidence remain preserved.
 > 用途：固定当前已确认的逻辑架构、技术架构与核心 Port 设计，作为后续实现与架构演进输入。
 > 注意：本文不自动修改既有项目治理文件中的 Frozen / Accepted / Risk 状态；若与正式主账本冲突，以正式主账本为准。
 

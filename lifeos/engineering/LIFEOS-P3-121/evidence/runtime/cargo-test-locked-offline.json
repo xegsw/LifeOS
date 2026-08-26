@@ -1,0 +1,28 @@
+{
+  "task": "LIFEOS-P3-121",
+  "command": [
+    "/Users/xxe/.cargo/bin/cargo",
+    "test",
+    "--locked",
+    "--offline"
+  ],
+  "cwd": "/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-121/candidate",
+  "cargo_target_dir": "/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-121/build/cargo-target",
+  "tmpdir": "/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-121/build/tmp",
+  "exit_code": 0,
+  "passed": true,
+  "required_named_tests_seen": {
+    "first_repeat_second_refresh_and_reopen_are_consistent": true,
+    "runtime_path_is_exact_and_other_paths_are_rejected": true,
+    "invalid_or_unpaired_input_is_rejected_before_storage": true,
+    "injected_failure_preserves_database_and_sentinel": true,
+    "runtime_status_closes_direct_capabilities_and_keeps_three_ipc": true
+  },
+  "warning_preserved": true,
+  "actual_app_bundle": {
+    "path": "/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-121/build/cargo-target/release/bundle/macos/LifeOS P3-121 Person-centered Runtime.app",
+    "exists": true,
+    "executable_exists": true,
+    "executable_sha256": "634e86fae20d56b3e385bdbcbf9cb5438ee75665c56e011e01b24db57ea5f3f2"
+  }
+}

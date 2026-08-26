@@ -1,0 +1,58 @@
+{
+  "task_id": "LIFEOS-P3-128",
+  "resolver": "GlobalAiContextResolver",
+  "purpose": "For one request, assemble a visible and removable context envelope. It is not a durable Person profile, a universal retrieval grant, or an Agent execution plan.",
+  "input_categories": [
+    {
+      "category": "person_context",
+      "allowed_refs": ["local owner reference", "explicit current preferences/confirmed facts only when authorized"],
+      "default": "included as minimum identity/scope reference, with detailed fields minimized",
+      "removal": "The person root cannot be replaced by an AI profile; optional person-derived detail can be removed before consumption.",
+      "authorization_action": "read_context"
+    },
+    {
+      "category": "page_context",
+      "allowed_refs": ["current route", "ContextId or ProjectId", "page-visible object refs"],
+      "default": "included only for the current visible page",
+      "removal": "user can remove page/object groups before submit",
+      "authorization_action": "read_context"
+    },
+    {
+      "category": "selection_context",
+      "allowed_refs": ["explicitly selected ArtifactVersion", "Decision", "Action", "Event", "MemoryItem evidence refs"],
+      "default": "empty unless an explicit selection exists",
+      "removal": "each selected item is removable independently",
+      "authorization_action": "read_context"
+    },
+    {
+      "category": "domain_or_context_expansion",
+      "allowed_refs": ["user-selected Domain or Context only"],
+      "default": "not implicitly expanded from a Page or Link",
+      "removal": "each Domain/Context group is removable; removal is request-local only",
+      "authorization_action": "read_context"
+    }
+  ],
+  "algorithm": [
+    "Accept only typed references from Person, Page, Selection, and explicit Domain/Context selections.",
+    "Construct a preview with identity kind, source/evidence status, reason for inclusion, and remove control for every optional item.",
+    "Apply user removals before any processing call; removals modify only the ephemeral request envelope.",
+    "For every remaining reference recheck subject, scope, action, purpose, location, time, source availability, exact version/generation, tombstone, and evidence state.",
+    "If all checks pass, return an immutable ResolverResult containing allowed refs and explicit omissions; any later AI output must persist this exact input set in Derivation.",
+    "If a check fails or is ambiguous, omit that ref and report a safe evidence/permission gap; do not substitute hidden adjacent content.",
+    "Discard ResolverResult after the request unless a separately authorized Derivation records its exact lawful refs."
+  ],
+  "output": {
+    "fields": ["request_context_id", "included_refs", "removed_refs", "omitted_refs", "authorization_receipts", "evidence_gaps", "purpose", "location", "expires_at"],
+    "ui_contract": "Context Inspector shows Person, Page, Selection, optional Domains/Contexts, Memory/Source evidence groups, and permissions. A user can inspect inclusion reason and remove every optional group before use.",
+    "no_evidence_semantics": "When evidence is insufficient, unavailable, stale, revoked, or ambiguous, output a bounded gap and permit a no-reliable-answer/no-reliable-suggestion state."
+  },
+  "failure_modes": [
+    {"id": "R-01", "condition": "Unknown or ambiguous authorization", "result": "deny that ref; do not reveal protected existence."},
+    {"id": "R-02", "condition": "Source unavailable or Artifact tombstoned", "result": "show source/evidence gap; do not use cached or derived substitution."},
+    {"id": "R-03", "condition": "User removed Health or any Domain", "result": "exclude it for this request; do not change durable facts, permissions, or future defaults."},
+    {"id": "R-04", "condition": "AI wants an unstated related Context", "result": "return candidate link/context proposal only; user must confirm durable creation or inclusion."},
+    {"id": "R-05", "condition": "Model/Agent unavailable", "result": "resolver may still show inspected context, but no output is marked generated and no fallback automation occurs."}
+  ],
+  "fast_track_scope": "The immediate Fast Track implements an inspectable resolver preview for a Project-backed Context without calling a model, Agent, network, or external source. Full Global AI consumption is explicitly deferred.",
+  "result": "PASS"
+}

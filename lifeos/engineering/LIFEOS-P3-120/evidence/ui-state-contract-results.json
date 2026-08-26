@@ -1,0 +1,48 @@
+{
+  "schema": "lifeos-p3-120/ui-state-contract-v1",
+  "generated_at_utc": "2026-08-25T08:09:13.738807+00:00",
+  "method": "source-state contract only; actual app launch is separately evidenced and no GUI injection/AX/CDP/webdriver is used",
+  "checks": [
+    {
+      "id": "UI-001",
+      "result": "PASS",
+      "actual": {
+        "today": "todayPage",
+        "me": "mePage",
+        "contexts": "contextsPage",
+        "context-detail": "contextDetailPage",
+        "memory": "memoryPage",
+        "memory-detail": "memoryDetailPage",
+        "workspace": "workspacePage",
+        "settings": "settingsPage"
+      }
+    },
+    {
+      "id": "UI-002",
+      "result": "PASS",
+      "actual": [
+        "today",
+        "me",
+        "contexts",
+        "memory",
+        "settings"
+      ]
+    },
+    {
+      "id": "UI-003",
+      "result": "PASS",
+      "actual": "detail and Global AI state transitions"
+    },
+    {
+      "id": "UI-004",
+      "result": "PASS",
+      "actual": "capture success follows get_today; failures remove success state"
+    },
+    {
+      "id": "UI-005",
+      "result": "PASS",
+      "actual": "content identities remain visible per page state"
+    }
+  ],
+  "result": "PASS"
+}

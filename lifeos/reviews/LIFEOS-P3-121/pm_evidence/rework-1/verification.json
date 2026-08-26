@@ -1,0 +1,52 @@
+{
+  "task": "LIFEOS-P3-121",
+  "review": "pm-rework-1-verification",
+  "result": "NOT_PASS",
+  "read_only_review": true,
+  "submitted_manifest": {
+    "path": "lifeos/engineering/LIFEOS-P3-121/evidence/rework-1/manifest/rework-1-manifest.json",
+    "sha256": "0e1722342a88c924e9fa2d5a170f8e9f63229bf60f4b6cdec9ea13da24764cad",
+    "declared_result": "NOT_PASS",
+    "entries_checked": 104,
+    "entries_matched": 104,
+    "hash_errors": []
+  },
+  "viewport_observed": {
+    "requested_1280x1024": [1036, 768],
+    "1160x768": [1160, 768],
+    "700x760": [700, 760]
+  },
+  "visual_contract_assessment": {
+    "p3_116_layout_tokens_and_interaction_restored": true,
+    "icon_only_rail_restored": true,
+    "whitespace_type_scale_identity_colors_restored": true,
+    "global_ai_spatial_relationship_restored": true,
+    "runtime_remains_minimal_three_ipc": true,
+    "apple_design_notes": "The reworked shell materially restores simplicity, spatial consistency, hierarchy and restrained material treatment; no residual design-fidelity P1 was observed in the reviewed actual-App images."
+  },
+  "findings": [
+    {
+      "id": "PM-RW1-001",
+      "severity": "P1",
+      "not_implemented": true,
+      "mapping": ["ABF-I-03", "ABF-M-009"],
+      "finding": "The required exact 1280x1024 actual-App Evidence is absent; the submitted image is 1036x768."
+    },
+    {
+      "id": "PM-RW1-002",
+      "severity": "P0",
+      "not_implemented": true,
+      "mapping": ["L1-6", "L1-7", "L1-10", "ABF-I-12", "ABF-I-13", "ABF-M-019", "ABF-M-020"],
+      "finding": "The combined closure matrix ends at M-019 and the submitted Rework Manifest omits the current delivery, combined-closure.json, visual-evidence-mutations.json and the initial PM Evidence Manifest; M-019 therefore cannot rely on a complete final lineage."
+    }
+  ],
+  "counts": {
+    "P0": 1,
+    "P1": 1,
+    "P2": 0,
+    "Unknown": 0,
+    "Not_Implemented": 2
+  },
+  "runtime_root_absent": true,
+  "pm_temporary_root_created": false
+}

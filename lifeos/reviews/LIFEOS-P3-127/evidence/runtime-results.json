@@ -1,0 +1,56 @@
+{
+  "test_id": "P127-M006",
+  "actual_app": "LifeOS P3-122 Native Viewport Runtime.app",
+  "actions": [
+    {
+      "run": "run-a",
+      "action": "runtime_status and get_today initial",
+      "ax_observation": "固定合成 Runtime · Offline · 3 IPC; attestation rt=[restricted_offline,0,0,null]; Recent=尚无 Runtime capture",
+      "screenshot": "evidence/run-a-ui-initial.jpeg",
+      "db_process": "evidence/run-a-process.txt",
+      "result": "PASS"
+    },
+    {
+      "run": "run-a",
+      "action": "first capture_record",
+      "ax_observation": "Runtime 已保存用户原文：p3-122-000001a03c99570e-p3-122-synthetic-one；attestation rt=[restricted_offline,1,1,null]",
+      "screenshot": "evidence/run-a-ui-capture-first.jpeg",
+      "sqlite": "evidence/run-a-sqlite.json",
+      "process": "evidence/run-a-process.txt",
+      "result": "PASS"
+    },
+    {
+      "run": "run-a",
+      "action": "repeat capture_record",
+      "ax_observation": "Runtime 幂等重复：沿用 p3-122-000001a03c99570e-p3-122-synthetic-one；未创建重复记录。 attestation rt=[restricted_offline,1,2,null]",
+      "screenshot": "evidence/run-a-ui-idempotent-repeat.jpeg",
+      "sqlite": "evidence/run-a-sqlite.json",
+      "result": "PASS"
+    },
+    {
+      "run": "run-a",
+      "action": "close/reopen and get_today refresh",
+      "ax_observation": "after native close/reopen, attestation rt=[restricted_offline,1,2,null] and the synthetic capture remains listed",
+      "screenshot": "evidence/run-a-ui-restart-persisted.jpeg",
+      "sqlite": "evidence/run-a-sqlite.json",
+      "result": "PASS"
+    },
+    {
+      "run": "run-b",
+      "action": "independent initial/first/repeat lifecycle",
+      "ax_observation": "initial rt=[restricted_offline,0,0,null]; first saved p3-122-000001a03c9c0d12-p3-122-synthetic-one with rt=[restricted_offline,1,1,null]; repeat retained one record with rt=[restricted_offline,1,2,null]",
+      "screenshots": [
+        "evidence/run-b-ui-initial.jpeg",
+        "evidence/run-b-ui-capture-first.jpeg",
+        "evidence/run-b-ui-idempotent-repeat.jpeg"
+      ],
+      "sqlite": "evidence/run-b-sqlite.json",
+      "process": "evidence/run-b-process.txt",
+      "result": "PASS"
+    }
+  ],
+  "supplementary_runtime_log": "evidence/run-b-cargo-test-serial-nocapture.log",
+  "native_gui_stderr": "evidence/run-b-app-native.log",
+  "native_gui_stderr_note": "empty GUI stderr is not used as positive evidence; actual App proof is UI/IPC receipt plus SQLite and PID evidence, with the runtime log retained separately as supplementary failure/IPC trace",
+  "result": "PASS"
+}

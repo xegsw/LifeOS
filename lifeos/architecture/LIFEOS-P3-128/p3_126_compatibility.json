@@ -1,0 +1,71 @@
+{
+  "task_id": "LIFEOS-P3-128",
+  "source_candidate": "lifeos/engineering/LIFEOS-P3-126/candidate/",
+  "source_status": "Accepted historical candidate; strictly read-only; implementation facts, not a schema/product/architecture freeze.",
+  "facts": [
+    {
+      "id": "C-01",
+      "path": "src/runtime.rs:13-14,306-351",
+      "fact": "Runtime root is build-time LIFEOS_RUNTIME_ROOT and exactly three IPC commands are registered: capture_record, get_today, runtime_status.",
+      "disposition": "retain"
+    },
+    {
+      "id": "C-02",
+      "path": "src/runtime.rs:22-62,155-247",
+      "fact": "Current controlled SQLite stores fixed synthetic captures/audit only; request validation is strict, AI is disabled, and unknown/direct capabilities are denied.",
+      "disposition": "retain_and_adapt"
+    },
+    {
+      "id": "C-03",
+      "path": "src/runtime.rs:91-154,202-247",
+      "fact": "Runtime-root path, file type, SQLite schema, sidecar, candidate-residue, input, and atomic-publish checks fail closed.",
+      "disposition": "retain"
+    },
+    {
+      "id": "C-04",
+      "path": "ui/runtime-adapter.js:17-263",
+      "fact": "Renderer calls only those IPC methods, uses a DOM/geometry attestation, and renders capture receipt/recent records from get_today.",
+      "disposition": "adapt"
+    },
+    {
+      "id": "C-05",
+      "path": "ui/fixtures.js:1-31; ui/app.js:88-140",
+      "fact": "The person-centered UI contains fixed in-memory Context, Memory, and Global AI examples, explicit no-silent-Context copy, and only demo persistence semantics.",
+      "disposition": "adapt_as_ui_contract_only"
+    },
+    {
+      "id": "C-06",
+      "path": "ui/ia_reconciliation.md:7-19; ui/interaction_contract.md:1-38",
+      "fact": "Project is expressed as a Context type; Memory is a browser; Person/Page/Selection visibility and user confirmation are UI commitments, not implemented domain storage.",
+      "disposition": "implement_narrowly"
+    },
+    {
+      "id": "C-07",
+      "path": "build.rs:1-63; capabilities/main.json:1-7; tauri.conf.json:1-40",
+      "fact": "The build/root boundary and empty renderer permission surface are fail-closed; no plugin filesystem, shell, network, export, sync, vault, or model capability exists.",
+      "disposition": "retain"
+    }
+  ],
+  "retain": [
+    "The exact existing IPC names and the compatible request/response fields used by current UI.",
+    "Build-time task-local runtime-root derivation and all root/SQLite/sidecar/symlink fail-closed checks.",
+    "Offline, single-process, fixed synthetic-only boundary and a zero-plugin renderer capability surface.",
+    "Immutable capture identity, idempotency, audit receipt, restart visibility, and no-success-on-failure behavior.",
+    "Existing DOM/CSS shell and navigation only as a compatibility target; no P3-116 visual redesign."
+  ],
+  "adapt": [
+    "Move capture/today behavior behind Application Services and repository ports; Rust/Tauri remains the host/security/IPC adapter, not the business-domain owner.",
+    "Extend get_today response compatibly with an optional context_recovery summary while preserving records, source, ai_status, and audit fields.",
+    "Replace fixed UI-only Context fixture behavior for one Project-backed synthetic Context with persisted, explicitly confirmed association evidence in the new task root.",
+    "Render Memory detail from provenance DTOs rather than fixture-only strings for the one vertical slice.",
+    "Render Global AI Context Inspector as preview-only, including visible Person/Page/Selection refs and removals; do not invoke a model."
+  ],
+  "defer": [
+    "Non-Project Context types, Domain activation, full Me/Memory search, generic FTS, vector, external Source ingestion, and cross-domain reasoning.",
+    "ModelPort, AgentPort, actual AI output, health advice, notifications, scheduling, export, clear/delete/recovery, sync, network, Vault, and external files.",
+    "Frozen Schema/API decisions, generic Context table/entity, final IPC capability names, and technical architecture changes.",
+    "Any modification, rerun, or Evidence rewrite in P3-126/P3-127 historical directories."
+  ],
+  "compatibility_decision": "A successor may copy only an explicitly allowlisted P3-126 source snapshot into a brand-new engineering root. It must not write P3-126 in place, inspect prohibited historical roots, or claim that P3-126 fixed fixtures already implement Person/Context/Memory semantics.",
+  "result": "PASS"
+}

@@ -1,4 +1,4 @@
-# LifeOS 专项任务回复模板
+# LifeOS 专项任务回复模板 V2
 
 注意：本模板用于聊天回复。不要在聊天中粘贴完整交付物正文。完整交付物必须写入 `lifeos/deliverables/` 下的 Markdown 文件。
 
@@ -10,11 +10,11 @@
 - 当前状态：Completed / Partial / Blocked
 - 需要 PM 决策：Yes / No
 - 任务类型：
-- Acceptance Basis Freeze 路径：
-- ABF ID／版本／PM 记录 SHA-256：
-- ABF 是否在任何工程动作前核对为 Frozen：Yes / No / N/A
-- 是否在启动前发现验收依据歧义：Yes / No；如 Yes，必须停止并回报 PM
-- 当前正式 Rework 次数／上限：
+- 风险等级：L0 / L1 / L2 / L3 / Gate
+- Task Contract 路径／章节：
+- L3/Gate ABF 路径／版本（其他写 N/A）：
+- 是否在启动前发现合同歧义：Yes / No；如 Yes，必须停止并回报 PM
+- 当前状态：In Progress / Closure Cycle / Blocked / Completed
 - 交付物篇幅是否在建议范围内：Yes / No / Slightly Over，原因：
 
 ## 执行摘要
@@ -25,13 +25,14 @@
 
 - 主责角色：
 - 协审角色：
-- 已覆盖评审关卡：
+- Evidence 等级与已覆盖关卡：
+- 是否触发独立评审及理由：
 - 仍需 PM/后续任务确认的关卡：
 
 ## 会话与上下文
 
 - 本任务执行方式：New Session / Reused Session / Unknown
-- 执行授权证据：用户投递的任务卡路径、会话类型、接收时间；若存在投递前单独确认，列出对应决策／用户确认。
+- 执行授权证据：用户的一次创建／开始授权，或任务卡路径投递记录；仅列真正新增的单独高风险确认。
 - 若复用会话，上一任务是否已结束：Yes / No / N/A
 - 是否发现旧任务授权或范围被错误继承：Yes / No
 - 已重新读取的关键文件：

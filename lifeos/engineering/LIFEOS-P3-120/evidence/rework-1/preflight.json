@@ -1,0 +1,55 @@
+{
+  "schema": "lifeos-p3-120/rework-1-preflight-v1",
+  "generated_at_utc": "2026-08-25T08:37:37.336549+00:00",
+  "authority": {
+    "status": "Rework 1/2 / User Adopted / Remediation Authorized",
+    "source": "lifeos/reviews/LIFEOS-P3-120_pm_review.md",
+    "scope": "evidence/rework-1 actual-app closure only; candidate and initial Evidence remain read-only",
+    "actual_model": "gpt-5.6-terra",
+    "actual_reasoning_effort": "xhigh",
+    "model_confirmation_source": "PM Review lines 22 and 153; user confirmation recorded by PM"
+  },
+  "initial_readonly_files": {
+    "initial_engineering_manifest": {
+      "path": "lifeos/engineering/LIFEOS-P3-120/evidence/MANIFEST.md",
+      "expected_sha256": "56f27d9e144f59b8e73cc24a398882fa6c7c6ec9750b84ff4572a5c3c99a70b0",
+      "actual_sha256": "56f27d9e144f59b8e73cc24a398882fa6c7c6ec9750b84ff4572a5c3c99a70b0",
+      "result": "PASS"
+    },
+    "initial_matrix": {
+      "path": "lifeos/engineering/LIFEOS-P3-120/evidence/matrix-results.json",
+      "expected_sha256": "68bf59499aae369520d4b001a3f1ae700a73406aa9618e5b7ff590e1eaf654e0",
+      "actual_sha256": "68bf59499aae369520d4b001a3f1ae700a73406aa9618e5b7ff590e1eaf654e0",
+      "result": "PASS"
+    },
+    "initial_delivery": {
+      "path": "lifeos/deliverables/LIFEOS-P3-120_person_centered_product_runtime_mvp_implementation.md",
+      "expected_sha256": "ef644706a21976053b81fe1019ff9294dce89099e4ab9d199b52df13fda5bdec",
+      "actual_sha256": "ef644706a21976053b81fe1019ff9294dce89099e4ab9d199b52df13fda5bdec",
+      "result": "PASS"
+    },
+    "task_card": {
+      "path": "lifeos/tasks/LIFEOS-P3-120_person_centered_product_runtime_mvp_implementation.md",
+      "expected_sha256": "d61a1cd92924c70c5b83121d78911b90c289d0b27280e752182a19d72cb2902f",
+      "actual_sha256": "d61a1cd92924c70c5b83121d78911b90c289d0b27280e752182a19d72cb2902f",
+      "result": "PASS"
+    },
+    "frozen_abf": {
+      "path": "lifeos/tasks/LIFEOS-P3-120_person_centered_product_runtime_mvp_implementation_acceptance_basis_freeze.md",
+      "expected_sha256": "e18c463ffb59f1bb80ba55d48a61009792cbd36190d998867d6f08a7aaebe219",
+      "actual_sha256": "e18c463ffb59f1bb80ba55d48a61009792cbd36190d998867d6f08a7aaebe219",
+      "result": "PASS"
+    },
+    "pm_review": {
+      "path": "lifeos/reviews/LIFEOS-P3-120_pm_review.md",
+      "expected_sha256": null,
+      "actual_sha256": "04f8a8ea75363873aef1e6a3a62c1c6e868794a82b54136e3c2b1c4506a22606",
+      "result": "PASS"
+    }
+  },
+  "temporary_root": {
+    "path": "/private/tmp/lifeos-p3-120-runtime-mvp-v1",
+    "absent_before_rework": true
+  },
+  "result": "PASS"
+}

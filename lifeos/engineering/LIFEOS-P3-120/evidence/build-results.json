@@ -1,0 +1,59 @@
+{
+  "schema": "lifeos-p3-120/build-results-v1",
+  "generated_at_utc": "2026-08-25T08:04:34.662672+00:00",
+  "commands": [
+    {
+      "label": "build-test",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "test",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "log": "build-test.log",
+      "result": "PASS"
+    },
+    {
+      "label": "build-binary",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "build",
+        "--locked",
+        "--offline",
+        "--release"
+      ],
+      "exit_code": 0,
+      "log": "build-binary.log",
+      "result": "PASS"
+    },
+    {
+      "label": "build-bundle",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "tauri",
+        "build",
+        "--bundles",
+        "app",
+        "--config",
+        "tauri.conf.json",
+        "--",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "log": "build-bundle.log",
+      "result": "PASS"
+    }
+  ],
+  "bundle": {
+    "path": "/private/tmp/lifeos-p3-120-runtime-mvp-v1/cargo-target/release/bundle/macos/LifeOS P3-120 Synthetic Runtime MVP.app",
+    "ready": true,
+    "files": [
+      "Contents/Info.plist",
+      "Contents/MacOS/lifeos-p3-120",
+      "Contents/Resources/icon.icns"
+    ]
+  },
+  "result": "PASS"
+}

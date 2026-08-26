@@ -1,0 +1,97 @@
+{
+  "command": "python3 -B lifeos/reviews/LIFEOS-P3-129/re-review-1/review_runner.py run --final",
+  "counts": {
+    "Not_Implemented": 0,
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0
+  },
+  "errors": [],
+  "isolation": {
+    "attempt_1_runner_result_or_review_used_as_positive_evidence": false,
+    "candidate_verifier_imported_or_called": false,
+    "temporary_directory_used": false,
+    "write_scope": "lifeos/reviews/LIFEOS-P3-129/re-review-1/ only"
+  },
+  "mutation_summary": {
+    "all_rejected": true,
+    "rejected": 4,
+    "total": 4
+  },
+  "result": "PASS",
+  "rows": [
+    {
+      "evidence": "15 independently rehashed Frozen inputs",
+      "id": "ABF-M-001",
+      "result": "PASS"
+    },
+    {
+      "evidence": "independent coverage of V0-01..V0-16",
+      "id": "ABF-M-002",
+      "result": "PASS"
+    },
+    {
+      "evidence": "12 PASS + Gate 5 N/A + 5 counterexamples",
+      "id": "ABF-M-003",
+      "result": "PASS"
+    },
+    {
+      "evidence": "9 normative bounds, 9 exclusions, 4 negative cases",
+      "id": "ABF-M-004",
+      "result": "PASS"
+    },
+    {
+      "evidence": "preserve/adapt/defer plus direct historical fact check",
+      "id": "ABF-M-005",
+      "result": "PASS"
+    },
+    {
+      "evidence": "independent pre/post hash reconstruction",
+      "id": "ABF-M-006",
+      "result": "PASS"
+    },
+    {
+      "evidence": "new re-review-1 runner; no candidate or attempt-1 runner imported/called",
+      "id": "ABF-M-007",
+      "result": "PASS"
+    },
+    {
+      "evidence": "RR1-MUT-HASH",
+      "id": "ABF-M-008",
+      "result": "PASS"
+    },
+    {
+      "evidence": "RR1-MUT-LEGACY-OMISSION",
+      "id": "ABF-M-009",
+      "result": "PASS"
+    },
+    {
+      "evidence": "RR1-MUT-SCOPE-EXPANSION",
+      "id": "ABF-M-010",
+      "result": "PASS"
+    },
+    {
+      "evidence": "RR1-MUT-BODY-CHANGE",
+      "id": "ABF-M-011",
+      "result": "PASS"
+    },
+    {
+      "evidence": "15 candidate history receipts plus current hash recheck",
+      "id": "ABF-M-012",
+      "result": "PASS"
+    },
+    {
+      "evidence": "fresh re-review-1 runner and independent_review.md",
+      "id": "ABF-M-013",
+      "result": "PASS"
+    },
+    {
+      "evidence": "non-self Final Manifest recomputed by audit",
+      "id": "ABF-M-014",
+      "result": "PASS"
+    }
+  ],
+  "schema": "lifeos.p3-129.re-review-1.independent-verification.v1",
+  "task_id": "LIFEOS-P3-129"
+}

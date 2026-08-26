@@ -1,0 +1,43 @@
+{
+  "task_id": "LIFEOS-P3-129",
+  "phase": "pm_review_of_independent_attempt_1",
+  "result": "INDEPENDENT_ATTEMPT_BLOCKED_CLOSURE_CYCLE_RE_REVIEW_REQUIRED",
+  "independent_manifest": {
+    "entry_count": 5,
+    "hash_matches": 5,
+    "hash_mismatches": 0,
+    "self_reference": false,
+    "manifest_sha256": "9156e5e8ddb5bdcb0e68c1debc97c8f71593f7b0e5d3b988db6260fb57e91026"
+  },
+  "fixed_assets": {
+    "canonical_v1_sha256": "2db0cbeda30eea2a56d965220363fb6af6622acf413dfb4ee8c11ec867009a32",
+    "freeze_status_sha256": "3d32e56876175636c00cf36b26e18bc284ff3d13123e291bce9f28f9e8f74a10",
+    "candidate_manifest_sha256": "7242064657e8c6d464bdf0d18b04b3ca4f3f2e2b7ca7d098ea88920bfe831a86",
+    "drift": false,
+    "promotion_executed": false
+  },
+  "execution_exception": {
+    "path": "/private/tmp/lifeos-p3-129-independent-verifier.stdout",
+    "write_authorized": false,
+    "observed_type": "regular_file",
+    "observed_bytes": 4901,
+    "exact_cleanup_reported": true,
+    "pm_post_cleanup_check": "ABSENT",
+    "retroactively_curable": false
+  },
+  "abf": {
+    "ABF-M-001_to_M-012": "STATIC_RECHECK_PASS_BUT_NOT_INDEPENDENT_SIGNOFF",
+    "ABF-M-013": "NOT_PASS_UNAUTHORIZED_TEMP_WRITE",
+    "ABF-M-014": "NOT_IMPLEMENTED_FINAL_GATE_CLOSURE"
+  },
+  "counts_overall_gate": {
+    "P0": 1,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 2
+  },
+  "candidate_defect_confirmed": false,
+  "new_task_required": false,
+  "next_action": "A different fresh isolated review session writes only under lifeos/reviews/LIFEOS-P3-129/re-review-1/ and independently redoes ABF-M-013 without using the failed runner or evidence as positive proof."
+}

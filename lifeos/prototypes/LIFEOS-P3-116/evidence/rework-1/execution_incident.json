@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "task_id": "LIFEOS-P3-116",
+  "rework": "1/2",
+  "status": "BLOCKED_NOT_PASS",
+  "recorded_at": "2026-08-25T11:53:00+08:00",
+  "scope": "Evidence/privacy-only remediation under unchanged ABF-P3-116-v1",
+  "incident": {
+    "type": "unexpected_external_navigation",
+    "phase": "task-local Chrome file loading",
+    "summary": "The normal Computer Use text-entry sequence caused Chrome to treat the intended local file path as a search query rather than loading the task-local file.",
+    "boundary_result": "A network page was reached, which is prohibited by the Frozen ABF. Dynamic capture stopped immediately.",
+    "data_statement": "No prototype screenshot, accessibility tree, browser tab title, account, extension, history, or other ambient browser metadata was written into this task-local Evidence directory. No task-local source or synthetic fixture content was entered into a remote form.",
+    "candidate_effect": "None. No candidate source, fixture, contract, initial Evidence, PM Evidence, or project ledger was modified by this attempt."
+  },
+  "remediation_execution": {
+    "chrome_file_preflight": "NOT PASS",
+    "dynamic_matrix_abf_m003_to_m015": "NOT IMPLEMENTED",
+    "page_only_screenshots": "NOT IMPLEMENTED",
+    "page_only_raw_logs": "NOT IMPLEMENTED",
+    "semantic_privacy_verifier": "NOT IMPLEMENTED",
+    "mutation_suite": "NOT IMPLEMENTED"
+  },
+  "current_candidate_source_sha256": {
+    "index.html": "d9283e3f0a0366ef350d8b11fe094a4f3fbebabef30511353b0b007b5de0b28b",
+    "app.js": "c1db2926e04f83e26d787f75f922fa562070db560bc8fbac661f82492b9a451f",
+    "styles.css": "cf9f800c8c30f75e05e0b58345807128b8a11d0c31ea11f076e8ff7a5a02d8d3",
+    "fixtures.js": "a7b01ba8e176d80ae172ddd8acd2ed3a8c9b755b046159b190a2272195af3d93"
+  },
+  "required_next_step": "PM must decide whether the same ABF can continue after this prohibited-network incident or whether a successor task and fresh acceptance basis are required."
+}

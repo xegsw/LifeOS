@@ -1,0 +1,81 @@
+{
+  "schema": "lifeos-p3-120/rework-1-manual-step-v1",
+  "step": "capture-two",
+  "structured_result_id": "R1-capture-two",
+  "captured_at_utc": "2026-08-25T09:02:59.169937+00:00",
+  "operator": "user-manual",
+  "attestation": "User manually selected the fixed synthetic capture two exactly once in Today, then observed two persisted Runtime records; delayed capture allowed the user to restore that already-open window after approval.",
+  "capture_delay_seconds": 12,
+  "automation_excluded": [
+    "Computer Use",
+    "AppleScript",
+    "AX",
+    "CDP",
+    "HTTP",
+    "WebDriver",
+    "browser control"
+  ],
+  "app": {
+    "pid": 24181,
+    "running": true,
+    "launch_count": 1
+  },
+  "db": {
+    "exists": true,
+    "type": "regular",
+    "bytes": 24576,
+    "sha256": "b7a1dbcf63fae64beb0129624d656aed120cbff665c9a8b25695728c67eb4f2a",
+    "quick_check": "ok",
+    "user_version": 104,
+    "captures": [
+      {
+        "id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "content": "P3-120 synthetic capture one",
+        "created_at_ms": 1787648390196,
+        "source": "local_capture",
+        "idem_key": "p3-120-synthetic-one"
+      },
+      {
+        "id": "p3-120-000001a038280c09-p3-120-synthetic-two",
+        "content": "P3-120 synthetic capture two",
+        "created_at_ms": 1787648543753,
+        "source": "local_capture",
+        "idem_key": "p3-120-synthetic-two"
+      }
+    ],
+    "audit": [
+      {
+        "id": 1,
+        "event": "capture_saved",
+        "capture_id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "created_at_ms": 1787648390196,
+        "detail": "local_capture"
+      },
+      {
+        "id": 2,
+        "event": "capture_repeat",
+        "capture_id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "created_at_ms": 1787648475867,
+        "detail": "same_idempotency_key"
+      },
+      {
+        "id": 3,
+        "event": "capture_saved",
+        "capture_id": "p3-120-000001a038280c09-p3-120-synthetic-two",
+        "created_at_ms": 1787648543753,
+        "detail": "local_capture"
+      }
+    ]
+  },
+  "log_snapshot": {
+    "path": "logs/capture-two.app.log",
+    "sha256": "b0723a7c0ae079e210f968c60d2d75853e0eabefb6d46327f0a4510f338165f1",
+    "missing_expected_lines": []
+  },
+  "screenshot": {
+    "path": "screenshots/capture-two.png",
+    "sha256": "6bc8bfcc4869295a2ebf8baf1a4bde0035638fc9628f0d79b507206ff413d529",
+    "bytes": 1986402
+  },
+  "result": "PASS"
+}

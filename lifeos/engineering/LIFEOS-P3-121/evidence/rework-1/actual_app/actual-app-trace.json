@@ -1,0 +1,27 @@
+{
+  "task": "LIFEOS-P3-121",
+  "kind": "rework-1-actual-tauri-app-trace",
+  "app": "LifeOS P3-121 Person-centered Runtime.app",
+  "bundle_identifier": "local.lifeos.p3-121",
+  "renderer": "tauri://localhost",
+  "interaction_method": "Computer Use node_repl + @oai/sky",
+  "actions": [
+    {"id": "A-001", "action": "launch default native app", "result": "PASS", "evidence": "m003-m004-native-default-requested-1280x1024.png", "observed": "icon-only rail; greeting-led Today; persistent bottom Global AI bar"},
+    {"id": "A-002", "action": "open Quick Capture", "result": "PASS", "evidence": "m012-native-quick-capture-open.png", "observed": "only the two frozen synthetic options are exposed"},
+    {"id": "A-003", "action": "capture synthetic one", "result": "PASS", "evidence": "m012-native-first-capture-saved.png", "observed": "one user-original record after capture_record and get_today"},
+    {"id": "A-004", "action": "repeat synthetic one", "result": "PASS", "evidence": "m013-native-idempotent-repeat.png", "observed": "one record and two audit events; repeat is explicitly reported"},
+    {"id": "A-005", "action": "capture synthetic two", "result": "PASS", "evidence": "m014-m015-native-second-capture-and-refresh.png", "observed": "two user-original records and three audit events"},
+    {"id": "A-006", "action": "navigate Me, Contexts, Context Detail, Memory, Memory Detail", "result": "PASS", "evidence": ["m005-native-me-person-first.png", "m006-native-contexts-person-first.png", "m006-native-context-detail.png", "m007-native-memory-evidence-browser.png", "m007-native-memory-detail-traceable.png"], "observed": "Person-first pages and traceability layers render in the actual app"},
+    {"id": "A-007", "action": "open Global AI then Escape", "result": "PASS", "evidence": ["m008-native-global-ai-context-panel.png", "m010-native-escape-closes-global-ai.png"], "observed": "contextual right panel is model-disabled and Escape closes it"},
+    {"id": "A-008", "action": "close then reopen native app, refresh Today", "result": "PASS", "evidence": "m015-native-close-reopen-two-records.png", "observed": "two records are read again through get_today"},
+    {"id": "A-009", "action": "switch legal empty and insufficient-evidence Today states", "result": "PASS", "evidence": ["m004-native-today-legal-empty.png", "m004-native-today-insufficient-evidence.png"], "observed": "both states disclose rather than fabricate a focus"},
+    {"id": "A-010", "action": "launch native 1160x768 bundle configuration", "result": "PASS", "evidence": "m009-native-1160x768.png", "observed": "sips independently measured 1160x768"},
+    {"id": "A-011", "action": "launch native 700x760 bundle configuration", "result": "PASS", "evidence": "m009-native-700x760.png", "observed": "sips independently measured 700x760; same DOM is stacked and Rail/composer remain reachable"},
+    {"id": "A-012", "action": "launch native default 1280x1024 configuration", "result": "NOT_IMPLEMENTED", "evidence": "m009-native-1280x1024.png", "observed": "actual screenshot measured 1036x768, not the required 1280x1024; no scaling or substitute Evidence was used"}
+  ],
+  "cleanup": {
+    "app_closed": true,
+    "temporary_root": "/private/tmp/lifeos-p3-121-combined-v1",
+    "temporary_root_removed": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "actions_attempted": 0,
+  "chrome_started": false,
+  "computer_use_target_queried": false,
+  "conclusion": "Blocked before GUI, screenshot, or native-capture activity. No substitute path was used.",
+  "fact": "The installed Computer Use surface has app-scoped operations only; it exposes no PID or native window-ID targeting parameter.",
+  "frozen_conflict": "Passing com.google.Chrome to Computer Use would invoke the app selector prohibited by ABF-P3-118-v1 and cannot prove the attested PID/window is the operated surface.",
+  "id": "BLOCKED_COMPUTER_USE_PID_BINDING_UNAVAILABLE",
+  "temporary_root_created": false
+}

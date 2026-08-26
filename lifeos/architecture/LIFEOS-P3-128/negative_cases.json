@@ -1,0 +1,15 @@
+{
+  "task_id": "LIFEOS-P3-128",
+  "cases": [
+    {"id": "NC-01", "name": "silent_context_creation", "setup": "AI/heuristic sees related records", "expected": "only a candidate with visible type/name/basis may appear; no durable ContextId, Link, Feedback, or Action is written until explicit user confirmation", "maps_to": ["AC-03", "AC-09"]},
+    {"id": "NC-02", "name": "domain_permission_escalation", "setup": "A record is visible in Work or Health Domain", "expected": "Domain is a view/filter only; Source/Artifact/Project authorization is rechecked and a Domain/Link cannot create read/model/export permission", "maps_to": ["AC-02", "AC-05", "AC-09"]},
+    {"id": "NC-03", "name": "ai_profile_impersonates_person", "setup": "AI has an inference about the user", "expected": "render it as ai_inference/Derivation with evidence and feedback; never write it into Person identity or treat it as user-confirmed fact", "maps_to": ["AC-02", "AC-04", "AC-09"]},
+    {"id": "NC-04", "name": "memory_copies_original", "setup": "Memory detail is built for a capture", "expected": "MemoryItem stores/reports references and provenance; original text remains in Artifact/version and cannot acquire a second authoritative copy", "maps_to": ["AC-04", "AC-09"]},
+    {"id": "NC-05", "name": "stale_or_revoked_evidence_consumption", "setup": "Source disconnected, Artifact version stale/tombstoned, evidence unavailable, or Authorization revoked", "expected": "resolver and Memory hide/mark the item unavailable or review_required; no reliable understanding, suggestion, or re-derivation uses it", "maps_to": ["AC-04", "AC-05", "AC-09"]},
+    {"id": "NC-06", "name": "ui_or_orchestrator_direct_sql", "setup": "Renderer or Orchestrator attempts to read/write SQLite", "expected": "architecture/source contract fails; only Application Service through Repository Port/Adapter may access persistence", "maps_to": ["AC-06", "AC-09"]},
+    {"id": "NC-07", "name": "project_becomes_all_life_context", "setup": "A Health Program or Life Event is modeled", "expected": "it remains a non-Project Context type with its own explicit confirmation/backing refs; Project is not silently promoted to universal container", "maps_to": ["AC-02", "AC-03"]},
+    {"id": "NC-08", "name": "feedback_overwrites_history", "setup": "User rejects, corrects, or retracts a Context association or AI inference", "expected": "append Feedback and recompute current effect; retain original identity/provenance/history and do not relabel AI output as user fact", "maps_to": ["AC-02", "AC-04", "AC-09"]},
+    {"id": "NC-09", "name": "unapproved_global_context_expansion", "setup": "Resolver finds a related Context or Domain not selected by the user", "expected": "do not include it; show a removable proposal with evidence gap/status and rerun checks after any explicit inclusion", "maps_to": ["AC-05", "AC-09"]}
+  ],
+  "coverage": {"required_six": ["NC-01", "NC-02", "NC-03", "NC-04", "NC-05", "NC-06"], "case_count": 9, "result": "PASS"}
+}

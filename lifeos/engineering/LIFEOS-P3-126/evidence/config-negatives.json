@@ -1,0 +1,96 @@
+{
+  "results": [
+    {
+      "case": "missing",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "check",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 101,
+      "expected_nonzero": true,
+      "label": "config-missing",
+      "log": "lifeos/engineering/LIFEOS-P3-126/logs/config-missing.log",
+      "log_sha256": "e9aeed328e40ed553399f8cc042c6cbad648a187a001480dcbea6c6444afee0f",
+      "pass": true
+    },
+    {
+      "case": "empty",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "check",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 101,
+      "expected_nonzero": true,
+      "label": "config-empty",
+      "log": "lifeos/engineering/LIFEOS-P3-126/logs/config-empty.log",
+      "log_sha256": "d78cb5049c63f1405e20f8ae9474169210b9ada92f0ec13395b42cf8ba348194",
+      "pass": true
+    },
+    {
+      "case": "relative",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "check",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 101,
+      "expected_nonzero": true,
+      "label": "config-relative",
+      "log": "lifeos/engineering/LIFEOS-P3-126/logs/config-relative.log",
+      "log_sha256": "68e2b91b3fa138ffb129425f573ca6a1e60b74a93823498b8a39d106bc4afe71",
+      "pass": true
+    },
+    {
+      "case": "traversal",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "check",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 101,
+      "expected_nonzero": true,
+      "label": "config-traversal",
+      "log": "lifeos/engineering/LIFEOS-P3-126/logs/config-traversal.log",
+      "log_sha256": "f845e16ce1281293222691f1a44db60e172c5e7bb45c9b75e51d6a2fadb5431c",
+      "pass": true
+    },
+    {
+      "case": "symlink",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "check",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 101,
+      "expected_nonzero": true,
+      "label": "config-symlink",
+      "log": "lifeos/engineering/LIFEOS-P3-126/logs/config-symlink.log",
+      "log_sha256": "4d991620d3d9b9690de2a42a259a8ff9d505bbdb83eddfb25c0c0709f668a869",
+      "pass": true
+    },
+    {
+      "case": "file",
+      "command": [
+        "/Users/xxe/.cargo/bin/cargo",
+        "check",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 101,
+      "expected_nonzero": true,
+      "label": "config-file",
+      "log": "lifeos/engineering/LIFEOS-P3-126/logs/config-file.log",
+      "log_sha256": "693b3830edc0bc036599fc05ab101cc8d38c482c206fc9206e4de788073a77cf",
+      "pass": true
+    }
+  ],
+  "status": "PASS",
+  "test_id": "P126-M004"
+}

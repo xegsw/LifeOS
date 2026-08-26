@@ -1,0 +1,16 @@
+{
+  "schema": "lifeos.p3-129.runtime-transition.v1",
+  "rules": [
+    {"id": "RT-01", "asset": "P3-126 accepted candidate", "fact": "Synthetic/offline actual-Tauri evidence established build-time task-local root, fresh synthetic SQLite, three existing IPC (`capture_record`, `get_today`, `runtime_status`), audit, fail-closed behavior and zero renderer plugin permission.", "treatment": "preserve", "forward_rule": "Keep this as historical compatibility evidence only. It does not freeze product Runtime, SQLite Schema, IPC signatures, capabilities, real files or external access."},
+    {"id": "RT-02", "asset": "P3-127 isolated review", "fact": "A separate synthetic/offline independent review confirmed P3-126 lineage, lifecycle, failure closure, mutation and cleanup in its frozen historical boundary.", "treatment": "preserve", "forward_rule": "Preserve Review/Evidence read-only. Do not reinterpret its PASS as an architecture, risk, Stage 4 or real-capability freeze."},
+    {"id": "RT-03", "asset": "P3-128 mapping/handoff", "fact": "Person/Domain/Context/Memory/Global AI Context is a Complete/Not Frozen L2 mapping. Its proposed Fast Track is a Project-backed Context Recovery slice with two future narrow IPC candidates.", "treatment": "adapt", "forward_rule": "Any future Task Contract must inherit V1.0 layering and retained V0.1 safeguards. It needs a new explicit authorization and its existing Fast Track remains paused until this Gate finishes."},
+    {"id": "RT-04", "asset": "current V1.0 target", "fact": "V1.0 defines target layers, Ports and adapters but neither declares an immediate code migration nor uses P3 fixtures as production facts.", "treatment": "adapt", "forward_rule": "Future implementation must route UI through Application/Domain/Ports, retain authorization/provenance/recheck constraints and demonstrate a separately authorized evidence chain."},
+    {"id": "RT-05", "asset": "real and deferred capability", "fact": "Real data/files/Vault/export/network/model/agent, Schema/API, capability signatures, cloud/sync and Stage 4 remain outside this Gate.", "treatment": "defer", "forward_rule": "No P3-129 result authorizes migration, enablement, risk decision, re-test bypass or engineering-baseline restoration."}
+  ],
+  "compatibility_assertions": [
+    "P3-126/P3-127 facts are retained without retroactively declaring the old candidate noncompliant.",
+    "P3-128 does not override V0.1 historically; D-0521 directs its future handoff to V1.0 only after P3-129 promotion.",
+    "A later task may adapt implementation to V1.0 but must not silently add a new core object, expand authorization, or freeze Schema/API/IPC details."
+  ],
+  "counts": {"preserve": 2, "adapt": 2, "defer": 1}
+}

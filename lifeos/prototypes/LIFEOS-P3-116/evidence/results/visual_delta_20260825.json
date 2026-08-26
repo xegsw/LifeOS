@@ -1,0 +1,59 @@
+{
+  "task_id": "LIFEOS-P3-116",
+  "kind": "user_requested_today_visual_calibration",
+  "timestamp_local": "2026-08-25T10:53:11+08:00",
+  "scope": [
+    "app.js Today normal-state composition",
+    "styles.css visual tokens and responsive layout",
+    "visual_contract.json",
+    "interaction_contract.md"
+  ],
+  "unchanged_boundaries": [
+    "primary IA remains Today, Me, Contexts, Memory",
+    "Focus remains 0-1 with a Why path",
+    "all data remains fixed synthetic and non-persistent",
+    "no calendar integration, notifications, account profile, runtime, network, storage, DB, file, Tauri, or IPC capability"
+  ],
+  "checks": [
+    {
+      "id": "P116-VD-001",
+      "action": "Chrome loaded a fresh file: copy from the exact temporary root",
+      "result": "PASS",
+      "observed": "Today defaults to 早上好。; one Today's Focus card leads; Noticed, Today, Day Overview, Recent, and composer are visible as supporting surfaces.",
+      "raw_evidence": "Chrome AX snapshot captured in this execution; screenshot below"
+    },
+    {
+      "id": "P116-VD-002",
+      "action": "Desktop visual inspection",
+      "result": "PASS",
+      "observed": "Greeting-led, two-column composition; rail stays icon-only; no wide sidebar, notification center, bell, avatar, or account profile.",
+      "screenshot": "evidence/screenshots/visual_delta_today_desktop.jpg",
+      "screenshot_sha256": "b8c5f63b7632c867999ebec3c216f6efbad2f010377ac702533578442dcbbd81",
+      "viewport_observed": "1223x768 Chrome window screenshot"
+    },
+    {
+      "id": "P116-VD-003",
+      "action": "Static regression runner",
+      "result": "PASS",
+      "observed": "10/10 P116-S-001 through P116-S-010 passed after the visual edit.",
+      "command": "python3 -B lifeos/prototypes/LIFEOS-P3-116/tests/verify_static.py"
+    },
+    {
+      "id": "P116-VD-004",
+      "action": "Source-level responsive and action binding review",
+      "result": "PASS",
+      "observed": "Today collapses at 980px and 820px; the original context:launch, why:focus, why:noticed, and motion action bindings remain in the rendered normal state.",
+      "evidence": "styles.css:97-98,189-191; app.js:64-75"
+    }
+  ],
+  "source_sha256": {
+    "app.js": "8b802bb8f0a7c22457d918f65b9bba55581aee04d27a8fd7b6d60690ff0f2228",
+    "styles.css": "d0ccd70dbc502edb35c5fe5bfca91df733c15b5282353d2191cf82f93c9e8550",
+    "visual_contract.json": "ee62cba28712463a7dec186535c118b4492396b625fcad4130766305075560e0",
+    "interaction_contract.md": "1ebceae1166627afe7e656ba6240aa36cb2c58de811e6b675bfab9cd9a50195b"
+  },
+  "limits": [
+    "This is a visual-delta and key-binding check, not a replacement for the historical 44-action dynamic closure.",
+    "Chrome extension policy blocked creation of a viewport-controlled file: tab after desktop capture; no workaround was used."
+  ]
+}

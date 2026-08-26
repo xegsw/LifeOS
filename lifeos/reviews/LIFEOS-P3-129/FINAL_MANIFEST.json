@@ -1,0 +1,35 @@
+{
+  "schema": "lifeos.p3-129.independent-review-final-manifest.v1",
+  "task_id": "LIFEOS-P3-129",
+  "state": "Independent Review Blocked / Not Pass / Fresh Review Required / Not Frozen",
+  "self_reference": "excluded",
+  "review_entries": [
+    {
+      "path": "independent_review_plan.md",
+      "sha256": "6d4e70301b3a2bfae43f155e6b6dcfd5f2d753f7283f835729e13e30e1d24403"
+    },
+    {
+      "path": "independent_verifier.py",
+      "sha256": "84f18a6c51948cd90122a076b1ab315f7f5b78e3d17b0561ff1b41556a06d42c"
+    },
+    {
+      "path": "independent_verification.json",
+      "sha256": "6ea4e0cd9d1e503fd6cfba195d4017321510efb0d14592bc3ecd9d95b357c048"
+    },
+    {
+      "path": "independent_review.md",
+      "sha256": "513b75624090d32c28f3dd0d233a97fc5b0dbf2d773154e40897b75ac4a5f1c1"
+    },
+    {
+      "path": "execution_exception.json",
+      "sha256": "0197c22a531c85d39650bf27f5e5e68aaee72265fd86cd3ee11c6b0541030521"
+    }
+  ],
+  "read_only_candidate": {
+    "path": "lifeos/architecture/LIFEOS-P3-129/FINAL_MANIFEST.json",
+    "sha256": "7242064657e8c6d464bdf0d18b04b3ca4f3f2e2b7ca7d098ea88920bfe831a86"
+  },
+  "excluded_preexisting_evidence": "pm_evidence/candidate-intake/ belongs to the prior PM candidate-intake phase and is not independent-review output.",
+  "replay": "python3 -B lifeos/reviews/LIFEOS-P3-129/independent_verifier.py --write --verify-review-manifest",
+  "final_gate": "This review cannot satisfy ABF-M-013. PM must arrange another fresh isolated review before ABF-M-014, any user confirmation, or any canonical or ledger promotion."
+}

@@ -1,0 +1,66 @@
+{
+  "task_id": "LIFEOS-P3-125",
+  "rework": "1/1",
+  "recorded_at": "2026-08-26T11:03:01+0800",
+  "authorization": {
+    "task_card": {
+      "path": "lifeos/tasks/LIFEOS-P3-125_runtime_root_configurable_fail_closed_closure.md",
+      "sha256": "4a9369c94e028c13ff2011ea604e4ead95fe068fbc12248db0ef38b85d2d3258"
+    },
+    "frozen_abf": {
+      "id": "ABF-P3-125-v1",
+      "path": "lifeos/tasks/LIFEOS-P3-125_runtime_root_configurable_fail_closed_closure_acceptance_basis_freeze.md",
+      "sha256": "4ab5ed8a0c1349041d1d9b13452be5059abf510f4d2ecae386e23283c1956057"
+    },
+    "source_allowlist": {
+      "path": "lifeos/tasks/LIFEOS-P3-125_source_allowlist.md",
+      "sha256": "807ff8e1dd565eed4fec4c1b6bf5c6bca133861a9dffdbae1ca2bac60293dc4b",
+      "physical_lines": 87,
+      "candidate_rows": 75,
+      "bytes_hash_mismatches": []
+    },
+    "pm_review": {
+      "path": "lifeos/reviews/LIFEOS-P3-125_pm_review.md",
+      "sha256": "5d0c4663fa08ec0741395eae42fe54fc3fd059d38ae99def7a340a952406d0de"
+    },
+    "rework_authorization_manifest": {
+      "path": "lifeos/reviews/LIFEOS-P3-125/pm_evidence/rework-1-authorization/MANIFEST.md",
+      "sha256": "30819132bf873fab26f6b6fc488d872a77db1249587167f3a721733ed1d9746d"
+    },
+    "user_authorization": {
+      "path": "lifeos/reviews/LIFEOS-P3-125/pm_evidence/rework-1-authorization/user_authorization.md",
+      "sha256": "208645e953b39b6c310a82c214f6c71ca10a0ff02c57b799eedae907bcd3cf13"
+    },
+    "initial_adoption_manifest": {
+      "path": "lifeos/reviews/LIFEOS-P3-125/pm_evidence/initial-adoption/MANIFEST.md",
+      "sha256": "3fb8c4953a7bb91eb7c6e3aadf67af992a168a90e83cb6d80f4336be926d1d7f"
+    }
+  },
+  "execution_configuration": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "xhigh",
+    "source": "platform request metadata: x-codex-turn-metadata",
+    "matches_frozen_route": true
+  },
+  "permitted_execution_root": {
+    "path": "/private/tmp/lifeos-p3-125-runtime-root-config-v1",
+    "absent_before_creation": true
+  },
+  "scope": {
+    "writes_only": [
+      "lifeos/engineering/LIFEOS-P3-125/rework-1/",
+      "new task-owned P3-125 Rework delivery",
+      "/private/tmp/lifeos-p3-125-runtime-root-config-v1"
+    ],
+    "initial_assets_read_only": true,
+    "old_historical_runtime_root_not_accessed_after_preflight": true
+  },
+  "disclosure": {
+    "prior_preflight_command_included_a_prohibited_old_root_existence_check": true,
+    "old_root_result_was_not_captured_or_used": true,
+    "user_subsequently_directed_continuation": true,
+    "non_task_python_compile_cache_write_attempt_was_rejected_by_the_filesystem": true,
+    "subsequent_execution_rule": "Do not access the old historical runtime root again; preserve this disclosure for PM review."
+  },
+  "result": "PRECHECKS_MATCHED_CONTINUING_BY_USER_DIRECTION"
+}

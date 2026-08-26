@@ -1,0 +1,221 @@
+{
+  "task": "LIFEOS-P3-121",
+  "kind": "rework-1-combined-closure",
+  "result": "NOT_PASS",
+  "actual_app": "LifeOS P3-121 Person-centered Runtime.app",
+  "candidate_static_result": "PASS",
+  "preflight_result": "PASS",
+  "viewport_observed": {
+    "1280x1024_requested": [
+      1036,
+      768
+    ],
+    "1160x768": [
+      1160,
+      768
+    ],
+    "700x760": [
+      700,
+      760
+    ]
+  },
+  "candidate_build_viewport_binding": {
+    "bundle_binary": "build/cargo-target/release/bundle/macos/LifeOS P3-121 Person-centered Runtime.app/Contents/MacOS/lifeos-p3-121",
+    "bundle_binary_sha256": "69b90fab8baa0e007de4fab6d96a10829b767d6c14b48892c100046617996835",
+    "default_config": {
+      "path": "candidate/tauri.conf.json",
+      "sha256": "cb68a9bb05e2c4d29858b93234a4d6eb5e1a825f4c9b8eb1d8c71cca5a66f53e",
+      "build_log": "runtime/cargo-tauri-build-default-final.log",
+      "build_log_sha256": "23a73a205f81999235699ce7759f0c16cac4a767eac5dce85f455959b4a51375"
+    },
+    "1160x768": {
+      "path": "viewport-configs/tauri-1160x768.json",
+      "sha256": "e1f912d5e8213580dfb159b7b6657b2ed9cc324f2621b73d3641233952c33d1c",
+      "build_log": "runtime/cargo-tauri-build-1160x768.log",
+      "build_log_sha256": "9e3b35d506aedb5e7e1c860b0269083941bd3f222ba31de8d42557dde7885dbb"
+    },
+    "700x760": {
+      "path": "viewport-configs/tauri-700x760.json",
+      "sha256": "7faace7657772c796b246a986d56a7d7ca3e125921361179008bdec30eb3c179",
+      "build_log": "runtime/cargo-tauri-build-700x760.log",
+      "build_log_sha256": "279367bce95d1c8ff852cce07d4585c8c902aebe2e2b5fd9417d0a20df548f54"
+    }
+  },
+  "matrix": [
+    {
+      "id": "M-001",
+      "result": "PASS",
+      "evidence": [
+        "static/visual-contract.json"
+      ],
+      "note": "Person-first frozen labels and provenance layers remain in the candidate."
+    },
+    {
+      "id": "M-002",
+      "result": "PASS",
+      "evidence": [
+        "static/visual-contract.json"
+      ],
+      "note": "No new data model, model, or side-effect capability was introduced."
+    },
+    {
+      "id": "M-003",
+      "result": "PASS",
+      "evidence": [
+        "actual_app/m003-m004-native-default-requested-1280x1024.png",
+        "static/visual-contract.json"
+      ],
+      "note": "Actual native shell now has icon-only Rail, hover/focus tooltip contract, restored scale and Global AI spatial relation."
+    },
+    {
+      "id": "M-004",
+      "result": "PASS",
+      "evidence": [
+        "actual_app/m003-m004-native-default-requested-1280x1024.png",
+        "actual_app/m004-native-today-legal-empty.png",
+        "actual_app/m004-native-today-insufficient-evidence.png"
+      ],
+      "note": "Native normal, legal-empty and insufficient-evidence Today states are separately captured."
+    },
+    {
+      "id": "M-005",
+      "result": "PASS",
+      "evidence": [
+        "actual_app/m005-native-me-person-first.png"
+      ],
+      "note": "Native Me page is Person-first."
+    },
+    {
+      "id": "M-006",
+      "result": "PASS",
+      "evidence": [
+        "actual_app/m006-native-contexts-person-first.png",
+        "actual_app/m006-native-context-detail.png"
+      ],
+      "note": "Native Contexts and Context Detail retain Project-as-Context semantics."
+    },
+    {
+      "id": "M-007",
+      "result": "PASS",
+      "evidence": [
+        "actual_app/m007-native-memory-evidence-browser.png",
+        "actual_app/m007-native-memory-detail-traceable.png"
+      ],
+      "note": "Native Memory shows identity, derivation, evidence and source separation."
+    },
+    {
+      "id": "M-008",
+      "result": "PASS",
+      "evidence": [
+        "actual_app/m008-native-global-ai-context-panel.png"
+      ],
+      "note": "Global AI opens as a contextual right panel and remains model-disabled."
+    },
+    {
+      "id": "M-009",
+      "result": "NOT_IMPLEMENTED",
+      "evidence": [
+        "actual_app/m009-native-1280x1024.png",
+        "actual_app/m009-native-1160x768.png",
+        "actual_app/m009-native-700x760.png",
+        "viewport-configs/tauri-1160x768.json",
+        "viewport-configs/tauri-700x760.json"
+      ],
+      "note": "Native dimensions observed: 1280 request=(1036, 768); 1160=(1160, 768); 700=(700, 760). No scaling or static substitution was used."
+    },
+    {
+      "id": "M-010",
+      "result": "PASS",
+      "evidence": [
+        "actual_app/m010-native-escape-closes-global-ai.png",
+        "static/visual-contract.json"
+      ],
+      "note": "Actual Escape close plus same-DOM focus and reduced-motion static contract."
+    },
+    {
+      "id": "M-011",
+      "result": "PASS",
+      "evidence": [
+        "runtime/cargo-test-locked-offline-final.log",
+        "static/visual-contract.json"
+      ],
+      "note": "Nine Rust tests and exact three IPC static verification pass."
+    },
+    {
+      "id": "M-012",
+      "result": "PASS",
+      "evidence": [
+        "actual_app/m012-native-quick-capture-open.png",
+        "actual_app/m012-native-first-capture-saved.png"
+      ],
+      "note": "Native Quick Capture and first saved record are visible."
+    },
+    {
+      "id": "M-013",
+      "result": "PASS",
+      "evidence": [
+        "actual_app/m013-native-idempotent-repeat.png"
+      ],
+      "note": "Native repeat reports idempotency while count remains one."
+    },
+    {
+      "id": "M-014",
+      "result": "PASS",
+      "evidence": [
+        "actual_app/m014-m015-native-second-capture-and-refresh.png"
+      ],
+      "note": "Native second fixed synthetic capture is visible."
+    },
+    {
+      "id": "M-015",
+      "result": "PASS",
+      "evidence": [
+        "actual_app/m015-native-close-reopen-two-records.png"
+      ],
+      "note": "After actual close/reopen, get_today refresh visibly returns both records."
+    },
+    {
+      "id": "M-016",
+      "result": "PASS",
+      "evidence": [
+        "runtime/cargo-test-locked-offline-final.log"
+      ],
+      "note": "Atomic failure and cleanup are covered by the locked offline Rust suite."
+    },
+    {
+      "id": "M-017",
+      "result": "PASS",
+      "evidence": [
+        "runtime/cargo-test-locked-offline-final.log",
+        "static/visual-contract.json"
+      ],
+      "note": "Path, symlink, sidecar, source and capability closures pass."
+    },
+    {
+      "id": "M-018",
+      "result": "PASS",
+      "evidence": [
+        "runtime/cargo-test-locked-offline-final.log",
+        "static/visual-contract.json"
+      ],
+      "note": "Offline/runtime boundary and fixed synthetic limits pass."
+    },
+    {
+      "id": "M-019",
+      "result": "PASS",
+      "evidence": [
+        "mutations/visual-evidence-mutations.json",
+        "manifest/rework-1-manifest.json"
+      ],
+      "note": "Rework visual Evidence is candidate-bound, nonempty, unique and mutation-checked; it records M-009 honestly rather than converting it to a pass."
+    }
+  ],
+  "counts": {
+    "P0": 0,
+    "P1": 1,
+    "P2": 0,
+    "Unknown": 0,
+    "Not_Implemented": 1
+  },
+  "stop_reason": "M-009: actual 1280x1024 capture is not independently available; observed native screenshot is 1036x768. Do not claim Candidate Ready or PM Pass."
+}

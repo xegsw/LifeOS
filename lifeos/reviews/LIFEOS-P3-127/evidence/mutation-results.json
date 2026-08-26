@@ -1,0 +1,33 @@
+{
+  "test_id": "P127-M010",
+  "pristine_controls": [
+    "evidence/source-lineage.json",
+    "evidence/mutation-pristine-copy.json",
+    "evidence/mutation-missing-pristine.json",
+    "evidence/mutation-symlink-pristine.json"
+  ],
+  "mutations": [
+    {
+      "class": "content",
+      "target": "disposable Cargo.toml",
+      "result_file": "evidence/mutation-source-lineage.json",
+      "expected_exit_code": 1,
+      "observed": "line 11 byte/hash mismatch rejected"
+    },
+    {
+      "class": "missing file",
+      "target": "disposable ui/fixtures.js",
+      "result_file": "evidence/mutation-missing.json",
+      "expected_exit_code": 1,
+      "observed": "missing-or-not-regular-file rejected"
+    },
+    {
+      "class": "symlink",
+      "target": "disposable ui/state_machine.json",
+      "result_file": "evidence/mutation-symlink.json",
+      "expected_exit_code": 1,
+      "observed": "missing-or-not-regular-file rejected without following symlink"
+    }
+  ],
+  "result": "PASS"
+}

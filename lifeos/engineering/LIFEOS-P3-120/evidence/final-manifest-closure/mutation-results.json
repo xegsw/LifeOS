@@ -1,0 +1,46 @@
+{
+  "schema": "lifeos-p3-120/final-manifest-mutations-v1",
+  "generated_at_utc": "2026-08-25T09:38:20.374636+00:00",
+  "scope": "disposable copy under final-manifest-closure only; no candidate, Rework-1, runtime temp root, Pilot, real asset, network, or app access",
+  "pristine_control": {
+    "result": "PASS",
+    "errors": []
+  },
+  "mutations": [
+    {
+      "name": "missing_current_delivery",
+      "result": "PASS",
+      "expected_error_fragment": "current delivery",
+      "errors": [
+        "manifest layers are missing or extra",
+        "current delivery: record missing"
+      ]
+    },
+    {
+      "name": "changed_candidate_payload_hash",
+      "result": "PASS",
+      "expected_error_fragment": "candidate inventory records",
+      "errors": [
+        "candidate inventory records differ from frozen inventory"
+      ]
+    },
+    {
+      "name": "extra_closure_file",
+      "result": "PASS",
+      "expected_error_fragment": "final closure inventory",
+      "errors": [
+        "final closure inventory has missing/extra/type/hash/byte drift"
+      ]
+    },
+    {
+      "name": "historical_current_lineage_confusion",
+      "result": "PASS",
+      "expected_error_fragment": "initial historical rows",
+      "errors": [
+        "initial historical rows differ from the initial Manifest"
+      ]
+    }
+  ],
+  "disposable_root_removed": true,
+  "result": "PASS"
+}

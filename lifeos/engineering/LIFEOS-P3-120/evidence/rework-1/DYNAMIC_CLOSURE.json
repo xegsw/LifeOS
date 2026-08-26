@@ -1,0 +1,334 @@
+{
+  "schema": "lifeos-p3-120/rework-1-dynamic-closure-v1",
+  "generated_at_utc": "2026-08-25T09:15:48.208028+00:00",
+  "actual_model": "gpt-5.6-terra",
+  "actual_reasoning_effort": "xhigh",
+  "operation_mode": "user-manual packaged-app interactions; capture/log/DB verification only",
+  "rows": [
+    {
+      "closure_id": "M-001",
+      "acceptance_id": "M-001",
+      "operation": "Preflight preserved initial evidence and recorded model confirmation.",
+      "structured_result_id": "R1-PREFLIGHT",
+      "visual": null,
+      "log": {
+        "path": "preflight.json",
+        "sha256": "b6f6798dd9f69eb9b6ea0e1702ab6256c45593fdc2e3c207384814b80513c192"
+      },
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-004-01",
+      "acceptance_id": "M-004",
+      "operation": "Actual packaged-app Today empty state.",
+      "structured_result_id": "R1-today-empty",
+      "manual_attestation": "User confirmed the packaged Tauri app was foregrounded on Today empty state.",
+      "visual": {
+        "path": "screenshots/today-empty.png",
+        "sha256": "98dac31fe462ac912efce5b615901ca353f9424c071d9d86bcf4fb40b65ce486",
+        "bytes": 1921579
+      },
+      "log": {
+        "path": "logs/today-empty.app.log",
+        "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+        "missing_expected_lines": []
+      },
+      "db_sha256": null,
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-004-02",
+      "acceptance_id": "M-004",
+      "operation": "Actual manual navigation to Me.",
+      "structured_result_id": "R1-me",
+      "manual_attestation": "User manually opened Me in the foreground packaged app.",
+      "visual": {
+        "path": "screenshots/me.png",
+        "sha256": "87a334e194524f3de2cbe73b3df74e40538ebf1f2e3991875948f52300cbd52d",
+        "bytes": 1106161
+      },
+      "log": {
+        "path": "logs/me.app.log",
+        "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+        "missing_expected_lines": []
+      },
+      "db_sha256": null,
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-004-03a",
+      "acceptance_id": "M-004",
+      "operation": "Actual manual navigation to Contexts.",
+      "structured_result_id": "R1-contexts",
+      "manual_attestation": "User manually opened Contexts in the foreground packaged app.",
+      "visual": {
+        "path": "screenshots/contexts.png",
+        "sha256": "96fdf750440fdad9604ad596f460ca39779ab3ccf1e7b6746382540b427c2d3f",
+        "bytes": 938644
+      },
+      "log": {
+        "path": "logs/contexts.app.log",
+        "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+        "missing_expected_lines": []
+      },
+      "db_sha256": null,
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-004-03b",
+      "acceptance_id": "M-004",
+      "operation": "Actual manual navigation to Context Detail.",
+      "structured_result_id": "R1-context-detail",
+      "manual_attestation": "User manually opened the LifeOS product-development Context detail in the foreground packaged app; delayed capture allowed the user to restore that already-open window after approval.",
+      "visual": {
+        "path": "screenshots/context-detail.png",
+        "sha256": "625d9ac91e0eaf354894dacfa7ed08a56b86617a6e081e80b0a5f5f7d023ea60",
+        "bytes": 1072027
+      },
+      "log": {
+        "path": "logs/context-detail.app.log",
+        "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+        "missing_expected_lines": []
+      },
+      "db_sha256": null,
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-004-04a",
+      "acceptance_id": "M-004",
+      "operation": "Actual manual navigation to Memory.",
+      "structured_result_id": "R1-memory",
+      "manual_attestation": "User manually opened Memory in the foreground packaged app; delayed capture allowed the user to restore that already-open window after approval.",
+      "visual": {
+        "path": "screenshots/memory.png",
+        "sha256": "1462bd3a33ae00d2fd498fe26fa99035fbe82d8e2586ac96d89edea8af983987",
+        "bytes": 973056
+      },
+      "log": {
+        "path": "logs/memory.app.log",
+        "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+        "missing_expected_lines": []
+      },
+      "db_sha256": null,
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-004-04b",
+      "acceptance_id": "M-004",
+      "operation": "Actual manual navigation to Memory Detail.",
+      "structured_result_id": "R1-memory-detail",
+      "manual_attestation": "User manually opened the first user-source Memory Detail in the foreground packaged app; delayed capture allowed the user to restore that already-open window after approval.",
+      "visual": {
+        "path": "screenshots/memory-detail.png",
+        "sha256": "93a5f01256b36e8c8064affdea1b9fc4fb19736a18c4912df98505961347eda2",
+        "bytes": 1065355
+      },
+      "log": {
+        "path": "logs/memory-detail.app.log",
+        "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+        "missing_expected_lines": []
+      },
+      "db_sha256": null,
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-004-05a",
+      "acceptance_id": "M-004",
+      "operation": "Actual manual opening of Global AI.",
+      "structured_result_id": "R1-global-ai",
+      "manual_attestation": "User manually opened Global AI in the foreground packaged app with unrelated desktop notifications cleared; delayed capture allowed the user to restore that already-open window after approval.",
+      "visual": {
+        "path": "screenshots/global-ai.png",
+        "sha256": "90077ddf16549a6c5b4139a89d9db419615127572dd1bd59b87305ea9ed10732",
+        "bytes": 1283670
+      },
+      "log": {
+        "path": "logs/global-ai.app.log",
+        "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+        "missing_expected_lines": []
+      },
+      "db_sha256": null,
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-004-05b",
+      "acceptance_id": "M-004",
+      "operation": "Actual manual expansion of AI Workspace.",
+      "structured_result_id": "R1-ai-workspace",
+      "manual_attestation": "User manually expanded AI Workspace in the foreground packaged app; delayed capture allowed the user to restore that already-open window after approval.",
+      "visual": {
+        "path": "screenshots/ai-workspace.png",
+        "sha256": "79660cda4d1aea0e6e9cd34a54fa3772efbdee4035813a896015d4b0b1bc5370",
+        "bytes": 1243522
+      },
+      "log": {
+        "path": "logs/ai-workspace.app.log",
+        "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+        "missing_expected_lines": []
+      },
+      "db_sha256": null,
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-004-06",
+      "acceptance_id": "M-004",
+      "operation": "Actual manual navigation to Settings.",
+      "structured_result_id": "R1-settings",
+      "manual_attestation": "User manually opened Settings in the foreground packaged app; delayed capture allowed the user to restore that already-open window after approval.",
+      "visual": {
+        "path": "screenshots/settings.png",
+        "sha256": "15863c811922df97ec707f8e5a39a0dc3623b0f7bc21eb9e0a841e4158a26785",
+        "bytes": 1173283
+      },
+      "log": {
+        "path": "logs/settings.app.log",
+        "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+        "missing_expected_lines": []
+      },
+      "db_sha256": null,
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-005",
+      "acceptance_id": "M-005",
+      "operation": "Restricted-offline packaged runtime status.",
+      "structured_result_id": "R1-today-empty",
+      "manual_attestation": "User confirmed the packaged Tauri app was foregrounded on Today empty state.",
+      "visual": {
+        "path": "screenshots/today-empty.png",
+        "sha256": "98dac31fe462ac912efce5b615901ca353f9424c071d9d86bcf4fb40b65ce486",
+        "bytes": 1921579
+      },
+      "log": {
+        "path": "logs/today-empty.app.log",
+        "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+        "missing_expected_lines": []
+      },
+      "db_sha256": null,
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-006",
+      "acceptance_id": "M-006",
+      "operation": "First fixed synthetic capture.",
+      "structured_result_id": "R1-capture-one",
+      "manual_attestation": "User manually selected the fixed synthetic capture one exactly once in Today, then observed one persisted Runtime record; delayed capture allowed the user to restore that already-open window after approval.",
+      "visual": {
+        "path": "screenshots/capture-one.png",
+        "sha256": "e90a37b2db3459254a43cf0bf2a34d8b82fc97a6de9f7fbfda8b89bf581cb588",
+        "bytes": 1983237
+      },
+      "log": {
+        "path": "logs/capture-one.app.log",
+        "sha256": "d373ee9014ee0b12839715de108828167ba8fcd01f6c42457c1227ec1262b64f",
+        "missing_expected_lines": []
+      },
+      "db_sha256": "24a3453a70363a181f0326af8efca85b884a0733e40e5b5508af142ac70a52f2",
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-007",
+      "acceptance_id": "M-007",
+      "operation": "Repeat of the first fixed synthetic capture.",
+      "structured_result_id": "R1-repeat-one",
+      "manual_attestation": "User manually selected the same fixed synthetic capture one a second time in Today, then observed the deterministic idempotent result; delayed capture allowed the user to restore that already-open window after approval.",
+      "visual": {
+        "path": "screenshots/repeat-one.png",
+        "sha256": "0802cb1e31766e956e31b84542a0b8f4e5cebd90ccad58a73e19eb05986bf0c1",
+        "bytes": 1975994
+      },
+      "log": {
+        "path": "logs/repeat-one.app.log",
+        "sha256": "8e61c8f1abf42d6c50beef23bd0b95e8b0bbe7f31da89ac8a0a0ea614baa8af3",
+        "missing_expected_lines": []
+      },
+      "db_sha256": "dbe85034d6ada6791a3152f237e5a552eb9f72b6a39afdacaebfd3c2e94de5c3",
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-008",
+      "acceptance_id": "M-008",
+      "operation": "Second fixed synthetic capture.",
+      "structured_result_id": "R1-capture-two",
+      "manual_attestation": "User manually selected the fixed synthetic capture two exactly once in Today, then observed two persisted Runtime records; delayed capture allowed the user to restore that already-open window after approval.",
+      "visual": {
+        "path": "screenshots/capture-two.png",
+        "sha256": "6bc8bfcc4869295a2ebf8baf1a4bde0035638fc9628f0d79b507206ff413d529",
+        "bytes": 1986402
+      },
+      "log": {
+        "path": "logs/capture-two.app.log",
+        "sha256": "b0723a7c0ae079e210f968c60d2d75853e0eabefb6d46327f0a4510f338165f1",
+        "missing_expected_lines": []
+      },
+      "db_sha256": "b7a1dbcf63fae64beb0129624d656aed120cbff665c9a8b25695728c67eb4f2a",
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-009",
+      "acceptance_id": "M-009",
+      "operation": "Manual Today refresh.",
+      "structured_result_id": "R1-refresh",
+      "manual_attestation": "User manually refreshed Today and observed the same two persisted Runtime records; delayed capture allowed the user to restore that already-open window after approval.",
+      "visual": {
+        "path": "screenshots/refresh.png",
+        "sha256": "46f1c3d8a92156e58e4f7996f3f61b08aab0efcdcb702d69fe707600e79d6814",
+        "bytes": 1971353
+      },
+      "log": {
+        "path": "logs/refresh.app.log",
+        "sha256": "2eeae9f463727526afcb15a3f4c1170a5c54e028f4122eb146b0bbf17e1ecb61",
+        "missing_expected_lines": []
+      },
+      "db_sha256": "b7a1dbcf63fae64beb0129624d656aed120cbff665c9a8b25695728c67eb4f2a",
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-010-01",
+      "acceptance_id": "M-010",
+      "operation": "Manual packaged-app close.",
+      "structured_result_id": "R1-closed",
+      "manual_attestation": "User manually closed the packaged Tauri app through its window control after the refresh evidence was captured.",
+      "visual": null,
+      "log": {
+        "path": "logs/closed.app.log",
+        "sha256": "2eeae9f463727526afcb15a3f4c1170a5c54e028f4122eb146b0bbf17e1ecb61",
+        "missing_expected_lines": []
+      },
+      "db_sha256": "b7a1dbcf63fae64beb0129624d656aed120cbff665c9a8b25695728c67eb4f2a",
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-010-02",
+      "acceptance_id": "M-010",
+      "operation": "Manual observation after same-bundle reopen.",
+      "structured_result_id": "R1-reopen-today",
+      "manual_attestation": "User manually observed the reopened packaged app Today page displaying the two prior fixed synthetic records; delayed capture allowed the user to restore that already-open window after approval.",
+      "visual": {
+        "path": "screenshots/reopen-today.png",
+        "sha256": "e21e6c16aac14e4414d9d72afe170e8f36c873a2bd75ebc293f412d50e48a9e1",
+        "bytes": 1456133
+      },
+      "log": {
+        "path": "logs/reopen-today.app.log",
+        "sha256": "2c7aca0d293a6c2ab7a0996103d4cc2dfe9059c0954ac59e4e0726d6a3d8c6e2",
+        "missing_expected_lines": []
+      },
+      "db_sha256": "b7a1dbcf63fae64beb0129624d656aed120cbff665c9a8b25695728c67eb4f2a",
+      "result": "PASS"
+    },
+    {
+      "closure_id": "M-015",
+      "acceptance_id": "M-015",
+      "operation": "Exact temporary-root cleanup after final user close.",
+      "structured_result_id": "R1-final",
+      "visual": null,
+      "log": {
+        "path": "cleanup.json",
+        "sha256": "e54707acde9c8bec681a197c3aceb4c212186215be899facb91d51b05d25c0d7"
+      },
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "lifeos.p3-129.independent-review-execution-exception.v1",
+  "task_id": "LIFEOS-P3-129",
+  "incident": "A terminal stdout redirection created /private/tmp/lifeos-p3-129-independent-verifier.stdout while checking the independent review manifest.",
+  "contract_conflict": "The P3-129 Task Contract authorizes independent-review writes only under lifeos/reviews/LIFEOS-P3-129/. The temporary path was not an authorized review output or a task-card-declared temporary root.",
+  "observed_before_cleanup": {
+    "path": "/private/tmp/lifeos-p3-129-independent-verifier.stdout",
+    "file_type": "Regular File",
+    "bytes": 4901
+  },
+  "cleanup": {
+    "method": "exact-path rm after type and size inspection",
+    "post_cleanup_check": "stat returned No such file or directory",
+    "candidate_or_history_modified": false
+  },
+  "effect": "Exact cleanup restores the filesystem but cannot retroactively cure the independent review's write-scope deviation. This review cannot satisfy ABF-M-013; a different fresh isolated review session must rerun the review without this deviation."
+}

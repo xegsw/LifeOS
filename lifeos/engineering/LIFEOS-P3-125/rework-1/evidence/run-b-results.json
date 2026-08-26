@@ -1,0 +1,44 @@
+{
+  "database": {
+    "path": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/runtime-snapshots/run-b-capture.sqlite",
+    "sha256": "adfd20f3c8a8f58ca939782461e8a529c31d6dc371ca8f9dd1820b6782285835",
+    "summary": {
+      "audit": [
+        {
+          "detail": "local_capture",
+          "event": "capture_saved"
+        }
+      ],
+      "capture_count": 1,
+      "captures": [
+        {
+          "content": "明天先把发布页的第一屏文字读一遍，再决定是否继续做视觉细节。",
+          "id": "p3-122-000001a03c1250f3-p3-122-synthetic-one",
+          "idem_key": "p3-122-synthetic-one",
+          "source": "local_capture"
+        }
+      ]
+    }
+  },
+  "geometry": {
+    "lines": 1,
+    "path": "lifeos/engineering/LIFEOS-P3-125/rework-1/evidence/runtime-snapshots/run-b-geometry.jsonl",
+    "sha256": "5dcff9db472fa518b22806a4cdc937e47228d59aa9955e57744567a4911f42f0"
+  },
+  "inventory": [
+    {
+      "bytes": 24576,
+      "path": "capture.sqlite",
+      "sha256": "adfd20f3c8a8f58ca939782461e8a529c31d6dc371ca8f9dd1820b6782285835"
+    },
+    {
+      "bytes": 560,
+      "path": "native-geometry-1280x1024.jsonl",
+      "sha256": "5dcff9db472fa518b22806a4cdc937e47228d59aa9955e57744567a4911f42f0"
+    }
+  ],
+  "result": "PASS",
+  "row": "ABF-M-005",
+  "runtime_root": "/private/tmp/lifeos-p3-125-runtime-root-config-v1/run-b",
+  "task_id": "LIFEOS-P3-125"
+}

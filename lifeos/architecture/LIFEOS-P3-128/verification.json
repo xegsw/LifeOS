@@ -1,0 +1,243 @@
+{
+  "task_id": "LIFEOS-P3-128",
+  "verifier": "verify_contract.py",
+  "result": "PASS",
+  "ac_results": {
+    "AC-01": "PASS",
+    "AC-02": "PASS",
+    "AC-03": "PASS",
+    "AC-04": "PASS",
+    "AC-05": "PASS",
+    "AC-06": "PASS",
+    "AC-07": "PASS",
+    "AC-08": "PASS",
+    "AC-09": "PASS",
+    "AC-10": "PASS"
+  },
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 0
+  },
+  "check_count": 43,
+  "failure_count": 0,
+  "checks": [
+    {
+      "id": "TASK-frozen_input_impact.json",
+      "result": "PASS",
+      "detail": "task_id is LIFEOS-P3-128"
+    },
+    {
+      "id": "TASK-object_mapping.json",
+      "result": "PASS",
+      "detail": "task_id is LIFEOS-P3-128"
+    },
+    {
+      "id": "TASK-context_lifecycle.json",
+      "result": "PASS",
+      "detail": "task_id is LIFEOS-P3-128"
+    },
+    {
+      "id": "TASK-memory_provenance.json",
+      "result": "PASS",
+      "detail": "task_id is LIFEOS-P3-128"
+    },
+    {
+      "id": "TASK-context_resolver_contract.json",
+      "result": "PASS",
+      "detail": "task_id is LIFEOS-P3-128"
+    },
+    {
+      "id": "TASK-application_port_contract.json",
+      "result": "PASS",
+      "detail": "task_id is LIFEOS-P3-128"
+    },
+    {
+      "id": "TASK-p3_126_compatibility.json",
+      "result": "PASS",
+      "detail": "task_id is LIFEOS-P3-128"
+    },
+    {
+      "id": "TASK-fast_track_handoff.json",
+      "result": "PASS",
+      "detail": "task_id is LIFEOS-P3-128"
+    },
+    {
+      "id": "TASK-negative_cases.json",
+      "result": "PASS",
+      "detail": "task_id is LIFEOS-P3-128"
+    },
+    {
+      "id": "AC-01-A",
+      "result": "PASS",
+      "detail": "Frozen/Not Frozen impact matrix has all input classes"
+    },
+    {
+      "id": "AC-01-B",
+      "result": "PASS",
+      "detail": "every fixed-input path exists"
+    },
+    {
+      "id": "AC-01-C",
+      "result": "PASS",
+      "detail": "Frozen precedence is explicit"
+    },
+    {
+      "id": "AC-01-D",
+      "result": "PASS",
+      "detail": "conflict policy is explicit"
+    },
+    {
+      "id": "AC-02-A",
+      "result": "PASS",
+      "detail": "all 11 core objects plus Link are present"
+    },
+    {
+      "id": "AC-02-B",
+      "result": "PASS",
+      "detail": "all five requested concepts are mapped"
+    },
+    {
+      "id": "AC-02-C",
+      "result": "PASS",
+      "detail": "every concept/core-object mapping cell is nonblank"
+    },
+    {
+      "id": "AC-02-D",
+      "result": "PASS",
+      "detail": "identity and lifecycle are supplied for each concept"
+    },
+    {
+      "id": "AC-03-A",
+      "result": "PASS",
+      "detail": "Context state machine is complete"
+    },
+    {
+      "id": "AC-03-B",
+      "result": "PASS",
+      "detail": "Context stable-ID rule is present"
+    },
+    {
+      "id": "AC-03-C",
+      "result": "PASS",
+      "detail": "Project/non-Project compatibility is explicit"
+    },
+    {
+      "id": "AC-04-A",
+      "result": "PASS",
+      "detail": "Memory provenance has complete trace examples"
+    },
+    {
+      "id": "AC-04-B",
+      "result": "PASS",
+      "detail": "Memory non-authority boundary is explicit"
+    },
+    {
+      "id": "AC-04-C",
+      "result": "PASS",
+      "detail": "stale/revoked/tombstone invalidation is covered"
+    },
+    {
+      "id": "AC-05-A",
+      "result": "PASS",
+      "detail": "Person/Page/Selection resolver inputs are present"
+    },
+    {
+      "id": "AC-05-B",
+      "result": "PASS",
+      "detail": "every resolver category has removal semantics"
+    },
+    {
+      "id": "AC-05-C",
+      "result": "PASS",
+      "detail": "authorization and evidence failure semantics are complete"
+    },
+    {
+      "id": "AC-06-A",
+      "result": "PASS",
+      "detail": "application service boundary is explicit"
+    },
+    {
+      "id": "AC-06-B",
+      "result": "PASS",
+      "detail": "repository, authorization, audit, and event ports are present"
+    },
+    {
+      "id": "AC-06-C",
+      "result": "PASS",
+      "detail": "no-direct-SQL layer rule is explicit"
+    },
+    {
+      "id": "AC-07-A",
+      "result": "PASS",
+      "detail": "retain, adapt, and defer compatibility dispositions are all declared"
+    },
+    {
+      "id": "AC-07-B",
+      "result": "PASS",
+      "detail": "P3-126 fact matrix is populated"
+    },
+    {
+      "id": "AC-07-C",
+      "result": "PASS",
+      "detail": "current Runtime deferrals are explicit"
+    },
+    {
+      "id": "AC-08-A",
+      "result": "PASS",
+      "detail": "one Fast Track vertical slice is named"
+    },
+    {
+      "id": "AC-08-B",
+      "result": "PASS",
+      "detail": "write/protected scope is explicit"
+    },
+    {
+      "id": "AC-08-C",
+      "result": "PASS",
+      "detail": "Fast Track test/evidence matrix is complete"
+    },
+    {
+      "id": "AC-08-D",
+      "result": "PASS",
+      "detail": "Fast Track stop rules are complete"
+    },
+    {
+      "id": "AC-09-A",
+      "result": "PASS",
+      "detail": "all six required counterexamples are present"
+    },
+    {
+      "id": "AC-09-B",
+      "result": "PASS",
+      "detail": "counterexamples have expected fail-closed behavior and AC mapping"
+    },
+    {
+      "id": "AC-10-A",
+      "result": "PASS",
+      "detail": "main delivery exists"
+    },
+    {
+      "id": "AC-10-B",
+      "result": "PASS",
+      "detail": "main delivery makes no forbidden freeze/Stage/implementation claim"
+    },
+    {
+      "id": "AC-10-C",
+      "result": "PASS",
+      "detail": "main delivery labels facts, candidate decisions, deferrals, and PM items"
+    },
+    {
+      "id": "MANIFEST-01",
+      "result": "PASS",
+      "detail": "Manifest exists"
+    },
+    {
+      "id": "MANIFEST-02",
+      "result": "PASS",
+      "detail": "Manifest hashes all stable non-self artifacts"
+    }
+  ]
+}

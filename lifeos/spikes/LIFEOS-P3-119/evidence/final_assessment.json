@@ -1,0 +1,39 @@
+{
+  "task_id": "LIFEOS-P3-119",
+  "abf_id": "ABF-P3-119-v1",
+  "self_check_status": "NOT_PASS",
+  "scope": "synthetic fixture and dedicated temporary Chrome PID only",
+  "actual_model_configuration": "UNKNOWN_NOT_EXPOSED_BY_EXECUTION_SURFACE",
+  "counts": {
+    "p0": 1,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 1,
+    "not_implemented": 4
+  },
+  "conclusive_execution": "evidence/execution-8",
+  "p0_finding": {
+    "id": "P119-P0-001",
+    "l1_l2_mapping": ["L1-4", "L1-6", "L1-7", "ABF-I-04", "ABF-M-004"],
+    "fact": "The helper posted P119-E001 with CGEvent.postToPid to the attested temporary Chrome PID/window, but the independent S1 native screenshot has the same SHA-256 as S0 and fails the S1 green pixel check.",
+    "result": "No S0 to S1 GUI transition was evidenced; runner stopped before any further GUI event."
+  },
+  "unknown": {
+    "id": "P119-U-001",
+    "fact": "The active Codex execution surface does not expose a verifiable actual model and reasoning configuration.",
+    "result": "The task-card-required configuration is not asserted as fact. This does not change the observed GUI failure."
+  },
+  "matrix": [
+    {"row": "ABF-M-001", "test_id": "P119-M001", "status": "PASS_WITH_MODEL_UNKNOWN", "evidence": "evidence/execution-8/fixed-inputs.jsonl"},
+    {"row": "ABF-M-002", "test_id": "P119-M002", "status": "PASS", "evidence": "evidence/execution-8/raw/static_audit.json"},
+    {"row": "ABF-M-003", "test_id": "P119-M003", "status": "PASS", "evidence": "evidence/execution-8/raw/P119-M003-attest.json and images/S0.png"},
+    {"row": "ABF-M-004", "test_id": "P119-M004", "status": "NOT_PASS", "evidence": "evidence/execution-8/raw/P119-E001-click.json, raw/S1-capture.json, raw/S1-pixels.json and images/S1.png"},
+    {"row": "ABF-M-005", "test_id": "P119-M005", "status": "NOT_IMPLEMENTED", "reason": "Frozen fail-closed rule stopped after M-004 mismatch."},
+    {"row": "ABF-M-006", "test_id": "P119-M006", "status": "NOT_IMPLEMENTED", "reason": "Frozen fail-closed rule stopped after M-004 mismatch."},
+    {"row": "ABF-M-007", "test_id": "P119-M007", "status": "NOT_IMPLEMENTED", "reason": "Frozen fail-closed rule stopped after M-004 mismatch."},
+    {"row": "ABF-M-008", "test_id": "P119-M008", "status": "NOT_IMPLEMENTED", "reason": "Negative mutations require a clean baseline PASS."},
+    {"row": "ABF-M-009", "test_id": "P119-M009", "status": "PASS", "evidence": "evidence/execution-8/cleanup.jsonl"}
+  ],
+  "history_preservation": "All ten frozen P3-118/acceptance inputs matched before temporary-root creation; no P3-116/P3-117/P3-118 asset was modified.",
+  "cleanup": "The exact temporary root /private/tmp/lifeos-p3-119-pid-gui-spike-v1 was absent after every execution, including the conclusive execution-8."
+}

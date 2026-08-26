@@ -1,0 +1,49 @@
+{
+  "task_id": "LIFEOS-P3-128",
+  "layer_rule": "UI -> Application Service -> Domain policy -> Ports -> Adapters. UI and Orchestrator must never hold a SQLite handle, issue SQL, infer authorization, or write state directly.",
+  "application_services": [
+    {
+      "name": "CaptureApplicationService",
+      "responsibility": "Validate a capture request, persist an immutable Artifact/record through a port, create minimal audit/outbox facts atomically, and return a receipt.",
+      "fast_track": "adapt existing capture_record behavior without expanding raw path or SQL input"
+    },
+    {
+      "name": "ContextRecoveryApplicationService",
+      "responsibility": "Resolve a Project-backed Context, load authorized related evidence/Decision/Action/Event projections, and return current state, next, recent, evidence gaps, and provenance refs.",
+      "fast_track": "new single vertical-slice application service"
+    },
+    {
+      "name": "ContextAssociationApplicationService",
+      "responsibility": "Apply explicit user confirmation of a proposed capture-to-existing-Project Context link, record Feedback/Audit, and never create a Context silently.",
+      "fast_track": "one explicit confirmation mutation, restricted to a preseeded synthetic Project-backed Context"
+    },
+    {
+      "name": "MemoryQueryApplicationService",
+      "responsibility": "Project authorized core objects into a MemoryItem/detail with provenance and stale/evidence-gap semantics.",
+      "fast_track": "read-only detail for the same single Context; no generic search, FTS, or source ingestion"
+    },
+    {
+      "name": "GlobalAiContextResolver",
+      "responsibility": "Assemble inspectable, removable, reauthorized request context for a future Model/Agent call.",
+      "fast_track": "preview-only; no ModelPort or AgentPort invocation"
+    }
+  ],
+  "ports": [
+    {"name": "CaptureRepository", "methods": ["appendCapture(request)", "findCaptureByIdempotency(key)"], "adapter": "SQLiteAdapter", "contract": "returns domain DTOs; no SQL, filesystem path, or opaque DB handle crosses the port"},
+    {"name": "ProjectRepository", "methods": ["getProject(projectId)"], "adapter": "SQLiteAdapter", "contract": "Project remains the authoritative backing object for context_type=project"},
+    {"name": "ContextProjectionRepository", "methods": ["getProjectContext(contextId)", "listRecoveryEvidence(contextId)"], "adapter": "SQLiteAdapter/read-model adapter", "contract": "returns a composed projection and typed refs, not a new Context core entity"},
+    {"name": "MemoryReadPort", "methods": ["getMemoryDetail(memoryItemId)"], "adapter": "SQLiteAdapter/read-model adapter", "contract": "returns provenance links and current availability; never materializes a second original-content authority"},
+    {"name": "AuthorizationPort", "methods": ["check(request)", "recheckConsumption(refs,purpose,location)"], "adapter": "authorization adapter", "contract": "deny-first, six dimensions, current state/generation/evidence checks"},
+    {"name": "FeedbackRepository", "methods": ["appendFeedback(feedback)"], "adapter": "SQLiteAdapter", "contract": "append-only; confirmation effect is computed, not overwritten"},
+    {"name": "AuditPort", "methods": ["appendMinimal(event)"], "adapter": "SQLiteAdapter", "contract": "minimum scoped metadata; no body/path/model prompt dumping"},
+    {"name": "DomainEventPort", "methods": ["publishAfterCommit(event)"], "adapter": "in-process event bus/outbox adapter", "contract": "event cannot publish if transaction does not commit"},
+    {"name": "ModelPort", "methods": ["generate(resolverResult)"], "adapter": "none in Fast Track", "contract": "future only; Model never receives unaudited/unapproved refs or direct repository access"},
+    {"name": "AgentPort", "methods": ["execute(task)"], "adapter": "none in Fast Track", "contract": "future only; Agent remains separate from Model and requires explicit capability/authorization"}
+  ],
+  "transaction_and_event_boundary": {
+    "write": "One application service owns one transaction: validate current authorization/generation -> append capture/link/Feedback/Audit -> commit -> publish domain event or outbox record. A failure yields no receipt and no event.",
+    "read": "Application service asks repository/read model for candidates -> AuthorizationPort rechecks every returned reference -> constructs response with evidence gaps -> UI renders only that DTO.",
+    "forbidden": ["UI invokes SQL", "Orchestrator owns transactions", "adapter manufactures user confirmation", "event emits before commit", "read model bypasses tombstone/source/authorization checks"]
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,13 @@
+{
+  "test_id": "P127-M002",
+  "reviewer_scripts": [
+    "lifeos/reviews/LIFEOS-P3-127/runner.py",
+    "lifeos/reviews/LIFEOS-P3-127/history_verify.py"
+  ],
+  "executable_reference_scan": "evidence/independence-executable-scan.txt",
+  "scan_exit_code": 1,
+  "scan_meaning": "expected empty result: neither reviewer script imports, invokes, copies, or subprocesses a P3-126 historical runner",
+  "diagnostic_scan": "evidence/independence-scan.txt",
+  "diagnostic_note": "the only diagnostic match is runner.py prose stating that no subprocess reference exists; it is not executable behavior",
+  "result": "PASS"
+}

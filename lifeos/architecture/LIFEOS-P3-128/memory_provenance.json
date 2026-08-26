@@ -1,0 +1,49 @@
+{
+  "task_id": "LIFEOS-P3-128",
+  "memory_definition": "Memory is a query/read projection over authorized Source, Artifact/version, Assertion, Decision, Action, Event, Derivation, Feedback, Authorization, AuditEntry, and Link records. It is not a second authority for original content.",
+  "memory_item_contract": {
+    "required_visible_fields": ["memory_item_id", "identity_kind", "display_status", "scope_refs", "provenance_status", "source_refs", "evidence_refs", "created_or_generated_at", "feedback_refs"],
+    "identity_kinds": ["user_original", "external_original", "user_confirmed_fact", "ai_observation", "ai_inference", "decision", "derivation", "external_source"],
+    "prohibited": ["copying original text into a second authoritative store", "rendering stale evidence as current", "turning an inference into a person fact", "using a feedback acknowledgement as execution evidence"]
+  },
+  "trace_examples": [
+    {
+      "id": "TRACE-UNDERSTANDING-001",
+      "question": "Why does LifeOS currently show an understanding?",
+      "chain": [
+        {"node": "Source", "identity": "SRC-SYN-WORK-001", "role": "identified fixed synthetic input channel", "must_check": ["access status", "authorization", "freshness"]},
+        {"node": "ArtifactVersion", "identity": "ART-SYN-WORK-001@v1", "role": "user/original-content reference", "must_check": ["identity kind", "version", "tombstone", "source link"]},
+        {"node": "Source", "identity": "SRC-SYN-HEALTH-001", "role": "separate fixed synthetic health self-report source", "must_check": ["authorization", "scope", "freshness"]},
+        {"node": "ArtifactVersion", "identity": "ART-SYN-HEALTH-001@v1", "role": "separate evidence reference", "must_check": ["identity kind", "version", "evidence status"]},
+        {"node": "Derivation", "identity": "DER-SYN-UNDERSTANDING-001@v1", "role": "AI/algorithm understanding with exact input refs", "must_check": ["input completeness", "purpose", "location", "authorization", "stale status"]},
+        {"node": "MemoryItem", "identity": "MEM:DER-SYN-UNDERSTANDING-001@v1", "role": "read-model entry with links back to every prior node", "must_check": ["all chain checks passed"]}
+      ],
+      "failure_result": "If any source, version, authorization, or evidence check fails, show evidence_unavailable or stale with the missing link; do not show a reliable understanding."
+    },
+    {
+      "id": "TRACE-DECISION-001",
+      "question": "Why was this decision made?",
+      "chain": [
+        {"node": "Decision", "identity": "DEC:<id>", "role": "independent decision with rationale and status", "must_check": ["confirmed/current state"]},
+        {"node": "Link", "identity": "LNK:decision-support:<id>", "role": "typed, sourced, confirmation-aware support relation", "must_check": ["validity", "confirmation", "link evidence"]},
+        {"node": "ArtifactVersion or Assertion", "identity": "EVID:<id>@version", "role": "supporting original content or stated fact", "must_check": ["identity", "source", "evidence availability"]},
+        {"node": "Feedback", "identity": "FDB:<id>", "role": "user confirmation/correction history", "must_check": ["not retracted", "target/version match"]},
+        {"node": "MemoryItem", "identity": "MEM:DEC:<id>", "role": "decision explanation view", "must_check": ["all previous nodes lawful and current"]}
+      ],
+      "failure_result": "A missing or revoked supporting item never erases Decision history, but the Memory detail must say evidence_unavailable/review_required and exclude it from automatic recommendation basis."
+    }
+  ],
+  "freshness_and_invalidation": [
+    {"trigger": "Artifact version changes", "effect": "Derivation and Memory projection become stale; a new derivation must declare its exact new input set."},
+    {"trigger": "Source disconnect/unavailability", "effect": "Memory retains a minimum historical reference only if authorized and labels the evidence gap; no reliable derived consumption."},
+    {"trigger": "Authorization revoked/expired", "effect": "active use is blocked before cleanup; dependent read projections become unavailable, stale, or review_required."},
+    {"trigger": "Feedback retracted", "effect": "dependent confirmation effect is recalculated while append-only history remains visible."},
+    {"trigger": "Tombstone", "effect": "deleted content cannot reappear through Memory, cache, export, backup, or a reconstructed projection."}
+  ],
+  "read_model_rules": {
+    "authoritative_writes": "None. Memory writes no original content, no confirmation effect, and no authorization.",
+    "rebuild": "Allowed only from still-authorized, non-tombstoned, exact-version provenance; old derivation output remains historical or superseded rather than being relabeled as a new result.",
+    "query_gate": "Repository/query adapter returns candidate ids only; application service rechecks authorization, source, version, tombstone, generation, evidence, and Link validity before presenting an item."
+  },
+  "result": "PASS"
+}

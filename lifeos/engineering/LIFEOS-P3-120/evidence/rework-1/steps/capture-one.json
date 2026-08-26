@@ -1,0 +1,60 @@
+{
+  "schema": "lifeos-p3-120/rework-1-manual-step-v1",
+  "step": "capture-one",
+  "structured_result_id": "R1-capture-one",
+  "captured_at_utc": "2026-08-25T09:00:39.541847+00:00",
+  "operator": "user-manual",
+  "attestation": "User manually selected the fixed synthetic capture one exactly once in Today, then observed one persisted Runtime record; delayed capture allowed the user to restore that already-open window after approval.",
+  "capture_delay_seconds": 12,
+  "automation_excluded": [
+    "Computer Use",
+    "AppleScript",
+    "AX",
+    "CDP",
+    "HTTP",
+    "WebDriver",
+    "browser control"
+  ],
+  "app": {
+    "pid": 24181,
+    "running": true,
+    "launch_count": 1
+  },
+  "db": {
+    "exists": true,
+    "type": "regular",
+    "bytes": 24576,
+    "sha256": "24a3453a70363a181f0326af8efca85b884a0733e40e5b5508af142ac70a52f2",
+    "quick_check": "ok",
+    "user_version": 104,
+    "captures": [
+      {
+        "id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "content": "P3-120 synthetic capture one",
+        "created_at_ms": 1787648390196,
+        "source": "local_capture",
+        "idem_key": "p3-120-synthetic-one"
+      }
+    ],
+    "audit": [
+      {
+        "id": 1,
+        "event": "capture_saved",
+        "capture_id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "created_at_ms": 1787648390196,
+        "detail": "local_capture"
+      }
+    ]
+  },
+  "log_snapshot": {
+    "path": "logs/capture-one.app.log",
+    "sha256": "d373ee9014ee0b12839715de108828167ba8fcd01f6c42457c1227ec1262b64f",
+    "missing_expected_lines": []
+  },
+  "screenshot": {
+    "path": "screenshots/capture-one.png",
+    "sha256": "e90a37b2db3459254a43cf0bf2a34d8b82fc97a6de9f7fbfda8b89bf581cb588",
+    "bytes": 1983237
+  },
+  "result": "PASS"
+}

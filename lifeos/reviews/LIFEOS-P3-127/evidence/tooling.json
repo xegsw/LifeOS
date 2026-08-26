@@ -1,0 +1,10 @@
+{
+  "runner": "runner.py",
+  "syntax_check": {
+    "initial_command": "python3 -m py_compile lifeos/reviews/LIFEOS-P3-127/runner.py",
+    "initial_result": "blocked-by-unapproved-macos-python-cache-write",
+    "fallback_command": "python3 -B -c compile(read_text(...), ..., 'exec')",
+    "fallback_result": "PASS",
+    "writes_outside_review_root": false
+  }
+}

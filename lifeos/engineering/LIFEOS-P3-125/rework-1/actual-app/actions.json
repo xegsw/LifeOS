@@ -1,0 +1,65 @@
+{
+  "task_id": "LIFEOS-P3-125",
+  "result": "PASS",
+  "tool": "Computer Use @oai/sky",
+  "app_identifier": "local.lifeos.p3-122",
+  "actions": [
+    {
+      "id": "D-001",
+      "root": "run-a",
+      "operation": "launch then inspect initial rendered Tauri window",
+      "observable_result": "P3_122_ATTESTATION rt=[restricted_offline,0,0,null]; Recent says no Runtime capture",
+      "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-a-initial.jpeg",
+      "sha256": "ab84beeef84c2fbd5d41f01f476f41b8324ecf659929d5cb7c1597b96fa59a1f"
+    },
+    {
+      "id": "D-002",
+      "root": "run-a",
+      "operation": "click Open Quick Capture",
+      "observable_result": "dialog shows only the Frozen synthetic input and Confirm association action",
+      "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-a-capture-modal.jpeg",
+      "sha256": "9a45d98ab4ff85c838d2f0ab52f09f12b1c28c8507a3db881bf8fb72b8076cb7"
+    },
+    {
+      "id": "D-003",
+      "root": "run-a",
+      "operation": "click Confirm association for the first capture",
+      "observable_result": "P3_122_ATTESTATION rt=[restricted_offline,1,1,null] and UI reports saved user original after the UI's capture_record→get_today refresh sequence",
+      "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-a-after-first.jpeg",
+      "sha256": "7dade8b7033548098f30ac77c91b297eadeea78c556a94259fbe229a4c8b6ece"
+    },
+    {
+      "id": "D-004",
+      "root": "run-a",
+      "operation": "repeat the identical Quick Capture confirmation",
+      "observable_result": "P3_122_ATTESTATION rt=[restricted_offline,1,2,null] and UI reports idempotent repeat with no duplicate record after the UI's capture_record→get_today refresh sequence",
+      "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-a-after-repeat.jpeg",
+      "sha256": "1f9d5b4c7778c286b2a74f2f77e0794755096981fb908d894fcab5572dfcf4f3"
+    },
+    {
+      "id": "D-005",
+      "root": "run-a",
+      "operation": "close the App and launch the same task-local bundle again",
+      "observable_result": "P3_122_ATTESTATION remains [restricted_offline,1,2,null] after reopen; app initialization runs runtime_status followed by get_today refresh",
+      "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-a-reopened.jpeg",
+      "sha256": "cfc6d82b1d945bc301eeb0dd214b8fc0c5452ddf7533d0901345b1670d4ea579"
+    },
+    {
+      "id": "D-006",
+      "root": "run-b",
+      "operation": "launch independently built run-b bundle and inspect its initial state",
+      "observable_result": "P3_122_ATTESTATION rt=[restricted_offline,0,0,null], proving the second configured root starts empty",
+      "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-b-initial.jpeg",
+      "sha256": "ab84beeef84c2fbd5d41f01f476f41b8324ecf659929d5cb7c1597b96fa59a1f"
+    },
+    {
+      "id": "D-007",
+      "root": "run-b",
+      "operation": "confirm the Frozen synthetic capture",
+      "observable_result": "P3_122_ATTESTATION rt=[restricted_offline,1,1,null] and UI reports saved user original",
+      "evidence": "lifeos/engineering/LIFEOS-P3-125/rework-1/actual-app/run-b-after-first.jpeg",
+      "sha256": "2cc52be0b8aea4aec431beec132e0a9ae100571364c778d3c4fe0ab98af8bd1a"
+    }
+  ],
+  "postcondition": "Computer Use app inventory contains no running local.lifeos.p3-122 process before collection."
+}

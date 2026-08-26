@@ -1,0 +1,26 @@
+   Compiling lifeos-p3-122 v0.1.0 (/private/tmp/lifeos-p3-127-independent-review-v1/candidate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.15s
+     Running unittests src/main.rs (/private/tmp/lifeos-p3-127-independent-review-v1/cargo-target/debug/deps/lifeos_p3_122-fb2a9ad6e01f24f5)
+
+running 4 tests
+test runtime::p3_125_tests::compiled_root_derives_every_runtime_path ... ok
+test runtime::p3_125_tests::first_repeat_refresh_reopen_and_atomic_failure_are_consistent ... ipc_result command=capture_record status=saved record_count=1 audit_event_count=1 repeated=false
+ipc_result command=capture_record status=idempotent_repeat record_count=1 audit_event_count=2 repeated=true
+ipc_result command=capture_record status=saved record_count=2 audit_event_count=3 repeated=false
+ipc_result command=get_today status=loaded record_count=2 audit_event_count=3
+ipc_result command=get_today status=loaded record_count=2 audit_event_count=3
+ipc_result command=capture_record status=saved record_count=1 audit_event_count=1 repeated=false
+ipc_result status=blocked code=injected_atomic_failure
+ok
+test runtime::p3_125_tests::input_and_storage_type_failures_preserve_the_root ... ipc_result status=blocked code=argument_schema_rejected
+ipc_result status=blocked code=database_type_rejected
+ipc_result status=blocked code=geometry_type_rejected
+ok
+test runtime::p3_125_tests::non_sqlite_sidecar_and_unwritable_failures_preserve_existing_data ... ipc_result status=blocked code=database_unavailable
+ipc_result command=capture_record status=saved record_count=1 audit_event_count=1 repeated=false
+ipc_result status=blocked code=database_sidecar_rejected
+ipc_result status=blocked code=path_boundary_unavailable
+ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+

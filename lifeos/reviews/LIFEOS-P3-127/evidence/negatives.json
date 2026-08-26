@@ -1,0 +1,16 @@
+{
+  "test_id": "P127-M007",
+  "method": "offline serial candidate tests with --nocapture under the authorized run-b build-time Runtime root",
+  "raw_log": "evidence/run-b-cargo-test-serial-nocapture.log",
+  "observed_fail_closed_codes": [
+    "injected_atomic_failure",
+    "argument_schema_rejected",
+    "database_type_rejected",
+    "geometry_type_rejected",
+    "database_unavailable",
+    "database_sidecar_rejected",
+    "path_boundary_unavailable"
+  ],
+  "preservation_assertion": "the named candidate tests passed after exercising input/type/sidecar/path/atomic branches; no success receipt was emitted for blocked branches",
+  "result": "PASS"
+}

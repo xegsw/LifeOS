@@ -1,0 +1,46 @@
+{
+  "task_id": "LIFEOS-P3-129",
+  "review_phase": "pm_candidate_intake",
+  "result": "CANDIDATE_INTAKE_PASS_AWAITING_MANDATORY_INDEPENDENT_REVIEW",
+  "fixed_contract": {
+    "task_sha256": "2fa9ae33705b5f57f9045b508547d0180932dd23d23a043a1b2df1b93904fc09",
+    "abf_sha256": "df3c4e9879a624e05ef8f7eb5b71d1a5835422db0eea278e2fc88404032b40fb",
+    "canonical_v1_pre_sha256": "2db0cbeda30eea2a56d965220363fb6af6622acf413dfb4ee8c11ec867009a32",
+    "freeze_status_sha256": "3d32e56876175636c00cf36b26e18bc284ff3d13123e291bce9f28f9e8f74a10"
+  },
+  "candidate_checks": {
+    "manifest_entries": 11,
+    "manifest_hash_matches": 11,
+    "manifest_hash_mismatches": 0,
+    "manifest_self_reference": false,
+    "fixed_input_matches": 15,
+    "fixed_input_mismatches": 0,
+    "v0_reconciliation_rows": 16,
+    "v0_unclassified_rows": 0,
+    "compatibility_pass": 12,
+    "compatibility_na": 1,
+    "compatibility_fail": 0,
+    "mutation_controls_rejected": 4,
+    "mutation_controls_total": 4,
+    "submitted_verifier": "PASS",
+    "canonical_promotion_executed": false
+  },
+  "promotion_patch": {
+    "allowed_changed_lines": [3],
+    "independently_recomputed_post_sha256": "1d7d82d2afcf7ac52b15730f4f8d3effc08f8965d0b085c6a53bbd2611ad7236",
+    "matches_candidate": true
+  },
+  "abf_matrix_state": {
+    "ABF-M-001_to_M-012": "CANDIDATE_SIDE_PASS",
+    "ABF-M-013": "NOT_IMPLEMENTED_MANDATORY_INDEPENDENT_REVIEW",
+    "ABF-M-014": "NOT_IMPLEMENTED_FINAL_GATE_CLOSURE"
+  },
+  "counts_overall_gate": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 2
+  },
+  "status": "Candidate Ready for Fresh Isolated Independent Review / Not Frozen / No Promotion"
+}

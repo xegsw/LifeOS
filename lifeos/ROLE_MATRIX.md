@@ -1,4 +1,4 @@
-# LifeOS 项目角色与职责矩阵 V0.1
+# LifeOS 项目角色与职责矩阵 V2.0
 
 更新时间：2026-08-11
 
@@ -16,7 +16,7 @@
 
 - 主责角色
 - 协审角色
-- 必须通过的评审关卡
+- 风险等级及是否触发独立评审
 
 角色不是职位头衔，而是守门责任。任何任务若影响某个角色负责的边界，必须在交付物中显式回答该角色关心的问题。
 
@@ -202,10 +202,10 @@ PM 应根据 `lifeos/AGENT_ROUTING_SCORECARD.md` 中的历史表现持续调整�
 
 | 任务类型 | 默认推荐 Agent | 交叉验证建议 |
 |---|---|---|
-| 工程实现 / 修复 / 测试 | Codex | WorkBuddy 后续独立评审 |
+| 工程实现 / 修复 / 测试 | Codex | L0/L1 默认仅 PM 验收；L2 条件触发；L3/Gate 才强制独立评审 |
 | P3 快车道 P1 / P2 工程补丁 | Codex | WorkBuddy 可提前准备反例清单，但不得并行修改工程文件 |
 | P3 快车道独立复评 / 反例清单 | WorkBuddy | 发现 P0 必须回到 PM 主会话，不得自行要求 Codex 直接修 |
-| 技术 Spike / 性能验证 | Codex | WorkBuddy 复核报告与 evidence 支撑 |
+| 技术 Spike / 性能验证 | Codex | 默认 PM 验收；结论用于关键冻结或关键 Evidence 不可复算时再独立评审 |
 | 独立评审 / 复评 | WorkBuddy | Codex 仅作测试复跑辅助，不给最终评审结论 |
 | PRD / IA / 产品规则 | 由 PM 按重心选择 Codex 或 WorkBuddy | 另一个 Agent 做范围和风险复核 |
 | 体验 / 文案 / 设计审查 | WorkBuddy 优先 | Codex 可补结构化整改任务 |
@@ -217,7 +217,7 @@ PM 应根据 `lifeos/AGENT_ROUTING_SCORECARD.md` 中的历史表现持续调整�
 
 - 主责角色视角下的结论
 - 协审角色视角下的风险
-- 必须通过的评审关卡
+- 风险等级、Evidence 等级和独立评审触发判断
 - 需要 PM 或用户确认的事项
 
-若专项任务没有覆盖其指定角色的关键问题，PM 主会话应标记为 Rework 或 Partial。
+若专项任务没有覆盖其 Task Contract 指定的关键问题，PM 应进入同任务 Closure Cycle；只有合同或边界必须变化时才关闭并新建任务。

@@ -1,7 +1,7 @@
 # LifeOS Current Status Index
 
-更新时间：2026-08-24  
-最后校验时间：2026-08-24（D-0467：P3-115 PM Pass；等待用户采纳，仍 Not Frozen）
+更新时间：2026-08-26
+最后校验时间：2026-08-26（D-0527：用户确认P3-130合并边界，任务Ready并等待投递）
 
 本文件是 PM 日常上下文入口，用于减少重复读取大文件；它是状态索引，不替代主账本。
 
@@ -13,13 +13,33 @@
 
 ## 当前阶段
 
-有限 Stage 3 / 自用 MVP 最小切片条件准入执行。技术架构 V0.1 合同已冻结；P2-018 的 Pass with Conditions 已由用户采纳；外部用户验证线仍暂停。
+有限 Stage 3 / 自用 MVP 最小切片条件准入执行。技术架构V1.0已冻结为前向规范权威；V0.1作为Frozen历史保留并被取代其前向权威。P2-018的Pass with Conditions已由用户采纳；外部用户验证线仍暂停。
 
 ## 当前状态
 
-- 当前活动事项：P3-110 保持暂停；P3-111 至 P3-114 已完成并只读。P3-115 已通过 PM 验收，等待用户采纳；候选关键原型仍 Not Frozen。
-- 当前可执行下一步：仅等待用户是否采纳 P3-115 PM Pass。若采纳并明确授权，PM 才创建全新隔离关键原型独立评审任务与新 Frozen ABF；当前不自动创建。
-- 当前任务指针：`LIFEOS-P3-111` 至 `LIFEOS-P3-114` 均为 Accepted / User Adopted / Complete / Not Frozen；`LIFEOS-P3-115` 为 Accepted / PM Pass / Awaiting User Adoption / Not Frozen；P3-110 继续暂停。
+- 当前治理：D-0516 起的新任务采用 Governance V2：完整 Task Contract 一次授权；结果级任务包含实现、测试、Evidence与同范围修正；L0/L1/L2内嵌验收合同，L3/Gate才独立ABF；独立评审按风险／事实触发；普通任务PM Pass后自动Complete；任务卡取消模型推荐和模型证明门禁。P3-127及此前历史不追溯。
+- 当前活动事项：P3-110保持暂停；P3-122、P3-126、P3-127、P3-128与P3-129均已Complete；P3-123至P3-125已关闭并只读。P3-130为`Ready / User Boundary Confirmed / Awaiting Task-card Delivery / Not Started / Not Frozen`。
+- 当前可执行下一步：把P3-130最终任务卡绝对路径投递到Codex工程会话。投递后即可执行实现、actual Tauri动态Evidence和包内修正，不再重复确认合同内边界；执行完成后由PM接收，再使用另一新会话完成同任务号独立复评。
+- 当前任务指针：`LIFEOS-P3-130`已Ready，等待工程任务卡投递；P3-110继续暂停。
+- P3-129 当前 PM 计数（整个 Gate）：P0=0、P1=0、P2=0、Unknown=0、Not Implemented=0。re-review-1 Manifest 5/5、fixed inputs 15/15、ABF-M-001～M-014、候选 verifier、独立 audit和4/4 mutation均通过；attempt-1作为失败历史只读保全。
+- 架构权威：技术架构V1.0已通过独立复评、PM Pass、最终用户确认与exact promotion，现为Frozen前向规范权威。V0.1历史合同、Review与Evidence继续只读保全，但不再作为后续前向架构权威。该冻结不外推到Schema/API、Runtime、工程基线、真实能力、风险或Stage 4。
+- P3-128 PM 计数：P0=0、P1=0、P2=1、Unknown=0、Not Implemented=0。PM 复算 11/11 stable Manifest、解析 9 个 JSON、核对 60/60 映射单元、9 个反例与 11 行 Fast Track 验收矩阵，并只读核对 P3-126 三 IPC／Runtime 根／UI fixture／capability 事实。P2 为将 Draft 架构文件误标成 Frozen 的非阻断元数据澄清；实际映射未改变 Frozen V0.1 语义，不触发独立评审。
+- P3-127 PM 计数：P0=0、P1=0、P2=0、Unknown=0、Not Implemented=0。PM 复算 Final Manifest 59/59、source lineage 75/75、P3-126 history 123/123、Frozen matrix 12/12；双根 actual-Tauri 三 IPC 生命周期、失败关闭、三类 mutation 与精确 cleanup 均通过。默认并行测试暴露的共享夹具清理竞争被如实保留，串行 Frozen 调用两次 4/4，通过且该诊断未被用作正证据。
+- P3-126 Re-Acceptance PM 计数：P0=0、P1=0、P2=0、Unknown=0、Not Implemented=0。用户作为平台操作者确认原 P3-126执行会话实际为 `gpt-5.6-terra / xhigh`，与工程动作前已有记录绑定；这关闭 M-001，不修改 ABF且未执行工程 Rework。初次 PM Review保留只读，由 Re-Acceptance Review取代未决结论。
+- P3-126 初次 PM 计数：P0=1、P1=0、P2=0、Unknown=1、Not Implemented=0。PM verifier PASS（123 entries/17 roles）、candidate 75/75 byte-exact、M-002～M-012、双根 actual-Tauri、三 IPC、mutation、history与cleanup成立；但平台未暴露 actual model/effort时专项未按 Frozen M-001 action-before stop，而是凭用户确认继续执行。仅允许补原会话平台证明的 Evidence-only Rework 1/1。
+- P3-125 Rework-1 最终 PM 计数：P0=1、P1=0、P2=0、Unknown=1、Not Implemented=0。技术补丁与 M-002～M-012 Evidence 已闭合，PM verifier PASS（305 entries/18 roles），189/189 历史 hash一致且 temp root absent；但正式预检实施了 Frozen ABF 明确禁止的旧历史 Runtime root existence check，M-001 NOT_PASS。actual model/effort 仅有专项 metadata 摘要，缺 PM 可独立重取的原始证明。Rework 1/1 已耗尽，任务关闭。
+- P3-125 初次 PM 计数：P0=2、P1=0、P2=0、Unknown=1、Not Implemented=2。P0 为生产 `build.rs` 仍固定 P3-125 task root、使 `LIFEOS_RUNTIME_ROOT` 不是唯一可移植路径权威，以及在缺失 Frozen M-011 mutation、M-012 cleanup/final 和完整 Manifest／历史闭环时宣告完成；Unknown 为实际 model/effort 未获得可复核记录；Not Implemented 为 M-011、M-012。候选相对 P3-122 仅 2/75 文件变化、73/75 不变，唯一 temp root已清理。
+- P3-124 Rework-1 PM 计数：P0=1、P1=0、P2=0、Unknown=1、Not Implemented=7。P0 为 Frozen candidate 固定使用旧 P3-122 Runtime/DB/geometry 根，而 P3-124 仅授权新 P3-124 temp root；继续需要修改 candidate、ABF 或目录，必须关闭并新建任务。18/18 Rework artifacts 与 9/9 fixed inputs hash 均匹配，初次 13/13 历史资产保持只读，唯一 temp root 已精确清理。
+- P3-123 PM 计数：P0=1、P1=0、P2=0、Unknown=1、Not Implemented=12。P0 为 Frozen candidate allowlist 只有 1 个物理行、0 个 raw Markdown 数据行，75 行仅能经未冻结的 `\\n` 反转义诊断得到；Unknown 为实际 model/effort 未独立暴露。M-001 FAIL、M-002 PASS、M-003～M-014 未实现；actual Tauri/IPC/DB 未启动，temp root absent。
+- P3-122 PM 验收计数：P0=0、P1=0、P2=0、Unknown=0、Not Implemented=0。PM 复跑 Final verifier PASS，245 条 Manifest 声明零 hash mismatch，75 个候选文件绑定一致；18/18 页面行、三档逻辑视口、三 IPC 生命周期、9/9 mutation、10/10 历史输入与精确清理均通过。1280×1024 的宿主可见截图与逻辑 geometry 已分栏披露。
+- P3-120 最终 PM 计数：P0=0、P1=0、P2=0、Unknown=0、Not Implemented=0。Final Manifest 分层覆盖 candidate 70、initial historical 101、Rework-1 59、final closure 7；PM 复跑 final verifier PASS/error_count=0，pristine control 与四类 disposable mutation 均 PASS，Runtime/disposable 根均不存在。
+- 产品一致性约束：P3-121 的 P3-116-faithful Tauri UI 视觉整改仍是可保留的历史成果，但任务未通过：最终 1280×1024 Evidence 仍为 1036×768；Final Manifest 138/138 列示 hash 匹配，却遗漏 Rework-1 PM Evidence Manifest 和当前 Rework-2 授权 Evidence。最终 P0=1、P1=1、P2=0、Unknown=0、Not Implemented=2；不得把视觉成果外推为组合候选 Accepted/Frozen。
+- P3-119 最终 PM 计数：P0=1、P1=0、P2=0、Unknown=1、Not Implemented=4。`CGEventPostToPid` 投递记录成立，但 S0/S1 原生截图 hash 完全相同且 S1 green pixels 为 0/81；后续动作按 fail-closed 停止，临时根已清理。失败对象仅是 GUI 工具链，不是 P3-116 产品候选。
+- P3-118 最终 PM 计数：P0=0、P1=0、P2=0、Unknown=1、Not Implemented=13。候选质量未评估；唯一阻断为当前 Computer Use 无 PID/window target，而 Frozen ABF 禁止 app selector。
+- P3-117 最终 PM 计数：P0=1、P1=0、P2=0、Unknown=2、Not Implemented=12。P0 为 Frozen ABF 固定的 P3-116 PM Review 旧 hash 与 D-0473 后权威 hash 冲突；Unknown 为实际模型标签和专用 GUI 窗口身份不可独立复核；M-003～M-014 动态 Evidence 闭环均未实现。
+- P3-116 当前 PM 计数：P0=2、P1=0、P2=0、Unknown=0、Not Implemented=1。P0 为 36 张空白动作截图仍被 verifier 判 PASS，以及 46 份 AX logs 收入 synthetic 范围外 ambient 浏览器元数据；Not Implemented 为最终候选 hash 未完成全量动态／视觉闭环。
+- P3-116 Rework-1 执行事故：第一次 `file:` 预检被 Chrome 当作搜索并到达禁止网络页面，执行方立即停止；未提交页面／浏览器 raw Evidence，候选 hash 4/4 一致，固定临时根已清理。该内部未完成尝试不改变上述正式验收计数。
+- P3-116 Rework-1 Attempt-2：第二次 `file:` 预检 PASS，但 Computer Use 仅提供 136×159 缩略图，合格 1536×924 页面级截图不可取得；执行方 fail closed，动态矩阵／verifier／mutation 未实现，临时根已清理。正式计数仍为 P0=2、P1=0、P2=0、Unknown=0、Not Implemented=1。
 - P3-115 当前 PM 计数：P0=0、P1=0、P2=0、Unknown=0、Not Implemented=0。PM 隔离复跑 16/16 矩阵、44/44 闭环和 167/167 Manifest，通过实际 Chrome 1280×1024 与 700×760 离线 `file:` 渲染抽验；尚未进行全新隔离独立评审。
 - P3-114 当前 PM 计数：P0=0、P1=0、P2=0、Unknown=0、Not Implemented=0。D-0462 的逐行 Evidence 映射 P1 已关闭；未确认 P3-113 产品候选缺陷。
 - P3-113 当前 PM 计数：P0=0、P1=0、P2=0、Unknown=0、Not Implemented=0。最小多 Source 身份／来源链与完整反馈→理解更新生命周期两个既有 P0 已关闭。
@@ -32,11 +52,11 @@
 
 ## 当前禁止事项
 
-不得继续修改 P3-096 工程、交付物或 Engineering Evidence；P3-094 至 P3-115 的任务、工程／原型、专项交付物、Review 与 Engineering／Prototype／PM Evidence 资产在等待用户决定期间严格只读。P3-108/P3-109 均不得继续、恢复或原地修改 ABF。P3-110 暂停期间全部资产只读，未来恢复须重新授权。禁止对 retained Pilot-2 做路径查找、metadata、打开、读取、hash、复制、覆盖或清理。不得运行 Tauri、DB、IPC、模型或网络，不得访问真实数据。不得调整系统显示缩放；“减少动态效果”只由用户手工恢复。不得读取、hash、复制、覆盖或清理 `/private/tmp/lifeos-p3-104-rework-static-results.json` 内容，只允许 `lstat` metadata 核对。不得写或执行真实用户 DB migration，不得迁移、覆盖、复制、清理或写入真实用户数据库。不得启用真实 Vault、真实文件导出、云 / 第三方模型、向量、同步 / 多设备、L3 或外部用户；不得关闭／重开风险；不得恢复或冻结工程基线、冻结 Schema/API、冻结新关键产品资产或进入下一阶段。
+不得继续修改 P3-096 工程、交付物或 Engineering Evidence；P3-094 至 P3-128 的任务、工程／架构／原型／Spike、专项交付物、Review 与 Engineering／Prototype／Independent／PM Evidence 资产严格只读，PM 账本除外。P3-122、P3-126 与 P3-127 已获用户采纳，但候选、交付物与 Evidence 不得再修改、冻结或重跑取证。P3-123/P3-124 已关闭并获用户采纳，不得原地修复、修改 ABF、继续 Rework、重新投递、创建旧 temp root 或覆盖已保全输出。P3-125 已关闭且 Rework 1/1 耗尽，不得继续、重投、修改 ABF/source allowlist、覆盖 initial/Rework Evidence，或访问／创建／stat／hash／清理旧 P3-122 temp root。P3-128 已 Complete，不得原地修订其交付物／结构化合同或自动执行 handoff；后继必须是新的 Task Contract。禁止 Pilot、真实 DB／路径／文本、网络、产品模型、新 IPC、clear/export/权限/恢复。P3-108/P3-109 均不得继续、恢复或原地修改 ABF。P3-110 暂停期间全部资产只读，未来恢复须重新授权。禁止对 retained Pilot-2 做路径查找、metadata、打开、读取、hash、复制、覆盖或清理。不得调整系统显示缩放；“减少动态效果”只由用户手工恢复。不得读取、hash、复制、覆盖或清理 `/private/tmp/lifeos-p3-104-rework-static-results.json` 内容，只允许 `lstat` metadata 核对。不得写或执行真实用户 DB migration，不得迁移、覆盖、复制、清理或写入真实用户数据库。不得启用真实 Vault、真实文件导出、云 / 第三方模型、向量、同步 / 多设备、L3 或外部用户；不得关闭／重开风险；不得恢复或冻结工程基线、冻结 Schema/API、冻结新关键产品资产或进入下一阶段。
 
 ## 已冻结核心资产摘要
 
-历史产品定位、目标用户、V1 第一场景、核心领域模型 V0.1、AI 权限与信任模型 V0.1、V1 范围、首页 / 今日页 PRD、首页 / 今日页三张静态关键原型、技术架构 V0.1 合同仍保留其 Frozen 记录。D-0457 后，Project 中心的第一场景、价值排序、V1 范围、首页／原型和 IA 仅作为工作领域历史基线；P3-113 人本重基线已通过 P3-114 独立评审并获用户采纳，但仍只是 Not Frozen 产品候选。新关键原型必须先经 P3-115、全新隔离独立评审、PM 验收和用户单独冻结决定，不能由 P3-114 Pass 自动冻结。产品宪法、信任模型原则和技术架构 V0.1 继续有效。
+历史产品定位、目标用户、V1 第一场景、核心领域模型 V0.1、AI 权限与信任模型 V0.1、V1 范围、首页 / 今日页 PRD、首页 / 今日页三张静态关键原型、技术架构 V0.1 合同仍保留其 Frozen 记录。D-0457 后，Project 中心的第一场景、价值排序、V1 范围、首页／原型和 IA 仅作为工作领域历史基线；P3-113 人本重基线已通过 P3-114 独立评审并获用户采纳，但仍只是 Not Frozen 产品候选。P3-115 是原 ABF 下 PM Pass、未被采纳为当前目标的历史候选；P3-116 是未满足动态 Evidence 验收而关闭的 Person-centered 原型候选，源码只读；P3-117～P3-119 是已关闭的取证／工具历史。P3-120 已获用户采纳但只冻结其本轮验收依据与 source allowlist，不冻结产品、原型、runtime 或架构资产；P3-121 已关闭且 Not Frozen；P3-122 只冻结 `ABF-P3-122-v1` 与双 positive source allowlist，不冻结产品、原型、runtime 或架构资产。产品宪法、信任模型原则和技术架构 V0.1 继续有效。
 
 ## P3 工程快车道状态
 
@@ -321,6 +341,67 @@ P3 Engineering Fast Lane 已建立，仅限有限 Stage 3、合成数据、单�
 - D-0464：PM 复验 P3-114 Rework 1 为 Accepted / PM Pass / Independent Pass。Rework Manifest 9/9、历史 Manifest 21/21 + 14/14 + 12/12、Frozen matrix/results 13/13 均通过，原映射 P1 已关闭；五类计数全零，等待用户采纳。不冻结、不创建后续任务、不改变风险、不进入 Stage 4。
 - D-0465：用户采纳 P3-114 Independent Pass／PM Pass 并授权创建 P3-115。PM 创建人本双领域自用 MVP 高保真原型与交互合同任务，在启动前冻结 `ABF-P3-115-v1`；P3-114 完成并只读。P3-115 仅允许本地代码原生原型、固定合成数据、Chrome `file:` 动态 Evidence，不接 runtime／真实数据／模型／网络；不冻结、不改变风险、不进入 Stage 4。
 - D-0466：P3-115 专项在启动前质疑窗口发现 v1 固定的 P3-114 Review hash `7edd…` 是采纳前快照，但当前文件为采纳后 `72d…`。PM 核对 P3-115 原型目录和唯一临时根均不存在，确认尚未执行；仅更新固定输入谱系并重新冻结 `ABF-P3-115-v2`，验收标准、矩阵、范围和授权完全不变。专项须重读 v2 后再启动。
+- D-0467：PM 初次验收 P3-115 为 Accepted / PM Pass。Frozen 16/16、动态闭环 44/44、Manifest 167/167、静态关闭态、mutation fail-closed 与实际 Chrome 两个 viewport 抽验通过；五类计数全零，但仍等待用户采纳、尚未独立评审、Not Frozen。
+- D-0468：用户确认不采纳 P3-115 为当前目标、保留其原 ABF 下历史 PM Pass，并授权新后继。PM 创建 P3-116 与 `ABF-P3-116-v1`，固定最新 Person-centered IA／架构输入、九个页面／展开态、18 行动态验收矩阵及 task-local synthetic 边界；等待任务卡投递，不冻结、不改变风险、不进入 Stage 4。
+- D-0469：PM 初次验收 P3-116 为 Rework 1/2。Manifest 118/118、七项输入和五个隔离 runner 成立，但 36 张动作截图均为同一空白图、最终候选未重做完整动态闭环，且 46 份 AX logs 收入 synthetic 范围外 ambient 浏览器元数据。最终 P0=2、Not Implemented=1；等待用户采纳与精确删除授权，ABF、风险总体状态、冻结和阶段边界不变。
+- D-0470：用户采纳 P3-116 Rework 1/2，授权同一能力包 Evidence／隐私窄整改，并精确授权删除 D-000.ax.txt～D-045.ax.txt 共 46 个受污染文件。PM 已记录逐文件删除前 hash、完成精确删除并验证仅保留 raw/dynamic_actions.json；P3-116 仍为 Rework、Not Frozen，五类计数不变。
+- D-0471：PM 判断 P3-116 Rework-1 首次 `file:` 预检误导航事故可在原 ABF 内安全恢复，不创建新任务、不增加正式 Rework。第一次失败已消耗一轮预检预算；事故资产只读，后续写入 `attempt-2/`，仅余一次预检，失败则停止并回 PM。
+- D-0472：PM 判断 P3-116 Rework-1 Attempt-2 为 Blocked / Not Pass。最后一次 `file:` 预检通过，但合格页面级高分辨率取证环境不可用，执行方未用缩略图／空白／替代物伪造 Evidence并已清理。两次预算耗尽，当前 ABF 不得继续；等待用户采纳，未授权新任务。
+- D-0473：用户采纳 P3-116 Blocked，授权关闭当前任务并创建后继。P3-116 转为 Closed — Acceptance Not Met / Superseded / Read-only；PM 创建 P3-117 与 `ABF-P3-117-v1`，只改变取证入口为专用临时 Chrome app-mode + macOS 原生窗口截图／可审计裁剪，不改变 P3-116 候选或产品完成定义。
+- D-0474：PM 初次验收 P3-117 为 Blocked。`ABF-P3-117-v1` 文件 hash 未漂移，但其固定输入表错误保留 P3-116 PM Review 采纳前 hash `f698…`，与 D-0473 及当前只读文件 `09d810…` 冲突；需实质修改 ABF，故不得同任务 Rework。计数 P0=1、P1=0、P2=0、Unknown=2、Not Implemented=12；等待用户采纳并决定是否授权关闭／创建新后继。
+- D-0475：用户采纳 P3-117 Blocked，授权关闭并创建新后继。P3-117 转为 Closed — Acceptance Not Met / Superseded / Read-only；PM 创建 P3-118 与 `ABF-P3-118-v1`，正确冻结 D-0473 后 P3-116 PM Review `09d810…` 和关闭后 P3-117 Review `d80747…`，并以专用 Chrome PID + PID 过滤唯一原生窗口 + 每动作 attestation 取代应用级 Chrome 选择器。
+- D-0476：P3-118 在 Chrome launch 前证明当前 Computer Use 没有 PID/window target，无法满足 Frozen ABF 且不得退回 app selector。用户采纳 PM 建议并关闭 P3-118；PM 创建 P3-119 极窄技术 Spike，只在 synthetic fixture 证明 `CGEventPostToPid`、PID window、原生截图、重复／重启、mutation 与清理。Spike 通过前禁止再次创建最终 46 动作 Evidence 任务。
+- D-0477：用户采纳关闭 P3-119 并授权创建 P3-120 产品 Runtime MVP；PM 先建 Draft，等待独立 synthetic-only Tauri/IPC 执行确认。
+- D-0478：用户确认 P3-120 仅使用全新工程根、唯一临时根、全新合成 DB 和既有三项 IPC；PM 冻结 `ABF-P3-120-v1` 并转 Ready。
+- D-0479：P3-120 初次 PM 验收为 Rework 1/2；实际 App 没有完成 renderer→IPC→DB→UI 的逐行闭环，模型配置也未证明。P3-116 视觉不一致因不在本轮 L2 内，不追溯阻断。
+- D-0480：用户采纳 Rework 1/2、确认实际模型为 `gpt-5.6-terra + xhigh`，并正式重申 P3-116 视觉缺口；同任务只补 actual-app Evidence，视觉收口必须新任务。
+- D-0481：P3-120 actual-app 生命周期缺口关闭，但当前交付物未进入最终 Manifest lineage；PM 判 Rework 2/2，只允许 final Manifest closure。
+- D-0482：用户采纳 Rework 2/2 并授权 final Manifest closure；禁止重跑 App、修改历史 Evidence 或混入 UI 重设计。
+- D-0483：P3-120 Final Manifest 分层闭合，PM verifier、pristine control 和四类 mutation 全通过；最终五类计数全零，PM Pass，等待用户采纳。
+- D-0484：用户采纳 P3-120 PM Pass 并授权创建后继。P3-120 Complete / Not Frozen；PM 创建 P3-121 Draft 与 Draft ABF，把 P3-116 设计忠实度和 P3-120 Runtime 合为新用户结果。创建不等于 Tauri/IPC 执行授权；等待用户确认精确 synthetic-only 边界后再正式冻结。
+- D-0485：用户确认 P3-121 的两个固定根、全新合成 DB、仅三项既有 Tauri/IPC，以及禁止 Pilot／真实 DB／路径／文本／网络／模型。PM 复算 15 项固定输入，生成并验证 P3-120 candidate 70/70 positive allowlist，确认两根不存在，冻结 `ABF-P3-121-v1`；任务转 Ready，等待绝对路径投递。
+- D-0486：PM 初验 P3-121 为 Rework 1/2；用户采纳并授权同任务恢复 P3-116 布局／Token／交互及三档 actual-App Evidence，保留 Tauri 架构与原 ABF。
+- D-0487：P3-121 Rework-1 已关闭初次视觉 P1，1160×768 与 700×760 成立；1280×1024 实图仍为 1036×768，且 combined closure／Manifest 缺 M-020 与 final lineage。PM 判 Rework 2/2，P0=1、P1=1、Unknown=0、Not Implemented=2，等待用户采纳。
+- D-0488：用户采纳 P3-121 Rework 2/2 并授权最终窄整改；仅允许 exact 1280×1024 native Tauri Evidence 与 M-020／Final Manifest 收口，当前视觉实现不得再设计。若再次失败必须关闭 P3-121，不允许第三轮 Rework。
+- D-0489：P3-121 Rework 2/2 最终仍未取得 exact 1280×1024；Final Manifest 虽 138/138 匹配但遗漏当前授权／上一轮 PM Evidence。PM 关闭任务为 Acceptance Not Met，等待用户采纳；不自动创建后继。
+- D-0490：用户采纳 P3-121 关闭结论并授权创建后继。P3-121 转为 User Adopted / Closed / Read-only；PM 创建 P3-122 Draft 与 Draft ABF，把“物理截图像素必须等于逻辑视口”纠正为原生 content bounds＋WebView/DOM 几何＋当前主机实际截图的联合证明。创建不等于新的 Tauri/IPC 执行授权；等待用户确认两根、合成 DB、三 IPC、P3-121 candidate 只读输入和严格禁止边界后再冻结。
+- D-0491：用户指出 P3-121 与 P3-116 视觉仍有实质差距并授权修订 P3-122 Draft。PM 只读保全 D-0490 Draft 后，把 P3-116 actual DOM/CSS/Token/page-specific components 改为强制 visual positive input，P3-121 仅提供 Runtime/Tauri source；新增逐页 source→computed style→actual screenshot 映射与相应 mutation。用户取消固定单一模型限制，执行可用项目白名单模型但必须记录实际配置。P3-122 仍未授权执行、未 Frozen。
+- D-0492：用户确认 P3-122 两个固定根、全新合成 DB、P3-116 visual＋P3-121 Runtime/Tauri 双只读 source、仅三 IPC 和禁止真实／网络／产品模型边界。PM 验证 visual 8/8、Runtime 65/65，确认两根不存在，冻结 `ABF-P3-122-v1` 并转 Ready。模型不固定，但仍限项目白名单和实际配置披露。
+- D-0493：P3-122 首次正式 PM 验收通过。PM 复跑 Final verifier、复算 245 条 Manifest 声明与 75 个 candidate 文件，并核对 18/18 页面行、三档 logical geometry、三 IPC 生命周期、失败关闭、9/9 mutation、10/10 history 和 exact cleanup；最终五类计数全零。任务转 PM Pass / Awaiting User Adoption / Not Frozen；用户采纳后才可创建全新隔离独立复评。
+- D-0494：用户采纳 P3-122 PM Pass 并授权创建独立复评后继。P3-122 转 Accepted / User Adopted / Complete / Not Frozen；PM 创建 P3-123 Draft task 与 Draft ABF。创建不等于新的 Tauri/IPC 执行授权；等待用户确认新 review/temp roots、全新合成 DB、P3-122 全部只读、仅三 IPC actual-Tauri 离线复评和严格禁止边界后再冻结。
+- D-0495：用户确认 P3-123 新 review/temp roots、全新合成 DB、P3-122 candidate/Evidence/Review 全部只读、仅三 IPC offline actual-Tauri 独立复评和禁止 Pilot／真实 DB／路径／文本／网络／产品模型。PM 验证 candidate 75/75 与关键输入、确认两根不存在，冻结 `ABF-P3-123-v1` 并转 Ready。
+- D-0496：P3-123 独立评审在 M-001 启动门发现 Frozen allowlist 为 1 个物理行、0 个 raw rows；PM 独立复算确认。该 PM 冻结输入缺陷需修改 Frozen input，故 P3-123 关闭为 Acceptance Not Met / Superseded Required，等待用户采纳；P3-122 候选质量未被本轮确认或否定。
+- D-0497：用户采纳 P3-123 Blocked 关闭结论并授权创建后继。P3-123 转 User Adopted / Closed / Superseded by P3-124；PM 创建 P3-124 Draft task、Draft ABF 和 75 行真实物理换行的 Draft allowlist。创建不等于新的 Tauri/IPC 执行授权；等待用户精确确认新根、全新合成 DB、只读输入、仅三 IPC 与禁止边界。
+- D-0498：用户采纳 Stage 3 → MVP 1.0 Fast Track 的规划顺序：先完成 P3-124，再以 P3-125 短合同明确 Person／Context／Memory 与既有 Core Domain 的映射及推荐架构策略，之后才以 P3-126 执行 4–5 小时工程 Fast Track。P3-125～P3-138 当前仅为未冻结路线草案，均未创建、未登记、未授权；P3-124 继续保持 Draft／等待精确 synthetic-only independent-review 边界确认。该采纳不修改风险、冻结状态、现有任务状态或阶段，不进入 Stage 4。
+- D-0499：用户确认 P3-124 精确 synthetic-only offline actual-Tauri 独立复评边界。PM 确认 review/temp roots 均不存在，复算 Frozen allowlist 为 87 个物理行、75 个 candidate 数据行且 75/75 bytes/hash 匹配，生成独立任务侧授权／冻结 Evidence并冻结 `ABF-P3-124-v1`；P3-124 转 Ready / Awaiting Task-card Delivery。仅最终任务卡绝对路径投递至全新隔离 Codex 评审会话才启动；不修改 P3-122/P3-123，不改变风险或产品冻结状态，不进入 Stage 4；P3-125～P3-138 仍仅为未创建路线草案。
+- D-0500：PM 初次验收 P3-124，将专项 `Blocked` 调整为 `Rework 1/2 / Awaiting User Adoption`。固定输入、75/75 candidate、独立 runner、离线 9/9 test、bundle build 与精确 temp cleanup 成立；但 ABF 未把 Computer Use 冻结为唯一 native 取证工具，专项只在该表面 timeout／inventory 缺目标后停止，未穷尽已授权的本地 native PID/window/geometry/capture 路径，M-003 与 M-005～M-014 未完成。另有 `review_root=true` 与“两根初始 absent”的 P2 时间语义不一致。最终 P0/P1/P2/Unknown/Not Implemented=`0/1/1/1/11`。ABF、候选和授权边界不变，可在用户采纳后同一 P3-124 仅写 `rework-1/` 完成 Evidence/native-capture 窄整改；不创建 P3-125、不修改风险/冻结、不进入 Stage 4。
+- D-0501：用户采纳 P3-124 Rework 1/2 并授权同任务窄整改。授权仅允许在原 `ABF-P3-124-v1`、原 synthetic-only 三 IPC 边界内写 `lifeos/reviews/LIFEOS-P3-124/rework-1/`，使用固定 `/private/tmp/lifeos-p3-124-independent-review-v1` 完成缺失的独立 source lineage、native PID/window/geometry/capture、18/18 页面、三 IPC 生命周期、失败关闭、边界、lineage、mutation、cleanup 与 Final Manifest。初次 P3-124 Review/Evidence 和全部历史资产转只读；不改候选、ABF、风险、冻结或阶段，不创建 P3-125。
+- D-0502：PM 接受 P3-124 Rework-1 的 Blocked / Not Pass。独立 native helper 与 Computer Use 均未取得 task-local App PID/window；更关键的是 Frozen candidate 把 Runtime/DB/geometry 根固定到旧 P3-122 temp root，而 P3-124 仅授权新 P3-124 root。继续需修改 candidate、ABF 或目录，命中新任务触发器，故关闭为 Acceptance Not Met / Superseded Required，等待用户采纳。最终 P0/P1/P2/Unknown/Not Implemented=`1/0/0/1/7`；风险、冻结、Stage 3 状态不变，不创建 P3-125。
+- D-0503：用户在获知 P3-124 关闭原因后明确要求新建 Runtime 根可配置化短任务；PM 将该请求记录为采纳 P3-124 关闭结论及创建 P3-125 Draft 的授权。P3-125 仅把固定旧根改为单一构建时 task-local root，所有 DB/viewport/geometry 路径统一派生并对非法配置失败关闭；不改 UI、三 IPC、Schema/API 或产品范围。正式 Rework 上限收紧为 1。等待用户确认新 engineering/temp root、合成 DB、只读输入与禁止边界后再冻结；原“短合同→Fast Track”路线顺延为 P3-127→P3-128，P3-126 预留为独立复评，均仍未创建。
+- D-0504：用户确认 P3-125 精确 synthetic-only Tauri/IPC 执行边界。PM 生成物理多行 source allowlist并复算 75/75 bytes/hash，确认 P3-125 engineering/temp root 均不存在，冻结 `ABF-P3-125-v1`；任务转 Ready / Awaiting Task-card Delivery。仅允许构建时 `LIFEOS_RUNTIME_ROOT`、全新合成 DB和既有三 IPC；P3-122/P3-124 全部只读，禁止旧 P3-122 temp root、Pilot、真实边界、网络和产品模型。风险、冻结和 Stage 3 状态不变。
+- D-0505：PM 初次验收 P3-125 为 `Rework 1/1 / Awaiting User Adoption`。候选 75/75 来源绑定成立且仅 2 文件变化，但生产 `build.rs` 仍固定 P3-125 父根；Frozen M-011 mutation 与 M-012 cleanup/final 未实现，逐行闭环和 Final Manifest 不完整且有一条交付物路径解析错误；实际 model/effort 仍 Unknown。最终 P0/P1/P2/Unknown/Not Implemented=`2/0/0/1/2`。仅允许用户采纳后进行同任务最后一次窄整改；不修改风险／冻结，不创建 P3-126，不进入 Stage 4。
+- D-0506：用户采纳 P3-125 `Rework 1/1 / Not Pass` 结论。该消息未包含“授权”，PM 不把采纳扩张为工程整改授权；P3-125 转 `User Adopted / Awaiting Remediation Authorization`，初次资产继续只读。风险、冻结和阶段状态不变。
+- D-0507：用户明确授权 P3-125 同任务最终窄整改。授权仅覆盖 PM Review 已冻结的 Rework 1/1 边界；ABF、任务卡、source allowlist、历史和 initial 资产保持只读，整改资产不得覆盖初次 Evidence。若实际 model/effort 无法在工程动作前记录，必须停止；若本轮仍不满足，关闭 P3-125，不得继续 Rework。
+- D-0508：PM 最终验收 P3-125 Rework-1。技术补丁、305-entry Final Manifest、12 行矩阵、8 类 mutation、189 行历史保全和精确 cleanup 均可复核；但专项如实披露其预检命令实施了禁止的旧 P3-122 Runtime root existence check，M-001 为 NOT_PASS。最终 `1/0/0/1/0`；Rework 1/1 耗尽，关闭任务并等待用户采纳。风险、冻结和阶段状态不变。
+- D-0509：用户采纳 P3-125 关闭结论，并询问需要新建什么任务。P3-125 转 User Adopted / Closed / Read-only。采纳不构成后继创建授权；PM 仅建议后续建立“当前技术候选清洁启动与验收链重建”任务，以新 ABF 和新隔离根重做干净 preflight/Evidence，而不是再次修改 UI、IPC、Schema 或重复技术补丁。
+- D-0510：用户授权创建 P3-126 清洁启动与验收链重建任务及新 ABF。PM 创建 Draft task、Draft ABF 和 75-row physical multiline Draft allowlist；P3-125 candidate 75/75 bytes/hash匹配。创建不等于 Tauri/IPC 执行授权，等待精确新根、合成 DB、只读输入、三 IPC与禁止边界确认后再冻结。
+- D-0511：用户确认 P3-126 精确 synthetic-only Tauri/IPC边界。PM 再次复算 P3-125 Rework candidate 75/75 bytes/hash、核对新 engineering/temp roots absent，冻结 `ABF-P3-126-v1`、source allowlist与授权 Manifest；任务转 Ready。PM 未探测旧 P3-122 Runtime root；风险、产品冻结和阶段状态不变。
+- D-0512：PM 初次验收 P3-126 为 `Evidence-only Rework 1/1`。全部技术与 Evidence行除 M-001外可复核；M-001因平台未暴露 actual model/effort保持 Unknown，专项却未 action-before stop。最终 `1/0/0/1/0`。不改 ABF、不重跑工程，只允许补原会话平台配置证明；风险、冻结、阶段状态不变。
+- D-0513：用户明确确认原 P3-126会话的模型和推理强度符合要求，并拒绝不必要的工程 Rework。PM将该声明作为平台操作者直接证明，与执行前已有确认记录绑定，关闭 M-001与Unknown；Re-Acceptance最终五类计数全零，转 PM Pass等待用户采纳。未修改 ABF或工程资产。
+- D-0514：用户采纳 P3-126 Re-Acceptance Pass并授权创建下一任务。P3-126转 User Adopted / Complete；PM创建 P3-127 全新隔离独立复评 Draft task、Draft ABF及75行Draft source allowlist。创建不等于冻结或执行；等待用户确认新review/temp根、合成DB、P3-126全只读、仅三IPC和旧P3-122 Runtime root零触达边界。
+- D-0515：用户确认 P3-127 精确 synthetic-only actual-Tauri/IPC 独立复评边界。PM只读复算P3-126 candidate与75行allowlist为75/75一致、确认新review/temp根均不存在并冻结ABF/allowlist；旧P3-122 Runtime root未被触达。P3-127转Ready，等待最终任务卡绝对路径投递。
+- D-0516：用户采纳并要求应用轻量治理优化。新任务改用一次性Task Contract授权、结果级任务、L0/L1/L2/L3/Gate风险分级、条件触发独立评审、普通PM Pass自动Complete和Closure Cycle；取消任务模型推荐／证明门禁。P3-127及此前历史不追溯，风险、冻结和Stage状态不变。
+- D-0517：PM 验收 P3-127 全新隔离独立复评为 Pass；59/59 Manifest、75/75 candidate lineage、123/123 history、12/12 Frozen matrix、双根 actual-Tauri三IPC、失败关闭、mutation与cleanup均通过，五类计数全零；等待一次最终Gate采纳。
+- D-0518：用户采纳 P3-127 Gate Pass。任务转为 User Adopted / Complete / Read-only；未创建后继任务、未冻结资产、未改变R-0051或其他风险、未进入Stage 4。
+- D-0519：用户要求创建后续任务。PM 按 Governance V2 创建 P3-128 结果级 L2 Task Contract，用一次任务完成 Person/Domain/Context/Memory/Global AI Context 与既有核心领域的映射及下一 Fast Track 工程合同；不另建 ABF，独立评审仅按事实触发。任务等待绝对路径投递，未写产品代码、未改变风险／冻结／Stage。
+- D-0520：PM 验收 P3-128 为 Pass。11/11 stable hashes、9 个 JSON、60/60 映射单元、9 个反例、11 行 Fast Track 验收矩阵和 P3-126 只读兼容事实均成立。发现 1 个非阻断 P2：Draft 架构文件被误标成 Frozen；后继须以 FREEZE_STATUS 的技术架构 V0.1 记录为权威。任务按 Governance V2 L2 自动 Accepted / Complete；未触发独立评审，未创建后继、未修改风险／冻结／Stage。
+- D-0521：用户明确确认以架构 V1.0 正式取代 V0.1。PM 将该决定记录为 replacement direction，并创建 P3-129 Gate 任务与 Frozen ABF；P3-128 Review 的“后继以 V0.1 为权威”限制自本决策起被后续架构方向取代，但历史 Review 不追溯改写。正式 promotion 前必须完成固定输入、V0→V1 reconcile、freeze scope、兼容矩阵、mutation、历史保全及全新隔离独立评审；期间暂停 Fast Track 工程任务，不改风险、不进入 Stage 4。
+- D-0522：PM完成P3-129执行侧候选 intake。Manifest 11/11、fixed inputs 15/15、V0→V1 16/16、兼容12 PASS+Gate5 N/A、mutation 4/4及promotion post-hash均一致，canonical保持Draft。M-013/M-014待完成，整个Gate计数为0/0/0/0/2；候选可进入另一全新隔离会话独立评审，不构成Rework/Blocked/Frozen。风险、Stage与Fast Track暂停状态不变。
+- D-0523：PM验收P3-129独立评审attempt-1。独立Manifest 5/5与全部固定hash一致，候选未发现静态缺陷；但评审在授权目录外创建4,901-byte stdout文件，虽已精确清理且PM确认当前absent，仍不能追溯满足ABF-M-013。结论为Blocked/Not Pass并进入同任务Closure Cycle；整个Gate计数1/0/0/0/2。下一轮由另一全新会话只写`re-review-1/`，不新建任务、不重复授权、不promotion、不改风险、不进入Stage4。
+- D-0524：P3-129全新隔离re-review-1 Independent Pass，PM同步验收Pass。独立Manifest 5/5、fixed inputs 15/15、ABF-M-001～M-014、候选verifier、独立audit及4/4 mutation均通过；attempt-1失败历史、V1.0 canonical和FREEZE_STATUS保持不变。整个Gate计数0/0/0/0/0，状态进入Awaiting Final User Freeze Confirmation；用户确认前不执行promotion、不改风险、不恢复Fast Track、不进入Stage4。
+- D-0525：用户采纳P3-129 PM Pass并授权最终promotion。PM仅替换canonical V1.0第3行状态元数据，actual post hash精确命中`1d7d82…7236`；V1.0现为Frozen前向架构权威，V0.1仅保留Frozen历史与Evidence并被supersede其前向权威。P3-129完成，计数0/0/0/0/0；不改风险、不冻结Schema/API或工程基线、不创建后继、不进入Stage4。
+- D-0526：PM基于Frozen架构V1.0与P3-128 handoff创建P3-130结果级L2 Fast Track Draft。唯一结果为合成Project-backed Context Recovery闭环；固定P3-126物理allowlist 75行、新工程根、唯一temp根、exact五IPC、actual Tauri动态Evidence及同任务号下的隔离独立复评。等待用户一次合并Tauri/IPC边界确认；尚未执行工程、未改风险／冻结／Stage。
+- D-0527：用户一次性确认并启动P3-130，明确同意任务卡内合成离线actual-Tauri、固定五IPC、唯一工程／临时根及全部禁止边界。任务卡与75行source allowlist转为Confirmed/Ready；本确认覆盖合同内实现、动态Evidence、包内修正、PM验收及同任务号隔离独立复评，不再重复确认。尚未在PM会话执行工程。
 
 ## PM 优先读取
 

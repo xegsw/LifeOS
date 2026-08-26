@@ -1,0 +1,81 @@
+{
+  "schema": "lifeos-p3-120/rework-1-manual-step-v1",
+  "step": "reopen-today",
+  "structured_result_id": "R1-reopen-today",
+  "captured_at_utc": "2026-08-25T09:07:41.593429+00:00",
+  "operator": "user-manual",
+  "attestation": "User manually observed the reopened packaged app Today page displaying the two prior fixed synthetic records; delayed capture allowed the user to restore that already-open window after approval.",
+  "capture_delay_seconds": 12,
+  "automation_excluded": [
+    "Computer Use",
+    "AppleScript",
+    "AX",
+    "CDP",
+    "HTTP",
+    "WebDriver",
+    "browser control"
+  ],
+  "app": {
+    "pid": 27597,
+    "running": true,
+    "launch_count": 2
+  },
+  "db": {
+    "exists": true,
+    "type": "regular",
+    "bytes": 24576,
+    "sha256": "b7a1dbcf63fae64beb0129624d656aed120cbff665c9a8b25695728c67eb4f2a",
+    "quick_check": "ok",
+    "user_version": 104,
+    "captures": [
+      {
+        "id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "content": "P3-120 synthetic capture one",
+        "created_at_ms": 1787648390196,
+        "source": "local_capture",
+        "idem_key": "p3-120-synthetic-one"
+      },
+      {
+        "id": "p3-120-000001a038280c09-p3-120-synthetic-two",
+        "content": "P3-120 synthetic capture two",
+        "created_at_ms": 1787648543753,
+        "source": "local_capture",
+        "idem_key": "p3-120-synthetic-two"
+      }
+    ],
+    "audit": [
+      {
+        "id": 1,
+        "event": "capture_saved",
+        "capture_id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "created_at_ms": 1787648390196,
+        "detail": "local_capture"
+      },
+      {
+        "id": 2,
+        "event": "capture_repeat",
+        "capture_id": "p3-120-000001a03825b434-p3-120-synthetic-one",
+        "created_at_ms": 1787648475867,
+        "detail": "same_idempotency_key"
+      },
+      {
+        "id": 3,
+        "event": "capture_saved",
+        "capture_id": "p3-120-000001a038280c09-p3-120-synthetic-two",
+        "created_at_ms": 1787648543753,
+        "detail": "local_capture"
+      }
+    ]
+  },
+  "log_snapshot": {
+    "path": "logs/reopen-today.app.log",
+    "sha256": "2c7aca0d293a6c2ab7a0996103d4cc2dfe9059c0954ac59e4e0726d6a3d8c6e2",
+    "missing_expected_lines": []
+  },
+  "screenshot": {
+    "path": "screenshots/reopen-today.png",
+    "sha256": "e21e6c16aac14e4414d9d72afe170e8f36c873a2bd75ebc293f412d50e48a9e1",
+    "bytes": 1456133
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,74 @@
+{
+  "actual_renderer_ipc_db_ui": {
+    "first": "lifeos/engineering/LIFEOS-P3-122/evidence/screenshots/1160x768/runtime-capture-first-settled.ax.txt",
+    "refresh": "lifeos/engineering/LIFEOS-P3-122/evidence/screenshots/1160x768/runtime-refresh.ax.txt",
+    "reopen": "lifeos/engineering/LIFEOS-P3-122/evidence/screenshots/1160x768/runtime-reopen.ax.txt",
+    "repeat": "lifeos/engineering/LIFEOS-P3-122/evidence/screenshots/1160x768/runtime-capture-repeat-settled.ax.txt"
+  },
+  "database": {
+    "audit": [
+      [
+        "capture_saved",
+        "local_capture"
+      ],
+      [
+        "capture_repeat",
+        "same_idempotency_key"
+      ]
+    ],
+    "path": "lifeos/engineering/LIFEOS-P3-122/evidence/results/runtime-final.sqlite",
+    "quick_check": "ok",
+    "record_count": 1,
+    "sha256": "9993f30879b74d4825db5a1c65e597a01968064c6634167e9f1c0ac90ed4590a",
+    "user_version": 104
+  },
+  "ipc_allowlist": [
+    "capture_record",
+    "get_today",
+    "runtime_status"
+  ],
+  "result": "PASS",
+  "unit_trace": {
+    "atomic_failure": {
+      "after_db_sha256": "cf3cf820c0d85ab5290b207ca215bf9eb2029a0dbdb3ae2a6106392de86fb319",
+      "after_sentinel_sha256": "40a4fd9537ab75b066df998fa717b3699546bedc02b2a2bb6bc0c0515253fa3c",
+      "before_db_sha256": "cf3cf820c0d85ab5290b207ca215bf9eb2029a0dbdb3ae2a6106392de86fb319",
+      "before_sentinel_sha256": "40a4fd9537ab75b066df998fa717b3699546bedc02b2a2bb6bc0c0515253fa3c",
+      "code": "injected_atomic_failure",
+      "records_after_failure": 1
+    },
+    "lifecycle": {
+      "after_first_sha256": "2f93ce97421fb3abf413b23cf8c17ce0c92efe10245fb454b28e524b25332311",
+      "after_repeat_sha256": "20c559357c47da06fdbddba61219bdd55154c21171700227709fafdd49e7d147",
+      "before_refresh_sha256": "085588a657c32945e6fa00ac423b060005c17aaf5bed160ce52afc961c3efe0c",
+      "first_record_id": "p3-122-000001a03999ac85-p3-122-synthetic-one",
+      "first_status": "saved",
+      "initial_status": "empty",
+      "refresh_contents": [
+        "明天先把发布页的第一屏文字读一遍，再决定是否继续做视觉细节。",
+        "P3-122 synthetic capture two"
+      ],
+      "refresh_status": "loaded",
+      "reopen_contents": [
+        "明天先把发布页的第一屏文字读一遍，再决定是否继续做视觉细节。",
+        "P3-122 synthetic capture two"
+      ],
+      "reopen_status": "loaded",
+      "repeat_record_id": "p3-122-000001a03999ac85-p3-122-synthetic-one",
+      "repeat_status": "idempotent_repeat",
+      "second_status": "saved"
+    },
+    "runtime_status": {
+      "ai_enabled": false,
+      "ipc_allowlist": [
+        "capture_record",
+        "get_today",
+        "runtime_status"
+      ],
+      "offline": true,
+      "renderer_direct_capabilities": [],
+      "status": "restricted_offline",
+      "unknown_ipc": "deny"
+    }
+  }
+}

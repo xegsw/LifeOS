@@ -1,0 +1,11 @@
+ui/runtime-adapter.js:21:    return invoke(name, { request });
+src/runtime.rs:13:const BUILD_RUNTIME_ROOT: Option<&str> = option_env!("LIFEOS_RUNTIME_ROOT");
+src/runtime.rs:306:fn capture_record(request: CaptureRequest, state: tauri::State<'_, AppState>) -> Result<CaptureResponse, IpcError> {
+src/runtime.rs:311:fn get_today(request: EmptyRequest, state: tauri::State<'_, AppState>) -> Result<TodayResponse, IpcError> {
+src/runtime.rs:315:fn runtime_status(request: EmptyRequest) -> RuntimeStatusResponse { let _ = request; eprintln!("ipc_result command=runtime_status status=restricted_offline"); status_impl() }
+src/runtime.rs:351:        .invoke_handler(tauri::generate_handler![capture_record, get_today, runtime_status])
+src/runtime.rs:479:    fn runtime_status_closes_direct_capabilities_and_keeps_three_ipc() {
+build.rs:6:    panic!("LIFEOS_RUNTIME_ROOT rejected before build output: {message}");
+build.rs:34:    let raw = env::var("LIFEOS_RUNTIME_ROOT")
+build.rs:60:    println!("cargo:rerun-if-env-changed=LIFEOS_RUNTIME_ROOT");
+build.rs:61:    println!("cargo:rustc-env=LIFEOS_RUNTIME_ROOT={}", root.display());

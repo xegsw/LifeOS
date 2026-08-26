@@ -1,0 +1,10 @@
+   Compiling lifeos-p3-122 v0.1.0 (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-126/candidate)
+error: failed to run custom build command for `lifeos-p3-122 v0.1.0 (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-126/candidate)`
+
+Caused by:
+  process didn't exit successfully: `/private/tmp/lifeos-p3-126-clean-closure-v1/cache/cargo-target/debug/build/lifeos-p3-122-c98ae1dcc7c2b716/build-script-build` (exit status: 101)
+  --- stderr
+
+  thread 'main' (7383949) panicked at build.rs:6:5:
+  LIFEOS_RUNTIME_ROOT rejected before build output: root or an ancestor is not a real directory
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

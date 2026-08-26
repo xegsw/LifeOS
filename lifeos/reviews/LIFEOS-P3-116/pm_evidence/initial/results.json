@@ -1,0 +1,68 @@
+{
+  "task_id": "LIFEOS-P3-116",
+  "review_round": "initial",
+  "checked_at": "2026-08-25",
+  "acceptance_basis": {
+    "id": "ABF-P3-116-v1",
+    "sha256": "220d3d73ef7a54f6be689bf2cdb05fb85c25d8118562fbb4788ef6a48a4d63cf",
+    "unchanged": true
+  },
+  "submitted_hashes": {
+    "task_card": "e82cdd576b1da561e9a36d2a2c93eb5206d83eade1c41d4eb4ff5ea6cb144211",
+    "deliverable": "c04674a91b677d37eb62e65114d546ffe2246bb1788e03eecc49a6a7626c1a01",
+    "evidence_manifest": "86052374213167ffbaea21caac4bdf5a172a23ce9f7464f88a307c2b67e6227a",
+    "verify_evidence_runner": "823d1b75e5d47cc027090780cf34465cd3543b96517ef93f27684d651fcf8242",
+    "mutation_runner": "3f015b5b6333b102d62e79b4b0b70c6ac1b9a136389b866fd7547755a933cd9f"
+  },
+  "checks": [
+    {
+      "id": "PM-I-001",
+      "status": "PASS",
+      "result": "Task delivery, isolated specialist session claim, gpt-5.6-terra+xhigh route, Frozen ABF hash and allowed write paths are recorded without ledger conflict."
+    },
+    {
+      "id": "PM-I-002",
+      "status": "PASS",
+      "result": "Submitted non-self-referential Manifest matches 118/118 files by SHA-256; all seven Frozen inputs independently match ABF hashes."
+    },
+    {
+      "id": "PM-I-003",
+      "status": "PASS_WITH_LIMITATION",
+      "result": "In a fresh /private/tmp workspace-shaped copy, verify_static, verify_evidence, run_mutations, record_cleanup and build_manifest all exited 0; rebuilt Manifest is byte-identical to the submission. This proves deterministic runner behavior, not semantic adequacy."
+    },
+    {
+      "id": "PM-CE-001",
+      "status": "FAIL",
+      "severity": "P0",
+      "mapping": ["L1-7", "L1-10", "ABF-I-12", "ABF-I-14", "ABF-M-003..015", "ABF-M-017", "ABF-M-018"],
+      "result": "D-000 through D-035 each claim distinct visual action evidence but all 36 screenshot files are the same 255x161 blank image with SHA-256 de39df26...; verify_evidence only checks file existence and declared hash, not image dimensions, non-blank content, action semantics or current-candidate source binding. The submitted mutation suite therefore passes while leaving this evidence bypass undetected."
+    },
+    {
+      "id": "PM-CE-002",
+      "status": "FAIL",
+      "severity": "P0",
+      "mapping": ["L1-1", "L1-9", "ABF authorization/data boundary", "ABF-I-14", "ABF-M-016", "ABF-M-018"],
+      "result": "All 46 AX raw logs include ambient Chrome tab-group/title metadata outside the synthetic prototype. The review does not reproduce those titles. This violates the task-local synthetic-only authorization and introduces unauthorized real browser-state metadata into Evidence."
+    },
+    {
+      "id": "PM-CE-003",
+      "status": "NOT_IMPLEMENTED",
+      "mapping": ["L1-7", "L1-10", "ABF-I-03..12", "ABF-I-14", "ABF-M-003..015", "Evidence contract"],
+      "result": "The final app.js/styles.css version was produced after Today visual calibration, Global AI entry correction and Me/Memory/AI Workspace visual alignment. The deliverable and three delta records explicitly state that these static/source-hash checks do not replace the historical 44-action dynamic closure. No full current-version dynamic/visual closure binds the final candidate hashes to all required actions and viewports."
+    },
+    {
+      "id": "PM-I-004",
+      "status": "PASS",
+      "result": "The exact PM temporary root was reserved only for this review; cleanup is recorded separately and no submitted Engineering/Prototype Evidence was overwritten."
+    }
+  ],
+  "counts": {
+    "P0": 2,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 1
+  },
+  "conclusion": "Rework 1/2 / Awaiting User Adoption / Acceptance Basis Unchanged / Not Frozen",
+  "next_boundary": "No P3-116 successor, independent review, freeze, runtime work or Stage 4 action. After user adoption, the same P3-116 package may perform evidence/privacy-only remediation under unchanged ABF, subject to explicit handling authorization for contaminated submitted AX logs."
+}

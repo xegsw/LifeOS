@@ -1,0 +1,35 @@
+{
+  "isolation": "all mutation payloads are in-memory deep copies; no candidate, history, temp root or Runtime was modified",
+  "results": [
+    {
+      "actual": "REJECT",
+      "expected": "REJECT",
+      "id": "RR1-MUT-HASH",
+      "mutation": "replace FI-V1 SHA-256 in an in-memory copy",
+      "reason": "fixed input hash mismatch: FI-V1"
+    },
+    {
+      "actual": "REJECT",
+      "expected": "REJECT",
+      "id": "RR1-MUT-LEGACY-OMISSION",
+      "mutation": "remove retained V0-04 from an in-memory reconciliation copy",
+      "reason": "V0.1 reconciliation is not exactly V0-01..V0-16"
+    },
+    {
+      "actual": "REJECT",
+      "expected": "REJECT",
+      "id": "RR1-MUT-SCOPE-EXPANSION",
+      "mutation": "add SQLite Schema to an in-memory frozen scope copy",
+      "reason": "frozen scope count"
+    },
+    {
+      "actual": "REJECT",
+      "expected": "REJECT",
+      "id": "RR1-MUT-BODY-CHANGE",
+      "mutation": "permit promotion on line 20 in an in-memory patch copy",
+      "reason": "promotion mutation permits non-metadata line"
+    }
+  ],
+  "schema": "lifeos.p3-129.re-review-1.independent-mutations.v1",
+  "task_id": "LIFEOS-P3-129"
+}

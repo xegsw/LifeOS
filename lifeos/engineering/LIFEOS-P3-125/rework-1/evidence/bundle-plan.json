@@ -1,0 +1,53 @@
+{
+  "allowed_runtime_roots": [
+    "/private/tmp/lifeos-p3-125-runtime-root-config-v1/run-a",
+    "/private/tmp/lifeos-p3-125-runtime-root-config-v1/run-b",
+    "/private/tmp/lifeos-p3-125-runtime-root-config-v1/test-root"
+  ],
+  "result": "PASS",
+  "run_a": {
+    "app_bundle": "/private/tmp/lifeos-p3-125-runtime-root-config-v1/target-run-a/release/bundle/macos/LifeOS P3-122 Native Viewport Runtime.app",
+    "app_bundle_relative_to_temp": "target-run-a/release/bundle/macos/LifeOS P3-122 Native Viewport Runtime.app",
+    "command": {
+      "args": [
+        "/Users/xxe/.cargo/bin/cargo-tauri",
+        "build",
+        "--bundles",
+        "app",
+        "--no-sign"
+      ],
+      "exit_code": 0,
+      "id": "bundle-run-a",
+      "log": "lifeos/engineering/LIFEOS-P3-125/rework-1/logs/bundle-run-a.log",
+      "log_sha256": "ff409d58861005295ea5a69d2a610f42c65fbae960ae2365695b1883db228ad0"
+    },
+    "root": "/private/tmp/lifeos-p3-125-runtime-root-config-v1/run-a",
+    "source_hashes": {
+      "build_rs": "f7156ec08042ff7f13af54e116b324e6abe94acf2af842bcb457a79465b87806",
+      "runtime_rs": "a71fda5bde69bd7179fbc9037e4a6e02b6465bb7649ce7a06a60af849e1d3495"
+    }
+  },
+  "run_b": {
+    "app_bundle": "/private/tmp/lifeos-p3-125-runtime-root-config-v1/target-run-b/release/bundle/macos/LifeOS P3-122 Native Viewport Runtime.app",
+    "app_bundle_relative_to_temp": "target-run-b/release/bundle/macos/LifeOS P3-122 Native Viewport Runtime.app",
+    "command": {
+      "args": [
+        "/Users/xxe/.cargo/bin/cargo-tauri",
+        "build",
+        "--bundles",
+        "app",
+        "--no-sign"
+      ],
+      "exit_code": 0,
+      "id": "bundle-run-b",
+      "log": "lifeos/engineering/LIFEOS-P3-125/rework-1/logs/bundle-run-b.log",
+      "log_sha256": "e77c382174264303d5f834c420d67f11b767a8df6b8507a54655b073f6896b96"
+    },
+    "root": "/private/tmp/lifeos-p3-125-runtime-root-config-v1/run-b",
+    "source_hashes": {
+      "build_rs": "f7156ec08042ff7f13af54e116b324e6abe94acf2af842bcb457a79465b87806",
+      "runtime_rs": "a71fda5bde69bd7179fbc9037e4a6e02b6465bb7649ce7a06a60af849e1d3495"
+    }
+  },
+  "task_id": "LIFEOS-P3-125"
+}

@@ -1,0 +1,84 @@
+{
+  "task_id": "LIFEOS-P3-128",
+  "handoff_status": "Candidate engineering Task Contract input; PM may create but must separately authorize any engineering execution.",
+  "proposed_task_name": "MVP 1.0 Fast Track Vertical Slice #1 — Project-backed Context Recovery",
+  "unique_user_result": "Using only fixed synthetic data, a person can capture one immutable original, explicitly confirm its association to one preseeded Work Project-backed Context, reopen Today/Context, and inspect the related Memory provenance without any model call or silent Context creation.",
+  "duration_estimate": "4-5 focused engineering hours excluding PM acceptance and any separately required independent review.",
+  "vertical_slice": {
+    "person": "One local synthetic owner reference is the display/scope root; no Profile or inferred persona record is created.",
+    "domain": "One fixed Work view narrows UI/read projection only; it grants no authorization and activates no new Domain intelligence.",
+    "context": "One preseeded Project-backed ContextId, ctx:project:synthetic-lifeos-product, is derived from a Project identity. A captured Artifact may be associated only through explicit confirmation.",
+    "memory": "One read-only Memory detail resolves capture -> Source -> Project Context Link -> confirmation Feedback -> Audit/provenance references. It does not duplicate original content.",
+    "global_ai_context": "One preview-only Context Inspector displays Person + current Today/Context page + selected capture/Memory item, supports temporary removal, and does not call ModelPort or AgentPort."
+  },
+  "allowed_successor_write_scope": [
+    "A new task-specific engineering root and its new task-specific Evidence/deliverable directories, named by the PM task card.",
+    "A new task-specific temporary root exactly named in the future task card.",
+    "Only source files copied from a physical multiline positive allowlist of P3-126 candidate files."
+  ],
+  "protected_scope": [
+    "All P3-126/P3-127 candidate, task, review, Evidence, Manifest, and historical roots remain read-only.",
+    "No real user data, Pilot, real database/path/text, network, cloud, third party, credential, Vault, file ingestion, model, Agent, export, clear/delete, recovery, sync, vector, or new active Domain.",
+    "No P3-116 visual redesign, new first-level IA, wide Sidebar, Domain dashboard, notification center, or standalone AI page."
+  ],
+  "candidate_data_contract": {
+    "authoritative_domain_subset": [
+      "Project: one fixed synthetic Project identity and status",
+      "Artifact/capture: immutable original with source identity and idempotency",
+      "Link: capture-to-Project Context association with candidate/confirmed identity",
+      "Feedback: append-only explicit confirmation/rejection of that association",
+      "AuditEntry: minimal capture, confirmation, and read consumption events"
+    ],
+    "application_projection_only": [
+      "context_id ctx:project:<project-id> derives from Project and is not stored as a new core Context entity",
+      "MemoryItem DTO derives from authorized provenance and is not a copied original-content table",
+      "Person Context and Work Domain labels are scoped display/resolver metadata, not Source, Profile, or authorization records"
+    ],
+    "candidate_storage_changes": [
+      "add one Project backing record/table or equivalent typed repository fixture in the new root",
+      "add typed capture_project_link records with confirmation_status candidate|confirmed|rejected",
+      "add append-only feedback records for association confirmation/rejection",
+      "extend audit with minimum scoped events; do not store raw path, prompt, or hidden profile detail"
+    ],
+    "prohibitions": ["no generic Context table", "no Person profile table", "no Domain-based permission ACL", "no Memory copy table", "no schema/API freeze"]
+  },
+  "candidate_ipc_contract": {
+    "retain_compatible": [
+      {"name": "capture_record", "request": "existing strict {text,key}", "response": "existing capture receipt unchanged"},
+      {"name": "get_today", "request": "existing strict empty request", "response": "existing fields retained; optional context_recovery summary may be appended compatibly"},
+      {"name": "runtime_status", "request": "existing strict empty request", "response": "existing deny/offline flags retained; may append feature flags"}
+    ],
+    "new_candidate": [
+      {"name": "confirm_capture_context", "request": "{capture_id, context_id, decision:confirm|reject, idempotency_key}", "purpose": "explicit association feedback only", "fail_closed": "unknown fields, non-preseeded ContextId, mismatched capture, stale generation, or duplicate-key conflict cause no state change"},
+      {"name": "get_context_recovery", "request": "{context_id}", "purpose": "read one Project-backed Context DTO with current, next, recent, evidence and Memory provenance", "fail_closed": "unknown/unauthorized/stale/tombstoned inputs produce safe no-context/no-evidence response"}
+    ],
+    "excluded": ["generic SQL", "generic paths", "create_context", "delete/clear/export", "Model/Agent invocation", "network or external Source commands"]
+  },
+  "acceptance_matrix": [
+    {"id": "FT-01", "assertion": "Existing three IPC compatibility holds", "evidence": "strict DTO tests and existing lifecycle replay"},
+    {"id": "FT-02", "assertion": "Capture persists immutable synthetic original and source identity", "evidence": "IPC result + SQLite query through test adapter + audit"},
+    {"id": "FT-03", "assertion": "Association is candidate before confirmation", "evidence": "Context recovery DTO and negative no-silent-creation test"},
+    {"id": "FT-04", "assertion": "Only explicit confirm creates a confirmed typed Link and Feedback", "evidence": "IPC result + read model + append-only audit"},
+    {"id": "FT-05", "assertion": "Project-backed Context restores after restart", "evidence": "close/reopen actual app or controlled process + UI/IPC/SQLite/audit chain"},
+    {"id": "FT-06", "assertion": "Memory detail traces to Source, Artifact/version, Link, Feedback, and Audit", "evidence": "structured provenance JSON and UI/IPC assertion"},
+    {"id": "FT-07", "assertion": "Removed preview Context is request-local", "evidence": "resolver preview before/after plus unchanged durable facts"},
+    {"id": "FT-08", "assertion": "Source/evidence/authorization failure yields evidence gap and no reliable suggestion", "evidence": "three independent fail-closed mutations"},
+    {"id": "FT-09", "assertion": "Unknown IPC fields and invalid ContextId make no write", "evidence": "negative IPC/DB/audit comparison"},
+    {"id": "FT-10", "assertion": "UI and resolver have no direct SQL, filesystem, model, Agent, or network path", "evidence": "source scan plus runtime_status/capability assertion"},
+    {"id": "FT-11", "assertion": "Task-local root is exact and cleanup is exact", "evidence": "preflight/postflight inventory and final Manifest"}
+  ],
+  "evidence_level": {
+    "level": "L2",
+    "required": ["structured positive and negative test results", "restart/reopen proof", "strict DTO and no-write failure evidence", "actual Tauri UI + IPC + SQLite/audit evidence if the successor task authorizes actual App execution", "source allowlist and non-self-referential Manifest", "exact task-root cleanup"],
+    "not_sufficient": ["unit tests alone", "fixture-only UI strings", "source contract claims", "static screenshots without IPC/database/audit correlation"]
+  },
+  "stop_rules": [
+    "Stop and return to PM if any requirement needs a new Frozen core object, a Context core table, a changed Project semantic, a frozen Schema/API, an AI authorization change, or a V1 scope/IA/architecture change.",
+    "Stop if synthetic-only or exact-new-root boundaries cannot be fixed before execution.",
+    "Stop if a required current authorization/evidence/source/version/tombstone/generation check is ambiguous; do not substitute cache or a fixture claim.",
+    "Stop if actual app proof is required by the future task card but cannot establish UI -> IPC -> SQLite/audit -> UI correlation.",
+    "Stop if any proposed capability reaches a real path, network, model, Agent, Vault, export, clear/delete, sync, or historical P3-126/P3-127 write."
+  ],
+  "creation_condition": "Ready for PM to create a single L2 Fast Track engineering Task Contract. Creation does not authorize execution, freeze assets, alter risk, or enter Stage 4.",
+  "result": "PASS"
+}

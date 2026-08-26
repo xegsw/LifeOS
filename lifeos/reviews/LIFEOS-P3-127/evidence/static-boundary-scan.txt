@@ -1,0 +1,7 @@
+8:use std::sync::Mutex;
+59:    status: &'static str, offline: bool, ai_enabled: bool, renderer_direct_capabilities: Vec<&'static str>, ipc_allowlist: Vec<&'static str>, unknown_ipc: &'static str,
+60:    filesystem: bool, raw_database: bool, generic_path_api: bool, shell: bool, process_spawn: bool, network: bool, vault: bool, export: bool, sync: bool,
+247:    RuntimeStatusResponse { status: "restricted_offline", offline: true, ai_enabled: false, renderer_direct_capabilities: Vec::new(), ipc_allowlist: IPC_ALLOWLIST.to_vec(), unknown_ipc: "deny", filesystem: false, raw_database: false, generic_path_api: false, shell: false, process_spawn: false, network: false, vault: false, export: false, sync: false }
+419:                    "renderer_direct_capabilities": status.renderer_direct_capabilities,
+420:                    "unknown_ipc": status.unknown_ipc,
+480:        let status = status_impl(); assert!(status.offline && !status.ai_enabled && status.renderer_direct_capabilities.is_empty()); assert_eq!(status.ipc_allowlist, IPC_ALLOWLIST); assert_eq!(status.unknown_ipc, "deny"); assert!(!status.filesystem && !status.raw_database && !status.generic_path_api); assert!(!status.shell && !status.process_spawn && !status.network && !status.vault && !status.export && !status.sync);

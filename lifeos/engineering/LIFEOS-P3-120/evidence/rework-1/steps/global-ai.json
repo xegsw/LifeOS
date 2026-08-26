@@ -1,0 +1,40 @@
+{
+  "schema": "lifeos-p3-120/rework-1-manual-step-v1",
+  "step": "global-ai",
+  "structured_result_id": "R1-global-ai",
+  "captured_at_utc": "2026-08-25T08:54:50.831943+00:00",
+  "operator": "user-manual",
+  "attestation": "User manually opened Global AI in the foreground packaged app with unrelated desktop notifications cleared; delayed capture allowed the user to restore that already-open window after approval.",
+  "capture_delay_seconds": 12,
+  "automation_excluded": [
+    "Computer Use",
+    "AppleScript",
+    "AX",
+    "CDP",
+    "HTTP",
+    "WebDriver",
+    "browser control"
+  ],
+  "app": {
+    "pid": 24181,
+    "running": true,
+    "launch_count": 1
+  },
+  "db": {
+    "exists": false,
+    "captures": [],
+    "audit": [],
+    "sha256": null
+  },
+  "log_snapshot": {
+    "path": "logs/global-ai.app.log",
+    "sha256": "0421f307b0186950845dece333591dd4be039bb4d2ff9d0be16ede922c44c661",
+    "missing_expected_lines": []
+  },
+  "screenshot": {
+    "path": "screenshots/global-ai.png",
+    "sha256": "90077ddf16549a6c5b4139a89d9db419615127572dd1bd59b87305ea9ed10732",
+    "bytes": 1283670
+  },
+  "result": "PASS"
+}

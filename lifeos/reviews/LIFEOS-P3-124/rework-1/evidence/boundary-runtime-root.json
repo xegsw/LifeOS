@@ -1,0 +1,19 @@
+{
+  "authorized_action": "none; no creation or write to the P3-122 historical temporary root",
+  "authorized_temporary_root": "/private/tmp/lifeos-p3-124-independent-review-v1",
+  "candidate_database_path_is_under_authorized_root": false,
+  "candidate_source": "lifeos/engineering/LIFEOS-P3-122/candidate/src/runtime.rs",
+  "candidate_source_sha256": "4c04007df124ded22aa3ff0adb7be1708dff4707d2592a9fda824d59f1e1770c",
+  "compiled_runtime_database_path": "/private/tmp/lifeos-p3-122-native-evidence-v1/capture.sqlite",
+  "compiled_runtime_root": "/private/tmp/lifeos-p3-122-native-evidence-v1",
+  "generated_at": "2026-08-26T01:22:27.622565+00:00",
+  "impact": "A byte-exact candidate build cannot create its required fresh DB within the sole P3-124 temporary root.",
+  "only_runtime_environment_variables": [
+    "LIFEOS_P3_122_VIEWPORT"
+  ],
+  "pass": true,
+  "startup_geometry_path_is_under_authorized_root": false,
+  "startup_geometry_write": "record_native_geometry is called during setup and opens RUNTIME_ROOT/native-geometry-{requested}.jsonl with create+append.",
+  "task_local_copy_sha256": "4c04007df124ded22aa3ff0adb7be1708dff4707d2592a9fda824d59f1e1770c",
+  "test_id": "P124R-BND-ROOT-01"
+}
