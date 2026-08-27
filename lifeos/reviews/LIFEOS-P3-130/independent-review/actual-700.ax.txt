@@ -1,0 +1,65 @@
+Window: "LifeOS · P3-130 Context Recovery", App: LifeOS P3-130 Context Recovery.
+0 standard window LifeOS · P3-130 Context Recovery, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: LifeOS · P3-130 Context Recovery, URL: tauri://localhost
+			3 link 跳到主要内容, Value: tauri://localhost#main-content
+			4 container
+				5 container 主导航
+					6 button Today
+					7 button Project Context
+					8 button Memory provenance
+					9 button Runtime status
+				10 container
+					11 text TODAY · PROJECT-BACKED CONTEXT RECOVERY
+					12 heading 从原始记录恢复项目上下文。, Value: 1
+						13 text 从原始记录恢复项目上下文。
+					14 text 固定合成数据、离线运行；原文、Project link、Feedback 与审计身份彼此分离。 P3-130 synthetic only
+				15 text Capture · 用户原文
+				16 heading 整理 LifeOS Context Recovery 合成验收记录。, Value: 2
+					17 text 整理 LifeOS Context Recovery 合成验收记录。
+				18 text Source: local_capture · SRC-SYN-WORK-001 · Artifact: ART-SYN-CONTEXT-RECOVERY-001@v1
+				19 button 记录固定合成原文
+				20 button 刷新 Today
+				21 text Typed Project link
+				22 heading LifeOS 产品开发, Value: 2
+					23 text LifeOS 产品开发
+				24 text empty
+				25 container
+					26 text Context ID: ctx:project:synthetic-lifeos-product Project: synthetic-lifeos-product · Person: person:synthetic-owner
+				27 text 尚无 capture。空状态不会自动生成内容、链接或建议。
+				28 text Audit / lifecycle
+				29 heading 可复核状态, Value: 2
+					30 text 可复核状态
+				31 text empty
+				32 text records: 0 · audit events: 0 · saved: 0 · repeats: 0
+				33 container 实际运行时状态
+					34 text {
+  "ipc": [
+    "capture_record",
+    "get_today",
+    "runtime_status",
+    "confirm_capture_context",
+    "get_context_recovery"
+  ],
+  "today": "empty",
+  "context": "empty",
+  "selection_included": true
+}
+				35 container
+					36 text Context Inspector
+					37 heading 恢复依据, Value: 2
+						38 text 恢复依据
+					39 text 只呈现 Project 的来源、Artifact、typed link、Feedback 与 audit 引用；不创建通用 Context 表。 无可靠建议 Person-first inspector 当前页面：Today 选中内容：纳入本次本地展示
+					40 button 移出选中
+					41 text Memory provenance Source / Artifact / Project link / Feedback / Audit 均为引用。没有复制用户原文到 Memory。
+					42 button 查看 provenance
+		43 scroll bar (settable, float) 0
+44 menu bar
+	45 LifeOS P3-130 Context Recovery
+	46 File
+	47 Edit
+	48 View
+	49 Window
+	50 Help
+
+The focused UI element is 2 HTML content Description: LifeOS · P3-130 Context Recovery, URL: tauri://localhost

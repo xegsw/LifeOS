@@ -1,0 +1,60 @@
+{
+  "kind": "independent actual Tauri evidence",
+  "scope": "two fresh bundles built offline from the review-owned copied candidate; all DB roots were under the exact review temp root",
+  "real_self_use": "not run against any real self-use root or real text",
+  "pass": false,
+  "bundles": {
+    "real_mode": {
+      "mode": "real_self_use with fresh synthetic runtime root",
+      "info_plist": "actual-real-Info.plist",
+      "info_plist_sha256": "62bb811dcae8bd7821061b16d8830f8d488d60b108b3c21fdcf77b1489ea469a",
+      "binary": "actual-real-binary",
+      "binary_sha256": "c5057c94006b8286d883f32bffb7b1cafd9895ef2d9c56c6ebeb652eb3a3cc9c"
+    },
+    "synthetic_mode": {
+      "mode": "synthetic",
+      "info_plist": "actual-synthetic-Info.plist",
+      "info_plist_sha256": "62bb811dcae8bd7821061b16d8830f8d488d60b108b3c21fdcf77b1489ea469a",
+      "binary": "actual-synthetic-binary",
+      "binary_sha256": "ef5ecb3af25cebbf9a26244a23462c733be022133a0f52611df024af09c08b16"
+    }
+  },
+  "observations": [
+    {
+      "id": "ACT-01",
+      "status": "PASS",
+      "observation": "The real-mode actual Tauri bundle showed exactly the frozen eleven IPC entries, offline status, and disabled real model disclosure before any user input.",
+      "evidence": "actual-initial.jpeg",
+      "sha256": "ec7a07ca7a818a83ecd6315930f1e8cbcc551ea28aecb7401de0c0866587d48e"
+    },
+    {
+      "id": "ACT-02",
+      "status": "PASS",
+      "observation": "With no capture present, Read Candidate remained empty; no automatic candidate or action was shown.",
+      "evidence": "actual-initial.jpeg",
+      "sha256": "ec7a07ca7a818a83ecd6315930f1e8cbcc551ea28aecb7401de0c0866587d48e"
+    },
+    {
+      "id": "ACT-03",
+      "status": "FAIL",
+      "severity": "P0",
+      "observation": "After two UI typing attempts and one set-value attempt, clicking real Capture produced real_input_rejected and remained at 0/3; the fresh synthetic DB did not appear. The typed value is deliberately not retained.",
+      "evidence": "actual-real-capture-rejected.jpeg",
+      "sha256": "57fed542f6a9eab6a62e3c7b542c1221bba9e6332d13dc5fcc06112ee3634075"
+    },
+    {
+      "id": "ACT-04",
+      "status": "PASS_SYNTHETIC_ONLY",
+      "observation": "The synthetic actual Tauri bundle completed Capture, explicit Context confirmation, explicit Action acceptance, and showed one Today Focus.",
+      "evidence": "actual-synthetic-confirmed-focus.jpeg",
+      "sha256": "424bb865a82e80002a0b2edec92c74e46c5651d9886e9ad941213fd1b012a8fd"
+    },
+    {
+      "id": "ACT-05",
+      "status": "PASS_SYNTHETIC_ONLY",
+      "observation": "After closing and reopening the synthetic actual Tauri bundle, the one confirmed Today Focus remained visible.",
+      "evidence": "actual-synthetic-reopen.jpeg",
+      "sha256": "ae823fe839a31194d8a73e5368978929aff319513a4d9dad0bc34bb9a3fd2b20"
+    }
+  ]
+}

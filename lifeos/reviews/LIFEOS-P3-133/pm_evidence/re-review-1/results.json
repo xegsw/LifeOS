@@ -1,0 +1,38 @@
+{
+  "task": "LIFEOS-P3-133",
+  "phase": "pm_validation_of_independent_re_review_1",
+  "conclusion": "MANDATORY_INDEPENDENT_RE_REVIEW_PASS_ACCEPTED",
+  "full_task_pass": false,
+  "independent_review_sha256": "2ff4c246a5913bc3a591e0b3489367577ccc353f29512177070d20efab75bf21",
+  "independent_manifest_sha256": "8119437d823dda905cba2e27ac1b4abbccd4e9c8fead8b00c3a166925bb844b6",
+  "independent_matrix_sha256": "767074d9f10659c9d7c9abc2893130338d6f5f9c3a4f7a4229ad56c23dc88746",
+  "pm_readonly_recomputation": {
+    "manifest_declared": 21,
+    "manifest_actual": 21,
+    "manifest_errors": 0,
+    "matrix_rows": 14,
+    "matrix_pass": 13,
+    "matrix_not_implemented": 1,
+    "static_before_passed": true,
+    "static_after_passed": true,
+    "static_before_after_identical": true,
+    "review_files_before": 22,
+    "review_files_after": 22,
+    "all_review_file_hashes_unchanged": true
+  },
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 1,
+    "Unknown": 0,
+    "Not_Implemented": 1
+  },
+  "temporary_root": {
+    "path": "/private/tmp/lifeos-p3-133-independent-re-review-v1",
+    "status_after_pm_check": "ABSENT"
+  },
+  "pilot_3_access_by_pm": "NOT_ATTEMPTED",
+  "next_gate": "USER_CONTROLLED_REAL_SELF_USE_UNDER_EXISTING_CONTRACT",
+  "risk_R_0053": "OPEN_AUTHORIZED_CONTROLLED_EXECUTION_BOUNDARY",
+  "local_model_precheck": "SKIPPED_L3_REAL_PERSONAL_DATA_GATE_REQUIRES_DIRECT_PM_REVIEW"
+}

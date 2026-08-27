@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "direction": "calm, lightweight, personal space; Apple/macOS-adjacent restraint; Today, Me, Memory, and AI Workspace share one date chrome, quiet cards, generous whitespace, and restrained blue/mint/lilac identity color; never a dashboard wall",
+  "shell": {
+    "primary_ia": ["Today", "Me", "Contexts", "Memory"],
+    "settings": "weak bottom icon rail entry",
+    "prohibited": ["wide sidebar", "notification center", "bell", "bottom-left avatar", "account profile"],
+    "global_ai": "persistent bottom Global AI Bar; clicking or submitting it opens the same contextual right-side panel; Quick Capture is a separate secondary plus action"
+  },
+  "tokens": {
+    "font": "system-ui / SF Pro fallback stack",
+    "background": "soft off-white with very low-saturation blue radial tint",
+    "surfaces": "translucent light materials with one weight per layer",
+    "corner_radius": "10-24px by hierarchy",
+    "focus": "3px blue visible outline",
+    "motion": "short opacity/transform transitions, near-instant when reduced"
+  },
+  "responsive": {
+    "1280x1024": "Today has a greeting-led two-column layout; Me, Memory, and AI Workspace use the same shell chrome and compact supporting-card rhythm without competing for priority",
+    "1160x768": "desktop shell retained; bottom composer remains reachable",
+    "700x760": "content stacks to one column; icon rail and composer remain reachable; workspace inspector moves below work"
+  },
+  "identity": {
+    "user_and_confirmed": "mint",
+    "observation": "lilac",
+    "inference_and_candidate": "amber",
+    "decision": "blue",
+    "unsafe_or_unavailable": "rose"
+  },
+  "accessibility": ["semantic landmarks", "skip link", "native buttons", "visible focus", "keyboard close", "prefers-reduced-motion", "contrast and non-color labels"]
+}

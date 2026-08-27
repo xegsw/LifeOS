@@ -1,0 +1,35 @@
+{
+  "schema": "LIFEOS-P3-134-closure3-verification-v1",
+  "overall": "NOT_PASS",
+  "decision_rule": "Any required AC with incomplete post-final-candidate actual-Tauri, DOM/landmark, visual, mutation, or cleanup evidence makes the whole delivery NOT_PASS.",
+  "facts": {
+    "candidate_patch": "runtime-adapter Capture decoration now preserves the P3-116 modal structure and visible labels; it binds only existing controls.",
+    "invalid_build_quarantine": "logs/build-candidate-700-v3.log was built from the wrong working directory and is not evidence.",
+    "visual_discovery": "The pre-patch 700 Quick Capture comparison changed 0.1619 of pixels and failed its 0.12 threshold. This was not masked or accepted.",
+    "runtime_matrix": {
+      "synthetic": "6 passed, 0 failed",
+      "real_mode_with_fixed_synthetic_fixture": "6 passed, 0 failed",
+      "coverage": ["0/1/multiple open actions", "same confirmed_at_ms action_id tie break", "restart-stable focus", "201-char rejection", "fourth-input rejection", "preexisting malformed DB rejection", "model disabled in real mode", "frozen 11 IPC"]
+    }
+  },
+  "ac_results": {
+    "AC-01": "PASS (closure-1 retained)",
+    "AC-02": "PASS (closure-1 retained)",
+    "AC-03": "NOT_PASS: final candidate post-patch DOM/class/landmark matrix is incomplete across all required states.",
+    "AC-04": "NOT_PASS: pre-patch actual-Tauri evidence exists for 700/1160/1280, but all required page/state combinations were not freshly rerun after the candidate patch.",
+    "AC-05": "NOT_PASS: the discovered Quick Capture mismatch was corrected in source but the post-patch actual-Tauri masked comparison is not yet complete.",
+    "AC-06": "PASS (closure-1 retained)",
+    "AC-07": "PASS (closure-1 retained)",
+    "AC-08": "PASS (closure-1 retained)",
+    "AC-09": "PASS (closure-1 retained)",
+    "AC-10": "PARTIAL / NOT_PASS overall: deterministic focus and stale/insufficient tests pass; full per-scenario actual-Tauri UI/IPC/DB/audit matrix remains incomplete.",
+    "AC-11": "PASS (closure-1 retained)",
+    "AC-12": "PASS (closure-1 retained)",
+    "AC-13": "PASS (closure-1 retained)",
+    "AC-14": "PARTIAL / NOT_PASS overall: controlled rejection coverage passes, but the required separate-fixture proof for every listed path/DTO/IPC case is incomplete.",
+    "AC-15": "PASS (closure-1 retained)",
+    "AC-16": "PASS (closure-1 retained)"
+  },
+  "counts": {"P0": 0, "P1": 1, "P2": 0, "Unknown": 0, "Not Implemented": 4},
+  "pm_candidate": false
+}

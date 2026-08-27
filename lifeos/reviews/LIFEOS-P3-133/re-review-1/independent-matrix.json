@@ -1,0 +1,30 @@
+{
+  "kind": "P3-133 Closure-2 independent re-review machine-readable matrix",
+  "task": "LIFEOS-P3-133",
+  "round": "re-review-1",
+  "scope": "mandatory independent re-review of Closure-2; synthetic-only; real-use step intentionally not run",
+  "rows": [
+    {"id":"ABF-M-001","status":"PASS","evidence":["static-verification.json","static-verification-after-dynamic.json"],"fact":"Frozen files, P3-132 history 75/75, current candidate 75/75 and Closure-2 20/20 all match."},
+    {"id":"ABF-M-002","status":"PASS","evidence":["actual-tauri-observations.json","runtime-positive-after-restart.json"],"fact":"A new normal task-local root produced only the review synthetic DB and normal runtime state."},
+    {"id":"ABF-M-003","status":"PASS","evidence":["path-db-mutations.json"],"fact":"Relative, linked and non-directory roots failed before build output; a nonempty root failed before window creation."},
+    {"id":"ABF-M-004","status":"PASS","evidence":["path-db-mutations.json","runtime-existingdb-after.json"],"fact":"A preexisting non-SQLite regular DB produced database_unavailable without a success receipt or replacement."},
+    {"id":"ABF-M-005","status":"PASS","evidence":["actual-tauri-observations.json","runtime-positive-after-restart.json","privacy-scan.json"],"fact":"Three 200-Unicode synthetic UI saves succeeded; review artifacts contain no generated input body or image evidence."},
+    {"id":"ABF-M-006","status":"PASS","evidence":["actual-tauri-observations.json","runtime-201check-after-201-entry.json","runtime-positive-after-restart.json"],"fact":"The actual control has maxlength 200; a supplied 201-character attempt was not submitted and left no DB. After three saves the Capture entry was absent and the DB remained at three captures."},
+    {"id":"ABF-M-007","status":"PASS","evidence":["actual-tauri-observations.json"],"fact":"After an explicit Context confirmation, the observed open Action count remained zero."},
+    {"id":"ABF-M-008","status":"PASS","evidence":["actual-tauri-observations.json","runtime-positive-after-restart.json"],"fact":"Only an explicit candidate acceptance produced one open Action."},
+    {"id":"ABF-M-009","status":"PASS","evidence":["actual-tauri-observations.json","runtime-positive-after-restart.json"],"fact":"Exactly one Today Focus derived from the explicitly accepted open Action."},
+    {"id":"ABF-M-010","status":"PASS","evidence":["actual-tauri-observations.json","runtime-positive-after-restart.json","static-verification-after-dynamic.json"],"fact":"Actual runtime reported 11 allowed IPC names, disabled ModelPort/adapter, zero Understanding and no noticed state."},
+    {"id":"ABF-M-011","status":"PASS","evidence":["actual-tauri-observations.json","runtime-positive-after-restart.json"],"fact":"After quit/reopen, non-content state remained 3 captures, 1 open Action and 1 Today Focus."},
+    {"id":"ABF-M-012","status":"PASS","evidence":["test_design_seal.json","test_design.md","independent_verify.py","independent-matrix.json"],"fact":"This review used a newly authored design, runner and synthetic temp root; engineering runner was not imported or called."},
+    {"id":"ABF-M-013","status":"NOT_IMPLEMENTED","evidence":["cleanup.json"],"fact":"Real self-use is deliberately not run by this re-review and remains a PM-gated subsequent step."},
+    {"id":"ABF-M-014","status":"PASS","evidence":["cleanup.json"],"fact":"The review temporary root was removed by one exact absolute path cleanup; no real-use boundary was cleaned."}
+  ],
+  "counts": {"P0":0,"P1":0,"P2":1,"Unknown":0,"NotImplemented":1},
+  "p2": [{"id":"D-0540","scope":"historical engineering Evidence overwrite incident","blocking":false,"reason":"read-only historical preservation; not used as this review's positive evidence"}],
+  "conclusion": {
+    "mandatory_independent_re_review":"PASS",
+    "full_p3_133_task":"NOT_YET_FINAL",
+    "reason":"ABF-M-013/AC-12 real self-use was intentionally not executed and needs PM gate validation after this independent Pass.",
+    "does_not_mean":["PM final acceptance","risk closure","product or runtime freeze","Stage 4","real model enablement"]
+  }
+}

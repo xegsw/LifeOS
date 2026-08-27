@@ -1,0 +1,17 @@
+{
+  "task": "LIFEOS-P3-131",
+  "target": "/private/tmp/lifeos-p3-131-next-action-v1",
+  "pre_cleanup": {
+    "exists": true,
+    "directories": 26,
+    "files": 14,
+    "bytes": 662272,
+    "direct_children": ["cache", "run-a", "run-b", "run-c", "run-d", "run-e", "run-f", "run-g", "run-test"]
+  },
+  "cleanup_method": "exact absolute target only: rm -rf /private/tmp/lifeos-p3-131-next-action-v1",
+  "post_cleanup": {
+    "exists": false,
+    "verification": "test ! -e /private/tmp/lifeos-p3-131-next-action-v1"
+  },
+  "historical_runtime_roots_accessed": false
+}

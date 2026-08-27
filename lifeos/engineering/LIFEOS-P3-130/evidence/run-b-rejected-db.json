@@ -1,0 +1,74 @@
+{
+  "audit": [
+    {
+      "capture_id": "capture:p3-130:000001a03d61f40f",
+      "detail": "local_capture",
+      "event": "capture_saved"
+    },
+    {
+      "capture_id": "capture:p3-130:000001a03d61f40f",
+      "detail": "ctx:project:synthetic-lifeos-product",
+      "event": "context_link_candidate"
+    },
+    {
+      "capture_id": "capture:p3-130:000001a03d61f40f",
+      "detail": "ctx:project:synthetic-lifeos-product",
+      "event": "context_rejected"
+    }
+  ],
+  "captures": [
+    {
+      "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+      "content": "整理 LifeOS Context Recovery 合成验收记录。",
+      "id": "capture:p3-130:000001a03d61f40f",
+      "idem_key": "p3-130-capture-001",
+      "source": "local_capture",
+      "source_id": "SRC-SYN-WORK-001"
+    }
+  ],
+  "database_present": true,
+  "database_sha256": "a9da3ab016c9fa2a2f703e80796e494f536613fbd8bfd488a0321e55fdfe16eb",
+  "feedback": [
+    {
+      "capture_id": "capture:p3-130:000001a03d61f40f",
+      "context_id": "ctx:project:synthetic-lifeos-product",
+      "decision": "reject",
+      "idem_key": "p3-130-confirm-001"
+    }
+  ],
+  "projects": [
+    {
+      "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+      "authorized": 1,
+      "evidence_ready": 1,
+      "generation_current": 1,
+      "id": "synthetic-lifeos-product",
+      "person_id": "person:synthetic-owner",
+      "source_available": 1,
+      "source_id": "SRC-SYN-WORK-001",
+      "title": "LifeOS 产品开发",
+      "tombstoned": 0
+    }
+  ],
+  "runtime_root": "/private/tmp/lifeos-p3-130-context-recovery-v1/run-b",
+  "tables": [
+    "audit",
+    "capture_project_links",
+    "captures",
+    "feedback",
+    "projects",
+    "sqlite_sequence"
+  ],
+  "task": "LIFEOS-P3-130",
+  "typed_links": [
+    {
+      "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+      "capture_id": "capture:p3-130:000001a03d61f40f",
+      "context_id": "ctx:project:synthetic-lifeos-product",
+      "link_status": "rejected",
+      "project_id": "synthetic-lifeos-product",
+      "source_id": "SRC-SYN-WORK-001"
+    }
+  ],
+  "user_version": 130
+}

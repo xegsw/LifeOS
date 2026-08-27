@@ -1,0 +1,273 @@
+{
+  "contract": "LIFEOS-P3-133",
+  "kind": "closure-1_read_only_engineering_integrity_verification",
+  "default_mode_writes": false,
+  "task_contract_sha256": "5035cf9b4b4fa85c431f02616cd323f5aa0ec614ff6f73bddc509f1e98c96d08",
+  "acceptance_basis_freeze_sha256": "3b1a801eb7fb61e4f9165c0e8331bf6ebef85cdcd6f87f934051455440d8f7c3",
+  "user_confirmation_sha256": "f2516cbed95ddccd82a748ab6ff7bd8de72a71792779ccfad2d02df649d0a648",
+  "source_manifest_sha256": "be1c8efe05cab8722a1010a3ba9231e7d81f290653f03d8200c0c5e6eb6e7e21",
+  "checks": [
+    {
+      "id": "CL01_source_history_75_regular_hashes",
+      "passed": true,
+      "detail": {
+        "expected": 75,
+        "source_mismatch": [],
+        "source_extra": []
+      }
+    },
+    {
+      "id": "CL01_candidate_75_regular_no_extra_or_link",
+      "passed": true,
+      "detail": {
+        "candidate_regular": 75,
+        "missing": [],
+        "extra": [],
+        "links": [],
+        "changed_from_p3_132": [
+          "Cargo.lock",
+          "Cargo.toml",
+          "build.rs",
+          "capabilities/main.json",
+          "gen/schemas/capabilities.json",
+          "src/runtime.rs",
+          "tauri.conf.json",
+          "ui/app.js",
+          "ui/index.html"
+        ]
+      }
+    },
+    {
+      "id": "CL01_quarantined_original_summaries_are_not_positive_evidence",
+      "passed": true,
+      "detail": {
+        "quarantined": {
+          "verification.json": {
+            "path": "verification.json",
+            "present": true,
+            "bytes": 6838,
+            "sha256": "d4e88c15437ee4e472ebe03901f79d4885af99e3d0744712e82eda35403c36ea"
+          },
+          "FINAL_MANIFEST.json": {
+            "path": "FINAL_MANIFEST.json",
+            "present": true,
+            "bytes": 19483,
+            "sha256": "a22614e992bdf1b9f42255491b61e33333c17e2caa578550ad889e5917037828"
+          }
+        },
+        "excluded_from_positive_evidence": [
+          "verification.json",
+          "FINAL_MANIFEST.json"
+        ]
+      }
+    },
+    {
+      "id": "CL02_build_time_mode_and_runtime_root_are_explicit",
+      "passed": true,
+      "detail": {
+        "markers": [
+          "LIFEOS_RUNTIME_ROOT",
+          "LIFEOS_INPUT_MODE",
+          "Some(\"real_self_use\")",
+          "disabled_for_real_input",
+          "disabled_in_real_mode"
+        ]
+      }
+    },
+    {
+      "id": "CL02_exact_eleven_ipc_and_closed_capability",
+      "passed": true,
+      "detail": {
+        "declared": [
+          "capture_record",
+          "get_today",
+          "runtime_status",
+          "confirm_capture_context",
+          "get_context_recovery",
+          "get_context_next_action",
+          "decide_context_next_action",
+          "record_action_result",
+          "assemble_global_ai_context",
+          "get_evidence_backed_understanding",
+          "decide_understanding_feedback"
+        ],
+        "handled": [
+          "capture_record",
+          "get_today",
+          "runtime_status",
+          "confirm_capture_context",
+          "get_context_recovery",
+          "get_context_next_action",
+          "decide_context_next_action",
+          "record_action_result",
+          "assemble_global_ai_context",
+          "get_evidence_backed_understanding",
+          "decide_understanding_feedback"
+        ],
+        "capability_permissions": [],
+        "forbidden_hits": {
+          "Command::new": false,
+          "std::process::Command": false,
+          "tokio::process": false,
+          "reqwest": false,
+          "TcpStream": false,
+          "UdpSocket": false,
+          "fetch(": false,
+          "XMLHttpRequest": false,
+          "WebSocket": false,
+          "@tauri-apps/plugin-fs": false,
+          "plugin-shell": false
+        }
+      }
+    },
+    {
+      "id": "CL02_real_mode_model_is_disabled_before_adapter_use",
+      "passed": true,
+      "detail": {
+        "understanding_short_circuit": true,
+        "adapter_call_count": 0
+      }
+    },
+    {
+      "id": "CL02_preserved_synthetic_test_and_mutation_logs",
+      "passed": true,
+      "detail": {
+        "synthetic_tests": {
+          "path": "test-logs/cargo-test-synthetic.log",
+          "present": true,
+          "bytes": 814,
+          "sha256": "278f09a4ec077a35e81dc26a6778c2431e0e59a48ab9a57fcc907af1a95d21e3"
+        },
+        "real_mode_equivalent_tests": {
+          "path": "test-logs/cargo-test-real-mode-equivalent.log",
+          "present": true,
+          "bytes": 814,
+          "sha256": "84e2746bc907410a983a70878202a9ae1e8253b773d5fc9b6530700d9b0fa3c5"
+        },
+        "synthetic_tauri_bundle": {
+          "path": "test-logs/cargo-tauri-build-synthetic.log",
+          "present": true,
+          "bytes": 692,
+          "sha256": "fbf5243b101bc4cb7442d2449b9ca7790a9e85dfc303739e1826bd18b1018b4d"
+        },
+        "relative_root_rejected": {
+          "path": "test-logs/mutation-relative-root.log",
+          "present": true,
+          "bytes": 684,
+          "sha256": "86c233bef90e24f13a7ca3cfd8748195d12d0fa092e0d3ba6fb7cd80c1e46890"
+        },
+        "symlink_root_rejected": {
+          "path": "test-logs/mutation-symlink-root.log",
+          "present": true,
+          "bytes": 8231,
+          "sha256": "bc14b21f8ac3ce634a358d74b065a7d65332602c5d284faeca33e3cf202bf54b"
+        },
+        "real_mode_build_without_root": {
+          "path": "test-logs/cargo-check-real-mode-no-root.log",
+          "present": true,
+          "bytes": 7664,
+          "sha256": "2848115fcad2a4fb5f71eabcf09ef1cc7fadd6688304aae0ede68dab78fd4651"
+        }
+      }
+    },
+    {
+      "id": "CL01_preserved_actual_tauri_ui_assets_match_raw_observations",
+      "passed": true,
+      "detail": {
+        "run_ids": [
+          "candidate-rejection",
+          "link-rejection",
+          "positive-lifecycle"
+        ],
+        "screenshot_hashes_match": true,
+        "screenshots": [
+          {
+            "path": "actual-tauri/screenshots/synthetic-confirmed-action.jpeg",
+            "present": true,
+            "bytes": 84367,
+            "sha256": "b7c53d40707c5094a42be94c324199fe9ecaefce9c54643b14748d461a04e27b"
+          },
+          {
+            "path": "actual-tauri/screenshots/synthetic-reopen-focus.jpeg",
+            "present": true,
+            "bytes": 127197,
+            "sha256": "c48b2bf0d7a233d3b89625e4a99130b73bedfe6f4e773fa19f6feff6bd5494a3"
+          },
+          {
+            "path": "actual-tauri/screenshots/synthetic-link-rejected.jpeg",
+            "present": true,
+            "bytes": 122359,
+            "sha256": "edd6f867aa6da61f97b9c2f4ca0ecbd70fc24f28eb1b1eb7a0979f3b5de23e5f"
+          },
+          {
+            "path": "actual-tauri/screenshots/synthetic-candidate-rejected.jpeg",
+            "present": true,
+            "bytes": 76779,
+            "sha256": "6846d2c66acaf714b77bda3a6bdf68a1842050c783619a4b0f75b23e3820e6fe"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CL01_preserved_bundle_identity_and_cleanup_receipt",
+      "passed": true,
+      "detail": {
+        "bundle": [
+          {
+            "path": "actual-tauri/bundle-identity/Info.plist",
+            "present": true,
+            "bytes": 1030,
+            "sha256": "62bb811dcae8bd7821061b16d8830f8d488d60b108b3c21fdcf77b1489ea469a"
+          },
+          {
+            "path": "actual-tauri/bundle-identity/lifeos-p3-133",
+            "present": true,
+            "bytes": 11756864,
+            "sha256": "8a48b4de8e9c3a6c126f8e6b2dac4c8bc15756105a6bf906af07b57a11755812"
+          }
+        ],
+        "cleanup_result": "PASS",
+        "cleanup_after": {
+          "exists": false
+        }
+      }
+    },
+    {
+      "id": "CL01_no_private_taint_in_preserved_nonquarantined_text_evidence",
+      "passed": true,
+      "detail": {
+        "taint_marker_present": false
+      }
+    },
+    {
+      "id": "CL01_closure_manifest_is_nonself_and_matches_files",
+      "passed": true,
+      "detail": {
+        "closure_inventory_count": 4,
+        "manifest_path": "closure-1/FINAL_MANIFEST.json"
+      }
+    }
+  ],
+  "passed": true,
+  "quarantined_original_summaries": {
+    "verification.json": {
+      "path": "verification.json",
+      "present": true,
+      "bytes": 6838,
+      "sha256": "d4e88c15437ee4e472ebe03901f79d4885af99e3d0744712e82eda35403c36ea"
+    },
+    "FINAL_MANIFEST.json": {
+      "path": "FINAL_MANIFEST.json",
+      "present": true,
+      "bytes": 19483,
+      "sha256": "a22614e992bdf1b9f42255491b61e33333c17e2caa578550ad889e5917037828"
+    }
+  },
+  "not_run": [
+    "AC-11 mandatory independent review",
+    "AC-12 PM-gated real self-use run"
+  ],
+  "real_root_access": "not attempted by this verifier",
+  "runtime_database_access": "not attempted by this verifier",
+  "closure_scope": "restores a non-overwriting engineering evidence lineage only; it is not an independent review or PM acceptance"
+}

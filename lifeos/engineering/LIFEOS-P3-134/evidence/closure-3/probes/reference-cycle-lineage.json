@@ -1,0 +1,39 @@
+{
+  "task": "LIFEOS-P3-134",
+  "kind": "disposable evidence-only Tauri probe",
+  "variant": "reference",
+  "scenario": "cycle",
+  "probe_root": "/private/tmp/lifeos-p3-134-ui-restoration-v1/probes/reference-cycle",
+  "native_log": "/private/tmp/lifeos-p3-134-ui-restoration-v1/native-reference-cycle.json",
+  "candidate_source_delta": [
+    "src/runtime.rs",
+    "ui/app.js",
+    "ui/evidence-probe.js",
+    "ui/index.html"
+  ],
+  "allowed_probe_delta": [
+    "src/runtime.rs",
+    "ui/evidence-probe.js",
+    "ui/index.html",
+    "index.html",
+    "app.js",
+    "styles.css",
+    "fixtures.js"
+  ],
+  "handler_commands": [
+    "capture_record",
+    "get_today",
+    "runtime_status",
+    "confirm_capture_context",
+    "get_context_recovery",
+    "get_context_next_action",
+    "decide_context_next_action",
+    "record_action_result",
+    "assemble_global_ai_context",
+    "get_evidence_backed_understanding",
+    "decide_understanding_feedback"
+  ],
+  "handler_exact_eleven": true,
+  "content_recorded": false,
+  "probe_must_be_deleted_after_evidence": true
+}

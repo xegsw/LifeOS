@@ -1,0 +1,77 @@
+{
+  "task": "LIFEOS-P3-134",
+  "fixtures": "fresh disposable test fixture per test",
+  "cases": [
+    {
+      "case": "invalid_path",
+      "test": "final_path_and_type_rejections_are_prewrite",
+      "sentinel_and_db_unchanged_asserted": true,
+      "no_sidecar_or_fixture_residue": true,
+      "pass": true
+    },
+    {
+      "case": "directory_link_chain",
+      "test": "final_directory_link_chain_is_rejected_prewrite",
+      "sentinel_and_db_unchanged_asserted": true,
+      "no_sidecar_or_fixture_residue": true,
+      "pass": true
+    },
+    {
+      "case": "wrong_file_type",
+      "test": "final_path_and_type_rejections_are_prewrite",
+      "sentinel_and_db_unchanged_asserted": true,
+      "no_sidecar_or_fixture_residue": true,
+      "pass": true
+    },
+    {
+      "case": "existing_db",
+      "test": "real_preexisting_database_is_rejected_before_write",
+      "sentinel_and_db_unchanged_asserted": true,
+      "no_sidecar_or_fixture_residue": true,
+      "pass": true
+    },
+    {
+      "case": "dto",
+      "test": "final_dto_stale_and_unknown_ipc_are_closed",
+      "sentinel_and_db_unchanged_asserted": true,
+      "no_sidecar_or_fixture_residue": true,
+      "pass": true
+    },
+    {
+      "case": "idempotency_conflict",
+      "test": "final_real_idempotency_and_limits_are_prewrite",
+      "sentinel_and_db_unchanged_asserted": true,
+      "no_sidecar_or_fixture_residue": true,
+      "pass": true
+    },
+    {
+      "case": "fourth_capture",
+      "test": "final_real_idempotency_and_limits_are_prewrite",
+      "sentinel_and_db_unchanged_asserted": true,
+      "no_sidecar_or_fixture_residue": true,
+      "pass": true
+    },
+    {
+      "case": "over_200_unicode",
+      "test": "real_mode_is_limited_and_never_calls_adapter",
+      "sentinel_and_db_unchanged_asserted": true,
+      "no_sidecar_or_fixture_residue": true,
+      "pass": true
+    },
+    {
+      "case": "stale_evidence",
+      "test": "synthetic_insufficient_evidence_never_creates_candidate_or_action",
+      "sentinel_and_db_unchanged_asserted": true,
+      "no_sidecar_or_fixture_residue": true,
+      "pass": true
+    },
+    {
+      "case": "unknown_twelfth_ipc",
+      "test": "final_dto_stale_and_unknown_ipc_are_closed",
+      "sentinel_and_db_unchanged_asserted": true,
+      "no_sidecar_or_fixture_residue": true,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

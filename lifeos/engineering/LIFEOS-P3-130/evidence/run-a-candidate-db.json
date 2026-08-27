@@ -1,0 +1,62 @@
+{
+  "audit": [
+    {
+      "capture_id": "capture:p3-130:000001a03d5b7c25",
+      "detail": "local_capture",
+      "event": "capture_saved"
+    },
+    {
+      "capture_id": "capture:p3-130:000001a03d5b7c25",
+      "detail": "ctx:project:synthetic-lifeos-product",
+      "event": "context_link_candidate"
+    }
+  ],
+  "captures": [
+    {
+      "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+      "content": "整理 LifeOS Context Recovery 合成验收记录。",
+      "id": "capture:p3-130:000001a03d5b7c25",
+      "idem_key": "p3-130-capture-001",
+      "source": "local_capture",
+      "source_id": "SRC-SYN-WORK-001"
+    }
+  ],
+  "database_present": true,
+  "database_sha256": "df22489d7e4952bb5ca673ff4d93dbccbeabfc4b57f9029353fe5b748dc17d8f",
+  "feedback": [],
+  "projects": [
+    {
+      "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+      "authorized": 1,
+      "evidence_ready": 1,
+      "generation_current": 1,
+      "id": "synthetic-lifeos-product",
+      "person_id": "person:synthetic-owner",
+      "source_available": 1,
+      "source_id": "SRC-SYN-WORK-001",
+      "title": "LifeOS 产品开发",
+      "tombstoned": 0
+    }
+  ],
+  "runtime_root": "/private/tmp/lifeos-p3-130-context-recovery-v1/run-a",
+  "tables": [
+    "audit",
+    "capture_project_links",
+    "captures",
+    "feedback",
+    "projects",
+    "sqlite_sequence"
+  ],
+  "task": "LIFEOS-P3-130",
+  "typed_links": [
+    {
+      "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+      "capture_id": "capture:p3-130:000001a03d5b7c25",
+      "context_id": "ctx:project:synthetic-lifeos-product",
+      "link_status": "candidate",
+      "project_id": "synthetic-lifeos-product",
+      "source_id": "SRC-SYN-WORK-001"
+    }
+  ],
+  "user_version": 130
+}

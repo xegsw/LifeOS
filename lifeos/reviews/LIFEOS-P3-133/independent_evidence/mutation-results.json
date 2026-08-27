@@ -1,0 +1,42 @@
+{
+  "kind": "independent synthetic-only fail-closed mutation evidence",
+  "scope": "review temp root only; the candidate source was copied before all executions",
+  "pass": true,
+  "mutations": [
+    {
+      "id": "MUT-ROOT-MISSING",
+      "mode": "synthetic",
+      "expected": "build rejects a missing runtime root before output",
+      "observed": "LIFEOS_RUNTIME_ROOT rejected before build output: root or an ancestor is not a real directory",
+      "exit_code": 101,
+      "raw_log": "mutation-missing-root.log",
+      "raw_log_sha256": "1ced6310b35ebb9592e30dd6b8cb6e51595a20b2033e72387ea08b596d7c15ef"
+    },
+    {
+      "id": "MUT-ROOT-RELATIVE",
+      "mode": "synthetic",
+      "expected": "build rejects a relative runtime root before output",
+      "observed": "LIFEOS_RUNTIME_ROOT rejected before build output: root must be an absolute normalized path",
+      "exit_code": 101,
+      "raw_log": "mutation-relative-root.log",
+      "raw_log_sha256": "99cb7bbcb308e2a97909848e3042323686164a00b8b126d36a7e914e3e7fad5b"
+    },
+    {
+      "id": "MUT-ROOT-SYMLINK",
+      "mode": "synthetic",
+      "expected": "build rejects a symlink runtime root before output",
+      "observed": "LIFEOS_RUNTIME_ROOT rejected before build output: root or an ancestor is not a real directory",
+      "exit_code": 101,
+      "raw_log": "mutation-symlink-root.log",
+      "raw_log_sha256": "92f8b4177c01c3f3518dcb6411a20643d73837320e21033bbc5b1214528827c3"
+    },
+    {
+      "id": "MUT-RUNTIME-DB-AND-LIMIT",
+      "mode": "real_self_use compiled against a fresh synthetic DB under the review temp root",
+      "expected": "symlink root, nonempty root, non-SQLite existing DB, 201 chars, and fourth record reject before changing protected state",
+      "observed": "two independent probe tests passed; each expected rejection appeared in the raw log",
+      "raw_log": "independent-probes.log",
+      "raw_log_sha256": "c3ce93bf1a87645794f73bd1367c4f22c2f36001a6316d6054c8d9a852ffe08a"
+    }
+  ]
+}

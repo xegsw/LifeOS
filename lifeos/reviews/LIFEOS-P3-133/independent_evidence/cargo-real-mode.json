@@ -1,0 +1,14 @@
+{
+  "kind": "independent offline Rust regression",
+  "mode": "real_self_use with an independent synthetic DB under the review temp root",
+  "source": "review-owned invocation; no real root or real text accessed",
+  "command": "CARGO_NET_OFFLINE=true CARGO_TARGET_DIR=<review-temp>/target-real TMPDIR=<review-temp>/tmp LIFEOS_RUNTIME_ROOT=<review-temp>/real-synthetic-root LIFEOS_INPUT_MODE=real_self_use cargo test --locked -- --test-threads=1 --nocapture",
+  "cargo": "cargo 1.98.0",
+  "rustc": "rustc 1.98.0",
+  "exit_code": 0,
+  "tests": {"passed": 5, "failed": 0, "ignored": 0},
+  "required_observations": ["201-Unicode-character input rejected before write", "fourth record rejected before write", "existing non-SQLite DB rejected without change", "real model adapter disabled"],
+  "raw_log": "cargo-real-mode.log",
+  "raw_log_sha256": "f1c84e7be487d7252c6899c69e9f57d20cdfffb4feb679ca6b4ebb33b01961d2",
+  "pass": true
+}

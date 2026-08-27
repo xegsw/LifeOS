@@ -1,0 +1,234 @@
+{
+  "contract": "LIFEOS-P3-133",
+  "scope": "engineering_only_before_independent_review",
+  "task_contract_sha256": "5035cf9b4b4fa85c431f02616cd323f5aa0ec614ff6f73bddc509f1e98c96d08",
+  "acceptance_basis_freeze_sha256": "3b1a801eb7fb61e4f9165c0e8331bf6ebef85cdcd6f87f934051455440d8f7c3",
+  "user_confirmation_sha256": "f2516cbed95ddccd82a748ab6ff7bd8de72a71792779ccfad2d02df649d0a648",
+  "source_manifest_sha256": "be1c8efe05cab8722a1010a3ba9231e7d81f290653f03d8200c0c5e6eb6e7e21",
+  "actual_synthetic_runtime": {
+    "available": false
+  },
+  "checks": [
+    {
+      "id": "AC-01_source_manifest_75_regular_hashes",
+      "passed": true,
+      "detail": {
+        "expected": 75,
+        "source": 75,
+        "mismatch": [],
+        "extra": []
+      }
+    },
+    {
+      "id": "AC-01_candidate_has_no_extra_or_link",
+      "passed": true,
+      "detail": {
+        "candidate_regular": 75,
+        "missing": [],
+        "extra": [],
+        "links": [],
+        "modified_from_source": [
+          "Cargo.lock",
+          "Cargo.toml",
+          "build.rs",
+          "capabilities/main.json",
+          "gen/schemas/capabilities.json",
+          "src/runtime.rs",
+          "tauri.conf.json",
+          "ui/app.js",
+          "ui/index.html"
+        ]
+      }
+    },
+    {
+      "id": "AC-02_engineering_boundary_only",
+      "passed": true,
+      "detail": {
+        "engineering_root": "/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-133",
+        "temporary_root": "/private/tmp/lifeos-p3-133-real-self-use-v1",
+        "authorised_real_root_accessed": false
+      }
+    },
+    {
+      "id": "AC-03_relative_root_fail_closed",
+      "passed": true,
+      "detail": {
+        "log": "test-logs/mutation-relative-root.log"
+      }
+    },
+    {
+      "id": "AC-03_symlink_root_fail_closed",
+      "passed": true,
+      "detail": {
+        "log": "test-logs/mutation-symlink-root.log"
+      }
+    },
+    {
+      "id": "AC-03_real_mode_build_does_not_create_root",
+      "passed": true,
+      "detail": {
+        "log": "test-logs/cargo-check-real-mode-no-root.log",
+        "root_exists_after_build": false
+      }
+    },
+    {
+      "id": "AC-04_exact_eleven_ipc_and_closed_capability",
+      "passed": true,
+      "detail": {
+        "declared": [
+          "capture_record",
+          "get_today",
+          "runtime_status",
+          "confirm_capture_context",
+          "get_context_recovery",
+          "get_context_next_action",
+          "decide_context_next_action",
+          "record_action_result",
+          "assemble_global_ai_context",
+          "get_evidence_backed_understanding",
+          "decide_understanding_feedback"
+        ],
+        "handled": [
+          "capture_record",
+          "get_today",
+          "runtime_status",
+          "confirm_capture_context",
+          "get_context_recovery",
+          "get_context_next_action",
+          "decide_context_next_action",
+          "record_action_result",
+          "assemble_global_ai_context",
+          "get_evidence_backed_understanding",
+          "decide_understanding_feedback"
+        ],
+        "capability_permissions": [],
+        "forbidden_hits": {
+          "Command::new": false,
+          "std::process::Command": false,
+          "tokio::process": false,
+          "reqwest": false,
+          "TcpStream": false,
+          "UdpSocket": false,
+          "fetch(": false,
+          "XMLHttpRequest": false,
+          "WebSocket": false,
+          "@tauri-apps/plugin-fs": false,
+          "plugin-shell": false
+        }
+      }
+    },
+    {
+      "id": "AC-05_real_mode_equivalent_limits",
+      "passed": true,
+      "detail": {
+        "log": "test-logs/cargo-test-real-mode-equivalent.log",
+        "max_records": 3,
+        "max_unicode_characters": 200
+      }
+    },
+    {
+      "id": "AC-06_real_text_isolation",
+      "passed": true,
+      "detail": {
+        "real_understanding_short_circuit": true,
+        "evidence_taint_marker_present": false,
+        "adapter_call_count": 0
+      }
+    },
+    {
+      "id": "AC-07_actual_synthetic_explicit_lifecycle",
+      "passed": false,
+      "detail": {
+        "available": false
+      }
+    },
+    {
+      "id": "actual_synthetic_link_rejection_has_no_action",
+      "passed": false,
+      "detail": {
+        "available": false
+      }
+    },
+    {
+      "id": "actual_synthetic_candidate_rejection_has_no_action",
+      "passed": false,
+      "detail": {
+        "available": false
+      }
+    },
+    {
+      "id": "AC-08_today_focus_only_confirmed_action",
+      "passed": false,
+      "detail": {
+        "available": false
+      }
+    },
+    {
+      "id": "AC-09_actual_synthetic_restart_evidence",
+      "passed": true,
+      "detail": {
+        "synthetic-confirmed-action.jpeg": {
+          "path": "actual-tauri/screenshots/synthetic-confirmed-action.jpeg",
+          "sha256": "b7c53d40707c5094a42be94c324199fe9ecaefce9c54643b14748d461a04e27b"
+        },
+        "synthetic-reopen-focus.jpeg": {
+          "path": "actual-tauri/screenshots/synthetic-reopen-focus.jpeg",
+          "sha256": "c48b2bf0d7a233d3b89625e4a99130b73bedfe6f4e773fa19f6feff6bd5494a3"
+        },
+        "synthetic-link-rejected.jpeg": {
+          "path": "actual-tauri/screenshots/synthetic-link-rejected.jpeg",
+          "sha256": "edd6f867aa6da61f97b9c2f4ca0ecbd70fc24f28eb1b1eb7a0979f3b5de23e5f"
+        },
+        "synthetic-candidate-rejected.jpeg": {
+          "path": "actual-tauri/screenshots/synthetic-candidate-rejected.jpeg",
+          "sha256": "6846d2c66acaf714b77bda3a6bdf68a1842050c783619a4b0f75b23e3820e6fe"
+        }
+      }
+    },
+    {
+      "id": "AC-10_existing_db_rejected_before_write",
+      "passed": true,
+      "detail": {
+        "test": "real_preexisting_database_is_rejected_before_write",
+        "log": "test-logs/cargo-test-real-mode-equivalent.log"
+      }
+    },
+    {
+      "id": "ui_dynamic_closure_template_complete",
+      "passed": true,
+      "detail": {
+        "path": "UI_DYNAMIC_CLOSURE.md",
+        "pass_rows": [
+          "D-133-01",
+          "D-133-02",
+          "D-133-03",
+          "D-133-04",
+          "D-133-05",
+          "D-133-06",
+          "D-133-07",
+          "D-133-08"
+        ]
+      }
+    },
+    {
+      "id": "actual_bundle_identity_retained",
+      "passed": true,
+      "detail": {
+        "lifeos-p3-133": {
+          "path": "actual-tauri/bundle-identity/lifeos-p3-133",
+          "sha256": "8a48b4de8e9c3a6c126f8e6b2dac4c8bc15756105a6bf906af07b57a11755812"
+        },
+        "Info.plist": {
+          "path": "actual-tauri/bundle-identity/Info.plist",
+          "sha256": "62bb811dcae8bd7821061b16d8830f8d488d60b108b3c21fdcf77b1489ea469a"
+        }
+      }
+    }
+  ],
+  "passed": false,
+  "not_run": [
+    "AC-11 independent review",
+    "AC-12 PM-gated real self-use run"
+  ],
+  "real_root_access": "not attempted"
+}

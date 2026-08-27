@@ -1,0 +1,123 @@
+{
+  "kind": "lifeos_p3_133_independent_re_review_manifest",
+  "round": "re-review-1",
+  "scope": "Closure-2 synthetic actual-Tauri independent re-review only",
+  "test_design_sha256": "b0cd4c0ff9f65e2db0c9ed1d4ed4e9de4779d474c95a25641556f177b4fb038a",
+  "items": [
+    {
+      "path": "actual-tauri-observations.json",
+      "bytes": 1826,
+      "sha256": "4df1e986c4e54129cca607c6a8ffbd742c4642072aa65c607936e58ed5a0fb23"
+    },
+    {
+      "path": "cleanup.json",
+      "bytes": 410,
+      "sha256": "3438f30eceded4d00422da9837845065dea01f935af5256c4d22b45bc057d3ab"
+    },
+    {
+      "path": "create_final_manifest.py",
+      "bytes": 1693,
+      "sha256": "c14851ee8def5f1e9a6b17fa56e756a6e2405bd771e2582c5e99f3de70fc97d4"
+    },
+    {
+      "path": "independent-matrix.json",
+      "bytes": 4138,
+      "sha256": "767074d9f10659c9d7c9abc2893130338d6f5f9c3a4f7a4229ad56c23dc88746"
+    },
+    {
+      "path": "independent_review.md",
+      "bytes": 4963,
+      "sha256": "2ff4c246a5913bc3a591e0b3489367577ccc353f29512177070d20efab75bf21"
+    },
+    {
+      "path": "independent_verify.py",
+      "bytes": 8051,
+      "sha256": "f99f2845e739590f57a10b069769d26e48fe5a89f63ff29b3636355b311afe94"
+    },
+    {
+      "path": "path-db-mutations.json",
+      "bytes": 1558,
+      "sha256": "12a0a81e64d3746437b82249a827f97e0721c94b1809079e2d6c8b7f0c63770d"
+    },
+    {
+      "path": "privacy-scan.json",
+      "bytes": 170,
+      "sha256": "3150e330d58c76cead6d99161504a42e97973c741bf3beceb409308bb4af7c57"
+    },
+    {
+      "path": "privacy_scan.py",
+      "bytes": 1374,
+      "sha256": "c29f0cb56b724fc828e532eff9517d6f6c8d97056d4776b0a42d1422fe7462c8"
+    },
+    {
+      "path": "runtime-201-after-201-ui-attempt.json",
+      "bytes": 461,
+      "sha256": "57d5135e27ed447cb4829084b210d7df71686defe9e18e212287eeb860d14a8b"
+    },
+    {
+      "path": "runtime-201-before.json",
+      "bytes": 150,
+      "sha256": "ebc31f9f559193255c24ac33776d559b81785989a32a6432145caab6a2507890"
+    },
+    {
+      "path": "runtime-201check-after-201-entry.json",
+      "bytes": 155,
+      "sha256": "e927656dac28b0b008c561c793ca62d9fdb98f8bfc9f4d37b6194d99bad371b1"
+    },
+    {
+      "path": "runtime-201check-after-explicit-launch.json",
+      "bytes": 155,
+      "sha256": "e927656dac28b0b008c561c793ca62d9fdb98f8bfc9f4d37b6194d99bad371b1"
+    },
+    {
+      "path": "runtime-201check-before.json",
+      "bytes": 97,
+      "sha256": "510b58e0a00284df9a5ba726138f31b18ddc73cc3784c8934edea0bc51e95eb2"
+    },
+    {
+      "path": "runtime-existingdb-after.json",
+      "bytes": 350,
+      "sha256": "6cdba5abf91254d900df678a474e63cab04210a8fcf51354390e7c1364a211d0"
+    },
+    {
+      "path": "runtime-positive-after-restart.json",
+      "bytes": 457,
+      "sha256": "90849f67d051a6dbe39eba8f851ba4d49b19ba3a2576fed2a7500cbd43e6f748"
+    },
+    {
+      "path": "runtime_probe.py",
+      "bytes": 2432,
+      "sha256": "f908126d10d9a38b42a43fe1276deca89a98acd6567b343b8508faa8d451dad9"
+    },
+    {
+      "path": "static-verification-after-dynamic.json",
+      "bytes": 3527,
+      "sha256": "e120f95ef52d51620e540977d30c0078c4f9573aab80a7fc138a65c7f05fbe43"
+    },
+    {
+      "path": "static-verification.json",
+      "bytes": 3527,
+      "sha256": "e120f95ef52d51620e540977d30c0078c4f9573aab80a7fc138a65c7f05fbe43"
+    },
+    {
+      "path": "test_design.md",
+      "bytes": 5616,
+      "sha256": "b0cd4c0ff9f65e2db0c9ed1d4ed4e9de4779d474c95a25641556f177b4fb038a"
+    },
+    {
+      "path": "test_design_seal.json",
+      "bytes": 310,
+      "sha256": "5f0d72a63d1186621964c62f4b856e135196c870def1e674662de7e0a0ec9a5d"
+    }
+  ],
+  "item_count": 21,
+  "excluded_from_self_hash": "FINAL_MANIFEST.json",
+  "verdict": "PASS_LIMITED_SCOPE",
+  "does_not_mean": [
+    "P3-133 final task acceptance",
+    "real self-use execution",
+    "R-0053 closure",
+    "freeze",
+    "Stage 4 entry"
+  ]
+}

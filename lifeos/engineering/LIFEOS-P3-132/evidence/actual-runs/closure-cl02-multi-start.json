@@ -1,0 +1,241 @@
+{
+  "contract": "LIFEOS-P3-132",
+  "evidence_kind": "actual_tauri_sqlite_audit_snapshot",
+  "case": "closure-cl02-multi-start",
+  "runtime_root": "/private/tmp/lifeos-p3-132-global-ai-today-lite-v1/closure-cl02-multi",
+  "database": {
+    "filename": "capture.sqlite",
+    "bytes": 118784,
+    "sha256": "17c3feef5d76677a24479398e84087d8e4879f23dae6b9c8abf65fe82e7a4257",
+    "read_mode": "sqlite_uri_mode_ro"
+  },
+  "row_counts": {
+    "captures": 1,
+    "projects": 1,
+    "capture_project_links": 1,
+    "derivations": 2,
+    "understandings": 1,
+    "feedback": 3,
+    "candidate_actions": 3,
+    "actions": 3,
+    "action_results": 0,
+    "audit": 6
+  },
+  "rows": {
+    "captures": [
+      {
+        "id": "capture:p3-131:fixture-multi-open",
+        "content": "整理 LifeOS Context Recovery 合成验收记录。",
+        "created_at_ms": 6000,
+        "source": "local_capture",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "idem_key": "p3-131-fixture-multi-open"
+      }
+    ],
+    "projects": [
+      {
+        "id": "synthetic-lifeos-product",
+        "person_id": "person:synthetic-owner",
+        "title": "LifeOS 产品开发",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "source_available": 1,
+        "generation_current": 1,
+        "tombstoned": 0,
+        "authorized": 1,
+        "evidence_ready": 1
+      }
+    ],
+    "capture_project_links": [
+      {
+        "capture_id": "capture:p3-131:fixture-multi-open",
+        "project_id": "synthetic-lifeos-product",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "link_status": "confirmed",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1"
+      }
+    ],
+    "derivations": [
+      {
+        "id": "derivation:p3-131:fixture-multi-open",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "capture_id": "capture:p3-131:fixture-multi-open",
+        "processor": "local_rule:p3-131-v1",
+        "processor_version": "v1",
+        "basis_refs": "capture:capture:p3-131:fixture-multi-open",
+        "why_text": "fixed fixture provenance",
+        "created_at_ms": 6001
+      },
+      {
+        "id": "derivation:p3-132:000001a03e540747",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "capture_id": "capture:p3-131:fixture-multi-open",
+        "processor": "offline_synthetic_model:p3-132-v1",
+        "processor_version": "p3-132-v1",
+        "basis_refs": "capture:capture:p3-131:fixture-multi-open|capture_project_links:capture:p3-131:fixture-multi-open:confirmed|source:SRC-SYN-WORK-001|artifact:ART-SYN-CONTEXT-RECOVERY-001@v1|project:synthetic-lifeos-product|context:ctx:project:synthetic-lifeos-product|selection:capture:p3-131:fixture-multi-open",
+        "why_text": "离线合成适配器仅消费已确认 Context、当前 Source/Artifact 与 Evidence refs；page=Today，selection=capture:p3-131:fixture-multi-open。",
+        "created_at_ms": 1787752089415
+      }
+    ],
+    "understandings": [
+      {
+        "id": "understanding:p3-132:000001a03e540747",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "capture_id": "capture:p3-131:fixture-multi-open",
+        "request_id": "p3-132-ui-capture_p3-131_fixture-multi-open-none",
+        "page": "today",
+        "selection_ref": "capture:p3-131:fixture-multi-open",
+        "removed_context_kinds": "",
+        "derivation_id": "derivation:p3-132:000001a03e540747",
+        "processor": "offline_synthetic_model:p3-132-v1",
+        "processor_version": "p3-132-v1",
+        "observation_text": "当前 Context 已具备继续推进所需的已确认 Evidence。",
+        "suggestion_text": "继续完成 LifeOS Context Recovery 合成验收记录的复核。",
+        "basis_refs": "capture:capture:p3-131:fixture-multi-open|capture_project_links:capture:p3-131:fixture-multi-open:confirmed|source:SRC-SYN-WORK-001|artifact:ART-SYN-CONTEXT-RECOVERY-001@v1|project:synthetic-lifeos-product|context:ctx:project:synthetic-lifeos-product|selection:capture:p3-131:fixture-multi-open",
+        "why_text": "离线合成适配器仅消费已确认 Context、当前 Source/Artifact 与 Evidence refs；page=Today，selection=capture:p3-131:fixture-multi-open。",
+        "evidence_state": "sufficient",
+        "created_at_ms": 1787752089415
+      }
+    ],
+    "feedback": [
+      {
+        "id": 1,
+        "target_kind": "candidate_action",
+        "target_id": "candidate:p3-131:fixture-newer",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "decision": "accept",
+        "idem_key": "p3-131-fixture-feedback-action:p3-131:fixture-newer",
+        "detail": "action:p3-131:fixture-newer",
+        "created_at_ms": 7002
+      },
+      {
+        "id": 2,
+        "target_kind": "candidate_action",
+        "target_id": "candidate:p3-131:fixture-tie-z",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "decision": "accept",
+        "idem_key": "p3-131-fixture-feedback-action:p3-131:fixture-tie-z",
+        "detail": "action:p3-131:fixture-tie-z",
+        "created_at_ms": 7000
+      },
+      {
+        "id": 3,
+        "target_kind": "candidate_action",
+        "target_id": "candidate:p3-131:fixture-tie-a",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "decision": "accept",
+        "idem_key": "p3-131-fixture-feedback-action:p3-131:fixture-tie-a",
+        "detail": "action:p3-131:fixture-tie-a",
+        "created_at_ms": 7000
+      }
+    ],
+    "candidate_actions": [
+      {
+        "id": "candidate:p3-131:fixture-newer",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "capture_id": "capture:p3-131:fixture-multi-open",
+        "derivation_id": "derivation:p3-131:fixture-multi-open",
+        "candidate_text": "整理 LifeOS Context Recovery 合成验收记录。",
+        "candidate_state": "accepted",
+        "created_at_ms": 7002
+      },
+      {
+        "id": "candidate:p3-131:fixture-tie-z",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "capture_id": "capture:p3-131:fixture-multi-open",
+        "derivation_id": "derivation:p3-131:fixture-multi-open",
+        "candidate_text": "整理 LifeOS Context Recovery 合成验收记录。",
+        "candidate_state": "accepted",
+        "created_at_ms": 7000
+      },
+      {
+        "id": "candidate:p3-131:fixture-tie-a",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "capture_id": "capture:p3-131:fixture-multi-open",
+        "derivation_id": "derivation:p3-131:fixture-multi-open",
+        "candidate_text": "整理 LifeOS Context Recovery 合成验收记录。",
+        "candidate_state": "accepted",
+        "created_at_ms": 7000
+      }
+    ],
+    "actions": [
+      {
+        "id": "action:p3-131:fixture-newer",
+        "candidate_id": "candidate:p3-131:fixture-newer",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "action_text": "整理 LifeOS Context Recovery 合成验收记录。",
+        "confirmation_kind": "accept",
+        "action_state": "open",
+        "created_at_ms": 7002,
+        "confirmed_at_ms": 7002
+      },
+      {
+        "id": "action:p3-131:fixture-tie-z",
+        "candidate_id": "candidate:p3-131:fixture-tie-z",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "action_text": "整理 LifeOS Context Recovery 合成验收记录。",
+        "confirmation_kind": "accept",
+        "action_state": "open",
+        "created_at_ms": 7000,
+        "confirmed_at_ms": 7000
+      },
+      {
+        "id": "action:p3-131:fixture-tie-a",
+        "candidate_id": "candidate:p3-131:fixture-tie-a",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "action_text": "整理 LifeOS Context Recovery 合成验收记录。",
+        "confirmation_kind": "accept",
+        "action_state": "open",
+        "created_at_ms": 7000,
+        "confirmed_at_ms": 7000
+      }
+    ],
+    "action_results": [],
+    "audit": [
+      {
+        "id": 1,
+        "event": "action_created",
+        "target_id": "action:p3-131:fixture-newer",
+        "created_at_ms": 7002,
+        "detail": "fixture_explicit_confirmed_action"
+      },
+      {
+        "id": 2,
+        "event": "action_created",
+        "target_id": "action:p3-131:fixture-tie-z",
+        "created_at_ms": 7000,
+        "detail": "fixture_explicit_confirmed_action"
+      },
+      {
+        "id": 3,
+        "event": "action_created",
+        "target_id": "action:p3-131:fixture-tie-a",
+        "created_at_ms": 7000,
+        "detail": "fixture_explicit_confirmed_action"
+      },
+      {
+        "id": 4,
+        "event": "capture_saved",
+        "target_id": "capture:p3-131:fixture-multi-open",
+        "created_at_ms": 6000,
+        "detail": "fixture_capture"
+      },
+      {
+        "id": 5,
+        "event": "context_confirmed",
+        "target_id": "capture:p3-131:fixture-multi-open",
+        "created_at_ms": 6001,
+        "detail": "ctx:project:synthetic-lifeos-product"
+      },
+      {
+        "id": 6,
+        "event": "understanding_generated",
+        "target_id": "understanding:p3-132:000001a03e540747",
+        "created_at_ms": 1787752089415,
+        "detail": "offline_synthetic_model:p3-132-v1"
+      }
+    ]
+  }
+}

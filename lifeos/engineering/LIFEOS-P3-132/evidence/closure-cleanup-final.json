@@ -1,0 +1,34 @@
+{
+  "contract": "LIFEOS-P3-132",
+  "temporary_root": "/private/tmp/lifeos-p3-132-global-ai-today-lite-v1",
+  "before": {
+    "exists": true,
+    "regular_file_count": 4,
+    "files": [
+      {
+        "relative_path": "closure-cl01-insufficient/capture.sqlite",
+        "bytes": 118784,
+        "sha256": "0e29eb385b8ebe99c2e1bec7a11d53bf72ac99287e6a019a02d08c5c4a05e0d6"
+      },
+      {
+        "relative_path": "closure-cl01-insufficient/native-geometry-1280x1024.jsonl",
+        "bytes": 1056,
+        "sha256": "b57963e6cf58928af203431487278e1dda176777103f61cffecf5647217a789e"
+      },
+      {
+        "relative_path": "closure-cl02-multi/capture.sqlite",
+        "bytes": 118784,
+        "sha256": "17c3feef5d76677a24479398e84087d8e4879f23dae6b9c8abf65fe82e7a4257"
+      },
+      {
+        "relative_path": "closure-cl02-multi/native-geometry-1280x1024.jsonl",
+        "bytes": 704,
+        "sha256": "8b84f6fe8ee500725d28b95b727ac48311b2a8046abe5faed1aa3d0c9c1a6c6e"
+      }
+    ]
+  },
+  "after": {
+    "exists": false,
+    "verification": "exact absolute path check after task-authorized cleanup"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "task": "LIFEOS-P3-130",
+  "kind": "independent_review_verification",
+  "checks": [
+    {
+      "check": "fresh_static_verification",
+      "status": "PASS",
+      "sha256": "8d5ba4d33017ed2bd756c7d405f32c348872a10921a9922eb9dac8c78e578fea"
+    },
+    {
+      "evidence": "actual-confirm-initial.ax.txt",
+      "status": "PASS",
+      "missing": [],
+      "sha256": "cb0f9a4171d057b73bd1da3b8f55f012f92b57c7d3b1d3f1a5b05d4da62d9697"
+    },
+    {
+      "evidence": "actual-confirm-captured.ax.txt",
+      "status": "PASS",
+      "missing": [],
+      "sha256": "6615675cc5b16b15e180928e26315074bffbbcd59b5f9aeebb697221efda4eca"
+    },
+    {
+      "evidence": "actual-confirm-repeat.ax.txt",
+      "status": "PASS",
+      "missing": [],
+      "sha256": "5034ed62b8c7d2bad64e7ce8c63255feb3c6b6ee5ca431f48e5743de0f5e0fa1"
+    },
+    {
+      "evidence": "actual-confirm-selection-removed.ax.txt",
+      "status": "PASS",
+      "missing": [],
+      "sha256": "c13df238ae34c8fdb46e9338803844fc746b8d05ea6fcc1966783d12b0ec74e2"
+    },
+    {
+      "evidence": "actual-confirm-confirmed.ax.txt",
+      "status": "PASS",
+      "missing": [],
+      "sha256": "d4ec4227df0acf6f32cf5a65e8957ee525cba165ef081064320e26bb83fbaaf5"
+    },
+    {
+      "evidence": "actual-confirm-reopened.ax.txt",
+      "status": "PASS",
+      "missing": [],
+      "sha256": "a35400ca24fb08ae14e06dfc10c7358a4af31b7e6f810d7f79a93c5b8ae1a716"
+    },
+    {
+      "evidence": "actual-confirm-context.ax.txt",
+      "status": "PASS",
+      "missing": [],
+      "sha256": "1e4851ebce571fa8628a487abc20b51ae878f222eb22908b4ab58d150ddb057d"
+    },
+    {
+      "evidence": "actual-confirm-memory.ax.txt",
+      "status": "PASS",
+      "missing": [],
+      "sha256": "b6a9bc543c0a4db5f13afd5accb4f542bdc031e298e801c6bedd036fb6ece246"
+    },
+    {
+      "evidence": "actual-reject-rejected.ax.txt",
+      "status": "PASS",
+      "missing": [],
+      "sha256": "157568a9b4f9b80c73cead7dea2406c4459a1184555df702e52f1d0c6619edc0"
+    },
+    {
+      "evidence": "actual-mutation-source-fail.ax.txt",
+      "status": "PASS",
+      "missing": [],
+      "sha256": "5fc025e4c03c6a9cc5743384d0f858a627a6cd2edc9198fb374e8828f874852e"
+    },
+    {
+      "evidence": "actual-mutation-tombstone-fail.ax.txt",
+      "status": "PASS",
+      "missing": [],
+      "sha256": "d9ed294f321ff62f117edc0ad36833aad164c21b9bff7afcef7dd2c66225238d"
+    },
+    {
+      "evidence": "actual-mutation-authorization-fail.ax.txt",
+      "status": "PASS",
+      "missing": [],
+      "sha256": "0d9823f4f9613dedc51d847941720712fbc98f856c1cc1cb1e997db3a1480d7d"
+    },
+    {
+      "evidence": "native-geometry-1280x1024.jsonl",
+      "status": "PASS",
+      "expected_logical": "1280x1024",
+      "observed_logical": {
+        "height": 1024.0,
+        "width": 1280.0
+      },
+      "row_count": 2,
+      "sha256": "b41d0b069a6c9e651238c2e7be19ec03b8f865f239f318859829be8cb250ed74"
+    },
+    {
+      "evidence": "native-geometry-1160x768.jsonl",
+      "status": "PASS",
+      "expected_logical": "1160x768",
+      "observed_logical": {
+        "height": 768.0,
+        "width": 1160.0
+      },
+      "row_count": 2,
+      "sha256": "ff17b15a49d383a7bc1533a43342877261357232b6cddb97d87e6d4d22dfa8c4"
+    },
+    {
+      "evidence": "native-geometry-700x760.jsonl",
+      "status": "PASS",
+      "expected_logical": "700x760",
+      "observed_logical": {
+        "height": 760.0,
+        "width": 700.0
+      },
+      "row_count": 2,
+      "sha256": "9dc87bc9eac3a08d513272db90441e9869e0edc15340954e2fbb02100ed01a6d"
+    },
+    {
+      "check": "mutation-source.json",
+      "status": "PASS",
+      "before_mutation_sha256": "a37b17d32760c691900af5bcd89289ff76a6f1caff19676381999763d7e9c575",
+      "after_mutation_before_confirm_sha256": "ab749163a70d30c24797cbcf0e42872820f3b0d9b28a6332867ec7aaa16bfedc",
+      "after_confirm_sha256": "ab749163a70d30c24797cbcf0e42872820f3b0d9b28a6332867ec7aaa16bfedc"
+    },
+    {
+      "check": "mutation-tombstone.json",
+      "status": "PASS",
+      "before_mutation_sha256": "4635bc05a18763e8770f3c446ddd8e53edaea7c4a0bf781b49245ec49c384794",
+      "after_mutation_before_confirm_sha256": "6838fc09ce19eb8a9a041c65ecc9b4d0ff71e3a30e66651fbc2d4f91f1e98ffe",
+      "after_confirm_sha256": "6838fc09ce19eb8a9a041c65ecc9b4d0ff71e3a30e66651fbc2d4f91f1e98ffe"
+    },
+    {
+      "check": "mutation-authorization.json",
+      "status": "PASS",
+      "before_mutation_sha256": "de41f374bca416f05db5671536c4122d29c44067a160711c5bbb45354814d2ae",
+      "after_mutation_before_confirm_sha256": "fa6301d24ed6baf8c85307b8835728d2cc772becd4e6150eea51795663530b6e",
+      "after_confirm_sha256": "fa6301d24ed6baf8c85307b8835728d2cc772becd4e6150eea51795663530b6e"
+    },
+    {
+      "check": "candidate_regression_supplement",
+      "status": "PASS",
+      "log_sha256": "9ee4b54e874a08d15a79d51cb8886b77d6daab0b5c8196183c0e5cf291eb11ee"
+    },
+    {
+      "check": "runtime_root_fail_closed",
+      "status": "PASS",
+      "log_sha256": "8527e9c32a509e4e5ae0a6193372f7cfd3008853fc5159c98c8c1028eb9e4c7c"
+    },
+    {
+      "check": "exact_cleanup",
+      "status": "PASS",
+      "temporary_root": "/private/tmp/lifeos-p3-130-context-recovery-v1",
+      "temporary_root_absent": true
+    }
+  ],
+  "status": "PASS"
+}

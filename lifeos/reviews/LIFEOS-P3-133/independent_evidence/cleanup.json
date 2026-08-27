@@ -1,0 +1,16 @@
+{
+  "kind": "exact temporary-root cleanup evidence",
+  "target": "/private/tmp/lifeos-p3-133-independent-review-v1",
+  "pre_cleanup": {
+    "file_count": 14866,
+    "size_kib": 7351508,
+    "app_close_requested_before_cleanup": true
+  },
+  "operation": "rm -rf on the exact approved target only",
+  "post_cleanup": {
+    "target_exists": false,
+    "verification": "test ! -e exact target",
+    "exit_code": 0
+  },
+  "pass": true
+}

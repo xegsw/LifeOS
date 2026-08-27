@@ -1,0 +1,27 @@
+{
+  "task": "LIFEOS-P3-134",
+  "closure": "closure-1",
+  "candidate_fix": "viewport-adapter.css is now loaded by ui/index.html after the inherited P3-116 stylesheet",
+  "fixed_inputs": "13/13 prior fixed-input hashes were read-only matched before this closure; six required P3-116 visual-contract files remain byte-identical after the fix",
+  "runtime": {"ipc_count": 11, "ipc_exact": true, "offline": true, "cargo_tests": "5/5 PASS", "actual_run": "P3-134 closure synthetic roots only"},
+  "acceptance": {
+    "AC-01": "PASS",
+    "AC-02": "PASS",
+    "AC-03": "NOT_IMPLEMENTED",
+    "AC-04": "NOT_PASS",
+    "AC-05": "NOT_IMPLEMENTED",
+    "AC-06": "PASS",
+    "AC-07": "PASS",
+    "AC-08": "PASS",
+    "AC-09": "PASS",
+    "AC-10": "NOT_IMPLEMENTED",
+    "AC-11": "PASS",
+    "AC-12": "PASS",
+    "AC-13": "PASS",
+    "AC-14": "NOT_IMPLEMENTED",
+    "AC-15": "PASS",
+    "AC-16": "PASS"
+  },
+  "whole_package": "NOT_PASS",
+  "reason": "The strict verifier correctly rejects incomplete per-state visual baseline/masked-pixel comparison, complete three-viewport actual geometry/action coverage, full Today multi/stale matrix, and the AC-14 mutation/sentinel matrix."
+}

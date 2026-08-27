@@ -1,0 +1,15 @@
+cargo:rerun-if-env-changed=LIFEOS_RUNTIME_ROOT
+cargo:rustc-env=LIFEOS_RUNTIME_ROOT=/private/tmp/lifeos-p3-132-global-ai-today-lite-v1/closure-cl01-insufficient
+cargo:rerun-if-env-changed=TAURI_CONFIG
+cargo:rustc-check-cfg=cfg(desktop)
+cargo:rustc-cfg=desktop
+cargo:rustc-check-cfg=cfg(mobile)
+cargo:rerun-if-changed=/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-132/candidate/tauri.conf.json
+cargo:rustc-env=TAURI_ANDROID_PACKAGE_NAME_APP_NAME=p3_132
+cargo:rustc-env=TAURI_ANDROID_PACKAGE_NAME_PREFIX=local_lifeos
+cargo:rustc-check-cfg=cfg(dev)
+cargo:PERMISSION_FILES_PATH=/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-132/evidence/build-cache/closure-cl01/release/build/lifeos-p3-132-0baf2e2d08cea97c/out/app-manifest/__app__-permission-files
+cargo:rerun-if-changed=capabilities
+cargo:rerun-if-env-changed=REMOVE_UNUSED_COMMANDS
+cargo:rustc-env=TAURI_ENV_TARGET_TRIPLE=aarch64-apple-darwin
+cargo:rustc-env=MACOSX_DEPLOYMENT_TARGET=10.13

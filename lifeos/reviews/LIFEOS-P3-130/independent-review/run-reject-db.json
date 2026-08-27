@@ -1,0 +1,74 @@
+{
+  "db_path": "task-local runtime-reject/capture.sqlite",
+  "sha256": "32106f667dc0a63a3354167c4d1436c05b579a3bc7375767949fa86d1c26dbc8",
+  "tables": {
+    "captures": [
+      {
+        "id": "capture:p3-130:000001a03d7a9b8f",
+        "content": "整理 LifeOS Context Recovery 合成验收记录。",
+        "created_at_ms": 1787737840527,
+        "source": "local_capture",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "idem_key": "p3-130-capture-001"
+      }
+    ],
+    "capture_project_links": [
+      {
+        "capture_id": "capture:p3-130:000001a03d7a9b8f",
+        "project_id": "synthetic-lifeos-product",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "link_status": "rejected",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1"
+      }
+    ],
+    "feedback": [
+      {
+        "id": 1,
+        "capture_id": "capture:p3-130:000001a03d7a9b8f",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "decision": "reject",
+        "idem_key": "p3-130-confirm-001",
+        "created_at_ms": 1787737847878
+      }
+    ],
+    "audit": [
+      {
+        "id": 1,
+        "event": "capture_saved",
+        "capture_id": "capture:p3-130:000001a03d7a9b8f",
+        "created_at_ms": 1787737840527,
+        "detail": "local_capture"
+      },
+      {
+        "id": 2,
+        "event": "context_link_candidate",
+        "capture_id": "capture:p3-130:000001a03d7a9b8f",
+        "created_at_ms": 1787737840527,
+        "detail": "ctx:project:synthetic-lifeos-product"
+      },
+      {
+        "id": 3,
+        "event": "context_rejected",
+        "capture_id": "capture:p3-130:000001a03d7a9b8f",
+        "created_at_ms": 1787737847878,
+        "detail": "ctx:project:synthetic-lifeos-product"
+      }
+    ],
+    "projects": [
+      {
+        "id": "synthetic-lifeos-product",
+        "person_id": "person:synthetic-owner",
+        "title": "LifeOS 产品开发",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "source_available": 1,
+        "generation_current": 1,
+        "tombstoned": 0,
+        "authorized": 1,
+        "evidence_ready": 1
+      }
+    ]
+  }
+}

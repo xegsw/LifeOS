@@ -1,0 +1,69 @@
+{
+  "task": "LIFEOS-P3-134",
+  "review_stage": "final-acceptance",
+  "verified_at": "2026-08-27T16:34:04+08:00",
+  "pm_conclusion": "PASS",
+  "task_contract_sha256": "8175686be251b123b5562b58ac11db8f7fe4a1b75bfdbf362949bb327c954679",
+  "final_manifest": {
+    "path": "lifeos/engineering/LIFEOS-P3-134/evidence/final-closure/FINAL_MANIFEST.json",
+    "asset_count": 333,
+    "missing": 0,
+    "extra": 0,
+    "hash_mismatch": 0,
+    "type_mismatch": 0,
+    "readonly_verifier_passed": true
+  },
+  "fixed_inputs": {
+    "count": 13,
+    "hash_mismatch": 0,
+    "historical_assets_read_only": true
+  },
+  "acceptance_contract": {
+    "rows": 16,
+    "passed": 16,
+    "failed": 0
+  },
+  "actual_tauri": {
+    "viewports": [700, 1160, 1280],
+    "states_per_viewport": 15,
+    "all_states_passed": true,
+    "keyboard_focus_escape_reduced_motion_passed": true,
+    "quick_capture_visually_inspected": true
+  },
+  "runtime": {
+    "ipc_count": 11,
+    "synthetic_pm_rerun": "5/5 PASS",
+    "real_self_use_pm_rerun": "5/5 PASS",
+    "network_used": false,
+    "product_model_used": false,
+    "real_data_used": false
+  },
+  "failure_closure": {
+    "mutation_cases": 10,
+    "all_stopped_prewrite": true,
+    "sentinel_unchanged": true,
+    "database_unchanged": true,
+    "residue_absent": true
+  },
+  "cleanup": {
+    "engineering_temp_root_absent": true,
+    "pm_temp_root_absent_after_rerun": true,
+    "pilot_3_accessed": false
+  },
+  "findings": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 1,
+    "Unknown": 0,
+    "Not_Implemented": 0
+  },
+  "p2_history": {
+    "id": "P3-134-FC-001",
+    "classification": "non_blocking_execution_hygiene_incident",
+    "reason": "A non-content verifier stdout file was briefly written outside the authorized temporary root, then exactly removed. It did not touch protected inputs and is not part of or required by the fresh final positive evidence chain."
+  },
+  "independent_review_triggered": false,
+  "independent_review_reason": "L2 facts are directly reproducible by PM; final evidence is clean, hash-closed and non-contaminated. The preserved P2 incident is not used as positive evidence and does not change scope, authority, risk or a frozen baseline.",
+  "temporary_root": "/private/tmp/lifeos-p3-134-ui-restoration-v1",
+  "temporary_root_absent": true
+}

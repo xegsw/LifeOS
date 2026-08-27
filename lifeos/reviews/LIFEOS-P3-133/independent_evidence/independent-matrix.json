@@ -1,0 +1,21 @@
+{
+  "task": "LIFEOS-P3-133",
+  "kind": "independent L3 ABF matrix",
+  "result": "CLOSURE_CYCLE_REQUIRED",
+  "rows": [
+    {"id": "ABF-M-001", "status": "PASS", "evidence": ["source-lineage.json", "command-inventory.json"], "note": "Frozen hashes, 75-file candidate lineage, exact eleven IPC, and static restricted surface independently checked."},
+    {"id": "ABF-M-002", "status": "PASS", "evidence": ["cargo-synthetic.json", "cargo-synthetic.log"], "note": "Fresh synthetic-only runtime regression passed 5/5 offline."},
+    {"id": "ABF-M-003", "status": "PASS", "evidence": ["mutation-results.json", "mutation-missing-root.log", "mutation-relative-root.log", "mutation-symlink-root.log"], "note": "Missing, relative, and symlink roots rejected before build output."},
+    {"id": "ABF-M-004", "status": "PASS", "evidence": ["independent-probes.log", "mutation-results.json"], "note": "Nonempty root and existing non-SQLite DB were rejected before protected-state change in review-only real-mode probe."},
+    {"id": "ABF-M-005", "status": "FAIL", "severity": "P0", "evidence": ["actual-real-capture-rejected.jpeg", "actual-tauri.json"], "note": "Real-mode actual Tauri Capture cannot deliver a typed nonempty record; it fails closed at 0/3."},
+    {"id": "ABF-M-006", "status": "NOT_IMPLEMENTED", "evidence": ["independent-probes.log", "actual-tauri.json"], "note": "Backend probe covered 3/200 and fourth-record rejection, but the mandatory actual-Tauri real-mode route is blocked by M-005."},
+    {"id": "ABF-M-007", "status": "NOT_IMPLEMENTED", "evidence": ["actual-tauri.json", "actual-synthetic-confirmed-focus.jpeg"], "note": "Synthetic confirmation works; real-mode actual UI lifecycle cannot start after M-005."},
+    {"id": "ABF-M-008", "status": "NOT_IMPLEMENTED", "evidence": ["actual-tauri.json", "actual-synthetic-confirmed-focus.jpeg"], "note": "Synthetic candidate display works; real-mode actual UI lifecycle cannot start after M-005."},
+    {"id": "ABF-M-009", "status": "NOT_IMPLEMENTED", "evidence": ["actual-tauri.json", "actual-synthetic-confirmed-focus.jpeg"], "note": "Synthetic explicit Action acceptance works; real-mode actual UI lifecycle cannot start after M-005."},
+    {"id": "ABF-M-010", "status": "NOT_IMPLEMENTED", "evidence": ["actual-tauri.json", "actual-synthetic-confirmed-focus.jpeg", "actual-synthetic-reopen.jpeg"], "note": "Synthetic Today Focus and reopen work; real-mode actual UI lifecycle cannot start after M-005."},
+    {"id": "ABF-M-011", "status": "NOT_IMPLEMENTED", "evidence": ["privacy-taint.json", "independent-probes.log", "actual-tauri.json"], "note": "Review-only runtime probe shows taint exclusion and model disablement, but no actual real-mode UI Capture was possible."},
+    {"id": "ABF-M-012", "status": "FAIL", "severity": "P0", "evidence": ["actual-tauri.json", "independent-matrix.json"], "note": "This independent review cannot issue a Pass while the real-mode actual Capture entrypoint is unavailable."},
+    {"id": "ABF-M-013", "status": "NOT_EXECUTED", "evidence": ["test_design.md"], "note": "AC-12 real self-use remains prohibited and unexecuted by this review."},
+    {"id": "ABF-M-014", "status": "PASS", "evidence": ["cleanup.json"], "note": "The exact review temporary root was removed and its absence was verified without a broad cleanup."}
+  ]
+}

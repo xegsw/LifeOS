@@ -1,0 +1,38 @@
+{
+  "kind": "explicit Context, Candidate, Action, Today, restart non-content state",
+  "post_restart": {
+    "database_role": "fresh synthetic real-mode fixture",
+    "content_columns_selected": false,
+    "mode": "real_self_use",
+    "contract": "LIFEOS-P3-133",
+    "counts": {
+      "captures": 3,
+      "links": 3,
+      "candidate_actions": 1,
+      "actions": 1,
+      "open_actions": 1,
+      "understandings": 0,
+      "feedback": 2,
+      "audit": 6
+    },
+    "link_states": {
+      "candidate": 2,
+      "confirmed": 1
+    },
+    "candidate_states": {
+      "accepted": 1
+    },
+    "action_states": {
+      "open": 1
+    },
+    "action_confirmation_kinds": {
+      "accept": 1
+    }
+  },
+  "assertions": {
+    "explicit_context_confirmation": true,
+    "action_only_after_explicit_candidate_accept": true,
+    "today_focus_only_from_open_confirmed_action": true,
+    "restart_consistent": true
+  }
+}

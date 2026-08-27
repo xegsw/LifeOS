@@ -1,0 +1,15 @@
+cargo:rerun-if-env-changed=LIFEOS_RUNTIME_ROOT
+cargo:rustc-env=LIFEOS_RUNTIME_ROOT=/private/tmp/lifeos-p3-131-next-action-v1/run-c
+cargo:rerun-if-env-changed=TAURI_CONFIG
+cargo:rustc-check-cfg=cfg(desktop)
+cargo:rustc-cfg=desktop
+cargo:rustc-check-cfg=cfg(mobile)
+cargo:rerun-if-changed=/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-131/candidate/tauri.conf.json
+cargo:rustc-env=TAURI_ANDROID_PACKAGE_NAME_APP_NAME=p3_131
+cargo:rustc-env=TAURI_ANDROID_PACKAGE_NAME_PREFIX=local_lifeos
+cargo:rustc-check-cfg=cfg(dev)
+cargo:rustc-cfg=dev
+cargo:PERMISSION_FILES_PATH=/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-131/evidence/build-cache/run-c/debug/build/lifeos-p3-131-277c4bdd3941be04/out/app-manifest/__app__-permission-files
+cargo:rerun-if-changed=capabilities
+cargo:rerun-if-env-changed=REMOVE_UNUSED_COMMANDS
+cargo:rustc-env=TAURI_ENV_TARGET_TRIPLE=aarch64-apple-darwin

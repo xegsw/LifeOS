@@ -1,0 +1,85 @@
+{
+  "task": "LIFEOS-P3-132",
+  "review_phase": "pm_acceptance_initial",
+  "date": "2026-08-26",
+  "task_contract_sha256": "139650a299be89d8603c3ecb84bd958ced312428f28f2da82b661fff04405dcb",
+  "submitted_manifest": {
+    "path": "lifeos/engineering/LIFEOS-P3-132/evidence/FINAL_MANIFEST.json",
+    "sha256": "6481797d446dccc9c0b1bce6f629c87f7b429c5df4f5dac62623076b8f496a23",
+    "candidate_entries_recomputed": 75,
+    "evidence_entries_recomputed": 22,
+    "mismatches": 0,
+    "result": "PASS"
+  },
+  "history_integrity": {
+    "source_task": "LIFEOS-P3-131",
+    "source_manifest_sha256": "4341c989a9199f7cb860518ba76d304923ea0571a47be3205c983198685c80a8",
+    "candidate_entries_recomputed": 75,
+    "mismatches": 0,
+    "result": "PASS"
+  },
+  "cargo_test": {
+    "command": "/Users/xxe/.cargo/bin/cargo test --locked --offline",
+    "passed": 10,
+    "failed": 0,
+    "result": "PASS"
+  },
+  "actual_tauri": {
+    "bundle_binary_sha256": "1ad52093b410c2bf17e02754d326ddc2a166791bbe89e0f486becd7af0620edf",
+    "offline": true,
+    "ipc_count_visible": 11,
+    "empty_state": "PASS",
+    "insufficient_no_understanding_no_action": "PASS",
+    "context_request_local_removal_db_hash_unchanged": "PASS",
+    "understanding_identity_basis_why_visible": "PASS",
+    "ignore_suppresses_noticed_and_creates_no_action": "PASS",
+    "explicit_candidate_accept_creates_focus": "PASS",
+    "quit_reopen_focus_persists": "PASS",
+    "insufficient_ui_identity_correlation": "FAIL"
+  },
+  "database_snapshots": {
+    "insufficient": {
+      "sha256": "841cf89e3a7bb659636869e78bf87b7e3adb600eb09896c8e0c8057754228793",
+      "captures": 1,
+      "derivations": 0,
+      "understandings": 0,
+      "feedback": 0,
+      "actions": 0
+    },
+    "sufficient_after_reopen": {
+      "sha256": "889524bbe39e57d6ae1fd901fc5a35adc96cd6d882ac5489ce1d70014ffad328",
+      "captures": 1,
+      "derivations": 2,
+      "understandings": 1,
+      "feedback": 3,
+      "candidate_actions": 1,
+      "actions": 1,
+      "action_results": 0,
+      "audit": 6
+    }
+  },
+  "findings": [
+    {
+      "id": "PM-P1-001",
+      "severity": "P1",
+      "acceptance": "AC-08",
+      "fact": "The actual-Tauri insufficient record is correctly unlinked in SQLite and produces no Understanding or Action, but the visible Evidence box labels it as typed link: candidate and the Capture panel continues to present the sufficient-input heading.",
+      "result": "FAIL"
+    },
+    {
+      "id": "PM-P1-002",
+      "severity": "P1",
+      "acceptance": "AC-11",
+      "fact": "No submitted unit or actual-Tauri fixture contains multiple open Actions. The source orders created_at_ms,id while the contract and UI claim confirmed_at/action_id, so deterministic multi-Action selection is not implemented as a reproducible acceptance fixture.",
+      "result": "NOT_IMPLEMENTED"
+    }
+  ],
+  "counts": {
+    "P0": 0,
+    "P1": 2,
+    "P2": 2,
+    "Unknown": 0,
+    "Not Implemented": 1
+  },
+  "conclusion": "Closure Cycle"
+}

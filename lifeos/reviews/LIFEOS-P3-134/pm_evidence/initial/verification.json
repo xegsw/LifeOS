@@ -1,0 +1,63 @@
+{
+  "task": "LIFEOS-P3-134",
+  "review_phase": "initial_pm_acceptance",
+  "review_mode": "read_only_recomputation_and_targeted_visual_inspection",
+  "engineering_manifest": {
+    "path": "lifeos/engineering/LIFEOS-P3-134/evidence/FINAL_MANIFEST.json",
+    "asset_count": 141,
+    "missing": 0,
+    "extra": 0,
+    "errors": 0,
+    "readonly_verifier_passed": true
+  },
+  "fixed_inputs": {
+    "recomputed": 13,
+    "hash_mismatch": 0,
+    "type_mismatch": 0
+  },
+  "candidate": {
+    "regular_files": 75,
+    "nonregular_files": 0,
+    "mandatory_visual_files_byte_identical": 6,
+    "ipc_count": 11,
+    "ipc_exact": true,
+    "cargo_tests_submitted": "5/5 PASS"
+  },
+  "actual_tauri_submitted": {
+    "runtime_lifecycle": "Today empty -> Capture -> explicit Context -> Candidate -> explicit accept -> Focus -> complete -> reopen",
+    "database_quick_check": "ok",
+    "restart_counts_identical": true,
+    "actual_page_state_coverage": ["Today", "Quick Capture", "Global AI panel"],
+    "missing_actual_page_state_coverage": ["Me", "Contexts", "Context Detail", "Memory", "Memory Detail", "AI Workspace", "Domain activation Gate", "Settings"]
+  },
+  "visual_findings": {
+    "mandatory_viewport": "700x760",
+    "state": "AI Workspace",
+    "machine_fact": "visual-mock-results.json records #main-content width=0 and height=3935",
+    "visual_fact": "candidate-700-workspace.png shows collapsed vertical text and unusable content",
+    "runner_false_positive": "run_visual_mock.cjs checks only that .workspace-reference exists and does not reject zero-width geometry",
+    "root_cause_signal": "candidate/ui/viewport-adapter.css contains the narrow correction but candidate/ui/index.html does not load it"
+  },
+  "missing_contract_evidence": [
+    "fresh reference/candidate per-state DOM matrix and diff allowlist",
+    "same-fixture masked pixel or perceptual comparison",
+    "actual-Tauri complete page-state/action matrix",
+    "zero/one/multiple Action plus stale-Evidence Today scenarios",
+    "actual request-local Global AI removal and reopen proof",
+    "actual keyboard, focus-visible, Escape and reduced-motion run",
+    "full AC-14 mutations for path, symlink chain, file type, existing DB, DTO, idempotency, quota and stale Evidence with sentinel/DB unchanged"
+  ],
+  "cleanup": {
+    "engineering_temp_absent": true,
+    "pm_diagnostic_temp_absent": true,
+    "historical_assets_modified": false
+  },
+  "counts": {
+    "P0": 1,
+    "P1": 2,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 7
+  },
+  "conclusion": "Closure Cycle"
+}

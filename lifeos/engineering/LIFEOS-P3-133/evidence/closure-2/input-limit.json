@@ -1,0 +1,41 @@
+{
+  "kind": "CL-IR-02 input limit receipts",
+  "maximum_unicode_characters": 200,
+  "maximum_records": 3,
+  "actual_ui": {
+    "attempted_characters": 201,
+    "accepted_characters": 200,
+    "two_hundred_first_character_blocked_before_invoke": true
+  },
+  "runtime_test": {
+    "log": "test-logs/cargo-test-real-mode.log",
+    "201_character_request": "rejected_before_write",
+    "fourth_request": "rejected_before_write"
+  },
+  "quota_ui": {
+    "after_three_records": "entry and save control absent",
+    "fourth_write_invocation_available": false
+  },
+  "probe_noncontent_after_ui_boundary_check": {
+    "database_role": "fresh synthetic real-mode fixture",
+    "content_columns_selected": false,
+    "mode": "real_self_use",
+    "contract": "LIFEOS-P3-133",
+    "counts": {
+      "captures": 1,
+      "links": 1,
+      "candidate_actions": 0,
+      "actions": 0,
+      "open_actions": 0,
+      "understandings": 0,
+      "feedback": 0,
+      "audit": 1
+    },
+    "link_states": {
+      "candidate": 1
+    },
+    "candidate_states": {},
+    "action_states": {},
+    "action_confirmation_kinds": {}
+  }
+}

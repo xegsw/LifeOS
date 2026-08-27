@@ -1,0 +1,36 @@
+{
+  "task": "LIFEOS-P3-134",
+  "status": "FINAL_PASS_CANDIDATE",
+  "results": {
+    "AC-01": true,
+    "AC-02": true,
+    "AC-03": true,
+    "AC-04": true,
+    "AC-05": true,
+    "AC-06": true,
+    "AC-07": true,
+    "AC-08": true,
+    "AC-09": true,
+    "AC-10": true,
+    "AC-11": true,
+    "AC-12": true,
+    "AC-13": true,
+    "AC-14": true,
+    "AC-15": true,
+    "AC-16": true
+  },
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 1,
+    "Unknown": 0,
+    "Not Implemented": 0
+  },
+  "overall_pass": true,
+  "nonblocking_p2": {
+    "id": "P3-134-FC-001",
+    "description": "A verifier diagnostic redirect briefly wrote a non-content stdout file outside the authorized temporary root. It was removed immediately by its exact absolute path; no candidate, Evidence, historical asset, Pilot-3, or real-data path was accessed or changed.",
+    "blocking": false
+  },
+  "governance_note": "Engineering Final Pass Candidate only; this does not update PM ledger, close risk, freeze assets, or authorize Stage 4."
+}

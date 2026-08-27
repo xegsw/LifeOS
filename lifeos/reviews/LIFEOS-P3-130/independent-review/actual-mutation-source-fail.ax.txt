@@ -1,0 +1,70 @@
+Window: "LifeOS · P3-130 Context Recovery", App: LifeOS P3-130 Context Recovery.
+0 standard window LifeOS · P3-130 Context Recovery, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: LifeOS · P3-130 Context Recovery, URL: tauri://localhost
+			3 link 跳到主要内容, Value: tauri://localhost#main-content
+			4 container
+				5 container 主导航
+					6 button Today
+					7 button Project Context
+					8 button Memory provenance
+					9 button Runtime status
+				10 text context_evidence_gap: Project Context Evidence gap: source_unavailable
+				11 container
+					12 text TODAY · PROJECT-BACKED CONTEXT RECOVERY
+					13 heading 从原始记录恢复项目上下文。, Value: 1
+						14 text 从原始记录恢复项目上下文。
+					15 text 固定合成数据、离线运行；原文、Project link、Feedback 与审计身份彼此分离。 P3-130 synthetic only
+				16 text Capture · 用户原文
+				17 heading 整理 LifeOS Context Recovery 合成验收记录。, Value: 2
+					18 text 整理 LifeOS Context Recovery 合成验收记录。
+				19 text Source: local_capture · SRC-SYN-WORK-001 · Artifact: ART-SYN-CONTEXT-RECOVERY-001@v1
+				20 button 重试同一 capture（幂等）
+				21 button 刷新 Today
+				22 text capture_record: saved · candidate
+				23 text Typed Project link
+				24 heading LifeOS 产品开发, Value: 2
+					25 text LifeOS 产品开发
+				26 text candidate
+				27 container
+					28 text Context ID: ctx:project:synthetic-lifeos-product Project: synthetic-lifeos-product · Person: person:synthetic-owner
+				29 container
+					30 text 已保留的用户原文 整理 LifeOS Context Recovery 合成验收记录。 capture_id: capture:p3-130:000001a03d7cf836 · link: capture_project_links:capture:p3-130:000001a03d7cf836:candidate
+				31 button 确认纳入此 Project Context
+				32 button 拒绝候选 link
+				33 text Audit / lifecycle
+				34 heading 可复核状态, Value: 2
+					35 text 可复核状态
+				36 text loaded
+				37 text records: 1 · audit events: 2 · saved: 1 · repeats: 0
+				38 container 实际运行时状态
+					39 text {
+  "ipc": [
+    "capture_record",
+    "get_today",
+    "runtime_status",
+    "confirm_capture_context",
+    "get_context_recovery"
+  ],
+  "today": "loaded",
+  "context": "candidate",
+  "selection_included": true
+}
+				40 container
+					41 text Context Inspector
+					42 heading 恢复依据, Value: 2
+						43 text 恢复依据
+					44 text 只呈现 Project 的来源、Artifact、typed link、Feedback 与 audit 引用；不创建通用 Context 表。 无可靠建议 Person-first inspector 当前页面：Today 选中内容：纳入本次本地展示
+					45 button 移出选中
+					46 text Memory provenance Source / Artifact / Project link / Feedback / Audit 均为引用。没有复制用户原文到 Memory。
+					47 button 查看 provenance
+		48 scroll bar (settable, float) 0
+49 menu bar
+	50 LifeOS P3-130 Context Recovery
+	51 File
+	52 Edit
+	53 View
+	54 Window
+	55 Help
+
+The focused UI element is 2 HTML content Description: LifeOS · P3-130 Context Recovery, URL: tauri://localhost

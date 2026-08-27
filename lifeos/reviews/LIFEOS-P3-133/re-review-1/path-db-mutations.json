@@ -1,0 +1,46 @@
+{
+  "kind": "P3-133 re-review-1 independent path and database mutation results",
+  "all_targets_synthetic_and_within_unique_temp_root": true,
+  "mutations": [
+    {
+      "id": "RR-08-relative-root",
+      "surface": "build-time root validation",
+      "result": "blocked_before_build_output",
+      "exit_code": 101,
+      "error_code": "root_must_be_absolute_normalized"
+    },
+    {
+      "id": "RR-08-link-root",
+      "surface": "build-time link-chain validation",
+      "result": "blocked_before_build_output",
+      "exit_code": 101,
+      "error_code": "root_or_ancestor_not_real_directory"
+    },
+    {
+      "id": "RR-08-non-directory-root",
+      "surface": "build-time file-type validation",
+      "result": "blocked_before_build_output",
+      "exit_code": 101,
+      "error_code": "root_or_ancestor_not_real_directory"
+    },
+    {
+      "id": "RR-08-nonempty-root",
+      "surface": "actual Tauri process startup",
+      "result": "blocked_before_window",
+      "exit_code": 101,
+      "error_code": "real_root_not_empty",
+      "sentinel": {"type": "regular", "bytes": 28},
+      "database_created": false
+    },
+    {
+      "id": "RR-08-existing-non-sqlite-db",
+      "surface": "actual Tauri UI load",
+      "result": "blocked_without_success_receipt",
+      "ui_error_code": "database_unavailable",
+      "database": {"type": "regular", "bytes": 52, "contract_readable": false, "error_class": "DatabaseError"},
+      "database_replaced": false
+    }
+  ],
+  "contract_outside_paths_accessed": false,
+  "real_use_boundary_accessed": false
+}

@@ -1,0 +1,56 @@
+{
+  "task": "LIFEOS-P3-133",
+  "phase": "pm_final_acceptance",
+  "conclusion": "PM_PASS_AWAITING_USER_FINAL_CONFIRMATION",
+  "real_use_receipt": {
+    "path": "lifeos/reviews/LIFEOS-P3-133/real-use/real-use-receipt.json",
+    "sha256": "c2579a4084a119a9d61cc72d1cafddd376b34f606839352a678c0c835763be5d"
+  },
+  "pm_path_type_check": {
+    "/Users": "directory",
+    "/Users/xxe": "directory",
+    "/Users/xxe/Documents": "directory",
+    "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-3": "directory",
+    "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-3/capture.sqlite": "regular_file"
+  },
+  "pm_database_check": {
+    "connection": "mode=ro&immutable=1; PRAGMA query_only=ON",
+    "content_columns_selected": false,
+    "database_or_text_hashed": false,
+    "runtime_mode": "real_self_use",
+    "runtime_contract": "LIFEOS-P3-133",
+    "counts": {
+      "captures": 3,
+      "context_links": 3,
+      "confirmed_context_links": 1,
+      "candidate_actions": 1,
+      "accepted_candidate_actions": 1,
+      "actions": 1,
+      "open_actions": 0,
+      "completed_actions": 1,
+      "action_results": 1,
+      "understandings": 0,
+      "feedback": 2,
+      "audit": 7
+    }
+  },
+  "temporary_root": {
+    "path": "/private/tmp/lifeos-p3-133-real-self-use-v1",
+    "status": "ABSENT"
+  },
+  "retention": {
+    "authorized_root_retained": true,
+    "capture_sqlite_retained": true,
+    "cleanup_performed_on_real_root_or_database": false
+  },
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 1,
+    "Unknown": 0,
+    "Not_Implemented": 0
+  },
+  "risk_R_0053": "OPEN_AUTHORIZED_CONTROLLED_EXECUTION_BOUNDARY",
+  "freeze_or_stage_change": false,
+  "local_model_precheck": "SKIPPED_L3_REAL_PERSONAL_DATA_FINAL_JUDGMENT"
+}

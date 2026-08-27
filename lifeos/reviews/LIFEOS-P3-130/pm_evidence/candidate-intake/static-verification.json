@@ -1,0 +1,39 @@
+{
+  "candidate_modified_from_inherited_allowlist": [
+    "Cargo.lock",
+    "Cargo.toml",
+    "src/runtime.rs",
+    "tauri.conf.json",
+    "ui/app.js",
+    "ui/index.html",
+    "ui/runtime-adapter.js"
+  ],
+  "five_ipc_commands": [
+    "capture_record",
+    "get_today",
+    "runtime_status",
+    "confirm_capture_context",
+    "get_context_recovery"
+  ],
+  "problems": [],
+  "renderer_invoked_ipc": [
+    "capture_record",
+    "confirm_capture_context",
+    "get_context_recovery",
+    "get_today",
+    "runtime_status"
+  ],
+  "result": "PASS",
+  "source_allowlist_expected": "af8fe84d2c809821bd076903ee2bfc303ae397b512c628adc4cf6e6ed7ef6b9c",
+  "source_allowlist_sha256": "af8fe84d2c809821bd076903ee2bfc303ae397b512c628adc4cf6e6ed7ef6b9c",
+  "source_lineage": "75/75",
+  "source_rows": 75,
+  "task": "LIFEOS-P3-130",
+  "task_contract_expected": "f39f1ca8460389fa637f8e1e175f43ef67742697efbb5ea1e8081ed8aacd10ec",
+  "task_contract_sha256": "f39f1ca8460389fa637f8e1e175f43ef67742697efbb5ea1e8081ed8aacd10ec",
+  "ui_shell": {
+    "app_shell": true,
+    "fixtures_loaded": false,
+    "icon_rail": true
+  }
+}

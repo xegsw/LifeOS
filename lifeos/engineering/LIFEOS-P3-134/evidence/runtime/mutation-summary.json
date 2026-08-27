@@ -1,0 +1,12 @@
+{
+  "task": "LIFEOS-P3-134",
+  "mode": "offline synthetic",
+  "results": [
+    {"case": "missing_build_time_runtime_root", "result": "PASS", "proof": "initial offline bundle attempt stopped at build.rs before bundle output"},
+    {"case": "invalid_synthetic_capture", "result": "PASS", "proof": "cargo test synthetic_lifecycle_and_no_write_rejection"},
+    {"case": "insufficient_evidence_no_candidate_or_action", "result": "PASS", "proof": "cargo test synthetic_insufficient_evidence_never_creates_candidate_or_action"},
+    {"case": "closed_eleven_ipc_surface", "result": "PASS", "proof": "cargo test status_is_closed_to_the_frozen_eleven_ipc and verification.json"},
+    {"case": "preexisting_real_database_boundary", "result": "PASS", "proof": "inherited P3-133 regression test real_preexisting_database_is_rejected_before_write; P3-134 actual mode remains synthetic by contract"}
+  ],
+  "content_policy": "No mutation uses a real Runtime root, Pilot, real text, or real database."
+}

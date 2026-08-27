@@ -1,0 +1,73 @@
+{
+  "task": "LIFEOS-P3-131",
+  "kind": "actual_tauri_ui_ipc_sqlite_audit_correlation",
+  "operator": "Codex Computer Use via @oai/sky",
+  "data_boundary": "fixed synthetic-only data; no network, model, Agent, external Source, or historical runtime root",
+  "runs": [
+    {
+      "run": "run-b",
+      "bundle": "evidence/build-cache/run-b/debug/bundle/macos/LifeOS P3-131 Candidate Next Action.app",
+      "scenario": "direct accept, close/reopen, completed result, provenance",
+      "ui_ipc_sequence": [
+        {"ui": "记录有充分证据的原文", "ipc": "capture_record", "result": "saved", "capture_id": "capture:p3-131:000001a03ddee8ee", "link_status": "candidate"},
+        {"ui": "确认纳入 Project Context", "ipc": "confirm_capture_context", "result": "saved/confirm", "context_id": "ctx:project:synthetic-lifeos-product"},
+        {"ui": "Candidate Next Action", "ipc": "get_context_next_action", "result": "one system-derived candidate", "candidate_id": "candidate:p3-131:000001a03ddf029d", "processor": "local_rule:p3-131-v1"},
+        {"ui": "接受并创建 Action", "ipc": "decide_context_next_action", "result": "accept", "action_id": "action:p3-131:000001a03ddf19ab"},
+        {"ui": "actual app close then reopen", "ipc": "get_today/get_context_recovery/get_context_next_action", "result": "open confirmed Action remains visible; Today Focus remains null"},
+        {"ui": "记录已完成结果", "ipc": "record_action_result", "result": "saved/completed", "result_id": "action_result:p3-131:000001a03ddf7e52"},
+        {"ui": "Memory provenance", "ipc": "get_today", "result": "Derivation/Candidate/Feedback/Action/Result refs visible; memory_copy_created=false"}
+      ],
+      "sqlite_audit_snapshot": "run-b-direct-accept-complete-reopen.json"
+    },
+    {
+      "run": "run-c",
+      "bundle": "evidence/build-cache/run-c/debug/bundle/macos/LifeOS P3-131 Candidate Next Action.app",
+      "scenario": "edit_accept",
+      "ui_ipc_sequence": [
+        {"ui": "record and confirm sufficient Context", "ipc": "capture_record + confirm_capture_context", "result": "candidate available"},
+        {"ui": "编辑后接受", "ipc": "decide_context_next_action", "result": "edit_accept", "action_id": "action:p3-131:000001a03de30c55", "action_text": "整理并复核 LifeOS Context Recovery 合成验收记录。"}
+      ],
+      "sqlite_audit_snapshot": "run-c-edit-accept.json"
+    },
+    {
+      "run": "run-d",
+      "bundle": "evidence/build-cache/run-d/debug/bundle/macos/LifeOS P3-131 Candidate Next Action.app",
+      "scenario": "reject",
+      "ui_ipc_sequence": [
+        {"ui": "record and confirm sufficient Context", "ipc": "capture_record + confirm_capture_context", "result": "candidate available"},
+        {"ui": "拒绝", "ipc": "decide_context_next_action", "result": "reject; no confirmed Today Action; Today Focus remains null"}
+      ],
+      "sqlite_audit_snapshot": "run-d-reject.json"
+    },
+    {
+      "run": "run-e",
+      "bundle": "evidence/build-cache/run-e/debug/bundle/macos/LifeOS P3-131 Candidate Next Action.app",
+      "scenario": "defer",
+      "ui_ipc_sequence": [
+        {"ui": "record and confirm sufficient Context", "ipc": "capture_record + confirm_capture_context", "result": "candidate available"},
+        {"ui": "暂缓", "ipc": "decide_context_next_action", "result": "defer; no confirmed Today Action; Today Focus remains null"}
+      ],
+      "sqlite_audit_snapshot": "run-e-defer.json"
+    },
+    {
+      "run": "run-g",
+      "bundle": "evidence/build-cache/run-g/debug/bundle/macos/LifeOS P3-131 Candidate Next Action.app",
+      "scenario": "pristine insufficient-evidence negative control",
+      "ui_ipc_sequence": [
+        {"ui": "记录证据不足原文", "ipc": "capture_record", "result": "saved/unlinked_insufficient"},
+        {"ui": "Candidate Next Action", "ipc": "get_context_next_action", "result": "zero candidates; visible disclosure '暂时没有足够证据判断。'; no Action and no Today Focus"}
+      ],
+      "sqlite_audit_snapshot": "run-g-insufficient.json"
+    }
+  ],
+  "command_inventory_observed_in_actual_app": [
+    "capture_record",
+    "get_today",
+    "runtime_status",
+    "confirm_capture_context",
+    "get_context_recovery",
+    "get_context_next_action",
+    "decide_context_next_action",
+    "record_action_result"
+  ]
+}

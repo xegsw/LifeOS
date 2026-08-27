@@ -1,0 +1,39 @@
+{
+  "task": "LIFEOS-P3-134",
+  "phase": "closure-2_pm_intake",
+  "review_mode": "read_only",
+  "manifest": {
+    "asset_count": 9,
+    "complete": true,
+    "asset_errors": 0,
+    "self_referential": false
+  },
+  "strict_verifier": {
+    "exit_code": 1,
+    "outcome": "NOT_PASS",
+    "expected": true
+  },
+  "assessment": {
+    "engineering_stop_was_correct": true,
+    "contract_change_required": false,
+    "new_task_required": false,
+    "new_ipc_required": false,
+    "counts_changed": false
+  },
+  "approved_same_contract_evidence_method": [
+    "Create an evidence-only actual-Tauri build under the authorized task temporary root; do not modify historical inputs or promote the probe into the final candidate.",
+    "Without adding a Tauri IPC command, use renderer-side JavaScript to compute non-content DOM/class/landmark/getBoundingClientRect/computed-token facts and expose them through an AX-readable output or task-local log.",
+    "Use an evidence-only Tauri setup/window probe to record native inner-size/content bounds to a task-local non-content log; no product command or generic interface may be added.",
+    "Record an exact source-delta/hash inventory proving the evidence build differs from the final candidate only by the bounded probe, then discard the probe and reverify the final candidate.",
+    "Render the fixed P3-116 source and the candidate with the same synthetic fixture in equivalent offline actual-Tauri evidence bundles, then run a task-local masked perceptual comparator.",
+    "Build multi-Action/stale and failure-closure scenarios with separate disposable synthetic databases and pre-start fixtures; no seeding IPC is permitted."
+  ],
+  "remaining_counts": {
+    "P0": 0,
+    "P1": 1,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 4
+  },
+  "conclusion": "Closure Cycle continues with clarified evidence method"
+}

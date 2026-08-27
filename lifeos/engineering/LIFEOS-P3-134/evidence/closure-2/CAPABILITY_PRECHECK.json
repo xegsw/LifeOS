@@ -1,0 +1,37 @@
+{
+  "task": "LIFEOS-P3-134",
+  "closure": "closure-2",
+  "phase": "fresh actual-tauri geometry capability preflight",
+  "input_mode": "offline_synthetic",
+  "bundle": {
+    "product": "LifeOS P3-134 Closure-2 Geometry Probe",
+    "identifier": "local.lifeos.p3-134.closure2.geometry",
+    "logical_viewport_requested": "700x760",
+    "actual_screenshot_pixels": "700x760",
+    "run_state": "opened, captured, then closed"
+  },
+  "capture_surface": {
+    "actual_tauri": true,
+    "available_fields": ["app", "screenshot", "accessibility_text"],
+    "native_content_bounds": "UNAVAILABLE",
+    "webview_dom_geometry": "UNAVAILABLE",
+    "computed_style": "UNAVAILABLE",
+    "dom_class_inventory": "UNAVAILABLE",
+    "reason": "The permitted actual-app capture interface returned a screenshot and semantic accessibility tree only. It exposes no coordinate, DOM, class, computed-style, or WebView-evaluation field."
+  },
+  "evidence": {
+    "actual_ax": "actual/actual-700-geometry-capability-ax.txt",
+    "actual_screenshot": "actual/actual-700-geometry-capability.png",
+    "cargo_test": "logs/cargo-test-synthetic.log",
+    "source_integrity": "static/source-integrity.json"
+  },
+  "acceptance_effect": {
+    "AC-03": "NOT_IMPLEMENTED: required fresh per-state DOM/class/landmark/geometry reference-candidate matrix cannot be produced",
+    "AC-04": "NOT_PASS: required actual native-content and WebView/DOM geometry for all three viewports cannot be produced",
+    "AC-05": "NOT_IMPLEMENTED: required same-fixture reference-candidate perceptual comparison cannot be produced without the frozen geometry/baseline capture",
+    "AC-10": "NOT_IMPLEMENTED: only the existing five runtime tests were fresh-run; no complete new multi-action/stale actual-UI/IPC/DB/audit/restart matrix exists",
+    "AC-14": "NOT_IMPLEMENTED: no complete fresh per-fixture pre-write sentinel/DB-unchanged matrix exists",
+    "overall": "NOT_PASS"
+  },
+  "substitution_policy": "No browser mock, source scan, screenshot, source hash, or narrative is promoted to the unavailable actual-Tauri proof."
+}

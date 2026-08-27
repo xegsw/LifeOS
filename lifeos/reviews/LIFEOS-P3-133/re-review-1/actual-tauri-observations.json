@@ -1,0 +1,42 @@
+{
+  "kind": "P3-133 re-review-1 actual Tauri non-content observations",
+  "synthetic_only": true,
+  "bundle": {
+    "relative_identity": "target/release/bundle/macos/LifeOS P3-133 Controlled Work Self-Use.app/Contents/MacOS/lifeos-p3-133",
+    "bytes": 11756864,
+    "sha256": "1116231922c2bd116077fd10c267bbf8015f21786f68eed2806024efa0638ec1"
+  },
+  "capture_lifecycle": {
+    "ui_read_before_render_observed": true,
+    "three_unicode_200_capture_saves": 3,
+    "after_explicit_context_confirmation_open_actions": 0,
+    "after_explicit_candidate_acceptance_open_actions": 1,
+    "after_explicit_candidate_acceptance_today_focus": 1,
+    "restart_record_count": 3,
+    "restart_open_action_count": 1,
+    "restart_today_focus_present": true,
+    "fourth_capture_entry_absent_after_three": true
+  },
+  "input_limit": {
+    "textarea_maxlength": 200,
+    "unicode_201_supplied_to_actual_control": true,
+    "unicode_201_attempt_was_not_submitted": true,
+    "unicode_201_runtime_probe": "runtime-201check-after-201-entry.json",
+    "database_exists_after_unsubmitted_attempt": false,
+    "fourth_write_block": "Capture entry absent after the third persisted record; runtime-positive-after-restart.json remains at three captures"
+  },
+  "model_boundary": {
+    "ipc_allowlist_count": 11,
+    "model_port": "disabled_for_real_input",
+    "model_adapter": "disabled_in_real_mode",
+    "understanding_count": 0,
+    "lifeos_noticed": "none"
+  },
+  "privacy": {
+    "captured_screenshots": 0,
+    "raw_ax_artifacts_written": 0,
+    "input_body_or_opaque_capture_identity_written": false,
+    "evidence_uses": ["counts", "error_codes", "bundle identity", "boolean UI observations"]
+  },
+  "computer_use_rule": "The accessibility tree was refreshed after every UI action; only non-content derived observations are persisted here."
+}

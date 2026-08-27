@@ -1,0 +1,16 @@
+{
+  "task": "LIFEOS-P3-134",
+  "repair": "candidate/ui/index.html now loads the existing task-local viewport-adapter.css after inherited styles.css; the repair only sets the narrow inspector grid column.",
+  "mandatory_700_workspace": {
+    "status": "PASS",
+    "evidence": "../actual/actual-700-workspace.png and ../actual/actual-700-workspace-ax.txt",
+    "observable": ["#main-content exposes a text field, five suggestion buttons, a send control and three recommendation start buttons", "main content is visibly multi-column-width and not vertically collapsed", "rail remains icon-only"]
+  },
+  "screenshots": {
+    "1280x1024_logical": {"capture_pixels": "960x768", "status": "PARTIAL", "reason": "host capture is physically cropped; config and bundle identity establish the logical window but this is not an exact physical screenshot"},
+    "1160x768": {"capture_pixels": "1160x768", "status": "PASS"},
+    "700x760": {"capture_pixels": "700x760", "status": "PASS"}
+  },
+  "hard_gate": "A future verifier must reject zero width/height, horizontal overflow, absent primary action, absent Global AI entry, or missing viewport evidence.",
+  "overall": "NOT_PASS because an actual native DOM-bounds export and complete per-viewport action coverage are absent."
+}

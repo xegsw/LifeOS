@@ -1,0 +1,46 @@
+{
+  "task": "LIFEOS-P3-133",
+  "review_phase": "pm_closure_2",
+  "conclusion": "ENGINEERING_CLOSURE_ACCEPTED_FOR_MANDATORY_INDEPENDENT_RE_REVIEW",
+  "final_task_pass": false,
+  "readonly_verifier": {
+    "path": "lifeos/engineering/LIFEOS-P3-133/tools/verify_closure2_readonly.py",
+    "sha256": "3516568bc54b8d2e9df1143dc86f89c19c5ea4a87a126daf924a87f78d9d42dc",
+    "exit_code": 0,
+    "checks_passed": 12,
+    "checks_total": 12,
+    "default_mode_writes": false
+  },
+  "engineering_tree_stability": {
+    "files_before": 129,
+    "files_after": 129,
+    "all_sha256_unchanged": true
+  },
+  "lineage": {
+    "candidate_files": 75,
+    "stable_closure_evidence_files": 20,
+    "final_manifest_sha256": "697d2a788e177b259bed741b8c257bcd3dbdabe550b02b1ddff947b2a2633d35",
+    "candidate_ui_app_sha256": "ad6acf0bead37a9b21a5493e194146c6aa1b7a74b3579705d081bc2a3e8d6d97",
+    "deliverable_sha256": "be9404c447f142667353513d76fad773ca3fed2c32be6251b1f7e0bec8dac953"
+  },
+  "closure_items": {
+    "CL-IR-01": "PASS",
+    "CL-IR-02": "PASS_ENGINEERING_STAGE",
+    "CL-IR-03": "PASS"
+  },
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 1,
+    "Unknown": 0,
+    "Not_Implemented": 2
+  },
+  "temporary_roots": {
+    "/private/tmp/lifeos-p3-133-real-self-use-v1": "ABSENT",
+    "/private/tmp/lifeos-p3-133-independent-review-v1": "ABSENT"
+  },
+  "pilot_3_access_by_pm": "NOT_ATTEMPTED",
+  "real_run": "PROHIBITED_PENDING_NEW_INDEPENDENT_PASS_AND_PM_VALIDATION",
+  "risk_R_0053": "OPEN_AUTHORIZED_CONTROLLED_EXECUTION_BOUNDARY",
+  "local_model_precheck": "SKIPPED_HIGH_RISK_L3_HUMAN_REVIEW_REQUIRED"
+}

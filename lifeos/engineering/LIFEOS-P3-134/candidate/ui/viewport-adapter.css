@@ -1,0 +1,6 @@
+/* Narrow correction only: the inherited generic inspector rule targets column 2. */
+@media (max-width: 1120px) {
+  .workspace-reference .workspace-inspector {
+    grid-column: 1;
+  }
+}

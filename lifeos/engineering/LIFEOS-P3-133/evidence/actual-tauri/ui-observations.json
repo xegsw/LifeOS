@@ -1,0 +1,54 @@
+{
+  "contract": "LIFEOS-P3-133",
+  "evidence_kind": "actual_tauri_visible_state",
+  "observed_via": "Computer Use against locally built native Tauri bundles and task-local synthetic SQLite roots",
+  "real_root_access": "not attempted",
+  "runs": [
+    {
+      "id": "positive-lifecycle",
+      "mode": "synthetic",
+      "actions": [
+        {"step": "fresh_start", "observed": "record_count=0; Today has no reliable focus"},
+        {"step": "capture", "observed": "capture_record:saved; Context link is candidate; no Action"},
+        {"step": "repeat_capture", "observed": "capture_record:idempotent_repeat; record_count remains 1"},
+        {"step": "confirm_context", "observed": "Context is confirmed; Candidate is visible; Today remains empty"},
+        {"step": "refresh", "observed": "Candidate remains visible; no automatic Today Focus"},
+        {"step": "accept_candidate", "observed": "one confirmed open Action becomes Today's Focus"},
+        {"step": "global_and_memory", "observed": "Global AI Context and Memory provenance pages are visible; Memory shows identity references only"},
+        {"step": "reopen", "observed": "record count, confirmed Context, open Action and Today's Focus remain visible"}
+      ],
+      "noncontent_result": "synthetic-run-noncontent.json",
+      "screenshots": [
+        {"path": "screenshots/synthetic-confirmed-action.jpeg", "sha256": "b7c53d40707c5094a42be94c324199fe9ecaefce9c54643b14748d461a04e27b"},
+        {"path": "screenshots/synthetic-reopen-focus.jpeg", "sha256": "c48b2bf0d7a233d3b89625e4a99130b73bedfe6f4e773fa19f6feff6bd5494a3"}
+      ]
+    },
+    {
+      "id": "link-rejection",
+      "mode": "synthetic",
+      "actions": [
+        {"step": "capture_then_reject_link", "observed": "Context link is rejected; Candidate count=0; Action count=0; Today remains empty"}
+      ],
+      "noncontent_result": "synthetic-link-rejected-noncontent.json",
+      "screenshots": [
+        {"path": "screenshots/synthetic-link-rejected.jpeg", "sha256": "edd6f867aa6da61f97b9c2f4ca0ecbd70fc24f28eb1b1eb7a0979f3b5de23e5f"}
+      ]
+    },
+    {
+      "id": "candidate-rejection",
+      "mode": "synthetic",
+      "actions": [
+        {"step": "confirm_context_then_reject_candidate", "observed": "Candidate decision is reject; Action count=0; Today remains empty"}
+      ],
+      "noncontent_result": "synthetic-candidate-rejected-noncontent.json",
+      "screenshots": [
+        {"path": "screenshots/synthetic-candidate-rejected.jpeg", "sha256": "6846d2c66acaf714b77bda3a6bdf68a1842050c783619a4b0f75b23e3820e6fe"}
+      ]
+    }
+  ],
+  "not_run": {
+    "real_input_ui": "blocked pending independent review and PM validation",
+    "keyboard_path": "not an acceptance action in this Task Contract",
+    "viewport_resize": "not an acceptance action in this Task Contract"
+  }
+}

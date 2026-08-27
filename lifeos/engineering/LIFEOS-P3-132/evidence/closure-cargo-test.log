@@ -1,0 +1,16 @@
+command: LIFEOS_RUNTIME_ROOT=/private/tmp/lifeos-p3-132-global-ai-today-lite-v1/closure-test CARGO_TARGET_DIR=lifeos/engineering/LIFEOS-P3-132/evidence/build-cache/closure-test CARGO_NET_OFFLINE=true cargo test --locked --offline -- --test-threads=1
+
+running 11 tests
+test runtime::tests::all_understanding_feedback_decisions_are_append_only_and_suppress_or_correct_notice ... ok
+test runtime::tests::direct_accept_complete_and_reopen_are_traceable ... ok
+test runtime::tests::edit_accept_separates_candidate_and_user_action ... ok
+test runtime::tests::global_context_understanding_and_today_focus_are_traceable ... ok
+test runtime::tests::insufficient_evidence_has_no_derivation_candidate_action_or_feedback ... ok
+test runtime::tests::link_rejection_and_understanding_dto_unknown_field_fail_closed ... ok
+test runtime::tests::multi_open_actions_use_confirmed_at_then_action_id_after_reopen ... ok
+test runtime::tests::mutations_and_invalid_requests_are_no_write ... ok
+test runtime::tests::reject_and_defer_append_feedback_without_action ... ok
+test runtime::tests::request_local_removal_and_insufficient_evidence_have_no_write ... ok
+test runtime::tests::status_has_exactly_eleven_commands_and_offline_adapter ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out

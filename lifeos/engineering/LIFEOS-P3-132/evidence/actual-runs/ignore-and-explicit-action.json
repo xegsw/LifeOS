@@ -1,0 +1,202 @@
+{
+  "contract": "LIFEOS-P3-132",
+  "evidence_kind": "actual_tauri_sqlite_audit_snapshot",
+  "case": "ignore_and_explicit_action",
+  "runtime_root": "/private/tmp/lifeos-p3-132-global-ai-today-lite-v1/run-evidence-ignore",
+  "database": {
+    "filename": "capture.sqlite",
+    "bytes": 118784,
+    "sha256": "1fef67a65e5510fe10febd0b2bb8f97890ffd375a94a898b261eb4c17eced16e",
+    "read_mode": "sqlite_uri_mode_ro"
+  },
+  "row_counts": {
+    "captures": 1,
+    "projects": 1,
+    "capture_project_links": 1,
+    "derivations": 2,
+    "understandings": 1,
+    "feedback": 3,
+    "candidate_actions": 1,
+    "actions": 1,
+    "action_results": 0,
+    "audit": 6
+  },
+  "rows": {
+    "captures": [
+      {
+        "id": "capture:p3-131:000001a03e2ebe25",
+        "content": "整理 LifeOS Context Recovery 合成验收记录。",
+        "created_at_ms": 1787749645861,
+        "source": "local_capture",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "idem_key": "p3-130-capture-001"
+      }
+    ],
+    "projects": [
+      {
+        "id": "synthetic-lifeos-product",
+        "person_id": "person:synthetic-owner",
+        "title": "LifeOS 产品开发",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "source_available": 1,
+        "generation_current": 1,
+        "tombstoned": 0,
+        "authorized": 1,
+        "evidence_ready": 1
+      }
+    ],
+    "capture_project_links": [
+      {
+        "capture_id": "capture:p3-131:000001a03e2ebe25",
+        "project_id": "synthetic-lifeos-product",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "link_status": "confirmed",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1"
+      }
+    ],
+    "derivations": [
+      {
+        "id": "derivation:p3-131:000001a03e2ed13b",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "capture_id": "capture:p3-131:000001a03e2ebe25",
+        "processor": "local_rule:p3-131-v1",
+        "processor_version": "v1",
+        "basis_refs": "capture:capture:p3-131:000001a03e2ebe25|capture_project_links:capture:p3-131:000001a03e2ebe25:confirmed|source:SRC-SYN-WORK-001|artifact:ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "why_text": "已确认 Project-backed Context 且固定 Evidence 当前有效。",
+        "created_at_ms": 1787749650747
+      },
+      {
+        "id": "derivation:p3-132:000001a03e2ed13d",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "capture_id": "capture:p3-131:000001a03e2ebe25",
+        "processor": "offline_synthetic_model:p3-132-v1",
+        "processor_version": "p3-132-v1",
+        "basis_refs": "capture:capture:p3-131:000001a03e2ebe25|capture_project_links:capture:p3-131:000001a03e2ebe25:confirmed|source:SRC-SYN-WORK-001|artifact:ART-SYN-CONTEXT-RECOVERY-001@v1|project:synthetic-lifeos-product|context:ctx:project:synthetic-lifeos-product|selection:capture:p3-131:000001a03e2ebe25",
+        "why_text": "离线合成适配器仅消费已确认 Context、当前 Source/Artifact 与 Evidence refs；page=Today，selection=capture:p3-131:000001a03e2ebe25。",
+        "created_at_ms": 1787749650749
+      }
+    ],
+    "understandings": [
+      {
+        "id": "understanding:p3-132:000001a03e2ed13d",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "capture_id": "capture:p3-131:000001a03e2ebe25",
+        "request_id": "p3-132-ui-capture_p3-131_000001a03e2ebe25-none",
+        "page": "today",
+        "selection_ref": "capture:p3-131:000001a03e2ebe25",
+        "removed_context_kinds": "",
+        "derivation_id": "derivation:p3-132:000001a03e2ed13d",
+        "processor": "offline_synthetic_model:p3-132-v1",
+        "processor_version": "p3-132-v1",
+        "observation_text": "当前 Context 已具备继续推进所需的已确认 Evidence。",
+        "suggestion_text": "继续完成 LifeOS Context Recovery 合成验收记录的复核。",
+        "basis_refs": "capture:capture:p3-131:000001a03e2ebe25|capture_project_links:capture:p3-131:000001a03e2ebe25:confirmed|source:SRC-SYN-WORK-001|artifact:ART-SYN-CONTEXT-RECOVERY-001@v1|project:synthetic-lifeos-product|context:ctx:project:synthetic-lifeos-product|selection:capture:p3-131:000001a03e2ebe25",
+        "why_text": "离线合成适配器仅消费已确认 Context、当前 Source/Artifact 与 Evidence refs；page=Today，selection=capture:p3-131:000001a03e2ebe25。",
+        "evidence_state": "sufficient",
+        "created_at_ms": 1787749650749
+      }
+    ],
+    "feedback": [
+      {
+        "id": 1,
+        "target_kind": "capture_context",
+        "target_id": "capture:p3-131:000001a03e2ebe25",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "decision": "confirm",
+        "idem_key": "p3-131-ui-link-confirm",
+        "detail": "explicit_user_decision",
+        "created_at_ms": 1787749650743
+      },
+      {
+        "id": 2,
+        "target_kind": "understanding",
+        "target_id": "understanding:p3-132:000001a03e2ed13d",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "decision": "ignore",
+        "idem_key": "p3-132-ui-ignore-understanding_p3-132_000001a03e2ed13d",
+        "detail": "",
+        "created_at_ms": 1787749657138
+      },
+      {
+        "id": 3,
+        "target_kind": "candidate_action",
+        "target_id": "candidate:p3-131:000001a03e2ed13b",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "decision": "accept",
+        "idem_key": "p3-131-ui-accept-001",
+        "detail": "action:p3-131:000001a03e2f12b8",
+        "created_at_ms": 1787749667512
+      }
+    ],
+    "candidate_actions": [
+      {
+        "id": "candidate:p3-131:000001a03e2ed13b",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "capture_id": "capture:p3-131:000001a03e2ebe25",
+        "derivation_id": "derivation:p3-131:000001a03e2ed13b",
+        "candidate_text": "整理 LifeOS Context Recovery 合成验收记录。",
+        "candidate_state": "accepted",
+        "created_at_ms": 1787749650747
+      }
+    ],
+    "actions": [
+      {
+        "id": "action:p3-131:000001a03e2f12b8",
+        "candidate_id": "candidate:p3-131:000001a03e2ed13b",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "action_text": "整理 LifeOS Context Recovery 合成验收记录。",
+        "confirmation_kind": "accept",
+        "action_state": "open",
+        "created_at_ms": 1787749667512
+      }
+    ],
+    "action_results": [],
+    "audit": [
+      {
+        "id": 1,
+        "event": "capture_saved",
+        "target_id": "capture:p3-131:000001a03e2ebe25",
+        "created_at_ms": 1787749645861,
+        "detail": "local_capture"
+      },
+      {
+        "id": 2,
+        "event": "context_confirmed",
+        "target_id": "capture:p3-131:000001a03e2ebe25",
+        "created_at_ms": 1787749650743,
+        "detail": "ctx:project:synthetic-lifeos-product"
+      },
+      {
+        "id": 3,
+        "event": "understanding_generated",
+        "target_id": "understanding:p3-132:000001a03e2ed13d",
+        "created_at_ms": 1787749650749,
+        "detail": "offline_synthetic_model:p3-132-v1"
+      },
+      {
+        "id": 4,
+        "event": "understanding_ignored",
+        "target_id": "understanding:p3-132:000001a03e2ed13d",
+        "created_at_ms": 1787749657138,
+        "detail": "ignore"
+      },
+      {
+        "id": 5,
+        "event": "action_created",
+        "target_id": "action:p3-131:000001a03e2f12b8",
+        "created_at_ms": 1787749667512,
+        "detail": "accept"
+      },
+      {
+        "id": 6,
+        "event": "candidate_accepted",
+        "target_id": "candidate:p3-131:000001a03e2ed13b",
+        "created_at_ms": 1787749667512,
+        "detail": "accept"
+      }
+    ]
+  }
+}

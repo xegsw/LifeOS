@@ -1,0 +1,42 @@
+{
+  "task": "LIFEOS-P3-134",
+  "mode": "offline synthetic",
+  "purpose": "native content-bounds, WebView geometry, identity and capture receipt",
+  "captures": [
+    {
+      "logical_viewport": "1280x1024",
+      "bundle_product": "LifeOS P3-134 Final Evidence 3 / Native Bounds 1280 / WebView Bounds 1280",
+      "window_title": "LifeOS · Person-centered workspace",
+      "ax": ["final3-action-ax.txt", "native-bounds-1280-ax.txt", "native-webview-1280-ax.txt"],
+      "screenshot": "final3-action.png",
+      "native_content_bounds_physical_px": "2560x2048",
+      "webview_dom_geometry_logical_px": "1280x1024",
+      "native_bounds": "native-bounds-1280.json",
+      "note": "The final lifecycle screenshot is physically host-cropped to 960x768, so the separately instrumented no-IPC native bounds run records the actual 2x backing-pixel content size and the WebView AX probe records its logical DOM size."
+    },
+    {
+      "logical_viewport": "1160x768",
+      "bundle_product": "LifeOS P3-134 Viewport 1160 Evidence / Native Bounds 1160 / WebView Bounds 1160",
+      "window_title": "LifeOS · Person-centered workspace",
+      "ax": ["actual-1160-empty-ax.txt", "native-bounds-1160-ax.txt", "native-webview-1160-ax.txt"],
+      "screenshot": "actual-1160-empty.png",
+      "screenshot_pixels": "1160x768",
+      "native_content_bounds_physical_px": "2320x1536",
+      "webview_dom_geometry_logical_px": "1160x768",
+      "native_bounds": "native-bounds-1160.json"
+    },
+    {
+      "logical_viewport": "700x760",
+      "bundle_product": "LifeOS P3-134 Viewport 700 Evidence / Native Bounds 700 / WebView Bounds 700",
+      "window_title": "LifeOS · Person-centered workspace",
+      "ax": ["actual-700-empty-ax.txt", "native-bounds-700-ax.txt", "native-webview-700-ax.txt"],
+      "screenshot": "actual-700-empty.png",
+      "screenshot_pixels": "700x760",
+      "native_content_bounds_physical_px": "1400x1520",
+      "webview_dom_geometry_logical_px": "700x760",
+      "native_bounds": "native-bounds-700.json"
+    }
+  ],
+  "source_state": "The screenshot/lifecycle runs use the final candidate UI and Runtime behavior. Native-bound collection used a temporary no-IPC setup probe and a visually-hidden AX probe solely to emit non-content dimensions; both probes were removed before final source/hash verification. Temporary bundle identity and viewport configuration differed only for capture.",
+  "content_policy": "Fixed synthetic UI only; no Pilot root, real data, network, model, credential, or PM ledger was accessed."
+}

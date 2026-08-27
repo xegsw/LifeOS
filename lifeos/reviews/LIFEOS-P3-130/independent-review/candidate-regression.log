@@ -1,0 +1,13 @@
+
+running 5 tests
+test runtime::tests::reject_is_idempotent_and_does_not_create_memory_copy ... ok
+test runtime::tests::bad_requests_and_atomic_failure_leave_no_success_state ... ok
+test runtime::tests::lifecycle_confirmation_reopen_and_provenance_are_consistent ... ok
+test runtime::tests::conflicts_and_unknown_fields_fail_before_durable_change ... ok
+test runtime::tests::three_independent_evidence_gaps_fail_closed_before_confirmation_write ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+   Compiling lifeos-p3-130 v0.1.0 (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-130/candidate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.55s
+     Running unittests src/main.rs (/private/tmp/lifeos-p3-130-context-recovery-v1/build-cache/debug/deps/lifeos_p3_130-8789e623df548394)

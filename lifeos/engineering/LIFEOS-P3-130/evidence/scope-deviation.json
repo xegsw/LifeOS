@@ -1,0 +1,12 @@
+{
+  "task": "LIFEOS-P3-130",
+  "severity": "P1",
+  "status": "CLEANED_BUT_NOT_ERASED_FROM_EXECUTION_HISTORY",
+  "fact": "A transient manifest-parse output was created at /private/tmp/p3-130-manifest-parse.json, outside the task contract's sole permitted temporary root.",
+  "cleanup": {
+    "exact_path_removed": "/private/tmp/p3-130-manifest-parse.json",
+    "exists_after_cleanup": false
+  },
+  "impact": "No project, historical, real-data, network, model, agent, or external asset was accessed or changed. The deviation still prevents claiming P1=0 or task Pass under this Frozen contract.",
+  "required_next_decision": "PM must decide whether this cleaned process deviation requires a new scoped task or whether it may be recorded as non-acceptance history. This engineering session will not self-waive it."
+}

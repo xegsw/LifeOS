@@ -1,0 +1,102 @@
+{
+  "kind": "P3-133 re-review-1 independent read-only verification",
+  "engine_verifier_imported_or_called": false,
+  "fixed_inputs": [
+    {
+      "path": "lifeos/tasks/LIFEOS-P3-133_controlled_real_input_work_self_use_runtime_loop.md",
+      "regular": true,
+      "expected_sha256": "5035cf9b4b4fa85c431f02616cd323f5aa0ec614ff6f73bddc509f1e98c96d08",
+      "actual_sha256": "5035cf9b4b4fa85c431f02616cd323f5aa0ec614ff6f73bddc509f1e98c96d08",
+      "passed": true
+    },
+    {
+      "path": "lifeos/tasks/LIFEOS-P3-133_controlled_real_input_work_self_use_runtime_loop_acceptance_basis_freeze.md",
+      "regular": true,
+      "expected_sha256": "3b1a801eb7fb61e4f9165c0e8331bf6ebef85cdcd6f87f934051455440d8f7c3",
+      "actual_sha256": "3b1a801eb7fb61e4f9165c0e8331bf6ebef85cdcd6f87f934051455440d8f7c3",
+      "passed": true
+    },
+    {
+      "path": "lifeos/tasks/LIFEOS-P3-133_user_confirmation.md",
+      "regular": true,
+      "expected_sha256": "f2516cbed95ddccd82a748ab6ff7bd8de72a71792779ccfad2d02df649d0a648",
+      "actual_sha256": "f2516cbed95ddccd82a748ab6ff7bd8de72a71792779ccfad2d02df649d0a648",
+      "passed": true
+    },
+    {
+      "path": "lifeos/architecture/LifeOS架构基线V1.0.md",
+      "regular": true,
+      "expected_sha256": "1d7d82d2afcf7ac52b15730f4f8d3effc08f8965d0b085c6a53bbd2611ad7236",
+      "actual_sha256": "1d7d82d2afcf7ac52b15730f4f8d3effc08f8965d0b085c6a53bbd2611ad7236",
+      "passed": true
+    },
+    {
+      "path": "lifeos/engineering/LIFEOS-P3-132/evidence/FINAL_MANIFEST.json",
+      "regular": true,
+      "expected_sha256": "be1c8efe05cab8722a1010a3ba9231e7d81f290653f03d8200c0c5e6eb6e7e21",
+      "actual_sha256": "be1c8efe05cab8722a1010a3ba9231e7d81f290653f03d8200c0c5e6eb6e7e21",
+      "passed": true
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-132_pm_review.md",
+      "regular": true,
+      "expected_sha256": "f787b626c4eace3dbb42eaa5750d6dace7a2aa9734f587b99ac81adb00331d4b",
+      "actual_sha256": "f787b626c4eace3dbb42eaa5750d6dace7a2aa9734f587b99ac81adb00331d4b",
+      "passed": true
+    }
+  ],
+  "closure_manifest": {
+    "task_contract_sha_matches_freeze": true,
+    "acceptance_basis_sha_matches_freeze": true,
+    "p3_132_source_manifest_sha_matches_freeze": true,
+    "candidate_inventory": {
+      "declared": 75,
+      "actual": 75,
+      "missing": [],
+      "extra": [],
+      "mismatches": [],
+      "passed": true
+    },
+    "closure_evidence_inventory": {
+      "declared": 20,
+      "actual": 20,
+      "missing": [],
+      "extra": [],
+      "mismatches": [],
+      "passed": true
+    },
+    "self_excluded": true
+  },
+  "p3_132_history_candidate": {
+    "declared": 75,
+    "actual": 75,
+    "missing": [],
+    "extra": [],
+    "mismatches": [],
+    "passed": true
+  },
+  "static_source_checks": {
+    "read_before_busy_render": true,
+    "old_read_after_render_pattern_absent": true,
+    "runtime_declares_exact_eleven": true,
+    "capability_permissions_empty": true,
+    "csp_connect_only_ipc": true,
+    "runtime_real_mode_model_disabled": true,
+    "runtime_no_generic_surface": true,
+    "build_requires_explicit_root_and_mode": true,
+    "expected_ipc": [
+      "capture_record",
+      "get_today",
+      "runtime_status",
+      "confirm_capture_context",
+      "get_context_recovery",
+      "get_context_next_action",
+      "decide_context_next_action",
+      "record_action_result",
+      "assemble_global_ai_context",
+      "get_evidence_backed_understanding",
+      "decide_understanding_feedback"
+    ]
+  },
+  "passed": true
+}

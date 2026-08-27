@@ -1,0 +1,20 @@
+{
+  "contract": "LIFEOS-P3-132",
+  "fixture_kind": "task_local_multi_open_confirmed_actions",
+  "runtime_root": "/private/tmp/lifeos-p3-132-global-ai-today-lite-v1/closure-cl02-multi",
+  "database_sha256": "f58a5bd140145b2eb9a4940ca07b82f341f0499aa564de6d7670f19d51fd07cb",
+  "quick_check": "ok",
+  "insert_order": [
+    "action:p3-131:fixture-newer",
+    "action:p3-131:fixture-tie-z",
+    "action:p3-131:fixture-tie-a"
+  ],
+  "ordering_rule": "confirmed_at_ms ASC, action_id ASC",
+  "expected_open_order": [
+    "action:p3-131:fixture-tie-a",
+    "action:p3-131:fixture-tie-z",
+    "action:p3-131:fixture-newer"
+  ],
+  "expected_todays_focus": "action:p3-131:fixture-tie-a",
+  "tie_break": "fixture-tie-a and fixture-tie-z have the same confirmed_at_ms=7000; fixture-tie-a wins by action_id"
+}

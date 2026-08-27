@@ -1,0 +1,42 @@
+{
+  "task": "LIFEOS-P3-133",
+  "phase": "pm_validation_of_mandatory_independent_review",
+  "date": "2026-08-27",
+  "independent_review": {
+    "sha256": "8afac1dfc487952dfde1c4dfcedac6498944b253bd3c45626c34fcc714ddb99a",
+    "conclusion": "REWORK_CLOSURE_CYCLE_REQUIRED"
+  },
+  "independent_manifest_sha256": "7f705540032ae18c2c4118014dc679ee875553ec39c0abf5c98c6d37b08305e4",
+  "readonly_replay": {
+    "exit_code": 0,
+    "pass": true,
+    "checks": {
+      "manifest_inventory_exact": true,
+      "recorded_p0_is_actual_tauri": true,
+      "recorded_real_run_not_executed": true,
+      "recorded_verification_is_non_pass": true
+    },
+    "files_before": 34,
+    "files_after": 34,
+    "changed_files": []
+  },
+  "p0": {
+    "id": "P0-IR-01",
+    "fact": "candidate/ui/app.js calls render after setting busy and before reading #real-capture-text, replacing the textarea and submitting an empty string",
+    "actual_tauri_observation": "real_input_rejected; count remained 0/3; synthetic review DB was not created",
+    "evidence_sha256": "5c67d6f7ae27e1154dc1ea3093ed1582b926653f408eb815f6f95d3766e16f7b"
+  },
+  "counts": {
+    "P0": 1,
+    "P1": 0,
+    "P2": 1,
+    "Unknown": 0,
+    "Not_Implemented": 7
+  },
+  "path_state": {
+    "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-3": "absent",
+    "/private/tmp/lifeos-p3-133-real-self-use-v1": "absent",
+    "/private/tmp/lifeos-p3-133-independent-review-v1": "absent"
+  },
+  "disposition": "Accept independent Rework conclusion; return CL-IR-01 through CL-IR-03 to the same P3-133 Closure Cycle. Real self-use remains prohibited."
+}

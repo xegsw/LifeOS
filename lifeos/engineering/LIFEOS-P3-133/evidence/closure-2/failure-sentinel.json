@@ -1,0 +1,67 @@
+{
+  "kind": "pre-write rejection non-content sentinel",
+  "over_200": {
+    "ui_prevented_201st_character": true,
+    "probe_state_unchanged_after_non-submitted_boundary_attempt": {
+      "database_role": "fresh synthetic real-mode fixture",
+      "content_columns_selected": false,
+      "mode": "real_self_use",
+      "contract": "LIFEOS-P3-133",
+      "counts": {
+        "captures": 1,
+        "links": 1,
+        "candidate_actions": 0,
+        "actions": 0,
+        "open_actions": 0,
+        "understandings": 0,
+        "feedback": 0,
+        "audit": 1
+      },
+      "link_states": {
+        "candidate": 1
+      },
+      "candidate_states": {},
+      "action_states": {},
+      "action_confirmation_kinds": {}
+    }
+  },
+  "fourth_record": {
+    "quota_control_absent_before_write": true,
+    "post_restart_state": {
+      "database_role": "fresh synthetic real-mode fixture",
+      "content_columns_selected": false,
+      "mode": "real_self_use",
+      "contract": "LIFEOS-P3-133",
+      "counts": {
+        "captures": 3,
+        "links": 3,
+        "candidate_actions": 1,
+        "actions": 1,
+        "open_actions": 1,
+        "understandings": 0,
+        "feedback": 2,
+        "audit": 6
+      },
+      "link_states": {
+        "candidate": 2,
+        "confirmed": 1
+      },
+      "candidate_states": {
+        "accepted": 1
+      },
+      "action_states": {
+        "open": 1
+      },
+      "action_confirmation_kinds": {
+        "accept": 1
+      }
+    }
+  },
+  "runtime_fail_closed_regression": {
+    "201_before_write": true,
+    "fourth_before_write": true,
+    "preexisting_non_sqlite_db_unchanged": true,
+    "database_before_after_compared_in_test": true,
+    "database_hash_retained_in_evidence": false
+  }
+}

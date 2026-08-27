@@ -1,0 +1,63 @@
+{
+  "task": "LIFEOS-P3-132",
+  "phase": "closure_cycle_reacceptance",
+  "date": "2026-08-26",
+  "task_contract_sha256": "139650a299be89d8603c3ecb84bd958ced312428f28f2da82b661fff04405dcb",
+  "manifest_recompute": {
+    "candidate_entries": 75,
+    "evidence_entries": 42,
+    "mismatches": 0,
+    "result": "PASS"
+  },
+  "history_recompute": {
+    "source_task": "LIFEOS-P3-131",
+    "source_manifest_sha256": "4341c989a9199f7cb860518ba76d304923ea0571a47be3205c983198685c80a8",
+    "candidate_entries": 75,
+    "mismatches": 0,
+    "result": "PASS"
+  },
+  "pm_regression": {
+    "command": "/Users/xxe/.cargo/bin/cargo test --locked --offline -- --test-threads=1",
+    "passed": 11,
+    "failed": 0,
+    "result": "PASS"
+  },
+  "closure_findings": {
+    "CL-01": {
+      "result": "PASS",
+      "visible_capture": "LifeOS Context Recovery 合成记录。",
+      "visible_identity": "user_original",
+      "visible_link_state": "Project link: none · evidence insufficient",
+      "forbidden_candidate_label_absent": true,
+      "row_counts": {
+        "captures": 1,
+        "capture_project_links": 0,
+        "derivations": 0,
+        "understandings": 0,
+        "feedback": 0,
+        "candidate_actions": 0,
+        "actions": 0
+      },
+      "database_sha256_before_after_reopen": "0e29eb385b8ebe99c2e1bec7a11d53bf72ac99287e6a019a02d08c5c4a05e0d6"
+    },
+    "CL-02": {
+      "result": "PASS",
+      "ordering_rule": "confirmed_at_ms ASC, action_id ASC",
+      "open_action_count": 3,
+      "expected_focus": "action:p3-131:fixture-tie-a",
+      "start_refresh_reopen_database_sha256": "17c3feef5d76677a24479398e84087d8e4879f23dae6b9c8abf65fe82e7a4257",
+      "tie_break_verified": true,
+      "refresh_verified": true,
+      "quit_reopen_verified": true
+    }
+  },
+  "independent_review_trigger": false,
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 2,
+    "Unknown": 0,
+    "Not Implemented": 0
+  },
+  "conclusion": "PASS"
+}

@@ -1,0 +1,32 @@
+{
+  "task": "LIFEOS-P3-134",
+  "closure": "closure-2",
+  "phase": "fail-closed evidence capability stop",
+  "fresh_actual_tauri": {
+    "bundle": "LifeOS P3-134 Closure-2 Geometry Probe",
+    "viewport_capture_pixels": "700x760",
+    "accessibility_tree": "captured",
+    "screenshot": "captured",
+    "process_closed_before_cleanup": true
+  },
+  "fresh_runtime": {
+    "command": "cargo test --locked --offline",
+    "input_mode": "synthetic",
+    "result": "5/5 PASS"
+  },
+  "readonly_verifier": {
+    "asset_errors": 0,
+    "manifest_complete": true,
+    "expected_exit_code": 1,
+    "outcome": "NOT_PASS",
+    "writes_during_verification": false
+  },
+  "blocker": {
+    "native_content_bounds": "unavailable",
+    "webview_dom_geometry": "unavailable",
+    "consequence": "AC-03, AC-04 and AC-05 cannot be closed; AC-10 and AC-14 remain not implemented because no substitute evidence is accepted."
+  },
+  "counts": {"P0": 0, "P1": 1, "P2": 0, "Unknown": 0, "Not Implemented": 4},
+  "whole_package": "NOT_PASS",
+  "cleanup": "exact temporary root absent"
+}

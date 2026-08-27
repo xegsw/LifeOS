@@ -1,0 +1,116 @@
+{
+  "counts": {
+    "action_results": 0,
+    "actions": 0,
+    "audit": 3,
+    "candidate_actions": 1,
+    "capture_project_links": 1,
+    "captures": 1,
+    "derivations": 1,
+    "feedback": 2,
+    "projects": 1
+  },
+  "database": {
+    "bytes": 94208,
+    "quick_check": "ok",
+    "sha256": "81178d927c95865e6ead1eae5afcb759787362dbc5ab079af22d48ae6786a730",
+    "tables": [
+      "action_results",
+      "actions",
+      "audit",
+      "candidate_actions",
+      "capture_project_links",
+      "captures",
+      "derivations",
+      "feedback",
+      "projects",
+      "sqlite_sequence"
+    ],
+    "unexpected_tables": [],
+    "user_version": 131
+  },
+  "kind": "actual_tauri_sqlite_snapshot",
+  "label": "defer-no-action",
+  "rows": {
+    "action_results": [],
+    "actions": [],
+    "audit": [
+      {
+        "detail": "local_capture",
+        "event": "capture_saved",
+        "id": 1,
+        "target_id": "capture:p3-131:000001a03de61e83"
+      },
+      {
+        "detail": "ctx:project:synthetic-lifeos-product",
+        "event": "context_confirmed",
+        "id": 2,
+        "target_id": "capture:p3-131:000001a03de61e83"
+      },
+      {
+        "detail": "defer",
+        "event": "candidate_deferred",
+        "id": 3,
+        "target_id": "candidate:p3-131:000001a03de6376a"
+      }
+    ],
+    "candidates": [
+      {
+        "candidate_state": "deferred",
+        "candidate_text": "整理 LifeOS Context Recovery 合成验收记录。",
+        "capture_id": "capture:p3-131:000001a03de61e83",
+        "derivation_id": "derivation:p3-131:000001a03de6376a",
+        "id": "candidate:p3-131:000001a03de6376a"
+      }
+    ],
+    "captures": [
+      {
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "content": "整理 LifeOS Context Recovery 合成验收记录。",
+        "id": "capture:p3-131:000001a03de61e83",
+        "idem_key": "p3-130-capture-001",
+        "source": "local_capture",
+        "source_id": "SRC-SYN-WORK-001"
+      }
+    ],
+    "derivations": [
+      {
+        "basis_refs": "capture:capture:p3-131:000001a03de61e83|capture_project_links:capture:p3-131:000001a03de61e83:confirmed|source:SRC-SYN-WORK-001|artifact:ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "capture_id": "capture:p3-131:000001a03de61e83",
+        "id": "derivation:p3-131:000001a03de6376a",
+        "processor": "local_rule:p3-131-v1",
+        "processor_version": "v1"
+      }
+    ],
+    "feedback": [
+      {
+        "decision": "confirm",
+        "detail": "explicit_user_decision",
+        "id": 1,
+        "idem_key": "p3-131-ui-link-confirm",
+        "target_id": "capture:p3-131:000001a03de61e83",
+        "target_kind": "capture_context"
+      },
+      {
+        "decision": "defer",
+        "detail": "",
+        "id": 2,
+        "idem_key": "p3-131-ui-defer-001",
+        "target_id": "candidate:p3-131:000001a03de6376a",
+        "target_kind": "candidate_action"
+      }
+    ],
+    "links": [
+      {
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "capture_id": "capture:p3-131:000001a03de61e83",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "link_status": "confirmed",
+        "project_id": "synthetic-lifeos-product",
+        "source_id": "SRC-SYN-WORK-001"
+      }
+    ]
+  },
+  "runtime_root": "/private/tmp/lifeos-p3-131-next-action-v1/run-e",
+  "task": "LIFEOS-P3-131"
+}

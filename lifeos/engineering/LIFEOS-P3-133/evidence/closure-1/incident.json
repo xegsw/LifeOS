@@ -1,0 +1,18 @@
+{
+  "kind": "pm_evidence_integrity_incident",
+  "decision": "D-0540",
+  "affected_original_summaries": [
+    {
+      "path": "../verification.json",
+      "current_sha256": "d4e88c15437ee4e472ebe03901f79d4885af99e3d0744712e82eda35403c36ea",
+      "positive_evidence_status": "excluded"
+    },
+    {
+      "path": "../FINAL_MANIFEST.json",
+      "current_sha256": "a22614e992bdf1b9f42255491b61e33333c17e2caa578550ad889e5917037828",
+      "positive_evidence_status": "excluded"
+    }
+  ],
+  "statement": "The original summaries were overwritten by a write-capable verifier after the synthetic task root was cleaned. This closure lineage never overwrites them and does not treat them as positive evidence.",
+  "real_root_access": "not attempted"
+}

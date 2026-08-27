@@ -1,0 +1,33 @@
+{
+  "task": "LIFEOS-P3-134",
+  "run_kind": "offline actual Tauri; fixed non-sensitive synthetic fixture",
+  "bundle_runs": [
+    {"viewport": "1280x1024 logical", "product": "LifeOS P3-134 High Fidelity Runtime", "evidence": "actual-1280-initial.png", "host_capture": "960x768 physical; native logical config is separately recorded"},
+    {"viewport": "1160x768", "product": "LifeOS P3-134 Closure 1160", "evidence": "actual-1160-initial.png"},
+    {"viewport": "700x760", "product": "LifeOS P3-134 Closure 700", "evidence": "actual-700-workspace.png"}
+  ],
+  "actual_700_states": [
+    {"state": "Today empty", "status": "PASS", "evidence": "actual-700-initial-ax.txt"},
+    {"state": "Today insufficient after Capture before Context confirmation", "status": "PASS", "evidence": "actual-700-capture-saved-ax.txt"},
+    {"state": "Quick Capture", "status": "PASS", "evidence": "actual-700-quick-capture-ax.txt"},
+    {"state": "explicit Context confirmation then Candidate without Action", "status": "PASS", "evidence": "actual-700-context-candidate-ax.txt"},
+    {"state": "Today normal only after explicit Candidate accept", "status": "PASS", "evidence": "actual-700-today-focus-ax.txt"},
+    {"state": "completed Action returns to insufficient", "status": "PASS", "evidence": "actual-700-completed-ax.txt"},
+    {"state": "Me", "status": "PASS", "evidence": "actual-700-me-ax.txt"},
+    {"state": "Contexts", "status": "PASS", "evidence": "actual-700-contexts-ax.txt"},
+    {"state": "Context Detail", "status": "PASS", "evidence": "actual-700-context-detail-ax.txt"},
+    {"state": "Memory", "status": "PASS", "evidence": "actual-700-memory-ax.txt"},
+    {"state": "Memory Detail", "status": "PASS", "evidence": "actual-700-memory-detail-ax.txt"},
+    {"state": "Global AI and request-local Health removal", "status": "PASS", "evidence": "actual-700-request-local-removal-ax.txt"},
+    {"state": "AI Workspace", "status": "PASS", "evidence": "actual-700-workspace-ax.txt"},
+    {"state": "Context candidate modal", "status": "PASS", "evidence": "actual-700-context-modal-ax.txt"},
+    {"state": "Domain activation Gate", "status": "PASS", "evidence": "actual-700-domain-gate-ax.txt"},
+    {"state": "Settings and reduced-motion preview", "status": "PASS", "evidence": "actual-700-reduced-motion-ax.txt"},
+    {"state": "Escape and focus-visible keyboard path", "status": "PASS", "evidence": "actual-700-escape-ax.txt, actual-700-focus-visible-ax.txt"},
+    {"state": "close/reopen persistence", "status": "PASS", "evidence": "actual-700-reopen-ax.txt"}
+  ],
+  "known_gaps": [
+    "The full interaction matrix was only driven in the 700x760 actual bundle; 1280x1024 and 1160x768 have initial actual bundle/AX evidence but not every page action.",
+    "No native WebView DOM bounding-box export is available in the current actual-app capture surface."
+  ]
+}

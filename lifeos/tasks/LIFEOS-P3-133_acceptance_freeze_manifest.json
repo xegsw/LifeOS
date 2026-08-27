@@ -1,0 +1,56 @@
+{
+  "manifest_kind": "LIFEOS-P3-133 acceptance basis freeze manifest (non-self)",
+  "task": "LIFEOS-P3-133",
+  "decision": "D-0539",
+  "frozen_at": "2026-08-26",
+  "status": "frozen",
+  "task_contract": {
+    "path": "lifeos/tasks/LIFEOS-P3-133_controlled_real_input_work_self_use_runtime_loop.md",
+    "sha256": "5035cf9b4b4fa85c431f02616cd323f5aa0ec614ff6f73bddc509f1e98c96d08"
+  },
+  "acceptance_basis": {
+    "path": "lifeos/tasks/LIFEOS-P3-133_controlled_real_input_work_self_use_runtime_loop_acceptance_basis_freeze.md",
+    "sha256": "3b1a801eb7fb61e4f9165c0e8331bf6ebef85cdcd6f87f934051455440d8f7c3"
+  },
+  "user_confirmation": {
+    "path": "lifeos/tasks/LIFEOS-P3-133_user_confirmation.md",
+    "sha256": "f2516cbed95ddccd82a748ab6ff7bd8de72a71792779ccfad2d02df649d0a648"
+  },
+  "fixed_inputs": [
+    {
+      "path": "lifeos/architecture/LifeOS架构基线V1.0.md",
+      "sha256": "1d7d82d2afcf7ac52b15730f4f8d3effc08f8965d0b085c6a53bbd2611ad7236"
+    },
+    {
+      "path": "lifeos/engineering/LIFEOS-P3-132/evidence/FINAL_MANIFEST.json",
+      "sha256": "be1c8efe05cab8722a1010a3ba9231e7d81f290653f03d8200c0c5e6eb6e7e21"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-132_pm_review.md",
+      "sha256": "f787b626c4eace3dbb42eaa5750d6dace7a2aa9734f587b99ac81adb00331d4b"
+    }
+  ],
+  "candidate_preflight": {
+    "declared_files": 75,
+    "actual_files": 75,
+    "missing": 0,
+    "extra": 0,
+    "hash_or_type_mismatch": 0
+  },
+  "preflight_path_state": {
+    "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-3": "absent",
+    "/private/tmp/lifeos-p3-133-real-self-use-v1": "absent",
+    "/private/tmp/lifeos-p3-133-independent-review-v1": "absent"
+  },
+  "authorized_real_boundary": {
+    "runtime_root": "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-3",
+    "database": "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-3/capture.sqlite",
+    "max_records": 3,
+    "max_unicode_characters_per_record": 200,
+    "user_enters_text_in_app": true,
+    "real_text_in_evidence_logs_screenshots_hash_or_model": false,
+    "independent_synthetic_review_before_real_run": true,
+    "retain_real_root_and_database": true,
+    "cleanup_requires_separate_confirmation": true
+  }
+}

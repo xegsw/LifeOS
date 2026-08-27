@@ -1,0 +1,53 @@
+{
+  "contract": "LIFEOS-P3-132",
+  "evidence_kind": "actual_tauri_visible_state",
+  "observed_via": "Computer Use against the locally built native Tauri application",
+  "cl01_insufficient_reopen": {
+    "runtime_root": "/private/tmp/lifeos-p3-132-global-ai-today-lite-v1/closure-cl01-insufficient",
+    "bundle_identity": "bundle-identities/closure-cl01/lifeos-p3-132",
+    "screenshot": "screenshots/closure-cl01-insufficient-reopen-verified.jpeg",
+    "screenshot_sha256": "b095ef6751daaa3aecd45167d50226982939405361bd101439b1b45f112fbe01",
+    "visible_capture_text": "LifeOS Context Recovery 合成记录。",
+    "visible_record_identity": "user_original",
+    "visible_link_state": "Project link: none · evidence insufficient",
+    "forbidden_visible_link": "typed link: candidate",
+    "visible_understanding_disclosure": "暂时没有足够证据判断。",
+    "visible_action_state": "今天没有特别需要你处理的事情。",
+    "restart_verified": true,
+    "sqlite_snapshots": [
+      "closure-cl01-before-second-reopen.json",
+      "closure-cl01-after-second-reopen.json"
+    ]
+  },
+  "cl02_multi_open_actions": {
+    "runtime_root": "/private/tmp/lifeos-p3-132-global-ai-today-lite-v1/closure-cl02-multi",
+    "bundle_identity": "bundle-identities/closure-cl02/lifeos-p3-132",
+    "expected_focus": "action:p3-131:fixture-tie-a",
+    "visible_open_action_count": 3,
+    "visible_order": [
+      "action:p3-131:fixture-tie-a · confirmed_at: 7000",
+      "action:p3-131:fixture-tie-z · confirmed_at: 7000",
+      "action:p3-131:fixture-newer · confirmed_at: 7002"
+    ],
+    "actual_states": [
+      {
+        "phase": "start",
+        "screenshot": "screenshots/closure-cl02-multi-start.jpeg",
+        "screenshot_sha256": "a31d11441e37d687976b4a3327eeb99607c363380f4f65a9e04d93b4dd78fc98",
+        "sqlite_snapshot": "closure-cl02-multi-start.json"
+      },
+      {
+        "phase": "refresh",
+        "screenshot": "screenshots/closure-cl02-multi-refresh.jpeg",
+        "screenshot_sha256": "ea37c022293225b15759551fcd46d14adac1407227229c1cd4bf342513d9c3f2",
+        "sqlite_snapshot": "closure-cl02-multi-refresh.json"
+      },
+      {
+        "phase": "quit_reopen",
+        "screenshot": "screenshots/closure-cl02-multi-reopen.jpeg",
+        "screenshot_sha256": "8586844a3e6152782f60d9570eeaa2c94d0eee1377ee91a1fc318b531ef6537d",
+        "sqlite_snapshot": "closure-cl02-multi-reopen.json"
+      }
+    ]
+  }
+}

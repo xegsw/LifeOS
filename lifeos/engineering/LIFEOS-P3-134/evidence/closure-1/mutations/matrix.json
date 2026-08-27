@@ -1,0 +1,10 @@
+{
+  "task": "LIFEOS-P3-134",
+  "executed": [
+    {"case": "invalid synthetic Capture DTO", "status": "PASS", "evidence": "../logs/cargo-test.log; runtime::tests::synthetic_lifecycle_and_no_write_rejection"},
+    {"case": "stale/insufficient evidence creates no Candidate or Action", "status": "PASS", "evidence": "../logs/cargo-test.log; runtime::tests::synthetic_insufficient_evidence_never_creates_candidate_or_action"},
+    {"case": "closed eleven-IPC surface", "status": "PASS", "evidence": "../logs/cargo-test.log; runtime::tests::status_is_closed_to_the_frozen_eleven_ipc"}
+  ],
+  "not_implemented": ["fresh per-case path and directory-link-chain fixtures", "file-type and pre-existing-DB sentinels", "DTO/idempotency/quota mutation matrix with pre-write DB evidence", "full stale-evidence and every-failure sentinel/DB-nonchange receipt"],
+  "overall": "NOT_PASS"
+}

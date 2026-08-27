@@ -1,0 +1,108 @@
+{
+  "task": "LIFEOS-P3-131",
+  "review_kind": "pm_fresh_actual_tauri_acceptance",
+  "date": "2026-08-26",
+  "boundary": {
+    "candidate_root": "lifeos/engineering/LIFEOS-P3-131/candidate",
+    "pm_temp_root": "/private/tmp/lifeos-p3-131-next-action-v1",
+    "data": "fixed synthetic only",
+    "network_model_agent": "not used",
+    "historical_runtime_roots": "not accessed"
+  },
+  "fixed_hashes": {
+    "task_contract": "b0ccb255c9f353b05c357da0aab281ee4b8829a26f38acd5f25c8f9767cc3d57",
+    "deliverable": "c0d8235188e0687498b9fcb6669434cc46cff76170bbe1b1b2d20e10c8ca3ae6",
+    "engineering_final_manifest": "4341c989a9199f7cb860518ba76d304923ea0571a47be3205c983198685c80a8",
+    "source_lineage": "95de01185b27014e6b3517cd47d60d72de7c3cee2cac6ed7627675b919d194e6"
+  },
+  "recomputation": {
+    "submitted_verifier_outputs_byte_exact": true,
+    "candidate_manifest_entries": 75,
+    "retained_evidence_manifest_entries": 14,
+    "manifest_entries_verified": 89,
+    "manifest_mismatches": 0,
+    "source_lineage_rows": 75,
+    "source_lineage_problems": 0,
+    "closure_rows_pass": 12,
+    "commands_exact": 8,
+    "renderer_permissions": 0
+  },
+  "actual_tauri_runs": [
+    {
+      "run": "accept_complete_reopen",
+      "observed": [
+        "capture saved",
+        "context explicitly confirmed",
+        "one system-derived candidate with visible rule basis and why",
+        "accept created one open confirmed Action",
+        "actual quit and separate reopen preserved the open Action",
+        "completed result removed the Action from Today",
+        "Memory provenance displayed Derivation, Candidate, Feedback, Action and Result references",
+        "today_focus remained null"
+      ],
+      "sqlite_quick_check": "ok",
+      "database_sha256": "60c73703c44297f5dc044474d10e01a8b1229be8f9df2fef674affa3d0898265",
+      "counts": {"captures": 1, "links": 1, "derivations": 1, "candidates": 1, "feedback": 2, "actions": 1, "results": 1, "audit": 5}
+    },
+    {
+      "run": "edit_accept",
+      "observed": ["explicit edit_accept created one open Action with the fixed edited text", "today_focus remained null"],
+      "action_text": "整理并复核 LifeOS Context Recovery 合成验收记录。",
+      "sqlite_quick_check": "ok",
+      "database_sha256": "e7ea940611c4f362dfe70b0cca820ae29251bd9093af008be9be32b75d380c1d",
+      "counts": {"captures": 1, "links": 1, "derivations": 1, "candidates": 1, "feedback": 2, "actions": 1, "results": 0, "audit": 4}
+    },
+    {
+      "run": "reject",
+      "observed": ["explicit reject appended reject feedback", "no Action or Result was created", "today_focus remained null"],
+      "sqlite_quick_check": "ok",
+      "database_sha256": "06ba9ca98b29e368b5f7b005d3ead1ba293058dde1ad756bd93f4a269a74b992",
+      "counts": {"captures": 1, "links": 1, "derivations": 1, "candidates": 1, "feedback": 2, "actions": 0, "results": 0, "audit": 3}
+    },
+    {
+      "run": "defer",
+      "observed": ["explicit defer appended defer feedback", "no Action or Result was created", "today_focus remained null"],
+      "sqlite_quick_check": "ok",
+      "database_sha256": "8c95241e5dce1d000b74cf614c4cdd796818b7c1baf901a29d9c8ebe2009dbee",
+      "counts": {"captures": 1, "links": 1, "derivations": 1, "candidates": 1, "feedback": 2, "actions": 0, "results": 0, "audit": 3}
+    },
+    {
+      "run": "insufficient_evidence",
+      "observed": ["fixed insufficient-evidence disclosure was visible", "zero candidate and zero downstream side effects"],
+      "sqlite_quick_check": "ok",
+      "database_sha256": "82e6e4f71efaaec11743d329771e6f3c571cdf16dd774558431ab77bcc608943",
+      "counts": {"captures": 1, "links": 0, "derivations": 0, "candidates": 0, "feedback": 0, "actions": 0, "results": 0, "audit": 1}
+    }
+  ],
+  "automated_tests": {
+    "command": "cargo test --locked --offline",
+    "passed": 6,
+    "failed": 0,
+    "includes": ["idempotency", "invalid state", "mutation fail-closed", "runtime-root fail-closed"]
+  },
+  "non_blocking_findings": [
+    {
+      "id": "PM-P2-001",
+      "severity": "P2",
+      "finding": "The submitted actual-app action log names app bundles inside excluded build-cache while the Final Manifest says no assertion depends on build-cache bytes; the authored log also lacks a raw PID and timestamp chain.",
+      "acceptance_treatment": "PM rebuilt the current candidate in the sole fresh task temp root and directly repeated every required actual-Tauri lifecycle path with correlated read-only SQLite checks. The submitted discrepancy remains preserved as a non-blocking Evidence-quality finding."
+    },
+    {
+      "id": "PM-P2-002",
+      "severity": "P2",
+      "finding": "The submitted source scanner reports the substring fs. and the closure checker only trusts PASS text.",
+      "acceptance_treatment": "The only match is basis_refs.map in ui/app.js, not a filesystem API. Independent targeted scanning found no renderer SQL, filesystem, network, ModelPort or AgentPort path; permissions are empty."
+    }
+  ],
+  "pm_cleanup": {
+    "exact_path": "/private/tmp/lifeos-p3-131-next-action-v1",
+    "pre_cleanup_size": "1.3G",
+    "post_cleanup_exists": false,
+    "historical_roots_touched": false
+  },
+  "final_counts": {"P0": 0, "P1": 0, "P2": 2, "Unknown": 0, "Not_Implemented": 0},
+  "conclusion": "PASS",
+  "independent_review_triggered": false,
+  "independent_review_reason": "PM could recompute all fixed artifacts and restore direct confidence through a fresh actual-Tauri rebuild and complete lifecycle rerun; no candidate contamination, authorization breach or unresolved critical dispute remained.",
+  "local_model_precheck": "skipped for the high-risk final actual-Tauri and local-data-boundary judgment; PM performed direct deterministic verification"
+}

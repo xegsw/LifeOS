@@ -1,0 +1,61 @@
+{
+  "capability_permissions": [],
+  "capability_permissions_empty": true,
+  "command_definitions": [
+    "capture_record",
+    "get_today",
+    "runtime_status",
+    "confirm_capture_context",
+    "get_context_recovery",
+    "get_context_next_action",
+    "decide_context_next_action",
+    "record_action_result",
+    "assemble_global_ai_context",
+    "get_evidence_backed_understanding",
+    "decide_understanding_feedback"
+  ],
+  "commands_exact": true,
+  "connect_src_ipc_only": true,
+  "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src ipc:; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'",
+  "expected_ipc": [
+    "capture_record",
+    "get_today",
+    "runtime_status",
+    "confirm_capture_context",
+    "get_context_recovery",
+    "get_context_next_action",
+    "decide_context_next_action",
+    "record_action_result",
+    "assemble_global_ai_context",
+    "get_evidence_backed_understanding",
+    "decide_understanding_feedback"
+  ],
+  "explicit_confirm_present": true,
+  "forbidden_runtime_tokens": {
+    "Command::": false,
+    "TcpStream": false,
+    "UdpSocket": false,
+    "curl ": false,
+    "reqwest": false,
+    "std::process": false,
+    "wget ": false
+  },
+  "forbidden_tokens_absent": true,
+  "handler_commands": [
+    "capture_record",
+    "get_today",
+    "runtime_status",
+    "confirm_capture_context",
+    "get_context_recovery",
+    "get_context_next_action",
+    "decide_context_next_action",
+    "record_action_result",
+    "assemble_global_ai_context",
+    "get_evidence_backed_understanding",
+    "decide_understanding_feedback"
+  ],
+  "input_limits_present": true,
+  "pass": true,
+  "path_rejection_present": true,
+  "real_mode_disables_adapter": true
+}

@@ -1,0 +1,61 @@
+{
+  "kind": "strict IPC and restricted-surface inventory",
+  "expected_ipc": [
+    "capture_record",
+    "get_today",
+    "runtime_status",
+    "confirm_capture_context",
+    "get_context_recovery",
+    "get_context_next_action",
+    "decide_context_next_action",
+    "record_action_result",
+    "assemble_global_ai_context",
+    "get_evidence_backed_understanding",
+    "decide_understanding_feedback"
+  ],
+  "declared_ipc": [
+    "capture_record",
+    "get_today",
+    "runtime_status",
+    "confirm_capture_context",
+    "get_context_recovery",
+    "get_context_next_action",
+    "decide_context_next_action",
+    "record_action_result",
+    "assemble_global_ai_context",
+    "get_evidence_backed_understanding",
+    "decide_understanding_feedback"
+  ],
+  "handled_ipc": [
+    "capture_record",
+    "get_today",
+    "runtime_status",
+    "confirm_capture_context",
+    "get_context_recovery",
+    "get_context_next_action",
+    "decide_context_next_action",
+    "record_action_result",
+    "assemble_global_ai_context",
+    "get_evidence_backed_understanding",
+    "decide_understanding_feedback"
+  ],
+  "capability_permissions": [],
+  "forbidden_surface_hits": {
+    "Command::new": false,
+    "std::process::Command": false,
+    "reqwest": false,
+    "TcpStream": false,
+    "UdpSocket": false,
+    "fetch(": false,
+    "XMLHttpRequest": false,
+    "WebSocket": false,
+    "plugin-shell": false
+  },
+  "real_mode_status": {
+    "model_port": "disabled_for_real_input",
+    "model_adapter": "disabled_in_real_mode",
+    "network": false,
+    "shell": false,
+    "export": false
+  }
+}

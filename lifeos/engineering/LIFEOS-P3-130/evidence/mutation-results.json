@@ -1,0 +1,19 @@
+{
+  "task": "LIFEOS-P3-130",
+  "source": "candidate/src/runtime.rs unit tests; see unit-tests.log",
+  "result": "PASS",
+  "project_evidence_gap_mutations": [
+    {"mutation": "source_available=0", "result": "context_evidence_gap", "durable_change": false},
+    {"mutation": "generation_current=0", "result": "context_evidence_gap", "durable_change": false},
+    {"mutation": "tombstoned=1", "result": "context_evidence_gap", "durable_change": false},
+    {"mutation": "authorized=0", "result": "context_evidence_gap", "durable_change": false},
+    {"mutation": "evidence_ready=0", "result": "context_evidence_gap", "durable_change": false}
+  ],
+  "strict_input_and_atomic_mutations": [
+    {"mutation": "unknown capture or Context field", "result": "serde reject before runtime logic", "durable_change": false},
+    {"mutation": "invalid Context ID", "result": "argument_schema_rejected", "durable_change": false},
+    {"mutation": "missing capture typed link", "result": "confirmation_state_rejected", "durable_change": false},
+    {"mutation": "same confirmation key bound to another capture", "result": "idempotency_conflict", "durable_change": false},
+    {"mutation": "injected pre-commit capture failure", "result": "injected_atomic_failure", "durable_change": false}
+  ]
+}

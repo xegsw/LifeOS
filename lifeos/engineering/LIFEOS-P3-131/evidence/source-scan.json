@@ -1,0 +1,27 @@
+{
+  "capabilities_main": {
+    "$schema": "../gen/schemas/desktop-schema.json",
+    "description": "P3-131 renderer with no plugin or direct system capability",
+    "identifier": "main",
+    "permissions": [],
+    "windows": [
+      "main"
+    ]
+  },
+  "commands": [
+    "capture_record",
+    "get_today",
+    "runtime_status",
+    "confirm_capture_context",
+    "get_context_recovery",
+    "get_context_next_action",
+    "decide_context_next_action",
+    "record_action_result"
+  ],
+  "commands_exact": true,
+  "renderer_forbidden_matches": [
+    "fs."
+  ],
+  "task": "LIFEOS-P3-131",
+  "tauri_identifier": "local.lifeos.p3-131"
+}

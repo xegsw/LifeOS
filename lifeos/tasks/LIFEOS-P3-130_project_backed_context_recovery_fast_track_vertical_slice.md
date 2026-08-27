@@ -34,7 +34,7 @@
 - Frozen 架构权威：`lifeos/architecture/LifeOS架构基线V1.0.md`，SHA-256 `1d7d82d2afcf7ac52b15730f4f8d3effc08f8965d0b085c6a53bbd2611ad7236`
 - P3-128 Fast Track handoff：`lifeos/architecture/LIFEOS-P3-128/fast_track_handoff.json`，SHA-256 `4e15c8006275b10058d6c307a35ac4e04ebcb63e59a249ed0eaf09962eefd3fd`
 - P3-126 当前合成候选与历史 Evidence：全部只读；Final Manifest SHA-256 `9b9df14db36eee2d31b9869527a46368de1b3e66e65e90b78eb893c6a86342c8`
-- 物理多行 source allowlist：`lifeos/tasks/LIFEOS-P3-130_source_allowlist.md`，75行，SHA-256 `71dc5675d153c8a240ff59b7dcbcc17576e6eed41c6ceb969a44378be9aaad80`
+- 物理多行 source allowlist：`lifeos/tasks/LIFEOS-P3-130_source_allowlist.md`，75行，SHA-256 `af8fe84d2c809821bd076903ee2bfc303ae397b512c628adc4cf6e6ed7ef6b9c`
 - P3-129候选、独立评审、PM Review和最终promotion Evidence：全部只读
 
 任一固定输入 hash、物理行数或路径不一致时，在复制或工程动作前 fail closed 回报 PM；不得自行改写 allowlist 或换用其他 UI／Runtime 来源。

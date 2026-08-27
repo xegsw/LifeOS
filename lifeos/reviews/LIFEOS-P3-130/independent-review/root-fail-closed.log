@@ -1,0 +1,13 @@
+   Compiling tauri-macros v2.6.3
+   Compiling lifeos-p3-130 v0.1.0 (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-130/candidate)
+   Compiling tauri v2.11.5
+error: failed to run custom build command for `lifeos-p3-130 v0.1.0 (/Users/xxe/Documents/No.2/lifeos/engineering/LIFEOS-P3-130/candidate)`
+
+Caused by:
+  process didn't exit successfully: `/private/tmp/lifeos-p3-130-context-recovery-v1/build-cache/debug/build/lifeos-p3-130-ce5f66c36dd776fa/build-script-build` (exit status: 101)
+  --- stderr
+
+  thread 'main' (7845937) panicked at build.rs:6:5:
+  LIFEOS_RUNTIME_ROOT rejected before build output: root or an ancestor is not a real directory
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+warning: build failed, waiting for other jobs to finish...

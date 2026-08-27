@@ -1,0 +1,56 @@
+{
+  "task": "LIFEOS-P3-134",
+  "phase": "closure-3_pm_intake",
+  "review_mode": "read_only",
+  "manifest": {
+    "asset_count": 295,
+    "asset_errors": 0,
+    "complete": true
+  },
+  "submitted_package_result": "NOT_PASS",
+  "findings": [
+    {
+      "id": "P0-C3-01",
+      "severity": "P0",
+      "fact": "The submitted post-patch candidate-700-v4-quick-capture.png shows a visually blank Quick Capture modal with only the confirm control visible, while the corresponding AX tree contains the expected modal content.",
+      "impact": "The current post-patch candidate is not visually usable or proven faithful for a core Capture state."
+    },
+    {
+      "id": "P1-C3-01",
+      "severity": "P1",
+      "fact": "verify_closure3_readonly.py validates only the asset manifest and returns PASS although closure-verification.json declares the package NOT_PASS and five AC rows remain non-PASS.",
+      "impact": "CL-05 regressed; the default verifier no longer fails closed on mandatory acceptance rows."
+    },
+    {
+      "id": "P1-C3-02",
+      "severity": "P1",
+      "fact": "The Runtime adapter was changed after the pre-patch visual and geometry collection, so the three-viewport full-state actual-Tauri evidence does not bind the current candidate.",
+      "impact": "AC-04 remains incomplete and prior evidence cannot be promoted to current-candidate proof."
+    }
+  ],
+  "verified_progress": {
+    "evidence_probe_method_operational": true,
+    "pre_patch_three_viewport_geometry_collected": true,
+    "pre_patch_perceptual_pairs": 11,
+    "pre_patch_quick_capture_changed_ratio": 0.1618721804511278,
+    "threshold": 0.12,
+    "synthetic_runtime_matrix": "6/6 PASS",
+    "real_mode_fixed_synthetic_matrix": "6/6 PASS",
+    "ipc_exact": 11
+  },
+  "closure_items": {
+    "CL-01": "CLOSED",
+    "CL-02": "OPEN",
+    "CL-03": "PARTIAL",
+    "CL-04": "PARTIAL",
+    "CL-05": "REOPENED"
+  },
+  "counts": {
+    "P0": 1,
+    "P1": 2,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 4
+  },
+  "conclusion": "Closure Cycle continues; current candidate and verifier require same-contract closure"
+}

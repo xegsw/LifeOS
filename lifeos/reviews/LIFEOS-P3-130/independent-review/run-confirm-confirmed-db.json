@@ -1,0 +1,81 @@
+{
+  "db_path": "task-local runtime-confirm/capture.sqlite",
+  "sha256": "e249d353119a2acf89f942f10cca4d30cbb203cebd96248d1ac284a19493b865",
+  "tables": {
+    "captures": [
+      {
+        "id": "capture:p3-130:000001a03d783ce8",
+        "content": "整理 LifeOS Context Recovery 合成验收记录。",
+        "created_at_ms": 1787737685224,
+        "source": "local_capture",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "idem_key": "p3-130-capture-001"
+      }
+    ],
+    "capture_project_links": [
+      {
+        "capture_id": "capture:p3-130:000001a03d783ce8",
+        "project_id": "synthetic-lifeos-product",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "link_status": "confirmed",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1"
+      }
+    ],
+    "feedback": [
+      {
+        "id": 1,
+        "capture_id": "capture:p3-130:000001a03d783ce8",
+        "context_id": "ctx:project:synthetic-lifeos-product",
+        "decision": "confirm",
+        "idem_key": "p3-130-confirm-001",
+        "created_at_ms": 1787737745508
+      }
+    ],
+    "audit": [
+      {
+        "id": 1,
+        "event": "capture_saved",
+        "capture_id": "capture:p3-130:000001a03d783ce8",
+        "created_at_ms": 1787737685224,
+        "detail": "local_capture"
+      },
+      {
+        "id": 2,
+        "event": "context_link_candidate",
+        "capture_id": "capture:p3-130:000001a03d783ce8",
+        "created_at_ms": 1787737685224,
+        "detail": "ctx:project:synthetic-lifeos-product"
+      },
+      {
+        "id": 3,
+        "event": "capture_repeat",
+        "capture_id": "capture:p3-130:000001a03d783ce8",
+        "created_at_ms": 1787737718337,
+        "detail": "same_idempotency_key"
+      },
+      {
+        "id": 4,
+        "event": "context_confirmed",
+        "capture_id": "capture:p3-130:000001a03d783ce8",
+        "created_at_ms": 1787737745508,
+        "detail": "ctx:project:synthetic-lifeos-product"
+      }
+    ],
+    "projects": [
+      {
+        "id": "synthetic-lifeos-product",
+        "person_id": "person:synthetic-owner",
+        "title": "LifeOS 产品开发",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "source_available": 1,
+        "generation_current": 1,
+        "tombstoned": 0,
+        "authorized": 1,
+        "evidence_ready": 1
+      }
+    ]
+  }
+}

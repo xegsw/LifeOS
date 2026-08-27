@@ -1,0 +1,52 @@
+{
+  "task": "LIFEOS-P3-134",
+  "phase": "closure-1_pm_intake",
+  "review_mode": "read_only",
+  "manifest": {
+    "path": "lifeos/engineering/LIFEOS-P3-134/evidence/closure-1/FINAL_MANIFEST.json",
+    "asset_count": 64,
+    "self_referential": false,
+    "sha256": "57cb9f463a95f74b155aad1291a356a71aea2177ed9b09b8812fe49cd737c08a",
+    "mismatch": 0
+  },
+  "strict_verifier": {
+    "readonly": true,
+    "exit_code": 1,
+    "passed": false,
+    "expected_failures": ["AC-03", "AC-04", "AC-05", "AC-10", "AC-14"],
+    "unexpected_errors": []
+  },
+  "closure_items": {
+    "CL-01": "CLOSED",
+    "CL-02": "OPEN",
+    "CL-03": "PARTIAL",
+    "CL-04": "PARTIAL",
+    "CL-05": "CLOSED"
+  },
+  "verified_progress": {
+    "workspace_700x760": "PASS; readable multi-column-width content, input, suggestions, recommendations and inspector are visible",
+    "candidate_index_loads_viewport_adapter": true,
+    "mandatory_visual_files_byte_identical": 6,
+    "candidate_regular_files": 75,
+    "candidate_symlinks": 0,
+    "ipc_exact": 11,
+    "cargo_tests": "5/5 PASS",
+    "actual_700_page_states": 18,
+    "task_temp_absent": true
+  },
+  "remaining": {
+    "P0": 0,
+    "P1": 1,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 4,
+    "items": [
+      "AC-03 per-state fresh reference/candidate DOM matrix and diff allowlist",
+      "AC-04 complete three-viewport actual native DOM geometry/action coverage",
+      "AC-05 same-fixture masked pixel/perceptual comparison",
+      "AC-10 multiple-Action deterministic Focus and stale-Evidence matrix",
+      "AC-14 full pre-write mutation/sentinel/DB-unchanged matrix"
+    ]
+  },
+  "conclusion": "Closure Cycle continues"
+}

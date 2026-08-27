@@ -1,0 +1,30 @@
+{
+  "task": "LIFEOS-P3-133",
+  "phase": "pm_candidate_intake",
+  "incident": "PM executed the submitted verifier as if it were read-only after engineering cleanup; the verifier rewrote engineering verification.json and FINAL_MANIFEST.json using absent cleaned runtime roots",
+  "actor": "PM main session",
+  "date": "2026-08-26",
+  "affected_engineering_files": [
+    {
+      "path": "lifeos/engineering/LIFEOS-P3-133/evidence/verification.json",
+      "post_incident_sha256": "d4e88c15437ee4e472ebe03901f79d4885af99e3d0744712e82eda35403c36ea",
+      "post_incident_passed": false
+    },
+    {
+      "path": "lifeos/engineering/LIFEOS-P3-133/evidence/FINAL_MANIFEST.json",
+      "post_incident_sha256": "a22614e992bdf1b9f42255491b61e33333c17e2caa578550ad889e5917037828"
+    }
+  ],
+  "unaffected": {
+    "candidate_inventory_count": 75,
+    "candidate_inventory_digest": "3a50f6196c0db91cb2c21be175793e07f0c8877333ca2bb7b3b9c550e2c4783c",
+    "candidate_manifest_mismatch_count": 0,
+    "raw_logs_screenshots_bundle_modified_by_pm": false,
+    "real_self_use_root_accessed": false,
+    "real_self_use_root_exists": false,
+    "engineering_temp_root_exists": false,
+    "independent_review_temp_root_exists": false
+  },
+  "disposition": "Do not use the two affected summaries as positive Evidence. Preserve them as incident state. Rebuild a new same-task closure evidence lineage in a new subdirectory without overwriting any current file; then perform mandatory fresh isolated review.",
+  "real_run_allowed": false
+}

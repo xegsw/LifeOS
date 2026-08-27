@@ -1,0 +1,22 @@
+{
+  "task": "LIFEOS-P3-134",
+  "ipc_commands": [
+    "capture_record",
+    "get_today",
+    "runtime_status",
+    "confirm_capture_context",
+    "get_context_recovery",
+    "get_context_next_action",
+    "decide_context_next_action",
+    "record_action_result",
+    "assemble_global_ai_context",
+    "get_evidence_backed_understanding",
+    "decide_understanding_feedback"
+  ],
+  "exact_eleven": true,
+  "runtime_logs": {
+    "synthetic": "runtime-synthetic-final.log",
+    "real": "runtime-real-final.log"
+  },
+  "pass": true
+}

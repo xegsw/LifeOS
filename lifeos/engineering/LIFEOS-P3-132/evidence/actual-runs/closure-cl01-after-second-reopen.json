@@ -1,0 +1,67 @@
+{
+  "contract": "LIFEOS-P3-132",
+  "evidence_kind": "actual_tauri_sqlite_audit_snapshot",
+  "case": "closure-cl01-after-second-reopen",
+  "runtime_root": "/private/tmp/lifeos-p3-132-global-ai-today-lite-v1/closure-cl01-insufficient",
+  "database": {
+    "filename": "capture.sqlite",
+    "bytes": 118784,
+    "sha256": "0e29eb385b8ebe99c2e1bec7a11d53bf72ac99287e6a019a02d08c5c4a05e0d6",
+    "read_mode": "sqlite_uri_mode_ro"
+  },
+  "row_counts": {
+    "captures": 1,
+    "projects": 1,
+    "capture_project_links": 0,
+    "derivations": 0,
+    "understandings": 0,
+    "feedback": 0,
+    "candidate_actions": 0,
+    "actions": 0,
+    "action_results": 0,
+    "audit": 1
+  },
+  "rows": {
+    "captures": [
+      {
+        "id": "capture:p3-131:000001a03e516677",
+        "content": "LifeOS Context Recovery 合成记录。",
+        "created_at_ms": 1787751917175,
+        "source": "local_capture",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "idem_key": "p3-131-insufficient-001"
+      }
+    ],
+    "projects": [
+      {
+        "id": "synthetic-lifeos-product",
+        "person_id": "person:synthetic-owner",
+        "title": "LifeOS 产品开发",
+        "source_id": "SRC-SYN-WORK-001",
+        "artifact_version": "ART-SYN-CONTEXT-RECOVERY-001@v1",
+        "source_available": 1,
+        "generation_current": 1,
+        "tombstoned": 0,
+        "authorized": 1,
+        "evidence_ready": 1
+      }
+    ],
+    "capture_project_links": [],
+    "derivations": [],
+    "understandings": [],
+    "feedback": [],
+    "candidate_actions": [],
+    "actions": [],
+    "action_results": [],
+    "audit": [
+      {
+        "id": 1,
+        "event": "capture_saved",
+        "target_id": "capture:p3-131:000001a03e516677",
+        "created_at_ms": 1787751917175,
+        "detail": "local_capture"
+      }
+    ]
+  }
+}
