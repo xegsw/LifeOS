@@ -1,0 +1,17 @@
+{
+  "schema": "lifeos.p3-141.actual-tauri-viewport-index.v7",
+  "scope": "final current synthetic_review bundle only; no Phase-B receipt consumed and no Phase-C result claimed",
+  "candidate_tree_sha256": "ffde1eaa9d595441ee96bc50dbbfbffab933a53f0c6feac7c94ab45a3938d6ef",
+  "bundle_binary_sha256": "26c2f5534ea8f9304fcb240ce5ceae6e7c80f459af5883cc56e54b2e9611a89d",
+  "direct_pid_to_native_ax": {
+    "method": "each retained PTY printed its own PID, and that PID alone was supplied to ax_pid_inspect.swift",
+    "required_chain": "direct PID -> exactly one exact-title AXWindow -> native AXWebArea or AXWebView",
+    "rejected_substitutes": ["app-level HTML accessibility content", "screenshots", "global window enumeration"]
+  },
+  "rows": [
+    {"viewport":"desktop","direct_pid":56928,"requested_inner_logical":[1280,1024],"observed_outer_logical":[1280,949],"ax_window_frame":[221,33,1280,949],"native_ax_role":"AXWebArea","ax_json":"final_desktop_native_ax.json","startup_receipt":"final_desktop_startup_receipt.json","screenshot":"../screenshots/attempt-8-final-synthetic-desktop-redacted-state.png","screenshot_sha256":"27c72f201d4ac1cb354408f43548a74964a47f6c5778329a6234a9fde94b488c"},
+    {"viewport":"compact","direct_pid":56982,"requested_inner_logical":[700,760],"observed_outer_logical":[700,760],"ax_window_frame":[221,33,700,760],"native_ax_role":"AXWebArea","ax_json":"final_compact_native_ax.json","startup_receipt":"final_compact_startup_receipt.json","screenshot":"../screenshots/attempt-8-final-synthetic-compact-redacted-state.png","screenshot_sha256":"60b619459abccde555abb0229f9dce5198f572dff7720af988310b8e9242deab"},
+    {"viewport":"narrow","direct_pid":57047,"requested_inner_logical":[560,640],"observed_outer_logical":[560,640],"ax_window_frame":[221,33,560,640],"native_ax_role":"AXWebArea","ax_json":"final_narrow_native_ax.json","startup_receipt":"final_narrow_startup_receipt.json","screenshot":"../screenshots/attempt-8-final-synthetic-narrow-redacted-state.png","screenshot_sha256":"924d293e433e6d8d03f33c9e49aadc7a09f9c9dad2eb9f9e21863f3f3526661f"}
+  ],
+  "result": "PASS_SYNTHETIC_ONLY"
+}

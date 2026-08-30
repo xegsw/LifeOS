@@ -72,6 +72,7 @@ def main() -> None:
 
     baseline_count, baseline_tree = framed_tree(args.baseline_root)
     source = (CANDIDATE / "src/runtime.rs").read_text(encoding="utf-8")
+    build = (CANDIDATE / "build.rs").read_text(encoding="utf-8")
     ipc_match = re.search(r"const IPC: \[&str; (\d+)\] = \[(.*?)\];", source, re.S)
     ipc = re.findall(r'"([a-z_]+)"', ipc_match.group(2)) if ipc_match else []
     profile_match = re.search(r"fn provider_profiles\(\).*?vec!\[(.*?)\]", source)
@@ -111,7 +112,16 @@ def main() -> None:
             "profiles": profiles,
             "profiles_closed_four": profiles == ["openai", "anthropic", "ollama", "lm_studio"],
             "provider_lock_present": "provider_locked_after_first_send" in source,
-            "phase_b_gate_present": "phase_b_independent_pass_required" in source,
+            "phase_b_gate_present": (
+                "validate_phase_b_receipt" in build
+                and "LIFEOS_P3_141_PHASE_B_RECEIPT_PATH" in build
+                and "legacy receipt string is prohibited" in build
+                and "VALIDATED_PHASE_B_RECEIPT_SHA256" in source
+            ),
+            "synthetic_review_mode_separate": (
+                "synthetic_review" in build
+                and "synthetic review builds may not consume a Phase B receipt" in build
+            ),
             "loopback_only_present": "synthetic_loopback_only" in source,
         },
         "content_exclusion": {

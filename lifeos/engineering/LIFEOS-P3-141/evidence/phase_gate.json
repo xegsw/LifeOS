@@ -1,10 +1,10 @@
 {
-  "schema": "lifeos.p3-141.phase-gate.v2",
-  "phase": "A_controlled_synthetic",
-  "no_receipt_command": "LIFEOS_INPUT_MODE=real_self_use LIFEOS_RUNTIME_ROOT=relative-root-must-not-be-parsed cargo check --offline",
-  "no_receipt_exit": 101,
-  "no_receipt_result": "phase_b_independent_pass_required before runtime-root inspection",
-  "receipt_enabled_test": "receipt_enabled_real_mode_requires_fresh_root_and_reopens_without_write",
-  "receipt_enabled_result": "1 passed; fresh missing temporary root and DB only",
-  "result": "PASS_SYNTHETIC_ONLY"
+  "schema": "lifeos.p3-141.phase-gate.v3",
+  "phase": "A_controlled_synthetic_attempt_8",
+  "synthetic_review": {"input_mode":"synthetic","receipt_consumed":false,"result":"cargo check passed"},
+  "phase_c_real_without_receipt": {"runtime_root":"relative-root-must-not-be-parsed","exit":101,"result":"explicit independent receipt path required before runtime-root inspection"},
+  "legacy_environment_string": {"exit":101,"result":"rejected; no string is an authorization artifact"},
+  "independent_receipt_gate": {"contract":"phase_b_receipt_contract.md","negative_regression":"phase_b_receipt_gate_regression.json","negative_cases":17,"accepting_receipt_created_by_engineering":false},
+  "phase_c_real_build_launch":"PENDING_PHASE_B_INDEPENDENT_PASS",
+  "result":"PASS_SYNTHETIC_ONLY"
 }

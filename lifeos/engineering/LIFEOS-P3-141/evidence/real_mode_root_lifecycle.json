@@ -1,9 +1,10 @@
 {
-  "schema": "lifeos.p3-141.receipt-gated-real-mode-lifecycle.v1",
-  "scope": "temporary synthetic fixture root only",
-  "no_receipt": {"input_mode":"real_self_use","runtime_root":"relative-root-must-not-be-parsed","exit":101,"message":"phase_b_independent_pass_required before runtime-root inspection"},
-  "receipt_enabled": {"receipt":"LIFEOS-P3-141-PHASE-B-INDEPENDENT-PASS","test":"runtime::tests::receipt_enabled_real_mode_requires_fresh_root_and_reopens_without_write","passed":1,"failed":0,"fresh_root_and_db_absent_before_start":true,"candidate_marker_and_schema_required_for_reopen":true,"read_reopen_db_bytes_unchanged":true},
-  "actual_bundle_fixture": {"root_entries_after_first_start":[".lifeos-p3-141-owner.json","capture.sqlite"],"captures":0,"understandings":0,"provider_dispatch_count":0,"network_dispatch_count":0,"gui_requests":3,"gui_request_ids_distinct":true,"provider_or_model_send":false},
+  "schema": "lifeos.p3-141.receipt-gated-real-mode-lifecycle.v2",
+  "scope": "Phase-A synthetic only; no real root was parsed, created, or probed",
+  "no_receipt": {"input_mode":"real_self_use","runtime_root":"relative-root-must-not-be-parsed","exit":101,"message":"explicit independent receipt path required before runtime-root inspection"},
+  "legacy_string": {"exit":101,"message":"rejected; token cannot authorize a real build"},
+  "independent_receipt_required": {"contract":"phase_b_receipt_contract.md","engineering_created_accepted_receipt":false,"phase_c_root_lifecycle_execution":"PENDING_PHASE_B_INDEPENDENT_PASS"},
+  "synthetic_contract": {"test":"attempt-8-replay.log","passed":48,"failed":0,"fresh_root_and_db_boundary_tests_retained":true,"provider_or_model_send":false,"network_dispatch_count":0},
   "negative_prewrite_cases": ["existing_empty_root","expected_db_without_marker","unknown_file","root_link","ancestor_link","non_regular_db","unknown_sqlite_db","sidecar"],
-  "result": "PASS_SYNTHETIC_ONLY"
+  "result": "PASS_SYNTHETIC_ONLY; Phase-C lifecycle not claimed"
 }

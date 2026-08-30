@@ -20,11 +20,10 @@ const DB: &str = "capture.sqlite";
 const OWNERSHIP_MARKER: &str = ".lifeos-p3-141-owner.json";
 const ROOT: Option<&str> = option_env!("LIFEOS_RUNTIME_ROOT");
 const MODE: Option<&str> = option_env!("LIFEOS_INPUT_MODE");
-// A receipt-gated build may enter real-mode code only after an independent
-// Phase B receipt is embedded at build time.  This Phase-A Closure exercises
-// that path solely against a fresh synthetic fixture root under its temp
-// boundary; it does not authorize a pilot or any real input.
-const PHASE_B_RECEIPT: Option<&str> = option_env!("LIFEOS_P3_141_PHASE_B_RECEIPT");
+// build.rs creates this only after it has verified a committed, review-owned
+// Phase B Pass asset. Synthetic review builds get no binding at all; an
+// arbitrary environment string can never enter the real-mode branch.
+include!(concat!(env!("OUT_DIR"), "/phase_b_receipt_binding.rs"));
 const IPC: [&str; 20] = ["capture_record", "get_today", "runtime_status", "confirm_capture_context", "get_context_recovery", "get_context_next_action", "decide_context_next_action", "record_action_result", "assemble_global_ai_context", "get_evidence_backed_understanding", "decide_understanding_feedback", "get_ai_provider_settings", "save_ai_provider_settings", "set_ai_provider_session_credential", "test_ai_provider_connection", "set_ai_provider_enabled", "upsert_durable_memory", "update_current_state", "resolve_request_context", "get_context_disclosure_receipt"];
 const CONTEXT: &str = "ctx:project:local-work-self-use";
 const PROJECT: &str = "local-work-self-use";
@@ -65,7 +64,7 @@ impl InputMode {
     fn limit(self) -> i64 { if self == Self::Real { 14 } else { 2 } }
     fn idempotency_prefix(self) -> &'static str { if self == Self::Real { "p3-141-real-ui-" } else { "p3-141-" } }
 }
-fn mode() -> Result<InputMode, Error> { match MODE { Some("synthetic") => Ok(InputMode::Synthetic), Some("real_self_use") if PHASE_B_RECEIPT == Some("LIFEOS-P3-141-PHASE-B-INDEPENDENT-PASS") => Ok(InputMode::Real), Some("real_self_use") => Err(Error::blocked("phase_b_independent_pass_required", "真实模式需要独立 Phase B Pass receipt；没有探测真实根。")), _ => Err(Error::blocked("input_mode_rejected", "构建时输入模式必须明确。")) } }
+fn mode() -> Result<InputMode, Error> { match (COMPILED_BUILD_MODE, MODE, VALIDATED_PHASE_B_RECEIPT_SHA256) { ("synthetic_review", Some("synthetic"), None) => Ok(InputMode::Synthetic), ("phase_c_real", Some("real_self_use"), Some(binding)) if binding.len() == 64 => Ok(InputMode::Real), ("phase_c_real", Some("real_self_use"), _) => Err(Error::blocked("phase_b_independent_pass_required", "真实模式需要已验证的独立 Phase B Pass receipt；没有探测真实根。")), _ => Err(Error::blocked("input_mode_rejected", "构建模式与输入模式必须明确且匹配。")) } }
 
 #[derive(Debug, Serialize)] struct Error { status: &'static str, code: &'static str, message: &'static str }
 impl Error { fn blocked(code: &'static str, message: &'static str) -> Self { eprintln!("ipc_result status=blocked code={code}"); Self { status: "blocked", code, message } } }
@@ -87,7 +86,7 @@ fn evidence_viewport() -> Result<Option<(&'static str, u32, u32)>, Error> {
 }
 
 fn controlled_fixture_evidence(paths: &Paths) -> bool {
-    paths.mode == InputMode::Real
+    paths.mode == InputMode::Synthetic
         && std::env::var("LIFEOS_P3_141_SYNTHETIC_FIXTURE_EVIDENCE").ok().as_deref() == Some("1")
         && paths.root.starts_with("/private/tmp/lifeos-p3-141-controlled-pilot-v1/")
 }
@@ -148,7 +147,7 @@ fn write_controlled_viewport_receipt(paths: &Paths, viewport: &str, width: u32, 
 
 fn write_startup_ready_receipt(paths: &Paths, window: &tauri::WebviewWindow) -> Result<(), Error> {
     let Some((viewport, width, height)) = evidence_viewport()? else { return Ok(()); };
-    if paths.mode == InputMode::Real {
+    if paths.mode == InputMode::Synthetic {
         if !controlled_fixture_evidence(paths) { return Ok(()); }
         write(paths, |_| Ok(()))?;
         window.set_size(Size::Logical(LogicalSize::new(width as f64, height as f64))).map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 窗口尺寸不可设置；未写入。"))?;

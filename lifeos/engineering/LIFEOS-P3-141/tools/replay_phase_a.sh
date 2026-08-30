@@ -25,6 +25,7 @@ python3 -B "$task_root/tools/verify_phase_a.py" --input-root "$input_root"
 cd "$candidate"
 LIFEOS_RUNTIME_ROOT="$temp_root/runtime" \
 LIFEOS_INPUT_MODE=synthetic \
+LIFEOS_P3_141_BUILD_MODE=synthetic_review \
 CARGO_NET_OFFLINE=true \
 CARGO_TARGET_DIR="$temp_root/cargo-target" \
 /Users/xxe/.cargo/bin/cargo test --locked --offline -- --test-threads=1

@@ -1,0 +1,114 @@
+{
+  "negative": [
+    {
+      "case": "missing_receipt",
+      "exit": 101,
+      "expected_rejection": "requires an explicit independent receipt path",
+      "passed": true
+    },
+    {
+      "case": "legacy_string",
+      "exit": 101,
+      "expected_rejection": "legacy receipt string is prohibited",
+      "passed": true
+    },
+    {
+      "case": "directory",
+      "exit": 101,
+      "expected_rejection": "must be one read-only regular",
+      "passed": true
+    },
+    {
+      "case": "symlink",
+      "exit": 101,
+      "expected_rejection": "must be one read-only regular",
+      "passed": true
+    },
+    {
+      "case": "ancestor_link",
+      "exit": 101,
+      "expected_rejection": "has a linked or non-directory ancestor",
+      "passed": true
+    },
+    {
+      "case": "unauthorized_root",
+      "exit": 101,
+      "expected_rejection": "authorized review-owned hierarchy",
+      "passed": true
+    },
+    {
+      "case": "wrong_candidate",
+      "exit": 101,
+      "expected_rejection": "stale or bound to a different candidate commit",
+      "passed": true
+    },
+    {
+      "case": "wrong_abf",
+      "exit": 101,
+      "expected_rejection": "receipt task, ABF, schema, or Pass verdict binding rejected",
+      "passed": true
+    },
+    {
+      "case": "rework_verdict",
+      "exit": 101,
+      "expected_rejection": "receipt task, ABF, schema, or Pass verdict binding rejected",
+      "passed": true
+    },
+    {
+      "case": "blocked_verdict",
+      "exit": 101,
+      "expected_rejection": "receipt task, ABF, schema, or Pass verdict binding rejected",
+      "passed": true
+    },
+    {
+      "case": "extra_field",
+      "exit": 101,
+      "expected_rejection": "fails the exact schema",
+      "passed": true
+    },
+    {
+      "case": "duplicate_field",
+      "exit": 101,
+      "expected_rejection": "malformed or contains duplicate fields",
+      "passed": true
+    },
+    {
+      "case": "malformed",
+      "exit": 101,
+      "expected_rejection": "malformed or contains duplicate fields",
+      "passed": true
+    },
+    {
+      "case": "wrong_manifest_hash",
+      "exit": 101,
+      "expected_rejection": "review-manifest hash binding rejected",
+      "passed": true
+    },
+    {
+      "case": "stale_tree",
+      "exit": 101,
+      "expected_rejection": "stale or bound to a different candidate tree",
+      "passed": true
+    },
+    {
+      "case": "mutable_history",
+      "exit": 101,
+      "expected_rejection": "review ownership worktree is mutable or dirty",
+      "passed": true
+    },
+    {
+      "case": "unrelated_git_root",
+      "exit": 101,
+      "expected_rejection": "not independently owned outside the candidate tree",
+      "passed": true
+    }
+  ],
+  "negative_count": 17,
+  "positive": {
+    "case": "synthetic_review_without_receipt",
+    "exit": 0,
+    "passed": true
+  },
+  "schema": "lifeos.p3-141.phase-b-receipt-gate-regression.v1",
+  "scope": "offline synthetic only; no accepting independent receipt was created"
+}
