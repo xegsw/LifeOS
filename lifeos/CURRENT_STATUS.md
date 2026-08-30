@@ -1,7 +1,7 @@
 # LifeOS Current Status Index
 
-更新时间：2026-08-27
-最后校验时间：2026-08-27（D-0554：P3-134终局PM Pass并自动Complete）
+更新时间：2026-08-30
+最后校验时间：2026-08-30（D-0621：模型设置权威基线纠正；P3-141 Revision 3 Closure，Phase C暂停）
 
 本文件是 PM 日常上下文入口，用于减少重复读取大文件；它是状态索引，不替代主账本。
 
@@ -18,9 +18,9 @@
 ## 当前状态
 
 - 当前治理：D-0516 起的新任务采用 Governance V2：完整 Task Contract 一次授权；结果级任务包含实现、测试、Evidence与同范围修正；L0/L1/L2内嵌验收合同，L3/Gate才独立ABF；独立评审按风险／事实触发；普通任务PM Pass后自动Complete；任务卡取消模型推荐和模型证明门禁。P3-127及此前历史不追溯。
-- 当前活动事项：P3-134已按D-0554完成终局PM验收并自动Complete；最终候选与Evidence转只读。当前没有自动创建的后继任务。
-- 当前可执行下一步：由用户决定是否要求PM规划下一项结果级任务。P3-134完成不构成R-0053关闭、产品／UI／Runtime／IPC／Schema/API／工程基线冻结、Pilot-3清理或Stage4准入。
-- 当前任务指针：P3-134 Complete / PM Pass / Read-only / Governance V2 L2 / Not Frozen；P3-133 Complete / Read-only / R-0053 Open；P3-110继续暂停。
+- 当前活动事项：用户确认模型设置权威基线：Cloud独立显示OpenAI／Anthropic／DeepSeek／Kimi／自定义OpenAI-compatible，Local独立显示Ollama／LM Studio／自定义本地兼容服务；API Key密文写入本地SQLite并跨重启保留、可更新／删除，不提供会话凭据／环境变量产品选项。当前P3-141候选存在两项P0回退。
+- 当前可执行下一步：同一P3-141按Revision 3和ABF-P3-141-v3完成模型设置、加密凭据生命周期、20 IPC窄替换、三档actual-Tauri、mutation、Manifest和全新隔离独立复评。此前不得继续Phase C或接触Pilot-6／真实Provider／凭据。
+- 当前任务指针：P3-141 Revision 3 Closure Cycle / Phase C Paused / User Confirmed / ABF-P3-141-v3 Frozen / Governance V2 L3 / Mandatory Independent Re-review / Not Product Frozen；D-0620正向效力撤回但历史只读；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
 - P3-134最终PM计数：P0=0、P1=0、P2=1、Unknown=0、Not Implemented=0。333项Final Manifest和13项固定输入hash复算闭合，AC-01～16全Pass，三档actual-Tauri各15态、同fixture视觉、十一IPC、双模式Runtime与10类写前失败关闭成立。P2为一次已精确清理且未参与正Evidence的无内容stdout越界历史。
 - P3-132 最终PM计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算工程Final Manifest 75+42、P3-131历史75/75并串行复跑11/11测试；CL-01不足身份显示与CL-02三个开放Action按`confirmed_at_ms/action_id`稳定Focus、刷新及重启全部闭合。两项首次工程历史P2保留但不阻断唯一用户结果；未触发独立评审。
 - P3-131 当前 PM 计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算Final Manifest 89/89与source lineage 75/75，离线测试6/6，并在唯一全新task temp root直接复跑actual Tauri的接受并完成、关闭重开、编辑接受、拒绝、暂缓和证据不足路径。两项P2分别为工程action log／build-cache Manifest措辞与原始PID时间链不足，以及source scanner对`basis_refs.map`的`fs.`子串误报和closure checker语义弱；均由PM定向复核关闭其阻断性，不影响唯一用户结果。
@@ -67,7 +67,7 @@ P3 Engineering Fast Lane 已建立，仅限有限 Stage 3、合成数据、单�
 
 ## 技术验证与工程状态摘要
 
-- R-0039：Closed；R-0040：Open / Conditional；R-0041：Closed；R-0042：Closed；R-0043：Closed / Limited Controlled Boundary；R-0044：Closed / Limited Controlled Boundary；R-0045：Closed；R-0046：Closed / Limited Controlled Boundary；R-0047：Closed / Limited Controlled Boundary；R-0048：Closed / Limited Controlled Boundary；R-0049：Closed / Limited Controlled Boundary；R-0050：Closed / Limited Controlled Boundary；R-0051：Closed / Limited Controlled Boundary；R-0052：Open / Authorized Controlled Execution Boundary；R-0053：Open / Authorized Controlled Execution Boundary。
+- R-0039：Closed；R-0040：Open / Conditional；R-0041：Closed；R-0042：Closed / Limited Controlled Boundary；R-0043：Closed / Limited Controlled Boundary；R-0044：Closed / Limited Controlled Boundary；R-0045：Closed；R-0046：Closed / Limited Controlled Boundary；R-0047：Closed / Limited Controlled Boundary；R-0048：Closed / Limited Controlled Boundary；R-0049：Closed / Limited Controlled Boundary；R-0050：Closed / Limited Controlled Boundary；R-0051：Closed / Limited Controlled Boundary；R-0052：Open / Authorized Controlled Execution Boundary；R-0053：Open / Authorized Controlled Execution Boundary；R-0054：Open / Authorized Controlled Execution Boundary；R-0055：Open / Authorized Controlled Execution Boundary。
 - P3-001：Accepted，已恢复为合成、单进程、受控测试包边界内的后续工程基线候选。
 - P3-009：Accepted / Controlled Baseline Extension Restored，目标技术栈最小工程骨架已恢复为受控工程基线扩展；仅限合成、单进程、受控测试包、本地 evidence 与 PM 任务卡授权范围；不代表生产 Schema / API / Tauri 配置 / 导出格式 / SLA 冻结。
 - P3-013：Accepted，P1-3 / P1-5 主体迁移成立；P3-014 发现的 `suggest()` 旧候选返回条件已由 P3-015 关闭。
@@ -428,6 +428,29 @@ P3 Engineering Fast Lane 已建立，仅限有限 Stage 3、合成数据、单�
 - D-0552：PM只读核对P3-134 Closure-3。evidence-only probe、三档pre-patch取证、11组visual pairs与双6/6 Runtime矩阵成立；但Quick Capture差异超阈值后修改adapter，post-patch V4截图出现近乎空白对话框，且未重跑最终candidate。Closure-3 verifier仅验Manifest并对Not Pass包返回Pass，CL-05回退。计数`1/2/0/0/4`，继续同合同修正，无需用户授权或新任务。
 - D-0553：用户要求一次任务完成修复，PM承认此前反复接收中间Closure造成治理节奏错误，并将同一P3-134转为单次终局收口。下一次只接收AC-01～16全Pass的Final Pass Candidate或穷尽合同内方法后的Blocked；普通缺陷必须包内自修，不再提交Closure-4/5半成品。合同、授权、风险、冻结和Stage均不变。
 - D-0554：PM完成P3-134终局验收并判Pass；333项Manifest、13项固定输入、AC-01～16、三档actual-Tauri各15态、同fixture视觉、十一IPC、双模式Runtime及10类失败关闭闭合，最终计数`0/0/1/0/0`。任务按Governance V2自动Complete；R-0053保持Open，不冻结、不清理Pilot-3、不进入Stage4。
+- D-0555：用户要求创建下一任务；PM创建P3-135完整L3真实自用Draft合同与Draft ABF。推荐使用全新Pilot-4／新DB，Runtime总额度10条×200字符，本轮由用户实际输入1～3条；P3-134视觉与十一IPC只读继承，合成独立评审必须先于真实运行。等待一次确认，尚未创建R-0054、Pilot-4、工程或Evidence。
+- D-0556：用户指出高保真真实自用此前已分别由P3-133和P3-134完成两半，并同意PM收窄Draft。P3-135现只组合启用P3-134既有real_self_use模式：Pilot-4新DB、1～3条×200字符，不再扩到10条，不重新设计或重写Runtime；仍待一次确认。
+- D-0557：用户一次确认并启动P3-135完整Revision 1合同。PM复核P3-134 333项Manifest与固定hash、确认工程／评审／两个temp／Pilot-4五个新根均absent，冻结`ABF-P3-135-v1`并建立R-0054 Open；任务转Ready，等待新Codex工程会话投递。
+- D-0558：PM完成P3-135工程预独立评审Gate。只读verifier复核7/7固定hash、333项P3-134资产、75项候选、11 IPC、87项非自指Manifest均通过，但语义核对发现纯空白真实输入未写前拒绝，root/DTO/idempotency/stale/unknown IPC、显式处置/Today/restart、三档final-candidate actual绑定及taint扫描证据不完整，且AC-15矩阵仍标cleanup pending。结论Closure Cycle，计数`0/5/1/0/7`；CL-01～CL-06保持原合同，无需重复授权。独立评审和Pilot-4真实自用暂不允许，R-0054与冻结／Stage均不变。
+- D-0559：PM完成P3-135终局工程Gate Re-Review 1并判工程Gate Pass。终局verifier复算7/7固定hash、333项历史、75项候选、2项授权delta、11 IPC、91项非自指Manifest与工程矩阵零错误；10/10 Rust、13类mutation、3类build-root失败、6条actual-Tauri生命周期和三档final-candidate结构化几何闭合。计数`0/0/1/0/2`；P2为700补充JPEG仅80×132不可读，独立评审必须fresh重取，不阻断工程Gate。任务转Mandatory Independent Review Ready，真实自用仍禁止；R-0054、冻结和Stage不变。
+- D-0560：PM验收P3-135首次强制隔离独立评审并判同任务Independent Review Closure Cycle。固定输入7/7、历史333项、候选75项和独立Manifest 16/16闭合，fresh 700×760与1160×768可读；但预冻结test design承诺的四份矩阵缺失，13项测试中10项来自候选而非独立评审，关闭重开仅为同进程模拟，默认1280原生逻辑视口未独立证明，终局verifier也只核lineage。计数`0/3/0/1/4`；工程Gate保持Pass。下一步仅由原独立评审会话关闭IR-CL-01～04并提交一次终局包；D-0557授权继续有效，不新建任务、不访问Pilot-4。R-0054、冻结与Stage不变。
+- D-0561：原P3-135独立评审会话在补齐技术工作后主动撤回Pass候选并报告一次合同外stdout写入；PM接受其`NOT PASS — REVIEW ATTEMPT INVALIDATED`结论。失效Manifest明确不可作为有效独立Manifest，技术资产不得提升为正Evidence。计数`1/0/0/0/1`；工程Gate保持Pass。P3-135不新建产品任务，但必须换全新隔离评审会话，在`independent-re-review-1/`从Frozen输入重做AC-01～13/15；D-0557继续有效，不访问Pilot-4，不触碰或清理合同外文件。R-0054、冻结与Stage不变。
+- D-0562：用户作为最终决策人明确要求移动合同外stdout、不重新独立评审，并确认接受本次独立关卡。PM精确移动3794-byte普通文件到授权评审Evidence目录，来源absent、目标SHA-256为`9172fa…121`，未覆盖历史；D-0561事实与失效Manifest仍只读保留。独立关卡现为`User Accepted by Explicit Exception`，不再阻断真实自用；P3-135整体尚待AC-14真实运行，状态转Real Use Ready。R-0054、ABF、冻结与Stage不变。
+- D-0563：PM最终验收P3-135受控真实自用。非内容收据与immutable/read-only DB核对逐项一致：quick_check ok、user_version 133、3 Capture、3 confirmed Context links、3 Candidate、1 completed Action、1 Result、0 Understanding、4 Feedback、9 Audit，时间范围一致；真实文本零读取／记录／hash／截图／模型。任务临时根absent，Pilot-4／DB和零sidecar状态保留。D-0562用户Pass确认生效，任务转User Adopted / Complete；历史P0例外保留，当前阻断0。R-0054、冻结与Stage不变。
+- D-0568：P3-136工程Attempt 1在任何工程实现前将Pilot-4列入`Path.exists()`／`Path.is_symlink()`启动探测并获得存在性结果，违反Frozen合同“独立Pass前零access/stat/probe”边界，计数`1/0/0/0/16`，该尝试及原会话永久失效。PM未访问Pilot-4；授权工程／评审根和两个temp根均absent，四项Frozen hash仍匹配。P3-136合同与ABF未变化，故不关闭任务或新建后继；下一步必须在同一P3-136使用全新隔离工程会话／worktree从零重启，不得复用Attempt 1资产。R-0055保持Open，真实关卡、冻结和Stage不变。
+- D-0569：PM验收P3-136 Attempt 2首次工程包并判同任务Closure Cycle。静态verifier可复跑且记录hash闭合，但仅做字符串／解析检查；PM确认绝对Cargo／Rust 1.98.0可用，工程工具链Blocked事实不成立。源码还没有真实五Provider Adapter／loopback请求，connection test直接写`fixture_connected`，synthetic Feedback明确Not Implemented，Understanding不持久化，Settings与冻结结构不符，且所有actual-Tauri／视觉／mutation／重启／隐私动态Evidence缺失。计数`0/5/2/5/8`；CL-01～08均在原合同内，D-0567继续覆盖，无需新任务或确认。独立评审、Pilot-4、真实Provider／凭据和Stage4继续禁止；R-0055与ABF不变。
+- D-0572：PM完成P3-136 Attempt 2工程Gate Re-Review 3并判Engineering Gate Pass。Final Manifest 129/129、候选75/75、固定输入15/15、静态22/22和Rust 20/20闭合；五Adapter协议构造／解析、五profile严格正负fixture及最终actual-Tauri Local／Cloud／反馈／Today／重启不重发均成立。计数`0/0/1/0/2`；P2为工程收据候选树聚合hash缺可复算算法，但75项单文件hash完整，不阻断全新独立评审。AC-14、AC-16按顺序未实施。R-0055保持Open，ABF及其他冻结不变，Stage4仍禁止。
+- D-0573：PM验收P3-136首次全新隔离独立评审并判同任务Independent Review Closure Cycle。独立Manifest 59/59、test design时序和pre-dynamic候选75/75闭合，三档actual-Tauri视觉／AX及Local／Cloud／反馈／Today／重启动态事实成立；但六项review-owned Rust测试源码未保留，actual运行binary未与精确未修改候选加密绑定，终局inventory另含44-byte测试挂载差异。计数`0/2/1/2/1`；工程Gate保持Pass。下一步仅由原评审会话在`closure-1/`关闭IR-CL-01～03，不新建任务、不重复授权。R-0055、ABF、其他冻结与Stage不变；AC-16继续禁止。
+- D-0574：PM接受P3-136独立评审Closure-1并关闭IR-CL-01～03。Closure Manifest 59/59、只读post-cleanup verifier 16/16、当前工程候选75/75闭合；六项review-owned Rust源码、固定复跑入口、6/6终局结果及失败历史均保留。AUT生产文件零修改，native binary与source／binary hash、路径、PID／窗口／bundle／WebView、fixture／SQLite及截图hash绑定，五个temp目标精确清理。计数`0/0/1/0/1`；P2为预写测试文件名与实际稳定路径及结构化字段精度偏差，不阻断AC-14。下一步仅允许AC-16受控真实关卡；R-0055、ABF、其他冻结与Stage不变。
+- D-0575：用户明确允许执行P3-136 AC-16单Provider受控真实发送、Evidence、反馈和重启闭环，并明确不允许风险关闭或进入Stage4。该口令启动D-0567已冻结合同中的真实关卡，不新增任务、不改变Provider／endpoint／模型冻结状态。原工程会话可作为运行辅助会话复用；用户在Settings自行选择并启用一个Provider，逐次选择最多3条Pilot-4低敏感Work记录。只允许非内容收据，禁止真实文本／凭据／响应正文进入Evidence、日志、截图、hash、聊天或其他模型；Pilot-4与DB保留。R-0055、ABF及其他冻结不变。
+- D-0576：P3-136 AC-16启动后因无装饰窗口缺少macOS原生close／minimize／zoom／drag而暂停；PM验收同任务Window Access Repair并判Engineering Repair Pass。与D-0574独立Pass候选相比，75项中仅`tauri.conf.json`从1031 bytes／`b91f…b36a`变为1030 bytes／`cb7f…71ecf`，语义为`decorations:false→true`，其余74项hash一致。PM静态23/23、Rust日志20/20、Manifest 135/135、三个task-local temp absent。计数`0/0/1/1/2`；新binary必须做全新隔离窗口delta独立复评，AC-16继续暂停。R-0055、ABF、冻结与Stage不变。
+- D-0577：用户明确回复“创建”；PM创建`P3-136 窗口 Delta 全新隔离独立复评`新worktree任务，thread为`01a0468e-9f76-7871-b56d-3c88c107865c`，工作树为`/Users/xxe/.codex/worktrees/4b55/No.2`。范围仅为一行窗口delta、新binary身份、原生控件／拖动／Settings／关闭重开、16 IPC／Provider零变化与精确清理；不得重跑完整Provider矩阵，不访问Pilot-4或真实Provider。任务／ABF不变，AC-16继续暂停；R-0055、冻结和Stage不变。
+- D-0578：PM验收P3-136窗口Delta独立评审并判同任务Evidence Closure Cycle。非自指Manifest 45/45、只读verifier 11 PASS／0 FAIL／1 UNKNOWN、候选75/75且仅`tauri.conf.json`变化、初始／重启PID 6228→6525、原生close／minimize／zoom、Settings、零Provider动作和精确清理成立；唯一Unknown为标题栏拖动缺同一绑定窗口的原生几何数值。窗口delta计数`0/0/0/1/0`，任务整体当前计数`0/0/1/1/1`。下一步由原独立评审会话在`closure-1/`用PID＋窗口标题绑定的macOS原生只读几何机制补证；不新建任务、不修改候选、不重复授权。AC-16保持暂停，R-0055、ABF、冻结和Stage不变。
+- D-0579：PM验收P3-136窗口Delta独立评审Closure-1为`Blocked`。Closure Manifest 34/34、候选／clone 75/75、AX helper源码／binary、exact executable／bundle／PID 10314／唯一标题／WebView、初次评审只读hash与精确清理均闭合；唯一预写拖动`(800,45)→(950,140)`前后原生几何均为`221/33/1280/949`，`dx=0,dy=0`。该事实未证明产品拖动失败，也不满足Pass，计数`0/0/0/1/0`。任务转Blocked等待用户选择停止，或允许一次用户手工拖动＋同一PID／标题AX几何的最终验证；未确认前不继续。AC-16保持暂停，R-0055、ABF、冻结和Stage不变。
+
+- D-0586：PM完成P3-137工程Re-Review 2并继续同任务Closure Cycle。75项源码、23/23 Rust、12张actual-Tauri、178项Manifest、Settings／“+”修复、final source/binary/PID/window谱系和exact cleanup成立；但三档未逐动作、键盘／低动态未取证、反馈／Link／mutation缺actual-Tauri SQLite／Audit前后，request counter缺逐事件归因。计数`0/3/0/0/2`；CL-09～12无需重复授权。独立评审、Pilot-5、R-0055关闭、冻结和Stage4继续禁止。
+
+- D-0587：PM复算P3-137 Closure-3撤权反例成立：`authorized=0`后仍POST并写Understanding／Audit，计数`1/2/0/0/2`。该P0直接位于Frozen AC-11／ABF-M-008，且ABF列出的Blocked条件均未发生，因此不接受工程Blocked治理解释；CL-13～16留在同一任务，无需新授权。独立评审、Pilot-5、R-0055关闭、冻结和Stage4继续禁止。
 
 ## PM 优先读取
 
