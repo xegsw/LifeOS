@@ -18,9 +18,9 @@
 ## 当前状态
 
 - 当前治理：D-0516 起的新任务采用 Governance V2：完整 Task Contract 一次授权；结果级任务包含实现、测试、Evidence与同范围修正；L0/L1/L2内嵌验收合同，L3/Gate才独立ABF；独立评审按风险／事实触发；普通任务PM Pass后自动Complete；任务卡取消模型推荐和模型证明门禁。P3-127及此前历史不追溯。
-- 当前活动事项：P3-141 Revision 3源码与51项合成测试已恢复Cloud五项、Local三项、模式隔离、SQLite密文凭据生命周期和20 IPC；首次工程包因三次direct-PID AX均`windows=0`且缺实际回退mutation和完整L3 Manifest，被PM判Closure Cycle。Blocked历史已由commit `5a37b92b`保全，同任务GUI Evidence终局收口已启动。
-- 当前可执行下一步：同一P3-141关闭CL-01～04：三档PID→AXWindow→AXWebArea→截图／几何、实际删除／合并／会话化mutation、全量非自指Manifest/verifier及编号纠正。Engineering Gate Pass后才创建全新隔离独立评审；此前不得继续Phase C或接触Pilot-6／真实Provider／凭据。
-- 当前任务指针：P3-141 Revision 3 Engineering Closure / Phase C Paused / User Confirmed / ABF-P3-141-v3 Frozen / Governance V2 L3 / Mandatory Independent Re-review After Engineering Gate / Not Product Frozen；当前工程计数`0/2/0/1/3`；D-0620正向效力撤回但历史只读；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
+- 当前活动事项：P3-141 Revision 3终局工程候选`60a93746`已通过PM工程门：51/51测试、4/4真实语义mutation、三档direct-PID AXWindow／AXWebArea／截图和124/124 Manifest闭合；首次Blocked包`5a37b92b`只读保全。当前进入全新隔离独立评审。
+- 当前可执行下一步：全新隔离独立评审必须fresh复算固定输入／候选／历史、使用review-owned正负测试与mutation，并fresh重取三档actual-Tauri Settings Evidence；若Pass再回PM终验。此前不得继续Phase C或接触Pilot-6／真实Provider／凭据。
+- 当前任务指针：P3-141 Revision 3 Engineering Gate Pass / Independent Review In Progress / Phase C Paused / User Confirmed / ABF-P3-141-v3 Frozen / Governance V2 L3 / Not Product Frozen；工程计数`0/0/0/0/0`；D-0620正向效力撤回但历史只读；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
 - P3-134最终PM计数：P0=0、P1=0、P2=1、Unknown=0、Not Implemented=0。333项Final Manifest和13项固定输入hash复算闭合，AC-01～16全Pass，三档actual-Tauri各15态、同fixture视觉、十一IPC、双模式Runtime与10类写前失败关闭成立。P2为一次已精确清理且未参与正Evidence的无内容stdout越界历史。
 - P3-132 最终PM计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算工程Final Manifest 75+42、P3-131历史75/75并串行复跑11/11测试；CL-01不足身份显示与CL-02三个开放Action按`confirmed_at_ms/action_id`稳定Focus、刷新及重启全部闭合。两项首次工程历史P2保留但不阻断唯一用户结果；未触发独立评审。
 - P3-131 当前 PM 计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算Final Manifest 89/89与source lineage 75/75，离线测试6/6，并在唯一全新task temp root直接复跑actual Tauri的接受并完成、关闭重开、编辑接受、拒绝、暂缓和证据不足路径。两项P2分别为工程action log／build-cache Manifest措辞与原始PID时间链不足，以及source scanner对`basis_refs.map`的`fs.`子串误报和closure checker语义弱；均由PM定向复核关闭其阻断性，不影响唯一用户结果。
