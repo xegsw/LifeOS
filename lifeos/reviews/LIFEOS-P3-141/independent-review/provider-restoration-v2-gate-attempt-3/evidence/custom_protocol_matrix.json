@@ -1,0 +1,20 @@
+{
+  "schema": "lifeos.p3-141.attempt-3.custom-protocol.v1",
+  "owner": "independent_review",
+  "fixture": "review-owned 127.0.0.1 loopback only",
+  "positive_connection": {
+    "profile": "custom_openai_compatible",
+    "mode": "local",
+    "actual_tauri": true,
+    "request": "GET /fixture/v1/models",
+    "authorization_present": false,
+    "result": "connected and fixture-model selected/enabled"
+  },
+  "inference_post": "not executed after P0",
+  "wrong_envelope": "not executed after P0",
+  "wrong_response": "not executed after P0",
+  "wrong_mode": "not executed after P0",
+  "credential_negative": "not executed after P0",
+  "status": "NOT_IMPLEMENTED_AFTER_P0",
+  "raw_loopback_receipt": "raw/review_loopback_receipt.json"
+}

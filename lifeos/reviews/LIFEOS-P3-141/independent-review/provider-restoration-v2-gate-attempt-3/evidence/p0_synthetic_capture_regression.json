@@ -1,0 +1,20 @@
+{
+  "schema": "lifeos.p3-141.attempt-3.p0.v1",
+  "severity": "P0",
+  "abf_row": "ABF2-M-002",
+  "candidate_commit": "26c08409e83a01caea7388223e51a76182a22a3c",
+  "engineering_source": "5837fb4ffd4203a24d5908d990d1996b3aae4dcf",
+  "actual_tauri_pid": 87046,
+  "trigger": "In the actual synthetic Tauri window, AX pressed the fixed-content control labeled '仅保存这条 Work，不创建长期关联'.",
+  "observed_error": "argument_schema_rejected",
+  "observed_message": "输入必须符合当前模式的固定边界。",
+  "source_cause": {
+    "runtime": "candidate/src/runtime.rs:32 defines SYN_KEY as p3-141-synthetic-capture-001",
+    "ui_adapter": "candidate/ui/runtime-adapter.js:12 defines SYN_KEY as p3-130-capture-001; ui/runtime-adapter.js:331 sends it to capture_record"
+  },
+  "effect": "The P3-141 synthetic capture lifecycle fails before recording the fixed Work fixture, so the provider first-send and restart paths cannot be legally reached.",
+  "fail_closed": true,
+  "candidate_modified": false,
+  "positive_evidence_stopped_immediately": true,
+  "raw_evidence": "raw/capture_saved_ax_tree.json"
+}
