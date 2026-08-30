@@ -31,6 +31,17 @@ fn no_linked_ancestor(path: &Path) -> bool {
 }
 
 fn frozen_runtime_root() -> (PathBuf, String) {
+    let mode = env::var("LIFEOS_INPUT_MODE")
+        .unwrap_or_else(|_| reject("missing required build-time input mode"));
+    if mode != "synthetic" && mode != "real_self_use" {
+        reject("input mode must be synthetic or real_self_use");
+    }
+    let phase_b_receipt = env::var("LIFEOS_P3_141_PHASE_B_RECEIPT").ok();
+    if mode == "real_self_use"
+        && phase_b_receipt.as_deref() != Some("LIFEOS-P3-141-PHASE-B-INDEPENDENT-PASS")
+    {
+        reject("phase_b_independent_pass_required before runtime-root inspection");
+    }
     let raw = env::var("LIFEOS_RUNTIME_ROOT")
         .unwrap_or_else(|_| reject("missing required build-time root"));
     if raw.is_empty() || raw.as_bytes().contains(&0) {
@@ -43,17 +54,6 @@ fn frozen_runtime_root() -> (PathBuf, String) {
             .any(|part| matches!(part, Component::CurDir | Component::ParentDir | Component::Prefix(_)))
     {
         reject("root must be an absolute normalized path");
-    }
-    let mode = env::var("LIFEOS_INPUT_MODE")
-        .unwrap_or_else(|_| reject("missing required build-time input mode"));
-    if mode != "synthetic" && mode != "real_self_use" {
-        reject("input mode must be synthetic or real_self_use");
-    }
-    let phase_b_receipt = env::var("LIFEOS_P3_141_PHASE_B_RECEIPT").ok();
-    if mode == "real_self_use"
-        && phase_b_receipt.as_deref() != Some("LIFEOS-P3-141-PHASE-B-INDEPENDENT-PASS")
-    {
-        reject("phase_b_independent_pass_required before runtime-root inspection");
     }
     let parent = root.parent().unwrap_or_else(|| reject("root must have a parent"));
     if !no_linked_ancestor(parent) {

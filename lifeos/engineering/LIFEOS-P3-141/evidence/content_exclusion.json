@@ -1,15 +1,10 @@
 {
-  "schema": "lifeos.p3-141.content-exclusion.v1",
-  "phase": "A_synthetic",
-  "scanner": "tools/verify_phase_a.py",
-  "prohibited_pilot_marker_hits": [],
-  "fixture_data": "obviously synthetic only",
-  "real_content_health_values_credentials_prompts_responses": "not recorded",
-  "synthetic_redacted_screenshots": [
-    "screenshots/desktop_redacted_state.jpeg",
-    "screenshots/compact_redacted_state.jpeg",
-    "screenshots/narrow_redacted_state.jpeg"
-  ],
-  "screenshot_review": "each retained frame was visually checked to contain only the fixed synthetic candidate UI and no real personal content",
-  "result": "PASS_SYNTHETIC_ONLY"
+  "schema":"lifeos.p3-141.content-exclusion.v2",
+  "scanner":"tools/verify_phase_a.py",
+  "prohibited_target_marker_hits":[],
+  "fixture_data":"obvious synthetic Work/Health/Fitness only",
+  "real_content_health_credentials_provider_network":"not recorded or contacted",
+  "real_mode_redacted_screenshots":["screenshots/real_mode_desktop_redacted_state.jpeg","screenshots/real_mode_compact_redacted_state.jpeg","screenshots/real_mode_narrow_redacted_state.jpeg"],
+  "manual_review":"all retained real-mode frames contain only fixed synthetic UI and a visible P3-141 title",
+  "result":"PASS_SYNTHETIC_ONLY"
 }

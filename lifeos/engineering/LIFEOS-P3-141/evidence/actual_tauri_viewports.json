@@ -1,22 +1,16 @@
 {
-  "schema": "lifeos.p3-141.actual-tauri-ax-webview.v2",
-  "phase": "A_synthetic",
-  "capture_chain": "For each record: use only the PID printed by that launch; assert one target application process, one AXWindow, exact AX title, and one AXWebArea; AXRaise that target window; capture the same AX-observed rectangle. No process or global-window enumeration was used.",
-  "required_ax_window_title": "LifeOS · P3-141 Controlled Pilot Candidate",
+  "schema": "lifeos.p3-141.actual-tauri-ax-webview.v3",
+  "phase": "A_controlled_synthetic_real_mode",
+  "candidate_bundle": "receipt-enabled final P3-141 bundle built from the candidate source; no network or real Provider",
+  "capture_chain": "Each PID was printed by an exec launch and verified with ps to the exact temporary bundle executable. The native AX adapter inspected only the same local.lifeos.p3-141 bundle and returned one standard window with one HTML/WebView element; it was raised before its screenshot was copied. No process/global-window enumeration was used.",
+  "required_title": "LifeOS · P3-141 Controlled Pilot Candidate",
   "records": [
-    {"viewport": "desktop", "pid": 22698, "ax_window_title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "position": [320, 37], "size": [1280, 1024], "ax_window_count_for_direct_pid": 1, "ax_web_area_count": 1, "screenshot": "screenshots/desktop_redacted_state.jpeg", "screenshot_sha256": "1164f6dc80fd1f112201e98cd5dc88044cb224a3ad76f43ac76f5b4d9cd38643", "screenshot_dimensions": [1280, 1024], "human_visible_title": "LifeOS · P3-141 Controlled Pilot Candidate"},
-    {"viewport": "compact", "pid": 22049, "ax_window_title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "position": [320, 37], "size": [700, 760], "ax_window_count_for_direct_pid": 1, "ax_web_area_count": 1, "screenshot": "screenshots/compact_redacted_state.jpeg", "screenshot_sha256": "b70ba3b4fde61ea358a89411ec60067fb26ef7587e2ad629f7ef1957f24d935c", "screenshot_dimensions": [700, 760], "human_visible_title": "LifeOS · P3-141 Controlled Pilot Candidate"},
-    {"viewport": "narrow", "pid": 22474, "ax_window_title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "position": [320, 37], "size": [560, 640], "ax_window_count_for_direct_pid": 1, "ax_web_area_count": 1, "screenshot": "screenshots/narrow_redacted_state.jpeg", "screenshot_sha256": "caaf22a5719b88334a5440324580bffb4d1b2c244a03b5ef2f931108018ead59", "screenshot_dimensions": [560, 640], "human_visible_title": "LifeOS · P3-141 Controlled Pilot Candidate"}
+    {"viewport":"desktop","direct_pid":49613,"bundle_executable":"lifeos-p3-141","ax_window_count":1,"ax_window_title":"LifeOS · P3-141 Controlled Pilot Candidate","ax_webview_count":1,"html_title":"LifeOS · P3-141 Controlled Pilot Candidate","logical_viewport":[1280,1024],"screenshot":"screenshots/real_mode_desktop_redacted_state.jpeg","screenshot_sha256":"d5659960732be4dde4861e99ac23d8ccd10fca0d7164856ee0ccfa0bba6dd6bd","pixel_dimensions":[960,768],"manual_title_visible":true},
+    {"viewport":"compact","direct_pid":49643,"bundle_executable":"lifeos-p3-141","ax_window_count":1,"ax_window_title":"LifeOS · P3-141 Controlled Pilot Candidate","ax_webview_count":1,"html_title":"LifeOS · P3-141 Controlled Pilot Candidate","logical_viewport":[700,760],"screenshot":"screenshots/real_mode_compact_redacted_state.jpeg","screenshot_sha256":"c56b55f3533aa4d74a673f47660a12f91787eccd8c2867989346f38f65954ff2","pixel_dimensions":[700,760],"manual_title_visible":true},
+    {"viewport":"narrow","direct_pid":49714,"bundle_executable":"lifeos-p3-141","ax_window_count":1,"ax_window_title":"LifeOS · P3-141 Controlled Pilot Candidate","ax_webview_count":1,"html_title":"LifeOS · P3-141 Controlled Pilot Candidate","logical_viewport":[560,640],"screenshot":"screenshots/real_mode_narrow_redacted_state.jpeg","screenshot_sha256":"f509d5078d5110d404e0ea3c9144bfd2644345674bfad789c6b861b4bc868c71","pixel_dimensions":[560,640],"manual_title_visible":true}
   ],
-  "human_identity_review": "evidence/screenshot_identity_review.md",
-  "invalidated_prior_compact_narrow_attempt": {
-    "source_commit": "4960a36e77bbb816a58bfaee34c89f6d17eca8d9",
-    "records": [
-      {"viewport": "compact", "pid": 20253, "previous_screenshot_sha256": "f57fda31b33e1d3e38a27b53e6a7fedceeb1805b8ef0779af1951c568f58966f"},
-      {"viewport": "narrow", "pid": 20522, "previous_screenshot_sha256": "b821405162984b87957f79e85e6b98a113c3e2d4c820b65ac747f57dbd7665d0"}
-    ],
-    "reason": "Human visual inspection found the retained top bar to be `LifeOS · P3-140 Cross-domain Today`, conflicting with the prior JSON title assertion. Those records and images are invalidated and excluded from positive Evidence; their identifying details remain here and in failure_history.md."
-  },
-  "content_boundary": "All current screenshots were manually checked to contain only fixed synthetic UI and the visible P3-141 candidate title; no real text, Health data, credentials, real Provider, real Pilot, or network response was present.",
+  "accessibility_method_note": "Terminal AppleScript accessibility was denied by the host (-25211) during the earlier PID 43794 attempt and is retained as failed history only; the successful final native AX adapter state is the evidence above.",
+  "invalidated_prior_screenshot_evidence": "Prior compact/narrow P3-140-title images and the PID 42033 fixture-rejection desktop run are preserved in failure_history.md and excluded from these records.",
+  "content_boundary": "Every frame was manually checked: fixed synthetic Work/Health fixture only; no real content, credentials, Provider traffic or network response.",
   "result": "PASS_SYNTHETIC_ONLY"
 }

@@ -1,8 +1,9 @@
 {
-  "schema": "lifeos.p3-141.synthetic-root-boundary.v1",
-  "phase": "A_synthetic",
+  "schema": "lifeos.p3-141.controlled-root-boundary.v2",
   "allowed_temp_root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1",
-  "database_location": "allowed_temp_root/runtime/capture.sqlite only",
-  "real_pilot_root_access": "not_attempted",
+  "first_start": "root absent and capture.sqlite absent; app creates only capture.sqlite plus strict local ownership marker",
+  "reopen": "only a normal canonical candidate-owned root with exact marker/schema/DB and no sidecars",
+  "prewrite_rejections": ["empty_preexisting_root","expected_file_only","unknown_file","root_or_ancestor_link","non_regular_db","unrecognized_db","sidecar","noncanonical_path"],
+  "prohibited_real_target_access": "not_attempted",
   "result": "PASS_SYNTHETIC_ONLY"
 }

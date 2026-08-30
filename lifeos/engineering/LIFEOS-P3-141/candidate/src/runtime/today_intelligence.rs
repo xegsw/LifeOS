@@ -357,7 +357,7 @@ fn ensure_p3139_fixture(paths: &Paths) -> Result<(), Error> {
     if fixture_ready(paths) {
         return Ok(());
     }
-    if paths.db.exists() {
+    if paths.db.exists() && !super::controlled_fixture_evidence(paths) {
         return Err(rejected("today_fixture_rejected", "P3-139 合成 Memory／State fixture 不完整；未组装 Today。"));
     }
     create_memory(paths, "memory:synthetic:person", memory_context::Domain::Person, "Synthetic Person: prefers concise daily planning.", "identity")?;

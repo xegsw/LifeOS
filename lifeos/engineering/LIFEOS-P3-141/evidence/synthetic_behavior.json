@@ -1,17 +1,11 @@
 {
-  "schema": "lifeos.p3-141.synthetic-behavior.v1",
-  "phase": "A_synthetic",
-  "memory_state_understanding": "separate identities; resolver does not create Understanding",
-  "feedback": "confirm/edit/reject/ignore/correct covered; only confirmation affects Today",
-  "health": "request-local removal and non-diagnostic safety stop covered",
-  "failure_close": "authorization, stale, budget, DB and Provider paths tested before persistence or dispatch",
-  "restart": "same request id returns existing Understanding without a second dispatch; provider lock reloads while enablement resets",
-  "tests": [
-    "memory_context::tests::*",
-    "today_intelligence::tests::*",
-    "provider_fixture_tests::authorization_race_recheck_blocks_derived_transaction_without_retry",
-    "provider_fixture_tests::loopback_timeout_http_malformed_oversize_disconnect_and_protocol_mismatch_fail_closed",
-    "provider_fixture_tests::loopback_probe_send_feedback_restart_and_no_implicit_repeat"
-  ],
-  "result": "PASS_SYNTHETIC_ONLY"
+  "schema":"lifeos.p3-141.synthetic-behavior.v2",
+  "phase":"A_controlled_synthetic",
+  "memory_state_understanding":"separate identities; resolver never creates Understanding",
+  "feedback":"confirm/edit/reject/ignore/correct; only applicable confirmation affects Today",
+  "health":"request-local removal and conservative non-diagnostic stop",
+  "failure_close":"authorization, stale, budget, DB, root and Provider paths reject before protected persistence or dispatch",
+  "request_and_restart":"same request id returns cached result without second dispatch; distinct GUI startup requests are never reused; provider lock reloads disabled",
+  "tests":{"synthetic_replay_passed":43,"receipt_enabled_real_mode_passed":1,"failed":0},
+  "result":"PASS_SYNTHETIC_ONLY"
 }

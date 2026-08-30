@@ -9,14 +9,14 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import argparse
 from pathlib import Path
 
 
 WORKSPACE = Path(__file__).resolve().parents[4]
 TASK_ROOT = WORKSPACE / "lifeos/engineering/LIFEOS-P3-141"
 CANDIDATE = TASK_ROOT / "candidate"
-FIXED = WORKSPACE / "lifeos/tasks/LIFEOS-P3-141_fixed_input_inventory.json"
-P3_140_CANDIDATE = Path(
+DEFAULT_P3_140_CANDIDATE = Path(
     "/Users/xxe/.codex/worktrees/a2e2/No.2/"
     "lifeos/engineering/LIFEOS-P3-140/closure-1/candidate"
 )
@@ -39,16 +39,38 @@ def framed_tree(root: Path) -> tuple[int, str]:
     return len(files), tree.hexdigest()
 
 
+def arguments() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="P3-141 read-only verifier")
+    parser.add_argument(
+        "--input-root",
+        type=Path,
+        default=WORKSPACE,
+        help="absolute root containing lifeos/tasks fixed inputs; explicit for portable replay",
+    )
+    parser.add_argument(
+        "--baseline-root",
+        type=Path,
+        default=DEFAULT_P3_140_CANDIDATE,
+        help="read-only P3-140 candidate baseline",
+    )
+    parsed = parser.parse_args()
+    if not parsed.input_root.is_absolute() or not parsed.baseline_root.is_absolute():
+        parser.error("--input-root and --baseline-root must be absolute paths")
+    return parsed
+
+
 def main() -> None:
-    fixed = json.loads(FIXED.read_text(encoding="utf-8"))
+    args = arguments()
+    fixed_path = args.input_root / "lifeos/tasks/LIFEOS-P3-141_fixed_input_inventory.json"
+    fixed = json.loads(fixed_path.read_text(encoding="utf-8"))
     verified_inputs: dict[str, bool] = {}
     for item in fixed["entries"]:
         path = Path(item["path"])
         if not path.is_absolute():
-            path = WORKSPACE / path
+            path = args.input_root / path
         verified_inputs[item["role"]] = digest(path) == item["sha256"]
 
-    baseline_count, baseline_tree = framed_tree(P3_140_CANDIDATE)
+    baseline_count, baseline_tree = framed_tree(args.baseline_root)
     source = (CANDIDATE / "src/runtime.rs").read_text(encoding="utf-8")
     ipc_match = re.search(r"const IPC: \[&str; (\d+)\] = \[(.*?)\];", source, re.S)
     ipc = re.findall(r'"([a-z_]+)"', ipc_match.group(2)) if ipc_match else []
@@ -64,6 +86,9 @@ def main() -> None:
 
     result = {
         "schema": "lifeos.p3-141.phase-a-readonly-verifier.v1",
+        "input_root": str(args.input_root),
+        "fixed_inventory": str(fixed_path),
+        "baseline_root": str(args.baseline_root),
         "fixed_input_hashes": verified_inputs,
         "fixed_input_all_match": all(verified_inputs.values()),
         "p3_140_baseline": {

@@ -1,9 +1,10 @@
 {
-  "schema": "lifeos.p3-141.phase-gate.v1",
-  "phase": "A_synthetic",
-  "command": "LIFEOS_INPUT_MODE=real_self_use cargo build --locked --offline",
-  "build_exit": 101,
-  "result": "PASS",
-  "expected_code": "phase_b_independent_pass_required",
-  "root_access": "none; build.rs rejects before runtime-root inspection"
+  "schema": "lifeos.p3-141.phase-gate.v2",
+  "phase": "A_controlled_synthetic",
+  "no_receipt_command": "LIFEOS_INPUT_MODE=real_self_use LIFEOS_RUNTIME_ROOT=relative-root-must-not-be-parsed cargo check --offline",
+  "no_receipt_exit": 101,
+  "no_receipt_result": "phase_b_independent_pass_required before runtime-root inspection",
+  "receipt_enabled_test": "receipt_enabled_real_mode_requires_fresh_root_and_reopens_without_write",
+  "receipt_enabled_result": "1 passed; fresh missing temporary root and DB only",
+  "result": "PASS_SYNTHETIC_ONLY"
 }

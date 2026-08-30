@@ -17,10 +17,13 @@ mod memory_context;
 mod today_intelligence;
 
 const DB: &str = "capture.sqlite";
+const OWNERSHIP_MARKER: &str = ".lifeos-p3-141-owner.json";
 const ROOT: Option<&str> = option_env!("LIFEOS_RUNTIME_ROOT");
 const MODE: Option<&str> = option_env!("LIFEOS_INPUT_MODE");
-// Phase A is compiled solely for a task-local synthetic runtime. A future
-// Phase C must first have an independent Phase B receipt.
+// A receipt-gated build may enter real-mode code only after an independent
+// Phase B receipt is embedded at build time.  This Phase-A Closure exercises
+// that path solely against a fresh synthetic fixture root under its temp
+// boundary; it does not authorize a pilot or any real input.
 const PHASE_B_RECEIPT: Option<&str> = option_env!("LIFEOS_P3_141_PHASE_B_RECEIPT");
 const IPC: [&str; 20] = ["capture_record", "get_today", "runtime_status", "confirm_capture_context", "get_context_recovery", "get_context_next_action", "decide_context_next_action", "record_action_result", "assemble_global_ai_context", "get_evidence_backed_understanding", "decide_understanding_feedback", "get_ai_provider_settings", "save_ai_provider_settings", "set_ai_provider_session_credential", "test_ai_provider_connection", "set_ai_provider_enabled", "upsert_durable_memory", "update_current_state", "resolve_request_context", "get_context_disclosure_receipt"];
 const CONTEXT: &str = "ctx:project:local-work-self-use";
@@ -50,7 +53,7 @@ CREATE TABLE IF NOT EXISTS understandings(id TEXT PRIMARY KEY,request_id TEXT NO
 PRAGMA user_version=141;
 "#;
 
-#[derive(Clone, Copy, PartialEq, Eq)] enum InputMode { Synthetic, Real }
+#[derive(Clone, Copy, Debug, PartialEq, Eq)] enum InputMode { Synthetic, Real }
 impl InputMode {
     fn value(self) -> &'static str { if self == Self::Real { "real_self_use" } else { "synthetic" } }
     fn capture_prefix(self) -> &'static str { if self == Self::Real { "capture:p3-133:" } else { "capture:p3-131:" } }
@@ -60,7 +63,7 @@ impl InputMode {
     fn artifact(self) -> &'static str { if self == Self::Real { "ART-USER-WORK-SELF-USE-001@v1" } else { "ART-SYN-CONTEXT-RECOVERY-001@v1" } }
     fn limit(self) -> i64 { if self == Self::Real { 3 } else { 2 } }
 }
-fn mode() -> Result<InputMode, Error> { match MODE { Some("synthetic") => Ok(InputMode::Synthetic), Some("real_self_use") if PHASE_B_RECEIPT != Some("LIFEOS-P3-141-PHASE-B-INDEPENDENT-PASS") => Err(Error::blocked("phase_b_independent_pass_required", "真实模式需要独立 Phase B Pass receipt；没有探测真实根。")), Some("real_self_use") => Err(Error::blocked("phase_c_operator_only", "Phase A 候选不承载真实模式；没有探测真实根。")), _ => Err(Error::blocked("input_mode_rejected", "构建时输入模式必须明确。")) } }
+fn mode() -> Result<InputMode, Error> { match MODE { Some("synthetic") => Ok(InputMode::Synthetic), Some("real_self_use") if PHASE_B_RECEIPT == Some("LIFEOS-P3-141-PHASE-B-INDEPENDENT-PASS") => Ok(InputMode::Real), Some("real_self_use") => Err(Error::blocked("phase_b_independent_pass_required", "真实模式需要独立 Phase B Pass receipt；没有探测真实根。")), _ => Err(Error::blocked("input_mode_rejected", "构建时输入模式必须明确。")) } }
 
 #[derive(Debug, Serialize)] struct Error { status: &'static str, code: &'static str, message: &'static str }
 impl Error { fn blocked(code: &'static str, message: &'static str) -> Self { eprintln!("ipc_result status=blocked code={code}"); Self { status: "blocked", code, message } } }
@@ -81,9 +84,19 @@ fn evidence_viewport() -> Result<Option<(&'static str, u32, u32)>, Error> {
     }
 }
 
+fn controlled_fixture_evidence(paths: &Paths) -> bool {
+    paths.mode == InputMode::Real
+        && std::env::var("LIFEOS_P3_141_SYNTHETIC_FIXTURE_EVIDENCE").ok().as_deref() == Some("1")
+        && paths.root.starts_with("/private/tmp/lifeos-p3-141-controlled-pilot-v1/")
+}
+
 fn write_startup_ready_receipt(paths: &Paths, window: &tauri::WebviewWindow) -> Result<(), Error> {
-    if paths.mode != InputMode::Synthetic { return Ok(()); }
     let Some((viewport, width, height)) = evidence_viewport()? else { return Ok(()); };
+    if paths.mode == InputMode::Real {
+        if !controlled_fixture_evidence(paths) { return Ok(()); }
+        write(paths, |_| Ok(()))?;
+        return window.set_size(Size::Logical(LogicalSize::new(width as f64, height as f64))).map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 窗口尺寸不可设置；未写入。"));
+    }
     window.set_size(Size::Logical(LogicalSize::new(width as f64, height as f64))).map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 窗口尺寸不可设置；未写入。"))?;
     let timestamp = now()?;
     let pid = std::process::id();
@@ -150,6 +163,10 @@ struct ProviderState {
 #[derive(Debug, Deserialize, Serialize)]
 #[serde(deny_unknown_fields)]
 struct PersistedProviderSettings { settings: ProviderSettings, locked_profile: Option<ProviderProfile> }
+
+#[derive(Debug, Deserialize, Serialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+struct OwnershipMarker { schema: String, contract: String, mode: String, database: String, owner: String }
 
 #[derive(Debug, Deserialize)]
 #[serde(deny_unknown_fields)]
@@ -235,7 +252,7 @@ fn validate_provider_settings_for(settings: &ProviderSettings, input: InputMode)
 fn validate_provider_settings(settings: &ProviderSettings) -> Result<(), Error> { validate_provider_settings_for(settings, InputMode::Real) }
 fn valid_settings_file(metadata: &fs::Metadata) -> Result<(), Error> { if !metadata.file_type().is_file() || metadata.file_type().is_symlink() || metadata.nlink() != 1 || metadata.permissions().mode() & 0o777 != 0o600 { return Err(Error::blocked("provider_settings_file_rejected", "Provider 设置文件必须是 0600 的普通单链接文件。")); } Ok(()) }
 fn load_provider_state(paths: &Paths) -> Result<ProviderState, Error> { let file = provider_settings_path(paths); match metadata(&file)? { None => Ok(default_provider_state()), Some(meta) => { valid_settings_file(&meta)?; let raw = fs::read_to_string(&file).map_err(io)?; let persisted: PersistedProviderSettings = serde_json::from_str(&raw).map_err(|_| Error::blocked("provider_settings_file_rejected", "Provider 设置文件无法按非敏感合同解析。"))?; validate_provider_settings_for(&persisted.settings, paths.mode)?; let connection_state = if persisted.settings.mode == ProviderMode::Disabled { "disabled" } else { "not_tested_after_restart" }; Ok(ProviderState { settings: persisted.settings, locked_profile: persisted.locked_profile, enabled: false, credential: None, connection_state, last_test_fingerprint: None, last_tested_at_ms: None, last_latency_ms: None, model_request_count: 0, discovered_models: Vec::new() }) } } }
-fn write_provider_settings(paths: &Paths, settings: &ProviderSettings, locked_profile: Option<ProviderProfile>) -> Result<(), Error> { prepare_root(paths)?; validate_provider_settings_for(settings, paths.mode)?; let target = provider_settings_path(paths); if let Some(meta) = metadata(&target)? { valid_settings_file(&meta)?; }
+fn write_provider_settings(paths: &Paths, settings: &ProviderSettings, locked_profile: Option<ProviderProfile>) -> Result<(), Error> { if paths.mode == InputMode::Real { write(paths, |_| Ok(()))?; } else { prepare_root(paths)?; } validate_provider_settings_for(settings, paths.mode)?; let target = provider_settings_path(paths); if let Some(meta) = metadata(&target)? { valid_settings_file(&meta)?; }
     let temporary = paths.root.join(".ai-provider-settings.tmp"); if metadata(&temporary)?.is_some() { return Err(Error::blocked("provider_settings_file_rejected", "Provider 设置临时文件异常存在。")); }
     let bytes = serde_json::to_vec_pretty(&PersistedProviderSettings { settings: settings.clone(), locked_profile }).map_err(|_| Error::blocked("provider_settings_serialization_rejected", "Provider 设置无法安全序列化。"))?;
     let mut file = OpenOptions::new().write(true).create_new(true).mode(0o600).open(&temporary).map_err(io)?;
@@ -245,14 +262,22 @@ fn write_provider_settings(paths: &Paths, settings: &ProviderSettings, locked_pr
 fn metadata(path: &Path) -> Result<Option<fs::Metadata>, Error> { match fs::symlink_metadata(path) { Ok(m) => Ok(Some(m)), Err(e) if e.kind() == std::io::ErrorKind::NotFound => Ok(None), Err(e) => Err(io(e)) } }
 fn real_dir(path: &Path) -> Result<(), Error> { let m = fs::symlink_metadata(path).map_err(io)?; if !m.file_type().is_dir() || m.file_type().is_symlink() { return Err(Error::blocked("path_symlink_rejected", "Runtime 根祖先必须是无链接目录。")); } Ok(()) }
 fn real_chain(path: &Path) -> Result<(), Error> { let mut current = PathBuf::new(); for part in path.components() { match part { Component::RootDir => current.push("/"), Component::Normal(value) => { current.push(value); real_dir(&current)?; }, _ => return Err(Error::blocked("runtime_root_noncanonical", "Runtime 根不规范。")), } } Ok(()) }
-fn paths() -> Result<Paths, Error> { let raw = ROOT.ok_or_else(|| Error::blocked("runtime_root_missing", "构建时 Runtime 根缺失。"))?; let root = PathBuf::from(raw); if raw.is_empty() || !root.is_absolute() || root.components().any(|p| matches!(p, Component::CurDir | Component::ParentDir | Component::Prefix(_))) { return Err(Error::blocked("runtime_root_noncanonical", "Runtime 根必须是绝对规范路径。")); } let parent = root.parent().ok_or_else(|| Error::blocked("runtime_root_noncanonical", "Runtime 根缺少父目录。"))?; real_chain(parent)?; let current_mode = mode()?; if current_mode == InputMode::Synthetic { real_chain(&root)?; if fs::canonicalize(&root).map_err(io)? != root { return Err(Error::blocked("runtime_root_noncanonical", "Runtime 根解析后发生变化。")); } } else if let Some(m) = metadata(&root)? { if !m.file_type().is_dir() || m.file_type().is_symlink() || fs::canonicalize(&root).map_err(io)? != root { return Err(Error::blocked("runtime_root_noncanonical", "真实 Runtime 根不规范。")); } } Ok(Paths { db: root.join(DB), root, mode: current_mode }) }
-fn prepare_root(paths: &Paths) -> Result<(), Error> { if paths.mode == InputMode::Synthetic { return real_chain(&paths.root); } match metadata(&paths.root)? { None => fs::create_dir(&paths.root).map_err(io)?, Some(m) if m.file_type().is_dir() && !m.file_type().is_symlink() => {}, Some(_) => return Err(Error::blocked("runtime_root_type_rejected", "真实 Runtime 根不是普通目录。")), } if fs::canonicalize(&paths.root).map_err(io)? != paths.root { return Err(Error::blocked("runtime_root_noncanonical", "真实 Runtime 根解析后发生变化。")); } for item in fs::read_dir(&paths.root).map_err(io)? { let name = item.map_err(io)?.file_name(); if name != DB && name != PROVIDER_SETTINGS { return Err(Error::blocked("real_root_not_empty", "真实 Runtime 根只允许 capture.sqlite 与非敏感 Provider 设置。")); } } Ok(()) }
-fn db_present(paths: &Paths) -> Result<bool, Error> { prepare_root(paths)?; for suffix in ["-journal", "-wal", "-shm"] { if metadata(&PathBuf::from(format!("{}{}", paths.db.display(), suffix)))?.is_some() { return Err(Error::blocked("database_sidecar_rejected", "数据库 sidecar 不受支持。")); } } match metadata(&paths.db)? { None => Ok(false), Some(m) if m.file_type().is_file() && !m.file_type().is_symlink() && m.nlink() == 1 => Ok(true), Some(_) => Err(Error::blocked("database_type_rejected", "数据库不是普通单链接文件。")), } }
+fn root_shape(root: &Path) -> Result<(), Error> { if !root.is_absolute() || root.components().any(|part| matches!(part, Component::CurDir | Component::ParentDir | Component::Prefix(_))) { return Err(Error::blocked("runtime_root_noncanonical", "Runtime 根必须是绝对规范路径。")); } let parent = root.parent().ok_or_else(|| Error::blocked("runtime_root_noncanonical", "Runtime 根缺少父目录。"))?; real_chain(parent) }
+fn ownership_path(paths: &Paths) -> PathBuf { paths.root.join(OWNERSHIP_MARKER) }
+fn valid_owned_file(meta: &fs::Metadata) -> Result<(), Error> { if !meta.file_type().is_file() || meta.file_type().is_symlink() || meta.nlink() != 1 || meta.permissions().mode() & 0o777 != 0o600 { return Err(Error::blocked("real_root_ownership_rejected", "本地 ownership marker 必须是 0600 的普通单链接文件。")); } Ok(()) }
+fn expected_ownership() -> OwnershipMarker { OwnershipMarker { schema: "lifeos.p3-141.local-owner.v1".into(), contract: "LIFEOS-P3-141".into(), mode: "real_self_use".into(), database: DB.into(), owner: "candidate_initialized_local_root".into() } }
+fn validate_ownership_marker(paths: &Paths) -> Result<(), Error> { let marker = ownership_path(paths); let meta = metadata(&marker)?.ok_or_else(|| Error::blocked("real_root_ownership_missing", "真实 Runtime 根缺少候选 ownership marker；未接管。"))?; valid_owned_file(&meta)?; let value: OwnershipMarker = serde_json::from_str(&fs::read_to_string(&marker).map_err(io)?).map_err(|_| Error::blocked("real_root_ownership_rejected", "本地 ownership marker 不可验证。"))?; if value != expected_ownership() { return Err(Error::blocked("real_root_ownership_rejected", "本地 ownership marker 不属于当前候选。")); } Ok(()) }
+fn write_ownership_marker(paths: &Paths) -> Result<(), Error> { let marker = ownership_path(paths); if metadata(&marker)?.is_some() { return Err(Error::blocked("real_root_ownership_rejected", "ownership marker 已存在；未覆盖。")); } let bytes = serde_json::to_vec_pretty(&expected_ownership()).map_err(|_| Error::blocked("real_root_ownership_rejected", "ownership marker 无法序列化。"))?; let mut file = OpenOptions::new().write(true).create_new(true).mode(0o600).open(&marker).map_err(io)?; if file.write_all(&bytes).is_err() || file.write_all(b"\n").is_err() || file.sync_all().is_err() { return Err(Error::blocked("real_root_ownership_rejected", "ownership marker 未能原子写入。")); } let meta = metadata(&marker)?.ok_or_else(|| Error::blocked("real_root_ownership_rejected", "ownership marker 写入后不可见。"))?; valid_owned_file(&meta) }
+fn reject_sidecars(paths: &Paths) -> Result<(), Error> { for suffix in ["-journal", "-wal", "-shm"] { if metadata(&PathBuf::from(format!("{}{}", paths.db.display(), suffix)))?.is_some() { return Err(Error::blocked("database_sidecar_rejected", "数据库 sidecar 不受支持。")); } } Ok(()) }
+fn validate_existing_real_root(paths: &Paths) -> Result<(), Error> { let root_meta = metadata(&paths.root)?.ok_or_else(|| Error::blocked("real_root_ownership_missing", "真实 Runtime 根缺失。"))?; if !root_meta.file_type().is_dir() || root_meta.file_type().is_symlink() { return Err(Error::blocked("runtime_root_type_rejected", "真实 Runtime 根不是普通目录。")); } if fs::canonicalize(&paths.root).map_err(io)? != paths.root { return Err(Error::blocked("runtime_root_noncanonical", "真实 Runtime 根解析后发生变化。")); } let mut marker = false; let mut database = false; let mut provider = false; for item in fs::read_dir(&paths.root).map_err(io)? { let name = item.map_err(io)?.file_name(); match name.to_str() { Some(OWNERSHIP_MARKER) => marker = true, Some(DB) => database = true, Some(PROVIDER_SETTINGS) => provider = true, Some(value) if value == format!("{DB}-journal") || value == format!("{DB}-wal") || value == format!("{DB}-shm") => return Err(Error::blocked("database_sidecar_rejected", "数据库 sidecar 不受支持。")), _ => return Err(Error::blocked("real_root_not_empty", "真实 Runtime 根出现未知文件；未接管。")), } } if !marker || !database { return Err(Error::blocked("real_root_ownership_missing", "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。")); } validate_ownership_marker(paths)?; reject_sidecars(paths)?; let db_meta = metadata(&paths.db)?.ok_or_else(|| Error::blocked("database_type_rejected", "数据库缺失。"))?; if !db_meta.file_type().is_file() || db_meta.file_type().is_symlink() || db_meta.nlink() != 1 { return Err(Error::blocked("database_type_rejected", "数据库不是普通单链接文件。")); } if provider { let provider_meta = metadata(&provider_settings_path(paths))?.ok_or_else(|| Error::blocked("provider_settings_file_rejected", "Provider 设置不可见。"))?; valid_settings_file(&provider_meta)?; } let conn = Connection::open_with_flags(&paths.db, OpenFlags::SQLITE_OPEN_READ_ONLY).map_err(sql)?; conn.pragma_update(None, "query_only", true).map_err(sql)?; valid_conn(&conn, InputMode::Real) }
+fn paths() -> Result<Paths, Error> { let raw = ROOT.ok_or_else(|| Error::blocked("runtime_root_missing", "构建时 Runtime 根缺失。"))?; let root = PathBuf::from(raw); if raw.is_empty() { return Err(Error::blocked("runtime_root_noncanonical", "Runtime 根必须是绝对规范路径。")); } root_shape(&root)?; let current_mode = mode()?; let paths = Paths { db: root.join(DB), root, mode: current_mode }; if current_mode == InputMode::Synthetic { real_chain(&paths.root)?; if fs::canonicalize(&paths.root).map_err(io)? != paths.root { return Err(Error::blocked("runtime_root_noncanonical", "Runtime 根解析后发生变化。")); } } else if metadata(&paths.root)?.is_some() { validate_existing_real_root(&paths)?; } Ok(paths) }
+fn prepare_root(paths: &Paths) -> Result<bool, Error> { if paths.mode == InputMode::Synthetic { real_chain(&paths.root)?; return Ok(false); } root_shape(&paths.root)?; match metadata(&paths.root)? { None => { fs::create_dir(&paths.root).map_err(io)?; fs::set_permissions(&paths.root, fs::Permissions::from_mode(0o700)).map_err(io)?; if fs::canonicalize(&paths.root).map_err(io)? != paths.root { return Err(Error::blocked("runtime_root_noncanonical", "真实 Runtime 根解析后发生变化。")); } Ok(true) }, Some(_) => { validate_existing_real_root(paths)?; Ok(false) } } }
+fn db_present(paths: &Paths) -> Result<bool, Error> { if paths.mode == InputMode::Real { if metadata(&paths.root)?.is_none() { return Ok(false); } validate_existing_real_root(paths)?; return Ok(true); } prepare_root(paths)?; reject_sidecars(paths)?; match metadata(&paths.db)? { None => Ok(false), Some(m) if m.file_type().is_file() && !m.file_type().is_symlink() && m.nlink() == 1 => Ok(true), Some(_) => Err(Error::blocked("database_type_rejected", "数据库不是普通单链接文件。")), } }
 fn init(conn: &Connection, m: InputMode) -> Result<(), Error> { conn.execute_batch(SCHEMA).map_err(sql)?; conn.execute("INSERT OR IGNORE INTO runtime_meta(mode,contract,created_at_ms) VALUES(?1,'LIFEOS-P3-141',?2)", params![m.value(), now()?]).map_err(sql)?; conn.execute("INSERT OR IGNORE INTO projects(id,person_id,source_id,artifact_version,source_available,generation_current,tombstoned,authorized,evidence_ready) VALUES(?1,?2,?3,?4,1,1,0,1,1)", params![PROJECT, PERSON, m.source(), m.artifact()]).map_err(sql)?; valid_conn(conn, m) }
 fn valid_conn(conn: &Connection, m: InputMode) -> Result<(), Error> { let quick: String = conn.query_row("PRAGMA quick_check", [], |r| r.get(0)).map_err(sql)?; let version: i64 = conn.query_row("PRAGMA user_version", [], |r| r.get(0)).map_err(sql)?; let meta: Option<(String, String)> = conn.query_row("SELECT mode,contract FROM runtime_meta", [], |r| Ok((r.get(0)?, r.get(1)?))).optional().map_err(sql)?; if quick != "ok" || version != 141 || meta.as_ref().map(|x| (x.0.as_str(), x.1.as_str())) != Some((m.value(), "LIFEOS-P3-141")) { return Err(Error::blocked("database_contract_rejected", "数据库不符合 P3-141 合同。")); } Ok(()) }
 fn read(paths: &Paths) -> Result<Connection, Error> { let conn = Connection::open_with_flags(&paths.db, OpenFlags::SQLITE_OPEN_READ_ONLY).map_err(sql)?; conn.pragma_update(None, "query_only", true).map_err(sql)?; valid_conn(&conn, paths.mode)?; Ok(conn) }
-fn write<T>(paths: &Paths, f: impl FnOnce(&mut Connection) -> Result<T, Error>) -> Result<T, Error> { let present = db_present(paths)?; let mut conn = Connection::open(&paths.db).map_err(sql)?; conn.execute_batch("PRAGMA foreign_keys=ON; PRAGMA journal_mode=DELETE;").map_err(sql)?; if present { valid_conn(&conn, paths.mode)?; } else { init(&conn, paths.mode)?; } let result = f(&mut conn)?; valid_conn(&conn, paths.mode)?; for suffix in ["-journal", "-wal", "-shm"] { if metadata(&PathBuf::from(format!("{}{}", paths.db.display(), suffix)))?.is_some() { return Err(Error::blocked("database_sidecar_rejected", "运行后残留数据库 sidecar。")); } } Ok(result) }
-fn read_or_memory(paths: &Paths) -> Result<Connection, Error> { if db_present(paths)? { read(paths) } else { let conn = Connection::open_in_memory().map_err(sql)?; init(&conn, paths.mode)?; Ok(conn) } }
+fn write<T>(paths: &Paths, f: impl FnOnce(&mut Connection) -> Result<T, Error>) -> Result<T, Error> { let fresh_real_root = prepare_root(paths)?; let present = if paths.mode == InputMode::Real { !fresh_real_root } else { db_present(paths)? }; let mut conn = Connection::open(&paths.db).map_err(sql)?; conn.execute_batch("PRAGMA foreign_keys=ON; PRAGMA journal_mode=DELETE;").map_err(sql)?; if present { valid_conn(&conn, paths.mode)?; } else { init(&conn, paths.mode)?; } let result = f(&mut conn)?; valid_conn(&conn, paths.mode)?; if fresh_real_root { write_ownership_marker(paths)?; } reject_sidecars(paths)?; Ok(result) }
+fn read_or_memory(paths: &Paths) -> Result<Connection, Error> { if paths.mode == InputMode::Real && !db_present(paths)? { write(paths, |_| Ok(()))?; } if db_present(paths)? { read(paths) } else { let conn = Connection::open_in_memory().map_err(sql)?; init(&conn, paths.mode)?; Ok(conn) } }
 
 // A request-local Bundle is current only while the selected Capture's
 // authoritative Project/source/artifact authorization remains current.  This
@@ -633,8 +658,10 @@ fn set_provider_enabled(state: &mut ProviderState, request: SetProviderEnabledRe
 #[tauri::command] fn get_context_disclosure_receipt(request:memory_context::ReceiptRequest,state:tauri::State<'_,State>)->Result<memory_context::DisclosureReceipt,Error>{let _guard=state.lock.lock().map_err(|_|Error::blocked("runtime_lock_unavailable","运行时锁不可用。"))?;memory_context::receipt(&state.paths,request)}
 pub fn run() {
     let runtime = paths().unwrap_or_else(|e| panic!("P3-141 runtime root rejected: {}", e.code));
-    prepare_root(&runtime).unwrap_or_else(|e| panic!("P3-141 runtime root rejected: {}", e.code));
-    let _ = db_present(&runtime).unwrap_or_else(|e| panic!("P3-141 database boundary rejected: {}", e.code));
+    if runtime.mode == InputMode::Synthetic {
+        prepare_root(&runtime).unwrap_or_else(|e| panic!("P3-141 runtime root rejected: {}", e.code));
+        let _ = db_present(&runtime).unwrap_or_else(|e| panic!("P3-141 database boundary rejected: {}", e.code));
+    }
     let provider = load_provider_state(&runtime).unwrap_or_else(|e| panic!("P3-141 Provider state rejected: {}", e.code));
     tauri::Builder::default()
         .manage(State { paths: runtime, lock: Mutex::new(()), provider: Mutex::new(provider) })
@@ -652,7 +679,7 @@ pub fn run() {
 #[cfg(test)] mod tests { use super::*; use sha2::{Digest,Sha256}; fn test_paths(name:&str)->Paths{let base=paths().unwrap().root;fs::create_dir_all(&base).unwrap();let root=base.join(format!("unit-{name}-{}",now().unwrap()));let _=fs::remove_dir_all(&root);let current=mode().unwrap();if current==InputMode::Synthetic{fs::create_dir(&root).unwrap();}Paths{db:root.join(DB),root,mode:current}} fn clean(p:&Paths){let _=fs::remove_dir_all(&p.root);} fn hash(p:&Path)->String{let mut h=Sha256::new();h.update(fs::read(p).unwrap());format!("{:x}",h.finalize())}
 #[test] fn real_preexisting_database_is_rejected_before_write(){if mode().unwrap()!=InputMode::Real{return;}let p=test_paths("real-existing-db");fs::create_dir(&p.root).unwrap();fs::write(&p.db,b"not-a-sqlite-db").unwrap();let before=hash(&p.db);let error=capture(&p,&CaptureRequest{text:"安全测试".into(),key:"p3-133-real-ui-existing-db".into()}).unwrap_err();assert_eq!(error.code,"database_unavailable");assert_eq!(before,hash(&p.db));clean(&p);}
 #[test] fn status_is_closed_to_the_p3_139_twenty_ipc(){let p=paths().unwrap();let s=status(&p);assert_eq!(s.ipc_allowlist,IPC);assert_eq!(IPC.len(),20);assert!(!s.ai_enabled&&!s.filesystem&&!s.raw_database&&!s.generic_path_api&&!s.shell&&!s.process_spawn&&!s.network&&!s.vault&&!s.export&&!s.sync);assert_eq!(s.model_port,"replaceable_provider_explicit_only");assert_eq!(s.model_adapter,"four_profile_explicit_user_enabled_synthetic_loopback_only");assert_eq!(provider_profiles(),vec!["openai","anthropic","ollama","lm_studio"]);}
-#[test] fn phase_c_real_mode_gate_precedes_runtime_root_access(){if MODE != Some("real_self_use"){return;}let error=match mode(){Ok(_)=>panic!("Phase A must not accept real mode"),Err(error)=>error};assert!(matches!(error.code,"phase_b_independent_pass_required"|"phase_c_operator_only"));}
+#[test] fn receipt_enabled_real_mode_requires_fresh_root_and_reopens_without_write(){if MODE != Some("real_self_use"){return;}assert_eq!(mode().unwrap(),InputMode::Real);let configured=paths().unwrap();assert!(metadata(&configured.root).unwrap().is_none());assert!(metadata(&configured.db).unwrap().is_none());let captured=capture(&configured,&CaptureRequest{text:"receipt-enabled synthetic fixture".into(),key:"p3-133-real-ui-receipt-enabled".into()}).unwrap();assert!(captured.record.id.starts_with(InputMode::Real.capture_prefix()));validate_existing_real_root(&configured).unwrap();let before=fs::read(&configured.db).unwrap();drop(read(&configured).unwrap());assert_eq!(before,fs::read(&configured.db).unwrap());fs::remove_dir_all(&configured.root).unwrap();}
 #[test] fn provider_settings_are_nonsecret_atomic_and_session_only(){if mode().unwrap()!=InputMode::Synthetic{return;}let p=test_paths("provider-settings");let mut state=default_provider_state();let settings=ProviderSettings{mode:ProviderMode::Cloud,profile:ProviderProfile::Openai,base_url:"https://api.example.test/v1".into(),model:"fixture-model".into(),temperature_bps:70,max_output_tokens:512,timeout_ms:30_000};let saved=save_provider_settings(&p,&mut state,SaveProviderSettingsRequest{settings:settings.clone()}).unwrap();assert!(!saved.enabled&&!saved.credential.present);set_provider_session_credential(&mut state,SessionCredentialRequest{credential:Some("SESSION_SECRET_DO_NOT_PERSIST".into()),environment_variable:None}).unwrap();let file=provider_settings_path(&p);let raw=fs::read_to_string(&file).unwrap();assert!(!raw.contains("SESSION_SECRET_DO_NOT_PERSIST"));let meta=fs::symlink_metadata(&file).unwrap();assert_eq!(meta.permissions().mode()&0o777,0o600);let reloaded=load_provider_state(&p).unwrap();assert_eq!(reloaded.settings,settings);assert!(!credential_status(&reloaded.credential).present);clean(&p);}
 #[test] fn provider_rejects_unsafe_endpoints_unsupported_profile_and_never_enables_stale_config(){if mode().unwrap()!=InputMode::Synthetic{return;}let p=test_paths("provider-negative");let mut state=default_provider_state();for url in ["http://169.254.1.9/v1","http://224.0.0.1/v1","file:///tmp/not-allowed","https://user:pass@api.example.test/v1"]{let settings=ProviderSettings{mode:ProviderMode::Local,profile:ProviderProfile::Ollama,base_url:url.into(),model:"fixture-model".into(),temperature_bps:0,max_output_tokens:10,timeout_ms:1_000};assert!(validate_provider_settings(&settings).is_err());}let cloud_ip=ProviderSettings{mode:ProviderMode::Cloud,profile:ProviderProfile::Openai,base_url:"https://127.0.0.1/v1".into(),model:"fixture-model".into(),temperature_bps:0,max_output_tokens:10,timeout_ms:1_000};assert!(validate_provider_settings(&cloud_ip).is_err());assert!(serde_json::from_str::<ProviderProfile>("\"custom_openai_compatible\"").is_err());let settings=ProviderSettings{mode:ProviderMode::Local,profile:ProviderProfile::Ollama,base_url:"http://127.0.0.1:11434/v1".into(),model:"fixture-model".into(),temperature_bps:0,max_output_tokens:10,timeout_ms:1_000};save_provider_settings(&p,&mut state,SaveProviderSettingsRequest{settings}).unwrap();assert_eq!(set_provider_enabled(&mut state,SetProviderEnabledRequest{enabled:true}).unwrap_err().code,"provider_enablement_rejected");assert_eq!(test_provider_connection(&p,&mut state,TestProviderConnectionRequest{cancel:None}).unwrap_err().code,"provider_connection_failed");assert!(!state.enabled);clean(&p);}
 #[test] fn provider_understanding_requires_explicit_successful_enablement(){if mode().unwrap()!=InputMode::Synthetic{return;}let p=test_paths("provider-understanding");let capture=capture(&p,&CaptureRequest{text:SYN_TEXT.into(),key:SYN_KEY.into()}).unwrap();let mut state=default_provider_state();let request=UnderstandingRequest{context_id:"request-local".into(),page:Page::Today,selection_ref:Some(capture.record.id),removed_context_kinds:None,request_id:"p3-137-test-explicit".into(),include_related_personal_content:None,additional_context_confirmed:None};assert!(provider_understanding(&p,&mut state,&request).unwrap().understanding_id.is_empty());assert_eq!(state.model_request_count,0);clean(&p);}
@@ -844,7 +871,8 @@ mod closure_tests {
 
         let db_dir = root_for("database-directory");
         let sentinel = sentinel_for(&db_dir, "database-directory");
-        fs::create_dir(&db_dir.root).unwrap(); fs::create_dir(&db_dir.db).unwrap();
+        capture_real(&db_dir, "p3-133-real-ui-database-directory-init", "database-directory-init");
+        fs::remove_file(&db_dir.db).unwrap(); fs::create_dir(&db_dir.db).unwrap();
         let before = snapshot(&db_dir);
         let error = capture(&db_dir, &CaptureRequest { text: taint(), key: "p3-133-real-ui-database-directory".into() }).unwrap_err();
         assert_eq!(error.code, "database_type_rejected");
@@ -853,19 +881,91 @@ mod closure_tests {
 
         let sidecar = root_for("sidecar");
         let sentinel = sentinel_for(&sidecar, "sidecar");
-        fs::create_dir(&sidecar.root).unwrap(); fs::write(sidecar.root.join("capture.sqlite-wal"), b"sidecar").unwrap();
+        capture_real(&sidecar, "p3-133-real-ui-sidecar-init", "sidecar-init");
+        fs::write(sidecar.root.join("capture.sqlite-wal"), b"sidecar").unwrap();
         let before = snapshot(&sidecar);
         let error = capture(&sidecar, &CaptureRequest { text: taint(), key: "p3-133-real-ui-sidecar".into() }).unwrap_err();
-        assert_eq!(error.code, "real_root_not_empty");
+        assert_eq!(error.code, "database_sidecar_rejected");
         receipt("sidecar_root_boundary", &error, &before, &snapshot(&sidecar), &sentinel);
         cleanup(&sidecar, &sentinel);
+    }
+
+    #[test]
+    fn closure_real_root_requires_fresh_absence_and_owned_restart() {
+        use std::os::unix::fs::symlink;
+
+        let fresh = root_for("fresh-owned-restart");
+        assert!(metadata(&fresh.root).unwrap().is_none());
+        assert!(metadata(&fresh.db).unwrap().is_none());
+        let first = capture_real(&fresh, "p3-133-real-ui-fresh-owned", "fresh-owned");
+        assert!(metadata(&fresh.root).unwrap().is_some());
+        assert!(metadata(&fresh.db).unwrap().is_some());
+        validate_existing_real_root(&fresh).unwrap();
+        let before_restart = snapshot(&fresh);
+        let reopened = read(&fresh).unwrap();
+        let captures: i64 = reopened.query_row("SELECT count(*) FROM captures", [], |row| row.get(0)).unwrap();
+        drop(reopened);
+        assert_eq!(captures, 1);
+        assert_eq!(before_restart, snapshot(&fresh));
+        assert!(first.record.id.starts_with(InputMode::Real.capture_prefix()));
+        cleanup(&fresh, &sentinel_for(&fresh, "fresh-owned-restart"));
+
+        let empty = root_for("preexisting-empty");
+        let sentinel = sentinel_for(&empty, "preexisting-empty");
+        fs::create_dir(&empty.root).unwrap();
+        let before = snapshot(&empty);
+        let error = capture(&empty, &CaptureRequest { text: taint(), key: "p3-133-real-ui-preexisting-empty".into() }).unwrap_err();
+        assert_eq!(error.code, "real_root_ownership_missing");
+        receipt("preexisting_empty_root", &error, &before, &snapshot(&empty), &sentinel);
+        cleanup(&empty, &sentinel);
+
+        let expected_only = root_for("preexisting-expected-db");
+        let sentinel = sentinel_for(&expected_only, "preexisting-expected-db");
+        fs::create_dir(&expected_only.root).unwrap(); fs::write(&expected_only.db, b"not-owned").unwrap();
+        let before = snapshot(&expected_only);
+        let error = capture(&expected_only, &CaptureRequest { text: taint(), key: "p3-133-real-ui-preexisting-expected-db".into() }).unwrap_err();
+        assert_eq!(error.code, "real_root_ownership_missing");
+        receipt("preexisting_expected_db", &error, &before, &snapshot(&expected_only), &sentinel);
+        cleanup(&expected_only, &sentinel);
+
+        let unknown = root_for("preexisting-unknown");
+        let sentinel = sentinel_for(&unknown, "preexisting-unknown");
+        fs::create_dir(&unknown.root).unwrap(); fs::write(unknown.root.join("foreign.txt"), b"foreign").unwrap();
+        let before = snapshot(&unknown);
+        let error = capture(&unknown, &CaptureRequest { text: taint(), key: "p3-133-real-ui-preexisting-unknown".into() }).unwrap_err();
+        assert_eq!(error.code, "real_root_not_empty");
+        receipt("preexisting_unknown_file", &error, &before, &snapshot(&unknown), &sentinel);
+        cleanup(&unknown, &sentinel);
+
+        let link = root_for("preexisting-link");
+        let sentinel = sentinel_for(&link, "preexisting-link");
+        let target = link.root.parent().unwrap().join(format!("closure-link-target-{}", now().unwrap()));
+        fs::create_dir(&target).unwrap(); symlink(&target, &link.root).unwrap();
+        let before = snapshot(&link);
+        let error = capture(&link, &CaptureRequest { text: taint(), key: "p3-133-real-ui-preexisting-link".into() }).unwrap_err();
+        assert_eq!(error.code, "runtime_root_type_rejected");
+        receipt("preexisting_root_link", &error, &before, &snapshot(&link), &sentinel);
+        fs::remove_file(&link.root).unwrap(); fs::remove_dir(&target).unwrap(); fs::remove_file(&sentinel).unwrap();
+
+        let base = paths().unwrap().root;
+        let actual_parent = base.join(format!("closure-ancestor-target-{}", now().unwrap()));
+        let linked_parent = base.join(format!("closure-ancestor-link-{}", now().unwrap()));
+        fs::create_dir(&actual_parent).unwrap(); symlink(&actual_parent, &linked_parent).unwrap();
+        let ancestor = Paths { db: linked_parent.join(DB), root: linked_parent.join("child"), mode: InputMode::Real };
+        let sentinel = actual_parent.join("ancestor-sentinel"); fs::write(&sentinel, b"P3-135 sentinel").unwrap();
+        let before = snapshot(&ancestor);
+        let error = capture(&ancestor, &CaptureRequest { text: taint(), key: "p3-133-real-ui-ancestor-link".into() }).unwrap_err();
+        assert_eq!(error.code, "path_symlink_rejected");
+        receipt("ancestor_link", &error, &before, &snapshot(&ancestor), &sentinel);
+        fs::remove_file(&sentinel).unwrap(); fs::remove_file(&linked_parent).unwrap(); fs::remove_dir(&actual_parent).unwrap();
     }
 
     #[test]
     fn closure_invalid_database_unknown_ipc_and_focus_are_runtime_checked() {
         let bad_db = root_for("bad-database");
         let sentinel = sentinel_for(&bad_db, "bad-database");
-        fs::create_dir(&bad_db.root).unwrap(); fs::write(&bad_db.db, b"not-sqlite").unwrap();
+        capture_real(&bad_db, "p3-133-real-ui-bad-database-init", "bad-database-init");
+        fs::remove_file(&bad_db.db).unwrap(); fs::write(&bad_db.db, b"not-sqlite").unwrap();
         let before = snapshot(&bad_db);
         let error = capture(&bad_db, &CaptureRequest { text: taint(), key: "p3-133-real-ui-bad-database".into() }).unwrap_err();
         assert_eq!(error.code, "database_unavailable");
