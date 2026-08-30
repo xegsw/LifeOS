@@ -313,31 +313,44 @@ fn fixture_ready(paths: &Paths) -> bool {
         return false;
     }
     let memories = connection.query_row(
-        "SELECT count(*) FROM durable_memories WHERE memory_id IN ('memory:synthetic:person','memory:synthetic:work','memory:synthetic:health') AND confirmation='confirmed' AND validity='active'",
-        [],
+        "SELECT count(*) FROM durable_memories WHERE memory_id IN (?1,?2,?3) AND confirmation='confirmed' AND validity='active'",
+        params![fixture_memory_id(paths,"person"),fixture_memory_id(paths,"work"),fixture_memory_id(paths,"health")],
         |row| row.get::<_, i64>(0),
     );
     let states = connection.query_row(
-        "SELECT count(*) FROM current_state_events WHERE state_id IN ('state:synthetic:load','state:synthetic:fatigue') AND validity='active'",
-        [],
+        "SELECT count(*) FROM current_state_events WHERE state_id IN (?1,?2) AND validity='active'",
+        params![fixture_state_id(paths,"load"),fixture_state_id(paths,"fatigue")],
         |row| row.get::<_, i64>(0),
     );
     memories.ok() == Some(3) && states.ok() == Some(2)
+}
+
+fn fixture_memory_id(paths: &Paths, suffix: &str) -> String {
+    if paths.mode == super::InputMode::Real { format!("memory:p3-141:real:fixture-{suffix}") } else { format!("memory:synthetic:{suffix}") }
+}
+fn fixture_state_id(paths: &Paths, suffix: &str) -> String {
+    if paths.mode == super::InputMode::Real { format!("state:p3-141:real:fixture-{suffix}") } else { format!("state:synthetic:{suffix}") }
+}
+fn fixture_source(paths: &Paths) -> &'static str {
+    if paths.mode == super::InputMode::Real { "source:synthetic:controlled-fixture" } else { "source:synthetic:memory-fixture" }
+}
+fn fixture_key(paths: &Paths, action: &str, id: &str) -> String {
+    if paths.mode == super::InputMode::Real { format!("p3-141-real-ui-fixture-{action}-{id}") } else { format!("p3-140-{action}-{id}") }
 }
 
 fn create_memory(paths: &Paths, id: &str, domain: memory_context::Domain, statement: &str, kind: &str) -> Result<(), Error> {
     let created = memory_context::upsert(paths, memory_context::DurableMemoryRequest {
         operation: memory_context::MemoryOperation::Create,
         memory_id: id.to_owned(), replacement_id: None, statement: Some(statement.to_owned()),
-        memory_type: Some(kind.to_owned()), source_refs: Some(vec!["source:synthetic:memory-fixture".to_owned()]),
+        memory_type: Some(kind.to_owned()), source_refs: Some(vec![fixture_source(paths).to_owned()]),
         observed_at_ms: None, domain, scope: "person".to_owned(), expected_generation: None,
-        idempotency_key: format!("p3-140-seed-{id}"),
+        idempotency_key: fixture_key(paths,"seed",id),
     })?;
     memory_context::upsert(paths, memory_context::DurableMemoryRequest {
         operation: memory_context::MemoryOperation::Confirm,
         memory_id: id.to_owned(), replacement_id: None, statement: None, memory_type: None,
         source_refs: None, observed_at_ms: None, domain, scope: "person".to_owned(),
-        expected_generation: Some(created.generation), idempotency_key: format!("p3-140-confirm-{id}"),
+        expected_generation: Some(created.generation), idempotency_key: fixture_key(paths,"confirm",id),
     })?;
     Ok(())
 }
@@ -346,9 +359,10 @@ fn create_state(paths: &Paths, id: &str, key: &str, value: &str, domain: memory_
     memory_context::update_state(paths, memory_context::CurrentStateRequest {
         operation: memory_context::StateOperation::Set,
         state_id: id.to_owned(), replacement_id: None, state_key: Some(key.to_owned()), value: Some(value.to_owned()),
-        domain, source_refs: Some(vec!["source:synthetic:memory-fixture".to_owned()]),
+        domain, source_refs: Some(vec![fixture_source(paths).to_owned()]),
         expires_at_ms: Some(now()? + 86_400_000), expected_generation: None,
-        idempotency_key: format!("p3-140-seed-{id}"),
+        idempotency_key: fixture_key(paths,"state",id),
+        structured_health: None,
     })?;
     Ok(())
 }
@@ -360,11 +374,11 @@ fn ensure_p3139_fixture(paths: &Paths) -> Result<(), Error> {
     if paths.db.exists() && !super::controlled_fixture_evidence(paths) {
         return Err(rejected("today_fixture_rejected", "P3-139 合成 Memory／State fixture 不完整；未组装 Today。"));
     }
-    create_memory(paths, "memory:synthetic:person", memory_context::Domain::Person, "Synthetic Person: prefers concise daily planning.", "identity")?;
-    create_memory(paths, "memory:synthetic:work", memory_context::Domain::Work, "Synthetic Work: weekday focus block supports review planning.", "preference")?;
-    create_memory(paths, "memory:synthetic:health", memory_context::Domain::Health, "Synthetic Health: low-impact recovery only when explicitly authorized.", "constraint")?;
-    create_state(paths, "state:synthetic:load", "work_load", "synthetic_work_load_high", memory_context::Domain::Work)?;
-    create_state(paths, "state:synthetic:fatigue", "fatigue", "synthetic_fatigue_moderate", memory_context::Domain::Health)?;
+    create_memory(paths, &fixture_memory_id(paths,"person"), memory_context::Domain::Person, "Synthetic Person: prefers concise daily planning.", "identity")?;
+    create_memory(paths, &fixture_memory_id(paths,"work"), memory_context::Domain::Work, "Synthetic Work: weekday focus block supports review planning.", "preference")?;
+    create_memory(paths, &fixture_memory_id(paths,"health"), memory_context::Domain::Health, "Synthetic Health: low-impact recovery only when explicitly authorized.", "constraint")?;
+    create_state(paths, &fixture_state_id(paths,"load"), "work_load", "synthetic_work_load_high", memory_context::Domain::Work)?;
+    create_state(paths, &fixture_state_id(paths,"fatigue"), "fatigue", "synthetic_fatigue_moderate", memory_context::Domain::Health)?;
     if fixture_ready(paths) { Ok(()) } else { Err(rejected("today_fixture_rejected", "P3-139 合成 fixture 无法完整验证；未组装 Today。")) }
 }
 

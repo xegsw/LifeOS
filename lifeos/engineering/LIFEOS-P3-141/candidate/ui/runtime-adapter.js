@@ -1,7 +1,7 @@
 "use strict";
 
 // P3-134 deliberately leaves the P3-116 renderer in app.js intact.  This
-// adapter is the only Runtime seam: it maps typed P3-133 DTOs to existing
+// adapter is the only Runtime seam: it maps typed P3-141 DTOs to existing
 // P3-116 nodes and intercepts only the actions that now have a local meaning.
 (() => {
   const ui = window.__P3_116_RUNTIME__;
@@ -11,7 +11,7 @@
   const SYN_TEXT = "整理 LifeOS Context Recovery 合成验收记录。";
   const SYN_KEY = "p3-130-capture-001";
   const SYN_SHORT = "LifeOS Context Recovery 合成记录。";
-  const SYN_SHORT_KEY = "p3-131-insufficient-001";
+  const SYN_SHORT_KEY = "p3-141-insufficient-001";
   const SYN_EDIT = "整理并复核 LifeOS Context Recovery 合成验收记录。";
   const SYN_RESULT = "已完成合成验收记录整理与复核。";
   const REAL_RESULT = "用户在本地标记为已完成。";
@@ -25,9 +25,9 @@
   const page = () => ui.state.page === "detail" ? "context_detail" : "today";
   const isReal = () => runtime.status?.input_mode === "real_self_use";
   const key = (label) => {
-    if (!isReal()) return `p3-131-ui-${label}-${++runtime.sequence}`;
+    if (!isReal()) return `p3-141-ui-${label}-${++runtime.sequence}`;
     const unique = globalThis.crypto?.randomUUID?.() || `${Date.now()}-${++runtime.sequence}`;
-    return `p3-133-real-ui-${label}-${unique}`;
+    return `p3-141-real-ui-${label}-${unique}`;
   };
   const clean = (value) => String(value || "").replace(/[<>&"']/g, (char) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;", "'": "&#39;" }[char]));
   const localError = (error) => { runtime.error = { code: error?.code || "runtime_unavailable", message: error?.message || "本地 Runtime 未显示成功；没有写入。" }; };
@@ -286,7 +286,7 @@
 
   function decorate() {
     if (runtime.busy) return;
-    document.documentElement.dataset.runtime = isReal() ? "p3-133-real-self-use" : "p3-133-offline-synthetic";
+    document.documentElement.dataset.runtime = isReal() ? "p3-141-real-self-use" : "p3-141-offline-synthetic";
     if (applyToday()) { queueMicrotask(decorate); return; }
     settingsPage(); disclosure(); decorateModal(); bindContextDetail(); bindGlobal();
     const main = document.querySelector("#main-content");

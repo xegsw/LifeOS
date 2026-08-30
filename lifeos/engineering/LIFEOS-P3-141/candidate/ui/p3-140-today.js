@@ -16,6 +16,7 @@
     response: null,
     error: null,
     loading: false,
+    healthReceipt: null,
   };
   // A process-local opaque token prevents a post-feedback restart from
   // replaying a superseded request id.  It contains no user content and is
@@ -35,6 +36,25 @@
     return state.healthIncluded
       ? "p3-140-synthetic-cross-domain-granted"
       : "p3-140-synthetic-person-granted";
+  }
+
+  function isReal() {
+    return runtime.status && runtime.status.input_mode === "real_self_use";
+  }
+
+  function healthEditor() {
+    const receipt = state.healthReceipt ? `<p class="tiny p3140-receipt">${escape(state.healthReceipt)}</p>` : "";
+    return `<section class="context-diff p3141-health-editor" data-p3141-health-editor>
+      <strong>Health / Fitness · 五项结构化状态</strong>
+      <p class="tiny">仅用于本地 Today；不支持自由文本、医疗诊断或治疗建议。</p>
+      <div class="p3140-controls">
+        <label>睡眠时长范围<select data-p3141-health="sleep_duration_range"><option value="under_five_hours">少于 5 小时</option><option value="five_to_seven_hours">5–7 小时</option><option value="seven_to_nine_hours" selected>7–9 小时</option><option value="over_nine_hours">超过 9 小时</option></select></label>
+        <label>精力<select data-p3141-health="energy">${[1,2,3,4,5].map((value) => `<option value="${value}" ${value === 3 ? "selected" : ""}>${value} / 5</option>`).join("")}</select></label>
+        <label>酸痛或疼痛<select data-p3141-health="soreness_or_pain"><option value="false" selected>否</option><option value="true">是</option></select></label>
+        <label>训练负荷<select data-p3141-health="training_load"><option value="low">低</option><option value="medium" selected>中</option><option value="high">高</option></select></label>
+        <label>可用时间<select data-p3141-health="available_time"><option value="under_thirty_minutes">少于 30 分钟</option><option value="thirty_to_sixty_minutes" selected>30–60 分钟</option><option value="sixty_to_one_hundred_twenty_minutes">60–120 分钟</option><option value="over_one_hundred_twenty_minutes">超过 120 分钟</option></select></label>
+        <button type="button" class="button" data-p3141-health-save>保存五项状态</button>
+      </div>${receipt}</section>`;
   }
 
   function panel() {
@@ -78,7 +98,46 @@
     target.innerHTML = `<div class="section-head p3140-head"><div><span class="section-label">Today intelligence · P3-140</span><h2>跨域 Today 候选</h2><p class="quiet">${status}</p></div><span class="pill">离线 · 无 Provider</span></div>
       <div class="p3140-controls"><label>固定场景<select data-p3140="scenario" ${state.loading ? "disabled" : ""}>${[["normal","常规"],["counterfactual","反事实"],["missing_health","Health 缺失"],["missing_health_skip","跳过后降级"],["health_stop","Health 停止"],["insufficient","证据不足"]].map(([value,label]) => `<option value="${value}" ${state.scenario === value ? "selected" : ""}>${label}</option>`).join("")}</select></label><button type="button" class="button" data-p3140="toggle-health" ${state.loading ? "disabled" : ""}>${state.healthIncluded ? "本次移除 Health" : "本次加入 Health"}</button><button type="button" class="button" data-p3140="failure" ${state.loading ? "disabled" : ""}>验证失败关闭</button></div>
       ${state.error ? `<div class="notice danger"><strong>没有显示成功</strong><br>${escape(state.error.message || "受控请求被拒绝。")}<br><button type="button" class="button" data-p3140="retry">返回受控场景</button></div>` : ""}
-      ${question}<div class="p3140-card-grid">${response ? cards(response) : ""}</div>${feedback}${disclosure}`;
+      ${healthEditor()}${question}<div class="p3140-card-grid">${response ? cards(response) : ""}</div>${feedback}${disclosure}`;
+  }
+
+  async function saveStructuredHealth(button) {
+    if (!invoke) return;
+    const editor = button.closest("[data-p3141-health-editor]");
+    if (!editor) return;
+    const value = (field) => editor.querySelector(`[data-p3141-health='${field}']`).value;
+    const nonce = `${Date.now().toString(36)}-${Math.floor(Math.random() * 0x1000000).toString(36)}`;
+    const real = isReal();
+    const payload = {
+      operation: "set",
+      state_id: real ? `state:p3-141:real:health-ui-${nonce}` : `state:synthetic:health-ui-${nonce}`,
+      replacement_id: null,
+      state_key: "health_fitness_structured_v1",
+      value: null,
+      domain: "health",
+      source_refs: [real ? "source:local:user-confirmed" : "source:synthetic:memory-fixture"],
+      expires_at_ms: Date.now() + 86400000,
+      expected_generation: null,
+      idempotency_key: real ? `p3-141-real-ui-health-${nonce}` : `p3-141-health-${nonce}`,
+      structured_health: {
+        sleep_duration_range: value("sleep_duration_range"),
+        energy: Number(value("energy")),
+        soreness_or_pain: value("soreness_or_pain") === "true",
+        training_load: value("training_load"),
+        available_time: value("available_time"),
+      },
+    };
+    button.disabled = true;
+    try {
+      await invoke("update_current_state", { request: payload });
+      state.healthReceipt = "已在本地保存五项结构化状态；没有自由文本或医疗判断。";
+      request({ kind: "health-state-updated" });
+    } catch (error) {
+      state.healthReceipt = `未保存：${String(error && (error.message || error.code) || "runtime_rejected")}`;
+      render();
+    } finally {
+      button.disabled = false;
+    }
   }
 
   async function request(extra = {}) {
@@ -109,6 +168,13 @@
   }
 
   document.addEventListener("click", (event) => {
+    const healthSave = event.target.closest("[data-p3141-health-save]");
+    if (healthSave) {
+      event.preventDefault();
+      event.stopPropagation();
+      saveStructuredHealth(healthSave);
+      return;
+    }
     const action = event.target.closest("[data-p3140]");
     if (!action) return;
     event.preventDefault();

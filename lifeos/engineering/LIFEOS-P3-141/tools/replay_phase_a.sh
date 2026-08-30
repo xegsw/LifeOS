@@ -18,6 +18,7 @@ case "$input_root" in
     /*) ;;
     *) printf '%s\n' 'input root must be absolute' >&2; exit 64 ;;
 esac
+trap 'sh "$task_root/tools/cleanup_temp.sh"' EXIT HUP INT TERM
 mkdir -p "$temp_root/runtime" "$temp_root/cargo-target"
 
 python3 -B "$task_root/tools/verify_phase_a.py" --input-root "$input_root"

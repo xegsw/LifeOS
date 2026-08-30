@@ -1,0 +1,59 @@
+{
+  "schema": "lifeos.p3-141.attempt-3-rework.actual-tauri.v2",
+  "scope": "receipt-enabled real-mode source with controlled synthetic fixtures only",
+  "source_contract": "LIFEOS-P3-141-PHASE-B-INDEPENDENT-PASS",
+  "network_dispatch_count": 0,
+  "content_recorded": false,
+  "direct_bindings": [
+    {
+      "viewport": "desktop",
+      "direct_pid": 86890,
+      "requested_inner_logical": [1280, 1024],
+      "observed_inner_logical": [1280, 1024],
+      "observed_outer_logical": [1280, 1024],
+      "ax_window_count": 1,
+      "ax_window_index": 0,
+      "ax_webview_count": 1,
+      "ax_webview_index": 2,
+      "window_title": "LifeOS · P3-141 Controlled Pilot Candidate",
+      "html_title": "LifeOS · P3-141 Controlled Pilot Candidate",
+      "screenshot": "screenshots/real_mode_desktop_1280x1024_final_v5.png",
+      "screenshot_sha256": "c852117f84f1b0e274af27cf64218fdd644ddb6b2877ccb70aea3c2c340e34bd",
+      "captured_pixels": [960, 768],
+      "capture_note": "native capture adapter caps the returned desktop frame at 960x768; the immediately preceding application receipt records the requested and observed native 1280x1024 inner and outer sizes."
+    },
+    {
+      "viewport": "compact",
+      "direct_pid": 88138,
+      "requested_inner_logical": [700, 760],
+      "observed_inner_logical": [700, 760],
+      "observed_outer_logical": [700, 760],
+      "ax_window_count": 1,
+      "ax_window_index": 0,
+      "ax_webview_count": 1,
+      "ax_webview_index": 2,
+      "window_title": "LifeOS · P3-141 Controlled Pilot Candidate",
+      "html_title": "LifeOS · P3-141 Controlled Pilot Candidate",
+      "screenshot": "screenshots/real_mode_compact_700x760_final_v5.png",
+      "screenshot_sha256": "f9754de9a1cfb30af95e08ff46c55f7aaec4dce38431b979fed6576e04aa3304",
+      "captured_pixels": [700, 760]
+    },
+    {
+      "viewport": "narrow",
+      "direct_pid": 89229,
+      "requested_inner_logical": [560, 640],
+      "observed_inner_logical": [560, 640],
+      "observed_outer_logical": [560, 640],
+      "ax_window_count": 1,
+      "ax_window_index": 0,
+      "ax_webview_count": 1,
+      "ax_webview_index": 2,
+      "window_title": "LifeOS · P3-141 Controlled Pilot Candidate",
+      "html_title": "LifeOS · P3-141 Controlled Pilot Candidate",
+      "screenshot": "screenshots/real_mode_narrow_560x640_final_v5.png",
+      "screenshot_sha256": "d732d01bcd673f600bff2ff8ace4b87969902a0a26659203c221c67453057153",
+      "captured_pixels": [560, 640]
+    }
+  ],
+  "replay_rule": "Each row used the PID emitted by its own direct launch. No PID, frame, or receipt from a prior attempt is positive evidence."
+}

@@ -1,10 +1,11 @@
 {
-  "schema":"lifeos.p3-141.cleanup-receipt.v2",
+  "schema":"lifeos.p3-141.cleanup-receipt.v3",
   "cleanup_tool":"tools/cleanup_temp.sh",
-  "cleanup_execution_count":8,
+  "historical_cleanup_execution_count_before_attempt_3_rework":8,
+  "attempt_3_rework_final_cleanup":"executed after final GUI, synthetic replay, and real-contract closure; target absent",
   "exact_removed_root":"/private/tmp/lifeos-p3-141-controlled-pilot-v1",
   "postcondition":"final_temp_root_absent=true",
-  "retained_artifacts":"task-root source, test design, evidence, screenshot hashes and failure history only; an unexpected non-sensitive verifier output was contained into this exact root and removed during execution 8",
+  "retained_artifacts":"task-root source, test design, evidence, final v5 screenshot hashes and failure history only; historical unexpected non-sensitive verifier output was contained into this exact root and removed",
   "prohibited_real_roots_or_databases":"not accessed and not cleaned",
   "result":"PASS_SYNTHETIC_ONLY"
 }

@@ -30,9 +30,9 @@ const CONTEXT: &str = "ctx:project:local-work-self-use";
 const PROJECT: &str = "local-work-self-use";
 const PERSON: &str = "person:local-owner";
 const SYN_TEXT: &str = "整理 LifeOS Context Recovery 合成验收记录。";
-const SYN_KEY: &str = "p3-130-capture-001";
+const SYN_KEY: &str = "p3-141-synthetic-capture-001";
 const SYN_SHORT: &str = "LifeOS Context Recovery 合成记录。";
-const SYN_SHORT_KEY: &str = "p3-131-insufficient-001";
+const SYN_SHORT_KEY: &str = "p3-141-synthetic-insufficient-001";
 const SYN_EDIT: &str = "整理并复核 LifeOS Context Recovery 合成验收记录。";
 const SYN_RESULT: &str = "已完成合成验收记录整理与复核。";
 const REAL_RESULT: &str = "用户在本地标记为已完成。";
@@ -43,6 +43,7 @@ PRAGMA journal_mode=DELETE; PRAGMA foreign_keys=ON;
 CREATE TABLE IF NOT EXISTS runtime_meta(mode TEXT PRIMARY KEY,contract TEXT NOT NULL,created_at_ms INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS projects(id TEXT PRIMARY KEY,person_id TEXT NOT NULL,source_id TEXT NOT NULL,artifact_version TEXT NOT NULL,source_available INTEGER NOT NULL,generation_current INTEGER NOT NULL,tombstoned INTEGER NOT NULL,authorized INTEGER NOT NULL,evidence_ready INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS captures(id TEXT PRIMARY KEY,content TEXT NOT NULL,created_at_ms INTEGER NOT NULL,source TEXT NOT NULL,source_id TEXT NOT NULL,artifact_version TEXT NOT NULL,idem_key TEXT NOT NULL UNIQUE);
+CREATE TABLE IF NOT EXISTS work_trial_days(day_key TEXT PRIMARY KEY,capture_id TEXT NOT NULL UNIQUE,created_at_ms INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS capture_project_links(capture_id TEXT PRIMARY KEY,context_id TEXT NOT NULL,link_status TEXT NOT NULL CHECK(link_status IN ('candidate','confirmed','rejected')));
 CREATE TABLE IF NOT EXISTS candidate_actions(id TEXT PRIMARY KEY,capture_id TEXT NOT NULL,candidate_text TEXT NOT NULL,candidate_state TEXT NOT NULL CHECK(candidate_state IN ('active','accepted','rejected','deferred')),created_at_ms INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS actions(id TEXT PRIMARY KEY,candidate_id TEXT NOT NULL UNIQUE,action_text TEXT NOT NULL,confirmation_kind TEXT NOT NULL,action_state TEXT NOT NULL CHECK(action_state IN ('open','completed')),created_at_ms INTEGER NOT NULL,confirmed_at_ms INTEGER GENERATED ALWAYS AS (created_at_ms) STORED);
@@ -56,12 +57,13 @@ PRAGMA user_version=141;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)] enum InputMode { Synthetic, Real }
 impl InputMode {
     fn value(self) -> &'static str { if self == Self::Real { "real_self_use" } else { "synthetic" } }
-    fn capture_prefix(self) -> &'static str { if self == Self::Real { "capture:p3-133:" } else { "capture:p3-131:" } }
-    fn candidate_prefix(self) -> &'static str { if self == Self::Real { "candidate:p3-133:" } else { "candidate:p3-131:" } }
-    fn action_prefix(self) -> &'static str { if self == Self::Real { "action:p3-133:" } else { "action:p3-131:" } }
-    fn source(self) -> &'static str { if self == Self::Real { "SRC-USER-WORK-LOCAL-001" } else { "SRC-SYN-WORK-001" } }
-    fn artifact(self) -> &'static str { if self == Self::Real { "ART-USER-WORK-SELF-USE-001@v1" } else { "ART-SYN-CONTEXT-RECOVERY-001@v1" } }
-    fn limit(self) -> i64 { if self == Self::Real { 3 } else { 2 } }
+    fn capture_prefix(self) -> &'static str { if self == Self::Real { "capture:p3-141:real:" } else { "capture:p3-141:synthetic:" } }
+    fn candidate_prefix(self) -> &'static str { if self == Self::Real { "candidate:p3-141:real:" } else { "candidate:p3-141:synthetic:" } }
+    fn action_prefix(self) -> &'static str { if self == Self::Real { "action:p3-141:real:" } else { "action:p3-141:synthetic:" } }
+    fn source(self) -> &'static str { if self == Self::Real { "SRC-P3-141-WORK-LOCAL-001" } else { "SRC-P3-141-SYN-WORK-001" } }
+    fn artifact(self) -> &'static str { if self == Self::Real { "ART-P3-141-WORK-SELF-USE-001@v1" } else { "ART-P3-141-SYN-WORK-001@v1" } }
+    fn limit(self) -> i64 { if self == Self::Real { 14 } else { 2 } }
+    fn idempotency_prefix(self) -> &'static str { if self == Self::Real { "p3-141-real-ui-" } else { "p3-141-" } }
 }
 fn mode() -> Result<InputMode, Error> { match MODE { Some("synthetic") => Ok(InputMode::Synthetic), Some("real_self_use") if PHASE_B_RECEIPT == Some("LIFEOS-P3-141-PHASE-B-INDEPENDENT-PASS") => Ok(InputMode::Real), Some("real_self_use") => Err(Error::blocked("phase_b_independent_pass_required", "真实模式需要独立 Phase B Pass receipt；没有探测真实根。")), _ => Err(Error::blocked("input_mode_rejected", "构建时输入模式必须明确。")) } }
 
@@ -90,12 +92,29 @@ fn controlled_fixture_evidence(paths: &Paths) -> bool {
         && paths.root.starts_with("/private/tmp/lifeos-p3-141-controlled-pilot-v1/")
 }
 
+fn write_controlled_viewport_receipt(paths: &Paths, window: &tauri::WebviewWindow, viewport: &str, width: u32, height: u32) -> Result<(), Error> {
+    // `set_size` sets the client area.  The receipt is deliberately emitted
+    // only afterwards and records both the requested inner viewport and the
+    // native outer frame observed from this just-started window.
+    let inner=window.inner_size().map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 内部窗口尺寸不可读取；未写入。"))?;
+    let outer=window.outer_size().map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 外部窗口尺寸不可读取；未写入。"))?;
+    let scale=window.scale_factor().map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 窗口缩放不可读取；未写入。"))?;
+    let target=paths.root.parent().ok_or_else(||Error::blocked("evidence_viewport_unavailable","合成 Evidence 根缺少父目录。"))?.join(format!("p3-141-actual-viewport-{}.json",std::process::id()));
+    if metadata(&target)?.is_some() { return Err(Error::blocked("startup_receipt_exists", "本次实际窗口收据已存在；未覆盖。")); }
+    let value=serde_json::json!({"schema":"lifeos.p3-141.actual-tauri-viewport.v2","pid":std::process::id(),"identifier":"local.lifeos.p3-141","window_title":"LifeOS · P3-141 Controlled Pilot Candidate","viewport":viewport,"requested_inner_logical":{"width":width,"height":height},"observed_inner_physical":{"width":inner.width,"height":inner.height},"observed_inner_logical":{"width":inner.width as f64/scale,"height":inner.height as f64/scale},"observed_outer_physical":{"width":outer.width,"height":outer.height},"observed_outer_logical":{"width":outer.width as f64/scale,"height":outer.height as f64/scale},"observed_scale_factor":scale,"synthetic_fixture":true,"content_recorded":false,"network_dispatch_count":0});
+    let bytes=serde_json::to_vec_pretty(&value).map_err(|_|Error::blocked("startup_receipt_serialization_rejected","实际窗口收据无法安全序列化；未写入。"))?;
+    let mut file=OpenOptions::new().write(true).create_new(true).mode(0o600).open(&target).map_err(io)?;
+    if file.write_all(&bytes).is_err() || file.write_all(b"\n").is_err() || file.sync_all().is_err() { let _=fs::remove_file(&target); return Err(Error::blocked("startup_receipt_write_rejected","实际窗口收据未能原子写入。")); }
+    Ok(())
+}
+
 fn write_startup_ready_receipt(paths: &Paths, window: &tauri::WebviewWindow) -> Result<(), Error> {
     let Some((viewport, width, height)) = evidence_viewport()? else { return Ok(()); };
     if paths.mode == InputMode::Real {
         if !controlled_fixture_evidence(paths) { return Ok(()); }
         write(paths, |_| Ok(()))?;
-        return window.set_size(Size::Logical(LogicalSize::new(width as f64, height as f64))).map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 窗口尺寸不可设置；未写入。"));
+        window.set_size(Size::Logical(LogicalSize::new(width as f64, height as f64))).map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 窗口尺寸不可设置；未写入。"))?;
+        return write_controlled_viewport_receipt(paths,window,viewport,width,height);
     }
     window.set_size(Size::Logical(LogicalSize::new(width as f64, height as f64))).map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 窗口尺寸不可设置；未写入。"))?;
     let timestamp = now()?;
@@ -346,7 +365,7 @@ impl FeedbackDecision { fn value(self) -> &'static str { match self { Self::Conf
 #[derive(Serialize)] struct Feedback { status: String, feedback_id: String, understanding_id: String, decision: String, feedback_text: Option<String>, audit_event_count: usize }
 #[derive(Serialize)] struct Status { status: &'static str, input_mode: &'static str, offline: bool, ai_enabled: bool, renderer_direct_capabilities: Vec<&'static str>, ipc_allowlist: Vec<&'static str>, unknown_ipc: &'static str, filesystem: bool, raw_database: bool, generic_path_api: bool, shell: bool, process_spawn: bool, network: bool, vault: bool, export: bool, sync: bool, context_recovery: &'static str, candidate_rule: &'static str, memory_duplicate_original: bool, model_port: &'static str, model_adapter: &'static str }
 
-fn valid_capture(paths: &Paths, request: &CaptureRequest) -> bool { if paths.mode == InputMode::Synthetic { (request.text == SYN_TEXT && request.key == SYN_KEY) || (request.text == SYN_SHORT && request.key == SYN_SHORT_KEY) } else { !request.text.trim().is_empty() && request.text.chars().count() <= 200 && request.key.starts_with("p3-133-real-ui-") && request.key.len() <= 128 && request.key.bytes().all(|b| b.is_ascii_alphanumeric() || b == b'-') } }
+fn valid_capture(paths: &Paths, request: &CaptureRequest) -> bool { if paths.mode == InputMode::Synthetic { (request.text == SYN_TEXT && request.key == SYN_KEY) || (request.text == SYN_SHORT && request.key == SYN_SHORT_KEY) } else { !request.text.trim().is_empty() && request.text.chars().count() <= 200 && request.key.starts_with(paths.mode.idempotency_prefix()) && request.key.len() <= 128 && request.key.bytes().all(|b| b.is_ascii_alphanumeric() || b == b'-') } }
 fn record(paths: &Paths, id: String, content: String, created: i64, source: String, source_id: String, artifact: String) -> Result<Record, Error> { let valid_content = if paths.mode == InputMode::Real { !content.is_empty() && content.chars().count() <= 200 } else { content == SYN_TEXT || content == SYN_SHORT }; if !id.starts_with(paths.mode.capture_prefix()) || !valid_content || created <= 0 || source != "local_capture" || source_id != paths.mode.source() || artifact != paths.mode.artifact() { return Err(Error::blocked("record_identity_rejected", "Capture 身份、来源或额度不可信。")); } Ok(Record { id, content, created_at_ms: created as u64, source, source_id, artifact_version: artifact, identity: "user_original" }) }
 fn audit(conn: &Connection) -> Result<Audit, Error> { let mut stmt = conn.prepare("SELECT event FROM audit").map_err(sql)?; let mut output = Audit { event_count: 0, capture_saved: 0, capture_repeat: 0, context_feedback: 0, candidate_feedback: 0, action_created: 0, result_recorded: 0 }; for event in stmt.query_map([], |r| r.get::<_, String>(0)).map_err(sql)? { output.event_count += 1; match event.map_err(sql)?.as_str() { "capture_saved" => output.capture_saved += 1, "capture_repeat" => output.capture_repeat += 1, "context_confirmed" | "context_rejected" => output.context_feedback += 1, "candidate_accepted" | "candidate_edit_accepted" | "candidate_rejected" | "candidate_deferred" | "understanding_created" | "understanding_confirmed" | "understanding_edited_confirmed" | "understanding_rejected" | "understanding_ignored" | "understanding_corrected" => output.candidate_feedback += 1, "action_created" | "understanding_action_created" => output.action_created += 1, "action_completed" => output.result_recorded += 1, _ => return Err(Error::blocked("audit_contract_rejected", "审计事件不在合同内。")), } } Ok(output) }
 fn recovery(paths: &Paths, conn: &Connection) -> Result<Recovery, Error> { let link: Option<(String, String)> = conn.query_row("SELECT capture_id,link_status FROM capture_project_links ORDER BY capture_id DESC LIMIT 1", [], |r| Ok((r.get(0)?, r.get(1)?))).optional().map_err(sql)?; let state = link.as_ref().map(|x| x.1.clone()).unwrap_or_else(|| "empty".into()); Ok(Recovery { context_id: CONTEXT.into(), project_id: PROJECT.into(), person_id: PERSON.into(), project_title: "LifeOS Work".into(), state, reliable_suggestion: false, evidence_gap: None, source_ref: paths.mode.source().into(), artifact_ref: paths.mode.artifact().into(), typed_link_ref: link.as_ref().map(|x| format!("capture_project_links:{}:{}", x.0, x.1)), feedback_ref: None, audit_ref: link.map(|x| format!("audit:capture:{}", x.0)), memory_copy_created: false }) }
@@ -367,8 +386,13 @@ fn capture(paths: &Paths, request: &CaptureRequest) -> Result<CaptureResponse, E
             let count: i64 = tx.query_row("SELECT count(*) FROM captures", [], |row| row.get(0)).map_err(sql)?;
             if count >= paths.mode.limit() { return Err(Error::blocked("input_limit_rejected", "当前输入额度已满；写入前已拒绝。")); }
             let time = now()?;
+            if paths.mode == InputMode::Real {
+                let same_day: i64 = tx.query_row("SELECT count(*) FROM work_trial_days WHERE day_key=strftime('%Y-%m-%d',?1 / 1000,'unixepoch','localtime')", params![time], |row| row.get(0)).map_err(sql)?;
+                if same_day >= 1 { return Err(Error::blocked("daily_work_limit_rejected", "当天已保存一条 Work；写入前已拒绝。")); }
+            }
             let id = format!("{}{}", paths.mode.capture_prefix(), request.key);
             tx.execute("INSERT INTO captures(id,content,created_at_ms,source,source_id,artifact_version,idem_key) VALUES(?1,?2,?3,'local_capture',?4,?5,?6)", params![id, request.text, time, paths.mode.source(), paths.mode.artifact(), request.key]).map_err(sql)?;
+            if paths.mode == InputMode::Real { tx.execute("INSERT INTO work_trial_days(day_key,capture_id,created_at_ms) VALUES(strftime('%Y-%m-%d',?1 / 1000,'unixepoch','localtime'),?2,?1)", params![time,id]).map_err(sql)?; }
             tx.execute("INSERT INTO audit(event,target_id,detail,created_at_ms) VALUES('capture_saved',?1,'local_capture',?2)", params![id, time]).map_err(sql)?;
             ("saved".into(), record(paths, id, request.text, time, "local_capture".into(), paths.mode.source().into(), paths.mode.artifact().into())?, "unlinked".into())
         };
@@ -379,7 +403,7 @@ fn capture(paths: &Paths, request: &CaptureRequest) -> Result<CaptureResponse, E
 }
 impl Clone for CaptureRequest { fn clone(&self) -> Self { Self { text: self.text.clone(), key: self.key.clone() } } }
 fn confirm(paths: &Paths, request: &ConfirmRequest) -> Result<ConfirmResponse, Error> {
-    if request.context_id != CONTEXT || !request.capture_id.starts_with(paths.mode.capture_prefix()) || !request.idempotency_key.starts_with(if paths.mode == InputMode::Real { "p3-133-real-ui-" } else { "p3-131-" }) {
+    if request.context_id != CONTEXT || !request.capture_id.starts_with(paths.mode.capture_prefix()) || !request.idempotency_key.starts_with(paths.mode.idempotency_prefix()) {
         return Err(Error::blocked("argument_schema_rejected", "Context 确认参数不符合合同。"));
     }
     let request = request.clone();
@@ -405,8 +429,8 @@ fn confirm(paths: &Paths, request: &ConfirmRequest) -> Result<ConfirmResponse, E
 }
 impl Clone for ConfirmRequest { fn clone(&self) -> Self { Self { capture_id: self.capture_id.clone(), context_id: self.context_id.clone(), decision: self.decision, idempotency_key: self.idempotency_key.clone() } } }
 fn no_next(status: &str, disclosure: &str) -> NextResponse { NextResponse { status: status.into(), context_id: CONTEXT.into(), candidates: Vec::new(), disclosure: Some(disclosure.into()), evidence_gap: None } }
-fn next(paths: &Paths, request: &ContextRequest) -> Result<NextResponse, Error> { if request.context_id != CONTEXT { return Err(Error::blocked("context_schema_rejected", "只接受固定 Project Context。")); } let conn = read_or_memory(paths)?; let capture: Option<(String, String)> = conn.query_row("SELECT id,content FROM captures ORDER BY created_at_ms DESC,id DESC LIMIT 1", [], |r| Ok((r.get(0)?, r.get(1)?))).optional().map_err(sql)?; let Some((capture_id, text)) = capture else { return Ok(no_next("empty", "暂时没有足够证据判断。")); }; if paths.mode == InputMode::Synthetic && text == SYN_SHORT { return Ok(no_next("insufficient_evidence", "暂时没有足够证据判断。")); } let link: Option<String> = conn.query_row("SELECT link_status FROM capture_project_links WHERE capture_id=?1", params![capture_id], |r| r.get(0)).optional().map_err(sql)?; if link.as_deref() != Some("confirmed") { return Ok(no_next("awaiting_context_confirmation", "请先确认此 capture 是否属于当前 Project Context。")); } let existing: Option<(String, String, String)> = conn.query_row("SELECT id,candidate_text,candidate_state FROM candidate_actions WHERE capture_id=?1 ORDER BY created_at_ms DESC LIMIT 1", params![capture_id], |r| Ok((r.get(0)?, r.get(1)?, r.get(2)?))).optional().map_err(sql)?; if let Some((id, content, state)) = existing { if state == "active" { return Ok(NextResponse { status: "available".into(), context_id: CONTEXT.into(), candidates: vec![Candidate { candidate_id: id, text: content, identity: "system_candidate_next_action", derivation_id: format!("derivation:{}", capture_id), processor: if paths.mode == InputMode::Real { "local_rule:p3-133-user-explicit-v1" } else { "local_rule:p3-131-v1" }.into(), processor_version: "v1".into(), basis_refs: vec![format!("capture:{capture_id}"), format!("capture_project_links:{capture_id}:confirmed")], evidence_state: "sufficient", why: "候选需要用户显式接受、拒绝或暂缓。".into() }], disclosure: None, evidence_gap: None }); } return Ok(no_next("already_decided", "此候选已完成用户处置。")); }
-    drop(conn); write(paths, move |conn| { let time = now()?; let id = format!("{}{}", paths.mode.candidate_prefix(), capture_id); let text = if paths.mode == InputMode::Real { REAL_ACTION } else { SYN_TEXT }; conn.execute("INSERT INTO candidate_actions(id,capture_id,candidate_text,candidate_state,created_at_ms) VALUES(?1,?2,?3,'active',?4)", params![id, capture_id, text, time]).map_err(sql)?; Ok(NextResponse { status: "available".into(), context_id: CONTEXT.into(), candidates: vec![Candidate { candidate_id: id, text: text.into(), identity: "system_candidate_next_action", derivation_id: format!("derivation:{}", capture_id), processor: if paths.mode == InputMode::Real { "local_rule:p3-133-user-explicit-v1" } else { "local_rule:p3-131-v1" }.into(), processor_version: "v1".into(), basis_refs: vec![format!("capture:{capture_id}"), format!("capture_project_links:{capture_id}:confirmed")], evidence_state: "sufficient", why: "候选需要用户显式接受、拒绝或暂缓。".into() }], disclosure: None, evidence_gap: None }) }) }
+fn next(paths: &Paths, request: &ContextRequest) -> Result<NextResponse, Error> { if request.context_id != CONTEXT { return Err(Error::blocked("context_schema_rejected", "只接受固定 Project Context。")); } let conn = read_or_memory(paths)?; let capture: Option<(String, String)> = conn.query_row("SELECT id,content FROM captures ORDER BY created_at_ms DESC,id DESC LIMIT 1", [], |r| Ok((r.get(0)?, r.get(1)?))).optional().map_err(sql)?; let Some((capture_id, text)) = capture else { return Ok(no_next("empty", "暂时没有足够证据判断。")); }; if paths.mode == InputMode::Synthetic && text == SYN_SHORT { return Ok(no_next("insufficient_evidence", "暂时没有足够证据判断。")); } let link: Option<String> = conn.query_row("SELECT link_status FROM capture_project_links WHERE capture_id=?1", params![capture_id], |r| r.get(0)).optional().map_err(sql)?; if link.as_deref() != Some("confirmed") { return Ok(no_next("awaiting_context_confirmation", "请先确认此 capture 是否属于当前 Project Context。")); } let existing: Option<(String, String, String)> = conn.query_row("SELECT id,candidate_text,candidate_state FROM candidate_actions WHERE capture_id=?1 ORDER BY created_at_ms DESC LIMIT 1", params![capture_id], |r| Ok((r.get(0)?, r.get(1)?, r.get(2)?))).optional().map_err(sql)?; if let Some((id, content, state)) = existing { if state == "active" { return Ok(NextResponse { status: "available".into(), context_id: CONTEXT.into(), candidates: vec![Candidate { candidate_id: id, text: content, identity: "system_candidate_next_action", derivation_id: format!("derivation:{}", capture_id), processor: if paths.mode == InputMode::Real { "local_rule:p3-141-user-explicit-v1" } else { "local_rule:p3-141-synthetic-v1" }.into(), processor_version: "v1".into(), basis_refs: vec![format!("capture:{capture_id}"), format!("capture_project_links:{capture_id}:confirmed")], evidence_state: "sufficient", why: "候选需要用户显式接受、拒绝或暂缓。".into() }], disclosure: None, evidence_gap: None }); } return Ok(no_next("already_decided", "此候选已完成用户处置。")); }
+    drop(conn); write(paths, move |conn| { let time = now()?; let id = format!("{}{}", paths.mode.candidate_prefix(), capture_id); let text = if paths.mode == InputMode::Real { REAL_ACTION } else { SYN_TEXT }; conn.execute("INSERT INTO candidate_actions(id,capture_id,candidate_text,candidate_state,created_at_ms) VALUES(?1,?2,?3,'active',?4)", params![id, capture_id, text, time]).map_err(sql)?; Ok(NextResponse { status: "available".into(), context_id: CONTEXT.into(), candidates: vec![Candidate { candidate_id: id, text: text.into(), identity: "system_candidate_next_action", derivation_id: format!("derivation:{}", capture_id), processor: if paths.mode == InputMode::Real { "local_rule:p3-141-user-explicit-v1" } else { "local_rule:p3-141-synthetic-v1" }.into(), processor_version: "v1".into(), basis_refs: vec![format!("capture:{capture_id}"), format!("capture_project_links:{capture_id}:confirmed")], evidence_state: "sufficient", why: "候选需要用户显式接受、拒绝或暂缓。".into() }], disclosure: None, evidence_gap: None }) }) }
 fn next_request_local(paths: &Paths, request: &ContextRequest) -> Result<NextResponse, Error> {
     let _legacy_for_read_only_regression: fn(&Paths, &ContextRequest) -> Result<NextResponse, Error> = next;
     if !request_context_id(&request.context_id) { return Err(Error::blocked("context_schema_rejected", "请求 Context 标识不受支持。")); }
@@ -420,9 +444,9 @@ fn next_request_local(paths: &Paths, request: &ContextRequest) -> Result<NextRes
     write(paths,move|conn|{let time=now()?;let id=format!("{}{}",paths.mode.candidate_prefix(),capture_id);let text=if paths.mode==InputMode::Real{REAL_ACTION}else{SYN_TEXT};conn.execute("INSERT INTO candidate_actions(id,capture_id,candidate_text,candidate_state,created_at_ms) VALUES(?1,?2,?3,'active',?4)",params![id,capture_id,text,time]).map_err(sql)?;Ok(NextResponse{status:"available".into(),context_id:"request-local".into(),candidates:vec![Candidate{candidate_id:id,text:text.into(),identity:"system_candidate_next_action",derivation_id:format!("derivation:{capture_id}"),processor:"local_rule:request_local-v1".into(),processor_version:"v1".into(),basis_refs:vec![format!("capture:{capture_id}")],evidence_state:"sufficient",why:"候选需要用户显式接受、拒绝或忽略。".into()}],disclosure:None,evidence_gap:None})})
 }
 fn action_view(conn: &Connection, id: &str) -> Result<Action, Error> { conn.query_row("SELECT id,action_text,action_state,confirmation_kind,candidate_id,confirmed_at_ms FROM actions WHERE id=?1", params![id], |r| Ok(Action { action_id: r.get(0)?, text: r.get(1)?, state: r.get(2)?, confirmation_kind: r.get(3)?, candidate_ref: r.get(4)?, confirmed_at: r.get::<_, i64>(5)? as u64 })).map_err(sql) }
-fn decide(paths: &Paths, request: &NextRequest) -> Result<DecisionResponse, Error> { if !request.candidate_id.starts_with(paths.mode.candidate_prefix()) || !request.idempotency_key.starts_with(if paths.mode == InputMode::Real { "p3-133-real-ui-" } else { "p3-131-" }) || (paths.mode == InputMode::Real && (request.decision == NextDecision::EditAccept || request.edited_text.is_some())) || (paths.mode == InputMode::Synthetic && request.decision == NextDecision::EditAccept && request.edited_text.as_deref() != Some(SYN_EDIT)) { return Err(Error::blocked("argument_schema_rejected", "Action 决定参数不符合合同。")); } let request = request.clone(); write(paths, move |conn| { let tx = conn.transaction_with_behavior(TransactionBehavior::Immediate).map_err(sql)?; let state: Option<String> = tx.query_row("SELECT candidate_state FROM candidate_actions WHERE id=?1", params![request.candidate_id], |r| r.get(0)).optional().map_err(sql)?; if state.as_deref() != Some("active") { return Err(Error::blocked("candidate_state_rejected", "只能处置开放的 Candidate。")); } let time = now()?; let mut action_id = String::new(); if matches!(request.decision, NextDecision::Accept | NextDecision::EditAccept) { action_id = format!("{}{}", paths.mode.action_prefix(), request.candidate_id); let text = if paths.mode == InputMode::Real { REAL_ACTION } else if request.decision == NextDecision::EditAccept { SYN_EDIT } else { SYN_TEXT }; tx.execute("INSERT INTO actions(id,candidate_id,action_text,confirmation_kind,action_state,created_at_ms) VALUES(?1,?2,?3,?4,'open',?5)", params![action_id, request.candidate_id, text, request.decision.value(), time]).map_err(sql)?; tx.execute("INSERT INTO audit(event,target_id,detail,created_at_ms) VALUES('action_created',?1,?2,?3)", params![action_id, request.decision.value(), time]).map_err(sql)?; } let state = match request.decision { NextDecision::Accept | NextDecision::EditAccept => "accepted", NextDecision::Reject => "rejected", NextDecision::Defer => "deferred" }; let event = match request.decision { NextDecision::Accept => "candidate_accepted", NextDecision::EditAccept => "candidate_edit_accepted", NextDecision::Reject => "candidate_rejected", NextDecision::Defer => "candidate_deferred" }; tx.execute("UPDATE candidate_actions SET candidate_state=?1 WHERE id=?2", params![state, request.candidate_id]).map_err(sql)?; tx.execute("INSERT INTO feedback(target_kind,target_id,decision,idem_key,detail,created_at_ms) VALUES('candidate_action',?1,?2,?3,?4,?5)", params![request.candidate_id, request.decision.value(), request.idempotency_key, action_id, time]).map_err(sql)?; tx.execute("INSERT INTO audit(event,target_id,detail,created_at_ms) VALUES(?1,?2,?3,?4)", params![event, request.candidate_id, request.decision.value(), time]).map_err(sql)?; tx.commit().map_err(sql)?; Ok(DecisionResponse { status: "saved".into(), candidate_id: request.candidate_id, decision: request.decision.value().into(), action: if action_id.is_empty() { None } else { Some(action_view(conn, &action_id)?) }, feedback_ref: format!("feedback:{time}"), audit_event_count: audit(conn)?.event_count }) }) }
+fn decide(paths: &Paths, request: &NextRequest) -> Result<DecisionResponse, Error> { if !request.candidate_id.starts_with(paths.mode.candidate_prefix()) || !request.idempotency_key.starts_with(paths.mode.idempotency_prefix()) || (paths.mode == InputMode::Real && (request.decision == NextDecision::EditAccept || request.edited_text.is_some())) || (paths.mode == InputMode::Synthetic && request.decision == NextDecision::EditAccept && request.edited_text.as_deref() != Some(SYN_EDIT)) { return Err(Error::blocked("argument_schema_rejected", "Action 决定参数不符合合同。")); } let request = request.clone(); write(paths, move |conn| { let tx = conn.transaction_with_behavior(TransactionBehavior::Immediate).map_err(sql)?; let state: Option<String> = tx.query_row("SELECT candidate_state FROM candidate_actions WHERE id=?1", params![request.candidate_id], |r| r.get(0)).optional().map_err(sql)?; if state.as_deref() != Some("active") { return Err(Error::blocked("candidate_state_rejected", "只能处置开放的 Candidate。")); } let time = now()?; let mut action_id = String::new(); if matches!(request.decision, NextDecision::Accept | NextDecision::EditAccept) { action_id = format!("{}{}", paths.mode.action_prefix(), request.candidate_id); let text = if paths.mode == InputMode::Real { REAL_ACTION } else if request.decision == NextDecision::EditAccept { SYN_EDIT } else { SYN_TEXT }; tx.execute("INSERT INTO actions(id,candidate_id,action_text,confirmation_kind,action_state,created_at_ms) VALUES(?1,?2,?3,?4,'open',?5)", params![action_id, request.candidate_id, text, request.decision.value(), time]).map_err(sql)?; tx.execute("INSERT INTO audit(event,target_id,detail,created_at_ms) VALUES('action_created',?1,?2,?3)", params![action_id, request.decision.value(), time]).map_err(sql)?; } let state = match request.decision { NextDecision::Accept | NextDecision::EditAccept => "accepted", NextDecision::Reject => "rejected", NextDecision::Defer => "deferred" }; let event = match request.decision { NextDecision::Accept => "candidate_accepted", NextDecision::EditAccept => "candidate_edit_accepted", NextDecision::Reject => "candidate_rejected", NextDecision::Defer => "candidate_deferred" }; tx.execute("UPDATE candidate_actions SET candidate_state=?1 WHERE id=?2", params![state, request.candidate_id]).map_err(sql)?; tx.execute("INSERT INTO feedback(target_kind,target_id,decision,idem_key,detail,created_at_ms) VALUES('candidate_action',?1,?2,?3,?4,?5)", params![request.candidate_id, request.decision.value(), request.idempotency_key, action_id, time]).map_err(sql)?; tx.execute("INSERT INTO audit(event,target_id,detail,created_at_ms) VALUES(?1,?2,?3,?4)", params![event, request.candidate_id, request.decision.value(), time]).map_err(sql)?; tx.commit().map_err(sql)?; Ok(DecisionResponse { status: "saved".into(), candidate_id: request.candidate_id, decision: request.decision.value().into(), action: if action_id.is_empty() { None } else { Some(action_view(conn, &action_id)?) }, feedback_ref: format!("feedback:{time}"), audit_event_count: audit(conn)?.event_count }) }) }
 impl Clone for NextRequest { fn clone(&self) -> Self { Self { candidate_id: self.candidate_id.clone(), decision: self.decision, edited_text: self.edited_text.clone(), idempotency_key: self.idempotency_key.clone() } } }
-fn result(paths: &Paths, request: &ResultRequest) -> Result<ResultResponse, Error> { let expected = if paths.mode == InputMode::Real { REAL_RESULT } else { SYN_RESULT }; if !request.action_id.starts_with(paths.mode.action_prefix()) || request.result != ActionResult::Completed || request.result_text != expected || !request.idempotency_key.starts_with(if paths.mode == InputMode::Real { "p3-133-real-ui-" } else { "p3-131-" }) { return Err(Error::blocked("argument_schema_rejected", "Action Result 参数不符合合同。")); } let request = request.clone(); write(paths, move |conn| { let state: Option<String> = conn.query_row("SELECT action_state FROM actions WHERE id=?1", params![request.action_id], |r| r.get(0)).optional().map_err(sql)?; if state.as_deref() != Some("open") { return Err(Error::blocked("action_state_rejected", "只能记录开放 Action 的结果。")); } let time = now()?; let result_id = format!("action_result:p3-133:{time:016x}"); let tx = conn.transaction_with_behavior(TransactionBehavior::Immediate).map_err(sql)?; tx.execute("INSERT INTO action_results(id,action_id,result_text,idem_key,created_at_ms) VALUES(?1,?2,?3,?4,?5)", params![result_id, request.action_id, expected, request.idempotency_key, time]).map_err(sql)?; tx.execute("UPDATE actions SET action_state='completed' WHERE id=?1", params![request.action_id]).map_err(sql)?; tx.execute("INSERT INTO audit(event,target_id,detail,created_at_ms) VALUES('action_completed',?1,'completed',?2)", params![request.action_id, time]).map_err(sql)?; tx.commit().map_err(sql)?; Ok(ResultResponse { status: "saved".into(), action_id: request.action_id, result: request.result.value().into(), result_ref: result_id, audit_event_count: audit(conn)?.event_count }) }) }
+fn result(paths: &Paths, request: &ResultRequest) -> Result<ResultResponse, Error> { let expected = if paths.mode == InputMode::Real { REAL_RESULT } else { SYN_RESULT }; if !request.action_id.starts_with(paths.mode.action_prefix()) || request.result != ActionResult::Completed || request.result_text != expected || !request.idempotency_key.starts_with(paths.mode.idempotency_prefix()) { return Err(Error::blocked("argument_schema_rejected", "Action Result 参数不符合合同。")); } let request = request.clone(); write(paths, move |conn| { let state: Option<String> = conn.query_row("SELECT action_state FROM actions WHERE id=?1", params![request.action_id], |r| r.get(0)).optional().map_err(sql)?; if state.as_deref() != Some("open") { return Err(Error::blocked("action_state_rejected", "只能记录开放 Action 的结果。")); } let time = now()?; let result_id = format!("action_result:p3-141:{time:016x}"); let tx = conn.transaction_with_behavior(TransactionBehavior::Immediate).map_err(sql)?; tx.execute("INSERT INTO action_results(id,action_id,result_text,idem_key,created_at_ms) VALUES(?1,?2,?3,?4,?5)", params![result_id, request.action_id, expected, request.idempotency_key, time]).map_err(sql)?; tx.execute("UPDATE actions SET action_state='completed' WHERE id=?1", params![request.action_id]).map_err(sql)?; tx.execute("INSERT INTO audit(event,target_id,detail,created_at_ms) VALUES('action_completed',?1,'completed',?2)", params![request.action_id, time]).map_err(sql)?; tx.commit().map_err(sql)?; Ok(ResultResponse { status: "saved".into(), action_id: request.action_id, result: request.result.value().into(), result_ref: result_id, audit_event_count: audit(conn)?.event_count }) }) }
 impl Clone for ResultRequest { fn clone(&self) -> Self { Self { action_id: self.action_id.clone(), result: self.result, result_text: self.result_text.clone(), idempotency_key: self.idempotency_key.clone() } } }
 fn today(paths: &Paths) -> Result<Today, Error> { let conn = read_or_memory(paths)?; let mut records = Vec::new(); let mut stmt = conn.prepare("SELECT id,content,created_at_ms,source,source_id,artifact_version FROM captures ORDER BY created_at_ms,id").map_err(sql)?; for row in stmt.query_map([], |r| Ok((r.get(0)?,r.get(1)?,r.get(2)?,r.get(3)?,r.get(4)?,r.get(5)?))).map_err(sql)? { let (id,content,time,source,source_id,artifact) = row.map_err(sql)?; records.push(record(paths,id,content,time,source,source_id,artifact)?); } let mut actions = Vec::new(); let mut stmt = conn.prepare("SELECT id,action_text,action_state,confirmation_kind,candidate_id,confirmed_at_ms FROM actions WHERE action_state='open' ORDER BY confirmed_at_ms,id").map_err(sql)?; for row in stmt.query_map([], |r| Ok(Action { action_id:r.get(0)?,text:r.get(1)?,state:r.get(2)?,confirmation_kind:r.get(3)?,candidate_ref:r.get(4)?,confirmed_at:r.get::<_,i64>(5)? as u64 })).map_err(sql)? { actions.push(row.map_err(sql)?); } let memory = Memory { derivation_refs: Vec::new(), candidate_refs: Vec::new(), feedback_refs: Vec::new(), action_refs: actions.iter().map(|x| x.action_id.clone()).collect(), result_refs: Vec::new(), original_copy_created: false }; Ok(Today { status: if records.is_empty() { "empty" } else { "ready" }, records, source:"local_capture", ai_status:"provider_requires_explicit_enablement", audit:audit(&conn)?, context_recovery:recovery(paths,&conn)?, todays_focus:actions.first().map(|x|x.action_id.clone()), confirmed_actions:actions, lifeos_noticed:None, memory_provenance:memory, intelligence:None }) }
 fn request_context_id(value: &str) -> bool { value == CONTEXT || value == "request-local" || value.starts_with("request:") }
@@ -663,30 +687,32 @@ pub fn run() {
         let _ = db_present(&runtime).unwrap_or_else(|e| panic!("P3-141 database boundary rejected: {}", e.code));
     }
     let provider = load_provider_state(&runtime).unwrap_or_else(|e| panic!("P3-141 Provider state rejected: {}", e.code));
-    tauri::Builder::default()
+    let app = tauri::Builder::default()
         .manage(State { paths: runtime, lock: Mutex::new(()), provider: Mutex::new(provider) })
-        .setup(|app| {
+        .invoke_handler(tauri::generate_handler![capture_record,get_today,runtime_status,confirm_capture_context,get_context_recovery,get_context_next_action,decide_context_next_action,record_action_result,assemble_global_ai_context,get_evidence_backed_understanding,decide_understanding_feedback,get_ai_provider_settings,save_ai_provider_settings,set_ai_provider_session_credential,test_ai_provider_connection,set_ai_provider_enabled,upsert_durable_memory,update_current_state,resolve_request_context,get_context_disclosure_receipt])
+        .build(tauri::generate_context!())
+        .expect("P3-141 Tauri runtime failed");
+    app.run(|app, event| {
+        if let tauri::RunEvent::Ready = event {
             let window = app.get_webview_window("main").expect("main window missing");
             let state = app.state::<State>();
-            write_startup_ready_receipt(&state.paths, &window).map_err(|error| error.message)?;
-            Ok(())
-        })
-        .invoke_handler(tauri::generate_handler![capture_record,get_today,runtime_status,confirm_capture_context,get_context_recovery,get_context_next_action,decide_context_next_action,record_action_result,assemble_global_ai_context,get_evidence_backed_understanding,decide_understanding_feedback,get_ai_provider_settings,save_ai_provider_settings,set_ai_provider_session_credential,test_ai_provider_connection,set_ai_provider_enabled,upsert_durable_memory,update_current_state,resolve_request_context,get_context_disclosure_receipt])
-        .run(tauri::generate_context!())
-        .expect("P3-139 Tauri runtime failed");
+            write_startup_ready_receipt(&state.paths, &window)
+                .unwrap_or_else(|error| panic!("P3-141 startup Evidence rejected: {}", error.code));
+        }
+    });
 }
 
 #[cfg(test)] mod tests { use super::*; use sha2::{Digest,Sha256}; fn test_paths(name:&str)->Paths{let base=paths().unwrap().root;fs::create_dir_all(&base).unwrap();let root=base.join(format!("unit-{name}-{}",now().unwrap()));let _=fs::remove_dir_all(&root);let current=mode().unwrap();if current==InputMode::Synthetic{fs::create_dir(&root).unwrap();}Paths{db:root.join(DB),root,mode:current}} fn clean(p:&Paths){let _=fs::remove_dir_all(&p.root);} fn hash(p:&Path)->String{let mut h=Sha256::new();h.update(fs::read(p).unwrap());format!("{:x}",h.finalize())}
-#[test] fn real_preexisting_database_is_rejected_before_write(){if mode().unwrap()!=InputMode::Real{return;}let p=test_paths("real-existing-db");fs::create_dir(&p.root).unwrap();fs::write(&p.db,b"not-a-sqlite-db").unwrap();let before=hash(&p.db);let error=capture(&p,&CaptureRequest{text:"安全测试".into(),key:"p3-133-real-ui-existing-db".into()}).unwrap_err();assert_eq!(error.code,"database_unavailable");assert_eq!(before,hash(&p.db));clean(&p);}
+#[test] fn real_preexisting_database_is_rejected_before_write(){if mode().unwrap()!=InputMode::Real{return;}let p=test_paths("real-existing-db");fs::create_dir(&p.root).unwrap();fs::write(&p.db,b"not-a-sqlite-db").unwrap();let before=hash(&p.db);let error=capture(&p,&CaptureRequest{text:"安全测试".into(),key:"p3-141-real-ui-existing-db".into()}).unwrap_err();assert_eq!(error.code,"database_unavailable");assert_eq!(before,hash(&p.db));clean(&p);}
 #[test] fn status_is_closed_to_the_p3_139_twenty_ipc(){let p=paths().unwrap();let s=status(&p);assert_eq!(s.ipc_allowlist,IPC);assert_eq!(IPC.len(),20);assert!(!s.ai_enabled&&!s.filesystem&&!s.raw_database&&!s.generic_path_api&&!s.shell&&!s.process_spawn&&!s.network&&!s.vault&&!s.export&&!s.sync);assert_eq!(s.model_port,"replaceable_provider_explicit_only");assert_eq!(s.model_adapter,"four_profile_explicit_user_enabled_synthetic_loopback_only");assert_eq!(provider_profiles(),vec!["openai","anthropic","ollama","lm_studio"]);}
-#[test] fn receipt_enabled_real_mode_requires_fresh_root_and_reopens_without_write(){if MODE != Some("real_self_use"){return;}assert_eq!(mode().unwrap(),InputMode::Real);let configured=paths().unwrap();assert!(metadata(&configured.root).unwrap().is_none());assert!(metadata(&configured.db).unwrap().is_none());let captured=capture(&configured,&CaptureRequest{text:"receipt-enabled synthetic fixture".into(),key:"p3-133-real-ui-receipt-enabled".into()}).unwrap();assert!(captured.record.id.starts_with(InputMode::Real.capture_prefix()));validate_existing_real_root(&configured).unwrap();let before=fs::read(&configured.db).unwrap();drop(read(&configured).unwrap());assert_eq!(before,fs::read(&configured.db).unwrap());fs::remove_dir_all(&configured.root).unwrap();}
+#[test] fn receipt_enabled_real_mode_requires_fresh_root_and_reopens_without_write(){if MODE != Some("real_self_use"){return;}assert_eq!(mode().unwrap(),InputMode::Real);let configured=paths().unwrap();assert!(metadata(&configured.root).unwrap().is_none());assert!(metadata(&configured.db).unwrap().is_none());let captured=capture(&configured,&CaptureRequest{text:"receipt-enabled synthetic fixture".into(),key:"p3-141-real-ui-receipt-enabled".into()}).unwrap();assert!(captured.record.id.starts_with(InputMode::Real.capture_prefix()));validate_existing_real_root(&configured).unwrap();let before=fs::read(&configured.db).unwrap();drop(read(&configured).unwrap());assert_eq!(before,fs::read(&configured.db).unwrap());fs::remove_dir_all(&configured.root).unwrap();}
 #[test] fn provider_settings_are_nonsecret_atomic_and_session_only(){if mode().unwrap()!=InputMode::Synthetic{return;}let p=test_paths("provider-settings");let mut state=default_provider_state();let settings=ProviderSettings{mode:ProviderMode::Cloud,profile:ProviderProfile::Openai,base_url:"https://api.example.test/v1".into(),model:"fixture-model".into(),temperature_bps:70,max_output_tokens:512,timeout_ms:30_000};let saved=save_provider_settings(&p,&mut state,SaveProviderSettingsRequest{settings:settings.clone()}).unwrap();assert!(!saved.enabled&&!saved.credential.present);set_provider_session_credential(&mut state,SessionCredentialRequest{credential:Some("SESSION_SECRET_DO_NOT_PERSIST".into()),environment_variable:None}).unwrap();let file=provider_settings_path(&p);let raw=fs::read_to_string(&file).unwrap();assert!(!raw.contains("SESSION_SECRET_DO_NOT_PERSIST"));let meta=fs::symlink_metadata(&file).unwrap();assert_eq!(meta.permissions().mode()&0o777,0o600);let reloaded=load_provider_state(&p).unwrap();assert_eq!(reloaded.settings,settings);assert!(!credential_status(&reloaded.credential).present);clean(&p);}
 #[test] fn provider_rejects_unsafe_endpoints_unsupported_profile_and_never_enables_stale_config(){if mode().unwrap()!=InputMode::Synthetic{return;}let p=test_paths("provider-negative");let mut state=default_provider_state();for url in ["http://169.254.1.9/v1","http://224.0.0.1/v1","file:///tmp/not-allowed","https://user:pass@api.example.test/v1"]{let settings=ProviderSettings{mode:ProviderMode::Local,profile:ProviderProfile::Ollama,base_url:url.into(),model:"fixture-model".into(),temperature_bps:0,max_output_tokens:10,timeout_ms:1_000};assert!(validate_provider_settings(&settings).is_err());}let cloud_ip=ProviderSettings{mode:ProviderMode::Cloud,profile:ProviderProfile::Openai,base_url:"https://127.0.0.1/v1".into(),model:"fixture-model".into(),temperature_bps:0,max_output_tokens:10,timeout_ms:1_000};assert!(validate_provider_settings(&cloud_ip).is_err());assert!(serde_json::from_str::<ProviderProfile>("\"custom_openai_compatible\"").is_err());let settings=ProviderSettings{mode:ProviderMode::Local,profile:ProviderProfile::Ollama,base_url:"http://127.0.0.1:11434/v1".into(),model:"fixture-model".into(),temperature_bps:0,max_output_tokens:10,timeout_ms:1_000};save_provider_settings(&p,&mut state,SaveProviderSettingsRequest{settings}).unwrap();assert_eq!(set_provider_enabled(&mut state,SetProviderEnabledRequest{enabled:true}).unwrap_err().code,"provider_enablement_rejected");assert_eq!(test_provider_connection(&p,&mut state,TestProviderConnectionRequest{cancel:None}).unwrap_err().code,"provider_connection_failed");assert!(!state.enabled);clean(&p);}
 #[test] fn provider_understanding_requires_explicit_successful_enablement(){if mode().unwrap()!=InputMode::Synthetic{return;}let p=test_paths("provider-understanding");let capture=capture(&p,&CaptureRequest{text:SYN_TEXT.into(),key:SYN_KEY.into()}).unwrap();let mut state=default_provider_state();let request=UnderstandingRequest{context_id:"request-local".into(),page:Page::Today,selection_ref:Some(capture.record.id),removed_context_kinds:None,request_id:"p3-137-test-explicit".into(),include_related_personal_content:None,additional_context_confirmed:None};assert!(provider_understanding(&p,&mut state,&request).unwrap().understanding_id.is_empty());assert_eq!(state.model_request_count,0);clean(&p);}
 #[test] fn disabled_provider_is_a_persisted_non_network_state(){if mode().unwrap()!=InputMode::Synthetic{return;}let p=test_paths("provider-disabled");let mut state=default_provider_state();let saved=save_provider_settings(&p,&mut state,SaveProviderSettingsRequest{settings:default_provider_settings()}).unwrap();assert_eq!(saved.connection_state,"disabled");assert_eq!(test_provider_connection(&p,&mut state,TestProviderConnectionRequest{cancel:None}).unwrap_err().code,"provider_disabled");assert_eq!(load_provider_state(&p).unwrap().connection_state,"disabled");clean(&p);}
-#[test] fn synthetic_lifecycle_and_no_write_rejection(){if mode().unwrap()==InputMode::Real{return;}let p=test_paths("synthetic");let c=capture(&p,&CaptureRequest{text:SYN_TEXT.into(),key:SYN_KEY.into()}).unwrap();assert_eq!(c.record_count,1);assert!(next(&p,&ContextRequest{context_id:CONTEXT.into()}).unwrap().candidates.is_empty());confirm(&p,&ConfirmRequest{capture_id:c.record.id,context_id:CONTEXT.into(),decision:LinkDecision::Confirm,idempotency_key:"p3-131-link-001".into()}).unwrap();let candidate=next(&p,&ContextRequest{context_id:CONTEXT.into()}).unwrap().candidates.remove(0);decide(&p,&NextRequest{candidate_id:candidate.candidate_id,decision:NextDecision::Accept,edited_text:None,idempotency_key:"p3-131-accept-001".into()}).unwrap();assert_eq!(today(&p).unwrap().confirmed_actions.len(),1);let before=hash(&p.db);assert_eq!(capture(&p,&CaptureRequest{text:"bad".into(),key:"bad".into()}).unwrap_err().code,"argument_schema_rejected");assert_eq!(before,hash(&p.db));clean(&p);}
+#[test] fn synthetic_lifecycle_and_no_write_rejection(){if mode().unwrap()==InputMode::Real{return;}let p=test_paths("synthetic");let c=capture(&p,&CaptureRequest{text:SYN_TEXT.into(),key:SYN_KEY.into()}).unwrap();assert_eq!(c.record_count,1);assert!(next(&p,&ContextRequest{context_id:CONTEXT.into()}).unwrap().candidates.is_empty());confirm(&p,&ConfirmRequest{capture_id:c.record.id,context_id:CONTEXT.into(),decision:LinkDecision::Confirm,idempotency_key:"p3-141-link-001".into()}).unwrap();let candidate=next(&p,&ContextRequest{context_id:CONTEXT.into()}).unwrap().candidates.remove(0);decide(&p,&NextRequest{candidate_id:candidate.candidate_id,decision:NextDecision::Accept,edited_text:None,idempotency_key:"p3-141-accept-001".into()}).unwrap();assert_eq!(today(&p).unwrap().confirmed_actions.len(),1);let before=hash(&p.db);assert_eq!(capture(&p,&CaptureRequest{text:"bad".into(),key:"bad".into()}).unwrap_err().code,"argument_schema_rejected");assert_eq!(before,hash(&p.db));clean(&p);}
 #[test] fn synthetic_insufficient_evidence_never_creates_candidate_or_action(){if mode().unwrap()==InputMode::Real{return;}let p=test_paths("synthetic-insufficient");let c=capture(&p,&CaptureRequest{text:SYN_SHORT.into(),key:SYN_SHORT_KEY.into()}).unwrap();assert_eq!(c.link_status,"unlinked");let before=hash(&p.db);assert!(next(&p,&ContextRequest{context_id:CONTEXT.into()}).unwrap().candidates.is_empty());assert!(today(&p).unwrap().confirmed_actions.is_empty());assert_eq!(before,hash(&p.db));let reopened=read(&p).unwrap();let captures:i64=reopened.query_row("SELECT count(*) FROM captures",[],|r|r.get(0)).unwrap();let candidates:i64=reopened.query_row("SELECT count(*) FROM candidate_actions",[],|r|r.get(0)).unwrap();let actions:i64=reopened.query_row("SELECT count(*) FROM actions",[],|r|r.get(0)).unwrap();assert_eq!((captures,candidates,actions),(1,0,0));clean(&p);}
-#[test] fn persistent_link_is_created_only_after_explicit_confirmation(){if mode().unwrap()!=InputMode::Synthetic{return;}let p=test_paths("explicit-link");let c=capture(&p,&CaptureRequest{text:SYN_TEXT.into(),key:SYN_KEY.into()}).unwrap();let conn=read(&p).unwrap();let before:i64=conn.query_row("SELECT count(*) FROM capture_project_links",[],|r|r.get(0)).unwrap();assert_eq!((c.link_status,before),("unlinked".into(),0));drop(conn);let rejected=confirm(&p,&ConfirmRequest{capture_id:c.record.id.clone(),context_id:CONTEXT.into(),decision:LinkDecision::Reject,idempotency_key:"p3-131-link-reject".into()}).unwrap();assert_eq!(rejected.recovery.state,"empty");let after_reject=read(&p).unwrap().query_row("SELECT count(*) FROM capture_project_links",[],|r|r.get::<_,i64>(0)).unwrap();assert_eq!(after_reject,0);let confirmed=confirm(&p,&ConfirmRequest{capture_id:c.record.id,context_id:CONTEXT.into(),decision:LinkDecision::Confirm,idempotency_key:"p3-131-link-confirm".into()}).unwrap();assert_eq!(confirmed.recovery.state,"confirmed");let after_confirm=read(&p).unwrap().query_row("SELECT count(*) FROM capture_project_links",[],|r|r.get::<_,i64>(0)).unwrap();assert_eq!(after_confirm,1);clean(&p);}
+#[test] fn persistent_link_is_created_only_after_explicit_confirmation(){if mode().unwrap()!=InputMode::Synthetic{return;}let p=test_paths("explicit-link");let c=capture(&p,&CaptureRequest{text:SYN_TEXT.into(),key:SYN_KEY.into()}).unwrap();let conn=read(&p).unwrap();let before:i64=conn.query_row("SELECT count(*) FROM capture_project_links",[],|r|r.get(0)).unwrap();assert_eq!((c.link_status,before),("unlinked".into(),0));drop(conn);let rejected=confirm(&p,&ConfirmRequest{capture_id:c.record.id.clone(),context_id:CONTEXT.into(),decision:LinkDecision::Reject,idempotency_key:"p3-141-link-reject".into()}).unwrap();assert_eq!(rejected.recovery.state,"empty");let after_reject=read(&p).unwrap().query_row("SELECT count(*) FROM capture_project_links",[],|r|r.get::<_,i64>(0)).unwrap();assert_eq!(after_reject,0);let confirmed=confirm(&p,&ConfirmRequest{capture_id:c.record.id,context_id:CONTEXT.into(),decision:LinkDecision::Confirm,idempotency_key:"p3-141-link-confirm".into()}).unwrap();assert_eq!(confirmed.recovery.state,"confirmed");let after_confirm=read(&p).unwrap().query_row("SELECT count(*) FROM capture_project_links",[],|r|r.get::<_,i64>(0)).unwrap();assert_eq!(after_confirm,1);clean(&p);}
 #[test] fn real_mode_model_port_is_explicit_and_not_implicit(){if mode().unwrap()!=InputMode::Real{return;}let p=test_paths("real-provider-gate");let mut state=default_provider_state();let settings=ProviderSettings{mode:ProviderMode::Cloud,profile:ProviderProfile::Openai,base_url:"https://api.example.test".into(),model:"user-selected-model".into(),temperature_bps:0,max_output_tokens:10,timeout_ms:1_000};save_provider_settings(&p,&mut state,SaveProviderSettingsRequest{settings}).unwrap();assert!(!state.enabled);let unavailable=provider_understanding(&p,&mut state,&UnderstandingRequest{context_id:"request-local".into(),page:Page::Today,selection_ref:None,removed_context_kinds:None,request_id:"p3-137-real-explicit-only".into(),include_related_personal_content:None,additional_context_confirmed:None}).unwrap_err();assert_eq!(unavailable.code,"selection_required");assert_eq!(state.model_request_count,0);assert_eq!(status(&p).model_port,"replaceable_provider_explicit_only");clean(&p);}
 #[test] fn request_local_bundle_is_minimal_and_does_not_require_persistent_link(){if mode().unwrap()!=InputMode::Synthetic{return;}let p=test_paths("request-local");let capture=capture(&p,&CaptureRequest{text:SYN_TEXT.into(),key:SYN_KEY.into()}).unwrap();let before=hash(&p.db);let bundle=global(&p,&GlobalRequest{page:Page::Today,selection_ref:Some(capture.record.id.clone()),removed_context_kinds:None,include_related_personal_content:None}).unwrap();let kinds=bundle.included.iter().map(|item|item.kind.as_str()).collect::<Vec<_>>();assert_eq!(kinds,["selection","page","person_domain","project","evidence_memory"]);assert!(!bundle.disclosure_required&&bundle.request_local);assert_eq!(before,hash(&p.db));let pending=understanding(&p,&UnderstandingRequest{context_id:"request-local".into(),page:Page::Today,selection_ref:Some(capture.record.id),removed_context_kinds:None,request_id:"p3-137-unlinked-minimal".into(),include_related_personal_content:None,additional_context_confirmed:None}).unwrap();assert_eq!(pending.identity,"no_reliable_understanding");clean(&p);}
 #[test] fn additional_personal_content_is_disclosed_before_any_request_or_write(){if mode().unwrap()!=InputMode::Synthetic{return;}let p=test_paths("disclosure");let capture=capture(&p,&CaptureRequest{text:SYN_TEXT.into(),key:SYN_KEY.into()}).unwrap();let before=hash(&p.db);let bundle=global(&p,&GlobalRequest{page:Page::Today,selection_ref:Some(capture.record.id.clone()),removed_context_kinds:None,include_related_personal_content:Some(true)}).unwrap();assert!(bundle.disclosure_required);assert_eq!(bundle.additional_personal_count,1);assert!(bundle.included.iter().any(|item|item.additional_personal_content&&item.authorization=="request_local:pending_confirmation"));let mut state=default_provider_state();let pending=provider_understanding(&p,&mut state,&UnderstandingRequest{context_id:"request-local".into(),page:Page::Today,selection_ref:Some(capture.record.id),removed_context_kinds:None,request_id:"p3-137-extra-pending".into(),include_related_personal_content:Some(true),additional_context_confirmed:Some(false)}).unwrap();assert_eq!(pending.identity,"request_disclosure_required");assert_eq!(state.model_request_count,0);assert_eq!(before,hash(&p.db));clean(&p);}
@@ -742,9 +768,9 @@ mod closure_tests {
     #[derive(Clone, Debug, PartialEq, Eq)]
     struct Snapshot { db_hash: String, counts: [i64; 6] }
 
-    fn taint() -> String { ["P3_135_", "SYNTHETIC_TAINT"].concat() }
+    fn taint() -> String { ["P3_141_", "SYNTHETIC_TAINT"].concat() }
     fn root_for(case: &str) -> Paths {
-        let base = paths().unwrap().root;
+        let base = paths().unwrap().root.parent().unwrap().to_path_buf();
         fs::create_dir_all(&base).unwrap();
         let root = base.join(format!("closure-{case}-{}", now().unwrap()));
         if root.exists() { fs::remove_dir_all(&root).unwrap(); }
@@ -752,7 +778,7 @@ mod closure_tests {
     }
     fn sentinel_for(paths: &Paths, case: &str) -> PathBuf {
         let sentinel = paths.root.parent().unwrap().join(format!("closure-sentinel-{case}-{}", now().unwrap()));
-        fs::write(&sentinel, b"P3-135 sentinel").unwrap();
+        fs::write(&sentinel, b"P3-141 sentinel").unwrap();
         sentinel
     }
     fn digest(path: &Path) -> String {
@@ -777,7 +803,7 @@ mod closure_tests {
     fn receipt(case: &str, error: &Error, before: &Snapshot, after: &Snapshot, sentinel: &Path) {
         let sentinel_hash = digest(sentinel);
         println!(
-            "P3-135-CLOSURE-RECEIPT|case={case}|code={}|db_before={}|db_after={}|counts_before={:?}|counts_after={:?}|sentinel_hash={sentinel_hash}",
+            "P3-141-CLOSURE-RECEIPT|case={case}|code={}|db_before={}|db_after={}|counts_before={:?}|counts_after={:?}|sentinel_hash={sentinel_hash}",
             error.code, before.db_hash, after.db_hash, before.counts, after.counts
         );
         assert_eq!(before, after, "{case} mutated the database or audit");
@@ -788,6 +814,40 @@ mod closure_tests {
     }
     fn capture_real(paths: &Paths, key: &str, suffix: &str) -> CaptureResponse {
         capture(paths, &CaptureRequest { text: format!("{}-{suffix}", taint()), key: key.into() }).unwrap()
+    }
+    fn real_memory(id: &str) -> memory_context::DurableMemoryRequest {
+        memory_context::DurableMemoryRequest {
+            operation: memory_context::MemoryOperation::Create, memory_id: id.into(), replacement_id: None,
+            statement: Some(format!("Synthetic P3-141 controlled memory fixture {id}.")), memory_type: Some("preference".into()),
+            source_refs: Some(vec!["source:local:user-confirmed".into()]), observed_at_ms: None,
+            domain: memory_context::Domain::Person, scope: "person".into(), expected_generation: None,
+            idempotency_key: format!("p3-141-real-ui-memory-{id}"),
+        }
+    }
+    fn real_health(id: &str, energy: u8) -> memory_context::CurrentStateRequest {
+        memory_context::CurrentStateRequest {
+            operation: memory_context::StateOperation::Set, state_id: id.into(), replacement_id: None,
+            state_key: Some("health_fitness_structured_v1".into()), value: None, domain: memory_context::Domain::Health,
+            source_refs: Some(vec!["source:local:user-confirmed".into()]), expires_at_ms: Some(now().unwrap()+86_400_000), expected_generation: None,
+            idempotency_key: format!("p3-141-real-ui-health-{id}"), structured_health: Some(memory_context::StructuredHealthState {
+                sleep_duration_range: memory_context::SleepDurationRange::SevenToNineHours, energy, soreness_or_pain: false,
+                training_load: memory_context::TrainingLoad::Medium, available_time: memory_context::AvailableTime::ThirtyToSixtyMinutes,
+            }),
+        }
+    }
+    fn seed_prior_work_days(paths: &Paths, count: i64) {
+        write(paths, |conn| {
+            let tx=conn.transaction_with_behavior(TransactionBehavior::Immediate).map_err(sql)?;
+            let time=now()?;
+            for number in 1..=count {
+                let created=time-(count-number+1)*86_400_000;
+                let key=format!("p3-141-real-ui-seeded-{number}");
+                let id=format!("{}{}",InputMode::Real.capture_prefix(),key);
+                tx.execute("INSERT INTO captures(id,content,created_at_ms,source,source_id,artifact_version,idem_key) VALUES(?1,?2,?3,'local_capture',?4,?5,?6)",params![id,format!("{}-seeded-{number}",taint()),created,InputMode::Real.source(),InputMode::Real.artifact(),key]).map_err(sql)?;
+                tx.execute("INSERT INTO work_trial_days(day_key,capture_id,created_at_ms) VALUES(strftime('%Y-%m-%d',?1 / 1000,'unixepoch','localtime'),?2,?1)",params![created,id]).map_err(sql)?;
+            }
+            tx.commit().map_err(sql)
+        }).unwrap();
     }
     fn confirm_real(paths: &Paths, capture_id: &str, key: &str) {
         confirm(paths, &ConfirmRequest {
@@ -807,7 +867,7 @@ mod closure_tests {
         for (case, text) in [("empty", ""), ("ascii", " \n\t "), ("unicode", "\u{3000}\u{00a0}\u{2003}")] {
             let sentinel = sentinel_for(&paths, case);
             let before = snapshot(&paths);
-            let error = capture(&paths, &CaptureRequest { text: text.into(), key: format!("p3-133-real-ui-whitespace-{case}") }).unwrap_err();
+            let error = capture(&paths, &CaptureRequest { text: text.into(), key: format!("p3-141-real-ui-whitespace-{case}") }).unwrap_err();
             let after = snapshot(&paths);
             assert_eq!(error.code, "real_input_rejected");
             receipt(&format!("whitespace_{case}"), &error, &before, &after, &sentinel);
@@ -820,28 +880,28 @@ mod closure_tests {
     fn closure_dto_idempotency_and_stale_paths_do_not_mutate() {
         let paths = root_for("dto-idempotency-stale");
         let sentinel = sentinel_for(&paths, "dto-idempotency-stale");
-        let first = capture_real(&paths, "p3-133-real-ui-idempotency-first", "first");
+        let first = capture_real(&paths, "p3-141-real-ui-idempotency-first", "first");
 
         let before = snapshot(&paths);
-        let error = capture(&paths, &CaptureRequest { text: format!("{}-different", taint()), key: "p3-133-real-ui-idempotency-first".into() }).unwrap_err();
+        let error = capture(&paths, &CaptureRequest { text: format!("{}-different", taint()), key: "p3-141-real-ui-idempotency-first".into() }).unwrap_err();
         assert_eq!(error.code, "idempotency_conflict");
         receipt("idempotency_conflict", &error, &before, &snapshot(&paths), &sentinel);
 
         let before = snapshot(&paths);
-        let error = blocked(confirm(&paths, &ConfirmRequest { capture_id: first.record.id.clone(), context_id: "ctx:wrong".into(), decision: LinkDecision::Confirm, idempotency_key: "p3-133-real-ui-bad-context".into() }));
+        let error = blocked(confirm(&paths, &ConfirmRequest { capture_id: first.record.id.clone(), context_id: "ctx:wrong".into(), decision: LinkDecision::Confirm, idempotency_key: "p3-141-real-ui-bad-context".into() }));
         assert_eq!(error.code, "argument_schema_rejected");
         receipt("dto_confirm", &error, &before, &snapshot(&paths), &sentinel);
 
-        confirm_real(&paths, &first.record.id, "p3-133-real-ui-confirm-first");
+        confirm_real(&paths, &first.record.id, "p3-141-real-ui-confirm-first");
         let candidate = candidate_real(&paths);
-        decide(&paths, &NextRequest { candidate_id: candidate.clone(), decision: NextDecision::Reject, edited_text: None, idempotency_key: "p3-133-real-ui-reject-first".into() }).unwrap();
+        decide(&paths, &NextRequest { candidate_id: candidate.clone(), decision: NextDecision::Reject, edited_text: None, idempotency_key: "p3-141-real-ui-reject-first".into() }).unwrap();
         let before = snapshot(&paths);
-        let error = blocked(decide(&paths, &NextRequest { candidate_id: candidate, decision: NextDecision::Reject, edited_text: None, idempotency_key: "p3-133-real-ui-reject-stale".into() }));
+        let error = blocked(decide(&paths, &NextRequest { candidate_id: candidate, decision: NextDecision::Reject, edited_text: None, idempotency_key: "p3-141-real-ui-reject-stale".into() }));
         assert_eq!(error.code, "candidate_state_rejected");
         receipt("stale_candidate", &error, &before, &snapshot(&paths), &sentinel);
 
         let before = snapshot(&paths);
-        let error = blocked(decide(&paths, &NextRequest { candidate_id: "candidate:p3-133:bad".into(), decision: NextDecision::EditAccept, edited_text: Some("not-allowed".into()), idempotency_key: "p3-133-real-ui-bad-edit".into() }));
+        let error = blocked(decide(&paths, &NextRequest { candidate_id: "candidate:p3-141:bad".into(), decision: NextDecision::EditAccept, edited_text: Some("not-allowed".into()), idempotency_key: "p3-141-real-ui-bad-edit".into() }));
         assert_eq!(error.code, "argument_schema_rejected");
         receipt("dto_real_edit", &error, &before, &snapshot(&paths), &sentinel);
         cleanup(&paths, &sentinel);
@@ -849,45 +909,88 @@ mod closure_tests {
 
     #[test]
     fn closure_limit_file_type_and_database_boundary_fail_closed() {
-        let paths = root_for("limit");
-        let sentinel = sentinel_for(&paths, "limit");
-        for number in 1..=3 {
-            capture_real(&paths, &format!("p3-133-real-ui-limit-{number}"), &format!("limit-{number}"));
-        }
-        let before = snapshot(&paths);
-        let error = capture(&paths, &CaptureRequest { text: format!("{}-fourth", taint()), key: "p3-133-real-ui-limit-fourth".into() }).unwrap_err();
+        let daily = root_for("daily-limit");
+        let sentinel = sentinel_for(&daily, "daily-limit");
+        capture_real(&daily, "p3-141-real-ui-daily-first", "daily-first");
+        drop(read(&daily).unwrap());
+        let before = snapshot(&daily);
+        let error = capture(&daily, &CaptureRequest { text: format!("{}-daily-second", taint()), key: "p3-141-real-ui-daily-second".into() }).unwrap_err();
+        assert_eq!(error.code, "daily_work_limit_rejected");
+        receipt("same_day_second_work", &error, &before, &snapshot(&daily), &sentinel);
+        cleanup(&daily, &sentinel);
+
+        let total = root_for("total-limit");
+        let sentinel = sentinel_for(&total, "total-limit");
+        seed_prior_work_days(&total, 14);
+        let before = snapshot(&total);
+        let error = capture(&total, &CaptureRequest { text: format!("{}-fifteenth", taint()), key: "p3-141-real-ui-fifteenth".into() }).unwrap_err();
         assert_eq!(error.code, "input_limit_rejected");
-        receipt("input_limit", &error, &before, &snapshot(&paths), &sentinel);
-        cleanup(&paths, &sentinel);
+        receipt("total_fifteenth_work", &error, &before, &snapshot(&total), &sentinel);
+        cleanup(&total, &sentinel);
 
         let file_root = root_for("root-file");
         let sentinel = sentinel_for(&file_root, "root-file");
         fs::write(&file_root.root, b"not-a-directory").unwrap();
         let before = snapshot(&file_root);
-        let error = capture(&file_root, &CaptureRequest { text: taint(), key: "p3-133-real-ui-root-file".into() }).unwrap_err();
+        let error = capture(&file_root, &CaptureRequest { text: taint(), key: "p3-141-real-ui-root-file".into() }).unwrap_err();
         assert_eq!(error.code, "runtime_root_type_rejected");
         receipt("root_file_type", &error, &before, &snapshot(&file_root), &sentinel);
         fs::remove_file(&file_root.root).unwrap(); fs::remove_file(&sentinel).unwrap();
 
         let db_dir = root_for("database-directory");
         let sentinel = sentinel_for(&db_dir, "database-directory");
-        capture_real(&db_dir, "p3-133-real-ui-database-directory-init", "database-directory-init");
+        capture_real(&db_dir, "p3-141-real-ui-database-directory-init", "database-directory-init");
         fs::remove_file(&db_dir.db).unwrap(); fs::create_dir(&db_dir.db).unwrap();
         let before = snapshot(&db_dir);
-        let error = capture(&db_dir, &CaptureRequest { text: taint(), key: "p3-133-real-ui-database-directory".into() }).unwrap_err();
+        let error = capture(&db_dir, &CaptureRequest { text: taint(), key: "p3-141-real-ui-database-directory".into() }).unwrap_err();
         assert_eq!(error.code, "database_type_rejected");
         receipt("database_file_type", &error, &before, &snapshot(&db_dir), &sentinel);
         cleanup(&db_dir, &sentinel);
 
         let sidecar = root_for("sidecar");
         let sentinel = sentinel_for(&sidecar, "sidecar");
-        capture_real(&sidecar, "p3-133-real-ui-sidecar-init", "sidecar-init");
+        capture_real(&sidecar, "p3-141-real-ui-sidecar-init", "sidecar-init");
         fs::write(sidecar.root.join("capture.sqlite-wal"), b"sidecar").unwrap();
         let before = snapshot(&sidecar);
-        let error = capture(&sidecar, &CaptureRequest { text: taint(), key: "p3-133-real-ui-sidecar".into() }).unwrap_err();
+        let error = capture(&sidecar, &CaptureRequest { text: taint(), key: "p3-141-real-ui-sidecar".into() }).unwrap_err();
         assert_eq!(error.code, "database_sidecar_rejected");
         receipt("sidecar_root_boundary", &error, &before, &snapshot(&sidecar), &sentinel);
         cleanup(&sidecar, &sentinel);
+    }
+
+    #[test]
+    fn closure_real_memory_cap_is_restart_safe_and_fourth_is_prewrite_rejected() {
+        let paths=root_for("memory-cap");
+        for number in 1..=3 {
+            let id=format!("memory:p3-141:real:fixture-{number}");
+            let created=memory_context::upsert(&paths,real_memory(&id)).unwrap();
+            let confirmed=memory_context::upsert(&paths,memory_context::DurableMemoryRequest { operation: memory_context::MemoryOperation::Confirm, memory_id:id, replacement_id:None, statement:None, memory_type:None, source_refs:None, observed_at_ms:None, domain:memory_context::Domain::Person, scope:"person".into(), expected_generation:Some(created.generation), idempotency_key:format!("p3-141-real-ui-memory-confirm-{number}") }).unwrap();
+            assert_eq!(confirmed.validity,"active");
+        }
+        let reopened=read(&paths).unwrap();
+        let confirmed:i64=reopened.query_row("SELECT count(*) FROM durable_memories WHERE confirmation='confirmed' AND validity='active'",[],|row|row.get(0)).unwrap();
+        drop(reopened); assert_eq!(confirmed,3);
+        let sentinel=sentinel_for(&paths,"memory-cap"); let before=snapshot(&paths);
+        let error=memory_context::upsert(&paths,real_memory("memory:p3-141:real:fixture-4")).unwrap_err();
+        assert_eq!(error.code,"durable_memory_limit_rejected"); receipt("durable_memory_fourth",&error,&before,&snapshot(&paths),&sentinel);
+        cleanup(&paths,&sentinel);
+    }
+
+    #[test]
+    fn closure_structured_health_has_five_fields_and_rejects_invalid_or_free_text_before_write() {
+        let paths=root_for("structured-health");
+        let saved=memory_context::update_state(&paths,real_health("state:p3-141:real:health-1",5)).unwrap();
+        assert_eq!(saved.invalidated_slice,"state:health_fitness_structured_v1");
+        let reopened=read(&paths).unwrap();
+        let fields:(String,i64,i64,String,String)=reopened.query_row("SELECT sleep_duration_range,energy,soreness_or_pain,training_load,available_time FROM structured_health_states WHERE state_id=?1",params![saved.state_id],|row|Ok((row.get(0)?,row.get(1)?,row.get(2)?,row.get(3)?,row.get(4)?))).unwrap();
+        drop(reopened); assert_eq!(fields,("seven_to_nine_hours".into(),5,0,"medium".into(),"thirty_to_sixty_minutes".into()));
+        let sentinel=sentinel_for(&paths,"structured-health"); let before=snapshot(&paths);
+        let error=memory_context::update_state(&paths,real_health("state:p3-141:real:health-invalid",0)).unwrap_err();
+        assert_eq!(error.code,"health_schema_rejected"); receipt("health_energy_out_of_range",&error,&before,&snapshot(&paths),&sentinel);
+        let raw=r#"{"operation":"set","state_id":"state:p3-141:real:health-free-text","replacement_id":null,"state_key":"health_fitness_structured_v1","value":null,"domain":"health","source_refs":["source:local:user-confirmed"],"expires_at_ms":4102444800000,"expected_generation":null,"idempotency_key":"p3-141-real-ui-health-free-text","structured_health":{"sleep_duration_range":"seven_to_nine_hours","energy":3,"soreness_or_pain":false,"training_load":"low","available_time":"under_thirty_minutes","free_text":"forbidden"}}"#;
+        assert!(serde_json::from_str::<memory_context::CurrentStateRequest>(raw).is_err());
+        assert_eq!(before,snapshot(&paths));
+        cleanup(&paths,&sentinel);
     }
 
     #[test]
@@ -897,7 +1000,7 @@ mod closure_tests {
         let fresh = root_for("fresh-owned-restart");
         assert!(metadata(&fresh.root).unwrap().is_none());
         assert!(metadata(&fresh.db).unwrap().is_none());
-        let first = capture_real(&fresh, "p3-133-real-ui-fresh-owned", "fresh-owned");
+        let first = capture_real(&fresh, "p3-141-real-ui-fresh-owned", "fresh-owned");
         assert!(metadata(&fresh.root).unwrap().is_some());
         assert!(metadata(&fresh.db).unwrap().is_some());
         validate_existing_real_root(&fresh).unwrap();
@@ -914,7 +1017,7 @@ mod closure_tests {
         let sentinel = sentinel_for(&empty, "preexisting-empty");
         fs::create_dir(&empty.root).unwrap();
         let before = snapshot(&empty);
-        let error = capture(&empty, &CaptureRequest { text: taint(), key: "p3-133-real-ui-preexisting-empty".into() }).unwrap_err();
+        let error = capture(&empty, &CaptureRequest { text: taint(), key: "p3-141-real-ui-preexisting-empty".into() }).unwrap_err();
         assert_eq!(error.code, "real_root_ownership_missing");
         receipt("preexisting_empty_root", &error, &before, &snapshot(&empty), &sentinel);
         cleanup(&empty, &sentinel);
@@ -923,7 +1026,7 @@ mod closure_tests {
         let sentinel = sentinel_for(&expected_only, "preexisting-expected-db");
         fs::create_dir(&expected_only.root).unwrap(); fs::write(&expected_only.db, b"not-owned").unwrap();
         let before = snapshot(&expected_only);
-        let error = capture(&expected_only, &CaptureRequest { text: taint(), key: "p3-133-real-ui-preexisting-expected-db".into() }).unwrap_err();
+        let error = capture(&expected_only, &CaptureRequest { text: taint(), key: "p3-141-real-ui-preexisting-expected-db".into() }).unwrap_err();
         assert_eq!(error.code, "real_root_ownership_missing");
         receipt("preexisting_expected_db", &error, &before, &snapshot(&expected_only), &sentinel);
         cleanup(&expected_only, &sentinel);
@@ -932,7 +1035,7 @@ mod closure_tests {
         let sentinel = sentinel_for(&unknown, "preexisting-unknown");
         fs::create_dir(&unknown.root).unwrap(); fs::write(unknown.root.join("foreign.txt"), b"foreign").unwrap();
         let before = snapshot(&unknown);
-        let error = capture(&unknown, &CaptureRequest { text: taint(), key: "p3-133-real-ui-preexisting-unknown".into() }).unwrap_err();
+        let error = capture(&unknown, &CaptureRequest { text: taint(), key: "p3-141-real-ui-preexisting-unknown".into() }).unwrap_err();
         assert_eq!(error.code, "real_root_not_empty");
         receipt("preexisting_unknown_file", &error, &before, &snapshot(&unknown), &sentinel);
         cleanup(&unknown, &sentinel);
@@ -942,19 +1045,19 @@ mod closure_tests {
         let target = link.root.parent().unwrap().join(format!("closure-link-target-{}", now().unwrap()));
         fs::create_dir(&target).unwrap(); symlink(&target, &link.root).unwrap();
         let before = snapshot(&link);
-        let error = capture(&link, &CaptureRequest { text: taint(), key: "p3-133-real-ui-preexisting-link".into() }).unwrap_err();
+        let error = capture(&link, &CaptureRequest { text: taint(), key: "p3-141-real-ui-preexisting-link".into() }).unwrap_err();
         assert_eq!(error.code, "runtime_root_type_rejected");
         receipt("preexisting_root_link", &error, &before, &snapshot(&link), &sentinel);
         fs::remove_file(&link.root).unwrap(); fs::remove_dir(&target).unwrap(); fs::remove_file(&sentinel).unwrap();
 
-        let base = paths().unwrap().root;
+        let base = paths().unwrap().root.parent().unwrap().to_path_buf();
         let actual_parent = base.join(format!("closure-ancestor-target-{}", now().unwrap()));
         let linked_parent = base.join(format!("closure-ancestor-link-{}", now().unwrap()));
         fs::create_dir(&actual_parent).unwrap(); symlink(&actual_parent, &linked_parent).unwrap();
         let ancestor = Paths { db: linked_parent.join(DB), root: linked_parent.join("child"), mode: InputMode::Real };
-        let sentinel = actual_parent.join("ancestor-sentinel"); fs::write(&sentinel, b"P3-135 sentinel").unwrap();
+        let sentinel = actual_parent.join("ancestor-sentinel"); fs::write(&sentinel, b"P3-141 sentinel").unwrap();
         let before = snapshot(&ancestor);
-        let error = capture(&ancestor, &CaptureRequest { text: taint(), key: "p3-133-real-ui-ancestor-link".into() }).unwrap_err();
+        let error = capture(&ancestor, &CaptureRequest { text: taint(), key: "p3-141-real-ui-ancestor-link".into() }).unwrap_err();
         assert_eq!(error.code, "path_symlink_rejected");
         receipt("ancestor_link", &error, &before, &snapshot(&ancestor), &sentinel);
         fs::remove_file(&sentinel).unwrap(); fs::remove_file(&linked_parent).unwrap(); fs::remove_dir(&actual_parent).unwrap();
@@ -964,10 +1067,10 @@ mod closure_tests {
     fn closure_invalid_database_unknown_ipc_and_focus_are_runtime_checked() {
         let bad_db = root_for("bad-database");
         let sentinel = sentinel_for(&bad_db, "bad-database");
-        capture_real(&bad_db, "p3-133-real-ui-bad-database-init", "bad-database-init");
+        capture_real(&bad_db, "p3-141-real-ui-bad-database-init", "bad-database-init");
         fs::remove_file(&bad_db.db).unwrap(); fs::write(&bad_db.db, b"not-sqlite").unwrap();
         let before = snapshot(&bad_db);
-        let error = capture(&bad_db, &CaptureRequest { text: taint(), key: "p3-133-real-ui-bad-database".into() }).unwrap_err();
+        let error = capture(&bad_db, &CaptureRequest { text: taint(), key: "p3-141-real-ui-bad-database".into() }).unwrap_err();
         assert_eq!(error.code, "database_unavailable");
         receipt("invalid_database", &error, &before, &snapshot(&bad_db), &sentinel);
         cleanup(&bad_db, &sentinel);
@@ -980,33 +1083,24 @@ mod closure_tests {
         assert_eq!(status(&paths).unknown_ipc, "rejected");
         receipt("unknown_ipc_runtime_surface", &status_receipt, &snapshot(&paths), &snapshot(&paths), &sentinel);
 
-        let mut expected = Vec::new();
-        for suffix in ["b", "a", "c"] {
-            let captured = capture_real(&paths, &format!("p3-133-real-ui-focus-{suffix}"), suffix);
-            confirm_real(&paths, &captured.record.id, &format!("p3-133-real-ui-focus-confirm-{suffix}"));
-            let candidate = candidate_real(&paths);
-            let action = decide(&paths, &NextRequest { candidate_id: candidate, decision: NextDecision::Accept, edited_text: None, idempotency_key: format!("p3-133-real-ui-focus-accept-{suffix}") }).unwrap().action.unwrap();
-            expected.push(action.action_id);
-        }
-        let conn = Connection::open(&paths.db).unwrap();
-        conn.execute("UPDATE actions SET created_at_ms=42", []).unwrap();
-        drop(conn);
-        expected.sort();
-        let multiple = today(&paths).unwrap();
-        assert_eq!(multiple.confirmed_actions.len(), 3);
-        assert_eq!(multiple.todays_focus.as_deref(), Some(expected[0].as_str()));
-        assert_eq!(today(&paths).unwrap().todays_focus, multiple.todays_focus);
-        result(&paths, &ResultRequest { action_id: expected[0].clone(), result: ActionResult::Completed, result_text: REAL_RESULT.into(), idempotency_key: "p3-133-real-ui-focus-complete".into() }).unwrap();
-        let stale = today(&paths).unwrap();
-        assert_eq!(stale.confirmed_actions.len(), 2);
-        assert_eq!(stale.todays_focus.as_deref(), Some(expected[1].as_str()));
+        let captured = capture_real(&paths, "p3-141-real-ui-focus", "focus");
+        confirm_real(&paths, &captured.record.id, "p3-141-real-ui-focus-confirm");
+        let candidate = candidate_real(&paths);
+        let action = decide(&paths, &NextRequest { candidate_id: candidate, decision: NextDecision::Accept, edited_text: None, idempotency_key: "p3-141-real-ui-focus-accept".into() }).unwrap().action.unwrap();
+        let current = today(&paths).unwrap();
+        assert_eq!(current.confirmed_actions.len(), 1);
+        assert_eq!(current.todays_focus.as_deref(), Some(action.action_id.as_str()));
+        assert_eq!(today(&paths).unwrap().todays_focus, current.todays_focus);
+        result(&paths, &ResultRequest { action_id: action.action_id, result: ActionResult::Completed, result_text: REAL_RESULT.into(), idempotency_key: "p3-141-real-ui-focus-complete".into() }).unwrap();
+        let completed = today(&paths).unwrap();
+        assert!(completed.confirmed_actions.is_empty() && completed.todays_focus.is_none());
         cleanup(&paths, &sentinel);
     }
 
     #[test]
     fn closure_configured_runtime_root_fails_before_any_write() {
-        let expected = match std::env::var("P3_135_EXPECT_PATH_ERROR") { Ok(value) => value, Err(_) => return };
-        let sentinel = PathBuf::from(std::env::var("P3_135_SENTINEL_PATH").expect("closure sentinel path"));
+        let expected = match std::env::var("P3_141_EXPECT_PATH_ERROR") { Ok(value) => value, Err(_) => return };
+        let sentinel = PathBuf::from(std::env::var("P3_141_SENTINEL_PATH").expect("closure sentinel path"));
         let before = Snapshot { db_hash: "absent".into(), counts: [0; 6] };
         let error = match paths() { Err(error) => error, Ok(_) => panic!("configured path unexpectedly accepted") };
         assert_eq!(error.code, expected);
