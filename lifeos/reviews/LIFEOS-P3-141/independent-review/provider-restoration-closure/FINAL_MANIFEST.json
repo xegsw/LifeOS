@@ -1,0 +1,75 @@
+{
+  "schema": "lifeos.p3_141.provider_restoration.independent.final_manifest.v1",
+  "non_self_referential": true,
+  "self_entry_present": false,
+  "review_conclusion": "REWORK",
+  "candidate_commit": "48a26320646219117b28e81cd77dd6c8206fe99c",
+  "counts": {
+    "p0": 1,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 6
+  },
+  "p0_binding": "ABF2-M-008 / CL-PROV-06: candidate Phase-C receipt gate remains bound to withdrawn ABF-P3-141-v1 rather than frozen v2",
+  "dynamic_evidence_status": "not_started_after_pre_dynamic_p0",
+  "files": {
+    "ABF2_MATRIX.md": {
+      "bytes": 2058,
+      "sha256": "cb05ee530ee0729c652211109806355c0cc3bc97ccb90cda2389609f1343457a"
+    },
+    "evidence/cleanup_receipt.json": {
+      "bytes": 592,
+      "sha256": "c1a113e725ab07ba88506a920cd8ad172f6b72b65fa24d2122885c99db228e0e"
+    },
+    "evidence/p0_revision2_phase_gate.json": {
+      "bytes": 1393,
+      "sha256": "567493a609f1b502905320c790bef69439fbb168610a4b3993c342d614324d76"
+    },
+    "evidence/prohibited_target_attestation.json": {
+      "bytes": 1065,
+      "sha256": "87569ee6965453db83f04516c539fcb1f72898ed21bfde97eab64636a16f352b"
+    },
+    "evidence/static_lineage_after_p0.json": {
+      "bytes": 11158,
+      "sha256": "912cbffa7e883bff01ef71cf0aa10e1758c8279b050f76497b267af7fd67a1be"
+    },
+    "independent_review.md": {
+      "bytes": 4213,
+      "sha256": "527a533c070d4d7cc5a434f469ac9573bb7b586a5e87dbb9e5311fcd874d661f"
+    },
+    "precontact_hashes.txt": {
+      "bytes": 405,
+      "sha256": "057e403bb96bb8abf42b417d3c8e8226ee200e148cd69cb9c64c8252ee5eb933"
+    },
+    "precontact_seal.json": {
+      "bytes": 916,
+      "sha256": "192f61930c3cb0d5a17393d2f72a5cc35a6ae5d287c130d496e27909ffdbaa22"
+    },
+    "test_design.md": {
+      "bytes": 2992,
+      "sha256": "4e7b0a54a91fdde79140c7b54e5ffc2f023c5de02fb18462dbeda40e1df4034d"
+    },
+    "tools/generate_final_manifest.py": {
+      "bytes": 1723,
+      "sha256": "e8cdb6e85271124fbcdc0a9692914b75fbf28938a37f2bb646607a4fa97f0d3c"
+    },
+    "tools/verify_final_manifest.py": {
+      "bytes": 2460,
+      "sha256": "093aefea1ad49e6d88bb8f21f54082250bf496da88dce71902d6efb222e8ae71"
+    },
+    "tools/verify_revision2_phase_gate.py": {
+      "bytes": 3844,
+      "sha256": "dd7851b701a91aed7aff79f97080072e64d8d39a373c5764ff6eeb7cb1089da8"
+    },
+    "tools/verify_static_lineage.py": {
+      "bytes": 6294,
+      "sha256": "05e952367eed8b0a258eb2a383cb0ce030a4cacd43ef9c0d59adeeadcb44cdb2"
+    },
+    "write_allowlist.txt": {
+      "bytes": 676,
+      "sha256": "c5640814ca3cecc7e0192d85f3c192f143f5563975f28dfb979813a034b452d8"
+    }
+  },
+  "file_count_excluding_manifest": 14
+}

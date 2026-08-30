@@ -1,0 +1,24 @@
+{
+  "schema": "lifeos.p3_141.provider_restoration.independent.phase_gate.v1",
+  "review_owned": true,
+  "candidate_commit": "48a26320646219117b28e81cd77dd6c8206fe99c",
+  "candidate_file_count": 79,
+  "candidate": "/Users/xxe/.codex/worktrees/5f7f/No.2/lifeos/engineering/LIFEOS-P3-141/closure-provider-restoration/candidate",
+  "checks": {
+    "candidate_build_rs_sha256": "74c7843301beb032c5c181e80e0ff0696a61a0a5f970a2e73ad96f6ea3c1a5b7",
+    "revision_2_abf_sha256": "096ad12beec63b78aaa3be92535b4a6ea632cdc4235c1d83f224db955d5dc9ea",
+    "expected_revision_2_abf_id": "ABF-P3-141-v2",
+    "compiled_abf_id": "ABF-P3-141-v1",
+    "compiled_abf_sha256": "ff05a7a4b52ceef0a4325294cabbfe5ad91c131160d8b9c123bd8fa59fd5c8b2",
+    "phase_c_calls_receipt_validation": true,
+    "receipt_validator_binds_receipt_to_compiled_abf": true,
+    "revision_2_supersedes_v1_for_positive_acceptance": true,
+    "compiled_abf_matches_revision_2": false
+  },
+  "failures": [
+    "Phase-C build gate is hard-coded to 'ABF-P3-141-v1', not frozen 'ABF-P3-141-v2'; a Revision-2 independent PASS cannot satisfy its receipt binding."
+  ],
+  "verdict": "P0_FAIL",
+  "p0": "ABF2-M-008 / CL-PROV-06: withdrawn Phase-B v1 receipt remains the sole Phase-C authorization binding",
+  "scope_note": "Static P0 proof only. No actual-Tauri run, real Provider, credential, network, Pilot, or product-model access occurred."
+}
