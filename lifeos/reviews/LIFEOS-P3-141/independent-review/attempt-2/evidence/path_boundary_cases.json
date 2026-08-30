@@ -1,0 +1,59 @@
+{
+  "schema": "lifeos-p3-141-review-path-boundaries-v1",
+  "candidate_read_only": "/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate",
+  "temporary_fixture_root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-path-boundaries",
+  "fixtures_removed": true,
+  "cases": [
+    {
+      "case": "existing_real_directory",
+      "root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-path-boundaries/valid-existing-directory",
+      "result": {
+        "returncode": 0,
+        "stdout_tail": "",
+        "stderr_tail": "oreign-types-macros v0.2.4\n   Compiling bitflags v1.3.2\n   Compiling foreign-types-shared v0.3.1\n   Compiling once_cell v1.21.4\n   Compiling foreign-types v0.5.0\n   Compiling crossbeam-channel v0.5.16\n   Compiling png v0.17.16\n   Compiling digest v0.10.7\n   Compiling core-graphics-types v0.2.0\n   Compiling cpufeatures v0.2.17\n   Compiling tauri-runtime v2.11.3\n   Compiling wry v0.55.1\n   Compiling vcpkg v0.2.15\n   Compiling pkg-config v0.3.34\n   Compiling objc2-web-kit v0.3.2\n   Compiling core-graphics v0.25.0\n   Compiling libsqlite3-sys v0.38.2\n   Compiling sha2 v0.10.9\n   Compiling ico v0.5.0\n   Compiling dispatch2 v0.3.1\n   Compiling getrandom v0.3.4\n   Compiling unicode-segmentation v1.13.3\n   Compiling tauri-runtime-wry v2.11.4\n   Compiling tao v0.35.3\n   Compiling keyboard-types v0.7.0\n   Compiling png v0.18.1\n   Compiling serialize-to-javascript-impl v0.1.2\n   Compiling pin-project-lite v0.2.17\n   Compiling tokio v1.53.1\n   Compiling muda v0.19.3\n   Compiling serialize-to-javascript v0.1.2\n   Compiling window-vibrancy v0.6.0\n   Compiling hashlink v0.12.1\n   Compiling serde_repr v0.1.21\n   Compiling mime v0.3.17\n   Compiling embed_plist v1.2.2\n   Compiling tauri-build v2.6.3\n   Compiling tauri-codegen v2.6.3\n   Compiling fallible-streaming-iterator v0.1.9\n   Compiling fallible-iterator v0.3.0\n   Compiling tauri v2.11.5\n   Compiling tauri-macros v2.6.3\n   Compiling lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate)\n   Compiling rusqlite v0.40.2\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 26.47s\n"
+      },
+      "pass": true
+    },
+    {
+      "case": "symlink_root",
+      "root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-path-boundaries/linked-root",
+      "result": {
+        "returncode": 101,
+        "stdout_tail": "",
+        "stderr_tail": "   Compiling lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate)\nerror: failed to run custom build command for `lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate)`\n\nCaused by:\n  process didn't exit successfully: `/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-path-boundary-target/debug/build/lifeos-p3-141-898041b9299df9aa/build-script-build` (exit status: 101)\n  --- stderr\n\n  thread 'main' (12913849) panicked at build.rs:6:5:\n  LIFEOS_RUNTIME_ROOT rejected before build output: root or an ancestor is not a real directory\n  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n"
+      },
+      "pass": true
+    },
+    {
+      "case": "regular_file_root",
+      "root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-path-boundaries/regular-file",
+      "result": {
+        "returncode": 101,
+        "stdout_tail": "",
+        "stderr_tail": "   Compiling lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate)\nerror: failed to run custom build command for `lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate)`\n\nCaused by:\n  process didn't exit successfully: `/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-path-boundary-target/debug/build/lifeos-p3-141-898041b9299df9aa/build-script-build` (exit status: 101)\n  --- stderr\n\n  thread 'main' (12913878) panicked at build.rs:6:5:\n  LIFEOS_RUNTIME_ROOT rejected before build output: root or an ancestor is not a real directory\n  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n"
+      },
+      "pass": true
+    },
+    {
+      "case": "missing_root",
+      "root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-path-boundaries/missing-directory",
+      "result": {
+        "returncode": 101,
+        "stdout_tail": "",
+        "stderr_tail": "   Compiling lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate)\nerror: failed to run custom build command for `lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate)`\n\nCaused by:\n  process didn't exit successfully: `/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-path-boundary-target/debug/build/lifeos-p3-141-898041b9299df9aa/build-script-build` (exit status: 101)\n  --- stderr\n\n  thread 'main' (12913901) panicked at build.rs:6:5:\n  LIFEOS_RUNTIME_ROOT rejected before build output: root or an ancestor is not a real directory\n  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n"
+      },
+      "pass": true
+    },
+    {
+      "case": "lexically_noncanonical",
+      "root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-path-boundaries/valid-existing-directory/../valid-existing-directory",
+      "result": {
+        "returncode": 101,
+        "stdout_tail": "",
+        "stderr_tail": "   Compiling lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate)\nerror: failed to run custom build command for `lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate)`\n\nCaused by:\n  process didn't exit successfully: `/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-path-boundary-target/debug/build/lifeos-p3-141-898041b9299df9aa/build-script-build` (exit status: 101)\n  --- stderr\n\n  thread 'main' (12913926) panicked at build.rs:6:5:\n  LIFEOS_RUNTIME_ROOT rejected before build output: root must be an absolute normalized path\n  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n"
+      },
+      "pass": true
+    }
+  ],
+  "status": "PASS"
+}

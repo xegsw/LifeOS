@@ -1,0 +1,29 @@
+{
+  "schema_version": "lifeos.p3_141.phase_b.precontact_seal.v1",
+  "task_id": "LIFEOS-P3-141",
+  "attempt": "attempt-2",
+  "phase": "B",
+  "candidate_contacted_before_seal": false,
+  "candidate_contact_rule": "No P3-141 candidate filesystem read, metadata lookup, inventory, or hash precedes this seal.",
+  "write_roots": [
+    "lifeos/reviews/LIFEOS-P3-141/independent-review/attempt-2/",
+    "/private/tmp/lifeos-p3-141-controlled-pilot-v1/"
+  ],
+  "frozen_input_count": 12,
+  "required_candidate_tree": {
+    "role": "p3_140_candidate",
+    "file_count": 79,
+    "tree_sha256": "6d5659826e3e4b642b94c848d9e97f43cd93f9a2468863ebd396a4f76389940e"
+  },
+  "required_final_conclusion_ceiling": "PASS_SYNTHETIC_INDEPENDENT",
+  "phase_c_only_matrix_rows": ["ABF-M-008", "ABF-M-009", "ABF-M-017"],
+  "prohibited_classes": [
+    "retained_pilot",
+    "real_db_or_text",
+    "real_health_data",
+    "credential",
+    "real_provider",
+    "external_network",
+    "phase_c"
+  ]
+}

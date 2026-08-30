@@ -1,0 +1,961 @@
+{
+  "schema_version": "lifeos.p3_141.phase_b.p3_140_lineage.v1",
+  "manifest_sha256": "aa4d9953d423217ab58558ed1f6b5000c48d0c1189e4cb890f9c309ec068df77",
+  "published_file_count": 79,
+  "actual_file_count": 79,
+  "published_length_framed_tree_sha256": "6d5659826e3e4b642b94c848d9e97f43cd93f9a2468863ebd396a4f76389940e",
+  "expected_inventory_tree_sha256": "6d5659826e3e4b642b94c848d9e97f43cd93f9a2468863ebd396a4f76389940e",
+  "entry_pass_count": 79,
+  "entry_fail_count": 0,
+  "pass": true,
+  "entries": [
+    {
+      "path": "Cargo.lock",
+      "expected": {
+        "bytes": 111954,
+        "sha256": "d3450bbd03fea97a833f3eb25c15ccd2294525009f0be0d2f63c6d9c0a68c099"
+      },
+      "actual": {
+        "bytes": 111954,
+        "sha256": "d3450bbd03fea97a833f3eb25c15ccd2294525009f0be0d2f63c6d9c0a68c099"
+      },
+      "pass": true
+    },
+    {
+      "path": "Cargo.toml",
+      "expected": {
+        "bytes": 538,
+        "sha256": "60b7cd31e83a918054cd773f6944ac691cf0db3322cf1c38063080e90dfa3356"
+      },
+      "actual": {
+        "bytes": 538,
+        "sha256": "60b7cd31e83a918054cd773f6944ac691cf0db3322cf1c38063080e90dfa3356"
+      },
+      "pass": true
+    },
+    {
+      "path": "build.rs",
+      "expected": {
+        "bytes": 2714,
+        "sha256": "51c853e52fd84a2da6e94a5986337389326d2ba74c6c68f030065fa3d5b3ec14"
+      },
+      "actual": {
+        "bytes": 2714,
+        "sha256": "51c853e52fd84a2da6e94a5986337389326d2ba74c6c68f030065fa3d5b3ec14"
+      },
+      "pass": true
+    },
+    {
+      "path": "capabilities/main.json",
+      "expected": {
+        "bytes": 225,
+        "sha256": "719b675203fc7e1fc538eb5d196918edf6b1ba8f983611b3b73fee70b27d1fe1"
+      },
+      "actual": {
+        "bytes": 225,
+        "sha256": "719b675203fc7e1fc538eb5d196918edf6b1ba8f983611b3b73fee70b27d1fe1"
+      },
+      "pass": true
+    },
+    {
+      "path": "gen/schemas/acl-manifests.json",
+      "expected": {
+        "bytes": 65934,
+        "sha256": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e"
+      },
+      "actual": {
+        "bytes": 65934,
+        "sha256": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e"
+      },
+      "pass": true
+    },
+    {
+      "path": "gen/schemas/capabilities.json",
+      "expected": {
+        "bytes": 178,
+        "sha256": "0be07efcd96d05d4cecd04bea5d35d404ab5633b83a30b45aa876bf7f69bb3a5"
+      },
+      "actual": {
+        "bytes": 178,
+        "sha256": "0be07efcd96d05d4cecd04bea5d35d404ab5633b83a30b45aa876bf7f69bb3a5"
+      },
+      "pass": true
+    },
+    {
+      "path": "gen/schemas/desktop-schema.json",
+      "expected": {
+        "bytes": 116049,
+        "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78"
+      },
+      "actual": {
+        "bytes": 116049,
+        "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78"
+      },
+      "pass": true
+    },
+    {
+      "path": "gen/schemas/macOS-schema.json",
+      "expected": {
+        "bytes": 116049,
+        "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78"
+      },
+      "actual": {
+        "bytes": 116049,
+        "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/128x128.png",
+      "expected": {
+        "bytes": 1227,
+        "sha256": "39572c12160197611428210db2eeb800e37dbd41860ba8e9a669166114f4a76b"
+      },
+      "actual": {
+        "bytes": 1227,
+        "sha256": "39572c12160197611428210db2eeb800e37dbd41860ba8e9a669166114f4a76b"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/128x128@2x.png",
+      "expected": {
+        "bytes": 2488,
+        "sha256": "d92aa427d4dd01feba7b03c0a321f5c4bef1f47e9a7e6e17ffeb0186b1e5f5f1"
+      },
+      "actual": {
+        "bytes": 2488,
+        "sha256": "d92aa427d4dd01feba7b03c0a321f5c4bef1f47e9a7e6e17ffeb0186b1e5f5f1"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/32x32.png",
+      "expected": {
+        "bytes": 441,
+        "sha256": "79bc6828196ed3e2403a53463914eff4c0c0efce5f8b6e7e0b139114e11a5e59"
+      },
+      "actual": {
+        "bytes": 441,
+        "sha256": "79bc6828196ed3e2403a53463914eff4c0c0efce5f8b6e7e0b139114e11a5e59"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/64x64.png",
+      "expected": {
+        "bytes": 643,
+        "sha256": "3e3ece76332b640d374bbeff1a09b8813f7fee0a4b653c9a38415062d996de59"
+      },
+      "actual": {
+        "bytes": 643,
+        "sha256": "3e3ece76332b640d374bbeff1a09b8813f7fee0a4b653c9a38415062d996de59"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/Square107x107Logo.png",
+      "expected": {
+        "bytes": 1065,
+        "sha256": "58c82e4e0e8272eaa122b6bcb756c12c76910ffa6e95256e44448bfa634267c4"
+      },
+      "actual": {
+        "bytes": 1065,
+        "sha256": "58c82e4e0e8272eaa122b6bcb756c12c76910ffa6e95256e44448bfa634267c4"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/Square142x142Logo.png",
+      "expected": {
+        "bytes": 1405,
+        "sha256": "05be4e8894bca70ea4b8099b3373090f51a0f5c3eb9f72c49e893eed1b1861e3"
+      },
+      "actual": {
+        "bytes": 1405,
+        "sha256": "05be4e8894bca70ea4b8099b3373090f51a0f5c3eb9f72c49e893eed1b1861e3"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/Square150x150Logo.png",
+      "expected": {
+        "bytes": 1587,
+        "sha256": "5e9085cc59b404169906b999a9de0c389c118d3ace1696e8787700b030b8dee5"
+      },
+      "actual": {
+        "bytes": 1587,
+        "sha256": "5e9085cc59b404169906b999a9de0c389c118d3ace1696e8787700b030b8dee5"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/Square284x284Logo.png",
+      "expected": {
+        "bytes": 2791,
+        "sha256": "28fdbcc829c7edbf94416276db345b5d9335391087e435831b412e745edb4de8"
+      },
+      "actual": {
+        "bytes": 2791,
+        "sha256": "28fdbcc829c7edbf94416276db345b5d9335391087e435831b412e745edb4de8"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/Square30x30Logo.png",
+      "expected": {
+        "bytes": 453,
+        "sha256": "579111e7e722cf3303c6309b8d4357b4ce5da7e28ba25734bc1cf672394ab3f5"
+      },
+      "actual": {
+        "bytes": 453,
+        "sha256": "579111e7e722cf3303c6309b8d4357b4ce5da7e28ba25734bc1cf672394ab3f5"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/Square310x310Logo.png",
+      "expected": {
+        "bytes": 2901,
+        "sha256": "9ded936b77aebe3f6d4affc3557c0baacad5a12886c30c85c46daf2067927955"
+      },
+      "actual": {
+        "bytes": 2901,
+        "sha256": "9ded936b77aebe3f6d4affc3557c0baacad5a12886c30c85c46daf2067927955"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/Square44x44Logo.png",
+      "expected": {
+        "bytes": 582,
+        "sha256": "3afc300fde82670e6ec6760addea1b03ccd6979424715802c8c767c42fcc5944"
+      },
+      "actual": {
+        "bytes": 582,
+        "sha256": "3afc300fde82670e6ec6760addea1b03ccd6979424715802c8c767c42fcc5944"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/Square71x71Logo.png",
+      "expected": {
+        "bytes": 779,
+        "sha256": "13d8fa01f25817d346c11d28a2a63ea7285586ae005f372825f905ad8749da12"
+      },
+      "actual": {
+        "bytes": 779,
+        "sha256": "13d8fa01f25817d346c11d28a2a63ea7285586ae005f372825f905ad8749da12"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/Square89x89Logo.png",
+      "expected": {
+        "bytes": 927,
+        "sha256": "4d65f163ed7dc62255f246ddb8bbc71de33f02a632af49be75ccd1de96a569f5"
+      },
+      "actual": {
+        "bytes": 927,
+        "sha256": "4d65f163ed7dc62255f246ddb8bbc71de33f02a632af49be75ccd1de96a569f5"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/StoreLogo.png",
+      "expected": {
+        "bytes": 564,
+        "sha256": "60bad4ad4470f1cad766e0082a6dace73b48619d032af700aaabb3e971df28cc"
+      },
+      "actual": {
+        "bytes": 564,
+        "sha256": "60bad4ad4470f1cad766e0082a6dace73b48619d032af700aaabb3e971df28cc"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-anydpi-v26/ic_launcher.xml",
+      "expected": {
+        "bytes": 261,
+        "sha256": "760d4b8a06bf7163dd010c33ad2cac9e4a75fa0177afaba042f83e311eef0c3e"
+      },
+      "actual": {
+        "bytes": 261,
+        "sha256": "760d4b8a06bf7163dd010c33ad2cac9e4a75fa0177afaba042f83e311eef0c3e"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-hdpi/ic_launcher.png",
+      "expected": {
+        "bytes": 1337,
+        "sha256": "0514a04799bc23d608ef68fc0786a11a1bea7b3e7930485469444c5964a6cf9f"
+      },
+      "actual": {
+        "bytes": 1337,
+        "sha256": "0514a04799bc23d608ef68fc0786a11a1bea7b3e7930485469444c5964a6cf9f"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-hdpi/ic_launcher_foreground.png",
+      "expected": {
+        "bytes": 1625,
+        "sha256": "e3adb898f0d807abc85bb75774e6b5e55b3f09627eee11e70844100f6ee8bef9"
+      },
+      "actual": {
+        "bytes": 1625,
+        "sha256": "e3adb898f0d807abc85bb75774e6b5e55b3f09627eee11e70844100f6ee8bef9"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-hdpi/ic_launcher_round.png",
+      "expected": {
+        "bytes": 956,
+        "sha256": "d30ea18205f233e5791b912e4a9f89979805b825d45101b5e2612ae03dfbf497"
+      },
+      "actual": {
+        "bytes": 956,
+        "sha256": "d30ea18205f233e5791b912e4a9f89979805b825d45101b5e2612ae03dfbf497"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-mdpi/ic_launcher.png",
+      "expected": {
+        "bytes": 1251,
+        "sha256": "9ac96d6e24ee47813b82b9044b22c84055428e808aba48d3d32dd47dfdea09e7"
+      },
+      "actual": {
+        "bytes": 1251,
+        "sha256": "9ac96d6e24ee47813b82b9044b22c84055428e808aba48d3d32dd47dfdea09e7"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-mdpi/ic_launcher_foreground.png",
+      "expected": {
+        "bytes": 1173,
+        "sha256": "d5925ec91058b5f59575bcbad8dc38b66c4ca18e79d8e625ddd05704ff103120"
+      },
+      "actual": {
+        "bytes": 1173,
+        "sha256": "d5925ec91058b5f59575bcbad8dc38b66c4ca18e79d8e625ddd05704ff103120"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-mdpi/ic_launcher_round.png",
+      "expected": {
+        "bytes": 953,
+        "sha256": "606ffd6da8ecaf7550673140f379eaf85cc838e320dfd6a33ee335654de6318c"
+      },
+      "actual": {
+        "bytes": 953,
+        "sha256": "606ffd6da8ecaf7550673140f379eaf85cc838e320dfd6a33ee335654de6318c"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-xhdpi/ic_launcher.png",
+      "expected": {
+        "bytes": 2206,
+        "sha256": "4aa5cd9b19fab966cf734af011232cb6f1a48322dfc3c8e2a1f3c0054cf8cc6c"
+      },
+      "actual": {
+        "bytes": 2206,
+        "sha256": "4aa5cd9b19fab966cf734af011232cb6f1a48322dfc3c8e2a1f3c0054cf8cc6c"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-xhdpi/ic_launcher_foreground.png",
+      "expected": {
+        "bytes": 2093,
+        "sha256": "4ae6b883cdda5f2ca78e3ec3067687e2efcc47e751c89e1b7b03ca6a3fc5d55d"
+      },
+      "actual": {
+        "bytes": 2093,
+        "sha256": "4ae6b883cdda5f2ca78e3ec3067687e2efcc47e751c89e1b7b03ca6a3fc5d55d"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-xhdpi/ic_launcher_round.png",
+      "expected": {
+        "bytes": 1249,
+        "sha256": "1f410423954eb7cf62e9963bb8f6656ef9159b602adbfabd72a0e03a6c0abf42"
+      },
+      "actual": {
+        "bytes": 1249,
+        "sha256": "1f410423954eb7cf62e9963bb8f6656ef9159b602adbfabd72a0e03a6c0abf42"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-xxhdpi/ic_launcher.png",
+      "expected": {
+        "bytes": 3030,
+        "sha256": "53d8316fd25ed535731a4863decb0280abb3d6fc68a32025da6593c9801a5df4"
+      },
+      "actual": {
+        "bytes": 3030,
+        "sha256": "53d8316fd25ed535731a4863decb0280abb3d6fc68a32025da6593c9801a5df4"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "expected": {
+        "bytes": 3051,
+        "sha256": "e9b95791588f1d650c74ea403c27e5758386b1f55cecb9b41ca18104989ad195"
+      },
+      "actual": {
+        "bytes": 3051,
+        "sha256": "e9b95791588f1d650c74ea403c27e5758386b1f55cecb9b41ca18104989ad195"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-xxhdpi/ic_launcher_round.png",
+      "expected": {
+        "bytes": 1583,
+        "sha256": "1d8c11c6c4145060e2f6532ffb3d98343fcbcd62b1bf1d8da7acaf44e82c995c"
+      },
+      "actual": {
+        "bytes": 1583,
+        "sha256": "1d8c11c6c4145060e2f6532ffb3d98343fcbcd62b1bf1d8da7acaf44e82c995c"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-xxxhdpi/ic_launcher.png",
+      "expected": {
+        "bytes": 3891,
+        "sha256": "acd57fb2317d236f78c21c7e31bef48fd55227cdbdf9efb6484fa01b7d44240f"
+      },
+      "actual": {
+        "bytes": 3891,
+        "sha256": "acd57fb2317d236f78c21c7e31bef48fd55227cdbdf9efb6484fa01b7d44240f"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "expected": {
+        "bytes": 4148,
+        "sha256": "6fbf0152677a925d70883c170bc05b7967eab5992ce09ce47618999507d97d60"
+      },
+      "actual": {
+        "bytes": 4148,
+        "sha256": "6fbf0152677a925d70883c170bc05b7967eab5992ce09ce47618999507d97d60"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/mipmap-xxxhdpi/ic_launcher_round.png",
+      "expected": {
+        "bytes": 2078,
+        "sha256": "6fbf756b41cf06d977ec2a40c216b6faf28c65cff9c28fd041e05d5da7d5452a"
+      },
+      "actual": {
+        "bytes": 2078,
+        "sha256": "6fbf756b41cf06d977ec2a40c216b6faf28c65cff9c28fd041e05d5da7d5452a"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/android/values/ic_launcher_background.xml",
+      "expected": {
+        "bytes": 115,
+        "sha256": "0687336f0ccc6f7ee09c7c95110667c63b75931238df779a21af401fb864cd34"
+      },
+      "actual": {
+        "bytes": 115,
+        "sha256": "0687336f0ccc6f7ee09c7c95110667c63b75931238df779a21af401fb864cd34"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/icon.icns",
+      "expected": {
+        "bytes": 31641,
+        "sha256": "e6e7eae0a6060cb21ace32751adb2bd9da6b2527374a4daae79c9aad505d11ed"
+      },
+      "actual": {
+        "bytes": 31641,
+        "sha256": "e6e7eae0a6060cb21ace32751adb2bd9da6b2527374a4daae79c9aad505d11ed"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/icon.ico",
+      "expected": {
+        "bytes": 5650,
+        "sha256": "1a14889bc10f824f3a072c1835b5561f3c576fb697ba4aa44839d55889116f0b"
+      },
+      "actual": {
+        "bytes": 5650,
+        "sha256": "1a14889bc10f824f3a072c1835b5561f3c576fb697ba4aa44839d55889116f0b"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/icon.png",
+      "expected": {
+        "bytes": 4982,
+        "sha256": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293"
+      },
+      "actual": {
+        "bytes": 4982,
+        "sha256": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/icon.svg",
+      "expected": {
+        "bytes": 232,
+        "sha256": "bf69a17326cffb6405dcd732a814778042a8a02df8e13938b698570f80ba6c66"
+      },
+      "actual": {
+        "bytes": 232,
+        "sha256": "bf69a17326cffb6405dcd732a814778042a8a02df8e13938b698570f80ba6c66"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-20x20@1x.png",
+      "expected": {
+        "bytes": 350,
+        "sha256": "76bfc33979b0171e8229eb2e370d01b74fa18aae7fdeca9a2c156e2b9253ed64"
+      },
+      "actual": {
+        "bytes": 350,
+        "sha256": "76bfc33979b0171e8229eb2e370d01b74fa18aae7fdeca9a2c156e2b9253ed64"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-20x20@2x-1.png",
+      "expected": {
+        "bytes": 529,
+        "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+      },
+      "actual": {
+        "bytes": 529,
+        "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-20x20@2x.png",
+      "expected": {
+        "bytes": 529,
+        "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+      },
+      "actual": {
+        "bytes": 529,
+        "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-20x20@3x.png",
+      "expected": {
+        "bytes": 684,
+        "sha256": "1079318d510e167cf2156dcaebd0dc9b4ea4b3a36f072b02ee7d3946de55d554"
+      },
+      "actual": {
+        "bytes": 684,
+        "sha256": "1079318d510e167cf2156dcaebd0dc9b4ea4b3a36f072b02ee7d3946de55d554"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-29x29@1x.png",
+      "expected": {
+        "bytes": 420,
+        "sha256": "f5a5f21fc384c9ab27cb1329e38be5e4b806e72e1d6eed5a5edc49deed3212ba"
+      },
+      "actual": {
+        "bytes": 420,
+        "sha256": "f5a5f21fc384c9ab27cb1329e38be5e4b806e72e1d6eed5a5edc49deed3212ba"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-29x29@2x-1.png",
+      "expected": {
+        "bytes": 667,
+        "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09"
+      },
+      "actual": {
+        "bytes": 667,
+        "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-29x29@2x.png",
+      "expected": {
+        "bytes": 667,
+        "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09"
+      },
+      "actual": {
+        "bytes": 667,
+        "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-29x29@3x.png",
+      "expected": {
+        "bytes": 945,
+        "sha256": "c89ad8db8ebb8b7bb035ae9024ea7f9f6e754d6e8efd8481de00d35d5be53446"
+      },
+      "actual": {
+        "bytes": 945,
+        "sha256": "c89ad8db8ebb8b7bb035ae9024ea7f9f6e754d6e8efd8481de00d35d5be53446"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-40x40@1x.png",
+      "expected": {
+        "bytes": 529,
+        "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+      },
+      "actual": {
+        "bytes": 529,
+        "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-40x40@2x-1.png",
+      "expected": {
+        "bytes": 882,
+        "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c"
+      },
+      "actual": {
+        "bytes": 882,
+        "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-40x40@2x.png",
+      "expected": {
+        "bytes": 882,
+        "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c"
+      },
+      "actual": {
+        "bytes": 882,
+        "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-40x40@3x.png",
+      "expected": {
+        "bytes": 1222,
+        "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b"
+      },
+      "actual": {
+        "bytes": 1222,
+        "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-512@2x.png",
+      "expected": {
+        "bytes": 12199,
+        "sha256": "743e79bd29fa8035295bfc510e3aa42acef7ac922edf642c4e9bebe152a95929"
+      },
+      "actual": {
+        "bytes": 12199,
+        "sha256": "743e79bd29fa8035295bfc510e3aa42acef7ac922edf642c4e9bebe152a95929"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-60x60@2x.png",
+      "expected": {
+        "bytes": 1222,
+        "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b"
+      },
+      "actual": {
+        "bytes": 1222,
+        "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-60x60@3x.png",
+      "expected": {
+        "bytes": 1835,
+        "sha256": "afe8ea3eca3ec76dee2f9f1b61e79f0755239378b6fda84c9dec63309375a804"
+      },
+      "actual": {
+        "bytes": 1835,
+        "sha256": "afe8ea3eca3ec76dee2f9f1b61e79f0755239378b6fda84c9dec63309375a804"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-76x76@1x.png",
+      "expected": {
+        "bytes": 873,
+        "sha256": "29e682960dc2ebbef7f40fb64204d0422f56dfe7af3e2938e16ec93af21b20ae"
+      },
+      "actual": {
+        "bytes": 873,
+        "sha256": "29e682960dc2ebbef7f40fb64204d0422f56dfe7af3e2938e16ec93af21b20ae"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-76x76@2x.png",
+      "expected": {
+        "bytes": 1536,
+        "sha256": "8188dddb316617937ee9b7151bdd75cc33602b46eee2bbff7d82e638030f39cd"
+      },
+      "actual": {
+        "bytes": 1536,
+        "sha256": "8188dddb316617937ee9b7151bdd75cc33602b46eee2bbff7d82e638030f39cd"
+      },
+      "pass": true
+    },
+    {
+      "path": "icons/ios/AppIcon-83.5x83.5@2x.png",
+      "expected": {
+        "bytes": 1652,
+        "sha256": "aa9d183c4b09055de09361471c6bb3353e0a1640e8368e75cc431308ddb29539"
+      },
+      "actual": {
+        "bytes": 1652,
+        "sha256": "aa9d183c4b09055de09361471c6bb3353e0a1640e8368e75cc431308ddb29539"
+      },
+      "pass": true
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "expected": {
+        "bytes": 52,
+        "sha256": "54231ca6bea6a491dfa45c5c1e12cc7485ae94c16a374e52933ee1a7cb48248f"
+      },
+      "actual": {
+        "bytes": 52,
+        "sha256": "54231ca6bea6a491dfa45c5c1e12cc7485ae94c16a374e52933ee1a7cb48248f"
+      },
+      "pass": true
+    },
+    {
+      "path": "src/main.rs",
+      "expected": {
+        "bytes": 117,
+        "sha256": "4d7a1e4a1eebe08ffec78a4c0cd0e7cdeabf6b92e68c003b02e3515a035e042c"
+      },
+      "actual": {
+        "bytes": 117,
+        "sha256": "4d7a1e4a1eebe08ffec78a4c0cd0e7cdeabf6b92e68c003b02e3515a035e042c"
+      },
+      "pass": true
+    },
+    {
+      "path": "src/runtime.rs",
+      "expected": {
+        "bytes": 153918,
+        "sha256": "b670ad64e8e651aa57ca1a67da2f4a0cd4b12dd2e3c32c34d159b7f842cf0301"
+      },
+      "actual": {
+        "bytes": 153918,
+        "sha256": "b670ad64e8e651aa57ca1a67da2f4a0cd4b12dd2e3c32c34d159b7f842cf0301"
+      },
+      "pass": true
+    },
+    {
+      "path": "src/runtime/memory_context.rs",
+      "expected": {
+        "bytes": 52607,
+        "sha256": "9d1f290773c53c3da87802f2465762b3fc0f32212c809a9020a959f7c7dc50a1"
+      },
+      "actual": {
+        "bytes": 52607,
+        "sha256": "9d1f290773c53c3da87802f2465762b3fc0f32212c809a9020a959f7c7dc50a1"
+      },
+      "pass": true
+    },
+    {
+      "path": "src/runtime/today_intelligence.rs",
+      "expected": {
+        "bytes": 44679,
+        "sha256": "8a7eb776c36f73fa129e667ad4855fa95bbdb6e2c8c8d9dd3682a186feeaa9b0"
+      },
+      "actual": {
+        "bytes": 44679,
+        "sha256": "8a7eb776c36f73fa129e667ad4855fa95bbdb6e2c8c8d9dd3682a186feeaa9b0"
+      },
+      "pass": true
+    },
+    {
+      "path": "tauri.conf.json",
+      "expected": {
+        "bytes": 1027,
+        "sha256": "da382f99933d983fd91abe909583d4456a702e9211f6db4173485a7b28ac330d"
+      },
+      "actual": {
+        "bytes": 1027,
+        "sha256": "da382f99933d983fd91abe909583d4456a702e9211f6db4173485a7b28ac330d"
+      },
+      "pass": true
+    },
+    {
+      "path": "ui/app.js",
+      "expected": {
+        "bytes": 42976,
+        "sha256": "8d50d5034a21a8a06b6b28c758c3718a2dcdc821ee19f78ad305a745d5efe183"
+      },
+      "actual": {
+        "bytes": 42976,
+        "sha256": "8d50d5034a21a8a06b6b28c758c3718a2dcdc821ee19f78ad305a745d5efe183"
+      },
+      "pass": true
+    },
+    {
+      "path": "ui/fixtures.js",
+      "expected": {
+        "bytes": 2994,
+        "sha256": "a7b01ba8e176d80ae172ddd8acd2ed3a8c9b755b046159b190a2272195af3d93"
+      },
+      "actual": {
+        "bytes": 2994,
+        "sha256": "a7b01ba8e176d80ae172ddd8acd2ed3a8c9b755b046159b190a2272195af3d93"
+      },
+      "pass": true
+    },
+    {
+      "path": "ui/ia_reconciliation.md",
+      "expected": {
+        "bytes": 3532,
+        "sha256": "5d11cf6d5a93e156272b26f7bce078e58669db7288e4b7305ea87a1445769599"
+      },
+      "actual": {
+        "bytes": 3532,
+        "sha256": "5d11cf6d5a93e156272b26f7bce078e58669db7288e4b7305ea87a1445769599"
+      },
+      "pass": true
+    },
+    {
+      "path": "ui/index.html",
+      "expected": {
+        "bytes": 790,
+        "sha256": "f5c2b38ec287fa2118bcacb7ced863be1c2e47a9bbbe42944cad87d201901bcf"
+      },
+      "actual": {
+        "bytes": 790,
+        "sha256": "f5c2b38ec287fa2118bcacb7ced863be1c2e47a9bbbe42944cad87d201901bcf"
+      },
+      "pass": true
+    },
+    {
+      "path": "ui/interaction_contract.md",
+      "expected": {
+        "bytes": 4816,
+        "sha256": "7ec4a1e1cbf49d8daa08f30eaf458025a9222ad338f606d0c4f82756d686ff81"
+      },
+      "actual": {
+        "bytes": 4816,
+        "sha256": "7ec4a1e1cbf49d8daa08f30eaf458025a9222ad338f606d0c4f82756d686ff81"
+      },
+      "pass": true
+    },
+    {
+      "path": "ui/p3-139-context-inspector.js",
+      "expected": {
+        "bytes": 9267,
+        "sha256": "d4f600d17606962eb16bad0963f8238e8fcd1c8bf74848c40f97bace8b90c2ae"
+      },
+      "actual": {
+        "bytes": 9267,
+        "sha256": "d4f600d17606962eb16bad0963f8238e8fcd1c8bf74848c40f97bace8b90c2ae"
+      },
+      "pass": true
+    },
+    {
+      "path": "ui/p3-140-today.js",
+      "expected": {
+        "bytes": 9337,
+        "sha256": "0cb8071aa78d83a027d5dc38e56e0f039f5fb0bb4395d9197961d731a9eb9261"
+      },
+      "actual": {
+        "bytes": 9337,
+        "sha256": "0cb8071aa78d83a027d5dc38e56e0f039f5fb0bb4395d9197961d731a9eb9261"
+      },
+      "pass": true
+    },
+    {
+      "path": "ui/runtime-adapter.js",
+      "expected": {
+        "bytes": 43298,
+        "sha256": "1f06fa773a4d96c229e14e136cadc9031694194f5451c4db2b64ef3a329e5213"
+      },
+      "actual": {
+        "bytes": 43298,
+        "sha256": "1f06fa773a4d96c229e14e136cadc9031694194f5451c4db2b64ef3a329e5213"
+      },
+      "pass": true
+    },
+    {
+      "path": "ui/state_machine.json",
+      "expected": {
+        "bytes": 3633,
+        "sha256": "484b4455c40b2737c50138ce7e055ae526885ad6b63c24498b55f1e44525bbcd"
+      },
+      "actual": {
+        "bytes": 3633,
+        "sha256": "484b4455c40b2737c50138ce7e055ae526885ad6b63c24498b55f1e44525bbcd"
+      },
+      "pass": true
+    },
+    {
+      "path": "ui/styles.css",
+      "expected": {
+        "bytes": 52074,
+        "sha256": "661471198cd1213b0ad9f68422dbd989908d23aa42fabcc9f2e73b2da1e5e666"
+      },
+      "actual": {
+        "bytes": 52074,
+        "sha256": "661471198cd1213b0ad9f68422dbd989908d23aa42fabcc9f2e73b2da1e5e666"
+      },
+      "pass": true
+    },
+    {
+      "path": "ui/viewport-adapter.css",
+      "expected": {
+        "bytes": 186,
+        "sha256": "196fb16782004c5eeef3e931b929d91a522d4fe64cba3eb878b46791775519f4"
+      },
+      "actual": {
+        "bytes": 186,
+        "sha256": "196fb16782004c5eeef3e931b929d91a522d4fe64cba3eb878b46791775519f4"
+      },
+      "pass": true
+    },
+    {
+      "path": "ui/visual_contract.json",
+      "expected": {
+        "bytes": 1949,
+        "sha256": "38ac6baf6bb1d54df5a31d247f69cdc972b7bcb14cf79f9e05d94bf8a5588d26"
+      },
+      "actual": {
+        "bytes": 1949,
+        "sha256": "38ac6baf6bb1d54df5a31d247f69cdc972b7bcb14cf79f9e05d94bf8a5588d26"
+      },
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "lifeos-p3-141-phase-c-pre-root-gate-v1",
+  "candidate_read_only": "/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate",
+  "mode": "real_self_use",
+  "receipt_present": false,
+  "unresolved_synthetic_path": "/private/tmp/lifeos-p3-141-controlled-pilot-v1/phase-c-gate-unresolved",
+  "result": {
+    "command": [
+      "/Users/xxe/.cargo/bin/cargo",
+      "build",
+      "--manifest-path",
+      "/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate/Cargo.toml",
+      "--locked",
+      "--offline"
+    ],
+    "returncode": 101,
+    "stdout_tail": "",
+    "stderr_tail": "   Compiling lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate)\nerror: failed to run custom build command for `lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate)`\n\nCaused by:\n  process didn't exit successfully: `/private/tmp/lifeos-p3-141-controlled-pilot-v1/phase-c-gate-target/debug/build/lifeos-p3-141-898041b9299df9aa/build-script-build` (exit status: 101)\n  --- stderr\n\n  thread 'main' (12907607) panicked at build.rs:6:5:\n  LIFEOS_RUNTIME_ROOT rejected before build output: phase_b_independent_pass_required before runtime-root inspection\n  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n"
+  },
+  "expected_error": "phase_b_independent_pass_required before runtime-root inspection",
+  "pass": true
+}

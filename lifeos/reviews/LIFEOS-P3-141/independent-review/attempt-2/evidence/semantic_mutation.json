@@ -1,0 +1,81 @@
+{
+  "schema": "lifeos-p3-141-semantic-mutation-v1",
+  "candidate_read_only": "/Users/xxe/.codex/worktrees/0976/No.2/lifeos/engineering/LIFEOS-P3-141/candidate",
+  "clone_root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/candidate",
+  "clone_removed": true,
+  "cases": [
+    {
+      "id": "provider_closed_set",
+      "candidate_file": "src/runtime.rs",
+      "test": "runtime::tests::status_is_closed_to_the_p3_139_twenty_ipc",
+      "baseline_returncode": 0,
+      "mutated_returncode": 101,
+      "mutation_detected": true,
+      "baseline_output": {
+        "returncode": 0,
+        "stdout_tail": "\nrunning 1 test\ntest runtime::tests::status_is_closed_to_the_p3_139_twenty_ipc ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 41 filtered out; finished in 0.00s\n\n",
+        "stderr_tail": "bjc2-app-kit v0.3.2\n   Compiling crossbeam-channel v0.5.16\n   Compiling digest v0.10.7\n   Compiling core-graphics-types v0.2.0\n   Compiling cpufeatures v0.2.17\n   Compiling vcpkg v0.2.15\n   Compiling tauri-runtime v2.11.3\n   Compiling pkg-config v0.3.34\n   Compiling wry v0.55.1\n   Compiling sha2 v0.10.9\n   Compiling core-graphics v0.25.0\n   Compiling libsqlite3-sys v0.38.2\n   Compiling ico v0.5.0\n   Compiling dispatch2 v0.3.1\n   Compiling tauri-runtime-wry v2.11.4\n   Compiling getrandom v0.3.4\n   Compiling unicode-segmentation v1.13.3\n   Compiling png v0.18.1\n   Compiling serialize-to-javascript-impl v0.1.2\n   Compiling pin-project-lite v0.2.17\n   Compiling hashlink v0.12.1\n   Compiling tokio v1.53.1\n   Compiling keyboard-types v0.7.0\n   Compiling serialize-to-javascript v0.1.2\n   Compiling serde_repr v0.1.21\n   Compiling embed_plist v1.2.2\n   Compiling mime v0.3.17\n   Compiling fallible-streaming-iterator v0.1.9\n   Compiling fallible-iterator v0.3.0\n   Compiling objc2-web-kit v0.3.2\n   Compiling tao v0.35.3\n   Compiling muda v0.19.3\n   Compiling window-vibrancy v0.6.0\n   Compiling tauri-build v2.6.3\n   Compiling tauri-codegen v2.6.3\n   Compiling rusqlite v0.40.2\n   Compiling tauri v2.11.5\n   Compiling tauri-macros v2.6.3\n   Compiling lifeos-p3-141 v0.1.0 (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/candidate)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 19.13s\n     Running unittests src/main.rs (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/cargo-target/debug/deps/lifeos_p3_141-00e61de87dfbc9ce)\n"
+      },
+      "mutation_output": {
+        "returncode": 101,
+        "stdout_tail": "\nrunning 1 test\ntest runtime::tests::status_is_closed_to_the_p3_139_twenty_ipc ... FAILED\n\nfailures:\n\n---- runtime::tests::status_is_closed_to_the_p3_139_twenty_ipc stdout ----\n\nthread 'runtime::tests::status_is_closed_to_the_p3_139_twenty_ipc' (12900401) panicked at src/runtime.rs:654:450:\nassertion `left == right` failed\n  left: [\"openai\", \"anthropic\", \"ollama\"]\n right: [\"openai\", \"anthropic\", \"ollama\", \"lm_studio\"]\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\n\nfailures:\n    runtime::tests::status_is_closed_to_the_p3_139_twenty_ipc\n\ntest result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 41 filtered out; finished in 0.00s\n\n",
+        "stderr_tail": "   Compiling lifeos-p3-141 v0.1.0 (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/candidate)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.73s\n     Running unittests src/main.rs (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/cargo-target/debug/deps/lifeos_p3_141-00e61de87dfbc9ce)\nerror: test failed, to rerun pass `--bin lifeos-p3-141`\n"
+      }
+    },
+    {
+      "id": "resolver_over_budget",
+      "candidate_file": "src/runtime/memory_context.rs",
+      "test": "runtime::memory_context::tests::format_budget_and_missing_receipt_fail_closed",
+      "baseline_returncode": 0,
+      "mutated_returncode": 101,
+      "mutation_detected": true,
+      "baseline_output": {
+        "returncode": 0,
+        "stdout_tail": "\nrunning 1 test\ntest runtime::memory_context::tests::format_budget_and_missing_receipt_fail_closed ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 41 filtered out; finished in 0.10s\n\n",
+        "stderr_tail": "   Compiling lifeos-p3-141 v0.1.0 (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/candidate)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.61s\n     Running unittests src/main.rs (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/cargo-target/debug/deps/lifeos_p3_141-00e61de87dfbc9ce)\n"
+      },
+      "mutation_output": {
+        "returncode": 101,
+        "stdout_tail": "and_missing_receipt_fail_closed ... FAILED\n\nfailures:\n\n---- runtime::memory_context::tests::format_budget_and_missing_receipt_fail_closed stdout ----\n\nthread 'runtime::memory_context::tests::format_budget_and_missing_receipt_fail_closed' (12900892) panicked at src/runtime/memory_context.rs:418:115:\ncalled `Result::unwrap_err()` on an `Ok` value: ResolvedContext { status: \"resolved\", request_id: \"request:synthetic:budget-32\", resolver_version: \"p3-139-context-resolver-v1\", authorization_id: \"AUTH-SYN-CROSS-GRANTED\", task_type: \"cross_domain\", included: [DisclosureItem { layer: \"L1\", reference: \"memory:synthetic:person\", reason: \"confirmed_active_profile\" }, DisclosureItem { layer: \"L2\", reference: \"state:synthetic:load\", reason: \"current_snapshot_slice\" }, DisclosureItem { layer: \"L2\", reference: \"state:synthetic:fatigue\", reason: \"current_snapshot_slice\" }, DisclosureItem { layer: \"L3\", reference: \"memory:synthetic:health\", reason: \"fts_after_authority_filter\" }], excluded: [DisclosureItem { layer: \"L3\", reference: \"memory:synthetic:candidate\", reason: \"unconfirmed\" }], top_k: 3, token_budget: 32, used_token_estimate: 4, l2_scanned_rows: 2, l2_recomputed_slices: [\"domain:work\", \"domain:health\"], receipt_ref: \"audit:p3-139:1a05079a910:context_resolved:request:synthetic:budget-32\", model_dispatch_count: 0 }\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\n\nfailures:\n    runtime::memory_context::tests::format_budget_and_missing_receipt_fail_closed\n\ntest result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 41 filtered out; finished in 0.03s\n\n",
+        "stderr_tail": "   Compiling lifeos-p3-141 v0.1.0 (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/candidate)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.59s\n     Running unittests src/main.rs (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/cargo-target/debug/deps/lifeos_p3_141-00e61de87dfbc9ce)\nerror: test failed, to rerun pass `--bin lifeos-p3-141`\n"
+      }
+    },
+    {
+      "id": "health_stop_identity",
+      "candidate_file": "src/runtime/today_intelligence.rs",
+      "test": "runtime::today_intelligence::tests::fixed_scenarios_are_evidence_linked_and_have_no_dispatch",
+      "baseline_returncode": 0,
+      "mutated_returncode": 101,
+      "mutation_detected": true,
+      "baseline_output": {
+        "returncode": 0,
+        "stdout_tail": "\nrunning 1 test\ntest runtime::today_intelligence::tests::fixed_scenarios_are_evidence_linked_and_have_no_dispatch ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 41 filtered out; finished in 0.15s\n\n",
+        "stderr_tail": "   Compiling lifeos-p3-141 v0.1.0 (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/candidate)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.60s\n     Running unittests src/main.rs (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/cargo-target/debug/deps/lifeos_p3_141-00e61de87dfbc9ce)\n"
+      },
+      "mutation_output": {
+        "returncode": 101,
+        "stdout_tail": "\nrunning 1 test\ntest runtime::today_intelligence::tests::fixed_scenarios_are_evidence_linked_and_have_no_dispatch ... FAILED\n\nfailures:\n\n---- runtime::today_intelligence::tests::fixed_scenarios_are_evidence_linked_and_have_no_dispatch stdout ----\n\nthread 'runtime::today_intelligence::tests::fixed_scenarios_are_evidence_linked_and_have_no_dispatch' (12901372) panicked at src/runtime/today_intelligence.rs:847:17:\nassertion `left == right` failed\n  left: \"system_suggestion\"\n right: \"health_safety_stop\"\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\n\nfailures:\n    runtime::today_intelligence::tests::fixed_scenarios_are_evidence_linked_and_have_no_dispatch\n\ntest result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 41 filtered out; finished in 0.10s\n\n",
+        "stderr_tail": "   Compiling lifeos-p3-141 v0.1.0 (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/candidate)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.59s\n     Running unittests src/main.rs (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/cargo-target/debug/deps/lifeos_p3_141-00e61de87dfbc9ce)\nerror: test failed, to rerun pass `--bin lifeos-p3-141`\n"
+      }
+    },
+    {
+      "id": "feedback_stale_write",
+      "candidate_file": "src/runtime/today_intelligence.rs",
+      "test": "runtime::today_intelligence::tests::repeated_request_is_stable_and_feedback_invalidates_only_target_slice",
+      "baseline_returncode": 0,
+      "mutated_returncode": 101,
+      "mutation_detected": true,
+      "baseline_output": {
+        "returncode": 0,
+        "stdout_tail": "\nrunning 1 test\ntest runtime::today_intelligence::tests::repeated_request_is_stable_and_feedback_invalidates_only_target_slice ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 41 filtered out; finished in 0.04s\n\n",
+        "stderr_tail": "   Compiling lifeos-p3-141 v0.1.0 (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/candidate)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.62s\n     Running unittests src/main.rs (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/cargo-target/debug/deps/lifeos_p3_141-00e61de87dfbc9ce)\n"
+      },
+      "mutation_output": {
+        "returncode": 101,
+        "stdout_tail": "\nrunning 1 test\ntest runtime::today_intelligence::tests::repeated_request_is_stable_and_feedback_invalidates_only_target_slice ... FAILED\n\nfailures:\n\n---- runtime::today_intelligence::tests::repeated_request_is_stable_and_feedback_invalidates_only_target_slice stdout ----\n\nthread 'runtime::today_intelligence::tests::repeated_request_is_stable_and_feedback_invalidates_only_target_slice' (12901859) panicked at src/runtime/today_intelligence.rs:907:9:\nassertion `left == right` failed\n  left: \"candidate\"\n right: \"stale\"\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\n\nfailures:\n    runtime::today_intelligence::tests::repeated_request_is_stable_and_feedback_invalidates_only_target_slice\n\ntest result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 41 filtered out; finished in 0.04s\n\n",
+        "stderr_tail": "   Compiling lifeos-p3-141 v0.1.0 (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/candidate)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.60s\n     Running unittests src/main.rs (/private/tmp/lifeos-p3-141-controlled-pilot-v1/review-semantic-mutations/cargo-target/debug/deps/lifeos_p3_141-00e61de87dfbc9ce)\nerror: test failed, to rerun pass `--bin lifeos-p3-141`\n"
+      }
+    }
+  ],
+  "status": "PASS"
+}
