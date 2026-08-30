@@ -1,0 +1,19 @@
+{
+  "schema": "lifeos.p3_141.provider_restoration_v2_gate.precontact_violation.v1",
+  "severity": "P0",
+  "verdict": "FAIL_CLOSED",
+  "requirement": "test_design, write_allowlist, and precontact seal must be self-written and hashed before any candidate contact",
+  "observed_sequence": [
+    "candidate-tree paths were enumerated during P3-141 input discovery before this review root had precontact artifacts",
+    "a subsequent content-location command matched closure-provider-restoration-v2-gate/candidate/build.rs before any self-written precontact seal existed",
+    "only after detecting this ordering failure were this review root and its fail-closed artifacts created"
+  ],
+  "impact": [
+    "independent precontact isolation is not provable",
+    "no candidate semantic conclusion, loopback test, mutation, build, synthetic DB, actual-Tauri run, or cleanup evidence may be collected as positive evidence in this review",
+    "the candidate is not repaired and no Phase C conclusion is available"
+  ],
+  "required_disposition": "Rework in the same P3-141 Closure Cycle using another newly isolated independent review session from a valid precontact seal",
+  "prohibited_paths_accessed": false,
+  "temp_root_created": false
+}

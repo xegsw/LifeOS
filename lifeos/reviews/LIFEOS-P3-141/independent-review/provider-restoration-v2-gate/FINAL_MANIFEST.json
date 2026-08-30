@@ -1,0 +1,24 @@
+{
+  "schema": "lifeos.p3_141.provider_restoration_v2_gate.review_manifest.v1",
+  "verdict": "REWORK_P0_FAIL_CLOSED",
+  "scope": "Fail-closed review record only; no candidate conclusion or dynamic Evidence is represented.",
+  "candidate_commit_expected": "26c08409e83a01caea7388223e51a76182a22a3c",
+  "engineering_source_expected": "5837fb4f",
+  "self_referential": false,
+  "entries": [
+    {"path": "test_design.md", "bytes": 1543, "sha256": "710b83907b45aea60ecc37edf0e32a696d5390ceb5d2bcc444a2d9dcda77a35a"},
+    {"path": "write_allowlist.md", "bytes": 839, "sha256": "65980a4b65e6f57abd28b0fcd08f116ef8723a76ab15f25840ebafdea20c2faf"},
+    {"path": "precontact_seal.json", "bytes": 632, "sha256": "6c5d6cb5c23723108b0515077427c00508e5141573c91b806e77ec397d3a8790"},
+    {"path": "postcontact_artifact_hashes.sha256", "bytes": 354, "sha256": "b83b6710cd07012f8c77b3516588eac795b56905b2bd67aa1589d5927b3c3fb9"},
+    {"path": "ABF2_MATRIX.md", "bytes": 1166, "sha256": "ab493fdbf142045cc2b796a1f35365aee81a063bb21901aae505001b05757628"},
+    {"path": "independent_review.md", "bytes": 4269, "sha256": "fe5e21190353576c92c81a1c77d2e2ac253547f8256bd4cc3219a2d6de6baec7"},
+    {"path": "evidence/precontact_violation.json", "bytes": 1233, "sha256": "d66a994ad653cbca9ec1c0df6569750ae6f3a021a85c1f6a01bdafbd8c18f7f9"},
+    {"path": "evidence/prohibited_target_attestation.json", "bytes": 532, "sha256": "3fd9563696a56a647615f43838361d22f38acb3cebab1052fa31c9e18e785f6c"},
+    {"path": "evidence/cleanup.json", "bytes": 379, "sha256": "c8852a799721ba8a9a5e7b84e3143480afb4733771f05b0e1f2a3e6e2547246a"},
+    {"path": "tools/verify_review_manifest.py", "bytes": 1276, "sha256": "69ae82465c8b30ba5987734abad3b47a7221e79919f37745b5d444743a5d6b82"}
+  ],
+  "intentionally_excluded": [
+    "FINAL_MANIFEST.json",
+    "evidence/manifest_verification.json"
+  ]
+}
