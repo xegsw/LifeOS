@@ -1,0 +1,28 @@
+{
+  "schema": "lifeos.p3-141.provider-restoration-v2-ui-key.final-manifest.v1",
+  "task_id": "LIFEOS-P3-141",
+  "closure": "provider-restoration-v2-ui-key",
+  "result": "PASS_ENGINEERING_READY_FOR_FRESH_INDEPENDENT_REVIEW",
+  "candidate_file_count": 80,
+  "candidate_tree_sha256": "ca32cdfa1773176c0de0ca44d4a95b01b1be3413aaa5053fcd80ba634e090ec1",
+  "files": [
+    {"path": "engineering_report.md", "sha256": "616a2d27d3c741912393f0a6d33ef12ff3cc96052eafcf030cb18d621da7cf27"},
+    {"path": "test_ui_runtime_key_contract.js", "sha256": "01e4571a369002b2a055e8c579463bf17e50905ca0975828fcd29df54f5faab4"},
+    {"path": "candidate/ui/runtime-adapter.js", "sha256": "ed06564f52307e95ee891cfc7be0bc7b2d8450041fecbcea65e695599edd8f6c"},
+    {"path": "candidate/src/runtime.rs", "sha256": "5e848d8ae7f400caa6f4f358be5ada493b529ef3db8ef31ffc2af9e6da07dc7e"},
+    {"path": "evidence/test_result.json", "sha256": "f57454c722801ed6ed500ffcac4e317a9ad698768715426dc196857a880be849"},
+    {"path": "evidence/change_scope.json", "sha256": "f0d77fbbd56ee5800bfb5282ad183e65fa88341e914f89e115f0b6ad65c79a48"},
+    {"path": "evidence/cleanup.json", "sha256": "2581e1c8bfb6db0f11f27885ef3eaf7ab3180720ea6db4947f7b2dd8f0ed27cb"}
+  ],
+  "claims": {
+    "five_provider_profiles_preserved": true,
+    "exactly_20_ipc_preserved": true,
+    "phase_c_v2_gate_preserved": true,
+    "pilot_6_accessed": false,
+    "real_provider_accessed": false,
+    "network_accessed": false,
+    "pm_accepted": false,
+    "risk_closed": false,
+    "stage_4": false
+  }
+}
