@@ -1,0 +1,81 @@
+{
+  "schema": "lifeos.p3-141.phase-a-engineering-final-manifest.v1",
+  "task": "LIFEOS-P3-141",
+  "phase": "A_synthetic_only",
+  "engineering_gate": "READY_FOR_INDEPENDENT_REVIEW",
+  "not_a_conclusion": [
+    "independent_review_pass",
+    "real_pilot_pass",
+    "pm_acceptance",
+    "risk_closure",
+    "freeze",
+    "stage_advance"
+  ],
+  "input_verification": {
+    "fixed_input_inventory_sha256": "3439b723980066ba78c758d6e4e6f11c05d5cbfee7d36044417e8fc9a15b8855",
+    "fixed_inputs": 12,
+    "all_match": true,
+    "p3_140_baseline_file_count": 79,
+    "p3_140_baseline_tree_sha256": "6d5659826e3e4b642b94c848d9e97f43cd93f9a2468863ebd396a4f76389940e",
+    "p3_140_baseline_match": true
+  },
+  "precontact_seal": {
+    "test_design_sha256": "3e3f9a8befc1a5de10ae141b40951c7ae402eeef8023db0e1b30c2400003148c",
+    "write_allowlist_sha256": "e2dea962683ef4cbd953a1952ad627cc75bb7879fb504664bdaeea74e639f682",
+    "unchanged_on_final_verification": true
+  },
+  "candidate": {
+    "file_count": 79,
+    "tree_sha256": "b3c681d5aca74f5f8d8cc0c3114a26f080b2c61091a43e3f3799c7163a656227",
+    "ipc_count": 20,
+    "providers": ["openai", "anthropic", "ollama", "lm_studio"],
+    "synthetic_dispatch": "task_local_loopback_only",
+    "phase_c_without_receipt": "build_time_fail_closed_before_runtime_root_inspection"
+  },
+  "successful_verification": {
+    "replay_command": "sh lifeos/engineering/LIFEOS-P3-141/tools/replay_phase_a.sh",
+    "rust_tests": {"passed": 42, "failed": 0},
+    "phase_gate_build_exit": 101,
+    "actual_tauri": {"desktop": "AXWindow+AXWebArea", "compact": "AXWindow+AXWebArea", "narrow": "AXWindow+AXWebArea"},
+    "content_exclusion_scanner": "zero prohibited marker hits",
+    "cleanup": "authorized temporary root absent"
+  },
+  "abf_rows": {
+    "phase_a_pass_synthetic_only": ["ABF-M-001", "ABF-M-002", "ABF-M-003", "ABF-M-004", "ABF-M-005", "ABF-M-006", "ABF-M-007", "ABF-M-010", "ABF-M-011", "ABF-M-012", "ABF-M-013", "ABF-M-014", "ABF-M-015", "ABF-M-016", "ABF-M-019", "ABF-M-020"],
+    "pending_phase_c": ["ABF-M-008", "ABF-M-009", "ABF-M-017"],
+    "pending_phase_b": ["ABF-M-018"]
+  },
+  "findings": {"p0": 0, "p1": 0, "p2": 1, "unknown": 0, "not_implemented": ["Phase B independent review", "Phase C controlled real use"]},
+  "p2_detail": "cargo-fmt component unavailable in supplied toolchain; no behavioral test gap",
+  "non_self_reference": {
+    "this_file_excluded_from_hash_inventory": true,
+    "verification_source": "tools/verify_phase_a.py plus listed file hashes"
+  },
+  "hashes": {
+    "engineering_report.md": "b61385b0bff740321436928b0ac6c2d6647e1a015fd82530f601e03d30cef7ef",
+    "candidate/Cargo.lock": "7e02d2bef7a22ebe68bd95b750c813198b1559a33733635261fa2f0c11561717",
+    "candidate/Cargo.toml": "7c669395b05465e818dcc83c22defef366b0f2c7700a96447ba54a123891a377",
+    "candidate/build.rs": "b5621f97a2e7633e8c2f3f159b3a737f54b1c70e0681e469599cb3c4fbd8af1c",
+    "candidate/src/runtime.rs": "c739b716bc291d5c26d0e6707a9c9e777c31eab2c7ed0d22827af31d8b599948",
+    "candidate/tauri.conf.json": "f8127debd6472dd3e8e0ef7ec55deb0e6d2d2e1743e94fcfa03c9c949fd10fed",
+    "candidate/ui/runtime-adapter.js": "45791b29e2102fb4995f9ce6a6bd50f3ef45199436885edaa3b4580ad9112ad9",
+    "evidence/ABF_PHASE_A_MATRIX.md": "0e7cd149db0616ea01db148ef2b98dc764ab228817d445c54fbb63a8bea64bda",
+    "evidence/actual_tauri_viewports.json": "d19a4e20dab71f211f643685ba7b5d994cb92ee137327a985f3c95b4dbc30aa8",
+    "evidence/cleanup_and_retention.json": "855b32c6687f796dab57fe908ad4a751709a05293618df5a220f9d26357dc9a2",
+    "evidence/content_exclusion.json": "7884055f4446227b86375395435ee93c62d80ae366e3babfaf9afe8c6afda928",
+    "evidence/failure_history.md": "8d9aebb3efac2a6ef0e5298d438959508bd6ff15ec56ef9c191f08ddf333e196",
+    "evidence/minimal_disclosure.json": "e8015c7856f93e300ce51d28f42e8432966dca48509823be1bbfb7e5e7f01853",
+    "evidence/mutation_report.md": "2100349f9e2ab5bce375a806bbf3d34ceeb484ffc9f9400cd4c1e1f63f4426b6",
+    "evidence/phase_gate.json": "df77e76634f777d61974f143c4adf62539e0d954fb3a35c7d5f037ae2eb3548a",
+    "evidence/pilot_root_boundary.json": "eb5ea2433fa0354d4b6b22cbcd15bd76fcb1aaab71708400e3168a45fdd782c8",
+    "evidence/provider_activation.json": "2f1b65f3ecabb4d0072bd6f8f7bc5839b1433971da05ac39b8e6fe09f02c887a",
+    "evidence/source_lineage.json": "e84dfc4d0a64e0abaa17990cded9cdf0e36f566bc81846664e2351b272ef6610",
+    "evidence/synthetic_behavior.json": "02d29607393152cba4bd1a4113b93ccdbe9320ce2e09fde318cb4bbfd688570b",
+    "precontact_seal.json": "71f6a769fa442dde8581bd76d8ca09b617421bb936932aaa5a3efd6ad16aa685",
+    "test_design.md": "3e3f9a8befc1a5de10ae141b40951c7ae402eeef8023db0e1b30c2400003148c",
+    "tools/cleanup_temp.sh": "f2316412795354e423de4d6edafe63a894cad53cb9c2ae37404e4e5b4aeb39c3",
+    "tools/replay_phase_a.sh": "b925623eb5a2ad568950d4f72ba3b25e784f9648b39af0906583dcf27303afc2",
+    "tools/verify_phase_a.py": "cde7dcbc68b24ab5f4ce6325008498f37de00593d32c388bf95befae69c19083",
+    "write_allowlist.md": "e2dea962683ef4cbd953a1952ad627cc75bb7879fb504664bdaeea74e639f682"
+  }
+}

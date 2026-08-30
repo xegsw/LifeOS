@@ -1,0 +1,9 @@
+{
+  "schema": "lifeos.p3-141.cleanup-receipt.v1",
+  "cleanup_tool": "tools/cleanup_temp.sh",
+  "cleanup_execution_count": 2,
+  "exact_removed_root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1",
+  "postcondition": "temp_root_absent_after_final_actual_tauri=true",
+  "prohibited_real_roots_or_databases": "not accessed and not cleaned",
+  "result": "PASS_SYNTHETIC_ONLY"
+}

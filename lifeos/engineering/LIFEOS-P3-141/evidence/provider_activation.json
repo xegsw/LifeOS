@@ -1,0 +1,15 @@
+{
+  "schema": "lifeos.p3-141.provider-activation.v1",
+  "phase": "A_synthetic",
+  "profiles": ["openai", "anthropic", "ollama", "lm_studio"],
+  "dispatch_fixture": "task-local loopback only",
+  "explicit_sequence": ["save", "test", "enable", "send"],
+  "first_send_lock": "ollama persisted; switch to lm_studio rejected with provider_locked_after_first_send",
+  "no_custom_second_provider_fallback_or_background_send": true,
+  "tests": [
+    "protocol_adapters_cover_the_closed_four_profiles_and_reject_mismatches",
+    "loopback_probe_send_feedback_restart_and_no_implicit_repeat",
+    "provider_rejects_unsafe_endpoints_unsupported_profile_and_never_enables_stale_config"
+  ],
+  "result": "PASS_SYNTHETIC_ONLY"
+}

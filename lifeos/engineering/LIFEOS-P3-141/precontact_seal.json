@@ -1,0 +1,23 @@
+{
+  "schema": "lifeos.p3_141.phase_a.precontact_seal.v1",
+  "task_id": "LIFEOS-P3-141",
+  "phase": "A_SYNTHETIC_ENGINEERING",
+  "candidate_contact_permitted_after": true,
+  "sealed_artifacts": {
+    "test_design.md": {
+      "bytes": 4316,
+      "sha256": "3e3f9a8befc1a5de10ae141b40951c7ae402eeef8023db0e1b30c2400003148c"
+    },
+    "write_allowlist.md": {
+      "bytes": 1279,
+      "sha256": "e2dea962683ef4cbd953a1952ad627cc75bb7879fb504664bdaeea74e639f682"
+    }
+  },
+  "fixed_expectations": {
+    "p3_140_candidate_file_count": 79,
+    "p3_140_candidate_tree_sha256": "6d5659826e3e4b642b94c848d9e97f43cd93f9a2468863ebd396a4f76389940e",
+    "ipc_count": 20,
+    "phase_b_receipt_required_for_real_mode": true
+  },
+  "prohibited_scope": "No real or retained Pilot/DB/path/text/Health/credential/provider/network target participates in precontact, candidate copy, tests, inventory, hash, or cleanup."
+}
