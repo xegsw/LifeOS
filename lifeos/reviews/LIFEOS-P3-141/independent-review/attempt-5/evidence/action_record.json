@@ -1,0 +1,37 @@
+{
+  "schema_version": "lifeos.p3_141.attempt_5.procedure_failure.v1",
+  "task_id": "LIFEOS-P3-141",
+  "attempt": 5,
+  "recorded_at_utc": "2026-08-30T06:05:32Z",
+  "outcome": "BLOCKED_NOT_PASS",
+  "p0_id": "P0-IR-141-A5-001",
+  "p0_summary": "Candidate-path metadata was enumerated before this review created and hashed its self-authored test design, write allowlist, and precontact seal.",
+  "chronology": [
+    {
+      "order": 1,
+      "action": "Verified the delegated task-path names in the current worktree; the three stated P3-141 governance files were absent there.",
+      "candidate_contact": false
+    },
+    {
+      "order": 2,
+      "action": "Obtained metadata line counts for the engineering report and engineering Final Manifest, then performed a workspace filename inventory that included candidate paths.",
+      "candidate_contact": true,
+      "violation": "This occurred before any valid self-authored test design, write allowlist, or precontact seal existed."
+    },
+    {
+      "order": 3,
+      "action": "After PM clarified formal read-only inputs, read the P3-141 task contract, Frozen ABF, and fixed-input inventory from the PM main worktree.",
+      "candidate_contact": false
+    },
+    {
+      "order": 4,
+      "action": "PM instructed this attempt to fail closed; no later candidate read, hash, inventory, test, build, launch, screenshot, mutation, Provider action, network action, or Pilot action was performed.",
+      "candidate_contact": false
+    }
+  ],
+  "non_sensitive_scope_statement": {
+    "pilot_6": "No filesystem access, probe, existence check, hash, creation, cleanup, capture, or content access was performed against Pilot-6 or its database.",
+    "real_content_health_credentials_provider": "No real text, Health value, credential, Provider response, or network endpoint was accessed, recorded, or sent.",
+    "candidate_assessment": "No candidate functionality was adjudicated. This P0 is a review-procedure failure, not a candidate functional finding."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "lifeos.p3_141.attempt_5.final_manifest.v1",
+  "task_id": "LIFEOS-P3-141",
+  "attempt": 5,
+  "kind": "procedure_failure_record",
+  "conclusion": "BLOCKED_NOT_PASS",
+  "candidate_adjudicated": false,
+  "candidate_assets_read_after_stop": false,
+  "self_referential": false,
+  "excludes": [
+    "FINAL_MANIFEST.json"
+  ],
+  "entries": [
+    {
+      "path": "evidence/action_record.json",
+      "sha256": "5f997986ee6975bf8e011fc4278ffb89b6e5d24390d2cf136b312a624444d2c6"
+    },
+    {
+      "path": "evidence/cleanup_receipt.json",
+      "sha256": "79521ee2cb44db6c145dc9ba9ad6a56fa5f684d13813891ada8bbf8c5957fe07"
+    },
+    {
+      "path": "evidence/ABF_MATRIX.md",
+      "sha256": "3fc7bc5637d10164e25d23483152e0216c3c555bcca1beaa5dcff310e72ee7d1"
+    },
+    {
+      "path": "REPLAY.md",
+      "sha256": "523e7da418091115dc4a806c42f047d3f00c49dcd0b31f6cbb6188b3fcb89ff8"
+    },
+    {
+      "path": "independent_review.md",
+      "sha256": "cab71a3673437b276da46738a9bf69a56ff3563869b8b80879a88913fdb06795"
+    }
+  ],
+  "verification": {
+    "entry_count": 5,
+    "expected_p0": 1,
+    "expected_candidate_functional_findings": 0,
+    "expected_pilot_6_accesses": 0,
+    "expected_review_owned_temp_assets": 0
+  }
+}
