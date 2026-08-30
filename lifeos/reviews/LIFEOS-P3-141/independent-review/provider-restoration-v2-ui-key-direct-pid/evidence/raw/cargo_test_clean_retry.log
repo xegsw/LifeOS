@@ -1,0 +1,214 @@
+   Compiling lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/ca28/No.2/lifeos/engineering/LIFEOS-P3-141/closure-provider-restoration-v2-ui-key/candidate)
+warning: constant `RECEIPT_FILE` is never used
+  --> tests/../build.rs:19:7
+   |
+19 | const RECEIPT_FILE: &str = "phase_c_v2_independent_pass_receipt.json";
+   |       ^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `MAX_MANIFEST_BYTES` is never used
+  --> tests/../build.rs:22:7
+   |
+22 | const MAX_MANIFEST_BYTES: u64 = 1024 * 1024;
+   |       ^^^^^^^^^^^^^^^^^^
+
+warning: enum `BuildMode` is never used
+  --> tests/../build.rs:25:6
+   |
+25 | enum BuildMode { SyntheticReview, PhaseCReal }
+   |      ^^^^^^^^^
+
+warning: methods `input_mode` and `value` are never used
+  --> tests/../build.rs:28:8
+   |
+27 | impl BuildMode {
+   | -------------- methods in this implementation
+28 |     fn input_mode(self) -> &'static str {
+   |        ^^^^^^^^^^
+...
+31 |     fn value(self) -> &'static str {
+   |        ^^^^^
+
+warning: function `build_mode` is never used
+  --> tests/../build.rs:40:4
+   |
+40 | fn build_mode() -> BuildMode {
+   |    ^^^^^^^^^^
+
+warning: function `normalized_absolute` is never used
+  --> tests/../build.rs:85:4
+   |
+85 | fn normalized_absolute(raw: &str, what: &str) -> PathBuf {
+   |    ^^^^^^^^^^^^^^^^^^^
+
+warning: function `frozen_runtime_root` is never used
+  --> tests/../build.rs:94:4
+   |
+94 | fn frozen_runtime_root(build_mode: BuildMode) -> PathBuf {
+   |    ^^^^^^^^^^^^^^^^^^^
+
+warning: function `sha256_hex` is never used
+   --> tests/../build.rs:107:4
+    |
+107 | fn sha256_hex(bytes: &[u8]) -> String {
+    |    ^^^^^^^^^^
+
+warning: function `safe_label` is never used
+   --> tests/../build.rs:117:4
+    |
+117 | fn safe_label(value: &str) -> bool {
+    |    ^^^^^^^^^^
+
+warning: fields `file`, `sha256`, and `schema` are never read
+   --> tests/../build.rs:181:32
+    |
+181 | struct ReviewManifestBinding { file: String, sha256: String, schema: String }
+    |        ---------------------   ^^^^          ^^^^^^          ^^^^^^
+    |        |
+    |        fields in this struct
+
+warning: field `review_manifest` is never read
+   --> tests/../build.rs:195:5
+    |
+184 | struct PassReceipt {
+    |        ----------- field in this struct
+...
+195 |     review_manifest: ReviewManifestBinding,
+    |     ^^^^^^^^^^^^^^^
+
+warning: function `git` is never used
+   --> tests/../build.rs:216:4
+    |
+216 | fn git(top: &Path, args: &[&str], what: &str) -> Vec<u8> {
+    |    ^^^
+
+warning: function `git_string` is never used
+   --> tests/../build.rs:222:4
+    |
+222 | fn git_string(top: &Path, args: &[&str], what: &str) -> String {
+    |    ^^^^^^^^^^
+
+warning: function `git_top` is never used
+   --> tests/../build.rs:226:4
+    |
+226 | fn git_top(path: &Path, what: &str) -> PathBuf {
+    |    ^^^^^^^
+
+warning: function `git_common_dir` is never used
+   --> tests/../build.rs:235:4
+    |
+235 | fn git_common_dir(top: &Path, what: &str) -> PathBuf {
+    |    ^^^^^^^^^^^^^^
+
+warning: function `declared_peer_worktree` is never used
+   --> tests/../build.rs:242:4
+    |
+242 | fn declared_peer_worktree(candidate_top: &Path, review_top: &Path) -> bool {
+    |    ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `git_head_bytes` is never used
+   --> tests/../build.rs:248:4
+    |
+248 | fn git_head_bytes(top: &Path, relative: &Path, what: &str) -> Vec<u8> {
+    |    ^^^^^^^^^^^^^^
+
+warning: function `candidate_tree_sha256` is never used
+   --> tests/../build.rs:253:4
+    |
+253 | fn candidate_tree_sha256(root: &Path) -> String {
+    |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `validate_phase_c_v2_receipt` is never used
+   --> tests/../build.rs:304:4
+    |
+304 | fn validate_phase_c_v2_receipt() -> String {
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `write_phase_c_v2_binding` is never used
+   --> tests/../build.rs:364:4
+    |
+364 | fn write_phase_c_v2_binding(build_mode: BuildMode, binding: Option<String>) {
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `lifeos-p3-141` (test "v2_phase_c_gate") generated 20 warnings
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.66s
+     Running unittests src/main.rs (/private/tmp/lifeos-p3-141-provider-restoration-v2-ui-key-direct-pid-review-v1/test-cargo/debug/deps/lifeos_p3_141-a3c9c76c5c02b4e0)
+
+running 50 tests
+test runtime::closure_tests::closure_configured_runtime_root_fails_before_any_write ... ok
+test runtime::closure_tests::closure_whitespace_real_capture_is_prewrite_rejected ... ok
+test runtime::closure_tests::closure_real_root_requires_fresh_absence_and_owned_restart ... ok
+test runtime::closure_tests::closure_structured_health_has_five_fields_and_rejects_invalid_or_free_text_before_write ... ok
+test runtime::closure_tests::closure_dto_idempotency_and_stale_paths_do_not_mutate ... ok
+test runtime::closure_tests::closure_limit_file_type_and_database_boundary_fail_closed ... ok
+test runtime::closure_tests::closure_invalid_database_unknown_ipc_and_focus_are_runtime_checked ... ok
+test runtime::memory_context::tests::inactive_authority_is_excluded_from_l1_and_l3 ... ok
+test runtime::memory_context::tests::memory_and_state_lifecycle_preserve_lineage ... ok
+test runtime::memory_context::tests::failure_paths_do_not_write_receipts_or_mutate_authority ... ok
+test runtime::memory_context::tests::cross_domain_authorization_and_request_removal_are_scoped ... ok
+test runtime::closure_tests::closure_real_memory_cap_is_restart_safe_and_fourth_is_prewrite_rejected ... ok
+test runtime::memory_context::tests::complete_memory_and_state_operations_preserve_history ... ok
+test runtime::provider_fixture_tests::protocol_adapters_cover_the_closed_four_profiles_and_reject_mismatches ... ok
+test runtime::provider_fixture_tests::authorization_race_recheck_blocks_derived_transaction_without_retry ... ok
+test runtime::provider_fixture_tests::authorized_unlinked_selection_still_sends_minimal_request ... ok
+test runtime::provider_fixture_tests::settings_link_temp_and_failure_preserve_db_sentinel ... ok
+test runtime::provider_fixture_tests::feedback_all_decisions_are_audited_and_only_confirmation_affects_today ... ok
+test runtime::provider_restoration_tests::custom_profile_rejects_wrong_envelope_response_mode_and_credential_order ... ok
+test runtime::provider_fixture_tests::provider_failures_do_not_persist_derived_objects_or_enable ... ok
+test runtime::tests::controlled_fixture_health_source_is_closed_and_today_uses_the_same_contract ... ok
+test runtime::tests::controlled_ui_health_dto_shape_is_a_valid_closed_five_field_request ... ok
+test runtime::tests::disabled_provider_is_a_persisted_non_network_state ... ok
+test runtime::provider_fixture_tests::revoked_authorization_blocks_bundle_and_provider_before_dispatch ... ok
+test runtime::provider_fixture_tests::loopback_probe_send_feedback_restart_and_no_implicit_repeat ... ok
+test runtime::memory_context::tests::receipt_reopens_deterministically_and_snapshots_incrementally ... ok
+test runtime::memory_context::tests::resolver_filters_authority_budgets_and_domain ... ok
+test runtime::memory_context::tests::understanding_is_not_created_by_resolver ... ok
+test runtime::tests::real_mode_model_port_is_explicit_and_not_implicit ... ok
+test runtime::tests::real_preexisting_database_is_rejected_before_write ... ok
+test runtime::tests::receipt_enabled_real_mode_requires_fresh_root_and_reopens_without_write ... ok
+test runtime::tests::receipt_geometry_requires_post_set_size_stability_and_never_reuses_another_viewport ... ok
+test runtime::tests::status_is_closed_to_the_p3_139_twenty_ipc ... ok
+test runtime::tests::provider_rejects_unsafe_endpoints_and_never_enables_stale_config ... ok
+test runtime::tests::provider_settings_are_nonsecret_atomic_and_session_only ... ok
+test runtime::provider_restoration_tests::custom_openai_compatible_loopback_is_protocol_bound_and_first_send_locks ... ok
+test runtime::tests::provider_understanding_requires_explicit_successful_enablement ... ok
+test runtime::tests::additional_personal_content_is_disclosed_before_any_request_or_write ... ok
+test runtime::tests::persistent_link_is_created_only_after_explicit_confirmation ... ok
+test runtime::tests::request_local_bundle_is_minimal_and_does_not_require_persistent_link ... ok
+test runtime::today_intelligence::tests::synthetic_mode_is_required_by_this_test_contract ... ok
+test runtime::tests::synthetic_insufficient_evidence_never_creates_candidate_or_action ... ok
+test runtime::tests::synthetic_lifecycle_and_no_write_rejection ... ok
+test runtime::today_intelligence::tests::rejected_inputs_fail_closed_without_new_rows ... ok
+test runtime::today_intelligence::tests::repeated_request_is_stable_and_feedback_invalidates_only_target_slice ... ok
+test runtime::memory_context::tests::format_budget_and_missing_receipt_fail_closed ... ok
+test runtime::today_intelligence::tests::five_single_variable_counterfactuals_and_receipts_are_deterministic ... ok
+test runtime::today_intelligence::tests::all_feedback_decisions_stay_candidate_only ... ok
+test runtime::today_intelligence::tests::fixed_scenarios_are_evidence_linked_and_have_no_dispatch ... ok
+test runtime::provider_fixture_tests::loopback_timeout_http_malformed_oversize_disconnect_and_protocol_mismatch_fail_closed ... ok
+
+test result: ok. 50 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.57s
+
+     Running tests/v2_phase_c_gate.rs (/private/tmp/lifeos-p3-141-provider-restoration-v2-ui-key-direct-pid-review-v1/test-cargo/debug/deps/v2_phase_c_gate-1674c6f61935ba20)
+
+running 4 tests
+test revision_2_gate::revision_2_gate_tests::v2_receipt_contract_accepts_exact_revision_2_binding ... ok
+test revision_2_gate::revision_2_gate_tests::v2_receipt_file_gate_rejects_symlink_and_directory_before_read ... FAILED
+test revision_2_gate::revision_2_gate_tests::v2_receipt_schema_rejects_duplicate_extra_and_fallback_fields ... ok
+test revision_2_gate::revision_2_gate_tests::v2_receipt_contract_rejects_v1_mixed_stale_and_nonpass_bindings ... ok
+
+failures:
+
+---- revision_2_gate::revision_2_gate_tests::v2_receipt_file_gate_rejects_symlink_and_directory_before_read stdout ----
+
+thread 'revision_2_gate::revision_2_gate_tests::v2_receipt_file_gate_rejects_symlink_and_directory_before_read' (14104164) panicked at tests/../build.rs:462:78:
+explicit v2 gate test root required: NotPresent
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    revision_2_gate::revision_2_gate_tests::v2_receipt_file_gate_rejects_symlink_and_directory_before_read
+
+test result: FAILED. 3 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test v2_phase_c_gate`
