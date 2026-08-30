@@ -1,0 +1,67 @@
+{
+  "schema": "lifeos-p3-141-independent-review-final-manifest-v1",
+  "scope": "startup-gate-only; no candidate positive evidence",
+  "review_conclusion": "BLOCKED_ACCEPTANCE_NOT_MET",
+  "non_self_referential": true,
+  "excluded": [
+    "This manifest does not hash itself.",
+    "No candidate, engineering Evidence, Pilot, real-data, credential, Health value, Provider, or network artifact was included as a Manifest entry."
+  ],
+  "entries": [
+    {
+      "path": "test_design.md",
+      "sha256": "62d8f5c867eaf22dcbee0209e758e792c3d52f1074b9103b8de2f8e96984c8e9",
+      "role": "invalidated-review-owned design record"
+    },
+    {
+      "path": "write_allowlist.md",
+      "sha256": "7d482ba63b3fbe3498506adaf22807bb0d00834b400cd953a805fccb2c0ff3b1",
+      "role": "review-owned write boundary"
+    },
+    {
+      "path": "precontact_seal.json",
+      "sha256": "bf758fcbc43e726d85d28b398485b329b47a53d8d55529007b5c014f2eb5c2ca",
+      "role": "honest invalid precontact-order record"
+    },
+    {
+      "path": "independent_review.md",
+      "sha256": "7a3ff4f499eee4220bd2396a1f2d95df3bf95bfe0bff2e7e218d55418ef175be",
+      "role": "mandatory review conclusion"
+    },
+    {
+      "path": "phase_b_matrix.md",
+      "sha256": "ade876ff5094eb810188863588293db6f7fa2948c23e50fdfcb3c7c3cf22159f",
+      "role": "line-by-line Phase B status matrix"
+    },
+    {
+      "path": "evidence/startup_gate.json",
+      "sha256": "f752ebea8221acb4fc8ab7a33602ca8f2fffa2e8c3ed09f281f319122d1a0c7b",
+      "role": "structured P0 startup findings"
+    },
+    {
+      "path": "evidence/input_discovery.json",
+      "sha256": "36e958fc4f676177c0fa1df8888a0370ccb44702f483f957843fa0269cfa460d",
+      "role": "task-input discovery result"
+    },
+    {
+      "path": "evidence/cleanup_receipt.json",
+      "sha256": "a0e4d3b651f521d2b47781d4b7f43c6865e36462dd7d94a3ac8388d41b9f88ae",
+      "role": "exact temporary-root absence receipt"
+    },
+    {
+      "path": "tools/replay_startup_gate.sh",
+      "sha256": "9760ca88685b04a6d9902917504b3f3ccf1e6f1e0594e33ff03d03ea1e9c6ee1",
+      "role": "review-owned no-candidate replay entry"
+    },
+    {
+      "path": "tools/verify_startup_gate.py",
+      "sha256": "3337da8079dceea49980588a5bba0e1e530884ad3299a96313d99b63a12012ed",
+      "role": "review-owned manifest and semantic-mutation verifier"
+    }
+  ],
+  "required_phase_c": {
+    "ABF_M_008": "PENDING_PHASE_C",
+    "ABF_M_009": "PENDING_PHASE_C",
+    "ABF_M_017": "PENDING_PHASE_C"
+  }
+}

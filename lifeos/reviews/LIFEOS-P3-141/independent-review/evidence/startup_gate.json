@@ -1,0 +1,22 @@
+{
+  "schema": "lifeos-p3-141-independent-review-startup-gate-v1",
+  "result": "BLOCKED",
+  "p0_findings": [
+    {
+      "id": "P0-IR-141-001",
+      "finding": "Specified task-card, acceptance-basis, and fixed-input files were absent from the current worktree.",
+      "effect": "The review cannot reconstruct frozen scope, baseline lineage, candidate hash, or Phase B / Phase C boundary."
+    },
+    {
+      "id": "P0-IR-141-002",
+      "finding": "Engineering metadata was accessed before review-owned design, write allowlist, and precontact seal existed.",
+      "effect": "This attempt cannot create valid independent positive evidence and must not continue candidate validation."
+    }
+  ],
+  "candidate_actions_after_abort": 0,
+  "runtime_launches": 0,
+  "database_creations": 0,
+  "provider_calls": 0,
+  "network_actions": 0,
+  "phase_c_status": "PENDING_PHASE_C"
+}
