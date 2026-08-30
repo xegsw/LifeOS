@@ -1,0 +1,19 @@
+{
+  "verifier_identity": "attempt-8-review-owned-receipt-gate-execution-negatives-v1",
+  "runtime_root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1/gate-runtime-*",
+  "cases": [
+    {
+      "case": "legacy_environment_string",
+      "result": "rejected",
+      "error_fragment": "legacy receipt string is prohibited; use an independently-owned receipt path only",
+      "runtime_root_created": false
+    },
+    {
+      "case": "missing_receipt_path",
+      "result": "rejected",
+      "error_fragment": "phase_c_real requires an explicit independent receipt path before runtime-root inspection",
+      "runtime_root_created": false
+    }
+  ],
+  "verdict": "Pass"
+}

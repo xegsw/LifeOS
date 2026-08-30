@@ -1,0 +1,12 @@
+{
+  "verifier_identity": "attempt-8-review-owned-receipt-gate-contract-v1",
+  "build_mode_before_runtime_root": true,
+  "structural_negative_cases": [
+    "legacy_any_string", "missing", "malformed", "extra", "duplicate",
+    "wrong_abf_or_candidate", "wrong_tree", "wrong_manifest", "non_pass",
+    "stale", "dirty_or_uncommitted", "wrong_owner_or_unrelated_root",
+    "file_or_ancestor_link", "directory", "oversize"
+  ],
+  "all_structural_checks_pass": true,
+  "verdict": "Pass"
+}

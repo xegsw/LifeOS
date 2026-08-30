@@ -1,0 +1,9 @@
+Finished `dev` profile [unoptimized + debuginfo] target(s) in isolated temporary Cargo target
+Running isolated review-owned runtime harness
+ipc_result status=blocked code=runtime_root_type_rejected
+ipc_result status=blocked code=real_root_ownership_missing
+ipc_result status=blocked code=daily_work_limit_rejected
+ipc_result status=blocked code=context_budget_rejected
+ipc_result status=blocked code=authorization_rejected
+ipc_result status=blocked code=provider_enablement_rejected
+{"verdict":"Pass","suite":"attempt-8-review-owned-runtime-harness","cases":["root_db_type_prewrite","work_daily_restart","resolver_budget_authorization_health","provider_closed_set_no_implicit_dispatch","today_feedback_recompute_safety_stop"]}
