@@ -178,11 +178,17 @@ fn mode_prefix(paths: &Paths, kind: &str) -> String {
     if paths.mode == super::InputMode::Real { format!("{kind}:p3-141:real:") } else { format!("{kind}:synthetic:") }
 }
 fn valid_mode_id(paths: &Paths, value: &str, kind: &str) -> bool { valid_id(value, &mode_prefix(paths, kind)) }
-fn source_refs(paths: &Paths, value: &Option<Vec<String>>) -> Result<(), Error> {
-    let expected = if paths.mode == super::InputMode::Real {
-        if super::controlled_fixture_evidence(paths) { "source:synthetic:controlled-fixture" } else { "source:local:user-confirmed" }
-    } else { SOURCE_REF };
+pub(crate) fn expected_source_ref(mode: super::InputMode, controlled_fixture: bool) -> &'static str {
+    if mode == super::InputMode::Real {
+        if controlled_fixture { "source:synthetic:controlled-fixture" } else { "source:local:user-confirmed" }
+    } else { SOURCE_REF }
+}
+pub(crate) fn validate_source_refs(mode: super::InputMode, controlled_fixture: bool, value: &Option<Vec<String>>) -> Result<(), Error> {
+    let expected = expected_source_ref(mode, controlled_fixture);
     if value.as_deref() == Some(&[expected.to_string()]) { Ok(()) } else { Err(blocked("source_refs_rejected", "Memory 与 State 只能引用当前模式的最小来源引用。")) }
+}
+fn source_refs(paths: &Paths, value: &Option<Vec<String>>) -> Result<(), Error> {
+    validate_source_refs(paths.mode, super::controlled_fixture_evidence(paths), value)
 }
 fn ensure_schema(conn: &Connection) -> Result<(), Error> {
     conn.execute_batch(r#"
@@ -323,7 +329,12 @@ fn load_label(value: TrainingLoad) -> &'static str { match value { TrainingLoad:
 fn time_label(value: AvailableTime) -> &'static str { match value { AvailableTime::UnderThirtyMinutes => "under_thirty_minutes", AvailableTime::ThirtyToSixtyMinutes => "thirty_to_sixty_minutes", AvailableTime::SixtyToOneHundredTwentyMinutes => "sixty_to_one_hundred_twenty_minutes", AvailableTime::OverOneHundredTwentyMinutes => "over_one_hundred_twenty_minutes" } }
 fn health_create_valid<'a>(paths: &Paths, request: &'a CurrentStateRequest) -> Result<&'a StructuredHealthState, Error> {
     let health=request.structured_health.as_ref().ok_or_else(||blocked("health_schema_rejected","Health 必须包含全部五项结构化字段。"))?;
-    if request.domain != Domain::Health || request.state_key.as_deref()!=Some("health_fitness_structured_v1") || request.value.is_some() || !valid_mode_id(paths,&request.state_id,"state") || request.expires_at_ms.unwrap_or(0)<=0 || health.energy==0 || health.energy>5 { return Err(blocked("health_schema_rejected","Health/Fitness 只能使用五项最小非诊断结构化合同；未写入。")); }
+    if request.domain != Domain::Health { return Err(blocked("health_schema_rejected","Health/Fitness domain 必须为 health；未写入。")); }
+    if request.state_key.as_deref()!=Some("health_fitness_structured_v1") { return Err(blocked("health_schema_rejected","Health/Fitness 必须使用固定状态键；未写入。")); }
+    if request.value.is_some() { return Err(blocked("health_schema_rejected","Health/Fitness 不接受自由 value 文本；未写入。")); }
+    if !valid_mode_id(paths,&request.state_id,"state") { return Err(blocked("health_schema_rejected","Health/Fitness State 标识不符合当前 P3-141 模式合同；未写入。")); }
+    if request.expires_at_ms.unwrap_or(0)<=0 { return Err(blocked("health_schema_rejected","Health/Fitness 到期时间无效；未写入。")); }
+    if health.energy==0 || health.energy>5 { return Err(blocked("health_schema_rejected","Health/Fitness 精力只能为 1–5；未写入。")); }
     source_refs(paths,&request.source_refs)?;
     if request.idempotency_key=="synthetic-persist-fail" || (paths.mode==super::InputMode::Real && !request.idempotency_key.starts_with("p3-141-real-ui-")) { return Err(blocked("health_schema_rejected","Health/Fitness 幂等键不符合当前合同；未写入。")); }
     Ok(health)

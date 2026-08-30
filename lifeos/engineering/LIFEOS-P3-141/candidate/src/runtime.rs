@@ -92,16 +92,54 @@ fn controlled_fixture_evidence(paths: &Paths) -> bool {
         && paths.root.starts_with("/private/tmp/lifeos-p3-141-controlled-pilot-v1/")
 }
 
-fn write_controlled_viewport_receipt(paths: &Paths, window: &tauri::WebviewWindow, viewport: &str, width: u32, height: u32) -> Result<(), Error> {
-    // `set_size` sets the client area.  The receipt is deliberately emitted
-    // only afterwards and records both the requested inner viewport and the
-    // native outer frame observed from this just-started window.
+// The platform applies `set_size` asynchronously. Receipt values therefore
+// come from three equal, non-zero observations after a post-settle delay, not
+// from the event-loop's first (possibly previous-viewport) sample.
+const VIEWPORT_SETTLE_DELAY_MS: u64 = 220;
+const VIEWPORT_SETTLE_SAMPLE_GAP_MS: u64 = 80;
+const VIEWPORT_SETTLE_SAMPLE_COUNT: usize = 3;
+
+#[derive(Clone, Copy, Debug)]
+struct ViewportGeometry { inner_width: u32, inner_height: u32, outer_width: u32, outer_height: u32, scale_factor: f64 }
+impl ViewportGeometry {
+    fn usable(self) -> bool { self.inner_width > 0 && self.inner_height > 0 && self.outer_width > 0 && self.outer_height > 0 && self.scale_factor.is_finite() && self.scale_factor > 0.0 }
+    fn matches(self, other: Self) -> bool {
+        self.inner_width == other.inner_width && self.inner_height == other.inner_height
+            && self.outer_width == other.outer_width && self.outer_height == other.outer_height
+            && self.scale_factor.to_bits() == other.scale_factor.to_bits()
+    }
+}
+
+fn stable_viewport_geometry(samples: &[ViewportGeometry]) -> Result<ViewportGeometry, Error> {
+    if samples.len() != VIEWPORT_SETTLE_SAMPLE_COUNT || samples.iter().any(|sample| !sample.usable()) {
+        return Err(Error::blocked("evidence_viewport_unstable", "合成 Evidence 窗口尺寸未形成完整有效样本；未写入。"));
+    }
+    let observed = samples[samples.len() - 1];
+    if samples.iter().all(|sample| sample.matches(observed)) { Ok(observed) }
+    else { Err(Error::blocked("evidence_viewport_unstable", "合成 Evidence 窗口尺寸仍在变化；未写入。")) }
+}
+
+fn observe_viewport_geometry(window: &tauri::WebviewWindow) -> Result<ViewportGeometry, Error> {
     let inner=window.inner_size().map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 内部窗口尺寸不可读取；未写入。"))?;
     let outer=window.outer_size().map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 外部窗口尺寸不可读取；未写入。"))?;
     let scale=window.scale_factor().map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 窗口缩放不可读取；未写入。"))?;
+    Ok(ViewportGeometry { inner_width: inner.width, inner_height: inner.height, outer_width: outer.width, outer_height: outer.height, scale_factor: scale })
+}
+
+fn observe_stable_viewport_geometry(window: &tauri::WebviewWindow) -> Result<ViewportGeometry, Error> {
+    std::thread::sleep(Duration::from_millis(VIEWPORT_SETTLE_DELAY_MS));
+    let mut samples = Vec::with_capacity(VIEWPORT_SETTLE_SAMPLE_COUNT);
+    for index in 0..VIEWPORT_SETTLE_SAMPLE_COUNT {
+        samples.push(observe_viewport_geometry(window)?);
+        if index + 1 < VIEWPORT_SETTLE_SAMPLE_COUNT { std::thread::sleep(Duration::from_millis(VIEWPORT_SETTLE_SAMPLE_GAP_MS)); }
+    }
+    stable_viewport_geometry(&samples)
+}
+
+fn write_controlled_viewport_receipt(paths: &Paths, viewport: &str, width: u32, height: u32, observed: ViewportGeometry) -> Result<(), Error> {
     let target=paths.root.parent().ok_or_else(||Error::blocked("evidence_viewport_unavailable","合成 Evidence 根缺少父目录。"))?.join(format!("p3-141-actual-viewport-{}.json",std::process::id()));
     if metadata(&target)?.is_some() { return Err(Error::blocked("startup_receipt_exists", "本次实际窗口收据已存在；未覆盖。")); }
-    let value=serde_json::json!({"schema":"lifeos.p3-141.actual-tauri-viewport.v2","pid":std::process::id(),"identifier":"local.lifeos.p3-141","window_title":"LifeOS · P3-141 Controlled Pilot Candidate","viewport":viewport,"requested_inner_logical":{"width":width,"height":height},"observed_inner_physical":{"width":inner.width,"height":inner.height},"observed_inner_logical":{"width":inner.width as f64/scale,"height":inner.height as f64/scale},"observed_outer_physical":{"width":outer.width,"height":outer.height},"observed_outer_logical":{"width":outer.width as f64/scale,"height":outer.height as f64/scale},"observed_scale_factor":scale,"synthetic_fixture":true,"content_recorded":false,"network_dispatch_count":0});
+    let value=serde_json::json!({"schema":"lifeos.p3-141.actual-tauri-viewport.v3","pid":std::process::id(),"identifier":"local.lifeos.p3-141","window_title":"LifeOS · P3-141 Controlled Pilot Candidate","viewport":viewport,"requested_inner_logical":{"width":width,"height":height},"observed_inner_physical":{"width":observed.inner_width,"height":observed.inner_height},"observed_inner_logical":{"width":observed.inner_width as f64/observed.scale_factor,"height":observed.inner_height as f64/observed.scale_factor},"observed_outer_physical":{"width":observed.outer_width,"height":observed.outer_height},"observed_outer_logical":{"width":observed.outer_width as f64/observed.scale_factor,"height":observed.outer_height as f64/observed.scale_factor},"observed_scale_factor":observed.scale_factor,"receipt_source":"post_set_size_stable_samples","settle_delay_ms":VIEWPORT_SETTLE_DELAY_MS,"settle_sample_gap_ms":VIEWPORT_SETTLE_SAMPLE_GAP_MS,"settle_sample_count":VIEWPORT_SETTLE_SAMPLE_COUNT,"synthetic_fixture":true,"content_recorded":false,"network_dispatch_count":0});
     let bytes=serde_json::to_vec_pretty(&value).map_err(|_|Error::blocked("startup_receipt_serialization_rejected","实际窗口收据无法安全序列化；未写入。"))?;
     let mut file=OpenOptions::new().write(true).create_new(true).mode(0o600).open(&target).map_err(io)?;
     if file.write_all(&bytes).is_err() || file.write_all(b"\n").is_err() || file.sync_all().is_err() { let _=fs::remove_file(&target); return Err(Error::blocked("startup_receipt_write_rejected","实际窗口收据未能原子写入。")); }
@@ -114,7 +152,15 @@ fn write_startup_ready_receipt(paths: &Paths, window: &tauri::WebviewWindow) -> 
         if !controlled_fixture_evidence(paths) { return Ok(()); }
         write(paths, |_| Ok(()))?;
         window.set_size(Size::Logical(LogicalSize::new(width as f64, height as f64))).map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 窗口尺寸不可设置；未写入。"))?;
-        return write_controlled_viewport_receipt(paths,window,viewport,width,height);
+        let receipt_paths = paths.clone();
+        let receipt_window = window.clone();
+        let viewport = viewport.to_string();
+        tauri::async_runtime::spawn_blocking(move || {
+            let result = observe_stable_viewport_geometry(&receipt_window)
+                .and_then(|observed| write_controlled_viewport_receipt(&receipt_paths, &viewport, width, height, observed));
+            if let Err(error) = result { eprintln!("P3-141 startup Evidence rejected: {}", error.code); }
+        });
+        return Ok(());
     }
     window.set_size(Size::Logical(LogicalSize::new(width as f64, height as f64))).map_err(|_| Error::blocked("evidence_viewport_unavailable", "合成 Evidence 窗口尺寸不可设置；未写入。"))?;
     let timestamp = now()?;
@@ -363,7 +409,7 @@ impl FeedbackDecision { fn value(self) -> &'static str { match self { Self::Conf
 #[derive(Serialize)] struct Global { context_id: String, page: String, selection_ref: Option<String>, included: Vec<ContextItem>, removed_context_kinds: Vec<String>, authorization_summary: Vec<String>, permissions: Vec<String>, evidence_status: String, request_local: bool, additional_personal_count: usize, disclosure_required: bool }
 #[derive(Debug, Serialize)] struct Understanding { understanding_id: String, observation: Option<String>, suggestion: Option<String>, identity: &'static str, processor: String, processor_version: String, basis_refs: Vec<String>, why: String, evidence_state: String, synthetic_adapter: bool, disclosure: Option<String> }
 #[derive(Serialize)] struct Feedback { status: String, feedback_id: String, understanding_id: String, decision: String, feedback_text: Option<String>, audit_event_count: usize }
-#[derive(Serialize)] struct Status { status: &'static str, input_mode: &'static str, offline: bool, ai_enabled: bool, renderer_direct_capabilities: Vec<&'static str>, ipc_allowlist: Vec<&'static str>, unknown_ipc: &'static str, filesystem: bool, raw_database: bool, generic_path_api: bool, shell: bool, process_spawn: bool, network: bool, vault: bool, export: bool, sync: bool, context_recovery: &'static str, candidate_rule: &'static str, memory_duplicate_original: bool, model_port: &'static str, model_adapter: &'static str }
+#[derive(Serialize)] struct Status { status: &'static str, input_mode: &'static str, controlled_synthetic_fixture: bool, offline: bool, ai_enabled: bool, renderer_direct_capabilities: Vec<&'static str>, ipc_allowlist: Vec<&'static str>, unknown_ipc: &'static str, filesystem: bool, raw_database: bool, generic_path_api: bool, shell: bool, process_spawn: bool, network: bool, vault: bool, export: bool, sync: bool, context_recovery: &'static str, candidate_rule: &'static str, memory_duplicate_original: bool, model_port: &'static str, model_adapter: &'static str }
 
 fn valid_capture(paths: &Paths, request: &CaptureRequest) -> bool { if paths.mode == InputMode::Synthetic { (request.text == SYN_TEXT && request.key == SYN_KEY) || (request.text == SYN_SHORT && request.key == SYN_SHORT_KEY) } else { !request.text.trim().is_empty() && request.text.chars().count() <= 200 && request.key.starts_with(paths.mode.idempotency_prefix()) && request.key.len() <= 128 && request.key.bytes().all(|b| b.is_ascii_alphanumeric() || b == b'-') } }
 fn record(paths: &Paths, id: String, content: String, created: i64, source: String, source_id: String, artifact: String) -> Result<Record, Error> { let valid_content = if paths.mode == InputMode::Real { !content.is_empty() && content.chars().count() <= 200 } else { content == SYN_TEXT || content == SYN_SHORT }; if !id.starts_with(paths.mode.capture_prefix()) || !valid_content || created <= 0 || source != "local_capture" || source_id != paths.mode.source() || artifact != paths.mode.artifact() { return Err(Error::blocked("record_identity_rejected", "Capture 身份、来源或额度不可信。")); } Ok(Record { id, content, created_at_ms: created as u64, source, source_id, artifact_version: artifact, identity: "user_original" }) }
@@ -560,7 +606,7 @@ fn feedback(paths: &Paths, request: &FeedbackRequest) -> Result<Feedback, Error>
         Ok(Feedback{status:"saved".into(),feedback_id,understanding_id:request.understanding_id,decision,feedback_text:request.edited_text,audit_event_count:audit(conn)?.event_count})
     })
 }
-fn status(paths: &Paths) -> Status { Status { status:"ready",input_mode:paths.mode.value(),offline:true,ai_enabled:false,renderer_direct_capabilities:Vec::new(),ipc_allowlist:IPC.to_vec(),unknown_ipc:"rejected",filesystem:false,raw_database:false,generic_path_api:false,shell:false,process_spawn:false,network:false,vault:false,export:false,sync:false,context_recovery:"request_local_bundle_with_optional_persistent_links",candidate_rule:"explicit_user_decision_required",memory_duplicate_original:false,model_port:"replaceable_provider_explicit_only",model_adapter:"four_profile_explicit_user_enabled_synthetic_loopback_only" } }
+fn status(paths: &Paths) -> Status { Status { status:"ready",input_mode:paths.mode.value(),controlled_synthetic_fixture:controlled_fixture_evidence(paths),offline:true,ai_enabled:false,renderer_direct_capabilities:Vec::new(),ipc_allowlist:IPC.to_vec(),unknown_ipc:"rejected",filesystem:false,raw_database:false,generic_path_api:false,shell:false,process_spawn:false,network:false,vault:false,export:false,sync:false,context_recovery:"request_local_bundle_with_optional_persistent_links",candidate_rule:"explicit_user_decision_required",memory_duplicate_original:false,model_port:"replaceable_provider_explicit_only",model_adapter:"four_profile_explicit_user_enabled_synthetic_loopback_only" } }
 
 fn get_provider_settings(state: &ProviderState) -> ProviderSettingsResponse { provider_response(state) }
 fn save_provider_settings(paths: &Paths, state: &mut ProviderState, request: SaveProviderSettingsRequest) -> Result<ProviderSettingsResponse, Error> { validate_provider_settings_for(&request.settings, paths.mode)?; if let Some(locked) = state.locked_profile { if request.settings.profile != locked { return Err(Error::blocked("provider_locked_after_first_send", "首次发送后 Provider 已锁定；不能切换 Provider。")); } } write_provider_settings(paths, &request.settings, state.locked_profile)?; state.settings = request.settings; state.enabled = false; state.credential = None; state.connection_state = if state.settings.mode == ProviderMode::Disabled { "disabled" } else { "not_tested" }; state.last_test_fingerprint = None; state.last_tested_at_ms = None; state.last_latency_ms = None; state.discovered_models.clear(); Ok(provider_response(state)) }
@@ -705,6 +751,44 @@ pub fn run() {
 #[cfg(test)] mod tests { use super::*; use sha2::{Digest,Sha256}; fn test_paths(name:&str)->Paths{let base=paths().unwrap().root;fs::create_dir_all(&base).unwrap();let root=base.join(format!("unit-{name}-{}",now().unwrap()));let _=fs::remove_dir_all(&root);let current=mode().unwrap();if current==InputMode::Synthetic{fs::create_dir(&root).unwrap();}Paths{db:root.join(DB),root,mode:current}} fn clean(p:&Paths){let _=fs::remove_dir_all(&p.root);} fn hash(p:&Path)->String{let mut h=Sha256::new();h.update(fs::read(p).unwrap());format!("{:x}",h.finalize())}
 #[test] fn real_preexisting_database_is_rejected_before_write(){if mode().unwrap()!=InputMode::Real{return;}let p=test_paths("real-existing-db");fs::create_dir(&p.root).unwrap();fs::write(&p.db,b"not-a-sqlite-db").unwrap();let before=hash(&p.db);let error=capture(&p,&CaptureRequest{text:"安全测试".into(),key:"p3-141-real-ui-existing-db".into()}).unwrap_err();assert_eq!(error.code,"database_unavailable");assert_eq!(before,hash(&p.db));clean(&p);}
 #[test] fn status_is_closed_to_the_p3_139_twenty_ipc(){let p=paths().unwrap();let s=status(&p);assert_eq!(s.ipc_allowlist,IPC);assert_eq!(IPC.len(),20);assert!(!s.ai_enabled&&!s.filesystem&&!s.raw_database&&!s.generic_path_api&&!s.shell&&!s.process_spawn&&!s.network&&!s.vault&&!s.export&&!s.sync);assert_eq!(s.model_port,"replaceable_provider_explicit_only");assert_eq!(s.model_adapter,"four_profile_explicit_user_enabled_synthetic_loopback_only");assert_eq!(provider_profiles(),vec!["openai","anthropic","ollama","lm_studio"]);}
+#[test] fn receipt_geometry_requires_post_set_size_stability_and_never_reuses_another_viewport(){
+    let desktop=ViewportGeometry{inner_width:1280,inner_height:949,outer_width:1280,outer_height:949,scale_factor:1.0};
+    let compact=ViewportGeometry{inner_width:700,inner_height:760,outer_width:700,outer_height:760,scale_factor:1.0};
+    let narrow=ViewportGeometry{inner_width:560,inner_height:640,outer_width:560,outer_height:640,scale_factor:1.0};
+    let stale_then_compact=[desktop,compact,compact];
+    assert_eq!(stable_viewport_geometry(&stale_then_compact).unwrap_err().code,"evidence_viewport_unstable");
+    assert!(stable_viewport_geometry(&[compact,compact,compact]).unwrap().matches(compact));
+    assert!(stable_viewport_geometry(&[narrow,narrow,narrow]).unwrap().matches(narrow));
+    assert!(!compact.matches(narrow));
+}
+#[test] fn controlled_fixture_health_source_is_closed_and_today_uses_the_same_contract(){
+    let fixture=Some(vec!["source:synthetic:controlled-fixture".into()]);
+    let user=Some(vec!["source:local:user-confirmed".into()]);
+    assert_eq!(memory_context::expected_source_ref(InputMode::Real,true),"source:synthetic:controlled-fixture");
+    assert_eq!(memory_context::expected_source_ref(InputMode::Real,false),"source:local:user-confirmed");
+    assert!(memory_context::validate_source_refs(InputMode::Real,true,&fixture).is_ok());
+    assert_eq!(memory_context::validate_source_refs(InputMode::Real,true,&user).unwrap_err().code,"source_refs_rejected");
+    assert_eq!(memory_context::validate_source_refs(InputMode::Real,true,&Some(vec!["source:synthetic:controlled-fixture".into(),"source:local:user-confirmed".into()])).unwrap_err().code,"source_refs_rejected");
+    let today=include_str!("../ui/p3-140-today.js");
+    let adapter=include_str!("../ui/runtime-adapter.js");
+    let index=include_str!("../ui/index.html");
+    assert!(today.contains("p3_141_runtime_status") && today.contains("source:synthetic:controlled-fixture"));
+    assert!(adapter.contains("ui.p3_141_runtime_status = runtime.status"));
+    assert!(index.find("runtime-adapter.js").unwrap() < index.find("p3-140-today.js").unwrap());
+}
+#[test] fn controlled_ui_health_dto_shape_is_a_valid_closed_five_field_request(){
+    let request=memory_context::CurrentStateRequest{
+        operation:memory_context::StateOperation::Set,state_id:"state:p3-141:real:health-ui-m8rl-abc".into(),replacement_id:None,
+        state_key:Some("health_fitness_structured_v1".into()),value:None,domain:memory_context::Domain::Health,
+        source_refs:Some(vec!["source:synthetic:controlled-fixture".into()]),expires_at_ms:Some(now().unwrap()+86_400_000),expected_generation:None,
+        idempotency_key:"p3-141-real-ui-health-m8rl-abc".into(),structured_health:Some(memory_context::StructuredHealthState{
+            sleep_duration_range:memory_context::SleepDurationRange::SevenToNineHours,energy:3,soreness_or_pain:false,training_load:memory_context::TrainingLoad::Medium,available_time:memory_context::AvailableTime::ThirtyToSixtyMinutes,
+        }),
+    };
+    assert!(memory_context::validate_source_refs(InputMode::Real,true,&request.source_refs).is_ok());
+    assert!(request.state_id.starts_with("state:p3-141:real:") && request.idempotency_key.starts_with("p3-141-real-ui-"));
+    assert!(request.value.is_none() && request.structured_health.is_some() && request.expires_at_ms.unwrap()>0);
+}
 #[test] fn receipt_enabled_real_mode_requires_fresh_root_and_reopens_without_write(){if MODE != Some("real_self_use"){return;}assert_eq!(mode().unwrap(),InputMode::Real);let configured=paths().unwrap();assert!(metadata(&configured.root).unwrap().is_none());assert!(metadata(&configured.db).unwrap().is_none());let captured=capture(&configured,&CaptureRequest{text:"receipt-enabled synthetic fixture".into(),key:"p3-141-real-ui-receipt-enabled".into()}).unwrap();assert!(captured.record.id.starts_with(InputMode::Real.capture_prefix()));validate_existing_real_root(&configured).unwrap();let before=fs::read(&configured.db).unwrap();drop(read(&configured).unwrap());assert_eq!(before,fs::read(&configured.db).unwrap());fs::remove_dir_all(&configured.root).unwrap();}
 #[test] fn provider_settings_are_nonsecret_atomic_and_session_only(){if mode().unwrap()!=InputMode::Synthetic{return;}let p=test_paths("provider-settings");let mut state=default_provider_state();let settings=ProviderSettings{mode:ProviderMode::Cloud,profile:ProviderProfile::Openai,base_url:"https://api.example.test/v1".into(),model:"fixture-model".into(),temperature_bps:70,max_output_tokens:512,timeout_ms:30_000};let saved=save_provider_settings(&p,&mut state,SaveProviderSettingsRequest{settings:settings.clone()}).unwrap();assert!(!saved.enabled&&!saved.credential.present);set_provider_session_credential(&mut state,SessionCredentialRequest{credential:Some("SESSION_SECRET_DO_NOT_PERSIST".into()),environment_variable:None}).unwrap();let file=provider_settings_path(&p);let raw=fs::read_to_string(&file).unwrap();assert!(!raw.contains("SESSION_SECRET_DO_NOT_PERSIST"));let meta=fs::symlink_metadata(&file).unwrap();assert_eq!(meta.permissions().mode()&0o777,0o600);let reloaded=load_provider_state(&p).unwrap();assert_eq!(reloaded.settings,settings);assert!(!credential_status(&reloaded.credential).present);clean(&p);}
 #[test] fn provider_rejects_unsafe_endpoints_unsupported_profile_and_never_enables_stale_config(){if mode().unwrap()!=InputMode::Synthetic{return;}let p=test_paths("provider-negative");let mut state=default_provider_state();for url in ["http://169.254.1.9/v1","http://224.0.0.1/v1","file:///tmp/not-allowed","https://user:pass@api.example.test/v1"]{let settings=ProviderSettings{mode:ProviderMode::Local,profile:ProviderProfile::Ollama,base_url:url.into(),model:"fixture-model".into(),temperature_bps:0,max_output_tokens:10,timeout_ms:1_000};assert!(validate_provider_settings(&settings).is_err());}let cloud_ip=ProviderSettings{mode:ProviderMode::Cloud,profile:ProviderProfile::Openai,base_url:"https://127.0.0.1/v1".into(),model:"fixture-model".into(),temperature_bps:0,max_output_tokens:10,timeout_ms:1_000};assert!(validate_provider_settings(&cloud_ip).is_err());assert!(serde_json::from_str::<ProviderProfile>("\"custom_openai_compatible\"").is_err());let settings=ProviderSettings{mode:ProviderMode::Local,profile:ProviderProfile::Ollama,base_url:"http://127.0.0.1:11434/v1".into(),model:"fixture-model".into(),temperature_bps:0,max_output_tokens:10,timeout_ms:1_000};save_provider_settings(&p,&mut state,SaveProviderSettingsRequest{settings}).unwrap();assert_eq!(set_provider_enabled(&mut state,SetProviderEnabledRequest{enabled:true}).unwrap_err().code,"provider_enablement_rejected");assert_eq!(test_provider_connection(&p,&mut state,TestProviderConnectionRequest{cancel:None}).unwrap_err().code,"provider_connection_failed");assert!(!state.enabled);clean(&p);}

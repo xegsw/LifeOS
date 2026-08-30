@@ -1,0 +1,16 @@
+{
+  "schema": "lifeos.p3-141.attempt-4-rework.replay-result.v1",
+  "command": "replay_phase_a.sh --input-root <explicit workspace root>; cargo test --locked --offline -- --test-threads=1",
+  "fixed_input_hashes": "12/12 matched",
+  "p3_140_candidate": "79 files and frozen tree hash matched",
+  "ipc_count": 20,
+  "provider_profiles": ["openai", "anthropic", "ollama", "lm_studio"],
+  "tests": {"passed": 48, "failed": 0},
+  "new_counterexamples": [
+    "A stale first geometry sample followed by compact samples is rejected rather than reused.",
+    "Controlled fixture source accepts exactly one controlled source ref and rejects user or multiple refs.",
+    "The real UI Health DTO shape and the runtime-adapter entrypoint are both asserted."
+  ],
+  "network_dispatch_count": 0,
+  "result": "PASS_SYNTHETIC_ONLY"
+}

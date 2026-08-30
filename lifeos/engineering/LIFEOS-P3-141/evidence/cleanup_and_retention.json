@@ -1,11 +1,12 @@
 {
-  "schema":"lifeos.p3-141.cleanup-receipt.v3",
+  "schema":"lifeos.p3-141.cleanup-receipt.v4",
   "cleanup_tool":"tools/cleanup_temp.sh",
   "historical_cleanup_execution_count_before_attempt_3_rework":8,
   "attempt_3_rework_final_cleanup":"executed after final GUI, synthetic replay, and real-contract closure; target absent",
+  "attempt_4_rework_final_cleanup":"executed twice: after final 48/48 replay, receipt-enabled three-viewport capture, direct-PID checks and task-root Evidence writes; then once more after quarantining a non-sensitive static-verifier output; target absent after the second exact cleanup",
   "exact_removed_root":"/private/tmp/lifeos-p3-141-controlled-pilot-v1",
-  "postcondition":"final_temp_root_absent=true",
-  "retained_artifacts":"task-root source, test design, evidence, final v5 screenshot hashes and failure history only; historical unexpected non-sensitive verifier output was contained into this exact root and removed",
-  "prohibited_real_roots_or_databases":"not accessed and not cleaned",
+  "postcondition":"final_temp_root_absent=true; direct_pid_21459_21709_21840_absent=true",
+  "retained_artifacts":"task-root source, test design, evidence, current final screenshots/hashes and failure history only; earlier excluded images remain task-root history. A generated candidate/target build cache and one non-sensitive verifier-output JSON were first moved into this exact root and removed by exact cleanup; neither is retained.",
+  "prohibited_real_roots_or_databases":"not accessed, probed, created, copied, hashed or cleaned",
   "result":"PASS_SYNTHETIC_ONLY"
 }

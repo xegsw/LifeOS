@@ -74,6 +74,10 @@ fn frozen_runtime_root() -> (PathBuf, String) {
 
 fn main() {
     let (root, mode) = frozen_runtime_root();
+    // Frontend assets are embedded by tauri-build. A changed UI source must
+    // invalidate the candidate bundle rather than silently reusing stale UI.
+    println!("cargo:rerun-if-changed=ui");
+    println!("cargo:rerun-if-changed=tauri.conf.json");
     println!("cargo:rerun-if-env-changed=LIFEOS_RUNTIME_ROOT");
     println!("cargo:rerun-if-env-changed=LIFEOS_INPUT_MODE");
     println!("cargo:rerun-if-env-changed=LIFEOS_P3_141_PHASE_B_RECEIPT");

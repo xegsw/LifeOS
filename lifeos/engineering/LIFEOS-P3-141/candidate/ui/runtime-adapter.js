@@ -34,6 +34,10 @@
 
   async function refresh() {
     runtime.status = await invoke("runtime_status", {});
+    // P3-140 loads before this adapter and intentionally reads only the
+    // retained P3-116 UI container. Publish this non-sensitive mode flag at
+    // that fixed seam so its Health DTO uses the same closed source contract.
+    ui.p3_141_runtime_status = runtime.status;
     runtime.today = await invoke("get_today", {});
     runtime.recovery = await invoke("get_context_recovery", { context_id: CONTEXT });
     runtime.next = null;

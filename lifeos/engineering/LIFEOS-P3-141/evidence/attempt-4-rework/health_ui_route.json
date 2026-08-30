@@ -1,0 +1,24 @@
+{
+  "schema": "lifeos.p3-141.attempt-4-rework.health-ui-route.v1",
+  "scope": "controlled real-mode synthetic fixture under the exact temporary root",
+  "direct_pid": 21459,
+  "ui_action": "Today → 保存五项状态 → 确认",
+  "ui_receipts": [
+    "已在本地保存五项结构化状态；没有自由文本或医疗判断。",
+    "已记录 confirm 反馈；候选没有提升为持久事实。"
+  ],
+  "accepted_source_refs": ["source:synthetic:controlled-fixture"],
+  "sqlite_structured_health_rows": 1,
+  "structured_health": {
+    "sleep_duration_range": "seven_to_nine_hours",
+    "energy": 3,
+    "soreness_or_pain": false,
+    "training_load": "medium",
+    "available_time": "thirty_to_sixty_minutes"
+  },
+  "p3140_feedback_rows": 1,
+  "p3140_feedback_decision": "confirm",
+  "free_text": "not accepted by DTO or SQLite schema",
+  "network_dispatch_count": 0,
+  "result": "PASS_SYNTHETIC_ONLY"
+}

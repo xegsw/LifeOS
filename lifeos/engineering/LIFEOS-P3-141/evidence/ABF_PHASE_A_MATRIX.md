@@ -4,7 +4,7 @@
 
 | Row | Phase A status | Evidence / successful test | Boundary statement |
 |---|---|---|---|
-| ABF-M-001 | PASS_SYNTHETIC_ONLY | replay verifier (12/12), final synthetic replay | 固定输入 12/12、P3-140 79-file tree、candidate 79 files/20 IPC 均匹配。 |
+| ABF-M-001 | PASS_SYNTHETIC_ONLY | `attempt-4-rework/replay_result.json` | 固定输入 12/12、P3-140 79-file tree、candidate 79 files/20 IPC 均匹配。 |
 | ABF-M-002 | PASS_SYNTHETIC_ONLY | `closure_real_root_requires_fresh_absence_and_owned_restart`, `closure_limit_file_type_and_database_boundary_fail_closed` | 首次仅 root/DB 均不存在；空目录、文件、link、sidecar、非普通/未知 DB 均写前拒绝；owned reopen 无重写。 |
 | ABF-M-003 | PASS_SYNTHETIC_ONLY | receipt-enabled real closure 8/8 | 无 receipt 先于 root 解析失败；正确 receipt 可进入同一 candidate real-mode 合同但只在 fresh 临时子根验证。 |
 | ABF-M-004 | PASS_SYNTHETIC_ONLY | `provider_activation.json`, loopback fixture tests | 显式 save → test → enable → synthetic send；四 profile 闭集。 |
@@ -15,11 +15,11 @@
 | ABF-M-009 | PENDING_PHASE_C | — | 真实 paired daily-fact 结果要求真实受控使用证据。 |
 | ABF-M-010 | PASS_SYNTHETIC_ONLY | `minimal_disclosure.json`, `synthetic_behavior.json` | request-local refs、预算与不泄漏路径已测。 |
 | ABF-M-011 | PASS_SYNTHETIC_ONLY | `synthetic_behavior.json`, Today tests | 校正/拒绝只使相关候选切片 stale/recompute。 |
-| ABF-M-012 | PASS_SYNTHETIC_ONLY | five-field Health real closure, Today tests | `update_current_state` 写入 sleep range、energy 1–5、pain boolean、L/M/H load、available time；Health 移除不跨 request 继承。 |
-| ABF-M-013 | PASS_SYNTHETIC_ONLY | five-field Health real closure, Today safety tests | 不接受自由文本、非法值或医疗诊断；高风险夹具仅给出保守、非诊断停止。 |
+| ABF-M-012 | PASS_SYNTHETIC_ONLY | `attempt-4-rework/health_ui_route.json`, five-field Health real closure, Today tests | `update_current_state` 写入 sleep range、energy 1–5、pain boolean、L/M/H load、available time；受控 real-mode UI 使用唯一授权 fixture source 并通过 SQLite → Today → feedback；Health 移除不跨 request 继承。 |
+| ABF-M-013 | PASS_SYNTHETIC_ONLY | five-field Health real closure, Today safety tests, `attempt-4-rework/health_ui_route.json` | 不接受自由文本、非法值、非法来源或医疗诊断；高风险夹具仅给出保守、非诊断停止。 |
 | ABF-M-014 | PASS_SYNTHETIC_ONLY | closure / Provider negative tests | 同日第2条、总第15条、Memory第4条、Health 非法值、授权、stale、budget、DB、root 与 Provider failure 均在业务写/dispatch 前关闭。 |
-| ABF-M-015 | PASS_SYNTHETIC_ONLY | synthetic lifecycle 45/45; real closure 8/8 | 7–14 day Work trial 的每天最多1条、总数14可重启审计；相同 request 不二次 dispatch，owned reopen 不二次写 capture 或发送。 |
-| ABF-M-016 | PASS_SYNTHETIC_ONLY | `attempt-3-rework/actual_tauri_viewports_final.json`, `attempt-3-rework/manual_screenshot_review.md` | 本轮三个 direct PID 各自绑定 1 个 AXWindow/1 个 AXWebView、exact P3-141 title、post-set actual inner/outer geometry 和无敏感 v5 截图。 |
+| ABF-M-015 | PASS_SYNTHETIC_ONLY | synthetic lifecycle 48/48; real closure paths | 7–14 day Work trial 的每天最多1条、总数14可重启审计；相同 request 不二次 dispatch，owned reopen 不二次写 capture 或发送。 |
+| ABF-M-016 | PASS_SYNTHETIC_ONLY | `attempt-4-rework/actual_tauri_viewports_final.json`, `attempt-4-rework/manual_screenshot_review.md` | 本轮三个 direct PID 各自绑定 exact-title 1 个 AXWindow/1 个 AXWebView；receipt 在 set_size 后 220ms + 3 个稳定样本写入，desktop 诚实记录 host-clamped 1280×949 并与同 PID AX frame 一致，compact/narrow 均精确匹配。 |
 | ABF-M-017 | PENDING_PHASE_C | — | 用户操作的非内容真实使用 receipt 不在本 Phase A。 |
 | ABF-M-018 | PENDING_PHASE_B | — | 新鲜独立评审尚未开始。 |
 | ABF-M-019 | PASS_SYNTHETIC_ONLY | final cleanup receipt; `cleanup_temp.sh` | 只清理精确临时根，最终 postcondition 为根不存在；未访问或清理任何禁止目标。 |

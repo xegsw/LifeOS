@@ -39,7 +39,7 @@
   }
 
   function isReal() {
-    return runtime.status && runtime.status.input_mode === "real_self_use";
+    return runtime.p3_141_runtime_status && runtime.p3_141_runtime_status.input_mode === "real_self_use";
   }
 
   function healthEditor() {
@@ -108,6 +108,12 @@
     const value = (field) => editor.querySelector(`[data-p3141-health='${field}']`).value;
     const nonce = `${Date.now().toString(36)}-${Math.floor(Math.random() * 0x1000000).toString(36)}`;
     const real = isReal();
+    // The only non-user source accepted by real mode is the explicitly gated
+    // controlled fixture. Production real mode keeps the user-confirmed
+    // source; no generic source path is introduced here.
+    const healthSourceRef = real && runtime.p3_141_runtime_status?.controlled_synthetic_fixture
+      ? "source:synthetic:controlled-fixture"
+      : real ? "source:local:user-confirmed" : "source:synthetic:memory-fixture";
     const payload = {
       operation: "set",
       state_id: real ? `state:p3-141:real:health-ui-${nonce}` : `state:synthetic:health-ui-${nonce}`,
@@ -115,7 +121,7 @@
       state_key: "health_fitness_structured_v1",
       value: null,
       domain: "health",
-      source_refs: [real ? "source:local:user-confirmed" : "source:synthetic:memory-fixture"],
+      source_refs: [healthSourceRef],
       expires_at_ms: Date.now() + 86400000,
       expected_generation: null,
       idempotency_key: real ? `p3-141-real-ui-health-${nonce}` : `p3-141-health-${nonce}`,
