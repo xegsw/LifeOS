@@ -1,0 +1,7 @@
+/Users/xxe/.codex/worktrees/b443/No.2/lifeos/reviews/LIFEOS-P3-141/independent-review/attempt-6/tools/ax_pid_probe.swift:41:18: error: value of type 'CFArray' has no member 'compactMap'
+ 39 |     guard AXUIElementCopyAttributeNames(element, &value) == .success,
+ 40 |           let value else { return [] }
+ 41 |     return value.compactMap { $0 as? String }.sorted()
+    |                  `- error: value of type 'CFArray' has no member 'compactMap'
+ 42 | }
+ 43 | 

@@ -1,0 +1,30 @@
+{
+  "schema_version": "lifeos.p3_141.independent_review.precontact_seal.v1",
+  "task_id": "LIFEOS-P3-141",
+  "review_attempt": "attempt-6",
+  "phase": "B_synthetic_offline_only",
+  "candidate_commit_expected": "e4eeb73395151955c0b833965979be1806406ce5",
+  "candidate_contact": false,
+  "pilot6_contact": false,
+  "real_content_contact": false,
+  "real_provider_or_network_contact": false,
+  "fixed_input_inventory": {
+    "path": "/Users/xxe/Documents/No.2/lifeos/tasks/LIFEOS-P3-141_fixed_input_inventory.json",
+    "entry_count": 12,
+    "verification": "PASS",
+    "task_contract_sha256": "88b0dbcafd525604b08ebb0dffc07dc360635666612c87a2cdc94e661e72ac5a",
+    "frozen_abf_sha256": "ff05a7a4b52ceef0a4325294cabbfe5ad91c131160d8b9c123bd8fa59fd5c8b2",
+    "p3_139_tree": {"file_count": 77, "sha256": "63e2bc5525bb8d57cd0b3a8d02e87d9d5379a1c18f385ed48d0b284cb53acc9e"},
+    "p3_140_tree": {"file_count": 79, "sha256": "6d5659826e3e4b642b94c848d9e97f43cd93f9a2468863ebd396a4f76389940e"}
+  },
+  "review_owned_inputs": {
+    "test_design.md": {"bytes": 7334, "sha256": "c39c8ab2e48623421d9b5b72c1000ead125f8a71ab0a5df470f67e5aee4a0e42"},
+    "write_allowlist.md": {"bytes": 1368, "sha256": "bf272a265e124a1d54063907b1023f878ec919ea49fba46005aaed4db0e05f81"}
+  },
+  "history_policy": "No attempt-1 through attempt-5 asset, fixture, DB, PID, window, screenshot or conclusion has been read or reused before sealing. After sealing, specified histories may be read only for failure-avoidance context and never as positive evidence.",
+  "positive_evidence_stop_rule": "Any P0 stops positive evidence; candidate remains read-only and only the exact temporary root may be cleaned.",
+  "write_scope": [
+    "/Users/xxe/.codex/worktrees/b443/No.2/lifeos/reviews/LIFEOS-P3-141/independent-review/attempt-6/",
+    "/private/tmp/lifeos-p3-141-controlled-pilot-v1/"
+  ]
+}

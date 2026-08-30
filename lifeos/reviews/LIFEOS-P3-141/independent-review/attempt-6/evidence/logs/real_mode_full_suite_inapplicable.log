@@ -1,0 +1,268 @@
+   Compiling lifeos-p3-141 v0.1.0 (/private/tmp/lifeos-p3-141-controlled-pilot-v1/candidate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.25s
+     Running unittests src/main.rs (/private/tmp/lifeos-p3-141-controlled-pilot-v1/cargo-target/debug/deps/lifeos_p3_141-00e61de87dfbc9ce)
+
+running 52 tests
+test runtime::closure_tests::closure_configured_runtime_root_fails_before_any_write ... ok
+test runtime::closure_tests::closure_dto_idempotency_and_stale_paths_do_not_mutate ... ok
+test runtime::closure_tests::closure_invalid_database_unknown_ipc_and_focus_are_runtime_checked ... ok
+test runtime::closure_tests::closure_limit_file_type_and_database_boundary_fail_closed ... ok
+test runtime::closure_tests::closure_real_memory_cap_is_restart_safe_and_fourth_is_prewrite_rejected ... FAILED
+test runtime::closure_tests::closure_real_root_requires_fresh_absence_and_owned_restart ... ok
+test runtime::closure_tests::closure_structured_health_has_five_fields_and_rejects_invalid_or_free_text_before_write ... FAILED
+test runtime::closure_tests::closure_whitespace_real_capture_is_prewrite_rejected ... ok
+test runtime::independent_runtime_tests::attempt6_ipc_and_provider_are_closed_sets ... ok
+test runtime::independent_runtime_tests::attempt6_root_and_work_limit_fail_closed_without_reuse ... FAILED
+test runtime::independent_runtime_tests::attempt6_stable_viewport_rejects_stale_first_sample ... ok
+test runtime::independent_runtime_tests::attempt6_today_health_success_and_all_invalid_forms_are_prewrite ... ok
+test runtime::memory_context::tests::complete_memory_and_state_operations_preserve_history ... ok
+test runtime::memory_context::tests::cross_domain_authorization_and_request_removal_are_scoped ... FAILED
+test runtime::memory_context::tests::failure_paths_do_not_write_receipts_or_mutate_authority ... FAILED
+test runtime::memory_context::tests::format_budget_and_missing_receipt_fail_closed ... FAILED
+test runtime::memory_context::tests::inactive_authority_is_excluded_from_l1_and_l3 ... FAILED
+test runtime::memory_context::tests::memory_and_state_lifecycle_preserve_lineage ... FAILED
+test runtime::memory_context::tests::receipt_reopens_deterministically_and_snapshots_incrementally ... FAILED
+test runtime::memory_context::tests::resolver_filters_authority_budgets_and_domain ... FAILED
+test runtime::memory_context::tests::understanding_is_not_created_by_resolver ... FAILED
+test runtime::provider_fixture_tests::authorization_race_recheck_blocks_derived_transaction_without_retry ... FAILED
+test runtime::provider_fixture_tests::authorized_unlinked_selection_still_sends_minimal_request ... FAILED
+test runtime::provider_fixture_tests::feedback_all_decisions_are_audited_and_only_confirmation_affects_today ... FAILED
+test runtime::provider_fixture_tests::loopback_probe_send_feedback_restart_and_no_implicit_repeat ... FAILED
+test runtime::provider_fixture_tests::loopback_timeout_http_malformed_oversize_disconnect_and_protocol_mismatch_fail_closed ... FAILED
+test runtime::provider_fixture_tests::protocol_adapters_cover_the_closed_four_profiles_and_reject_mismatches ... ok
+test runtime::provider_fixture_tests::provider_failures_do_not_persist_derived_objects_or_enable ... FAILED
+test runtime::provider_fixture_tests::revoked_authorization_blocks_bundle_and_provider_before_dispatch ... FAILED
+test runtime::provider_fixture_tests::settings_link_temp_and_failure_preserve_db_sentinel ... FAILED
+test runtime::tests::additional_personal_content_is_disclosed_before_any_request_or_write ... ok
+test runtime::tests::controlled_fixture_health_source_is_closed_and_today_uses_the_same_contract ... ok
+test runtime::tests::controlled_ui_health_dto_shape_is_a_valid_closed_five_field_request ... ok
+test runtime::tests::disabled_provider_is_a_persisted_non_network_state ... ok
+test runtime::tests::persistent_link_is_created_only_after_explicit_confirmation ... ok
+test runtime::tests::provider_rejects_unsafe_endpoints_unsupported_profile_and_never_enables_stale_config ... ok
+test runtime::tests::provider_settings_are_nonsecret_atomic_and_session_only ... ok
+test runtime::tests::provider_understanding_requires_explicit_successful_enablement ... ok
+test runtime::tests::real_mode_model_port_is_explicit_and_not_implicit ... FAILED
+test runtime::tests::real_preexisting_database_is_rejected_before_write ... FAILED
+test runtime::tests::receipt_enabled_real_mode_requires_fresh_root_and_reopens_without_write ... FAILED
+test runtime::tests::receipt_geometry_requires_post_set_size_stability_and_never_reuses_another_viewport ... ok
+test runtime::tests::request_local_bundle_is_minimal_and_does_not_require_persistent_link ... ok
+test runtime::tests::status_is_closed_to_the_p3_139_twenty_ipc ... FAILED
+test runtime::tests::synthetic_insufficient_evidence_never_creates_candidate_or_action ... ok
+test runtime::tests::synthetic_lifecycle_and_no_write_rejection ... ok
+test runtime::today_intelligence::tests::all_feedback_decisions_stay_candidate_only ... FAILED
+test runtime::today_intelligence::tests::five_single_variable_counterfactuals_and_receipts_are_deterministic ... FAILED
+test runtime::today_intelligence::tests::fixed_scenarios_are_evidence_linked_and_have_no_dispatch ... FAILED
+test runtime::today_intelligence::tests::rejected_inputs_fail_closed_without_new_rows ... FAILED
+test runtime::today_intelligence::tests::repeated_request_is_stable_and_feedback_invalidates_only_target_slice ... FAILED
+test runtime::today_intelligence::tests::synthetic_mode_is_required_by_this_test_contract ... FAILED
+
+failures:
+
+---- runtime::closure_tests::closure_real_memory_cap_is_restart_safe_and_fourth_is_prewrite_rejected stdout ----
+ipc_result status=blocked code=source_refs_rejected
+
+thread 'runtime::closure_tests::closure_real_memory_cap_is_restart_safe_and_fourth_is_prewrite_rejected' (13545885) panicked at src/runtime.rs:1056:73:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "source_refs_rejected", message: "Memory 与 State 只能引用当前模式的最小来源引用。" }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- runtime::closure_tests::closure_structured_health_has_five_fields_and_rejects_invalid_or_free_text_before_write stdout ----
+ipc_result status=blocked code=source_refs_rejected
+
+thread 'runtime::closure_tests::closure_structured_health_has_five_fields_and_rejects_invalid_or_free_text_before_write' (13545887) panicked at src/runtime.rs:1072:100:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "source_refs_rejected", message: "Memory 与 State 只能引用当前模式的最小来源引用。" }
+
+---- runtime::independent_runtime_tests::attempt6_root_and_work_limit_fail_closed_without_reuse stdout ----
+
+thread 'runtime::independent_runtime_tests::attempt6_root_and_work_limit_fail_closed_without_reuse' (13545890) panicked at /Users/xxe/.codex/worktrees/b443/No.2/lifeos/reviews/LIFEOS-P3-141/independent-review/attempt-6/tools/independent_runtime_tests.rs:24:79:
+called `Result::unwrap()` on an `Err` value: SqliteFailure(Error { code: Unknown, extended_code: 1 }, Some("no such table: durable_memories"))
+
+---- runtime::memory_context::tests::cross_domain_authorization_and_request_removal_are_scoped stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::memory_context::tests::cross_domain_authorization_and_request_removal_are_scoped' (13545894) panicked at src/runtime/memory_context.rs:514:69:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::memory_context::tests::failure_paths_do_not_write_receipts_or_mutate_authority stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::memory_context::tests::failure_paths_do_not_write_receipts_or_mutate_authority' (13545895) panicked at src/runtime/memory_context.rs:514:69:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::memory_context::tests::format_budget_and_missing_receipt_fail_closed stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::memory_context::tests::format_budget_and_missing_receipt_fail_closed' (13545896) panicked at src/runtime/memory_context.rs:514:69:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::memory_context::tests::inactive_authority_is_excluded_from_l1_and_l3 stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::memory_context::tests::inactive_authority_is_excluded_from_l1_and_l3' (13545897) panicked at src/runtime/memory_context.rs:514:69:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::memory_context::tests::memory_and_state_lifecycle_preserve_lineage stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::memory_context::tests::memory_and_state_lifecycle_preserve_lineage' (13545898) panicked at src/runtime/memory_context.rs:514:69:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::memory_context::tests::receipt_reopens_deterministically_and_snapshots_incrementally stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::memory_context::tests::receipt_reopens_deterministically_and_snapshots_incrementally' (13545899) panicked at src/runtime/memory_context.rs:514:69:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::memory_context::tests::resolver_filters_authority_budgets_and_domain stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::memory_context::tests::resolver_filters_authority_budgets_and_domain' (13545900) panicked at src/runtime/memory_context.rs:514:69:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::memory_context::tests::understanding_is_not_created_by_resolver stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::memory_context::tests::understanding_is_not_created_by_resolver' (13545901) panicked at src/runtime/memory_context.rs:514:69:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::provider_fixture_tests::authorization_race_recheck_blocks_derived_transaction_without_retry stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::provider_fixture_tests::authorization_race_recheck_blocks_derived_transaction_without_retry' (13545902) panicked at src/runtime.rs:811:59:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::provider_fixture_tests::authorized_unlinked_selection_still_sends_minimal_request stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::provider_fixture_tests::authorized_unlinked_selection_still_sends_minimal_request' (13545903) panicked at src/runtime.rs:811:59:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::provider_fixture_tests::feedback_all_decisions_are_audited_and_only_confirmation_affects_today stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::provider_fixture_tests::feedback_all_decisions_are_audited_and_only_confirmation_affects_today' (13545904) panicked at src/runtime.rs:811:59:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::provider_fixture_tests::loopback_probe_send_feedback_restart_and_no_implicit_repeat stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::provider_fixture_tests::loopback_probe_send_feedback_restart_and_no_implicit_repeat' (13545905) panicked at src/runtime.rs:811:59:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::provider_fixture_tests::loopback_timeout_http_malformed_oversize_disconnect_and_protocol_mismatch_fail_closed stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::provider_fixture_tests::loopback_timeout_http_malformed_oversize_disconnect_and_protocol_mismatch_fail_closed' (13545906) panicked at src/runtime.rs:811:59:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::provider_fixture_tests::provider_failures_do_not_persist_derived_objects_or_enable stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::provider_fixture_tests::provider_failures_do_not_persist_derived_objects_or_enable' (13545908) panicked at src/runtime.rs:811:59:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::provider_fixture_tests::revoked_authorization_blocks_bundle_and_provider_before_dispatch stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::provider_fixture_tests::revoked_authorization_blocks_bundle_and_provider_before_dispatch' (13545909) panicked at src/runtime.rs:811:59:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::provider_fixture_tests::settings_link_temp_and_failure_preserve_db_sentinel stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::provider_fixture_tests::settings_link_temp_and_failure_preserve_db_sentinel' (13545910) panicked at src/runtime.rs:811:59:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::tests::real_mode_model_port_is_explicit_and_not_implicit stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::tests::real_mode_model_port_is_explicit_and_not_implicit' (13545919) panicked at src/runtime.rs:751:116:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::tests::real_preexisting_database_is_rejected_before_write stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::tests::real_preexisting_database_is_rejected_before_write' (13545920) panicked at src/runtime.rs:751:116:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::tests::receipt_enabled_real_mode_requires_fresh_root_and_reopens_without_write stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::tests::receipt_enabled_real_mode_requires_fresh_root_and_reopens_without_write' (13545921) panicked at src/runtime.rs:792:194:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::tests::status_is_closed_to_the_p3_139_twenty_ipc stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::tests::status_is_closed_to_the_p3_139_twenty_ipc' (13545924) panicked at src/runtime.rs:753:70:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::today_intelligence::tests::all_feedback_decisions_stay_candidate_only stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::today_intelligence::tests::all_feedback_decisions_stay_candidate_only' (13545927) panicked at src/runtime/today_intelligence.rs:803:28:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::today_intelligence::tests::five_single_variable_counterfactuals_and_receipts_are_deterministic stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::today_intelligence::tests::five_single_variable_counterfactuals_and_receipts_are_deterministic' (13545929) panicked at src/runtime/today_intelligence.rs:803:28:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::today_intelligence::tests::fixed_scenarios_are_evidence_linked_and_have_no_dispatch stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::today_intelligence::tests::fixed_scenarios_are_evidence_linked_and_have_no_dispatch' (13545930) panicked at src/runtime/today_intelligence.rs:803:28:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::today_intelligence::tests::rejected_inputs_fail_closed_without_new_rows stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::today_intelligence::tests::rejected_inputs_fail_closed_without_new_rows' (13545931) panicked at src/runtime/today_intelligence.rs:803:28:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::today_intelligence::tests::repeated_request_is_stable_and_feedback_invalidates_only_target_slice stdout ----
+ipc_result status=blocked code=real_root_ownership_missing
+
+thread 'runtime::today_intelligence::tests::repeated_request_is_stable_and_feedback_invalidates_only_target_slice' (13545932) panicked at src/runtime/today_intelligence.rs:803:28:
+called `Result::unwrap()` on an `Err` value: Error { status: "blocked", code: "real_root_ownership_missing", message: "真实 Runtime 根必须由本候选以 marker 和 capture.sqlite 初始化。" }
+
+---- runtime::today_intelligence::tests::synthetic_mode_is_required_by_this_test_contract stdout ----
+
+thread 'runtime::today_intelligence::tests::synthetic_mode_is_required_by_this_test_contract' (13545933) panicked at src/runtime/today_intelligence.rs:983:9:
+assertion failed: mode().unwrap() == InputMode::Synthetic
+
+
+failures:
+    runtime::closure_tests::closure_real_memory_cap_is_restart_safe_and_fourth_is_prewrite_rejected
+    runtime::closure_tests::closure_structured_health_has_five_fields_and_rejects_invalid_or_free_text_before_write
+    runtime::independent_runtime_tests::attempt6_root_and_work_limit_fail_closed_without_reuse
+    runtime::memory_context::tests::cross_domain_authorization_and_request_removal_are_scoped
+    runtime::memory_context::tests::failure_paths_do_not_write_receipts_or_mutate_authority
+    runtime::memory_context::tests::format_budget_and_missing_receipt_fail_closed
+    runtime::memory_context::tests::inactive_authority_is_excluded_from_l1_and_l3
+    runtime::memory_context::tests::memory_and_state_lifecycle_preserve_lineage
+    runtime::memory_context::tests::receipt_reopens_deterministically_and_snapshots_incrementally
+    runtime::memory_context::tests::resolver_filters_authority_budgets_and_domain
+    runtime::memory_context::tests::understanding_is_not_created_by_resolver
+    runtime::provider_fixture_tests::authorization_race_recheck_blocks_derived_transaction_without_retry
+    runtime::provider_fixture_tests::authorized_unlinked_selection_still_sends_minimal_request
+    runtime::provider_fixture_tests::feedback_all_decisions_are_audited_and_only_confirmation_affects_today
+    runtime::provider_fixture_tests::loopback_probe_send_feedback_restart_and_no_implicit_repeat
+    runtime::provider_fixture_tests::loopback_timeout_http_malformed_oversize_disconnect_and_protocol_mismatch_fail_closed
+    runtime::provider_fixture_tests::provider_failures_do_not_persist_derived_objects_or_enable
+    runtime::provider_fixture_tests::revoked_authorization_blocks_bundle_and_provider_before_dispatch
+    runtime::provider_fixture_tests::settings_link_temp_and_failure_preserve_db_sentinel
+    runtime::tests::real_mode_model_port_is_explicit_and_not_implicit
+    runtime::tests::real_preexisting_database_is_rejected_before_write
+    runtime::tests::receipt_enabled_real_mode_requires_fresh_root_and_reopens_without_write
+    runtime::tests::status_is_closed_to_the_p3_139_twenty_ipc
+    runtime::today_intelligence::tests::all_feedback_decisions_stay_candidate_only
+    runtime::today_intelligence::tests::five_single_variable_counterfactuals_and_receipts_are_deterministic
+    runtime::today_intelligence::tests::fixed_scenarios_are_evidence_linked_and_have_no_dispatch
+    runtime::today_intelligence::tests::rejected_inputs_fail_closed_without_new_rows
+    runtime::today_intelligence::tests::repeated_request_is_stable_and_feedback_invalidates_only_target_slice
+    runtime::today_intelligence::tests::synthetic_mode_is_required_by_this_test_contract
+
+test result: FAILED. 23 passed; 29 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s
+
+error: test failed, to rerun pass `--bin lifeos-p3-141`

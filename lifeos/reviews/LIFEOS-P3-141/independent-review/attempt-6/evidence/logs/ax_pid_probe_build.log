@@ -1,0 +1,31 @@
+/Users/xxe/.codex/worktrees/b443/No.2/lifeos/reviews/LIFEOS-P3-141/independent-review/attempt-6/tools/ax_pid_probe.swift:73:41: error: cannot find 'kAXWindowNumberAttribute' in scope
+71 |     return [
+72 |         "title": text(window, kAXTitleAttribute as CFString) ?? "",
+73 |         "window_number": number(window, kAXWindowNumberAttribute as CFString) as Any,
+   |                                         `- error: cannot find 'kAXWindowNumberAttribute' in scope
+74 |         "frame": ["x": frame.origin.x, "y": frame.origin.y, "width": frame.size.width, "height": frame.size.height],
+75 |         "roles": roles,
+
+/Users/xxe/.codex/worktrees/b443/No.2/lifeos/reviews/LIFEOS-P3-141/independent-review/attempt-6/tools/ax_pid_probe.swift:76:35: error: cannot find 'kAXWebAreaRole' in scope
+74 |         "frame": ["x": frame.origin.x, "y": frame.origin.y, "width": frame.size.width, "height": frame.size.height],
+75 |         "roles": roles,
+76 |         "has_ax_web_area": (roles[kAXWebAreaRole as String] ?? 0) > 0,
+   |                                   `- error: cannot find 'kAXWebAreaRole' in scope
+77 |         "has_ax_web_view": (roles[kAXWebViewRole as String] ?? 0) > 0,
+78 |     ]
+
+/Users/xxe/.codex/worktrees/b443/No.2/lifeos/reviews/LIFEOS-P3-141/independent-review/attempt-6/tools/ax_pid_probe.swift:77:35: error: cannot find 'kAXWebViewRole' in scope
+75 |         "roles": roles,
+76 |         "has_ax_web_area": (roles[kAXWebAreaRole as String] ?? 0) > 0,
+77 |         "has_ax_web_view": (roles[kAXWebViewRole as String] ?? 0) > 0,
+   |                                   `- error: cannot find 'kAXWebViewRole' in scope
+78 |     ]
+79 | }
+
+/Users/xxe/.codex/worktrees/b443/No.2/lifeos/reviews/LIFEOS-P3-141/independent-review/attempt-6/tools/ax_pid_probe.swift:24:50: error: cannot find 'kAXFrameAttribute' in scope
+22 | func rect(_ element: AXUIElement) -> CGRect? {
+23 |     var value: CFTypeRef?
+24 |     guard AXUIElementCopyAttributeValue(element, kAXFrameAttribute as CFString, &value) == .success,
+   |                                                  `- error: cannot find 'kAXFrameAttribute' in scope
+25 |           let value, AXValueGetType(value as! AXValue) == .cgRect else { return nil }
+26 |     var result = CGRect.zero
