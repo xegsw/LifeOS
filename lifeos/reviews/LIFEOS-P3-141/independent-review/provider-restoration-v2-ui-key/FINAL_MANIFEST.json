@@ -1,0 +1,39 @@
+{
+  "schema": "lifeos.p3-141.independent-review-manifest.v2",
+  "task_id": "LIFEOS-P3-141",
+  "task_sha256": "c97419a1818e0aa6fe6fc61c487e3ef97746e199b2c7d22435d8c05090374800",
+  "fixed_input_inventory_sha256": "3651e046da8211f06bf5144a155a0505b7ddfbaab67a249e51d94aeae09861a5",
+  "abf_id": "ABF-P3-141-v2",
+  "abf_sha256": "096ad12beec63b78aaa3be92535b4a6ea632cdc4235c1d83f224db955d5dc9ea",
+  "review_identity": {
+    "role": "independent_review",
+    "attempt_id": "provider-restoration-v2-ui-key"
+  },
+  "review_conclusion": "NOT_PASS",
+  "candidate_commit": "01b08f7877ba1b657218ab1d0aaa1e495a7d92fb",
+  "failure": {
+    "severity": "P0",
+    "code": "review_environment_pid_ax_binding_unavailable",
+    "fail_closed": true
+  },
+  "counts": {
+    "P0": 1,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 1,
+    "Not Implemented": 9
+  },
+  "phase_c_v2_pass_receipt_created": false,
+  "files": [
+    {"path": "test_design.md", "sha256": "533e2666e5cc8833d98fc2f8a483f9c6239ec1a6b3bb09db75c92fb40db1ea61"},
+    {"path": "write_allowlist.md", "sha256": "2802dee30b415c07ac0dc1aed078c329b0595fb6a46abd73ef43a92e43b858ff"},
+    {"path": "precontact_seal.json", "sha256": "220f3b76d8db1347f0a68b52a848a7422a81715da078564f3eb1ccde709388ab"},
+    {"path": "independent_review.md", "sha256": "e76048725f5b8ea1088428dbfa21882f5236d437dbb6bdaa1ad4171b810b187a"},
+    {"path": "review_verifier.py", "sha256": "42c73d9003a610f253f1716a12f9f25c594c7082341bd440661ffddea0cadc96"},
+    {"path": "evidence/p0_pid_ax_binding.json", "sha256": "8a011e0d1056f2cc87e5e1fb65c5400337f85d5f54d42cc8c77f8a688549ec29"},
+    {"path": "evidence/cleanup.json", "sha256": "472b7b8ba82c2246f88fe3472ac4342b299b03f96588f103da4157ba38c0d71b"},
+    {"path": "tools/pid_ax_probe.swift", "sha256": "3744622fac554ff1f9cefe78f0887d5c434cdb36b7be5ba22eb30abc080a6dab"},
+    {"path": "tools/pid_ax_probe", "sha256": "2037aeaee0ce2eb924f1a54e2d5d75e13fe81dcb58309bf1a7607d1a6a51209f"}
+  ],
+  "self_reference": "FINAL_MANIFEST.json is intentionally excluded from files"
+}

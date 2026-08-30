@@ -1,0 +1,26 @@
+{
+  "schema": "lifeos-independent-review-precontact-seal-v1",
+  "review_id": "LIFEOS-P3-141-provider-restoration-v2-ui-key-independent-review-v1",
+  "created_at": "2026-08-30T00:00:00+08:00",
+  "candidate_contacted": false,
+  "git_contacted": false,
+  "candidate_mutated": false,
+  "permitted_persistent_root": "lifeos/reviews/LIFEOS-P3-141/independent-review/provider-restoration-v2-ui-key",
+  "sole_disposable_root": "/private/tmp/lifeos-p3-141-provider-restoration-v2-ui-key-independent-review-v1",
+  "sealed_inputs": [
+    {
+      "path": "test_design.md",
+      "sha256": "533e2666e5cc8833d98fc2f8a483f9c6239ec1a6b3bb09db75c92fb40db1ea61"
+    },
+    {
+      "path": "write_allowlist.md",
+      "sha256": "2802dee30b415c07ac0dc1aed078c329b0595fb6a46abd73ef43a92e43b858ff"
+    }
+  ],
+  "prohibited": [
+    "Pilot-6 and retained database contact",
+    "real Provider, credential, real text, or public network contact",
+    "candidate or historical-asset writes",
+    "PM ledger, risk, freeze, or stage writes"
+  ]
+}

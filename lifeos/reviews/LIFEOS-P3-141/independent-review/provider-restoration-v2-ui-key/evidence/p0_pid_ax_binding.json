@@ -1,0 +1,52 @@
+{
+  "schema": "lifeos.p3-141.independent-review.p0-pid-ax-binding.v1",
+  "candidate_commit": "01b08f7877ba1b657218ab1d0aaa1e495a7d92fb",
+  "candidate_process": {
+    "pid": 93433,
+    "command": "/private/tmp/lifeos-p3-141-provider-restoration-v2-ui-key-independent-review-v1/target/debug/lifeos-p3-141",
+    "launch_session_id": 27781,
+    "startup": "started from the review-owned temporary binary",
+    "alive_observation": "pgrep returned 93433 and ps returned the exact review-owned binary command",
+    "exit": "stopped by this review with terminal interrupt before cleanup; post-stop ps returned no process",
+    "stopped_before_cleanup": true
+  },
+  "expected_identity": {
+    "bundle_identifier": "local.lifeos.p3-141",
+    "window_title": "LifeOS · P3-141 Controlled Pilot Candidate",
+    "required_binding": "PID -> AXWindow -> AXWebView"
+  },
+  "observed_accessibility_result": {
+    "candidate_identifier_query": "Invalid app: local.lifeos.p3-141",
+    "only_observed_conflicting_local_lifeos_window": {
+      "application": "LifeOS P3-137 Context Simplification",
+      "window_title": "LifeOS · Person-centered workspace"
+    },
+    "candidate_ax_window_bound": false,
+    "candidate_ax_webview_bound": false,
+    "direct_pid_ax_probe_after_controlled_exit": {
+      "raw": {"pid": 93433, "windows_ax_error": -25204, "webview_like_descendants": 0, "window_roles": []},
+      "meaning": "This raw probe preserves the post-exit state only. It cannot establish whether the live candidate process did or did not expose an AX window."
+    }
+  },
+  "consequence": {
+    "severity": "P0",
+    "code": "review_environment_pid_ax_binding_unavailable",
+    "message": "The review UI surface could not resolve the candidate bundle identifier and exposed a conflicting P3-137 window. It could not provide the required direct candidate PID binding.",
+    "fail_closed": true,
+    "positive_dynamic_validation_stopped": true,
+    "v2_pass_receipt_created": false
+  },
+  "causal_classification": {
+    "review_environment_failure": true,
+    "candidate_window_defect": "not established",
+    "candidate_window_exposure_or_self_exit": "Unknown because no direct PID AX probe was captured while PID 93433 was alive",
+    "required_future_control": "Use a direct PID-native AX probe while the candidate is alive; do not use bundle lookup or an existing P3-137 window as a substitute."
+  },
+  "data_boundary": {
+    "pilot_6_accessed": false,
+    "real_provider_accessed": false,
+    "credential_accessed": false,
+    "real_text_accessed": false,
+    "public_network_accessed": false
+  }
+}
