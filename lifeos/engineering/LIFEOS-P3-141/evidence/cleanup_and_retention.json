@@ -1,12 +1,14 @@
 {
-  "schema":"lifeos.p3-141.cleanup-receipt.v4",
-  "cleanup_tool":"tools/cleanup_temp.sh",
-  "historical_cleanup_execution_count_before_attempt_3_rework":8,
-  "attempt_3_rework_final_cleanup":"executed after final GUI, synthetic replay, and real-contract closure; target absent",
-  "attempt_4_rework_final_cleanup":"executed twice: after final 48/48 replay, receipt-enabled three-viewport capture, direct-PID checks and task-root Evidence writes; then once more after quarantining a non-sensitive static-verifier output; target absent after the second exact cleanup",
-  "exact_removed_root":"/private/tmp/lifeos-p3-141-controlled-pilot-v1",
-  "postcondition":"final_temp_root_absent=true; direct_pid_21459_21709_21840_absent=true",
-  "retained_artifacts":"task-root source, test design, evidence, current final screenshots/hashes and failure history only; earlier excluded images remain task-root history. A generated candidate/target build cache and one non-sensitive verifier-output JSON were first moved into this exact root and removed by exact cleanup; neither is retained.",
-  "prohibited_real_roots_or_databases":"not accessed, probed, created, copied, hashed or cleaned",
-  "result":"PASS_SYNTHETIC_ONLY"
+  "schema": "lifeos.p3-141.cleanup-receipt.v5",
+  "cleanup_tool": "tools/cleanup_temp.sh",
+  "historical_cleanup_execution_count_before_attempt_3_rework": 8,
+  "attempt_3_rework_final_cleanup": "executed after final GUI, synthetic replay and real-contract closure; target absent",
+  "attempt_4_rework_final_cleanup": "executed after final replay and PID capture; retained as historical Evidence only",
+  "attempt_7_preflight_cleanup": "after excluded PID 36059 preflight, exact temporary root was removed before the fresh final bundle build",
+  "attempt_7_final_cleanup": "after final PID 37686/37890/38060 AX/receipt/screenshot capture and full 48/48 replay, cleanup_temp.sh removed the exact root; postcondition observed absent",
+  "exact_removed_root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1",
+  "postcondition": "final_temp_root_absent=true; direct_pid_37686_37890_38060_absent=true",
+  "retained_artifacts": "task-root source, test design, Evidence, final screenshot hashes and failure history only; all build products, helper binary, synthetic runtime root and capture.sqlite existed only under the exact temporary root and were removed",
+  "prohibited_real_roots_or_databases": "not accessed, probed, created, copied, hashed or cleaned",
+  "result": "PASS_SYNTHETIC_ONLY"
 }

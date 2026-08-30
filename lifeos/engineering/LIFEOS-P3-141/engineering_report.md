@@ -1,26 +1,29 @@
-# LIFEOS-P3-141 Attempt-4 Rework Closure engineering report
+# LIFEOS-P3-141 Attempt-7 Closure engineering report
 
 ## 工程门结论
 
-**Phase A Ready for Independent Review**。本 Closure 修复了 attempt-4 指出的启动回执时序、多档尺寸复用风险、Today Health 受控来源和前端入口遗漏，并重新完成受控 real-mode actual-Tauri Evidence。结论仅覆盖唯一临时根中的固定合成夹具；不是 Phase B 独立评审 Pass、Phase C 真实使用、PM 验收、风险关闭、冻结或 Stage 推进。Phase B/C/D/E 均为 Pending。
+**Phase A Ready for Independent Review**。本 Closure 关闭了 attempt-6 的 P0/P1：最终 receipt-enabled P3-141 bundle 现在在原生 Tauri/Wry `WKWebView` 上显式设置 Accessibility element 与 `AXWebArea` role；current `source_lineage.json` 已以最终 candidate 的 79-file framed tree 重建。结论仅覆盖唯一临时根中的固定合成夹具，不是独立评审 Pass、真实使用、PM 验收、风险关闭、冻结或 Stage 推进。Phase B/C/D/E 继续 Pending。
 
 ## 已实现与复跑事实
 
-- candidate 仍为 79 文件、恰好 20 IPC；固定输入 12/12 与 P3-140 candidate 79/79 tree 均匹配。Provider 仅 OpenAI、Anthropic、Ollama、LM Studio；验证仅使用 loopback，零 Custom、第二 Provider、fallback、后台发送或网络。
-- Work real-contract 为 7–14 天、每日最多 1 条、总数最多 14。第 2 条同日和第 15 条总量均在任何业务写前拒绝，并由 restart-safe ledger 审计。
-- `update_current_state` 承载 Health/Fitness 五个封闭字段：sleep duration range、energy 1–5、soreness/pain boolean、training load L/M/H、available time。没有自由文本或医疗诊断路径；非法值和自由文本在写前拒绝，Today/feedback 仍复用现有闭环。
-- receipt-enabled real-contract 限制 confirmed Durable Memory 至 3；第 4 条写前拒绝并在重启后保持。candidate 的 real-flow 标识、source/artifact、request key 和文案均为 P3-141；静态扫描无 P3-133/P3-131 残留。
-- 最终 synthetic replay 为 Rust 48/48。新增反例覆盖 stale 首样本/跨档复用、受控 source 的唯一闭集、完整 UI Health DTO 和 `runtime-adapter.js` 必须在 P3-140 前加载。既有 root、Work、Memory、五字段非法/自由文本、重启、DB/哨兵、Provider lock、budget 与 feedback 覆盖均未回退。
-- actual-Tauri 仅在 receipt-enabled real-mode、固定合成夹具中启动：desktop PID 21459、compact PID 21709、narrow PID 21840。每次直接 PID 均定位同一 bundle；原生 AX 对该 PID 返回 1 个 exact-title Window 和 1 个 HTML WebView。回执在 `set_size` 后等待 220ms 并采集 3 个稳定样本。desktop 主机实际外框为 1280×949（而非声称请求值 1280×1024），与同 PID AX frame 一致；compact 700×760、narrow 560×640 均精确一致。
-- desktop Today 的合成五字段 UI 已实际保存：受控 source ref、SQLite 五字段行、Today 更新和 candidate-only `confirm` feedback 均可复核；无自由文本、诊断、Provider 或网络派发。
+- 继承的 P3-140 tree 79/79 和固定输入 12/12 均匹配；current P3-141 candidate 为 79 文件、恰好 20 IPC、framed tree SHA-256 `7034edd14b9f99dbd85f8ba6a4b58f993c61a738d870fb9067b994ed6ca404c2`。旧 `6a45…a87e1` 仅为 attempt-6 失败历史。
+- Provider 保持 OpenAI、Anthropic、Ollama、LM Studio 四选一；验证只走合成 loopback，零 Custom、第二 Provider、fallback、后台发送或网络。首次真实发送锁定、root receipt gate、strict fresh/owned lifecycle、Work 7–14 day 上限、Memory ≤3、五字段 Health、Today/feedback、Resolver/预算与失败关闭均保留。
+- 离线 Rust 完整回放为 **48/48**；另编译的 AX helper self-test 确认：window-only 与 `AXHTMLContent`-only 均拒绝，而 `AXWebArea`／`AXWebView` 才可通过。
+- 以同一 receipt-enabled final bundle、固定合成夹具和全新 direct PID 进行 actual-Tauri：desktop PID 37686、compact PID 37890、narrow PID 38060。每一行只向 native helper 传入该 PID；helper 从该 PID 的 exact-title 唯一 `AXWindow` 递归找到原生 `AXWebArea`，不把截图、Computer Use app-level HTML 或全局窗口搜索当作身份证据。
+- startup receipt 仅在 `set_size`、220ms delay 和三次相等有效样本后写出。desktop 的同 PID receipt/AXWindow 均为 host-clamped 1280×949；compact 均为 700×760，narrow 均为 560×640。三张无敏感 supporting screenshot 的 native top bar 均肉眼显示 `LifeOS · P3-141 Controlled Pilot Candidate`。
 
-## Evidence、清理与保留
+## Evidence、历史与清理
 
-- 最终 actual-Tauri 数据与截图 hash：[`actual_tauri_viewports_final.json`](evidence/attempt-4-rework/actual_tauri_viewports_final.json)；人工视觉声明：[`manual_screenshot_review.md`](evidence/attempt-4-rework/manual_screenshot_review.md)；Health UI route：[`health_ui_route.json`](evidence/attempt-4-rework/health_ui_route.json)。仅该目录内三张 `*_final.png` 是本次正 Evidence。
-- 逐行状态在 [`ABF_PHASE_A_MATRIX.md`](evidence/ABF_PHASE_A_MATRIX.md)。旧标题冲突、初始 compact 尺寸不符、fixture schema 失败和所有中间截图均保留在 [`failure_history.md`](evidence/failure_history.md)，不作正 Evidence。
-- 回放入口为 [`replay_phase_a.sh`](tools/replay_phase_a.sh)（显式 `--input-root`）；它以 trap 调用唯一 [`cleanup_temp.sh`](tools/cleanup_temp.sh)。最终 cleanup receipt 确认唯一临时根已不存在。
-- 本包 P0=0、P1=0、P2=1（环境缺少 rustfmt，`cargo fmt --check` 未能执行）、Unknown=0、Not Implemented=0（仅 Phase A 范围）。全任务层面：Phase B/C/D/E 均 Pending，不能宣称完成。
+- 当前 native AX / receipt / screenshot 总索引：[actual_tauri_viewports.json](evidence/actual_tauri_viewports.json)；原始 PID 链和 strict helper controls 在 [attempt-7-rework](evidence/attempt-7-rework/)；三张截图在 [evidence/screenshots](evidence/screenshots/)。
+- 逐行 Frozen ABF 状态：[ABF_PHASE_A_MATRIX.md](evidence/ABF_PHASE_A_MATRIX.md)。attempt-6 及本轮所有失败或排除尝试保留在 [failure_history.md](evidence/failure_history.md)，未被重写为正 Evidence。
+- 可移植的离线回放入口为 [replay_phase_a.sh](tools/replay_phase_a.sh)，须显式传入 `--input-root`；其只调用 [cleanup_temp.sh](tools/cleanup_temp.sh) 精确清理唯一临时根。最终 cleanup receipt、非自引用 Manifest 与 current source lineage 在 Evidence 根。
 
-## PM 下一步
+## 五类计数与 PM 下一步
 
-需要一轮新的隔离独立评审。不得由本工程会话自行启动任何真实 Pilot 或 Phase C。
+- P0：0
+- P1：0
+- P2：1（本机 Rust toolchain 未安装 rustfmt，`cargo fmt --check` 无法执行；不影响编译、测试或动态 Evidence）
+- Unknown：0（仅 Phase A 合成离线合同）
+- Not Implemented：0（仅 Phase A 合同；Phase B/C/D/E 是明确 Pending，非本轮已实现结论）
+
+需要一轮全新隔离的独立评审。工程会话不得自行启动 Phase C 或任何真实 Pilot。

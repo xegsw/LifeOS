@@ -4,7 +4,7 @@
 
 | Row | Phase A status | Evidence / successful test | Boundary statement |
 |---|---|---|---|
-| ABF-M-001 | PASS_SYNTHETIC_ONLY | `attempt-4-rework/replay_result.json` | 固定输入 12/12、P3-140 79-file tree、candidate 79 files/20 IPC 均匹配。 |
+| ABF-M-001 | PASS_SYNTHETIC_ONLY | `attempt-7-rework/current_candidate_tree.json`, `source_lineage.json` | 固定输入 12/12、P3-140 79-file tree、current candidate 79 files/20 IPC 均匹配；current framed tree=`7034edd1…404c2`。attempt-6 stale tree 值保留在失败历史。 |
 | ABF-M-002 | PASS_SYNTHETIC_ONLY | `closure_real_root_requires_fresh_absence_and_owned_restart`, `closure_limit_file_type_and_database_boundary_fail_closed` | 首次仅 root/DB 均不存在；空目录、文件、link、sidecar、非普通/未知 DB 均写前拒绝；owned reopen 无重写。 |
 | ABF-M-003 | PASS_SYNTHETIC_ONLY | receipt-enabled real closure 8/8 | 无 receipt 先于 root 解析失败；正确 receipt 可进入同一 candidate real-mode 合同但只在 fresh 临时子根验证。 |
 | ABF-M-004 | PASS_SYNTHETIC_ONLY | `provider_activation.json`, loopback fixture tests | 显式 save → test → enable → synthetic send；四 profile 闭集。 |
@@ -19,10 +19,10 @@
 | ABF-M-013 | PASS_SYNTHETIC_ONLY | five-field Health real closure, Today safety tests, `attempt-4-rework/health_ui_route.json` | 不接受自由文本、非法值、非法来源或医疗诊断；高风险夹具仅给出保守、非诊断停止。 |
 | ABF-M-014 | PASS_SYNTHETIC_ONLY | closure / Provider negative tests | 同日第2条、总第15条、Memory第4条、Health 非法值、授权、stale、budget、DB、root 与 Provider failure 均在业务写/dispatch 前关闭。 |
 | ABF-M-015 | PASS_SYNTHETIC_ONLY | synthetic lifecycle 48/48; real closure paths | 7–14 day Work trial 的每天最多1条、总数14可重启审计；相同 request 不二次 dispatch，owned reopen 不二次写 capture 或发送。 |
-| ABF-M-016 | PASS_SYNTHETIC_ONLY | `attempt-4-rework/actual_tauri_viewports_final.json`, `attempt-4-rework/manual_screenshot_review.md` | 本轮三个 direct PID 各自绑定 exact-title 1 个 AXWindow/1 个 AXWebView；receipt 在 set_size 后 220ms + 3 个稳定样本写入，desktop 诚实记录 host-clamped 1280×949 并与同 PID AX frame 一致，compact/narrow 均精确匹配。 |
+| ABF-M-016 | PASS_SYNTHETIC_ONLY | `actual_tauri_viewports.json`, `attempt-7-rework/*_native_ax.json`, `attempt-7-rework/ax_helper_counterexamples.json`, `attempt-7-rework/manual_screenshot_review.md` | 三个全新 direct PID 各自在 exact-title 唯一 AXWindow 下发现原生 `AXWebArea`；helper 明确拒绝 window-only 与 `AXHTMLContent`。receipt 在 set_size 后 220ms + 3 个稳定样本写入并与同 PID AX frame 精确一致；desktop 诚实记录 host-clamped 1280×949。 |
 | ABF-M-017 | PENDING_PHASE_C | — | 用户操作的非内容真实使用 receipt 不在本 Phase A。 |
 | ABF-M-018 | PENDING_PHASE_B | — | 新鲜独立评审尚未开始。 |
-| ABF-M-019 | PASS_SYNTHETIC_ONLY | final cleanup receipt; `cleanup_temp.sh` | 只清理精确临时根，最终 postcondition 为根不存在；未访问或清理任何禁止目标。 |
-| ABF-M-020 | PASS_SYNTHETIC_ONLY | regenerated non-self-referential `FINAL_MANIFEST.json` | Manifest 仅列 task-root 文件，排除自身，并列明 pending 行。 |
+| ABF-M-019 | PASS_SYNTHETIC_ONLY | attempt-7 final cleanup receipt; `cleanup_temp.sh` | 只清理精确临时根，最终 postcondition 为根不存在；未访问或清理任何禁止目标。 |
+| ABF-M-020 | PASS_SYNTHETIC_ONLY | regenerated non-self-referential `FINAL_MANIFEST.json` | Manifest 仅列 task-root 文件，排除自身，纳入 attempt-7 原生 AX／截图／lineage Evidence，并列明 pending 行。 |
 
 工程门：所有 Phase-A-applicable 行 **Ready for Independent Review**；Phase B/C/D/E 均继续 pending。

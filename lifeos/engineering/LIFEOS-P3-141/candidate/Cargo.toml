@@ -15,6 +15,14 @@ serde = { version = "=1.0.229", features = ["derive"] }
 serde_json = "=1.0.151"
 tauri = { version = "=2.11.5", features = [] }
 
+[target.'cfg(target_os = "macos")'.dependencies]
+# The actual Wry backing view is a WKWebView.  These direct, pinned imports
+# configure that native view's accessibility role; they do not create an app
+# level HTML surrogate for Evidence.
+objc2-app-kit = { version = "=0.3.2", default-features = false, features = ["NSAccessibility", "NSAccessibilityConstants"] }
+objc2-foundation = { version = "=0.3.2", default-features = false, features = ["NSString"] }
+objc2-web-kit = { version = "=0.3.2", default-features = false, features = ["WKWebView"] }
+
 [dev-dependencies]
 sha2 = "=0.10.9"
 

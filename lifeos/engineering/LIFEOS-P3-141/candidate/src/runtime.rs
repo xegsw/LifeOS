@@ -183,6 +183,35 @@ fn write_startup_ready_receipt(paths: &Paths, window: &tauri::WebviewWindow) -> 
     Ok(())
 }
 
+// Evidence identity must terminate at the native Wry WKWebView, not at an
+// application-level HTML accessibility surrogate.  Tauri exposes the exact
+// native view owned by this WebviewWindow; setting its AppKit accessibility
+// role makes the OS AX tree report an AXWebArea for the same direct-PID
+// window.  This runs before the delayed, post-set_size receipt is sampled, so
+// a startup receipt cannot be emitted for a window whose native identity was
+// not configured.
+#[cfg(target_os = "macos")]
+fn configure_native_webview_accessibility(window: &tauri::WebviewWindow) -> Result<(), Error> {
+    use objc2_app_kit::{NSAccessibility, NSAccessibilityWebAreaRole};
+    use objc2_foundation::NSString;
+    use objc2_web_kit::WKWebView;
+
+    window
+        .with_webview(|webview| unsafe {
+            let view: &WKWebView = &*webview.inner().cast();
+            let label = NSString::from_str("LifeOS P3-141 native WebView content");
+            view.setAccessibilityElement(true);
+            view.setAccessibilityRole(Some(NSAccessibilityWebAreaRole));
+            view.setAccessibilityLabel(Some(&label));
+        })
+        .map_err(|_| Error::blocked("native_webview_accessibility_rejected", "原生 WebView 无法建立可访问性绑定；未写入。"))
+}
+
+#[cfg(not(target_os = "macos"))]
+fn configure_native_webview_accessibility(_: &tauri::WebviewWindow) -> Result<(), Error> {
+    Ok(())
+}
+
 #[derive(Clone)] struct Paths { root: PathBuf, db: PathBuf, mode: InputMode }
 struct State { paths: Paths, lock: Mutex<()>, provider: Mutex<ProviderState> }
 
@@ -742,6 +771,8 @@ pub fn run() {
         if let tauri::RunEvent::Ready = event {
             let window = app.get_webview_window("main").expect("main window missing");
             let state = app.state::<State>();
+            configure_native_webview_accessibility(&window)
+                .unwrap_or_else(|error| panic!("P3-141 native WebView accessibility rejected: {}", error.code));
             write_startup_ready_receipt(&state.paths, &window)
                 .unwrap_or_else(|error| panic!("P3-141 startup Evidence rejected: {}", error.code));
         }
