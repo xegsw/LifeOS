@@ -1,0 +1,55 @@
+{
+  "schema": "lifeos.p3-141.provider-restoration-v2-gate.dynamic-matrix.v1",
+  "result": "PASS",
+  "positive": [
+    {
+      "test": "v2_receipt_contract_accepts_exact_revision_2_binding",
+      "scope": "synthetic in-process contract only; not a self-signed independent receipt"
+    }
+  ],
+  "negative": [
+    {
+      "test": "v2_receipt_contract_rejects_v1_mixed_stale_and_nonpass_bindings",
+      "covers": [
+        "v1 id",
+        "v1 hash",
+        "mixed v1/v2",
+        "old task/inventory",
+        "old commit/tree",
+        "Rework manifest"
+      ]
+    },
+    {
+      "test": "v2_receipt_schema_rejects_duplicate_extra_and_fallback_fields",
+      "covers": [
+        "duplicate",
+        "extra",
+        "fallback"
+      ]
+    },
+    {
+      "test": "v2_receipt_file_gate_rejects_symlink_and_directory_before_read",
+      "covers": [
+        "symlink",
+        "directory",
+        "ancestor link"
+      ]
+    },
+    {
+      "evidence": "phase_c_pre_root_negative.json",
+      "covers": [
+        "missing v2 receipt",
+        "legacy Phase-B input"
+      ],
+      "before_runtime_root": true
+    },
+    {
+      "evidence": "phase_c_dirty_candidate_negative.json",
+      "covers": [
+        "dirty/uncommitted candidate"
+      ],
+      "before_runtime_root": true
+    }
+  ],
+  "no_accepted_engineering_receipt_created": true
+}

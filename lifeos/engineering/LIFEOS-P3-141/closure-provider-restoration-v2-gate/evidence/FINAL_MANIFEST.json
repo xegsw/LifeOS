@@ -1,0 +1,568 @@
+{
+  "schema": "lifeos.p3-141.provider-restoration-v2-gate.final-manifest.v1",
+  "result": "ENGINEERING_READY_FOR_FRESH_INDEPENDENT_REVIEW",
+  "scope": "narrow Revision-2 Phase-C receipt/build-gate repair; synthetic offline only",
+  "non_self_referential": true,
+  "self_entry_present": false,
+  "excluded_from_evidence_inventory": [
+    "FINAL_MANIFEST.json",
+    "manifest_verification.json"
+  ],
+  "conclusions": {
+    "engineering": "READY_FOR_FRESH_INDEPENDENT_REVIEW",
+    "failed_first_independent_review": "PRESERVED_REWORK_P0",
+    "fresh_independent_review": "PENDING",
+    "phase_c_d_e": "PENDING"
+  },
+  "acceptance": {
+    "gate_repair": "PASS",
+    "provider_regression": "PASS",
+    "actual_tauri": "PENDING_NEW_INDEPENDENT_REVIEW",
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "unknown": 0,
+    "not_implemented": 0
+  },
+  "lineage": {
+    "schema": "lifeos.p3-141.provider-restoration-v2-gate.source-lineage.v1",
+    "result": "PASS",
+    "starting_commit": "48a26320646219117b28e81cd77dd6c8206fe99c",
+    "starting_candidate": {
+      "file_count": 79,
+      "length_framed_tree_sha256": "e4e29b6d45c953aecf0688202d45a68c557cbacfb9a6bd58d8a441c9d7bc74c6"
+    },
+    "current_candidate": {
+      "file_count": 80,
+      "length_framed_tree_sha256": "1767d3c067631387b42a6ec03843deeeac14ce742b9015b39bbb4ad61e076874"
+    },
+    "allowed_delta": [
+      "candidate/build.rs",
+      "candidate/src/runtime.rs",
+      "candidate/tests/v2_phase_c_gate.rs"
+    ],
+    "source_diff": {
+      "path": "evidence/source_gate_diff.md",
+      "bytes": 22592,
+      "sha256": "c526f6666e7a10656d419257ce6d4f30cfd30069f25b7d53f57c474d2a627677"
+    },
+    "phase_c_candidate_identity": "resolved only from clean candidate worktree HEAD plus current candidate tree at build time; no constant or fallback is accepted"
+  },
+  "tests": {
+    "command": "cargo test",
+    "offline": true,
+    "input_mode": "synthetic",
+    "unit_tests": 50,
+    "v2_gate_tests": 4,
+    "total_tests": 54,
+    "exit_code": 0,
+    "result": "passed"
+  },
+  "gate_dynamic": {
+    "schema": "lifeos.p3-141.provider-restoration-v2-gate.dynamic-matrix.v1",
+    "result": "PASS",
+    "positive": [
+      {
+        "test": "v2_receipt_contract_accepts_exact_revision_2_binding",
+        "scope": "synthetic in-process contract only; not a self-signed independent receipt"
+      }
+    ],
+    "negative": [
+      {
+        "test": "v2_receipt_contract_rejects_v1_mixed_stale_and_nonpass_bindings",
+        "covers": [
+          "v1 id",
+          "v1 hash",
+          "mixed v1/v2",
+          "old task/inventory",
+          "old commit/tree",
+          "Rework manifest"
+        ]
+      },
+      {
+        "test": "v2_receipt_schema_rejects_duplicate_extra_and_fallback_fields",
+        "covers": [
+          "duplicate",
+          "extra",
+          "fallback"
+        ]
+      },
+      {
+        "test": "v2_receipt_file_gate_rejects_symlink_and_directory_before_read",
+        "covers": [
+          "symlink",
+          "directory",
+          "ancestor link"
+        ]
+      },
+      {
+        "evidence": "phase_c_pre_root_negative.json",
+        "covers": [
+          "missing v2 receipt",
+          "legacy Phase-B input"
+        ],
+        "before_runtime_root": true
+      },
+      {
+        "evidence": "phase_c_dirty_candidate_negative.json",
+        "covers": [
+          "dirty/uncommitted candidate"
+        ],
+        "before_runtime_root": true
+      }
+    ],
+    "no_accepted_engineering_receipt_created": true
+  },
+  "candidate": {
+    "file_count": 80,
+    "length_framed_tree_sha256": "1767d3c067631387b42a6ec03843deeeac14ce742b9015b39bbb4ad61e076874",
+    "entries": {
+      "Cargo.lock": {
+        "bytes": 112011,
+        "sha256": "e7a46808ca953a19b0328b177d38f9f997cc839020bc3387590144122472e8c0"
+      },
+      "Cargo.toml": {
+        "bytes": 1170,
+        "sha256": "616e990c2b5dfc3e233cd62455c8a783408a320d1dc71167ad3e225367ba1f16"
+      },
+      "build.rs": {
+        "bytes": 27192,
+        "sha256": "ce7a0173303f69200d129ef48abdc0e982f581cc7894110a766f04434978c0dc"
+      },
+      "capabilities/main.json": {
+        "bytes": 225,
+        "sha256": "3cb510f5680295641c17a4ef1ac799dbc1238a467e0a8221a5501bdf9995a071"
+      },
+      "gen/schemas/acl-manifests.json": {
+        "bytes": 65934,
+        "sha256": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e"
+      },
+      "gen/schemas/capabilities.json": {
+        "bytes": 178,
+        "sha256": "29c9b588ce037d020c1b0e1fd0e6343e1def416cacf4a11a3a32b45513588109"
+      },
+      "gen/schemas/desktop-schema.json": {
+        "bytes": 116049,
+        "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78"
+      },
+      "gen/schemas/macOS-schema.json": {
+        "bytes": 116049,
+        "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78"
+      },
+      "icons/128x128.png": {
+        "bytes": 1227,
+        "sha256": "39572c12160197611428210db2eeb800e37dbd41860ba8e9a669166114f4a76b"
+      },
+      "icons/128x128@2x.png": {
+        "bytes": 2488,
+        "sha256": "d92aa427d4dd01feba7b03c0a321f5c4bef1f47e9a7e6e17ffeb0186b1e5f5f1"
+      },
+      "icons/32x32.png": {
+        "bytes": 441,
+        "sha256": "79bc6828196ed3e2403a53463914eff4c0c0efce5f8b6e7e0b139114e11a5e59"
+      },
+      "icons/64x64.png": {
+        "bytes": 643,
+        "sha256": "3e3ece76332b640d374bbeff1a09b8813f7fee0a4b653c9a38415062d996de59"
+      },
+      "icons/Square107x107Logo.png": {
+        "bytes": 1065,
+        "sha256": "58c82e4e0e8272eaa122b6bcb756c12c76910ffa6e95256e44448bfa634267c4"
+      },
+      "icons/Square142x142Logo.png": {
+        "bytes": 1405,
+        "sha256": "05be4e8894bca70ea4b8099b3373090f51a0f5c3eb9f72c49e893eed1b1861e3"
+      },
+      "icons/Square150x150Logo.png": {
+        "bytes": 1587,
+        "sha256": "5e9085cc59b404169906b999a9de0c389c118d3ace1696e8787700b030b8dee5"
+      },
+      "icons/Square284x284Logo.png": {
+        "bytes": 2791,
+        "sha256": "28fdbcc829c7edbf94416276db345b5d9335391087e435831b412e745edb4de8"
+      },
+      "icons/Square30x30Logo.png": {
+        "bytes": 453,
+        "sha256": "579111e7e722cf3303c6309b8d4357b4ce5da7e28ba25734bc1cf672394ab3f5"
+      },
+      "icons/Square310x310Logo.png": {
+        "bytes": 2901,
+        "sha256": "9ded936b77aebe3f6d4affc3557c0baacad5a12886c30c85c46daf2067927955"
+      },
+      "icons/Square44x44Logo.png": {
+        "bytes": 582,
+        "sha256": "3afc300fde82670e6ec6760addea1b03ccd6979424715802c8c767c42fcc5944"
+      },
+      "icons/Square71x71Logo.png": {
+        "bytes": 779,
+        "sha256": "13d8fa01f25817d346c11d28a2a63ea7285586ae005f372825f905ad8749da12"
+      },
+      "icons/Square89x89Logo.png": {
+        "bytes": 927,
+        "sha256": "4d65f163ed7dc62255f246ddb8bbc71de33f02a632af49be75ccd1de96a569f5"
+      },
+      "icons/StoreLogo.png": {
+        "bytes": 564,
+        "sha256": "60bad4ad4470f1cad766e0082a6dace73b48619d032af700aaabb3e971df28cc"
+      },
+      "icons/android/mipmap-anydpi-v26/ic_launcher.xml": {
+        "bytes": 261,
+        "sha256": "760d4b8a06bf7163dd010c33ad2cac9e4a75fa0177afaba042f83e311eef0c3e"
+      },
+      "icons/android/mipmap-hdpi/ic_launcher.png": {
+        "bytes": 1337,
+        "sha256": "0514a04799bc23d608ef68fc0786a11a1bea7b3e7930485469444c5964a6cf9f"
+      },
+      "icons/android/mipmap-hdpi/ic_launcher_foreground.png": {
+        "bytes": 1625,
+        "sha256": "e3adb898f0d807abc85bb75774e6b5e55b3f09627eee11e70844100f6ee8bef9"
+      },
+      "icons/android/mipmap-hdpi/ic_launcher_round.png": {
+        "bytes": 956,
+        "sha256": "d30ea18205f233e5791b912e4a9f89979805b825d45101b5e2612ae03dfbf497"
+      },
+      "icons/android/mipmap-mdpi/ic_launcher.png": {
+        "bytes": 1251,
+        "sha256": "9ac96d6e24ee47813b82b9044b22c84055428e808aba48d3d32dd47dfdea09e7"
+      },
+      "icons/android/mipmap-mdpi/ic_launcher_foreground.png": {
+        "bytes": 1173,
+        "sha256": "d5925ec91058b5f59575bcbad8dc38b66c4ca18e79d8e625ddd05704ff103120"
+      },
+      "icons/android/mipmap-mdpi/ic_launcher_round.png": {
+        "bytes": 953,
+        "sha256": "606ffd6da8ecaf7550673140f379eaf85cc838e320dfd6a33ee335654de6318c"
+      },
+      "icons/android/mipmap-xhdpi/ic_launcher.png": {
+        "bytes": 2206,
+        "sha256": "4aa5cd9b19fab966cf734af011232cb6f1a48322dfc3c8e2a1f3c0054cf8cc6c"
+      },
+      "icons/android/mipmap-xhdpi/ic_launcher_foreground.png": {
+        "bytes": 2093,
+        "sha256": "4ae6b883cdda5f2ca78e3ec3067687e2efcc47e751c89e1b7b03ca6a3fc5d55d"
+      },
+      "icons/android/mipmap-xhdpi/ic_launcher_round.png": {
+        "bytes": 1249,
+        "sha256": "1f410423954eb7cf62e9963bb8f6656ef9159b602adbfabd72a0e03a6c0abf42"
+      },
+      "icons/android/mipmap-xxhdpi/ic_launcher.png": {
+        "bytes": 3030,
+        "sha256": "53d8316fd25ed535731a4863decb0280abb3d6fc68a32025da6593c9801a5df4"
+      },
+      "icons/android/mipmap-xxhdpi/ic_launcher_foreground.png": {
+        "bytes": 3051,
+        "sha256": "e9b95791588f1d650c74ea403c27e5758386b1f55cecb9b41ca18104989ad195"
+      },
+      "icons/android/mipmap-xxhdpi/ic_launcher_round.png": {
+        "bytes": 1583,
+        "sha256": "1d8c11c6c4145060e2f6532ffb3d98343fcbcd62b1bf1d8da7acaf44e82c995c"
+      },
+      "icons/android/mipmap-xxxhdpi/ic_launcher.png": {
+        "bytes": 3891,
+        "sha256": "acd57fb2317d236f78c21c7e31bef48fd55227cdbdf9efb6484fa01b7d44240f"
+      },
+      "icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png": {
+        "bytes": 4148,
+        "sha256": "6fbf0152677a925d70883c170bc05b7967eab5992ce09ce47618999507d97d60"
+      },
+      "icons/android/mipmap-xxxhdpi/ic_launcher_round.png": {
+        "bytes": 2078,
+        "sha256": "6fbf756b41cf06d977ec2a40c216b6faf28c65cff9c28fd041e05d5da7d5452a"
+      },
+      "icons/android/values/ic_launcher_background.xml": {
+        "bytes": 115,
+        "sha256": "0687336f0ccc6f7ee09c7c95110667c63b75931238df779a21af401fb864cd34"
+      },
+      "icons/icon.icns": {
+        "bytes": 31641,
+        "sha256": "e6e7eae0a6060cb21ace32751adb2bd9da6b2527374a4daae79c9aad505d11ed"
+      },
+      "icons/icon.ico": {
+        "bytes": 5650,
+        "sha256": "1a14889bc10f824f3a072c1835b5561f3c576fb697ba4aa44839d55889116f0b"
+      },
+      "icons/icon.png": {
+        "bytes": 4982,
+        "sha256": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293"
+      },
+      "icons/icon.svg": {
+        "bytes": 232,
+        "sha256": "bf69a17326cffb6405dcd732a814778042a8a02df8e13938b698570f80ba6c66"
+      },
+      "icons/ios/AppIcon-20x20@1x.png": {
+        "bytes": 350,
+        "sha256": "76bfc33979b0171e8229eb2e370d01b74fa18aae7fdeca9a2c156e2b9253ed64"
+      },
+      "icons/ios/AppIcon-20x20@2x-1.png": {
+        "bytes": 529,
+        "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+      },
+      "icons/ios/AppIcon-20x20@2x.png": {
+        "bytes": 529,
+        "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+      },
+      "icons/ios/AppIcon-20x20@3x.png": {
+        "bytes": 684,
+        "sha256": "1079318d510e167cf2156dcaebd0dc9b4ea4b3a36f072b02ee7d3946de55d554"
+      },
+      "icons/ios/AppIcon-29x29@1x.png": {
+        "bytes": 420,
+        "sha256": "f5a5f21fc384c9ab27cb1329e38be5e4b806e72e1d6eed5a5edc49deed3212ba"
+      },
+      "icons/ios/AppIcon-29x29@2x-1.png": {
+        "bytes": 667,
+        "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09"
+      },
+      "icons/ios/AppIcon-29x29@2x.png": {
+        "bytes": 667,
+        "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09"
+      },
+      "icons/ios/AppIcon-29x29@3x.png": {
+        "bytes": 945,
+        "sha256": "c89ad8db8ebb8b7bb035ae9024ea7f9f6e754d6e8efd8481de00d35d5be53446"
+      },
+      "icons/ios/AppIcon-40x40@1x.png": {
+        "bytes": 529,
+        "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+      },
+      "icons/ios/AppIcon-40x40@2x-1.png": {
+        "bytes": 882,
+        "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c"
+      },
+      "icons/ios/AppIcon-40x40@2x.png": {
+        "bytes": 882,
+        "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c"
+      },
+      "icons/ios/AppIcon-40x40@3x.png": {
+        "bytes": 1222,
+        "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b"
+      },
+      "icons/ios/AppIcon-512@2x.png": {
+        "bytes": 12199,
+        "sha256": "743e79bd29fa8035295bfc510e3aa42acef7ac922edf642c4e9bebe152a95929"
+      },
+      "icons/ios/AppIcon-60x60@2x.png": {
+        "bytes": 1222,
+        "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b"
+      },
+      "icons/ios/AppIcon-60x60@3x.png": {
+        "bytes": 1835,
+        "sha256": "afe8ea3eca3ec76dee2f9f1b61e79f0755239378b6fda84c9dec63309375a804"
+      },
+      "icons/ios/AppIcon-76x76@1x.png": {
+        "bytes": 873,
+        "sha256": "29e682960dc2ebbef7f40fb64204d0422f56dfe7af3e2938e16ec93af21b20ae"
+      },
+      "icons/ios/AppIcon-76x76@2x.png": {
+        "bytes": 1536,
+        "sha256": "8188dddb316617937ee9b7151bdd75cc33602b46eee2bbff7d82e638030f39cd"
+      },
+      "icons/ios/AppIcon-83.5x83.5@2x.png": {
+        "bytes": 1652,
+        "sha256": "aa9d183c4b09055de09361471c6bb3353e0a1640e8368e75cc431308ddb29539"
+      },
+      "rust-toolchain.toml": {
+        "bytes": 52,
+        "sha256": "54231ca6bea6a491dfa45c5c1e12cc7485ae94c16a374e52933ee1a7cb48248f"
+      },
+      "src/main.rs": {
+        "bytes": 117,
+        "sha256": "4d7a1e4a1eebe08ffec78a4c0cd0e7cdeabf6b92e68c003b02e3515a035e042c"
+      },
+      "src/runtime/memory_context.rs": {
+        "bytes": 66076,
+        "sha256": "1911da908a9a02a789adbe5145f0662fb349fd2f64a03bae5fbfd245ffccdec6"
+      },
+      "src/runtime/today_intelligence.rs": {
+        "bytes": 45645,
+        "sha256": "2e1ebc5fe202dc0346255996ba69b523f80f32904a5062b93c2c1617710a78c5"
+      },
+      "src/runtime.rs": {
+        "bytes": 190138,
+        "sha256": "5e848d8ae7f400caa6f4f358be5ada493b529ef3db8ef31ffc2af9e6da07dc7e"
+      },
+      "tauri.conf.json": {
+        "bytes": 1043,
+        "sha256": "f8127debd6472dd3e8e0ef7ec55deb0e6d2d2e1743e94fcfa03c9c949fd10fed"
+      },
+      "tests/v2_phase_c_gate.rs": {
+        "bytes": 206,
+        "sha256": "b2338d6b99386426941ac3dc760114ccd5f7625b269ae56ae6f5d28ffdf10995"
+      },
+      "ui/app.js": {
+        "bytes": 42976,
+        "sha256": "8d50d5034a21a8a06b6b28c758c3718a2dcdc821ee19f78ad305a745d5efe183"
+      },
+      "ui/fixtures.js": {
+        "bytes": 2994,
+        "sha256": "a7b01ba8e176d80ae172ddd8acd2ed3a8c9b755b046159b190a2272195af3d93"
+      },
+      "ui/ia_reconciliation.md": {
+        "bytes": 3532,
+        "sha256": "5d11cf6d5a93e156272b26f7bce078e58669db7288e4b7305ea87a1445769599"
+      },
+      "ui/index.html": {
+        "bytes": 844,
+        "sha256": "425d057d857cd6004e20733a420ae16d0277f00f42770e10ba692568caee1b9a"
+      },
+      "ui/interaction_contract.md": {
+        "bytes": 4816,
+        "sha256": "7ec4a1e1cbf49d8daa08f30eaf458025a9222ad338f606d0c4f82756d686ff81"
+      },
+      "ui/p3-139-context-inspector.js": {
+        "bytes": 9267,
+        "sha256": "d4f600d17606962eb16bad0963f8238e8fcd1c8bf74848c40f97bace8b90c2ae"
+      },
+      "ui/p3-140-today.js": {
+        "bytes": 13637,
+        "sha256": "6f9f79b3747e527a8e624d1dcab80d9182d11227eafca20a023645c02f04b8a0"
+      },
+      "ui/runtime-adapter.js": {
+        "bytes": 43574,
+        "sha256": "92a4bc92dd74ac7917209ab41cc961fb09f5870af4a1ee4348821f09069d002b"
+      },
+      "ui/state_machine.json": {
+        "bytes": 3633,
+        "sha256": "484b4455c40b2737c50138ce7e055ae526885ad6b63c24498b55f1e44525bbcd"
+      },
+      "ui/styles.css": {
+        "bytes": 52074,
+        "sha256": "661471198cd1213b0ad9f68422dbd989908d23aa42fabcc9f2e73b2da1e5e666"
+      },
+      "ui/viewport-adapter.css": {
+        "bytes": 186,
+        "sha256": "196fb16782004c5eeef3e931b929d91a522d4fe64cba3eb878b46791775519f4"
+      },
+      "ui/visual_contract.json": {
+        "bytes": 1949,
+        "sha256": "38ac6baf6bb1d54df5a31d247f69cdc972b7bcb14cf79f9e05d94bf8a5588d26"
+      }
+    }
+  },
+  "closure_documents": {
+    "file_count": 7,
+    "length_framed_tree_sha256": "a32bb2e0a6ef0cfa4c0a6b56fd433421e7b0bb59a7ff05d80684018900123e4f",
+    "entries": {
+      "ABF2_GATE_MATRIX.md": {
+        "bytes": 2275,
+        "sha256": "fdb9853d97f1536f4f5f4257d7d22b6c0cb848377f000a79c7eb03bd8d423f23"
+      },
+      "engineering_report.md": {
+        "bytes": 2351,
+        "sha256": "ce32f4521ea1d58e1fca40c64b2bdcb77f0ae4247d3d9f04b5dd1bdd23e6de8b"
+      },
+      "precontact_seal.json": {
+        "bytes": 672,
+        "sha256": "9fbd4585ed621459c75960dae640d76692bcb92a2889f74e37da2f8a6dec119e"
+      },
+      "receipt_v2_contract.md": {
+        "bytes": 2498,
+        "sha256": "07036facbc2f689ddd08aee0d4c22bc700257bc21b9b054411aa1502ee91b82e"
+      },
+      "replay.sh": {
+        "bytes": 1015,
+        "sha256": "15a388da9e05ed49fda5b664e2f31bd4ff963d3324906108f9a6a950bec3828e"
+      },
+      "test_design.md": {
+        "bytes": 2543,
+        "sha256": "6e0c271a7d03d91e01d12bd4bd65dd738e0efe2bcdf9fa02df03b35a55f0a741"
+      },
+      "write_allowlist.md": {
+        "bytes": 855,
+        "sha256": "ced411a686a8c9d15d01d6f1be8bcbfe9f9f14b077d6a00e84be18feb833ab2d"
+      }
+    }
+  },
+  "closure_tools": {
+    "file_count": 3,
+    "length_framed_tree_sha256": "fb66393e42ae53dfe117488f83d733caf58e54f62d662b27889a08428ee9f51c",
+    "entries": {
+      "cleanup_temp.sh": {
+        "bytes": 1058,
+        "sha256": "25a9f4ce9386087974536b3ecaf5d3762d2862498776b279c921a584ccc4bad3"
+      },
+      "finalize_manifest.py": {
+        "bytes": 6496,
+        "sha256": "3a0bc63f4031e5fe1348379165f3c60030d54c9be08922164fb9b4568f1680c7"
+      },
+      "generate_evidence.py": {
+        "bytes": 9210,
+        "sha256": "96f0934993d5b6375f20b53e406e12a0368cffd3304d61d29b86cde780cde4b4"
+      }
+    }
+  },
+  "evidence": {
+    "file_count": 15,
+    "length_framed_tree_sha256": "a1932a3f286a30694d1b1f7de3fb44464c595839afbcc46588d001bf9af3eb22",
+    "entries": {
+      "cargo_test.log": {
+        "bytes": 10068,
+        "sha256": "3fe156ff9f1a147c630cbe970c1889f30ffc1a9a69956c80da9d094397a34a7f"
+      },
+      "cleanup_receipt.json": {
+        "bytes": 262,
+        "sha256": "a3a9b7b9b4de28c385e244cab7eae17df22fc015f9b5efbbf89384cfd9ee8112"
+      },
+      "failure_review_reference.json": {
+        "bytes": 764,
+        "sha256": "3ec6e3bd3fec9eb6418bd31c8ca827f9c9f7e2a3a07f756bf09bdbed67421330"
+      },
+      "fixed_input_verification.json": {
+        "bytes": 3038,
+        "sha256": "1db72182abe338cd48fd2f055e003a41580ecaa85ebb804e5d67de72e43019e3"
+      },
+      "non_provider_regression.json": {
+        "bytes": 463,
+        "sha256": "4424ff2803a118d84ecea76739b3c0e603a8821c892f570d4480c13ad5739b82"
+      },
+      "phase_c_dirty_candidate_negative.json": {
+        "bytes": 246,
+        "sha256": "f54c5ea0cd7b8d91ca91ed222665d55ab2772b2fd69c6adb3e412336597d459a"
+      },
+      "phase_c_dirty_candidate_rejected.log": {
+        "bytes": 816,
+        "sha256": "71a4ed6b80bf982f2423c771a51376dbd4c212d17ad0752883ffed7707611cda"
+      },
+      "phase_c_legacy_phase_b_input.log": {
+        "bytes": 862,
+        "sha256": "12f21c8c1c57224c4f0269ce72addbf8032ebb0c7406ca10aa7d49ccace4491c"
+      },
+      "phase_c_missing_v2_receipt.log": {
+        "bytes": 6547,
+        "sha256": "5f7f0eb9df67b588cf62fcf29e777362d2bfd6d7cce8d453893235546bf98b82"
+      },
+      "phase_c_pre_root_negative.json": {
+        "bytes": 318,
+        "sha256": "185f917d998b28a84b565891f88539f309bd15fb02edebcfa53b8ee5ac74315d"
+      },
+      "prohibited_target_attestation.json": {
+        "bytes": 443,
+        "sha256": "9f84cf3fd6d68e794c4b514f356d320dcc2f7275a69c6b86f299df080d5b58f0"
+      },
+      "source_gate_diff.md": {
+        "bytes": 22592,
+        "sha256": "c526f6666e7a10656d419257ce6d4f30cfd30069f25b7d53f57c474d2a627677"
+      },
+      "source_lineage.json": {
+        "bytes": 926,
+        "sha256": "36eb45bef40c642bf05f39e5128a580873594f3886a518f6b6af2cc93322fc81"
+      },
+      "test_result.json": {
+        "bytes": 148,
+        "sha256": "db906d8056ec4b8e492fa1841621f9cbe4fed6b6ada2aea2508d3fb0429e37e4"
+      },
+      "v2_gate_dynamic_matrix.json": {
+        "bytes": 1342,
+        "sha256": "b0e9e5971c3248d874f4bbc5bb863fd5826112019446ca9aa3e8066ecefa9b59"
+      }
+    }
+  },
+  "cleanup": {
+    "schema": "lifeos.p3-141.provider-restoration-v2-gate.cleanup.v1",
+    "status": "REMOVED_EXACT_TASK_ROOT",
+    "temporary_root": "/private/tmp/lifeos-p3-141-provider-restoration-v2-gate-v1",
+    "marker_required": true,
+    "root_exists_after": false,
+    "prohibited_target_access": false
+  }
+}

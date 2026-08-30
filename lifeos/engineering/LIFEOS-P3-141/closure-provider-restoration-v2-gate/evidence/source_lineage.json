@@ -1,0 +1,24 @@
+{
+  "schema": "lifeos.p3-141.provider-restoration-v2-gate.source-lineage.v1",
+  "result": "PASS",
+  "starting_commit": "48a26320646219117b28e81cd77dd6c8206fe99c",
+  "starting_candidate": {
+    "file_count": 79,
+    "length_framed_tree_sha256": "e4e29b6d45c953aecf0688202d45a68c557cbacfb9a6bd58d8a441c9d7bc74c6"
+  },
+  "current_candidate": {
+    "file_count": 80,
+    "length_framed_tree_sha256": "1767d3c067631387b42a6ec03843deeeac14ce742b9015b39bbb4ad61e076874"
+  },
+  "allowed_delta": [
+    "candidate/build.rs",
+    "candidate/src/runtime.rs",
+    "candidate/tests/v2_phase_c_gate.rs"
+  ],
+  "source_diff": {
+    "path": "evidence/source_gate_diff.md",
+    "bytes": 22592,
+    "sha256": "c526f6666e7a10656d419257ce6d4f30cfd30069f25b7d53f57c474d2a627677"
+  },
+  "phase_c_candidate_identity": "resolved only from clean candidate worktree HEAD plus current candidate tree at build time; no constant or fallback is accepted"
+}

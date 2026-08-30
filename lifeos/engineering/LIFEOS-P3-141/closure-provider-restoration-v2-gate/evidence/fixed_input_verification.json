@@ -1,0 +1,83 @@
+{
+  "schema": "lifeos.p3-141.provider-restoration-v2-gate.fixed-inputs.v1",
+  "result": "PASS",
+  "entries": [
+    {
+      "role": "task_contract_revision_2",
+      "path": "lifeos/tasks/LIFEOS-P3-141_person_level_work_health_controlled_n1_pilot_revision_2.md",
+      "actual": {
+        "bytes": 5837,
+        "sha256": "c97419a1818e0aa6fe6fc61c487e3ef97746e199b2c7d22435d8c05090374800"
+      },
+      "matched": true
+    },
+    {
+      "role": "frozen_abf_revision_2",
+      "path": "lifeos/tasks/LIFEOS-P3-141_person_level_work_health_controlled_n1_pilot_acceptance_basis_freeze_revision_2.md",
+      "actual": {
+        "bytes": 2759,
+        "sha256": "096ad12beec63b78aaa3be92535b4a6ea632cdc4235c1d83f224db955d5dc9ea"
+      },
+      "matched": true
+    },
+    {
+      "role": "provider_restoration_user_confirmation",
+      "path": "lifeos/tasks/LIFEOS-P3-141_provider_restoration_user_confirmation.md",
+      "actual": {
+        "bytes": 800,
+        "sha256": "7cc795341a1452da39dd93d5db071624ae1f5fa67274c652dffc15eab3ba2d61"
+      },
+      "matched": true
+    },
+    {
+      "role": "withdrawal_pm_review",
+      "path": "lifeos/reviews/LIFEOS-P3-141_pm_phase_b_withdrawal_review.md",
+      "actual": {
+        "bytes": 1852,
+        "sha256": "199239330d96b01d776be129a44f3f04689ff15dbb8c8a7c4eb02b1fe0399d96"
+      },
+      "matched": true
+    },
+    {
+      "role": "historical_v1_fixed_input_inventory_read_only",
+      "path": "lifeos/tasks/LIFEOS-P3-141_fixed_input_inventory.json",
+      "actual": {
+        "bytes": 3388,
+        "sha256": "3439b723980066ba78c758d6e4e6f11c05d5cbfee7d36044417e8fc9a15b8855"
+      },
+      "matched": true
+    },
+    {
+      "role": "p3_140_final_manifest_read_only",
+      "path": "/Users/xxe/.codex/worktrees/a2e2/No.2/lifeos/engineering/LIFEOS-P3-140/closure-1/evidence/FINAL_MANIFEST.json",
+      "actual": {
+        "bytes": 23417,
+        "sha256": "aa4d9953d423217ab58558ed1f6b5000c48d0c1189e4cb890f9c309ec068df77"
+      },
+      "matched": true
+    },
+    {
+      "role": "p3_140_pm_final_read_only",
+      "path": "lifeos/reviews/LIFEOS-P3-140_pm_final_review.md",
+      "actual": {
+        "bytes": 5157,
+        "sha256": "3205a582e01c07d7b28336140592e429739a8fe46b4cb920d2f04caefb1ba440"
+      },
+      "matched": true
+    }
+  ],
+  "candidate_lineage": {
+    "p3_140_final_candidate_file_count": 79,
+    "p3_140_final_candidate_tree_sha256": "6d5659826e3e4b642b94c848d9e97f43cd93f9a2468863ebd396a4f76389940e",
+    "p3_141_withdrawn_candidate_commit": "c7087586d89a52bc252765ec89fa63611f585d0e",
+    "p3_141_withdrawn_candidate_file_count": 79,
+    "p3_141_withdrawn_phase_b_engineering_manifest_sha256": "e405286cda30aa7aa46680bc5b38da6289abde2a64c952c4345eeca707129504",
+    "p3_141_withdrawn_phase_b_review_manifest_sha256": "2906457402872d4f1b76420ea5cdafeaa383e0349ce7304149868ff150dbcd89"
+  },
+  "governance": {
+    "phase_b_pass_withdrawn": true,
+    "phase_c_paused": true,
+    "pilot_6_closure_access_prohibited": true,
+    "historical_attempts_read_only": true
+  }
+}

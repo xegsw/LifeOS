@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.1",
+  "scope": "fixed synthetic P3-140 Today adapter on the retained LifeOS shell",
+  "states": {
+    "today": ["normal", "empty", "insufficient", "counterfactual", "missing_health", "health_stop", "cross_domain_limited"],
+    "today_intelligence": ["candidate", "feedback_recorded", "target_stale_recomputed", "fail_closed"],
+    "context": ["candidate", "active", "watching", "closed"],
+    "ai_context": ["person_page_selection", "health_removed_temporarily"],
+    "ai_panel": ["closed", "open_with_visible_context"],
+    "candidate": ["candidate", "confirmed_demo", "edited_demo", "rejected_demo", "ignored_demo", "corrected_demo"],
+    "memory_trace": ["connected", "source_unavailable"],
+    "domain_activation": ["work_health_enabled", "other_unenabled", "gate_blocked"],
+    "motion": ["standard", "reduced"]
+  },
+  "transitions": [
+    { "id": "S-01", "from": "today.normal", "event": "choose_empty", "to": "today.empty", "persistent_effect": "none" },
+    { "id": "S-02", "from": "today.normal", "event": "choose_insufficient", "to": "today.insufficient", "persistent_effect": "none" },
+    { "id": "S-03", "from": "context.candidate", "event": "user_confirms", "to": "context.active", "persistent_effect": "demo_receipt_only" },
+    { "id": "S-04", "from": "context.candidate", "event": "user_rejects", "to": "context.candidate", "persistent_effect": "none" },
+    { "id": "S-05", "from": "ai_context.person_page_selection", "event": "temporarily_remove_health", "to": "ai_context.health_removed_temporarily", "persistent_effect": "none" },
+    { "id": "S-06", "from": "candidate.candidate", "event": "confirm_edit_reject_ignore_or_correct", "to": "candidate.*_demo", "persistent_effect": "none" },
+    { "id": "S-07", "from": "memory_trace.connected", "event": "source_unavailable", "to": "memory_trace.source_unavailable", "persistent_effect": "candidate_generation_blocked" },
+    { "id": "S-08", "from": "domain_activation.other_unenabled", "event": "gates_incomplete", "to": "domain_activation.gate_blocked", "persistent_effect": "none" },
+    { "id": "S-09", "from": "motion.standard", "event": "user_toggle_or_os_preference", "to": "motion.reduced", "persistent_effect": "none" },
+    { "id": "S-10", "from": "any", "event": "refresh_or_close_reopen", "to": "initial_fixture", "persistent_effect": "none" },
+    { "id": "S-11", "from": "ai_panel.closed", "event": "click_or_submit_global_ai_bar", "to": "ai_panel.open_with_visible_context", "persistent_effect": "none" }
+    ,{ "id": "S-12", "from": "today.normal", "event": "fixed_synthetic_get_today", "to": "today_intelligence.candidate", "persistent_effect": "candidate_and_audit_only" }
+    ,{ "id": "S-13", "from": "today_intelligence.candidate", "event": "reject_or_correct", "to": "today_intelligence.target_stale_recomputed", "persistent_effect": "only_target_slice_invalidated" }
+    ,{ "id": "S-14", "from": "today_intelligence.candidate", "event": "authorization_budget_or_generation_failure", "to": "today_intelligence.fail_closed", "persistent_effect": "none" }
+  ],
+  "invariants": [
+    "Only P3-140 Today transitions invoke the existing get_today IPC with fixed synthetic DTOs; they call no Provider, model, network, external tool, file or Agent capability.",
+    "Candidate objects do not become confirmed facts without explicit user action.",
+    "P3-140 feedback remains candidate-only; reject or correct invalidates only the referenced result and never promotes durable memory.",
+    "Temporary context removal never changes durable facts.",
+    "A source-unavailable trace cannot support a reliable suggestion."
+  ]
+}

@@ -1,0 +1,10 @@
+   Compiling lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/971c/No.2/lifeos/engineering/LIFEOS-P3-141/closure-provider-restoration-v2-gate/candidate)
+error: failed to run custom build command for `lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/971c/No.2/lifeos/engineering/LIFEOS-P3-141/closure-provider-restoration-v2-gate/candidate)`
+
+Caused by:
+  process didn't exit successfully: `/private/tmp/lifeos-p3-141-provider-restoration-v2-gate-v1/cargo-target/debug/build/lifeos-p3-141-f971882e22a1f22b/build-script-build` (exit status: 101)
+  --- stderr
+
+  thread 'main' (13935632) panicked at build.rs:37:5:
+  LIFEOS_P3_141_PHASE_C_V2_GATE rejected before runtime-root inspection: legacy Phase-B receipt inputs are prohibited; use the v2 independently-owned receipt path only
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
