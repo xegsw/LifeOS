@@ -1,0 +1,20 @@
+{
+  "schema": "lifeos.p3_141.attempt_7.phase_gate_mutation.v1",
+  "mutation": "Provide only the literal LIFEOS-P3-141-PHASE-B-INDEPENDENT-PASS at build time; no independent-review artifact, signature, manifest verification, or real-data target was supplied.",
+  "synthetic_runtime_root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1/p0-env-root",
+  "prohibited_targets_touched": false,
+  "control_without_literal": {
+    "command_result": "cargo check failed",
+    "observed_error": "phase_b_independent_pass_required before runtime-root inspection",
+    "evidence": "../logs/p0_phase_gate_missing_receipt_control.log"
+  },
+  "mutation_with_literal": {
+    "command_result": "cargo check succeeded",
+    "observed_result": "build accepted real_self_use mode and a synthetic runtime root without verifying a review artifact",
+    "evidence": "../logs/p0_phase_gate_env_bypass_cargo_check.log"
+  },
+  "static_corroboration": "build.rs reads the environment value and compares it to the literal before runtime root inspection; no authenticated receipt or independent manifest check exists.",
+  "severity": "P0",
+  "abf_impact": ["ABF-I-01", "ABF-M-003", "AC-03"],
+  "disposition": "STOP_POSITIVE_EVIDENCE_REWORK_REQUIRED"
+}

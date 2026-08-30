@@ -1,0 +1,35 @@
+{
+  "schema_version": "lifeos.p3_141.independent_review.precontact_seal.v1",
+  "task_id": "LIFEOS-P3-141",
+  "attempt": "attempt-7",
+  "phase": "B",
+  "sealed_at_utc": "2026-08-30T07:05:49Z",
+  "candidate_commit_required": "8eeaa0353c8f275d4a6321e3d3f66535b6e5f12b",
+  "candidate_contact_before_seal": false,
+  "prior_attempt_assets_reused": false,
+  "test_design": {
+    "path": "test_design.md",
+    "sha256": "5e5fca01734f68ca2e722ee278508f750092944146d4692e3c2c3b2bd01bcbf0"
+  },
+  "write_allowlist_file": {
+    "path": "write_allowlist.md",
+    "sha256": "a53a8ca50c47946eba6de4d86654ae4f996baf99223bf530551dea0c5f1201cf"
+  },
+  "fixed_input_inventory": {
+    "pm_absolute_path": "/Users/xxe/Documents/No.2/lifeos/tasks/LIFEOS-P3-141_fixed_input_inventory.json",
+    "sha256": "3439b723980066ba78c758d6e4e6f11c05d5cbfee7d36044417e8fc9a15b8855",
+    "entry_count": 12,
+    "all_bytes_and_hashes_match": true
+  },
+  "abf": {
+    "id": "ABF-P3-141-v1",
+    "sha256": "ff05a7a4b52ceef0a4325294cabbfe5ad91c131160d8b9c123bd8fa59fd5c8b2",
+    "status": "Frozen"
+  },
+  "write_allowlist": [
+    "lifeos/reviews/LIFEOS-P3-141/independent-review/attempt-7/**",
+    "/private/tmp/lifeos-p3-141-controlled-pilot-v1/**"
+  ],
+  "prohibited_target_policy": "No real-data, retained-Pilot, credential, Provider-target, or network target was and will be accessed, probed, statted, inventoried, hashed, copied, created, or cleaned by this Phase B attempt.",
+  "positive_evidence_gate": "Candidate contact is permitted only after this sealed document. A P0 stops positive evidence and the candidate is never repaired."
+}
