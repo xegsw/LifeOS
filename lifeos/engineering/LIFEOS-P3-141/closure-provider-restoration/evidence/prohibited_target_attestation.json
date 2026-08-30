@@ -1,0 +1,11 @@
+{
+  "schema": "lifeos.p3-141.provider-restoration.prohibited-target-attestation.v1",
+  "result": "PASS",
+  "temporary_root": "/private/tmp/lifeos-p3-141-provider-restoration-closure-v1",
+  "assertions": [
+    "all runtime, cargo target, bundle, loopback, PID, AX and receipt activity used only the declared temporary root",
+    "only fictional synthetic fixture data was used",
+    "no external provider, network, credential, or real personal content was contacted",
+    "prohibited real-pilot target was not accessed, probed, created, copied, hashed, read, written or cleaned"
+  ]
+}

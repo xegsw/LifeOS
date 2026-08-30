@@ -1,0 +1,27 @@
+{
+  "schema": "lifeos.p3-141.provider-restoration.provider-state-machine.v1",
+  "result": "PASS",
+  "single_enable_path": [
+    "save non-secret settings",
+    "successful synthetic loopback test",
+    "explicit enable"
+  ],
+  "first_send_lock": {
+    "test": "custom_openai_compatible_loopback_is_protocol_bound_and_first_send_locks",
+    "after_successful_send": "Custom OpenAI-compatible locked",
+    "switch_attempt": "LM Studio",
+    "rejection": "provider_locked_after_first_send"
+  },
+  "no_fallback": {
+    "test": "protocol_adapters_cover_the_closed_four_profiles_and_reject_mismatches",
+    "assertion": "profile/mode mismatch rejected; no alternate adapter selected"
+  },
+  "no_implicit_repeat": {
+    "test": "loopback_probe_send_feedback_restart_and_no_implicit_repeat",
+    "assertion": "restart does not create another provider send"
+  },
+  "failure_atomicity": {
+    "test": "provider_failures_do_not_persist_derived_objects_or_enable",
+    "assertion": "failure preserves DB sentinel and no enablement"
+  }
+}

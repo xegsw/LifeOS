@@ -1,0 +1,39 @@
+{
+  "all_passed" : true,
+  "controls" : [
+    {
+      "name" : "window_only_rejected",
+      "passed" : true,
+      "roles" : [
+        "AXWindow",
+        "AXGroup",
+        "AXStaticText"
+      ]
+    },
+    {
+      "name" : "app_html_only_rejected",
+      "passed" : true,
+      "roles" : [
+        "AXWindow",
+        "AXHTMLContent"
+      ]
+    },
+    {
+      "name" : "native_web_area_accepted",
+      "passed" : true,
+      "roles" : [
+        "AXWindow",
+        "AXWebArea"
+      ]
+    },
+    {
+      "name" : "native_web_view_accepted",
+      "passed" : true,
+      "roles" : [
+        "AXWindow",
+        "AXWebView"
+      ]
+    }
+  ],
+  "mode" : "strict_native_web_node_counterexamples"
+}

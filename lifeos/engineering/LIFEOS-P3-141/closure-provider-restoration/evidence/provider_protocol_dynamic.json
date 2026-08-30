@@ -1,0 +1,45 @@
+{
+  "schema": "lifeos.p3-141.provider-restoration.dynamic-protocol.v1",
+  "result": "PASS",
+  "execution": "offline synthetic loopback only; no external provider, credential, or network target",
+  "positive": [
+    {
+      "profiles": [
+        "OpenAI",
+        "Anthropic",
+        "Ollama",
+        "LM Studio"
+      ],
+      "test": "protocol_adapters_cover_the_closed_four_profiles_and_reject_mismatches",
+      "assertion": "profile-specific probe and inference envelopes accepted by loopback"
+    },
+    {
+      "profiles": [
+        "Custom OpenAI-compatible"
+      ],
+      "test": "custom_openai_compatible_loopback_is_protocol_bound_and_first_send_locks",
+      "assertion": "GET /fixture/v1/models then POST /fixture/v1/chat/completions accepted"
+    }
+  ],
+  "negative": [
+    {
+      "test": "custom_profile_rejects_wrong_envelope_response_mode_and_credential_order",
+      "assertions": [
+        "wrong models envelope rejected",
+        "wrong chat response rejected",
+        "wrong mode rejected",
+        "enable before successful test rejected"
+      ]
+    },
+    {
+      "test": "loopback_timeout_http_malformed_oversize_disconnect_and_protocol_mismatch_fail_closed",
+      "assertion": "transport/protocol failure closes before derived persistence or enablement"
+    }
+  ],
+  "not_a_string_scan": true,
+  "test_log": {
+    "path": "evidence/cargo_test.log",
+    "bytes": 5274,
+    "sha256": "5a470309cd54e0ae523e4b93e805ba18ee030d4b9927ce0291481527fdbcb0b4"
+  }
+}
