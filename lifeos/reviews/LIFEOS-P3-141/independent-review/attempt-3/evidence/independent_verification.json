@@ -1,0 +1,160 @@
+{
+  "checks": [
+    {
+      "detail": "/Users/xxe/Documents/No.2/lifeos/tasks/LIFEOS-P3-141_person_level_work_health_controlled_n1_pilot.md",
+      "id": "fixed:task_contract",
+      "status": "PASS"
+    },
+    {
+      "detail": "/Users/xxe/Documents/No.2/lifeos/tasks/LIFEOS-P3-141_person_level_work_health_controlled_n1_pilot_acceptance_basis_freeze.md",
+      "id": "fixed:frozen_abf",
+      "status": "PASS"
+    },
+    {
+      "detail": "/Users/xxe/Documents/No.2/lifeos/tasks/LIFEOS-P3-141_user_confirmation.md",
+      "id": "fixed:user_confirmation",
+      "status": "PASS"
+    },
+    {
+      "detail": "/Users/xxe/Documents/No.2/lifeos/deliverables/LIFEOS-P3-138_long_term_person_memory_driven_cross_domain_today_intelligence_core_experience_contract.md",
+      "id": "fixed:p3_138_product_contract",
+      "status": "PASS"
+    },
+    {
+      "detail": "/Users/xxe/Documents/No.2/lifeos/architecture/LifeOS架构基线V1.0.md",
+      "id": "fixed:architecture_v1",
+      "status": "PASS"
+    },
+    {
+      "detail": "/Users/xxe/Documents/No.2/lifeos/tasks/LIFEOS-P3-137_three_step_ai_interaction_and_background_context_assembly_simplification.md",
+      "id": "fixed:p3_137_task",
+      "status": "PASS"
+    },
+    {
+      "detail": "/Users/xxe/Documents/No.2/lifeos/reviews/LIFEOS-P3-137_pm_final_review.md",
+      "id": "fixed:p3_137_pm_final",
+      "status": "PASS"
+    },
+    {
+      "detail": "/Users/xxe/Documents/No.2/lifeos/reviews/LIFEOS-P3-139_pm_final_review.md",
+      "id": "fixed:p3_139_pm_final",
+      "status": "PASS"
+    },
+    {
+      "detail": "/Users/xxe/Documents/No.2/lifeos/reviews/LIFEOS-P3-140_pm_final_review.md",
+      "id": "fixed:p3_140_pm_final",
+      "status": "PASS"
+    },
+    {
+      "detail": "/Users/xxe/.codex/worktrees/b381/No.2/lifeos/engineering/LIFEOS-P3-139/evidence/FINAL_MANIFEST.json",
+      "id": "fixed:p3_139_manifest",
+      "status": "PASS"
+    },
+    {
+      "detail": "/Users/xxe/.codex/worktrees/a2e2/No.2/lifeos/engineering/LIFEOS-P3-140/closure-1/evidence/FINAL_MANIFEST.json",
+      "id": "fixed:p3_140_manifest",
+      "status": "PASS"
+    },
+    {
+      "detail": "/Users/xxe/Documents/No.2/lifeos/reviews/LIFEOS-P3-140/independent-review/FINAL_MANIFEST.json",
+      "id": "fixed:p3_140_independent_manifest",
+      "status": "PASS"
+    },
+    {
+      "detail": "77/63e2bc5525bb8d57cd0b3a8d02e87d9d5379a1c18f385ed48d0b284cb53acc9e",
+      "id": "lineage:p3_139",
+      "status": "PASS"
+    },
+    {
+      "detail": "79/6d5659826e3e4b642b94c848d9e97f43cd93f9a2468863ebd396a4f76389940e",
+      "id": "lineage:p3_140",
+      "status": "PASS"
+    },
+    {
+      "detail": "79/6a45b656a7bd1203485818872242d4ce2b9db572f197bec869356a6d807a87e1",
+      "id": "candidate:tree",
+      "status": "PASS"
+    },
+    {
+      "detail": "['capture_record', 'get_today', 'runtime_status', 'confirm_capture_context', 'get_context_recovery', 'get_context_next_action', 'decide_context_next_action', 'record_action_result', 'assemble_global_ai_context', 'get_evidence_backed_understanding', 'decide_understanding_feedback', 'get_ai_provider_settings', 'save_ai_provider_settings', 'set_ai_provider_session_credential', 'test_ai_provider_connection', 'set_ai_provider_enabled', 'upsert_durable_memory', 'update_current_state', 'resolve_request_context', 'get_context_disclosure_receipt']",
+      "id": "ipc:exact_20",
+      "status": "PASS"
+    },
+    {
+      "detail": "['openai', 'anthropic', 'ollama', 'lm_studio']",
+      "id": "provider:closed_four",
+      "status": "PASS"
+    },
+    {
+      "detail": "Provider enum vocabulary",
+      "id": "provider:no_custom",
+      "status": "PASS"
+    },
+    {
+      "detail": "static lock gate",
+      "id": "provider:first_send_lock",
+      "status": "PASS"
+    },
+    {
+      "detail": "build.rs ordering",
+      "id": "gate:receipt_precedes_root",
+      "status": "PASS"
+    },
+    {
+      "detail": "ownership/schema functions",
+      "id": "root:ownership_marker",
+      "status": "PASS"
+    },
+    {
+      "detail": "sidecar guard",
+      "id": "root:sidecar_rejection",
+      "status": "PASS"
+    },
+    {
+      "detail": "resolver stable errors",
+      "id": "resolver:budget_failure_closed",
+      "status": "PASS"
+    },
+    {
+      "detail": "feedback implementation",
+      "id": "feedback:stale_path",
+      "status": "PASS"
+    },
+    {
+      "detail": "runtime/UI removal seams",
+      "id": "health:request_local_removal",
+      "status": "PASS"
+    },
+    {
+      "detail": "P3-141 permits 14 Work records across 7–14 days",
+      "id": "phase_c:real_total_limit_14",
+      "status": "FAIL"
+    },
+    {
+      "detail": "daily quota enforcement",
+      "id": "phase_c:daily_work_quota",
+      "status": "FAIL"
+    },
+    {
+      "detail": "required bounded Health/Fitness fields",
+      "id": "phase_c:structured_health_fields",
+      "status": "FAIL"
+    },
+    {
+      "detail": "maximum three confirmed Durable Memory records",
+      "id": "phase_c:memory_cap_three",
+      "status": "FAIL"
+    },
+    {
+      "detail": "P3-141 real-flow identifiers must not retain P3-133 contract namespace",
+      "id": "phase_c:current_contract_identity",
+      "status": "FAIL"
+    }
+  ],
+  "fail_count": 5,
+  "fixed_input_pass": 12,
+  "fixed_input_total": 12,
+  "pass_count": 25,
+  "phase_b_pass": false,
+  "schema": "lifeos.p3-141.attempt-3.independent-verifier.v1"
+}

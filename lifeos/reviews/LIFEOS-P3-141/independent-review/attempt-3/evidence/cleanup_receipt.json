@@ -1,0 +1,30 @@
+{
+  "schema": "lifeos.p3-141.attempt-3.cleanup-receipt.v1",
+  "temporary_root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1",
+  "precondition": {
+    "root_was_ordinary_directory": true,
+    "root_was_not_symlink": true,
+    "marker_was_direct_regular_file": true,
+    "marker_was_not_symlink": true,
+    "marker_value": "LIFEOS-P3-141 independent-review attempt-3 synthetic-only disposable root"
+  },
+  "cleanup": {
+    "method": "review-owned fixed-literal cleanup_review_assets.py",
+    "no_glob": true,
+    "no_parent_discovery": true,
+    "recovery": {
+      "first_pass": "removed the marker but stopped on a concurrently changing synthetic child directory; no target outside the literal root was touched",
+      "continued_without_marker": false,
+      "recovery_precheck": "literal root only; ordinary directory; no symbolic links; only review-mutations synthetic directories at depth two",
+      "marker_restored_from_original_literal": true,
+      "final_marker_gated_pass": true
+    },
+    "postcondition_root_absent": true
+  },
+  "retention": {
+    "candidate_read_only": true,
+    "pilot_6_not_accessed_or_cleaned": true,
+    "real_database_not_accessed_or_cleaned": true
+  },
+  "result": "PASS"
+}
