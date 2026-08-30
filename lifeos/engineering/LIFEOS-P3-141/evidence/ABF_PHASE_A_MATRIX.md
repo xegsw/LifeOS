@@ -19,7 +19,7 @@ Status vocabulary: `PASS_SYNTHETIC_ONLY` is evidence that the row's synthetic-co
 | ABF-M-013 | PASS_SYNTHETIC_ONLY | `synthetic_behavior.json`, Today safety tests | High-risk signal produces a conservative non-diagnostic stop. |
 | ABF-M-014 | PASS_SYNTHETIC_ONLY | `synthetic_behavior.json`, closure and Provider negative tests | Authorization, stale, budget, DB and Provider failures stop before their protected write/dispatch. |
 | ABF-M-015 | PASS_SYNTHETIC_ONLY | `synthetic_behavior.json`, lifecycle test | Restart reloads lock but does not enable or dispatch; repeated request id reuses result. |
-| ABF-M-016 | PASS_SYNTHETIC_ONLY | `actual_tauri_viewports.json` | Three known launch PIDs each bind exactly one AXWindow and one AXWebArea. |
+| ABF-M-016 | PASS_SYNTHETIC_ONLY | `actual_tauri_viewports.json`, `screenshots/desktop_redacted_state.jpeg`, `screenshots/compact_redacted_state.jpeg`, `screenshots/narrow_redacted_state.jpeg` | Three known launch PIDs each bind exactly one AXWindow and one AXWebArea; each direct PID-bound window has a separately hashed, fixed-synthetic redacted-state screenshot. |
 | ABF-M-017 | PENDING_PHASE_C | — | User-only non-content real-use receipt is outside Phase A. |
 | ABF-M-018 | PENDING_PHASE_B | — | A fresh independent-review session is mandatory and has not started. |
 | ABF-M-019 | PASS_SYNTHETIC_ONLY | `cleanup_and_retention.json`, `tools/cleanup_temp.sh` | Exact temporary root is absent; prohibited real targets were not accessed or cleaned. |

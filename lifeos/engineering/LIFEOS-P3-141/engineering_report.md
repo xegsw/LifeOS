@@ -19,11 +19,11 @@
 - 预接触封存：`test_design.md` 和 `write_allowlist.md` 的 SHA-256 在接触候选前写入 seal，复核未变。
 - 最终可复跑合成命令：`sh lifeos/engineering/LIFEOS-P3-141/tools/replay_phase_a.sh`；最终结果为 Rust 42/42 passed。
 - Phase gate：无 receipt 的 `real_self_use` offline build 返回 101，报出 `phase_b_independent_pass_required before runtime-root inspection`。
-- actual Tauri：桌面、compact、narrow 三次独立启动均以各自返回 PID 绑定 1 个 `AXWindow` 和 1 个 `AXWebArea`；桌面档通过原生 AX 执行了 Health 本次移除和失败关闭，界面显示 `context_budget_rejected`。
+- actual Tauri：桌面、compact、narrow 三次独立启动均以各自返回 PID 绑定 1 个 `AXWindow` 和 1 个 `AXWebArea`；三档都执行并观察到合成 `context_budget_rejected` 失败关闭。每个直接 PID-bound AX 窗口都留下单独哈希的固定合成无敏感状态截图：`evidence/screenshots/desktop_redacted_state.jpeg`（1280×1024）、`compact_redacted_state.jpeg`（700×760）与 `narrow_redacted_state.jpeg`（560×640）。
 - 内容排除 scanner：禁止 Pilot 标记 0 命中；Evidence 只记录虚构夹具和非内容状态。
 - 清理：唯一临时根已精确移除；任何真实目标均未访问或清理。
 
-完整逐行状态见 [ABF_PHASE_A_MATRIX.md](evidence/ABF_PHASE_A_MATRIX.md)。实际 GUI 记录见 [actual_tauri_viewports.json](evidence/actual_tauri_viewports.json)。
+完整逐行状态见 [ABF_PHASE_A_MATRIX.md](evidence/ABF_PHASE_A_MATRIX.md)。实际 GUI 的 PID/AX/WebView/截图哈希记录见 [actual_tauri_viewports.json](evidence/actual_tauri_viewports.json)。
 
 ## 问题与保留项
 

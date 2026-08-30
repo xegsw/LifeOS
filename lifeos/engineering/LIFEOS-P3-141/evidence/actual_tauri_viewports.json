@@ -1,12 +1,12 @@
 {
   "schema": "lifeos.p3-141.actual-tauri-ax-webview.v1",
   "phase": "A_synthetic",
-  "launch_binding": "each record uses only the PID printed by that launch; no process or window enumeration was used",
+  "launch_binding": "each record uses only the PID printed by that launch; direct PID -> one AXWindow -> one AXWebArea was observed before the screenshot. No process or window enumeration was used.",
   "records": [
-    {"viewport": "desktop", "pid": 16404, "title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "size": [1280, 1024], "ax_web_area_count": 1, "interaction": ["本次移除 Health", "验证失败关闭"], "observed_failure_close": "context_budget_rejected"},
-    {"viewport": "compact", "pid": 16648, "title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "size": [700, 760], "ax_web_area_count": 1},
-    {"viewport": "narrow", "pid": 16768, "title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "size": [560, 640], "ax_web_area_count": 1}
+    {"viewport": "desktop", "pid": 19667, "title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "position": [320, 37], "size": [1280, 1024], "ax_web_area_count": 1, "interaction": ["本次移除 Health", "验证失败关闭"], "observed_failure_close": "context_budget_rejected", "screenshot": "screenshots/desktop_redacted_state.jpeg", "screenshot_sha256": "7cd6cd2843b26b6ea162beb5b424218e9fe5ccde71a135ae8ad58eff6f11a45a", "screenshot_dimensions": [1280, 1024]},
+    {"viewport": "compact", "pid": 20253, "title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "position": [320, 37], "size": [700, 760], "ax_web_area_count": 1, "interaction": ["验证失败关闭"], "observed_failure_close": "context_budget_rejected", "screenshot": "screenshots/compact_redacted_state.jpeg", "screenshot_sha256": "f57fda31b33e1d3e38a27b53e6a7fedceeb1805b8ef0779af1951c568f58966f", "screenshot_dimensions": [700, 760]},
+    {"viewport": "narrow", "pid": 20522, "title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "position": [320, 37], "size": [560, 640], "ax_web_area_count": 1, "interaction": ["验证失败关闭"], "observed_failure_close": "context_budget_rejected", "screenshot": "screenshots/narrow_redacted_state.jpeg", "screenshot_sha256": "b821405162984b87957f79e85e6b98a113c3e2d4c820b65ac747f57dbd7665d0", "screenshot_dimensions": [560, 640]}
   ],
-  "content_boundary": "AX observations were limited to synthetic UI labels and non-content failure state",
+  "content_boundary": "AX observations and screenshots were limited to fixed synthetic UI labels; non-content failure-close state was observed separately through the same direct app accessibility target. The three retained frames contain no real text, Health data, credentials, real Provider, real Pilot, or network response.",
   "result": "PASS_SYNTHETIC_ONLY"
 }
