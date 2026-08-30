@@ -1,0 +1,62 @@
+{
+  "task_id": "LIFEOS-P3-141",
+  "attempt": 4,
+  "candidate_commit": "d35a72bf6fbcb9d6cdc905eac100679b69c97e61",
+  "launch_method": "three new receipt-enabled offline Tauri launches with controlled synthetic fixture only",
+  "binding_method": "each launch PID was queried directly through AXUIElementCreateApplication(pid); no global process/window enumeration",
+  "computer_use": {
+    "used": true,
+    "purpose": "one local-app targeting attempt for the active debug Tauri bundle",
+    "result": "debug bundle was not registered in Computer Use app inventory; no macOS Accessibility authorization error or prompt occurred",
+    "follow_up": "direct PID-scoped AX binding was used and succeeded; no retry was required"
+  },
+  "viewports": [
+    {
+      "name": "desktop",
+      "requested_outer_px": [1280, 1024],
+      "launch_pid": 3695,
+      "ax_title": "LifeOS · P3-141",
+      "ax_window": true,
+      "webview_accessibility_role": "AXWebArea",
+      "ax_outer_frame_px": {"x": 221, "y": 33, "width": 1280, "height": 949},
+      "receipt_observed_inner_logical": [1280, 949],
+      "receipt_observed_outer_logical": [1280, 949],
+      "screenshot": "screenshots/actual-tauri-desktop-1280x1024.png",
+      "screenshot_sha256": "5d4946615cf693279980fe4d0f075384465d623c5963a63a6ab1ad7ed8f57a4e"
+    },
+    {
+      "name": "compact",
+      "requested_outer_px": [700, 760],
+      "launch_pid": 3758,
+      "ax_title": "LifeOS · P3-141",
+      "ax_window": true,
+      "webview_accessibility_role": "AXWebArea",
+      "ax_outer_frame_px": {"x": 221, "y": 33, "width": 700, "height": 760},
+      "receipt_observed_inner_logical": [1280, 949],
+      "receipt_observed_outer_logical": [1280, 949],
+      "screenshot": "screenshots/actual-tauri-compact-700x760.png",
+      "screenshot_sha256": "eef50acc476ffc27064bd1795433f7eb2ff0e965f25d4252d5a64200c490913c"
+    },
+    {
+      "name": "narrow",
+      "requested_outer_px": [560, 640],
+      "launch_pid": 3794,
+      "ax_title": "LifeOS · P3-141",
+      "ax_window": true,
+      "webview_accessibility_role": "AXWebArea",
+      "ax_outer_frame_px": {"x": 221, "y": 33, "width": 560, "height": 640},
+      "receipt_observed_inner_logical": [1280, 949],
+      "receipt_observed_outer_logical": [1280, 949],
+      "screenshot": "screenshots/actual-tauri-narrow-560x640.png",
+      "screenshot_sha256": "439ae0221923ae9cfa64e349e8bcf1f1dda5567ae6d093503c2b1dc4ab0a1092"
+    }
+  ],
+  "content_boundary": "screenshots and receipts contain controlled synthetic/de-identified UI only; no real text, credentials, provider request or network traffic",
+  "result": {
+    "direct_pid_ax_binding": "PASS",
+    "actual_outer_frame_compact_and_narrow": "PASS",
+    "receipt_matches_actual_inner_and_outer_all_tiers": "FAIL",
+    "severity": "P0",
+    "reason": "compact and narrow receipts retained 1280x949 after the AX window had resized to their requested geometry; desktop requested 1280x1024 was likewise observed/receipted as 1280x949. The candidate records startup receipt geometry before the platform resize has settled."
+  }
+}

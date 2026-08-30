@@ -1,0 +1,102 @@
+{
+  "schema": "lifeos-p3-141-attempt-4-final-manifest-v1",
+  "task_id": "LIFEOS-P3-141",
+  "attempt": 4,
+  "candidate_commit": "d35a72bf6fbcb9d6cdc905eac100679b69c97e61",
+  "self_reference": {
+    "excluded_path": "FINAL_MANIFEST.json",
+    "reason": "A manifest cannot include its own final byte hash; every other review artifact is individually hashed."
+  },
+  "files": [
+    {
+      "path": "evidence/matrices/actual_tauri_viewports.json",
+      "sha256": "61f3cc4dd1019f466c2a2d6b66b9a71314b4a5daadb29c1b717ca53f02f1aa7a",
+      "bytes": 3078
+    },
+    {
+      "path": "evidence/matrices/cleanup_and_retention.json",
+      "sha256": "df21a016770dd20084324e3b65ffaf0382bc5fd1eff3581d5a8b24d8d598ec4c",
+      "bytes": 369
+    },
+    {
+      "path": "evidence/matrices/dynamic_runtime_matrix.json",
+      "sha256": "c5e30bb31d752725f4422da695ce888fb0ac16bcbf09b537187984e9bb634e87",
+      "bytes": 4622
+    },
+    {
+      "path": "evidence/matrices/fixed_inputs_and_lineage.json",
+      "sha256": "e7415987d64dd6f9a2f01c0e32dcdf897b3d9986f40216c4f8a554c47bb0725f",
+      "bytes": 47930
+    },
+    {
+      "path": "evidence/matrices/mutation_matrix.json",
+      "sha256": "99a4c4fa158fc8ea4efcc9d4a43d369396dba1be19cadbfaa6dc4422ae7d028e",
+      "bytes": 2433
+    },
+    {
+      "path": "evidence/matrices/review_scope_and_identity.json",
+      "sha256": "cc752451d551ac6a3b2aa2e7285ee724da1dcf2293f12f7f97aca6bf088f4d6d",
+      "bytes": 957
+    },
+    {
+      "path": "independent_review.md",
+      "sha256": "d68bc861da3d22490d080707d47b615782f0691526414b610f52de6956f8fcb8",
+      "bytes": 7709
+    },
+    {
+      "path": "precontact_seal.json",
+      "sha256": "3891a20793047d4aac9d911a0d2e09151b219a54b72a1c638cad54bfa9355aa8",
+      "bytes": 1038
+    },
+    {
+      "path": "screenshots/actual-tauri-compact-700x760.png",
+      "sha256": "eef50acc476ffc27064bd1795433f7eb2ff0e965f25d4252d5a64200c490913c",
+      "bytes": 1320578
+    },
+    {
+      "path": "screenshots/actual-tauri-desktop-1280x1024.png",
+      "sha256": "5d4946615cf693279980fe4d0f075384465d623c5963a63a6ab1ad7ed8f57a4e",
+      "bytes": 3042171
+    },
+    {
+      "path": "screenshots/actual-tauri-narrow-560x640.png",
+      "sha256": "439ae0221923ae9cfa64e349e8bcf1f1dda5567ae6d093503c2b1dc4ab0a1092",
+      "bytes": 877152
+    },
+    {
+      "path": "test_design.md",
+      "sha256": "a8f9c337261303cbd21b3396617afa5baa9671616488f16a42b5e4d255edc760",
+      "bytes": 7905
+    },
+    {
+      "path": "tools/attempt4_independent_runtime_tests.rs",
+      "sha256": "e1d81a727205c8fce020897333ba5b0e03dc5b9c9ab0dc2e20be2058dc594ef9",
+      "bytes": 19203
+    },
+    {
+      "path": "tools/ax_pid_window.swift",
+      "sha256": "724f4f78305445131ea6fca0f8ef82638de2b68d1de415134611f0fc832dd105",
+      "bytes": 3310
+    },
+    {
+      "path": "tools/cleanup_attempt4.py",
+      "sha256": "27bbb6638b940eb3955be76144271e37ad06380a487f67f9b450258d7eea7893",
+      "bytes": 1674
+    },
+    {
+      "path": "tools/generate_final_manifest.py",
+      "sha256": "a705dd5bac66dfeda607c2321d0eea44b953666927eb7e98ccc8a59a0dbe64e7",
+      "bytes": 1503
+    },
+    {
+      "path": "tools/verify_fixed_inputs_and_candidate.py",
+      "sha256": "fc07dfd095846a57c1b014526f5844145c52598326deeee8fd460a08f32febba",
+      "bytes": 7381
+    },
+    {
+      "path": "write_allowlist.md",
+      "sha256": "a827a88c28f2e5da9a62a13f81b945d3fc072bf24f198a12ff194747e2f8a1d2",
+      "bytes": 802
+    }
+  ]
+}

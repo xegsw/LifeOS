@@ -1,0 +1,64 @@
+{
+  "task_id": "LIFEOS-P3-141",
+  "attempt": 4,
+  "scope": "review-owned copies under the unique controlled temporary root; candidate source remained read-only",
+  "mutations": [
+    {
+      "id": "MUT-01",
+      "area": "Work daily/total limit",
+      "change": "count >= limit changed to count > limit",
+      "oracle": "attempt4_receipted_real_matrix",
+      "killed": true,
+      "signal": "expected daily_work_limit_rejected but reached input_limit_rejected"
+    },
+    {
+      "id": "MUT-02",
+      "area": "Durable Memory limit",
+      "change": "confirmed_active >= 3 changed to confirmed_active > 3",
+      "oracle": "attempt4_receipted_real_matrix",
+      "killed": true,
+      "signal": "fourth confirmed Memory returned Ok MemoryMutationResponse instead of durable_memory_limit_rejected"
+    },
+    {
+      "id": "MUT-03",
+      "area": "Health schema",
+      "change": "energy zero guard disabled",
+      "oracle": "attempt4_receipted_real_matrix",
+      "killed": true,
+      "signal": "invalid energy reached state lifecycle and returned health_state_exists instead of health_schema_rejected"
+    },
+    {
+      "id": "MUT-04",
+      "area": "provider first-send lock",
+      "change": "save_provider_settings lock guard forced false",
+      "oracle": "attempt4_receipted_real_matrix",
+      "killed": true,
+      "signal": "post-send provider switch returned Ok ProviderSettingsResponse"
+    },
+    {
+      "id": "MUT-05",
+      "area": "receipt gate",
+      "change": "build.rs receipt conditional forced false",
+      "oracle": "manual offline cargo build-boundary oracle",
+      "killed": true,
+      "signal": "unreceipted build succeeded where the baseline must stop before root inspection"
+    },
+    {
+      "id": "MUT-06",
+      "area": "runtime-root ownership",
+      "change": "existing-root validation bypassed",
+      "oracle": "attempt4_real_root_shapes_and_owned_restart",
+      "killed": true,
+      "signal": "unowned database produced database_unavailable instead of real_root_ownership_missing"
+    },
+    {
+      "id": "MUT-07",
+      "area": "Today feedback/budget failure code",
+      "change": "context_budget_rejected remapped to today_request_rejected",
+      "oracle": "attempt4_today_feedback_and_context_budget_fail_closed",
+      "killed": true,
+      "signal": "over-budget request returned today_request_rejected instead of context_budget_rejected"
+    }
+  ],
+  "result": "7/7 killed"
+}

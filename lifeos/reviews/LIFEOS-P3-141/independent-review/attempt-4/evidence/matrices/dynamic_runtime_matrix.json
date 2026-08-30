@@ -1,0 +1,81 @@
+{
+  "task_id": "LIFEOS-P3-141",
+  "attempt": 4,
+  "candidate_commit": "d35a72bf6fbcb9d6cdc905eac100679b69c97e61",
+  "execution_boundary": {
+    "input_mode": "real_self_use",
+    "fixture_evidence": true,
+    "network": false,
+    "real_text": false,
+    "real_provider": false,
+    "credentials": false,
+    "database": "fresh controlled synthetic databases only"
+  },
+  "cases": [
+    {
+      "id": "DYN-01",
+      "subject": "receipt-before-root-inspection",
+      "method": "offline cargo build without Phase-B receipt and a deliberately invalid runtime-root value",
+      "expected": "build fails before runtime-root parsing or probing",
+      "result": "PASS",
+      "observed": "LIFEOS_RUNTIME_ROOT rejected before build output: phase_b_independent_pass_required before runtime-root inspection"
+    },
+    {
+      "id": "DYN-02",
+      "subject": "20 IPC and provider-lock contract",
+      "method": "independent Rust harness plus source inventory",
+      "expected": "exactly 20 IPC; OpenAI/Anthropic/Ollama/LM Studio only; Custom rejected; first send locks settings; no fallback or parallel dispatch",
+      "result": "PASS",
+      "observed": "20 IPC static inventory passed; four provider profiles accepted; Custom deserialization rejected; attempted post-send switch returned provider_locked_after_first_send"
+    },
+    {
+      "id": "DYN-03",
+      "subject": "Work 7-14 days and restart safety",
+      "method": "receipted controlled real_self_use harness",
+      "expected": "at most one Work per day and at most 14 total; day-two and fifteenth insertions reject before write; owned restart writes/sends no duplicate",
+      "result": "PASS",
+      "observed": "daily_work_limit_rejected and input_limit_rejected; fresh owned-root restart preserved one capture/day without duplicate"
+    },
+    {
+      "id": "DYN-04",
+      "subject": "five-field structured non-medical Health",
+      "method": "480 legal enum/energy combinations plus invalid payloads",
+      "expected": "all legal values and energy 1-5 persist; missing/invalid/free_text reject before write; UI/SQLite/Today/feedback remain consistent",
+      "result": "FAIL (P0 UI-to-runtime fixture mismatch)",
+      "observed": "480 legal combinations accepted; energy 0, unknown enum, extra free_text and missing fields returned health_schema_rejected before write; Today/feedback controlled flow passed. But the exact real-mode Today UI payload uses source:local:user-confirmed while receipt-enabled fixture mode requires source:synthetic:controlled-fixture, so it returned source_refs_rejected before write."
+    },
+    {
+      "id": "DYN-05",
+      "subject": "confirmed Durable Memory limit",
+      "method": "receipted controlled real_self_use harness",
+      "expected": "three confirmed items maximum; fourth rejects before write and remains rejected after restart",
+      "result": "PASS",
+      "observed": "fourth returned durable_memory_limit_rejected; persisted count remained three across restart"
+    },
+    {
+      "id": "DYN-06",
+      "subject": "runtime-root shapes and ownership",
+      "method": "fresh missing root and eight negative shapes",
+      "expected": "only fresh missing root succeeds; empty/file/link/ancestor-link/unowned DB/unknown/sidecar/noncanonical reject",
+      "result": "PASS",
+      "observed": "real_root_ownership_missing, runtime_root_type_rejected, path_symlink_rejected, runtime_root_noncanonical, real_root_not_empty and database_sidecar_rejected observed on their respective negative paths"
+    },
+    {
+      "id": "DYN-07",
+      "subject": "Today, feedback, Context Resolver and budget fail-closed",
+      "method": "controlled P3-140-compatible Today request and direct resolver request",
+      "expected": "correct feedback stales one result and persists one feedback; over-budget error has no state mutation",
+      "result": "PASS",
+      "observed": "one stale result and one feedback persisted; both Today fault and 31-token resolver request returned context_budget_rejected with before/after counts unchanged"
+    },
+    {
+      "id": "DYN-08",
+      "subject": "real external provider dispatch",
+      "method": "not run by contract",
+      "expected": "N/A for Phase B",
+      "result": "NOT_IMPLEMENTED",
+      "observed": "real Provider, credentials and network were explicitly prohibited; no external dispatch was attempted"
+    }
+  ],
+  "overall": "most contract-permitted controlled dynamic checks passed. Two P0 failures remain: actual-Tauri startup receipt geometry is stale, and the actual Today Health UI payload is rejected in the receipt-enabled controlled fixture mode."
+}
