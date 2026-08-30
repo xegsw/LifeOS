@@ -6,7 +6,7 @@
 
 ## 实现事实
 
-- 以 P3-140 的 79 文件候选为唯一基线，修改仍限候选内 6 个允许文件；当前候选保持 79 文件。
+- 以 P3-140 的 79 文件候选为唯一基线；当前候选保持 79 文件。除原先 6 个实现文件外，`ui/index.html` 的 native document title 已对齐为 `LifeOS · P3-141 Controlled Pilot Candidate`，避免在窄视口把 P3-140 Today 语义标题误作候选身份。
 - IPC 仍为恰好 20 项；未新增 IPC。
 - Provider 闭集为 OpenAI、Anthropic、Ollama、LM Studio。Phase A 的唯一可派发路径是 task-local loopback fixture；Custom、第二 Provider、fallback 和后台发送均没有实现路径。
 - Provider 明确执行保存 → 测试 → 启用 → 发送。首个成功合成发送后持久化锁定 Provider；切换被 `provider_locked_after_first_send` 拒绝，重启后锁仍存在但不会自动启用或重发。
@@ -19,11 +19,11 @@
 - 预接触封存：`test_design.md` 和 `write_allowlist.md` 的 SHA-256 在接触候选前写入 seal，复核未变。
 - 最终可复跑合成命令：`sh lifeos/engineering/LIFEOS-P3-141/tools/replay_phase_a.sh`；最终结果为 Rust 42/42 passed。
 - Phase gate：无 receipt 的 `real_self_use` offline build 返回 101，报出 `phase_b_independent_pass_required before runtime-root inspection`。
-- actual Tauri：桌面、compact、narrow 三次独立启动均以各自返回 PID 绑定 1 个 `AXWindow` 和 1 个 `AXWebArea`；三档都执行并观察到合成 `context_budget_rejected` 失败关闭。每个直接 PID-bound AX 窗口都留下单独哈希的固定合成无敏感状态截图：`evidence/screenshots/desktop_redacted_state.jpeg`（1280×1024）、`compact_redacted_state.jpeg`（700×760）与 `narrow_redacted_state.jpeg`（560×640）。
+- actual Tauri：最终重建 bundle 的桌面、compact、narrow 三次独立启动均以各自返回 PID 绑定 1 个 `AXWindow` 和 1 个 `AXWebArea`，并逐档断言 exact native title `LifeOS · P3-141 Controlled Pilot Candidate`。每个直接 PID-bound AX 窗口留下单独哈希的固定合成无敏感截图：`evidence/screenshots/desktop_redacted_state.jpeg`（1280×1024）、`compact_redacted_state.jpeg`（700×760）与 `narrow_redacted_state.jpeg`（560×640）。此前 compact/narrow 顶栏显示 P3-140 的两张图已经明确失效，不作正 Evidence。
 - 内容排除 scanner：禁止 Pilot 标记 0 命中；Evidence 只记录虚构夹具和非内容状态。
 - 清理：唯一临时根已精确移除；任何真实目标均未访问或清理。
 
-完整逐行状态见 [ABF_PHASE_A_MATRIX.md](evidence/ABF_PHASE_A_MATRIX.md)。实际 GUI 的 PID/AX/WebView/截图哈希记录见 [actual_tauri_viewports.json](evidence/actual_tauri_viewports.json)。
+完整逐行状态见 [ABF_PHASE_A_MATRIX.md](evidence/ABF_PHASE_A_MATRIX.md)。实际 GUI 的 PID/AX/WebView/截图哈希记录见 [actual_tauri_viewports.json](evidence/actual_tauri_viewports.json)，逐档人工身份核验见 [screenshot_identity_review.md](evidence/screenshot_identity_review.md)。
 
 ## 问题与保留项
 

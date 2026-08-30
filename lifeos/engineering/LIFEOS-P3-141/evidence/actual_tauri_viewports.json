@@ -1,12 +1,22 @@
 {
-  "schema": "lifeos.p3-141.actual-tauri-ax-webview.v1",
+  "schema": "lifeos.p3-141.actual-tauri-ax-webview.v2",
   "phase": "A_synthetic",
-  "launch_binding": "each record uses only the PID printed by that launch; direct PID -> one AXWindow -> one AXWebArea was observed before the screenshot. No process or window enumeration was used.",
+  "capture_chain": "For each record: use only the PID printed by that launch; assert one target application process, one AXWindow, exact AX title, and one AXWebArea; AXRaise that target window; capture the same AX-observed rectangle. No process or global-window enumeration was used.",
+  "required_ax_window_title": "LifeOS · P3-141 Controlled Pilot Candidate",
   "records": [
-    {"viewport": "desktop", "pid": 19667, "title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "position": [320, 37], "size": [1280, 1024], "ax_web_area_count": 1, "interaction": ["本次移除 Health", "验证失败关闭"], "observed_failure_close": "context_budget_rejected", "screenshot": "screenshots/desktop_redacted_state.jpeg", "screenshot_sha256": "7cd6cd2843b26b6ea162beb5b424218e9fe5ccde71a135ae8ad58eff6f11a45a", "screenshot_dimensions": [1280, 1024]},
-    {"viewport": "compact", "pid": 20253, "title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "position": [320, 37], "size": [700, 760], "ax_web_area_count": 1, "interaction": ["验证失败关闭"], "observed_failure_close": "context_budget_rejected", "screenshot": "screenshots/compact_redacted_state.jpeg", "screenshot_sha256": "f57fda31b33e1d3e38a27b53e6a7fedceeb1805b8ef0779af1951c568f58966f", "screenshot_dimensions": [700, 760]},
-    {"viewport": "narrow", "pid": 20522, "title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "position": [320, 37], "size": [560, 640], "ax_web_area_count": 1, "interaction": ["验证失败关闭"], "observed_failure_close": "context_budget_rejected", "screenshot": "screenshots/narrow_redacted_state.jpeg", "screenshot_sha256": "b821405162984b87957f79e85e6b98a113c3e2d4c820b65ac747f57dbd7665d0", "screenshot_dimensions": [560, 640]}
+    {"viewport": "desktop", "pid": 22698, "ax_window_title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "position": [320, 37], "size": [1280, 1024], "ax_window_count_for_direct_pid": 1, "ax_web_area_count": 1, "screenshot": "screenshots/desktop_redacted_state.jpeg", "screenshot_sha256": "1164f6dc80fd1f112201e98cd5dc88044cb224a3ad76f43ac76f5b4d9cd38643", "screenshot_dimensions": [1280, 1024], "human_visible_title": "LifeOS · P3-141 Controlled Pilot Candidate"},
+    {"viewport": "compact", "pid": 22049, "ax_window_title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "position": [320, 37], "size": [700, 760], "ax_window_count_for_direct_pid": 1, "ax_web_area_count": 1, "screenshot": "screenshots/compact_redacted_state.jpeg", "screenshot_sha256": "b70ba3b4fde61ea358a89411ec60067fb26ef7587e2ad629f7ef1957f24d935c", "screenshot_dimensions": [700, 760], "human_visible_title": "LifeOS · P3-141 Controlled Pilot Candidate"},
+    {"viewport": "narrow", "pid": 22474, "ax_window_title": "LifeOS · P3-141 Controlled Pilot Candidate", "ax_role": "AXWindow", "position": [320, 37], "size": [560, 640], "ax_window_count_for_direct_pid": 1, "ax_web_area_count": 1, "screenshot": "screenshots/narrow_redacted_state.jpeg", "screenshot_sha256": "caaf22a5719b88334a5440324580bffb4d1b2c244a03b5ef2f931108018ead59", "screenshot_dimensions": [560, 640], "human_visible_title": "LifeOS · P3-141 Controlled Pilot Candidate"}
   ],
-  "content_boundary": "AX observations and screenshots were limited to fixed synthetic UI labels; non-content failure-close state was observed separately through the same direct app accessibility target. The three retained frames contain no real text, Health data, credentials, real Provider, real Pilot, or network response.",
+  "human_identity_review": "evidence/screenshot_identity_review.md",
+  "invalidated_prior_compact_narrow_attempt": {
+    "source_commit": "4960a36e77bbb816a58bfaee34c89f6d17eca8d9",
+    "records": [
+      {"viewport": "compact", "pid": 20253, "previous_screenshot_sha256": "f57fda31b33e1d3e38a27b53e6a7fedceeb1805b8ef0779af1951c568f58966f"},
+      {"viewport": "narrow", "pid": 20522, "previous_screenshot_sha256": "b821405162984b87957f79e85e6b98a113c3e2d4c820b65ac747f57dbd7665d0"}
+    ],
+    "reason": "Human visual inspection found the retained top bar to be `LifeOS · P3-140 Cross-domain Today`, conflicting with the prior JSON title assertion. Those records and images are invalidated and excluded from positive Evidence; their identifying details remain here and in failure_history.md."
+  },
+  "content_boundary": "All current screenshots were manually checked to contain only fixed synthetic UI and the visible P3-141 candidate title; no real text, Health data, credentials, real Provider, real Pilot, or network response was present.",
   "result": "PASS_SYNTHETIC_ONLY"
 }
