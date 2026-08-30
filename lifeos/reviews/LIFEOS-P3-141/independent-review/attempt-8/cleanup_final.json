@@ -1,0 +1,13 @@
+{
+  "verifier_identity": "attempt-8-review-owned-exact-cleanup-v1",
+  "temporary_root": "/private/tmp/lifeos-p3-141-controlled-pilot-v1",
+  "candidate_peer": "/private/tmp/lifeos-p3-141-controlled-pilot-v1/candidate-peer",
+  "ordered_actions": [
+    "git worktree remove candidate-peer registration",
+    "remove exact temporary root"
+  ],
+  "candidate_peer_registered_after_cleanup": false,
+  "temporary_root_exists_after_cleanup": false,
+  "real_pilot_or_database_cleanup": "not attempted",
+  "verdict": "Pass"
+}
