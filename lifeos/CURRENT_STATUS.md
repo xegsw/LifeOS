@@ -1,7 +1,7 @@
 # LifeOS Current Status Index
 
 更新时间：2026-08-30
-最后校验时间：2026-08-31（D-0630：P3-141首场最终独立复评因现场锁屏Blocked；桌面解锁后全新复评重启，Phase C暂停）
+最后校验时间：2026-08-31（D-0631：P3-141全新独立复评发现模式显示／后端状态P2；同任务窄Closure启动，Phase C暂停）
 
 本文件是 PM 日常上下文入口，用于减少重复读取大文件；它是状态索引，不替代主账本。
 
@@ -18,9 +18,9 @@
 ## 当前状态
 
 - 当前治理：D-0516 起的新任务采用 Governance V2：完整 Task Contract 一次授权；结果级任务包含实现、测试、Evidence与同范围修正；L0/L1/L2内嵌验收合同，L3/Gate才独立ABF；独立评审按风险／事实触发；普通任务PM Pass后自动Complete；任务卡取消模型推荐和模型证明门禁。P3-127及此前历史不追溯。
-- 当前活动事项：P3-141 Revision 3 interactive GUI v2工程门Pass。首场最终独立复评的precontact、谱系、4/4自有测试、5/5 mutation和清理均通过，但GUI阶段现场Mac锁屏，三档原生链未执行，结论Blocked而非候选缺陷。用户已解锁，新的全新隔离复评重启中。
-- 当前可执行下一步：新worktree从阶段0自写并封存test design，复算固定输入、候选和全部Blocked历史；使用全新严格review root完成review-owned正负测试、mutation及三档fresh direct-PID actual-Tauri。不得复用上轮PID、DB、截图、root或结论；独立结论回PM前Phase C保持暂停。
-- 当前任务指针：P3-141 Revision 3 Engineering Gate Pass / Mandatory Fresh Independent Re-review 1 In Progress / Phase C Paused / User Confirmed / ABF-P3-141-v3 Frozen / Governance V2 L3 / Not Product Frozen；最近Blocked评审计数`0/0/0/1/1`；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
+- 当前活动事项：P3-141 Revision 3全新隔离复评已完成。固定输入、候选谱系、14/14静态检查、5/5 mutation、三档原生GUI、合成凭据生命周期和精确清理均闭合；但发现持久化local后仅切Cloud卡片会显示删除按钮，backend仍按local拒绝，形成UI／backend mode不一致的P2。数据未删除、未泄露、未联网。
+- 当前可执行下一步：原工程专项在同一P3-141内仅修复CL-MODE-DELETE-01，将凭据删除控件与持久化mode绑定，或在待保存Cloud态禁用并说明；加入真实UI回归并完整复跑。工程门Pass后再创建另一个全新隔离独立复评。
+- 当前任务指针：P3-141 Revision 3 P2 Closure Cycle / Phase C Paused / User Confirmed / ABF-P3-141-v3 Frozen / Governance V2 L3 / Not Product Frozen；当前计数`0/0/1/0/0`；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
 - P3-134最终PM计数：P0=0、P1=0、P2=1、Unknown=0、Not Implemented=0。333项Final Manifest和13项固定输入hash复算闭合，AC-01～16全Pass，三档actual-Tauri各15态、同fixture视觉、十一IPC、双模式Runtime与10类写前失败关闭成立。P2为一次已精确清理且未参与正Evidence的无内容stdout越界历史。
 - P3-132 最终PM计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算工程Final Manifest 75+42、P3-131历史75/75并串行复跑11/11测试；CL-01不足身份显示与CL-02三个开放Action按`confirmed_at_ms/action_id`稳定Focus、刷新及重启全部闭合。两项首次工程历史P2保留但不阻断唯一用户结果；未触发独立评审。
 - P3-131 当前 PM 计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算Final Manifest 89/89与source lineage 75/75，离线测试6/6，并在唯一全新task temp root直接复跑actual Tauri的接受并完成、关闭重开、编辑接受、拒绝、暂缓和证据不足路径。两项P2分别为工程action log／build-cache Manifest措辞与原始PID时间链不足，以及source scanner对`basis_refs.map`的`fs.`子串误报和closure checker语义弱；均由PM定向复核关闭其阻断性，不影响唯一用户结果。
