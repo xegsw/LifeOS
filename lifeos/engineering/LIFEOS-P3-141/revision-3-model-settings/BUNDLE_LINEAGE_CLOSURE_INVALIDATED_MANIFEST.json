@@ -1,0 +1,610 @@
+{
+  "authorized_root_cleanup": {
+    "literal_absent": true,
+    "method": "marker_gated_cleanup.py",
+    "note": "The runner stopped at the mutation-fixture anchor failure. The exact authorized root was then cleaned through the marker-gated script; no old temporary root was accessed.",
+    "root": "/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v1",
+    "schema": "lifeos.p3-141.bundle-lineage.invalidated-attempt-cleanup.v1"
+  },
+  "files": [
+    {
+      "bytes": 5469,
+      "path": "lifeos/deliverables/LIFEOS-P3-141_revision-3_bundle-lineage-and-native-capture-closure_report.md",
+      "sha256": "07bc04603491c8ef3b757196c874bc963e3677917925007de7210f947ff23fb6"
+    },
+    {
+      "bytes": 114847,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/Cargo.lock",
+      "sha256": "42639232f7af2086e77574154ce4f364ac6e3be0a347646e516be7887d912acf"
+    },
+    {
+      "bytes": 1242,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/Cargo.toml",
+      "sha256": "b12d53cb10fed5fdb05822f29a57fce6dc23674cd8fe222ab114f086b42602a5"
+    },
+    {
+      "bytes": 7649,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/build.rs",
+      "sha256": "ef16cc6ae5c2d0f38f134093ffaa6cba32c93408433f20368ddc3e624415d152"
+    },
+    {
+      "bytes": 225,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/capabilities/main.json",
+      "sha256": "3cb510f5680295641c17a4ef1ac799dbc1238a467e0a8221a5501bdf9995a071"
+    },
+    {
+      "bytes": 65934,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/gen/schemas/acl-manifests.json",
+      "sha256": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e"
+    },
+    {
+      "bytes": 178,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/gen/schemas/capabilities.json",
+      "sha256": "29c9b588ce037d020c1b0e1fd0e6343e1def416cacf4a11a3a32b45513588109"
+    },
+    {
+      "bytes": 116049,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/gen/schemas/desktop-schema.json",
+      "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78"
+    },
+    {
+      "bytes": 116049,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/gen/schemas/macOS-schema.json",
+      "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78"
+    },
+    {
+      "bytes": 1227,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/128x128.png",
+      "sha256": "39572c12160197611428210db2eeb800e37dbd41860ba8e9a669166114f4a76b"
+    },
+    {
+      "bytes": 2488,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/128x128@2x.png",
+      "sha256": "d92aa427d4dd01feba7b03c0a321f5c4bef1f47e9a7e6e17ffeb0186b1e5f5f1"
+    },
+    {
+      "bytes": 441,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/32x32.png",
+      "sha256": "79bc6828196ed3e2403a53463914eff4c0c0efce5f8b6e7e0b139114e11a5e59"
+    },
+    {
+      "bytes": 643,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/64x64.png",
+      "sha256": "3e3ece76332b640d374bbeff1a09b8813f7fee0a4b653c9a38415062d996de59"
+    },
+    {
+      "bytes": 1065,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/Square107x107Logo.png",
+      "sha256": "58c82e4e0e8272eaa122b6bcb756c12c76910ffa6e95256e44448bfa634267c4"
+    },
+    {
+      "bytes": 1405,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/Square142x142Logo.png",
+      "sha256": "05be4e8894bca70ea4b8099b3373090f51a0f5c3eb9f72c49e893eed1b1861e3"
+    },
+    {
+      "bytes": 1587,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/Square150x150Logo.png",
+      "sha256": "5e9085cc59b404169906b999a9de0c389c118d3ace1696e8787700b030b8dee5"
+    },
+    {
+      "bytes": 2791,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/Square284x284Logo.png",
+      "sha256": "28fdbcc829c7edbf94416276db345b5d9335391087e435831b412e745edb4de8"
+    },
+    {
+      "bytes": 453,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/Square30x30Logo.png",
+      "sha256": "579111e7e722cf3303c6309b8d4357b4ce5da7e28ba25734bc1cf672394ab3f5"
+    },
+    {
+      "bytes": 2901,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/Square310x310Logo.png",
+      "sha256": "9ded936b77aebe3f6d4affc3557c0baacad5a12886c30c85c46daf2067927955"
+    },
+    {
+      "bytes": 582,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/Square44x44Logo.png",
+      "sha256": "3afc300fde82670e6ec6760addea1b03ccd6979424715802c8c767c42fcc5944"
+    },
+    {
+      "bytes": 779,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/Square71x71Logo.png",
+      "sha256": "13d8fa01f25817d346c11d28a2a63ea7285586ae005f372825f905ad8749da12"
+    },
+    {
+      "bytes": 927,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/Square89x89Logo.png",
+      "sha256": "4d65f163ed7dc62255f246ddb8bbc71de33f02a632af49be75ccd1de96a569f5"
+    },
+    {
+      "bytes": 564,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/StoreLogo.png",
+      "sha256": "60bad4ad4470f1cad766e0082a6dace73b48619d032af700aaabb3e971df28cc"
+    },
+    {
+      "bytes": 261,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-anydpi-v26/ic_launcher.xml",
+      "sha256": "760d4b8a06bf7163dd010c33ad2cac9e4a75fa0177afaba042f83e311eef0c3e"
+    },
+    {
+      "bytes": 1337,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-hdpi/ic_launcher.png",
+      "sha256": "0514a04799bc23d608ef68fc0786a11a1bea7b3e7930485469444c5964a6cf9f"
+    },
+    {
+      "bytes": 1625,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-hdpi/ic_launcher_foreground.png",
+      "sha256": "e3adb898f0d807abc85bb75774e6b5e55b3f09627eee11e70844100f6ee8bef9"
+    },
+    {
+      "bytes": 956,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-hdpi/ic_launcher_round.png",
+      "sha256": "d30ea18205f233e5791b912e4a9f89979805b825d45101b5e2612ae03dfbf497"
+    },
+    {
+      "bytes": 1251,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-mdpi/ic_launcher.png",
+      "sha256": "9ac96d6e24ee47813b82b9044b22c84055428e808aba48d3d32dd47dfdea09e7"
+    },
+    {
+      "bytes": 1173,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-mdpi/ic_launcher_foreground.png",
+      "sha256": "d5925ec91058b5f59575bcbad8dc38b66c4ca18e79d8e625ddd05704ff103120"
+    },
+    {
+      "bytes": 953,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-mdpi/ic_launcher_round.png",
+      "sha256": "606ffd6da8ecaf7550673140f379eaf85cc838e320dfd6a33ee335654de6318c"
+    },
+    {
+      "bytes": 2206,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-xhdpi/ic_launcher.png",
+      "sha256": "4aa5cd9b19fab966cf734af011232cb6f1a48322dfc3c8e2a1f3c0054cf8cc6c"
+    },
+    {
+      "bytes": 2093,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-xhdpi/ic_launcher_foreground.png",
+      "sha256": "4ae6b883cdda5f2ca78e3ec3067687e2efcc47e751c89e1b7b03ca6a3fc5d55d"
+    },
+    {
+      "bytes": 1249,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-xhdpi/ic_launcher_round.png",
+      "sha256": "1f410423954eb7cf62e9963bb8f6656ef9159b602adbfabd72a0e03a6c0abf42"
+    },
+    {
+      "bytes": 3030,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-xxhdpi/ic_launcher.png",
+      "sha256": "53d8316fd25ed535731a4863decb0280abb3d6fc68a32025da6593c9801a5df4"
+    },
+    {
+      "bytes": 3051,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "sha256": "e9b95791588f1d650c74ea403c27e5758386b1f55cecb9b41ca18104989ad195"
+    },
+    {
+      "bytes": 1583,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-xxhdpi/ic_launcher_round.png",
+      "sha256": "1d8c11c6c4145060e2f6532ffb3d98343fcbcd62b1bf1d8da7acaf44e82c995c"
+    },
+    {
+      "bytes": 3891,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-xxxhdpi/ic_launcher.png",
+      "sha256": "acd57fb2317d236f78c21c7e31bef48fd55227cdbdf9efb6484fa01b7d44240f"
+    },
+    {
+      "bytes": 4148,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "sha256": "6fbf0152677a925d70883c170bc05b7967eab5992ce09ce47618999507d97d60"
+    },
+    {
+      "bytes": 2078,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/mipmap-xxxhdpi/ic_launcher_round.png",
+      "sha256": "6fbf756b41cf06d977ec2a40c216b6faf28c65cff9c28fd041e05d5da7d5452a"
+    },
+    {
+      "bytes": 115,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/android/values/ic_launcher_background.xml",
+      "sha256": "0687336f0ccc6f7ee09c7c95110667c63b75931238df779a21af401fb864cd34"
+    },
+    {
+      "bytes": 31641,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/icon.icns",
+      "sha256": "e6e7eae0a6060cb21ace32751adb2bd9da6b2527374a4daae79c9aad505d11ed"
+    },
+    {
+      "bytes": 5650,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/icon.ico",
+      "sha256": "1a14889bc10f824f3a072c1835b5561f3c576fb697ba4aa44839d55889116f0b"
+    },
+    {
+      "bytes": 4982,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/icon.png",
+      "sha256": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293"
+    },
+    {
+      "bytes": 232,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/icon.svg",
+      "sha256": "bf69a17326cffb6405dcd732a814778042a8a02df8e13938b698570f80ba6c66"
+    },
+    {
+      "bytes": 350,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-20x20@1x.png",
+      "sha256": "76bfc33979b0171e8229eb2e370d01b74fa18aae7fdeca9a2c156e2b9253ed64"
+    },
+    {
+      "bytes": 529,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-20x20@2x-1.png",
+      "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+    },
+    {
+      "bytes": 529,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-20x20@2x.png",
+      "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+    },
+    {
+      "bytes": 684,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-20x20@3x.png",
+      "sha256": "1079318d510e167cf2156dcaebd0dc9b4ea4b3a36f072b02ee7d3946de55d554"
+    },
+    {
+      "bytes": 420,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-29x29@1x.png",
+      "sha256": "f5a5f21fc384c9ab27cb1329e38be5e4b806e72e1d6eed5a5edc49deed3212ba"
+    },
+    {
+      "bytes": 667,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-29x29@2x-1.png",
+      "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09"
+    },
+    {
+      "bytes": 667,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-29x29@2x.png",
+      "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09"
+    },
+    {
+      "bytes": 945,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-29x29@3x.png",
+      "sha256": "c89ad8db8ebb8b7bb035ae9024ea7f9f6e754d6e8efd8481de00d35d5be53446"
+    },
+    {
+      "bytes": 529,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-40x40@1x.png",
+      "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc"
+    },
+    {
+      "bytes": 882,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-40x40@2x-1.png",
+      "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c"
+    },
+    {
+      "bytes": 882,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-40x40@2x.png",
+      "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c"
+    },
+    {
+      "bytes": 1222,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-40x40@3x.png",
+      "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b"
+    },
+    {
+      "bytes": 12199,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-512@2x.png",
+      "sha256": "743e79bd29fa8035295bfc510e3aa42acef7ac922edf642c4e9bebe152a95929"
+    },
+    {
+      "bytes": 1222,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-60x60@2x.png",
+      "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b"
+    },
+    {
+      "bytes": 1835,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-60x60@3x.png",
+      "sha256": "afe8ea3eca3ec76dee2f9f1b61e79f0755239378b6fda84c9dec63309375a804"
+    },
+    {
+      "bytes": 873,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-76x76@1x.png",
+      "sha256": "29e682960dc2ebbef7f40fb64204d0422f56dfe7af3e2938e16ec93af21b20ae"
+    },
+    {
+      "bytes": 1536,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-76x76@2x.png",
+      "sha256": "8188dddb316617937ee9b7151bdd75cc33602b46eee2bbff7d82e638030f39cd"
+    },
+    {
+      "bytes": 1652,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/icons/ios/AppIcon-83.5x83.5@2x.png",
+      "sha256": "aa9d183c4b09055de09361471c6bb3353e0a1640e8368e75cc431308ddb29539"
+    },
+    {
+      "bytes": 51,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/rust-toolchain.toml",
+      "sha256": "b4ea3c94c934d96a2772b7878c12ccbf3e486313d0988a9c960e0bd87bafc8fe"
+    },
+    {
+      "bytes": 116,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/src/main.rs",
+      "sha256": "97c073972a026daf3cbd49aa240756a6c38a16602b31f4cd201e8a7cee076288"
+    },
+    {
+      "bytes": 66076,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/src/runtime/memory_context.rs",
+      "sha256": "1911da908a9a02a789adbe5145f0662fb349fd2f64a03bae5fbfd245ffccdec6"
+    },
+    {
+      "bytes": 45645,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/src/runtime/today_intelligence.rs",
+      "sha256": "2e1ebc5fe202dc0346255996ba69b523f80f32904a5062b93c2c1617710a78c5"
+    },
+    {
+      "bytes": 213790,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/src/runtime.rs",
+      "sha256": "e49795d5db10515ef2d5181d5e852faa0221977afe65c1f016ec40870c1aad0a"
+    },
+    {
+      "bytes": 1043,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/tauri.conf.json",
+      "sha256": "f8127debd6472dd3e8e0ef7ec55deb0e6d2d2e1743e94fcfa03c9c949fd10fed"
+    },
+    {
+      "bytes": 1960,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/tests/bundle_lineage_contract.mjs",
+      "sha256": "c605053bd17aa45fd0e119b889c921bbc1bd51a78ef8006cd649aeb94ec49ed1"
+    },
+    {
+      "bytes": 4257,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/tests/mode_delete_ui_contract.mjs",
+      "sha256": "679e4d2fc8d9ff0515e8ce2777cac31800171f2171c9da8b2b82a153fee78892"
+    },
+    {
+      "bytes": 206,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/tests/v2_phase_c_gate.rs",
+      "sha256": "b2338d6b99386426941ac3dc760114ccd5f7625b269ae56ae6f5d28ffdf10995"
+    },
+    {
+      "bytes": 42976,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/ui/app.js",
+      "sha256": "8d50d5034a21a8a06b6b28c758c3718a2dcdc821ee19f78ad305a745d5efe183"
+    },
+    {
+      "bytes": 2994,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/ui/fixtures.js",
+      "sha256": "a7b01ba8e176d80ae172ddd8acd2ed3a8c9b755b046159b190a2272195af3d93"
+    },
+    {
+      "bytes": 3630,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/ui/ia_reconciliation.md",
+      "sha256": "ba18cbe504959e302331e9853730f714f35b61466e2ae9d752fe11621ab0cf0b"
+    },
+    {
+      "bytes": 844,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/ui/index.html",
+      "sha256": "425d057d857cd6004e20733a420ae16d0277f00f42770e10ba692568caee1b9a"
+    },
+    {
+      "bytes": 4998,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/ui/interaction_contract.md",
+      "sha256": "afdcef69a821f31c36b63d22129c6c69e2afe3ff1052b516da71a936aa4cddec"
+    },
+    {
+      "bytes": 9267,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/ui/p3-139-context-inspector.js",
+      "sha256": "d4f600d17606962eb16bad0963f8238e8fcd1c8bf74848c40f97bace8b90c2ae"
+    },
+    {
+      "bytes": 13637,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/ui/p3-140-today.js",
+      "sha256": "6f9f79b3747e527a8e624d1dcab80d9182d11227eafca20a023645c02f04b8a0"
+    },
+    {
+      "bytes": 45211,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/ui/runtime-adapter.js",
+      "sha256": "667e0e76d55a6f5732a85a0526c5abd816549b9031d96a3b1a1581293e99b6f1"
+    },
+    {
+      "bytes": 3633,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/ui/state_machine.json",
+      "sha256": "484b4455c40b2737c50138ce7e055ae526885ad6b63c24498b55f1e44525bbcd"
+    },
+    {
+      "bytes": 52086,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/ui/styles.css",
+      "sha256": "e3051c867e0dea4b13d1d613331f2ee7bbc47a4d7f238556116a1cd29de6322f"
+    },
+    {
+      "bytes": 186,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/ui/viewport-adapter.css",
+      "sha256": "196fb16782004c5eeef3e931b929d91a522d4fe64cba3eb878b46791775519f4"
+    },
+    {
+      "bytes": 2030,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/ui/visual_contract.json",
+      "sha256": "9ece61f440717c5762779648e6fc71ad7c87dab3310388424dee3c0ae14e093e"
+    },
+    {
+      "bytes": 792,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/PROCEDURAL_DEVIATION.md",
+      "sha256": "2b0a70006e1de9edce639cca6846afbbd6a479dd885ecaec1518cf784d4ebf0d"
+    },
+    {
+      "bytes": 408,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/cleanup-after-invalidated-run.json",
+      "sha256": "7d8bb9085df55d9937693088c2763bc019457b3a00bde16c1be724a0ba07f66b"
+    },
+    {
+      "bytes": 80,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/closure-failure.txt",
+      "sha256": "e352df35007cd15df4e02a197feb6dfe052e6aca118226492c6f4523f386e2ad"
+    },
+    {
+      "bytes": 813,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/gui/compact-capture.json",
+      "sha256": "4b545cba9b95b8cf3f8022b429c14fa208761288c3af36b1a8d59fc30e5776fc"
+    },
+    {
+      "bytes": 4,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/gui/compact-pid-exit.txt",
+      "sha256": "0e55cbbc9d11449b186092d82905aa6974858df7a0b7d706ae51c4716c9461ef"
+    },
+    {
+      "bytes": 832,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/gui/compact-viewport-receipt.json",
+      "sha256": "3b99f94b688ed1e6633501883949860b295bbb68fbdba5f2ea5164284a6e575e"
+    },
+    {
+      "bytes": 813,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/gui/desktop-capture.json",
+      "sha256": "af21f951734c458e488d7a30c9c66d928d59a37443d9d65c654ce5fd8f1592db"
+    },
+    {
+      "bytes": 4,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/gui/desktop-pid-exit.txt",
+      "sha256": "0e55cbbc9d11449b186092d82905aa6974858df7a0b7d706ae51c4716c9461ef"
+    },
+    {
+      "bytes": 833,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/gui/desktop-viewport-receipt.json",
+      "sha256": "ca7ae360dce214eaaca6e5982874d59e23c952f0ef48d6401f273bf1e60af4fb"
+    },
+    {
+      "bytes": 812,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/gui/narrow-capture.json",
+      "sha256": "bc7dc0b1e1f4cae5d0950f464e2ecdeed64aa5f31b85b3ed1b01beaf3fab1252"
+    },
+    {
+      "bytes": 4,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/gui/narrow-pid-exit.txt",
+      "sha256": "0e55cbbc9d11449b186092d82905aa6974858df7a0b7d706ae51c4716c9461ef"
+    },
+    {
+      "bytes": 828,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/gui/narrow-viewport-receipt.json",
+      "sha256": "a768b93887137b18ff86a86afa8284e1888508f3f7a13058012abfce6528904b"
+    },
+    {
+      "bytes": 30,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/logs/bundle-lineage-contract.log",
+      "sha256": "f831bf15e9e96d94ef43d5b2ca3e6fd01047894da1e5cd23d7efddc952674df0"
+    },
+    {
+      "bytes": 6450,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/logs/cargo-tauri-build.log",
+      "sha256": "7943f7e5ec9ac0f66685b220f9910072d3d4a647162a829fc91c82945505210b"
+    },
+    {
+      "bytes": 17363,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/logs/cargo-test-default-parallel.log",
+      "sha256": "1efe181d32b4acd5613024aeeaa7474695e03efb5e88ab940c6d39b4712150b0"
+    },
+    {
+      "bytes": 9511,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/logs/cargo-test-serial.log",
+      "sha256": "6ae10f26aac43a2b8963bd4e3e09460c3df121238714b21b5f9564d32328f537"
+    },
+    {
+      "bytes": 0,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/logs/compact-direct-pid.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/logs/desktop-direct-pid.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 30,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/logs/mode-delete-ui-contract.log",
+      "sha256": "8fed6009353d12625a1e391266f97f30b939b3d0c8cb9defc8bff9d549059dd1"
+    },
+    {
+      "bytes": 0,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/logs/narrow-direct-pid.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1954,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/logs/native-window-capture-build.log",
+      "sha256": "6ca877b2fc4905869f47fa32d920cd3e6fb916dac1f781555eb5c695204fb58c"
+    },
+    {
+      "bytes": 1474,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/marker_gated_cleanup.py",
+      "sha256": "3ecf1da0c7d0526504ddd8ab6ecfa59f0b4cfd90fb8a62f84eb6f026fd4c13f8"
+    },
+    {
+      "bytes": 12970,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/native_window_capture.swift",
+      "sha256": "cb6c92246eaed3a94438c8d8ba5101c87f7a1d7a90e3bc42c74ce81468e08eb8"
+    },
+    {
+      "bytes": 1133,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/purge_invalid_capture_outputs.py",
+      "sha256": "6ef47e676fcad4d54a9d847296de8630edd3756fcf5883160a1bd753d24a1fad"
+    },
+    {
+      "bytes": 22057,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/run_bundle_lineage_closure.py",
+      "sha256": "525067cf531d958f3fa4a30655c15d6a0f088f1aee2e375314aa7ddfadb0f185"
+    },
+    {
+      "bytes": 3376,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/write_invalidated_manifest.py",
+      "sha256": "c280e6a3bb5c52e7a5b61d0c20d4ad009474feedbd662610e736cfffe04d4a0c"
+    },
+    {
+      "bytes": 9264,
+      "path": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/verify_bundle_lineage_closure.py",
+      "sha256": "39df4d5499663eeefecf95ec34084164dc82ba2c2ae734f54856757b08aef8d6"
+    }
+  ],
+  "finding_counts": {
+    "Not Implemented": 0,
+    "P0": 1,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0
+  },
+  "fixed_inputs": [
+    {
+      "bytes": 4751,
+      "path": "lifeos/tasks/LIFEOS-P3-141_person_level_work_health_controlled_n1_pilot_revision_3.md",
+      "sha256": "d8295c0e4c518c1caf8817f3e6120ec778d3ceaaa3b83faa0cbc3edda85070f6"
+    },
+    {
+      "bytes": 2181,
+      "path": "lifeos/tasks/LIFEOS-P3-141_person_level_work_health_controlled_n1_pilot_acceptance_basis_freeze_revision_3.md",
+      "sha256": "f4ef4047ea918c04773ba5a7ee04cd754caf161710f8677be34e116694a57bec"
+    },
+    {
+      "bytes": 1029,
+      "path": "lifeos/tasks/LIFEOS-P3-141_model_settings_baseline_user_confirmation.md",
+      "sha256": "371e791e32665116e9c493dc49c7dca27960dcf8353885d897c2a6bbb1e7867a"
+    },
+    {
+      "bytes": 3403,
+      "path": "lifeos/product/LIFEOS_MODEL_SETTINGS_BASELINE_V1.md",
+      "sha256": "bbe5614e27b3fc77fcf7e58a54bfb1168e5ac45270c30c7a19d6d007a5b32a4a"
+    },
+    {
+      "bytes": 3700,
+      "path": "lifeos/reviews/LIFEOS-P3-141_pm_revision_3_mode_delete_final_independent_review_invalidated.md",
+      "sha256": "cec5ed2b8ac591c71e832729be8bead282cb6db22e36d0b17e8511d0ad794b53"
+    }
+  ],
+  "invalidation": {
+    "positive_evidence_status": "All test, build, and native-capture outputs listed here are archival invalidated-attempt history only; none is valid positive Engineering Evidence.",
+    "reason": "A helper compile output was created outside the one authorized Closure root.",
+    "record": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/PROCEDURAL_DEVIATION.md"
+  },
+  "manifest_exclusions": [
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/BUNDLE_LINEAGE_CLOSURE_INVALIDATED_MANIFEST.json"
+  ],
+  "non_conclusions": [
+    "Not an Engineering Pass or independent review.",
+    "Does not restore Phase C, authorize Pilot-6, real Provider, credential, risk closure, product freeze, or Stage 4."
+  ],
+  "schema": "lifeos.p3-141.bundle-lineage-invalidated-attempt-manifest.v1",
+  "status": "INVALIDATED",
+  "task_id": "LIFEOS-P3-141"
+}

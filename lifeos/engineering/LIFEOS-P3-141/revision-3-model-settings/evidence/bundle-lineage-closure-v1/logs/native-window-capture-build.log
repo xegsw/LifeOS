@@ -1,0 +1,19 @@
+/Users/xxe/.codex/worktrees/a231/No.2/lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/native_window_capture.swift:111:66: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect. [#DeprecatedDeclaration]
+109 | _ = AXUIElementSetAttributeValue(application, "AXManualAccessibility" as CFString, kCFBooleanTrue)
+110 | let runningApplication = NSRunningApplication(processIdentifier: pid_t(pid))
+111 | _ = runningApplication?.activate(options: [.activateAllWindows, .activateIgnoringOtherApps])
+    |                                                                  `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect. [#DeprecatedDeclaration]
+112 | usleep(400_000)
+113 | let windows = (value(application, kAXWindowsAttribute) as? [AXUIElement]) ?? []
+
+/Users/xxe/.codex/worktrees/a231/No.2/lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v1/native_window_capture.swift:10:7: warning: immutable property will not be decoded because it is declared with an initial value which cannot be overwritten
+  8 | struct CGCandidate: Codable { let windowID: UInt32; let name: String; let frame: Frame }
+  9 | struct Capture: Codable {
+ 10 |   let schema = "lifeos.p3-141.bundle-lineage.window-capture.v1"
+    |       |- warning: immutable property will not be decoded because it is declared with an initial value which cannot be overwritten
+    |       |- note: set the initial value via the initializer or explicitly define a CodingKeys enum including a 'schema' case to silence this warning
+    |       `- note: make the property mutable instead
+ 11 |   let pid: Int32
+ 12 |   let expectedTitle: String
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>
