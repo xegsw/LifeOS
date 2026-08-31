@@ -1,0 +1,13 @@
+   Compiling lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/dc82/No.2/lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate)
+error: failed to run custom build command for `lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/dc82/No.2/lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate)`
+
+Caused by:
+  process didn't exit successfully: `/private/tmp/lifeos-p3-141-revision-3-engineering-closure-mode-delete-v1/target/debug/build/lifeos-p3-141-204d66311b6c96b0/build-script-build` (exit status: 101)
+  --- stdout
+  cargo:rerun-if-changed=/private/tmp/lifeos-p3-141-revision-3-engineering-closure-mode-delete-v1/.lifeos-p3-141-authorized-synthetic-root.json
+
+  --- stderr
+
+  thread 'main' (15147039) panicked at build.rs:26:5:
+  LIFEOS-P3-141 Revision-3 synthetic build rejected before runtime contact: runtime root must be a canonical 0700 non-symlink directory
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

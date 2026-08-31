@@ -1,0 +1,23 @@
+   Compiling lifeos-p3-141 v0.1.0 (/Users/xxe/.codex/worktrees/dc82/No.2/lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate)
+warning: function `default_provider_settings` is never used
+   --> src/runtime.rs:327:4
+    |
+327 | fn default_provider_settings() -> ProviderSettings { default_provider_settings_for(ProviderMode::Cloud) }
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `valid_env_name` is never used
+   --> src/runtime.rs:336:4
+    |
+336 | fn valid_env_name(value: &str) -> bool { let mut chars = value.chars(); matches!(chars.next(), Some('A'..='Z')) && chars.all(|c| c....
+    |    ^^^^^^^^^^^^^^
+
+warning: struct `LmStudioAdapter` is never constructed
+   --> src/runtime.rs:948:8
+    |
+948 | struct LmStudioAdapter;
+    |        ^^^^^^^^^^^^^^^
+
+warning: `lifeos-p3-141` (bin "lifeos-p3-141") generated 3 warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.44s

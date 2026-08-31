@@ -1,0 +1,119 @@
+Window: "LifeOS · P3-141 Controlled Pilot Candidate", App: LifeOS P3-141 Controlled Pilot Candidate.
+0 standard window LifeOS · P3-141 Controlled Pilot Candidate, Secondary Actions: Raise
+	1 group LifeOS P3-141 native WebView content
+		2 scroll area
+			3 HTML content Description: LifeOS · P3-141 Controlled Pilot Candidate, URL: tauri://localhost
+				4 link 跳到主要内容, Value: tauri://localhost#main-content
+				5 container
+					6 container LifeOS 主导航
+						7 container LifeOS
+							8 text ✦
+						9 button Today
+						10 button Me
+						11 button Contexts
+						12 button Memory
+						13 button Settings
+					14 container
+						15 heading 模型设置, Value: 1
+							16 text 模型设置
+						17 text 配置 LifeOS 使用的云端或本地模型。
+					18 text 运行模式
+					19 text 先选择连接方式，再配置并测试。
+					20 运行模式
+						21 container
+							22 text 云端模型 OpenAI、Anthropic、DeepSeek、Kimi 或 OpenAI-compatible 服务
+							23 radio button 云端模型 OpenAI、Anthropic、DeepSeek、Kimi 或 OpenAI-compatible 服务, Value: 0
+						24 container
+							25 text 本地模型 Ollama、LM Studio 或本地兼容服务
+							26 radio button 本地模型 Ollama、LM Studio 或本地兼容服务, Value: 1
+					27 text 连接配置
+					28 text 保存、测试、选择、启用和发送是彼此分离的操作。
+					29 text 本地
+					30 container
+						31 text Provider
+						32 pop up button Provider, Value: Ollama
+					33 container
+						34 text 接口地址
+						35 text field (settable) 接口地址, Value: http://127.0.0.1:11434/v1, Placeholder: http://127.0.0.1:11434
+					36 container
+						37 text 本地模型不需要 API Key 仅连接到你选择的 loopback 或私有局域网模型服务。
+					38 text 本地连接不会索取或保存 API Key。
+					39 button 保存配置
+					40 button 测试连接
+					41 text 连接状态
+					42 text 手动测试后显示可用模型。
+					43 text 状态
+					44 text 需要重新测试
+					45 text 延迟
+					46 text —
+					47 text 最近检查
+					48 text —
+					49 text 连接测试不发送个人 Context。
+					50 container
+						51 text 当前启用模型 从刚刚测试成功的接口返回结果中选择。 尚未选择模型 未启用 可用模型
+						52 pop up button (disabled) 可用模型, Value: 测试连接后显示可用模型
+						53 button (disabled) 先测试并选择模型
+						54 container (collapsed) Secondary Actions: Expand
+							55 summary 高级参数 可选, Value: off
+								56 text 高级参数
+								57 text 可选
+							58 stepper 0
+								59 unknown
+								60 unknown
+							61 value indicator 0.7
+							62 stepper 0
+								63 unknown
+								64 unknown
+							65 value indicator 2048
+							66 stepper 0
+								67 unknown
+								68 unknown
+							69 value indicator 60
+					70 container Global AI Bar
+						71 button 打开 Global AI
+						72 text field (settable) 问 LifeOS, Placeholder: 问 LifeOS…
+						73 text Global AI · 仅本地演示
+						74 button 发送并展开 Global AI
+				75 text 本地最小披露
+				76 heading Context Inspector, Value: 2
+					77 text Context Inspector
+				78 text 未初始化
+				79 text 固定合成 Memory 与 Current State 只在本地 SQLite 中使用；本面板不发起外部派发。
+				80 container
+					81 button 写入固定合成资料
+					82 button 解析 Work Context
+					83 button 跨领域解析并临时移除 Health
+					84 button 读取非内容收据
+					85 button 验证无效 Authorization
+				86 container
+					87 text 本次使用
+					88 content list
+						89 container 尚无 request
+							90 list marker •
+							91 text 尚无 request
+					92 text 本次排除
+					93 content list
+						94 container 尚无 request
+							95 list marker •
+							96 text 尚无 request
+				97 description list
+					98 text request
+					99 text —
+					100 text 预算
+					101 text —
+					102 text 外部派发
+					103 text 0
+			104 scroll bar (settable, float) 0
+	105 close button
+	106 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	107 minimize button
+	108 text LifeOS · P3-141 Controlled Pilot Candidate
+109 menu bar
+	110 LifeOS P3-141 Controlled Pilot Candidate
+	111 File
+	112 Edit
+	113 View
+	114 Window
+	115 Help
+
+The focused UI element is 3 HTML content Description: LifeOS · P3-141 Controlled Pilot Candidate, URL: tauri://localhost
