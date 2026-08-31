@@ -1,7 +1,7 @@
 # LifeOS Current Status Index
 
 更新时间：2026-08-30
-最后校验时间：2026-08-30（D-0621：模型设置权威基线纠正；P3-141 Revision 3 Closure，Phase C暂停）
+最后校验时间：2026-08-31（D-0627：P3-141 Root Authority工程P0关闭；native GUI Evidence Closure启动，Phase C暂停）
 
 本文件是 PM 日常上下文入口，用于减少重复读取大文件；它是状态索引，不替代主账本。
 
@@ -18,9 +18,9 @@
 ## 当前状态
 
 - 当前治理：D-0516 起的新任务采用 Governance V2：完整 Task Contract 一次授权；结果级任务包含实现、测试、Evidence与同范围修正；L0/L1/L2内嵌验收合同，L3/Gate才独立ABF；独立评审按风险／事实触发；普通任务PM Pass后自动Complete；任务卡取消模型推荐和模型证明门禁。P3-127及此前历史不追溯。
-- 当前活动事项：第三场P3-141 Revision 3独立复评有效确认候选P0：build.rs硬编码工程期synthetic root，拒绝任何全新独立评审根。候选`60a93746`工程门当前效力撤回但历史只读；同任务root-authority Closure启动中。
-- 当前可执行下一步：在不扩大任意路径能力的前提下，把build/runtime root改为每次显式task-scoped、marker验证的全新P3-141 synthetic root；补absolute／normalized／prefix／real-dir／non-symlink／0600 marker／exact-root／direct-child失败关闭，完整复跑和重建Manifest后再换全新worktree独立复评。
-- 当前任务指针：P3-141 Revision 3 Root Authority Closure / Phase C Paused / User Confirmed / ABF-P3-141-v3 Frozen / Governance V2 L3 / Mandatory Fresh Independent Re-review / Not Product Frozen；当前计数`1/0/0/0/11`；D-0620与D-0623正向效力撤回但历史只读；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
+- 当前活动事项：P3-141 Revision 3工程提交`476e5f06`已关闭第三场独立复评确认的固定root P0：显式task-scoped root、严格名称、canonical 0700目录、0600 exact marker、direct real runtime child及10项写前失败关闭成立；同任务进入native GUI Evidence Closure。
+- 当前可执行下一步：在全新隔离会话与全新marker-bound P3-141 synthetic root中，仅为修复后新二进制补desktop／compact／narrow三档direct PID→AXWindow→AXWebArea/WebView→截图／geometry／source／binary证据；不得重新设计或复用旧截图。成功后再换另一全新worktree完整独立复评。
+- 当前任务指针：P3-141 Revision 3 Native GUI Evidence Closure / Phase C Paused / User Confirmed / ABF-P3-141-v3 Frozen / Governance V2 L3 / Mandatory Fresh Independent Re-review / Not Product Frozen；当前计数`0/0/1/0/1`；Root Authority P0工程关闭但尚非最终PM Pass；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
 - P3-134最终PM计数：P0=0、P1=0、P2=1、Unknown=0、Not Implemented=0。333项Final Manifest和13项固定输入hash复算闭合，AC-01～16全Pass，三档actual-Tauri各15态、同fixture视觉、十一IPC、双模式Runtime与10类写前失败关闭成立。P2为一次已精确清理且未参与正Evidence的无内容stdout越界历史。
 - P3-132 最终PM计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算工程Final Manifest 75+42、P3-131历史75/75并串行复跑11/11测试；CL-01不足身份显示与CL-02三个开放Action按`confirmed_at_ms/action_id`稳定Focus、刷新及重启全部闭合。两项首次工程历史P2保留但不阻断唯一用户结果；未触发独立评审。
 - P3-131 当前 PM 计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算Final Manifest 89/89与source lineage 75/75，离线测试6/6，并在唯一全新task temp root直接复跑actual Tauri的接受并完成、关闭重开、编辑接受、拒绝、暂缓和证据不足路径。两项P2分别为工程action log／build-cache Manifest措辞与原始PID时间链不足，以及source scanner对`basis_refs.map`的`fs.`子串误报和closure checker语义弱；均由PM定向复核关闭其阻断性，不影响唯一用户结果。

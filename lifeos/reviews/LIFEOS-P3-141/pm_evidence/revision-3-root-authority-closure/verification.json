@@ -1,0 +1,24 @@
+{
+  "schema": "lifeos.p3-141.pm.root-authority-closure-verification.v1",
+  "candidate_commit": "476e5f069671dc7d0dc53be88f9d328901d6d543",
+  "manifest": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/ROOT_AUTHORITY_FINAL_MANIFEST.json",
+  "manifest_status": "PASS",
+  "group_counts": {
+    "candidate": 80,
+    "fixed_inputs": 7,
+    "blocked_history": 68,
+    "closure_evidence": 22
+  },
+  "self_exclusion_verified": true,
+  "serial_tests": "51/51 PASS",
+  "semantic_mutations": "7/7 captured",
+  "root_negative_cases": "10/10 fail-closed before runtime or persistence",
+  "pm_counts": {
+    "p0": 0,
+    "p1": 0,
+    "p2": 1,
+    "unknown": 0,
+    "not_implemented": 1
+  },
+  "conclusion": "CLOSURE_CYCLE_NATIVE_GUI_EVIDENCE_REQUIRED"
+}
