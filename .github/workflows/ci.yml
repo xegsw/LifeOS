@@ -26,8 +26,21 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-      - name: Check out repository
+      - name: Check out required repository paths
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            generate_depr_sql.py
+            generate_simple_depr_sql.py
+            lifeos/tools/local_precheck.py
+            lifeos/CURRENT_STATUS.md
+            lifeos/DECISION_LOG.md
+            lifeos/FREEZE_STATUS.md
+            lifeos/TASK_REGISTRY.md
+            lifeos/PM_OPERATING_MODEL.md
+            lifeos/engineering/LIFEOS-P3-134/candidate
+          sparse-checkout-cone-mode: false
 
       - name: Compile tracked Python scripts
         run: |
@@ -69,8 +82,13 @@ jobs:
       run:
         working-directory: lifeos/engineering/LIFEOS-P3-134/candidate
     steps:
-      - name: Check out repository
+      - name: Check out current candidate
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            lifeos/engineering/LIFEOS-P3-134/candidate
+          sparse-checkout-cone-mode: false
 
       - name: Install pinned Rust toolchain
         run: |
