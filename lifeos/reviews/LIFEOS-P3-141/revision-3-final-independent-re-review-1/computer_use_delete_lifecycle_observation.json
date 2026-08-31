@@ -1,0 +1,21 @@
+{
+  "schema": "lifeos.p3-141.review-computer-use-delete-lifecycle.v1",
+  "scope": "synthetic-only; user-confirmed deletion in the unique review root",
+  "direct_launch_pid": 93288,
+  "exact_window_title": "LifeOS · P3-141 Controlled Pilot Candidate",
+  "steps": [
+    "Started from persisted local mode with one redacted cloud/openai credential row.",
+    "Clicked Cloud radio; the Cloud card and delete control became visible.",
+    "Clicked delete before persisting Cloud; candidate failed closed with credential_mode_rejected and kept the row (P2-001).",
+    "Set only the synthetic fixture cloud endpoint https://fixture.lifeos.test:443/v1 and saved Cloud configuration; no test, enable, send, or network action was invoked.",
+    "Clicked delete again; UI reverted to the no-credential presentation and the redacted SQLite probe observed zero credential rows.",
+    "A fresh direct restart showed no API Key mask and no delete control."
+  ],
+  "network_action_invoked": false,
+  "sensitive_value_entered": false,
+  "supporting_db_observations": [
+    "credential-gui-delete-db.json",
+    "credential-delete-restart-db.json"
+  ],
+  "direct_pid_exit": "The launch process was stopped before cleanup; a remaining exact-root child PID 93060 was separately identified and terminated before marker-gated cleanup."
+}

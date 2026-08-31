@@ -1,0 +1,19 @@
+{
+  "schema": "lifeos.p3-141.review-computer-use-local-save.v1",
+  "scope": "synthetic-only; no connection test, enable, send, or external dispatch",
+  "direct_launch_pid": 93036,
+  "exact_window_title": "LifeOS · P3-141 Controlled Pilot Candidate",
+  "observations": {
+    "settings_opened": true,
+    "native_web_content_present": true,
+    "local_radio_selected_by_real_click": true,
+    "local_mode_hides_api_key_control": true,
+    "local_mode_shows_ollama_and_lm_studio": true,
+    "initial_blank_endpoint_save_rejected_closed": "provider_endpoint_rejected",
+    "synthetic_loopback_endpoint_saved": "http://127.0.0.1:11434/v1",
+    "post_save_connection_state": "not_tested",
+    "network_action_invoked": false
+  },
+  "separate_redacted_sqlite_observation": "computer-use-local-save-db.json records active_mode=local, separate cloud and local rows, one cloud credential ciphertext row only, and no plaintext canary.",
+  "pid_exit_check": "direct process PID was absent at cleanup check; no substitute PID was used."
+}

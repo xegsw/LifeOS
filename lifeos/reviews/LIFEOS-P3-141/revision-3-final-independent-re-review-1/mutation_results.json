@@ -1,0 +1,45 @@
+{
+  "control_static_pass": true,
+  "fail_count": 0,
+  "pass_count": 5,
+  "results": [
+    {
+      "detected_failures": [
+        "cloud_five_source",
+        "mode_isolation"
+      ],
+      "id": "provider_set_fallback",
+      "pass": true
+    },
+    {
+      "detected_failures": [
+        "exact_20_ipc",
+        "session_credential_absent"
+      ],
+      "id": "session_credential_fallback",
+      "pass": true
+    },
+    {
+      "detected_failures": [
+        "mode_isolation"
+      ],
+      "id": "cloud_local_cross_use",
+      "pass": true
+    },
+    {
+      "detected_failures": [
+        "literal_tmp_root"
+      ],
+      "id": "generic_root",
+      "pass": true
+    },
+    {
+      "detected_failures": [
+        "strict_marker"
+      ],
+      "id": "marker_bypass",
+      "pass": true
+    }
+  ],
+  "schema": "lifeos.p3-141.revision-3.review-owned-mutations.v1"
+}
