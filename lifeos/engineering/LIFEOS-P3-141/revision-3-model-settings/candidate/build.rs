@@ -68,7 +68,7 @@ fn allowed_authorized_root_name(name: &str) -> bool {
         && !run.contains("--")
         && run.bytes().all(|byte| byte.is_ascii_lowercase() || byte.is_ascii_digit() || byte == b'-');
     match kind {
-        "engineering" => valid_run && (run.starts_with("closure-") || run == "bundle-lineage-v1"),
+        "engineering" => valid_run && (run.starts_with("closure-") || run == "bundle-lineage-v3" || run == "bundle-lineage-v5"),
         "independent" => valid_run && run.starts_with("review-"),
         "root" => valid_run && run.starts_with("authority-"),
         _ => false,

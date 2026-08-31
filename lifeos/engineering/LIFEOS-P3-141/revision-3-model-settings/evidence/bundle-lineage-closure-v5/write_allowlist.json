@@ -1,0 +1,22 @@
+{
+  "schema": "lifeos.p3-141.bundle-lineage-closure-v5.write-allowlist.v1",
+  "task_id": "LIFEOS-P3-141",
+  "closure": "Revision 3 Bundle Lineage Closure v5",
+  "authorized_candidate_writes": {
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/build.rs": "Add only the literal bundle-lineage-v5 engineering run to the existing exact root-name allowlist; retain all existing fail-closed checks.",
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate/src/runtime.rs": "Make the same literal bundle-lineage-v5 allowlist addition; retain all existing fail-closed checks."
+  },
+  "authorized_workspace_writes": [
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v5/**",
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/BUNDLE_LINEAGE_CLOSURE_V5_FINAL_MANIFEST.json",
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/verify_bundle_lineage_closure_v5.py",
+    "lifeos/deliverables/LIFEOS-P3-141_revision-3_bundle-lineage-and-native-capture-closure-v5_report.md"
+  ],
+  "authorized_temporary_root": "/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/**",
+  "prohibited_candidate_writes": [
+    "any Candidate path other than build.rs and src/runtime.rs",
+    "any Provider, credential, IPC, DOM, CSS, schema, model, product or business-semantic change",
+    "any generic root-name or path relaxation"
+  ],
+  "commit_policy": "Commit only after all engineering acceptance conditions, including three target-window native captures and cleanup verifier, pass."
+}

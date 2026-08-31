@@ -1,0 +1,21 @@
+{
+  "schema": "lifeos.p3-141.bundle-lineage-closure-v5.precontact-seal.v1",
+  "task_id": "LIFEOS-P3-141",
+  "sealed_at_utc": "2026-08-31T16:19:22Z",
+  "attempt": "v5",
+  "v5_candidate_or_history_contact_before_seal": false,
+  "v4_history": "read_only_blocked_archive; excluded_from_positive_evidence",
+  "controls": {
+    "test_design.md": "0cc2253980a2ae602acd9a87889d9087cd226bbfbb3cfa772a58a411518afc4e",
+    "write_allowlist.json": "25a2afbaa1ada74d8e7cb0b77b3acc66d5ac0f0e38008a755c3489d567986b5e",
+    "prohibited_paths.md": "b5836679f18c25989ea95efbe99a573efa1f0f4ee4dc2f8f29aada8fd9c6084b",
+    "run_plan.md": "a7e8c388f2801cf46c7a38b6c03f5db4785910daef13341d27136fc82f13a318"
+  },
+  "authorized_temporary_root": "/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5",
+  "candidate_delta": {
+    "paths": ["candidate/build.rs", "candidate/src/runtime.rs"],
+    "only_allowed_semantic_change": "literal bundle-lineage-v5 root-name acceptance while retaining the strict allowlist"
+  },
+  "native_capture_rule": "direct_pid_then_unique_exact_title_axwindow_then_axwebarea_or_webview_then_target_window_only_capture",
+  "failure_rule": "fail_closed_without_desktop_fullscreen_compact_narrow_or_browser_substitution"
+}

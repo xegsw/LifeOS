@@ -567,7 +567,7 @@ fn allowed_authorized_root_name(name: &str) -> bool {
     let Some(suffix) = name.strip_prefix("lifeos-p3-141-revision-3-") else { return false; };
     let Some((kind, run)) = suffix.split_once('-') else { return false; };
     let valid_run = !run.is_empty() && run.len() <= 72 && !run.starts_with('-') && !run.ends_with('-') && !run.contains("--") && run.bytes().all(|byte| byte.is_ascii_lowercase() || byte.is_ascii_digit() || byte == b'-');
-    match kind { "engineering" => valid_run && (run.starts_with("closure-") || run == "bundle-lineage-v1"), "independent" => valid_run && run.starts_with("review-"), "root" => valid_run && run.starts_with("authority-"), _ => false }
+    match kind { "engineering" => valid_run && (run.starts_with("closure-") || run == "bundle-lineage-v3" || run == "bundle-lineage-v5"), "independent" => valid_run && run.starts_with("review-"), "root" => valid_run && run.starts_with("authority-"), _ => false }
 }
 fn authorized_synthetic_root() -> Result<PathBuf, Error> {
     let raw = COMPILED_AUTHORIZED_SYNTHETIC_ROOT;

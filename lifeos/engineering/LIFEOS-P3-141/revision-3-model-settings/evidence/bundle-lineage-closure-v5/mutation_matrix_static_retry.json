@@ -1,0 +1,61 @@
+{
+  "all_rejected": false,
+  "expected_tree_sha256": "c1004305e4f6ee8581ca47deaee61d9e642cea42aaeb96bdeb66499fc7446f8f",
+  "results": [
+    {
+      "failures": [
+        "forbidden_product_term:本次会话 API Key"
+      ],
+      "name": "session_wording",
+      "rejected": true
+    },
+    {
+      "failures": [
+        "missing_adapter_term:option(\"deepseek\", \"DeepSeek\")"
+      ],
+      "name": "deepseek_removal",
+      "rejected": true
+    },
+    {
+      "failures": [
+        "missing_adapter_term:option(\"kimi\", \"Kimi\")"
+      ],
+      "name": "kimi_merge",
+      "rejected": true
+    },
+    {
+      "failures": [],
+      "name": "mode_guard_removal",
+      "rejected": false
+    },
+    {
+      "failures": [
+        "legacy_credential_ipc"
+      ],
+      "name": "credential_ipc_reversion",
+      "rejected": true
+    },
+    {
+      "failures": [
+        "missing_runtime_term:encrypt_credential(paths, value)?"
+      ],
+      "name": "encryption_removal",
+      "rejected": true
+    },
+    {
+      "failures": [
+        "resource_binding_missing"
+      ],
+      "name": "resource_binding_removal",
+      "rejected": true
+    },
+    {
+      "failures": [
+        "tree_sha256_mismatch"
+      ],
+      "name": "wrong_tree",
+      "rejected": true
+    }
+  ],
+  "schema": "lifeos.p3-141.v5.static-mutation-matrix.v1"
+}

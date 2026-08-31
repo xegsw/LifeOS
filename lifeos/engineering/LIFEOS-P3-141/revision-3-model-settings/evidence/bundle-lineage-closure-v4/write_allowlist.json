@@ -1,0 +1,21 @@
+{
+  "schema": "lifeos.p3-141.bundle-lineage-closure-v4.write-allowlist.v1",
+  "task_id": "LIFEOS-P3-141",
+  "closure": "Revision 3 Bundle Lineage Closure v4",
+  "authorized_writes": [
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v4/**",
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/BUNDLE_LINEAGE_CLOSURE_V4_FINAL_MANIFEST.json",
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/verify_bundle_lineage_closure_v4.py",
+    "lifeos/deliverables/LIFEOS-P3-141_revision-3_bundle-lineage-and-native-capture-closure-v4_report.md",
+    "/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v4/**"
+  ],
+  "candidate_write_policy": "No candidate write is planned. If an acceptance-required defect is discovered, stop before any candidate modification and record the need for a scope-valid repair.",
+  "commit_policy": "A narrow commit is permitted only if every engineering acceptance condition, including all three direct-PID native captures, passes.",
+  "forbidden_write_classes": [
+    "Pilot-6 or any real-data root",
+    "real database, text, Health value, Provider, credential, network or cloud target",
+    "Revision 1/2/v3 historical artifacts",
+    "PM ledger, risk, freeze or stage records",
+    "outside the exact temporary root"
+  ]
+}

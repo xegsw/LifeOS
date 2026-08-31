@@ -1,0 +1,15 @@
+/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/tools/native_window_probe.swift:23:62: error: conditional downcast to CoreFoundation type 'AXValue' will always succeed
+ 21 |
+ 22 | func pointValue(_ element: AXUIElement) -> CGPoint? {
+ 23 |     guard let value = axValue(element, kAXPositionAttribute) as? AXValue else { return nil }
+    |                                                              `- error: conditional downcast to CoreFoundation type 'AXValue' will always succeed
+ 24 |     var result = CGPoint.zero
+ 25 |     return AXValueGetValue(value, .cgPoint, &result) ? result : nil
+
+/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/tools/native_window_probe.swift:29:58: error: conditional downcast to CoreFoundation type 'AXValue' will always succeed
+ 27 |
+ 28 | func sizeValue(_ element: AXUIElement) -> CGSize? {
+ 29 |     guard let value = axValue(element, kAXSizeAttribute) as? AXValue else { return nil }
+    |                                                          `- error: conditional downcast to CoreFoundation type 'AXValue' will always succeed
+ 30 |     var result = CGSize.zero
+ 31 |     return AXValueGetValue(value, .cgSize, &result) ? result : nil

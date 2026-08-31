@@ -1,0 +1,78 @@
+{
+  "all_rejected": true,
+  "expected_tree_sha256": "c1004305e4f6ee8581ca47deaee61d9e642cea42aaeb96bdeb66499fc7446f8f",
+  "results": [
+    {
+      "failures": [
+        "forbidden_product_term:本次会话 API Key",
+        "missing_persistent_semantics:ui/interaction_contract.md",
+        "missing_persistent_semantics:ui/visual_contract.json"
+      ],
+      "name": "session_wording",
+      "rejected": true
+    },
+    {
+      "failures": [
+        "missing_adapter_term:option(\"deepseek\", \"DeepSeek\")",
+        "missing_persistent_semantics:ui/interaction_contract.md",
+        "missing_persistent_semantics:ui/visual_contract.json"
+      ],
+      "name": "deepseek_removal",
+      "rejected": true
+    },
+    {
+      "failures": [
+        "missing_adapter_term:option(\"kimi\", \"Kimi\")",
+        "missing_persistent_semantics:ui/interaction_contract.md",
+        "missing_persistent_semantics:ui/visual_contract.json"
+      ],
+      "name": "kimi_merge",
+      "rejected": true
+    },
+    {
+      "failures": [
+        "missing_persistent_semantics:ui/interaction_contract.md",
+        "missing_persistent_semantics:ui/visual_contract.json"
+      ],
+      "name": "mode_guard_removal",
+      "rejected": true
+    },
+    {
+      "failures": [
+        "legacy_credential_ipc",
+        "missing_persistent_semantics:ui/interaction_contract.md",
+        "missing_persistent_semantics:ui/visual_contract.json"
+      ],
+      "name": "credential_ipc_reversion",
+      "rejected": true
+    },
+    {
+      "failures": [
+        "missing_runtime_term:encrypt_credential(paths, value)?",
+        "missing_persistent_semantics:ui/interaction_contract.md",
+        "missing_persistent_semantics:ui/visual_contract.json"
+      ],
+      "name": "encryption_removal",
+      "rejected": true
+    },
+    {
+      "failures": [
+        "missing_persistent_semantics:ui/interaction_contract.md",
+        "missing_persistent_semantics:ui/visual_contract.json",
+        "resource_binding_missing"
+      ],
+      "name": "resource_binding_removal",
+      "rejected": true
+    },
+    {
+      "failures": [
+        "missing_persistent_semantics:ui/interaction_contract.md",
+        "missing_persistent_semantics:ui/visual_contract.json",
+        "tree_sha256_mismatch"
+      ],
+      "name": "wrong_tree",
+      "rejected": true
+    }
+  ],
+  "schema": "lifeos.p3-141.v5.static-mutation-matrix.v1"
+}

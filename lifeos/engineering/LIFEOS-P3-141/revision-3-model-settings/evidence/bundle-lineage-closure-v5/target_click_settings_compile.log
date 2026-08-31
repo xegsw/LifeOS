@@ -1,0 +1,7 @@
+/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/tools/target_click_settings.swift:14:141: error: '==' is not a postfix unary operator
+12 | let title=CommandLine.arguments[2]
+13 | guard AXIsProcessTrusted(), NSWorkspace.shared.frontmostApplication?.processIdentifier==pid else { emit(["status":"rejected","pid":Int(pid),"reason":"accessibility_or_frontmost_rejected"]); exit(2) }
+14 | let app=AXUIElementCreateApplication(pid); var raw:CFTypeRef?; guard AXUIElementCopyAttributeValue(app,kAXWindowsAttribute as CFString,&raw)==.success,let windows=raw as?[AXUIElement] else { emit(["status":"rejected","pid":Int(pid),"reason":"ax_windows_unavailable"]); exit(2) }
+   |                                                                                                                                             `- error: '==' is not a postfix unary operator
+15 | let matches=windows.filter{text($0,kAXTitleAttribute)==title}; guard matches.count==1,let button=find(matches[0]),let p=point(button),let s=size(button),s.width>0,s.height>0 else { emit(["status":"rejected","pid":Int(pid),"reason":"settings_target_unavailable"]); exit(2) }
+16 | let target=CGPoint(x:p.x+s.width/2,y:p.y+s.height/2)

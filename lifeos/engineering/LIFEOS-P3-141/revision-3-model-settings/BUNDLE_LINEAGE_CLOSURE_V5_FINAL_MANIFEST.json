@@ -1,0 +1,120 @@
+{
+  "schema": "lifeos.p3-141.bundle-lineage-closure-v5.final-manifest.v1",
+  "task_id": "LIFEOS-P3-141",
+  "attempt": "v5",
+  "conclusion": "Engineering Pass — synthetic/offline scope only",
+  "scope_limits": [
+    "No real credential, Provider, Pilot, cloud, network, actual personal data, or actual database was accessed.",
+    "This is not an independent review, PM acceptance, Phase C authorization, risk closure, product freeze, or stage decision."
+  ],
+  "precontact": {
+    "seal_sha256": "f69f3550e053c99b2acc86991fe9e12ea4df128d9daeb18f2c4b1917d412bc29",
+    "candidate_or_history_contact_before_seal": false,
+    "v4_history": "read-only blocked archive; excluded from v5 positive evidence"
+  },
+  "candidate_delta": {
+    "reconstructed_v3_tree_sha256": "0d64f8f150a79f90622fde66df861b03171551400339a0701ac4d058e7982e2e",
+    "current_v5_tree_sha256": "889190704040f47b7e8bf9604ec9cd47289b192d91ca0c923780971145e2f222",
+    "file_count": 82,
+    "allowed_changed_paths_only": [
+      "build.rs",
+      "src/runtime.rs"
+    ],
+    "change": "add only the exact bundle-lineage-v5 root literal to the existing strict root-name allowlist in build.rs and runtime.rs; no DOM/CSS/Provider/credential/IPC/business-semantic modification"
+  },
+  "source_bundle_binary_lineage": {
+    "candidate_to_clean_build_input_equal": true,
+    "debug_binary_to_app_binary_equal": true,
+    "debug_and_app_binary_sha256": "4e932ac8b8e34a4901a787f226ac474ab195320a9217229350bde10921720233",
+    "ui_binding": "Tauri embeds compressed UI assets. Actual UI semantics are therefore bound by the direct-PID AXWebArea and target-window capture records, not a plaintext binary-string assumption."
+  },
+  "offline_regression": {
+    "cargo_serial": "52 passed; 0 failed",
+    "cargo_parallel": "52 passed; 0 failed",
+    "node_bundle_lineage_contract": "PASS",
+    "node_mode_delete_ui_contract": "PASS",
+    "tauri_bundle": "PASS; warnings only"
+  },
+  "static_and_mutation": {
+    "static_contract_pass": true,
+    "mutations_rejected": [
+      "session_wording",
+      "deepseek_removal",
+      "kimi_merge",
+      "mode_guard_removal",
+      "credential_ipc_reversion",
+      "encryption_removal",
+      "resource_binding_removal",
+      "wrong_tree"
+    ]
+  },
+  "native_actual_app": {
+    "binding_rule": "direct PID -> one exact-title AXWindow -> AXWebArea -> stable/frontmost/non-overlapped target-window capture",
+    "requested_evidence_viewports": {
+      "desktop": "1280x1024",
+      "compact": "1160x768",
+      "narrow": "700x760"
+    },
+    "observed_target_ax_window_frames_points": {
+      "desktop": "1280x949",
+      "compact": "1160x768",
+      "narrow": "700x760"
+    },
+    "desktop_frame_note": "The captured macOS target AXWindow was constrained to the 949 pt available window frame. The requested desktop evidence viewport is separately bound by the direct-launch environment and source/runtime contract; no fullscreen or desktop capture was substituted.",
+    "settings_click": "an accessibility button frame inside the already-bound target AXWindow",
+    "all_post_click_records": "unique title/window, AXWebArea, stable frame, frontmost, no overlap, backing-scale geometry match, and visible Settings text markers"
+  },
+  "cleanup": {
+    "root": "/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5",
+    "marker_gate": "missing, wrong-payload, and symlink markers each rejected; correct marker verified; exact root then deleted",
+    "root_absent_after_cleanup": true
+  },
+  "diagnostic_history_excluded_from_positive_evidence": [
+    "The v4 root-name incompatibility was already archived Blocked and remained read-only.",
+    "v5 early static, mutation, and source/bundle helper outputs are preserved diagnostics; their final retry records are the authoritative positive records.",
+    "Early desktop Today-window captures and unsuccessful navigation probes are preserved diagnostics and excluded from positive Settings proof.",
+    "The first desktop/compact transaction status-recording footer used bash PIPESTATUS under zsh and did not create its footer. The independent recovery records add only reaped-PID state; the launch, pre/post native probes, click records, screenshots, and geometry records remain direct evidence."
+  ],
+  "artifact_sha256": {
+    "evidence/bundle-lineage-closure-v5/test_design.md": "0cc2253980a2ae602acd9a87889d9087cd226bbfbb3cfa772a58a411518afc4e",
+    "evidence/bundle-lineage-closure-v5/write_allowlist.json": "25a2afbaa1ada74d8e7cb0b77b3acc66d5ac0f0e38008a755c3489d567986b5e",
+    "evidence/bundle-lineage-closure-v5/prohibited_paths.md": "b5836679f18c25989ea95efbe99a573efa1f0f4ee4dc2f8f29aada8fd9c6084b",
+    "evidence/bundle-lineage-closure-v5/run_plan.md": "a7e8c388f2801cf46c7a38b6c03f5db4785910daef13341d27136fc82f13a318",
+    "evidence/bundle-lineage-closure-v5/precontact_seal.json": "f69f3550e053c99b2acc86991fe9e12ea4df128d9daeb18f2c4b1917d412bc29",
+    "evidence/bundle-lineage-closure-v5/static_contract_prebuild_final.json": "8c1581826c40a29d2fb1a4d6eece7237a223df41a95eaaf14165bf1ef09b48c6",
+    "evidence/bundle-lineage-closure-v5/mutation_matrix_static_final.json": "e71d2aa7abe507b87da71fcbe37e955306167b7a5b5b30133d979507b7f76638",
+    "evidence/bundle-lineage-closure-v5/source_bundle_binary_lineage_retry.json": "ed740d0df306b4f28fcd08c99a9b721657d41311c5a594c34d3bbff26618cec0",
+    "evidence/bundle-lineage-closure-v5/bundle_resource_inventory_retry.json": "165cce608d601b7716f053f11ceb3b00ee59583e1006980a7122d5190d84911f",
+    "evidence/bundle-lineage-closure-v5/candidate_v5_delta_retry.json": "64b04e66eac854484cebad70d584950550164c8b65250f50bd7f29186161161c",
+    "evidence/bundle-lineage-closure-v5/cargo_test_serial.log": "693f27ddee329e82ad8be6c72ed6f70a268981ee9509d4a41071e7de4ac7ea2f",
+    "evidence/bundle-lineage-closure-v5/cargo_test_parallel.log": "33b3ec2529f07e38d584e5ed34b04ad93097e3d55758dc0cf27cf6d59cbbc831",
+    "evidence/bundle-lineage-closure-v5/bundle_lineage_contract.log": "f831bf15e9e96d94ef43d5b2ca3e6fd01047894da1e5cd23d7efddc952674df0",
+    "evidence/bundle-lineage-closure-v5/mode_delete_ui_contract.log": "8fed6009353d12625a1e391266f97f30b939b3d0c8cb9defc8bff9d549059dd1",
+    "evidence/bundle-lineage-closure-v5/cargo_tauri_bundle.log": "d4aa92a35ceb6819564e651633e7a2ddb7aaafb910b5adb930b6b8288a6c0a8a",
+    "evidence/bundle-lineage-closure-v5/direct_launch_desktop_framefallback.json": "983945a55cba0ee448016dc9f5bfea113f73eb99ae71ceacefb0cca5795e4f62",
+    "evidence/bundle-lineage-closure-v5/direct_launch_compact_framefallback.json": "5eb21830b13be1ad0454a862e7eb884323c2e4ff1b4f27c71a1f039b31366dbd",
+    "evidence/bundle-lineage-closure-v5/direct_launch_narrow_framefallback.json": "0a33154f2ba4cb4f0c7b6b1c45941a77e242eef60258630227cbb6d72442d2f5",
+    "evidence/bundle-lineage-closure-v5/native_desktop_ax_pre_framefallback.json": "34a5708ddc478ebcedb902c2e77b6b335a0d5f13d8f8e3c53d28c82b09a112c2",
+    "evidence/bundle-lineage-closure-v5/native_compact_ax_pre_framefallback.json": "f8d9a465cc8dafdbc2fcc95cfdfd3e14005b500b52c4f8f807f2f69248c89d64",
+    "evidence/bundle-lineage-closure-v5/native_narrow_ax_pre_framefallback.json": "f8bc13bc24680de37b1ab614efc472f1a7b4dee667896eb410cd78f6cd804b07",
+    "evidence/bundle-lineage-closure-v5/target_click_desktop_framefallback.json": "622bc6bbc9969982567443bb8227885b7e85429b637f3244ce3dac8ec3f4c2e0",
+    "evidence/bundle-lineage-closure-v5/target_click_compact_framefallback.json": "85c68c59a399aa564f5041c2966eedd24bd3534bcaadbfb445d8cada91cd97fe",
+    "evidence/bundle-lineage-closure-v5/target_click_narrow_framefallback.json": "5b810bddfb6d305a4077badbb60cd9c826267b2b6662f7dd7932d759a0fce961",
+    "evidence/bundle-lineage-closure-v5/direct_launch_desktop_framefallback_exit_recovery.json": "c7e56a5e309aa4787b78cc66b48acabb9cb94a066b8a61bbc01d72c722796e50",
+    "evidence/bundle-lineage-closure-v5/direct_launch_compact_framefallback_exit_recovery.json": "6e5036caab326e1fcae15229d94aac3fa88aa3b4304c897b3b7a2821eb213c8b",
+    "evidence/bundle-lineage-closure-v5/direct_launch_narrow_framefallback_exit.json": "8fd4f87938ebb4eb4e4aec9221b5d62c50b9809d83be7c2dd550c39a36ee955c",
+    "evidence/bundle-lineage-closure-v5/native_desktop_ax_settings_framefallback.json": "7bd6484b7916da54337cb07e20cf2ae230d1f78704b220a4e34d05ef21a47bb8",
+    "evidence/bundle-lineage-closure-v5/native_compact_ax_settings_framefallback.json": "1d3993d40d64670895bf6d190a261707c98911e40ace5cbff4a22241808b2ab5",
+    "evidence/bundle-lineage-closure-v5/native_narrow_ax_settings_framefallback.json": "e89e7a089ebc6a318d423aa3ee9d4394fcb7cdb192dc446737ad45861ef4fec3",
+    "evidence/bundle-lineage-closure-v5/settings_desktop_framefallback_geometry.json": "6bf12065a392a816c4e696def11a03ac4f6d0513f2f5c027b281c51970b930e6",
+    "evidence/bundle-lineage-closure-v5/settings_compact_framefallback_geometry.json": "757806849f785e744809b270b3ae94b0e7c66ff9b2acc3758b68eac010b19680",
+    "evidence/bundle-lineage-closure-v5/settings_narrow_framefallback_geometry.json": "091227e9c7adc385fbda82803db366003d8206eefdade3570ea80dd1cae83a6b",
+    "evidence/bundle-lineage-closure-v5/settings_desktop_framefallback.png": "4016f9a94ea627e66c5e7c61e450636912b90e8d783612a93f45048b11f634a2",
+    "evidence/bundle-lineage-closure-v5/settings_compact_framefallback.png": "a79c3b015f1e1ea08421eb7fb2e004884153fb755f10d55ec672f9006f522a01",
+    "evidence/bundle-lineage-closure-v5/settings_narrow_framefallback.png": "a8c51070bb5949bc49163a45e57c1368e435e1782e2e7ed73d0d0b20599d5c0a",
+    "evidence/bundle-lineage-closure-v5/native_visual_review.md": "89a36e4cd5c03e509db5db4684b02b880031a69a7ca5e9f1d21ea03947bc3797",
+    "evidence/bundle-lineage-closure-v5/cleanup_gate_matrix.json": "7e0ec11629a1d9769fc5e980c94df14fc9e95614510e5ffbb1bc001eb8211b90",
+    "evidence/bundle-lineage-closure-v5/cleanup_final.json": "1a3e59b323fa6cefdf5adf921d359064f4e658ca300e079108dc302fd55457da"
+  },
+  "non_self_referential": true
+}

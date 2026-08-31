@@ -1,0 +1,14 @@
+{
+  "schema": "lifeos.p3-141.bundle-lineage-closure-v4.root-gate-incompatibility.v1",
+  "task_id": "LIFEOS-P3-141",
+  "status": "blocked_before_build",
+  "required_authorized_root": "/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v4",
+  "candidate_observation": {
+    "build_rs": "allowed_authorized_root_name permits engineering runs beginning closure- or exactly bundle-lineage-v3",
+    "runtime_rs": "allowed_authorized_root_name has the same exact bundle-lineage-v3 restriction"
+  },
+  "result": "The fixed Candidate rejects the user-specified v4 root before any build or runtime can bind to it.",
+  "control_effect": "The v4 precontact write allowlist explicitly planned no Candidate changes and requires stopping before a newly discovered candidate modification.",
+  "positive_gui_validation_started": false,
+  "prohibited_boundary_contact": false
+}

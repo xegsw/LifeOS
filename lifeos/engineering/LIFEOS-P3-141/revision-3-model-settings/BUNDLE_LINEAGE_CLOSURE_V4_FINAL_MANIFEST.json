@@ -1,0 +1,21 @@
+{
+  "schema": "lifeos.p3-141.v4.prebuild-blocked-manifest.v1",
+  "task_id": "LIFEOS-P3-141",
+  "closure": "Revision 3 Bundle Lineage Closure v4",
+  "status": "BLOCKED_ROOT_GATE_INCOMPATIBILITY",
+  "conclusion": "This archive proves only a sealed, fail-closed stop: the fixed Candidate rejects the explicitly required v4 root and the sealed v4 allowlist did not permit Candidate modification.",
+  "evidence_files": {
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v4/write_allowlist.json": "b480e7a1a5f04112ec750fcc88433ab6a2ccd66940db1d7e7ee23fdd031531d8",
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v4/prohibited_paths.md": "f12fb65dc8c2bf0918d5e329491b39635ddf9cf069d8580b4f807f02fc4c5871",
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v4/run_plan.md": "db534fdfc2c6c657aaf24b5941f812a6efff37684320dd79ca06b4a492241dcf",
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v4/precontact_seal.json": "8af5028dd19de841982843d512a5f9486ccfe9225bc413a0434aedd365921feb",
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v4/root_gate_incompatibility.json": "2d1d360de34952346f1fe300947c9f8927d61a32df53e1b715a66f53fbf7bce3",
+    "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/evidence/bundle-lineage-closure-v4/cleanup_final.json": "a8aae323940bc8ae11e5f05336316bfca30d36fb31ed78aba2cf70e32cdd38b4",
+    "lifeos/deliverables/LIFEOS-P3-141_revision-3_bundle-lineage-and-native-capture-closure-v4_report.md": "29a0052b9cf18d2bd8fee2dac24d4e87bd8019a55e3cfc5d38513e719e191321"
+  },
+  "temporary_root": "/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v4",
+  "expected_root_absent_for_verification": true,
+  "positive_engineering_evidence": false,
+  "non_self_referential": true,
+  "excluded_from_payload": ["BUNDLE_LINEAGE_CLOSURE_V4_FINAL_MANIFEST.json"]
+}

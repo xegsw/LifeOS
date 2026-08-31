@@ -1,0 +1,81 @@
+/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/tools/native_window_probe.swift:102:86: error: conditional downcast to CoreFoundation type 'CFDictionary' will always succeed
+100 |     let owner = (item[kCGWindowOwnerPID as String] as? NSNumber)?.int32Value
+101 |     let layer = (item[kCGWindowLayer as String] as? NSNumber)?.intValue ?? -1
+102 |     guard owner == pid, layer == 0, let boundsDict = item[kCGWindowBounds as String] as? CFDictionary else { continue }
+    |                                                                                      |- error: conditional downcast to CoreFoundation type 'CFDictionary' will always succeed
+    |                                                                                      `- note: did you mean to explicitly compare the CFTypeIDs of 'subscript' and 'CFDictionary'?
+103 |     let bounds = CGRect(dictionaryRepresentation: boundsDict) ?? .zero
+104 |     if abs(bounds.origin.x - target.origin.x) < 2 && abs(bounds.origin.y - target.origin.y) < 2 && abs(bounds.width - target.width) < 2 && abs(bounds.height - target.height) < 2 { targetIndex = index; break }
+
+/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/tools/native_window_probe.swift:113:101: error: conditional downcast to CoreFoundation type 'CFDictionary' will always succeed
+111 |         let alpha = (item[kCGWindowAlpha as String] as? NSNumber)?.doubleValue ?? 1
+112 |         let owner = (item[kCGWindowOwnerPID as String] as? NSNumber)?.int32Value
+113 |         guard layer == 0, alpha > 0, owner != pid, let boundsDict = item[kCGWindowBounds as String] as? CFDictionary else { continue }
+    |                                                                                                     |- error: conditional downcast to CoreFoundation type 'CFDictionary' will always succeed
+    |                                                                                                     `- note: did you mean to explicitly compare the CFTypeIDs of 'subscript' and 'CFDictionary'?
+114 |         if let bounds = CGRect(dictionaryRepresentation: boundsDict), !bounds.intersection(target).isNull { overlaps += 1 }
+115 |     }
+
+/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/tools/native_window_probe.swift:23:40: error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 21 |
+ 22 | func pointValue(_ element: AXUIElement) -> CGPoint? {
+ 23 |     guard let value = axValue(element, kAXPositionAttribute) as? AXValue else { return nil }
+    |                                        `- error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 24 |     var result = CGPoint.zero
+ 25 |     return AXValueGetValue(value, .cgPoint, &result) ? result : nil
+
+/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/tools/native_window_probe.swift:29:40: error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 27 |
+ 28 | func sizeValue(_ element: AXUIElement) -> CGSize? {
+ 29 |     guard let value = axValue(element, kAXSizeAttribute) as? AXValue else { return nil }
+    |                                        `- error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 30 |     var result = CGSize.zero
+ 31 |     return AXValueGetValue(value, .cgSize, &result) ? result : nil
+
+/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/tools/native_window_probe.swift:35:41: error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 33 |
+ 34 | func snapshot(_ window: AXUIElement) -> Snapshot {
+ 35 |     Snapshot(title: stringValue(window, kAXTitleAttribute), role: stringValue(window, kAXRoleAttribute), position: pointValue(window), size: sizeValue(window))
+    |                                         `- error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 36 | }
+ 37 |
+
+/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/tools/native_window_probe.swift:35:87: error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 33 |
+ 34 | func snapshot(_ window: AXUIElement) -> Snapshot {
+ 35 |     Snapshot(title: stringValue(window, kAXTitleAttribute), role: stringValue(window, kAXRoleAttribute), position: pointValue(window), size: sizeValue(window))
+    |                                                                                       `- error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 36 | }
+ 37 |
+
+/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/tools/native_window_probe.swift:44:29: error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 42 |
+ 43 | func children(_ element: AXUIElement) -> [AXUIElement] {
+ 44 |     return axValue(element, kAXChildrenAttribute) as? [AXUIElement] ?? []
+    |                             `- error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 45 | }
+ 46 |
+
+/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/tools/native_window_probe.swift:50:37: error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 48 |     if depth > 24 || visited > 2500 { return }
+ 49 |     visited += 1
+ 50 |     let role = stringValue(element, kAXRoleAttribute) ?? ""
+    |                                     `- error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 51 |     let title = stringValue(element, kAXTitleAttribute) ?? ""
+ 52 |     let value = stringValue(element, kAXValueAttribute) ?? ""
+
+/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/tools/native_window_probe.swift:51:38: error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 49 |     visited += 1
+ 50 |     let role = stringValue(element, kAXRoleAttribute) ?? ""
+ 51 |     let title = stringValue(element, kAXTitleAttribute) ?? ""
+    |                                      `- error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 52 |     let value = stringValue(element, kAXValueAttribute) ?? ""
+ 53 |     if role == "AXWebArea" { webAreas += 1 }
+
+/private/tmp/lifeos-p3-141-revision-3-engineering-bundle-lineage-v5/tools/native_window_probe.swift:52:38: error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 50 |     let role = stringValue(element, kAXRoleAttribute) ?? ""
+ 51 |     let title = stringValue(element, kAXTitleAttribute) ?? ""
+ 52 |     let value = stringValue(element, kAXValueAttribute) ?? ""
+    |                                      `- error: cannot convert value of type 'String' to expected argument type 'CFString'
+ 53 |     if role == "AXWebArea" { webAreas += 1 }
+ 54 |     if role == "AXButton" && (title == "Settings" || value == "Settings") { settingsButton = element }
