@@ -1,0 +1,101 @@
+name: LifeOS CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lifeos-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CANDIDATE_DIR: lifeos/engineering/LIFEOS-P3-134/candidate
+  RUST_BACKTRACE: "1"
+
+jobs:
+  repository-guardrails:
+    name: Repository guardrails
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Compile tracked Python scripts
+        run: |
+          python3 -m py_compile \
+            generate_depr_sql.py \
+            generate_simple_depr_sql.py \
+            lifeos/tools/local_precheck.py
+
+      - name: Validate candidate JSON files
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path("lifeos/engineering/LIFEOS-P3-134/candidate")
+          files = sorted(root.rglob("*.json"))
+          if not files:
+              raise SystemExit("No candidate JSON files found")
+          for path in files:
+              with path.open("r", encoding="utf-8") as handle:
+                  json.load(handle)
+              print(f"validated {path}")
+          PY
+
+      - name: Check authoritative entry points
+        run: |
+          test -f lifeos/CURRENT_STATUS.md
+          test -f lifeos/DECISION_LOG.md
+          test -f lifeos/FREEZE_STATUS.md
+          test -f lifeos/TASK_REGISTRY.md
+          test -f lifeos/PM_OPERATING_MODEL.md
+          test -f "$CANDIDATE_DIR/Cargo.toml"
+
+  rust-candidate:
+    name: Rust candidate
+    runs-on: macos-14
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lifeos/engineering/LIFEOS-P3-134/candidate
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Install pinned Rust toolchain
+        run: |
+          rustup toolchain install 1.98.0 --profile minimal --component rustfmt
+          rustup default 1.98.0
+          rustc --version
+          cargo --version
+
+      - name: Prepare isolated runtime roots
+        working-directory: .
+        run: |
+          mkdir -p "$RUNNER_TEMP/lifeos-ci-check"
+          mkdir -p "$RUNNER_TEMP/lifeos-ci-test"
+
+      - name: Check formatting
+        run: cargo fmt --all --check
+
+      - name: Cargo check
+        env:
+          LIFEOS_RUNTIME_ROOT: ${{ runner.temp }}/lifeos-ci-check
+          LIFEOS_INPUT_MODE: synthetic
+        run: cargo check --locked --all-targets
+
+      - name: Cargo test
+        env:
+          LIFEOS_RUNTIME_ROOT: ${{ runner.temp }}/lifeos-ci-test
+          LIFEOS_INPUT_MODE: synthetic
+        run: cargo test --locked --all-targets

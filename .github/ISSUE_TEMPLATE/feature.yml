@@ -1,0 +1,45 @@
+name: Feature proposal
+description: Propose a bounded user outcome before implementation.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Describe the recurring problem and who experiences it.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: State the observable outcome without prescribing the implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: Link research, self-use observations, decisions, or existing LifeOS artifacts.
+    validations:
+      required: true
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-goals
+      description: Explicitly bound the proposal.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Candidate acceptance criteria
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Trust, privacy, and reversibility risks

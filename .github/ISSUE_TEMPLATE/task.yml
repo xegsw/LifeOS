@@ -1,0 +1,81 @@
+name: Outcome task
+description: Create an implementation or governance task mapped to a LifeOS task ID.
+title: "[LIFEOS-P?-???] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        GitHub Issues are the execution surface. LifeOS ledgers remain authoritative for acceptance, freeze, risk, and decisions.
+  - type: input
+    id: task_id
+    attributes:
+      label: LifeOS task ID
+      description: Use the canonical form, for example LIFEOS-P3-135.
+      placeholder: LIFEOS-P3-135
+    validations:
+      required: true
+  - type: dropdown
+    id: governance_level
+    attributes:
+      label: Governance level
+      options:
+        - L0 — routine and reversible
+        - L1 — bounded implementation
+        - L2 — outcome-level task
+        - L3 / Gate — independent review or stage decision
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: User or system outcome
+      description: State the observable result, not merely the activity.
+      placeholder: A user can...
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and non-goals
+      description: List what is included, excluded, and which frozen inputs must remain unchanged.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance contract
+      description: Use objective pass/fail criteria and include negative cases where relevant.
+      placeholder: |
+        - [ ] AC-01 ...
+        - [ ] AC-02 ...
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Required evidence
+      description: Name commands, artifacts, manifests, screenshots, or logs needed to verify the result.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and source-of-truth references
+      placeholder: |
+        - lifeos/tasks/...
+        - lifeos/DECISION_LOG.md#...
+        - Depends on #...
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and stop conditions
+      description: State fail-closed conditions and when work must stop for a new decision.
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Author confirmation
+      options:
+        - label: I checked CURRENT_STATUS.md and the relevant authoritative ledgers.
+          required: true
+        - label: This issue does not itself declare an asset Accepted or Frozen.
+          required: true

@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a reproducible LifeOS defect or failed contract.
+title: "[Bug] "
+body:
+  - type: input
+    id: task_id
+    attributes:
+      label: Related LifeOS task ID
+      placeholder: LIFEOS-P3-135 or N/A
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+      description: Include the exact failure, error code, and affected state.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Reference the governing contract or acceptance criterion.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Attach logs, screenshots, hashes, fixtures, or a minimal failing test.
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Initial severity
+      options:
+        - P0 — invalidates safety, trust, or the claimed result
+        - P1 — blocks the intended outcome
+        - P2 — material but non-blocking
+        - Unknown — requires triage
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Boundary and data-safety notes
+      description: Describe local data, permissions, migration, deletion, or privacy impact.
