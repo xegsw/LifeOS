@@ -1,7 +1,7 @@
 # LifeOS Current Status Index
 
 更新时间：2026-08-30
-最后校验时间：2026-08-31（D-0627：P3-141 Root Authority工程P0关闭；native GUI Evidence Closure启动，Phase C暂停）
+最后校验时间：2026-08-31（D-0628：P3-141 native GUI Evidence因Mac锁屏Blocked；等待交互式桌面，Phase C暂停）
 
 本文件是 PM 日常上下文入口，用于减少重复读取大文件；它是状态索引，不替代主账本。
 
@@ -18,9 +18,9 @@
 ## 当前状态
 
 - 当前治理：D-0516 起的新任务采用 Governance V2：完整 Task Contract 一次授权；结果级任务包含实现、测试、Evidence与同范围修正；L0/L1/L2内嵌验收合同，L3/Gate才独立ABF；独立评审按风险／事实触发；普通任务PM Pass后自动Complete；任务卡取消模型推荐和模型证明门禁。P3-127及此前历史不追溯。
-- 当前活动事项：P3-141 Revision 3工程提交`476e5f06`已关闭第三场独立复评确认的固定root P0：显式task-scoped root、严格名称、canonical 0700目录、0600 exact marker、direct real runtime child及10项写前失败关闭成立；同任务进入native GUI Evidence Closure。
-- 当前可执行下一步：在全新隔离会话与全新marker-bound P3-141 synthetic root中，仅为修复后新二进制补desktop／compact／narrow三档direct PID→AXWindow→AXWebArea/WebView→截图／geometry／source／binary证据；不得重新设计或复用旧截图。成功后再换另一全新worktree完整独立复评。
-- 当前任务指针：P3-141 Revision 3 Native GUI Evidence Closure / Phase C Paused / User Confirmed / ABF-P3-141-v3 Frozen / Governance V2 L3 / Mandatory Fresh Independent Re-review / Not Product Frozen；当前计数`0/0/1/0/1`；Root Authority P0工程关闭但尚非最终PM Pass；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
+- 当前活动事项：P3-141 Revision 3 Native GUI Evidence第二次工程收口仍Blocked；固定候选未变化，Root Authority、51/51、7项mutation与Manifest均成立，但三档direct PID均没有真实AXWindow／WebArea。PM桌面检查确认Mac处于锁屏状态，这是当前交互式Evidence不可取得的直接平台阻断。
+- 当前可执行下一步：用户手工解锁Mac并保持可见桌面后，复用原Evidence专项会话，在新固定marker-bound合成根`/private/tmp/lifeos-p3-141-revision-3-engineering-interactive-gui-v1`仅补三档direct PID→AXWindow→AXWebArea/WebView→截图／geometry／source／binary证据；不得修改候选或复用旧截图。成功后再换另一全新worktree完整独立复评。
+- 当前任务指针：P3-141 Revision 3 Native GUI Evidence Closure / Blocked Awaiting Interactive Desktop / Phase C Paused / User Confirmed / ABF-P3-141-v3 Frozen / Governance V2 L3 / Mandatory Fresh Independent Re-review / Not Product Frozen；当前计数`0/0/1/0/1`；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
 - P3-134最终PM计数：P0=0、P1=0、P2=1、Unknown=0、Not Implemented=0。333项Final Manifest和13项固定输入hash复算闭合，AC-01～16全Pass，三档actual-Tauri各15态、同fixture视觉、十一IPC、双模式Runtime与10类写前失败关闭成立。P2为一次已精确清理且未参与正Evidence的无内容stdout越界历史。
 - P3-132 最终PM计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算工程Final Manifest 75+42、P3-131历史75/75并串行复跑11/11测试；CL-01不足身份显示与CL-02三个开放Action按`confirmed_at_ms/action_id`稳定Focus、刷新及重启全部闭合。两项首次工程历史P2保留但不阻断唯一用户结果；未触发独立评审。
 - P3-131 当前 PM 计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算Final Manifest 89/89与source lineage 75/75，离线测试6/6，并在唯一全新task temp root直接复跑actual Tauri的接受并完成、关闭重开、编辑接受、拒绝、暂缓和证据不足路径。两项P2分别为工程action log／build-cache Manifest措辞与原始PID时间链不足，以及source scanner对`basis_refs.map`的`fs.`子串误报和closure checker语义弱；均由PM定向复核关闭其阻断性，不影响唯一用户结果。
