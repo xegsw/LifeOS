@@ -1,0 +1,43 @@
+name: Research or spike
+description: Time-box an uncertainty before a product or architecture decision.
+title: "[Research] "
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Decision-driving question
+      description: Phrase the uncertainty as a question that can change a decision.
+    validations:
+      required: true
+  - type: textarea
+    id: fixed_inputs
+    attributes:
+      label: Fixed inputs and constraints
+      description: Name frozen contracts, data boundaries, and assumptions that must not be changed.
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Method and time box
+      description: Define the smallest experiment or review that can answer the question.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Required evidence
+      description: State what would count as supporting, falsifying, or inconclusive evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: stop
+    attributes:
+      label: Stop conditions
+      description: State when the spike must stop rather than expand scope.
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: Decision to be made after the spike

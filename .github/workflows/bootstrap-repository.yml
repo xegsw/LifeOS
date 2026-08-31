@@ -1,0 +1,123 @@
+name: Bootstrap repository metadata
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/bootstrap-repository.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  bootstrap:
+    name: Labels and milestones
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Create or update labels and milestones
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+
+            const labels = [
+              { name: "type: feature", color: "1f883d", description: "User-facing capability or product outcome" },
+              { name: "type: bug", color: "d1242f", description: "Reproducible defect or failed contract" },
+              { name: "type: task", color: "0969da", description: "Bounded implementation or governance task" },
+              { name: "type: research", color: "8250df", description: "Decision-driving research or spike" },
+              { name: "type: decision", color: "bf8700", description: "Decision or governance record required" },
+
+              { name: "area: product", color: "54aeff", description: "Product scope, behavior, or user outcome" },
+              { name: "area: ui", color: "a371f7", description: "User interface and interaction" },
+              { name: "area: runtime", color: "fb8f44", description: "Runtime, IPC, application lifecycle, or packaging" },
+              { name: "area: data", color: "57ab5a", description: "Schema, persistence, migration, or recovery" },
+              { name: "area: architecture", color: "6e7781", description: "Architecture contracts and boundaries" },
+              { name: "area: governance", color: "bf8700", description: "LifeOS governance, evidence, or acceptance" },
+              { name: "area: engineering", color: "0969da", description: "Repository, CI, tooling, and developer workflow" },
+
+              { name: "priority: p0", color: "b60205", description: "Invalidates safety, trust, or the claimed result" },
+              { name: "priority: p1", color: "d93f0b", description: "Blocks the intended outcome" },
+              { name: "priority: p2", color: "fbca04", description: "Material but non-blocking" },
+
+              { name: "risk: trust", color: "b60205", description: "Trust, authorization, evidence, or provenance risk" },
+              { name: "risk: privacy", color: "d73a4a", description: "Privacy or sensitive-data risk" },
+              { name: "risk: migration", color: "fbca04", description: "Migration, compatibility, or recovery risk" },
+              { name: "risk: release", color: "c5def5", description: "Packaging, distribution, or release risk" },
+
+              { name: "blocked", color: "000000", description: "Cannot proceed until a named blocker is resolved" },
+              { name: "needs-evidence", color: "f9d0c4", description: "Evidence is missing or insufficient" },
+              { name: "needs-decision", color: "fef2c0", description: "A product or governance decision is required" },
+              { name: "breaking", color: "b60205", description: "Backward-incompatible product or contract change" },
+              { name: "skip-changelog", color: "ededed", description: "Exclude from generated release notes" }
+            ];
+
+            const existingLabels = await github.paginate(
+              github.rest.issues.listLabelsForRepo,
+              { owner, repo, per_page: 100 }
+            );
+
+            for (const label of labels) {
+              const current = existingLabels.find((item) => item.name === label.name);
+              if (current) {
+                await github.rest.issues.updateLabel({
+                  owner,
+                  repo,
+                  name: current.name,
+                  new_name: label.name,
+                  color: label.color,
+                  description: label.description
+                });
+                core.info(`updated label: ${label.name}`);
+              } else {
+                await github.rest.issues.createLabel({ owner, repo, ...label });
+                core.info(`created label: ${label.name}`);
+              }
+            }
+
+            const milestones = [
+              {
+                title: "M0 — GitHub Engineering Foundation",
+                description: "Issue forms, PR workflow, CI, repository metadata, and the initial engineering operating baseline."
+              },
+              {
+                title: "M1 — Stable Product Root",
+                description: "Promote an approved candidate into a stable product source root and redirect CI, dependency updates, and release tooling."
+              },
+              {
+                title: "v0.1 — Self-use MVP",
+                description: "The minimum installable, recoverable, and verifiable self-use release. Membership does not itself imply Stage 4 entry."
+              }
+            ];
+
+            const existingMilestones = await github.paginate(
+              github.rest.issues.listMilestones,
+              { owner, repo, state: "all", per_page: 100 }
+            );
+
+            for (const milestone of milestones) {
+              const current = existingMilestones.find((item) => item.title === milestone.title);
+              if (current) {
+                await github.rest.issues.updateMilestone({
+                  owner,
+                  repo,
+                  milestone_number: current.number,
+                  title: milestone.title,
+                  description: milestone.description,
+                  state: "open"
+                });
+                core.info(`updated milestone: ${milestone.title}`);
+              } else {
+                await github.rest.issues.createMilestone({
+                  owner,
+                  repo,
+                  title: milestone.title,
+                  description: milestone.description,
+                  state: "open"
+                });
+                core.info(`created milestone: ${milestone.title}`);
+              }
+            }

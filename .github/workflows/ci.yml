@@ -1,0 +1,131 @@
+name: LifeOS CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lifeos-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CANDIDATE_DIR: lifeos/engineering/LIFEOS-P3-134/candidate
+  RUST_BACKTRACE: "1"
+
+jobs:
+  repository-guardrails:
+    name: Repository guardrails
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out required repository paths
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            generate_depr_sql.py
+            generate_simple_depr_sql.py
+            lifeos/tools/local_precheck.py
+            lifeos/CURRENT_STATUS.md
+            lifeos/DECISION_LOG.md
+            lifeos/FREEZE_STATUS.md
+            lifeos/TASK_REGISTRY.md
+            lifeos/PM_OPERATING_MODEL.md
+            lifeos/engineering/LIFEOS-P3-134/candidate
+          sparse-checkout-cone-mode: false
+
+      - name: Compile tracked Python scripts
+        run: |
+          python3 -m py_compile \
+            generate_depr_sql.py \
+            generate_simple_depr_sql.py \
+            lifeos/tools/local_precheck.py
+
+      - name: Validate candidate JSON files
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path("lifeos/engineering/LIFEOS-P3-134/candidate")
+          files = sorted(root.rglob("*.json"))
+          if not files:
+              raise SystemExit("No candidate JSON files found")
+          for path in files:
+              with path.open("r", encoding="utf-8") as handle:
+                  json.load(handle)
+              print(f"validated {path}")
+          PY
+
+      - name: Check authoritative entry points
+        run: |
+          test -f lifeos/CURRENT_STATUS.md
+          test -f lifeos/DECISION_LOG.md
+          test -f lifeos/FREEZE_STATUS.md
+          test -f lifeos/TASK_REGISTRY.md
+          test -f lifeos/PM_OPERATING_MODEL.md
+          test -f "$CANDIDATE_DIR/Cargo.toml"
+
+  rust-candidate:
+    name: Rust candidate
+    runs-on: macos-14
+    timeout-minutes: 45
+    steps:
+      - name: Check out current candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            lifeos/engineering/LIFEOS-P3-134/candidate
+          sparse-checkout-cone-mode: false
+
+      - name: Stage candidate outside sparse Git worktree
+        run: |
+          rm -rf "$RUNNER_TEMP/lifeos-candidate"
+          mkdir -p "$RUNNER_TEMP/lifeos-candidate"
+          cp -R "$CANDIDATE_DIR"/. "$RUNNER_TEMP/lifeos-candidate/"
+
+      - name: Install pinned Rust toolchain
+        run: |
+          rustup toolchain install 1.98.0 --profile minimal --component rustfmt
+          rustup default 1.98.0
+          rustc --version
+          cargo --version
+
+      - name: Prepare isolated runtime roots
+        run: |
+          mkdir -p "$RUNNER_TEMP/lifeos-ci-check"
+          mkdir -p "$RUNNER_TEMP/lifeos-ci-test"
+
+      - name: Report inherited formatting drift
+        id: formatting
+        continue-on-error: true
+        working-directory: ${{ runner.temp }}/lifeos-candidate
+        run: cargo fmt --all --check
+
+      - name: Explain inherited formatting drift
+        if: steps.formatting.outcome == 'failure'
+        run: |
+          echo "::warning::The read-only P3-134 candidate has inherited rustfmt drift. CI reports it without rewriting historical candidate evidence."
+
+      - name: Cargo check
+        working-directory: ${{ runner.temp }}/lifeos-candidate
+        env:
+          LIFEOS_RUNTIME_ROOT: ${{ runner.temp }}/lifeos-ci-check
+          LIFEOS_INPUT_MODE: synthetic
+        run: cargo check --locked --all-targets
+
+      - name: Cargo test
+        working-directory: ${{ runner.temp }}/lifeos-candidate
+        env:
+          LIFEOS_RUNTIME_ROOT: ${{ runner.temp }}/lifeos-ci-test
+          LIFEOS_INPUT_MODE: synthetic
+        run: cargo test --locked --all-targets
