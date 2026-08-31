@@ -1,0 +1,127 @@
+   Compiling lifeos-p3-141 v0.1.0 (/private/tmp/lifeos-p3-141-revision-3-independent-review-mode-delete-v1/candidate)
+warning: constant `TASK_ID` is never used
+ --> tests/../build.rs:7:7
+  |
+7 | const TASK_ID: &str = "LIFEOS-P3-141";
+  |       ^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `BUILD_MODE` is never used
+ --> tests/../build.rs:8:7
+  |
+8 | const BUILD_MODE: &str = "revision_3_synthetic";
+  |       ^^^^^^^^^^
+
+warning: constant `AUTHORIZED_ROOT_ENV` is never used
+ --> tests/../build.rs:9:7
+  |
+9 | const AUTHORIZED_ROOT_ENV: &str = "LIFEOS_P3_141_AUTHORIZED_SYNTHETIC_ROOT";
+  |       ^^^^^^^^^^^^^^^^^^^
+
+warning: constant `RUNTIME_ROOT_ENV` is never used
+  --> tests/../build.rs:10:7
+   |
+10 | const RUNTIME_ROOT_ENV: &str = "LIFEOS_RUNTIME_ROOT";
+   |       ^^^^^^^^^^^^^^^^
+
+warning: constant `AUTHORIZED_ROOT_MARKER` is never used
+  --> tests/../build.rs:11:7
+   |
+11 | const AUTHORIZED_ROOT_MARKER: &str = ".lifeos-p3-141-authorized-synthetic-root.json";
+   |       ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: constant `AUTHORIZED_ROOT_SCHEMA` is never used
+  --> tests/../build.rs:12:7
+   |
+12 | const AUTHORIZED_ROOT_SCHEMA: &str = "lifeos.p3-141.authorized-synthetic-root.v1";
+   |       ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: constant `AUTHORIZED_ROOT_OWNER` is never used
+  --> tests/../build.rs:13:7
+   |
+13 | const AUTHORIZED_ROOT_OWNER: &str = "lifeos-p3-141-revision-3-synthetic-root-authority";
+   |       ^^^^^^^^^^^^^^^^^^^^^
+
+warning: struct `AuthorizedSyntheticRootMarker` is never constructed
+  --> tests/../build.rs:17:8
+   |
+17 | struct AuthorizedSyntheticRootMarker {
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `reject` is never used
+  --> tests/../build.rs:25:4
+   |
+25 | fn reject(message: &str) -> ! {
+   |    ^^^^^^
+
+warning: function `real_directory` is never used
+  --> tests/../build.rs:29:4
+   |
+29 | fn real_directory(path: &Path) -> bool {
+   |    ^^^^^^^^^^^^^^
+
+warning: function `direct_real_ancestors` is never used
+  --> tests/../build.rs:36:4
+   |
+36 | fn direct_real_ancestors(path: &Path) -> bool {
+   |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `normalized_absolute` is never used
+  --> tests/../build.rs:51:4
+   |
+51 | fn normalized_absolute(raw: &str, subject: &str) -> PathBuf {
+   |    ^^^^^^^^^^^^^^^^^^^
+
+warning: function `allowed_authorized_root_name` is never used
+  --> tests/../build.rs:60:4
+   |
+60 | fn allowed_authorized_root_name(name: &str) -> bool {
+   |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `validate_authorized_root` is never used
+  --> tests/../build.rs:78:4
+   |
+78 | fn validate_authorized_root(root: &Path) {
+   |    ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `main` is never used
+   --> tests/../build.rs:102:4
+    |
+102 | fn main() {
+    |    ^^^^
+
+warning: `lifeos-p3-141` (test "v2_phase_c_gate") generated 15 warnings
+warning: function `default_provider_settings` is never used
+   --> src/runtime.rs:327:4
+    |
+327 | fn default_provider_settings() -> ProviderSettings { default_provider_settings_for(ProviderMode::Cloud) }
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `valid_env_name` is never used
+   --> src/runtime.rs:336:4
+    |
+336 | fn valid_env_name(value: &str) -> bool { let mut chars = value.chars(); matches!(chars.next(), Some('A'..='Z')) && chars.all(|c| c....
+    |    ^^^^^^^^^^^^^^
+
+warning: struct `LmStudioAdapter` is never constructed
+   --> src/runtime.rs:948:8
+    |
+948 | struct LmStudioAdapter;
+    |        ^^^^^^^^^^^^^^^
+
+error: linking with `cc` failed: exit status: 1
+  |
+  = note:  "cc" "/private/tmp/lifeos-p3-141-revision-3-independent-review-mode-delete-v1/target/debug/deps/rustcjjA2m4/symbols.o" "<257 object files omitted>" "-lcurl" "/private/tmp/lifeos-p3-141-revision-3-independent-review-mode-delete-v1/target/debug/deps/{libtauri-302921a9d20e1833,libmime-979e3b4c4cd4921e,libgetrandom-705fd5af0587cb87,libtauri_runtime_wry-d1a8a0f7b7107195,libwry-3bdd4ed0baef5b20,libdirs-595396a72a05e35a,libdirs_sys-c6785583ccb314c8,liboption_ext-862704f1dc5a38d4,libtao-aa729e1157a78a74,libdispatch2-272131a2532537a9,libcore_graphics-3566a4e87cc8cff1,libforeign_types-8516f5193f7a9f85,libforeign_types_shared-bc810afd1715bb32,libcore_graphics_types-ded4f4d0373db273,libcore_foundation-a0b89ee37d03b87b,libcore_foundation_sys-15a9978a86acc8c9,libmuda-3ff4e78c7f30fd60,libpng-a69e9f1726920852,libflate2-9c4a81bee83bdb14,libminiz_oxide-6cc09dd74b28432a,libfdeflate-05450f9f3a318ceb,libsimd_adler32-04c08aac4cbcf3c5,libcrc32fast-a454270f217e29f1,libkeyboard_types-9b6c2498433cb400,libunicode_segmentation-a29297e972fb2b6b,libonce_cell-591480f406cbcdff,libcrossbeam_channel-ce37f937cfdd76b8,libcrossbeam_utils-b58ffe9cf70df0e9,libwindow_vibrancy-9f7c1d7058e22232,libtokio-8d2a092f4c58d13d,libpin_project_lite-32477cb2cf2a5633,libtauri_runtime-2a9e7b101a92da0a,libobjc2_web_kit-cca1853b2878f3c7,libobjc2_app_kit-17b296c770a8ed88,libblock2-6d69d729024d1616,libobjc2_foundation-b428365f20606b92,libobjc2_core_foundation-5700635f721df5b5,libobjc2-fdac1563913df9a5,libobjc2_exception_helper-32cd6fd110fa9ce2,libobjc2_encode-31fa3a09debab9af,libcookie-0947fd8edbe96b17,libdpi-5715badcee25864d,libserialize_to_javascript-f16db7297fdac18f,libraw_window_handle-10af0bb040612140,libtauri_utils-291c001bd137fff7,libswift_rs-a89d6b89b5b93f2d,libinfer-05cb18c811f30c75,libcfb-f5199c5b1607345c,libfnv-3005171024d08ef8,libbyteorder-8c14e75ae3363294,libbrotli-f7e62acf1afec082,libbrotli_decompressor-0410bbe68b6de8ec,liballoc_stdlib-0be892c0d8fb4c91,liballoc_no_stdlib-e2b91ce2f38f761b,liburlpattern-ff5f593fa145e50e,libunic_ucd_ident-8ff9621587fcfe21,libunic_ucd_version-87a7d1a79433b79a,libunic_common-5639e699f4d3682d,libunic_char_property-943e4d537a5e7851,libunic_char_range-afad4d7ed122532a,libregex-99d93fa5c13c114a,libregex_automata-d475ff85340cce8a,libaho_corasick-a5cab86554d20522,libregex_syntax-8b3d9c235bf60cdb,libcargo_metadata-a470ff9a17204291,libcargo_platform-d6a2216ff745a4bf,libcamino-d5d44eb699353108,libdunce-3bb7b39b6982840a,libglob-6c44c262e99a6b7b,libwalkdir-926f6f14878057b3,libsame_file-9f486d3aef669163,libctor-b774db414fa86821,libdom_query-aa94035583cb2ceb,libselectors-2e43a484f1183050,librustc_hash-5a04c56953ca2756,libservo_arc-b59b8571b924506a,libderive_more-3d6750d94d13ac78,libbit_set-75038ce7e6a4dc65,libbit_vec-4464e9ab5b657f26,libhtml5ever-27aec8d3eea98014,liblog-d0911bc738242bcc,libmarkup5ever-d796368e0d7d371c,libtendril-853001168df2c931,libweb_atoms-d972ebde8f10cf27,libstring_cache-3f91a62fb6acff80,libprecomputed_hash-b2a4956f29f3e470,libparking_lot-ec7955ff023df046,libparking_lot_core-d7240ccc92995727,liblock_api-13a6051c9f7814b3,libscopeguard-a8dbfd210a10f39a,libdebug_unreachable-10efa4e3b5595351,libcssparser-f068bcdce45c69aa,libdtoa_short-1edd6e150a235a40,libdtoa-5a91ee7baa7ed9d6,libplist-9da4f5e2e24712b9,libtime-081ed6aad8cdf3a0,libpowerfmt-f986ed48f50a1cc3,libnum_conv-a888e1464dce4c4d,libderanged-bd42824ea727bfe9,libtime_core-fe3bafb583bca6fa,libquick_xml-9151ea71b1180d13,libbase64-ca366a3e7937421d,libindexmap-ddc2fa66b32154b2,libequivalent-aa2afd7a6eb6a390,libjson_patch-60c85dbfc0236adf,libthiserror-479f12ffb4ede07f,libjsonptr-cbf72d6309620688,libserde_with-df0d1c744fa4f868,libhttp-c75297d27163bee1,libbytes-13dbd938f5df2672,libphf-a424c540d914884a,libphf_shared-f9aaed82242d34cc,libsiphasher-9ee691564479cd2e,libtoml-3d082206e00154a4,libtoml_writer-dab8e5ff40ecb20a,libtoml_parser-c1f3f44fe16c113a,libwinnow-3de9d7652c246904,libserde_spanned-01744a468c09d0c0,libtoml_datetime-ac0655dcc514e654,libquote-eddcdbd52cb29c67,libproc_macro2-18b68f5fbc94604d,libunicode_ident-bcfcaf11c6035ab7}.rlib" "<sysroot>/lib/rustlib/aarch64-apple-darwin/lib/{libproc_macro-*,librustc_literal_escaper-*}.rlib" "/private/tmp/lifeos-p3-141-revision-3-independent-review-mode-delete-v1/target/debug/deps/{libschemars-992fd62ecf9f6c88,libdyn_clone-a9f25f8c23925e00,libuuid-fbe4e7e8a071a23f,libindexmap-8ab8b2b548c97628,libhashbrown-50ae0b628e66bf96,libserde_json-233436d77ea148ca,libmemchr-3751665e9564b7d9,libitoa-2f3d7664e58c6b21,libzmij-643c796aef8464b0,libserde_untagged-06ffe3ba560bfa4e,liberased_serde-0f63bb3a63aac904,libtypeid-077ef4a5d387b846,liburl-2670d1cc363ced2d,libidna-0c9733791db63d61,libidna_adapter-11059447234e13f4,libicu_properties-c3814d532e618a30,libicu_properties_data-9fcfe5fcae048f52,libicu_normalizer-1005d30864b6f8c9,libicu_normalizer_data-8b26f29d2942dca6,libicu_collections-fb9ef49a26626e1e,libutf8_iter-153cda542a0b1f1d,libpotential_utf-a6ec1ab7b1598c0e,libicu_provider-e48529441aabfa07,libicu_locale_core-040f4121ccb8becb,libtinystr-347067f6d53cec9f,liblitemap-ca17ea96587398ef,libwriteable-31b9abf1beb84c76,libzerovec-9542b98840ccde2f,libzerotrie-cdfedf45d62f1f7a,libyoke-4ee4969cc0541f99,libstable_deref_trait-eb20163a76bfe253,libzerofrom-7b44105e8840363f,libform_urlencoded-7d5df487ec9a3552,libpercent_encoding-49ea304e83f9e8a4,libthiserror-0773fd105cb6ff5a,libanyhow-dd7ca2ea82a46290,libsemver-a9d4b9995808038b,libembed_plist-4e47057a0a6c2871,libserde-f2124cabceafa40e,librusqlite-46b04ed0171acd5a,libbitflags-dcca1111e86f3471,libserde_core-d32a72cacb76e9f5,libsmallvec-49ba912908133b17,libhashlink-6a1cd25186c9d02f,libhashbrown-c71e7ca52a267190,libfoldhash-48cec8e8d2e3d43d,liblibsqlite3_sys-ac370adc4f6d4f8f,libfallible_streaming_iterator-42c84c3912811d78,libfallible_iterator-786252451cba0ad5,libaes_gcm-76ac5b86d0e85d6a,libctr-d13cf4fed1920574,libghash-8ae1987fb522ff0e,libpolyval-7c55cb373f01d68b,libopaque_debug-c1ca806e4f0c242d,libuniversal_hash-baae4e7e9375b31d,libsubtle-d40cb4d6063edf83,libaes-2fda15b52b49dd26,libcipher-4abcd0471f89248b,libinout-c2673dd839b917a3,libaead-8248b66d0cbaad7a,libcrypto_common-b8d18023713fc7d5,libgeneric_array-1ef5fdca6a2d8e90,libtypenum-46b55a2a9d03d920,librand_core-47bda19a0776fba3,libgetrandom-1896849f64afb0f5,liblibc-599b85aa98c959cf,libcfg_if-526516b2a2045480}.rlib" "<sysroot>/lib/rustlib/aarch64-apple-darwin/lib/{libstd-*,libpanic_unwind-*,libobject-*,libmemchr-*,libaddr2line-*,libgimli-*,libcfg_if-*,librustc_demangle-*,libstd_detect-*,libhashbrown-*,librustc_std_workspace_alloc-*,libminiz_oxide-*,libadler2-*,libunwind-*,liblibc-*,librustc_std_workspace_core-*,liballoc-*,libcore-*,libcompiler_builtins-*}.rlib" "-framework" "WebKit" "-framework" "ApplicationServices" "-framework" "CoreGraphics" "-framework" "Carbon" "-framework" "CoreVideo" "-framework" "CoreFoundation" "-lSystem" "-framework" "CoreGraphics" "-framework" "CoreGraphics" "-framework" "CoreFoundation" "-framework" "WebKit" "-framework" "AppKit" "-framework" "Foundation" "-framework" "CoreFoundation" "-lobjc" "-framework" "Foundation" "-liconv" "-lSystem" "-lc" "-lm" "-arch" "arm64" "-mmacosx-version-min=11.0.0" "-L" "/private/tmp/lifeos-p3-141-revision-3-independent-review-mode-delete-v1/target/debug/build/objc2-exception-helper-9d897c98a6f2b40d/out" "-L" "/private/tmp/lifeos-p3-141-revision-3-independent-review-mode-delete-v1/target/debug/build/libsqlite3-sys-a527f9680c168447/out" "-o" "/private/tmp/lifeos-p3-141-revision-3-independent-review-mode-delete-v1/target/debug/deps/lifeos_p3_141-2fdd72311b942a8a" "-Wl,-dead_strip" "-nodefaultlibs"
+  = note: some arguments are omitted. use `--verbose` to show all linker arguments
+  = note: clang: error: unable to make temporary file: No such file or directory
+          clang: error: unable to execute command: No such file or directory
+          clang: error: linker command failed with exit code 1 (use -v to see invocation)
+          
+
+warning: `lifeos-p3-141` (bin "lifeos-p3-141") generated 3 warnings (3 duplicates)
+error: could not compile `lifeos-p3-141` (bin "lifeos-p3-141") due to 1 previous error; 3 warnings emitted
+warning: build failed, waiting for other jobs to finish...
+warning: `lifeos-p3-141` (bin "lifeos-p3-141" test) generated 3 warnings
