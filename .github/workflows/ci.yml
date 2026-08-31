@@ -78,9 +78,6 @@ jobs:
     name: Rust candidate
     runs-on: macos-14
     timeout-minutes: 45
-    defaults:
-      run:
-        working-directory: lifeos/engineering/LIFEOS-P3-134/candidate
     steps:
       - name: Check out current candidate
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -90,6 +87,12 @@ jobs:
             lifeos/engineering/LIFEOS-P3-134/candidate
           sparse-checkout-cone-mode: false
 
+      - name: Stage candidate outside sparse Git worktree
+        run: |
+          rm -rf "$RUNNER_TEMP/lifeos-candidate"
+          mkdir -p "$RUNNER_TEMP/lifeos-candidate"
+          cp -R "$CANDIDATE_DIR"/. "$RUNNER_TEMP/lifeos-candidate/"
+
       - name: Install pinned Rust toolchain
         run: |
           rustup toolchain install 1.98.0 --profile minimal --component rustfmt
@@ -98,7 +101,6 @@ jobs:
           cargo --version
 
       - name: Prepare isolated runtime roots
-        working-directory: .
         run: |
           mkdir -p "$RUNNER_TEMP/lifeos-ci-check"
           mkdir -p "$RUNNER_TEMP/lifeos-ci-test"
@@ -106,21 +108,23 @@ jobs:
       - name: Report inherited formatting drift
         id: formatting
         continue-on-error: true
+        working-directory: ${{ runner.temp }}/lifeos-candidate
         run: cargo fmt --all --check
 
       - name: Explain inherited formatting drift
         if: steps.formatting.outcome == 'failure'
-        working-directory: .
         run: |
           echo "::warning::The read-only P3-134 candidate has inherited rustfmt drift. CI reports it without rewriting historical candidate evidence."
 
       - name: Cargo check
+        working-directory: ${{ runner.temp }}/lifeos-candidate
         env:
           LIFEOS_RUNTIME_ROOT: ${{ runner.temp }}/lifeos-ci-check
           LIFEOS_INPUT_MODE: synthetic
         run: cargo check --locked --all-targets
 
       - name: Cargo test
+        working-directory: ${{ runner.temp }}/lifeos-candidate
         env:
           LIFEOS_RUNTIME_ROOT: ${{ runner.temp }}/lifeos-ci-test
           LIFEOS_INPUT_MODE: synthetic
