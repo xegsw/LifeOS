@@ -1,0 +1,66 @@
+{
+  "schema": "lifeos.p3-141.revision-3-v5-user-gate-exception.pm-verification.v1",
+  "task_id": "LIFEOS-P3-141",
+  "decision_id": "D-0634",
+  "scope": "synthetic_offline_revision_3_v5_only",
+  "engineering_source_commit": "b4377f22",
+  "main_commit_after_cherry_pick": "18775c3a",
+  "artifacts": {
+    "report_sha256": "8d1b7303e23c89d93c951d19be00c1487046ea1f000d2b84af1914f5a24b64fe",
+    "final_manifest_sha256": "247c27aca2de3eb2b28279425cfe2a4447f61694daa6934f05f97c203a883174",
+    "verifier_sha256": "441130a0ff4ba9b77a0b4cde9b44b676e0e8c6a8fde573dd31f335787cdf69fe"
+  },
+  "pm_verifier": {
+    "status": "PASS",
+    "checked_temp_root_absent": true,
+    "errors": []
+  },
+  "engineering_facts": {
+    "cargo_serial": "52 passed; 0 failed",
+    "cargo_parallel": "52 passed; 0 failed",
+    "mutations_rejected": 8,
+    "actual_tauri_viewports": 3,
+    "source_bundle_binary_lineage": "PASS",
+    "target_window_only_capture": "PASS",
+    "marker_gated_cleanup": "PASS"
+  },
+  "pm_visual_check": {
+    "desktop": "PASS; actual AXWindow 1280x949 pt accepted as host available frame",
+    "compact": "PASS; 1160x768",
+    "narrow": "PASS; 700x760",
+    "required_product_markers": "Cloud five, Local three, encrypted SQLite and key separation, distinct save/save-key/test controls visible"
+  },
+  "user_gate": {
+    "actual_app_opened": true,
+    "user_statement": "我验收好了，代替独立评审吧",
+    "recorded_as": "User Accepted by Explicit Independent-Review Exception",
+    "not_recorded_as": "Independent Review Pass"
+  },
+  "current_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 2,
+    "Unknown": 0,
+    "Not Implemented": 0
+  },
+  "p2_notes": [
+    "desktop host constrained requested 1280x1024 to an actual 1280x949 AXWindow without full-screen fallback",
+    "desktop and compact initial zsh footer did not record exit status; PID-exit recovery records were added without restarting or recapturing"
+  ],
+  "boundaries": {
+    "phase_c": "PAUSED_PENDING_SEPARATE_EXPLICIT_CONFIRMATION",
+    "pilot_6": "NOT_ACCESSED",
+    "real_provider_or_credential": "NOT_ACCESSED",
+    "risk_r0056": "OPEN",
+    "product_frozen": false,
+    "stage_4": "NOT_READY"
+  },
+  "manual_preview_cleanup": {
+    "app_closed": true,
+    "literal_runtime_root_absent": true,
+    "recoverable_trash_locations": [
+      "/Users/xxe/.Trash/LifeOS-P3-141-preview-v5-20260901",
+      "/Users/xxe/.Trash/LifeOS-P3-141-preview-v5-20260901-late-writes"
+    ]
+  }
+}
