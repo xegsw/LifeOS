@@ -1,7 +1,7 @@
 # LifeOS Current Status Index
 
 更新时间：2026-09-01
-最后校验时间：2026-09-01（D-0636：普通L0/L1/L2 PM Pass后自动任务分支、CI全绿后快进main；高风险仍人工确认）
+最后校验时间：2026-09-01（D-0640：P3-142 合成离线模型设置中心 PM Pass / Accepted / Complete）
 
 本文件是 PM 日常上下文入口，用于减少重复读取大文件；它是状态索引，不替代主账本。
 
@@ -18,9 +18,9 @@
 ## 当前状态
 
 - 当前治理：D-0516 起的新任务采用 Governance V2，D-0635 升级为 V2.1：完整 Task Contract 一次授权；结果级任务包含实现、测试、Evidence与同范围修正；L0/L1/L2内嵌验收合同，L3/Gate才独立ABF；独立评审按风险／事实触发；普通任务PM Pass后自动Complete。CI校验确认基线与确定性合成回归；锁屏、AX／截图服务暂不可用等环境问题记为`Paused — Resumable`并从检查点定向继续。D-0636授权普通L0/L1/L2 PM Pass后自动推送任务分支并在CI全绿、main可快进时自动合并；高风险仍人工确认。P3-127及此前历史不追溯。
-- 当前活动事项：P3-141 Revision 3 v5已完成synthetic/offline工程闭环。52项串行与52项并行测试、8项mutation、Cloud五项／Local三项、加密SQLite凭据语义、固定20 IPC、source→Bundle→binary→direct-PID实际Settings谱系、三档目标窗口Evidence及精确清理成立。用户亲自操作重新构建的实际v5 App后明确要求其验收替代重新独立评审；D-0634记录为`User Accepted by Explicit Exception`，不得表述为Independent Pass。
-- 当前可执行下一步：按用户要求暂停P3-141后续推进，先完成并观察CI/CD治理门禁。P3-141 Phase C不自动恢复；确认前Pilot-6、真实Provider、API Key、网络和真实文本继续禁止。后续遇到锁屏、AX或截图环境问题时写检查点并暂停，环境恢复后只重跑受影响阶段。
-- 当前任务指针：P3-141 Revision 3 Synthetic Gate User Accepted by Explicit Exception / Phase C Paused / ABF-P3-141-v3 Frozen / Governance V2.1 L3 / Not Product Frozen；当前v5计数`0/0/2/0/0`，历史失效attempt继续只读；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
+- 当前活动事项：P3-142已由PM验收通过并自动`Accepted / Complete`。合成离线模型设置中心完成Cloud八项／Local四项Provider、单一主服务、Capability Registry／Router、严格DTO、持久化、失败关闭、恰好20 IPC与三档actual-Tauri。`cargo fmt --check`、Rust 9/9、离线合同15/15及Final Manifest 117/117均通过；默认skip-link裁切已在同一Closure Cycle关闭，焦点态仍可访问；唯一临时根已精确清理。
+- 当前可执行下一步：执行P3-142低风险交付自动化：提交并推送`codex/l2-*`任务分支，CI全绿且main可快进时自动合并；若仓库分叉则停止自动合并并回报。P3-141 Phase C继续暂停且全部资产只读；任何真实Provider、凭据、网络或Pilot启用仍需新的L3合同和用户确认。
+- 当前任务指针：P3-142 Accepted / Complete / PM Pass / Governance V2.1 L2 / No Separate ABF / Not Frozen；当前计数`0/0/2/0/0`；P3-141 Revision 3 v5保持 `User Accepted by Explicit Exception / Phase C Paused`；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
 - P3-134最终PM计数：P0=0、P1=0、P2=1、Unknown=0、Not Implemented=0。333项Final Manifest和13项固定输入hash复算闭合，AC-01～16全Pass，三档actual-Tauri各15态、同fixture视觉、十一IPC、双模式Runtime与10类写前失败关闭成立。P2为一次已精确清理且未参与正Evidence的无内容stdout越界历史。
 - P3-132 最终PM计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算工程Final Manifest 75+42、P3-131历史75/75并串行复跑11/11测试；CL-01不足身份显示与CL-02三个开放Action按`confirmed_at_ms/action_id`稳定Focus、刷新及重启全部闭合。两项首次工程历史P2保留但不阻断唯一用户结果；未触发独立评审。
 - P3-131 当前 PM 计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算Final Manifest 89/89与source lineage 75/75，离线测试6/6，并在唯一全新task temp root直接复跑actual Tauri的接受并完成、关闭重开、编辑接受、拒绝、暂缓和证据不足路径。两项P2分别为工程action log／build-cache Manifest措辞与原始PID时间链不足，以及source scanner对`basis_refs.map`的`fs.`子串误报和closure checker语义弱；均由PM定向复核关闭其阻断性，不影响唯一用户结果。
