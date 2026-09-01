@@ -163,6 +163,16 @@ def run_checks(task_id: str | None) -> int:
             env = os.environ.copy()
             env.update(entry.get("environment", {}))
             cwd = ROOT / entry["working_directory"]
+            if entry.get("stage_into_synthetic_root"):
+                if root is None:
+                    raise RuntimeError("staged checks require a synthetic root")
+                staged_cwd = root / "source"
+                shutil.copytree(
+                    cwd,
+                    staged_cwd,
+                    ignore=shutil.ignore_patterns("target", ".DS_Store"),
+                )
+                cwd = staged_cwd
             for command in entry["commands"]:
                 executable = shutil.which(command[0], path=env.get("PATH"))
                 if executable is None:
