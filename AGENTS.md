@@ -62,6 +62,17 @@
 - 不再机械使用两轮Rework上限；是否新建任务只看Task Contract是否需要变化、历史是否可信。
 - 当前合同外的普通改进进入Backlog，不得阻断本轮Pass。
 
+### CI/CD 与可恢复执行（D-0635 起）
+
+- 后续任务必须遵守 `lifeos/CI_CD_GOVERNANCE.md`：确定性合同、基线和自动测试进入 CI；真实数据、凭据、Provider 和桌面 GUI 不进入无人值守 CI。
+- 锁屏、前台会话不可见、AXWindow／截图服务暂不可用、runner临时不可用，默认状态为 `Paused — Resumable`，不是 Rework、候选缺陷或尝试失效。
+- L2/L3/Gate 动态执行在阶段边界写 `checkpoint.json`。环境恢复且合同、候选、基线摘要未变、无禁止边界接触时，从 `resume_from` 继续，只重跑受影响阶段。
+- 截图尺寸、裁切、目标窗口或渲染错误在未接触禁止数据／路径时属于 Evidence Gap；排除错误产物并补取，不重做无关构建、测试和 mutation。
+- 只有禁止路径／数据／网络／凭据接触、只读候选／历史被修改、正 Evidence 与污染无法分离或授权边界被突破，才可判定 `Irrecoverable Invalidation`。
+- 已确认产品／架构／视觉基线由 `lifeos/ci/confirmed_baselines.json` 防漂移。合法更新必须同时有新 PM 决策和基线登记更新；后继任务不得静默降级。
+- D-0636 起，普通 L0/L1/L2 任务 PM Pass 后可按长期授权自动提交并推送 `codex/l0-*`、`codex/l1-*` 或 `codex/l2-*` 任务分支；CI 全绿且主线可快进时自动合并 `main`。工作区混入无关修改、主线分叉、冲突、敏感文件或基线变更时必须暂停自动合并。
+- L3/Gate、真实数据／凭据／网络、风险关闭、关键冻结和 Stage 切换不得使用自动合并，仍等待用户确认。
+
 ## 多 Agent 协作
 
 - PM 主会话是唯一任务分派者和项目账本维护者。

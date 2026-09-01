@@ -8,7 +8,7 @@
 - 候选／交付物：
 - Evidence 等级与路径：
 - 任务状态：
-- PM 结论：Pass / Closure Cycle / Blocked / Closed — Acceptance Not Met / Superseded
+- PM 结论：Pass / Closure Cycle / Evidence Closure / Paused — Resumable / Blocked / Invalidated Attempt / Closed — Acceptance Not Met / Superseded
 
 ## 结论摘要
 
@@ -53,6 +53,20 @@ PM 不得增加无法映射到长期质量原则或 Task Contract 的新阻断�
 - 是否保持同一结果、范围、数据、入口、权限、风险和架构：Yes / No
 - Yes：原任务进入 Closure Cycle，无需用户重复授权。
 - No：关闭或 Superseded，并说明必须变化的合同边界。
+
+## 暂停／恢复判断（仅适用时）
+
+- 失败类别：Candidate Failure / Evidence Gap / Recoverable Environment / Recoverable Procedure / External Blocker / Irrecoverable Invalidation / Contract Change
+- 检查点路径：
+- Task Contract／候选／基线摘要是否仍一致：Yes / No
+- 是否触及禁止边界：Yes / No
+- 已完成且可复用阶段：
+- 最早受影响阶段：
+- `resume_from`：
+- 错误 Evidence 是否已列入 excluded artifacts：Yes / No / N/A
+- PM 结论：Paused — Resumable / Evidence Closure / Blocked / Invalidated Attempt
+
+锁屏、AXWindow暂不可得、截图服务不可用或一次无敏感内容的截图错误，不得单独构成候选P0或整个任务失效。
 
 ## 用户确认判断
 

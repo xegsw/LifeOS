@@ -1,0 +1,92 @@
+name: LifeOS CI and Synthetic Delivery
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - 'codex/l0-*'
+      - 'codex/l1-*'
+      - 'codex/l2-*'
+  workflow_dispatch:
+    inputs:
+      package_synthetic_candidate:
+        description: Package the current synthetic candidate after all gates pass
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lifeos-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  governance-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate governance, frozen baselines, and resume schema
+        run: python3 lifeos/tools/lifeos_ci.py validate
+      - name: Reject whitespace and conflict markers
+        run: git diff --check
+
+  deterministic-regression:
+    runs-on: macos-latest
+    needs: governance-guard
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show deterministic toolchain
+        run: |
+          python3 --version
+          node --version
+          cargo --version
+      - name: Run registered synthetic-only checks
+        run: python3 lifeos/tools/lifeos_ci.py run-checks
+
+  promote-low-risk:
+    if: >-
+      github.event_name == 'push' &&
+      (startsWith(github.ref_name, 'codex/l0-') ||
+       startsWith(github.ref_name, 'codex/l1-') ||
+       startsWith(github.ref_name, 'codex/l2-'))
+    runs-on: ubuntu-latest
+    needs: [governance-guard, deterministic-regression]
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify fast-forward-only promotion boundary
+        run: |
+          git fetch origin main
+          git merge-base --is-ancestor origin/main HEAD
+          ! git diff --name-only origin/main...HEAD | grep -E '(^|/)(Pilot|pilot|real-use|credentials?|secrets?)(/|$)|\.sqlite($|[-.])|\.env($|\.)|\.key$'
+      - name: Fast-forward main after all gates pass
+        run: git push origin HEAD:main
+
+  synthetic-candidate-package:
+    if: github.event_name == 'workflow_dispatch' && inputs.package_synthetic_candidate
+    runs-on: ubuntu-latest
+    needs: [governance-guard, deterministic-regression]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package source-only synthetic candidate
+        run: |
+          mkdir -p dist
+          tar \
+            --exclude='target' \
+            --exclude='evidence' \
+            --exclude='*.sqlite*' \
+            --exclude='*.key' \
+            -czf dist/lifeos-p3-141-synthetic-source-${GITHUB_SHA}.tar.gz \
+            lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate
+          shasum -a 256 dist/*.tar.gz > dist/SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lifeos-synthetic-candidate-${{ github.sha }}
+          path: dist/
+          if-no-files-found: error

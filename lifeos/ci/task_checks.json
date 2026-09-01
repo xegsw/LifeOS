@@ -1,0 +1,32 @@
+{
+  "schema": "lifeos.task-checks.v1",
+  "checks": [
+    {
+      "task_id": "LIFEOS-P3-141",
+      "working_directory": "lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate",
+      "synthetic_root": {
+        "path": "/private/tmp/lifeos-p3-141-revision-3-engineering-closure-ci-v1",
+        "runtime_child": "runtime",
+        "marker_name": ".lifeos-p3-141-authorized-synthetic-root.json",
+        "marker": {
+          "schema": "lifeos.p3-141.authorized-synthetic-root.v1",
+          "task_id": "LIFEOS-P3-141",
+          "authorized_root": "/private/tmp/lifeos-p3-141-revision-3-engineering-closure-ci-v1",
+          "mode": "revision_3_synthetic",
+          "owner": "lifeos-p3-141-revision-3-synthetic-root-authority"
+        }
+      },
+      "environment": {
+        "LIFEOS_P3_141_BUILD_MODE": "revision_3_synthetic",
+        "LIFEOS_INPUT_MODE": "synthetic",
+        "LIFEOS_P3_141_AUTHORIZED_SYNTHETIC_ROOT": "/private/tmp/lifeos-p3-141-revision-3-engineering-closure-ci-v1",
+        "LIFEOS_RUNTIME_ROOT": "/private/tmp/lifeos-p3-141-revision-3-engineering-closure-ci-v1/runtime"
+      },
+      "commands": [
+        ["node", "tests/bundle_lineage_contract.mjs"],
+        ["node", "tests/mode_delete_ui_contract.mjs"],
+        ["cargo", "test", "--locked", "--", "--test-threads=1"]
+      ]
+    }
+  ]
+}

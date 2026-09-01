@@ -618,7 +618,7 @@ PM可为L1/L2额外触发独立评审，但必须记录具体理由：关键Evid
 - 专项会话创建干净临时副本后，必须先在新的 Chrome 标签页直接打开该 `file:` 入口，并在 Evidence 中记录：Chrome、入口 URL、加载结果、时间及副本 hash。该预检通过后，才执行完整动态矩阵。
 - 不得通过 HTTP 服务、网络、CDP、命令行浏览器、浏览器持久化或绕过浏览器安全警告来替代该预检；直接在 Chrome 打开任务卡允许的本地 `file:` 副本不属于策略绕过。
 - In-app Browser 或其他未被任务卡指定表面对 `file:` 的拒绝，只能记录为工具限制，**不得**单独判定工程 Rework 或任务 Blocked。
-- 只有在新 Chrome 标签页按正常操作连续两次仍无法加载同一 task-local `file:` 副本，且已记录两次结果、未采用任何替代／规避路径时，才能将动态 Evidence 记为 Blocked；PM 仍须判断是否为真实外部阻断。
+- 新 Chrome 标签页无法加载同一 task-local `file:` 副本时，先记录 `Paused — Resumable` 检查点并停止后续动态动作；环境／工具恢复后从该预检继续。只有有界恢复仍不可用且缺少合同内安全替代时，才能记为 Blocked。
 - 若预检通过而合同要求的动态矩阵遗漏，属于同一任务内的执行／Evidence缺口，应在提交PM前补齐；只有已触发独立评审的L3/Gate或污染场景才要求新隔离会话。
 - 此规则不降低动态验证、PM验收、风险、冻结或阶段关卡要求；Evidence深度按风险等级决定。
 - 若任务进入Closure Cycle，原Review、Evidence、结构化结果和Manifest只读保留；新的运行写入任务内明确的新目录，不得覆盖历史。
@@ -638,11 +638,30 @@ PM可为L1/L2额外触发独立评审，但必须记录具体理由：关键Evid
 - Review：待 PM 验收
 - Accepted：已验收
 - Closure Cycle：同一 Task Contract 内集中收口
+- Evidence Closure：候选不变，仅补齐受影响 Evidence
+- Paused — Resumable：环境／工具暂不可用，检查点有效，可定向继续
 - Rework：历史状态；D-0516后新任务优先使用 Closure Cycle
 - Blocked：被阻塞
+- Invalidated Attempt：当前attempt不可采信，但不自动否定未受影响候选
 - Dropped：决定不做
 - Closed — Acceptance Not Met：决定终止，验收未通过且历史只读保留
 - Superseded：Task Contract／ABF 边界发生实质变化，由新任务接替
+
+## 环境暂停、检查点与定向恢复
+
+锁屏、前台桌面不可见、AXWindow／AXWebArea暂不可得、截图服务不可用和runner临时中断，均先按 `Paused — Resumable` 处理。专项会话不得把这些事实写成候选P0，也不得机械创建新会话从阶段0重做。
+
+L2/L3/Gate 动态执行应按 `preflight → build_test → data_lifecycle → app_launch → native_window_binding → visual_capture → cleanup → manifest` 写阶段检查点。检查点必须包含 `resume_from`、合同／候选／基线摘要、已完成与待完成检查、excluded artifacts、禁止边界接触事实和临时根／PID／DB状态。
+
+PM 恢复判断：
+
+1. 摘要一致且无禁止边界接触：从 `resume_from` 继续；
+2. 候选变化：从受该变化影响的最早阶段继续；
+3. 只有 Evidence 产物错误：进入 Evidence Closure，排除错误产物并重取；
+4. 禁止边界接触、只读资产被改或正 Evidence 无法分离：仅使受污染 attempt 失效；
+5. Task Contract 必须改变：才关闭／Superseded并新建任务。
+
+环境解锁、恢复显示会话或重新激活 App 不是新增产品授权，不得再次请求用户授权。完整规则见 `lifeos/CI_CD_GOVERNANCE.md`。
 
 ## 验收、冻结与阶段状态口径
 

@@ -1,7 +1,7 @@
-# LifeOS 轻量风险分级治理流程 V2.0
+# LifeOS 轻量风险分级治理流程 V2.1
 
-生效决策：D-0516
-生效日期：2026-08-26
+生效决策：D-0516；D-0635 增加 CI/CD 与可恢复执行
+生效日期：2026-09-01
 
 ## 目标与适用边界
 
@@ -118,6 +118,33 @@ Closure Cycle 后：满足合同则 Pass；仍可在同一合同内安全修复�
 
 不再使用统一“两轮 Rework 上限”作为机械终止条件。PM 根据合同是否变化和 Evidence 是否仍可信决定继续或新建任务。
 
+## Paused — Resumable 与失效边界
+
+环境条件暂不可用时，必须先区分“无法继续执行”和“候选不合格”。以下事实默认记为 `Paused — Resumable`：
+
+- macOS锁屏、登录会话或前台窗口暂不可见；
+- direct PID 已启动但 AXWindow／AXWebArea 暂未暴露；
+- 截图服务、显示会话或本地 runner 暂不可用；
+- 一次截图尺寸、裁切、窗口目标或渲染不合格，但未接触禁止数据／路径。
+
+专项会话应在安全点停止 App、写入者和数据库连接，写入符合 `lifeos/templates/EXECUTION_CHECKPOINT_TEMPLATE.json` 的检查点。环境恢复后，若 Task Contract、候选和基线摘要未变化，历史 Evidence hash 一致，且没有禁止边界接触，则从 `resume_from` 继续，只重跑最早受影响阶段及其下游。
+
+只有以下事实允许将本次 attempt 判为 `Irrecoverable Invalidation`：
+
+- 接触任务明确禁止的路径、真实数据、网络、Provider或凭据；
+- 修改只读候选、固定输入或历史 Evidence；
+- 错误产物包含任务外真实信息，且无法证明已精确隔离、清除或与正 Evidence 分离；
+- 授权边界被突破，或正 Evidence 的来源／候选身份已不可可信恢复。
+
+即使评审／Evidence attempt 失效，也只重启受污染部分；不得自动要求重建未变化且有可信hash的工程候选。完整分类、检查点和恢复规则见 `lifeos/CI_CD_GOVERNANCE.md`。
+
+## CI 与确认基线防回退
+
+- 确认产品、架构和视觉基线登记在 `lifeos/ci/confirmed_baselines.json`，由 CI 校验 hash。
+- 后续任务若合法改变确认基线，必须在同一变更中加入新的 PM 决策并更新基线登记；否则 CI 失败。
+- D-0635 后新任务必须在 Task Contract 中声明 CI 检查清单、人工／环境 Gate、检查点阶段和最早受影响阶段重跑规则。
+- CI 只执行合成、确定性、无真实数据／凭据／Provider的检查。桌面 GUI 与用户亲验属于可恢复人工 Gate，不因未在 CI 执行而失败。
+
 ## 模型与执行环境
 
 - 新任务卡不填写推荐模型、推理强度、降级模型或后备模型。
@@ -139,6 +166,7 @@ flowchart TD
     G -- "是" --> H{"触发独立评审？"}
     G -- "否，同合同" --> I["Closure Cycle"]
     G -- "需改合同" --> J["关闭并新建任务"]
+    G -- "可恢复环境" --> Q["Paused — Resumable"]
     G -- "外部阻断" --> K["Blocked"]
     I --> E
     H -- "否" --> L["Accepted / Complete"]
@@ -147,7 +175,9 @@ flowchart TD
     N -- "Pass" --> O{"L3/Gate？"}
     N -- "同合同缺陷" --> I
     N -- "需改合同" --> J
+    N -- "Paused" --> Q
     N -- "Blocked" --> K
+    Q -- "环境恢复且摘要一致" --> E
     O -- "否" --> L
     O -- "是" --> P["用户关卡确认"]
     P --> L
@@ -158,7 +188,10 @@ flowchart TD
 - `Draft`：合同尚未完整展示或尚未授权。
 - `Ready / In Progress`：用户一次授权已覆盖任务合同。
 - `Closure Cycle`：PM 已一次性列明同合同缺口，原任务内收口。
+- `Evidence Closure`：候选不变，仅补齐或重取受影响 Evidence。
+- `Paused — Resumable`：环境或工具暂不可用；已写检查点，可从 `resume_from` 继续。
 - `Blocked`：必要外部条件不可用。
+- `Invalidated Attempt`：当前 attempt 的可信度被不可逆破坏；不自动否定未受影响的候选或其他阶段。
 - `Closed — Acceptance Not Met`：任务结束但未满足合同。
 - `Superseded`：合同或边界改变，由新任务接替。
 - `Accepted / Complete`：满足合同；不自动等于 Frozen、风险关闭或 Stage 准入。

@@ -8,7 +8,7 @@
 - 标题：
 - 风险等级：L0 / L1 / L2 / L3 / Gate
 - 优先级／缺陷严重性：P0 / P1 / P2 / N/A
-- 状态：Draft / Ready / In Progress / Closure Cycle / Blocked / Accepted / Closed
+- 状态：Draft / Ready / In Progress / Closure Cycle / Evidence Closure / Paused — Resumable / Blocked / Accepted / Closed
 - 主责 Agent／会话类型：
 - 所需执行能力：本地文件 / 测试 / actual Tauri / 离线运行 / 视觉操作 / Other
 - 是否需要独立评审：No / Conditional / Mandatory
@@ -61,6 +61,16 @@ Pass 公式：所有完成定义行通过；P0/P1/Unknown/Not Implemented 为 0�
 
 仅当用户结果、能力、数据类型、真实目标、入口、权限、风险、架构、Schema/API、核心语义或冻结合同变化，或历史污染无法可信恢复时新建任务。测试、Evidence、Manifest、同范围缺陷和文案修正留在本任务。
 
+### 7. CI / 可恢复执行
+
+- CI 检查清单（确定性、合成、无真实数据）：
+- 人工／环境 Gate（如 actual Tauri、AX、截图、用户亲验）：
+- 检查点写入路径：
+- 可恢复执行阶段：preflight / build_test / data_lifecycle / app_launch / native_window_binding / visual_capture / cleanup / manifest
+- 环境暂停时的 `resume_from` 规则：
+- 候选或合同变化后的最早受影响阶段：
+- 只有哪些事实会触发 `Irrecoverable Invalidation`：
+
 ## 一次性授权方式
 
 - 用户在本 Task Contract 完整展示且未变化时回复“创建”“采纳并创建”“开始”，即授权创建、启动、实现、测试、动态验证、Evidence、包内修正和 PM 验收。
@@ -96,6 +106,7 @@ Pass 公式：所有完成定义行通过；P0/P1/Unknown/Not Implemented 为 0�
 5. 历史 Review／Evidence／Manifest 只读。
 6. 不修改 PM 账本、风险、冻结或 Stage 状态。
 7. 不自动创建后续任务。
+8. 锁屏、AX或截图环境暂不可用时写检查点并暂停；恢复后定向继续，不机械重做未受影响阶段。
 
 ## 交付物
 

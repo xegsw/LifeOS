@@ -7,14 +7,14 @@
 - 任务 ID：
 - 任务名称：
 - 执行 Agent：Codex / WorkBuddy / Other
-- 当前状态：Completed / Partial / Blocked
+- 当前状态：Completed / Partial / Paused — Resumable / Blocked / Invalidated Attempt
 - 需要 PM 决策：Yes / No
 - 任务类型：
 - 风险等级：L0 / L1 / L2 / L3 / Gate
 - Task Contract 路径／章节：
 - L3/Gate ABF 路径／版本（其他写 N/A）：
 - 是否在启动前发现合同歧义：Yes / No；如 Yes，必须停止并回报 PM
-- 当前状态：In Progress / Closure Cycle / Blocked / Completed
+- 当前状态：In Progress / Closure Cycle / Evidence Closure / Paused — Resumable / Blocked / Invalidated Attempt / Completed
 - 交付物篇幅是否在建议范围内：Yes / No / Slightly Over，原因：
 
 ## 执行摘要
@@ -61,3 +61,12 @@
 ## 阻塞或异常
 
 若任务未完整完成，说明阻塞原因。若无，写“无”。
+
+若为 `Paused — Resumable`，必须补充：
+
+- 检查点路径：
+- `resume_from`：
+- 已完成且无需重跑的阶段：
+- 最早受影响阶段：
+- 环境恢复条件：
+- 是否触及禁止边界：Yes / No

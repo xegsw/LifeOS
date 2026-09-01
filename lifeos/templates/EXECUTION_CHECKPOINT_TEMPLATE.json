@@ -1,0 +1,30 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-000",
+  "attempt_id": "attempt-1",
+  "updated_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "task_contract_sha256": "64-lowercase-hex",
+  "candidate_sha256": "64-lowercase-hex",
+  "baseline_sha256": "64-lowercase-hex-or-na",
+  "stage": "preflight",
+  "status": "paused_resumable",
+  "pause_class": "recoverable_environment",
+  "pause_reason_code": "desktop_locked",
+  "completed_checks": [],
+  "pending_checks": [],
+  "rerun_checks": [],
+  "excluded_artifacts": [],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "absent"
+  },
+  "resume_from": "preflight",
+  "safe_to_resume": true,
+  "notes": "Do not include personal text, credentials, or database contents."
+}
