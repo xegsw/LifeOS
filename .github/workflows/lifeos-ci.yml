@@ -64,6 +64,8 @@ jobs:
             lifeos/tools/lifeos_ci.py
             lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate
             lifeos/engineering/LIFEOS-P3-142/candidate
+      - name: Install rustfmt for the active pinned toolchain
+        run: rustup component add rustfmt
       - name: Show deterministic toolchain
         run: |
           python3 --version
