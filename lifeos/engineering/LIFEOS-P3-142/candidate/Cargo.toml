@@ -1,0 +1,26 @@
+[package]
+name = "lifeos-p3-142"
+version = "0.1.0"
+description = "LifeOS P3-142 synthetic offline model settings candidate"
+authors = ["LifeOS"]
+edition = "2021"
+rust-version = "1.98"
+
+[build-dependencies]
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.151"
+sha2 = "=0.10.9"
+tauri-build = { version = "=2.6.3", features = [] }
+
+[dependencies]
+rusqlite = { version = "=0.40.2", features = ["bundled"] }
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.151"
+tauri = { version = "=2.11.5", features = [] }
+
+[dev-dependencies]
+sha2 = "=0.10.9"
+tauri-build = { version = "=2.6.3", features = [] }
+
+[profile.dev]
+debug = 1

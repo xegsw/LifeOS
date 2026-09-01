@@ -1,0 +1,93 @@
+Window: "LifeOS · 模型设置（合成离线）", App: LifeOS · 模型设置（合成离线）.
+0 standard window LifeOS · 模型设置（合成离线）, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: LifeOS · 模型设置（合成离线）, URL: tauri://localhost
+			3 link 跳到主要内容, Value: tauri://localhost#main-content
+			4 container
+				5 container LifeOS 主导航
+					6 container LifeOS
+						7 text ✦
+					8 button Today
+					9 button Me
+					10 button Contexts
+					11 button Memory
+					12 button 设置
+				13 container 设置导航
+					14 button 通用
+					15 button 模型设置
+					16 button 数据与隐私
+					17 button 备份与导出
+					18 button 关于
+				19 container
+					20 text Settings · 辅助入口
+					21 heading 模型设置, Value: 1
+						22 text 模型设置
+					23 text 配置一个可替换的主 AI 服务；LifeOS 会按授权、处理位置与能力状态自动匹配。 ◇ 合成离线 · 无网络
+				24 text ☁
+				25 text 主 AI 服务
+				26 heading OpenAI, Value: 2
+					27 text OpenAI
+				28 text synthetic-text-v1 · 合成云端目录
+				29 text 离线能力已验证 ✓ 文字推理 ✓ 工具调用 ✓ 长文本 ✓ 结构化输出 ✓ 视觉理解
+				30 text 未保存草稿
+				31 heading 更换或调整服务, Value: 2
+					32 text 更换或调整服务
+				33 text 保存前不会成为活动服务
+				34 container 服务处理位置
+					35 toggle button ☁ 云端服务 使用可替换的云端服务目录, Value: off
+					36 toggle button ⌘ 本地服务 使用设备上的本地服务目录, Value: on
+				37 container
+					38 text 模型提供方
+					39 pop up button 模型提供方, Value: Ollama
+				40 container
+					41 text 模型名称
+					42 text field (settable) 模型名称, Value: synthetic-local-v1
+				43 container
+					44 text 本地 Runtime
+					45 text field 合成本地 Runtime, Value: synthetic-local-runtime-v1
+					46 text 这是离线 Adapter 标识，不会探测 Ollama、LM Studio 或本地进程。
+				47 button 保存配置
+				48 button 离线测试连接
+				49 button 已启用
+				50 text 运行策略
+				51 heading 按需要匹配能力, Value: 2
+					52 text 按需要匹配能力
+				53 text 默认失败关闭
+				54 container
+					55 checkbox 优先使用本地 优先考虑当前已配置的本地能力, Value: 1
+					56 text 优先使用本地 优先考虑当前已配置的本地能力
+				57 container
+					58 checkbox 允许云端补齐 默认关闭；没有明确授权时不选择云端, Value: 0
+					59 text 允许云端补齐 默认关闭；没有明确授权时不选择云端
+				60 container
+					61 checkbox 服务失败时自动切换 默认关闭；不会静默切到备用服务, Value: 0
+					62 text 服务失败时自动切换 默认关闭；不会静默切到备用服务
+				63 container
+					64 checkbox 优先响应更快 只在已授权、能力匹配的服务中排序, Value: 0
+					65 text 优先响应更快 只在已授权、能力匹配的服务中排序
+				66 text ◒ 备用服务（可选）
+				67 text 尚未配置，不会阻塞主服务。
+				68 summary 高级设置 默认折叠 · 所有能力覆盖保持“自动” ⌄, Value: off
+					69 text 高级设置
+					70 text 默认折叠 · 所有能力覆盖保持“自动”
+					71 text ⌄
+				72 container
+					73 text 能力状态
+					74 heading LifeOS 自动匹配, Value: 2
+						75 text LifeOS 自动匹配
+					76 text 不需要逐项选择模型 ✓ 文字推理 可用 ✓ 视觉理解 可用 ✓ 语音输入 可用 ✓ 语音输出 可用 ✓ 工具调用 可用 ✓ 长文本 可用 ✓ 结构化输出 可用 ✓ 嵌入 可用
+				77 container Global AI 合成占位
+					78 text ✦ 问 LifeOS…
+					79 button (disabled) 发送
+		80 scroll bar (settable, float) 0.03575357
+	81 close button
+	82 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	83 minimize button
+	84 text LifeOS · 模型设置（合成离线）
+85 menu bar
+	86 LifeOS · 模型设置（合成离线）
+	87 File
+	88 Edit
+	89 View
+	90 Window
+	91 Help

@@ -1,0 +1,48 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-142",
+  "attempt_id": "engineering-attempt-1",
+  "updated_at": "2026-09-01T12:40:28Z",
+  "task_contract_sha256": "0d6b9ed952586466db2b13869c5b710911217177d4b219ff8d551391537f8268",
+  "candidate_sha256": "f56b359f4b37a79f5bf3639effbde96561097ea5f948d0d928e541c3a3c48e92",
+  "baseline_sha256": "bbe5614e27b3fc77fcf7e58a54bfb1168e5ac45270c30c7a19d6d007a5b32a4a",
+  "stage": "complete",
+  "status": "completed_engineering",
+  "pause_class": null,
+  "pause_reason_code": null,
+  "completed_checks": [
+    "preflight",
+    "build_test",
+    "data_lifecycle",
+    "app_launch",
+    "native_window_binding",
+    "readable_target_only_desktop_screenshot",
+    "readable_target_only_compact_screenshot",
+    "readable_target_only_narrow_screenshot",
+    "visual_checklist",
+    "offline_cargo_fmt_check",
+    "skip_link_visual_closure",
+    "final_manifest",
+    "exact_cleanup"
+  ],
+  "pending_checks": [],
+  "rerun_checks": [],
+  "excluded_artifacts": [
+    "evidence/native-desktop-final.png: 138x163 thumbnail",
+    "evidence/native-compact-final.png: 127x134 thumbnail",
+    "evidence/native-narrow-final.png: 80x132 thumbnail"
+  ],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "absent_after_marker_gated_exact_cleanup"
+  },
+  "resume_from": null,
+  "safe_to_resume": false,
+  "notes": "The user-authorized official Rustup rustfmt component install remains fixed to Rust 1.98.0; no further network was used. The skip-link closure keeps the accessibility link in DOM, hides it by default, and shows it fully on keyboard focus in Desktop and Narrow. Offline tests, static contract, three readable current native captures, corrected non-self-referential manifest generation, and marker-gated exact cleanup are complete. Pre-marker build cache was not used as positive Evidence. Do not include personal text, credentials, or database contents."
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "lifeos.p3-142.static-evidence.v1",
+  "task": "LIFEOS-P3-142",
+  "source_sha256": {
+    "src/runtime.rs": "b12e5016172b874f29a7b39194ce699feefd94748575b5c563b68059960efda7",
+    "ui/app.js": "46242f1c9332bcd7cc3005e0b3c71c570d22e5b0dd2de6ddeffce6a5a9fb1a69",
+    "ui/styles.css": "01bcb4ec6d2f8f352ed85b29fbb1cc7eb8dbac9348cd60e50d601e54e9641e96",
+    "ui/index.html": "af2fbe954ebeeff30956f3c8a51b8a144e6fe0ee6a0030ea64c3029daee115c0",
+    "ci/checks.json": "5cb3c0ec39bf34b99357da742ed5b8b1cbf18d74a28fa3ae6fe457a5b2003525"
+  },
+  "provider_registry": {
+    "cloud": 8,
+    "local": 4,
+    "source": "Provider Registry / Adapter metadata"
+  },
+  "ipc": {
+    "count": 20,
+    "source": "IPC constant and Tauri invoke handler"
+  },
+  "dto": {
+    "version": 1,
+    "strict": true
+  },
+  "boundary": {
+    "rust_network_symbols": false,
+    "ui_network_symbols": false,
+    "synthetic_credential_only": true
+  },
+  "result": "PASS"
+}

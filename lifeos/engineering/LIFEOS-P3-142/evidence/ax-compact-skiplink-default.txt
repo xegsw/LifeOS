@@ -1,0 +1,100 @@
+Window: "LifeOS · 模型设置（合成离线）", App: LifeOS · 模型设置（合成离线）.
+0 standard window LifeOS · 模型设置（合成离线）, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: LifeOS · 模型设置（合成离线）, URL: tauri://localhost
+			3 link 跳到主要内容, Value: tauri://localhost#main-content
+			4 container
+				5 container LifeOS 主导航
+					6 container LifeOS
+						7 text ✦
+					8 button Today
+					9 button Me
+					10 button Contexts
+					11 button Memory
+					12 button 设置
+				13 container 设置导航
+					14 text 设置
+					15 button 通用 暂未开放
+					16 button 模型设置
+					17 button 数据与隐私 暂未开放
+					18 button 备份与导出 暂未开放
+					19 button 关于 暂未开放
+				20 container
+					21 text Settings · 辅助入口
+					22 heading 模型设置, Value: 1
+						23 text 模型设置
+					24 text 配置一个可替换的主 AI 服务；LifeOS 会按授权、处理位置与能力状态自动匹配。 ◇ 合成离线 · 无网络
+				25 text ✦
+				26 text 主 AI 服务
+				27 heading 还没有配置服务, Value: 2
+					28 text 还没有配置服务
+				29 text 只需添加一个主服务。文字、视觉、语音和工具能力由 LifeOS 根据服务 metadata 自动匹配。
+				30 button 添加服务
+				31 text 未保存草稿
+				32 heading 添加主服务, Value: 2
+					33 text 添加主服务
+				34 text 保存前不会成为活动服务
+				35 container 服务处理位置
+					36 toggle button ☁ 云端服务 使用可替换的云端服务目录, Value: on
+					37 toggle button ⌘ 本地服务 使用设备上的本地服务目录, Value: off
+				38 container
+					39 text 模型提供方
+					40 pop up button 模型提供方, Value: OpenAI
+				41 container
+					42 text 模型名称
+					43 text field (settable) 模型名称, Value: synthetic-text-v1
+				44 container
+					45 text 合成服务端点
+					46 text field 合成服务端点, Value: offline://catalog/cloud/openai
+					47 text 仅用于离线目录识别；不会发起网络连接。
+				48 container
+					49 text API Key（固定非秘密夹具）
+					50 secure text field 固定非秘密 API Key 夹具, Value: •••••••••••••••••••••••••••••••
+					51 button API Key（固定非秘密夹具） ••••••••••••••••••••••••••••••• 页面只显示掩码；持久化仅保存不可用的合成引用。
+					52 text 页面只显示掩码；持久化仅保存不可用的合成引用。
+				53 button 保存配置
+				54 button (disabled) 离线测试连接
+				55 button (disabled) 显式启用
+				56 text 运行策略
+				57 heading 按需要匹配能力, Value: 2
+					58 text 按需要匹配能力
+				59 text 默认失败关闭
+				60 container
+					61 checkbox 优先使用本地 优先考虑当前已配置的本地能力, Value: 1
+					62 text 优先使用本地 优先考虑当前已配置的本地能力
+				63 container
+					64 checkbox 允许云端补齐 默认关闭；没有明确授权时不选择云端, Value: 0
+					65 text 允许云端补齐 默认关闭；没有明确授权时不选择云端
+				66 container
+					67 checkbox 服务失败时自动切换 默认关闭；不会静默切到备用服务, Value: 0
+					68 text 服务失败时自动切换 默认关闭；不会静默切到备用服务
+				69 container
+					70 checkbox 优先响应更快 只在已授权、能力匹配的服务中排序, Value: 0
+					71 text 优先响应更快 只在已授权、能力匹配的服务中排序
+				72 text ◒ 备用服务（可选）
+				73 text 尚未配置，不会阻塞主服务。
+				74 text 视觉弱化
+				75 summary 高级设置 默认折叠 · 所有能力覆盖保持“自动” ⌄, Value: off
+					76 text 高级设置
+					77 text 默认折叠 · 所有能力覆盖保持“自动”
+					78 text ⌄
+				79 container
+					80 text 能力状态
+					81 heading LifeOS 自动匹配, Value: 2
+						82 text LifeOS 自动匹配
+					83 text 不需要逐项选择模型 – 文字推理 尚未配置 – 视觉理解 尚未配置 – 语音输入 尚未配置 – 语音输出 尚未配置 – 工具调用 尚未配置 – 长文本 尚未配置 – 结构化输出 尚未配置 – 嵌入 尚未配置
+				84 container Global AI 合成占位
+					85 text ✦ 问 LifeOS… Settings 页面已弱化
+					86 button (disabled) 发送
+		87 scroll bar (settable, float) 0
+	88 close button
+	89 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	90 minimize button
+	91 text LifeOS · 模型设置（合成离线）
+92 menu bar
+	93 LifeOS · 模型设置（合成离线）
+	94 File
+	95 Edit
+	96 View
+	97 Window
+	98 Help

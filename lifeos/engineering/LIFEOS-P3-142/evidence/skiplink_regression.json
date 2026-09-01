@@ -1,0 +1,30 @@
+{
+  "schema": "lifeos.p3-142.skip-link-regression.v1",
+  "task": "LIFEOS-P3-142",
+  "executed_at": "2026-09-01T12:39:29Z",
+  "network_used": false,
+  "format": {
+    "command": "cargo fmt --all -- --check",
+    "result": "PASS"
+  },
+  "rust_tests": {
+    "command": "cargo test --locked --offline -- --test-threads=1",
+    "passed": 9,
+    "failed": 0,
+    "result": "PASS"
+  },
+  "offline_contract": {
+    "command": "node tests/offline_contract.mjs",
+    "passed": 15,
+    "skip_link_contract": "PASS",
+    "ipc_count": 20,
+    "network": "absent",
+    "result": "PASS"
+  },
+  "task_root_negative": {
+    "wrong_marker": "rejected",
+    "symlink": "rejected",
+    "traversal": "rejected_by_exact_literal",
+    "result": "PASS"
+  }
+}
