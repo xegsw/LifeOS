@@ -28,6 +28,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github/workflows/lifeos-ci.yml
+            AGENTS.md
+            lifeos/ACCEPTANCE_GOVERNANCE.md
+            lifeos/PM_OPERATING_MODEL.md
+            lifeos/DECISION_LOG.md
+            lifeos/ci
+            lifeos/tools/lifeos_ci.py
+            lifeos/templates
+            lifeos/tasks
+            lifeos/product/LIFEOS_MODEL_SETTINGS_BASELINE_V1.md
+            lifeos/architecture/LifeOS架构基线V1.0.md
+            lifeos/architecture/LifeOS高保真原型IA-V1.0.md
+            lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate
       - name: Validate governance, frozen baselines, and resume schema
         run: python3 lifeos/tools/lifeos_ci.py validate
       - name: Reject whitespace and conflict markers
@@ -38,6 +55,13 @@ jobs:
     needs: governance-guard
     steps:
       - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            lifeos/ci
+            lifeos/tools/lifeos_ci.py
+            lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate
       - name: Show deterministic toolchain
         run: |
           python3 --version
@@ -59,7 +83,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          filter: blob:none
           fetch-depth: 0
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github/workflows/lifeos-ci.yml
       - name: Verify fast-forward-only promotion boundary
         run: |
           git fetch origin main
@@ -74,6 +102,11 @@ jobs:
     needs: [governance-guard, deterministic-regression]
     steps:
       - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate
       - name: Package source-only synthetic candidate
         run: |
           mkdir -p dist
