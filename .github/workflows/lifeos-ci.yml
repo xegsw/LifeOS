@@ -60,6 +60,7 @@ jobs:
           filter: blob:none
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            .gitignore
             lifeos/ci
             lifeos/tools/lifeos_ci.py
             lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate
