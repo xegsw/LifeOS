@@ -9,6 +9,7 @@ const fail = (code) => { throw new Error(code); };
 const markerPath = (root = ROOT) => `${root}/${MARKER}`;
 const exactRoot = (root) => root === ROOT && dirname(root) === "/private/tmp" && resolve(root) === ROOT;
 const mode = (stats) => Number(stats.mode & 0o777);
+const canonicalPayload = (value) => JSON.stringify(value, Object.keys(value).sort());
 
 async function verifyAt(root, { exact = true } = {}) {
   if ((exact && !exactRoot(root)) || (!exact && !root.startsWith(`${ROOT}/negative-`))) fail("root_literal_rejected");
@@ -17,7 +18,7 @@ async function verifyAt(root, { exact = true } = {}) {
   const marker = await lstat(markerPath(root));
   if (!marker.isFile() || marker.isSymbolicLink() || mode(marker) !== 0o600) fail("marker_type_rejected");
   const parsed = JSON.parse(await readFile(markerPath(root), "utf8"));
-  if (JSON.stringify(parsed) !== JSON.stringify(EXPECTED)) fail("marker_payload_rejected");
+  if (canonicalPayload(parsed) !== canonicalPayload(EXPECTED)) fail("marker_payload_rejected");
   return { root, marker: markerPath(root), entries: (await readdir(root)).sort() };
 }
 

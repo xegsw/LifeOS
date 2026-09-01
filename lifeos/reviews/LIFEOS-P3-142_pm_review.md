@@ -15,7 +15,7 @@
 - 唯一用户结果是否实现：Yes
 - 范围与授权是否一致：Yes。唯一新增联网动作仅为用户逐次授权的 Rust 1.98.0 `rustfmt` 组件安装；未连接 Provider、模型或其他网络目标。
 - 历史是否保全：Yes
-- 测试与 Evidence 摘要：`cargo fmt --check`、串行 Rust 9/9、离线合同 15/15、恰好 20 IPC、Cloud 8／Local 4 Provider、严格 DTO、重启持久化、失败关闭和三档 actual-Tauri 均通过。PM 发现的默认 skip-link 裁切已在同一 Closure Cycle 内修正；Desktop 与 Narrow 焦点态仍可用。Final Manifest 117/117，verifier 0 errors；唯一临时根已 marker-gated 精确清理并确认不存在。
+- 测试与 Evidence 摘要：`cargo fmt --check`、串行／默认 Rust 9/9、离线合同 15/15、恰好 20 IPC、Cloud 8／Local 4 Provider、严格 DTO、重启持久化、失败关闭和三档 actual-Tauri 均通过。PM 发现的默认 skip-link 裁切已在同一 Closure Cycle 内修正；Desktop 与 Narrow 焦点态仍可用。任务已登记至中央确定性 CI，治理校验与任务检查均通过；marker JSON 使用语义等价比较，不依赖字段顺序。Final Manifest 117/117，verifier 0 errors；唯一临时根已 marker-gated 精确清理并确认不存在。
 
 ## Task Contract 核对
 
