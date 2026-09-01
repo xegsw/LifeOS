@@ -1,0 +1,36 @@
+{
+  "schema": "lifeos.p3-142.regression-after-rustfmt.v1",
+  "task": "LIFEOS-P3-142",
+  "executed_at": "2026-09-01T12:19:20Z",
+  "network_used": false,
+  "format_check": {
+    "command": "cargo fmt --all -- --check",
+    "result": "PASS"
+  },
+  "rust_tests": {
+    "command": "cargo test --locked --offline -- --test-threads=1",
+    "passed": 9,
+    "failed": 0,
+    "result": "PASS"
+  },
+  "offline_contract": {
+    "command": "node tests/offline_contract.mjs",
+    "passed": 15,
+    "ipc_count": 20,
+    "network": "absent",
+    "result": "PASS"
+  },
+  "task_root_negative": {
+    "command": "node tools/task_root.mjs negative /private/tmp/lifeos-p3-142-ai-service-config-center-v1",
+    "wrong_marker": "rejected",
+    "symlink": "rejected",
+    "traversal": "rejected_by_exact_literal",
+    "result": "PASS"
+  },
+  "formatting_scope": "mechanical source layout only; no semantic change observed",
+  "manifest_tool_repair": {
+    "scope": "tools/generate_manifest.mjs and tools/verify_manifest.mjs resolve the engineering root rather than candidate/candidate",
+    "candidate_runtime_semantics_changed": false,
+    "result": "PASS"
+  }
+}

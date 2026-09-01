@@ -1,0 +1,18 @@
+{
+  "schema": "lifeos.p3-142.formatter-preflight.v1",
+  "task": "LIFEOS-P3-142",
+  "checked_at": "2026-09-01T12:19:20Z",
+  "network_used": true,
+  "toolchains": [
+    "1.98.0-aarch64-apple-darwin (active, default)"
+  ],
+  "installed_components": [
+    "cargo-aarch64-apple-darwin",
+    "rust-std-aarch64-apple-darwin",
+    "rustc-aarch64-apple-darwin",
+    "rustfmt-aarch64-apple-darwin"
+  ],
+  "formatter_binary_found": true,
+  "cargo_fmt_result": "cargo fmt --all -- --check: PASS after mechanical formatting",
+  "result": "PASS"
+}

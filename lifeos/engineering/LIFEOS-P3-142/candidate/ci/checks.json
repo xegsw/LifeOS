@@ -1,0 +1,14 @@
+{
+  "schema": "lifeos.p3-142.ci-checks.v1",
+  "task": "LIFEOS-P3-142",
+  "offline_only": true,
+  "commands": [
+    "cargo fmt --all -- --check",
+    "cargo test --locked --offline",
+    "cargo test --locked --offline -- --test-threads=1",
+    "node tests/offline_contract.mjs",
+    "node tools/task_root.mjs negative"
+  ],
+  "prohibited": ["network", "Pilot", "real_provider", "real_credential", "real_database", "GUI"],
+  "manual_gate": ["actual_tauri_desktop", "actual_tauri_compact", "actual_tauri_narrow", "direct_pid_ax_window_web_area"]
+}

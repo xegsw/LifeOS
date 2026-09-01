@@ -1,0 +1,61 @@
+{
+  "schema": "lifeos.p3-142.native-window-evidence.v1",
+  "task": "LIFEOS-P3-142",
+  "status": "PASS",
+  "attempts": [
+    {
+      "viewport": "desktop",
+      "requested": {
+        "width": 1280,
+        "height": 1024
+      },
+      "pid": 53553,
+      "ax_file": "ax-desktop-skiplink-default.txt",
+      "screenshot": "native-desktop-skiplink-default.jpeg",
+      "screenshot_pixels": {
+        "width": 1036,
+        "height": 768
+      },
+      "expected_window_title": "LifeOS · 模型设置（合成离线）",
+      "ax_chain": "direct PID -> exact AXWindow title -> HTML content (Tauri WebView/Area)",
+      "screenshot_result": "accepted_readable_target_only_capture"
+    },
+    {
+      "viewport": "compact",
+      "requested": {
+        "width": 1160,
+        "height": 768
+      },
+      "pid": 53600,
+      "ax_file": "ax-compact-skiplink-default.txt",
+      "screenshot": "native-compact-skiplink-default.jpeg",
+      "screenshot_pixels": {
+        "width": 1160,
+        "height": 768
+      },
+      "expected_window_title": "LifeOS · 模型设置（合成离线）",
+      "ax_chain": "direct PID -> exact AXWindow title -> HTML content (Tauri WebView/Area)",
+      "screenshot_result": "accepted_readable_target_only_capture"
+    },
+    {
+      "viewport": "narrow",
+      "requested": {
+        "width": 700,
+        "height": 760
+      },
+      "pid": 53674,
+      "ax_file": "ax-narrow-skiplink-default.txt",
+      "screenshot": "native-narrow-skiplink-default.jpeg",
+      "screenshot_pixels": {
+        "width": 700,
+        "height": 760
+      },
+      "expected_window_title": "LifeOS · 模型设置（合成离线）",
+      "ax_chain": "direct PID -> exact AXWindow title -> HTML content (Tauri WebView/Area)",
+      "screenshot_result": "accepted_readable_target_only_capture"
+    }
+  ],
+  "positive_native_binding": true,
+  "visual_acceptance": "PASS_THREE_READABLE_TARGET_ONLY_CAPTURES",
+  "environment_note": "Current Computer Use capture produced readable target-only Desktop, Compact, and Narrow images after the skip-link closure. No external target or prohibited data was accessed."
+}

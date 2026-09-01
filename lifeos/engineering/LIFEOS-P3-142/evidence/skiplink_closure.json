@@ -1,0 +1,39 @@
+{
+  "schema": "lifeos.p3-142.skip-link-closure.v1",
+  "task": "LIFEOS-P3-142",
+  "executed_at": "2026-09-01T12:39:29Z",
+  "candidate_sha256": "f56b359f4b37a79f5bf3639effbde96561097ea5f948d0d928e541c3a3c48e92",
+  "change_scope": {
+    "ui_styles": "Default .skip-link is fixed above the viewport; :focus and :focus-visible place it at top: 12px, left: 12px.",
+    "accessibility": "The #main-content link remains in DOM and is keyboard-focusable.",
+    "runtime_provider_capability_ipc_changed": false
+  },
+  "static_contract": {
+    "skip_link_rule": "PASS",
+    "offline_contract_checks": 15,
+    "exact_ipc_count": 20,
+    "network": "absent"
+  },
+  "native": {
+    "desktop": {
+      "pid": 53553,
+      "default_screenshot": "native-desktop-skiplink-default.jpeg",
+      "focused_screenshot": "skiplink-desktop-focused.jpeg",
+      "default_visible": false,
+      "focused_visible_and_complete": true
+    },
+    "compact": {
+      "pid": 53600,
+      "default_screenshot": "native-compact-skiplink-default.jpeg",
+      "default_visible": false
+    },
+    "narrow": {
+      "pid": 53674,
+      "default_screenshot": "native-narrow-skiplink-default.jpeg",
+      "focused_screenshot": "skiplink-narrow-focused.jpeg",
+      "default_visible": false,
+      "focused_visible_and_complete": true
+    }
+  },
+  "result": "PASS"
+}
