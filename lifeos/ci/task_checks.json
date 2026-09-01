@@ -27,6 +27,28 @@
         ["node", "tests/mode_delete_ui_contract.mjs"],
         ["cargo", "test", "--locked", "--", "--test-threads=1"]
       ]
+    },
+    {
+      "task_id": "LIFEOS-P3-142",
+      "working_directory": "lifeos/engineering/LIFEOS-P3-142/candidate",
+      "synthetic_root": {
+        "path": "/private/tmp/lifeos-p3-142-ai-service-config-center-v1",
+        "runtime_child": "runtime",
+        "marker_name": ".lifeos-p3-142-owner.json",
+        "marker": {
+          "schema": "lifeos.p3-142.synthetic-root.v1",
+          "task": "LIFEOS-P3-142",
+          "owner": "lifeos-p3-142-ai-service-config-center-v1"
+        }
+      },
+      "environment": {},
+      "commands": [
+        ["cargo", "fmt", "--all", "--", "--check"],
+        ["cargo", "test", "--locked", "--", "--test-threads=1"],
+        ["cargo", "test", "--locked"],
+        ["node", "tests/offline_contract.mjs"],
+        ["node", "tools/task_root.mjs", "negative"]
+      ]
     }
   ]
 }
