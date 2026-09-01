@@ -1,7 +1,7 @@
 # LifeOS Current Status Index
 
 更新时间：2026-09-01
-最后校验时间：2026-09-01（D-0640：P3-142 合成离线模型设置中心 PM Pass / Accepted / Complete）
+最后校验时间：2026-09-01（D-0641：P3-143 真实 AI 服务与加密凭据安全启用任务已创建、ABF 冻结并获一次性启动授权）
 
 本文件是 PM 日常上下文入口，用于减少重复读取大文件；它是状态索引，不替代主账本。
 
@@ -18,9 +18,9 @@
 ## 当前状态
 
 - 当前治理：D-0516 起的新任务采用 Governance V2，D-0635 升级为 V2.1：完整 Task Contract 一次授权；结果级任务包含实现、测试、Evidence与同范围修正；L0/L1/L2内嵌验收合同，L3/Gate才独立ABF；独立评审按风险／事实触发；普通任务PM Pass后自动Complete。CI校验确认基线与确定性合成回归；锁屏、AX／截图服务暂不可用等环境问题记为`Paused — Resumable`并从检查点定向继续。D-0636授权普通L0/L1/L2 PM Pass后自动推送任务分支并在CI全绿、main可快进时自动合并；高风险仍人工确认。P3-127及此前历史不追溯。
-- 当前活动事项：P3-142已由PM验收通过并自动`Accepted / Complete`。合成离线模型设置中心完成Cloud八项／Local四项Provider、单一主服务、Capability Registry／Router、严格DTO、持久化、失败关闭、恰好20 IPC与三档actual-Tauri。`cargo fmt --check`、Rust 9/9、离线合同15/15及Final Manifest 117/117均通过；默认skip-link裁切已在同一Closure Cycle关闭，焦点态仍可访问；唯一临时根已精确清理。
-- 当前可执行下一步：执行P3-142低风险交付自动化：提交并推送`codex/l2-*`任务分支，CI全绿且main可快进时自动合并；若仓库分叉则停止自动合并并回报。P3-141 Phase C继续暂停且全部资产只读；任何真实Provider、凭据、网络或Pilot启用仍需新的L3合同和用户确认。
-- 当前任务指针：P3-142 Accepted / Complete / PM Pass / Governance V2.1 L2 / No Separate ABF / Not Frozen；当前计数`0/0/2/0/0`；P3-141 Revision 3 v5保持 `User Accepted by Explicit Exception / Phase C Paused`；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
+- 当前活动事项：P3-142已由PM验收通过并经CI全绿自动交付至GitHub `main`（commit `eeb3fb62`），保持`Accepted / Complete`。P3-143已创建为一个完整结果级L3任务：继承P3-142全部高保真UI、Cloud八项／Local四项Provider和恰好20 IPC，只把DeepSeek作为本轮唯一真实正向目标；API Key固定为SQLite密文跨重启、密钥材料由专用macOS Keychain项分离管理。用户已一次性授权创建和启动。
+- 当前可执行下一步：在全新隔离工程会话执行P3-143 Phase A合成／离线工程Gate；Phase A全Pass后进入用户在App内手工输入Key的单一DeepSeek真实Gate，再由不同全新隔离会话强制独立评审。Agent不得观察API Key；不得访问Pilot、真实个人DB／路径／文本／Health／Context。环境锁屏、AX、截图或临时网络问题按V2.1写checkpoint并定向恢复。
+- 当前任务指针：P3-143 Ready / Authorized / Engineering Start Pending / ABF-P3-143-v1 Frozen / Governance V2.1 L3 / Not Product Frozen；P3-142 Accepted / Complete / delivered to main；P3-141旧Phase C保持历史暂停且全部资产只读；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
 - P3-134最终PM计数：P0=0、P1=0、P2=1、Unknown=0、Not Implemented=0。333项Final Manifest和13项固定输入hash复算闭合，AC-01～16全Pass，三档actual-Tauri各15态、同fixture视觉、十一IPC、双模式Runtime与10类写前失败关闭成立。P2为一次已精确清理且未参与正Evidence的无内容stdout越界历史。
 - P3-132 最终PM计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算工程Final Manifest 75+42、P3-131历史75/75并串行复跑11/11测试；CL-01不足身份显示与CL-02三个开放Action按`confirmed_at_ms/action_id`稳定Focus、刷新及重启全部闭合。两项首次工程历史P2保留但不阻断唯一用户结果；未触发独立评审。
 - P3-131 当前 PM 计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算Final Manifest 89/89与source lineage 75/75，离线测试6/6，并在唯一全新task temp root直接复跑actual Tauri的接受并完成、关闭重开、编辑接受、拒绝、暂缓和证据不足路径。两项P2分别为工程action log／build-cache Manifest措辞与原始PID时间链不足，以及source scanner对`basis_refs.map`的`fs.`子串误报和closure checker语义弱；均由PM定向复核关闭其阻断性，不影响唯一用户结果。
@@ -55,7 +55,7 @@
 
 ## 当前禁止事项
 
-不得继续修改 P3-096 工程、交付物或 Engineering Evidence；P3-094 至 P3-128 的任务、工程／架构／原型／Spike、专项交付物、Review 与 Engineering／Prototype／Independent／PM Evidence 资产严格只读，PM 账本除外。P3-122、P3-126 与 P3-127 已获用户采纳，但候选、交付物与 Evidence 不得再修改、冻结或重跑取证。P3-123/P3-124 已关闭并获用户采纳，不得原地修复、修改 ABF、继续 Rework、重新投递、创建旧 temp root 或覆盖已保全输出。P3-125 已关闭且 Rework 1/1 耗尽，不得继续、重投、修改 ABF/source allowlist、覆盖 initial/Rework Evidence，或访问／创建／stat／hash／清理旧 P3-122 temp root。P3-128 已 Complete，不得原地修订其交付物／结构化合同或自动执行 handoff；后继必须是新的 Task Contract。禁止 Pilot、真实 DB／路径／文本、网络、产品模型、新 IPC、clear/export/权限/恢复。P3-108/P3-109 均不得继续、恢复或原地修改 ABF。P3-110 暂停期间全部资产只读，未来恢复须重新授权。禁止对 retained Pilot-2 做路径查找、metadata、打开、读取、hash、复制、覆盖或清理。不得调整系统显示缩放；“减少动态效果”只由用户手工恢复。不得读取、hash、复制、覆盖或清理 `/private/tmp/lifeos-p3-104-rework-static-results.json` 内容，只允许 `lstat` metadata 核对。不得写或执行真实用户 DB migration，不得迁移、覆盖、复制、清理或写入真实用户数据库。不得启用真实 Vault、真实文件导出、云 / 第三方模型、向量、同步 / 多设备、L3 或外部用户；不得关闭／重开风险；不得恢复或冻结工程基线、冻结 Schema/API、冻结新关键产品资产或进入下一阶段。
+不得继续修改 P3-096 工程、交付物或 Engineering Evidence；P3-094 至 P3-142 的历史任务、候选、交付物、Review、Manifest 与 Engineering／Prototype／Independent／PM Evidence 资产严格只读，PM 账本除外。P3-143 仅可在其任务卡、ABF、工程／交付物／Review路径和唯一临时根内执行；除用户在App内手工输入的DeepSeek API Key、专用Keychain密钥材料和对 `https://api.deepseek.com` 的用户触发合成canary Gate外，继续禁止任何Pilot、真实个人DB／路径／文本、其他网络目标、其他真实Provider、产品模型消费个人数据、新IPC、clear/export/权限/恢复。P3-108/P3-109均不得继续；P3-110继续暂停。禁止探测或清理任何retained Pilot及旧Runtime根。不得调整系统显示缩放。不得写或执行真实用户DB migration，不得启用真实Vault、真实文件导出、向量、同步／多设备或外部用户；不得关闭／重开风险、恢复／冻结工程基线、冻结Schema/API／新产品资产或进入下一阶段。
 
 ## 已冻结核心资产摘要
 
