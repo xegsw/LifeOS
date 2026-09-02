@@ -1,0 +1,24 @@
+{
+  "schema": "lifeos.p3-144.closure-4-independent-review.actual-tauri.v1",
+  "build": { "offline": true, "no_sign": true, "result": "PASS", "executable_sha256": "83a66d27a89a1149d7acb70cdd97f8cf744a32689d04141b5b3e7816f91ddeaf" },
+  "first_launch": {
+    "pid": 47675,
+    "direct_executable_launch": true,
+    "exact_title": "LifeOS · Work 与健康状态",
+    "exact_title_ax_window": true,
+    "ax_web_role": "AXWebArea",
+    "window_bounds": { "x": 221, "y": 33, "width": 1280, "height": 949 },
+    "synthetic_work_saved": true,
+    "minimal_disclosure_previewed": true,
+    "unenabled_send_fail_closed": true,
+    "network_requests": 0
+  },
+  "database": { "basename": "capture.sqlite", "type": "regular_file", "mode": "0600", "size_after_synthetic_flow": 57344 },
+  "restart": { "first_pid_exited": true, "fresh_pid": 47799, "app_reopened": true, "same_database_preserved": true },
+  "screenshots": {
+    "desktop-settings-target-window.png": "fa1be1faa19084f6b8ba7782c6e0fa660a80a57bc4a91858e3e44fda3c1cd9f8",
+    "desktop-disclosure-target-window.png": "0aa1b66ded52bcceabe4d1726bb428cf42a40ecd5cb1cbdc7c2b7d3f8463fb3f",
+    "scope": "exact PID/title target window only; desktop excluded"
+  },
+  "cleanup": { "writer_stopped": true, "marker_gated_exact_root_cleanup": true, "root_absent": true }
+}

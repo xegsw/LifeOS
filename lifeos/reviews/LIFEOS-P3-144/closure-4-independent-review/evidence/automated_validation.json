@@ -1,0 +1,14 @@
+{
+  "schema": "lifeos.p3-144.closure-4-independent-review.automated-validation.v1",
+  "cargo": {
+    "command": "cargo test --locked --offline -- --test-threads=1",
+    "result": "PASS",
+    "passed": 26,
+    "failed": 0,
+    "target_location": "review-owned build cache"
+  },
+  "offline_contract": { "result": "PASS", "checks": 23, "ipc_count": 20 },
+  "network": { "permitted": false, "observed_requests": 0 },
+  "excluded_run": "excluded-run-1/incident.json",
+  "excluded_run_reason": "review orchestration placed build output inside the exclusive runtime root; recovered without candidate change"
+}

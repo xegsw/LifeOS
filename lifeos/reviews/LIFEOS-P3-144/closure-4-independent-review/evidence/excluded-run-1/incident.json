@@ -1,0 +1,11 @@
+{
+  "schema": "lifeos.p3-144.independent-review.excluded-run.v1",
+  "task_id": "LIFEOS-P3-144",
+  "candidate_commit": "86d764d91c4c6716254eef7d002dd47092c42826",
+  "classification": "Recoverable Procedure",
+  "candidate_failure": false,
+  "prohibited_boundary_contact": false,
+  "network_used": false,
+  "summary": "Cargo target and TMPDIR were placed inside the runtime root whose lifecycle tests require exclusive create/remove ownership. Seventeen tests passed and nine root-lifecycle tests failed from this orchestration conflict. The run is excluded from positive Evidence.",
+  "recovery": "Move build cache to review-owned output, re-establish the exact previously owned marker, perform marker-gated cleanup, then rerun from build_test with the runtime root absent."
+}

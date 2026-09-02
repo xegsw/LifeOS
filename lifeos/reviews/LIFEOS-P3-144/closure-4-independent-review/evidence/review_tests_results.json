@@ -1,0 +1,12 @@
+{
+  "schema": "lifeos.p3-144.closure-4.review-tests.v1",
+  "candidate_commit": "86d764d91c4c6716254eef7d002dd47092c42826",
+  "status": "PASS",
+  "base_checks": { "passed": 15, "failed": 0 },
+  "mutations": {
+    "passed": 10,
+    "failed": 0,
+    "ids": ["timeout_as_network", "timeout_30_seconds", "wrong_database_basename", "accept_non_regular_database", "database_mode_0644", "repeat_feedback_allowed", "feedback_cas_removed", "stale_disclosure_retained", "twenty_first_ipc", "receipt_content_field"]
+  },
+  "cleanup": { "wrong_marker_refused": true, "exact_marker_cleanup": true, "root_absent": true }
+}
