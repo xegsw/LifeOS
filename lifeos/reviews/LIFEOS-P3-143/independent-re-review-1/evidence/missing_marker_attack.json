@@ -1,0 +1,19 @@
+{
+  "schema": "lifeos.p3-143.independent-missing-marker-attack.v1",
+  "reviewer_owned": true,
+  "profile": "independent-review",
+  "run_id": "rereviewb20260902",
+  "fixture": "fresh, pre-existing 0700 direct-child root with no marker, runtime child, or database",
+  "expected": "reject before marker creation, database, Keychain, network, or other durable state write",
+  "observed": {
+    "marker_created": true,
+    "runtime_child_created": true,
+    "database_created": true,
+    "injected_runtime_root_created": false,
+    "root_mode": 448,
+    "marker_mode": 384
+  },
+  "candidate_exit_code": -15,
+  "cleanup": "CLEANED",
+  "verdict": "FAIL_OPEN"
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "lifeos.p3-143.independent-rereview-final-manifest.v1",
+  "task": "LIFEOS-P3-143",
+  "review": "independent-re-review-1",
+  "conclusion": "REWORK",
+  "counts": {"p0": 1, "p1": 0, "p2": 0, "unknown": 0, "not_implemented": 20},
+  "self_exclusion": true,
+  "external_bindings": {
+    "candidate_commit": "767301fb051d11a6bf11488413f8b03aabfc2d99",
+    "candidate_branch": "codex/l3-p3-143-real-ai-activation",
+    "candidate_worktree_matches_commit": true,
+    "engineering_final_manifest_sha256": "daa2ed5dc247617087bbbd0f7cae7c0a5ab221ccb7f22960dc841b83699619e7",
+    "root_authority_closure_sha256": "ca16c43c3866ce7e448f2b83aa7323708588ebcd0e37da39633e28d5065b1513",
+    "acceptance_basis_sha256": "c7385a767c827d94b3b44bfe98bdb97377d3d9ed90f718832f6f431130feb90f"
+  },
+  "files": [
+    {"path": "controls/test_design.md", "bytes": 3442, "sha256": "c2e83ace96c84795db7719a9a096e03d2e22e7bbec8a0d1d582ad59e3481c36a", "role": "precontact_test_design"},
+    {"path": "controls/allowlist.md", "bytes": 1852, "sha256": "2c33ebddd2f3c7e0bf3ebd0fa41f3c8059059e1fbdca77d2f6d8afdabc462729", "role": "precontact_allowlist"},
+    {"path": "controls/prohibited_path_declaration.md", "bytes": 1085, "sha256": "c3412dd34aec21ddb091ddac89496cf04e9fd25e638c127bc408ca132285a02e", "role": "prohibited_declaration"},
+    {"path": "controls/precontact_seal.json", "bytes": 928, "sha256": "7d69cf20c07bb3fb43dcb3e9357f910e99262bfddfcb3e741e78c87a55502e83", "role": "precontact_seal"},
+    {"path": "review_tools/verify_lineage.mjs", "bytes": 2442, "sha256": "75bc8284f85eb53a369c2dc7d19f795140751f64d6e0830d3e73ca01c25f7efa", "role": "alternate_review_verifier_source"},
+    {"path": "review_tools/verify_lineage.py", "bytes": 2658, "sha256": "a37f49d8e516988934dfe619c8d1c3e8c6075431cfd74eae9d602e1e7f173cf0", "role": "lineage_verifier_source"},
+    {"path": "review_tools/verify_declared_manifest.py", "bytes": 2081, "sha256": "8d5a4da52f7b990310fd04b9bbe26a3b2befab8637e17d28d0d1e2223d5d3433", "role": "predecessor_manifest_verifier_source"},
+    {"path": "review_tools/missing_marker_attack.py", "bytes": 4337, "sha256": "2dcbafaec94f953b5042c5866130845e59a3e0e0548055edded4fe0134fbff28", "role": "review_owned_root_attack_source"},
+    {"path": "review_tools/verify_review_manifest.py", "bytes": 1852, "sha256": "3baac643252d569779b286fc39f8060896082a7b5534e2188dc5764ec198021a", "role": "final_manifest_verifier_source"},
+    {"path": "evidence/lineage_verification.json", "bytes": 52565, "sha256": "c1b83ab7692515fc9bb3299ff64ecc5ec019ac5f9cfb3c06277ef9bd996c5aaa", "role": "p3_143_lineage_result"},
+    {"path": "evidence/p3_142_manifest_verification.json", "bytes": 47864, "sha256": "272a21a2227c6f00137e0a70957ac0cc9b4e4b877857b796f4c8bb15284dea93", "role": "p3_142_lineage_result"},
+    {"path": "evidence/missing_marker_attack.json", "bytes": 654, "sha256": "0694b1630f8f0236a5d56c5c5608536f8850f56aec2d373752c0be17463203de", "role": "root_authority_negative_result"},
+    {"path": "evidence/review_matrix.json", "bytes": 3138, "sha256": "c3a168896c98e7b2db7ddd823a15d2eb93b432bd8460c502709c8a6dfe032943", "role": "abf_matrix"},
+    {"path": "evidence/build_profile_binding.json", "bytes": 814, "sha256": "cb71d9c9ec8aa936918c32dea51ad8aef2e5f3e10528a2cbf6be868c05544b4d", "role": "compiled_profile_binding"},
+    {"path": "independent_review.md", "bytes": 4361, "sha256": "5d45398a2a1d17b1988a1e5eed225a1b8a3cc05dd7e41032374d8f7ee93eca37", "role": "independent_review_report"}
+  ]
+}

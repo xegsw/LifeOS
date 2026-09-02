@@ -1,0 +1,1273 @@
+{
+  "schema": "lifeos.p3-143.independent-lineage-verification.v1",
+  "reviewer_owned": true,
+  "candidate_commit": "767301fb051d11a6bf11488413f8b03aabfc2d99",
+  "manifest_self_referential": false,
+  "manifest_entry_count": 125,
+  "category_counts": {
+    "candidate": 85,
+    "fixed_input": 7,
+    "history": 4,
+    "evidence": 29
+  },
+  "hash_error_count": 0,
+  "root_authority_closure": {
+    "sha256": "ca16c43c3866ce7e448f2b83aa7323708588ebcd0e37da39633e28d5065b1513",
+    "candidate_files": 85,
+    "closure_candidate_sha256": "06ffa277be1dd42c946d7f7372d8a7f66619784a78aef351ceedc8068b1951c1",
+    "decision": "PASS_READY_FOR_NEW_ISOLATED_INDEPENDENT_REREVIEW"
+  },
+  "status": "PASS",
+  "files": [
+    {
+      "category": "fixed_input",
+      "role": "governance",
+      "path": "lifeos/ACCEPTANCE_GOVERNANCE.md",
+      "bytes_expected": 12937,
+      "bytes_actual": 12937,
+      "sha256_expected": "c3b0627a291942158a022a71564e186580e650bd513fe29c1845bd7f5d1a812d",
+      "sha256_actual": "c3b0627a291942158a022a71564e186580e650bd513fe29c1845bd7f5d1a812d",
+      "pass": true
+    },
+    {
+      "category": "fixed_input",
+      "role": "architecture_authority",
+      "path": "lifeos/architecture/LifeOS架构基线V1.0.md",
+      "bytes_expected": 10125,
+      "bytes_actual": 10125,
+      "sha256_expected": "1d7d82d2afcf7ac52b15730f4f8d3effc08f8965d0b085c6a53bbd2611ad7236",
+      "sha256_actual": "1d7d82d2afcf7ac52b15730f4f8d3effc08f8965d0b085c6a53bbd2611ad7236",
+      "pass": true
+    },
+    {
+      "category": "fixed_input",
+      "role": "ci_governance",
+      "path": "lifeos/CI_CD_GOVERNANCE.md",
+      "bytes_expected": 6654,
+      "bytes_actual": 6654,
+      "sha256_expected": "23611c5a1a4c75497bc2dde961b9e18d6ba64faa3387c9b09505b2539acd9bfd",
+      "sha256_actual": "23611c5a1a4c75497bc2dde961b9e18d6ba64faa3387c9b09505b2539acd9bfd",
+      "pass": true
+    },
+    {
+      "category": "history",
+      "role": "predecessor_deliverable",
+      "path": "lifeos/deliverables/LIFEOS-P3-142_model_settings_ai_service_configuration_center_v1.md",
+      "bytes_expected": 7681,
+      "bytes_actual": 7681,
+      "sha256_expected": "d77a0fcaebe4032d05c35df58576bef808d83d94cc90133fdebeb4753a72e200",
+      "sha256_actual": "d77a0fcaebe4032d05c35df58576bef808d83d94cc90133fdebeb4753a72e200",
+      "pass": true
+    },
+    {
+      "category": "fixed_input",
+      "role": "product_baseline",
+      "path": "lifeos/product/LIFEOS_MODEL_SETTINGS_BASELINE_V1.md",
+      "bytes_expected": 3403,
+      "bytes_actual": 3403,
+      "sha256_expected": "bbe5614e27b3fc77fcf7e58a54bfb1168e5ac45270c30c7a19d6d007a5b32a4a",
+      "sha256_actual": "bbe5614e27b3fc77fcf7e58a54bfb1168e5ac45270c30c7a19d6d007a5b32a4a",
+      "pass": true
+    },
+    {
+      "category": "history",
+      "role": "predecessor_pm_review",
+      "path": "lifeos/reviews/LIFEOS-P3-142_pm_review.md",
+      "bytes_expected": 4497,
+      "bytes_actual": 4497,
+      "sha256_expected": "e6bdb005ee4f726a97fe968148201f9082ac03ac3105d11cf72bab11f645c731",
+      "sha256_actual": "e6bdb005ee4f726a97fe968148201f9082ac03ac3105d11cf72bab11f645c731",
+      "pass": true
+    },
+    {
+      "category": "history",
+      "role": "predecessor_contract",
+      "path": "lifeos/tasks/LIFEOS-P3-142_model_settings_ai_service_configuration_center_v1.md",
+      "bytes_expected": 18878,
+      "bytes_actual": 18878,
+      "sha256_expected": "5c1e8ec54349cc851839c76b8025e407f2ee4444bd5c52fe0bec67949c8cb434",
+      "sha256_actual": "5c1e8ec54349cc851839c76b8025e407f2ee4444bd5c52fe0bec67949c8cb434",
+      "pass": true
+    },
+    {
+      "category": "fixed_input",
+      "role": "acceptance_freeze_manifest",
+      "path": "lifeos/tasks/LIFEOS-P3-143_acceptance_freeze_manifest.json",
+      "bytes_expected": 2343,
+      "bytes_actual": 2343,
+      "sha256_expected": "3183f77e1c524c216e2d754d494ae80915eeda708734699a165735c9f21b49f8",
+      "sha256_actual": "3183f77e1c524c216e2d754d494ae80915eeda708734699a165735c9f21b49f8",
+      "pass": true
+    },
+    {
+      "category": "fixed_input",
+      "role": "acceptance_basis",
+      "path": "lifeos/tasks/LIFEOS-P3-143_real_ai_service_and_encrypted_credential_secure_activation_acceptance_basis_freeze.md",
+      "bytes_expected": 10859,
+      "bytes_actual": 10859,
+      "sha256_expected": "c7385a767c827d94b3b44bfe98bdb97377d3d9ed90f718832f6f431130feb90f",
+      "sha256_actual": "c7385a767c827d94b3b44bfe98bdb97377d3d9ed90f718832f6f431130feb90f",
+      "pass": true
+    },
+    {
+      "category": "fixed_input",
+      "role": "task_contract",
+      "path": "lifeos/tasks/LIFEOS-P3-143_real_ai_service_and_encrypted_credential_secure_activation.md",
+      "bytes_expected": 17357,
+      "bytes_actual": 17357,
+      "sha256_expected": "c3a1e40101fa60c71a66bc2ff640be879c3ed64a020ce6491d8e4345b4bcc6f7",
+      "sha256_actual": "c3a1e40101fa60c71a66bc2ff640be879c3ed64a020ce6491d8e4345b4bcc6f7",
+      "pass": true
+    },
+    {
+      "category": "history",
+      "role": "predecessor_manifest",
+      "path": "lifeos/engineering/LIFEOS-P3-142/FINAL_MANIFEST.json",
+      "bytes_expected": 20346,
+      "bytes_actual": 20346,
+      "sha256_expected": "0d16c964ff367f493748742fbbed21ed42cf894de770ea9c533f5c6634ffbe33",
+      "sha256_actual": "0d16c964ff367f493748742fbbed21ed42cf894de770ea9c533f5c6634ffbe33",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/build.rs",
+      "bytes_expected": 3085,
+      "bytes_actual": 3085,
+      "sha256_expected": "36fdea50fb622c4804fee83be7919d49f9f024cc0f0e0b16dffa0657dcdb65e1",
+      "sha256_actual": "36fdea50fb622c4804fee83be7919d49f9f024cc0f0e0b16dffa0657dcdb65e1",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/capabilities/main.json",
+      "bytes_expected": 257,
+      "bytes_actual": 257,
+      "sha256_expected": "d1c00756a2b1e53ba04406dac8526193b90fbec4c66743eea2cb8c1a2f0782e1",
+      "sha256_actual": "d1c00756a2b1e53ba04406dac8526193b90fbec4c66743eea2cb8c1a2f0782e1",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/Cargo.lock",
+      "bytes_expected": 116828,
+      "bytes_actual": 116828,
+      "sha256_expected": "22ded4c89ab82a9721dd8920edf7716737214af01d7d19d6671ac23bed30a658",
+      "sha256_actual": "22ded4c89ab82a9721dd8920edf7716737214af01d7d19d6671ac23bed30a658",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/Cargo.toml",
+      "bytes_expected": 774,
+      "bytes_actual": 774,
+      "sha256_expected": "09fd7c83e2264e5fa044e3951aaa8f79754f493dc1303dfc211c40dcbf610379",
+      "sha256_actual": "09fd7c83e2264e5fa044e3951aaa8f79754f493dc1303dfc211c40dcbf610379",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/ci/checks.json",
+      "bytes_expected": 577,
+      "bytes_actual": 577,
+      "sha256_expected": "68d11792179f1a523e0f35477bcf77222476c71e3456f2db94f5b8f85b01e81f",
+      "sha256_actual": "68d11792179f1a523e0f35477bcf77222476c71e3456f2db94f5b8f85b01e81f",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/gen/schemas/acl-manifests.json",
+      "bytes_expected": 65934,
+      "bytes_actual": 65934,
+      "sha256_expected": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e",
+      "sha256_actual": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/gen/schemas/capabilities.json",
+      "bytes_expected": 210,
+      "bytes_actual": 210,
+      "sha256_expected": "887729934c651009101e9c7d3fb8bb753967c3c405de4fea11a480940f8dd0d2",
+      "sha256_actual": "887729934c651009101e9c7d3fb8bb753967c3c405de4fea11a480940f8dd0d2",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/gen/schemas/desktop-schema.json",
+      "bytes_expected": 116049,
+      "bytes_actual": 116049,
+      "sha256_expected": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "sha256_actual": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/gen/schemas/macOS-schema.json",
+      "bytes_expected": 116049,
+      "bytes_actual": 116049,
+      "sha256_expected": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "sha256_actual": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/128x128.png",
+      "bytes_expected": 1227,
+      "bytes_actual": 1227,
+      "sha256_expected": "39572c12160197611428210db2eeb800e37dbd41860ba8e9a669166114f4a76b",
+      "sha256_actual": "39572c12160197611428210db2eeb800e37dbd41860ba8e9a669166114f4a76b",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/128x128@2x.png",
+      "bytes_expected": 2488,
+      "bytes_actual": 2488,
+      "sha256_expected": "d92aa427d4dd01feba7b03c0a321f5c4bef1f47e9a7e6e17ffeb0186b1e5f5f1",
+      "sha256_actual": "d92aa427d4dd01feba7b03c0a321f5c4bef1f47e9a7e6e17ffeb0186b1e5f5f1",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/32x32.png",
+      "bytes_expected": 441,
+      "bytes_actual": 441,
+      "sha256_expected": "79bc6828196ed3e2403a53463914eff4c0c0efce5f8b6e7e0b139114e11a5e59",
+      "sha256_actual": "79bc6828196ed3e2403a53463914eff4c0c0efce5f8b6e7e0b139114e11a5e59",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/64x64.png",
+      "bytes_expected": 643,
+      "bytes_actual": 643,
+      "sha256_expected": "3e3ece76332b640d374bbeff1a09b8813f7fee0a4b653c9a38415062d996de59",
+      "sha256_actual": "3e3ece76332b640d374bbeff1a09b8813f7fee0a4b653c9a38415062d996de59",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-anydpi-v26/ic_launcher.xml",
+      "bytes_expected": 261,
+      "bytes_actual": 261,
+      "sha256_expected": "760d4b8a06bf7163dd010c33ad2cac9e4a75fa0177afaba042f83e311eef0c3e",
+      "sha256_actual": "760d4b8a06bf7163dd010c33ad2cac9e4a75fa0177afaba042f83e311eef0c3e",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-hdpi/ic_launcher_foreground.png",
+      "bytes_expected": 1625,
+      "bytes_actual": 1625,
+      "sha256_expected": "e3adb898f0d807abc85bb75774e6b5e55b3f09627eee11e70844100f6ee8bef9",
+      "sha256_actual": "e3adb898f0d807abc85bb75774e6b5e55b3f09627eee11e70844100f6ee8bef9",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-hdpi/ic_launcher_round.png",
+      "bytes_expected": 956,
+      "bytes_actual": 956,
+      "sha256_expected": "d30ea18205f233e5791b912e4a9f89979805b825d45101b5e2612ae03dfbf497",
+      "sha256_actual": "d30ea18205f233e5791b912e4a9f89979805b825d45101b5e2612ae03dfbf497",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-hdpi/ic_launcher.png",
+      "bytes_expected": 1337,
+      "bytes_actual": 1337,
+      "sha256_expected": "0514a04799bc23d608ef68fc0786a11a1bea7b3e7930485469444c5964a6cf9f",
+      "sha256_actual": "0514a04799bc23d608ef68fc0786a11a1bea7b3e7930485469444c5964a6cf9f",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-mdpi/ic_launcher_foreground.png",
+      "bytes_expected": 1173,
+      "bytes_actual": 1173,
+      "sha256_expected": "d5925ec91058b5f59575bcbad8dc38b66c4ca18e79d8e625ddd05704ff103120",
+      "sha256_actual": "d5925ec91058b5f59575bcbad8dc38b66c4ca18e79d8e625ddd05704ff103120",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-mdpi/ic_launcher_round.png",
+      "bytes_expected": 953,
+      "bytes_actual": 953,
+      "sha256_expected": "606ffd6da8ecaf7550673140f379eaf85cc838e320dfd6a33ee335654de6318c",
+      "sha256_actual": "606ffd6da8ecaf7550673140f379eaf85cc838e320dfd6a33ee335654de6318c",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-mdpi/ic_launcher.png",
+      "bytes_expected": 1251,
+      "bytes_actual": 1251,
+      "sha256_expected": "9ac96d6e24ee47813b82b9044b22c84055428e808aba48d3d32dd47dfdea09e7",
+      "sha256_actual": "9ac96d6e24ee47813b82b9044b22c84055428e808aba48d3d32dd47dfdea09e7",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-xhdpi/ic_launcher_foreground.png",
+      "bytes_expected": 2093,
+      "bytes_actual": 2093,
+      "sha256_expected": "4ae6b883cdda5f2ca78e3ec3067687e2efcc47e751c89e1b7b03ca6a3fc5d55d",
+      "sha256_actual": "4ae6b883cdda5f2ca78e3ec3067687e2efcc47e751c89e1b7b03ca6a3fc5d55d",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-xhdpi/ic_launcher_round.png",
+      "bytes_expected": 1249,
+      "bytes_actual": 1249,
+      "sha256_expected": "1f410423954eb7cf62e9963bb8f6656ef9159b602adbfabd72a0e03a6c0abf42",
+      "sha256_actual": "1f410423954eb7cf62e9963bb8f6656ef9159b602adbfabd72a0e03a6c0abf42",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-xhdpi/ic_launcher.png",
+      "bytes_expected": 2206,
+      "bytes_actual": 2206,
+      "sha256_expected": "4aa5cd9b19fab966cf734af011232cb6f1a48322dfc3c8e2a1f3c0054cf8cc6c",
+      "sha256_actual": "4aa5cd9b19fab966cf734af011232cb6f1a48322dfc3c8e2a1f3c0054cf8cc6c",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "bytes_expected": 3051,
+      "bytes_actual": 3051,
+      "sha256_expected": "e9b95791588f1d650c74ea403c27e5758386b1f55cecb9b41ca18104989ad195",
+      "sha256_actual": "e9b95791588f1d650c74ea403c27e5758386b1f55cecb9b41ca18104989ad195",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-xxhdpi/ic_launcher_round.png",
+      "bytes_expected": 1583,
+      "bytes_actual": 1583,
+      "sha256_expected": "1d8c11c6c4145060e2f6532ffb3d98343fcbcd62b1bf1d8da7acaf44e82c995c",
+      "sha256_actual": "1d8c11c6c4145060e2f6532ffb3d98343fcbcd62b1bf1d8da7acaf44e82c995c",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-xxhdpi/ic_launcher.png",
+      "bytes_expected": 3030,
+      "bytes_actual": 3030,
+      "sha256_expected": "53d8316fd25ed535731a4863decb0280abb3d6fc68a32025da6593c9801a5df4",
+      "sha256_actual": "53d8316fd25ed535731a4863decb0280abb3d6fc68a32025da6593c9801a5df4",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "bytes_expected": 4148,
+      "bytes_actual": 4148,
+      "sha256_expected": "6fbf0152677a925d70883c170bc05b7967eab5992ce09ce47618999507d97d60",
+      "sha256_actual": "6fbf0152677a925d70883c170bc05b7967eab5992ce09ce47618999507d97d60",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-xxxhdpi/ic_launcher_round.png",
+      "bytes_expected": 2078,
+      "bytes_actual": 2078,
+      "sha256_expected": "6fbf756b41cf06d977ec2a40c216b6faf28c65cff9c28fd041e05d5da7d5452a",
+      "sha256_actual": "6fbf756b41cf06d977ec2a40c216b6faf28c65cff9c28fd041e05d5da7d5452a",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/mipmap-xxxhdpi/ic_launcher.png",
+      "bytes_expected": 3891,
+      "bytes_actual": 3891,
+      "sha256_expected": "acd57fb2317d236f78c21c7e31bef48fd55227cdbdf9efb6484fa01b7d44240f",
+      "sha256_actual": "acd57fb2317d236f78c21c7e31bef48fd55227cdbdf9efb6484fa01b7d44240f",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/android/values/ic_launcher_background.xml",
+      "bytes_expected": 115,
+      "bytes_actual": 115,
+      "sha256_expected": "0687336f0ccc6f7ee09c7c95110667c63b75931238df779a21af401fb864cd34",
+      "sha256_actual": "0687336f0ccc6f7ee09c7c95110667c63b75931238df779a21af401fb864cd34",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/icon.icns",
+      "bytes_expected": 31641,
+      "bytes_actual": 31641,
+      "sha256_expected": "e6e7eae0a6060cb21ace32751adb2bd9da6b2527374a4daae79c9aad505d11ed",
+      "sha256_actual": "e6e7eae0a6060cb21ace32751adb2bd9da6b2527374a4daae79c9aad505d11ed",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/icon.ico",
+      "bytes_expected": 5650,
+      "bytes_actual": 5650,
+      "sha256_expected": "1a14889bc10f824f3a072c1835b5561f3c576fb697ba4aa44839d55889116f0b",
+      "sha256_actual": "1a14889bc10f824f3a072c1835b5561f3c576fb697ba4aa44839d55889116f0b",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/icon.png",
+      "bytes_expected": 4982,
+      "bytes_actual": 4982,
+      "sha256_expected": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293",
+      "sha256_actual": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/icon.svg",
+      "bytes_expected": 232,
+      "bytes_actual": 232,
+      "sha256_expected": "bf69a17326cffb6405dcd732a814778042a8a02df8e13938b698570f80ba6c66",
+      "sha256_actual": "bf69a17326cffb6405dcd732a814778042a8a02df8e13938b698570f80ba6c66",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-20x20@1x.png",
+      "bytes_expected": 350,
+      "bytes_actual": 350,
+      "sha256_expected": "76bfc33979b0171e8229eb2e370d01b74fa18aae7fdeca9a2c156e2b9253ed64",
+      "sha256_actual": "76bfc33979b0171e8229eb2e370d01b74fa18aae7fdeca9a2c156e2b9253ed64",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-20x20@2x-1.png",
+      "bytes_expected": 529,
+      "bytes_actual": 529,
+      "sha256_expected": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "sha256_actual": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-20x20@2x.png",
+      "bytes_expected": 529,
+      "bytes_actual": 529,
+      "sha256_expected": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "sha256_actual": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-20x20@3x.png",
+      "bytes_expected": 684,
+      "bytes_actual": 684,
+      "sha256_expected": "1079318d510e167cf2156dcaebd0dc9b4ea4b3a36f072b02ee7d3946de55d554",
+      "sha256_actual": "1079318d510e167cf2156dcaebd0dc9b4ea4b3a36f072b02ee7d3946de55d554",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-29x29@1x.png",
+      "bytes_expected": 420,
+      "bytes_actual": 420,
+      "sha256_expected": "f5a5f21fc384c9ab27cb1329e38be5e4b806e72e1d6eed5a5edc49deed3212ba",
+      "sha256_actual": "f5a5f21fc384c9ab27cb1329e38be5e4b806e72e1d6eed5a5edc49deed3212ba",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-29x29@2x-1.png",
+      "bytes_expected": 667,
+      "bytes_actual": 667,
+      "sha256_expected": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+      "sha256_actual": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-29x29@2x.png",
+      "bytes_expected": 667,
+      "bytes_actual": 667,
+      "sha256_expected": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+      "sha256_actual": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-29x29@3x.png",
+      "bytes_expected": 945,
+      "bytes_actual": 945,
+      "sha256_expected": "c89ad8db8ebb8b7bb035ae9024ea7f9f6e754d6e8efd8481de00d35d5be53446",
+      "sha256_actual": "c89ad8db8ebb8b7bb035ae9024ea7f9f6e754d6e8efd8481de00d35d5be53446",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-40x40@1x.png",
+      "bytes_expected": 529,
+      "bytes_actual": 529,
+      "sha256_expected": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "sha256_actual": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-40x40@2x-1.png",
+      "bytes_expected": 882,
+      "bytes_actual": 882,
+      "sha256_expected": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+      "sha256_actual": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-40x40@2x.png",
+      "bytes_expected": 882,
+      "bytes_actual": 882,
+      "sha256_expected": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+      "sha256_actual": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-40x40@3x.png",
+      "bytes_expected": 1222,
+      "bytes_actual": 1222,
+      "sha256_expected": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+      "sha256_actual": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-512@2x.png",
+      "bytes_expected": 12199,
+      "bytes_actual": 12199,
+      "sha256_expected": "743e79bd29fa8035295bfc510e3aa42acef7ac922edf642c4e9bebe152a95929",
+      "sha256_actual": "743e79bd29fa8035295bfc510e3aa42acef7ac922edf642c4e9bebe152a95929",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-60x60@2x.png",
+      "bytes_expected": 1222,
+      "bytes_actual": 1222,
+      "sha256_expected": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+      "sha256_actual": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-60x60@3x.png",
+      "bytes_expected": 1835,
+      "bytes_actual": 1835,
+      "sha256_expected": "afe8ea3eca3ec76dee2f9f1b61e79f0755239378b6fda84c9dec63309375a804",
+      "sha256_actual": "afe8ea3eca3ec76dee2f9f1b61e79f0755239378b6fda84c9dec63309375a804",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-76x76@1x.png",
+      "bytes_expected": 873,
+      "bytes_actual": 873,
+      "sha256_expected": "29e682960dc2ebbef7f40fb64204d0422f56dfe7af3e2938e16ec93af21b20ae",
+      "sha256_actual": "29e682960dc2ebbef7f40fb64204d0422f56dfe7af3e2938e16ec93af21b20ae",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-76x76@2x.png",
+      "bytes_expected": 1536,
+      "bytes_actual": 1536,
+      "sha256_expected": "8188dddb316617937ee9b7151bdd75cc33602b46eee2bbff7d82e638030f39cd",
+      "sha256_actual": "8188dddb316617937ee9b7151bdd75cc33602b46eee2bbff7d82e638030f39cd",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/ios/AppIcon-83.5x83.5@2x.png",
+      "bytes_expected": 1652,
+      "bytes_actual": 1652,
+      "sha256_expected": "aa9d183c4b09055de09361471c6bb3353e0a1640e8368e75cc431308ddb29539",
+      "sha256_actual": "aa9d183c4b09055de09361471c6bb3353e0a1640e8368e75cc431308ddb29539",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/Square107x107Logo.png",
+      "bytes_expected": 1065,
+      "bytes_actual": 1065,
+      "sha256_expected": "58c82e4e0e8272eaa122b6bcb756c12c76910ffa6e95256e44448bfa634267c4",
+      "sha256_actual": "58c82e4e0e8272eaa122b6bcb756c12c76910ffa6e95256e44448bfa634267c4",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/Square142x142Logo.png",
+      "bytes_expected": 1405,
+      "bytes_actual": 1405,
+      "sha256_expected": "05be4e8894bca70ea4b8099b3373090f51a0f5c3eb9f72c49e893eed1b1861e3",
+      "sha256_actual": "05be4e8894bca70ea4b8099b3373090f51a0f5c3eb9f72c49e893eed1b1861e3",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/Square150x150Logo.png",
+      "bytes_expected": 1587,
+      "bytes_actual": 1587,
+      "sha256_expected": "5e9085cc59b404169906b999a9de0c389c118d3ace1696e8787700b030b8dee5",
+      "sha256_actual": "5e9085cc59b404169906b999a9de0c389c118d3ace1696e8787700b030b8dee5",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/Square284x284Logo.png",
+      "bytes_expected": 2791,
+      "bytes_actual": 2791,
+      "sha256_expected": "28fdbcc829c7edbf94416276db345b5d9335391087e435831b412e745edb4de8",
+      "sha256_actual": "28fdbcc829c7edbf94416276db345b5d9335391087e435831b412e745edb4de8",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/Square30x30Logo.png",
+      "bytes_expected": 453,
+      "bytes_actual": 453,
+      "sha256_expected": "579111e7e722cf3303c6309b8d4357b4ce5da7e28ba25734bc1cf672394ab3f5",
+      "sha256_actual": "579111e7e722cf3303c6309b8d4357b4ce5da7e28ba25734bc1cf672394ab3f5",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/Square310x310Logo.png",
+      "bytes_expected": 2901,
+      "bytes_actual": 2901,
+      "sha256_expected": "9ded936b77aebe3f6d4affc3557c0baacad5a12886c30c85c46daf2067927955",
+      "sha256_actual": "9ded936b77aebe3f6d4affc3557c0baacad5a12886c30c85c46daf2067927955",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/Square44x44Logo.png",
+      "bytes_expected": 582,
+      "bytes_actual": 582,
+      "sha256_expected": "3afc300fde82670e6ec6760addea1b03ccd6979424715802c8c767c42fcc5944",
+      "sha256_actual": "3afc300fde82670e6ec6760addea1b03ccd6979424715802c8c767c42fcc5944",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/Square71x71Logo.png",
+      "bytes_expected": 779,
+      "bytes_actual": 779,
+      "sha256_expected": "13d8fa01f25817d346c11d28a2a63ea7285586ae005f372825f905ad8749da12",
+      "sha256_actual": "13d8fa01f25817d346c11d28a2a63ea7285586ae005f372825f905ad8749da12",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/Square89x89Logo.png",
+      "bytes_expected": 927,
+      "bytes_actual": 927,
+      "sha256_expected": "4d65f163ed7dc62255f246ddb8bbc71de33f02a632af49be75ccd1de96a569f5",
+      "sha256_actual": "4d65f163ed7dc62255f246ddb8bbc71de33f02a632af49be75ccd1de96a569f5",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/icons/StoreLogo.png",
+      "bytes_expected": 564,
+      "bytes_actual": 564,
+      "sha256_expected": "60bad4ad4470f1cad766e0082a6dace73b48619d032af700aaabb3e971df28cc",
+      "sha256_actual": "60bad4ad4470f1cad766e0082a6dace73b48619d032af700aaabb3e971df28cc",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/rust-toolchain.toml",
+      "bytes_expected": 51,
+      "bytes_actual": 51,
+      "sha256_expected": "b4ea3c94c934d96a2772b7878c12ccbf3e486313d0988a9c960e0bd87bafc8fe",
+      "sha256_actual": "b4ea3c94c934d96a2772b7878c12ccbf3e486313d0988a9c960e0bd87bafc8fe",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/src/deepseek.rs",
+      "bytes_expected": 8075,
+      "bytes_actual": 8075,
+      "sha256_expected": "9e5712e8cec98341129a01808dc5fca84418379cf150ed2b12d004ce19605757",
+      "sha256_actual": "9e5712e8cec98341129a01808dc5fca84418379cf150ed2b12d004ce19605757",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/src/main.rs",
+      "bytes_expected": 154,
+      "bytes_actual": 154,
+      "sha256_expected": "6b3803f183a378caf2ee8bc5dc4d018afa17a26664909ec0248fe86fb5473b0b",
+      "sha256_actual": "6b3803f183a378caf2ee8bc5dc4d018afa17a26664909ec0248fe86fb5473b0b",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/src/runtime.rs",
+      "bytes_expected": 70847,
+      "bytes_actual": 70847,
+      "sha256_expected": "8630c73dabe4cfba6b4268fa5233205becc8c9a059bf6f8281c9bd870f1ef5f6",
+      "sha256_actual": "8630c73dabe4cfba6b4268fa5233205becc8c9a059bf6f8281c9bd870f1ef5f6",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/src/runtime/memory_context.rs",
+      "bytes_expected": 66076,
+      "bytes_actual": 66076,
+      "sha256_expected": "1911da908a9a02a789adbe5145f0662fb349fd2f64a03bae5fbfd245ffccdec6",
+      "sha256_actual": "1911da908a9a02a789adbe5145f0662fb349fd2f64a03bae5fbfd245ffccdec6",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/src/runtime/today_intelligence.rs",
+      "bytes_expected": 45645,
+      "bytes_actual": 45645,
+      "sha256_expected": "2e1ebc5fe202dc0346255996ba69b523f80f32904a5062b93c2c1617710a78c5",
+      "sha256_actual": "2e1ebc5fe202dc0346255996ba69b523f80f32904a5062b93c2c1617710a78c5",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/src/secure_credentials.rs",
+      "bytes_expected": 4744,
+      "bytes_actual": 4744,
+      "sha256_expected": "5ad7e56e4597a99141081b61c20b7a483555f81a324cd6806634a2a8e45e4c34",
+      "sha256_actual": "5ad7e56e4597a99141081b61c20b7a483555f81a324cd6806634a2a8e45e4c34",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/tauri.conf.json",
+      "bytes_expected": 1052,
+      "bytes_actual": 1052,
+      "sha256_expected": "e3152bc411b0b29f6029c7db26fc748ac557a3e7f7bbb25ac49d47842d3d1dfa",
+      "sha256_actual": "e3152bc411b0b29f6029c7db26fc748ac557a3e7f7bbb25ac49d47842d3d1dfa",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/tests/offline_contract.mjs",
+      "bytes_expected": 4757,
+      "bytes_actual": 4757,
+      "sha256_expected": "35c726bf405bfa7f5180b48b30baad76ac10aade9919d65bbcb5d89a4bc430b1",
+      "sha256_actual": "35c726bf405bfa7f5180b48b30baad76ac10aade9919d65bbcb5d89a4bc430b1",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/tools/clean_local_build_cache.mjs",
+      "bytes_expected": 1184,
+      "bytes_actual": 1184,
+      "sha256_expected": "632054c954f243ec55215888260067c49ea75e5f2c8b741328eada7bc339ac26",
+      "sha256_actual": "632054c954f243ec55215888260067c49ea75e5f2c8b741328eada7bc339ac26",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/tools/collect_static_evidence.mjs",
+      "bytes_expected": 3943,
+      "bytes_actual": 3943,
+      "sha256_expected": "ca9a99aa1fdc274d3b980dce343365722fc51ffcf4d48ed1c2023a9b363e8bd5",
+      "sha256_actual": "ca9a99aa1fdc274d3b980dce343365722fc51ffcf4d48ed1c2023a9b363e8bd5",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/tools/generate_manifest.mjs",
+      "bytes_expected": 1558,
+      "bytes_actual": 1558,
+      "sha256_expected": "d170cf07a9a8f4b51336ed1106837c3aec2e28153fe999e0e56b795e2558a581",
+      "sha256_actual": "d170cf07a9a8f4b51336ed1106837c3aec2e28153fe999e0e56b795e2558a581",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/tools/task_root.mjs",
+      "bytes_expected": 3526,
+      "bytes_actual": 3526,
+      "sha256_expected": "f346a0de5eedbc55bfbee28c38e4bffa621730e1418251b4fed8722a9886d53e",
+      "sha256_actual": "f346a0de5eedbc55bfbee28c38e4bffa621730e1418251b4fed8722a9886d53e",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/tools/verify_manifest.mjs",
+      "bytes_expected": 1385,
+      "bytes_actual": 1385,
+      "sha256_expected": "91f6945160756ccb8350eb3a9415d5f2c07a951ac66ca86c823037ea17f0be77",
+      "sha256_actual": "91f6945160756ccb8350eb3a9415d5f2c07a951ac66ca86c823037ea17f0be77",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/tools/write_checkpoint.mjs",
+      "bytes_expected": 3196,
+      "bytes_actual": 3196,
+      "sha256_expected": "dbe68966bd4f93059d1c175fa1be10c7ee07ea6b684f67a24c56bb93ea6fb1dc",
+      "sha256_actual": "dbe68966bd4f93059d1c175fa1be10c7ee07ea6b684f67a24c56bb93ea6fb1dc",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/ui/app.js",
+      "bytes_expected": 22930,
+      "bytes_actual": 22930,
+      "sha256_expected": "187527cdfc6f839154088746b0dbf3c3a53199ba99a833e4b716d56c5f84f57b",
+      "sha256_actual": "187527cdfc6f839154088746b0dbf3c3a53199ba99a833e4b716d56c5f84f57b",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/ui/ia_reconciliation.md",
+      "bytes_expected": 3630,
+      "bytes_actual": 3630,
+      "sha256_expected": "ba18cbe504959e302331e9853730f714f35b61466e2ae9d752fe11621ab0cf0b",
+      "sha256_actual": "ba18cbe504959e302331e9853730f714f35b61466e2ae9d752fe11621ab0cf0b",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/ui/index.html",
+      "bytes_expected": 627,
+      "bytes_actual": 627,
+      "sha256_expected": "6d9b9491822117d8a7bd176b4430b653fa06e3209cc883d99e26aceaead84b8e",
+      "sha256_actual": "6d9b9491822117d8a7bd176b4430b653fa06e3209cc883d99e26aceaead84b8e",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/ui/interaction_contract.md",
+      "bytes_expected": 2176,
+      "bytes_actual": 2176,
+      "sha256_expected": "a2ad44ecf0aecd46243e5a6105d99e6361a7b238eb5f862e6d485b62d588f1da",
+      "sha256_actual": "a2ad44ecf0aecd46243e5a6105d99e6361a7b238eb5f862e6d485b62d588f1da",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/ui/state_machine.json",
+      "bytes_expected": 2118,
+      "bytes_actual": 2118,
+      "sha256_expected": "b95083ea929b43c82ae1d8373fb5641b984c75c47e4c2eb50adc5d2c2f6fbc47",
+      "sha256_actual": "b95083ea929b43c82ae1d8373fb5641b984c75c47e4c2eb50adc5d2c2f6fbc47",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/ui/styles.css",
+      "bytes_expected": 13730,
+      "bytes_actual": 13730,
+      "sha256_expected": "830b4f1058c0845a908dae1e0ee5602ff5e532f68dba03fe32ee85bda326735a",
+      "sha256_actual": "830b4f1058c0845a908dae1e0ee5602ff5e532f68dba03fe32ee85bda326735a",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/ui/viewport-adapter.css",
+      "bytes_expected": 186,
+      "bytes_actual": 186,
+      "sha256_expected": "196fb16782004c5eeef3e931b929d91a522d4fe64cba3eb878b46791775519f4",
+      "sha256_actual": "196fb16782004c5eeef3e931b929d91a522d4fe64cba3eb878b46791775519f4",
+      "pass": true
+    },
+    {
+      "category": "candidate",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/candidate/ui/visual_contract.json",
+      "bytes_expected": 2030,
+      "bytes_actual": 2030,
+      "sha256_expected": "9ece61f440717c5762779648e6fc71ad7c87dab3310388424dee3c0ae14e093e",
+      "sha256_actual": "9ece61f440717c5762779648e6fc71ad7c87dab3310388424dee3c0ae14e093e",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/augment_final_manifest.mjs",
+      "bytes_expected": 2270,
+      "bytes_actual": 2270,
+      "sha256_expected": "0fde89b3613c8b5035257f2d5db29254cbfcef71c0498db61baf37dbe46b921d",
+      "sha256_actual": "0fde89b3613c8b5035257f2d5db29254cbfcef71c0498db61baf37dbe46b921d",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/checkpoint.json",
+      "bytes_expected": 3498,
+      "bytes_actual": 3498,
+      "sha256_expected": "1dfc0b24fac8acc59d485c7d4f14d1cd19c72bdce93bd3eff8833a6f6e3c502f",
+      "sha256_actual": "1dfc0b24fac8acc59d485c7d4f14d1cd19c72bdce93bd3eff8833a6f6e3c502f",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/locked_offline_cargo_runner.sh",
+      "bytes_expected": 107,
+      "bytes_actual": 107,
+      "sha256_expected": "8ab8ed664deedd10b5284dafc6a0699c86e6a6f2970d34d4bf1af25dad31a4e1",
+      "sha256_actual": "8ab8ed664deedd10b5284dafc6a0699c86e6a6f2970d34d4bf1af25dad31a4e1",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/native_ax_geometry.swift",
+      "bytes_expected": 4505,
+      "bytes_actual": 4505,
+      "sha256_expected": "89e1ef80113e3d48b4be8a2d2165903e6d378d3840ba876032e8e84e6c771f1e",
+      "sha256_actual": "89e1ef80113e3d48b4be8a2d2165903e6d378d3840ba876032e8e84e6c771f1e",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/native_window_evidence.json",
+      "bytes_expected": 4387,
+      "bytes_actual": 4387,
+      "sha256_expected": "cb9eea02394bf89797514238af4b8198588e962c085bbd40f7320e76e010c690",
+      "sha256_actual": "cb9eea02394bf89797514238af4b8198588e962c085bbd40f7320e76e010c690",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/native-compact-resume-ax.json",
+      "bytes_expected": 1435,
+      "bytes_actual": 1435,
+      "sha256_expected": "7d0324024b21630beeba2362759fc1ab4b8a8d39da3c4b060651ca30d926912f",
+      "sha256_actual": "7d0324024b21630beeba2362759fc1ab4b8a8d39da3c4b060651ca30d926912f",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/native-compact-resume-ax.png",
+      "bytes_expected": 532289,
+      "bytes_actual": 532289,
+      "sha256_expected": "09cfcc3706d5cfb46f9183f7a2253765188a8d41f160562bbc847d1ffc153572",
+      "sha256_actual": "09cfcc3706d5cfb46f9183f7a2253765188a8d41f160562bbc847d1ffc153572",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/native-desktop-resume-ax.jpeg",
+      "bytes_expected": 93468,
+      "bytes_actual": 93468,
+      "sha256_expected": "aa60663a4d367a3f881b0358c18165fb115c79ae63c6ee93189c046d1224ebc9",
+      "sha256_actual": "aa60663a4d367a3f881b0358c18165fb115c79ae63c6ee93189c046d1224ebc9",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/native-desktop-resume-ax.json",
+      "bytes_expected": 1748,
+      "bytes_actual": 1748,
+      "sha256_expected": "84fab7b9dac2f26ecf549055869f005c615adc345d5b87c0a88c6d14a750c273",
+      "sha256_actual": "84fab7b9dac2f26ecf549055869f005c615adc345d5b87c0a88c6d14a750c273",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/native-desktop-resume.png",
+      "bytes_expected": 93389,
+      "bytes_actual": 93389,
+      "sha256_expected": "bd07d71e67990ef19f4e7442ebe3869ee694bac25946707b583b1db2175f7cef",
+      "sha256_actual": "bd07d71e67990ef19f4e7442ebe3869ee694bac25946707b583b1db2175f7cef",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/native-desktop-settings.png",
+      "bytes_expected": 93448,
+      "bytes_actual": 93448,
+      "sha256_expected": "4639a2d325ea3099867408e9a27ee45741f091d6c95786d3b94384c09b277a9e",
+      "sha256_actual": "4639a2d325ea3099867408e9a27ee45741f091d6c95786d3b94384c09b277a9e",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/native-narrow-resume-ax.json",
+      "bytes_expected": 1429,
+      "bytes_actual": 1429,
+      "sha256_expected": "cf23d6ae401d8fa5251adcb81f28a46e2fed16163d392289d4cdb4fc15f539c4",
+      "sha256_actual": "cf23d6ae401d8fa5251adcb81f28a46e2fed16163d392289d4cdb4fc15f539c4",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/native-narrow-resume-ax.png",
+      "bytes_expected": 347493,
+      "bytes_actual": 347493,
+      "sha256_expected": "5bd8f45a25676d000130136be1dde71ad1a3ae4171869bb18efbcc75d84e4c4f",
+      "sha256_actual": "5bd8f45a25676d000130136be1dde71ad1a3ae4171869bb18efbcc75d84e4c4f",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_a_ac_matrix.json",
+      "bytes_expected": 8204,
+      "bytes_actual": 8204,
+      "sha256_expected": "b82df1b9bba1d7f3e23cfabc477b67f17e97142e814af3af0ec032f566dcaad4",
+      "sha256_actual": "b82df1b9bba1d7f3e23cfabc477b67f17e97142e814af3af0ec032f566dcaad4",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_a_desktop_visual_contract_review.json",
+      "bytes_expected": 3339,
+      "bytes_actual": 3339,
+      "sha256_expected": "964376ac4c5e2c7b517db18c2e4ffa4d081437eaf9e34062966eb784174bb5e9",
+      "sha256_actual": "964376ac4c5e2c7b517db18c2e4ffa4d081437eaf9e34062966eb784174bb5e9",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_a_final_gate.json",
+      "bytes_expected": 2155,
+      "bytes_actual": 2155,
+      "sha256_expected": "5304bace9cd0ede0fc8246e9ca2f24ba5a90a854990c6d0c3474f44ce9f0c57c",
+      "sha256_actual": "5304bace9cd0ede0fc8246e9ca2f24ba5a90a854990c6d0c3474f44ce9f0c57c",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_a_offline_validation.json",
+      "bytes_expected": 2157,
+      "bytes_actual": 2157,
+      "sha256_expected": "817513943a2752e67b89e40a3ba96b368f070c24f0b0db5543129089e9717079",
+      "sha256_actual": "817513943a2752e67b89e40a3ba96b368f070c24f0b0db5543129089e9717079",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_a_pre_real_gate_manifest_verification.json",
+      "bytes_expected": 138,
+      "bytes_actual": 138,
+      "sha256_expected": "609cecd10cc801db42150aa8cf7c06427156e0c35551a879f84d2c32c9dd3e75",
+      "sha256_actual": "609cecd10cc801db42150aa8cf7c06427156e0c35551a879f84d2c32c9dd3e75",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_canary_receipt.json",
+      "bytes_expected": 1680,
+      "bytes_actual": 1680,
+      "sha256_expected": "13555804974ad3f6475f5868baaaffd97b577d67580165ce359fb568d16c7cf6",
+      "sha256_actual": "13555804974ad3f6475f5868baaaffd97b577d67580165ce359fb568d16c7cf6",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_checkpoint.json",
+      "bytes_expected": 4608,
+      "bytes_actual": 4608,
+      "sha256_expected": "40bf9e86d92b4228c9aee9cde6ec7fe25359aa563d6b5bf557275833cf1db485",
+      "sha256_actual": "40bf9e86d92b4228c9aee9cde6ec7fe25359aa563d6b5bf557275833cf1db485",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_credential_delete_receipt.json",
+      "bytes_expected": 1185,
+      "bytes_actual": 1185,
+      "sha256_expected": "88bf9aa01005b5cc68431617bfd9c74a2e02f6c8d495a395413982ce9eca3e60",
+      "sha256_actual": "88bf9aa01005b5cc68431617bfd9c74a2e02f6c8d495a395413982ce9eca3e60",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_credential_save_receipt.json",
+      "bytes_expected": 1357,
+      "bytes_actual": 1357,
+      "sha256_expected": "704544a3caa4be6f99f7e9a93b1b5da1f6807e1f0eafb25db53588332f0aadfa",
+      "sha256_actual": "704544a3caa4be6f99f7e9a93b1b5da1f6807e1f0eafb25db53588332f0aadfa",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_deletion_and_fresh_restart_deny_receipt.json",
+      "bytes_expected": 2091,
+      "bytes_actual": 2091,
+      "sha256_expected": "3f79ed157949bd23c3e63e5184f597a1bc320cce3900a42282d3e466b0dd1074",
+      "sha256_actual": "3f79ed157949bd23c3e63e5184f597a1bc320cce3900a42282d3e466b0dd1074",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_enablement_receipt.json",
+      "bytes_expected": 1329,
+      "bytes_actual": 1329,
+      "sha256_expected": "ce4c5253bc5c1a9efe488241e3b5ec23693b80a44812fb430b760acbfc7b4f3e",
+      "sha256_actual": "ce4c5253bc5c1a9efe488241e3b5ec23693b80a44812fb430b760acbfc7b4f3e",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_model_selection_receipt.json",
+      "bytes_expected": 1318,
+      "bytes_actual": 1318,
+      "sha256_expected": "067f604721b95912b365e78c78a6bd645587ec711db288e8bcd18335e053b489",
+      "sha256_actual": "067f604721b95912b365e78c78a6bd645587ec711db288e8bcd18335e053b489",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_state_separation_closure.json",
+      "bytes_expected": 3030,
+      "bytes_actual": 3030,
+      "sha256_expected": "80302b564f19e2468872672fa82a8e9f41175a7a3c63f58f316edd691649a2cb",
+      "sha256_actual": "80302b564f19e2468872672fa82a8e9f41175a7a3c63f58f316edd691649a2cb",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_test_models_receipt.json",
+      "bytes_expected": 1410,
+      "bytes_actual": 1410,
+      "sha256_expected": "7a75f46329f127d9779e4531a0d22ac2c63c02c191537f87aaa0566c43f8c4f0",
+      "sha256_actual": "7a75f46329f127d9779e4531a0d22ac2c63c02c191537f87aaa0566c43f8c4f0",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/root_authority_closure.json",
+      "bytes_expected": 3325,
+      "bytes_actual": 3325,
+      "sha256_expected": "ca16c43c3866ce7e448f2b83aa7323708588ebcd0e37da39633e28d5065b1513",
+      "sha256_actual": "ca16c43c3866ce7e448f2b83aa7323708588ebcd0e37da39633e28d5065b1513",
+      "pass": true
+    },
+    {
+      "category": "evidence",
+      "role": null,
+      "path": "lifeos/engineering/LIFEOS-P3-143/evidence/static_contract_report.json",
+      "bytes_expected": 2024,
+      "bytes_actual": 2024,
+      "sha256_expected": "ef03706a7a038b4971a6001213d857540386708e18f656c8fc45ed87567feaef",
+      "sha256_actual": "ef03706a7a038b4971a6001213d857540386708e18f656c8fc45ed87567feaef",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema": "lifeos.p3-143.independent-review-manifest-verifier.v1",
+  "reviewer_owned": true,
+  "self_exclusion_declared": true,
+  "manifest_listed_as_input": false,
+  "entry_count": 15,
+  "mismatch_count": 0,
+  "status": "PASS",
+  "files": [
+    {
+      "path": "controls/test_design.md",
+      "expected_bytes": 3442,
+      "actual_bytes": 3442,
+      "expected_sha256": "c2e83ace96c84795db7719a9a096e03d2e22e7bbec8a0d1d582ad59e3481c36a",
+      "actual_sha256": "c2e83ace96c84795db7719a9a096e03d2e22e7bbec8a0d1d582ad59e3481c36a"
+    },
+    {
+      "path": "controls/allowlist.md",
+      "expected_bytes": 1852,
+      "actual_bytes": 1852,
+      "expected_sha256": "2c33ebddd2f3c7e0bf3ebd0fa41f3c8059059e1fbdca77d2f6d8afdabc462729",
+      "actual_sha256": "2c33ebddd2f3c7e0bf3ebd0fa41f3c8059059e1fbdca77d2f6d8afdabc462729"
+    },
+    {
+      "path": "controls/prohibited_path_declaration.md",
+      "expected_bytes": 1085,
+      "actual_bytes": 1085,
+      "expected_sha256": "c3412dd34aec21ddb091ddac89496cf04e9fd25e638c127bc408ca132285a02e",
+      "actual_sha256": "c3412dd34aec21ddb091ddac89496cf04e9fd25e638c127bc408ca132285a02e"
+    },
+    {
+      "path": "controls/precontact_seal.json",
+      "expected_bytes": 928,
+      "actual_bytes": 928,
+      "expected_sha256": "7d69cf20c07bb3fb43dcb3e9357f910e99262bfddfcb3e741e78c87a55502e83",
+      "actual_sha256": "7d69cf20c07bb3fb43dcb3e9357f910e99262bfddfcb3e741e78c87a55502e83"
+    },
+    {
+      "path": "review_tools/verify_lineage.mjs",
+      "expected_bytes": 2442,
+      "actual_bytes": 2442,
+      "expected_sha256": "75bc8284f85eb53a369c2dc7d19f795140751f64d6e0830d3e73ca01c25f7efa",
+      "actual_sha256": "75bc8284f85eb53a369c2dc7d19f795140751f64d6e0830d3e73ca01c25f7efa"
+    },
+    {
+      "path": "review_tools/verify_lineage.py",
+      "expected_bytes": 2658,
+      "actual_bytes": 2658,
+      "expected_sha256": "a37f49d8e516988934dfe619c8d1c3e8c6075431cfd74eae9d602e1e7f173cf0",
+      "actual_sha256": "a37f49d8e516988934dfe619c8d1c3e8c6075431cfd74eae9d602e1e7f173cf0"
+    },
+    {
+      "path": "review_tools/verify_declared_manifest.py",
+      "expected_bytes": 2081,
+      "actual_bytes": 2081,
+      "expected_sha256": "8d5a4da52f7b990310fd04b9bbe26a3b2befab8637e17d28d0d1e2223d5d3433",
+      "actual_sha256": "8d5a4da52f7b990310fd04b9bbe26a3b2befab8637e17d28d0d1e2223d5d3433"
+    },
+    {
+      "path": "review_tools/missing_marker_attack.py",
+      "expected_bytes": 4337,
+      "actual_bytes": 4337,
+      "expected_sha256": "2dcbafaec94f953b5042c5866130845e59a3e0e0548055edded4fe0134fbff28",
+      "actual_sha256": "2dcbafaec94f953b5042c5866130845e59a3e0e0548055edded4fe0134fbff28"
+    },
+    {
+      "path": "review_tools/verify_review_manifest.py",
+      "expected_bytes": 1852,
+      "actual_bytes": 1852,
+      "expected_sha256": "3baac643252d569779b286fc39f8060896082a7b5534e2188dc5764ec198021a",
+      "actual_sha256": "3baac643252d569779b286fc39f8060896082a7b5534e2188dc5764ec198021a"
+    },
+    {
+      "path": "evidence/lineage_verification.json",
+      "expected_bytes": 52565,
+      "actual_bytes": 52565,
+      "expected_sha256": "c1b83ab7692515fc9bb3299ff64ecc5ec019ac5f9cfb3c06277ef9bd996c5aaa",
+      "actual_sha256": "c1b83ab7692515fc9bb3299ff64ecc5ec019ac5f9cfb3c06277ef9bd996c5aaa"
+    },
+    {
+      "path": "evidence/p3_142_manifest_verification.json",
+      "expected_bytes": 47864,
+      "actual_bytes": 47864,
+      "expected_sha256": "272a21a2227c6f00137e0a70957ac0cc9b4e4b877857b796f4c8bb15284dea93",
+      "actual_sha256": "272a21a2227c6f00137e0a70957ac0cc9b4e4b877857b796f4c8bb15284dea93"
+    },
+    {
+      "path": "evidence/missing_marker_attack.json",
+      "expected_bytes": 654,
+      "actual_bytes": 654,
+      "expected_sha256": "0694b1630f8f0236a5d56c5c5608536f8850f56aec2d373752c0be17463203de",
+      "actual_sha256": "0694b1630f8f0236a5d56c5c5608536f8850f56aec2d373752c0be17463203de"
+    },
+    {
+      "path": "evidence/review_matrix.json",
+      "expected_bytes": 3138,
+      "actual_bytes": 3138,
+      "expected_sha256": "c3a168896c98e7b2db7ddd823a15d2eb93b432bd8460c502709c8a6dfe032943",
+      "actual_sha256": "c3a168896c98e7b2db7ddd823a15d2eb93b432bd8460c502709c8a6dfe032943"
+    },
+    {
+      "path": "evidence/build_profile_binding.json",
+      "expected_bytes": 814,
+      "actual_bytes": 814,
+      "expected_sha256": "cb71d9c9ec8aa936918c32dea51ad8aef2e5f3e10528a2cbf6be868c05544b4d",
+      "actual_sha256": "cb71d9c9ec8aa936918c32dea51ad8aef2e5f3e10528a2cbf6be868c05544b4d"
+    },
+    {
+      "path": "independent_review.md",
+      "expected_bytes": 4361,
+      "actual_bytes": 4361,
+      "expected_sha256": "5d45398a2a1d17b1988a1e5eed225a1b8a3cc05dd7e41032374d8f7ee93eca37",
+      "actual_sha256": "5d45398a2a1d17b1988a1e5eed225a1b8a3cc05dd7e41032374d8f7ee93eca37"
+    }
+  ],
+  "mismatches": []
+}

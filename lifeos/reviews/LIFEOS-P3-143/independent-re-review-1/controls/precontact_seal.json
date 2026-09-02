@@ -1,0 +1,16 @@
+{
+  "schema_version": "lifeos.precontact-seal.v1",
+  "task_id": "LIFEOS-P3-143",
+  "review_id": "independent-re-review-1",
+  "sealed_at_utc": "2026-09-02T02:47:23Z",
+  "candidate_commit": "767301fb051d11a6bf11488413f8b03aabfc2d99",
+  "candidate_branch": "codex/l3-p3-143-real-ai-activation",
+  "candidate_contact_before_seal": false,
+  "engineering_evidence_contact_before_seal": false,
+  "controls": {
+    "test_design_md_sha256": "c2e83ace96c84795db7719a9a096e03d2e22e7bbec8a0d1d582ad59e3481c36a",
+    "allowlist_md_sha256": "2c33ebddd2f3c7e0bf3ebd0fa41f3c8059059e1fbdca77d2f6d8afdabc462729",
+    "prohibited_path_declaration_md_sha256": "c3412dd34aec21ddb091ddac89496cf04e9fd25e638c127bc408ca132285a02e"
+  },
+  "permitted_next_action": "read-only binding of the supplied candidate commit and listed frozen inputs; no runtime or Keychain action until run-id grammar and closed build-time profile are independently verified"
+}

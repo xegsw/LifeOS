@@ -1,0 +1,17 @@
+{
+  "schema": "lifeos.p3-143.independent-build-profile-binding.v1",
+  "reviewer_owned": true,
+  "candidate_commit": "767301fb051d11a6bf11488413f8b03aabfc2d99",
+  "candidate_worktree_matches_commit": true,
+  "command": "LIFEOS_P3_143_ROOT_PROFILE=independent-review LIFEOS_P3_143_REVIEW_RUN_ID=rereviewb20260902 CARGO_NET_OFFLINE=true cargo build --locked --offline",
+  "toolchain": {
+    "cargo": "1.98.0",
+    "rustc": "1.98.0"
+  },
+  "profile": "independent-review",
+  "run_id": "rereviewb20260902",
+  "expected_compiled_root": "/private/tmp/lifeos-p3-143-independent-review-rereviewb20260902",
+  "result": "PASS",
+  "binary_sha256": "ebc27f831e4d52b64b66f3370d38d4ccbe9841d5903a3620828042eba25ba661",
+  "note": "The subsequent reviewer-owned missing-marker attack used exactly this direct binary and run-id."
+}
