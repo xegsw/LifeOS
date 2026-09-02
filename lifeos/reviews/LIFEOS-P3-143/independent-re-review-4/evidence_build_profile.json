@@ -1,0 +1,20 @@
+{
+  "schema": "lifeos.p3-143.independent-rereview4.build-profile.v1",
+  "mode": "synthetic_offline",
+  "profile": "independent-review",
+  "run_id": "finalgui-20260902",
+  "literal_root": "/private/tmp/lifeos-p3-143-independent-review-finalgui-20260902",
+  "invalid_run_id_check": {
+    "run_id": "invalid",
+    "execution_mode": "build_time_only_no_runtime_launch",
+    "result": "PASS_REJECTED",
+    "candidate_build_rs_error": "independent-review requires a safe 8-48 character lowercase/digit/hyphen run id"
+  },
+  "fresh_app_build": {
+    "result": "PASS",
+    "command_mode": "cargo --locked --offline tauri build --debug --bundles app --no-sign --ci",
+    "bundle": "candidate-app-build-target/debug/bundle/macos/LifeOS · 模型设置（安全凭据验证）.app",
+    "network_requests": 0
+  },
+  "prohibited_boundary_contact": false
+}

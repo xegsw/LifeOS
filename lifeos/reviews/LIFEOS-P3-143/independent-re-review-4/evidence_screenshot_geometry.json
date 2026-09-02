@@ -1,0 +1,35 @@
+{
+  "schema": "lifeos.p3-143.independent-rereview4.target-screenshot-geometry.v1",
+  "mode": "synthetic_offline",
+  "direct_pid": 3812,
+  "exact_title": "LifeOS · 模型设置（安全凭据验证）",
+  "same_cg_window_id": 95681,
+  "target_only_capture": true,
+  "views": [
+    {
+      "name": "desktop_visible_workspace",
+      "logical_geometry": {"width": 1280, "height": 949},
+      "image_pixels": {"width": 2784, "height": 2122},
+      "sha256": "7cb01b9816c0ea7329042f3a8249ae18eeacf7e1157737d52d8362a1bbcc3bff",
+      "path": "native_desktop_target_only.png"
+    },
+    {
+      "name": "compact",
+      "requested_logical_geometry": {"width": 1160, "height": 768},
+      "observed_logical_geometry": {"width": 1160, "height": 768},
+      "image_pixels": {"width": 2544, "height": 1760},
+      "sha256": "8dba26fa32886869265dbec5828136d165d38c29d2cbe3e21e50be562e821dc5",
+      "path": "native_compact_target_only.png"
+    },
+    {
+      "name": "narrow",
+      "requested_logical_geometry": {"width": 700, "height": 760},
+      "observed_logical_geometry": {"width": 700, "height": 760},
+      "image_pixels": {"width": 1624, "height": 1744},
+      "sha256": "d9309aab12a1c1b42acbed5f26b6c36a67a2d1696541887dae20a4a376d19d71",
+      "path": "native_narrow_target_only.png"
+    }
+  ],
+  "note": "Pixel dimensions include native window capture framing; the binding source of truth for requested/observed logical geometry is evidence_native_pid_ax.json.",
+  "prohibited_boundary_contact": false
+}

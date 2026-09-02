@@ -1,0 +1,20 @@
+{
+  "schema": "lifeos.p3-143.independent-rereview4.static-contract.v1",
+  "mode": "synthetic_offline",
+  "candidate": "lifeos/engineering/LIFEOS-P3-143/candidate",
+  "baseline_errors": [],
+  "mutation_errors": {
+    "semantic_duplicate_ipc": [
+      "exact_20_ipc_drift"
+    ],
+    "semantic_wrong_deepseek_authority": [
+      "deepseek_authority_proxy_redirect_guard_drift"
+    ]
+  },
+  "mutation_detected": {
+    "semantic_duplicate_ipc": true,
+    "semantic_wrong_deepseek_authority": true
+  },
+  "network_requests": 0,
+  "result": "PASS"
+}

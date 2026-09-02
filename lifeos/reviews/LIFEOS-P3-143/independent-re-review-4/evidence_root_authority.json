@@ -1,0 +1,34 @@
+{
+  "schema": "lifeos.p3-143.independent-rereview4.root-authority.v1",
+  "mode": "synthetic_offline",
+  "compiled_from": "immutable candidate src/runtime.rs through review-owned harness",
+  "profile": "independent-review",
+  "run_id": "finalgui-20260902",
+  "literal_root": "/private/tmp/lifeos-p3-143-independent-review-finalgui-20260902",
+  "result": "PASS",
+  "test": {
+    "command": "cargo test --locked --offline review_owned_finalgui_root_authority_matrix -- --test-threads=1",
+    "passed": 1,
+    "failed": 0,
+    "filtered_candidate_tests": 19
+  },
+  "runtime_cases": {
+    "positive_root_marker_runtime_and_db": "PASS",
+    "missing_marker_prewrite_refusal": "PASS",
+    "wrong_marker_prewrite_refusal": "PASS",
+    "symlink_marker_prewrite_refusal": "PASS",
+    "marker_mode_prewrite_refusal": "PASS",
+    "wrong_parent_profile_and_run_id_rejection": "PASS",
+    "runtime_child_symlink_refusal": "PASS",
+    "database_symlink_refusal": "PASS",
+    "environment_root_profile_run_id_injection_ignored": "PASS"
+  },
+  "prewrite_invariants": {
+    "sentinel_unchanged": true,
+    "database_absent_on_marker_refusals": true,
+    "runtime_child_absent_on_marker_refusals": true,
+    "network_requests": 0,
+    "keychain_access": "none"
+  },
+  "prohibited_boundary_contact": false
+}
