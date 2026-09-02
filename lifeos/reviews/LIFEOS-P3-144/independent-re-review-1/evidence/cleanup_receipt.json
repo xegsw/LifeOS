@@ -1,0 +1,20 @@
+{
+  "schema": "lifeos.p3-144.independent-review.cleanup-receipt.v1",
+  "review_root": "/private/tmp/lifeos-p3-144-independent-review-v1",
+  "writer_pids": [19293, 19550, 19591],
+  "writer_status": "all_stopped_before_final_cleanup",
+  "negative_control": "A wrong marker payload was rejected and the root remained present; see wrong_marker_rejection.json.",
+  "positive_control": "The exact 0700 root and exact 0600 regular marker were accepted by marker_gated_cleanup.mjs. The cleanup script removed only the literal review root.",
+  "synthetic_credential": {
+    "keychain_service": "com.lifeos.p3-144.aead-key.v1",
+    "key_reference": "p3-144-key-2427224e70cc2a70566b868f48584c9d",
+    "removed": true,
+    "post_delete_lookup": "absent"
+  },
+  "postconditions": {
+    "review_root": "absent",
+    "build_target": "absent",
+    "direct_launch_pids": "absent"
+  },
+  "result": "PASS"
+}

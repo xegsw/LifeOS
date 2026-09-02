@@ -1,0 +1,170 @@
+{
+  "schema": "lifeos.p3-144.independent-re-review-1.final-manifest.v1",
+  "task": "LIFEOS-P3-144",
+  "phase": "B",
+  "candidate_commit": "4115f2958d8fa08fa30fccc90217bdc404769363",
+  "self_exclusion": true,
+  "excluded_from_manifest": [
+    "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/FINAL_MANIFEST.json",
+    "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/review_manifest_verification.json",
+    "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/excluded/**"
+  ],
+  "categories": {
+    "precontact": [
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/precontact/allowlist.md",
+        "sha256": "f8a92804794bf63d10dba506aa74562401bcbf1e77263c5c061a5f6586273b5f"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/precontact/prohibited_path_declaration.md",
+        "sha256": "d9691b9a381f4a9dd6ee2925d8d949b4e5c5848484dbb2c51bd95504d49c6cb0"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/precontact/seal.json",
+        "sha256": "c8a614031639113bcd91b2f835878e83bf93a904485c4d306387e95e222064b0"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/precontact/test_design.md",
+        "sha256": "3deb104a1f8de7e1bcaf46bb91acdc6fcfb34a8736d914775f8049022619b445"
+      }
+    ],
+    "review_tools": [
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/review_tools/direct_launch.mjs",
+        "sha256": "604d05fcfef601e03f7a9082306679b3979ff2c3a419739acb9e6310d97ed151"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/review_tools/generate_final_manifest.mjs",
+        "sha256": "220db8c1a048dcb5e19291a3af85fc0b54715add31f2cd5dfa224e8c3378b04a"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/review_tools/marker_gated_cleanup.mjs",
+        "sha256": "d6638dd7a42c6422ecdc2739b375d528460a9c89b221b776658def9462edc6ed"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/review_tools/native_pid_ax_capture",
+        "sha256": "f98026d0afbfd93c16aa071903ebc280c98bcf24699d662188ad62617c8e2556"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/review_tools/native_pid_ax_capture.swift",
+        "sha256": "61a2d330ba4b4a1c3b9d47247f044bbdf883346330c497dc794691e17b6f17df"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/review_tools/static_phase_b_audit.mjs",
+        "sha256": "70853ffb2a66fe62541bb355b4e41d000cacee025e77f2c2f117d343fdfc2b89"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/review_tools/verify_lineage.mjs",
+        "sha256": "99ffa9f1715c714726b6d0f053a0422a153aad23e57ebccc1f5b5251cbf8dff8"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/review_tools/verify_review_manifest.mjs",
+        "sha256": "0475527ca8794c40620e8f2f510c17959782ada4aef0bc3534f75a8d02893242"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/candidate_serial_regression.json",
+        "sha256": "20a58f6ec40d343409aac0f3f91e467387be520183a4c3fec4b0efce4ae6a091"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/cleanup_receipt.json",
+        "sha256": "93ee32d7718aae24f206766177c7b091a1691f644af745dd207f94522360b396"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/compact_native_pid_ax.json",
+        "sha256": "b075728b12b428b30c52705667b3a7661d0856f9546395435c66767136ba71af"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/compact_target_only.png",
+        "sha256": "ded0e1ce3072bd5287c914ced946fcc47e92639d1952111eb8ca753fbc22d36e"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/desktop_ax_tree.json",
+        "sha256": "ec1ab8ecca793ea849269a32af9de9f2aab3a5628fe7a53755bb74052881bc2c"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/desktop_feedback_native_pid_ax.json",
+        "sha256": "b391dc91ec5f896f9d6e921636be6e4799d03a457d9e5db4f4d28b1c9a674719"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/desktop_feedback_target_only.png",
+        "sha256": "d7846f45e0ca310db9dad878aa02647216a5e41b73187e5acfb73783292f50f4"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/desktop_native_pid_ax.json",
+        "sha256": "7c74b276bffaf9d4c906d9662d68dd8789bb30bd9452e6c7943d223e5716adf3"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/desktop_target_only.png",
+        "sha256": "9d42cf6963a84350db82a0bdf3e56acf132df5c93ed48ab00d4e7573ec0cd509"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/desktop_ui_interaction_log.md",
+        "sha256": "582ac627e653b97fcda3601cf482a73c1af99c4946a3370d82f500d3046beb53"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/direct_launch_compact.json",
+        "sha256": "c98b4fe0e1acbc566cc415dba0069353bd078ab8322e0cda6e64b7089326e551"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/direct_launch_desktop.json",
+        "sha256": "dec1118c89207eb0b723a4200c5545291bfb5a184301031bd017d84f221b1b4f"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/direct_launch_narrow.json",
+        "sha256": "32b5cb1b1f5e0f89399d23e8d741c5b6f17923d54573d5dd0f97998961c16f70"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/isolated_regression_support.json",
+        "sha256": "32fadddf4f6ef8e51e1e4b90b7ee7f54392d5f802fc6676352ed27ff158d73ee"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/lineage_verification.json",
+        "sha256": "dddcfa3642e395ab38ecb619533793ea547766de62e15fa46b4cd290a9812687"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/lineage_verification_closure_1.json",
+        "sha256": "8f2e04fcadf4f648892192ebd3cc9d0276e94bf9f4a8dcea10e130f603182bdb"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/lineage_verification_closure_2.json",
+        "sha256": "a77efd6364a87e7b306fde8a0fce498fd09173db087a1f894a4047bd5fc33166"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/narrow_native_pid_ax.json",
+        "sha256": "36dc6a24dd99b12225da3fee7672fd0a65e33b62a2523adfd19be3c16e474281"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/narrow_target_only.png",
+        "sha256": "6d9db78b186be20f768843778cc34790970354468ce943e672be9de69963ec29"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/phase_a_regression_support.json",
+        "sha256": "1130fed8cf3c5cbed39856f579ae8523c6ddda246ee3c457581be1daaf1e3e53"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/review_tooling_closure_1.md",
+        "sha256": "b20b58d01dd433cfda4a0ebad9c4f251074771d3ba4e3813299455d7a7626187"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/static_phase_b_audit.json",
+        "sha256": "c5146dc652a197e34fca7f21c160207d6c72db9da9e2cd08d0dd6ef544577e5d"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/synthetic_sqlite_summary.json",
+        "sha256": "a18f951d22ddea41fc3e8bc9e5550a8e5859ae484a52dfb814ef9cefb06ead68"
+      },
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/evidence/wrong_marker_rejection.json",
+        "sha256": "a2bc41eb5bdb9a3ee6e8b7d88407127f3fb5db14137197cb412e3b82e3d6744f"
+      }
+    ],
+    "review_report": [
+      {
+        "path": "lifeos/reviews/LIFEOS-P3-144/independent-re-review-1/independent_review.md",
+        "sha256": "62569643d2f2946378f5b1ea738dec5b2371b589a048039a965fb5b9c84e6e64"
+      }
+    ]
+  }
+}

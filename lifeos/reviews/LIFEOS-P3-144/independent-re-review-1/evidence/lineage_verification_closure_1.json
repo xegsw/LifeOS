@@ -1,0 +1,608 @@
+{
+  "schema": "lifeos.p3-144.independent-review.lineage.v1",
+  "result": "PASS",
+  "fixed_candidate_commit": "4115f2958d8fa08fa30fccc90217bdc404769363",
+  "git_tree": "91fd9af221c8615fca99b760d4317370966defb2",
+  "checked_at": "2026-09-02T11:14:37.939Z",
+  "manifest": "lifeos/engineering/LIFEOS-P3-144/closure-1/FINAL_MANIFEST.json",
+  "categories": {
+    "candidate": 85,
+    "fixed_inputs": 3,
+    "preserved_history": 3,
+    "closure_evidence": 12
+  },
+  "candidate_tree": {
+    "declared": 85,
+    "actual": 85,
+    "missing": [],
+    "extra": []
+  },
+  "checks": [
+    {
+      "id": "manifest_schema",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "manifest_self_exclusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "candidate_is_array",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "candidate_count",
+      "pass": true,
+      "detail": "expected=85 actual=85"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/Cargo.lock",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/Cargo.toml",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/build.rs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/capabilities/main.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/ci/checks.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/gen/schemas/acl-manifests.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/gen/schemas/capabilities.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/gen/schemas/desktop-schema.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/gen/schemas/macOS-schema.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/128x128.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/128x128@2x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/32x32.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/64x64.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/Square107x107Logo.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/Square142x142Logo.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/Square150x150Logo.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/Square284x284Logo.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/Square30x30Logo.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/Square310x310Logo.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/Square44x44Logo.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/Square71x71Logo.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/Square89x89Logo.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/StoreLogo.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-anydpi-v26/ic_launcher.xml",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-hdpi/ic_launcher.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-hdpi/ic_launcher_foreground.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-hdpi/ic_launcher_round.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-mdpi/ic_launcher.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-mdpi/ic_launcher_foreground.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-mdpi/ic_launcher_round.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-xhdpi/ic_launcher.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-xhdpi/ic_launcher_foreground.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-xhdpi/ic_launcher_round.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-xxhdpi/ic_launcher.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-xxhdpi/ic_launcher_round.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-xxxhdpi/ic_launcher.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/mipmap-xxxhdpi/ic_launcher_round.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/android/values/ic_launcher_background.xml",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/icon.icns",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/icon.ico",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/icon.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/icon.svg",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-20x20@1x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-20x20@2x-1.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-20x20@2x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-20x20@3x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-29x29@1x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-29x29@2x-1.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-29x29@2x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-29x29@3x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-40x40@1x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-40x40@2x-1.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-40x40@2x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-40x40@3x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-512@2x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-60x60@2x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-60x60@3x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-76x76@1x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-76x76@2x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/icons/ios/AppIcon-83.5x83.5@2x.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/rust-toolchain.toml",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/src/deepseek.rs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/src/main.rs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/src/runtime/memory_context.rs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/src/runtime/today_intelligence.rs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/src/runtime.rs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/src/secure_credentials.rs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/tauri.conf.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/tests/offline_contract.mjs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/tools/clean_local_build_cache.mjs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/tools/collect_static_evidence.mjs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/tools/generate_manifest.mjs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/tools/task_root.mjs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/tools/verify_manifest.mjs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/tools/write_checkpoint.mjs",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/ui/app.js",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/ui/ia_reconciliation.md",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/ui/index.html",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/ui/interaction_contract.md",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/ui/state_machine.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/ui/styles.css",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/ui/viewport-adapter.css",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/candidate/ui/visual_contract.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "fixed_inputs_is_array",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "fixed_inputs_count",
+      "pass": true,
+      "detail": "expected=3 actual=3"
+    },
+    {
+      "id": "hash:lifeos/tasks/LIFEOS-P3-144_acceptance_freeze_manifest.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/tasks/LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop.md",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/tasks/LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop_acceptance_basis_freeze.md",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "preserved_history_is_array",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "preserved_history_count",
+      "pass": true,
+      "detail": "expected=3 actual=3"
+    },
+    {
+      "id": "hash:lifeos/deliverables/LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop.md",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/FINAL_MANIFEST.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/reviews/LIFEOS-P3-144/independent-review/independent_review.md",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "closure_evidence_is_array",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "closure_evidence_count",
+      "pass": true,
+      "detail": "expected=12 actual=12"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/closure-1/evidence/build_and_root_regression.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/closure-1/evidence/checkpoint.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/closure-1/evidence/cleanup_receipt.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/closure-1/evidence/closure_ac_matrix.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/closure-1/evidence/ipc_regression.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/closure-1/evidence/native-desktop-root-authority.png",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/closure-1/evidence/native_ax_web_probe.swift",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/closure-1/evidence/native_desktop_direct_pid.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/closure-1/evidence/root_lifecycle_regression.json",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/closure-1/tools/generate_final_manifest.py",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/closure-1/tools/marker_gated_cleanup.py",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "hash:lifeos/engineering/LIFEOS-P3-144/closure-1/tools/verify_final_manifest.py",
+      "pass": true,
+      "detail": "hash mismatch"
+    },
+    {
+      "id": "manifest_no_duplicate_paths",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "candidate_no_missing",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "id": "candidate_no_extra",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "id": "fixed_candidate_commit",
+      "pass": true,
+      "detail": "4115f2958d8fa08fa30fccc90217bdc404769363"
+    }
+  ],
+  "failures": []
+}

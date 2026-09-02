@@ -1,0 +1,14 @@
+{
+  "schema": "lifeos.p3-144.independent-review.isolated-regression-support.v1",
+  "candidate_commit": "4115f2958d8fa08fa30fccc90217bdc404769363",
+  "command_prefix": "cargo test --locked --offline <test-name> -- --test-threads=1",
+  "root_profile": "independent-review",
+  "tests": [
+    "runtime::tests::review_root_authority_rejects_root_symlink_before_writes",
+    "runtime::tests::review_root_authority_rejects_wrong_profile_root_run_id_and_traversal_before_writes",
+    "runtime::tests::sqlite_ciphertext_requires_its_exact_keychain_material_and_leaks_no_canary"
+  ],
+  "result": "PASS",
+  "root_residual_after_all_tests": false,
+  "interpretation": "Each affected test passes in isolation from an absent exact review root. This supports, but does not mitigate, the P1 full-serial order-dependence finding in candidate_serial_regression.json."
+}

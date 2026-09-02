@@ -1,0 +1,18 @@
+{
+  "schema": "lifeos.p3-144.independent-review.phase-a-regression-support.v1",
+  "candidate_commit": "4115f2958d8fa08fa30fccc90217bdc404769363",
+  "command": "cargo test --locked --offline p3_144_phase_a_context_limits_disclosure_and_confirmation_are_fail_closed -- --test-threads=1",
+  "root_profile": "independent-review",
+  "result": "PASS",
+  "coverage_from_test_name_and_assertions": [
+    "three Work entries and fourth-entry reject",
+    "non-medical Health accepted and medical wording rejected",
+    "Work-only disclosure selection",
+    "restart and stale/replayed confirmation rejection",
+    "removal invalidates an old confirmation",
+    "one-time confirmation consumption",
+    "understanding invalidation after correction",
+    "Health disclosure rejected after revoke"
+  ],
+  "post_test_cleanup": "The exact review root was removed by the review-owned marker-gated cleanup after this support test. This candidate-owned regression is supporting evidence only; it is not treated as independent proof."
+}

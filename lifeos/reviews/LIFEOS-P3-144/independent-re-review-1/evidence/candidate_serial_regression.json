@@ -1,0 +1,24 @@
+{
+  "schema": "lifeos.p3-144.independent-review.candidate-serial-regression.v1",
+  "command": "cargo test --locked --offline -- --test-threads=1",
+  "profile": "independent-review",
+  "network": "disabled_by_offline_mode",
+  "result": "FAIL",
+  "tests": {
+    "passed": 18,
+    "failed": 3,
+    "total": 21
+  },
+  "failed_tests": [
+    "runtime::tests::review_root_authority_rejects_root_symlink_before_writes",
+    "runtime::tests::review_root_authority_rejects_wrong_profile_root_run_id_and_traversal_before_writes",
+    "runtime::tests::sqlite_ciphertext_requires_its_exact_keychain_material_and_leaks_no_canary"
+  ],
+  "finding": {
+    "severity": "P1",
+    "classification": "candidate_regression_is_not_order_independent",
+    "evidence": "The preceding p3_144_phase_a_context_limits_disclosure_and_confirmation_are_fail_closed test leaves the fixed review root present. The three later tests each require that root to be absent before their mutation setup, so the complete required serial suite cannot pass."
+  },
+  "candidate_commit": "4115f2958d8fa08fa30fccc90217bdc404769363",
+  "read_only_candidate": true
+}

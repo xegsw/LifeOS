@@ -1,0 +1,12 @@
+{
+  "schema": "lifeos.p3-144.independent-review.wrong-marker-mutation.v1",
+  "root": "/private/tmp/lifeos-p3-144-independent-review-v1",
+  "mutation": "The review-owned marker owner field was changed from the exact authorized value to lifeos-p3-144-independent-review-wrong-marker after all App PIDs had stopped.",
+  "cleanup_command": "review_tools/marker_gated_cleanup.mjs",
+  "observed": {
+    "error": "marker_payload_rejected",
+    "root_exists_after_rejection": true
+  },
+  "restoration": "The exact original marker payload was restored before the positive marker-gated cleanup run.",
+  "result": "PASS"
+}

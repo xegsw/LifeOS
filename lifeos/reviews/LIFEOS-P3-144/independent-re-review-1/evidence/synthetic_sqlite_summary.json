@@ -1,0 +1,18 @@
+{
+  "schema": "lifeos.p3-144.independent-review.synthetic-sqlite-summary.v1",
+  "capturedAt": "2026-09-02T19:38:00+08:00",
+  "root": "/private/tmp/lifeos-p3-144-independent-review-v1",
+  "database": "secure-provider-settings.sqlite",
+  "contentRead": false,
+  "method": "SQLite aggregate-only queries over table names, column names, and grouped counts; no context text, question, response body, or credential bytes were selected.",
+  "results": [
+    { "table": "context_item", "bucket": "health:active", "count": 3 },
+    { "table": "context_item", "bucket": "work:active", "count": 3 },
+    { "table": "derivation", "bucket": "understanding:ignored", "count": 1 },
+    { "table": "disclosure_request", "bucket": "work:preview=1:confirmed=1", "count": 1 },
+    { "table": "encrypted_credential", "bucket": "deepseek:AES-256-GCM:1", "count": 1 },
+    { "table": "feedback_event", "bucket": "ignore", "count": 1 },
+    { "table": "provider_state", "bucket": "rows", "count": 1 }
+  ],
+  "conclusion": "PASS — the fresh review-owned database contains only the intended synthetic aggregate state: three active Work and three active Health entries, one consumed Work disclosure, one ignored AI Understanding, one feedback event, and one AES-256-GCM credential record. This does not prove real Provider behavior."
+}
