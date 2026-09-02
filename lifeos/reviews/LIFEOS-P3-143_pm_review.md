@@ -7,8 +7,8 @@
 - Task Contract／ABF：`lifeos/tasks/LIFEOS-P3-143_real_ai_service_and_encrypted_credential_secure_activation.md`；`ABF-P3-143-v1`
 - 候选／交付物：业务候选 `dcbc32518d92e16e26f8c7dfec682630f5d51cde`；最终只读谱系 `1aefaf4f`；`lifeos/deliverables/LIFEOS-P3-143_real_ai_service_and_encrypted_credential_secure_activation.md`
 - Evidence 等级与路径：L3；`lifeos/engineering/LIFEOS-P3-143/`；`lifeos/reviews/LIFEOS-P3-143/independent-re-review-4/`
-- 任务状态：PM Pass / Independent Pass / User Final Confirmation Pending / Not Product Frozen
-- PM 结论：**Pass — User Final Confirmation Pending**
+- 任务状态：Accepted / Complete / PM Pass / Independent Pass / User Adopted / Not Product Frozen
+- PM 结论：**Pass — User Adopted**
 
 ## 结论摘要
 
@@ -63,16 +63,16 @@
 
 ## 用户确认判断
 
-本任务是否需要用户确认：Yes。P3-143 是 L3／真实 Provider 与凭据 Gate；PM Pass 后须用户最终采纳，才可记为 `Accepted / Complete` 并决定是否提交／推送／合并任务分支。
+本任务是否需要用户确认：Yes，且已完成。用户于 2026-09-02 采纳最终 PM Pass，并授权提交／推送任务分支及进入 CI／main 安全合并流程。
 
 ## 账本与下一步
 
-- CURRENT_STATUS：更新为 P3-143 PM Pass / Independent Pass / User Final Confirmation Pending。
+- CURRENT_STATUS：更新为 P3-143 Accepted / Complete / User Adopted。
 - TASK_REGISTRY：同上；保留 Not Product Frozen。
-- DECISION_LOG：新增 PM Pass 待用户确认决策。
+- DECISION_LOG：D-0642保留PM Pass待确认事实；D-0643记录用户采纳与分支交付授权。
 - RISK_LOG／FREEZE_STATUS 是否有事实变化：No。R-0055／R-0056 保持 Open；ABF 保持任务级 Frozen；产品资产不冻结。
-- 下一步：用户最终采纳。采纳不自动关闭风险、不恢复 Pilot-6、不启用个人数据发送、不进入 Stage 4。
+- 下一步：提交并推送L3任务分支；仅在CI全绿、无冲突且主线可安全合并时进入main。采纳不关闭风险、不恢复 Pilot-6、不启用个人数据发送、不进入 Stage 4。
 
 ## 聊天摘要
 
-P3-143 已达到 PM Pass：最终计数 `0/0/0/0/0`，工程与独立 Manifest 均可复算，真实 DeepSeek Gate 已由用户完成且凭据已删除；最终独立复评全绿。等待用户作为 L3 Gate 最终采纳。
+P3-143 已由用户采纳并完成：最终计数 `0/0/0/0/0`，工程与独立 Manifest 均可复算，真实 DeepSeek Gate 已由用户完成且凭据已删除；最终独立复评全绿。产品未冻结，R-0055／R-0056保持Open，Stage 4仍未准入。
