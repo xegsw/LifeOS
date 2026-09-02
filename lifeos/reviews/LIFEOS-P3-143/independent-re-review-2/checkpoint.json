@@ -1,0 +1,16 @@
+{
+  "schema": "lifeos.review.checkpoint.v1",
+  "status": "Blocked",
+  "resume_from": "input_availability",
+  "completed_stages": [
+    "minimal_startup_package",
+    "review_owned_precontact_controls",
+    "precontact_hash_seal",
+    "exact_input_availability_check"
+  ],
+  "earliest_affected_stage": "historical_lineage_preservation",
+  "resume_condition": "PM must restore both exact independent-re-review-1 paths or issue a new explicit contract/ABF that removes them. This review must not infer a substitute from engineering closure text.",
+  "prohibited_boundary_contact": false,
+  "synthetic_root_created": false,
+  "candidate_dynamic_execution_started": false
+}

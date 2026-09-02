@@ -1,0 +1,17 @@
+{
+  "schema": "lifeos.p3-143.independent-rereview-2.input-availability.v1",
+  "status": "BLOCKED_MISSING_EXACT_HISTORICAL_INPUTS",
+  "checked_after_precontact_seal": true,
+  "fixed_candidate_commit_presence": "dcbc32518d92e16e26f8c7dfec682630f5d51cde present",
+  "available_direct_inputs": [
+    "lifeos/engineering/LIFEOS-P3-143/evidence/root_authority_missing_marker_closure.json",
+    "lifeos/engineering/LIFEOS-P3-143/FINAL_MANIFEST.json",
+    "lifeos/deliverables/LIFEOS-P3-143_real_ai_service_and_encrypted_credential_secure_activation.md"
+  ],
+  "missing_exact_historical_inputs": [
+    "lifeos/reviews/LIFEOS-P3-143/independent-re-review-1/independent_review.md",
+    "lifeos/reviews/LIFEOS-P3-143/independent-re-review-1/evidence/missing_marker_attack.json"
+  ],
+  "handling": "No fuzzy search, substitute, candidate test, candidate source read, build, runtime launch, GUI action, synthetic-root creation, cleanup, network, Provider, credential, Keychain, real DB, or real-text action was performed after this blocker was found.",
+  "classification": "P0 procedural/frozen-input availability blocker; not a candidate engineering finding"
+}

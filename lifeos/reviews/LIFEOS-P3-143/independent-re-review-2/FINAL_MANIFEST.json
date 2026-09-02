@@ -1,0 +1,22 @@
+{
+  "schema": "lifeos.p3-143.independent-rereview-2.final-manifest.v1",
+  "task": "LIFEOS-P3-143",
+  "review_result": "Blocked",
+  "self_referential": false,
+  "excluded_self": "FINAL_MANIFEST.json",
+  "entry_count": 10,
+  "files": [
+    {"path": "input_availability.json", "bytes": 1149, "sha256": "dfdf18146013476f9de73caada8587a92bfa8e3992cb0b5372c2c613781b9e4e", "role": "blocker_record"},
+    {"path": "review_matrix.md", "bytes": 1451, "sha256": "b634d29d0e581c810b8d1c1f66aa514e3e874dcafa7c6e9899c7b94fd8e4e97f", "role": "matrix"},
+    {"path": "checkpoint.json", "bytes": 669, "sha256": "ba1f89c476c89ba2107efd6ed7dc748a0d70789bff5d4cf7c4b4e5cb214fb938", "role": "resume_checkpoint"},
+    {"path": "independent_review.md", "bytes": 4158, "sha256": "7ded3a813283da290c9a01e0cb99782fca590eb0c784bacf90647d666feb6ed1", "role": "review_conclusion"},
+    {"path": "test_design.md", "bytes": 2297, "sha256": "71c36f4bea435abd98077c71b91402aeb011c8e291243ccbc290e13192c41c84", "role": "precontact_test_design"},
+    {"path": "allowlist.txt", "bytes": 568, "sha256": "9e546ca1b51a6367494ea1bc68c09c30e6b352eb1bfaf189f7e1cae766ad37ee", "role": "precontact_allowlist"},
+    {"path": "prohibited_paths.md", "bytes": 810, "sha256": "3fe1c6d21882963a58ad74e0d0522e50990ff60b98fe144f005d00977d826075", "role": "precontact_prohibited_declaration"},
+    {"path": "precontact_seal.json", "bytes": 840, "sha256": "f26f865ea06852efdda220cb69c4c9e78f95d6faf3d7c43f0d76e2cf42e53ba5", "role": "precontact_seal"},
+    {"path": "precontact_seal.sha256", "bytes": 87, "sha256": "23590b9e909c6cee36943931af26ca5c6480225ee2ecf79566f7bd923a056f6f", "role": "precontact_seal_hash"},
+    {"path": "review_verifier.sh", "bytes": 2196, "sha256": "a80e15e86dcaf6e2c2bed67053703b9aedd06b612f16f351790334322c58c76e", "role": "review_owned_verifier"}
+  ],
+  "candidate_or_runtime_activity": "none_after_blocker",
+  "prohibited_boundary_contact": false
+}
