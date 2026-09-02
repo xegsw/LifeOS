@@ -1,0 +1,20 @@
+{
+  "schema": "lifeos.p3-143.independent-review-static.v1",
+  "task": "LIFEOS-P3-143",
+  "runner_owner": "independent-review",
+  "candidate_test_or_verifier_imported": false,
+  "network_actions": 0,
+  "results": [
+    { "id": "IR-S-001", "result": "PASS", "detail": "Manifest identity and self-exclusion are explicit." },
+    { "id": "IR-S-002", "result": "PASS", "detail": "Recomputed 124 listed hashes; mismatches=0." },
+    { "id": "IR-S-003", "result": "PASS", "detail": "Exact IPC literals parsed=20, unique=20." },
+    { "id": "IR-S-004", "result": "PASS", "detail": "Adapter declares exact HTTPS authority, cleared environment, redirect limit, and proxy suppression." },
+    { "id": "IR-S-005", "result": "PASS", "detail": "Static credential design separates ciphertext record from Keychain material and does not declare a plaintext column." },
+    { "id": "IR-S-006", "result": "PASS", "detail": "Static state machine separates test, selection, enablement, and fixed-canary send." },
+    { "id": "IR-S-007", "result": "PASS", "detail": "UI static scan finds Tauri invoke boundary and no direct browser network primitive." },
+    { "id": "IR-S-008", "result": "FAIL", "detail": "Fixed candidate must support a fresh review-owned root without touching the retained Phase-B root." },
+    { "id": "IR-S-009", "result": "PASS", "detail": "Review-owned temporary-root marker is a 0600 regular file." }
+  ],
+  "passed": 8,
+  "failed": 1
+}

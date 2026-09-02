@@ -1,0 +1,20 @@
+{
+  "schema_version": "lifeos.independent_review.precontact_seal.v1",
+  "task_id": "LIFEOS-P3-143",
+  "review_id": "independent-review",
+  "sealed_at_utc": "2026-09-02T02:04:40Z",
+  "purpose": "Fresh isolated L3 independent review controls, written before candidate or P3-143 engineering contact.",
+  "candidate_or_engineering_contact_before_seal": false,
+  "review_control_hashes": {
+    "test_design.md": "1dfa0c9036237b79b333214453e54b8633f5f14add0d9face3d448c5f8ea0e66",
+    "allowlist.md": "d4f6c733cac2ac28362928d9ac8c4217ba1af08bf05fa8bf75950e363062c9b6",
+    "prohibited_paths.md": "72e1aba691c8be1e8fea6fe2c0fbceb49bb173febc3635344b6f228ed1e51c1d"
+  },
+  "frozen_input_expectations": {
+    "task_contract": "c3a1e40101fa60c71a66bc2ff640be879c3ed64a020ce6491d8e4345b4bcc6f7",
+    "acceptance_basis": "c7385a767c827d94b3b44bfe98bdb97377d3d9ed90f718832f6f431130feb90f"
+  },
+  "review_owned_runtime_root": "/private/tmp/lifeos-p3-143-independent-review-v1",
+  "network_boundary": "No network until synthetic review passes; any later real action is user-operated, non-content, exact https://api.deepseek.com only.",
+  "prohibited_boundary_declaration": "See prohibited_paths.md; no Pilot, personal data, real credentials, other provider, other network, broad temporary-root access or PM ledger contact."
+}

@@ -1,0 +1,42 @@
+{
+  "schema": "lifeos.p3-143.independent-review-matrix.v1",
+  "task": "LIFEOS-P3-143",
+  "conclusion": "REWORK",
+  "decisive_failure": {
+    "id": "IR-P0-001",
+    "abf": ["ABF-I-13", "ABF-M-022"],
+    "severity": "P0",
+    "fact": "The fixed candidate declares only the retained engineering Phase-B root and exposes no validated review-root override. Starting its actual Tauri runtime would create/use that retained root rather than the fresh review-owned root required by the frozen contract.",
+    "evidence": ["static_runner_results.rerun.json#IR-S-008", "candidate/src/runtime.rs:15", "candidate/src/runtime.rs:307-375", "candidate/src/runtime.rs:1184-1190"],
+    "safety_action": "No candidate runtime, candidate test, database mutation, Keychain mutation, network action, or actual-Tauri launch was attempted."
+  },
+  "rows": [
+    { "id": "ABF-M-001", "result": "PASS", "basis": "Independent 10/10 freeze hash recomputation, 124/124 current Manifest recomputation, exact 20 IPC static parse." },
+    { "id": "ABF-M-002", "result": "NOT_IMPLEMENTED", "basis": "Stopped before any runtime write because no fresh candidate review root can be bound." },
+    { "id": "ABF-M-003", "result": "NOT_IMPLEMENTED", "basis": "Stopped before synthetic credential persistence or Keychain contact." },
+    { "id": "ABF-M-004", "result": "NOT_IMPLEMENTED", "basis": "Fresh independent restart requires a fresh candidate-bound DB/root." },
+    { "id": "ABF-M-005", "result": "NOT_IMPLEMENTED", "basis": "DB-only copy matrix not safe without review-root binding." },
+    { "id": "ABF-M-006", "result": "NOT_IMPLEMENTED", "basis": "Tamper matrix not safe without review-root binding." },
+    { "id": "ABF-M-007", "result": "NOT_IMPLEMENTED", "basis": "Credential update lifecycle not run." },
+    { "id": "ABF-M-008", "result": "NOT_IMPLEMENTED", "basis": "Delete/fresh-restart lifecycle not run." },
+    { "id": "ABF-M-009", "result": "PARTIAL_STATIC", "basis": "Static explicit separation passes; independent action-counter execution stopped." },
+    { "id": "ABF-M-010", "result": "PARTIAL_STATIC", "basis": "Strict DTO source checks pass; independent mutation execution stopped." },
+    { "id": "ABF-M-011", "result": "PARTIAL_STATIC", "basis": "Static authority/proxy/redirect controls pass; independent harness not started." },
+    { "id": "ABF-M-012", "result": "PARTIAL_STATIC", "basis": "Error-classification source reviewed; no runtime injection performed." },
+    { "id": "ABF-M-013", "result": "PARTIAL_STATIC", "basis": "Cloud 8/Local 4 and exact DeepSeek authority are statically present; no dynamic ledger." },
+    { "id": "ABF-M-014", "result": "NOT_IMPLEMENTED", "basis": "No direct-PID desktop launch against the retained root." },
+    { "id": "ABF-M-015", "result": "NOT_IMPLEMENTED", "basis": "No direct-PID compact launch against the retained root." },
+    { "id": "ABF-M-016", "result": "NOT_IMPLEMENTED", "basis": "No direct-PID narrow launch against the retained root." },
+    { "id": "ABF-M-017", "result": "PARTIAL_READONLY", "basis": "Read-only Phase-A artefacts exist; they cannot substitute review-owned execution." },
+    { "id": "ABF-M-018", "result": "NOT_REACHED", "basis": "A new user-operated real Gate is forbidden until independent synthetic review passes." },
+    { "id": "ABF-M-019", "result": "NOT_REACHED", "basis": "A new user-operated real Gate is forbidden until independent synthetic review passes." },
+    { "id": "ABF-M-020", "result": "NOT_REACHED", "basis": "No new credential was requested or entered; existing Phase-B receipts were read only and sanitized." },
+    { "id": "ABF-M-021", "result": "NOT_IMPLEMENTED", "basis": "No app writer was started; checkpoint-resume must follow a candidate repair." },
+    { "id": "ABF-M-022", "result": "FAIL", "basis": "Fresh seal exists, but the candidate cannot be dynamically bound to fresh review-owned DB/root/PID." }
+  ],
+  "counts": { "P0": 1, "P1": 0, "P2": 1, "Unknown": 0, "Not_Implemented": 16 },
+  "p2": {
+    "id": "IR-P2-001",
+    "fact": "The engineering delivery retains an earlier Phase-B-not-started statement alongside later Phase-B-complete updates. The current Phase-B checkpoint and receipt sequence are internally current, but the cumulative delivery wording should be reconciled in the same Closure Cycle."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "lifeos.p3-143.independent-review-final-manifest.v1",
+  "task": "LIFEOS-P3-143",
+  "review": "independent-review",
+  "self_referential": false,
+  "excluded_from_hash_set": [
+    "FINAL_MANIFEST.json",
+    "verify_final_manifest.mjs",
+    "manifest_verification.json"
+  ],
+  "files": [
+    { "path": "test_design.md", "bytes": 5744, "sha256": "1dfa0c9036237b79b333214453e54b8633f5f14add0d9face3d448c5f8ea0e66", "role": "precontact_test_design" },
+    { "path": "allowlist.md", "bytes": 2114, "sha256": "d4f6c733cac2ac28362928d9ac8c4217ba1af08bf05fa8bf75950e363062c9b6", "role": "precontact_allowlist" },
+    { "path": "prohibited_paths.md", "bytes": 1708, "sha256": "72e1aba691c8be1e8fea6fe2c0fbceb49bb173febc3635344b6f228ed1e51c1d", "role": "prohibited_boundary_declaration" },
+    { "path": "precontact_seal.json", "bytes": 1310, "sha256": "90082eb8cf878be86c78d713dedd2c66eb0fd88c28af80c7666d7287caea773b", "role": "precontact_seal" },
+    { "path": "review_static_runner.mjs", "bytes": 4092, "sha256": "ce28dfc6956d70e565d7fdc0900b69411d242f352a607c8a5f9974b5837b31dc", "role": "review_owned_static_runner" },
+    { "path": "static_runner_results.json", "bytes": 1638, "sha256": "9414031b6db2a709a557d729dbb292e0e41df31ad9c0c012b1340405b925d541", "role": "excluded_initial_runner_artifact" },
+    { "path": "static_runner_correction.md", "bytes": 594, "sha256": "d4896b1c905d3222d3ea4ecd5f085306e3781df866e62f63075ef6867684793d", "role": "runner_correction" },
+    { "path": "static_runner_results.rerun.json", "bytes": 1440, "sha256": "73124d51c97e89eec4066013700c358c0d3dde2e321fdcb430960442b016cba6", "role": "review_static_rerun" },
+    { "path": "offline_compile_result.json", "bytes": 557, "sha256": "fc2ba1c1d796ad9861089af4d5f458971bbfdfbde1878e2c6d6f42c3dc5b2816", "role": "review_owned_offline_compile" },
+    { "path": "review_matrix.json", "bytes": 4316, "sha256": "a6759cedd5cc93bc189465f6d113cbfb97d2636c07f6e053a351c6797013621c", "role": "line_matrix" },
+    { "path": "cleanup_review_root.mjs", "bytes": 1203, "sha256": "95163cd14e6864d3145e626e435f0bee09586eb2b6faa017081358d0ba539180", "role": "marker_gated_cleanup_script" },
+    { "path": "independent_review.md", "bytes": 6496, "sha256": "23eb3fc9c2c52193ba1e361fa8ce9cc842a034c3ff2e40f1461b519e4f3f18e1", "role": "independent_review" },
+    { "path": "cleanup_receipt.json", "bytes": 467, "sha256": "bd7b20bfeed7f64381bae5a3d1b776d5733d7c1fe939f765fe6f4a22819086fe", "role": "cleanup_receipt" }
+  ]
+}
