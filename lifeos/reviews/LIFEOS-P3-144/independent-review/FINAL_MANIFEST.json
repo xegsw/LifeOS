@@ -1,0 +1,22 @@
+{
+  "schema": "lifeos.p3-144.independent-review.failure-manifest.v1",
+  "taskId": "LIFEOS-P3-144",
+  "candidateCommit": "f6c03b083efe4525005887dd1dd4dad423ca6d10",
+  "reviewConclusion": "REWORK_NOT_PASS_P0_ROOT_AUTHORITY_CONFLICT",
+  "selfExclusion": true,
+  "counts": {"P0": 1, "P1": 0, "P2": 0, "Unknown": 0, "NotImplemented": 31},
+  "entries": [
+    {"role":"precontact_design","path":"lifeos/reviews/LIFEOS-P3-144/independent-review/precontact/test_design.md","sha256":"81584178a1eedc1328de6863d1a9b38c9158c85b6ab9ffb9f68300e1b646993c"},
+    {"role":"precontact_allowlist","path":"lifeos/reviews/LIFEOS-P3-144/independent-review/precontact/allowlist.md","sha256":"0c36c230c7fc875ad9434962fa3bc34726d0f6eee52fdd109c63507ea4921d0b"},
+    {"role":"precontact_prohibited_paths","path":"lifeos/reviews/LIFEOS-P3-144/independent-review/precontact/prohibited_path_declaration.md","sha256":"66d868c155f22538e63eb9b9638d3751ca0eb4a365e8cfd2ae3578a66a8b9fda"},
+    {"role":"precontact_seal","path":"lifeos/reviews/LIFEOS-P3-144/independent-review/precontact/precontact_seal.json","sha256":"1779f9127d69e9e202f494c2335300e6a17c84f19f4d5d6b892850354f939106"},
+    {"role":"precontact_seal_hash","path":"lifeos/reviews/LIFEOS-P3-144/independent-review/precontact/precontact_seal.sha256","sha256":"2f1de28973271fa0e9d8f7f9881bb1db241b68e5debd6c54ca98b708335548a6"},
+    {"role":"root_contract_verifier","path":"lifeos/reviews/LIFEOS-P3-144/independent-review/review_tools/verify_review_root_contract.mjs","sha256":"28b109d7b575c968820d983a393126dc7cc37e01781d05208277aaaf66ead3aa"},
+    {"role":"failure_manifest_verifier","path":"lifeos/reviews/LIFEOS-P3-144/independent-review/review_tools/verify_failure_manifest.mjs","sha256":"d17bfe1ede3a3be8c47cd2eac048dd227aede07e119efdc93e1ab188abfab190"},
+    {"role":"fixed_input_recomputation","path":"lifeos/reviews/LIFEOS-P3-144/independent-review/evidence/frozen_input_recomputation.json","sha256":"c52cfb6cff232ba1bb23d7dc3abe9bf1afec250df7e2ce2f52aa364c57338be7"},
+    {"role":"root_contract_result","path":"lifeos/reviews/LIFEOS-P3-144/independent-review/evidence/root_contract_verification.json","sha256":"4a587d85e64aa44b308e60945eda7c13ad6c608371447104a14d134ac5addabb"},
+    {"role":"cleanup_receipt","path":"lifeos/reviews/LIFEOS-P3-144/independent-review/evidence/cleanup_receipt.json","sha256":"07f19e83de1ce4d78ac382c5607ae102eab021f4efa9a67faf8068f99095feb7"},
+    {"role":"review_matrix","path":"lifeos/reviews/LIFEOS-P3-144/independent-review/review_matrix.md","sha256":"f371a9b31f6db44488ac12bffbb781cd365454884722d3daad362fcdd4b7631f"},
+    {"role":"independent_review","path":"lifeos/reviews/LIFEOS-P3-144/independent-review/independent_review.md","sha256":"93f74f2fedb6bec36a8f40a759a18e5022df02999b19baee8d646b516db6b333"}
+  ]
+}

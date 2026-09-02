@@ -1,0 +1,43 @@
+{
+  "schema": "lifeos.p3-144.independent-review.root-contract.v1",
+  "candidateCommit": "f6c03b083efe4525005887dd1dd4dad423ca6d10",
+  "candidatePath": "lifeos/engineering/LIFEOS-P3-144/candidate/build.rs",
+  "candidateBlob": "9befc41021f44cc66837ed7a76fc26b52cbe1421",
+  "candidateBlobSha256": "dcd6f17ce4a91c65f003473acfbea52e013e43877204b958f961c8b6f4df4f9e",
+  "taskPath": "lifeos/tasks/LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop.md",
+  "taskSha256": "77ffb9438807c37362608d2bca1c315a4ea8a222d4ec8a0c543fcc84158466ac",
+  "fixedReviewRoot": "/private/tmp/lifeos-p3-144-independent-review-v1",
+  "baseline": {
+    "minimumReviewRunIdLength": 8,
+    "dynamicRunIdDerivedRoot": true,
+    "exactFrozenRootHardCoded": false,
+    "violations": [
+      "dynamic_unfrozen_review_root",
+      "frozen_v1_root_rejected_by_minimum_run_id"
+    ],
+    "verdict": "P0_ROOT_AUTHORITY_CONFLICT"
+  },
+  "reviewOwnedMutationCases": [
+    {
+      "id": "mutation_accepts_v1_length",
+      "candidateMutation": "minimum run id 8→2 and compile-time run id fixed to v1",
+      "expectedVerdict": "NO_ROOT_CONFLICT",
+      "actualVerdict": "NO_ROOT_CONFLICT",
+      "result": "PASS"
+    },
+    {
+      "id": "mutation_removes_review_profile",
+      "candidateMutation": "remove independent-review profile arm",
+      "expectedVerdict": "P0_ROOT_AUTHORITY_CONFLICT",
+      "actualVerdict": "P0_ROOT_AUTHORITY_CONFLICT",
+      "result": "PASS"
+    }
+  ],
+  "reviewOwnedVerifier": "review_tools/verify_review_root_contract.mjs",
+  "result": "P0_CONFIRMED_STOP_POSITIVE_VALIDATION",
+  "pilot7Contact": false,
+  "realNetworkContact": false,
+  "realCredentialContact": false,
+  "candidateModified": false,
+  "historyModified": false
+}

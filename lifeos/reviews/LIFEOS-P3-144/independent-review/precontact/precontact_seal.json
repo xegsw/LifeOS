@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "task_id": "LIFEOS-P3-144",
+  "review_phase": "Phase B synthetic/offline independent review",
+  "status": "SEALED_BEFORE_CANDIDATE_OR_EVIDENCE_CONTACT",
+  "candidate_commit": "f6c03b083efe4525005887dd1dd4dad423ca6d10",
+  "frozen_abf": "ABF-P3-144-v1",
+  "sealed_on": "2026-09-02 Asia/Shanghai",
+  "sealed_controls": {
+    "test_design.md": "81584178a1eedc1328de6863d1a9b38c9158c85b6ab9ffb9f68300e1b646993c",
+    "allowlist.md": "0c36c230c7fc875ad9434962fa3bc34726d0f6eee52fdd109c63507ea4921d0b",
+    "prohibited_path_declaration.md": "66d868c155f22538e63eb9b9638d3751ca0eb4a365e8cfd2ae3578a66a8b9fda"
+  },
+  "precontact_assertions": [
+    "No P3-144 candidate path, engineering Evidence, deliverable, or Manifest was enumerated, read, or hashed before this seal.",
+    "No access, stat, probe, hash, enumeration, create, read, write, or cleanup was performed against Pilot-7 or capture.sqlite.",
+    "No real content, credential, DeepSeek request, other Provider, or network action occurred.",
+    "All future candidate and historical contact is read-only and limited to the declared allowlist."
+  ]
+}
