@@ -1,0 +1,93 @@
+{
+  "schema": "lifeos.p3-143.independent-rereview-3.manifest-verification.v1",
+  "network": "disabled_by_runner_contract",
+  "manifests": [
+    {
+      "manifest": "lifeos/engineering/LIFEOS-P3-143/PHASE_A_PRE_REAL_GATE_MANIFEST.json",
+      "basis": "git:68cee194a34183ff550e07112b2faada618774e8",
+      "schema": "lifeos.p3-143.final-manifest.v1",
+      "self_referential": false,
+      "declared_file_count": 113,
+      "checked": 113,
+      "mismatches": [
+        {
+          "index": 76,
+          "path": "candidate/src/runtime.rs",
+          "kind": "disk_hash_or_size_mismatch",
+          "expected_sha256": "d7fb005a997aa6793e7f2365948747abcca2a3b6043d499df146661ce95e6af5",
+          "actual_sha256": "109bf6a458a349967a13d5688046bbc277f5d2ddc018d37b198c3585c9ea1b83",
+          "expected_bytes": 58331,
+          "actual_bytes": 59514
+        },
+        {
+          "index": 81,
+          "path": "candidate/tests/offline_contract.mjs",
+          "kind": "disk_hash_or_size_mismatch",
+          "expected_sha256": "5548b1f832cc75101bf08d128d3eac80a18569550a50252efb045c05ff25ddf9",
+          "actual_sha256": "551b26c28913294e584ba42977f0fa5805d5d452979d3cae515e94c2273e3540",
+          "expected_bytes": 3817,
+          "actual_bytes": 4224
+        },
+        {
+          "index": 88,
+          "path": "candidate/ui/app.js",
+          "kind": "disk_hash_or_size_mismatch",
+          "expected_sha256": "4041310aff0749f6ed4a53309755bd505faf189cb0deb89395d5e7c873f2076f",
+          "actual_sha256": "187527cdfc6f839154088746b0dbf3c3a53199ba99a833e4b716d56c5f84f57b",
+          "expected_bytes": 22220,
+          "actual_bytes": 22930
+        },
+        {
+          "index": 92,
+          "path": "candidate/ui/state_machine.json",
+          "kind": "disk_hash_or_size_mismatch",
+          "expected_sha256": "b7f8af65872c8f35cd2c770a92d24e66f77fe8143c22c4ca0b9a1d8a2fd04cbe",
+          "actual_sha256": "b95083ea929b43c82ae1d8373fb5641b984c75c47e4c2eb50adc5d2c2f6fbc47",
+          "expected_bytes": 1976,
+          "actual_bytes": 2118
+        },
+        {
+          "index": 108,
+          "path": "evidence/phase_a_ac_matrix.json",
+          "kind": "disk_hash_or_size_mismatch",
+          "expected_sha256": "4b6291bc3133e92458cd8ce11cc17afbece4eb450e517ac4fcc1a4f1fb0193ce",
+          "actual_sha256": "5dfb0f9a2af63d657dcc5d5b34f29782461f8a809b94df3f3cdcddec42597d23",
+          "expected_bytes": 6245,
+          "actual_bytes": 7664
+        },
+        {
+          "index": 110,
+          "path": "evidence/phase_a_final_gate.json",
+          "kind": "disk_hash_or_size_mismatch",
+          "expected_sha256": "5f99d193a75e43f23426e3ce47c06e86187da5434c0823e2d45d3849bbd999d3",
+          "actual_sha256": "5304bace9cd0ede0fc8246e9ca2f24ba5a90a854990c6d0c3474f44ce9f0c57c",
+          "expected_bytes": 1943,
+          "actual_bytes": 2155
+        },
+        {
+          "index": 111,
+          "path": "evidence/phase_a_offline_validation.json",
+          "kind": "disk_hash_or_size_mismatch",
+          "expected_sha256": "a168d3b592617d1fc44608c40b78931f170d8596b4098d9091fb02fbfe92d2bc",
+          "actual_sha256": "817513943a2752e67b89e40a3ba96b368f070c24f0b0db5543129089e9717079",
+          "expected_bytes": 1895,
+          "actual_bytes": 2157
+        },
+        {
+          "index": 112,
+          "path": "evidence/static_contract_report.json",
+          "kind": "disk_hash_or_size_mismatch",
+          "expected_sha256": "7d3b4e24f04cbe610b1cc4a26a9c7f16268c252f688061cbfba8506ac1fe6c16",
+          "actual_sha256": "bc4d7381fe311a843572fcc64e9fa158c723de5c44f3cd0d7b70baa978ad3d1a",
+          "expected_bytes": 1752,
+          "actual_bytes": 1752
+        }
+      ],
+      "candidate_git_checked": 0,
+      "candidate_git_mismatches": [],
+      "status": "FAIL"
+    }
+  ],
+  "error_count": 8,
+  "status": "FAIL"
+}

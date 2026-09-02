@@ -1,0 +1,27 @@
+{
+  "schema": "lifeos.p3-143.independent-rereview-3.static-contract.v1",
+  "candidate": "lifeos/engineering/LIFEOS-P3-143/candidate",
+  "baseline_errors": [],
+  "mutations": {
+    "remove_missing_marker_rejection": [
+      "root_authority_guard_missing"
+    ],
+    "duplicate_ipc": [
+      "exact_20_ipc_drift"
+    ],
+    "evil_authority": [
+      "deepseek_authority_drift"
+    ],
+    "remove_noproxy": [
+      "network_authority_or_proxy_guard_missing"
+    ]
+  },
+  "mutation_detected": {
+    "remove_missing_marker_rejection": true,
+    "duplicate_ipc": true,
+    "evil_authority": true,
+    "remove_noproxy": true
+  },
+  "network": "not_executed",
+  "result": "PASS"
+}

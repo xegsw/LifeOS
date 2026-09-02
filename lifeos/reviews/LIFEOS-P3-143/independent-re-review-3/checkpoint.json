@@ -1,0 +1,46 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-143",
+  "attempt_id": "independent-re-review-3",
+  "updated_at": "2026-09-02T13:00:00+0800",
+  "task_contract_sha256": "c3a1e40101fa60c71a66bc2ff640be879c3ed64a020ce6491d8e4345b4bcc6f7",
+  "candidate_sha256": "e65a9599fd691b01c2dc87a2b468c01980d56bdaf5e8b8d401371f4fa669bad8",
+  "baseline_sha256": "bbe5614e27b3fc77fcf7e58a54bfb1168e5ac45270c30c7a19d6d007a5b32a4a",
+  "stage": "procedural_invalidation",
+  "status": "invalidated",
+  "pause_class": "irrecoverable_procedural_p0",
+  "pause_reason_code": "sealed_single_root_expansion",
+  "completed_checks": [
+    "precontact_controls_and_hashes",
+    "exact_input_availability_and_freeze_hashes",
+    "candidate_a95a0beb_and_manifest_lineage",
+    "review_owned_static_contract_and_four_mutations",
+    "two_independent_review_profile_compiles",
+    "review_owned_single_root_authority_matrix",
+    "direct_pid_98057_synthetic_app_launch",
+    "direct_pid_98603_synthetic_app_launch_after_desktop_resume",
+    "fresh_source_built_app_bundle_and_direct_pid_99755_native_chain",
+    "writer_stop_and_marker_gated_root_cleanup"
+  ],
+  "pending_checks": [],
+  "rerun_checks": [
+    "all_independent_review_phases_in_a_new_isolated_attempt"
+  ],
+  "excluded_artifacts": [
+    "The initial raw-executable native binding attempts are retained as history only. The later source-built-bundle native evidence is technically present but non-positive after IR-RR3-P0-001."
+  ],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": false,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": 99755,
+    "direct_pids_attempted": [98057, 98603, 99755],
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "both_known_review_roots_absent_after_marker_gated_cleanup"
+  },
+  "resume_from": "new_isolated_independent_rereview_required",
+  "safe_to_resume": false,
+  "notes": "Synthetic/offline only; no API Key, Provider, Keychain item, personal data, prompt, response or network target was contacted. The source-built bundle introduced a second candidate-derived runtime root after the sealed sole-root binding. It and the original root are absent, but IR-RR3-P0-001 invalidates this review’s positive evidence. Do not resume this attempt."
+}
