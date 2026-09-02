@@ -1,0 +1,39 @@
+{
+  "schema": "lifeos.p3-143.phase-b-state-separation-closure.v1",
+  "task": "LIFEOS-P3-143",
+  "recorded_at": "2026-09-02T09:10:00+08:00",
+  "trigger": {
+    "observed_non_sensitive_state": "test_models receipt was successful while selectedModel was present and enabled was false",
+    "pm_judgement": "Saving, testing, selection, enablement, and sending must remain separate; selection cannot be inferred or treated as a test side effect.",
+    "real_request_history": "Preserved read-only: one successful user-triggered GET test_models receipt to the exact DeepSeek authority. No retry or replay."
+  },
+  "narrow_correction": {
+    "runtime": "test_ai_provider_connection now delegates state transition to apply_tested_model_directory, which always writes a tested directory while clearing selected_model and enabled.",
+    "ui": "Changing the model dropdown sets UI-only pendingModel. Only a separate user click on 确认选择模型 invokes select_model.",
+    "state_machine": "C-02 now explicitly forbids setting model.selected; C-03 requires user_confirms_model_selection."
+  },
+  "regression_evidence": {
+    "format_check": "PASS",
+    "unit_test": "PASS: runtime::tests::test_models_clears_prior_selection_and_keeps_provider_disabled (1 passed, 13 filtered; synthetic pure-state mutation)",
+    "static_contract": "PASS: 18 checks, 20 IPC; explicit-confirmation and clear-selection assertions added",
+    "offline_bundle_build": "PASS: fixed candidate actual Tauri app built with locked/offline runner and no signing",
+    "build_warning": "rust-objcopy debug-strip warning only; Tauri release bundle completed successfully"
+  },
+  "execution_history": [
+    "Initial Rust exact filter matched zero tests because the unqualified test name was supplied with --exact; the fully qualified pure-state test was then run and passed. No credential/root-touching test executed.",
+    "Initial cargo tauri invocation rejected an unsupported --locked argument; a locked/offline runner was added. The first runner build then stopped because its task-local TMPDIR child was absent. After creating that exact task-local child, the offline bundle completed successfully."
+  ],
+  "live_state_migration": {
+    "allowed_change": "Only selectedModel was set to null and enabled set false in provider_state.",
+    "preserved_non_sensitive_attestation": "Encrypted credential metadata, exact P3-143 Keychain service presence, tested model directory, and the sole non-content test receipt remain present.",
+    "credential_or_model_identifier_read": false,
+    "credential_delete": false,
+    "network_replay_or_new_request": false
+  },
+  "candidate_identity_after_correction": {
+    "file_count": 85,
+    "sha256": "a63af432a6d9fe20875423066a766735e68152d40663f65c11f33b0299d81e6d"
+  },
+  "result": "PASS_NARROW_CLOSURE_WAITING_USER_MODEL_SELECTION",
+  "next_user_action": "After relaunch, the user alone selects a tested model in the dropdown and then explicitly clicks 确认选择模型. The Agent must not select, enable, or send."
+}

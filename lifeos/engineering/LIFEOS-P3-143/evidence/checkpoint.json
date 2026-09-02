@@ -1,0 +1,63 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-143",
+  "attempt_id": "engineering-phase-a-attempt-1",
+  "updated_at": "2026-09-02T00:36:00.000Z",
+  "task_contract_sha256": "c3a1e40101fa60c71a66bc2ff640be879c3ed64a020ce6491d8e4345b4bcc6f7",
+  "candidate_sha256": "ca923e448a63705b26699bbf293b1dcec234c6f81bcfddced91cb5d813dee4e6",
+  "baseline_sha256": "c7385a767c827d94b3b44bfe98bdb97377d3d9ed90f718832f6f431130feb90f",
+  "stage": "phase_b_user_operated_real_gate",
+  "status": "awaiting_user_action",
+  "pause_class": "user_gate",
+  "pause_reason_code": "phase_a_passed_user_must_hand_enter_deepseek_key_in_app",
+  "completed_checks": [
+    "preflight",
+    "offline_contract",
+    "credential_lifecycle_and_mutation",
+    "three_direct_pid_native_views",
+    "desktop_visual_contract_governance_correction",
+    "phase_a_ac_matrix",
+    "phase_a_final_manifest",
+    "phase_a_manifest_verifier"
+  ],
+  "pending_checks": [
+    "user_operated_real_gate",
+    "post_real_gate_credential_deletion_and_exact_root_cleanup",
+    "independent_review",
+    "pm_acceptance"
+  ],
+  "rerun_checks": [
+    "user_operated_real_gate_only",
+    "phase_c_independent_review_after_real_gate",
+    "pm_acceptance_after_independent_review"
+  ],
+  "previous_recoverable_evidence_gap": {
+    "name": "desktop_1280x1024_execution_side_gate",
+    "resolution": "removed by PM-directed frozen-contract review; it was not an AC or ABF condition",
+    "evidence": "phase_a_desktop_visual_contract_review.json"
+  },
+  "excluded_artifacts": [
+    "evidence/native-compact-settings.png: 127x134 unreadable thumbnail removed",
+    "evidence/native-narrow-settings.png: 80x132 unreadable thumbnail removed",
+    "evidence/native-desktop-direct-ax.png: 276x322 unreadable thumbnail removed immediately"
+  ],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "present_marker_bound_for_user_gate"
+  },
+  "resume_from": "user_operated_real_gate",
+  "safe_to_resume": false,
+  "user_gate_requirements": [
+    "PM opens the approved P3-143 App in its explicitly authorized real-gate runtime; the engineering Agent does not initiate any real request.",
+    "The user manually types the DeepSeek Key only into the App secure field and clicks Save; the Agent must not ask for, observe, copy, log, or receive the Key.",
+    "The user deliberately clicks Test and read models, selects one returned model, explicitly enables it, and sends only the frozen non-personal canary.",
+    "After the transient in-App response, the user clicks Delete credential; the subsequent verification records only non-content metadata and proves fail-closed cleanup."
+  ],
+  "notes": "Phase A is PASS under the formal frozen contract. Compact and Narrow exact-geometry native evidence passed. Desktop direct-PID -> exact AXWindow -> AXWebArea, readable target-only capture, normal scroll-area reachability, and zero-credential state passed; an absolute 1280x1024 geometry gate was removed because P3-142 itself formally passed with accepted 1036x768 Desktop evidence for requested 1280x1024. No API Key, prompt, response, personal data, Provider request, or network request was used in Phase A. This checkpoint does not claim Phase B, Phase C, PM acceptance, risk closure, product freeze, or Stage transition."
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "lifeos.p3-143.phase-b-deletion-and-fresh-restart-deny-receipt.v1",
+  "task": "LIFEOS-P3-143",
+  "recorded_at": "2026-09-02T09:57:25+08:00",
+  "user_attestation": "User explicitly reported that the credential deletion action completed. Agent did not invoke the UI deletion action.",
+  "post_delete_noncontent_state": {
+    "encrypted_credential_exact_deepseek_default_rows": 0,
+    "connection_state": "credential_missing",
+    "credential_reference_state": "absent; value not read or emitted",
+    "credential_mask_state": "absent; value not read or emitted",
+    "selected_model_state": "absent; identifier not read or emitted",
+    "enabled": false,
+    "available_models_count": 0
+  },
+  "keychain_exact_item_check": {
+    "service": "com.lifeos.p3-143.aead-key.v1",
+    "result": "item_absent",
+    "method": "exact-service lookup only; no enumeration and no item or secret content read"
+  },
+  "noncontent_network_history": {
+    "receipt_count": 2,
+    "operation_sequence": ["test_models", "send_fixed_canary"],
+    "authority_for_every_receipt": "https://api.deepseek.com",
+    "delete_action_network_receipt": false,
+    "third_request": false
+  },
+  "fresh_restart_deny": {
+    "candidate": "corrected Closure candidate",
+    "runtime": "real_gate",
+    "direct_pid": 72781,
+    "native_structure": "exact AXWindow to AXWebArea",
+    "post_restart_state": "credential missing; no credential saved",
+    "test_control": "disabled",
+    "send_control": "disabled",
+    "failure_closure": "test and send are unavailable before any network action; receipt count remains exactly 2"
+  },
+  "pm_actual_ui_observation": "PM-provided bounded Computer Use AX observation confirms the fresh no-credential page, disabled delete/test controls, disabled global send, and no new network action. No page content, secure input, model identifier, response, or error body was recorded.",
+  "decision": "PHASE_B_ENGINEERING_COMPLETE_READY_FOR_PHASE_C_INDEPENDENT_REVIEW",
+  "temporary_root": "preserved for the new isolated Phase C review; no marker-gated cleanup has been performed"
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "lifeos.p3-143.phase-b-test-models-receipt.v1",
+  "task": "LIFEOS-P3-143",
+  "recorded_at": "2026-09-02T08:58:00+08:00",
+  "user_attestation": "User explicitly reported test and model read complete. Agent did not invoke the action.",
+  "noncontent_network_receipt": {
+    "receipt_count": 1,
+    "operation": "test_models",
+    "authority": "https://api.deepseek.com",
+    "method_class": "GET",
+    "status_class": "2xx",
+    "timestamp_ms": 1788310559139,
+    "request_bucket": "1KiB_or_less",
+    "response_bucket": "1KiB_or_less"
+  },
+  "non_sensitive_state": {
+    "connection_state": "real_connected",
+    "last_test": "real_gate",
+    "available_model_identifiers": "non_empty; identifiers not read or emitted",
+    "enabled": false,
+    "selected_model_state": "present; identifier not read or emitted"
+  },
+  "contract_checks": {
+    "single_user_triggered_test_models_action": "PASS",
+    "authority_exact": "PASS",
+    "redirect_proxy_retry_fallback_background_or_other_provider_action": "No Agent action issued; frozen adapter identity permits none",
+    "credential_response_or_error_content_observed": false
+  },
+  "decision": "STOP_PENDING_USER_CONFIRMATION_OF_MODEL_SELECTION",
+  "reason": "The model selection state is already present despite the user reporting only test/model read. Agent will not inspect the identifier, assume the selection, enable, send canary, or retry."
+}

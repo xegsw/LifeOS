@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "scope": "P3-143 DeepSeek secure credential activation on the retained LifeOS Settings shell",
+  "states": {
+    "credential": ["missing", "encrypted_saved", "deleted"],
+    "connection": ["credential_missing", "not_tested", "synthetic_connected", "real_connected", "failed_closed"],
+    "model": ["unavailable", "listed_from_last_test", "selected"],
+    "provider": ["disabled", "enabled"],
+    "response": ["absent", "transient", "cleared"]
+  },
+  "transitions": [
+    { "id": "C-01", "from": "credential.missing", "event": "user_saves_key", "to": "credential.encrypted_saved", "persistent_effect": "ciphertext and nonsecret reference only" },
+    { "id": "C-02", "from": "connection.not_tested", "event": "user_tests", "to": "connection.synthetic_connected|real_connected + model.listed_from_last_test", "persistent_effect": "noncontent receipt and tested model identifiers only; selected model must remain unset" },
+    { "id": "C-03", "from": "model.listed_from_last_test", "event": "user_confirms_model_selection", "to": "model.selected", "persistent_effect": "selected model only after an explicit confirmation action" },
+    { "id": "C-04", "from": "provider.disabled", "event": "user_enables_selected_model", "to": "provider.enabled", "persistent_effect": "explicit enablement only" },
+    { "id": "C-05", "from": "provider.enabled", "event": "user_sends_fixed_canary", "to": "response.transient", "persistent_effect": "noncontent receipt only" },
+    { "id": "C-06", "from": "credential.encrypted_saved", "event": "user_deletes_credential", "to": "credential.deleted", "persistent_effect": "ciphertext, reference, Keychain item and enablement invalidated" }
+  ],
+  "invariants": [
+    "Only DeepSeek at https://api.deepseek.com may enter the real gate.",
+    "Saving, testing, model selection, enabling, sending and deleting are separate user actions.",
+    "No personal Context, Memory, Health, Pilot data or response body is persisted or included in Evidence.",
+    "Credential or authentication failure blocks before network activity and keeps the provider disabled."
+  ]
+}

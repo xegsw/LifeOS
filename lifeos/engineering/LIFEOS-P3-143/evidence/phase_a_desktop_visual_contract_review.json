@@ -1,0 +1,47 @@
+{
+  "schema": "lifeos.p3-143.phase-a-desktop-visual-contract-review.v1",
+  "task": "LIFEOS-P3-143",
+  "phase": "A-synthetic-offline",
+  "reviewed_at": "2026-09-02T08:32:00+08:00",
+  "governance_correction": {
+    "previous_execution_side_gate": "desktop_requested_geometry_and_readable_target_screenshot_at_1280x1024",
+    "determination": "not a frozen P3-143 acceptance condition",
+    "frozen_contract_basis": [
+      "Task AC-01: preserve P3-142 high-fidelity Shell, Settings, three responsive views, direct-PID actual-Tauri screenshot/AXWindow/WebView evidence",
+      "Task AC-06: three-view screenshot and DOM/AX evidence must not disclose a credential",
+      "Task AC-16: before Real Gate, synthetic tests, lifecycle, leak attacks, failure closure, three native views, and Manifest pass",
+      "ABF-I-01: preserve Cloud 8/Local 4, Cloud/Local separation, high-fidelity three views, and exactly 20 IPC",
+      "ABF-M-014: complete target window and secure masking; PID -> AXWindow -> WebView plus screenshot"
+    ],
+    "predecessor_precedent": {
+      "path": "../../LIFEOS-P3-142/evidence/native_window_evidence.json",
+      "requested_desktop": { "width": 1280, "height": 1024 },
+      "accepted_desktop_screenshot_pixels": { "width": 1036, "height": 768 },
+      "pm_review": "../../../reviews/LIFEOS-P3-142_pm_review.md",
+      "pm_conclusion": "AC-22 PASS: three actual-Tauri views without truncation or unreachable controls"
+    }
+  },
+  "desktop_evidence": {
+    "direct_launch_pid": 68490,
+    "exact_window_title": "LifeOS · 模型设置（安全凭据验证）",
+    "ax_chain": "direct PID -> one exact-title AXWindow -> AXWebArea",
+    "ax_window_logical_frame": { "x": 116, "y": 33, "width": 1280, "height": 949 },
+    "screenshot": "native-desktop-resume-ax.jpeg",
+    "screenshot_sha256": "aa60663a4d367a3f881b0358c18165fb115c79ae63c6ee93189c046d1224ebc9",
+    "screenshot_pixels": { "width": 1036, "height": 768 },
+    "network_mode": "synthetic_no_network",
+    "credential_input_state": "no credential entered; secure field remained its non-secret manual-entry placeholder"
+  },
+  "contract_visual_review": {
+    "target_window_only": "pass",
+    "title_and_window_bounds_readable": "pass",
+    "horizontal_overflow_or_clipped_window_chrome": "not_observed",
+    "credential_leak_in_screenshot_or_ax_evidence": "not_observed",
+    "settings_controls_reachable": "pass: AX tree was rooted in a scroll area and exposed the model/provider, endpoint, secure-entry, save, delete, test, enable, routing-policy, and advanced-settings controls; disabled lifecycle actions matched the no-credential synthetic state rather than a layout obstruction",
+    "vertical_continuation": "normal scroll-area continuation; the contract requires a complete target window and reachable controls, not all vertically scrollable content in one raster frame",
+    "predecessor_layout_regression": "not_observed: the same accepted P3-142 desktop capture model uses 1036x768 target-only raster evidence for a requested 1280x1024 view",
+    "result": "pass"
+  },
+  "result": "PASS_DESKTOP_NATIVE_EVIDENCE_UNDER_FROZEN_CONTRACT",
+  "limitations": "This closes only Phase A visual evidence. It does not execute or approve the user-operated Real Gate, independent review, PM acceptance, risk closure, product freeze, or Stage transition."
+}

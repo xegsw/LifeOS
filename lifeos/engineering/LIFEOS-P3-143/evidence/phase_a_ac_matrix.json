@@ -1,0 +1,54 @@
+{
+  "schema": "lifeos.p3-143.phase-a-ac-matrix.v1",
+  "task": "LIFEOS-P3-143",
+  "phase": "A-synthetic-offline_and_B-user-operated-real-gate",
+  "updated_at": "2026-09-02T09:57:25+08:00",
+  "frozen_input_identity": {
+    "task_contract_sha256": "c3a1e40101fa60c71a66bc2ff640be879c3ed64a020ce6491d8e4345b4bcc6f7",
+    "acceptance_basis_sha256": "c7385a767c827d94b3b44bfe98bdb97377d3d9ed90f718832f6f431130feb90f",
+    "candidate_sha256": "a63af432a6d9fe20875423066a766735e68152d40663f65c11f33b0299d81e6d"
+  },
+  "governance_correction_ref": "phase_a_desktop_visual_contract_review.json",
+  "rows": [
+    { "id": "AC-01", "phase_a_status": "PASS", "evidence": ["static_contract_report.json", "native_window_evidence.json", "phase_a_desktop_visual_contract_review.json", "phase_b_state_separation_closure.json"], "assertion": "P3-142 Shell, Settings relationship, three responsive native views, direct PID/AX/WebArea evidence, and the repaired explicit model-selection UI are preserved." },
+    { "id": "AC-02", "phase_a_status": "PASS", "evidence": ["static_contract_report.json", "phase_a_offline_validation.json"], "assertion": "Cloud 8/Local 4 and Cloud/Local separation remain present." },
+    { "id": "AC-03", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json", "static_contract_report.json"], "assertion": "Exactly 20 IPC and no UI direct SQL/Keychain/network path." },
+    { "id": "AC-04", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json", "static_contract_report.json"], "assertion": "SQLite credential storage is ciphertext plus non-secret reference; key material is separated." },
+    { "id": "AC-05", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json"], "assertion": "Synthetic leak scan and mutation coverage found no canary plaintext in permitted artifacts." },
+    { "id": "AC-06", "phase_a_status": "PASS", "evidence": ["phase_a_desktop_visual_contract_review.json", "native-compact-resume-ax.json", "native-narrow-resume-ax.json"], "assertion": "Three native-view Evidence contains no credential; secure input was empty and represented only by non-secret placeholder state." },
+    { "id": "AC-07", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json"], "assertion": "Fresh restart, DB-only, and key-only failure-closure paths are covered by synthetic lifecycle tests." },
+    { "id": "AC-08", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json"], "assertion": "Replacement and delete invalidate old credential state and fail closed." },
+    { "id": "AC-09", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json"], "assertion": "ciphertext, nonce, AAD, version, and reference mutations stop before network." },
+    { "id": "AC-10", "phase_a_status": "PASS", "evidence": ["static_contract_report.json", "phase_a_offline_validation.json"], "assertion": "Save is separated from test, model selection, enablement, and send." },
+    { "id": "AC-11", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json"], "assertion": "Synthetic negative adapter cases cover honest failure classification with no secret retention." },
+    { "id": "AC-12", "phase_a_status": "PASS", "evidence": ["static_contract_report.json", "phase_a_offline_validation.json"], "assertion": "Strict state progression requires successful test before selection and re-test after relevant changes." },
+    { "id": "AC-13", "phase_a_status": "PASS", "evidence": ["static_contract_report.json", "phase_a_offline_validation.json"], "assertion": "Routing remains fail-closed until selected and explicitly enabled." },
+    { "id": "AC-14", "phase_a_status": "PASS", "evidence": ["static_contract_report.json", "phase_a_offline_validation.json"], "assertion": "Adapter-only authority, no redirect/proxy inheritance/retry/background scheduling, and UI direct-network absence are covered." },
+    { "id": "AC-15", "phase_a_status": "PASS", "evidence": ["static_contract_report.json", "phase_a_offline_validation.json"], "assertion": "Only DeepSeek is a future Real Gate target; the other eleven listed providers remain unverified and zero-network." },
+    { "id": "AC-16", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json", "native_window_evidence.json", "phase_a_desktop_visual_contract_review.json", "phase_b_state_separation_closure.json", "../FINAL_MANIFEST.json", "manifest_verification.json"], "assertion": "Phase A was closed before Real Gate and its deterministic state-separation correction was revalidated with an offline pure-state mutation test, static contract, format check, and offline Tauri build; no real test was replayed." },
+    { "id": "AC-17", "phase_a_status": "PENDING_USER_PHASE_B", "phase_b_status": "PASS", "evidence": ["phase_b_credential_save_receipt.json", "phase_b_test_models_receipt.json", "phase_b_model_selection_receipt.json", "phase_b_enablement_receipt.json", "phase_b_canary_receipt.json"], "assertion": "The user-operated Real Gate produced only one DeepSeek test/model-read receipt and one fixed synthetic canary receipt, both exact-authority and non-content; no personal Context was sent." },
+    { "id": "AC-18", "phase_a_status": "PENDING_USER_PHASE_B", "phase_b_status": "PASS", "evidence": ["phase_b_canary_receipt.json", "phase_b_deletion_and_fresh_restart_deny_receipt.json"], "assertion": "Real-Gate response handling is bounded to the App; Evidence retains only authority, method/status class, and byte buckets. The subsequent fresh no-credential state contains no persisted response content." },
+    { "id": "AC-19", "phase_a_status": "PENDING_USER_PHASE_B", "phase_b_status": "PASS_FOR_PHASE_C_HANDOFF", "evidence": ["phase_b_deletion_and_fresh_restart_deny_receipt.json"], "assertion": "User deletion removed the exact DeepSeek/default ciphertext row and exact P3-143 Keychain service item; fresh corrected-candidate restart leaves test/send disabled before network with the historical receipt count still two. Marker-gated temporary-root cleanup is deliberately deferred to preserve Phase C review inputs." },
+    { "id": "AC-20", "phase_a_status": "PASS", "evidence": ["../FINAL_MANIFEST.json", "manifest_verification.json"], "assertion": "Frozen P3-142 inputs and P3-143 candidate identity were re-hashed; history was read-only." },
+    { "id": "AC-21", "phase_a_status": "PASS", "evidence": ["checkpoint.json", "native_window_evidence.json"], "assertion": "The earlier screenshot Evidence gap was checkpointed and resumed without rerunning unrelated checks; the added 1280x1024 condition was formally removed as non-contractual." },
+    { "id": "AC-22", "phase_a_status": "PENDING_INDEPENDENT_PHASE_C", "evidence": [], "assertion": "Requires a new isolated independent-review session after the user-operated Real Gate." }
+  ],
+  "phase_a_result": "PASS",
+  "phase_b_result": "PASS_FOR_PHASE_C_HANDOFF",
+  "full_task_result": "READY_FOR_PHASE_C_NEW_ISOLATED_INDEPENDENT_REVIEW",
+  "severity_counts_for_completed_phase_a": { "P0": 0, "P1": 0, "P2": 0, "Unknown": 0, "Not_Implemented": 0 },
+  "boundary_attestation": {
+    "real_provider_contact": false,
+    "api_key_observed_or_recorded": false,
+    "personal_data_or_prohibited_history_contact": false,
+    "candidate_or_history_mutated": false
+  },
+  "phase_b_boundary_attestation": {
+    "real_provider_contact": true,
+    "network_receipts": 2,
+    "api_key_model_identifier_prompt_response_or_error_body_observed_or_recorded": false,
+    "personal_data_or_prohibited_history_contact": false,
+    "post_delete_third_network_request": false,
+    "temporary_root_cleanup": "deferred_for_phase_c_input_preservation"
+  }
+}

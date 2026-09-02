@@ -1,0 +1,30 @@
+{
+  "schema": "lifeos.p3-143.phase-b-model-selection-receipt.v1",
+  "task": "LIFEOS-P3-143",
+  "recorded_at": "2026-09-02T09:19:20+08:00",
+  "user_attestation": "User explicitly reported that a tested model was selected and the separate confirmation action completed. Agent did not invoke either UI action.",
+  "non_sensitive_state": {
+    "connection_state": "real_connected",
+    "last_test": "real_gate",
+    "tested_model_directory": "non-empty; identifiers not read or emitted",
+    "selected_model_state": "present; identifier not read or emitted",
+    "enabled": false
+  },
+  "noncontent_network_check": {
+    "receipt_count": 1,
+    "expected_only_operation": "test_models",
+    "authority": "https://api.deepseek.com",
+    "method_class": "GET",
+    "status_class": "2xx",
+    "result": "PASS; unchanged from the previously sealed single test receipt"
+  },
+  "boundary_check": {
+    "agent_network_actions": 0,
+    "test_replay": false,
+    "fallback_or_other_provider_action": false,
+    "background_request_observed_in_noncontent_receipt": false,
+    "credential_model_identifier_response_or_error_content_observed": false
+  },
+  "decision": "PASS_PENDING_USER_EXPLICIT_ENABLEMENT",
+  "next_user_action": "User alone may click the explicit enable-selected-model button. Do not send the fixed canary yet."
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "lifeos.p3-143.phase-b-enablement-receipt.v1",
+  "task": "LIFEOS-P3-143",
+  "recorded_at": "2026-09-02T09:45:33+08:00",
+  "user_attestation": "User explicitly reported that the enable-service action completed. Agent did not invoke the UI action.",
+  "non_sensitive_state": {
+    "connection_state": "real_connected",
+    "last_test": "real_gate",
+    "tested_model_directory": "non-empty; identifiers not read or emitted",
+    "selected_model_state": "present; identifier not read or emitted",
+    "enabled": true
+  },
+  "noncontent_network_check": {
+    "receipt_count": 1,
+    "expected_only_operation": "test_models",
+    "authority": "https://api.deepseek.com",
+    "method_class": "GET",
+    "status_class": "2xx",
+    "result": "PASS; unchanged from the previously sealed single test receipt"
+  },
+  "boundary_check": {
+    "agent_network_actions": 0,
+    "enablement_network_action": false,
+    "test_replay": false,
+    "fallback_or_other_provider_action": false,
+    "background_request_observed_in_noncontent_receipt": false,
+    "credential_model_identifier_response_or_error_content_observed": false
+  },
+  "decision": "PASS_PENDING_USER_FIXED_SYNTHETIC_CANARY",
+  "next_user_action": "User alone may click the fixed synthetic canary action. The only permitted authority is https://api.deepseek.com."
+}

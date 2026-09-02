@@ -1,0 +1,35 @@
+{
+  "schema": "lifeos-p3-143-native-ax-evidence-v1",
+  "phase": "A-synthetic-offline",
+  "captured_at": "2026-09-02T08:17:14+08:00",
+  "direct_launch_pid": 68490,
+  "direct_launch_environment": {
+    "LIFEOS_P3_143_VIEWPORT": "desktop",
+    "LIFEOS_P3_143_REAL_GATE": "synthetic"
+  },
+  "expected_title": "LifeOS · 模型设置（安全凭据验证）",
+  "ax": {
+    "app_trusted": true,
+    "window_count_for_direct_pid": 2,
+    "exact_title_matches": 1,
+    "title": "LifeOS · 模型设置（安全凭据验证）",
+    "role": "AXWindow",
+    "frame_logical_points": { "x": 116, "y": 33, "width": 1280, "height": 949 },
+    "web_role": "AXWebArea",
+    "web_frame_logical_points": { "x": 116, "y": 65, "width": 1280, "height": 2089 },
+    "result": "pass"
+  },
+  "target_window_only_screenshot": {
+    "path": "native-desktop-resume-ax.jpeg",
+    "sha256": "aa60663a4d367a3f881b0358c18165fb115c79ae63c6ee93189c046d1224ebc9",
+    "pixel_dimensions": { "width": 1036, "height": 768 },
+    "readability": "verified visually; target window only; no credential entered or rendered",
+    "capture_binding": "Computer Use state for bundle id local.lifeos.p3-143 during direct PID 68490 launch"
+  },
+  "geometry_assessment": {
+    "requested_logical_viewport": { "width": 1280, "height": 1024 },
+    "observed_window_frame": { "width": 1280, "height": 949 },
+    "status": "host_height_constrained_not_a_frozen_failure",
+    "note": "Width is exact; the visible host desktop constrained the fresh AXWindow height to 949 points. PM-directed contract review confirmed that an absolute 1280x1024 raster/window-height condition was execution-side only, while this target-only AX and readable-capture evidence satisfies the frozen visual contract."
+  }
+}

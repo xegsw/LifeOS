@@ -1,0 +1,57 @@
+{
+  "schema": "lifeos.p3-143.phase-a-offline-validation.v1",
+  "task": "LIFEOS-P3-143",
+  "execution_mode": "synthetic_offline",
+  "real_provider_contact": false,
+  "credential_content_in_evidence": false,
+  "checks": [
+    {
+      "name": "cargo_fmt_check",
+      "result": "PASS"
+    },
+    {
+      "name": "cargo_test_locked_offline_serial",
+      "result": "PASS",
+      "tests": 13,
+      "coverage": ["AES-GCM ciphertext", "P3-143 Keychain material separation", "missing key fail-closed", "ciphertext/nonce/AAD/version/reference mutation", "SQLite no-canary-byte scan", "credential replacement/delete", "Cloud 8/Local 4", "20 IPC", "strict DTO"]
+    },
+    {
+      "name": "offline_contract",
+      "result": "PASS",
+      "checks": 18,
+      "ipc_count": 20
+    },
+    {
+      "name": "marker_negative_matrix",
+      "result": "PASS",
+      "cases": ["wrong_marker_rejected", "symlink_rejected", "traversal_rejected"]
+    },
+    {
+      "name": "static_contract_report",
+      "result": "PASS",
+      "source_files": 8,
+      "real_gate_provider": "DeepSeek",
+      "transport": "adapter-only; UI direct-network APIs absent"
+    }
+  ],
+  "preserved_harness_history": [
+    {
+      "event": "pre_schema_cleanup_attempt",
+      "result": "stopped_before_encryption",
+      "effect": "no Keychain item created; no credential, provider, or network contact",
+      "closure": "initialize_store moved before cleanup and panic-safe exact P3-143 Keychain cleanup guard added"
+    }
+  ],
+  "phase_a_decision": "PASS_AFTER_NATIVE_EVIDENCE_AND_FINAL_MANIFEST_CLOSURE",
+  "native_evidence_closure": [
+    "native_window_evidence.json",
+    "phase_a_desktop_visual_contract_review.json",
+    "phase_a_ac_matrix.json"
+  ],
+  "deterministic_state_separation_closure": {
+    "result": "PASS",
+    "evidence": "phase_b_state_separation_closure.json",
+    "scope": "offline pure-state mutation, static contract, format, and Tauri bundle only; the completed real GET was not replayed"
+  },
+  "next": "Stop before the user-operated Real Gate. The user must hand-enter the DeepSeek Key only inside the App; the Agent must not request, observe, record, or transmit it."
+}

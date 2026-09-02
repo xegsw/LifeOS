@@ -1,0 +1,36 @@
+{
+  "schema": "lifeos-p3-143-native-ax-evidence-v1",
+  "phase": "A-synthetic-offline",
+  "captured_at": "2026-09-02T08:21:15+08:00",
+  "direct_launch_pid": 68686,
+  "direct_launch_environment": {
+    "LIFEOS_P3_143_VIEWPORT": "narrow",
+    "LIFEOS_P3_143_REAL_GATE": "synthetic"
+  },
+  "expected_title": "LifeOS · 模型设置（安全凭据验证）",
+  "ax": {
+    "app_trusted": true,
+    "window_count_for_direct_pid": 1,
+    "exact_title_matches": 1,
+    "title": "LifeOS · 模型设置（安全凭据验证）",
+    "role": "AXWindow",
+    "frame_logical_points": { "x": 116, "y": 33, "width": 700, "height": 760 },
+    "web_role": "AXWebArea",
+    "web_frame_logical_points": { "x": 116, "y": 65, "width": 700, "height": 3079 },
+    "window_number": 94623,
+    "result": "pass"
+  },
+  "target_window_only_screenshot": {
+    "path": "native-narrow-resume-ax.png",
+    "sha256": "5bd8f45a25676d000130136be1dde71ad1a3ae4171869bb18efbcc75d84e4c4f",
+    "pixel_dimensions": { "width": 1400, "height": 1520 },
+    "backing_scale_factor": 2,
+    "capture_binding": "screencapture -l 94623 after exact direct-PID AXWindow and AXWebArea binding",
+    "readability": "verified visually; target window only; no credential entered or rendered"
+  },
+  "geometry_assessment": {
+    "requested_logical_viewport": { "width": 700, "height": 760 },
+    "observed_window_frame": { "width": 700, "height": 760 },
+    "status": "pass"
+  }
+}

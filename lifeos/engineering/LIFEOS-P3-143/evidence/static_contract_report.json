@@ -1,0 +1,56 @@
+{
+  "schema": "lifeos.p3-143.static-evidence.v1",
+  "task": "LIFEOS-P3-143",
+  "source_sha256": {
+    "src/runtime.rs": "109bf6a458a349967a13d5688046bbc277f5d2ddc018d37b198c3585c9ea1b83",
+    "src/deepseek.rs": "9e5712e8cec98341129a01808dc5fca84418379cf150ed2b12d004ce19605757",
+    "src/secure_credentials.rs": "5ad7e56e4597a99141081b61c20b7a483555f81a324cd6806634a2a8e45e4c34",
+    "ui/app.js": "187527cdfc6f839154088746b0dbf3c3a53199ba99a833e4b716d56c5f84f57b",
+    "ui/styles.css": "830b4f1058c0845a908dae1e0ee5602ff5e532f68dba03fe32ee85bda326735a",
+    "ui/index.html": "6d9b9491822117d8a7bd176b4430b653fa06e3209cc883d99e26aceaead84b8e",
+    "tauri.conf.json": "e3152bc411b0b29f6029c7db26fc748ac557a3e7f7bbb25ac49d47842d3d1dfa",
+    "tests/offline_contract.mjs": "551b26c28913294e584ba42977f0fa5805d5d452979d3cae515e94c2273e3540"
+  },
+  "provider_registry": {
+    "cloud": 8,
+    "local": 4,
+    "real_gate_provider": "DeepSeek",
+    "unverified_provider_count": 11
+  },
+  "ipc": {
+    "count": 20,
+    "exact_unique": true
+  },
+  "credential_boundary": {
+    "sqlite_fields": [
+      "ciphertext",
+      "nonce",
+      "tag",
+      "algorithm",
+      "version",
+      "key_reference"
+    ],
+    "aead": true,
+    "exact_keychain_service": true,
+    "plaintext_persistence_field_absent": true
+  },
+  "transport_boundary": {
+    "authority": "https://api.deepseek.com",
+    "direct_ui_network_api_absent": true,
+    "adapter_guard_complete": true,
+    "csp_ipc_only": true,
+    "background_scheduler_absent": true
+  },
+  "lifecycle": {
+    "explicit_steps": [
+      "store",
+      "user_test",
+      "select_model",
+      "set_enabled",
+      "send_fixed_canary",
+      "delete"
+    ],
+    "transient_response_only": true
+  },
+  "result": "PASS"
+}

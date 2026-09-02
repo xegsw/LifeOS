@@ -1,0 +1,93 @@
+{
+  "schema": "lifeos.p3-143.phase-b-checkpoint.v1",
+  "task": "LIFEOS-P3-143",
+  "updated_at": "2026-09-02T09:57:39+08:00",
+  "phase_a_seal": {
+    "manifest": "../PHASE_A_PRE_REAL_GATE_MANIFEST.json",
+    "manifest_verifier": "phase_a_pre_real_gate_manifest_verification.json",
+    "entries": 113,
+    "errors": 0,
+    "candidate_sha256": "ca923e448a63705b26699bbf293b1dcec234c6f81bcfddced91cb5d813dee4e6",
+    "acceptance_basis_sha256": "c7385a767c827d94b3b44bfe98bdb97377d3d9ed90f718832f6f431130feb90f"
+  },
+  "current_candidate_sha256": "a63af432a6d9fe20875423066a766735e68152d40663f65c11f33b0299d81e6d",
+  "current_closure_manifest": {
+    "manifest": "../FINAL_MANIFEST.json",
+    "entries": 124,
+    "errors": 0,
+    "result": "PASS"
+  },
+  "stage": "phase_b_user_operated_real_gate",
+  "status": "phase_b_complete_ready_for_phase_c_independent_review",
+  "runtime": {
+    "app_running": false,
+    "direct_pid": 72791,
+    "real_gate_runtime_enabled": true,
+    "agent_network_actions": 0
+  },
+  "completed": [
+    "user_manual_credential_save",
+    "non_sensitive_encrypted_storage_receipt",
+    "user_test_and_model_read_noncontent_receipt",
+    "state_separation_narrow_closure",
+    "user_explicit_model_selection_after_relaunch",
+    "user_explicit_enablement",
+    "user_fixed_canary",
+    "user_credential_delete",
+    "post_delete_fresh_restart_fail_closed"
+  ],
+  "pending": [
+    "independent_review",
+    "pm_acceptance"
+  ],
+  "authority_precondition_for_next_user_action": {
+    "authorized_by": "user-approved Phase B contract and user manual action only",
+    "only_allowed_authority": "https://api.deepseek.com",
+    "provider_scope": "DeepSeek only",
+    "forbidden": ["other Provider", "retry", "fallback", "background request", "proxy inheritance", "redirect"]
+  },
+  "secret_handling": "Agent did not read, observe, copy, record, receive, or emit the API Key, credential reference, key material, prompt, or response.",
+  "state_migration": "selectedModel cleared and enabled reset false without reading or deleting the credential; tested model directory retained.",
+  "non_sensitive_selection_check": {
+    "selected_model_state": "present; identifier not read or emitted",
+    "enabled": false,
+    "tested_model_directory": "non-empty; identifiers not read or emitted",
+    "network_receipt_count": 1,
+    "network_receipt_unchanged": true
+  },
+  "non_sensitive_enablement_check": {
+    "selected_model_state": "present; identifier not read or emitted",
+    "enabled": true,
+    "tested_model_directory": "non-empty; identifiers not read or emitted",
+    "network_receipt_count": 1,
+    "network_receipt_unchanged": true
+  },
+  "noncontent_canary_check": {
+    "network_receipt_count": 2,
+    "operation_sequence": ["test_models", "send_fixed_canary"],
+    "authority_exact": "https://api.deepseek.com",
+    "method_and_status_classes_only": true,
+    "request_and_response_buckets_only": true,
+    "retry_redirect_proxy_fallback_background_or_other_provider_receipt": false
+  },
+  "keychain_dialog_interaction": {
+    "user_report": "Keychain dialog disappeared; Agent did not inspect, dismiss, or operate it.",
+    "controlled_interaction_fact": "The current Closure bundle is an ad-hoc development build with no Team ID. Its post-Closure identity change can cause macOS Keychain access control to prompt again.",
+    "credential_leak_or_plaintext_inference": "not inferred; no credential material, secure input, reference, or dialog content was read or recorded"
+  },
+  "post_delete_check": {
+    "encrypted_credential_rows": 0,
+    "credential_reference_absent": true,
+    "credential_mask_absent": true,
+    "selected_model_absent": true,
+    "enabled": false,
+    "available_model_count": 0,
+    "exact_p3_143_keychain_item": "absent",
+    "fresh_restart_direct_pid": 72791,
+    "fresh_restart_window_to_html_webview": "PASS",
+    "test_and_send_controls_disabled": true,
+    "network_receipt_count": 2,
+    "network_receipt_unchanged": true
+  },
+  "resume_from": "phase_c_independent_review"
+}

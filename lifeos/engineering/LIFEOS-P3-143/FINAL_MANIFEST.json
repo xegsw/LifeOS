@@ -1,0 +1,777 @@
+{
+  "schema": "lifeos.p3-143.final-manifest.v1",
+  "task": "LIFEOS-P3-143",
+  "self_referential": false,
+  "categories": [
+    "candidate",
+    "fixed_input",
+    "history",
+    "evidence"
+  ],
+  "files": [
+    {
+      "category": "fixed_input",
+      "role": "governance",
+      "path": "../../ACCEPTANCE_GOVERNANCE.md",
+      "bytes": 12937,
+      "sha256": "c3b0627a291942158a022a71564e186580e650bd513fe29c1845bd7f5d1a812d"
+    },
+    {
+      "category": "fixed_input",
+      "role": "architecture_authority",
+      "path": "../../architecture/LifeOS架构基线V1.0.md",
+      "bytes": 10125,
+      "sha256": "1d7d82d2afcf7ac52b15730f4f8d3effc08f8965d0b085c6a53bbd2611ad7236"
+    },
+    {
+      "category": "fixed_input",
+      "role": "ci_governance",
+      "path": "../../CI_CD_GOVERNANCE.md",
+      "bytes": 6654,
+      "sha256": "23611c5a1a4c75497bc2dde961b9e18d6ba64faa3387c9b09505b2539acd9bfd"
+    },
+    {
+      "category": "history",
+      "role": "predecessor_deliverable",
+      "path": "../../deliverables/LIFEOS-P3-142_model_settings_ai_service_configuration_center_v1.md",
+      "bytes": 7681,
+      "sha256": "d77a0fcaebe4032d05c35df58576bef808d83d94cc90133fdebeb4753a72e200"
+    },
+    {
+      "category": "fixed_input",
+      "role": "product_baseline",
+      "path": "../../product/LIFEOS_MODEL_SETTINGS_BASELINE_V1.md",
+      "bytes": 3403,
+      "sha256": "bbe5614e27b3fc77fcf7e58a54bfb1168e5ac45270c30c7a19d6d007a5b32a4a"
+    },
+    {
+      "category": "history",
+      "role": "predecessor_pm_review",
+      "path": "../../reviews/LIFEOS-P3-142_pm_review.md",
+      "bytes": 4497,
+      "sha256": "e6bdb005ee4f726a97fe968148201f9082ac03ac3105d11cf72bab11f645c731"
+    },
+    {
+      "category": "history",
+      "role": "predecessor_contract",
+      "path": "../../tasks/LIFEOS-P3-142_model_settings_ai_service_configuration_center_v1.md",
+      "bytes": 18878,
+      "sha256": "5c1e8ec54349cc851839c76b8025e407f2ee4444bd5c52fe0bec67949c8cb434"
+    },
+    {
+      "category": "fixed_input",
+      "role": "acceptance_freeze_manifest",
+      "path": "../../tasks/LIFEOS-P3-143_acceptance_freeze_manifest.json",
+      "bytes": 2343,
+      "sha256": "3183f77e1c524c216e2d754d494ae80915eeda708734699a165735c9f21b49f8"
+    },
+    {
+      "category": "fixed_input",
+      "role": "acceptance_basis",
+      "path": "../../tasks/LIFEOS-P3-143_real_ai_service_and_encrypted_credential_secure_activation_acceptance_basis_freeze.md",
+      "bytes": 10859,
+      "sha256": "c7385a767c827d94b3b44bfe98bdb97377d3d9ed90f718832f6f431130feb90f"
+    },
+    {
+      "category": "fixed_input",
+      "role": "task_contract",
+      "path": "../../tasks/LIFEOS-P3-143_real_ai_service_and_encrypted_credential_secure_activation.md",
+      "bytes": 17357,
+      "sha256": "c3a1e40101fa60c71a66bc2ff640be879c3ed64a020ce6491d8e4345b4bcc6f7"
+    },
+    {
+      "category": "history",
+      "role": "predecessor_manifest",
+      "path": "../LIFEOS-P3-142/FINAL_MANIFEST.json",
+      "bytes": 20346,
+      "sha256": "0d16c964ff367f493748742fbbed21ed42cf894de770ea9c533f5c6634ffbe33"
+    },
+    {
+      "path": "candidate/build.rs",
+      "bytes": 40,
+      "sha256": "6aeeab41bc35efde4e3c2b644a6248f7fc06d24ae30b75c0d33491cbb0c1fa31",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/capabilities/main.json",
+      "bytes": 257,
+      "sha256": "d1c00756a2b1e53ba04406dac8526193b90fbec4c66743eea2cb8c1a2f0782e1",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/Cargo.lock",
+      "bytes": 116828,
+      "sha256": "22ded4c89ab82a9721dd8920edf7716737214af01d7d19d6671ac23bed30a658",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/Cargo.toml",
+      "bytes": 774,
+      "sha256": "09fd7c83e2264e5fa044e3951aaa8f79754f493dc1303dfc211c40dcbf610379",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/ci/checks.json",
+      "bytes": 577,
+      "sha256": "68d11792179f1a523e0f35477bcf77222476c71e3456f2db94f5b8f85b01e81f",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/gen/schemas/acl-manifests.json",
+      "bytes": 65934,
+      "sha256": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/gen/schemas/capabilities.json",
+      "bytes": 210,
+      "sha256": "887729934c651009101e9c7d3fb8bb753967c3c405de4fea11a480940f8dd0d2",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/gen/schemas/desktop-schema.json",
+      "bytes": 116049,
+      "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/gen/schemas/macOS-schema.json",
+      "bytes": 116049,
+      "sha256": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/128x128.png",
+      "bytes": 1227,
+      "sha256": "39572c12160197611428210db2eeb800e37dbd41860ba8e9a669166114f4a76b",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/128x128@2x.png",
+      "bytes": 2488,
+      "sha256": "d92aa427d4dd01feba7b03c0a321f5c4bef1f47e9a7e6e17ffeb0186b1e5f5f1",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/32x32.png",
+      "bytes": 441,
+      "sha256": "79bc6828196ed3e2403a53463914eff4c0c0efce5f8b6e7e0b139114e11a5e59",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/64x64.png",
+      "bytes": 643,
+      "sha256": "3e3ece76332b640d374bbeff1a09b8813f7fee0a4b653c9a38415062d996de59",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-anydpi-v26/ic_launcher.xml",
+      "bytes": 261,
+      "sha256": "760d4b8a06bf7163dd010c33ad2cac9e4a75fa0177afaba042f83e311eef0c3e",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-hdpi/ic_launcher_foreground.png",
+      "bytes": 1625,
+      "sha256": "e3adb898f0d807abc85bb75774e6b5e55b3f09627eee11e70844100f6ee8bef9",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-hdpi/ic_launcher_round.png",
+      "bytes": 956,
+      "sha256": "d30ea18205f233e5791b912e4a9f89979805b825d45101b5e2612ae03dfbf497",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-hdpi/ic_launcher.png",
+      "bytes": 1337,
+      "sha256": "0514a04799bc23d608ef68fc0786a11a1bea7b3e7930485469444c5964a6cf9f",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-mdpi/ic_launcher_foreground.png",
+      "bytes": 1173,
+      "sha256": "d5925ec91058b5f59575bcbad8dc38b66c4ca18e79d8e625ddd05704ff103120",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-mdpi/ic_launcher_round.png",
+      "bytes": 953,
+      "sha256": "606ffd6da8ecaf7550673140f379eaf85cc838e320dfd6a33ee335654de6318c",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-mdpi/ic_launcher.png",
+      "bytes": 1251,
+      "sha256": "9ac96d6e24ee47813b82b9044b22c84055428e808aba48d3d32dd47dfdea09e7",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-xhdpi/ic_launcher_foreground.png",
+      "bytes": 2093,
+      "sha256": "4ae6b883cdda5f2ca78e3ec3067687e2efcc47e751c89e1b7b03ca6a3fc5d55d",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-xhdpi/ic_launcher_round.png",
+      "bytes": 1249,
+      "sha256": "1f410423954eb7cf62e9963bb8f6656ef9159b602adbfabd72a0e03a6c0abf42",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-xhdpi/ic_launcher.png",
+      "bytes": 2206,
+      "sha256": "4aa5cd9b19fab966cf734af011232cb6f1a48322dfc3c8e2a1f3c0054cf8cc6c",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "bytes": 3051,
+      "sha256": "e9b95791588f1d650c74ea403c27e5758386b1f55cecb9b41ca18104989ad195",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-xxhdpi/ic_launcher_round.png",
+      "bytes": 1583,
+      "sha256": "1d8c11c6c4145060e2f6532ffb3d98343fcbcd62b1bf1d8da7acaf44e82c995c",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-xxhdpi/ic_launcher.png",
+      "bytes": 3030,
+      "sha256": "53d8316fd25ed535731a4863decb0280abb3d6fc68a32025da6593c9801a5df4",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "bytes": 4148,
+      "sha256": "6fbf0152677a925d70883c170bc05b7967eab5992ce09ce47618999507d97d60",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-xxxhdpi/ic_launcher_round.png",
+      "bytes": 2078,
+      "sha256": "6fbf756b41cf06d977ec2a40c216b6faf28c65cff9c28fd041e05d5da7d5452a",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/mipmap-xxxhdpi/ic_launcher.png",
+      "bytes": 3891,
+      "sha256": "acd57fb2317d236f78c21c7e31bef48fd55227cdbdf9efb6484fa01b7d44240f",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/android/values/ic_launcher_background.xml",
+      "bytes": 115,
+      "sha256": "0687336f0ccc6f7ee09c7c95110667c63b75931238df779a21af401fb864cd34",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/icon.icns",
+      "bytes": 31641,
+      "sha256": "e6e7eae0a6060cb21ace32751adb2bd9da6b2527374a4daae79c9aad505d11ed",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/icon.ico",
+      "bytes": 5650,
+      "sha256": "1a14889bc10f824f3a072c1835b5561f3c576fb697ba4aa44839d55889116f0b",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/icon.png",
+      "bytes": 4982,
+      "sha256": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/icon.svg",
+      "bytes": 232,
+      "sha256": "bf69a17326cffb6405dcd732a814778042a8a02df8e13938b698570f80ba6c66",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-20x20@1x.png",
+      "bytes": 350,
+      "sha256": "76bfc33979b0171e8229eb2e370d01b74fa18aae7fdeca9a2c156e2b9253ed64",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-20x20@2x-1.png",
+      "bytes": 529,
+      "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-20x20@2x.png",
+      "bytes": 529,
+      "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-20x20@3x.png",
+      "bytes": 684,
+      "sha256": "1079318d510e167cf2156dcaebd0dc9b4ea4b3a36f072b02ee7d3946de55d554",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-29x29@1x.png",
+      "bytes": 420,
+      "sha256": "f5a5f21fc384c9ab27cb1329e38be5e4b806e72e1d6eed5a5edc49deed3212ba",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-29x29@2x-1.png",
+      "bytes": 667,
+      "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-29x29@2x.png",
+      "bytes": 667,
+      "sha256": "f964da27b5b51edaf009f83a7b00b488283cbb0850d32de1af56fee375410c09",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-29x29@3x.png",
+      "bytes": 945,
+      "sha256": "c89ad8db8ebb8b7bb035ae9024ea7f9f6e754d6e8efd8481de00d35d5be53446",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-40x40@1x.png",
+      "bytes": 529,
+      "sha256": "e8fa22213d6a595d9c5a746125d5854a1d05a27cfbf061ed1400ba33727dbcfc",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-40x40@2x-1.png",
+      "bytes": 882,
+      "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-40x40@2x.png",
+      "bytes": 882,
+      "sha256": "cd30348b213f42733fb408ba74ff675e921f24a914a7d7c24751890ee20b0c1c",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-40x40@3x.png",
+      "bytes": 1222,
+      "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-512@2x.png",
+      "bytes": 12199,
+      "sha256": "743e79bd29fa8035295bfc510e3aa42acef7ac922edf642c4e9bebe152a95929",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-60x60@2x.png",
+      "bytes": 1222,
+      "sha256": "0781e2deb529dcef6991d3ad72d34388c446c29bd0b211d8995f3e98a263e30b",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-60x60@3x.png",
+      "bytes": 1835,
+      "sha256": "afe8ea3eca3ec76dee2f9f1b61e79f0755239378b6fda84c9dec63309375a804",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-76x76@1x.png",
+      "bytes": 873,
+      "sha256": "29e682960dc2ebbef7f40fb64204d0422f56dfe7af3e2938e16ec93af21b20ae",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-76x76@2x.png",
+      "bytes": 1536,
+      "sha256": "8188dddb316617937ee9b7151bdd75cc33602b46eee2bbff7d82e638030f39cd",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/ios/AppIcon-83.5x83.5@2x.png",
+      "bytes": 1652,
+      "sha256": "aa9d183c4b09055de09361471c6bb3353e0a1640e8368e75cc431308ddb29539",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/Square107x107Logo.png",
+      "bytes": 1065,
+      "sha256": "58c82e4e0e8272eaa122b6bcb756c12c76910ffa6e95256e44448bfa634267c4",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/Square142x142Logo.png",
+      "bytes": 1405,
+      "sha256": "05be4e8894bca70ea4b8099b3373090f51a0f5c3eb9f72c49e893eed1b1861e3",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/Square150x150Logo.png",
+      "bytes": 1587,
+      "sha256": "5e9085cc59b404169906b999a9de0c389c118d3ace1696e8787700b030b8dee5",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/Square284x284Logo.png",
+      "bytes": 2791,
+      "sha256": "28fdbcc829c7edbf94416276db345b5d9335391087e435831b412e745edb4de8",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/Square30x30Logo.png",
+      "bytes": 453,
+      "sha256": "579111e7e722cf3303c6309b8d4357b4ce5da7e28ba25734bc1cf672394ab3f5",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/Square310x310Logo.png",
+      "bytes": 2901,
+      "sha256": "9ded936b77aebe3f6d4affc3557c0baacad5a12886c30c85c46daf2067927955",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/Square44x44Logo.png",
+      "bytes": 582,
+      "sha256": "3afc300fde82670e6ec6760addea1b03ccd6979424715802c8c767c42fcc5944",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/Square71x71Logo.png",
+      "bytes": 779,
+      "sha256": "13d8fa01f25817d346c11d28a2a63ea7285586ae005f372825f905ad8749da12",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/Square89x89Logo.png",
+      "bytes": 927,
+      "sha256": "4d65f163ed7dc62255f246ddb8bbc71de33f02a632af49be75ccd1de96a569f5",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/icons/StoreLogo.png",
+      "bytes": 564,
+      "sha256": "60bad4ad4470f1cad766e0082a6dace73b48619d032af700aaabb3e971df28cc",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/rust-toolchain.toml",
+      "bytes": 51,
+      "sha256": "b4ea3c94c934d96a2772b7878c12ccbf3e486313d0988a9c960e0bd87bafc8fe",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/src/deepseek.rs",
+      "bytes": 8075,
+      "sha256": "9e5712e8cec98341129a01808dc5fca84418379cf150ed2b12d004ce19605757",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/src/main.rs",
+      "bytes": 154,
+      "sha256": "6b3803f183a378caf2ee8bc5dc4d018afa17a26664909ec0248fe86fb5473b0b",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/src/runtime.rs",
+      "bytes": 59514,
+      "sha256": "109bf6a458a349967a13d5688046bbc277f5d2ddc018d37b198c3585c9ea1b83",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/src/runtime/memory_context.rs",
+      "bytes": 66076,
+      "sha256": "1911da908a9a02a789adbe5145f0662fb349fd2f64a03bae5fbfd245ffccdec6",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/src/runtime/today_intelligence.rs",
+      "bytes": 45645,
+      "sha256": "2e1ebc5fe202dc0346255996ba69b523f80f32904a5062b93c2c1617710a78c5",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/src/secure_credentials.rs",
+      "bytes": 4744,
+      "sha256": "5ad7e56e4597a99141081b61c20b7a483555f81a324cd6806634a2a8e45e4c34",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/tauri.conf.json",
+      "bytes": 1052,
+      "sha256": "e3152bc411b0b29f6029c7db26fc748ac557a3e7f7bbb25ac49d47842d3d1dfa",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/tests/offline_contract.mjs",
+      "bytes": 4224,
+      "sha256": "551b26c28913294e584ba42977f0fa5805d5d452979d3cae515e94c2273e3540",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/tools/clean_local_build_cache.mjs",
+      "bytes": 1184,
+      "sha256": "632054c954f243ec55215888260067c49ea75e5f2c8b741328eada7bc339ac26",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/tools/collect_static_evidence.mjs",
+      "bytes": 3153,
+      "sha256": "b4284cf405c50e846670a20045a92234ed943930ea83129233885f0f1abd4fb1",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/tools/generate_manifest.mjs",
+      "bytes": 1558,
+      "sha256": "d170cf07a9a8f4b51336ed1106837c3aec2e28153fe999e0e56b795e2558a581",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/tools/task_root.mjs",
+      "bytes": 3526,
+      "sha256": "f346a0de5eedbc55bfbee28c38e4bffa621730e1418251b4fed8722a9886d53e",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/tools/verify_manifest.mjs",
+      "bytes": 1385,
+      "sha256": "91f6945160756ccb8350eb3a9415d5f2c07a951ac66ca86c823037ea17f0be77",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/tools/write_checkpoint.mjs",
+      "bytes": 3196,
+      "sha256": "dbe68966bd4f93059d1c175fa1be10c7ee07ea6b684f67a24c56bb93ea6fb1dc",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/ui/app.js",
+      "bytes": 22930,
+      "sha256": "187527cdfc6f839154088746b0dbf3c3a53199ba99a833e4b716d56c5f84f57b",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/ui/ia_reconciliation.md",
+      "bytes": 3630,
+      "sha256": "ba18cbe504959e302331e9853730f714f35b61466e2ae9d752fe11621ab0cf0b",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/ui/index.html",
+      "bytes": 627,
+      "sha256": "6d9b9491822117d8a7bd176b4430b653fa06e3209cc883d99e26aceaead84b8e",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/ui/interaction_contract.md",
+      "bytes": 2176,
+      "sha256": "a2ad44ecf0aecd46243e5a6105d99e6361a7b238eb5f862e6d485b62d588f1da",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/ui/state_machine.json",
+      "bytes": 2118,
+      "sha256": "b95083ea929b43c82ae1d8373fb5641b984c75c47e4c2eb50adc5d2c2f6fbc47",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/ui/styles.css",
+      "bytes": 13730,
+      "sha256": "830b4f1058c0845a908dae1e0ee5602ff5e532f68dba03fe32ee85bda326735a",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/ui/viewport-adapter.css",
+      "bytes": 186,
+      "sha256": "196fb16782004c5eeef3e931b929d91a522d4fe64cba3eb878b46791775519f4",
+      "category": "candidate"
+    },
+    {
+      "path": "candidate/ui/visual_contract.json",
+      "bytes": 2030,
+      "sha256": "9ece61f440717c5762779648e6fc71ad7c87dab3310388424dee3c0ae14e093e",
+      "category": "candidate"
+    },
+    {
+      "path": "evidence/augment_final_manifest.mjs",
+      "bytes": 2270,
+      "sha256": "0fde89b3613c8b5035257f2d5db29254cbfcef71c0498db61baf37dbe46b921d",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/checkpoint.json",
+      "bytes": 3498,
+      "sha256": "1dfc0b24fac8acc59d485c7d4f14d1cd19c72bdce93bd3eff8833a6f6e3c502f",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/locked_offline_cargo_runner.sh",
+      "bytes": 107,
+      "sha256": "8ab8ed664deedd10b5284dafc6a0699c86e6a6f2970d34d4bf1af25dad31a4e1",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/native_ax_geometry.swift",
+      "bytes": 4505,
+      "sha256": "89e1ef80113e3d48b4be8a2d2165903e6d378d3840ba876032e8e84e6c771f1e",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/native_window_evidence.json",
+      "bytes": 4387,
+      "sha256": "cb9eea02394bf89797514238af4b8198588e962c085bbd40f7320e76e010c690",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/native-compact-resume-ax.json",
+      "bytes": 1435,
+      "sha256": "7d0324024b21630beeba2362759fc1ab4b8a8d39da3c4b060651ca30d926912f",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/native-compact-resume-ax.png",
+      "bytes": 532289,
+      "sha256": "09cfcc3706d5cfb46f9183f7a2253765188a8d41f160562bbc847d1ffc153572",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/native-desktop-resume-ax.jpeg",
+      "bytes": 93468,
+      "sha256": "aa60663a4d367a3f881b0358c18165fb115c79ae63c6ee93189c046d1224ebc9",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/native-desktop-resume-ax.json",
+      "bytes": 1748,
+      "sha256": "84fab7b9dac2f26ecf549055869f005c615adc345d5b87c0a88c6d14a750c273",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/native-desktop-resume.png",
+      "bytes": 93389,
+      "sha256": "bd07d71e67990ef19f4e7442ebe3869ee694bac25946707b583b1db2175f7cef",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/native-desktop-settings.png",
+      "bytes": 93448,
+      "sha256": "4639a2d325ea3099867408e9a27ee45741f091d6c95786d3b94384c09b277a9e",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/native-narrow-resume-ax.json",
+      "bytes": 1429,
+      "sha256": "cf23d6ae401d8fa5251adcb81f28a46e2fed16163d392289d4cdb4fc15f539c4",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/native-narrow-resume-ax.png",
+      "bytes": 347493,
+      "sha256": "5bd8f45a25676d000130136be1dde71ad1a3ae4171869bb18efbcc75d84e4c4f",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_a_ac_matrix.json",
+      "bytes": 7664,
+      "sha256": "5dfb0f9a2af63d657dcc5d5b34f29782461f8a809b94df3f3cdcddec42597d23",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_a_desktop_visual_contract_review.json",
+      "bytes": 3339,
+      "sha256": "964376ac4c5e2c7b517db18c2e4ffa4d081437eaf9e34062966eb784174bb5e9",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_a_final_gate.json",
+      "bytes": 2155,
+      "sha256": "5304bace9cd0ede0fc8246e9ca2f24ba5a90a854990c6d0c3474f44ce9f0c57c",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_a_offline_validation.json",
+      "bytes": 2157,
+      "sha256": "817513943a2752e67b89e40a3ba96b368f070c24f0b0db5543129089e9717079",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_a_pre_real_gate_manifest_verification.json",
+      "bytes": 138,
+      "sha256": "609cecd10cc801db42150aa8cf7c06427156e0c35551a879f84d2c32c9dd3e75",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_b_canary_receipt.json",
+      "bytes": 1680,
+      "sha256": "13555804974ad3f6475f5868baaaffd97b577d67580165ce359fb568d16c7cf6",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_b_checkpoint.json",
+      "bytes": 4032,
+      "sha256": "b6e2add9d0548fd66d7f32258bb923a3401a2bea7f2aed02af4d8190c1dca007",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_b_credential_delete_receipt.json",
+      "bytes": 1185,
+      "sha256": "88bf9aa01005b5cc68431617bfd9c74a2e02f6c8d495a395413982ce9eca3e60",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_b_credential_save_receipt.json",
+      "bytes": 1357,
+      "sha256": "704544a3caa4be6f99f7e9a93b1b5da1f6807e1f0eafb25db53588332f0aadfa",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_b_deletion_and_fresh_restart_deny_receipt.json",
+      "bytes": 2091,
+      "sha256": "3f79ed157949bd23c3e63e5184f597a1bc320cce3900a42282d3e466b0dd1074",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_b_enablement_receipt.json",
+      "bytes": 1329,
+      "sha256": "ce4c5253bc5c1a9efe488241e3b5ec23693b80a44812fb430b760acbfc7b4f3e",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_b_model_selection_receipt.json",
+      "bytes": 1318,
+      "sha256": "067f604721b95912b365e78c78a6bd645587ec711db288e8bcd18335e053b489",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_b_state_separation_closure.json",
+      "bytes": 3030,
+      "sha256": "80302b564f19e2468872672fa82a8e9f41175a7a3c63f58f316edd691649a2cb",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/phase_b_test_models_receipt.json",
+      "bytes": 1410,
+      "sha256": "7a75f46329f127d9779e4531a0d22ac2c63c02c191537f87aaa0566c43f8c4f0",
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/static_contract_report.json",
+      "bytes": 1752,
+      "sha256": "bc4d7381fe311a843572fcc64e9fa158c723de5c44f3cd0d7b70baa978ad3d1a",
+      "category": "evidence"
+    }
+  ],
+  "generated_at": "deterministic-from-current-files-and-frozen-inputs",
+  "fixed_input_freeze": {
+    "path": "../../tasks/LIFEOS-P3-143_acceptance_freeze_manifest.json",
+    "sha256": "3183f77e1c524c216e2d754d494ae80915eeda708734699a165735c9f21b49f8",
+    "schema_version": "lifeos.acceptance_freeze_manifest.v2",
+    "abf_id": "ABF-P3-143-v1",
+    "entry_count": 11,
+    "verified_before_manifest_write": true
+  }
+}

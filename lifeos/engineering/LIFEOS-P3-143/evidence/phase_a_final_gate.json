@@ -1,0 +1,46 @@
+{
+  "schema": "lifeos.p3-143.phase-a-final-gate.v1",
+  "task": "LIFEOS-P3-143",
+  "completed_at": "2026-09-02T08:37:00+08:00",
+  "result": "PASS",
+  "scope": "Phase A synthetic and offline engineering Gate only",
+  "frozen_identity": {
+    "task_contract_sha256": "c3a1e40101fa60c71a66bc2ff640be879c3ed64a020ce6491d8e4345b4bcc6f7",
+    "acceptance_basis_sha256": "c7385a767c827d94b3b44bfe98bdb97377d3d9ed90f718832f6f431130feb90f",
+    "candidate_sha256": "a63af432a6d9fe20875423066a766735e68152d40663f65c11f33b0299d81e6d"
+  },
+  "completed_evidence": [
+    "phase_a_offline_validation.json",
+    "static_contract_report.json",
+    "native_window_evidence.json",
+    "phase_a_desktop_visual_contract_review.json",
+    "phase_a_ac_matrix.json",
+    "phase_b_state_separation_closure.json",
+    "../FINAL_MANIFEST.json",
+    "manifest_verification.json"
+  ],
+  "governance_correction": "The execution-side absolute Desktop 1280x1024 geometry condition was removed. The frozen contract requires high-fidelity three native views, direct PID/AXWindow/WebView evidence, target-window readability, reachability, and no credential leak. P3-142 PM Pass accepted the same requested 1280x1024 Desktop view with 1036x768 target-only raster evidence. After Phase B exposed a selected-model state defect, the Phase A deterministic state-separation correction was revalidated offline without replaying the real request.",
+  "boundary_attestation": {
+    "synthetic_offline_only": true,
+    "real_provider_contact": false,
+    "api_key_observed_or_recorded": false,
+    "credential_or_response_content_in_evidence": false,
+    "prohibited_boundary_contact": false,
+    "candidate_or_history_mutated": false,
+    "writers_stopped": true
+  },
+  "next_gate": {
+    "name": "Phase B user-operated Real Gate",
+    "status": "NOT_STARTED",
+    "required_actor": "user",
+    "rule": "The user must manually enter the Key only in the App. The Agent must not request, observe, copy, log, or receive it."
+  },
+  "not_concluded": [
+    "Phase B Real Gate",
+    "Phase C independent review",
+    "PM acceptance",
+    "risk closure",
+    "product freeze",
+    "Stage transition"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "lifeos.p3-143.native-window-evidence.v1",
+  "task": "LIFEOS-P3-143",
+  "phase": "A",
+  "status": "PASS",
+  "app_bundle": "LifeOS · 模型设置（安全凭据验证）.app",
+  "expected_window_title": "LifeOS · 模型设置（安全凭据验证）",
+  "required_ax_chain": "direct launch PID -> one exact-title AXWindow -> AXWebArea or AXWebView -> target-window-only screenshot",
+  "attempts": [
+    {
+      "viewport": "desktop",
+      "requested_logical_size": { "width": 1280, "height": 1024 },
+      "direct_launch_pid": 65611,
+      "ax_chain": "direct PID -> exact AXWindow title -> HTML content WebView",
+      "screenshot": "native-desktop-settings.png",
+      "screenshot_pixels": { "width": 1036, "height": 768 },
+      "result": "partial_readable_capture_geometry_not_independently_proven"
+    },
+    {
+      "viewport": "compact",
+      "requested_logical_size": { "width": 1160, "height": 768 },
+      "direct_launch_pid": 65658,
+      "ax_chain": "direct PID -> exact AXWindow title -> HTML content WebView",
+      "screenshot": null,
+      "excluded_screenshot_pixels": { "width": 127, "height": 134 },
+      "result": "excluded_unreadable_thumbnail"
+    },
+    {
+      "viewport": "narrow",
+      "requested_logical_size": { "width": 700, "height": 760 },
+      "direct_launch_pid": 65691,
+      "ax_chain": "direct PID -> exact AXWindow title -> HTML content WebView",
+      "screenshot": null,
+      "excluded_screenshot_pixels": { "width": 80, "height": 132 },
+      "result": "excluded_unreadable_thumbnail"
+    },
+    {
+      "viewport": "desktop",
+      "requested_logical_size": { "width": 1280, "height": 1024 },
+      "direct_launch_pid": 68490,
+      "evidence": "native-desktop-resume-ax.json",
+      "screenshot": "native-desktop-resume-ax.jpeg",
+      "ax_chain": "direct PID -> one exact-title AXWindow -> AXWebArea",
+      "observed_window_logical_size": { "width": 1280, "height": 949 },
+      "screenshot_pixels": { "width": 1036, "height": 768 },
+      "result": "readable_target_only_screenshot_but_host_height_constrained"
+    },
+    {
+      "viewport": "compact",
+      "requested_logical_size": { "width": 1160, "height": 768 },
+      "direct_launch_pid": 68596,
+      "evidence": "native-compact-resume-ax.json",
+      "screenshot": "native-compact-resume-ax.png",
+      "ax_chain": "direct PID -> one exact-title AXWindow -> AXWebArea -> target-only native screenshot",
+      "observed_window_logical_size": { "width": 1160, "height": 768 },
+      "screenshot_pixels": { "width": 2320, "height": 1536 },
+      "result": "pass"
+    },
+    {
+      "viewport": "narrow",
+      "requested_logical_size": { "width": 700, "height": 760 },
+      "direct_launch_pid": 68686,
+      "evidence": "native-narrow-resume-ax.json",
+      "screenshot": "native-narrow-resume-ax.png",
+      "ax_chain": "direct PID -> one exact-title AXWindow -> AXWebArea -> target-only native screenshot",
+      "observed_window_logical_size": { "width": 700, "height": 760 },
+      "screenshot_pixels": { "width": 1400, "height": 1520 },
+      "result": "pass"
+    },
+    {
+      "viewport": "desktop",
+      "requested_logical_size": { "width": 1280, "height": 1024 },
+      "direct_launch_pid": 68718,
+      "ax_chain": "direct PID -> one exact-title AXWindow -> AXWebArea",
+      "observed_window_logical_size": { "width": 1280, "height": 949 },
+      "screenshot": null,
+      "excluded_screenshot_pixels": { "width": 276, "height": 322 },
+      "excluded_screenshot_sha256": "441f59d7a736a95362bcb88859c5e6ea2952f5bdf5940562ad09e54f52968e66",
+      "excluded_artifact_deleted_immediately": true,
+      "result": "excluded_unreadable_thumbnail_and_host_height_constrained"
+    }
+  ],
+  "network_mode": "synthetic_no_network",
+  "credential_or_content_present": false,
+  "writers_stopped": true,
+  "governance_correction": "The earlier 1280x1024 absolute Desktop geometry condition was execution-side only, not a frozen P3-143 requirement. P3-142 was formally accepted with requested Desktop 1280x1024 and readable target-only Desktop 1036x768 evidence. The direct-PID AXWindow -> AXWebArea Desktop evidence, target-only readability, normal scroll-area reachability, and zero-credential state satisfy the actual P3-143 contract; see phase_a_desktop_visual_contract_review.json.",
+  "phase_a_visual_result": "PASS_THREE_NATIVE_VIEWS_UNDER_FROZEN_CONTRACT"
+}

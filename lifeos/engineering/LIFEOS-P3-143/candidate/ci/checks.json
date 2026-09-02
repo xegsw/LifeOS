@@ -1,0 +1,13 @@
+{
+  "schema": "lifeos.p3-143.ci-checks.v1",
+  "task": "LIFEOS-P3-143",
+  "offline_only": true,
+  "commands": [
+    "cargo test --locked --offline -- --test-threads=1",
+    "node tests/offline_contract.mjs",
+    "node tools/task_root.mjs negative",
+    "node tools/collect_static_evidence.mjs"
+  ],
+  "prohibited": ["real_provider", "real_credential", "personal_database", "Pilot", "GUI", "network"],
+  "manual_gates": ["actual_tauri_desktop", "actual_tauri_compact", "actual_tauri_narrow", "direct_pid_ax_window_webview", "user_operated_deepseek_gate", "independent_review"]
+}

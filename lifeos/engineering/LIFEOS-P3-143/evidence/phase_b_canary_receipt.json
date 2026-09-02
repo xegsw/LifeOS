@@ -1,0 +1,38 @@
+{
+  "schema": "lifeos.p3-143.phase-b-canary-receipt.v1",
+  "task": "LIFEOS-P3-143",
+  "recorded_at": "2026-09-02T09:51:16+08:00",
+  "user_attestation": "User reported that the Keychain dialog disappeared after the user-operated flow. Agent did not invoke, retry, or replay a canary action.",
+  "noncontent_network_sequence": [
+    {
+      "operation": "test_models",
+      "authority": "https://api.deepseek.com",
+      "method_class": "GET",
+      "status_class": "2xx",
+      "request_bucket": "1KiB_or_less",
+      "response_bucket": "1KiB_or_less"
+    },
+    {
+      "operation": "send_fixed_canary",
+      "authority": "https://api.deepseek.com",
+      "method_class": "POST",
+      "status_class": "2xx",
+      "request_bucket": "1KiB_or_less",
+      "response_bucket": "1KiB_or_less"
+    }
+  ],
+  "sequence_check": {
+    "receipt_count": 2,
+    "expected_operation_order": "test_models then send_fixed_canary",
+    "authority_exact_for_every_receipt": "PASS",
+    "retry_redirect_proxy_fallback_background_or_other_provider_receipt": "none observed",
+    "credential_prompt_response_or_error_content_observed": false
+  },
+  "keychain_dialog_controlled_interaction": {
+    "user_report": "Keychain dialog disappeared; Agent did not inspect or operate the dialog.",
+    "development_identity_fact": "The rebuilt Closure bundle is ad-hoc signed with no Team ID. The identity change is a controlled explanation for a repeat macOS Keychain authorization prompt.",
+    "not_a_credential_leak_inference": true
+  },
+  "decision": "PASS_PENDING_USER_CREDENTIAL_DELETE",
+  "next_user_action": "User alone may delete the credential in the App. Do not issue another network action."
+}
