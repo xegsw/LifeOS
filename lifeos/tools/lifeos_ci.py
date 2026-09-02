@@ -94,6 +94,11 @@ def validate_repo() -> int:
                 errors.append(f"governance clause missing in {relative}: {phrase}")
 
     for task_path in sorted((ROOT / "lifeos/tasks").glob("LIFEOS-P3-*.md")):
+        # Frozen ABFs are acceptance artifacts, not future Task Contracts. Their
+        # schema is intentionally different and must not be rewritten merely to
+        # satisfy task-card-only CI metadata requirements.
+        if task_path.name.endswith("_acceptance_basis_freeze.md"):
+            continue
         match = TASK_ID.search(task_path.name)
         if not match or int(match.group(1)) < 142:
             continue

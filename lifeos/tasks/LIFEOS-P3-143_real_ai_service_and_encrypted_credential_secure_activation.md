@@ -138,6 +138,15 @@ Pass 公式：AC-01～AC-22 全部 Pass，P0=0、P1=0、Unknown=0、Not Implemen
 - 唯一临时根 marker 必须是普通文件、0600、精确 task/run identity；根与 runtime direct child 均须 canonical、非 symlink、权限收紧。错误／缺失／symlink marker 必须拒绝删除。
 - Keychain 清理由专用 CredentialPort 删除精确 P3-143 item，不得枚举、读取或修改其他项目／用户凭据。
 
+### 10. CI／可恢复执行
+
+- CI 检查清单：治理与确认基线校验、格式与冲突标记、P3-142合成确定性回归、P3-143离线凭据生命周期、严格状态机、authority／redirect失败关闭、exact 20 IPC、serial／default-parallel tests、Manifest verifier。CI不得访问真实DeepSeek、API Key、Keychain真实凭据、Pilot、个人数据或桌面GUI。
+- 人工／环境 Gate：真实DeepSeek用户逐次操作、macOS Keychain授权、actual-Tauri direct PID→精确标题AXWindow→AXWebArea与三档视觉Evidence；这些步骤不得进入无人值守CI。
+- 检查点：L2／L3动态阶段在边界写`checkpoint.json`，至少记录candidate／contract／baseline摘要、已完成阶段、`resume_from`和允许根。
+- 可恢复执行阶段：`preflight` → `build_test` → `credential_lifecycle` → `provider_gate` → `app_launch` → `native_window_binding` → `visual_capture` → `cleanup` → `manifest`。
+- 最早受影响阶段：由候选、合同、CI元数据或环境变化首次影响的上述阶段确定；恢复时只从该阶段及其下游依赖继续。纯CI合同元数据修正不得触发真实Provider、凭据或GUI阶段重放。
+- 锁屏、AX／截图、Keychain提示或暂时网络不可用均为`Paused — Resumable`；候选、合同和基线摘要不变且无禁止边界接触时定向继续。
+
 ## 输入与最小启动包
 
 必须读取：
@@ -171,4 +180,3 @@ Pass 公式：AC-01～AC-22 全部 Pass，P0=0、P1=0、Unknown=0、Not Implemen
 - CI 只运行合成、确定性、无凭据／无真实 Provider的检查；真实 DeepSeek、Keychain 和桌面操作是可恢复人工 Gate。
 - L3 不适用低风险自动合并 main。PM Pass 后仍须用户最终确认，之后才决定合并；不 force push，不上传任何敏感／临时资产。
 - 本任务 Pass 不关闭 R-0055／R-0056，不冻结设置产品，不恢复 Pilot-6，不进入 Stage 4。
-
