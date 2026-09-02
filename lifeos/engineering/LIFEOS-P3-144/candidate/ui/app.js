@@ -67,6 +67,14 @@
 
   async function refresh() {
     state.settings = await invoke("get_ai_provider_settings", { version: 1 });
+    const history = await invoke("get_evidence_backed_understanding", { version: 1 });
+    const latest = history?.understandings?.[0];
+    state.understanding = latest ? {
+      understandingId: latest.id,
+      model: latest.model,
+      transientResponse: latest.text,
+      lifecycleStatus: latest.status,
+    } : null;
     const current = active();
     if (current) {
       state.drafts[current.mode] = { providerId: current.providerId, modelLabel: current.modelLabel };
@@ -157,7 +165,12 @@
   function composer() {
     const disclosure = state.disclosure;
     const panel = disclosure ? `<div class="disclosure-panel"><p class="eyebrow">本次最小披露预览</p><strong>仅发送到 ${escape(disclosure.provider)} · ${escape(disclosure.authority)}</strong><p>模型：${escape(disclosure.model || "尚未选择模型")} · 预算：最多 ${escape(disclosure.budget?.itemLimit)} 条 / ${escape(disclosure.budget?.characterLimit)} 字符 / ${escape(disclosure.budget?.tokenLimit)} tokens</p><p>${escape(disclosure.processingLocation || "")}</p><ul>${(disclosure.items || []).map((item) => `<li><span>${escape(item.domain)} · ${escape(item.type)}</span><p>${escape(item.text)}</p><button class="button quiet" data-action="remove-disclosure:${escape(item.id)}">移除</button></li>`).join("")}</ul><div class="form-actions"><button class="button primary" data-action="confirm-disclosure" ${state.busy ? "disabled" : ""}>确认并发送本次披露</button><button class="button quiet" data-action="clear-disclosure">取消</button></div></div>` : "";
-    const result = state.understanding ? `<div class="understanding-panel"><strong>AI Understanding · ${escape(state.understanding.model || "DeepSeek")}</strong><p>${escape(state.understanding.transientResponse || "")}</p><div class="form-actions">${["confirm","edit","reject","ignore","correct"].map((action) => `<button class="button secondary" data-action="feedback:${action}">${({confirm:"确认",edit:"编辑",reject:"拒绝",ignore:"忽略",correct:"纠正"})[action]}</button>`).join("")}</div></div>` : "";
+    const lifecycle = state.understanding?.lifecycleStatus || "pending";
+    const lifecycleLabel = ({ pending: "等待你的反馈", confirmed: "已确认", edited: "已编辑", rejected: "已拒绝", ignored: "已忽略", corrected: "已纠正", invalidated: "已纠正并失效" })[lifecycle] || lifecycle;
+    const feedback = lifecycle === "pending"
+      ? `<div class="form-actions">${["confirm","edit","reject","ignore","correct"].map((action) => `<button class="button secondary" data-action="feedback:${action}">${({confirm:"确认",edit:"编辑",reject:"拒绝",ignore:"忽略",correct:"纠正"})[action]}</button>`).join("")}</div>`
+      : `<p class="understanding-status" role="status">${escape(lifecycleLabel)}</p>`;
+    const result = state.understanding ? `<div class="understanding-panel"><strong>DeepSeek 回答 · ${escape(state.understanding.model || "DeepSeek")}</strong><p>${escape(state.understanding.transientResponse || "")}</p>${feedback}</div>` : "";
     return `<section class="global-ai ${disclosure || state.understanding ? "is-open" : ""}" aria-label="Global AI 空间"><div class="global-ai-row"><span>${icon("spark")}</span><select data-global-domain aria-label="上下文类型"><option value="work" ${state.globalDomain === "work" ? "selected" : ""}>Work</option><option value="health" ${state.globalDomain === "health" ? "selected" : ""}>Health / Fitness</option></select><input data-global-question maxlength="200" aria-label="问 LifeOS" placeholder="问 LifeOS…" /><button class="button primary" data-action="assemble" ${state.busy ? "disabled" : ""}>组装披露</button></div>${panel}${result}</section>`;
   }
   function render() { const content = state.page === "today" ? contextPage("work") : state.page === "me" ? contextPage("health") : state.page !== "settings" ? quietPage() : `<div class="settings-shell">${secondaryNav()}${state.section === "model" ? modelPage() : unavailablePage()}</div>`; app.innerHTML = `<div class="app-shell">${shell()}${content}</div>${composer()}`; }
@@ -244,10 +257,15 @@
       } else if (name === "confirm-disclosure") {
         state.busy = true; render();
         const current = state.disclosure;
-        const result = await invoke("resolve_request_context", { version: 1, operation: "confirm_send", disclosureId: current?.disclosureId, observedRevision: current?.revision, userAction: "confirm_current_disclosure" });
-        state.understanding = result;
-        state.disclosure = null;
-        state.notice = "本次确认已消耗；结果以 AI Understanding 保存，可继续反馈。";
+        try {
+          const result = await invoke("resolve_request_context", { version: 1, operation: "confirm_send", disclosureId: current?.disclosureId, observedRevision: current?.revision, userAction: "confirm_current_disclosure" });
+          state.understanding = { ...result, lifecycleStatus: "pending" };
+          state.disclosure = null;
+          state.notice = "本次确认已消耗；结果以 AI Understanding 保存，可继续反馈。";
+        } catch (error) {
+          state.disclosure = null;
+          throw error;
+        }
       } else if (name === "feedback") {
         let replacementText;
         if (detail === "edit") {
@@ -256,6 +274,7 @@
         }
         state.busy = true; render();
         const result = await invoke("decide_understanding_feedback", { version: 1, operation: detail, understandingId: state.understanding?.understandingId, replacementText });
+        state.understanding = { ...state.understanding, lifecycleStatus: detail === "correct" ? "invalidated" : ({ confirm: "confirmed", edit: "edited", reject: "rejected", ignore: "ignored" })[detail] };
         state.notice = `反馈已保存；相关 Today 投影为 ${result.projectionStatus}。`;
       } else if (name === "clear-disclosure") {
         state.disclosure = null;

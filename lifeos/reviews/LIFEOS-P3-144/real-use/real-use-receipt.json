@@ -1,0 +1,51 @@
+{
+  "schema": "lifeos.p3-144.real-use-receipt.v1",
+  "task_id": "LIFEOS-P3-144",
+  "date": "2026-09-03",
+  "user_operated": true,
+  "user_reported_complete": true,
+  "contains_real_text": false,
+  "contains_real_text_hash": false,
+  "contains_secret": false,
+  "provider": "DeepSeek",
+  "authority": "https://api.deepseek.com",
+  "observed_noncontent_operations": [
+    "test_models",
+    "confirmed_minimal_context"
+  ],
+  "confirmed_minimal_context_request_count": 1,
+  "other_provider_request_count": 0,
+  "background_request_count": 0,
+  "closure_network_request_count": 0,
+  "limits": {
+    "active_work_items": 3,
+    "active_health_items": 0,
+    "work_limit": 3,
+    "health_limit": 3,
+    "per_item_character_limit": 200
+  },
+  "lifecycle": {
+    "credential_records": 1,
+    "understanding_records": 2,
+    "confirmed_understanding_records": 2,
+    "restart_state_unchanged": true,
+    "database_basename": "capture.sqlite",
+    "database_mode": "0600",
+    "pilot_retained": true,
+    "database_retained": true,
+    "credential_retained": true
+  },
+  "prohibited_actions": {
+    "clear": false,
+    "export": false,
+    "sync": false,
+    "tool_use": false,
+    "fallback": false,
+    "cleanup": false
+  },
+  "notes": [
+    "用户在 actual Tauri App 内完成操作；Agent 未代填、未读取或记录真实正文。",
+    "旧 UI 的反馈状态可见性问题在同任务 Closure 中修复；重复反馈历史只读保全。",
+    "零字节 capture.sqlite 占位文件已按用户授权改名保全；实际数据库无损迁移到冻结文件名。"
+  ]
+}

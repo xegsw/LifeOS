@@ -15,7 +15,7 @@ use zeroize::Zeroize;
 
 const MARKER: &str = ".lifeos-p3-144-owner.json";
 const RUNTIME_CHILD: &str = "runtime";
-const DB: &str = "secure-provider-settings.sqlite";
+const DB: &str = "capture.sqlite";
 const DTO_VERSION: u8 = 1;
 const PROFILE_ID: &str = "default";
 const DEEPSEEK: &str = "deepseek";
@@ -536,7 +536,11 @@ fn database_path(root: &Path) -> Result<PathBuf, ApiError> {
             "database_path_rejected",
             "数据库路径不能是符号链接。",
         )),
-        Ok(_) => Ok(path),
+        Ok(meta) if meta.file_type().is_file() => Ok(path),
+        Ok(_) => Err(ApiError::blocked(
+            "database_path_rejected",
+            "数据库路径必须是普通文件。",
+        )),
         Err(error) if error.kind() == std::io::ErrorKind::NotFound => Ok(path),
         Err(_) => Err(ApiError::blocked(
             "database_path_rejected",
@@ -546,7 +550,9 @@ fn database_path(root: &Path) -> Result<PathBuf, ApiError> {
 }
 
 fn initialize_store(root: &Path) -> Result<PersistedState, ApiError> {
-    let connection = Connection::open(database_path(root)?).map_err(db_error)?;
+    let path = database_path(root)?;
+    let connection = Connection::open(&path).map_err(db_error)?;
+    fs::set_permissions(&path, fs::Permissions::from_mode(0o600)).map_err(io_error)?;
     connection.execute_batch("PRAGMA secure_delete=ON;
         CREATE TABLE IF NOT EXISTS provider_state (id INTEGER PRIMARY KEY CHECK(id = 1), state_json TEXT NOT NULL, updated_at_ms INTEGER NOT NULL);
         CREATE TABLE IF NOT EXISTS encrypted_credential (provider_id TEXT NOT NULL, profile_id TEXT NOT NULL, ciphertext BLOB NOT NULL, nonce BLOB NOT NULL, tag BLOB NOT NULL, algorithm TEXT NOT NULL, version INTEGER NOT NULL, key_reference TEXT NOT NULL, PRIMARY KEY(provider_id, profile_id));
@@ -1853,6 +1859,29 @@ fn get_evidence_backed_understanding(
     let entries = statement.query_map([], |row| Ok(json!({"id":row.get::<_,String>(0)?,"kind":row.get::<_,String>(1)?,"provider":row.get::<_,String>(2)?,"model":row.get::<_,String>(3)?,"sourceRefs":serde_json::from_str::<Vec<String>>(&row.get::<_,String>(4)?).unwrap_or_default(),"text":row.get::<_,String>(5)?,"status":row.get::<_,String>(6)?,"createdAtMs":row.get::<_,i64>(7)?}))).map_err(db_error)?.collect::<Result<Vec<_>,_>>().map_err(db_error)?;
     Ok(json!({"status":"ready","understandings":entries}))
 }
+
+fn feedback_target_status(operation: &str, current_status: &str) -> Option<&'static str> {
+    if current_status == "pending" {
+        return match operation {
+            "confirm" => Some("confirmed"),
+            "edit" => Some("edited"),
+            "reject" => Some("rejected"),
+            "ignore" => Some("ignored"),
+            "correct" => Some("invalidated"),
+            _ => None,
+        };
+    }
+    if operation == "correct"
+        && matches!(
+            current_status,
+            "confirmed" | "edited" | "rejected" | "ignored"
+        )
+    {
+        return Some("invalidated");
+    }
+    None
+}
+
 #[tauri::command]
 fn decide_understanding_feedback(
     request: FeedbackRequest,
@@ -1887,16 +1916,28 @@ fn decide_understanding_feedback(
             "当前反馈动作不接受替代文本；未写入。",
         ));
     }
-    let status = match request.operation.as_str() {
-        "confirm" => "confirmed",
-        "edit" => "edited",
-        "reject" => "rejected",
-        "ignore" => "ignored",
-        "correct" => "invalidated",
-        _ => unreachable!(),
-    };
     let connection = Connection::open(database_path(&state.root)?).map_err(db_error)?;
-    let changed = connection.execute("UPDATE derivation SET status=?1 WHERE id=?2 AND status NOT IN ('invalidated','corrected')", params![status, request.understanding_id]).map_err(db_error)?;
+    let current_status = connection
+        .query_row(
+            "SELECT status FROM derivation WHERE id=?1",
+            params![request.understanding_id],
+            |row| row.get::<_, String>(0),
+        )
+        .optional()
+        .map_err(db_error)?
+        .ok_or_else(|| {
+            ApiError::blocked(
+                "understanding_not_available",
+                "AI Understanding 不存在或已失效；未写入。",
+            )
+        })?;
+    let status = feedback_target_status(&request.operation, &current_status).ok_or_else(|| {
+        ApiError::blocked(
+            "understanding_feedback_consumed",
+            "该 AI Understanding 的本次反馈已经消费；未重复写入。",
+        )
+    })?;
+    let changed = connection.execute("UPDATE derivation SET status=?1 WHERE id=?2 AND status=?3", params![status, request.understanding_id, current_status]).map_err(db_error)?;
     if changed != 1 {
         return Err(ApiError::blocked(
             "understanding_not_available",
@@ -2733,6 +2774,26 @@ mod tests {
     }
 
     #[test]
+    fn database_must_be_regular_and_is_forced_to_owner_only_permissions() {
+        {
+            let directory_case = TestRoot::new();
+            let database = directory_case.root.join(DB);
+            fs::create_dir(&database).unwrap();
+            assert_eq!(
+                database_path(&directory_case.root).unwrap_err().code,
+                "database_path_rejected"
+            );
+            fs::remove_dir(database).unwrap();
+        }
+
+        let permission_case = TestRoot::new();
+        initialize_store(&permission_case.root).unwrap();
+        let metadata = fs::metadata(permission_case.root.join(DB)).unwrap();
+        assert!(metadata.file_type().is_file());
+        assert_eq!(metadata.permissions().mode() & 0o777, 0o600);
+    }
+
+    #[test]
     fn credential_keychain_material_and_aead_are_separate_and_fail_closed() {
         let source = "p3-144-key-canary-keep-private";
         let aad = credential_aad(DEEPSEEK, PROFILE_ID);
@@ -2964,14 +3025,25 @@ mod tests {
         assert!(!state.enabled);
     }
 
+    #[test]
+    fn understanding_feedback_is_single_use_except_explicit_correction() {
+        assert_eq!(feedback_target_status("confirm", "pending"), Some("confirmed"));
+        assert_eq!(feedback_target_status("confirm", "confirmed"), None);
+        assert_eq!(feedback_target_status("edit", "confirmed"), None);
+        assert_eq!(
+            feedback_target_status("correct", "confirmed"),
+            Some("invalidated")
+        );
+        assert_eq!(feedback_target_status("correct", "invalidated"), None);
+    }
+
     fn reset_phase_a_store(root: &Path) {
-        for name in [
-            DB,
-            "secure-provider-settings.sqlite-wal",
-            "secure-provider-settings.sqlite-shm",
-            "noncontent-network-receipts.json",
+        for path in [
+            root.join(DB),
+            root.join(format!("{DB}-wal")),
+            root.join(format!("{DB}-shm")),
+            root.join("noncontent-network-receipts.json"),
         ] {
-            let path = root.join(name);
             if let Ok(meta) = fs::symlink_metadata(&path) {
                 assert!(!meta.file_type().is_symlink());
                 fs::remove_file(path).unwrap();

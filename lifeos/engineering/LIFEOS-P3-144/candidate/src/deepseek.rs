@@ -68,8 +68,11 @@ fn response_bucket(length: usize) -> &'static str {
     }
 }
 
-fn classify(status: u16, had_process_error: bool) -> AdapterFailure {
-    if had_process_error || status == 0 {
+fn classify(status: u16, process_exit: Option<i32>) -> AdapterFailure {
+    if process_exit == Some(28) {
+        return AdapterFailure::Timeout;
+    }
+    if process_exit != Some(0) || status == 0 {
         return AdapterFailure::Network;
     }
     match status {
@@ -132,7 +135,7 @@ fn call(
         .arg("--connect-timeout")
         .arg("15")
         .arg("--max-time")
-        .arg("30")
+        .arg("60")
         .arg("--config")
         .arg("-")
         .arg("--write-out")
@@ -180,9 +183,27 @@ fn call(
     };
     if !output.status.success() || !(200..300).contains(&status) {
         response.zeroize();
-        return Err(classify(status, !output.status.success()));
+        return Err(classify(status, output.status.code()));
     }
     Ok((response, receipt))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{classify, AdapterFailure};
+
+    #[test]
+    fn curl_timeout_is_not_misreported_as_network_unavailable() {
+        assert_eq!(classify(0, Some(28)), AdapterFailure::Timeout);
+    }
+
+    #[test]
+    fn http_status_classes_remain_distinct_when_curl_succeeds() {
+        assert_eq!(classify(401, Some(0)), AdapterFailure::Authentication);
+        assert_eq!(classify(408, Some(0)), AdapterFailure::Timeout);
+        assert_eq!(classify(422, Some(0)), AdapterFailure::Model);
+        assert_eq!(classify(500, Some(0)), AdapterFailure::Capability);
+    }
 }
 
 pub fn synthetic_models(timestamp_ms: i64) -> ModelList {
