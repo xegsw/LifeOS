@@ -4,14 +4,14 @@ import { createHash } from "node:crypto";
 
 const candidate = resolve(import.meta.dirname, "..");
 const evidence = resolve(candidate, "..", "evidence");
-const files = ["src/runtime.rs", "src/deepseek.rs", "src/secure_credentials.rs", "ui/app.js", "ui/styles.css", "ui/index.html", "tauri.conf.json", "tests/offline_contract.mjs"];
+const files = ["build.rs", "src/runtime.rs", "src/deepseek.rs", "src/secure_credentials.rs", "ui/app.js", "ui/styles.css", "ui/index.html", "tauri.conf.json", "tests/offline_contract.mjs"];
 const hash = (value) => createHash("sha256").update(value).digest("hex");
 const source = Object.fromEntries(await Promise.all(files.map(async (file) => {
   const value = await readFile(resolve(candidate, file));
   return [file, hash(value)];
 })));
-const [runtime, adapter, credentials, app, config] = await Promise.all([
-  readFile(resolve(candidate, "src/runtime.rs"), "utf8"), readFile(resolve(candidate, "src/deepseek.rs"), "utf8"),
+const [build, runtime, adapter, credentials, app, config] = await Promise.all([
+  readFile(resolve(candidate, "build.rs"), "utf8"), readFile(resolve(candidate, "src/runtime.rs"), "utf8"), readFile(resolve(candidate, "src/deepseek.rs"), "utf8"),
   readFile(resolve(candidate, "src/secure_credentials.rs"), "utf8"), readFile(resolve(candidate, "ui/app.js"), "utf8"),
   readFile(resolve(candidate, "tauri.conf.json"), "utf8"),
 ]);
@@ -41,7 +41,13 @@ const report = {
     explicit_steps: ["store", "user_test", "select_model", "set_enabled", "send_fixed_canary", "delete"],
     transient_response_only: app.includes("瞬时响应（不保存）") && app.includes("clear-response"),
   },
-  result: commands.length === 20 && new Set(commands).size === 20 && transport ? "PASS" : "FAIL",
+  root_authority: {
+    build_time_profiles_only: build.includes("LIFEOS_P3_143_ROOT_PROFILE") && build.includes("independent-review") && build.includes("LIFEOS_P3_143_REVIEW_RUN_ID"),
+    review_run_id_validation: build.includes("valid_review_run_id") && build.includes("8..=48"),
+    runtime_compiled_authority_only: runtime.includes("compiled_root_authority") && runtime.includes("verify_runtime_child") && !runtime.includes('const TASK_ROOT: &str = "/private/tmp/lifeos-p3-143-real-ai-secure-activation-v1"'),
+    database_direct_child_guard: runtime.includes("database_path") && runtime.includes("database_path_rejected"),
+  },
+  result: commands.length === 20 && new Set(commands).size === 20 && transport && build.includes("valid_review_run_id") && runtime.includes("compiled_root_authority") ? "PASS" : "FAIL",
 };
 await mkdir(evidence, { recursive: true });
 await writeFile(resolve(evidence, "static_contract_report.json"), `${JSON.stringify(report, null, 2)}\n`, { mode: 0o600 });

@@ -1,0 +1,61 @@
+{
+  "schema": "lifeos.p3-143.root-authority-closure.v1",
+  "task": "LIFEOS-P3-143",
+  "recorded_at": "2026-09-02T10:33:01+08:00",
+  "trigger": {
+    "independent_review_rework": "IR-P0-001",
+    "preserved_review_commit": "e5fae069",
+    "engineering_history_commit": "089ec743",
+    "root_cause": "Runtime had bound fresh independent-review execution to the preserved engineering Phase-B root."
+  },
+  "candidate_identity": {
+    "before_root_authority_closure_sha256": "a63af432a6d9fe20875423066a766735e68152d40663f65c11f33b0299d81e6d",
+    "after_root_authority_closure_sha256": "06ffa277be1dd42c946d7f7372d8a7f66619784a78aef351ceedc8068b1951c1",
+    "candidate_files": 85
+  },
+  "closure_scope": {
+    "changed": ["candidate/build.rs", "candidate/src/runtime.rs", "candidate/tests/offline_contract.mjs"],
+    "unchanged_contracts": ["DeepSeek-only real target", "Cloud 8", "Local 4", "exactly 20 IPC", "credential encryption", "Keychain service", "network lifecycle", "preserved Phase-B history"],
+    "prohibited_contact": ["preserved engineering Phase-B root", "real Provider", "real credential", "network"]
+  },
+  "compiled_root_profiles": {
+    "engineering": {
+      "root": "/private/tmp/lifeos-p3-143-real-ai-secure-activation-v1",
+      "run_id": "engineering",
+      "marker": "exact existing P3-143 engineering marker contract"
+    },
+    "independent_review": {
+      "root_parent": "/private/tmp",
+      "root_basename": "lifeos-p3-143-independent-review-{safe-run-id}",
+      "run_id_grammar": "8-48 lowercase ASCII letters, digits, or hyphens; no leading or trailing hyphen",
+      "marker": "compiled schema, task, owner, and exact runId"
+    },
+    "runtime_guard": ["compiled authority only", "canonical direct-child root", "0700 root", "0700 runtime child", "0600 normal non-symlink marker", "database direct child of root and non-symlink"]
+  },
+  "offline_validation": {
+    "engineering_profile_serial_rust_tests": "PASS: 17 passed, test-threads=1",
+    "static_contract": "PASS: 20 checks, 20 IPC",
+    "legal_independent_review_builds": [
+      { "run_id": "review-a20260902", "result": "PASS: isolated cargo test --no-run" },
+      { "run_id": "review-b20260902", "result": "PASS: isolated cargo test --no-run" }
+    ],
+    "negative_build_time_matrix": {
+      "traversal_run_id": "REJECTED",
+      "short_run_id": "REJECTED",
+      "unknown_profile": "REJECTED",
+      "engineering_profile_with_review_run_id": "REJECTED"
+    },
+    "runtime_path_injection": "PASS: an arbitrary LIFEOS_P3_143_RUNTIME_ROOT environment value did not alter the compiled review authority",
+    "runtime_root_mutations_before_store": ["traversal", "wrong parent", "wrong marker", "symlink"],
+    "mutation_result": "PASS: every listed mutation rejected before database, Keychain, or network"
+  },
+  "synthetic_isolation": {
+    "new_test_roots": "fresh /private/tmp direct-child independent-review unit roots only",
+    "test_database": "new synthetic test-root database only",
+    "preserved_phase_b_root_accessed": false,
+    "real_provider_or_network_action": false,
+    "real_credential_or_phase_b_keychain_item_accessed": false
+  },
+  "decision": "PASS_READY_FOR_NEW_ISOLATED_INDEPENDENT_REREVIEW",
+  "non_conclusions": ["independent review", "PM acceptance", "risk closure", "product freeze", "Stage change"]
+}

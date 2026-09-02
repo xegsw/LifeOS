@@ -2,14 +2,14 @@
 
 ## 结论
 
-**Phase A 合成／离线工程 Gate：Pass；Phase B 用户操作的单一 DeepSeek Real Gate：Pass。** 任务整体尚未完成，当前已完成真实 Gate 与凭据删除，准备进入 **Phase C — 全新隔离独立评审**。Agent 未接触、读取、记录或传输 API Key、模型标识、prompt 或 response 正文。
+**Phase A 合成／离线工程 Gate：Pass；Phase B 用户操作的单一 DeepSeek Real Gate：Pass for Phase C handoff。** 任务整体尚未完成，当前已完成真实 Gate 与凭据删除，准备进入 **Phase C — 全新隔离独立评审**。Agent 未接触、读取、记录或传输 API Key、模型标识、prompt 或 response 正文。
 
 本轮按 PM 定向校正复核了冻结合同：此前将 Desktop 强行要求为 1280×1024 是执行侧增加的条件，不是 AC-01／AC-06／AC-16 或 ABF-I-01 的冻结要求。P3-142 的正式 PM Pass 已接受“requested 1280×1024、实际 target-only Desktop 1036×768”的同类证据。P3-143 现有 Desktop 证据满足真正合同：直启 PID → 精确 AXWindow → AXWebArea、完整可读的目标窗口、正常 scroll-area 可达性与零凭据泄漏。
 
 ## 范围与边界
 
-- 仅修改 P3-143 工程 Evidence、Final Manifest、checkpoint 与本交付物；P3-142 与所有历史输入只读。
-- Phase A 保持合成／离线；Phase B 仅由用户逐次触发两次 `https://api.deepseek.com` 请求：模型目录 GET 与固定无个人含义 canary POST。未接触 Pilot、个人 DB／文本、Context、Memory、Health 或其他 Provider。
+- 本轮 Closure 仅修改 P3-143 candidate 的 build-time root authority、离线测试与同任务 Evidence／Manifest／交付物；P3-142、首次独立评审与全部历史输入只读。
+- 本轮 Closure 保持合成／离线；Phase B 的两次 `https://api.deepseek.com` 用户请求仅以既有非内容收据保全。未接触 Pilot、个人 DB／文本、Context、Memory、Health 或其他 Provider。
 - 未作独立评审、PM 验收、风险关闭、产品冻结或 Stage 变更结论。
 
 ## Phase A 已完成事实
@@ -46,7 +46,7 @@ Agent 不得索取、观察、复制、记录或接收 Key，且不得代替用�
 
 - 主责：Codex 工程执行。
 - L3 Phase A：Pass。
-- Phase B 用户 Real Gate：未开始，等待用户操作。
+- Phase B 用户 Real Gate：Pass for Phase C handoff；App 已停止，临时根保留给独立评审。
 - Phase C 独立评审、PM 验收、风险关闭、产品冻结与 Stage 4：均未开始。
 
 ## Phase B 状态机 Closure 更新
@@ -85,17 +85,6 @@ Agent 不得索取、观察、复制、记录或接收 Key，且不得代替用�
 
 相关 Evidence：[canary 收据](/Users/xxe/.codex/worktrees/de3f/No.2/lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_canary_receipt.json)。
 
-## Phase B 删除与失败关闭闭环
-
-- 用户已在 App 内删除凭据。仅核对到精确 DeepSeek/default 密文行数为 0，非敏感运行状态为 `credential_missing`、reference／mask／selectedModel 均 absent、`enabled=false`、模型目录计数为 0。
-- 仅按精确 P3-143 Keychain service 查询，结果为 item absent；未枚举或读取任何其他 Keychain 项、reference 或内容。
-- 网络历史仍恰好两条：既有测试和固定 canary；删除没有网络收据。修正候选 fresh restart 后，App 处于无凭据状态，测试与发送均在网络前被禁用，未发出第三次请求。
-- 当前 App 已按 Phase B 收口要求停止。唯一临时根连同 marker、非内容收据与候选输入保留给全新隔离的 Phase C；尚未执行 marker-gated 清理，避免丢失评审输入。
-
-**Phase B 工程结论：Pass for Phase C handoff。** 这不是独立评审、PM 验收、风险关闭、产品冻结或 Stage 变更结论。
-
-相关 Evidence：[删除／fresh-restart deny 收据](/Users/xxe/.codex/worktrees/de3f/No.2/lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_deletion_and_fresh_restart_deny_receipt.json)。
-
 ## Phase B 凭据删除与 fresh restart 失败关闭
 
 - 用户已在 App 内删除凭据。只读非内容核对确认：`encrypted_credential` 行数为 0；credential reference、mask、selected model 均为空；服务禁用且模型目录清空。
@@ -103,6 +92,21 @@ Agent 不得索取、观察、复制、记录或接收 Key，且不得代替用�
 - 修正 App 已以 fresh direct PID 72791 重启并绑定精确 AXWindow → HTML WebView。界面显示尚未保存凭据，删除、测试与全局发送按钮均禁用。
 - 删除与 fresh restart 后网络收据仍恰好为历史两条，未产生第三次请求；由此证明无凭据状态在网络前失败关闭。
 - fresh App 已停止。Phase B 工程 Gate 已完成，下一步仅允许全新隔离、候选与工程 Evidence 只读的 Phase C 独立评审。
+- 唯一临时根及其 marker、候选与非内容 Evidence 均保留给 Phase C；尚未执行 marker-gated 清理，避免丢失评审输入。
 - 当前非自指 Final Manifest 已重建并复核：124 entries、0 errors。
 
-相关 Evidence：[删除与 fresh restart 收据](/Users/xxe/.codex/worktrees/de3f/No.2/lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_credential_delete_receipt.json)。
+**Phase B 工程结论：Pass for Phase C handoff。** 这不是独立评审、PM 验收、风险关闭、产品冻结或 Stage 变更结论。
+
+相关 Evidence：[删除与 fresh restart 收据](/Users/xxe/.codex/worktrees/de3f/No.2/lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_credential_delete_receipt.json)、[交叉核对](/Users/xxe/.codex/worktrees/de3f/No.2/lifeos/engineering/LIFEOS-P3-143/evidence/phase_b_deletion_and_fresh_restart_deny_receipt.json)。
+
+## IR-P0-001 root authority Closure
+
+- 首次独立评审的 `IR-P0-001` 已只读保全；本工程 Closure 仅修正候选的 root authority，不改动 Provider 目录、20 IPC、凭据／Keychain、网络语义或 Phase B 历史。
+- `build.rs` 现在只编译两种 profile：精确工程根，或以严格 8–48 位安全 run-id 组合出的 `/private/tmp/lifeos-p3-143-independent-review-<run-id>`。运行时只读取编译进候选的 authority，并再次核对 root/runtime 0700、marker 0600 非 symlink 且内容精确、DB 为 root 直接子项。
+- 离线验证通过：17 项串行 Rust 测试、20 项静态合同；两个不同合法 review run-id 独立构建成功；traversal／短 run-id／未知 profile／engineering profile 混入 review run-id 均在 build-time 拒绝。任意运行时路径环境变量未改变编译 authority。
+- 全程只使用新的合成 review test root／DB；未访问或修改已保留工程 Phase-B 根、真实 Provider、凭据或网络。
+- 候选现有 85 个文件，root authority Closure 后 digest 为 `06ffa277be1dd42c946d7f7372d8a7f66619784a78aef351ceedc8068b1951c1`；此前 `a63af432…d81e6d` 仅作为 Phase B 历史保留。
+
+**工程 Closure 结论：Ready for 全新隔离 independent re-review。** 不得在本会话自行评审、重新真实调用或清理既有历史。
+
+相关 Evidence：[root authority Closure](/Users/xxe/.codex/worktrees/de3f/No.2/lifeos/engineering/LIFEOS-P3-143/evidence/root_authority_closure.json)。

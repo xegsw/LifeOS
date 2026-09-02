@@ -12,8 +12,8 @@ use std::time::{SystemTime, UNIX_EPOCH};
 use tauri::{LogicalSize, Manager, Size};
 use zeroize::Zeroize;
 
-const TASK_ROOT: &str = "/private/tmp/lifeos-p3-143-real-ai-secure-activation-v1";
 const MARKER: &str = ".lifeos-p3-143-owner.json";
+const RUNTIME_CHILD: &str = "runtime";
 const DB: &str = "secure-provider-settings.sqlite";
 const DTO_VERSION: u8 = 1;
 const PROFILE_ID: &str = "default";
@@ -288,30 +288,140 @@ fn response(state: &PersistedState) -> SettingsResponse {
     }
 }
 
-#[derive(Serialize, Deserialize, PartialEq)]
+#[derive(Clone, Debug)]
+struct RootAuthority {
+    profile: String,
+    parent: String,
+    basename: String,
+    root: String,
+    marker_schema: String,
+    marker_task: String,
+    marker_owner: String,
+    run_id: String,
+    marker_run_id: Option<String>,
+}
+
+fn compiled_root_authority() -> RootAuthority {
+    let marker_run_id = env!("LIFEOS_P3_143_COMPILED_MARKER_RUN_ID");
+    RootAuthority {
+        profile: env!("LIFEOS_P3_143_COMPILED_ROOT_PROFILE").into(),
+        parent: env!("LIFEOS_P3_143_COMPILED_ROOT_PARENT").into(),
+        basename: env!("LIFEOS_P3_143_COMPILED_ROOT_BASENAME").into(),
+        root: env!("LIFEOS_P3_143_COMPILED_ROOT").into(),
+        marker_schema: env!("LIFEOS_P3_143_COMPILED_MARKER_SCHEMA").into(),
+        marker_task: env!("LIFEOS_P3_143_COMPILED_MARKER_TASK").into(),
+        marker_owner: env!("LIFEOS_P3_143_COMPILED_MARKER_OWNER").into(),
+        run_id: env!("LIFEOS_P3_143_COMPILED_RUN_ID").into(),
+        marker_run_id: (!marker_run_id.is_empty()).then(|| marker_run_id.into()),
+    }
+}
+
+fn valid_review_run_id(value: &str) -> bool {
+    (8..=48).contains(&value.len())
+        && !value.starts_with('-')
+        && !value.ends_with('-')
+        && value
+            .bytes()
+            .all(|byte| byte.is_ascii_lowercase() || byte.is_ascii_digit() || byte == b'-')
+}
+
+fn compiled_authority_is_valid(authority: &RootAuthority) -> bool {
+    let root = Path::new(&authority.root);
+    if authority.parent != "/private/tmp"
+        || authority.basename.is_empty()
+        || authority.basename.contains('/')
+        || authority.basename == "."
+        || authority.basename == ".."
+        || root.parent() != Some(Path::new(&authority.parent))
+        || root.file_name().and_then(|value| value.to_str()) != Some(authority.basename.as_str())
+        || authority.marker_task != "LIFEOS-P3-143"
+        || authority.marker_owner.is_empty()
+    {
+        return false;
+    }
+    match authority.profile.as_str() {
+        "engineering" => {
+            authority.run_id == "engineering"
+                && authority.marker_run_id.is_none()
+                && authority.marker_owner == authority.basename
+                && authority.marker_schema == "lifeos.p3-143.real-ai-secure-activation-root.v1"
+        }
+        "independent-review" => authority
+            .basename
+            .strip_prefix("lifeos-p3-143-independent-review-")
+            .is_some_and(|run_id| {
+                run_id == authority.run_id
+                    && authority.marker_run_id.as_deref() == Some(run_id)
+                    && valid_review_run_id(run_id)
+                    && authority.marker_owner == "lifeos-p3-143-independent-review"
+                    && authority.marker_schema == "lifeos.p3-143.independent-review-root.v1"
+            }),
+        _ => false,
+    }
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(deny_unknown_fields)]
 struct RootMarker {
     schema: String,
     task: String,
     owner: String,
+    #[serde(default, rename = "runId", skip_serializing_if = "Option::is_none")]
+    run_id: Option<String>,
 }
 
-fn expected_marker() -> RootMarker {
+fn expected_marker(authority: &RootAuthority) -> RootMarker {
     RootMarker {
-        schema: "lifeos.p3-143.real-ai-secure-activation-root.v1".into(),
-        task: "LIFEOS-P3-143".into(),
-        owner: "lifeos-p3-143-real-ai-secure-activation-v1".into(),
+        schema: authority.marker_schema.clone(),
+        task: authority.marker_task.clone(),
+        owner: authority.marker_owner.clone(),
+        run_id: authority.marker_run_id.clone(),
     }
 }
 
-fn verify_task_root() -> Result<PathBuf, ApiError> {
-    let root = PathBuf::from(TASK_ROOT);
-    if root.parent() != Some(Path::new("/private/tmp")) {
+fn verify_runtime_child(root: &Path) -> Result<(), ApiError> {
+    let child = root.join(RUNTIME_CHILD);
+    if child.parent() != Some(root) {
         return Err(ApiError::blocked(
-            "task_root_literal_rejected",
-            "任务根不是合同指定的精确路径。",
+            "runtime_child_literal_rejected",
+            "运行目录不是任务根的直接子目录。",
         ));
     }
+    match fs::symlink_metadata(&child) {
+        Ok(meta) => {
+            if meta.file_type().is_symlink()
+                || !meta.file_type().is_dir()
+                || meta.permissions().mode() & 0o777 != 0o700
+            {
+                return Err(ApiError::blocked(
+                    "runtime_child_type_rejected",
+                    "运行目录必须是 0700 的普通目录。",
+                ));
+            }
+        }
+        Err(error) if error.kind() == std::io::ErrorKind::NotFound => {
+            fs::create_dir(&child).map_err(io_error)?;
+            fs::set_permissions(&child, fs::Permissions::from_mode(0o700)).map_err(io_error)?;
+        }
+        Err(error) => return Err(io_error(error)),
+    }
+    if fs::canonicalize(&child).map_err(io_error)? != child {
+        return Err(ApiError::blocked(
+            "runtime_child_canonical_rejected",
+            "运行目录解析后发生变化。",
+        ));
+    }
+    Ok(())
+}
+
+fn verify_authorized_root(authority: &RootAuthority) -> Result<PathBuf, ApiError> {
+    if !compiled_authority_is_valid(&authority) {
+        return Err(ApiError::blocked(
+            "compiled_root_authority_rejected",
+            "编译期任务根 authority 无法验证。",
+        ));
+    }
+    let root = PathBuf::from(&authority.root);
     match fs::symlink_metadata(&root) {
         Ok(meta) => {
             if meta.file_type().is_symlink()
@@ -338,7 +448,7 @@ fn verify_task_root() -> Result<PathBuf, ApiError> {
     }
     let marker = root.join(MARKER);
     if !marker.exists() {
-        let bytes = serde_json::to_vec_pretty(&expected_marker()).map_err(|_| {
+        let bytes = serde_json::to_vec_pretty(&expected_marker(&authority)).map_err(|_| {
             ApiError::blocked("marker_serialization_rejected", "任务 marker 无法序列化。")
         })?;
         let mut file = OpenOptions::new()
@@ -364,17 +474,44 @@ fn verify_task_root() -> Result<PathBuf, ApiError> {
     }
     let observed: RootMarker = serde_json::from_slice(&fs::read(&marker).map_err(io_error)?)
         .map_err(|_| ApiError::blocked("task_marker_rejected", "任务 marker 不能证明所有权。"))?;
-    if observed != expected_marker() {
+    if observed != expected_marker(&authority) {
         return Err(ApiError::blocked(
             "task_marker_rejected",
             "任务 marker 不属于 P3-143。",
         ));
     }
+    verify_runtime_child(&root)?;
     Ok(root)
 }
 
+fn verify_task_root() -> Result<PathBuf, ApiError> {
+    verify_authorized_root(&compiled_root_authority())
+}
+
+fn database_path(root: &Path) -> Result<PathBuf, ApiError> {
+    let path = root.join(DB);
+    if path.parent() != Some(root) {
+        return Err(ApiError::blocked(
+            "database_path_rejected",
+            "数据库必须位于已授权任务根。",
+        ));
+    }
+    match fs::symlink_metadata(&path) {
+        Ok(meta) if meta.file_type().is_symlink() => Err(ApiError::blocked(
+            "database_path_rejected",
+            "数据库路径不能是符号链接。",
+        )),
+        Ok(_) => Ok(path),
+        Err(error) if error.kind() == std::io::ErrorKind::NotFound => Ok(path),
+        Err(_) => Err(ApiError::blocked(
+            "database_path_rejected",
+            "数据库路径无法安全验证。",
+        )),
+    }
+}
+
 fn initialize_store(root: &Path) -> Result<PersistedState, ApiError> {
-    let connection = Connection::open(root.join(DB)).map_err(db_error)?;
+    let connection = Connection::open(database_path(root)?).map_err(db_error)?;
     connection.execute_batch("PRAGMA secure_delete=ON; CREATE TABLE IF NOT EXISTS provider_state (id INTEGER PRIMARY KEY CHECK(id = 1), state_json TEXT NOT NULL, updated_at_ms INTEGER NOT NULL); CREATE TABLE IF NOT EXISTS encrypted_credential (provider_id TEXT NOT NULL, profile_id TEXT NOT NULL, ciphertext BLOB NOT NULL, nonce BLOB NOT NULL, tag BLOB NOT NULL, algorithm TEXT NOT NULL, version INTEGER NOT NULL, key_reference TEXT NOT NULL, PRIMARY KEY(provider_id, profile_id));")
         .map_err(db_error)?;
     let stored: Option<String> = connection
@@ -398,7 +535,7 @@ fn initialize_store(root: &Path) -> Result<PersistedState, ApiError> {
 fn persist(root: &Path, state: &PersistedState) -> Result<(), ApiError> {
     let raw = serde_json::to_string(state)
         .map_err(|_| ApiError::blocked("synthetic_store_rejected", "合成设置状态无法序列化。"))?;
-    let connection = Connection::open(root.join(DB)).map_err(db_error)?;
+    let connection = Connection::open(database_path(root)?).map_err(db_error)?;
     connection.execute("INSERT INTO provider_state(id,state_json,updated_at_ms) VALUES(1,?1,?2) ON CONFLICT(id) DO UPDATE SET state_json=excluded.state_json,updated_at_ms=excluded.updated_at_ms", params![raw, now_ms()?]).map_err(db_error)?;
     Ok(())
 }
@@ -442,7 +579,7 @@ fn credential_failure(error: secure_credentials::CredentialFailure) -> ApiError 
 }
 
 fn credential_row(root: &Path) -> Result<Option<CredentialRow>, ApiError> {
-    let connection = Connection::open(root.join(DB)).map_err(db_error)?;
+    let connection = Connection::open(database_path(root)?).map_err(db_error)?;
     connection.query_row(
         "SELECT ciphertext, nonce, tag, algorithm, version, key_reference FROM encrypted_credential WHERE provider_id = ?1 AND profile_id = ?2",
         params![DEEPSEEK, PROFILE_ID],
@@ -457,7 +594,7 @@ fn remove_credential_row(root: &Path) -> Result<Option<String>, ApiError> {
             Ok(()) | Err(secure_credentials::CredentialFailure::KeychainMissing) => {}
             Err(error) => return Err(credential_failure(error)),
         }
-        let connection = Connection::open(root.join(DB)).map_err(db_error)?;
+        let connection = Connection::open(database_path(root)?).map_err(db_error)?;
         connection
             .execute(
                 "DELETE FROM encrypted_credential WHERE provider_id = ?1 AND profile_id = ?2",
@@ -474,7 +611,7 @@ fn write_credential_row(
     root: &Path,
     encrypted: &secure_credentials::EncryptedCredential,
 ) -> Result<(), ApiError> {
-    let connection = Connection::open(root.join(DB)).map_err(db_error)?;
+    let connection = Connection::open(database_path(root)?).map_err(db_error)?;
     connection.execute(
         "INSERT INTO encrypted_credential(provider_id, profile_id, ciphertext, nonce, tag, algorithm, version, key_reference) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8)",
         params![DEEPSEEK, PROFILE_ID, encrypted.ciphertext, encrypted.nonce, encrypted.tag, encrypted.algorithm, encrypted.version, encrypted.key_reference],
@@ -1235,6 +1372,49 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    struct TestRoot {
+        root: PathBuf,
+        authority: RootAuthority,
+    }
+
+    impl TestRoot {
+        fn new(label: &str) -> Self {
+            let run_id = format!("unit-{}-{}-{label}", std::process::id(), now_ms().unwrap());
+            let basename = format!("lifeos-p3-143-independent-review-{run_id}");
+            let root = PathBuf::from(format!("/private/tmp/{basename}"));
+            fs::create_dir(&root).unwrap();
+            fs::set_permissions(&root, fs::Permissions::from_mode(0o700)).unwrap();
+            let authority = RootAuthority {
+                profile: "independent-review".into(),
+                parent: "/private/tmp".into(),
+                basename,
+                root: root.to_string_lossy().into_owned(),
+                marker_schema: "lifeos.p3-143.independent-review-root.v1".into(),
+                marker_task: "LIFEOS-P3-143".into(),
+                marker_owner: "lifeos-p3-143-independent-review".into(),
+                run_id: run_id.clone(),
+                marker_run_id: Some(run_id),
+            };
+            assert_eq!(verify_authorized_root(&authority).unwrap(), root);
+            Self { root, authority }
+        }
+    }
+
+    impl Drop for TestRoot {
+        fn drop(&mut self) {
+            let expected_prefix = "lifeos-p3-143-independent-review-unit-";
+            if self.root.parent() == Some(Path::new("/private/tmp"))
+                && self
+                    .root
+                    .file_name()
+                    .and_then(|value| value.to_str())
+                    .is_some_and(|value| value.starts_with(expected_prefix))
+            {
+                let _ = fs::remove_dir_all(&self.root);
+            }
+        }
+    }
+
     struct TestCredentialCleanup {
         root: Option<PathBuf>,
         references: Vec<String>,
@@ -1452,6 +1632,107 @@ mod tests {
     }
 
     #[test]
+    fn compiled_root_authority_is_closed_and_non_runtime_configurable() {
+        let authority = compiled_root_authority();
+        assert!(compiled_authority_is_valid(&authority));
+        match authority.profile.as_str() {
+            "engineering" => {
+                assert_eq!(authority.run_id, "engineering");
+                assert!(authority.marker_run_id.is_none());
+                assert_eq!(
+                    authority.root,
+                    "/private/tmp/lifeos-p3-143-real-ai-secure-activation-v1"
+                );
+            }
+            "independent-review" => {
+                assert!(valid_review_run_id(&authority.run_id));
+                assert_eq!(
+                    authority.marker_run_id.as_deref(),
+                    Some(authority.run_id.as_str())
+                );
+                assert_eq!(
+                    authority.root,
+                    format!(
+                        "/private/tmp/lifeos-p3-143-independent-review-{}",
+                        authority.run_id
+                    )
+                );
+            }
+            other => panic!("unexpected compiled root profile: {other}"),
+        }
+    }
+
+    #[test]
+    fn review_root_authority_rejects_traversal_wrong_parent_and_marker_mutations_before_store() {
+        let mut traversal = compiled_root_authority();
+        traversal.profile = "independent-review".into();
+        traversal.basename = "..".into();
+        traversal.root = "/private/tmp/..".into();
+        traversal.run_id = "review-unit-a".into();
+        traversal.marker_run_id = Some("review-unit-a".into());
+        traversal.marker_schema = "lifeos.p3-143.independent-review-root.v1".into();
+        assert_eq!(
+            verify_authorized_root(&traversal).unwrap_err().code,
+            "compiled_root_authority_rejected"
+        );
+
+        let mut wrong_parent = compiled_root_authority();
+        wrong_parent.profile = "independent-review".into();
+        wrong_parent.parent = "/private/var".into();
+        wrong_parent.basename = "lifeos-p3-143-independent-review-review-unit-b".into();
+        wrong_parent.root = "/private/var/lifeos-p3-143-independent-review-review-unit-b".into();
+        wrong_parent.run_id = "review-unit-b".into();
+        wrong_parent.marker_run_id = Some("review-unit-b".into());
+        wrong_parent.marker_schema = "lifeos.p3-143.independent-review-root.v1".into();
+        assert_eq!(
+            verify_authorized_root(&wrong_parent).unwrap_err().code,
+            "compiled_root_authority_rejected"
+        );
+
+        let test_root = TestRoot::new("marker");
+        let marker = test_root.root.join(MARKER);
+        fs::write(
+            &marker,
+            b"{\"schema\":\"wrong\",\"task\":\"LIFEOS-P3-143\",\"owner\":\"lifeos-p3-143-independent-review\",\"runId\":\"wrong\"}\n",
+        )
+        .unwrap();
+        fs::set_permissions(&marker, fs::Permissions::from_mode(0o600)).unwrap();
+        assert_eq!(
+            verify_authorized_root(&test_root.authority)
+                .unwrap_err()
+                .code,
+            "task_marker_rejected"
+        );
+        assert!(!test_root.root.join(DB).exists());
+    }
+
+    #[test]
+    fn review_root_authority_rejects_symlink_before_database_open() {
+        let target = TestRoot::new("symlink-target");
+        let run_id = format!("unit-{}-{}-symlink", std::process::id(), now_ms().unwrap());
+        let basename = format!("lifeos-p3-143-independent-review-{run_id}");
+        let link = PathBuf::from(format!("/private/tmp/{basename}"));
+        std::os::unix::fs::symlink(&target.root, &link).unwrap();
+        let authority = RootAuthority {
+            profile: "independent-review".into(),
+            parent: "/private/tmp".into(),
+            basename,
+            root: link.to_string_lossy().into_owned(),
+            marker_schema: "lifeos.p3-143.independent-review-root.v1".into(),
+            marker_task: "LIFEOS-P3-143".into(),
+            marker_owner: "lifeos-p3-143-independent-review".into(),
+            run_id: run_id.clone(),
+            marker_run_id: Some(run_id),
+        };
+        assert_eq!(
+            verify_authorized_root(&authority).unwrap_err().code,
+            "task_root_type_rejected"
+        );
+        assert!(!link.join(DB).exists());
+        fs::remove_file(link).unwrap();
+    }
+
+    #[test]
     fn credential_keychain_material_and_aead_are_separate_and_fail_closed() {
         let source = "p3-143-key-canary-keep-private";
         let aad = credential_aad(DEEPSEEK, PROFILE_ID);
@@ -1559,7 +1840,8 @@ mod tests {
 
     #[test]
     fn sqlite_ciphertext_requires_its_exact_keychain_material_and_leaks_no_canary() {
-        let root = verify_task_root().unwrap();
+        let test_root = TestRoot::new("storage");
+        let root = test_root.root.clone();
         initialize_store(&root).unwrap();
         let _ = remove_credential_row(&root).unwrap();
         let mut cleanup = TestCredentialCleanup::root_bound(root.clone());
@@ -1588,7 +1870,8 @@ mod tests {
 
     #[test]
     fn credential_replacement_invalidates_the_previous_ciphertext_and_reference() {
-        let root = verify_task_root().unwrap();
+        let test_root = TestRoot::new("replacement");
+        let root = test_root.root.clone();
         initialize_store(&root).unwrap();
         let _ = remove_credential_row(&root).unwrap();
         let mut cleanup = TestCredentialCleanup::root_bound(root.clone());

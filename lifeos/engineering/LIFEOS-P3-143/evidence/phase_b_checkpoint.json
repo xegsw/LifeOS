@@ -1,7 +1,7 @@
 {
   "schema": "lifeos.p3-143.phase-b-checkpoint.v1",
   "task": "LIFEOS-P3-143",
-  "updated_at": "2026-09-02T09:57:39+08:00",
+  "updated_at": "2026-09-02T10:33:01+08:00",
   "phase_a_seal": {
     "manifest": "../PHASE_A_PRE_REAL_GATE_MANIFEST.json",
     "manifest_verifier": "phase_a_pre_real_gate_manifest_verification.json",
@@ -10,10 +10,10 @@
     "candidate_sha256": "ca923e448a63705b26699bbf293b1dcec234c6f81bcfddced91cb5d813dee4e6",
     "acceptance_basis_sha256": "c7385a767c827d94b3b44bfe98bdb97377d3d9ed90f718832f6f431130feb90f"
   },
-  "current_candidate_sha256": "a63af432a6d9fe20875423066a766735e68152d40663f65c11f33b0299d81e6d",
+  "current_candidate_sha256": "06ffa277be1dd42c946d7f7372d8a7f66619784a78aef351ceedc8068b1951c1",
   "current_closure_manifest": {
     "manifest": "../FINAL_MANIFEST.json",
-    "entries": 124,
+    "entries": 125,
     "errors": 0,
     "result": "PASS"
   },
@@ -89,5 +89,13 @@
     "network_receipt_count": 2,
     "network_receipt_unchanged": true
   },
-  "resume_from": "phase_c_independent_review"
+  "root_authority_closure": {
+    "trigger": "IR-P0-001 preserved in review commit e5fae069 and engineering history commit 089ec743",
+    "result": "PASS_READY_FOR_NEW_ISOLATED_INDEPENDENT_REREVIEW",
+    "candidate_sha256": "06ffa277be1dd42c946d7f7372d8a7f66619784a78aef351ceedc8068b1951c1",
+    "evidence": "root_authority_closure.json",
+    "runtime_root_source": "build-time closed profile only; runtime path injection rejected by non-use",
+    "historical_phase_b_root": "preserved and not accessed by this Closure"
+  },
+  "resume_from": "pm_dispatches_new_isolated_phase_c_independent_re_review_with_precontact_seal"
 }
