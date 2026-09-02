@@ -3,14 +3,14 @@
   "task": "LIFEOS-P3-143",
   "source_sha256": {
     "build.rs": "36fdea50fb622c4804fee83be7919d49f9f024cc0f0e0b16dffa0657dcdb65e1",
-    "src/runtime.rs": "8630c73dabe4cfba6b4268fa5233205becc8c9a059bf6f8281c9bd870f1ef5f6",
+    "src/runtime.rs": "2ca96bd93a62568722ae47cc38aaf301a1588e6c034a5b3138df5a223d3a8dd1",
     "src/deepseek.rs": "9e5712e8cec98341129a01808dc5fca84418379cf150ed2b12d004ce19605757",
     "src/secure_credentials.rs": "5ad7e56e4597a99141081b61c20b7a483555f81a324cd6806634a2a8e45e4c34",
     "ui/app.js": "187527cdfc6f839154088746b0dbf3c3a53199ba99a833e4b716d56c5f84f57b",
     "ui/styles.css": "830b4f1058c0845a908dae1e0ee5602ff5e532f68dba03fe32ee85bda326735a",
     "ui/index.html": "6d9b9491822117d8a7bd176b4430b653fa06e3209cc883d99e26aceaead84b8e",
     "tauri.conf.json": "e3152bc411b0b29f6029c7db26fc748ac557a3e7f7bbb25ac49d47842d3d1dfa",
-    "tests/offline_contract.mjs": "35c726bf405bfa7f5180b48b30baad76ac10aade9919d65bbcb5d89a4bc430b1"
+    "tests/offline_contract.mjs": "81cd82c6096c195ff0b74d635b8f2687f5f49cb8c6117105fa5b4e6a889e06c0"
   },
   "provider_registry": {
     "cloud": 8,
@@ -57,6 +57,7 @@
     "build_time_profiles_only": true,
     "review_run_id_validation": true,
     "runtime_compiled_authority_only": true,
+    "existing_root_missing_marker_fails_closed": true,
     "database_direct_child_guard": true
   },
   "result": "PASS"

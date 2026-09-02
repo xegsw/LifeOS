@@ -1,7 +1,7 @@
 {
   "schema": "lifeos.p3-143.phase-b-checkpoint.v1",
   "task": "LIFEOS-P3-143",
-  "updated_at": "2026-09-02T10:33:01+08:00",
+  "updated_at": "2026-09-02T11:18:22+08:00",
   "phase_a_seal": {
     "manifest": "../PHASE_A_PRE_REAL_GATE_MANIFEST.json",
     "manifest_verifier": "phase_a_pre_real_gate_manifest_verification.json",
@@ -10,10 +10,10 @@
     "candidate_sha256": "ca923e448a63705b26699bbf293b1dcec234c6f81bcfddced91cb5d813dee4e6",
     "acceptance_basis_sha256": "c7385a767c827d94b3b44bfe98bdb97377d3d9ed90f718832f6f431130feb90f"
   },
-  "current_candidate_sha256": "06ffa277be1dd42c946d7f7372d8a7f66619784a78aef351ceedc8068b1951c1",
+  "current_candidate_sha256": "b2bbd8a3641e8ca38535004bd0c4cca7f6221f8408058cfa783e7ce5ffca5177",
   "current_closure_manifest": {
     "manifest": "../FINAL_MANIFEST.json",
-    "entries": 125,
+    "entries": 126,
     "errors": 0,
     "result": "PASS"
   },
@@ -95,6 +95,15 @@
     "candidate_sha256": "06ffa277be1dd42c946d7f7372d8a7f66619784a78aef351ceedc8068b1951c1",
     "evidence": "root_authority_closure.json",
     "runtime_root_source": "build-time closed profile only; runtime path injection rejected by non-use",
+    "historical_phase_b_root": "preserved and not accessed by this Closure"
+  },
+  "root_authority_missing_marker_closure": {
+    "trigger": "PM-supplied IR-RR1-P0-001: a pre-existing legal direct 0700 review root without marker was upgraded before continuation",
+    "review_input_availability": "The two PM-named exact review paths were unavailable in this engineering worktree; no fuzzy search, substitute, or review-asset mutation was performed.",
+    "result": "PASS_READY_FOR_ANOTHER_FRESH_ISOLATED_INDEPENDENT_REREVIEW",
+    "candidate_sha256": "b2bbd8a3641e8ca38535004bd0c4cca7f6221f8408058cfa783e7ce5ffca5177",
+    "evidence": "root_authority_missing_marker_closure.json",
+    "policy": "Only a root absent at verifier entry may be created and marked. Any pre-existing root must already hold the exact regular 0600 marker or fails before runtime or DB writes.",
     "historical_phase_b_root": "preserved and not accessed by this Closure"
   },
   "resume_from": "pm_dispatches_new_isolated_phase_c_independent_re_review_with_precontact_seal"

@@ -45,9 +45,10 @@ const report = {
     build_time_profiles_only: build.includes("LIFEOS_P3_143_ROOT_PROFILE") && build.includes("independent-review") && build.includes("LIFEOS_P3_143_REVIEW_RUN_ID"),
     review_run_id_validation: build.includes("valid_review_run_id") && build.includes("8..=48"),
     runtime_compiled_authority_only: runtime.includes("compiled_root_authority") && runtime.includes("verify_runtime_child") && !runtime.includes('const TASK_ROOT: &str = "/private/tmp/lifeos-p3-143-real-ai-secure-activation-v1"'),
+    existing_root_missing_marker_fails_closed: runtime.includes("created_root") && runtime.includes("task_marker_missing"),
     database_direct_child_guard: runtime.includes("database_path") && runtime.includes("database_path_rejected"),
   },
-  result: commands.length === 20 && new Set(commands).size === 20 && transport && build.includes("valid_review_run_id") && runtime.includes("compiled_root_authority") ? "PASS" : "FAIL",
+  result: commands.length === 20 && new Set(commands).size === 20 && transport && build.includes("valid_review_run_id") && runtime.includes("compiled_root_authority") && runtime.includes("task_marker_missing") ? "PASS" : "FAIL",
 };
 await mkdir(evidence, { recursive: true });
 await writeFile(resolve(evidence, "static_contract_report.json"), `${JSON.stringify(report, null, 2)}\n`, { mode: 0o600 });

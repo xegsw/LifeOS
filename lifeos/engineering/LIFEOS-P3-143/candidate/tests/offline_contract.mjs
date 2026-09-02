@@ -32,7 +32,7 @@ expect(css.includes(".global-ai") && css.includes("@media (max-width: 760px)") &
 expect(config.includes("local.lifeos.p3-143") && config.includes("connect-src ipc:"), "tauri_identity_or_csp_missing");
 expect(rootTool.includes("root_literal_rejected") && rootTool.includes("marker_payload_rejected") && rootTool.includes("symlink"), "marker_cleanup_contract_missing");
 expect(build.includes("LIFEOS_P3_143_ROOT_PROFILE") && build.includes("independent-review") && build.includes("LIFEOS_P3_143_REVIEW_RUN_ID") && build.includes("valid_review_run_id"), "build_time_root_profile_missing");
-expect(runtime.includes("compiled_root_authority") && runtime.includes("verify_runtime_child") && runtime.includes("database_path") && !runtime.includes('const TASK_ROOT: &str = "/private/tmp/lifeos-p3-143-real-ai-secure-activation-v1"'), "compiled_root_authority_runtime_guard_missing");
+expect(runtime.includes("compiled_root_authority") && runtime.includes("verify_runtime_child") && runtime.includes("database_path") && runtime.includes("created_root") && runtime.includes("task_marker_missing") && !runtime.includes('const TASK_ROOT: &str = "/private/tmp/lifeos-p3-143-real-ai-secure-activation-v1"'), "compiled_root_authority_runtime_guard_missing");
 
 if (failures.length) {
   console.error(JSON.stringify({ status: "FAIL", failures }, null, 2));

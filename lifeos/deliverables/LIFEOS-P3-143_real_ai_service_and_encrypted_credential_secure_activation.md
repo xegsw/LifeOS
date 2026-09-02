@@ -110,3 +110,16 @@ Agent 不得索取、观察、复制、记录或接收 Key，且不得代替用�
 **工程 Closure 结论：Ready for 全新隔离 independent re-review。** 不得在本会话自行评审、重新真实调用或清理既有历史。
 
 相关 Evidence：[root authority Closure](/Users/xxe/.codex/worktrees/de3f/No.2/lifeos/engineering/LIFEOS-P3-143/evidence/root_authority_closure.json)。
+
+## IR-RR1-P0-001 预存 root marker Closure
+
+- PM 委派说明的两个 RR1 输入在本工程工作树的精确路径不可读；未做模糊搜索、替代取证或 review 资产修改。以下 P0 原因与历史计数均明确标注为 PM 提供事实，而非本会话读取该报告后的推断。
+- 问题是：一个已存在、直接且 0700 的 review root 缺少 marker 时，候选曾会自动补 marker／runtime／SQLite 并继续。现已改为只有 verifier 入口确认“不存在”的精确 root 才可创建，并以 `create_new`、0600、`sync_all` 写入精确任务 marker；已存在 root 必须已经拥有普通、非 symlink、0600 且 schema/task/owner/run-id 完全匹配的 marker。
+- 因而已存在 root 的缺 marker、错内容、marker symlink、0640 marker、root symlink、错误 parent／traversal 与 DB symlink 均在 runtime／DB 写入前拒绝；测试逐项保留 sentinel，且确认 runtime 与 DB 未出现。另有“缺失 root”正例确认创建 root、精确 marker 与 runtime，DB 仍未创建。
+- 离线验证通过：19 项串行 Rust 测试、20 项静态合同；`review-a20260902` 与 `review-b20260902` 分别编译；四种 build-time 非法 profile／run-id 拒绝，运行时 root 环境变量不改变编译 authority。Provider Cloud 8／Local 4、20 IPC、凭据、网络语义与 Phase B 历史均未改变。
+- 当前候选 85 个文件，digest 为 `b2bbd8a3641e8ca38535004bd0c4cca7f6221f8408058cfa783e7ce5ffca5177`。合成测试根／DB 的清理由独立 0600 test-owner marker 守卫；本 Closure 未接触 Phase B 保留根、真实 Provider、凭据、网络或个人数据。
+- 本 Closure 的非自指 Final Manifest 已重建并复核：126 entries、0 errors。
+
+**工程 Closure 结论：Ready for another fresh isolated independent re-review。** 历史 `IR-RR1-P0-001` 不因本工程自测而关闭；新评审仍须在接触候选前自行 seal 控制面。
+
+相关 Evidence：[missing-marker Closure](/Users/xxe/.codex/worktrees/de3f/No.2/lifeos/engineering/LIFEOS-P3-143/evidence/root_authority_missing_marker_closure.json)。

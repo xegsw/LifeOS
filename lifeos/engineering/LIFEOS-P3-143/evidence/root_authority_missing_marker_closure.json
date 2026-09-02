@@ -1,0 +1,88 @@
+{
+  "schema": "lifeos.p3-143.root-authority-missing-marker-closure.v1",
+  "task": "LIFEOS-P3-143",
+  "updated_at": "2026-09-02T11:18:22+08:00",
+  "closure_scope": "IR-RR1-P0-001 only",
+  "fixed_candidate": {
+    "base_commit": "767301fb051d11a6bf11488413f8b03aabfc2d99",
+    "before_sha256": "06ffa277be1dd42c946d7f7372d8a7f66619784a78aef351ceedc8068b1951c1",
+    "after_sha256": "b2bbd8a3641e8ca38535004bd0c4cca7f6221f8408058cfa783e7ce5ffca5177",
+    "candidate_file_count": 85
+  },
+  "review_input_availability": {
+    "independent_review": "lifeos/reviews/LIFEOS-P3-143/independent-re-review-1/independent_review.md",
+    "missing_marker_attack": "lifeos/reviews/LIFEOS-P3-143/independent-re-review-1/evidence/missing_marker_attack.json",
+    "availability_in_engineering_worktree": "unavailable_at_exact_paths",
+    "handling": "No fuzzy search, substitute, or review-asset mutation was performed. The P0 facts and historical counts below were supplied by PM delegation, not read from unavailable review assets."
+  },
+  "historical_review_facts_supplied_by_pm": {
+    "finding": "IR-RR1-P0-001",
+    "severity_counts": {
+      "P0": 1,
+      "P1": 0,
+      "P2": 0,
+      "Unknown": 0,
+      "Not_Implemented": 20
+    },
+    "cause": "A pre-existing legal direct 0700 /private/tmp independent-review root without the task marker was upgraded by candidate writes before continuation."
+  },
+  "implemented_policy": {
+    "compiled_profiles_only": ["engineering", "independent-review"],
+    "runtime_arbitrary_path_configuration": "rejected_by_non_use",
+    "absent_exact_root": "Only a root observed absent by symlink_metadata is created as a direct 0700 child; its exact regular 0600 task marker is create_new plus sync_all before runtime child or DB use.",
+    "pre_existing_root": "The root must already be direct, canonical, non-symlink, and 0700. Its marker must already be a regular non-symlink 0600 file with exact schema, task, owner, and runId. Missing or invalid marker returns task_marker_missing/task_marker_rejected/task_marker_type_rejected before runtime or database writes.",
+    "database": "The database path remains an exact non-symlink direct child of the authorized root."
+  },
+  "offline_verification": {
+    "rust": {
+      "command_class": "cargo test --locked --offline -- --test-threads=1",
+      "result": "PASS",
+      "tests": 19
+    },
+    "static_contract": {
+      "result": "PASS",
+      "checks": 20,
+      "ipc_count": 20
+    },
+    "review_profile_builds": [
+      {"run_id": "review-a20260902", "result": "PASS"},
+      {"run_id": "review-b20260902", "result": "PASS"}
+    ],
+    "build_time_rejections": [
+      {"mutation": "review run-id ../escape", "result": "PASS_REJECTED"},
+      {"mutation": "review run-id short", "result": "PASS_REJECTED"},
+      {"mutation": "unknown root profile", "result": "PASS_REJECTED"},
+      {"mutation": "engineering profile with review run-id", "result": "PASS_REJECTED"}
+    ],
+    "runtime_environment_mutation": {
+      "mutation": "LIFEOS_P3_143_RUNTIME_ROOT=/private/tmp/attacker-root",
+      "result": "PASS_IGNORED",
+      "proof": "compiled_root_authority_is_closed_and_non_runtime_configurable"
+    }
+  },
+  "prewrite_regression_matrix": [
+    {"case": "absent legal review root", "result": "PASS", "expected": "candidate creates 0700 root plus exact 0600 marker before runtime; DB remains absent"},
+    {"case": "existing legal 0700 root with missing marker", "result": "PASS_REJECTED", "error": "task_marker_missing", "preserved": ["sentinel", "marker absence", "no runtime child", "no DB"]},
+    {"case": "existing root with wrong marker content", "result": "PASS_REJECTED", "error": "task_marker_rejected", "preserved": ["sentinel", "no runtime child", "no DB"]},
+    {"case": "existing root with marker symlink", "result": "PASS_REJECTED", "error": "task_marker_type_rejected", "preserved": ["sentinel", "no runtime child", "no DB"]},
+    {"case": "existing root with marker mode 0640", "result": "PASS_REJECTED", "error": "task_marker_type_rejected", "preserved": ["sentinel", "no runtime child", "no DB"]},
+    {"case": "root symlink", "result": "PASS_REJECTED", "error": "task_root_type_rejected", "preserved": ["target sentinel", "no runtime child", "no DB"]},
+    {"case": "wrong parent or traversal authority", "result": "PASS_REJECTED", "error": "compiled_root_authority_rejected", "preserved": ["sentinel", "no task marker", "no runtime child", "no DB"]},
+    {"case": "database symlink", "result": "PASS_REJECTED", "error": "database_path_rejected", "preserved": ["database sentinel"]}
+  ],
+  "test_root_cleanup": {
+    "scope": "new synthetic unit-test roots and DB only",
+    "guard": "separate exact 0600 regular test-owner marker with exact content",
+    "result": "PASS"
+  },
+  "boundary_attestation": {
+    "provider_directory_or_ipc_changed": false,
+    "provider_network_or_real_call": false,
+    "credential_keychain_or_real_data_access": false,
+    "phase_b_preserved_root_access": false,
+    "review_assets_modified": false,
+    "independent_review_or_pm_acceptance_claimed": false
+  },
+  "result": "PASS_READY_FOR_ANOTHER_FRESH_ISOLATED_INDEPENDENT_REREVIEW",
+  "next_step": "A new isolated independent re-review must seal its own controls before candidate contact. This engineering Closure neither performs that review nor closes its historical P0."
+}
