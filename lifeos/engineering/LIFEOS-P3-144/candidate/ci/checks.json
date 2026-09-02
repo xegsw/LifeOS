@@ -5,6 +5,7 @@
   "commands": [
     "LIFEOS_P3_144_ROOT_PROFILE=engineering cargo test --locked --offline -- --test-threads=1",
     "LIFEOS_P3_144_ROOT_PROFILE=independent-review cargo test --locked --offline -- --test-threads=1",
+    "LIFEOS_P3_144_ROOT_PROFILE=pilot-7 cargo check --locked --offline",
     "node tests/offline_contract.mjs",
     "node tools/task_root.mjs negative",
     "node tools/collect_static_evidence.mjs"

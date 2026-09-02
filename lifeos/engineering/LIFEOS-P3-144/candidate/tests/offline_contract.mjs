@@ -16,7 +16,7 @@ const commands = ipcBlock ? [...ipcBlock[1].matchAll(/"([a-z_]+)"/g)].map((match
 expect(commands.length === 20 && commands.every((name, index) => name === expected[index]), "exact_twenty_ipc_failed");
 expect(runtime.includes("deny_unknown_fields") && runtime.includes("dto_version_rejected"), "strict_dto_missing");
 expect(adapter.includes('pub const AUTHORITY: &str = "https://api.deepseek.com"'), "exact_deepseek_authority_missing");
-expect(runtime.includes("fn run_mode() -> &'static str {") && runtime.includes('    "synthetic"'), "phase_a_not_hard_pinned_synthetic");
+expect(runtime.includes("fn run_mode() -> &'static str {") && runtime.includes('env!("LIFEOS_P3_144_COMPILED_RUN_MODE")'), "compiled_run_mode_binding_missing");
 expect(runtime.includes("const ITEM_LIMIT: i64 = 3") && runtime.includes("DISCLOSURE_CHARACTER_BUDGET") && runtime.includes("DISCLOSURE_TOKEN_BUDGET"), "minimal_context_budget_missing");
 expect(runtime.includes("authorized=1 AND status='active'") && runtime.includes("disclosure_selection_stale"), "invalid_context_exclusion_missing");
 expect(runtime.includes("previewed=1") && runtime.includes("confirmation_used=1") && runtime.includes("confirmation_stale_or_replayed"), "preview_confirmation_contract_missing");
@@ -34,10 +34,12 @@ expect(html.includes("app.js") && !html.includes("runtime-adapter.js"), "legacy_
 expect(config.includes("local.lifeos.p3-144") && config.includes("connect-src ipc:"), "tauri_identity_or_csp_missing");
 expect(rootTool.includes("lifeos-p3-144-engineering-v1") && rootTool.includes("marker_payload_rejected") && rootTool.includes("symlink"), "marker_cleanup_contract_missing");
 expect(build.includes("LIFEOS_P3_144_ROOT_PROFILE") && build.includes("engineering") && build.includes("independent-review") && build.includes("REVIEW_BASENAME") && build.includes("REVIEW_RUN_ID") && build.includes("rejects dynamic review run ids") && !build.includes("real-ai-secure-activation"), "build_time_root_profile_missing");
+expect(build.includes('const PILOT_PARENT: &str = "/Users/xxe/Documents"') && build.includes('const PILOT_BASENAME: &str = "LifeOS-Self-Use-Pilot-7"') && build.includes('"pilot-7"') && build.includes('"real_gate"'), "pilot_7_exact_profile_missing");
+expect(runtime.includes('authority.root == "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-7"') && runtime.includes('authority.marker_schema == "lifeos.p3-144.pilot-7-root.v1"'), "pilot_7_runtime_authority_missing");
 expect(runtime.includes("compiled_root_authority") && runtime.includes("verify_runtime_child") && runtime.includes("database_path") && runtime.includes("created_root") && runtime.includes("task_marker_missing"), "compiled_root_authority_runtime_guard_missing");
 
 if (failures.length) {
   console.error(JSON.stringify({ status: "FAIL", failures }, null, 2));
   process.exit(1);
 }
-console.log(JSON.stringify({ status: "PASS", checks: 21, ipc_count: commands.length, run_mode: "synthetic", ui: "Chinese Work Health disclosure center" }));
+console.log(JSON.stringify({ status: "PASS", checks: 23, ipc_count: commands.length, run_modes: ["synthetic", "real_gate"], ui: "Chinese Work Health disclosure center" }));

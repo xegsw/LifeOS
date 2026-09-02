@@ -85,10 +85,18 @@ fn now_ms() -> Result<i64, ApiError> {
 }
 
 fn run_mode() -> &'static str {
-    // Phase A is compiled only for an engineering or independent-review root.
-    // A caller-controlled environment literal must never turn an offline build
-    // into a real Provider gate.
-    "synthetic"
+    // The mode is emitted by build.rs together with the exact root profile.
+    // Runtime environment variables cannot turn an offline binary into a real gate.
+    env!("LIFEOS_P3_144_COMPILED_RUN_MODE")
+}
+
+fn run_mode_matches_profile(profile: &str, mode: &str) -> bool {
+    matches!(
+        (profile, mode),
+        ("engineering", "synthetic")
+            | ("independent-review", "synthetic")
+            | ("pilot-7", "real_gate")
+    )
 }
 
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
@@ -326,8 +334,7 @@ fn compiled_root_authority() -> RootAuthority {
 
 fn compiled_authority_is_valid(authority: &RootAuthority) -> bool {
     let root = Path::new(&authority.root);
-    if authority.parent != "/private/tmp"
-        || authority.basename.is_empty()
+    if authority.basename.is_empty()
         || authority.basename.contains('/')
         || authority.basename == "."
         || authority.basename == ".."
@@ -340,18 +347,30 @@ fn compiled_authority_is_valid(authority: &RootAuthority) -> bool {
     }
     match authority.profile.as_str() {
         "engineering" => {
-            authority.run_id == "engineering"
+            authority.parent == "/private/tmp"
+                && authority.root == "/private/tmp/lifeos-p3-144-engineering-v1"
+                && authority.run_id == "engineering"
                 && authority.marker_run_id.is_none()
                 && authority.marker_owner == authority.basename
                 && authority.marker_schema == "lifeos.p3-144.engineering-root.v1"
         }
         "independent-review" => {
-            authority.basename == "lifeos-p3-144-independent-review-v1"
+            authority.parent == "/private/tmp"
+                && authority.basename == "lifeos-p3-144-independent-review-v1"
                 && authority.root == "/private/tmp/lifeos-p3-144-independent-review-v1"
                 && authority.run_id == "v1"
                 && authority.marker_run_id.as_deref() == Some("v1")
                 && authority.marker_owner == "lifeos-p3-144-independent-review"
                 && authority.marker_schema == "lifeos.p3-144.independent-review-root.v1"
+        }
+        "pilot-7" => {
+            authority.parent == "/Users/xxe/Documents"
+                && authority.basename == "LifeOS-Self-Use-Pilot-7"
+                && authority.root == "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-7"
+                && authority.run_id == "pilot-7"
+                && authority.marker_run_id.as_deref() == Some("pilot-7")
+                && authority.marker_owner == "lifeos-p3-144-pilot-7"
+                && authority.marker_schema == "lifeos.p3-144.pilot-7-root.v1"
         }
         _ => false,
     }
@@ -494,7 +513,14 @@ fn verify_authorized_root(authority: &RootAuthority) -> Result<PathBuf, ApiError
 }
 
 fn verify_task_root() -> Result<PathBuf, ApiError> {
-    verify_authorized_root(&compiled_root_authority())
+    let authority = compiled_root_authority();
+    if !run_mode_matches_profile(&authority.profile, run_mode()) {
+        return Err(ApiError::blocked(
+            "compiled_run_mode_rejected",
+            "编译期运行模式与任务根 profile 不一致；未访问数据或网络。",
+        ));
+    }
+    verify_authorized_root(&authority)
 }
 
 fn database_path(root: &Path) -> Result<PathBuf, ApiError> {
@@ -2139,6 +2165,20 @@ mod tests {
         }
     }
 
+    fn pilot_7_authority() -> RootAuthority {
+        RootAuthority {
+            profile: "pilot-7".into(),
+            parent: "/Users/xxe/Documents".into(),
+            basename: "LifeOS-Self-Use-Pilot-7".into(),
+            root: "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-7".into(),
+            marker_schema: "lifeos.p3-144.pilot-7-root.v1".into(),
+            marker_task: "LIFEOS-P3-144".into(),
+            marker_owner: "lifeos-p3-144-pilot-7".into(),
+            run_id: "pilot-7".into(),
+            marker_run_id: Some("pilot-7".into()),
+        }
+    }
+
     fn write_test_cleanup_marker(root: &Path) {
         let marker = root.join(TEST_CLEANUP_MARKER);
         let mut file = OpenOptions::new()
@@ -2505,6 +2545,29 @@ mod tests {
             }
             other => panic!("unexpected compiled root profile: {other}"),
         }
+    }
+
+    #[test]
+    fn pilot_7_authority_is_exact_without_accessing_the_pilot_root() {
+        let authority = pilot_7_authority();
+        assert!(compiled_authority_is_valid(&authority));
+        assert!(run_mode_matches_profile("pilot-7", "real_gate"));
+        assert!(!run_mode_matches_profile("pilot-7", "synthetic"));
+        assert!(!run_mode_matches_profile("engineering", "real_gate"));
+        assert_eq!(
+            authority.root,
+            "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-7"
+        );
+
+        let mut wrong = authority.clone();
+        wrong.basename = "LifeOS-Self-Use-Pilot-8".into();
+        assert!(!compiled_authority_is_valid(&wrong));
+        let mut wrong = authority.clone();
+        wrong.root = "/private/tmp/lifeos-p3-144-pilot-7".into();
+        assert!(!compiled_authority_is_valid(&wrong));
+        let mut wrong = authority;
+        wrong.marker_run_id = None;
+        assert!(!compiled_authority_is_valid(&wrong));
     }
 
     #[test]

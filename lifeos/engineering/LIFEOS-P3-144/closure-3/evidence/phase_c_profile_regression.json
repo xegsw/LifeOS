@@ -1,0 +1,61 @@
+{
+  "schema": "lifeos.p3-144.closure-3.phase-c-profile-regression.v1",
+  "task": "LIFEOS-P3-144",
+  "scope": "offline_compile_only_no_pilot_access",
+  "checks": [
+    {
+      "profile": "engineering",
+      "mode": "synthetic",
+      "command": "cargo test --locked --offline -- --test-threads=1",
+      "result": "PASS",
+      "passed": 22,
+      "failed": 0
+    },
+    {
+      "profile": "independent-review",
+      "mode": "synthetic",
+      "command": "cargo test --locked --offline -- --test-threads=1",
+      "result": "PASS",
+      "passed": 22,
+      "failed": 0
+    },
+    {
+      "profile": "pilot-7",
+      "mode": "real_gate",
+      "command": "cargo check --locked --offline",
+      "runtime_started": false,
+      "result": "PASS"
+    },
+    {
+      "command": "node tests/offline_contract.mjs",
+      "result": "PASS",
+      "checks": 23,
+      "ipc_count": 20,
+      "run_modes": ["synthetic", "real_gate"]
+    },
+    {
+      "case": "pilot_profile_rejects_review_run_id",
+      "result": "PASS",
+      "observed_exit": 101,
+      "failure_stage": "build_time"
+    },
+    {
+      "case": "unknown_profile_rejected",
+      "result": "PASS",
+      "observed_exit": 101,
+      "failure_stage": "build_time"
+    }
+  ],
+  "candidate_files_changed": [
+    {"path": "lifeos/engineering/LIFEOS-P3-144/candidate/build.rs", "sha256": "fb25a9245ab288eda6fd39eb386092504ed4c476bd641bc476ea4131abf587e5"},
+    {"path": "lifeos/engineering/LIFEOS-P3-144/candidate/src/runtime.rs", "sha256": "3ffea154dd41ebd9f73c29df2bd9f393df37c6b80e0c4c7319f4b9cd6d84a69e"},
+    {"path": "lifeos/engineering/LIFEOS-P3-144/candidate/tests/offline_contract.mjs", "sha256": "9b5f1dd86cf14619a54ce09a454cb8caf4f09c4a2453afa901cacb7b9981f260"},
+    {"path": "lifeos/engineering/LIFEOS-P3-144/candidate/ci/checks.json", "sha256": "700052006e1b9fb628fdf5ee65509d53b33336f39ce051dca22708ad612c3ac8"}
+  ],
+  "pilot_7_contact": false,
+  "real_database_contact": false,
+  "real_content_contact": false,
+  "real_credential_contact": false,
+  "network_contact": false,
+  "counts": {"P0": 0, "P1": 0, "P2": 0, "Unknown": 0, "Not Implemented": 0}
+}
