@@ -1,17 +1,26 @@
-# LIFEOS-P3-144 · Phase A 合成／离线工程 Gate 交付
+# LIFEOS-P3-144 · DeepSeek Work／Health 最小个人上下文受控真实闭环
 
 ## 任务信息
 
 - 任务 ID：LIFEOS-P3-144
 - 任务名称：DeepSeek Work／Health 最小个人上下文受控循环
 - 执行 Agent：Codex
-- 当前状态：Partial — Phase A Completed，Awaiting Fresh Independent Review
+- 当前状态：PM Pass / User Final Confirmation Pending / Not Product Frozen
 - 需要 PM 决策：Yes
 - 任务类型：工程实现、L3/Gate Evidence Closure
 - 风险等级：L3/Gate
 - Task Contract：[LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop.md](../tasks/LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop.md)
 - L3/Gate ABF：ABF-P3-144-v1，[acceptance basis](../tasks/LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop_acceptance_basis_freeze.md)
 - 启动前合同歧义：No
+
+## 终局收口摘要（2026-09-03）
+
+- Phase A 合成／离线工程 Gate、Phase B 全新隔离独立评审、Phase C 用户操作真实 Gate、Closure-3 profile delta 和 Closure-4 独立增量复核均已完成。
+- 用户在 actual Tauri App 内完成受控真实操作；一次确认后的最小上下文只发送至 DeepSeek 精确 authority。真实正文、凭据和正文 hash 未进入 Evidence、日志、截图或聊天。
+- Closure-4 关闭真实使用暴露的超时误分类、回答／反馈状态不可见、数据库文件名偏离合同和反馈重复消费问题。
+- 活动数据库已按用户明确授权无损收口为 Pilot-7 根内 `capture.sqlite`，普通文件 `0600`；原零字节占位文件改名保全。Pilot-7、DB 与加密凭据均保留。
+- 最终 PM 计数：P0=0、P1=0、P2=3、Unknown=0、Not Implemented=0。三个 P2 均为已修复或已排除的可分离历史事实，不阻断唯一用户结果。
+- PM 结论为 Pass；L3 最终采纳仍待用户确认。R-0055／R-0056保持Open，产品Not Frozen，Stage 4 Not Ready。
 
 ## 执行摘要
 

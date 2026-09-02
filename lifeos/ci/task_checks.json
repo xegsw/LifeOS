@@ -50,6 +50,17 @@
         ["node", "tests/offline_contract.mjs"],
         ["node", "tools/task_root.mjs", "negative"]
       ]
+    },
+    {
+      "task_id": "LIFEOS-P3-144",
+      "working_directory": "lifeos/engineering/LIFEOS-P3-144/candidate",
+      "environment": {
+        "LIFEOS_P3_144_ROOT_PROFILE": "engineering"
+      },
+      "commands": [
+        ["cargo", "test", "--locked", "--offline", "--", "--test-threads=1"],
+        ["node", "tests/offline_contract.mjs"]
+      ]
     }
   ]
 }

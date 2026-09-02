@@ -1,0 +1,57 @@
+{
+  "schema": "lifeos.p3-144.pm-final-verification.v1",
+  "task_id": "LIFEOS-P3-144",
+  "date": "2026-09-03",
+  "candidate_commit": "86d764d91c4c6716254eef7d002dd47092c42826",
+  "review_commit": "c7a058cd2648cc78b6fd48f49a1dca123a1a47be",
+  "contains_real_text": false,
+  "contains_secret": false,
+  "contains_database_hash": false,
+  "engineering": {
+    "rust": "26/26 PASS",
+    "offline_contract": "23/23 PASS",
+    "ipc_count": 20,
+    "pilot_restart_noncontent": "PASS",
+    "closure_network_requests": 0
+  },
+  "ci": {
+    "governance_guard": "PASS",
+    "task_check_registered": true,
+    "deterministic_regression": "PASS"
+  },
+  "independent_review": {
+    "conclusion": "Pass",
+    "rust": "26/26 PASS",
+    "offline_contract": "23/23 PASS",
+    "review_owned_semantics": "15/15 PASS",
+    "mutations": "10/10 PASS",
+    "actual_tauri": "PASS",
+    "manifest": "19/19 PASS",
+    "temporary_root_absent": true
+  },
+  "real_use_noncontent": {
+    "user_operated": true,
+    "user_reported_complete": true,
+    "provider": "DeepSeek",
+    "authority": "https://api.deepseek.com",
+    "confirmed_minimal_context_requests": 1,
+    "other_provider_requests": 0,
+    "background_requests": 0,
+    "active_work_items": 3,
+    "active_health_items": 0,
+    "credential_records": 1,
+    "confirmed_understanding_records": 2,
+    "feedback_records_preserved": 17,
+    "database_basename": "capture.sqlite",
+    "database_mode": "0600",
+    "restart_counts_unchanged": true
+  },
+  "counts": { "P0": 0, "P1": 0, "P2": 3, "Unknown": 0, "Not_Implemented": 0 },
+  "pm_conclusion": "Pass — User Final Confirmation Pending",
+  "risk_and_stage": {
+    "R-0055": "Open",
+    "R-0056": "Open",
+    "product_frozen": false,
+    "stage_4_ready": false
+  }
+}
