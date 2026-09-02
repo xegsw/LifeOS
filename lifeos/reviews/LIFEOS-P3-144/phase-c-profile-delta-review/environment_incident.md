@@ -1,0 +1,9 @@
+# Environment incident: review temporary root disappeared
+
+After the immutable-input post-test verifier completed successfully, the original ordinary review marker was absent.  The root retained only review-owned snapshot/cache/temporary material; candidate source, Closure/history inputs, review output, and all prohibited Pilot-7 assets are separate locations.
+
+Initial provenance of the absent marker was not established by this review.  A first PM-approved recovery cleanup then passed strict identity, ownership, top-level allowlist, non-symlink and 95-input-hash checks, but its `fs.rmSync` returned `ENOTEMPTY`.  PM subsequently verified that the only residual top-level directories were this review's read-only `snapshot/` and `history/` copies, with no open handles.  That explains the failure: the v1 cleanup did not first restore owner write/execute permissions on read-only snapshot directories.  It does **not** prove concurrent external repopulation.
+
+Classification: recoverable cleanup implementation/environment incident, not a candidate finding and not a prohibited-boundary contact.  The v2 recovery procedure is limited to revalidating the literal root and its copies, writing a distinct recovery marker, restoring owner write/execute only on already-validated review-copy directories, and deleting the same exact root.  No candidate or historical source will be modified.
+
+Outcome: v2 passed.  Its independent pre-delete validation recorded the strict residual top level (`history`, `snapshot`, and the v2 marker), 189 non-symlink nodes, no open handles, and 95 reproduced Closure-input hashes.  It restored owner permissions on 41 validated review-copy directories only, removed the exact literal review root, and the post-action absence check passed.  The v1 issue remains recorded as a closed P2 review-cleanup issue; it neither changes candidate findings nor grants real Pilot/Provider authority.

@@ -1,0 +1,42 @@
+{
+  "schema": "lifeos.p3-144.phase-c-profile-delta.recovery-root-validation.v2",
+  "root": "/private/tmp/lifeos-p3-144-phase-c-profile-delta-review-v1",
+  "real_root": "/private/tmp/lifeos-p3-144-phase-c-profile-delta-review-v1",
+  "root_mode_octal": "700",
+  "root_uid": 501,
+  "current_uid": 501,
+  "top_level": [
+    "history",
+    "snapshot"
+  ],
+  "expected_top_level": [
+    "history",
+    "snapshot"
+  ],
+  "nodes_inspected": 189,
+  "controls": {
+    "test_design.md": {
+      "expected": "00b92b7e6ec5f36439737c8e0f6c94d180599187dbd97dfca42344e910b29c9a",
+      "actual": "00b92b7e6ec5f36439737c8e0f6c94d180599187dbd97dfca42344e910b29c9a",
+      "pass": true
+    },
+    "allowlist.md": {
+      "expected": "9be9d15be430e0cd93f04859ad911871f47ed006ff55e477859525e86c3552d8",
+      "actual": "9be9d15be430e0cd93f04859ad911871f47ed006ff55e477859525e86c3552d8",
+      "pass": true
+    },
+    "prohibited_paths.md": {
+      "expected": "74451ece56b785c4f246824643aa61c2417815ccde5108d8faf9c7a72c85eb4d",
+      "actual": "74451ece56b785c4f246824643aa61c2417815ccde5108d8faf9c7a72c85eb4d",
+      "pass": true
+    },
+    "PRECONTACT_SEAL.md": {
+      "expected": "0185fb8717d4e515254851c65efd7739732b80248bdab30f21043e3e77469e84",
+      "actual": "0185fb8717d4e515254851c65efd7739732b80248bdab30f21043e3e77469e84",
+      "pass": true
+    }
+  },
+  "closure_entries_verified": 95,
+  "failures": [],
+  "pass": true
+}

@@ -1,0 +1,207 @@
+{
+  "schema": "lifeos.p3-144.phase-c-profile-delta-review.final-manifest-verifier.v1",
+  "integrity_pass": true,
+  "review_outcome": {
+    "status": "PASS",
+    "counts": {
+      "P0": 0,
+      "P1": 0,
+      "P2": 1,
+      "Unknown": 0,
+      "NotImplemented": 0
+    },
+    "blocking_row": null,
+    "candidate_finding": false
+  },
+  "candidate_commit": "777af31ec88751661ada34aa13343aabf77b6609",
+  "review_evidence_count": 31,
+  "evidence": [
+    {
+      "path": "PRECONTACT_HASHES.md",
+      "expected": "5229076ffae27b30fc340e3c74d6976a0bce6cfe1a24acfc4d7235734ce9f3f4",
+      "actual": "5229076ffae27b30fc340e3c74d6976a0bce6cfe1a24acfc4d7235734ce9f3f4",
+      "pass": true
+    },
+    {
+      "path": "PRECONTACT_SEAL.md",
+      "expected": "0185fb8717d4e515254851c65efd7739732b80248bdab30f21043e3e77469e84",
+      "actual": "0185fb8717d4e515254851c65efd7739732b80248bdab30f21043e3e77469e84",
+      "pass": true
+    },
+    {
+      "path": "allowlist.md",
+      "expected": "9be9d15be430e0cd93f04859ad911871f47ed006ff55e477859525e86c3552d8",
+      "actual": "9be9d15be430e0cd93f04859ad911871f47ed006ff55e477859525e86c3552d8",
+      "pass": true
+    },
+    {
+      "path": "checkpoint.json",
+      "expected": "a057d490b7887c44922ffdeb5cb8a79364ac673053f1ebfde36c9eebac68b320",
+      "actual": "a057d490b7887c44922ffdeb5cb8a79364ac673053f1ebfde36c9eebac68b320",
+      "pass": true
+    },
+    {
+      "path": "environment_incident.md",
+      "expected": "8afdd87497b453220e5fae4e72a310afaf11698f7962df81b592a579a8728f8a",
+      "actual": "8afdd87497b453220e5fae4e72a310afaf11698f7962df81b592a579a8728f8a",
+      "pass": true
+    },
+    {
+      "path": "evidence_build_profile_mutations.json",
+      "expected": "74ef7648e240d391531ade5a387bdae5de71a94c375733f21063ba9e8cc8e1d1",
+      "actual": "74ef7648e240d391531ade5a387bdae5de71a94c375733f21063ba9e8cc8e1d1",
+      "pass": true
+    },
+    {
+      "path": "evidence_closure3_input_verification.json",
+      "expected": "721ac0cb2973126000ef40d9242d9ee2cecdc350bace3ab257580bcadb4b8695",
+      "actual": "721ac0cb2973126000ef40d9242d9ee2cecdc350bace3ab257580bcadb4b8695",
+      "pass": true
+    },
+    {
+      "path": "evidence_closure3_posttest_verification.json",
+      "expected": "721ac0cb2973126000ef40d9242d9ee2cecdc350bace3ab257580bcadb4b8695",
+      "actual": "721ac0cb2973126000ef40d9242d9ee2cecdc350bace3ab257580bcadb4b8695",
+      "pass": true
+    },
+    {
+      "path": "evidence_missing_marker_cleanup_rejection.json",
+      "expected": "9bbb9922fc96139d336db968c8eba21f7d36cf8912fda32f82037703655356c1",
+      "actual": "9bbb9922fc96139d336db968c8eba21f7d36cf8912fda32f82037703655356c1",
+      "pass": true
+    },
+    {
+      "path": "evidence_recovery_cleanup_v2_receipt.json",
+      "expected": "32dd6524faad92345b4f46b283b9b5c9bec5b443d22042661152a2b50d7db2e1",
+      "actual": "32dd6524faad92345b4f46b283b9b5c9bec5b443d22042661152a2b50d7db2e1",
+      "pass": true
+    },
+    {
+      "path": "evidence_recovery_root_validation.json",
+      "expected": "0cfd1bf2462612ac273a1862c599e82e96468193c0afabe13150cd5b63d0bb87",
+      "actual": "0cfd1bf2462612ac273a1862c599e82e96468193c0afabe13150cd5b63d0bb87",
+      "pass": true
+    },
+    {
+      "path": "evidence_recovery_root_validation_v2.json",
+      "expected": "8cb835eb55ef6344fbe0648c1ea91f644635a4266b72836d2fe9e02673326b00",
+      "actual": "8cb835eb55ef6344fbe0648c1ea91f644635a4266b72836d2fe9e02673326b00",
+      "pass": true
+    },
+    {
+      "path": "evidence_static_delta_audit.json",
+      "expected": "9cfbb10f3bef695aabf0cd0b14aa1e3b7f2e36d03ece98431edabad78ebd27cb",
+      "actual": "9cfbb10f3bef695aabf0cd0b14aa1e3b7f2e36d03ece98431edabad78ebd27cb",
+      "pass": true
+    },
+    {
+      "path": "evidence_wrong_marker_rejection.json",
+      "expected": "8cdaa95b1b745571103f30cbec5cd2250db6be92a292f7385be6e895f49f6858",
+      "actual": "8cdaa95b1b745571103f30cbec5cd2250db6be92a292f7385be6e895f49f6858",
+      "pass": true
+    },
+    {
+      "path": "governance_guard.log",
+      "expected": "22df821bf7a5f200bcf7ce5fedb0fc3a76becfad013d5301956d23540bb0f613",
+      "actual": "22df821bf7a5f200bcf7ce5fedb0fc3a76becfad013d5301956d23540bb0f613",
+      "pass": true
+    },
+    {
+      "path": "offline_contract.log",
+      "expected": "bb429d1ed46f15d4efe1ce96502203af717d8e9f69fde2b743f5688b7a3d3e71",
+      "actual": "bb429d1ed46f15d4efe1ce96502203af717d8e9f69fde2b743f5688b7a3d3e71",
+      "pass": true
+    },
+    {
+      "path": "pilot_7_compile_only.log",
+      "expected": "9b958830799ca2ef2d514461bf4fee3a23bb6f7e2ad827017afcd19e82748e75",
+      "actual": "9b958830799ca2ef2d514461bf4fee3a23bb6f7e2ad827017afcd19e82748e75",
+      "pass": true
+    },
+    {
+      "path": "prohibited_paths.md",
+      "expected": "74451ece56b785c4f246824643aa61c2417815ccde5108d8faf9c7a72c85eb4d",
+      "actual": "74451ece56b785c4f246824643aa61c2417815ccde5108d8faf9c7a72c85eb4d",
+      "pass": true
+    },
+    {
+      "path": "review_matrix.json",
+      "expected": "33b3be14941e37352faaabbad4cc8f594d14277fcd91f550daafed25830d7fb8",
+      "actual": "33b3be14941e37352faaabbad4cc8f594d14277fcd91f550daafed25830d7fb8",
+      "pass": true
+    },
+    {
+      "path": "rust_engineering_serial.log",
+      "expected": "29e1b3e9212b5b66af9f07a55962936c50632bb69b408f53df193c2b4edb3fb6",
+      "actual": "29e1b3e9212b5b66af9f07a55962936c50632bb69b408f53df193c2b4edb3fb6",
+      "pass": true
+    },
+    {
+      "path": "rust_engineering_serial_resume.log",
+      "expected": "4e7474782d931d69510f17aa67a99a81f700fb5533ca05140ba2105f6592f839",
+      "actual": "4e7474782d931d69510f17aa67a99a81f700fb5533ca05140ba2105f6592f839",
+      "pass": true
+    },
+    {
+      "path": "rust_independent_review_serial.log",
+      "expected": "899c0bcea46eb3fe1a70f59a42e3ec29a84b4de4a27f4f14673b830d968b0100",
+      "actual": "899c0bcea46eb3fe1a70f59a42e3ec29a84b4de4a27f4f14673b830d968b0100",
+      "pass": true
+    },
+    {
+      "path": "test_design.md",
+      "expected": "00b92b7e6ec5f36439737c8e0f6c94d180599187dbd97dfca42344e910b29c9a",
+      "actual": "00b92b7e6ec5f36439737c8e0f6c94d180599187dbd97dfca42344e910b29c9a",
+      "pass": true
+    },
+    {
+      "path": "review_tools/build_profile_mutations.mjs",
+      "expected": "15cfd761025189cc31f816bfe88c41d3e22633145353ddbc9d5224d471a13491",
+      "actual": "15cfd761025189cc31f816bfe88c41d3e22633145353ddbc9d5224d471a13491",
+      "pass": true
+    },
+    {
+      "path": "review_tools/marker_gated_cleanup.mjs",
+      "expected": "c25638ca15427aaf1c818b94b3945a92e1af495f15b261f7b253359d82767dd6",
+      "actual": "c25638ca15427aaf1c818b94b3945a92e1af495f15b261f7b253359d82767dd6",
+      "pass": true
+    },
+    {
+      "path": "review_tools/recovery_marker_gated_cleanup.mjs",
+      "expected": "6ae62d6d155f822f0c48424568163761f3cd8df25a41bef9dfca0e529942c2a2",
+      "actual": "6ae62d6d155f822f0c48424568163761f3cd8df25a41bef9dfca0e529942c2a2",
+      "pass": true
+    },
+    {
+      "path": "review_tools/recovery_marker_gated_cleanup_v2.mjs",
+      "expected": "4e5e28533e0646cd916e15db153ee3fa1f2fc9f5d98732510838987584bf6102",
+      "actual": "4e5e28533e0646cd916e15db153ee3fa1f2fc9f5d98732510838987584bf6102",
+      "pass": true
+    },
+    {
+      "path": "review_tools/static_delta_audit.mjs",
+      "expected": "0a4c6027aa65cb3e9627dabf304fbd9209afc850ad98113cdbe649e929ac4f0b",
+      "actual": "0a4c6027aa65cb3e9627dabf304fbd9209afc850ad98113cdbe649e929ac4f0b",
+      "pass": true
+    },
+    {
+      "path": "review_tools/validate_recovery_root.mjs",
+      "expected": "518e41e7b1a21946fee5eaf364c27ba925c6729fc8cbfe2f6301a643fe156a4d",
+      "actual": "518e41e7b1a21946fee5eaf364c27ba925c6729fc8cbfe2f6301a643fe156a4d",
+      "pass": true
+    },
+    {
+      "path": "review_tools/validate_recovery_root_v2.mjs",
+      "expected": "88ee69de13365f42d326553e535000c478da5b6400d4138656837724ce2f9483",
+      "actual": "88ee69de13365f42d326553e535000c478da5b6400d4138656837724ce2f9483",
+      "pass": true
+    },
+    {
+      "path": "review_tools/verify_closure3_inputs.mjs",
+      "expected": "6393fe40ee66c01fb701c762637a08de17d28e5c8d5918e6f9aa32a4c6fcad67",
+      "actual": "6393fe40ee66c01fb701c762637a08de17d28e5c8d5918e6f9aa32a4c6fcad67",
+      "pass": true
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "lifeos.p3-144.phase-c-profile-delta.build-profile-mutations.v1",
+  "assertions": {
+    "environment_override_exit_zero": true,
+    "compiled_profile_remains_engineering": true,
+    "compiled_mode_remains_synthetic": true,
+    "unknown_profile_exit_101": true,
+    "unknown_profile_message": true,
+    "pilot_review_run_id_exit_101": true,
+    "pilot_review_run_id_message": true
+  },
+  "runs": [
+    {
+      "name": "synthetic_environment_cannot_promote_to_real",
+      "status": 0,
+      "signal": null,
+      "output_tail": "    Checking muda v0.19.3\n    Checking window-vibrancy v0.6.0\n    Checking ctr v0.9.2\n    Checking aes v0.8.4\n    Checking security-framework-sys v2.15.0\n    Checking hashlink v0.12.1\n    Checking aead v0.5.2\n   Compiling serde_repr v0.1.21\n    Checking embed_plist v1.2.2\n    Checking mime v0.3.17\n    Checking fallible-streaming-iterator v0.1.9\n    Checking fallible-iterator v0.3.0\n    Checking aes-gcm v0.10.3\n    Checking security-framework v3.5.1\n    Checking rand v0.8.6\n    Checking zeroize v1.8.1\n   Compiling tauri-build v2.6.3\n   Compiling tauri-codegen v2.6.3\n   Compiling tauri v2.11.5\n   Compiling tauri-macros v2.6.3\n   Compiling lifeos-p3-144 v0.1.0 (/private/tmp/lifeos-p3-144-phase-c-profile-delta-review-v1/snapshot/lifeos/engineering/LIFEOS-P3-144/candidate)\n    Checking rusqlite v0.40.2\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 22.93s\n"
+    },
+    {
+      "name": "unknown_profile_build_time_rejected",
+      "status": 101,
+      "signal": null,
+      "output_tail": "   Compiling lifeos-p3-144 v0.1.0 (/private/tmp/lifeos-p3-144-phase-c-profile-delta-review-v1/snapshot/lifeos/engineering/LIFEOS-P3-144/candidate)\nerror: failed to run custom build command for `lifeos-p3-144 v0.1.0 (/private/tmp/lifeos-p3-144-phase-c-profile-delta-review-v1/snapshot/lifeos/engineering/LIFEOS-P3-144/candidate)`\n\nCaused by:\n  process didn't exit successfully: `/private/tmp/lifeos-p3-144-phase-c-profile-delta-review-v1/cargo-target/build-profile-mutations/debug/build/lifeos-p3-144-5b192b14b1e0b66e/build-script-build` (exit status: 101)\n  --- stdout\n  cargo:rerun-if-env-changed=LIFEOS_P3_144_ROOT_PROFILE\n  cargo:rerun-if-env-changed=LIFEOS_P3_144_REVIEW_RUN_ID\n\n  --- stderr\n\n  thread 'main' (17608613) panicked at build.rs:70:18:\n  root profile must be engineering, independent-review, or pilot-7\n  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n"
+    },
+    {
+      "name": "pilot_profile_with_review_run_id_build_time_rejected",
+      "status": 101,
+      "signal": null,
+      "output_tail": "   Compiling lifeos-p3-144 v0.1.0 (/private/tmp/lifeos-p3-144-phase-c-profile-delta-review-v1/snapshot/lifeos/engineering/LIFEOS-P3-144/candidate)\nerror: failed to run custom build command for `lifeos-p3-144 v0.1.0 (/private/tmp/lifeos-p3-144-phase-c-profile-delta-review-v1/snapshot/lifeos/engineering/LIFEOS-P3-144/candidate)`\n\nCaused by:\n  process didn't exit successfully: `/private/tmp/lifeos-p3-144-phase-c-profile-delta-review-v1/cargo-target/build-profile-mutations/debug/build/lifeos-p3-144-5b192b14b1e0b66e/build-script-build` (exit status: 101)\n  --- stdout\n  cargo:rerun-if-env-changed=LIFEOS_P3_144_ROOT_PROFILE\n  cargo:rerun-if-env-changed=LIFEOS_P3_144_REVIEW_RUN_ID\n\n  --- stderr\n\n  thread 'main' (17608635) panicked at build.rs:58:21:\n  review run id is invalid for the pilot-7 root profile\n  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n"
+    }
+  ],
+  "pass": true
+}

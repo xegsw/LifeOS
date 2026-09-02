@@ -1,0 +1,67 @@
+{
+  "schema": "lifeos.p3-144.phase-c-profile-delta.static-audit.v1",
+  "candidate_sha256": {
+    "build.rs": "fb25a9245ab288eda6fd39eb386092504ed4c476bd641bc476ea4131abf587e5",
+    "src/runtime.rs": "3ffea154dd41ebd9f73c29df2bd9f393df37c6b80e0c4c7319f4b9cd6d84a69e",
+    "src/deepseek.rs": "b9d100fefda24f9a1cc71c4b11c764a18a7d673663defb5f5c4bed4105600142",
+    "src/main.rs": "6b3803f183a378caf2ee8bc5dc4d018afa17a26664909ec0248fe86fb5473b0b",
+    "tests/offline_contract.mjs": "9b5f1dd86cf14619a54ce09a454cb8caf4f09c4a2453afa901cacb7b9981f260"
+  },
+  "pristine": {
+    "pass": true,
+    "errors": []
+  },
+  "mutations": [
+    {
+      "name": "pilot_parent",
+      "detected": true,
+      "expected_error": "pilot_parent_not_exact",
+      "errors": [
+        "pilot_parent_not_exact"
+      ]
+    },
+    {
+      "name": "pilot_mode",
+      "detected": true,
+      "expected_error": "pilot_real_gate_not_compiled",
+      "errors": [
+        "pilot_real_gate_not_compiled"
+      ]
+    },
+    {
+      "name": "runtime_mode_env",
+      "detected": true,
+      "expected_error": "run_mode_not_compile_time_bound",
+      "errors": [
+        "run_mode_not_compile_time_bound",
+        "run_mode_runtime_env_override_possible"
+      ]
+    },
+    {
+      "name": "root_gate_order",
+      "detected": true,
+      "expected_error": "profile_mode_not_rejected_before_root_access",
+      "errors": [
+        "profile_mode_not_rejected_before_root_access"
+      ]
+    },
+    {
+      "name": "pilot_run_id",
+      "detected": true,
+      "expected_error": "pilot_review_run_id_not_rejected_at_build",
+      "errors": [
+        "pilot_review_run_id_not_rejected_at_build"
+      ]
+    },
+    {
+      "name": "ipc_removed",
+      "detected": true,
+      "expected_error": "ipc_missing_get_context_disclosure_receipt",
+      "errors": [
+        "ipc_missing_get_context_disclosure_receipt",
+        "ipc_list_drift"
+      ]
+    }
+  ],
+  "pass": true
+}

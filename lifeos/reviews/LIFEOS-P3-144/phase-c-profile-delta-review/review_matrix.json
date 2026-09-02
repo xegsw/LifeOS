@@ -1,0 +1,85 @@
+{
+  "schema": "lifeos.p3-144.phase-c-profile-delta.review-matrix.v1",
+  "candidate_commit": "777af31ec88751661ada34aa13343aabf77b6609",
+  "scope": "Closure-3 Phase-C build/profile authority delta only; no Phase-B UI or real Pilot operation",
+  "rows": [
+    {
+      "id": "D-01",
+      "requirement": "precontact test design, allowlist, prohibited declaration, and seal are written and hashed before candidate/history contact",
+      "status": "PASS",
+      "evidence": ["test_design.md", "allowlist.md", "prohibited_paths.md", "PRECONTACT_SEAL.md", "PRECONTACT_HASHES.md"]
+    },
+    {
+      "id": "D-02",
+      "requirement": "fixed candidate and Closure-3 Manifest/source hashes reproduce; history is read-only",
+      "status": "PASS",
+      "evidence": ["evidence_closure3_input_verification.json", "evidence_closure3_posttest_verification.json"]
+    },
+    {
+      "id": "D-03",
+      "requirement": "engineering profile serial Rust regression is exactly 22/22",
+      "status": "PASS",
+      "evidence": ["rust_engineering_serial_resume.log"]
+    },
+    {
+      "id": "D-04",
+      "requirement": "independent-review profile serial Rust regression is exactly 22/22",
+      "status": "PASS",
+      "evidence": ["rust_independent_review_serial.log"]
+    },
+    {
+      "id": "D-05",
+      "requirement": "offline contract is exactly 23/23 and keeps 20 IPC",
+      "status": "PASS",
+      "evidence": ["offline_contract.log"]
+    },
+    {
+      "id": "D-06",
+      "requirement": "pilot-7 profile is compile-only and never starts a runtime",
+      "status": "PASS",
+      "evidence": ["pilot_7_compile_only.log", "evidence_build_profile_mutations.json"]
+    },
+    {
+      "id": "D-07",
+      "requirement": "exact parent/root/basename, marker schema/owner/run-id, compiled real_gate, mode binding, pre-root/DB failure order, 20 IPC and DeepSeek/data/credential/disclosure non-drift",
+      "status": "PASS",
+      "evidence": ["evidence_static_delta_audit.json"]
+    },
+    {
+      "id": "D-08",
+      "requirement": "environment cannot promote synthetic to real; unknown profile and pilot plus review run-id are build-time rejected",
+      "status": "PASS",
+      "evidence": ["evidence_build_profile_mutations.json"]
+    },
+    {
+      "id": "D-09",
+      "requirement": "candidate/history zero write and Pilot-7/real-network/credential/text zero contact",
+      "status": "PASS",
+      "evidence": ["PRECONTACT_SEAL.md", "evidence_closure3_posttest_verification.json", "checkpoint.json"]
+    },
+    {
+      "id": "D-10",
+      "requirement": "wrong marker cleanup rejects and the correct marker cleans only the exact review temporary root",
+      "status": "PASS",
+      "reason": "The wrong-marker and missing-marker paths failed closed.  Under PM's narrowly authorized recovery route, v2 revalidated the literal root, ownership, strict top-level allowlist, non-symlink tree, no open handles, controls, and all 95 Closure hashes; it repaired permissions only on validated review-copy directories and removed that exact root.",
+      "evidence": ["environment_incident.md", "evidence_wrong_marker_rejection.json", "evidence_missing_marker_cleanup_rejection.json", "evidence_recovery_root_validation_v2.json", "evidence_recovery_cleanup_v2_receipt.json"]
+    },
+    {
+      "id": "D-11",
+      "requirement": "governance guard passes",
+      "status": "PASS",
+      "evidence": ["governance_guard.log"]
+    }
+  ],
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 1,
+    "Unknown": 0,
+    "Not Implemented": 0
+  },
+  "outcome": "PASS",
+  "blocking_fact": null,
+  "resolved_p2": "Recovery cleanup v1 stopped on read-only review snapshot directories because it did not restore validated owner directory permissions before exact deletion.  It is a review-cleanup implementation/environment issue, not a candidate finding; v2's independent revalidation and exact cleanup closed it.",
+  "candidate_finding": false
+}
