@@ -2238,6 +2238,40 @@ mod tests {
         }
     }
 
+    struct PhaseATestRootCleanup {
+        root: PathBuf,
+        authority: RootAuthority,
+    }
+
+    impl PhaseATestRootCleanup {
+        fn new(root: PathBuf) -> Self {
+            let authority = compiled_root_authority();
+            assert_eq!(root, PathBuf::from(&authority.root));
+            Self { root, authority }
+        }
+    }
+
+    impl Drop for PhaseATestRootCleanup {
+        fn drop(&mut self) {
+            reset_phase_a_store(&self.root);
+
+            let marker = self.root.join(MARKER);
+            let marker_meta = fs::symlink_metadata(&marker).unwrap();
+            assert!(marker_meta.file_type().is_file() && !marker_meta.file_type().is_symlink());
+            assert_eq!(marker_meta.permissions().mode() & 0o777, 0o600);
+            let observed: RootMarker = serde_json::from_slice(&fs::read(&marker).unwrap()).unwrap();
+            assert_eq!(observed, expected_marker(&self.authority));
+
+            let runtime = self.root.join(RUNTIME_CHILD);
+            let runtime_meta = fs::symlink_metadata(&runtime).unwrap();
+            assert!(runtime_meta.file_type().is_dir() && !runtime_meta.file_type().is_symlink());
+            assert_eq!(runtime_meta.permissions().mode() & 0o777, 0o700);
+            fs::remove_dir(&runtime).unwrap();
+            fs::remove_file(&marker).unwrap();
+            fs::remove_dir(&self.root).unwrap();
+        }
+    }
+
     struct TestCredentialCleanup {
         root: Option<PathBuf>,
         references: Vec<String>,
@@ -2885,6 +2919,7 @@ mod tests {
     #[test]
     fn p3_144_phase_a_context_limits_disclosure_and_confirmation_are_fail_closed() {
         let root = verify_task_root().unwrap();
+        let _root_cleanup = PhaseATestRootCleanup::new(root.clone());
         reset_phase_a_store(&root);
         initialize_store(&root).unwrap();
 

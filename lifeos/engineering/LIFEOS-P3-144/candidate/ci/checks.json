@@ -3,7 +3,8 @@
   "task": "LIFEOS-P3-144",
   "offline_only": true,
   "commands": [
-    "cargo test --locked --offline p3_144_phase_a_context_limits_disclosure_and_confirmation_are_fail_closed -- --test-threads=1",
+    "LIFEOS_P3_144_ROOT_PROFILE=engineering cargo test --locked --offline -- --test-threads=1",
+    "LIFEOS_P3_144_ROOT_PROFILE=independent-review cargo test --locked --offline -- --test-threads=1",
     "node tests/offline_contract.mjs",
     "node tools/task_root.mjs negative",
     "node tools/collect_static_evidence.mjs"

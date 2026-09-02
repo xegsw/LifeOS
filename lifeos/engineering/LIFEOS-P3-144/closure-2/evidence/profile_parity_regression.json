@@ -1,0 +1,54 @@
+{
+  "schema": "lifeos.p3-144.closure-2.profile-parity-regression.v1",
+  "task": "LIFEOS-P3-144",
+  "scope": "synthetic_offline_only",
+  "finding_closed": "candidate_regression_is_not_order_independent",
+  "checks": [
+    {
+      "profile": "engineering",
+      "command": "LIFEOS_P3_144_ROOT_PROFILE=engineering cargo test --locked --offline -- --test-threads=1",
+      "result": "PASS",
+      "passed": 21,
+      "failed": 0
+    },
+    {
+      "profile": "independent-review",
+      "command": "LIFEOS_P3_144_ROOT_PROFILE=independent-review cargo test --locked --offline -- --test-threads=1",
+      "result": "PASS",
+      "passed": 21,
+      "failed": 0
+    },
+    {
+      "command": "cargo fmt -- --check",
+      "result": "PASS"
+    },
+    {
+      "command": "node tests/offline_contract.mjs",
+      "result": "PASS",
+      "checks": 21,
+      "ipc_count": 20,
+      "run_mode": "synthetic"
+    },
+    {
+      "command": "python3 lifeos/tools/lifeos_ci.py validate",
+      "result": "PASS"
+    }
+  ],
+  "candidate_files_changed": [
+    {
+      "path": "lifeos/engineering/LIFEOS-P3-144/candidate/src/runtime.rs",
+      "sha256": "25dcb357260da3bd313bbcd330735ca2574d1f5a0a5fc5ebdf0a73c6762ea573"
+    },
+    {
+      "path": "lifeos/engineering/LIFEOS-P3-144/candidate/ci/checks.json",
+      "sha256": "6d586048137a2557bd64c287e7aa1b6f6fd125cb346684fa0a3efaee2fd8d9a5"
+    }
+  ],
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "Not Implemented": 0
+  }
+}
