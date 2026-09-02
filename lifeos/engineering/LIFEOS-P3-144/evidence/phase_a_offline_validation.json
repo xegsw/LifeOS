@@ -1,0 +1,23 @@
+{
+  "schema": "lifeos.p3-144.phase-a-offline-validation.v1",
+  "task": "LIFEOS-P3-144",
+  "execution_mode": "synthetic_offline",
+  "real_provider_contact": false,
+  "real_credential_contact": false,
+  "pilot_7_contact": false,
+  "evidence_content": "fixed_non_sensitive_synthetic_fixtures_only",
+  "checks": [
+    { "name": "cargo_fmt", "result": "PASS" },
+    { "name": "targeted_locked_offline_rust_test", "result": "PASS", "tests": 1, "filtered_inherited_tests": 19, "coverage": ["3-item and 200-character limits", "non-medical Health rejection", "one-domain disclosure", "remove/re-preview confirmation", "restart invalidates unconsumed confirmation", "replay rejection", "corrected or revoked source invalidates Understanding", "zero synthetic network receipt"] },
+    { "name": "offline_contract", "result": "PASS", "checks": 22, "ipc_count": 20 },
+    { "name": "static_contract_report", "result": "PASS", "source_files": 9, "run_mode": "hard_pinned_synthetic", "provider_registry": "Cloud 8 / Local 4" },
+    { "name": "marker_negative_matrix", "result": "PASS", "cases": ["wrong_marker_rejected", "symlink_rejected", "traversal_rejected"] },
+    { "name": "locked_offline_tauri_bundle", "result": "PASS", "bundle": "LifeOS · Work 与健康状态.app" }
+  ],
+  "preserved_harness_history": [
+    { "event": "inherited_full_test_suite_once", "result": "excluded_from_positive_evidence", "reason": "inherited fixtures created task-prefixed independent-review roots instead of the fixed engineering root", "boundary_contact": "none", "remediation": "all subsequent Rust validation used only the P3-144 targeted test and fixed engineering root" },
+    { "event": "display_name_launch_attempt", "result": "excluded_from_positive_evidence", "reason": "the macOS bundle CFBundleExecutable is lifeos-p3-144; later captures use a live direct executable PID" }
+  ],
+  "phase_a_result": "PASS_AWAITING_FRESH_INDEPENDENT_REVIEW",
+  "next": "A fresh isolated independent-review session must seal its own controls before candidate contact. Phase C is not authorized by this report."
+}

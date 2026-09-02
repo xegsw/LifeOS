@@ -1,0 +1,67 @@
+# LIFEOS-P3-144 · Phase A 合成／离线工程 Gate 交付
+
+## 任务信息
+
+- 任务 ID：LIFEOS-P3-144
+- 任务名称：DeepSeek Work／Health 最小个人上下文受控循环
+- 执行 Agent：Codex
+- 当前状态：Partial — Phase A Completed，Awaiting Fresh Independent Review
+- 需要 PM 决策：Yes
+- 任务类型：工程实现、L3/Gate Evidence Closure
+- 风险等级：L3/Gate
+- Task Contract：[LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop.md](../tasks/LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop.md)
+- L3/Gate ABF：ABF-P3-144-v1，[acceptance basis](../tasks/LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop_acceptance_basis_freeze.md)
+- 启动前合同歧义：No
+
+## 执行摘要
+
+### 事实
+
+- 已在 `lifeos/engineering/LIFEOS-P3-144/candidate/` 实现受限 Work 与非医疗 Health/Fitness Current State：每域最多 3 条、每条最多 200 字符，Health 医疗语义写前拒绝。
+- Context Resolver 只从当前 Domain 的相关、有效、授权条目组装披露；披露预览明确显示条目、DeepSeek 精确 authority、模型、处理位置和 `3 / 480 / 120` 预算。移除、重启、过期式失效、撤回、纠正与重复确认均失败关闭。
+- Understandings 以独立类型保存来源引用、Provider 和 model；用户可确认、编辑、拒绝、忽略、纠正。纠正／撤回来源会使相关 Understanding 标记为 `invalidated`，不改写历史。
+- Phase A `run_mode()` 硬固定为 `synthetic`；Renderer 没有直接网络 API，DeepSeek 真实 adapter 在本 Gate 不可达。Cloud 8／Local 4、恰好 20 个既有 IPC 名称及 P3-143 Settings shell 均保留。
+- 锁定离线定向 Rust 测试、前端离线合同、静态合同、marker 反例矩阵和最终 Tauri bundle 均通过。最终 bundle 以直接启动且仍存活的 PID 完成 Desktop／Compact／Narrow 的 `PID → exact AXWindow → AXWebArea → target-only screenshot` Evidence。
+- Phase A 仅使用固定非敏感合成夹具。未访问或探测 Pilot-7、其 DB、真实个人内容、真实 DeepSeek、真实凭据或其他 Provider。
+- 工程临时根 `/private/tmp/lifeos-p3-144-engineering-v1` 已在 marker 复核后精确清除；本轮创建的合成 Keychain 项已删除。
+
+### 推断
+
+- 工程 Gate 具备交给全新隔离独立评审的最小可复核包；这一推断不等同 Independent Pass、PM 验收、Phase C 许可、风险关闭、产品冻结或 Stage 切换。
+
+### 建议
+
+- PM 应创建全新隔离的 Phase B 独立评审会话。评审必须先封存自有 test design、allowlist 和禁止路径声明，再只读接触候选；不得复用本会话、PID、DB、临时根、截图或结论。
+
+## 角色与关卡
+
+- 主责角色：工程实现 / Technical Owner
+- 协审角色：独立评审、安全与数据治理
+- 已覆盖：Phase A synthetic/offline engineering、结构化正负路径、动态 actual-Tauri、Manifest 和精确清理。
+- 已触发独立评审：Yes；原因是 L3/Gate 且 Phase C、真实数据／凭据／网络边界仍未许可。
+- 未通过或未执行的关卡：Phase B Independent Review、Phase C user-operated real loop、Phase D non-content terminal review、PM acceptance、用户最终采纳。
+
+## Evidence 与交付物
+
+- 工程目录：[LIFEOS-P3-144](../engineering/LIFEOS-P3-144)
+- Phase A 验证：[phase_a_offline_validation.json](../engineering/LIFEOS-P3-144/evidence/phase_a_offline_validation.json)
+- AC 矩阵：[phase_a_ac_matrix.json](../engineering/LIFEOS-P3-144/evidence/phase_a_ac_matrix.json)
+- 原生窗口 Evidence：[native_window_evidence.json](../engineering/LIFEOS-P3-144/evidence/native_window_evidence.json)
+- Checkpoint：[checkpoint.json](../engineering/LIFEOS-P3-144/evidence/checkpoint.json)
+- 清理收据：[cleanup_receipt.json](../engineering/LIFEOS-P3-144/evidence/cleanup_receipt.json)
+- Final Manifest：[FINAL_MANIFEST.json](../engineering/LIFEOS-P3-144/FINAL_MANIFEST.json)
+- Manifest 验证：[manifest_verification.json](../engineering/LIFEOS-P3-144/evidence/manifest_verification.json)（127 entries，0 errors，PASS）
+
+## 需要 PM 决策
+
+1. 是否按任务卡建立全新隔离的 Phase B 独立评审会话。
+2. 在 Independent Pass 前，保持 Phase C／Pilot-7／真实内容／真实凭据／真实网络全部未授权。
+
+## 后续任务建议
+
+- 仅在 Phase B Independent Pass 后，按原 Task Contract 的用户操作边界进入 Phase C；不得由工程会话代为输入、观察或记录真实内容或凭据。
+
+## 阻塞或异常
+
+- 无工程阻塞。
+- 历史保全：一次继承的完整测试集会创建不属于固定工程根的任务前缀 fixture root，已从正 Evidence 排除；后续只运行 P3-144 定向测试。一次显示名 bundle 启动及一次后台 PID 尝试均未满足“启动返回且仍存活 PID”的要求，已排除；最终 PID Evidence 均使用持久终端 `exec` 的 live PID。

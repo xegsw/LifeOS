@@ -1,0 +1,17 @@
+{
+  "schema": "lifeos.p3-144.native-window-evidence.v1",
+  "task": "LIFEOS-P3-144",
+  "phase": "A",
+  "status": "PASS",
+  "required_ax_chain": "direct launch live PID -> one exact-title AXWindow -> AXWebArea -> target-window-only screenshot",
+  "network_mode": "synthetic_no_network",
+  "credential_or_real_content_present": false,
+  "attempts": [
+    { "viewport": "desktop", "requested_logical_size": { "width": 1280, "height": 1024 }, "direct_launch_pid": 11423, "expected_window_title": "LifeOS · Work 与健康状态", "evidence": "native-desktop-final-disclosure-ax.json", "screenshot": "native-desktop-final-disclosure.png", "screenshot_pixels": { "width": 2784, "height": 2122 }, "result": "PASS: fixed Work fixture, Provider, unselected model, exact budget and processing location are visible before confirmation" },
+    { "viewport": "desktop", "requested_logical_size": { "width": 1280, "height": 1024 }, "direct_launch_pid": 10628, "expected_window_title": "LifeOS · Work 与健康状态", "evidence": "native-desktop-final-direct-pid-ax.json", "screenshot": "native-desktop-final-direct-pid.png", "screenshot_pixels": { "width": 2784, "height": 2122 }, "result": "PASS: final bundle Settings shell" },
+    { "viewport": "compact", "requested_logical_size": { "width": 1160, "height": 768 }, "direct_launch_pid": 10679, "expected_window_title": "LifeOS · Work 与健康状态", "evidence": "native-compact-final-direct-pid-ax.json", "screenshot": "native-compact-final-direct-pid.png", "screenshot_pixels": { "width": 2544, "height": 1760 }, "result": "PASS" },
+    { "viewport": "narrow", "requested_logical_size": { "width": 700, "height": 760 }, "direct_launch_pid": 10820, "expected_window_title": "LifeOS · Work 与健康状态", "evidence": "native-narrow-final-direct-pid-ax.json", "screenshot": "native-narrow-final-direct-pid.png", "screenshot_pixels": { "width": 1624, "height": 1744 }, "result": "PASS" }
+  ],
+  "supplemental_synthetic_loop": { "pid": 10237, "evidence": ["native-desktop-direct-pid-disclosure-ax.json", "native-desktop-direct-pid-disclosure.png", "native-desktop-direct-pid-result-ax.json", "native-desktop-direct-pid-result.png"], "actions": ["fixed synthetic credential save", "synthetic model test", "explicit selection and enablement", "Work and Health separated save", "disclosure preview", "one-time synthetic confirmation", "feedback"], "qualification": "same P3-144 synthetic UI flow before the final display-only model/budget correction; no real Provider, real credential, personal content, or Pilot-7 path was touched" },
+  "writers_stopped": true
+}

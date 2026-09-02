@@ -1,0 +1,33 @@
+{
+  "schema": "lifeos.p3-144.phase-a-ac-matrix.v1",
+  "task": "LIFEOS-P3-144",
+  "scope": "Phase A synthetic/offline engineering gate only",
+  "rows": [
+    { "id": "AC-01", "phase_a_status": "PASS", "evidence": ["static_contract_report.json", "native_window_evidence.json"], "assertion": "P3-143 shell relationship, Cloud 8/Local 4, exact 20 IPC and final Desktop/Compact/Narrow direct-PID AX evidence are retained." },
+    { "id": "AC-02", "phase_a_status": "PASS", "evidence": ["preflight/prohibited_path_declaration.md", "preflight/allowlist.md", "checkpoint.json"], "assertion": "Phase A used only the authorized engineering root and fixed synthetic fixtures; prohibited Pilot-7 paths were not contacted." },
+    { "id": "AC-03", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json", "native_window_evidence.json"], "assertion": "Work and Health Current State have separate domain/type writes in actual synthetic UI and SQLite schema." },
+    { "id": "AC-04", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json", "static_contract_report.json"], "assertion": "Limits, empty values, strict DTO and medical/type rejection fail before writes." },
+    { "id": "AC-05", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json", "static_contract_report.json"], "assertion": "Resolver selects only relevant active authorized records from the requested domain." },
+    { "id": "AC-06", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json"], "assertion": "Corrected/revoked source records make selections stale and cannot enter later disclosure." },
+    { "id": "AC-07", "phase_a_status": "PASS", "evidence": ["native-desktop-final-disclosure.png", "native-desktop-final-disclosure-ax.json", "static_contract_report.json"], "assertion": "Before confirmation the final App shows precise item list, DeepSeek authority, model state, processing location and 3/480/120 budget, with removal." },
+    { "id": "AC-08", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json"], "assertion": "Removal, restart and replay invalidate or reject an unconsumed confirmation." },
+    { "id": "AC-09", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json", "static_contract_report.json"], "assertion": "Synthetic test observes zero network receipt until confirmed flow; code is hard-pinned synthetic and rejects incomplete state." },
+    { "id": "AC-10", "phase_a_status": "PASS", "evidence": ["static_contract_report.json"], "assertion": "Only the exact DeepSeek authority is declared, while Phase A cannot enter a real gate or renderer network path." },
+    { "id": "AC-11", "phase_a_status": "PASS_PHASE_A_ONLY", "evidence": ["phase_a_offline_validation.json", "checkpoint.json"], "assertion": "Evidence contains fixed non-sensitive synthetic fixtures only; no real-content evidence claim is made." },
+    { "id": "AC-12", "phase_a_status": "PASS", "evidence": ["static_contract_report.json", "native_window_evidence.json"], "assertion": "Understanding is separately typed with provider/model/source references, not presented as user fact." },
+    { "id": "AC-13", "phase_a_status": "PASS", "evidence": ["native_window_evidence.json", "static_contract_report.json"], "assertion": "Confirm/edit/reject/ignore/correct controls and persistent feedback event path are implemented; fixed synthetic confirm was exercised." },
+    { "id": "AC-14", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json"], "assertion": "Correcting/revoking a source invalidates derivations containing that source reference; history is retained with an invalidated status." },
+    { "id": "AC-15", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json", "static_contract_report.json"], "assertion": "Non-medical Health Current State is enforced; diagnosis/treatment terms fail closed." },
+    { "id": "AC-16", "phase_a_status": "PASS_PHASE_A_ONLY", "evidence": ["static_contract_report.json", "native_window_evidence.json"], "assertion": "AES-GCM plus separate task Keychain reference is retained and synthetic lifecycle was exercised; real credential testing is excluded." },
+    { "id": "AC-17", "phase_a_status": "PASS", "evidence": ["phase_a_offline_validation.json", "../FINAL_MANIFEST.json", "manifest_verification.json"], "assertion": "The final non-self-referential Manifest and verifier are required and generated as the closing Phase A check." },
+    { "id": "AC-18", "phase_a_status": "DEFERRED_PHASE_B", "evidence": [], "assertion": "Requires a fresh isolated independent-review session." },
+    { "id": "AC-19", "phase_a_status": "DEFERRED_PHASE_B", "evidence": ["checkpoint.json"], "assertion": "Phase C remains blocked until Independent Pass." },
+    { "id": "AC-20", "phase_a_status": "DEFERRED_PHASE_C", "evidence": [], "assertion": "No real user content was entered or observed." },
+    { "id": "AC-21", "phase_a_status": "DEFERRED_PHASE_C", "evidence": [], "assertion": "No real request was sent." },
+    { "id": "AC-22", "phase_a_status": "DEFERRED_PHASE_C", "evidence": [], "assertion": "No Pilot-7, real DB, or real credential exists in this Phase A scope." },
+    { "id": "AC-23", "phase_a_status": "PASS", "evidence": ["../FINAL_MANIFEST.json", "manifest_verification.json"], "assertion": "Frozen P3-144 inputs and P3-143 history are rehashed during final Manifest augmentation and independently reproducible by the verifier." },
+    { "id": "AC-24", "phase_a_status": "PASS", "evidence": ["checkpoint.json"], "assertion": "Excluded nonpositive runs are recorded and environment-only evidence gaps remain resumable, not candidate defects." }
+  ],
+  "phase_a_gate": "PASS_AWAITING_FRESH_INDEPENDENT_REVIEW",
+  "overall_task": "PENDING_PHASE_B_C_D_AND_PM"
+}
