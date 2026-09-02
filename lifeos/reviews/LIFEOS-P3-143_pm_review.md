@@ -71,7 +71,7 @@
 - TASK_REGISTRY：同上；保留 Not Product Frozen。
 - DECISION_LOG：D-0642保留PM Pass待确认事实；D-0643记录用户采纳与分支交付授权。
 - RISK_LOG／FREEZE_STATUS 是否有事实变化：No。R-0055／R-0056 保持 Open；ABF 保持任务级 Frozen；产品资产不冻结。
-- 下一步：提交并推送L3任务分支；仅在CI全绿、无冲突且主线可安全合并时进入main。采纳不关闭风险、不恢复 Pilot-6、不启用个人数据发送、不进入 Stage 4。
+- 交付状态：PR #2两套CI全绿，任务分支已以fast-forward方式进入GitHub `main`；任务资产转历史只读。采纳不关闭风险、不恢复 Pilot-6、不启用个人数据发送、不进入 Stage 4。
 
 ## 聊天摘要
 

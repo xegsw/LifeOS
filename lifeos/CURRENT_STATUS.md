@@ -1,7 +1,7 @@
 # LifeOS Current Status Index
 
 更新时间：2026-09-02
-最后校验时间：2026-09-02（D-0643：用户采纳 P3-143 PM Pass；任务 Accepted / Complete，等待 L3 分支推送与 CI／主线合并检查）
+最后校验时间：2026-09-02（D-0644：P3-143 用户已采纳，PR #2 CI全绿并快进交付GitHub main）
 
 本文件是 PM 日常上下文入口，用于减少重复读取大文件；它是状态索引，不替代主账本。
 
@@ -19,7 +19,7 @@
 
 - 当前治理：D-0516 起的新任务采用 Governance V2，D-0635 升级为 V2.1：完整 Task Contract 一次授权；结果级任务包含实现、测试、Evidence与同范围修正；L0/L1/L2内嵌验收合同，L3/Gate才独立ABF；独立评审按风险／事实触发；普通任务PM Pass后自动Complete。CI校验确认基线与确定性合成回归；锁屏、AX／截图服务暂不可用等环境问题记为`Paused — Resumable`并从检查点定向继续。D-0636授权普通L0/L1/L2 PM Pass后自动推送任务分支并在CI全绿、main可快进时自动合并；高风险仍人工确认。P3-127及此前历史不追溯。
 - 当前活动事项：P3-142保持`Accepted / Complete`并已交付GitHub `main`。P3-143已完成Phase A合成工程Gate、用户在实际App内逐次完成的单一DeepSeek真实Gate、凭据删除／fresh restart deny，以及最终全新隔离独立复评；用户已采纳PM Pass，任务转`Accepted / Complete / Read-only`。业务候选为`dcbc3251`，最终评审资产已纳入任务分支`1aefaf4f`。
-- 当前可执行下一步：按用户对本次L3的明确授权提交账本状态、推送任务分支，并在CI全绿、主线无冲突且可安全合并时进入main。无需再次输入API Key或重跑真实DeepSeek；仍不得自动关闭R-0055／R-0056、恢复Pilot-6、向Provider发送个人Context、冻结产品或进入Stage4。
+- 当前可执行下一步：P3-143已交付GitHub `main`，全部任务资产转历史只读；等待用户决定后续产品任务。无需再次输入API Key或重跑真实DeepSeek；仍不得自动关闭R-0055／R-0056、恢复Pilot-6、向Provider发送个人Context、冻结产品或进入Stage4。
 - 当前任务指针：P3-143 Accepted / Complete / PM Pass / Independent Pass / User Adopted / ABF-P3-143-v1 Frozen / Governance V2.1 L3 / Not Product Frozen；最终计数`0/0/0/0/0`。P3-142 Accepted / Complete / delivered to main；P3-141旧Phase C保持历史暂停且全部资产只读；R-0053／R-0054／R-0055／R-0056 Open；Stage 4 Not Ready；P3-110继续暂停。
 - P3-134最终PM计数：P0=0、P1=0、P2=1、Unknown=0、Not Implemented=0。333项Final Manifest和13项固定输入hash复算闭合，AC-01～16全Pass，三档actual-Tauri各15态、同fixture视觉、十一IPC、双模式Runtime与10类写前失败关闭成立。P2为一次已精确清理且未参与正Evidence的无内容stdout越界历史。
 - P3-132 最终PM计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算工程Final Manifest 75+42、P3-131历史75/75并串行复跑11/11测试；CL-01不足身份显示与CL-02三个开放Action按`confirmed_at_ms/action_id`稳定Focus、刷新及重启全部闭合。两项首次工程历史P2保留但不阻断唯一用户结果；未触发独立评审。
