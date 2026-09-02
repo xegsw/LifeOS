@@ -1,0 +1,20 @@
+{
+  "schema": "lifeos.p3-144.independent-review-attempt-status.v1",
+  "review_id": "independent-re-review-3",
+  "conclusion": "BLOCKED — PHASE B INDEPENDENT PASS NOT ESTABLISHED",
+  "blocker": "The frozen independent-review Cargo profile did not reach its required 21/21 result: both bounded, offline, review-contained attempts returned 18/21 because three synthetic Keychain lifecycle tests failed with KeychainUnavailable.",
+  "candidate_finding": "No candidate defect is concluded from this environment blocker.",
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 1,
+    "Unknown": 0,
+    "Not_Implemented": 24
+  },
+  "p2": "The first revision of the review-owned candidate ledger expected 75 tracked files. It stopped before producing a PASS and was retained as excluded evidence; the corrected ledger independently established the actual 85-file candidate tree and zero candidate writes.",
+  "phase_c_allowed": false,
+  "pm_accepted": false,
+  "risk_closed": false,
+  "product_frozen": false,
+  "stage_4_ready": false
+}

@@ -1,0 +1,204 @@
+{
+  "schema": "lifeos.p3-144.independent-review.static-mutation.v1",
+  "candidate": "lifeos/engineering/LIFEOS-P3-144/candidate",
+  "source_sha256": "faa0fb33b71c4b4ed34991f112d8b5486a3e43476c21e1d56cd8d24b80315276",
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "IR-001",
+      "title": "独立评审编译 profile 固定唯一根",
+      "status": "PASS",
+      "assertion": "build profile rejects dynamic independent-review run IDs and compiles the literal v1 root"
+    },
+    {
+      "id": "IR-002",
+      "title": "根、marker 与 runtime child 失败关闭",
+      "status": "PASS",
+      "assertion": "root, marker and child type/permission checks are present before store initialization"
+    },
+    {
+      "id": "IR-003",
+      "title": "离线 run mode 不是调用方环境开关",
+      "status": "PASS",
+      "assertion": "offline mode is a compiled literal"
+    },
+    {
+      "id": "IR-004",
+      "title": "严格 20 IPC",
+      "status": "PASS",
+      "assertion": "ordered IPC list equals the frozen 20-item contract"
+    },
+    {
+      "id": "IR-005",
+      "title": "Provider 目录保留 Cloud 8 / Local 4",
+      "status": "PASS",
+      "assertion": "all 12 frozen provider IDs remain in separate cloud/local arrays"
+    },
+    {
+      "id": "IR-006",
+      "title": "DeepSeek authority 精确",
+      "status": "PASS",
+      "assertion": "only the exact HTTPS DeepSeek authority enters the active gate"
+    },
+    {
+      "id": "IR-007",
+      "title": "无代理、重定向或环境继承",
+      "status": "PASS",
+      "assertion": "real adapter clears environment and disables proxy/redirect use"
+    },
+    {
+      "id": "IR-008",
+      "title": "最小上下文预算",
+      "status": "PASS",
+      "assertion": "3-item, 480-character and 120-token checks reject before send"
+    },
+    {
+      "id": "IR-009",
+      "title": "空、未知与过量输入拒绝",
+      "status": "PASS",
+      "assertion": "input, empty selection and fourth item all have explicit rejection codes"
+    },
+    {
+      "id": "IR-010",
+      "title": "相关性、有效性与域隔离",
+      "status": "PASS",
+      "assertion": "resolver filters active/non-expired records and respects Work/Health relevance"
+    },
+    {
+      "id": "IR-011",
+      "title": "移除、重预览、过期与重放拒绝",
+      "status": "PASS",
+      "assertion": "confirmation is atomically single-use and mutations invalidate preview"
+    },
+    {
+      "id": "IR-012",
+      "title": "凭据 AEAD 与 Keychain 材料分离",
+      "status": "PASS",
+      "assertion": "SQLite retains encrypted material/reference while key material uses macOS Keychain"
+    },
+    {
+      "id": "IR-013",
+      "title": "凭据缺失、篡改与删除失败关闭",
+      "status": "PASS",
+      "assertion": "missing/tampered/deleted credential states have explicit pre-network failures"
+    },
+    {
+      "id": "IR-014",
+      "title": "保存、测试、选择、启用与发送分离",
+      "status": "PASS",
+      "assertion": "UI retains distinct user actions for each state transition"
+    },
+    {
+      "id": "IR-015",
+      "title": "Provider 就绪验证位于确认消耗之前",
+      "status": "PASS",
+      "assertion": "no confirmation token is consumed before provider readiness is checked"
+    },
+    {
+      "id": "IR-016",
+      "title": "AI identity 与五类反馈",
+      "status": "PASS",
+      "assertion": "understanding identity and five feedback actions are present"
+    },
+    {
+      "id": "IR-017",
+      "title": "撤回／修正会失效派生",
+      "status": "PASS",
+      "assertion": "source retirement invalidates dependent understanding projections"
+    },
+    {
+      "id": "IR-018",
+      "title": "Health 非医疗边界",
+      "status": "PASS",
+      "assertion": "medical-risk text is rejected for Health inputs/questions and UI states the boundary"
+    },
+    {
+      "id": "IR-019",
+      "title": "UI 无 WebView 直连网络",
+      "status": "PASS",
+      "assertion": "UI uses Tauri invoke and contains no browser network primitive"
+    },
+    {
+      "id": "IR-020",
+      "title": "秘密输入即时清空",
+      "status": "PASS",
+      "assertion": "credential UI clears input and local variable after store attempt"
+    },
+    {
+      "id": "IR-021",
+      "title": "合成收据无网络",
+      "status": "PASS",
+      "assertion": "synthetic model/context receipts assert no request method or network activity"
+    },
+    {
+      "id": "IR-022",
+      "title": "持久记忆入口拒绝扩展",
+      "status": "PASS",
+      "assertion": "P3-144 does not silently add durable-memory behavior"
+    },
+    {
+      "id": "MUT-001",
+      "title": "变异被评审器拒绝：root authority",
+      "status": "PASS",
+      "assertion": "review-owned in-memory semantic mutation removes a required guard and is detected"
+    },
+    {
+      "id": "MUT-002",
+      "title": "变异被评审器拒绝：DeepSeek authority",
+      "status": "PASS",
+      "assertion": "review-owned in-memory semantic mutation removes a required guard and is detected"
+    },
+    {
+      "id": "MUT-003",
+      "title": "变异被评审器拒绝：confirmation single-use predicate",
+      "status": "PASS",
+      "assertion": "review-owned in-memory semantic mutation removes a required guard and is detected"
+    },
+    {
+      "id": "MUT-004",
+      "title": "变异被评审器拒绝：proxy isolation",
+      "status": "PASS",
+      "assertion": "review-owned in-memory semantic mutation removes a required guard and is detected"
+    },
+    {
+      "id": "MUT-005",
+      "title": "变异被评审器拒绝：Health medical guard",
+      "status": "PASS",
+      "assertion": "review-owned in-memory semantic mutation removes a required guard and is detected"
+    }
+  ],
+  "mutations": [
+    {
+      "id": "MUT-001",
+      "subject": "root authority",
+      "status": "REJECTED"
+    },
+    {
+      "id": "MUT-002",
+      "subject": "DeepSeek authority",
+      "status": "REJECTED"
+    },
+    {
+      "id": "MUT-003",
+      "subject": "confirmation single-use predicate",
+      "status": "REJECTED"
+    },
+    {
+      "id": "MUT-004",
+      "subject": "proxy isolation",
+      "status": "REJECTED"
+    },
+    {
+      "id": "MUT-005",
+      "subject": "Health medical guard",
+      "status": "REJECTED"
+    }
+  ],
+  "counts": {
+    "pass": 27,
+    "fail": 0,
+    "rejected_mutations": 5
+  },
+  "network_access": false,
+  "prohibited_pilot_contact": false
+}

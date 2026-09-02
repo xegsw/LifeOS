@@ -1,0 +1,50 @@
+{
+  "schema": "lifeos.p3-144.independent-review.visual-capture-resume.v1",
+  "resume_from": "visual_capture",
+  "scope": "fresh sequential direct PIDs only; target-window capture excludes desktop",
+  "desktop_reused": {
+    "pid": 28009,
+    "ax_window": true,
+    "ax_web_area": true,
+    "evidence": [
+      "evidence/native_ax_desktop_final.json",
+      "evidence/desktop_target_only_final_receipt.json"
+    ]
+  },
+  "compact": {
+    "pid": 31132,
+    "viewport": "compact",
+    "geometry": { "width": 1160, "height": 768 },
+    "ax_window": true,
+    "ax_web_area": true,
+    "ax_web_area_available_on_bounded_attempt": 2,
+    "activation": "exact PID/title only",
+    "evidence": [
+      "evidence/native_ax_compact_resume_2_capture_2.json",
+      "evidence/compact_activation_resume_2.json",
+      "evidence/compact_target_only_resume_2_final_receipt.json"
+    ]
+  },
+  "narrow": {
+    "pid": 31013,
+    "viewport": "narrow",
+    "geometry": { "width": 700, "height": 760 },
+    "ax_window": true,
+    "ax_web_area": true,
+    "ax_web_area_available_on_bounded_attempt": 2,
+    "evidence": [
+      "evidence/native_ax_narrow_resume_2.json",
+      "evidence/narrow_geometry_resume_2.json",
+      "evidence/narrow_target_only_resume_2_receipt.json"
+    ]
+  },
+  "excluded": [
+    "The compact PID 30848 thumbnail capture was retained as an excluded transient artifact and not used as positive viewport evidence.",
+    "A generic UI controller selected a same-bundle/title application and was not used for any action or evidence."
+  ],
+  "all_resume_pids_stopped": [30848, 31013, 31132],
+  "pilot_7_contact": false,
+  "real_provider_contact": false,
+  "real_credential_contact": false,
+  "network_contact": false
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "lifeos.p3-144.independent-review.interim-manifest-verification.v1",
+  "manifest": "FINAL_MANIFEST.json",
+  "evaluation_status": "PAUSED_RESUMABLE",
+  "normal_verification": {
+    "status": "PASS",
+    "entry_count": 73,
+    "errors": []
+  },
+  "mutations": [
+    {
+      "mutation": "missing_entry",
+      "status": "REJECTED",
+      "error": "missing_entry:attempt_status.json"
+    },
+    {
+      "mutation": "hash_drift",
+      "status": "REJECTED",
+      "error": "hash:attempt_status.json"
+    }
+  ],
+  "self_reference": false,
+  "work_directory_excluded": true
+}

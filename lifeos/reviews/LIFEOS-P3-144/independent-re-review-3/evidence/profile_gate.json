@@ -1,0 +1,47 @@
+{
+  "schema": "lifeos.p3-144.independent-review.profile-gate.v1",
+  "task_id": "LIFEOS-P3-144",
+  "review_id": "independent-re-review-3",
+  "profile": "independent-review",
+  "required_command": "LIFEOS_P3_144_ROOT_PROFILE=independent-review cargo test --locked --offline -- --test-threads=1",
+  "cargo_target_dir": "/Users/xxe/.codex/worktrees/eb73/No.2/lifeos/reviews/LIFEOS-P3-144/independent-re-review-3/work/cargo-target",
+  "home_and_tmp_contained_under_review_work": true,
+  "offline": true,
+  "network_contact": false,
+  "real_credential_contact": false,
+  "pilot_7_contact": false,
+  "fixed_runtime_root_absent_before_first_run": true,
+  "fixed_runtime_root_absent_after_each_run": true,
+  "ci_declares_both_complete_profiles": true,
+  "attempts": [
+    {
+      "id": "cargo-1",
+      "security_session_locator": "not_set",
+      "passed": 18,
+      "failed": 3,
+      "result": "NOT_PASS",
+      "failing_tests": [
+        "credential_keychain_material_and_aead_are_separate_and_fail_closed",
+        "credential_replacement_invalidates_the_previous_ciphertext_and_reference",
+        "sqlite_ciphertext_requires_its_exact_keychain_material_and_leaks_no_canary"
+      ],
+      "failure": "KeychainUnavailable"
+    },
+    {
+      "id": "cargo-2",
+      "security_session_locator": "macOS Security Framework user-session location only; HOME/TMP/Cargo caches remained review-owned",
+      "passed": 18,
+      "failed": 3,
+      "result": "NOT_PASS",
+      "failing_tests": [
+        "credential_keychain_material_and_aead_are_separate_and_fail_closed",
+        "credential_replacement_invalidates_the_previous_ciphertext_and_reference",
+        "sqlite_ciphertext_requires_its_exact_keychain_material_and_leaks_no_canary"
+      ],
+      "failure": "KeychainUnavailable"
+    }
+  ],
+  "gate_result": "BLOCKED",
+  "reason_code": "credential_store_unavailable_after_bounded_safe_retry",
+  "next_allowed_action": "resume at build_test only in a fresh macOS login session where the task-specific synthetic Keychain item can be created and removed, while all Cargo outputs remain review-owned"
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "lifeos.p3-144.independent-review.marker-gated-runtime-cleanup.v1",
+  "exact_root": "/private/tmp/lifeos-p3-144-independent-review-v1",
+  "writer_pids_stopped_before_cleanup": [
+    28009,
+    28564,
+    28598,
+    28801,
+    28823
+  ],
+  "expected_marker": {
+    "schema": "lifeos.p3-144.independent-review-root.v1",
+    "task": "LIFEOS-P3-144",
+    "owner": "lifeos-p3-144-independent-review",
+    "runId": "v1"
+  },
+  "rejected": [
+    {
+      "label": "missing_marker",
+      "code": "ENOENT: no such file or directory, lstat '/private/tmp/lifeos-p3-144-independent-review-v1/.lifeos-p3-144-owner.json'"
+    },
+    {
+      "label": "wrong_marker",
+      "code": "marker_payload_rejected"
+    },
+    {
+      "label": "symlink_marker",
+      "code": "marker_type_rejected"
+    }
+  ],
+  "cleanup_performed": true,
+  "exact_root_absent_after_cleanup": true,
+  "prohibited_pilot_contact": false
+}

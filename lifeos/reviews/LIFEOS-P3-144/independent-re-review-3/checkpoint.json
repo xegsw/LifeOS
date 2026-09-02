@@ -1,0 +1,46 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-144",
+  "attempt_id": "independent-re-review-3",
+  "updated_at": "2026-09-02T12:44:24Z",
+  "task_contract_sha256": "77ffb9438807c37362608d2bca1c315a4ea8a222d4ec8a0c543fcc84158466ac",
+  "candidate_sha256": "0d5962da8705c877d9c8ad1227dc0ac9ac5c16fa22be0a4bbbcf800d0f3acf48",
+  "baseline_sha256": "1d7d82d2afcf7ac52b15730f4f8d3effc08f8965d0b085c6a53bbd2611ad7236",
+  "stage": "build_test",
+  "status": "blocked",
+  "pause_class": "external_blocker",
+  "pause_reason_code": "credential_store_unavailable_after_bounded_safe_retry",
+  "completed_checks": [
+    "precontact_controls_sealed_and_hashed",
+    "fixed_commit_and_closure2_candidate_equivalence",
+    "candidate_zero_write_ledger_before_and_after_cargo",
+    "fixed_review_root_absence_before_and_after_cargo"
+  ],
+  "pending_checks": [
+    "complete_21_of_21_independent_review_profile",
+    "review_owned_mutations_and_synthetic_lifecycle",
+    "actual_tauri_direct_pid_ax_webview_three_viewports",
+    "marker_gated_runtime_cleanup",
+    "nonself_final_manifest_positive_verification"
+  ],
+  "rerun_checks": [
+    "complete_21_of_21_independent_review_profile",
+    "all_downstream_abf_rows"
+  ],
+  "excluded_artifacts": [
+    "evidence/candidate_ledger_before.json"
+  ],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "absent"
+  },
+  "resume_from": "build_test",
+  "safe_to_resume": true,
+  "notes": "Two fully offline, review-contained Cargo attempts reached 18/21 and failed only the three Keychain lifecycle tests with KeychainUnavailable. No personal text, real credentials, real Provider, or Pilot-7 path was accessed."
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "lifeos.p3-144.independent-review-resume.v1",
+  "review_id": "independent-re-review-3",
+  "resume_from": "build_test",
+  "pm_ruling": "KeychainUnavailable was caused by redirecting HOME to review-owned work; it is a recoverable review-environment configuration blocker, not a candidate defect and not a new-task trigger.",
+  "historical_checkpoint": "checkpoint.json",
+  "historical_checkpoint_sha256": "9b4470963f887f039f73c5e41d11b69fab7441ffefe2fdcc32e7478f1a3b01a9",
+  "historical_status_sha256": "9e85adaec2b349cbc6b5a55d3e9250db02a4cbfe1134ce355f4140e6a84278cb",
+  "precontact_seal_unchanged": true,
+  "candidate_tree_sha256": "0d5962da8705c877d9c8ad1227dc0ac9ac5c16fa22be0a4bbbcf800d0f3acf48",
+  "candidate_or_history_mutated": false,
+  "prohibited_boundary_contact": false,
+  "environment_for_resume": {
+    "HOME": "preserve invoking macOS login session value",
+    "CFFIXED_USER_HOME": "preserve invoking macOS login session value",
+    "CARGO_TARGET_DIR": "review-owned work/cargo-target",
+    "CARGO_HOME": "review-owned work/cargo-home",
+    "TMPDIR": "review-owned work/tmp"
+  },
+  "phase_c_allowed": false
+}

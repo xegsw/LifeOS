@@ -1,0 +1,27 @@
+{
+  "schema": "lifeos.p3-144.independent-review.profile-gate-resume.v1",
+  "task_id": "LIFEOS-P3-144",
+  "review_id": "independent-re-review-3",
+  "resume_from": "build_test",
+  "required_command": "LIFEOS_P3_144_ROOT_PROFILE=independent-review cargo test --locked --offline -- --test-threads=1",
+  "execution_environment": {
+    "HOME": "preserved invoking macOS login session; not redirected",
+    "CFFIXED_USER_HOME": "preserved invoking macOS login session; not redirected",
+    "CARGO_HOME": "review-owned work/cargo-home",
+    "CARGO_TARGET_DIR": "review-owned work/cargo-target",
+    "TMPDIR": "review-owned work/tmp",
+    "offline": true,
+    "network_contact": false,
+    "real_credential_contact": false,
+    "pilot_7_contact": false
+  },
+  "result": {
+    "passed": 21,
+    "failed": 0,
+    "serial": true,
+    "fixed_root_absent_after_run": true,
+    "candidate_tree_sha256": "0d5962da8705c877d9c8ad1227dc0ac9ac5c16fa22be0a4bbbcf800d0f3acf48"
+  },
+  "ci_profile_declaration": "candidate/ci/checks.json lists both engineering and independent-review offline serial commands",
+  "conclusion": "PASS for the bounded independent-review synthetic/offline Cargo profile only; it does not establish the required native GUI Gate."
+}
