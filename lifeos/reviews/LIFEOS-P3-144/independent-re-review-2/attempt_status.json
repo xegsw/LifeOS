@@ -1,0 +1,27 @@
+{
+  "schema": "lifeos.p3-144.independent-re-review.invalidated-attempt.v1",
+  "task": "LIFEOS-P3-144",
+  "review": "independent-re-review-2",
+  "candidate_commit": "461423b3489c18683167bb9c85775a79548836b1",
+  "status": "invalidated_attempt",
+  "classification": "irrecoverable_invalidation",
+  "p0": 1,
+  "p1": 0,
+  "p2": 0,
+  "unknown": 0,
+  "not_implemented": 22,
+  "incident": {
+    "code": "candidate_build_output_outside_review_output",
+    "command": "LIFEOS_P3_144_ROOT_PROFILE=independent-review /Users/xxe/.cargo/bin/cargo test --locked --offline -- --test-threads=1",
+    "written_path": "lifeos/engineering/LIFEOS-P3-144/candidate/target/",
+    "tracked_candidate_diff_exit": 0,
+    "ignored_artifact_observed": true,
+    "positive_evidence_eligible": false
+  },
+  "prohibited_boundary_touched": false,
+  "review_root_state": "absent",
+  "app_started_by_review": false,
+  "review_owned_mutation_or_gui_started": false,
+  "remaining_writer_or_pid": false,
+  "next_action": "PM must arrange a new fully isolated review attempt; this session must not repair or clean the candidate."
+}
