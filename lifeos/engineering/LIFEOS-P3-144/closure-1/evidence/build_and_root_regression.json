@@ -1,0 +1,45 @@
+{
+  "schema": "lifeos.p3-144.closure-1.build-root-regression.v1",
+  "scope": "synthetic_offline_only",
+  "earliest_affected_stage": "build_test",
+  "prohibited_boundary_contact": false,
+  "real_network_contact": false,
+  "real_credential_contact": false,
+  "checks": [
+    {
+      "id": "rust_engineering_profile_serial",
+      "command": "/Users/xxe/.cargo/bin/cargo test --locked --offline -- --test-threads=1",
+      "result": "PASS",
+      "tests": 21,
+      "profile": "engineering"
+    },
+    {
+      "id": "rust_frozen_independent_profile",
+      "command": "LIFEOS_P3_144_ROOT_PROFILE=independent-review cargo test --locked --offline compiled_root_authority_is_closed_and_non_runtime_configurable -- --test-threads=1",
+      "result": "PASS",
+      "tests": 1,
+      "compiled_root": "/private/tmp/lifeos-p3-144-independent-review-v1",
+      "compiled_run_id": "v1"
+    },
+    {
+      "id": "offline_contract",
+      "runner": "bundled node_repl",
+      "result": "PASS",
+      "checks": 21,
+      "ipc_count": 20,
+      "run_mode": "synthetic"
+    },
+    {
+      "id": "build_time_rejection_matrix",
+      "result": "PASS",
+      "cases": [
+        "dynamic_v1",
+        "short",
+        "long",
+        "dynamic_other",
+        "wrong_profile"
+      ],
+      "assertion": "Each independent-review build with LIFEOS_P3_144_REVIEW_RUN_ID, and the invalid profile build, exited 101 before any runtime, database, credential, or network action."
+    }
+  ]
+}

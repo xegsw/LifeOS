@@ -1,0 +1,15 @@
+{
+  "schema": "lifeos.p3-144.closure-1.ipc-regression.v1",
+  "result": "PASS",
+  "static": {
+    "offline_contract_checks": 21,
+    "registered_ipc_count": 20,
+    "assertion": "The exact frozen ordered 20-command allowlist remains unchanged."
+  },
+  "runtime": {
+    "rust_test": "exactly_twenty_ipc_are_registered",
+    "result": "PASS",
+    "actual_tauri": "Fresh direct-PID bundled App launch completed in synthetic mode and rendered the Settings shell through the registered handler graph."
+  },
+  "scope_note": "This closure changed only root authority. The full Phase A 20-IPC lifecycle evidence remains read-only historical evidence; this file does not claim a new independent-review proof."
+}

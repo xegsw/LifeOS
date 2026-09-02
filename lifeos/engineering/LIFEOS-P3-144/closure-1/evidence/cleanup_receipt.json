@@ -1,0 +1,16 @@
+{
+  "schema": "lifeos.p3-144.closure-1.cleanup-receipt.v1",
+  "result": "PASS",
+  "root": "/private/tmp/lifeos-p3-144-engineering-v1",
+  "marker": "/private/tmp/lifeos-p3-144-engineering-v1/.lifeos-p3-144-owner.json",
+  "preconditions": [
+    "direct literal root matched",
+    "root was an ordinary 0700 directory, not a symlink",
+    "marker was an ordinary 0600 file, not a symlink",
+    "marker JSON exactly matched the P3-144 engineering root owner"
+  ],
+  "writers_stopped": true,
+  "root_absent_after_cleanup": true,
+  "frozen_independent_review_root_absent": true,
+  "real_assets_touched": false
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "lifeos.p3-144.closure-1.affected-ac-matrix.v1",
+  "scope": "only the independent-review root-authority Closure List",
+  "rows": [
+    {
+      "id": "ABF-M-001",
+      "status": "PASS_ENGINEERING_CLOSURE",
+      "assertion": "The candidate compiles with the precise frozen independent-review root and rejects dynamic root selection."
+    },
+    {
+      "id": "ABF-M-023",
+      "status": "PASS_ENGINEERING_CLOSURE",
+      "assertion": "The earliest affected build, root/data lifecycle, exact-20 IPC regression, target-only actual-Tauri launch and marker-gated cleanup passed without forbidden contact."
+    },
+    {
+      "id": "ABF-M-024",
+      "status": "PENDING_FRESH_INDEPENDENT_REVIEW",
+      "assertion": "This engineering session cannot assess its own repaired candidate. A new isolated Phase B review must create a new precontact seal and execute its review-owned matrix."
+    },
+    {
+      "id": "ABF-M-025_to_M-032",
+      "status": "NOT_ENTERED",
+      "assertion": "Phase C/D, real content, credentials and network remain outside this closure and untouched."
+    }
+  ],
+  "current_closure_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "NotImplemented": 0
+  },
+  "historical_independent_review": {
+    "status": "read_only_rework_not_pass",
+    "P0": 1,
+    "NotImplemented": 31,
+    "effect": "Not replaced or reclassified by this engineering Closure Cycle."
+  }
+}

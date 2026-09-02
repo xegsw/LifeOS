@@ -3,16 +3,8 @@ use std::env;
 const TASK: &str = "LIFEOS-P3-144";
 const PARENT: &str = "/private/tmp";
 const ENGINEERING_BASENAME: &str = "lifeos-p3-144-engineering-v1";
-const REVIEW_PREFIX: &str = "lifeos-p3-144-independent-review-";
-
-fn valid_review_run_id(value: &str) -> bool {
-    (8..=48).contains(&value.len())
-        && !value.starts_with('-')
-        && !value.ends_with('-')
-        && value
-            .bytes()
-            .all(|byte| byte.is_ascii_lowercase() || byte.is_ascii_digit() || byte == b'-')
-}
+const REVIEW_BASENAME: &str = "lifeos-p3-144-independent-review-v1";
+const REVIEW_RUN_ID: &str = "v1";
 
 fn emit(name: &str, value: &str) {
     println!("cargo:rustc-env={name}={value}");
@@ -40,19 +32,17 @@ fn main() {
             )
         }
         "independent-review" => {
-            let run_id = review_run_id
-                .filter(|value| valid_review_run_id(value))
-                .unwrap_or_else(|| {
-                    panic!(
-                        "independent-review requires a safe 8-48 character lowercase/digit/hyphen run id"
-                    )
-                });
+            if review_run_id.is_some() {
+                panic!(
+                    "independent-review uses the frozen v1 root and rejects dynamic review run ids"
+                );
+            }
             (
-                format!("{REVIEW_PREFIX}{run_id}"),
+                REVIEW_BASENAME.to_owned(),
                 "lifeos.p3-144.independent-review-root.v1".to_owned(),
                 "lifeos-p3-144-independent-review".to_owned(),
-                run_id.clone(),
-                run_id,
+                REVIEW_RUN_ID.to_owned(),
+                REVIEW_RUN_ID.to_owned(),
             )
         }
         _ => panic!("root profile must be engineering or independent-review"),

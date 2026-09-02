@@ -324,15 +324,6 @@ fn compiled_root_authority() -> RootAuthority {
     }
 }
 
-fn valid_review_run_id(value: &str) -> bool {
-    (8..=48).contains(&value.len())
-        && !value.starts_with('-')
-        && !value.ends_with('-')
-        && value
-            .bytes()
-            .all(|byte| byte.is_ascii_lowercase() || byte.is_ascii_digit() || byte == b'-')
-}
-
 fn compiled_authority_is_valid(authority: &RootAuthority) -> bool {
     let root = Path::new(&authority.root);
     if authority.parent != "/private/tmp"
@@ -354,16 +345,14 @@ fn compiled_authority_is_valid(authority: &RootAuthority) -> bool {
                 && authority.marker_owner == authority.basename
                 && authority.marker_schema == "lifeos.p3-144.engineering-root.v1"
         }
-        "independent-review" => authority
-            .basename
-            .strip_prefix("lifeos-p3-144-independent-review-")
-            .is_some_and(|run_id| {
-                run_id == authority.run_id
-                    && authority.marker_run_id.as_deref() == Some(run_id)
-                    && valid_review_run_id(run_id)
-                    && authority.marker_owner == "lifeos-p3-144-independent-review"
-                    && authority.marker_schema == "lifeos.p3-144.independent-review-root.v1"
-            }),
+        "independent-review" => {
+            authority.basename == "lifeos-p3-144-independent-review-v1"
+                && authority.root == "/private/tmp/lifeos-p3-144-independent-review-v1"
+                && authority.run_id == "v1"
+                && authority.marker_run_id.as_deref() == Some("v1")
+                && authority.marker_owner == "lifeos-p3-144-independent-review"
+                && authority.marker_schema == "lifeos.p3-144.independent-review-root.v1"
+        }
         _ => false,
     }
 }
@@ -2132,30 +2121,22 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    const FROZEN_REVIEW_ROOT: &str = "/private/tmp/lifeos-p3-144-independent-review-v1";
     const TEST_CLEANUP_MARKER: &str = ".lifeos-p3-144-root-authority-test-owner";
     const TEST_CLEANUP_OWNER: &[u8] = b"lifeos-p3-144-root-authority-test-v1\n";
 
-    fn review_authority(root: &Path, run_id: &str) -> RootAuthority {
-        let basename = format!("lifeos-p3-144-independent-review-{run_id}");
-        assert_eq!(
-            root.file_name().and_then(|value| value.to_str()),
-            Some(basename.as_str())
-        );
+    fn review_authority() -> RootAuthority {
         RootAuthority {
             profile: "independent-review".into(),
             parent: "/private/tmp".into(),
-            basename,
-            root: root.to_string_lossy().into_owned(),
+            basename: "lifeos-p3-144-independent-review-v1".into(),
+            root: FROZEN_REVIEW_ROOT.into(),
             marker_schema: "lifeos.p3-144.independent-review-root.v1".into(),
             marker_task: "LIFEOS-P3-144".into(),
             marker_owner: "lifeos-p3-144-independent-review".into(),
-            run_id: run_id.into(),
-            marker_run_id: Some(run_id.into()),
+            run_id: "v1".into(),
+            marker_run_id: Some("v1".into()),
         }
-    }
-
-    fn test_run_id(label: &str) -> String {
-        format!("unit-{}-{}-{label}", std::process::id(), now_ms().unwrap())
     }
 
     fn write_test_cleanup_marker(root: &Path) {
@@ -2171,6 +2152,7 @@ mod tests {
     }
 
     fn marker_gated_test_cleanup(root: &Path) {
+        assert_eq!(root, Path::new(FROZEN_REVIEW_ROOT));
         let marker = root.join(TEST_CLEANUP_MARKER);
         let meta = fs::symlink_metadata(&marker).unwrap();
         assert!(meta.file_type().is_file() && !meta.file_type().is_symlink());
@@ -2185,15 +2167,13 @@ mod tests {
     }
 
     impl TestRoot {
-        fn new(label: &str) -> Self {
-            let run_id = test_run_id(label);
-            let basename = format!("lifeos-p3-144-independent-review-{run_id}");
-            let root = PathBuf::from(format!("/private/tmp/{basename}"));
+        fn new() -> Self {
+            let root = PathBuf::from(FROZEN_REVIEW_ROOT);
             assert!(matches!(
                 fs::symlink_metadata(&root),
                 Err(error) if error.kind() == std::io::ErrorKind::NotFound
             ));
-            let authority = review_authority(&root, &run_id);
+            let authority = review_authority();
             assert_eq!(verify_authorized_root(&authority).unwrap(), root);
             write_test_cleanup_marker(&root);
             let sentinel = root.join("database-sentinel.txt");
@@ -2215,17 +2195,19 @@ mod tests {
     }
 
     impl ExistingReviewRoot {
-        fn new(label: &str) -> Self {
-            let run_id = test_run_id(label);
-            let basename = format!("lifeos-p3-144-independent-review-{run_id}");
-            let root = PathBuf::from(format!("/private/tmp/{basename}"));
+        fn new() -> Self {
+            let root = PathBuf::from(FROZEN_REVIEW_ROOT);
+            assert!(matches!(
+                fs::symlink_metadata(&root),
+                Err(error) if error.kind() == std::io::ErrorKind::NotFound
+            ));
             fs::create_dir(&root).unwrap();
             fs::set_permissions(&root, fs::Permissions::from_mode(0o700)).unwrap();
             write_test_cleanup_marker(&root);
             let sentinel = root.join("sentinel.txt");
             fs::write(&sentinel, b"preexisting-root-sentinel\n").unwrap();
             Self {
-                authority: review_authority(&root, &run_id),
+                authority: review_authority(),
                 root,
                 sentinel,
             }
@@ -2483,18 +2465,9 @@ mod tests {
                 assert_eq!(authority.root, "/private/tmp/lifeos-p3-144-engineering-v1");
             }
             "independent-review" => {
-                assert!(valid_review_run_id(&authority.run_id));
-                assert_eq!(
-                    authority.marker_run_id.as_deref(),
-                    Some(authority.run_id.as_str())
-                );
-                assert_eq!(
-                    authority.root,
-                    format!(
-                        "/private/tmp/lifeos-p3-144-independent-review-{}",
-                        authority.run_id
-                    )
-                );
+                assert_eq!(authority.run_id, "v1");
+                assert_eq!(authority.marker_run_id.as_deref(), Some("v1"));
+                assert_eq!(authority.root, FROZEN_REVIEW_ROOT);
             }
             other => panic!("unexpected compiled root profile: {other}"),
         }
@@ -2502,23 +2475,14 @@ mod tests {
 
     #[test]
     fn absent_review_root_creates_the_exact_marker_before_runtime_or_database() {
-        let authorized = TestRoot::new("absent-root");
+        let authorized = TestRoot::new();
         let marker = authorized.root.join(MARKER);
         let marker_meta = fs::symlink_metadata(&marker).unwrap();
         assert!(marker_meta.file_type().is_file() && !marker_meta.file_type().is_symlink());
         assert_eq!(marker_meta.permissions().mode() & 0o777, 0o600);
         assert_eq!(
             serde_json::from_slice::<RootMarker>(&fs::read(&marker).unwrap()).unwrap(),
-            expected_marker(&review_authority(
-                &authorized.root,
-                authorized
-                    .root
-                    .file_name()
-                    .and_then(|name| name.to_str())
-                    .unwrap()
-                    .strip_prefix("lifeos-p3-144-independent-review-")
-                    .unwrap(),
-            )),
+            expected_marker(&review_authority()),
         );
         let runtime = authorized.root.join(RUNTIME_CHILD);
         assert!(runtime.is_dir());
@@ -2535,98 +2499,126 @@ mod tests {
 
     #[test]
     fn existing_review_root_missing_or_mutated_marker_fails_before_runtime_or_database() {
-        let missing = ExistingReviewRoot::new("missing-marker");
-        missing.assert_prewrite_state();
-        assert_eq!(
-            verify_authorized_root(&missing.authority).unwrap_err().code,
-            "task_marker_missing"
-        );
-        missing.assert_prewrite_state();
+        {
+            let missing = ExistingReviewRoot::new();
+            missing.assert_prewrite_state();
+            assert_eq!(
+                verify_authorized_root(&missing.authority).unwrap_err().code,
+                "task_marker_missing"
+            );
+            missing.assert_prewrite_state();
+        }
 
-        let wrong = ExistingReviewRoot::new("wrong-marker");
-        let wrong_marker = wrong.root.join(MARKER);
-        fs::write(
-            &wrong_marker,
-            b"{\"schema\":\"wrong\",\"task\":\"LIFEOS-P3-144\",\"owner\":\"lifeos-p3-144-independent-review\",\"runId\":\"wrong\"}\n",
-        )
-        .unwrap();
-        fs::set_permissions(&wrong_marker, fs::Permissions::from_mode(0o600)).unwrap();
-        assert_eq!(
-            verify_authorized_root(&wrong.authority).unwrap_err().code,
-            "task_marker_rejected"
-        );
-        wrong.assert_sentinel_unchanged();
-        wrong.assert_no_runtime_or_database();
+        {
+            let wrong = ExistingReviewRoot::new();
+            let wrong_marker = wrong.root.join(MARKER);
+            fs::write(
+                &wrong_marker,
+                b"{\"schema\":\"wrong\",\"task\":\"LIFEOS-P3-144\",\"owner\":\"lifeos-p3-144-independent-review\",\"runId\":\"wrong\"}\n",
+            )
+            .unwrap();
+            fs::set_permissions(&wrong_marker, fs::Permissions::from_mode(0o600)).unwrap();
+            assert_eq!(
+                verify_authorized_root(&wrong.authority).unwrap_err().code,
+                "task_marker_rejected"
+            );
+            wrong.assert_sentinel_unchanged();
+            wrong.assert_no_runtime_or_database();
+        }
 
-        let marker_symlink = ExistingReviewRoot::new("marker-symlink");
-        let marker_link = marker_symlink.root.join(MARKER);
-        std::os::unix::fs::symlink(&marker_symlink.sentinel, &marker_link).unwrap();
-        assert_eq!(
-            verify_authorized_root(&marker_symlink.authority)
-                .unwrap_err()
-                .code,
-            "task_marker_type_rejected"
-        );
-        marker_symlink.assert_sentinel_unchanged();
-        marker_symlink.assert_no_runtime_or_database();
+        {
+            let marker_symlink = ExistingReviewRoot::new();
+            let marker_link = marker_symlink.root.join(MARKER);
+            std::os::unix::fs::symlink(&marker_symlink.sentinel, &marker_link).unwrap();
+            assert_eq!(
+                verify_authorized_root(&marker_symlink.authority)
+                    .unwrap_err()
+                    .code,
+                "task_marker_type_rejected"
+            );
+            marker_symlink.assert_sentinel_unchanged();
+            marker_symlink.assert_no_runtime_or_database();
+        }
 
-        let wrong_permissions = ExistingReviewRoot::new("marker-permissions");
-        let permissions_marker = wrong_permissions.root.join(MARKER);
-        fs::write(
-            &permissions_marker,
-            serde_json::to_vec(&expected_marker(&wrong_permissions.authority)).unwrap(),
-        )
-        .unwrap();
-        fs::set_permissions(&permissions_marker, fs::Permissions::from_mode(0o640)).unwrap();
-        assert_eq!(
-            verify_authorized_root(&wrong_permissions.authority)
-                .unwrap_err()
-                .code,
-            "task_marker_type_rejected"
-        );
-        wrong_permissions.assert_sentinel_unchanged();
-        wrong_permissions.assert_no_runtime_or_database();
+        {
+            let wrong_permissions = ExistingReviewRoot::new();
+            let permissions_marker = wrong_permissions.root.join(MARKER);
+            fs::write(
+                &permissions_marker,
+                serde_json::to_vec(&expected_marker(&wrong_permissions.authority)).unwrap(),
+            )
+            .unwrap();
+            fs::set_permissions(&permissions_marker, fs::Permissions::from_mode(0o640)).unwrap();
+            assert_eq!(
+                verify_authorized_root(&wrong_permissions.authority)
+                    .unwrap_err()
+                    .code,
+                "task_marker_type_rejected"
+            );
+            wrong_permissions.assert_sentinel_unchanged();
+            wrong_permissions.assert_no_runtime_or_database();
+        }
     }
 
     #[test]
-    fn review_root_authority_rejects_root_symlink_wrong_parent_and_traversal_before_writes() {
-        let target = ExistingReviewRoot::new("root-symlink-target");
-        let run_id = test_run_id("root-symlink");
-        let link = PathBuf::from(format!(
-            "/private/tmp/lifeos-p3-144-independent-review-{run_id}"
+    fn review_root_authority_rejects_root_symlink_before_writes() {
+        let link = PathBuf::from(FROZEN_REVIEW_ROOT);
+        assert!(matches!(
+            fs::symlink_metadata(&link),
+            Err(error) if error.kind() == std::io::ErrorKind::NotFound
         ));
-        std::os::unix::fs::symlink(&target.root, &link).unwrap();
-        let authority = review_authority(&link, &run_id);
+        std::os::unix::fs::symlink("/private/tmp", &link).unwrap();
         assert_eq!(
-            verify_authorized_root(&authority).unwrap_err().code,
+            verify_authorized_root(&review_authority())
+                .unwrap_err()
+                .code,
             "task_root_type_rejected"
         );
-        target.assert_prewrite_state();
         fs::remove_file(link).unwrap();
+    }
 
-        let wrong_parent_root = ExistingReviewRoot::new("wrong-parent");
-        let mut wrong_parent = wrong_parent_root.authority.clone();
-        wrong_parent.parent = "/private/var".into();
-        assert_eq!(
-            verify_authorized_root(&wrong_parent).unwrap_err().code,
-            "compiled_root_authority_rejected"
-        );
-        wrong_parent_root.assert_prewrite_state();
-
-        let traversal_root = ExistingReviewRoot::new("traversal");
-        let mut traversal = traversal_root.authority.clone();
-        traversal.basename = "..".into();
-        traversal.root = "/private/tmp/..".into();
-        assert_eq!(
-            verify_authorized_root(&traversal).unwrap_err().code,
-            "compiled_root_authority_rejected"
-        );
-        traversal_root.assert_prewrite_state();
+    #[test]
+    fn review_root_authority_rejects_wrong_profile_root_run_id_and_traversal_before_writes() {
+        let root = ExistingReviewRoot::new();
+        let mutations: [(&str, fn(&mut RootAuthority)); 6] = [
+            ("wrong-profile", |authority: &mut RootAuthority| {
+                authority.profile = "engineering".into();
+            }),
+            ("different-root", |authority: &mut RootAuthority| {
+                authority.basename = "lifeos-p3-144-independent-review-other".into();
+                authority.root = "/private/tmp/lifeos-p3-144-independent-review-other".into();
+            }),
+            ("dynamic-run-id", |authority: &mut RootAuthority| {
+                authority.run_id = "independent-review-run".into();
+                authority.marker_run_id = Some("independent-review-run".into());
+            }),
+            ("short-run-id", |authority: &mut RootAuthority| {
+                authority.run_id = "x".into();
+                authority.marker_run_id = Some("x".into());
+            }),
+            ("long-run-id", |authority: &mut RootAuthority| {
+                authority.run_id = "v".repeat(49);
+                authority.marker_run_id = Some("v".repeat(49));
+            }),
+            ("traversal", |authority: &mut RootAuthority| {
+                authority.basename = "..".into();
+                authority.root = "/private/tmp/..".into();
+            }),
+        ];
+        for (_name, mutate) in mutations {
+            let mut authority = root.authority.clone();
+            mutate(&mut authority);
+            assert_eq!(
+                verify_authorized_root(&authority).unwrap_err().code,
+                "compiled_root_authority_rejected"
+            );
+            root.assert_prewrite_state();
+        }
     }
 
     #[test]
     fn database_symlink_is_rejected_before_open_and_sentinel_is_unchanged() {
-        let authorized = TestRoot::new("database-symlink");
+        let authorized = TestRoot::new();
         let database = authorized.root.join(DB);
         std::os::unix::fs::symlink(&authorized.sentinel, &database).unwrap();
         assert_eq!(
@@ -2751,7 +2743,7 @@ mod tests {
 
     #[test]
     fn sqlite_ciphertext_requires_its_exact_keychain_material_and_leaks_no_canary() {
-        let test_root = TestRoot::new("storage");
+        let test_root = TestRoot::new();
         let root = test_root.root.clone();
         initialize_store(&root).unwrap();
         let _ = remove_credential_row(&root).unwrap();
@@ -2781,7 +2773,7 @@ mod tests {
 
     #[test]
     fn credential_replacement_invalidates_the_previous_ciphertext_and_reference() {
-        let test_root = TestRoot::new("replacement");
+        let test_root = TestRoot::new();
         let root = test_root.root.clone();
         initialize_store(&root).unwrap();
         let _ = remove_credential_row(&root).unwrap();

@@ -33,7 +33,7 @@ expect(css.includes(".global-ai") && css.includes("@media (max-width: 760px)") &
 expect(html.includes("app.js") && !html.includes("runtime-adapter.js"), "legacy_runtime_adapter_still_active");
 expect(config.includes("local.lifeos.p3-144") && config.includes("connect-src ipc:"), "tauri_identity_or_csp_missing");
 expect(rootTool.includes("lifeos-p3-144-engineering-v1") && rootTool.includes("marker_payload_rejected") && rootTool.includes("symlink"), "marker_cleanup_contract_missing");
-expect(build.includes("LIFEOS_P3_144_ROOT_PROFILE") && build.includes("engineering") && build.includes("independent-review") && build.includes("valid_review_run_id") && !build.includes("real-ai-secure-activation"), "build_time_root_profile_missing");
+expect(build.includes("LIFEOS_P3_144_ROOT_PROFILE") && build.includes("engineering") && build.includes("independent-review") && build.includes("REVIEW_BASENAME") && build.includes("REVIEW_RUN_ID") && build.includes("rejects dynamic review run ids") && !build.includes("real-ai-secure-activation"), "build_time_root_profile_missing");
 expect(runtime.includes("compiled_root_authority") && runtime.includes("verify_runtime_child") && runtime.includes("database_path") && runtime.includes("created_root") && runtime.includes("task_marker_missing"), "compiled_root_authority_runtime_guard_missing");
 
 if (failures.length) {

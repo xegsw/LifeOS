@@ -1,0 +1,33 @@
+{
+  "schema": "lifeos.p3-144.closure-1.root-lifecycle-regression.v1",
+  "frozen_review_root": "/private/tmp/lifeos-p3-144-independent-review-v1",
+  "positive": {
+    "result": "PASS",
+    "assertion": "The fixed independent-review compile profile binds that literal root and v1 marker identity; runtime creates only a 0700 direct runtime child and 0600 exact marker before any database exists."
+  },
+  "negative": {
+    "result": "PASS",
+    "cases": [
+      "wrong_profile",
+      "different_root",
+      "dynamic_run_id",
+      "short_run_id",
+      "long_run_id",
+      "traversal",
+      "root_symlink",
+      "missing_marker",
+      "wrong_marker",
+      "marker_symlink",
+      "marker_wrong_permissions",
+      "database_symlink"
+    ],
+    "assertion": "Every authority or marker rejection leaves the disposable sentinel unchanged and creates neither runtime child nor database; database symlink rejection occurs before SQLite open."
+  },
+  "cleanup": {
+    "result": "PASS",
+    "engineering_root": "/private/tmp/lifeos-p3-144-engineering-v1",
+    "review_root": "/private/tmp/lifeos-p3-144-independent-review-v1",
+    "post_run_state": "both_absent",
+    "method": "exact literal, 0700 ordinary-root and 0600 exact-marker validation before deletion"
+  }
+}
