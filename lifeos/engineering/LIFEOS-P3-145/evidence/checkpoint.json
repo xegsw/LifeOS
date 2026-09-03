@@ -1,0 +1,49 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-145",
+  "attempt_id": "engineering-phase-a-attempt-1",
+  "updated_at": "2026-09-03T01:55:59.746Z",
+  "task_contract_sha256": "2cbaedabc1049d1e4e13d58c39b13095bd498a685cc5f8028ba0e9a17816f626",
+  "baseline_sha256": "040c7166afac7e45bfcdf893c1cc23bfa28827e6e2d1d186ffd8cc4f049e66b1",
+  "acceptance_freeze_manifest_sha256": "38755bb363a19c6e883fbe34e1d3c68fe58c291fc9c24f5304519e4f249681a9",
+  "candidate_sha256": "9979657fd676998476446ab5da00b394f55833a3bc696128a835c3b670e0fc30",
+  "stage": "phase_a_engineering_complete",
+  "status": "awaiting_independent_review",
+  "pause_class": "role_separation",
+  "pause_reason_code": "phase_a_complete_fresh_independent_review_required",
+  "completed_checks": [
+    "preflight_allowlist_and_prohibited_path_declaration",
+    "rust_format_and_targeted_locked_offline_test",
+    "offline_contract_and_static_contract",
+    "marker_negative_matrix",
+    "locked_offline_tauri_bundle",
+    "actual_tauri_synthetic_work_health_loop",
+    "direct_launch_pid_to_exact_axwindow_to_axwebarea",
+    "target_window_only_desktop_compact_narrow_screenshots"
+  ],
+  "pending_checks": [
+    "fresh_independent_review",
+    "pm_acceptance",
+    "phase_c_controlled_real_loop_after_independent_pass"
+  ],
+  "rerun_checks": [
+    "independent_review_only_if_candidate_and_frozen_inputs_unchanged"
+  ],
+  "excluded_artifacts": [
+    "Phase B review-root tests remain ignored in Phase A and are reserved for a fresh independent session",
+    "All retained screenshots contain only fixed synthetic canaries"
+  ],
+  "prohibited_boundary_contact": false,
+  "fixed_inputs_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "cleaned_marker_bound_after_phase_a"
+  },
+  "resume_from": "fresh_independent_review",
+  "safe_to_resume": false,
+  "notes": "Phase A used only fixed synthetic fixtures and a hard-pinned synthetic mode. The actual-Tauri evidence records direct PID chains for desktop, compact, and narrow viewports; no network request or real personal content was used. This checkpoint is not an independent-review, PM acceptance, Phase C, risk-closure, product-freeze, or Stage-transition conclusion."
+}

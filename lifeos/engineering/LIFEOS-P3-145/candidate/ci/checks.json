@@ -1,0 +1,14 @@
+{
+  "schema": "lifeos.p3-145.ci-checks.v1",
+  "task": "LIFEOS-P3-145",
+  "offline_only": true,
+  "commands": [
+    "LIFEOS_P3_145_ROOT_PROFILE=engineering cargo test --locked --offline -- --test-threads=1",
+    "LIFEOS_P3_145_ROOT_PROFILE=engineering cargo check --locked --offline",
+    "node tests/offline_contract.mjs",
+    "node tools/task_root.mjs negative",
+    "node tools/collect_static_evidence.mjs"
+  ],
+  "prohibited": ["real_provider", "real_credential", "personal_database", "Pilot", "GUI", "network"],
+  "manual_gates": ["actual_tauri_desktop", "actual_tauri_compact", "actual_tauri_narrow", "direct_pid_ax_window_webview", "synthetic_work_health_confirmation_loop", "phase_b_independent_review"]
+}
