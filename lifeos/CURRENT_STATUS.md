@@ -1,7 +1,7 @@
 # LifeOS Current Status Index
 
 更新时间：2026-09-03
-最后校验时间：2026-09-03（D-0647：P3-144终局PM Pass获用户采纳，任务Complete并授权推送L3任务分支）
+最后校验时间：2026-09-03（D-0648：P3-144快进交付GitHub main；P3-145完整Draft合同与ABF创建，等待一次真实边界确认）
 
 本文件是 PM 日常上下文入口，用于减少重复读取大文件；它是状态索引，不替代主账本。
 
@@ -18,9 +18,9 @@
 ## 当前状态
 
 - 当前治理：D-0516 起的新任务采用 Governance V2，D-0635 升级为 V2.1：完整 Task Contract 一次授权；结果级任务包含实现、测试、Evidence与同范围修正；L0/L1/L2内嵌验收合同，L3/Gate才独立ABF；独立评审按风险／事实触发；普通任务PM Pass后自动Complete。CI校验确认基线与确定性合成回归；锁屏、AX／截图服务暂不可用等环境问题记为`Paused — Resumable`并从检查点定向继续。D-0636授权普通L0/L1/L2 PM Pass后自动推送任务分支并在CI全绿、main可快进时自动合并；高风险仍人工确认。P3-127及此前历史不追溯。
-- 当前活动事项：P3-144 `Accepted / Complete / PM Pass / Independent Pass / User Adopted / ABF-P3-144-v1 Frozen / Governance V2.1 L3 / Not Product Frozen`。用户已在Pilot-7 actual Tauri App内完成最多3条低敏感Work范围内的DeepSeek最小披露、确认、回答与反馈闭环；真实正文未进入Evidence。Closure-4已关闭超时误分类、结果／反馈状态不可见、DB文件名和反馈重复消费缺口，用户于D-0647采纳终局结论。
-- 当前可执行下一步：P3-144已完成并转历史只读；用户授权推送当前L3任务分支，但未授权合并main或自动创建后继任务。Pilot-7、`capture.sqlite`和加密凭据继续保留，等待用户决定下一结果级任务。
-- 当前任务指针：P3-144 Accepted / Complete / User Adopted。最终计数`0/0/3/0/0`；Closure-4独立复核26/26 Rust、23/23合同、10/10 mutation、actual-Tauri与19/19 Manifest通过。R-0055／R-0056保持Open，产品Not Frozen，Stage 4 Not Ready；P3-110继续暂停。
+- 当前活动事项：P3-145 `Draft / Awaiting Single Real-Boundary Confirmation / ABF-P3-145-v1 Draft / Governance V2.1 L3 / Not Product Frozen`。唯一结果是复用Pilot-7既有Work和加密DeepSeek服务，新增非医疗Health Current State与一条确认的Durable Memory，让Today形成Person-level跨域Focus并验证反馈后的可解释变化。
+- 当前可执行下一步：向用户完整展示P3-145合同；用户一次确认Pilot-7复用、1～3条Health＋1条Durable Memory、最多2次逐次确认的DeepSeek请求及保留／禁止边界后，冻结ABF并启动全新隔离工程会话。确认前不得创建工程／评审／临时根或访问Pilot-7。
+- 当前任务指针：P3-144已交付GitHub main并转历史只读；P3-145仅为Draft，尚未启动工程。R-0055／R-0056保持Open，产品Not Frozen，Stage 4 Not Ready；P3-110继续暂停。
 - P3-134最终PM计数：P0=0、P1=0、P2=1、Unknown=0、Not Implemented=0。333项Final Manifest和13项固定输入hash复算闭合，AC-01～16全Pass，三档actual-Tauri各15态、同fixture视觉、十一IPC、双模式Runtime与10类写前失败关闭成立。P2为一次已精确清理且未参与正Evidence的无内容stdout越界历史。
 - P3-132 最终PM计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算工程Final Manifest 75+42、P3-131历史75/75并串行复跑11/11测试；CL-01不足身份显示与CL-02三个开放Action按`confirmed_at_ms/action_id`稳定Focus、刷新及重启全部闭合。两项首次工程历史P2保留但不阻断唯一用户结果；未触发独立评审。
 - P3-131 当前 PM 计数：P0=0、P1=0、P2=2、Unknown=0、Not Implemented=0。PM复算Final Manifest 89/89与source lineage 75/75，离线测试6/6，并在唯一全新task temp root直接复跑actual Tauri的接受并完成、关闭重开、编辑接受、拒绝、暂缓和证据不足路径。两项P2分别为工程action log／build-cache Manifest措辞与原始PID时间链不足，以及source scanner对`basis_refs.map`的`fs.`子串误报和closure checker语义弱；均由PM定向复核关闭其阻断性，不影响唯一用户结果。

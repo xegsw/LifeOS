@@ -1,6 +1,6 @@
 # LifeOS 阶段关卡与评审清单 V0.1
 
-更新时间：2026-08-08
+更新时间：2026-08-29
 
 ## 使用原则
 
@@ -251,6 +251,7 @@ Stage 0 结束不代表可以进入 MVP 开发；它只代表可以更安全地�
 - 基础权限设置
 - 错误和数据恢复策略
 - Alpha 用户使用说明
+- 至少一条经授权、可审计的真实 Person-level Work + Health / Fitness 跨领域闭环：已确认长期信息与当天状态共同改变 Today 结果；实际最小 Context 披露 refs 可审计；用户反馈或纠正导致后续 Understanding 或建议发生可解释变化；Health 高风险路径保守停止。仅 Work Pilot 或 Provider 成功不得替代本条件。
 
 必须通过：
 
