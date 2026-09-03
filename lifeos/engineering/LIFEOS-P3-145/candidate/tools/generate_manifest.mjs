@@ -13,7 +13,7 @@ async function walk(folder) {
   const values = [];
   for (const entry of entries) {
     const path = resolve(folder, entry.name);
-    if (["target", ".cargo-target", ".tmp"].includes(entry.name)) continue;
+    if (entry.name === "target" || entry.name === ".tmp" || entry.name.startsWith(".cargo-target")) continue;
     if (excluded.has(path)) continue;
     if (entry.isDirectory()) values.push(...await walk(path));
     else if (entry.isFile()) { const bytes = await readFile(path); values.push({ path: relative(engineering, path), bytes: bytes.length, sha256: hash(bytes) }); }

@@ -1,0 +1,38 @@
+{
+  "schema": "lifeos.p3-145.closure-checkpoint.v1",
+  "task": "LIFEOS-P3-145",
+  "candidate_base_commit": "579914d06923db65db8c3b421b2da663a1950354",
+  "source_diff_sha256": "7c70dfbf10a24dc2fabe08019d208f466ce686ff02da735f080e619e002adbcb",
+  "stage": "closure_delta_engineering_complete",
+  "status": "awaiting_isolated_delta_review",
+  "resume_from": "isolated_delta_review",
+  "completed": [
+    "task_and_run_scoped_receipt_budget",
+    "legacy_unscoped_receipt_preservation",
+    "failure_before_confirmation_consumption",
+    "global_ai_notice_region",
+    "failed_disclosure_retention",
+    "synthetic_offline_regression",
+    "nonself_manifest_excludes_prefixed_build_targets",
+    "locked_offline_pilot_7_bundle"
+  ],
+  "not_executed": [
+    "real_network_send_after_delta",
+    "real_content_read",
+    "automatic_disclosure_confirmation"
+  ],
+  "runtime": {
+    "pilot_7_app_running": true,
+    "direct_pid": 74714,
+    "binary_sha256": "56598acf4ef5f1149b4c2ef70dabf360cdf6f1435595d73924eb565c9ebe7fac",
+    "user_input_or_network_by_agent": false
+  },
+  "risk_summary": {
+    "p0_open": 0,
+    "p1_open": 0,
+    "p2_open": 0,
+    "unknown": ["post-delta real send is intentionally not executed"],
+    "not_implemented": []
+  },
+  "next_required_gate": "PM-routed isolated L3 delta review; this checkpoint is not PM acceptance, risk closure, freeze, or Stage progression."
+}

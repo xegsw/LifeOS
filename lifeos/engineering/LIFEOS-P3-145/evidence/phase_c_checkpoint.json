@@ -1,0 +1,55 @@
+{
+  "task": "LIFEOS-P3-145",
+  "phase": "C",
+  "status": "Paused — Resumable",
+  "resume_from": "real_preflight/app_launch",
+  "candidate_commit": "579914d06923db65db8c3b421b2da663a1950354",
+  "profile": "pilot-7",
+  "run_mode": "real_gate",
+  "root": {
+    "path": "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-7",
+    "mode": "0700",
+    "device_inode": "16777231:19063604"
+  },
+  "marker": {
+    "path": "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-7/.lifeos-p3-145-owner.json",
+    "mode": "0600",
+    "type": "regular",
+    "symlink": false,
+    "device_inode": "16777231:19874970"
+  },
+  "runtime": {
+    "path": "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-7/runtime",
+    "mode": "0700",
+    "type": "directory",
+    "symlink": false,
+    "device_inode": "16777231:19063606",
+    "provenance": "unknown_not_attributed_to_this_run"
+  },
+  "database": {
+    "path": "/Users/xxe/Documents/LifeOS-Self-Use-Pilot-7/capture.sqlite",
+    "mode": "0600",
+    "type": "regular",
+    "device_inode": "16777231:19063607",
+    "size_bytes_before_and_after": 69632,
+    "content_read": false
+  },
+  "direct_launch": {
+    "pid": 71451,
+    "executable_sha256": "ce64d6f2158a66ab15bfabfbe15d55961adefc0715405b1a938d57471c24186d",
+    "live_after_seconds": 4,
+    "stderr_bytes": 0,
+    "ax_query_result": "timeoutReached",
+    "pid_after_ax_timeout": "absent",
+    "positive_ax_window_webview_evidence": false
+  },
+  "prohibited_boundary": {
+    "user_text_read": false,
+    "credential_access": false,
+    "network": false,
+    "disclosure_confirmation": false,
+    "database_clear_or_overwrite_observed": false,
+    "database_migration_evidence": "not_available"
+  },
+  "next_condition": "Resume only after the native AX service/environment is available; reuse the exact marker, runtime, candidate commit, and binary hash unless they change."
+}

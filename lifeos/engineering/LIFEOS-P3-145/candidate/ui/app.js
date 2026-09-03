@@ -189,6 +189,7 @@
   function composer() {
     const disclosure = state.disclosure;
     const scopeLabel = state.globalDomain === "person" ? "Person · Work + Health" : state.globalDomain === "health" ? "Health / Fitness" : "Work";
+    const globalNotice = state.notice ? `<p class="notice global-ai-notice" role="status">${escape(state.notice)}</p>` : "";
     const panel = disclosure ? `<div class="disclosure-panel"><p class="eyebrow">本次最小披露预览</p><strong>范围：${escape(scopeLabel)} · 仅发送到 ${escape(disclosure.provider)} · ${escape(disclosure.authority)}</strong><p>模型：${escape(disclosure.model || "尚未选择模型")} · 预算：最多 ${escape(disclosure.budget?.itemLimit)} 条 / ${escape(disclosure.budget?.characterLimit)} 字符 / ${escape(disclosure.budget?.tokenLimit)} tokens</p><p>${escape(disclosure.processingLocation || "")}</p><ul>${(disclosure.items || []).map((item) => `<li><span>${escape(item.domain)} · ${escape(item.itemType || item.type)}</span><p>${escape(item.text)}</p><button class="button quiet" data-action="remove-disclosure:${escape(item.id)}">移除</button></li>`).join("")}</ul><div class="form-actions"><button class="button primary" data-action="confirm-disclosure" ${state.busy ? "disabled" : ""}>确认并发送本次披露</button><button class="button quiet" data-action="clear-disclosure">取消</button></div></div>` : "";
     const lifecycle = state.understanding?.lifecycleStatus || "pending";
     const lifecycleLabel = ({ pending: "等待你的反馈", confirmed: "已确认", edited: "已编辑", rejected: "已拒绝", ignored: "已忽略", corrected: "已纠正", invalidated: "已纠正并失效" })[lifecycle] || lifecycle;
@@ -196,7 +197,7 @@
       ? `<div class="form-actions">${["confirm","edit","reject","ignore","correct"].map((action) => `<button class="button secondary" data-action="feedback:${action}">${({confirm:"确认",edit:"编辑",reject:"拒绝",ignore:"忽略",correct:"纠正"})[action]}</button>`).join("")}</div>`
       : `<p class="understanding-status" role="status">${escape(lifecycleLabel)}</p>`;
     const result = state.understanding ? `<div class="understanding-panel"><strong>DeepSeek 回答 · ${escape(state.understanding.model || "DeepSeek")}</strong><p>${escape(state.understanding.transientResponse || "")}</p>${feedback}</div>` : "";
-    return `<section class="global-ai ${disclosure || state.understanding ? "is-open" : ""}" aria-label="Global AI 空间"><div class="global-ai-row"><span>${icon("spark")}</span><select data-global-domain aria-label="上下文范围"><option value="person" ${state.globalDomain === "person" ? "selected" : ""}>Person · Work + Health</option><option value="work" ${state.globalDomain === "work" ? "selected" : ""}>Work</option><option value="health" ${state.globalDomain === "health" ? "selected" : ""}>Health / Fitness</option></select><input data-global-question maxlength="200" aria-label="问 LifeOS" placeholder="问 LifeOS…" /><button class="button primary" data-action="assemble" ${state.busy ? "disabled" : ""}>组装披露</button></div>${panel}${result}</section>`;
+    return `<section class="global-ai ${disclosure || state.understanding || state.notice ? "is-open" : ""}" aria-label="Global AI 空间"><div class="global-ai-row"><span>${icon("spark")}</span><select data-global-domain aria-label="上下文范围"><option value="person" ${state.globalDomain === "person" ? "selected" : ""}>Person · Work + Health</option><option value="work" ${state.globalDomain === "work" ? "selected" : ""}>Work</option><option value="health" ${state.globalDomain === "health" ? "selected" : ""}>Health / Fitness</option></select><input data-global-question maxlength="200" aria-label="问 LifeOS" placeholder="问 LifeOS…" /><button class="button primary" data-action="assemble" ${state.busy ? "disabled" : ""}>组装披露</button></div>${globalNotice}${panel}${result}</section>`;
   }
   function render() { const content = state.page === "today" ? todayPage() : state.page === "me" ? mePage() : state.page !== "settings" ? quietPage() : `<div class="settings-shell">${secondaryNav()}${state.section === "model" ? modelPage() : unavailablePage()}</div>`; app.innerHTML = `<div class="app-shell">${shell()}${content}</div>${composer()}`; }
 
@@ -325,7 +326,7 @@
           state.disclosure = null;
           state.notice = "本次确认已消耗；结果以 AI Understanding 保存，可继续反馈。";
         } catch (error) {
-          state.disclosure = null;
+          state.disclosure = current;
           throw error;
         }
       } else if (name === "feedback") {

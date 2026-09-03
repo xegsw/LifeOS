@@ -1,0 +1,46 @@
+{
+  "schema": "lifeos.p3-145.closure-regression.v1",
+  "task": "LIFEOS-P3-145",
+  "scope": "receipt_budget_and_global_ai_status_delta",
+  "execution_mode": "synthetic_offline_only",
+  "candidate_base_commit": "579914d06923db65db8c3b421b2da663a1950354",
+  "source_diff_sha256": "7c70dfbf10a24dc2fabe08019d208f466ce686ff02da735f080e619e002adbcb",
+  "tests": [
+    {
+      "name": "runtime::tests::p3_145_scoped_network_budget_preserves_legacy_receipts_and_prevents_early_consumption",
+      "result": "PASS",
+      "assertions": [
+        "two unscoped legacy receipts are preserved and excluded",
+        "current P3-145 engineering scope allows first and second receipt",
+        "third current-scope request is rejected",
+        "scope count persists across initialize_store restart",
+        "budget rejection occurs while confirmation_used remains zero"
+      ]
+    },
+    {
+      "name": "runtime::tests::p3_145_global_ai_renders_notice_and_preserves_failed_disclosure",
+      "result": "PASS",
+      "assertions": ["Global AI has role=status notice region", "failed confirmation retains the current disclosure"]
+    },
+    {
+      "name": "runtime::tests::p3_145_person_scope_memory_and_feedback_projection_are_typed_and_bounded",
+      "result": "PASS",
+      "assertions": ["existing scoped two-request budget regression"]
+    },
+    {
+      "name": "runtime::tests::p3_145_phase_a_context_limits_disclosure_and_confirmation_are_fail_closed",
+      "result": "PASS",
+      "assertions": ["existing confirmation fail-closed regression"]
+    },
+    {
+      "name": "closure_css_dom_contract",
+      "result": "PASS",
+      "assertions": ["desktop safe area", "compact inherited safe area", "narrow safe area", "context bottom padding", "Global AI status region"]
+    }
+  ],
+  "manifest_exclusion": "PASS: target, .tmp, and .cargo-target-* are excluded",
+  "test_count": 6,
+  "network_access": false,
+  "real_content_read": false,
+  "pilot_7_mutation": false
+}

@@ -1292,6 +1292,11 @@ fn receipt_value(receipt: &deepseek::NetworkReceipt) -> Value {
     })
 }
 
+fn current_receipt_scope() -> Value {
+    let authority = compiled_root_authority();
+    json!({"taskId":authority.marker_task,"runId":authority.run_id})
+}
+
 fn record_noncontent_receipt(
     root: &Path,
     operation: &str,
@@ -1302,7 +1307,7 @@ fn record_noncontent_receipt(
         .ok()
         .and_then(|bytes| serde_json::from_slice::<Vec<Value>>(&bytes).ok())
         .unwrap_or_default();
-    values.push(json!({"operation": operation, "receipt": receipt_value(receipt)}));
+    values.push(json!({"scope":current_receipt_scope(),"operation": operation, "receipt": receipt_value(receipt)}));
     let bytes = serde_json::to_vec_pretty(&values).map_err(|_| {
         ApiError::blocked("receipt_serialization_rejected", "非内容网络收据无法写入。")
     })?;
@@ -1332,10 +1337,12 @@ fn confirmed_request_count(root: &Path) -> Result<usize, ApiError> {
             "非内容网络收据无法验证；未发送。",
         )
     })?;
+    let scope = current_receipt_scope();
     Ok(values
         .iter()
         .filter(|value| {
             value.get("operation").and_then(Value::as_str) == Some("confirmed_minimal_context")
+                && value.get("scope") == Some(&scope)
         })
         .count())
 }
@@ -3360,6 +3367,94 @@ mod tests {
         }
     }
 
+    fn synthetic_network_receipt() -> deepseek::NetworkReceipt {
+        deepseek::NetworkReceipt {
+            authority: deepseek::AUTHORITY,
+            method_class: "POST",
+            status_class: "2xx".into(),
+            timestamp_ms: 1,
+            request_bucket: "0B",
+            response_bucket: "0B",
+        }
+    }
+
+    #[test]
+    fn p3_145_scoped_network_budget_preserves_legacy_receipts_and_prevents_early_consumption() {
+        let root = verify_task_root().unwrap();
+        let _root_cleanup = PhaseATestRootCleanup::new(root.clone());
+        reset_phase_a_store(&root);
+        initialize_store(&root).unwrap();
+
+        let receipt_path = root.join("noncontent-network-receipts.json");
+        let legacy = vec![
+            json!({"operation":"confirmed_minimal_context","receipt":{"authority":"https://api.deepseek.com","methodClass":"POST","statusClass":"2xx"}}),
+            json!({"operation":"confirmed_minimal_context","receipt":{"authority":"https://api.deepseek.com","methodClass":"POST","statusClass":"2xx"}}),
+        ];
+        fs::write(&receipt_path, serde_json::to_vec(&legacy).unwrap()).unwrap();
+        assert_eq!(confirmed_request_count(&root).unwrap(), 0);
+
+        let receipt = synthetic_network_receipt();
+        assert!(ensure_confirmed_request_budget(&root).is_ok());
+        record_noncontent_receipt(&root, "confirmed_minimal_context", &receipt).unwrap();
+        assert_eq!(confirmed_request_count(&root).unwrap(), 1);
+        initialize_store(&root).unwrap();
+        assert_eq!(confirmed_request_count(&root).unwrap(), 1);
+
+        assert!(ensure_confirmed_request_budget(&root).is_ok());
+        record_noncontent_receipt(&root, "confirmed_minimal_context", &receipt).unwrap();
+        initialize_store(&root).unwrap();
+        assert_eq!(confirmed_request_count(&root).unwrap(), 2);
+        assert_eq!(
+            ensure_confirmed_request_budget(&root).unwrap_err().code,
+            "confirmed_request_limit_rejected"
+        );
+
+        let retained =
+            serde_json::from_slice::<Vec<Value>>(&fs::read(&receipt_path).unwrap()).unwrap();
+        assert_eq!(&retained[..legacy.len()], legacy.as_slice());
+        assert!(retained[legacy.len()..].iter().all(|value| {
+            value
+                .get("scope")
+                .and_then(Value::as_object)
+                .and_then(|scope| scope.get("taskId"))
+                .and_then(Value::as_str)
+                == Some("LIFEOS-P3-145")
+                && value
+                    .get("scope")
+                    .and_then(Value::as_object)
+                    .and_then(|scope| scope.get("runId"))
+                    .and_then(Value::as_str)
+                    == Some("engineering")
+        }));
+
+        insert_context_item(&root, WORK, "user_work", "synthetic scoped budget item").unwrap();
+        let (disclosure_id, _, _, _) =
+            assemble_disclosure(&root, WORK, "synthetic scoped budget question", false).unwrap();
+        disclosure_view(&root, &disclosure_id, true).unwrap();
+        assert_eq!(
+            ensure_confirmed_request_budget(&root).unwrap_err().code,
+            "confirmed_request_limit_rejected"
+        );
+        let confirmation_used: i64 = Connection::open(database_path(&root).unwrap())
+            .unwrap()
+            .query_row(
+                "SELECT confirmation_used FROM disclosure_request WHERE id=?1",
+                params![disclosure_id],
+                |row| row.get(0),
+            )
+            .unwrap();
+        assert_eq!(confirmation_used, 0);
+    }
+
+    #[test]
+    fn p3_145_global_ai_renders_notice_and_preserves_failed_disclosure() {
+        let ui = include_str!("../ui/app.js");
+        assert!(ui.contains("const globalNotice = state.notice ?"));
+        assert!(ui.contains("class=\"notice global-ai-notice\" role=\"status\""));
+        assert!(ui.contains("disclosure || state.understanding || state.notice"));
+        assert!(ui.contains("state.disclosure = current;"));
+    }
+
     #[test]
     fn p3_145_phase_a_context_limits_disclosure_and_confirmation_are_fail_closed() {
         let root = verify_task_root().unwrap();
@@ -3592,15 +3687,9 @@ mod tests {
             .unwrap();
         assert_eq!(unrelated_status, "confirmed");
 
-        let receipts = json!([
-            {"operation":"confirmed_minimal_context"},
-            {"operation":"confirmed_minimal_context"}
-        ]);
-        fs::write(
-            root.join("noncontent-network-receipts.json"),
-            serde_json::to_vec(&receipts).unwrap(),
-        )
-        .unwrap();
+        let receipt = synthetic_network_receipt();
+        record_noncontent_receipt(&root, "confirmed_minimal_context", &receipt).unwrap();
+        record_noncontent_receipt(&root, "confirmed_minimal_context", &receipt).unwrap();
         assert_eq!(
             ensure_confirmed_request_budget(&root).unwrap_err().code,
             "confirmed_request_limit_rejected"
