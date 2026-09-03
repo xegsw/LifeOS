@@ -7,7 +7,7 @@
 - Task Contract／ABF：`LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop.md`／`ABF-P3-144-v1`
 - 固定候选：`86d764d91c4c6716254eef7d002dd47092c42826`
 - Evidence：Phase A／Phase B／Closure-3／Phase-C delta／Closure-4／真实使用非内容 receipt／Closure-4 Independent Review
-- 任务状态：PM Pass / User Final Confirmation Pending / Not Product Frozen
+- 任务状态：Accepted / Complete / PM Pass / Independent Pass / User Adopted / Not Product Frozen
 - PM 结论：**Pass**
 
 ## 结论摘要
@@ -69,7 +69,8 @@
 ## 用户确认判断
 
 - 本任务需要用户最终确认：Yes。
-- 理由：L3真实数据／凭据／网络关卡。当前 Pass 不自动推送、合并 main、关闭风险、冻结产品或进入 Stage 4。
+- 用户最终确认：已于 D-0647 采纳 PM Pass，并授权推送当前 L3 任务分支。
+- 边界：本次采纳不授权合并 main、关闭风险、冻结产品、进入 Stage 4、清理保留资产或自动创建后继任务。
 
 ## 资产、风险与下一步
 
@@ -78,7 +79,7 @@
 - R-0055／R-0056：保持 Open。
 - 产品：Not Frozen。
 - Stage 4：Not Ready。
-- 下一步：等待用户采纳本 PM Pass；采纳后才可提交／推送 L3 分支，并另行规划新任务。
+- 下一步：任务完成并转历史只读；推送当前 L3 任务分支，等待用户决定是否合并 main及下一结果级任务。
 
 ## 证据路径
 

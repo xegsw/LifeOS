@@ -5,8 +5,8 @@
 - 任务 ID：LIFEOS-P3-144
 - 任务名称：DeepSeek Work／Health 最小个人上下文受控循环
 - 执行 Agent：Codex
-- 当前状态：PM Pass / User Final Confirmation Pending / Not Product Frozen
-- 需要 PM 决策：Yes
+- 当前状态：Accepted / Complete / PM Pass / Independent Pass / User Adopted / Not Product Frozen
+- 需要 PM 决策：No
 - 任务类型：工程实现、L3/Gate Evidence Closure
 - 风险等级：L3/Gate
 - Task Contract：[LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop.md](../tasks/LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop.md)
@@ -20,7 +20,7 @@
 - Closure-4 关闭真实使用暴露的超时误分类、回答／反馈状态不可见、数据库文件名偏离合同和反馈重复消费问题。
 - 活动数据库已按用户明确授权无损收口为 Pilot-7 根内 `capture.sqlite`，普通文件 `0600`；原零字节占位文件改名保全。Pilot-7、DB 与加密凭据均保留。
 - 最终 PM 计数：P0=0、P1=0、P2=3、Unknown=0、Not Implemented=0。三个 P2 均为已修复或已排除的可分离历史事实，不阻断唯一用户结果。
-- PM 结论为 Pass；L3 最终采纳仍待用户确认。R-0055／R-0056保持Open，产品Not Frozen，Stage 4 Not Ready。
+- PM 结论为 Pass，用户已于 D-0647 完成 L3 最终采纳并授权推送当前任务分支。R-0055／R-0056保持Open，产品Not Frozen，Stage 4 Not Ready。
 
 ## 执行摘要
 
@@ -36,19 +36,19 @@
 
 ### 推断
 
-- 工程 Gate 具备交给全新隔离独立评审的最小可复核包；这一推断不等同 Independent Pass、PM 验收、Phase C 许可、风险关闭、产品冻结或 Stage 切换。
+- 工程 Gate、独立评审、真实用户 Gate 与 PM 验收共同支持本任务 Pass；该结论不外推为风险关闭、产品冻结或 Stage 切换。
 
 ### 建议
 
-- PM 应创建全新隔离的 Phase B 独立评审会话。评审必须先封存自有 test design、allowlist 和禁止路径声明，再只读接触候选；不得复用本会话、PID、DB、临时根、截图或结论。
+- P3-144资产转历史只读；保留Pilot-7、DB和加密凭据，等待用户决定下一结果级任务。
 
 ## 角色与关卡
 
 - 主责角色：工程实现 / Technical Owner
 - 协审角色：独立评审、安全与数据治理
-- 已覆盖：Phase A synthetic/offline engineering、结构化正负路径、动态 actual-Tauri、Manifest 和精确清理。
-- 已触发独立评审：Yes；原因是 L3/Gate 且 Phase C、真实数据／凭据／网络边界仍未许可。
-- 未通过或未执行的关卡：Phase B Independent Review、Phase C user-operated real loop、Phase D non-content terminal review、PM acceptance、用户最终采纳。
+- 已覆盖：Phase A synthetic/offline engineering、结构化正负路径、动态 actual-Tauri、Manifest、Phase B/Closure-4独立评审、Phase C真实用户操作、PM验收与用户最终采纳。
+- 已触发独立评审：Yes；原因是 L3/Gate真实数据、凭据和第三方网络边界。
+- 未通过或未执行的关卡：无（本 Task Contract 内）。
 
 ## Evidence 与交付物
 
@@ -61,14 +61,14 @@
 - Final Manifest：[FINAL_MANIFEST.json](../engineering/LIFEOS-P3-144/FINAL_MANIFEST.json)
 - Manifest 验证：[manifest_verification.json](../engineering/LIFEOS-P3-144/evidence/manifest_verification.json)（127 entries，0 errors，PASS）
 
-## 需要 PM 决策
+## 终局治理状态
 
-1. 是否按任务卡建立全新隔离的 Phase B 独立评审会话。
-2. 在 Independent Pass 前，保持 Phase C／Pilot-7／真实内容／真实凭据／真实网络全部未授权。
+- Phase B 独立评审、Phase C 用户真实 Gate、Closure-4 独立增量复核、PM Pass与用户采纳均已完成。
+- 当前任务转历史只读；本次授权仅覆盖任务分支推送，不包含 main 合并、风险关闭、产品冻结、Stage切换、资产清理或后继任务创建。
 
 ## 后续任务建议
 
-- 仅在 Phase B Independent Pass 后，按原 Task Contract 的用户操作边界进入 Phase C；不得由工程会话代为输入、观察或记录真实内容或凭据。
+- 不自动创建后继任务；等待用户基于当前路线选择下一结果级任务。
 
 ## 阻塞或异常
 
