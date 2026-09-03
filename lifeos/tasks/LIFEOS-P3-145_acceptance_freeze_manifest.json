@@ -1,0 +1,71 @@
+{
+  "schema_version": "lifeos.acceptance_freeze_manifest.v2",
+  "task_id": "LIFEOS-P3-145",
+  "abf_id": "ABF-P3-145-v1",
+  "frozen_at": "2026-09-03T00:00:00+08:00",
+  "decision_id": "D-0649",
+  "predecessor_candidate_commit": "86d764d91c4c6716254eef7d002dd47092c42826",
+  "self_exclusion": true,
+  "entries": [
+    {
+      "path": "lifeos/tasks/LIFEOS-P3-145_work_health_cross_domain_today_personalization_and_feedback_adaptation_real_loop.md",
+      "sha256": "2cbaedabc1049d1e4e13d58c39b13095bd498a685cc5f8028ba0e9a17816f626",
+      "role": "task_contract"
+    },
+    {
+      "path": "lifeos/tasks/LIFEOS-P3-145_work_health_cross_domain_today_personalization_and_feedback_adaptation_real_loop_acceptance_basis_freeze.md",
+      "sha256": "040c7166afac7e45bfcdf893c1cc23bfa28827e6e2d1d186ffd8cc4f049e66b1",
+      "role": "acceptance_basis"
+    },
+    {
+      "path": "lifeos/tasks/LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop.md",
+      "sha256": "77ffb9438807c37362608d2bca1c315a4ea8a222d4ec8a0c543fcc84158466ac",
+      "role": "predecessor_contract"
+    },
+    {
+      "path": "lifeos/tasks/LIFEOS-P3-144_deepseek_work_health_minimal_person_context_controlled_real_loop_acceptance_basis_freeze.md",
+      "sha256": "711219613e07a45c97f537f74c5e902c039592317e11c479759f982841bc6f90",
+      "role": "predecessor_acceptance_basis"
+    },
+    {
+      "path": "lifeos/engineering/LIFEOS-P3-144/closure-4/report.md",
+      "sha256": "357401f1a9b6157701b544e208b956dd76f50f28ea743daf840156c83aeb69b0",
+      "role": "predecessor_closure_report"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-144/closure-4-independent-review/independent_review.md",
+      "sha256": "333cb9647f5663bd35347f67e484d103b9974522e86c2369371b3879693bd8d9",
+      "role": "predecessor_independent_review"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-144_pm_review.md",
+      "sha256": "0939f80bb4d7c26767ef66c604611e260653518662e6399b0b366283eb70bbc3",
+      "role": "predecessor_pm_review"
+    },
+    {
+      "path": "lifeos/architecture/LifeOS架构基线V1.0.md",
+      "sha256": "1d7d82d2afcf7ac52b15730f4f8d3effc08f8965d0b085c6a53bbd2611ad7236",
+      "role": "architecture_authority"
+    },
+    {
+      "path": "lifeos/architecture/LifeOS高保真原型IA-V1.0.md",
+      "sha256": "adcc9daf3b8f0fcf27a13176eabb1581c6079d47b48a26ee88cbaba209704243",
+      "role": "product_ia"
+    },
+    {
+      "path": "lifeos/ACCEPTANCE_GOVERNANCE.md",
+      "sha256": "c3b0627a291942158a022a71564e186580e650bd513fe29c1845bd7f5d1a812d",
+      "role": "governance"
+    },
+    {
+      "path": "lifeos/CI_CD_GOVERNANCE.md",
+      "sha256": "23611c5a1a4c75497bc2dde961b9e18d6ba64faa3387c9b09505b2539acd9bfd",
+      "role": "ci_governance"
+    },
+    {
+      "path": "lifeos/STAGE_GATES.md",
+      "sha256": "a61bcd9deff1115170bfa7c816fa3d003c4ea37bf56a615e42bc64b15c0fa31d",
+      "role": "stage_gate_authority"
+    }
+  ]
+}

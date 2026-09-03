@@ -6,12 +6,13 @@
 - 标题：Work＋Health 跨域 Today 个性化与反馈适应真实闭环
 - 风险等级：L3
 - 优先级／缺陷严重性：P0
-- 状态：Draft / Awaiting Single Real-Boundary Confirmation / ABF-P3-145-v1 Draft / Not Product Frozen
+- 状态：Ready / Authorized / Engineering Start Pending / ABF-P3-145-v1 Frozen / Not Product Frozen
 - 主责 Agent／会话类型：全新 Codex 隔离工程会话；一次全新隔离独立评审由未参与实现的会话执行
 - 所需执行能力：本地文件、Rust/Tauri、SQLite、actual Tauri、受控 DeepSeek HTTPS、原生窗口操作、非内容 Evidence
 - 是否需要独立评审：Mandatory（一次，位于真实 Gate 前）
 - 独立评审触发理由：复用真实个人 DB、增加真实 Health Current State／Durable Memory、向第三方披露跨域最小 Context
-- 当前授权依据：用户已授权 P3-144 合并 main，并授权创建、启动 P3-145 完整 Task Contract。由于下列 Pilot-7 复用、真实数据额度和网络次数在授权前尚未完整展示，本卡先创建为 Draft；用户一次确认本完整合同后立即转 Ready 并启动，不再拆分确认。
+- 用户授权依据：用户于 2026-09-03 在完整 Task Contract 展示后明确回复“确认 P3-145 完整合同并启动”，登记为 D-0649。该一次授权覆盖合同内创建、启动、工程、合成验证、一次独立评审、Phase C用户操作、Evidence、同任务Closure Cycle和PM验收；L3最终采纳、资产清理、风险关闭、产品冻结、main合并和Stage切换仍不包含在内。
+- Frozen ABF SHA-256：`040c7166afac7e45bfcdf893c1cc23bfa28827e6e2d1d186ffd8cc4f049e66b1`（ABF文件不自指）。
 
 ## 授权与安全语境
 
