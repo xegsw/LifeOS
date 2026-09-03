@@ -1,0 +1,72 @@
+{
+  "schema": "lifeos.independent-review.final-manifest.v1",
+  "task": "LIFEOS-P3-145",
+  "review": "independent-review/closure-1",
+  "status": "blocked",
+  "conclusion": "Blocked",
+  "candidate": {
+    "commit": "579914d06923db65db8c3b421b2da663a1950354",
+    "tree": "481ffa80e88838669a233ced526cb5321ca0b697",
+    "declared_branch": "codex/l3-p3-145-engineering-phase-a"
+  },
+  "frozen_inputs": {
+    "task_sha256": "2cbaedabc1049d1e4e13d58c39b13095bd498a685cc5f8028ba0e9a17816f626",
+    "abf_sha256": "040c7166afac7e45bfcdf893c1cc23bfa28827e6e2d1d186ffd8cc4f049e66b1",
+    "freeze_manifest_sha256": "38755bb363a19c6e883fbe34e1d3c68fe58c291fc9c24f5304519e4f249681a9"
+  },
+  "attempt_1_history": {
+    "path": "../INDEPENDENT_REVIEW_REPORT.md",
+    "classification": "separable wrong-App Evidence Gap; preserved, excluded, not reused"
+  },
+  "precontact_controls": [
+    {"path": "test_design.md", "sha256": "351d462a737123a3244c49178b8a81e28e8549b00e99c8f7cc8b523f1074489e"},
+    {"path": "allowlist.md", "sha256": "6a2da70f52f1b5718b42929d493421fd72c00f9f3b22d556b67b53f858f19c51"},
+    {"path": "prohibited_path_declaration.md", "sha256": "74c44440fad3ed36d2a3f672dd5e7f27f477a014dfcb2b430808fb3c1676448e"},
+    {"path": "precontact_seal.json", "sha256": "f99af6db07983edce2bb0cea3f5f06b0ac44b950e1655b2d3280e5c2529f68e8"}
+  ],
+  "review_owned_runner": {
+    "path": "review_static_contract.py",
+    "sha256": "be78ec2d365307e2083c6771ecaae812868613f3c0578a6ee97bfadcc490e882",
+    "result_path": "evidence/static_contract_results.json",
+    "result_sha256": "04b46936a3ae87af292b753a9e67e7c5a7f56f4d297e9f3e0fbf76cf68ebbf94",
+    "checks": 4,
+    "mutations_rejected": 4
+  },
+  "native_evidence": {
+    "pre_ui_pid_binding": {"path": "evidence/pre_ui_pid_binding.json", "sha256": "3b68cabc6d5c7419eeeab8375c376b89a8440f87ea3d0d8d83bb8b56a17bb859"},
+    "ax_binding": {"path": "evidence/native_pre_action_binding.md", "sha256": "bebe5aa4e881dffa87bb4eab20bdb5f4e67ef3b702abfadc2bfc27c3f1cf2823"},
+    "screenshots": [
+      {"path": "evidence/native/desktop-today.jpeg", "sha256": "c8f26868ca42f47bc75ab0cde19aa95bb46ea64579f328316e95a72fa5d45fa9", "geometry_px": [1036, 768]},
+      {"path": "evidence/native/compact-today.jpeg", "sha256": "db69a9b28d6a033954089ea9b63084208a600c4fc03f3f7c4f82b972362760e2", "geometry_px": [1160, 768]},
+      {"path": "evidence/native/narrow-today.jpeg", "sha256": "66fb65e2da43fdc7aabecb39aee81e624a896fabd49af93b878d425a91379cea", "geometry_px": [700, 760]}
+    ]
+  },
+  "dynamic_evidence": {
+    "path": "evidence/dynamic_phase_b_results.json",
+    "sha256": "27004dd798c98cbd6639116944d9d07b6edaa13c07b9a90e85b5736033c8a832",
+    "provider_actions": 0,
+    "credential_actions": 0,
+    "network_actions": 0
+  },
+  "cleanup": {
+    "path": "evidence/cleanup.md",
+    "sha256": "a3a3c9d13ded2fe66dd412beae48286ce37aa5ff224e6cc4e62830d2d1cea59c",
+    "runtime_root_absent": true,
+    "closure_root_absent": true,
+    "closure_worktree_absent": true
+  },
+  "review_report": {"path": "INDEPENDENT_REVIEW_REPORT.md", "sha256": "4f6d85f2ff1f126435fd367f30efb43590826cdfedffb7de87796f08b447ae22"},
+  "checkpoint": {"path": "checkpoint.json", "sha256": "2e0bddc9c20a87e516992e11be054578a3f73e62afca161c83c5dc94e28fb8a6", "status": "blocked"},
+  "delivery": {"path": "lifeos/deliverables/LIFEOS-P3-145_independent_review_phase_b_closure_1.md", "sha256": "0511a78145ae09d5f4f563b6de2683fdd86352ac8a4792651e9866fc21024950"},
+  "counts": {
+    "current_p0": 0,
+    "current_p1": 0,
+    "current_p2": 0,
+    "unknown": 13,
+    "not_implemented": 0,
+    "static_checks_passed": 4,
+    "mutations_rejected": 4,
+    "native_viewports": 3
+  },
+  "blocker": "Provider, credential and network actions are prohibited while the Task/ABF requires their synthetic response, feedback and credential failure-closed matrices for PASS."
+}

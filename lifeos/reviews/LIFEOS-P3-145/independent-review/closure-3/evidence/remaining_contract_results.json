@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "credential_missing_and_tamper_fail_before_adapter": true,
+    "disclosure_remove_invalidates_preview_and_confirmation": true,
+    "feedback_maps_all_five_actions_and_is_single_use": true,
+    "no_plaintext_log_sinks_in_credential_paths": true,
+    "resolver_excludes_unauthorized_revoked_and_expired": true
+  },
+  "mutations_rejected": {
+    "confirmation_conditional_guard_removed": true,
+    "credential_authentication_guard_removed": true,
+    "credential_load_before_adapter_removed": true,
+    "disclosure_revision_bump_removed": true,
+    "feedback_compare_and_set_removed": true,
+    "feedback_confirm_mapping_removed": true,
+    "feedback_correct_mapping_removed": true,
+    "feedback_edit_mapping_removed": true,
+    "feedback_ignore_mapping_removed": true,
+    "feedback_reject_mapping_removed": true,
+    "resolver_active_status_filter_removed": true,
+    "resolver_authorization_filter_removed": true,
+    "resolver_expiry_filter_removed": true
+  },
+  "pass": true
+}

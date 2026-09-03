@@ -1,0 +1,69 @@
+{
+  "schema": "lifeos.independent-review.final-manifest.v1",
+  "task": "LIFEOS-P3-145",
+  "review_run_id": "v1",
+  "phase": "B-synthetic-offline-only",
+  "status": "blocked_invalidated_attempt",
+  "review_conclusion": "Blocked",
+  "candidate": {
+    "declared_branch": "codex/l3-p3-145-engineering-phase-a",
+    "fixed_commit": "579914d06923db65db8c3b421b2da663a1950354",
+    "git_tree": "481ffa80e88838669a233ced526cb5321ca0b697",
+    "allowed_readonly_root": "/private/tmp/lifeos-p3-145-independent-review-v1/candidate"
+  },
+  "frozen_inputs": {
+    "task_sha256": "2cbaedabc1049d1e4e13d58c39b13095bd498a685cc5f8028ba0e9a17816f626",
+    "abf_sha256": "040c7166afac7e45bfcdf893c1cc23bfa28827e6e2d1d186ffd8cc4f049e66b1",
+    "freeze_manifest_sha256": "38755bb363a19c6e883fbe34e1d3c68fe58c291fc9c24f5304519e4f249681a9"
+  },
+  "precontact_controls": [
+    {"path": "test_design.md", "sha256": "7ef79d9e152b0ff94dfecc477ebffcc63b0790e73e1c793a7ca97520ebc623b0"},
+    {"path": "allowlist.md", "sha256": "6254f3bc390d38d77c591292c0aa9e9382fcede4525ecfdd60995843cf37a596"},
+    {"path": "prohibited_path_declaration.md", "sha256": "ffdc0d8dea06262bb076b71c38c4272c465e2eaab080e32c02ae995101492192"},
+    {"path": "precontact_seal.json", "sha256": "c424a9d15fcfdf05d75571ea8d1034c95b30a92c872520e4e0a066e15f8c327d"}
+  ],
+  "valid_evidence": [
+    {"path": "evidence/P0-145-IR-001.md", "sha256": "78b7334037a2d2e57204fb8b1a6e69c6b33ccbe7cd94bf38c1759335ac203ac4"},
+    {"path": "QUARANTINE.md", "sha256": "38e2759247cd59d8532dd3d79f5a5b3946bba8d060b7d7ccf1e2ea4f625bda97"},
+    {"path": "INDEPENDENT_REVIEW_REPORT.md", "sha256": "5dff6cb51e24f3333e8c53a75da7fb5064b1087d864aa7bdbd7089d58db3e6ea"},
+    {"path": "evidence/cleanup.md", "sha256": "1a0567d6844582bd060ea4a3d0cbad1171cbde457407e58e9aaf7dead05dde94"}
+  ],
+  "excluded_artifacts": [
+    {"path": "evidence/native/desktop-person-disclosure.jpeg", "reason": "wrong-worktree native App process; not candidate evidence"},
+    {"path": "evidence/native/compact-today.jpeg", "reason": "wrong-worktree native App process; not candidate evidence"},
+    {"path": "evidence/native/narrow-today.jpeg", "reason": "wrong-worktree native App process; not candidate evidence"}
+  ],
+  "counts": {
+    "ac_valid_pass": 0,
+    "ac_engineering_fail": 0,
+    "ac_not_assessed": 20,
+    "review_owned_mutation_executed": 0,
+    "p0": 1,
+    "p1": 0,
+    "p2": 0,
+    "quarantined_ui_screenshots": 3
+  },
+  "p0": {
+    "id": "P0-145-IR-001",
+    "summary": "Actual native window PID 60780 resolved to a same-named App in worktree d510 rather than the uniquely allowed temporary candidate root.",
+    "consequence": "All dynamic UI evidence is excluded; stop required; no candidate quality conclusion."
+  },
+  "prohibited_boundary": {
+    "pilot7_or_real_data_or_credentials_or_provider_or_network_contact": false,
+    "phase_c_started": false,
+    "candidate_modified": false,
+    "pm_ledger_modified": false
+  },
+  "cleanup": {
+    "required": true,
+    "root": "/private/tmp/lifeos-p3-145-independent-review-v1",
+    "status": "completed_marker_validated_cleanup",
+    "script_path": "cleanup_temp_root.sh",
+    "script_sha256": "224d221872c763889dabb725c90d13a2a43ed477c61eae322296dd58f4483e05",
+    "postcondition": "root absent and worktree registration absent"
+  },
+  "delivery": {
+    "summary_path": "lifeos/deliverables/LIFEOS-P3-145_independent_review_phase_b_v1.md",
+    "summary_sha256": "542bcc76677a18f0f60a265f2553406e01410b67f53343c6782afe0276bc0402"
+  }
+}

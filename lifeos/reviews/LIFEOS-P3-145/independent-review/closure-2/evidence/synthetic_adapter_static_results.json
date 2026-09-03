@@ -1,0 +1,17 @@
+{
+  "schema_version": "lifeos.p3-145.synthetic-adapter-static-results.v1",
+  "candidate_commit": "579914d06923db65db8c3b421b2da663a1950354",
+  "runner": "review_synthetic_adapter_contract.py",
+  "runner_sha256": "dce019355dad1c3a09d31847846bf1ac6f962c80f02113965368fcfb561b6cfd",
+  "result": "PASS",
+  "checks": [
+    "synthetic_adapter_has_no_network_receipt",
+    "credential_missing_fails_before_adapter"
+  ],
+  "mutations_rejected": [
+    "synthetic_models_replaced_with_real",
+    "synthetic_response_replaced_with_real",
+    "credential_presence_guard_removed"
+  ],
+  "interpretation": "The compiled synthetic path returns the no-network receipt class and requires credential material before entering the adapter. This is static support, not a substitute for the dynamic socket checks."
+}

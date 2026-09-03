@@ -1,0 +1,54 @@
+{
+  "task": "LIFEOS-P3-145",
+  "closure": "closure-1",
+  "mode": "synthetic_offline",
+  "candidate_commit": "579914d06923db65db8c3b421b2da663a1950354",
+  "native_bindings": [
+    {"viewport": "desktop", "pid": 62670, "geometry_px": [1036, 768], "title": "LifeOS · Work 与健康状态", "webview": "tauri://localhost"},
+    {"viewport": "compact", "pid": 62783, "geometry_px": [1160, 768], "title": "LifeOS · Work 与健康状态", "webview": "tauri://localhost"},
+    {"viewport": "narrow", "pid": 62808, "geometry_px": [700, 760], "title": "LifeOS · Work 与健康状态", "webview": "tauri://localhost"},
+    {"viewport": "empty_today_restart", "pid": 62870, "title": "LifeOS · Work 与健康状态", "webview": "tauri://localhost"}
+  ],
+  "positive_dynamic_checks": {
+    "health_current_state_saved_locally": true,
+    "durable_memory_explicitly_confirmed": true,
+    "work_saved_locally": true,
+    "person_today_has_exactly_one_focus_when_work_and_health_exist": true,
+    "person_today_reason_has_three_minimal_refs_and_one_durable_memory": true,
+    "local_disclosure_preview_contains_exactly_three_selected_items": true,
+    "local_disclosure_cancelled_without_send": true,
+    "restart_preserves_synthetic_work_health_memory_state": true,
+    "empty_today_after_fresh_synthetic_root": true
+  },
+  "negative_dynamic_checks": {
+    "empty_question_rejected_before_send": true,
+    "medical_language_health_save_rejected_before_write": true,
+    "provider_rows": 0,
+    "encrypted_credential_rows": 0,
+    "feedback_rows": 0,
+    "network_or_provider_action": false
+  },
+  "database_metadata_after_positive_path": {
+    "context_items": [
+      "health/health_current_state=1",
+      "work/durable_memory=1",
+      "work/user_work=1"
+    ],
+    "disclosure": "previewed then cancelled; confirmation_used=0",
+    "provider_rows": 0,
+    "encrypted_credential_rows": 0,
+    "feedback_rows": 0
+  },
+  "intentionally_not_executed": {
+    "provider_configuration_or_connection": "prohibited by the review contract",
+    "credential_creation_or_use": "prohibited by the review contract",
+    "confirmation_send_or_provider_response": "prohibited by the review contract",
+    "dynamic_feedback_consumption": "requires the prohibited provider-response precondition"
+  },
+  "evidence": {
+    "desktop": "evidence/native/desktop-today.jpeg",
+    "compact": "evidence/native/compact-today.jpeg",
+    "narrow": "evidence/native/narrow-today.jpeg",
+    "pre_action_binding": "evidence/native_pre_action_binding.md"
+  }
+}

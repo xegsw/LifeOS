@@ -1,0 +1,111 @@
+{
+  "schema_version": "lifeos.independent-review-final-manifest.v1",
+  "task_id": "LIFEOS-P3-145",
+  "closure": "closure-2",
+  "result": "Blocked",
+  "candidate": {
+    "commit": "579914d06923db65db8c3b421b2da663a1950354",
+    "tree": "481ffa80e88838669a233ced526cb5321ca0b697"
+  },
+  "frozen_inputs": [
+    {
+      "path": "lifeos/tasks/LIFEOS-P3-145_work_health_cross_domain_today_personalization_and_feedback_adaptation_real_loop.md",
+      "sha256": "2cbaedabc1049d1e4e13d58c39b13095bd498a685cc5f8028ba0e9a17816f626"
+    },
+    {
+      "path": "lifeos/tasks/LIFEOS-P3-145_work_health_cross_domain_today_personalization_and_feedback_adaptation_real_loop_acceptance_basis_freeze.md",
+      "sha256": "040c7166afac7e45bfcdf893c1cc23bfa28827e6e2d1d186ffd8cc4f049e66b1"
+    }
+  ],
+  "preserved_history": [
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-145/independent-review/INDEPENDENT_REVIEW_REPORT.md",
+      "sha256": "5dff6cb51e24f3333e8c53a75da7fb5064b1087d864aa7bdbd7089d58db3e6ea",
+      "role": "attempt-1 invalidated history, not positive evidence"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-145/independent-review/closure-1/INDEPENDENT_REVIEW_REPORT.md",
+      "sha256": "4f6d85f2ff1f126435fd367f30efb43590826cdfedffb7de87796f08b447ae22",
+      "role": "paused-resumable Closure-1 history and completed stages"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-145/independent-review/closure-1/FINAL_MANIFEST.json",
+      "sha256": "bb9762b89cff6f28f8448902f8a8544bffc3358bfffeda4c4c4ed1a76a0a36b3",
+      "role": "Closure-1 non-self manifest"
+    }
+  ],
+  "closure2_artifacts": [
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-145/independent-review/closure-2/test_design.md",
+      "sha256": "850f6ed3edd7a70165d579a403f056c68335467928fecbac583e46827a96baeb"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-145/independent-review/closure-2/allowlist.md",
+      "sha256": "896411571c4ab6265df9cc34e40b72ae84efea86b78b198764ffcf292dfae6d5"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-145/independent-review/closure-2/prohibited_path_declaration.md",
+      "sha256": "e40e857a7aa25df0671c7fc6423bfebe1d698feb5a759def185514f93490b5d7"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-145/independent-review/closure-2/precontact_seal.json",
+      "sha256": "3515055a21bbab8fc4e6374bb3b1b850ba4fe2a136496a87d0386dd6c774e7ea"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-145/independent-review/closure-2/review_synthetic_adapter_contract.py",
+      "sha256": "dce019355dad1c3a09d31847846bf1ac6f962c80f02113965368fcfb561b6cfd"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-145/independent-review/closure-2/evidence/synthetic_adapter_static_results.json",
+      "sha256": "966991754071abb27c84779ef46ba45e214958eb097598551d55636df1b0ddaa"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-145/independent-review/closure-2/evidence/dynamic_matrix.md",
+      "sha256": "105ce9e63135023293a2756cefe31979bc8dbf20c1ec76d01f381a039d900188"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-145/independent-review/closure-2/cleanup_closure2.sh",
+      "sha256": "4eab2afe59a9cad1c765b516647343894bec7e1d613eaf79f46c1b1145b3b59a"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-145/independent-review/closure-2/checkpoint.json",
+      "sha256": "938793cbf4a33c59650da0688bf0fab91960fc74f33c47cee5d31219c572ac92"
+    },
+    {
+      "path": "lifeos/reviews/LIFEOS-P3-145/independent-review/closure-2/INDEPENDENT_REVIEW_REPORT.md",
+      "sha256": "b8cb318caaff594fc1f0bb669abbd3eab7c15e963a95de174f9e6a2df5780c42"
+    },
+    {
+      "path": "lifeos/deliverables/LIFEOS-P3-145_independent_review_phase_b_closure_2.md",
+      "sha256": "d8f4468b780bcdb0bf03bd4f9eb4538c44ce2d4c89a862483839306cdbf8f4dd"
+    }
+  ],
+  "dynamic_summary": {
+    "synthetic_confirmed_requests": 2,
+    "synthetic_model_tests": 2,
+    "network_receipts": "all NONE / 0B / synthetic_no_network",
+    "live_pid_socket_checks": "all zero",
+    "feedback_terminal_states": {
+      "confirmed": 1,
+      "invalidated_after_correction": 1
+    },
+    "prohibited_boundary_contact": false
+  },
+  "cleanup": {
+    "closure2_runtime_root": "absent",
+    "closure2_build_root": "absent",
+    "closure2_candidate_worktree": "absent",
+    "closure2_canary": "deleted_and_absent",
+    "unattributed_same_service_synthetic_item": "preserved; different opaque account; not deletion-authorized"
+  },
+  "counts": {
+    "p0": 0,
+    "p1": 0,
+    "p2": 1,
+    "unknown": 7,
+    "not_implemented": 0
+  },
+  "self_excluded": true,
+  "self_path": "lifeos/reviews/LIFEOS-P3-145/independent-review/closure-2/FINAL_MANIFEST.json",
+  "scope_note": "This manifest does not authorize Phase C, real Provider use, PM Pass, user adoption, risk closure, freezing, merge, or Stage transition."
+}

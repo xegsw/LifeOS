@@ -1,0 +1,20 @@
+{
+  "closure": "closure-1",
+  "candidate_commit": "579914d06923db65db8c3b421b2da663a1950354",
+  "prelaunch_same_bundle_competitors": 0,
+  "direct_macho_attempts": [
+    {"pid": 62624, "result": "exited_before_binding_without_stderr"},
+    {"pid": 62652, "result": "exited_before_binding_without_stderr"}
+  ],
+  "native_launch": {
+    "method": "open -n on the closure-owned, offline-built bundle after zero-competitor check",
+    "actual_new_pid": 62670,
+    "ppid": 1,
+    "executable": "/private/tmp/lifeos-p3-145-independent-review-closure-1/target/debug/bundle/macos/LifeOS · Work 与健康状态.app/Contents/MacOS/lifeos-p3-145",
+    "executable_sha256": "52ad2bb2a4e4c26717b61d8bf6c03975e53d0e43255aa81945f11476297d5281",
+    "candidate_source_snapshot": "/private/tmp/lifeos-p3-145-independent-review-closure-1/candidate/lifeos/engineering/LIFEOS-P3-145/candidate",
+    "binding": "The executable is an offline closure-owned build artifact from the fixed, read-only source snapshot; it is under the same unique closure temporary root and not any prior worktree."
+  },
+  "ui_actions_before_record": false,
+  "next_required_binding": "exact AXWindow title and AXWebView/HTML content"
+}

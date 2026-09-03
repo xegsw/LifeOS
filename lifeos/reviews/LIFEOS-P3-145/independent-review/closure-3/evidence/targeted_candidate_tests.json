@@ -1,0 +1,20 @@
+{
+  "schema_version": "lifeos.p3-145.closure-3.targeted-candidate-tests.v1",
+  "candidate_commit": "579914d06923db65db8c3b421b2da663a1950354",
+  "command_profile": "LIFEOS_P3_145_ROOT_PROFILE=independent-review; cargo test --locked --offline; --test-threads=1",
+  "tests": [
+    {
+      "name": "runtime::tests::p3_145_phase_a_context_limits_disclosure_and_confirmation_are_fail_closed",
+      "result": "PASS",
+      "coverage": ["remove disclosure item", "revision invalidation", "old confirmation rejection", "replay rejection", "revoked selected item rejection", "zero receipt file before confirmation"]
+    },
+    {
+      "name": "runtime::tests::p3_145_person_scope_memory_and_feedback_projection_are_typed_and_bounded",
+      "result": "PASS",
+      "coverage": ["Person Work+Health selection", "affected feedback projection", "correction invalidation", "unrelated Understanding remains confirmed", "two-request budget rejection"]
+    }
+  ],
+  "credential_store_actions": "none; neither selected test invokes secure_credentials",
+  "provider_or_network_actions": "none",
+  "post_test_runtime_root": "absent"
+}

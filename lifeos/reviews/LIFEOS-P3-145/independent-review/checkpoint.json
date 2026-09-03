@@ -1,0 +1,19 @@
+{
+  "schema_version": "lifeos.execution_checkpoint.v1",
+  "task_id": "LIFEOS-P3-145",
+  "phase": "independent_review",
+  "status": "invalidated_attempt",
+  "candidate_commit": "579914d06923db65db8c3b421b2da663a1950354",
+  "candidate_tree": "4ae4d9f4593c6848aead012444dff55ef896502d",
+  "baseline_summary": {
+    "task_sha256": "2cbaedabc1049d1e4e13d58c39b13095bd498a685cc5f8028ba0e9a17816f626",
+    "abf_sha256": "040c7166afac7e45bfcdf893c1cc23bfa28827e6e2d1d186ffd8cc4f049e66b1"
+  },
+  "completed": ["preflight", "fixed_commit_binding", "frozen_input_hashes", "offline_build", "p0_preservation", "marker_validated_cleanup", "manifest_finalization"],
+  "resume_from": null,
+  "pending": [],
+  "prohibited_boundary_contact": false,
+  "temporary_root": "/private/tmp/lifeos-p3-145-independent-review-v1",
+  "excluded_artifacts": ["evidence/native/desktop-person-disclosure.jpeg", "evidence/native/compact-today.jpeg", "evidence/native/narrow-today.jpeg"],
+  "notes": "P0-145-IR-001: native App PID resolved outside the uniquely allowed candidate root. Stop required; this run cannot resume. No prohibited boundary contact."
+}

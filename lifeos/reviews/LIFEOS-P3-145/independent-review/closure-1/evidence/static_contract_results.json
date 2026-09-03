@@ -1,0 +1,19 @@
+{
+  "runner": "closure-1/review_static_contract.py",
+  "runner_sha256": "be78ec2d365307e2083c6771ecaae812868613f3c0578a6ee97bfadcc490e882",
+  "candidate_commit": "579914d06923db65db8c3b421b2da663a1950354",
+  "checks": {
+    "compiled_review_root_and_synthetic_mode": true,
+    "exact_20_ipc_and_handler": true,
+    "feedback_single_use_guard": true,
+    "non_medical_health_guard": true
+  },
+  "mutations_rejected": {
+    "change_compiled_review_root": true,
+    "remove_feedback_pending_gate": true,
+    "remove_health_guard": true,
+    "remove_one_ipc": true
+  },
+  "pass": true,
+  "runner_note": "The first run exposed a review-runner parser omission for the final handler item without a trailing comma. The runner was repaired and rerun; this was not a candidate finding."
+}

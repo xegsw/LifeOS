@@ -1,0 +1,16 @@
+{
+  "schema_version": "lifeos.execution_checkpoint.v1",
+  "task_id": "LIFEOS-P3-145",
+  "closure": "closure-1",
+  "status": "blocked",
+  "resume_from": "provider_gated_matrix",
+  "baseline": {
+    "candidate_commit": "579914d06923db65db8c3b421b2da663a1950354",
+    "task_sha256": "2cbaedabc1049d1e4e13d58c39b13095bd498a685cc5f8028ba0e9a17816f626",
+    "abf_sha256": "040c7166afac7e45bfcdf893c1cc23bfa28827e6e2d1d186ffd8cc4f049e66b1"
+  },
+  "completed": ["closure_controls", "closure_precontact_seal", "candidate_rebind", "static_runner", "pid_ax_binding", "synthetic_dynamic_matrix_without_provider", "visual_matrix", "marker_validated_cleanup", "final_manifest"],
+  "pending": ["provider_gated_matrix_for_response_feedback_credential"],
+  "prohibited_boundary_contact": false,
+  "blocker": "Current instruction prohibits Provider, credential and network actions; Task/ABF requires their synthetic dynamic matrices for a Phase-B PASS."
+}

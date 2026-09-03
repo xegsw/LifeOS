@@ -1,0 +1,30 @@
+{
+  "schema_version": "lifeos.execution_checkpoint.v1",
+  "task_id": "LIFEOS-P3-145",
+  "closure": "closure-2",
+  "status": "completed_blocked",
+  "resume_from": null,
+  "completed": [
+    "closure_controls",
+    "closure_precontact_seal",
+    "candidate_snapshot",
+    "synthetic_adapter_proof",
+    "credential_failure_closed",
+    "response_feedback",
+    "restart",
+    "cleanup",
+    "final_manifest_preparation"
+  ],
+  "pending": [],
+  "prohibited_boundary_contact": false,
+  "terminal_reason": "Closure-2 completed every permitted response/feedback/credential matrix item. The full frozen Phase-B Pass remains blocked by inherited, deliberately un-repeated AC-01/08/09/10/13/16/19 gaps; no candidate repair was performed.",
+  "cleanup": {
+    "closure2_runtime_root": "absent",
+    "closure2_candidate_worktree": "absent",
+    "closure2_build_root": "absent",
+    "closure2_keychain_canary": "deleted_and_absent"
+  },
+  "p2": [
+    "A service-scoped synthetic Keychain item with a different opaque account remained after the closure-2 canary was deleted. It was not bound to closure-2's now-removed database reference and was not deleted without provenance."
+  ]
+}
