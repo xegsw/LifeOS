@@ -1,0 +1,15 @@
+lifeos/engineering/LIFEOS-P3-147/candidate/tools/alias_metadata.swift:5:38: error: incorrect argument label in call (have 'forKeys:fromBookmark:', expected 'forKeys:fromBookmarkData:')
+3 | let data=FileHandle.standardInput.readDataToEndOfFile()
+4 | guard data.count<=1024*1024,
+5 |       let values=NSURL.resourceValues(forKeys:[.pathKey],fromBookmark:data),
+  |                                      `- error: incorrect argument label in call (have 'forKeys:fromBookmark:', expected 'forKeys:fromBookmarkData:')
+6 |       let path=values[.pathKey] as? String else {exit(2)}
+7 | FileHandle.standardOutput.write(Data(path.utf8))
+
+lifeos/engineering/LIFEOS-P3-147/candidate/tools/alias_metadata.swift:6:24: error: cannot infer contextual base in reference to member 'pathKey'
+4 | guard data.count<=1024*1024,
+5 |       let values=NSURL.resourceValues(forKeys:[.pathKey],fromBookmark:data),
+6 |       let path=values[.pathKey] as? String else {exit(2)}
+  |                        `- error: cannot infer contextual base in reference to member 'pathKey'
+7 | FileHandle.standardOutput.write(Data(path.utf8))
+8 | 
