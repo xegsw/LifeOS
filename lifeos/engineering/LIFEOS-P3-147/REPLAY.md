@@ -1,3 +1,20 @@
+# 当前阶段：用户连接入口准备
+
+User-directed review waiver / No Independent Pass。真实连接未激活；当前使用candidate/tools/verify_entry_release.py核对普通入口包的完整性，不运行或替代安全评审。
+
+合成演练：Settings → 数据与隐私 → 来源 → 查看连接说明；真实按钮禁用。收起说明后可“连接合成目录”。真实路径仅作为说明字符串展示，不探测、不建库。
+
+仅复跑本轮普通检查：
+```sh
+LIFEOS_P3_147_BUILD_PROFILE=engineering python3 -B lifeos/engineering/LIFEOS-P3-147/candidate/tools/run_internal_checks.py ui_build,build,entry_flow
+python3 -B lifeos/engineering/LIFEOS-P3-147/candidate/tools/verify_entry_release.py
+LIFEOS_P3_147_BUILD_PROFILE=engineering python3 -B lifeos/engineering/LIFEOS-P3-147/candidate/tools/launch_app.py entrypreview01 desktop
+```
+
+不要同时启动多个App实例。当前真实profile未实现，不能给环境变量填真实路径。精确激活方案见design/real-entry-activation-proposal.md，待PM和用户对应批准。下文为旧801e478a及更早工程复跑说明的历史保留，当前不执行独立评审或旧安全runner。
+
+---
+
 # P3-147 合成工程复跑与 App
 
 本包仅运行任务自有合成库和注入 Transport。五项公共 IPC 已批准，原20项保留。不得将本入口用于真实目录、真实网络、Provider、凭据或旧 Pilot。

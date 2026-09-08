@@ -1,3 +1,20 @@
+# 当前普通产品入口准备增量
+
+本轮不执行独立复评：User-directed review waiver / No Independent Pass。原安全未完成8行保持未完成，不把以下普通功能验证当作安全补评。
+
+| 普通功能 | 当前证据 |
+|---|---|
+| 展开/收起说明不发IPC，真实按钮禁用 | checks-20260908T065600195699Z/entry_flow.log，app-entry-desktop-plan与app-entry-narrow-plan |
+| 自动导入、格式与进度诚实显示 | 同普通flow，app-entry-desktop-import |
+| 暂停跨重启保留、继续恢复 | 同普通flow，app-entry-desktop-paused、app-entry-narrow-paused-restart |
+| 本地检索、刷新、断开后重启 | 同普通flow，app-entry-narrow-search |
+| 源码与平台边界 | user-entry-diff.json；Rust/root_profiles/25IPC/Schema/Provider不变 |
+| 真实激活 | 未实现，等待固定profile及用户非加密存储授权；真实路径零探测 |
+
+当前6组检查与6份native证据属于普通合成验证。下文为801e478a历史工程矩阵，保留历史计数与当时待复评状态；不代表用户waiver之后重新执行安全评审。
+
+---
+
 # P3-147 合成工程逐行矩阵
 
 执行侧自检，不是Frozen ABF或独立评审。原独立安全评审Rework（IR-P0-147-001）保留；Independent Delta及8行补评、真实亲验待执行。原始日志均保留；本表指向最后覆盖相应变动的成功结果。

@@ -1,69 +1,16 @@
 {
-  "schema": "lifeos.p3-147.entry-preparation-manifest.v1",
-  "phase": "entry_preparation",
+  "schema": "lifeos.p3-147.engineering-manifest.v1",
   "task": "LIFEOS-P3-147",
-  "parent_commit": "801e478a5bf0c62a87d740c68a765fc219e81406",
-  "updated_at": "2026-09-08T07:03:26.277946+00:00",
+  "status": "engineering_repair_complete_pending_independent_delta",
   "gate_status": {
-    "independent_security": "user_directed_waiver_no_independent_pass",
-    "real_activation": "inactive_pending_contract_and_storage_approval",
+    "independent_security": "pending",
+    "real_user_gate": "pending",
     "pm_final": "pending"
   },
-  "candidate_sha256": "333491f34956c27de1be04454ae085fa505ed52d53ce6524b69d1ec25edc7d8f",
-  "binary_sha256": "dcf8979b337a641c5ffeb3f2e0b7e9f4dc6dbc40a142a941e7644f6555747bfe",
-  "report_sha256": "fe2bacf05d5cd1a8191862a078838ec6ea7558a1fc281fd46e993e8d15fcf114",
-  "ordinary_flow": {
-    "count": 6,
-    "log": "evidence/checks-20260908T065600195699Z/entry_flow.log",
-    "results": "evidence/checks-20260908T065600195699Z/results.json"
-  },
-  "build_evidence": "evidence/checks-20260908T065434468999Z/results.json",
-  "native_evidence": [
-    {
-      "evidence": "evidence/app-entry-desktop-plan.json",
-      "image": "evidence/app-entry-desktop-plan.png",
-      "launch": "evidence/launch-entrydesktop.json",
-      "width": 1280
-    },
-    {
-      "evidence": "evidence/app-entry-desktop-import.json",
-      "image": "evidence/app-entry-desktop-import.png",
-      "launch": "evidence/launch-entrydesktop.json",
-      "width": 1280
-    },
-    {
-      "evidence": "evidence/app-entry-desktop-paused.json",
-      "image": "evidence/app-entry-desktop-paused.png",
-      "launch": "evidence/launch-entrydesktop.json",
-      "width": 1280
-    },
-    {
-      "evidence": "evidence/app-entry-narrow-paused-restart.json",
-      "image": "evidence/app-entry-narrow-paused-restart.png",
-      "launch": "evidence/launch-entrynarrow.json",
-      "width": 700
-    },
-    {
-      "evidence": "evidence/app-entry-narrow-search.json",
-      "image": "evidence/app-entry-narrow-search.png",
-      "launch": "evidence/launch-entrynarrow.json",
-      "width": 700
-    },
-    {
-      "evidence": "evidence/app-entry-narrow-plan.json",
-      "image": "evidence/app-entry-narrow-plan.png",
-      "launch": "evidence/launch-entrynarrow.json",
-      "width": 700
-    }
-  ],
-  "historical_security_evidence": "history/pre-user-entry/FINAL_MANIFEST.json",
-  "current_verifier": "candidate/tools/verify_entry_release.py",
-  "excluded": [
-    "FINAL_MANIFEST.json",
-    "evidence/entry-release-verification.json",
-    "**/__pycache__/**",
-    "**/*.pyc"
-  ],
+  "created_at": "2026-09-08T05:06:32.370344+00:00",
+  "candidate_sha256": "61a944c5b568fd39b40efd8ec25bfcbf0656ca25352d6e8e4d6a75db4c49d79f",
+  "binary_sha256": "82d3de671bfbe855ab642daca8c8c9d1d4942f890bd7afdf4e43c2b22a236a64",
+  "report_sha256": "61af930c58f9da8cbd5d52c25bc1ad977c8e1b77624625add7d2a87a6479a93c",
   "files": [
     {
       "path": ".gitignore",
@@ -72,8 +19,8 @@
     },
     {
       "path": "REPLAY.md",
-      "bytes": 8199,
-      "sha256": "69e62652972bad6f911aca8aed0bf6b636a35d908ac975dd26ee15d31683bcc5"
+      "bytes": 7010,
+      "sha256": "8b6dc4c639d0cf9d321b9fc8e93227a77f70c345f07e3d1041b3b5f743931bf8"
     },
     {
       "path": "baseline/src/deepseek.rs",
@@ -102,8 +49,8 @@
     },
     {
       "path": "candidate/application/ui.ts",
-      "bytes": 23213,
-      "sha256": "c5a98c32acc885cf7b749e7c00b94f266e3e32cccdf41b971f6c2476c6d6f584"
+      "bytes": 21579,
+      "sha256": "a6eab8ffb31d7310f40e655856daf4d0cab4365733d4db6a1d16b21ba16d100d"
     },
     {
       "path": "candidate/application/web_source.ts",
@@ -231,11 +178,6 @@
       "sha256": "4345f2eefbb6e1d6e01c57264caaace7217c17ae4143b150b43825da231c18bc"
     },
     {
-      "path": "candidate/tests/source_entry.mjs",
-      "bytes": 3942,
-      "sha256": "8536a621f74d24ae920f500f54454fb2aad32e7356fd631295f53b09f1a4eac3"
-    },
-    {
       "path": "candidate/tests/ui_startup.mjs",
       "bytes": 1018,
       "sha256": "db79ab07f446647683c3bad23519747aa2fc88050ba4464b600f600f55e71a03"
@@ -292,8 +234,8 @@
     },
     {
       "path": "candidate/tools/run_internal_checks.py",
-      "bytes": 2821,
-      "sha256": "974b5e4143653cbba94c676bbbe1429cf768f013ce2845247bf473f3f5af4aef"
+      "bytes": 2754,
+      "sha256": "a365263900ba6c9be01fd099dd8a26e6290d9f69a3389d3f4e073565c01f406a"
     },
     {
       "path": "candidate/tools/run_p3_146_checks.mjs",
@@ -324,11 +266,6 @@
       "path": "candidate/tools/test_target_boundaries.py",
       "bytes": 4483,
       "sha256": "c11f7a1cf6877383c8676c1741dde786076ae5f522b44c3aa910982fe738643e"
-    },
-    {
-      "path": "candidate/tools/verify_entry_release.py",
-      "bytes": 4393,
-      "sha256": "85ee9b39841f0c48bc75db5aad1271f7e4577d7fa92a7c36c54699ffaf6cf142"
     },
     {
       "path": "candidate/tools/verify_manifest.py",
@@ -367,8 +304,8 @@
     },
     {
       "path": "candidate/ui/ui.js",
-      "bytes": 27233,
-      "sha256": "3d069cfcd4a02c4c99025bcd8f04e8b7f40367b74f5d4437abd85c2fda4d58db"
+      "bytes": 25491,
+      "sha256": "c78c2f3c679ccb0e9c99a90226a1d6dfcfdf2839d3db9d77a193cb2cb97a72f4"
     },
     {
       "path": "candidate/ui/viewport-adapter.css",
@@ -396,19 +333,14 @@
       "sha256": "b39d51c1caaa523c5c578b4ce5927ea29801ab0ccee1b378956b7ca172e04942"
     },
     {
-      "path": "design/real-entry-activation-proposal.md",
-      "bytes": 3193,
-      "sha256": "cf3c0117b774fbd96ab1ee2bcdc03cb9ec5a040798ee97b2f51e76250c59eeb7"
-    },
-    {
       "path": "design/root-closure.md",
       "bytes": 1201,
       "sha256": "7ff23ba5d166dff476c3a13f84db56c5f6ad508ece84b9085a6ee184f757a13e"
     },
     {
       "path": "evidence/AC_MATRIX.md",
-      "bytes": 7639,
-      "sha256": "ac113a9a6ef4bbddcd1eb484fe6cf1104b4769e40c1c004726858443a6d0c45b"
+      "bytes": 6528,
+      "sha256": "b1985d1331899c80720a75c274ee87aecc3bcb1e9254a254788c9899681b2294"
     },
     {
       "path": "evidence/alias-fixture-build.log",
@@ -534,66 +466,6 @@
       "path": "evidence/app-delivery-narrow-revoked-restart.png",
       "bytes": 285895,
       "sha256": "2820d99c5adb2ed3fa676a2d7ecf1ce13d7b4af3e6e24e5d5712bba986622f52"
-    },
-    {
-      "path": "evidence/app-entry-desktop-import.json",
-      "bytes": 1202990,
-      "sha256": "c736619671787ef7ed7eabb5352d884b0583c02a95db865aa155321b9fc72357"
-    },
-    {
-      "path": "evidence/app-entry-desktop-import.png",
-      "bytes": 496655,
-      "sha256": "6ecc375e86e5fad42368172a86cf3c39d0b12505ccd6137f3333245017fc5926"
-    },
-    {
-      "path": "evidence/app-entry-desktop-paused.json",
-      "bytes": 1202990,
-      "sha256": "d8eefdd8b0984a9454c8b4df8de7ca13d5ca5a13cde3ddf4c18d338ff0ea658b"
-    },
-    {
-      "path": "evidence/app-entry-desktop-paused.png",
-      "bytes": 500558,
-      "sha256": "a05f5a69e24218d20bf2615d67f78a47610560b55e40b98ee7238150f096904f"
-    },
-    {
-      "path": "evidence/app-entry-desktop-plan.json",
-      "bytes": 965433,
-      "sha256": "090a07cb4622fae4b186c4513c6d191413c0ceb182a8ef020b3c1d506d40a21f"
-    },
-    {
-      "path": "evidence/app-entry-desktop-plan.png",
-      "bytes": 564332,
-      "sha256": "5f980e3bf4b26cbec0ce59f29f45bdae9cde076d92b77329b1cbf0bb031fb73c"
-    },
-    {
-      "path": "evidence/app-entry-narrow-paused-restart.json",
-      "bytes": 1202900,
-      "sha256": "8469c872dac7d4493e92f649955d09b7a9298872683b131972a7a8a1e1d7e3b8"
-    },
-    {
-      "path": "evidence/app-entry-narrow-paused-restart.png",
-      "bytes": 291773,
-      "sha256": "4b330f8278f10fa630741142ca0f69f82c8f0d5ad2ce4b4fa4181ea7cc800ebc"
-    },
-    {
-      "path": "evidence/app-entry-narrow-plan.json",
-      "bytes": 1204172,
-      "sha256": "006ab24d4dea575b219279febf47ca43faf4bd99a2fdfbd64d26be3a1cef11f6"
-    },
-    {
-      "path": "evidence/app-entry-narrow-plan.png",
-      "bytes": 401022,
-      "sha256": "beff776600e1dce8e7e175bbb666ce48309c2b2c5a7e193a3448fc266db1b6ba"
-    },
-    {
-      "path": "evidence/app-entry-narrow-search.json",
-      "bytes": 1199982,
-      "sha256": "106497306cb80c651996dec9893e00fadc3f31a20c7a2ee28d304845f821b9ad"
-    },
-    {
-      "path": "evidence/app-entry-narrow-search.png",
-      "bytes": 299144,
-      "sha256": "f9521e70173fb9628cccae563fae446bb6285ee220f6a7e09caca439b43a1432"
     },
     {
       "path": "evidence/app-final-desktop-disconnected.json",
@@ -817,8 +689,8 @@
     },
     {
       "path": "evidence/checkpoint.json",
-      "bytes": 2634,
-      "sha256": "5cb9e1728f2855d7c748ae426989bf80270c222d6f8a2d99828a6ba71908a430"
+      "bytes": 2447,
+      "sha256": "69d9082f73ddd39de63ab7d20d91d02c6aa530cc509c3c3b61d98d82a2199225"
     },
     {
       "path": "evidence/checks-20260908T035657252730Z/build.log",
@@ -1156,46 +1028,6 @@
       "sha256": "9fb2a9d7dc216148e03fb702ebfb5335b94ad0246624ddecbf9df5404619b5a7"
     },
     {
-      "path": "evidence/checks-20260908T065331778074Z/build.log",
-      "bytes": 1197,
-      "sha256": "faf3121dc411a9af378a4e60caee622c6970cff2251a71f721c77272a96d4d64"
-    },
-    {
-      "path": "evidence/checks-20260908T065331778074Z/results.json",
-      "bytes": 239,
-      "sha256": "8ae54cb5cd4a6d11e836e92b7e68b4d4b4ff2f5bcad40af2d455ee1b248cf114"
-    },
-    {
-      "path": "evidence/checks-20260908T065331778074Z/ui_build.log",
-      "bytes": 183,
-      "sha256": "445b67441701ac4ca894b7d51458447966e8cffc2e3e62a83566154c090d8ce2"
-    },
-    {
-      "path": "evidence/checks-20260908T065434468999Z/build.log",
-      "bytes": 1197,
-      "sha256": "24cf95a5945a762b1e1f2666db74cb2745702e3ad0afa3f2f364e1f2d982dbd3"
-    },
-    {
-      "path": "evidence/checks-20260908T065434468999Z/results.json",
-      "bytes": 239,
-      "sha256": "8ae54cb5cd4a6d11e836e92b7e68b4d4b4ff2f5bcad40af2d455ee1b248cf114"
-    },
-    {
-      "path": "evidence/checks-20260908T065434468999Z/ui_build.log",
-      "bytes": 183,
-      "sha256": "6b89c81e112e16f5afdd9a6a31e07eb0b1c4e82d0f9834f190b38213aa0646da"
-    },
-    {
-      "path": "evidence/checks-20260908T065600195699Z/entry_flow.log",
-      "bytes": 407,
-      "sha256": "7da4274689edb1adf3e75c6219bfeb6e79c9124252c8215b9dc1e30d5d404004"
-    },
-    {
-      "path": "evidence/checks-20260908T065600195699Z/results.json",
-      "bytes": 184,
-      "sha256": "1233ae3d00039132afb86f8e004d2a1596c996b32823e6a385de5fb4e9d3f932"
-    },
-    {
       "path": "evidence/cua-relaunch-stop.json",
       "bytes": 321,
       "sha256": "06e1083758665ad398201e807252d6de6f849de340f7d5c902ca5c0791bf8b46"
@@ -1291,16 +1123,6 @@
       "sha256": "14b73cc1ab7d6dd82414f80a73ad9373a3d8b1a95b529981b679dcfb9b77966a"
     },
     {
-      "path": "evidence/launch-entrydesktop.json",
-      "bytes": 6045,
-      "sha256": "e2dd2ec64236c7020db0785321c137a6b256dfc377ae986993d433cbd77d6e08"
-    },
-    {
-      "path": "evidence/launch-entrynarrow.json",
-      "bytes": 6044,
-      "sha256": "15b32739e50ac680da235c3142ad48c605bcccc0b39b75d57e258b60174da54f"
-    },
-    {
       "path": "evidence/launch-finaldesktop.json",
       "bytes": 4930,
       "sha256": "c3197184a89116884a49739bbe00be8f67b22e748ae9f9ca926afe7e6a6fdc85"
@@ -1334,11 +1156,6 @@
       "path": "evidence/launch-sources1.json",
       "bytes": 4728,
       "sha256": "87aa2b7e9601f0bfa89bb8913e71177b0f12709a3487b845f42ad8001b458f40"
-    },
-    {
-      "path": "evidence/manifest-mutations.json",
-      "bytes": 1732,
-      "sha256": "5c1c5de9a483c3a3c57a31bf8e73c4cf2d9f20f303b8dcac89806f85775a3e8b"
     },
     {
       "path": "evidence/native-environment-releasedesktop.json",
@@ -1444,11 +1261,6 @@
       "path": "evidence/public-ui-position-run.log",
       "bytes": 150,
       "sha256": "7db68fb8fa8663e6087761a89f814883d3852b37a155a45f990943cf5c2a3cc9"
-    },
-    {
-      "path": "evidence/release-verification.json",
-      "bytes": 169,
-      "sha256": "218c03847a2557deecce20f30a0eec7ee8117a8e838f030111456c4822ec2515"
     },
     {
       "path": "evidence/review-repro-1788847179082677000/adaptation.json",
@@ -1559,16 +1371,6 @@
       "path": "evidence/ui-startup-diagnostic.log",
       "bytes": 35,
       "sha256": "76f40fa1b9c626323cf949011447f60b3925956bf49534aa48de39af4d5a891c"
-    },
-    {
-      "path": "evidence/user-entry-diff.json",
-      "bytes": 18426,
-      "sha256": "ec7cc17a2d93f2a04416713d23f3bd55edf0770ccfa9fad71ad90fd82cece043"
-    },
-    {
-      "path": "evidence/user-entry-runtime.json",
-      "bytes": 175,
-      "sha256": "5f61b4612d07c83eb106ca14354f8d7bed646d1d7c2329055febe31850b70666"
     },
     {
       "path": "evidence/web-tests-2.log",
@@ -3274,41 +3076,107 @@
       "path": "history/pre-root-closure/report.md",
       "bytes": 6813,
       "sha256": "bc7d3ccb40e76953ba1893c5bc6be9d13c17c524114ab1834e0d6e0a7c6ffbd0"
-    },
-    {
-      "path": "history/pre-user-entry/FINAL_MANIFEST.json",
-      "bytes": 119349,
-      "sha256": "7760a97b114defb79525877cfd6552f69682812ade4f195bb2c5df22d39d74db"
-    },
-    {
-      "path": "history/pre-user-entry/candidate/tools/verify_release.py",
-      "bytes": 7519,
-      "sha256": "3e72559ecd1b9861b4fcbeab1ad8e7169a13378ea02307af804fa8d03640b06c"
-    },
-    {
-      "path": "history/pre-user-entry/evidence/checkpoint.json",
-      "bytes": 2447,
-      "sha256": "69d9082f73ddd39de63ab7d20d91d02c6aa530cc509c3c3b61d98d82a2199225"
-    },
-    {
-      "path": "history/pre-user-entry/evidence/manifest-mutations.json",
-      "bytes": 1732,
-      "sha256": "5c1c5de9a483c3a3c57a31bf8e73c4cf2d9f20f303b8dcac89806f85775a3e8b"
-    },
-    {
-      "path": "history/pre-user-entry/evidence/release-verification.json",
-      "bytes": 169,
-      "sha256": "218c03847a2557deecce20f30a0eec7ee8117a8e838f030111456c4822ec2515"
-    },
-    {
-      "path": "history/pre-user-entry/lineage.json",
-      "bytes": 911,
-      "sha256": "4e11152e37e267b8284553f37e60dc04d96a1e38abf0a5a5453bca8339d2ae33"
-    },
-    {
-      "path": "history/pre-user-entry/report.md",
-      "bytes": 10575,
-      "sha256": "61af930c58f9da8cbd5d52c25bc1ad977c8e1b77624625add7d2a87a6479a93c"
     }
-  ]
+  ],
+  "test_evidence": {
+    "rust": {
+      "count": 23,
+      "results": "evidence/checks-20260908T055801782593Z/results.json",
+      "log": "evidence/checks-20260908T055801782593Z/rust.log"
+    },
+    "parser": {
+      "count": 11,
+      "results": "evidence/checks-20260908T052535959595Z/results.json",
+      "log": "evidence/checks-20260908T052535959595Z/parser.log",
+      "reused": "unchanged implementation and tests versus 640ebb6; exact equality in artifact-closure-diff.json"
+    },
+    "web": {
+      "results": "evidence/checks-20260908T043508621304Z/results.json",
+      "log": "evidence/checks-20260908T043508621304Z/web.log",
+      "count": 14,
+      "reused": "unchanged implementation and tests versus 640ebb6; exact equality in artifact-closure-diff.json"
+    },
+    "inherited": {
+      "count": 31,
+      "results": "evidence/checks-20260908T055801782593Z/results.json",
+      "log": "evidence/checks-20260908T055801782593Z/inherited.log"
+    },
+    "public_api": {
+      "count": 1,
+      "results": "evidence/checks-20260908T055849064483Z/results.json",
+      "log": "evidence/checks-20260908T055849064483Z/public_api.log"
+    },
+    "root_profiles": {
+      "count": 4,
+      "results": "evidence/checks-20260908T052535959595Z/results.json",
+      "log": "evidence/checks-20260908T052535959595Z/root_profiles.log",
+      "reused": "unchanged implementation and tests versus 640ebb6; exact equality in artifact-closure-diff.json"
+    },
+    "target_boundaries": {
+      "count": 10,
+      "results": "evidence/checks-20260908T055849064483Z/results.json",
+      "log": "evidence/checks-20260908T055849064483Z/target_boundaries.log"
+    }
+  },
+  "native_evidence": [
+    {
+      "evidence": "evidence/app-artifact-desktop-start.json",
+      "image": "evidence/app-artifact-desktop-start.png",
+      "launch": "evidence/launch-artifactclosuredesktop.json",
+      "width": 1280,
+      "revoked_restart": false
+    },
+    {
+      "evidence": "evidence/app-artifact-desktop-targets.json",
+      "image": "evidence/app-artifact-desktop-targets.png",
+      "launch": "evidence/launch-artifactclosuredesktop.json",
+      "width": 1280,
+      "revoked_restart": false
+    },
+    {
+      "evidence": "evidence/app-artifact-desktop-detail.json",
+      "image": "evidence/app-artifact-desktop-detail.png",
+      "launch": "evidence/launch-artifactclosuredesktop.json",
+      "width": 1280,
+      "revoked_restart": false
+    },
+    {
+      "evidence": "evidence/app-artifact-desktop-disconnected.json",
+      "image": "evidence/app-artifact-desktop-disconnected.png",
+      "launch": "evidence/launch-artifactclosuredesktop.json",
+      "width": 1280,
+      "revoked_restart": false
+    },
+    {
+      "evidence": "evidence/app-artifact-narrow-restart.json",
+      "image": "evidence/app-artifact-narrow-restart.png",
+      "launch": "evidence/launch-artifactclosurenarrow.json",
+      "width": 700,
+      "revoked_restart": true
+    },
+    {
+      "evidence": "evidence/app-artifact-narrow-empty-search.json",
+      "image": "evidence/app-artifact-narrow-empty-search.png",
+      "launch": "evidence/launch-artifactclosurenarrow.json",
+      "width": 700,
+      "revoked_restart": true
+    }
+  ],
+  "excluded": [
+    "**/*.pyc",
+    "**/__pycache__/**",
+    "FINAL_MANIFEST.json",
+    "evidence/manifest-mutations.json",
+    "evidence/release-verification.json"
+  ],
+  "exclusion_reason": "non-self-reference and generated interpreter caches; verifier result files are outputs, not verification inputs",
+  "root_build_evidence": "evidence/root-build-20260908T052514/results.json",
+  "closure": "same-contract IR-P0-147-001 artifact safety",
+  "updated_at": "2026-09-08T06:11:03.280300+00:00",
+  "artifact_review_compile": "evidence/artifact-review-profile-compile/result.json",
+  "artifact_target_evidence": "evidence/artifact-target-1788847132844195000.json",
+  "review_repro_evidence": "evidence/review-repro-1788847179082677000/target-boundary-results.json",
+  "current_test_count": 65,
+  "reused_test_count": 29,
+  "review_reproduction_cases": 2
 }

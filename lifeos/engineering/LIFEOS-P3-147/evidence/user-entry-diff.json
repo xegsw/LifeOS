@@ -1,0 +1,407 @@
+{
+  "parent_commit": "801e478a5bf0c62a87d740c68a765fc219e81406",
+  "full_changed_paths": [
+    "lifeos/deliverables/LIFEOS-P3-147_obsidian_readonly_source_and_conversation_memory_integration.md",
+    "lifeos/engineering/LIFEOS-P3-147/FINAL_MANIFEST.json",
+    "lifeos/engineering/LIFEOS-P3-147/REPLAY.md",
+    "lifeos/engineering/LIFEOS-P3-147/candidate/application/ui.ts",
+    "lifeos/engineering/LIFEOS-P3-147/candidate/tests/source_entry.mjs",
+    "lifeos/engineering/LIFEOS-P3-147/candidate/tools/run_internal_checks.py",
+    "lifeos/engineering/LIFEOS-P3-147/candidate/tools/verify_entry_release.py",
+    "lifeos/engineering/LIFEOS-P3-147/candidate/ui/ui.js",
+    "lifeos/engineering/LIFEOS-P3-147/design/real-entry-activation-proposal.md",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/AC_MATRIX.md",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/app-entry-desktop-import.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/app-entry-desktop-import.png",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/app-entry-desktop-paused.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/app-entry-desktop-paused.png",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/app-entry-desktop-plan.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/app-entry-desktop-plan.png",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/app-entry-narrow-paused-restart.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/app-entry-narrow-paused-restart.png",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/app-entry-narrow-plan.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/app-entry-narrow-plan.png",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/app-entry-narrow-search.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/app-entry-narrow-search.png",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/checkpoint.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/checks-20260908T065331778074Z/build.log",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/checks-20260908T065331778074Z/results.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/checks-20260908T065331778074Z/ui_build.log",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/checks-20260908T065434468999Z/build.log",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/checks-20260908T065434468999Z/results.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/checks-20260908T065434468999Z/ui_build.log",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/checks-20260908T065600195699Z/entry_flow.log",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/checks-20260908T065600195699Z/results.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/entry-release-verification.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/launch-entrydesktop.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/launch-entrynarrow.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/user-entry-diff.json",
+    "lifeos/engineering/LIFEOS-P3-147/evidence/user-entry-runtime.json",
+    "lifeos/engineering/LIFEOS-P3-147/history/pre-user-entry/FINAL_MANIFEST.json",
+    "lifeos/engineering/LIFEOS-P3-147/history/pre-user-entry/candidate/tools/verify_release.py",
+    "lifeos/engineering/LIFEOS-P3-147/history/pre-user-entry/evidence/checkpoint.json",
+    "lifeos/engineering/LIFEOS-P3-147/history/pre-user-entry/evidence/manifest-mutations.json",
+    "lifeos/engineering/LIFEOS-P3-147/history/pre-user-entry/evidence/release-verification.json",
+    "lifeos/engineering/LIFEOS-P3-147/history/pre-user-entry/lineage.json",
+    "lifeos/engineering/LIFEOS-P3-147/history/pre-user-entry/report.md"
+  ],
+  "candidate_files": [
+    {
+      "path": "candidate/Cargo.lock",
+      "before": "39a696f4a667fe4c8e96dc8e4efffc60d052a8f49f60ba771d7fe2c1a970679b",
+      "after": "39a696f4a667fe4c8e96dc8e4efffc60d052a8f49f60ba771d7fe2c1a970679b",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/Cargo.toml",
+      "before": "757a06bb19d7c2a4cb6a2af4cdf9bff848964b1a400a2591fa3a3a334a721076",
+      "after": "757a06bb19d7c2a4cb6a2af4cdf9bff848964b1a400a2591fa3a3a334a721076",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/application/core.ts",
+      "before": "4ccd89bde846d5064ac014c3e19e45ce53b4a06a34038f3c90bdf8c7a5d3c6ed",
+      "after": "4ccd89bde846d5064ac014c3e19e45ce53b4a06a34038f3c90bdf8c7a5d3c6ed",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/application/ui.ts",
+      "before": "a6eab8ffb31d7310f40e655856daf4d0cab4365733d4db6a1d16b21ba16d100d",
+      "after": "c5a98c32acc885cf7b749e7c00b94f266e3e32cccdf41b971f6c2476c6d6f584",
+      "unchanged": false
+    },
+    {
+      "path": "candidate/application/web_source.ts",
+      "before": "bea6d906f3e3c1a78ac44c0e08332a71955984d1a59d0940efebc85697f0978a",
+      "after": "bea6d906f3e3c1a78ac44c0e08332a71955984d1a59d0940efebc85697f0978a",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/build.rs",
+      "before": "972406816af5f738234e174bbb39e72646373f1b4121e9da51169cfb8322593e",
+      "after": "972406816af5f738234e174bbb39e72646373f1b4121e9da51169cfb8322593e",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/capabilities/main.json",
+      "before": "e032ea1b613ebf475a328d81eba2e10b3c4ef5a1e4d38713af94c1db5d33a617",
+      "after": "e032ea1b613ebf475a328d81eba2e10b3c4ef5a1e4d38713af94c1db5d33a617",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/gen/schemas/acl-manifests.json",
+      "before": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e",
+      "after": "b8665c2471bd4c59d570c77e226f37410ce396da52525383a15b5cbbff9d786e",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/gen/schemas/capabilities.json",
+      "before": "557f9b9e21a006dec3a9502c1ef57e4885bcf5392b689254048557165f75df97",
+      "after": "557f9b9e21a006dec3a9502c1ef57e4885bcf5392b689254048557165f75df97",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/gen/schemas/desktop-schema.json",
+      "before": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "after": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/gen/schemas/macOS-schema.json",
+      "before": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "after": "f68a9c570ecff07ac6826145d33b966d6fc02f7d680967f44437268b08a6ba78",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/icons/icon.png",
+      "before": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293",
+      "after": "1e17993555bbe3d3984f113044221455fb0aa20bde281bfdc41c02a77c816293",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/root_profile.rs",
+      "before": "bdc961c389c0b5073afc8a844aa768dfbf467bd963e0fc52de7b40c01ab14816",
+      "after": "bdc961c389c0b5073afc8a844aa768dfbf467bd963e0fc52de7b40c01ab14816",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/root_profiles.json",
+      "before": "2d64fe006e6a257a283969d68b30735908f54ce278a3196beaa23578f5c973c4",
+      "after": "2d64fe006e6a257a283969d68b30735908f54ce278a3196beaa23578f5c973c4",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/src/artifact_io.rs",
+      "before": "c3bd4980fb285c87b6adaf5004cb6bc94351fd0a62d2765c43f25f31c602df8b",
+      "after": "c3bd4980fb285c87b6adaf5004cb6bc94351fd0a62d2765c43f25f31c602df8b",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/src/deepseek.rs",
+      "before": "4673d3b1a141b3c86d6114c276e058dd6fac8c25c009125ac935c85165defa7e",
+      "after": "4673d3b1a141b3c86d6114c276e058dd6fac8c25c009125ac935c85165defa7e",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/src/main.rs",
+      "before": "92c1e7513417496cdd688658fb14651c14010b375c42e16113e96f83a747ed80",
+      "after": "92c1e7513417496cdd688658fb14651c14010b375c42e16113e96f83a747ed80",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/src/repository.rs",
+      "before": "ce08d57745d0ec9140a319c80b17da2ee84d091ff2085295c537aeb30f803213",
+      "after": "ce08d57745d0ec9140a319c80b17da2ee84d091ff2085295c537aeb30f803213",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/src/runtime_root.rs",
+      "before": "c89137316ee49a147f8d33b2345e64d3d6efbf7ff8123cf024cd40b222ac380a",
+      "after": "c89137316ee49a147f8d33b2345e64d3d6efbf7ff8123cf024cd40b222ac380a",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/src/secure_credentials.rs",
+      "before": "dbf89518225735eeb9ac331212fcb105816dc4bc9065da3ef1810bff18a1299b",
+      "after": "dbf89518225735eeb9ac331212fcb105816dc4bc9065da3ef1810bff18a1299b",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/src/source_api.rs",
+      "before": "8435ce413d13d6ef66bec52245a0b8ef3aa45e69e81ce63073032c595100319a",
+      "after": "8435ce413d13d6ef66bec52245a0b8ef3aa45e69e81ce63073032c595100319a",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/src/source_file.rs",
+      "before": "42c093a599707320f33d9d3fbf07edb1abb9796112860be2a476ea0388b472e9",
+      "after": "42c093a599707320f33d9d3fbf07edb1abb9796112860be2a476ea0388b472e9",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/src/source_store.rs",
+      "before": "066b0db686516433935d6f3986e8e8c9314b3d3e1dcc4ab4205b6b92f392e4e7",
+      "after": "066b0db686516433935d6f3986e8e8c9314b3d3e1dcc4ab4205b6b92f392e4e7",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/src/source_targets.rs",
+      "before": "4c61744acb65cfc9cedb79f09e6c06943bfdf1fd1fe016a59bf192161e5fcb11",
+      "after": "4c61744acb65cfc9cedb79f09e6c06943bfdf1fd1fe016a59bf192161e5fcb11",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/src/source_worker.rs",
+      "before": "6608f729472437ce18f1535f3c88a26d394cc50fcf3016851104b57669c60545",
+      "after": "6608f729472437ce18f1535f3c88a26d394cc50fcf3016851104b57669c60545",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tauri.conf.json",
+      "before": "7480460f053d0169e7cc499fe1e7066c4bb186aeb4304c8331549310e6c6a34a",
+      "after": "7480460f053d0169e7cc499fe1e7066c4bb186aeb4304c8331549310e6c6a34a",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tests/create_alias.swift",
+      "before": "178124ad141c6728e3710897f611dc3603fc499bb2e43ef0524c787faab136a7",
+      "after": "178124ad141c6728e3710897f611dc3603fc499bb2e43ef0524c787faab136a7",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tests/integration.mjs",
+      "before": "80a52fa492d63418c62d936d92426587652a929b1294b3675bdd96a9bd11a50e",
+      "after": "80a52fa492d63418c62d936d92426587652a929b1294b3675bdd96a9bd11a50e",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tests/parsers.py",
+      "before": "4345f2eefbb6e1d6e01c57264caaace7217c17ae4143b150b43825da231c18bc",
+      "after": "4345f2eefbb6e1d6e01c57264caaace7217c17ae4143b150b43825da231c18bc",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tests/source_entry.mjs",
+      "before": null,
+      "after": "8536a621f74d24ae920f500f54454fb2aad32e7356fd631295f53b09f1a4eac3",
+      "unchanged": false
+    },
+    {
+      "path": "candidate/tests/ui_startup.mjs",
+      "before": "db79ab07f446647683c3bad23519747aa2fc88050ba4464b600f600f55e71a03",
+      "after": "db79ab07f446647683c3bad23519747aa2fc88050ba4464b600f600f55e71a03",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tests/web_source.mjs",
+      "before": "2d04177b9d62d2bf83825e522e942e279b061ef813a47dabd92777dff2c37490",
+      "after": "2d04177b9d62d2bf83825e522e942e279b061ef813a47dabd92777dff2c37490",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/alias_metadata.swift",
+      "before": "27595bc6e1c64438150b1d476e3a538cc01cf270f68e484c2a9b8ce1df59207a",
+      "after": "27595bc6e1c64438150b1d476e3a538cc01cf270f68e484c2a9b8ce1df59207a",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/build_ui.mjs",
+      "before": "c6d4333fc2b9d457140f7b2359d417d03110069ce76446418f9d9648b2835184",
+      "after": "c6d4333fc2b9d457140f7b2359d417d03110069ce76446418f9d9648b2835184",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/fetch_source.mjs",
+      "before": "d485bc779f0d0612a4321bc886547853c04db86ff2d1697aed5fa6083240c284",
+      "after": "d485bc779f0d0612a4321bc886547853c04db86ff2d1697aed5fa6083240c284",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/launch_app.py",
+      "before": "7202d5940e16283a34347b4aa6146fb05de921b49e4593a29a1e8f3f30097337",
+      "after": "7202d5940e16283a34347b4aa6146fb05de921b49e4593a29a1e8f3f30097337",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/native_evidence.swift",
+      "before": "7f892b4deea285688e211ba2ff9c4baf244b0c85c4ffe7fa081c17096a747ece",
+      "after": "7f892b4deea285688e211ba2ff9c4baf244b0c85c4ffe7fa081c17096a747ece",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/parse_source.py",
+      "before": "4823ba44b033020d5c08e051f5877bfa67ef545737e4a87c7bccb89bf4501b6e",
+      "after": "4823ba44b033020d5c08e051f5877bfa67ef545737e4a87c7bccb89bf4501b6e",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/prepare_review_copy.py",
+      "before": "8f5245327c3e54ab587adf5de4176936ea9a2caca7ac1f099c646310a7c51b8c",
+      "after": "8f5245327c3e54ab587adf5de4176936ea9a2caca7ac1f099c646310a7c51b8c",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/record_app_evidence.py",
+      "before": "aa76b1b422474341267e7c0674493e17406cb7cc470038d2c3ec5c01ca17af06",
+      "after": "aa76b1b422474341267e7c0674493e17406cb7cc470038d2c3ec5c01ca17af06",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/root_config.mjs",
+      "before": "111e99a338e1df3c17a6f7a35f2eb850a988c22ecd1a58ef5525ff24320c8c0d",
+      "after": "111e99a338e1df3c17a6f7a35f2eb850a988c22ecd1a58ef5525ff24320c8c0d",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/run_internal_checks.py",
+      "before": "a365263900ba6c9be01fd099dd8a26e6290d9f69a3389d3f4e073565c01f406a",
+      "after": "974b5e4143653cbba94c676bbbe1429cf768f013ce2845247bf473f3f5af4aef",
+      "unchanged": false
+    },
+    {
+      "path": "candidate/tools/run_p3_146_checks.mjs",
+      "before": "e10ebf0d0fae6af99c335224003fd9893557879170895894db6d75558a54daa0",
+      "after": "e10ebf0d0fae6af99c335224003fd9893557879170895894db6d75558a54daa0",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/seed_source_fixture.py",
+      "before": "0fff2c19ab9759f72fbe7a64addcd0ef383b021ea2a5297d625de990a451b6dd",
+      "after": "0fff2c19ab9759f72fbe7a64addcd0ef383b021ea2a5297d625de990a451b6dd",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/task_root.py",
+      "before": "666017b9a254656bd56d7dc557ab7af6b6c83013e06b346b254a402aa62a8987",
+      "after": "666017b9a254656bd56d7dc557ab7af6b6c83013e06b346b254a402aa62a8987",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/test_root_profiles.py",
+      "before": "5c25e51d042949b9e132c45fb09dbefa5bbc60a4066a0fabe81fe4460c9979ad",
+      "after": "5c25e51d042949b9e132c45fb09dbefa5bbc60a4066a0fabe81fe4460c9979ad",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/test_source_api.py",
+      "before": "b49910930ee851333ecd6a96fc42b402b71c883a55793163d7acad14f7f47804",
+      "after": "b49910930ee851333ecd6a96fc42b402b71c883a55793163d7acad14f7f47804",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/test_target_boundaries.py",
+      "before": "c11f7a1cf6877383c8676c1741dde786076ae5f522b44c3aa910982fe738643e",
+      "after": "c11f7a1cf6877383c8676c1741dde786076ae5f522b44c3aa910982fe738643e",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/verify_entry_release.py",
+      "before": null,
+      "after": "85ee9b39841f0c48bc75db5aad1271f7e4577d7fa92a7c36c54699ffaf6cf142",
+      "unchanged": false
+    },
+    {
+      "path": "candidate/tools/verify_manifest.py",
+      "before": "c8389776b88697a0b9289163cea46be271d39bde246b6d0b38afa24933cc7b74",
+      "after": "c8389776b88697a0b9289163cea46be271d39bde246b6d0b38afa24933cc7b74",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/verify_partial_manifest.py",
+      "before": "5afb4bc7d37f2a4da6499ace703c38f074c93c30f9b8a47c6759c189e63b40af",
+      "after": "5afb4bc7d37f2a4da6499ace703c38f074c93c30f9b8a47c6759c189e63b40af",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/tools/verify_release.py",
+      "before": "3e72559ecd1b9861b4fcbeab1ad8e7169a13378ea02307af804fa8d03640b06c",
+      "after": "3e72559ecd1b9861b4fcbeab1ad8e7169a13378ea02307af804fa8d03640b06c",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/ui/conversation.css",
+      "before": "b16fe2e9597b0d58887ac400db9c41ac21dd801c0a0569dbaaec43a4b99eff97",
+      "after": "b16fe2e9597b0d58887ac400db9c41ac21dd801c0a0569dbaaec43a4b99eff97",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/ui/core.js",
+      "before": "47bffbd1bd632bb301531d71cdb5b65eef7585c709276f3fbef9aef500364b21",
+      "after": "47bffbd1bd632bb301531d71cdb5b65eef7585c709276f3fbef9aef500364b21",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/ui/index.html",
+      "before": "4f8b2e3d86bb18da2d809e71ae52464eff8acaa9d35ace71be58cf00469b8097",
+      "after": "4f8b2e3d86bb18da2d809e71ae52464eff8acaa9d35ace71be58cf00469b8097",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/ui/styles.css",
+      "before": "6067a5469369936d216dcbcd0c1b52244e103c407010b5427db0becf20f73690",
+      "after": "6067a5469369936d216dcbcd0c1b52244e103c407010b5427db0becf20f73690",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/ui/ui.js",
+      "before": "c78c2f3c679ccb0e9c99a90226a1d6dfcfdf2839d3db9d77a193cb2cb97a72f4",
+      "after": "3d069cfcd4a02c4c99025bcd8f04e8b7f40367b74f5d4437abd85c2fda4d58db",
+      "unchanged": false
+    },
+    {
+      "path": "candidate/ui/viewport-adapter.css",
+      "before": "196fb16782004c5eeef3e931b929d91a522d4fe64cba3eb878b46791775519f4",
+      "after": "196fb16782004c5eeef3e931b929d91a522d4fe64cba3eb878b46791775519f4",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/ui/web_source.js",
+      "before": "c898b46cc7c92ba05cbf2ab8fced31808afafa668b40e00ed1636e734d2c0faa",
+      "after": "c898b46cc7c92ba05cbf2ab8fced31808afafa668b40e00ed1636e734d2c0faa",
+      "unchanged": true
+    }
+  ],
+  "real_path_contact": false,
+  "profile_change": false,
+  "ipc_count": 25
+}

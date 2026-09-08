@@ -2,12 +2,12 @@
   "schema": "lifeos.execution-checkpoint.v1",
   "task_id": "LIFEOS-P3-147",
   "attempt_id": "attempt-1",
-  "updated_at": "2026-09-08T07:01:28.998783+00:00",
+  "updated_at": "2026-09-08T06:11:03.280300+00:00",
   "task_contract_sha256": "6cfcd9c5c53fd91a847b003262f9b39b057c5cc4d65b268d050a0aef348e4e06",
-  "candidate_sha256": "333491f34956c27de1be04454ae085fa505ed52d53ce6524b69d1ec25edc7d8f",
+  "candidate_sha256": "61a944c5b568fd39b40efd8ec25bfcbf0656ca25352d6e8e4d6a75db4c49d79f",
   "baseline_sha256": "f56223ad92f5b86c42f4bd60303ca6c892c3f9c1",
-  "stage": "entry_preparation_handoff",
-  "status": "partial_waiting_activation_contract",
+  "stage": "engineering_handoff",
+  "status": "engineering_repair_complete_pending_independent_delta",
   "pause_class": null,
   "pause_reason_code": null,
   "completed_checks": [
@@ -46,17 +46,11 @@
     "29_history_tests_reused",
     "2_review_counterexample_engineering_reproductions",
     "final_artifact_binary_desktop_narrow",
-    "artifact_closure_writers_stopped",
-    "entry_preparation_ui",
-    "ordinary_synthetic_flow_6",
-    "entry_desktop_narrow_native",
-    "entry_app_pids_stopped"
+    "artifact_closure_writers_stopped"
   ],
   "pending_checks": [
-    "pm_profile_decision",
-    "user_storage_approval",
-    "authorized_real_entry_implementation",
-    "user_real_connection",
+    "independent_delta_and_8_unfinished_rows",
+    "real_user_gate",
     "pm_final"
   ],
   "rerun_checks": [],
@@ -71,9 +65,9 @@
     "database_closed": true,
     "temporary_root_state": "owned_retained"
   },
-  "resume_from": "pm_profile_decision_and_user_storage_approval",
+  "resume_from": "independent_delta_and_8_unfinished_rows",
   "safe_to_resume": true,
-  "notes": "User-directed review waiver / No Independent Pass; no security review rerun or bypass; real entry remains inactive.",
+  "notes": "IR-P0-147-001 repaired and affected checks complete; original Rework retained; independent closure pending.",
   "mutation_class": "authorized_same_contract_artifact_safety_delta",
   "historical_assets_mutated": false
 }

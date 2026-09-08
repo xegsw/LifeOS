@@ -56,7 +56,7 @@ const local = [
 function btn(action, label, id = '', secondary = false) {
     return `<button class="button ${secondary ? 'secondary' : 'primary'}" data-action="${action}" data-id="${escape(id)}" ${busy ? 'disabled' : ''}>${label}</button>`;
 }
-let sourceStatus = null, sourceMatches = [], sourceDetail = null, sourceQuery = '', disconnectPending = false;
+let sourceStatus = null, sourceMatches = [], sourceDetail = null, sourceQuery = '', disconnectPending = false, sourcePlanOpen = false;
 const stateLabels = {
     active: '已连接',
     paused: '已暂停，可继续',
@@ -97,9 +97,12 @@ function sourceReason(code) {
 function sourceState(code) {
     return stateLabels[code] || (String(code).startsWith('unavailable:') ? '目标暂不可用，请核对授权后重试' : '待处理');
 }
+function sourceConnectionPlan() {
+    return `<section id="source-connection-plan" aria-label="目录连接说明"><h3>连接 Obsidian 目录</h3><p>拟连接目录：<code>/Users/xxe/IT-obstain</code></p><p>只读接入目录及子目录；不会向原目录写入索引、缓存或标记。</p><p>拟保存到：<code>/Users/xxe/Documents/LifeOS-Source-Pilot-1/capture.sqlite</code></p><p>这是未加密的本地 SQLite 数据库；原件缓存和解析临时文件也会保存在同一专用目录。配置内容受限保存，不进入普通记忆或模型上下文。</p><p role="status">真实连接尚未激活：本地保存边界等待确认，当前版本仅支持合成演练。</p><button class="button primary" disabled aria-describedby="source-activation-note">连接此目录（未激活）</button><p id="source-activation-note">确认保存边界并完成真实入口接线后，才可由你在 App 中连接。查看此说明不会检查目录或创建数据库。</p><p>连接后自动扫描并显示进度，可暂停、继续、取消和手动刷新；不支持的附件会保留未解析状态。目录外文件、网页和模型服务均不启用。</p>${btn('source-plan-close', '收起说明', '', true)}</section>`;
+}
 function sourcePanel() {
     const c = sourceStatus;
-    return `<section class="config-card"><p class="eyebrow">数据与隐私</p><h2>来源</h2><p>连接任务内合成目录后，自动接入笔记、配置和附件。真实目录接入尚未开放。</p>${!c ? btn('source-connect', '连接合成目录') : `<p role="status">${escape(stateLabels[c.status] || c.status)} · 已发现 ${c.discovered} · 已处理 ${c.processed} · 正文已解析 ${c.parsed} · 未解析或受限 ${c.unparsed} · 失败 ${c.failed} · 待处理 ${c.pending}</p><p>${c.error ? '处理中断：' + escape(sourceReason(c.error)) : !c.scanComplete || c.pending ? '正在分批处理；未完成全量接入。' : c.failed || c.unparsed ? '处理已结束，存在未解析或受限原件。' : '本轮扫描与导入完成。'}</p><div class="form-actions">${btn('source-refresh', '刷新', '', true)}${btn(c.status === 'paused' ? 'source-resume' : 'source-pause', c.status === 'paused' ? '继续' : '暂停', '', true)}${btn('source-cancel', '取消处理', '', true)}${btn('source-disconnect', '断开来源', '', true)}</div>${disconnectPending ? `<p>断开后，来源与外链退出检索，旧上下文失效；历史保留。</p>${btn('source-confirm-disconnect', '确认断开')}${btn('source-keep', '保留连接', '', true)}` : ''}<details><summary>查看原件处理状态</summary><small>此处最多显示 256 项；扫描和导入覆盖全部来源，未解析项保留状态。</small>${c.files.map((f)=>`<p>${escape(f.title)} · ${escape(stateLabels[f.status] || f.status)} · v${f.version} ${f.reason ? ' · ' + escape(sourceReason(f.reason)) : ''} ${btn('source-detail', '依据', f.sourceRef, true)}</p>`).join('')}</details><details><summary>直接引用的目标</summary>${c.links.map((l)=>`<p>${escape(l.target)} · ${escape(sourceState(l.status))}</p>${l.status === 'local_original_linked' ? '' : `<div class="form-actions">${btn('source-grant', '授权此合成目标', l.linkId, true)}${btn('source-revoke', '撤回目标授权', l.linkId, true)}</div>`}`).join('') || '<p>尚无引用目标。</p>'}</details>`}</section>`;
+    return `<section class="config-card"><p class="eyebrow">数据与隐私</p><h2>来源</h2><p>连接目录后，自动处理笔记、配置和附件，并保留来源依据。</p>${btn('source-plan', '查看连接说明', '', true)}${sourcePlanOpen ? sourceConnectionPlan() : ''}<h3>合成目录演练</h3><p>当前演练只使用示例文件。</p>${!c || c.status === 'disconnected' ? btn('source-connect', '连接合成目录') : `<p role="status">${escape(stateLabels[c.status] || c.status)} · 已发现 ${c.discovered} · 已处理 ${c.processed} · 正文已解析 ${c.parsed} · 未解析或受限 ${c.unparsed} · 失败 ${c.failed} · 待处理 ${c.pending}</p><p>${c.error ? '处理中断：' + escape(sourceReason(c.error)) : !c.scanComplete || c.pending ? '正在分批处理；未完成全量接入。' : c.failed || c.unparsed ? '处理已结束，存在未解析或受限原件。' : '本轮扫描与导入完成。'}</p><div class="form-actions">${btn('source-refresh', '刷新', '', true)}${btn(c.status === 'paused' ? 'source-resume' : 'source-pause', c.status === 'paused' ? '继续' : '暂停', '', true)}${btn('source-cancel', '取消处理', '', true)}${btn('source-disconnect', '断开来源', '', true)}</div>${disconnectPending ? `<p>断开后，来源与外链退出检索，旧上下文失效；历史保留。</p>${btn('source-confirm-disconnect', '确认断开')}${btn('source-keep', '保留连接', '', true)}` : ''}<details><summary>查看原件处理状态</summary><small>此处最多显示 256 项；扫描和导入覆盖全部来源，未解析项保留状态。</small>${c.files.map((f)=>`<p>${escape(f.title)} · ${escape(stateLabels[f.status] || f.status)} · v${f.version} ${f.reason ? ' · ' + escape(sourceReason(f.reason)) : ''} ${btn('source-detail', '依据', f.sourceRef, true)}</p>`).join('')}</details><details><summary>直接引用的目标</summary>${c.links.map((l)=>`<p>${escape(l.target)} · ${escape(sourceState(l.status))}</p>${l.status === 'local_original_linked' ? '' : `<div class="form-actions">${btn('source-grant', '授权此合成目标', l.linkId, true)}${btn('source-revoke', '撤回目标授权', l.linkId, true)}</div>`}`).join('') || '<p>尚无引用目标。</p>'}</details>`}</section>`;
 }
 function sourceMemory() {
     return `<section class="config-card"><h2>来源与引用</h2><p>检索结果是原文依据，不代表 AI 已理解，也不是已确认长期信息。</p><label>本地检索<input id="source-query" value="${escape(sourceQuery)}" placeholder="例如：项目计划"></label>${btn('source-search', '检索来源')}<div>${sourceMatches.map((r)=>`<article class="record"><div><p>${escape(r.text)}</p><small>原始来源 · v${r.version} · ${escape(r.locator)}</small></div>${btn('source-detail', '查看原文依据', r.sourceRef, true)}</article>`).join('') || '<p>当前没有检索结果。</p>'}</div>${sourceDetail ? `<section id="source-evidence" aria-label="来源依据"><h3>${escape(sourceDetail.title)} · v${sourceDetail.version}</h3><small>${sourceDetail.observedAt ? new Date(sourceDetail.observedAt).toLocaleString() : '来源时间未提供'} · ${escape(sourceDetail.mimeType)}</small><p>${escape(stateLabels[sourceDetail.status] || sourceDetail.status)}</p>${sourceDetail.segments.map((r)=>`<small>${escape(r.locator)}</small><pre class="source-original">${escape(r.text)}</pre>`).join('')}${sourceDetail.nextCursor ? btn('source-more', '继续读取原文', '', true) : ''}</section>` : ''}</section>`;
@@ -177,6 +180,14 @@ function resetDraft() {
     editing = null;
 }
 async function act(action, id) {
+    if (action === 'source-plan' || action === 'source-plan-close') {
+        sourcePlanOpen = action === 'source-plan';
+        render();
+        if (sourcePlanOpen) document.getElementById('source-connection-plan')?.scrollIntoView({
+            block: 'start'
+        });
+        return;
+    }
     busy = true;
     notice = '';
     try {

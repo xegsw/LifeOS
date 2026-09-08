@@ -1,0 +1,97 @@
+{
+  "control_pass": true,
+  "in_memory_only": true,
+  "count": 12,
+  "results": [
+    {
+      "mutation": "missing_file",
+      "rejected": true,
+      "errors": [
+        "coverage"
+      ]
+    },
+    {
+      "mutation": "bad_hash",
+      "rejected": true,
+      "errors": [
+        "file_integrity"
+      ]
+    },
+    {
+      "mutation": "candidate_identity",
+      "rejected": true,
+      "errors": [
+        "candidate_identity"
+      ]
+    },
+    {
+      "mutation": "report_identity",
+      "rejected": true,
+      "errors": [
+        "report_integrity"
+      ]
+    },
+    {
+      "mutation": "binary_identity",
+      "rejected": true,
+      "errors": [
+        "artifact_targets",
+        "native_identity",
+        "review_repro"
+      ]
+    },
+    {
+      "mutation": "gate_overclaim",
+      "rejected": true,
+      "errors": [
+        "gate_overclaim"
+      ]
+    },
+    {
+      "mutation": "wrong_count",
+      "rejected": true,
+      "errors": [
+        "test_count",
+        "test_total"
+      ]
+    },
+    {
+      "mutation": "missing_test_group",
+      "rejected": true,
+      "errors": [
+        "test_groups",
+        "test_total"
+      ]
+    },
+    {
+      "mutation": "missing_native",
+      "rejected": true,
+      "errors": [
+        "native_coverage"
+      ]
+    },
+    {
+      "mutation": "wrong_width",
+      "rejected": true,
+      "errors": [
+        "native_coverage",
+        "native_geometry"
+      ]
+    },
+    {
+      "mutation": "failed_target_result",
+      "rejected": true,
+      "errors": [
+        "artifact_targets"
+      ]
+    },
+    {
+      "mutation": "old_repro_result",
+      "rejected": true,
+      "errors": [
+        "review_repro",
+        "review_repro_semantics"
+      ]
+    }
+  ]
+}
