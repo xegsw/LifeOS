@@ -46,6 +46,7 @@ jobs:
             lifeos/architecture/LifeOS高保真原型IA-V1.0.md
             lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate
             lifeos/engineering/LIFEOS-P3-142/candidate
+            lifeos/engineering/LIFEOS-P3-144/candidate
       - name: Validate governance, frozen baselines, and resume schema
         run: python3 lifeos/tools/lifeos_ci.py validate
       - name: Reject whitespace and conflict markers
@@ -65,6 +66,7 @@ jobs:
             lifeos/tools/lifeos_ci.py
             lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate
             lifeos/engineering/LIFEOS-P3-142/candidate
+            lifeos/engineering/LIFEOS-P3-144/candidate
       - name: Install rustfmt for the active pinned toolchain
         run: rustup component add --toolchain 1.98.0-aarch64-apple-darwin rustfmt
       - name: Show deterministic toolchain
