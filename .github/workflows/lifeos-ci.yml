@@ -84,7 +84,6 @@ jobs:
     timeout-minutes: 30
     env:
       CARGO_TARGET_DIR: /private/tmp/lifeos-p3-146-conversation-source-v1/initial-build-cache
-      TMPDIR: /private/tmp/lifeos-p3-146-conversation-source-v1/tmp
       LIFEOS_P3_146_PROFILE: synthetic
       PYTHONDONTWRITEBYTECODE: '1'
     defaults:
@@ -104,6 +103,8 @@ jobs:
       - name: Create exclusive synthetic root
         run: python3 "$GITHUB_WORKSPACE/lifeos/ci/p3_146_ci.py" init
       - name: Install build toolchain and fetch locked dependencies only
+        env:
+          TMPDIR: /private/tmp/lifeos-p3-146-conversation-source-v1/tmp
         run: |
           rustup toolchain install 1.98.0 --profile minimal --component rustfmt
           cargo +1.98.0 fetch --locked
