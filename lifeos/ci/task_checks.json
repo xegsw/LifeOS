@@ -58,7 +58,7 @@
         "LIFEOS_P3_144_ROOT_PROFILE": "engineering"
       },
       "commands": [
-        ["cargo", "test", "--locked", "--offline", "--", "--test-threads=1"],
+        ["python3", "../../../ci/p3_144_ci.py"],
         ["node", "tests/offline_contract.mjs"]
       ]
     }

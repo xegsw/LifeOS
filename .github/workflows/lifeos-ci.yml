@@ -75,7 +75,11 @@ jobs:
           node --version
           cargo --version
       - name: Run registered synthetic-only checks
-        run: python3 lifeos/tools/lifeos_ci.py run-checks
+        # Dependency preparation is separate from the registered offline test command.
+        # Credential tests remain a manual gate; p3_144_ci.py verifies the complete inventory.
+        run: |
+          cargo fetch --locked --manifest-path lifeos/engineering/LIFEOS-P3-144/candidate/Cargo.toml
+          python3 lifeos/tools/lifeos_ci.py run-checks
 
   p3-146-regression:
     name: P3-146 offline conversation and memory regression
