@@ -53,6 +53,22 @@ source_command!(get_source_status);
 source_command!(authorize_source_target);
 source_command!(get_source_evidence);
 fn main() {
+    if runtime_root::is_real() {
+        // No user content diagnostic channel in the real application, including panic output.
+        std::panic::set_hook(Box::new(|_| {}));
+        unsafe {
+            let fd = libc::open(c"/dev/null".as_ptr(), libc::O_RDWR);
+            if fd >= 0 {
+                libc::dup2(fd, 0);
+                libc::dup2(fd, 1);
+                libc::dup2(fd, 2);
+                if fd > 2 {
+                    libc::close(fd);
+                }
+            }
+            libc::umask(0o077);
+        }
+    }
     let args: Vec<String> = std::env::args().collect();
     if args.get(1).map(String::as_str) == Some("--profile-info") {
         match runtime_root::profile_info() {
@@ -65,6 +81,9 @@ fn main() {
         return;
     }
     if args.get(1).map(String::as_str) == Some("--repository-stdio") {
+        if runtime_root::is_real() {
+            std::process::exit(2);
+        }
         let fixture = args.get(2).map(String::as_str).unwrap_or("app");
         for line in io::stdin().lock().lines() {
             let result = line.map_err(|_| Error::new("stdio_failed")).and_then(|s| {
@@ -102,14 +121,32 @@ fn main() {
         }
         return;
     }
-    repository::open("app").expect("P3-147 root/store rejected");
-    source_api::resume("app").expect("source resume failed");
+    if !runtime_root::is_real() {
+        repository::open("app").expect("P3-147 root/store rejected");
+        source_api::resume("app").expect("source resume failed");
+    }
     let mut context = tauri::generate_context!();
+    context.config_mut().app.windows[0].create = false;
     if std::env::var("LIFEOS_P3_147_VIEWPORT").ok().as_deref() == Some("narrow") {
         context.config_mut().app.windows[0].width = 700.0;
         context.config_mut().app.windows[0].height = 760.0;
     }
+    let mut window_config = context.config().app.windows[0].clone();
+    if runtime_root::is_real() {
+        window_config.title = "LifeOS · 本地来源".into();
+    }
     tauri::Builder::default()
+        .setup(move |app| {
+            tauri::WebviewWindowBuilder::from_config(app, &window_config)?
+                .initialization_script(format!(
+                    "window.__LIFEOS_REAL_SOURCE__ = {};",
+                    runtime_root::is_real()
+                ))
+                .devtools(!runtime_root::is_real())
+                .incognito(runtime_root::is_real())
+                .build()?;
+            Ok(())
+        })
         .invoke_handler(tauri::generate_handler![
             capture_record,
             get_today,

@@ -2,7 +2,10 @@
 use serde_json::Value;
 pub const PROFILES: &str = include_str!("root_profiles.json");
 pub fn select(name: &str) -> Result<Value, &'static str> {
-    if !matches!(name, "engineering" | "independent-review") {
+    if !matches!(
+        name,
+        "engineering" | "independent-review" | "source-pilot-1"
+    ) {
         return Err("profile_rejected");
     }
     let profiles: Value = serde_json::from_str(PROFILES).map_err(|_| "profile_rejected")?;

@@ -2,12 +2,12 @@
   "schema": "lifeos.execution-checkpoint.v1",
   "task_id": "LIFEOS-P3-147",
   "attempt_id": "attempt-1",
-  "updated_at": "2026-09-08T07:01:28.998783+00:00",
-  "task_contract_sha256": "6cfcd9c5c53fd91a847b003262f9b39b057c5cc4d65b268d050a0aef348e4e06",
-  "candidate_sha256": "333491f34956c27de1be04454ae085fa505ed52d53ce6524b69d1ec25edc7d8f",
+  "updated_at": "2026-09-08T07:25:53.353457+00:00",
+  "task_contract_sha256": "1067935878453ba2e5927d4d67b07a1b5722d8bec42f427029bb7b2049e99424",
+  "candidate_sha256": "c87050b1e0890cb614db0c6caf959ac93d00ec4efafe6056a05d262553000e95",
   "baseline_sha256": "f56223ad92f5b86c42f4bd60303ca6c892c3f9c1",
-  "stage": "entry_preparation_handoff",
-  "status": "partial_waiting_activation_contract",
+  "stage": "real_wiring_engineering_handoff",
+  "status": "engineering_complete_waiting_user_click",
   "pause_class": null,
   "pause_reason_code": null,
   "completed_checks": [
@@ -50,12 +50,16 @@
     "entry_preparation_ui",
     "ordinary_synthetic_flow_6",
     "entry_desktop_narrow_native",
-    "entry_app_pids_stopped"
+    "entry_app_pids_stopped",
+    "fixed_real_profile",
+    "lazy_click_activation",
+    "ordinary_real_ui_3",
+    "ordinary_engineering_flow_6",
+    "ordinary_pilot_fixture_lifecycle_1",
+    "real_app_packaged_not_launched",
+    "final_engineering_native_3"
   ],
   "pending_checks": [
-    "pm_profile_decision",
-    "user_storage_approval",
-    "authorized_real_entry_implementation",
     "user_real_connection",
     "pm_final"
   ],
@@ -71,9 +75,9 @@
     "database_closed": true,
     "temporary_root_state": "owned_retained"
   },
-  "resume_from": "pm_profile_decision_and_user_storage_approval",
+  "resume_from": "user_click_real_source_in_app",
   "safe_to_resume": true,
-  "notes": "User-directed review waiver / No Independent Pass; no security review rerun or bypass; real entry remains inactive.",
+  "notes": "Storage and fixed profile approved. User-directed review waiver / No Independent Pass. Real App packaged but not launched.",
   "mutation_class": "authorized_same_contract_artifact_safety_delta",
   "historical_assets_mutated": false
 }

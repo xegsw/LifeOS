@@ -9,9 +9,128 @@ use std::{
 };
 #[path = "../root_profile.rs"]
 mod policy;
+#[cfg(not(test))]
 pub const ROOT: &str = env!("P3_147_COMPILED_ROOT");
+#[cfg(test)]
+pub const ROOT: &str = if env!("P3_147_COMPILED_SOURCE").is_empty() {
+    env!("P3_147_COMPILED_ROOT")
+} else {
+    "/private/tmp/lifeos-p3-147-obsidian-source-v1/fixtures/pilot-normal-v1"
+};
 pub const PROFILE: &str = env!("P3_147_COMPILED_PROFILE");
 pub const CHILDREN: &[&str] = &["fixtures", ".runtime", "tmp", "artifacts"];
+static ACTIVE: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
+static ACTIVATING: std::sync::Mutex<()> = std::sync::Mutex::new(());
+pub fn is_real() -> bool {
+    PROFILE == "source-pilot-1"
+}
+pub fn active() -> bool {
+    !is_real() || ACTIVE.load(std::sync::atomic::Ordering::Acquire)
+}
+pub fn source_path() -> PathBuf {
+    if is_real() {
+        #[cfg(test)]
+        return PathBuf::from("/private/tmp/lifeos-p3-147-obsidian-source-v1/fixtures/app-source");
+        #[cfg(not(test))]
+        return PathBuf::from(env!("P3_147_COMPILED_SOURCE"));
+    }
+    Path::new(ROOT).join("fixtures/app-source")
+}
+fn spec() -> Result<Value, Error> {
+    let value = policy::select(PROFILE).map_err(err)?;
+    #[cfg(test)]
+    {
+        let mut value = value;
+        if is_real() {
+            value["root"] = serde_json::json!(ROOT);
+            value["marker"]["root"] = serde_json::json!(ROOT);
+            value["marker"]["owner"] = serde_json::json!("pilot-normal-test");
+        }
+        return Ok(value);
+    }
+    #[cfg(not(test))]
+    Ok(value)
+}
+pub fn activate_from_user_click() -> Result<(), Error> {
+    if !is_real() {
+        return Ok(());
+    }
+    policy::validate_environment(PROFILE).map_err(err)?;
+    let _guard = ACTIVATING.lock().map_err(|_| err("activation_failed"))?;
+    if active() {
+        return Ok(());
+    }
+    let root = Path::new(ROOT);
+    let parent = crate::artifact_io::Dir::absolute(
+        root.parent().ok_or_else(|| err("root_rejected"))?,
+        false,
+        false,
+    )?;
+    let leaf = root
+        .file_name()
+        .and_then(|s| s.to_str())
+        .ok_or_else(|| err("root_rejected"))?;
+    if !parent.exists(leaf)? {
+        let d = parent.new_child(leaf)?;
+        let mut marker = d.create(".lifeos-p3-147-owner.json")?;
+        marker.write_all(
+            &serde_json::to_vec(&expected_marker()?).map_err(|_| err("marker_rejected"))?,
+        )?;
+        marker.sync()?;
+        d.new_child("artifacts")?;
+        d.new_child(".runtime")?;
+        d.sync()?;
+    }
+    verify()?;
+    let owned = crate::artifact_io::Dir::root()?;
+    for entry in owned.entries()? {
+        if ![
+            ".lifeos-p3-147-owner.json",
+            "artifacts",
+            ".runtime",
+            "capture.sqlite",
+            "capture.sqlite-wal",
+            "capture.sqlite-shm",
+            "capture.sqlite-journal",
+        ]
+        .contains(&entry.as_str())
+        {
+            return Err(err("unexpected_existing_asset"));
+        }
+    }
+    ACTIVE.store(true, std::sync::atomic::Ordering::Release);
+    Ok(())
+}
+pub fn helper(name: &str) -> Result<PathBuf, Error> {
+    #[cfg(test)]
+    if is_real() {
+        return Ok(if name == "parse_source.py" {
+            PathBuf::from(concat!(
+                env!("CARGO_MANIFEST_DIR"),
+                "/tools/parse_source.py"
+            ))
+        } else {
+            Path::new("/private/tmp/lifeos-p3-147-obsidian-source-v1").join(name)
+        });
+    }
+    if is_real() {
+        #[cfg(not(test))]
+        {
+            return std::env::current_exe()
+                .ok()
+                .and_then(|p| p.parent()?.parent().map(|p| p.join("Resources").join(name)))
+                .ok_or_else(|| err("helper_unavailable"));
+        }
+    }
+    Ok(if name == "parse_source.py" {
+        PathBuf::from(concat!(
+            env!("CARGO_MANIFEST_DIR"),
+            "/tools/parse_source.py"
+        ))
+    } else {
+        Path::new(env!("P3_147_COMPILED_ROOT")).join(name)
+    })
+}
 fn err(s: &str) -> Error {
     Error::new(s)
 }
@@ -58,13 +177,17 @@ fn verify_at(root: &Path, spec: &Value) -> Result<PathBuf, Error> {
     if actual != spec["marker"] {
         return Err(err("marker_rejected"));
     }
-    for child in CHILDREN {
+    for child in if is_real() {
+        &[".runtime", "artifacts"][..]
+    } else {
+        CHILDREN
+    } {
         directory(&root.join(child))?;
     }
     Ok(root.to_path_buf())
 }
 pub fn expected_marker() -> Result<Value, Error> {
-    Ok(policy::select(PROFILE).map_err(err)?["marker"].clone())
+    Ok(spec()?["marker"].clone())
 }
 pub fn profile_info() -> Result<Value, Error> {
     policy::validate_environment(PROFILE).map_err(err)?;
@@ -72,12 +195,102 @@ pub fn profile_info() -> Result<Value, Error> {
 }
 pub fn verify() -> Result<PathBuf, Error> {
     policy::validate_environment(PROFILE).map_err(err)?;
-    verify_at(Path::new(ROOT), &policy::select(PROFILE).map_err(err)?)
+    verify_at(Path::new(ROOT), &spec()?)
 }
 #[cfg(test)]
 mod tests {
     use super::*;
     use serde_json::json;
+    #[test]
+    fn pilot_normal_lifecycle() {
+        if !is_real() {
+            return;
+        }
+        // Test-only constants map BOTH source and output inside the engineering fixture root.
+        assert!(ROOT.starts_with("/private/tmp/lifeos-p3-147-obsidian-source-v1/fixtures/"));
+        assert!(
+            source_path().starts_with("/private/tmp/lifeos-p3-147-obsidian-source-v1/fixtures/")
+        );
+        let call = |name: &str, payload: Value| {
+            crate::source_api::dispatch(
+                name,
+                crate::source_api::Request {
+                    version: 1,
+                    payload,
+                },
+                "app",
+            )
+            .unwrap()
+        };
+        assert!(!active());
+        assert_eq!(
+            call("get_source_status", json!({}))["connectors"],
+            json!([])
+        );
+        call(
+            "connect_source_directory",
+            json!({"requestId":format!("pilot-normal-connect-{}",std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().as_nanos())}),
+        );
+        let done = || {
+            for _ in 0..400 {
+                let v = call("get_source_status", json!({}));
+                let s = &v["connectors"][0];
+                assert!(s["error"].is_null());
+                if s["scanComplete"] == true && s["pending"] == 0 {
+                    return s.clone();
+                }
+                std::thread::sleep(std::time::Duration::from_millis(100));
+            }
+            panic!("ordinary fixture timeout")
+        };
+        let status = done();
+        assert_eq!(status["discovered"], 6);
+        assert_eq!(status["parsed"], 3);
+        let generation = status["grantGeneration"].clone();
+        let control = |action: &str| {
+            call(
+                "control_source_job",
+                json!({"requestId":format!("normal-{action}-{}",std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().as_nanos()),"connectorId":"directory","expectedGeneration":generation,"action":action}),
+            )
+        };
+        control("pause");
+        ACTIVE.store(false, std::sync::atomic::Ordering::Release);
+        assert_eq!(
+            call("get_source_status", json!({}))["connectors"],
+            json!([])
+        );
+        call(
+            "connect_source_directory",
+            json!({"requestId":"pilot-normal-reopen"}),
+        );
+        assert_eq!(
+            call("get_source_status", json!({}))["connectors"][0]["status"],
+            "paused"
+        );
+        control("resume");
+        done();
+        let result = call(
+            "get_source_evidence",
+            json!({"mode":"search","connectorId":"directory","expectedGeneration":generation,"query":"项目计划"}),
+        );
+        assert!(!result["results"].as_array().unwrap().is_empty());
+        control("refresh");
+        done();
+        control("disconnect");
+        assert_eq!(
+            call("get_source_status", json!({}))["connectors"],
+            json!([])
+        );
+        assert_eq!(
+            std::fs::metadata(Path::new(ROOT).join("capture.sqlite"))
+                .unwrap()
+                .permissions()
+                .mode()
+                & 0o777,
+            0o600
+        );
+        println!("ordinary pilot fixture: lazy status, click initialization, six-file import, pause/reopen/resume, search, refresh, disconnect; no real roots contacted");
+    }
     #[test]
     fn exact_profiles_and_mixing_without_contact() {
         let e = policy::select("engineering").unwrap();

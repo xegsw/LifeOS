@@ -91,6 +91,9 @@ fn body(s: &str) -> R<()> {
     Ok(())
 }
 pub fn open(fixture: &str) -> R<Connection> {
+    if crate::runtime_root::is_real() && (!crate::runtime_root::active() || fixture != "app") {
+        return reject("source_activation_required");
+    }
     if fixture.is_empty()
         || fixture.len() > 60
         || !fixture
@@ -100,7 +103,21 @@ pub fn open(fixture: &str) -> R<Connection> {
         return reject("fixture_rejected");
     }
     let root = crate::runtime_root::verify()?;
-    let path = root.join(format!("{fixture}.sqlite"));
+    let path = root.join(if crate::runtime_root::is_real() {
+        "capture.sqlite".into()
+    } else {
+        format!("{fixture}.sqlite")
+    });
+    let anchored = if crate::runtime_root::is_real() {
+        let d = crate::artifact_io::Dir::root()?;
+        Some(if d.exists("capture.sqlite")? {
+            d.open("capture.sqlite")?
+        } else {
+            d.create("capture.sqlite")?
+        })
+    } else {
+        None
+    };
     for suffix in ["", "-wal", "-shm", "-journal"] {
         let p = PathBuf::from(format!("{}{suffix}", path.display()));
         match fs::symlink_metadata(p) {
@@ -113,9 +130,19 @@ pub fn open(fixture: &str) -> R<Connection> {
             _ => (),
         }
     }
-    let c = Connection::open(&path)?;
-    fs::set_permissions(&path, fs::Permissions::from_mode(0o600))
-        .map_err(|_| Error::new("permissions_failed"))?;
+    let c = Connection::open_with_flags(
+        &path,
+        rusqlite::OpenFlags::SQLITE_OPEN_READ_WRITE
+            | rusqlite::OpenFlags::SQLITE_OPEN_CREATE
+            | rusqlite::OpenFlags::SQLITE_OPEN_NO_MUTEX
+            | rusqlite::OpenFlags::SQLITE_OPEN_NOFOLLOW,
+    )?;
+    if let Some(f) = &anchored {
+        f.validate()?;
+    } else {
+        fs::set_permissions(&path, fs::Permissions::from_mode(0o600))
+            .map_err(|_| Error::new("permissions_failed"))?;
+    }
     c.execute_batch("PRAGMA foreign_keys=ON; CREATE TABLE IF NOT EXISTS meta(id INTEGER PRIMARY KEY CHECK(id=1),revision INTEGER NOT NULL); INSERT OR IGNORE INTO meta VALUES(1,0); CREATE TABLE IF NOT EXISTS requests(id TEXT PRIMARY KEY,operation TEXT NOT NULL,payload TEXT NOT NULL,result TEXT NOT NULL); CREATE TABLE IF NOT EXISTS audit(id INTEGER PRIMARY KEY,event TEXT NOT NULL,ref TEXT NOT NULL,at INTEGER NOT NULL);")?;
     for t in TABLES {
         c.execute_batch(&format!("CREATE TABLE IF NOT EXISTS {t}(id TEXT PRIMARY KEY,body TEXT NOT NULL CHECK(json_valid(body)));"))?;
@@ -159,7 +186,7 @@ fn revision(c: &Connection) -> R<i64> {
     Ok(c.query_row("SELECT revision FROM meta WHERE id=1", [], |r| r.get(0))?)
 }
 fn snapshot(c: &Connection) -> R<Value> {
-    let mut v = json!({"revision":revision(c)?,"now":time(),"boundary":{"network":0,"credentials":0,"provider":0},"profile":"synthetic"});
+    let mut v = json!({"revision":revision(c)?,"now":time(),"boundary":{"network":0,"credentials":0,"provider":0},"profile":if crate::runtime_root::is_real() {"source-pilot-1"} else {"synthetic"}});
     for t in TABLES {
         if *t == "records" {
             let mut q = c.prepare(

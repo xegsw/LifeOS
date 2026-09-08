@@ -22,5 +22,9 @@ fn main() {
         "cargo:rustc-env=P3_147_COMPILED_ROOT={}",
         spec["root"].as_str().unwrap()
     );
+    println!(
+        "cargo:rustc-env=P3_147_COMPILED_SOURCE={}",
+        spec["source"].as_str().unwrap_or("")
+    );
     tauri_build::build();
 }

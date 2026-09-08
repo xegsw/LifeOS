@@ -220,9 +220,41 @@ pub fn dispatch(command: &str, r: Request, fixture: &str) -> R<Value> {
         },
         _ => unreachable!(),
     }
+    if crate::runtime_root::is_real() {
+        if command == "authorize_source_target" {
+            return Err(error("external_targets_disabled"));
+        }
+        if command == "connect_source_directory" {
+            id(p, "requestId")?;
+            crate::runtime_root::activate_from_user_click()?;
+        } else if !crate::runtime_root::active() {
+            return if command == "get_source_status" {
+                Ok(json!({"connectors":[]}))
+            } else {
+                Err(error("source_activation_required"))
+            };
+        }
+    }
     let mut c = repository::open(fixture)?;
     source_store::init(&c)?;
     c.execute_batch("CREATE TABLE IF NOT EXISTS source_api_requests(id TEXT PRIMARY KEY,payload TEXT NOT NULL,result TEXT NOT NULL);CREATE TABLE IF NOT EXISTS source_runtime_errors(connector_id TEXT PRIMARY KEY,code TEXT NOT NULL);")?;
+    if crate::runtime_root::is_real() && command == "connect_source_directory" {
+        if let Ok(l) = lease(&c, "directory") {
+            if readable(&c, &l).is_ok() {
+                let state: String = c.query_row(
+                    "SELECT state FROM connectors WHERE id='directory'",
+                    [],
+                    |r| r.get(0),
+                )?;
+                if state == "active" {
+                    run(fixture);
+                }
+                return Ok(
+                    json!({"connectorId":"directory","grantGeneration":l.generation,"status":state,"jobId":format!("job:directory:{}",l.epoch)}),
+                );
+            }
+        }
+    }
     if matches!(
         command,
         "connect_source_directory" | "control_source_job" | "authorize_source_target"
@@ -341,8 +373,9 @@ fn mutate(c: &mut Connection, command: &str, p: &Value, fixture: &str) -> R<Valu
     let mut target = None;
     let result = match command {
         "connect_source_directory" => {
-            let directory = &crate::runtime_root::verify()?.join("fixtures/app-source");
-            let identity = crate::source_file::FileGrant::synthetic(directory)?.root_identity()?;
+            let directory = crate::runtime_root::source_path();
+            let identity =
+                crate::source_file::FileGrant::for_source(&directory)?.root_identity()?;
             let old: Option<(i64, i64, String)> = tx
                 .query_row(
                     "SELECT grant_generation,epoch,state FROM connectors WHERE id='directory'",
@@ -475,6 +508,9 @@ pub fn resume(fixture: &str) -> R<()> {
         if source_store::check(&c, &l).is_ok() {
             run(fixture)
         }
+    }
+    if crate::runtime_root::is_real() {
+        return Ok(());
     }
     let mut q = c.prepare("SELECT sl.id,tc.grant_generation FROM source_links sl JOIN connectors tc ON tc.id=sl.grant_id WHERE sl.state='fetch_pending'")?;
     for row in q.query_map([], |r| Ok((r.get::<_, String>(0)?, r.get::<_, i64>(1)?)))? {

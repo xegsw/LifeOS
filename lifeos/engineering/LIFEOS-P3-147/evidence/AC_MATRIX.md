@@ -1,3 +1,22 @@
+# 当前固定真实profile工程增量
+
+已获任务卡最新授权；当前普通工程完成，等待用户点击真实App。User-directed review waiver / No Independent Pass。
+
+| 普通功能/接线 | 当前证据 |
+|---|---|
+| 真实UI启动与说明零IPC、点击先于仓储读取 | checks-20260908T072044412392Z/real_entry_ui.log（3组） |
+| 合成导入/暂停恢复/检索/刷新/断开重启 | 同目录entry_flow.log（6组） |
+| source-pilot-1同代码普通生命周期 | pilot-normal-20260908T072104Z/ordinary.log（1组，cfg(test)仅工程fixture源/输出） |
+| 格式/工程构建/UI生成 | checks-20260908T072044412392Z及checks-20260908T071937035501Z |
+| 最终工程App原生入口 | app-wire-desktop-status、app-wire-desktop-plan、app-wire-narrow-plan，PID54593/54991 |
+| 专用真实App打包 | pilot-package-20260908T072127Z/result.json；本地签名，未启动 |
+| 真实源和DB | 工程未访问或探测；只交由用户App点击 |
+| 独立安全/风险关闭 | 无Independent Pass，原Rework及8行未完成保留 |
+
+以下均为前序阶段历史，不将旧安全结果重标成当前复评。新全量变动见real-wiring-diff.json；真实root/profile及同25IPC映射已获批准，不再列为待批准阻塞。
+
+---
+
 # 当前普通产品入口准备增量
 
 本轮不执行独立复评：User-directed review waiver / No Independent Pass。原安全未完成8行保持未完成，不把以下普通功能验证当作安全补评。

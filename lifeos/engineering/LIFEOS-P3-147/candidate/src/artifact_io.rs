@@ -38,6 +38,37 @@ pub struct Dir {
     chain: Vec<Node>,
 }
 impl Dir {
+    // Absolute component walk for the fixed source and user-click-owned output bootstrap.
+    // No canonicalization through links and no chmod of pre-existing objects.
+    pub fn absolute(path: &std::path::Path, create_leaf: bool, strict_leaf: bool) -> R<Self> {
+        let fd = OpenOptions::new()
+            .read(true)
+            .custom_flags(libc::O_DIRECTORY | libc::O_NOFOLLOW | libc::O_CLOEXEC)
+            .open("/")
+            .map_err(|_| err())?;
+        let mut d = Self {
+            chain: vec![Node {
+                fd: Arc::new(fd),
+                name: String::new(),
+                strict: false,
+            }],
+        };
+        let parts: Vec<_> = path.components().collect();
+        if parts.first() != Some(&std::path::Component::RootDir) {
+            return Err(err());
+        }
+        for (i, part) in parts.iter().enumerate().skip(1) {
+            let std::path::Component::Normal(n) = part else {
+                return Err(err());
+            };
+            d = d.open_child(
+                n.to_str().ok_or_else(err)?,
+                create_leaf && i + 1 == parts.len(),
+                strict_leaf && i + 1 == parts.len(),
+            )?;
+        }
+        Ok(d)
+    }
     fn fd(&self) -> &File {
         &self.chain.last().unwrap().fd
     }
@@ -135,6 +166,14 @@ impl Dir {
     }
     pub fn child(&self, s: &str, create: bool) -> R<Self> {
         self.open_child(s, create, true)
+    }
+    pub fn new_child(&self, s: &str) -> R<Self> {
+        self.validate()?;
+        let n = name(s)?;
+        if unsafe { libc::mkdirat(self.fd().as_raw_fd(), n.as_ptr(), 0o700) } != 0 {
+            return Err(err());
+        }
+        self.open_child(s, false, true)
     }
     pub fn create(&self, s: &str) -> R<OwnedFile> {
         self.create_after_check(s, || {})

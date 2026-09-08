@@ -34,11 +34,17 @@ fn root_ref(c: &Connection, l: &Lease) -> R<PathBuf> {
     if !source_store::valid_id(&r) {
         return Err(err("grant_rejected"));
     }
+    if crate::runtime_root::is_real() {
+        if r != "app-source" || l.connector != "directory" {
+            return Err(err("grant_rejected"));
+        }
+        return Ok(crate::runtime_root::source_path());
+    }
     Ok(Path::new(ROOT).join("fixtures").join(r))
 }
 fn granted(c: &Connection, l: &Lease) -> R<FileGrant> {
     let root = root_ref(c, l)?;
-    let grant = FileGrant::synthetic(&root)?;
+    let grant = FileGrant::for_source(&root)?;
     let identity = grant.root_identity()?;
     let expected:Option<String>=c.query_row("SELECT target_ref FROM connector_grants WHERE id=?1 AND generation=?2 AND state='active'",params![format!("root:{}",l.connector),l.generation],|r|r.get(0)).optional()?;
     if expected != Some(json!([identity.dev, identity.ino]).to_string()) {
@@ -49,7 +55,7 @@ fn granted(c: &Connection, l: &Lease) -> R<FileGrant> {
 pub fn begin(c: &mut Connection, l: &Lease) -> R<()> {
     source_store::check(c, l)?;
     let root = root_ref(c, l)?;
-    let identity = FileGrant::synthetic(&root)?.root_identity()?;
+    let identity = FileGrant::for_source(&root)?.root_identity()?;
     let key = format!("root:{}", l.connector);
     let expected = json!([identity.dev, identity.ino]).to_string();
     let old: Option<(String, i64)> = c
@@ -154,14 +160,37 @@ fn artifact_dir(c: &Connection, l: &Lease) -> R<crate::artifact_io::Dir> {
 }
 fn parse(file: File, ext: &str, out: &mut crate::artifact_io::OwnedFile) -> R<Value> {
     out.validate()?;
+    // argv contains a fixed format token, never an arbitrary user filename suffix.
+    let format_token = if [
+        ".md",
+        ".markdown",
+        ".txt",
+        ".json",
+        ".yaml",
+        ".yml",
+        ".toml",
+        ".ini",
+        ".cfg",
+        ".conf",
+        ".html",
+        ".htm",
+        ".csv",
+        ".log",
+        ".pdf",
+        ".docx",
+    ]
+    .contains(&ext)
+    {
+        ext
+    } else {
+        ".bin"
+    };
     let mut child = Command::new(
         "/Users/xxe/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
     )
-    .args([
-        "-B",
-        concat!(env!("CARGO_MANIFEST_DIR"), "/tools/parse_source.py"),
-        ext,
-    ])
+    .arg("-B")
+    .arg(crate::runtime_root::helper("parse_source.py")?)
+    .arg(format_token)
     .stdin(Stdio::from(file))
     .stdout(Stdio::from(out.descriptor()?))
     .stderr(Stdio::null())

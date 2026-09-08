@@ -50,6 +50,19 @@ pub struct Entry {
     pub identity: Option<Identity>,
 }
 impl FileGrant {
+    pub fn for_source(root: &Path) -> R<Self> {
+        if !crate::runtime_root::is_real() {
+            return Self::synthetic(root);
+        }
+        if !crate::runtime_root::active() || root != crate::runtime_root::source_path() {
+            return Err(err("grant_rejected"));
+        }
+        let d = crate::artifact_io::Dir::absolute(root, false, false)?;
+        Ok(Self {
+            root: d.descriptor()?,
+            root_path: root.to_path_buf(),
+        })
+    }
     pub fn synthetic(root: &Path) -> R<Self> {
         let verified = crate::runtime_root::verify()?;
         let allowed_path = verified.join("fixtures");
@@ -148,13 +161,12 @@ impl FileGrant {
                 {
                     return Err(err("alias_metadata_budget"));
                 }
-                let output = std::process::Command::new(
-                    crate::runtime_root::verify()?.join("alias_metadata"),
-                )
-                .stdin(std::process::Stdio::from(current))
-                .stderr(std::process::Stdio::null())
-                .output()
-                .map_err(|_| err("alias_parser_unavailable"))?;
+                let output =
+                    std::process::Command::new(crate::runtime_root::helper("alias_metadata")?)
+                        .stdin(std::process::Stdio::from(current))
+                        .stderr(std::process::Stdio::null())
+                        .output()
+                        .map_err(|_| err("alias_parser_unavailable"))?;
                 if !output.status.success() {
                     return Err(err("alias_metadata_unavailable"));
                 }

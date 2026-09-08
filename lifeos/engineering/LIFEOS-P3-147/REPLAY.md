@@ -1,3 +1,19 @@
+# 当前阶段：真实接线完成，等待用户点击
+
+用户已批准固定来源和非加密保存边界，source-pilot-1方案已实施。专用App：/private/tmp/lifeos-p3-147-obsidian-source-v1/LifeOS Local Source.app；由用户打开后点击“连接此目录”。工程会话不启动它、不采集真实阶段AX/截图/stdio。
+
+仅普通合成复跑：
+```sh
+LIFEOS_P3_147_BUILD_PROFILE=engineering python3 -B lifeos/engineering/LIFEOS-P3-147/candidate/tools/run_internal_checks.py ui_build,format,build,real_entry_ui,entry_flow
+python3 -B lifeos/engineering/LIFEOS-P3-147/candidate/tools/verify_entry_release.py
+```
+
+打包入口 package_source_pilot.py 必须以engineering环境调用，只在工程根编译/签名，不启动真实App。真实分支普通Rust测试只能使用cargo test过滤pilot_normal_lifecycle，cfg(test)将源和输出固定到工程fixtures；不要运行被用户停止的独立评审或安全runner。不得把source-pilot-1交给旧task_root.py init/cleanup；真实初始化仅在App的用户点击后执行。
+
+User-directed review waiver / No Independent Pass。旧说明在下方历史保留，其待批准状态与旧复评命令不是当前执行指令。当前真实步骤与限制见主报告和design/real-wiring.md。
+
+---
+
 # 当前阶段：用户连接入口准备
 
 User-directed review waiver / No Independent Pass。真实连接未激活；当前使用candidate/tools/verify_entry_release.py核对普通入口包的完整性，不运行或替代安全评审。
