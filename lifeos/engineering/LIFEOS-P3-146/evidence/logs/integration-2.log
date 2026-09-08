@@ -1,0 +1,43 @@
+✔ original bytes, persisted draft, once-only save and lost acknowledgement retry (22.082083ms)
+✔ same text with distinct intentional turns is not deduplicated (13.716583ms)
+✔ transaction failure before receipt leaves original/state/audit unchanged and draft recoverable (17.506167ms)
+✔ invalid input rejects before mutation and arbitrary roots/profile cannot be selected (10.033375ms)
+✔ one valuable clarification, irrelevant or already available evidence produces no question (23.169292ms)
+✔ persistent question decision ignore (16.451833ms)
+✔ persistent question decision refuse (15.898291ms)
+✔ persistent question decision defer (15.579083ms)
+✔ silence makes no state or implicit confirmation; deferred time can reopen same gap (130.60575ms)
+✔ memory confirmation is single explicit intent, inference/source is not confirmation (19.649333ms)
+✔ correction is atomic, preserves provenance and invalidates only dependent projections (24.096333ms)
+✖ source version deduplication, identity isolation, version conflict and rollback (14.102708ms)
+✔ revocation excludes all historical packets and model switching never revives source (24.481125ms)
+✔ required layers budget is prewrite atomic, exact boundary and optional pruning (13.478958ms)
+✔ expired evidence and request-local removal do not become current facts (9.92175ms)
+✔ two actual offline adapters across process restarts preserve all authority and feedback (26.48525ms)
+✔ health parser rejects missing/invalid units, field inflation, future times and unsupported sync (9.334833ms)
+✔ database symlink is rejected before opening and sentinel stays unchanged (3.953416ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 17
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 444.754291
+
+✖ failing tests:
+
+test at lifeos/engineering/LIFEOS-P3-146/candidate/tests/integration.mjs:31:1
+✖ source version deduplication, identity isolation, version conflict and rollback (14.102708ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/5ed8/No.2/lifeos/engineering/LIFEOS-P3-146/candidate/tests/integration.mjs:31:441)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /source_version_stale/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

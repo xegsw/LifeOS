@@ -1,0 +1,38 @@
+✔ original bytes, persisted draft, once-only save and lost acknowledgement retry (859.012041ms)
+✔ same text with distinct intentional turns is not deduplicated (15.394291ms)
+✔ transaction failure before receipt leaves original/state/audit unchanged and draft recoverable (19.403125ms)
+✔ invalid input rejects before mutation and arbitrary roots/profile cannot be selected (10.47625ms)
+✔ one valuable clarification, irrelevant or already available evidence produces no question (22.851291ms)
+✔ persistent question decision ignore (15.855416ms)
+✔ persistent question decision refuse (15.827333ms)
+✔ persistent question decision defer (16.37475ms)
+✔ silence makes no state or implicit confirmation; deferred time can reopen same gap (131.4335ms)
+✔ memory confirmation is single explicit intent, inference/source is not confirmation (19.314458ms)
+✔ correction is atomic, preserves provenance and invalidates only dependent projections (23.953875ms)
+✔ source version deduplication, identity isolation, version conflict and rollback (15.619458ms)
+✔ revocation excludes all historical packets and model switching never revives source (23.614042ms)
+✔ required layers budget is prewrite atomic, exact boundary and optional pruning (12.9015ms)
+✔ expired evidence and request-local removal do not become current facts (10.126875ms)
+✔ two actual offline adapters across process restarts preserve all authority and feedback (27.59125ms)
+✔ health parser rejects missing/invalid units, field inflation, future times and unsupported sync (9.424208ms)
+✔ database symlink is rejected before opening and sentinel stays unchanged (4.413666ms)
+✔ authorized Markdown answers a relevant gap without asking again (10.869625ms)
+✔ a fresh state makes superseded facts and their model packets unavailable (13.780792ms)
+✔ renderer cannot forge packet content or state projection while retaining valid refs (10.360542ms)
+✔ correction commits its draft and restart does not resurrect that pending edit (18.077ms)
+✔ production secret code stays byte-exact but unlinked; original catalog and 20 IPC stay visible (0.612916ms)
+✔ PM counterexample: nonexistent or unrelated feedback does not affect a pure packet or output (10.007209ms)
+✔ feedback requires entire current target basis, removed or domain-excluded refs leave unrelated result unchanged across restart (34.119375ms)
+✔ forged feedback packets are rejected by repository before packet audit or receipt writes (21.175ms)
+✔ revoked, expired and replaced target basis cannot carry feedback into fresh or stale packets (69.7035ms)
+✔ type-changing or unparseable corrections reject atomically and keep draft original state and unrelated output after restart (45.934041ms)
+✔ correction repository derives type and value from text and rejects forged missing null or out-of-range values (17.399167ms)
+✔ same-type work and sleep corrections succeed, preserve unrelated projection, rollback on receipt failure and persist (19.531958ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1566.068833

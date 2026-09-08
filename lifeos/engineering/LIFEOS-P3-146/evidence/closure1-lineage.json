@@ -1,0 +1,40 @@
+{
+  "from_binary": "ea80364e1afb2bdfdf2704a6bf77c03b27fa234ed4d46467a96d5302e371c635",
+  "current_binary": "1a1baf3d4718e694ae9feeaec63f23a271ec942aa83eaa117d97fe5fe04767ef",
+  "application_changes": [
+    {
+      "path": "application/core.ts",
+      "before": "824873d0af393db9fddd71408f9158d2cf7b0cae0ef49d02e1438ba4eb77d8ae",
+      "after": "2c048c44a9d264f5b62a5359cab8776604f7bb83b6ce33857207c3b6f15f4d39"
+    },
+    {
+      "path": "application/ui.ts",
+      "before": "36c68a7d09336f6330c31a49917df534967c24513b6842c10ee96903af53d0c0",
+      "after": "c815fa4d42a8ba3eb4d9a33f097bbb493fca180a8f8f468eca5a40db69754a56"
+    },
+    {
+      "path": "src/repository.rs",
+      "before": "dcbdb7a1f17598a3d71911bd6536e34ae499274ee11c2c70aa63b825020de846",
+      "after": "55fe592b3290d377de6c04363311eea842a229de2bd983beab87b8bd332aa69e"
+    },
+    {
+      "path": "tests/integration.mjs",
+      "before": "ed0cd67b365cc7e0360efd8fc0168a18e531c638d23c787f90446605a1c7109a",
+      "after": "0cedb681a28668c99859ee0ed99d962352c0d3f9e89c23ccc7617986b3d1b5ab"
+    },
+    {
+      "path": "ui/core.js",
+      "before": "fb399c11f052aaebbad691f2343eed8a82d034d2eb8ba9677062ba103bb66b15",
+      "after": "27985772bd69e4afaa5b76355b148a180cd6365ce8f2f592d371ca8a313894cc"
+    },
+    {
+      "path": "ui/ui.js",
+      "before": "e77f8da2495947116f4a0c010dbf072bca6d278df6febdad60309e5d9635c2c9",
+      "after": "0dc0031a365b3e03c7166486add803cf2235f09065ae7872edd8a8162683f055"
+    }
+  ],
+  "checks": "checks-1788833496480.json",
+  "cleanup": "cleanup-20260908T021932.json",
+  "history": "history/pre-closure-1",
+  "unaffected_gui_evidence": "Earlier 16 final captures retained as historical coverage, not claimed captured on current binary. Closure 1 six captures rerun affected flows."
+}

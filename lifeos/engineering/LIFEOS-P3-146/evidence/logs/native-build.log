@@ -1,0 +1,7 @@
+lifeos/engineering/LIFEOS-P3-146/candidate/tools/native_evidence.swift:6:143: error: '==' is not a postfix unary operator
+ 4 | let pid=pid_t(args[1])!
+ 5 | let app=AXUIElementCreateApplication(pid)
+ 6 | func attr(_ node:AXUIElement,_ key:String)->AnyObject? {var value:CFTypeRef?;return AXUIElementCopyAttributeValue(node,key as CFString,&value)==.success ? value : nil}
+   |                                                                                                                                               `- error: '==' is not a postfix unary operator
+ 7 | func point(_ node:AXUIElement)->[String:Double] {var p=CGPoint.zero;var s=CGSize.zero;if let v=attr(node,kAXPositionAttribute) {AXValueGetValue(v as! AXValue,.cgPoint,&p)};if let v=attr(node,kAXSizeAttribute){AXValueGetValue(v as! AXValue,.cgSize,&s)};return ["x":p.x,"y":p.y,"width":s.width,"height":s.height]}
+ 8 | func walk(_ node:AXUIElement,_ depth:Int)->[[String:String]] {if depth>10{return []};var out:[[String:String]]=[];let role=attr(node,kAXRoleAttribute) as? String ?? "";let title=attr(node,kAXTitleAttribute) as? String ?? "";let desc=attr(node,kAXDescriptionAttribute) as? String ?? "";if ["AXWebArea","AXWebView","AXTextArea","AXButton","AXStaticText"].contains(role){out.append(["role":role,"title":title,"description":desc])};if let children=attr(node,kAXChildrenAttribute) as? [AXUIElement] {for child in children{out += walk(child,depth+1)}};return out}

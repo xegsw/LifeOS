@@ -1,0 +1,44 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-146",
+  "attempt_id": "attempt-1",
+  "updated_at": "2026-09-08T02:01:18.701962+00:00",
+  "task_contract_sha256": "842db4494ba3c1e11ab21a55e1fffe19fefeaca29c2a3eeb580fca90c79e0b5f",
+  "candidate_sha256": "ea80364e1afb2bdfdf2704a6bf77c03b27fa234ed4d46467a96d5302e371c635",
+  "baseline_sha256": "98b151d3b30908079c6e76cc236a93d03f0a6cbdba5796ab0739a54cbddfd6b5",
+  "stage": "engineering_complete",
+  "status": "completed",
+  "pause_class": null,
+  "pause_reason_code": null,
+  "completed_checks": [
+    "contract_read",
+    "history_preserved",
+    "implementation",
+    "automated_checks_23_pass",
+    "actual_app_16_captures_26_assertions",
+    "exact_root_cleanup",
+    "manifest"
+  ],
+  "pending_checks": [
+    "pm_review"
+  ],
+  "rerun_checks": [],
+  "excluded_artifacts": [
+    "build-start-deviation.json",
+    "provisional-app-history.json",
+    "narrow-ax-gap.json"
+  ],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "removed"
+  },
+  "resume_from": "pm_review",
+  "safe_to_resume": true,
+  "notes": "P2 process metadata diagnostic retained in build-start-deviation; no zero-boundary overclaim. Final evidence separable; AX gap resumed same binary."
+}

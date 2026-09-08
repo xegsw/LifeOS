@@ -1,0 +1,116 @@
+{
+  "schema": "lifeos.p3-146.actual-app-validation.v1",
+  "binary_sha256": "ea80364e1afb2bdfdf2704a6bf77c03b27fa234ed4d46467a96d5302e371c635",
+  "captures": 16,
+  "checks": [
+    {
+      "name": "final-defer PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-failure PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-settings-b PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-refuse-restart PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-memory PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-correct PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-revoke-b PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-restart-narrow PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-save PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-refuse PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-defer-restart PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-sources PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-provenance PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-narrow-a PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-answer PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "final-narrow-settings PID/window/WebArea/image",
+      "pass": true
+    },
+    {
+      "name": "failed save unchanged record/state/audit/request counts",
+      "pass": true
+    },
+    {
+      "name": "failure draft retained",
+      "pass": true
+    },
+    {
+      "name": "retry one answer",
+      "pass": true
+    },
+    {
+      "name": "correct old preserved",
+      "pass": true
+    },
+    {
+      "name": "restart assets and feedback identical",
+      "pass": true
+    },
+    {
+      "name": "restart no pending draft",
+      "pass": true
+    },
+    {
+      "name": "revoke persisted",
+      "pass": true
+    },
+    {
+      "name": "defer persisted after restart",
+      "pass": true
+    },
+    {
+      "name": "refuse persisted after restart",
+      "pass": true
+    },
+    {
+      "name": "one confirmed memory only",
+      "pass": true
+    }
+  ],
+  "notes": [
+    "Desktop requested 1280x1024, OS constrained actual 1280x949; narrow actual 700x760; screenshots 2x pixels.",
+    "AX gap PID17773 excluded, same binary/DB resumed PID17984; CUA native pipe reconnect during refusal kept draft.",
+    "Only final-* captures are final positive evidence; earlier captures remain preserved."
+  ]
+}

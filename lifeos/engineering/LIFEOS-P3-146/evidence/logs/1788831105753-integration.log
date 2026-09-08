@@ -1,0 +1,29 @@
+✔ original bytes, persisted draft, once-only save and lost acknowledgement retry (814.98025ms)
+✔ same text with distinct intentional turns is not deduplicated (18.348792ms)
+✔ transaction failure before receipt leaves original/state/audit unchanged and draft recoverable (23.464292ms)
+✔ invalid input rejects before mutation and arbitrary roots/profile cannot be selected (10.294333ms)
+✔ one valuable clarification, irrelevant or already available evidence produces no question (22.403833ms)
+✔ persistent question decision ignore (15.404625ms)
+✔ persistent question decision refuse (15.652125ms)
+✔ persistent question decision defer (15.919125ms)
+✔ silence makes no state or implicit confirmation; deferred time can reopen same gap (129.860458ms)
+✔ memory confirmation is single explicit intent, inference/source is not confirmation (19.018375ms)
+✔ correction is atomic, preserves provenance and invalidates only dependent projections (24.004125ms)
+✔ source version deduplication, identity isolation, version conflict and rollback (15.430375ms)
+✔ revocation excludes all historical packets and model switching never revives source (24.225292ms)
+✔ required layers budget is prewrite atomic, exact boundary and optional pruning (12.8145ms)
+✔ expired evidence and request-local removal do not become current facts (10.640833ms)
+✔ two actual offline adapters across process restarts preserve all authority and feedback (26.82775ms)
+✔ health parser rejects missing/invalid units, field inflation, future times and unsupported sync (9.834292ms)
+✔ database symlink is rejected before opening and sentinel stays unchanged (4.4885ms)
+✔ authorized Markdown answers a relevant gap without asking again (11.209083ms)
+✔ a fresh state makes superseded facts and their model packets unavailable (13.304333ms)
+✔ renderer cannot forge packet content or state projection while retaining valid refs (10.50925ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1284.852625

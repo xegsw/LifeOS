@@ -1,0 +1,42 @@
+[
+  {
+    "name": "ui",
+    "command": [
+      "/Users/xxe/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "tools/build_ui.mjs"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "format",
+    "command": [
+      "/Users/xxe/.cargo/bin/cargo",
+      "fmt",
+      "--all",
+      "--",
+      "--check"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "build",
+    "command": [
+      "/Users/xxe/.cargo/bin/cargo",
+      "build",
+      "--locked",
+      "--offline"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "integration",
+    "command": [
+      "/Users/xxe/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "--test",
+      "--test-concurrency=1",
+      "--test-timeout=15000",
+      "tests/integration.mjs"
+    ],
+    "exit": 0
+  }
+]
