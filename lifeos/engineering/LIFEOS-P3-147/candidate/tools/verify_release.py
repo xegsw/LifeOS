@@ -9,7 +9,7 @@ def verify(m):
  if set(r['path'] for r in m['files'])!=inventory:errors.append('coverage')
  digest=hashlib.sha256(json.dumps([[r['path'],r['sha256']] for r in m['files'] if r['path'].startswith('candidate/')],separators=(',',':')).encode()).hexdigest()
  if digest!=m['candidate_sha256']:errors.append('candidate_identity')
- if set(m['test_evidence'])!={'rust','parser','web','inherited','public_api'}:errors.append('test_groups')
+ if set(m['test_evidence'])!={'rust','parser','web','inherited','public_api','root_profiles'}:errors.append('test_groups')
  if len(m['native_evidence'])<3 or {r['width'] for r in m['native_evidence']}!={700,1280}:errors.append('native_coverage')
  if m['gate_status']!={'independent_security':'pending','real_user_gate':'pending','pm_final':'pending'}:errors.append('gate_overclaim')
  for row in m['files']:
@@ -26,12 +26,13 @@ def verify(m):
   if not any(s['name']==group and s['exit_code']==0 for s in result['steps']):errors.append('test_failed')
   log=(BASE/row['log']).read_text()
   import re
-  pattern=r'test result: ok\. (\d+) passed' if group=='rust' else r'Ran (\d+) test' if group in ['parser','public_api'] else r'(?:ℹ tests|# tests) (\d+)'
+  pattern=r'test result: ok\. (\d+) passed' if group=='rust' else r'Ran (\d+) test' if group in ['parser','public_api','root_profiles'] else r'(?:ℹ tests|# tests) (\d+)'
   found=re.search(pattern,log)
   if not found or int(found.group(1))!=row['count']:errors.append('test_count')
- if sum(r['count'] for r in m['test_evidence'].values())!=71:errors.append('test_total')
+ if sum(r['count'] for r in m['test_evidence'].values())!=77:errors.append('test_total')
  for row in m['native_evidence']:
   evidence=json.loads((BASE/row['evidence']).read_text());launch=json.loads((BASE/row['launch']).read_text())
+  if launch.get('compiled_profile')!='engineering':errors.append('native_profile')
   if evidence['pid']!=launch['pid'] or launch['binary_sha256']!=m['binary_sha256'] or launch['source_binary_sha256']!=m['binary_sha256']:errors.append('native_identity')
   if evidence['window']['title']!='LifeOS · P3-147 · 合成离线' or not any(n['role'] in ['AXWebArea','AXWebView'] for n in evidence['window']['nodes']):errors.append('native_window')
   if row.get('revoked_restart'):
@@ -41,10 +42,20 @@ def verify(m):
   if w/g['width']!=h/g['height'] or w/g['width'] not in [1,2] or g['width']!=row['width']:errors.append('native_geometry')
   if hashlib.sha256(png).hexdigest()!=evidence['image_sha256']:errors.append('native_image')
   for name,digest in launch['source_files'].items():
-   if name.startswith(('src/','application/','ui/','capabilities/')) or name in ['Cargo.toml','Cargo.lock','tauri.conf.json','build.rs']:
+   if name.startswith(('src/','application/','ui/','capabilities/')) or name in ['Cargo.toml','Cargo.lock','tauri.conf.json','build.rs','root_profile.rs','root_profiles.json']:
     if hashlib.sha256((BASE/'candidate'/name).read_bytes()).hexdigest()!=digest:errors.append('runtime_source_drift')
+ build=json.loads((BASE/m['root_build_evidence']).read_text())
+ if build.get('review_root_contact') is not False or len(build['steps'])!=4:errors.append('root_build_coverage')
+ for row in build['steps']:
+  log=(BASE/Path(m['root_build_evidence']).parent/(row['name']+'.log')).read_text()
+  if row['runtime_executed'] or row['cache_scope']!='engineering root only' or (row['exit_code']==0)!=row['expected_success'] or not row['pass']:errors.append('root_build_result')
+  if not row['expected_success'] and 'profile' not in log:errors.append('root_build_reason')
+ history=json.loads((BASE/'evidence/root-closure-history.json').read_text())
+ for row in history['files']:
+  if hashlib.sha256((BASE/'history/pre-root-closure'/row['path']).read_bytes()).hexdigest()!=row['sha256']:errors.append('history_integrity')
+ if hashlib.sha256((BASE/'history/pre-root-closure/report.md').read_bytes()).hexdigest()!=history['report_sha256']:errors.append('history_report')
  return errors
 if __name__=='__main__':
  m=json.loads((BASE/'FINAL_MANIFEST.json').read_text());errors=verify(m)
- print(json.dumps({'integrity_and_linkage':not errors,'errors':errors,'files':len(m['files']),'tests':71,'independent_security':'pending','real_user_gate':'pending'}))
+ print(json.dumps({'integrity_and_linkage':not errors,'errors':errors,'files':len(m['files']),'tests':77,'independent_security':'pending','real_user_gate':'pending'}))
  sys.exit(bool(errors))

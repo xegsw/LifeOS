@@ -17,7 +17,7 @@ use std::{
     time::{Duration, Instant},
 };
 type R<T> = Result<T, Error>;
-const ROOT: &str = "/private/tmp/lifeos-p3-147-obsidian-source-v1";
+use crate::runtime_root::ROOT;
 fn err(s: &str) -> Error {
     Error::new(s)
 }
@@ -173,6 +173,10 @@ fn artifact_dir(c: &Connection, l: &Lease) -> R<PathBuf> {
     Ok(p)
 }
 fn parse(file: File, ext: &str, output: &Path) -> R<Value> {
+    let verified_root = crate::runtime_root::verify()?;
+    if output.parent() != Some(verified_root.join(".runtime").as_path()) {
+        return Err(err("parser_output_failed"));
+    }
     let out = OpenOptions::new()
         .write(true)
         .create_new(true)
@@ -190,7 +194,7 @@ fn parse(file: File, ext: &str, output: &Path) -> R<Value> {
     .stdin(Stdio::from(file))
     .stdout(Stdio::from(out))
     .stderr(Stdio::null())
-    .env("TMPDIR", Path::new(ROOT).join("tmp"))
+    .env("TMPDIR", verified_root.join(".runtime"))
     .spawn()
     .map_err(|_| err("parser_dependency_missing"))?;
     let start = Instant::now();

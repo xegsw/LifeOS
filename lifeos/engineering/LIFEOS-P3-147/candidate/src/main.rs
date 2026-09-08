@@ -1,5 +1,6 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 mod repository;
+mod runtime_root;
 mod source_api;
 mod source_file;
 mod source_store;
@@ -52,6 +53,16 @@ source_command!(authorize_source_target);
 source_command!(get_source_evidence);
 fn main() {
     let args: Vec<String> = std::env::args().collect();
+    if args.get(1).map(String::as_str) == Some("--profile-info") {
+        match runtime_root::profile_info() {
+            Ok(v) => println!("{}", v),
+            Err(e) => {
+                eprintln!("{}", e.code);
+                std::process::exit(2);
+            }
+        }
+        return;
+    }
     if args.get(1).map(String::as_str) == Some("--repository-stdio") {
         let fixture = args.get(2).map(String::as_str).unwrap_or("app");
         for line in io::stdin().lock().lines() {

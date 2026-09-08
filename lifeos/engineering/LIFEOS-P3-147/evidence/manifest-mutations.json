@@ -1,30 +1,31 @@
 {
-  "in_memory_only": true,
-  "positive": true,
-  "mutations": [
+  "scope": "in-memory manifest mutations only; candidate/history unchanged",
+  "control_pass": true,
+  "count": 10,
+  "results": [
     {
-      "case": "changed_hash",
+      "mutation": "changed_file_hash",
       "rejected": true,
       "errors": [
         "file_integrity"
       ]
     },
     {
-      "case": "candidate_identity",
+      "mutation": "candidate_identity",
       "rejected": true,
       "errors": [
         "candidate_identity"
       ]
     },
     {
-      "case": "missing_file",
+      "mutation": "missing_file",
       "rejected": true,
       "errors": [
         "coverage"
       ]
     },
     {
-      "case": "test_count",
+      "mutation": "test_count",
       "rejected": true,
       "errors": [
         "test_count",
@@ -32,21 +33,21 @@
       ]
     },
     {
-      "case": "missing_native",
+      "mutation": "missing_native",
       "rejected": true,
       "errors": [
         "native_coverage"
       ]
     },
     {
-      "case": "wrong_binary",
+      "mutation": "wrong_binary",
       "rejected": true,
       "errors": [
         "native_identity"
       ]
     },
     {
-      "case": "wrong_geometry",
+      "mutation": "wrong_geometry",
       "rejected": true,
       "errors": [
         "native_coverage",
@@ -54,12 +55,27 @@
       ]
     },
     {
-      "case": "premature_gate_pass",
+      "mutation": "premature_independent_pass",
       "rejected": true,
       "errors": [
         "gate_overclaim"
       ]
+    },
+    {
+      "mutation": "old_nonprofile_launch",
+      "rejected": true,
+      "errors": [
+        "native_identity",
+        "native_profile",
+        "runtime_source_drift"
+      ]
+    },
+    {
+      "mutation": "missing_root_build",
+      "rejected": true,
+      "errors": [
+        "FileNotFoundError"
+      ]
     }
-  ],
-  "rejected": 8
+  ]
 }

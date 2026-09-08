@@ -1,0 +1,279 @@
+   Compiling lifeos-p3-147 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate)
+warning: unused variable: `root`
+   --> src/source_worker.rs:211:9
+    |
+211 |     let root = root_ref(c, l)?;
+    |         ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: type alias `R` is never used
+  --> src/source_file.rs:16:6
+   |
+16 | type R<T> = Result<T, Error>;
+   |      ^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `err` is never used
+  --> src/source_file.rs:17:4
+   |
+17 | fn err(s: &str) -> Error {
+   |    ^^^
+
+warning: struct `Identity` is never constructed
+  --> src/source_file.rs:21:12
+   |
+21 | pub struct Identity {
+   |            ^^^^^^^^
+
+warning: function `identity` is never used
+  --> src/source_file.rs:30:4
+   |
+30 | fn identity(f: &File) -> R<Identity> {
+   |    ^^^^^^^^
+
+warning: struct `FileGrant` is never constructed
+  --> src/source_file.rs:42:12
+   |
+42 | pub struct FileGrant {
+   |            ^^^^^^^^^
+
+warning: struct `Entry` is never constructed
+  --> src/source_file.rs:46:12
+   |
+46 | pub struct Entry {
+   |            ^^^^^
+
+warning: multiple associated items are never used
+   --> src/source_file.rs:52:12
+    |
+ 51 | impl FileGrant {
+    | -------------- associated items in this implementation
+ 52 |     pub fn synthetic(root: &Path) -> R<Self> {
+    |            ^^^^^^^^^
+...
+ 77 |     pub fn root_identity(&self) -> R<Identity> {
+    |            ^^^^^^^^^^^^^
+...
+ 80 |     pub fn resolve_ref(&self, reference: &str) -> R<String> {
+    |            ^^^^^^^^^^^
+...
+140 |     pub fn file(&self, reference: &str) -> R<File> {
+    |            ^^^^
+...
+159 |     pub fn page(&self, reference: &str, offset: u64) -> R<(Vec<Entry>, u64, bool)> {
+    |            ^^^^
+...
+230 |     pub fn identity(&self, reference: &str) -> R<Identity> {
+    |            ^^^^^^^^
+...
+233 |     pub fn copy(
+    |            ^^^^
+
+warning: function `openat` is never used
+   --> src/source_file.rs:274:4
+    |
+274 | fn openat(dir: &File, name: &str, directory: bool) -> R<File> {
+    |    ^^^^^^
+
+warning: function `normalize` is never used
+   --> src/source_file.rs:287:4
+    |
+287 | fn normalize(s: &str) -> R<Vec<String>> {
+    |    ^^^^^^^^^
+
+warning: type alias `R` is never used
+ --> src/source_store.rs:6:6
+  |
+6 | type R<T> = Result<T, Error>;
+  |      ^
+
+warning: constant `MAX` is never used
+ --> src/source_store.rs:7:7
+  |
+7 | const MAX: i64 = 9007199254740991;
+  |       ^^^
+
+warning: function `fail` is never used
+ --> src/source_store.rs:8:4
+  |
+8 | fn fail<T>(s: &str) -> R<T> {
+  |    ^^^^
+
+warning: function `valid_id` is never used
+  --> src/source_store.rs:11:8
+   |
+11 | pub fn valid_id(s: &str) -> bool {
+   |        ^^^^^^^^
+
+warning: function `init` is never used
+  --> src/source_store.rs:17:8
+   |
+17 | pub fn init(c: &Connection) -> R<()> {
+   |        ^^^^
+
+warning: struct `Lease` is never constructed
+  --> src/source_store.rs:33:12
+   |
+33 | pub struct Lease {
+   |            ^^^^^
+
+warning: function `check` is never used
+  --> src/source_store.rs:38:8
+   |
+38 | pub fn check(c: &Connection, l: &Lease) -> R<()> {
+   |        ^^^^^
+
+warning: function `connect` is never used
+  --> src/source_store.rs:59:8
+   |
+59 | pub fn connect(c: &mut Connection, request: &str, connector: &str, root_ref: &str) -> R<Lease> {
+   |        ^^^^^^^
+
+warning: function `control` is never used
+   --> src/source_store.rs:114:8
+    |
+114 | pub fn control(c: &mut Connection, l: &Lease, request: &str, action: &str) -> R<Lease> {
+    |        ^^^^^^^
+
+warning: function `invalidate` is never used
+   --> src/source_store.rs:219:4
+    |
+219 | fn invalidate(c: &Connection, rid: &str) -> R<()> {
+    |    ^^^^^^^^^^
+
+warning: struct `Imported` is never constructed
+   --> src/source_store.rs:226:12
+    |
+226 | pub struct Imported {
+    |            ^^^^^^^^
+
+warning: function `commit_batch` is never used
+   --> src/source_store.rs:241:8
+    |
+241 | pub fn commit_batch(c: &mut Connection, l: &Lease, items: &[Imported], request: &str) -> R<()> {
+    |        ^^^^^^^^^^^^
+
+warning: function `evidence` is never used
+   --> src/source_store.rs:382:8
+    |
+382 | pub fn evidence(c: &Connection, l: &Lease, file: &str, version: i64, offset: i64) -> R<Value> {
+    |        ^^^^^^^^
+
+warning: function `missing` is never used
+   --> src/source_store.rs:411:8
+    |
+411 | pub fn missing(c: &mut Connection, l: &Lease, file: &str) -> R<()> {
+    |        ^^^^^^^
+
+warning: function `make_cursor` is never used
+   --> src/source_store.rs:446:8
+    |
+446 | pub fn make_cursor(
+    |        ^^^^^^^^^^^
+
+warning: function `consume_cursor` is never used
+   --> src/source_store.rs:464:8
+    |
+464 | pub fn consume_cursor(
+    |        ^^^^^^^^^^^^^^
+
+warning: function `search` is never used
+   --> src/source_store.rs:485:8
+    |
+485 | pub fn search(c: &Connection, l: &Lease, query: &str) -> R<Vec<Value>> {
+    |        ^^^^^^
+
+warning: type alias `R` is never used
+  --> src/source_worker.rs:19:6
+   |
+19 | type R<T> = Result<T, Error>;
+   |      ^
+
+warning: constant `ROOT` is never used
+  --> src/source_worker.rs:20:7
+   |
+20 | const ROOT: &str = "/private/tmp/lifeos-p3-147-obsidian-source-v1";
+   |       ^^^^
+
+warning: function `err` is never used
+  --> src/source_worker.rs:21:4
+   |
+21 | fn err(s: &str) -> Error {
+   |    ^^^
+
+warning: function `stable` is never used
+  --> src/source_worker.rs:24:4
+   |
+24 | fn stable(s: &str) -> String {
+   |    ^^^^^^
+
+warning: function `root_ref` is never used
+  --> src/source_worker.rs:27:4
+   |
+27 | fn root_ref(c: &Connection, l: &Lease) -> R<PathBuf> {
+   |    ^^^^^^^^
+
+warning: function `granted` is never used
+  --> src/source_worker.rs:39:4
+   |
+39 | fn granted(c: &Connection, l: &Lease) -> R<FileGrant> {
+   |    ^^^^^^^
+
+warning: function `begin` is never used
+  --> src/source_worker.rs:49:8
+   |
+49 | pub fn begin(c: &mut Connection, l: &Lease) -> R<()> {
+   |        ^^^^^
+
+warning: function `scan_page` is never used
+  --> src/source_worker.rs:76:8
+   |
+76 | pub fn scan_page(c: &mut Connection, l: &Lease) -> R<bool> {
+   |        ^^^^^^^^^
+
+warning: function `artifact_dir` is never used
+   --> src/source_worker.rs:122:4
+    |
+122 | fn artifact_dir(c: &Connection, l: &Lease) -> R<PathBuf> {
+    |    ^^^^^^^^^^^^
+
+warning: function `parse` is never used
+   --> src/source_worker.rs:150:4
+    |
+150 | fn parse(file: File, ext: &str, output: &Path) -> R<Value> {
+    |    ^^^^^
+
+warning: function `import_one` is never used
+   --> src/source_worker.rs:210:8
+    |
+210 | pub fn import_one(c: &mut Connection, l: &Lease) -> R<bool> {
+    |        ^^^^^^^^^^
+
+warning: function `progress` is never used
+   --> src/source_worker.rs:322:8
+    |
+322 | pub fn progress(c: &Connection, l: &Lease) -> R<Value> {
+    |        ^^^^^^^^
+
+warning: function `recover` is never used
+   --> src/source_worker.rs:411:8
+    |
+411 | pub fn recover(c: &Connection, l: &Lease) -> R<usize> {
+    |        ^^^^^^^
+
+warning: function `finalize_scan` is never used
+   --> src/source_worker.rs:506:8
+    |
+506 | pub fn finalize_scan(c: &mut Connection, l: &Lease) -> R<()> {
+    |        ^^^^^^^^^^^^^
+
+warning: function `resolve_local_links` is never used
+   --> src/source_worker.rs:523:8
+    |
+523 | pub fn resolve_local_links(c: &Connection, l: &Lease) -> R<usize> {
+    |        ^^^^^^^^^^^^^^^^^^^
+
+warning: `lifeos-p3-147` (bin "lifeos-p3-147") generated 42 warnings (run `cargo fix --bin "lifeos-p3-147" -p lifeos-p3-147` to apply 1 suggestion)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.11s

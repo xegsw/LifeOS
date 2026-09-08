@@ -341,9 +341,7 @@ fn mutate(c: &mut Connection, command: &str, p: &Value, fixture: &str) -> R<Valu
     let mut target = None;
     let result = match command {
         "connect_source_directory" => {
-            let directory = std::path::Path::new(
-                "/private/tmp/lifeos-p3-147-obsidian-source-v1/fixtures/app-source",
-            );
+            let directory = &crate::runtime_root::verify()?.join("fixtures/app-source");
             let identity = crate::source_file::FileGrant::synthetic(directory)?.root_identity()?;
             let old: Option<(i64, i64, String)> = tx
                 .query_row(

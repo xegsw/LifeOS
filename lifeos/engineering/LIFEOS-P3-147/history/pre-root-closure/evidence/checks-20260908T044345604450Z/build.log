@@ -1,0 +1,35 @@
+   Compiling lifeos-p3-147 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate)
+warning: function `connect` is never used
+  --> src/source_store.rs:69:8
+   |
+69 | pub fn connect(c: &mut Connection, request: &str, connector: &str, root_ref: &str) -> R<Lease> {
+   |        ^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `control` is never used
+   --> src/source_store.rs:124:8
+    |
+124 | pub fn control(c: &mut Connection, l: &Lease, request: &str, action: &str) -> R<Lease> {
+    |        ^^^^^^^
+
+warning: function `make_cursor` is never used
+   --> src/source_store.rs:483:8
+    |
+483 | pub fn make_cursor(
+    |        ^^^^^^^^^^^
+
+warning: function `begin` is never used
+  --> src/source_worker.rs:49:8
+   |
+49 | pub fn begin(c: &mut Connection, l: &Lease) -> R<()> {
+   |        ^^^^^
+
+warning: function `progress` is never used
+   --> src/source_worker.rs:365:8
+    |
+365 | pub fn progress(c: &Connection, l: &Lease) -> R<Value> {
+    |        ^^^^^^^^
+
+warning: `lifeos-p3-147` (bin "lifeos-p3-147") generated 5 warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.10s

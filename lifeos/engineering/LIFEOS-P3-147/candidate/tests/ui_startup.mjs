@@ -1,6 +1,7 @@
+import {root} from '../tools/root_config.mjs';
 // Diagnostic render against this task's synthetic app DB; no GUI or network substitution.
 import {spawn} from 'node:child_process';import {createInterface} from 'node:readline';
-const child=spawn('/private/tmp/lifeos-p3-147-obsidian-source-v1/initial-build-cache/debug/lifeos-p3-147',['--repository-stdio','app'],{stdio:['pipe','pipe','pipe']});
+const child=spawn(root+'/initial-build-cache/debug/lifeos-p3-147',['--repository-stdio','app'],{stdio:['pipe','pipe','pipe']});
 const pending=[];createInterface({input:child.stdout}).on('line',s=>{const v=JSON.parse(s),p=pending.shift();v.error?p.reject(v.error):p.resolve(v.ok)});
 globalThis.window={__TAURI__:{core:{invoke:(ipc,{request})=>new Promise((resolve,reject)=>{pending.push({resolve,reject});child.stdin.write(JSON.stringify({ipc,request})+'\n')})}}};
 const host={innerHTML:''};globalThis.document={getElementById:()=>host,addEventListener:()=>{}};globalThis.setInterval=()=>0;

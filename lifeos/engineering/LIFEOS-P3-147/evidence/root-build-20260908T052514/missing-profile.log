@@ -1,0 +1,20 @@
+   Compiling lifeos-p3-147 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate)
+error: failed to run custom build command for `lifeos-p3-147 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate)`
+
+Caused by:
+  process didn't exit successfully: `/private/tmp/lifeos-p3-147-obsidian-source-v1/initial-build-cache/debug/build/lifeos-p3-147-3e8a2dfdd0c0ec8b/build-script-build` (exit status: 101)
+  --- stdout
+  cargo:rerun-if-env-changed=LIFEOS_P3_147_BUILD_PROFILE
+  cargo:rerun-if-env-changed=LIFEOS_P3_147_PROFILE
+  cargo:rerun-if-env-changed=LIFEOS_RUNTIME_ROOT
+  cargo:rerun-if-env-changed=LIFEOS_P3_145_ROOT_PROFILE
+  cargo:rerun-if-env-changed=LIFEOS_P3_147_ROOT
+  cargo:rerun-if-env-changed=LIFEOS_P3_147_ROOT_PROFILE
+  cargo:rerun-if-changed=root_profiles.json
+  cargo:rerun-if-changed=root_profile.rs
+
+  --- stderr
+
+  thread 'main' (19930553) panicked at build.rs:16:54:
+  explicit build profile required: NotPresent
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

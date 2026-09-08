@@ -51,7 +51,9 @@ pub struct Entry {
 }
 impl FileGrant {
     pub fn synthetic(root: &Path) -> R<Self> {
-        let allowed = Path::new("/private/tmp/lifeos-p3-147-obsidian-source-v1/fixtures");
+        let verified = crate::runtime_root::verify()?;
+        let allowed_path = verified.join("fixtures");
+        let allowed = allowed_path.as_path();
         if !root.starts_with(allowed)
             || root
                 .components()
@@ -149,7 +151,7 @@ impl FileGrant {
                     return Err(err("alias_metadata_budget"));
                 }
                 let output = std::process::Command::new(
-                    "/private/tmp/lifeos-p3-147-obsidian-source-v1/alias_metadata",
+                    crate::runtime_root::verify()?.join("alias_metadata"),
                 )
                 .stdin(std::process::Stdio::from(current))
                 .stderr(std::process::Stdio::null())
@@ -375,7 +377,7 @@ mod tests {
     use super::*;
     #[test]
     fn anchored_read_pages_special_links_and_changed() {
-        let base = Path::new("/private/tmp/lifeos-p3-147-obsidian-source-v1/fixtures");
+        let base = Path::new(crate::runtime_root::ROOT).join("fixtures");
         let p = base.join(format!("fd-test-{}", std::process::id()));
         std::fs::create_dir(&p).unwrap();
         for n in 0..530 {
@@ -421,7 +423,8 @@ mod scale_tests {
     use super::*;
     #[test]
     fn beyond_old_count_depth_and_size_limits() {
-        let root = Path::new("/private/tmp/lifeos-p3-147-obsidian-source-v1/fixtures")
+        let root = Path::new(crate::runtime_root::ROOT)
+            .join("fixtures")
             .join(format!("scale-{}", std::process::id()));
         std::fs::create_dir(&root).unwrap();
         for n in 0..5201 {

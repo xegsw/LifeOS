@@ -9,7 +9,6 @@ use std::{
     path::PathBuf,
     time::{SystemTime, UNIX_EPOCH},
 };
-const ROOT: &str = "/private/tmp/lifeos-p3-147-obsidian-source-v1";
 const TABLES: &[&str] = &[
     "records",
     "memories",
@@ -100,34 +99,7 @@ pub fn open(fixture: &str) -> R<Connection> {
     {
         return reject("fixture_rejected");
     }
-    if std::env::var("LIFEOS_RUNTIME_ROOT").is_ok()
-        || std::env::var("LIFEOS_P3_145_ROOT_PROFILE").is_ok()
-        || std::env::var("LIFEOS_P3_147_PROFILE").is_ok_and(|s| s != "synthetic")
-    {
-        return reject("profile_rejected");
-    }
-    let root = PathBuf::from(ROOT);
-    let meta = fs::symlink_metadata(&root).map_err(|_| Error::new("root_missing"))?;
-    if !meta.is_dir() || meta.file_type().is_symlink() || meta.permissions().mode() & 0o777 != 0o700
-    {
-        return reject("root_rejected");
-    }
-    let marker = root.join(".lifeos-p3-147-owner.json");
-    let m = fs::symlink_metadata(&marker).map_err(|_| Error::new("marker_missing"))?;
-    if !m.is_file()
-        || m.file_type().is_symlink()
-        || m.permissions().mode() & 0o777 != 0o600
-        || m.uid() != meta.uid()
-    {
-        return reject("marker_rejected");
-    }
-    let v: Value =
-        serde_json::from_slice(&fs::read(marker).map_err(|_| Error::new("marker_rejected"))?)
-            .map_err(|_| Error::new("marker_rejected"))?;
-    if v != json!({"task":"LIFEOS-P3-147","owner":"01a07f0e-dbbd-7d23-9e6d-68f2152f9484","schema":"lifeos.p3-147.root.v1","root":ROOT})
-    {
-        return reject("marker_rejected");
-    }
+    let root = crate::runtime_root::verify()?;
     let path = root.join(format!("{fixture}.sqlite"));
     for suffix in ["", "-wal", "-shm", "-journal"] {
         let p = PathBuf::from(format!("{}{suffix}", path.display()));

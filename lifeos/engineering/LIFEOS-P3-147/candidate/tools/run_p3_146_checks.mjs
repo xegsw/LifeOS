@@ -1,7 +1,7 @@
 import {spawnSync} from 'node:child_process';
 import {readFileSync,writeFileSync,lstatSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
-const root='/private/tmp/lifeos-p3-147-obsidian-source-v1';
+import {root} from './root_config.mjs';
 const base=fileURLToPath(new URL('..',import.meta.url));
 const marker=JSON.parse(readFileSync(root+'/.lifeos-p3-147-owner.json','utf8'));
 if(marker.task!=='LIFEOS-P3-147'||marker.root!==root||lstatSync(root).isSymbolicLink())throw Error('root_rejected');

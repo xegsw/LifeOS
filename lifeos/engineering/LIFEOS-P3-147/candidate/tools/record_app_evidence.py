@@ -1,6 +1,7 @@
 import sys,json,subprocess,sqlite3,hashlib,datetime
 from pathlib import Path
-root=Path('/private/tmp/lifeos-p3-147-obsidian-source-v1')
+from task_root import ROOT as root,verify
+verify()
 base=Path(__file__).resolve().parents[2];label=sys.argv[1];pid=int(sys.argv[2])
 assert label.replace('-','').isalnum()
 raw=json.loads(subprocess.check_output([str(root/'native_evidence'),str(pid)]))

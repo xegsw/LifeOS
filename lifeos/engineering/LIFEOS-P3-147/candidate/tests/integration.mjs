@@ -5,7 +5,7 @@ import {createInterface} from 'node:readline';
 import {DatabaseSync} from 'node:sqlite';
 import {writeFileSync,symlinkSync,readFileSync} from 'node:fs';
 import {Application,resolve,nextQuestion,makeModel,boundary,validRows,FixtureSource} from '../ui/core.js';
-const root='/private/tmp/lifeos-p3-147-obsidian-source-v1';
+import {root} from '../tools/root_config.mjs';
 const bin=root+'/initial-build-cache/debug/lifeos-p3-147';
 let counter=0;const run=Date.now().toString(36);const active=[];
 function repo(name='test'){

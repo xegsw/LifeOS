@@ -1,0 +1,37 @@
+{
+  "review_root_contact": false,
+  "steps": [
+    {
+      "name": "review-compile-only",
+      "exit_code": 0,
+      "expected_success": true,
+      "pass": true,
+      "runtime_executed": false,
+      "cache_scope": "engineering root only"
+    },
+    {
+      "name": "unknown-profile",
+      "exit_code": 101,
+      "expected_success": false,
+      "pass": true,
+      "runtime_executed": false,
+      "cache_scope": "engineering root only"
+    },
+    {
+      "name": "arbitrary-root",
+      "exit_code": 101,
+      "expected_success": false,
+      "pass": true,
+      "runtime_executed": false,
+      "cache_scope": "engineering root only"
+    },
+    {
+      "name": "missing-profile",
+      "exit_code": 101,
+      "expected_success": false,
+      "pass": true,
+      "runtime_executed": false,
+      "cache_scope": "engineering root only"
+    }
+  ]
+}

@@ -1,3 +1,8 @@
+import sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
+from task_root import ROOT,verify
+verify()
 import sys,unittest,io,zipfile,importlib.util
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('parser',Path(__file__).parents[1]/'tools/parse_source.py');p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
@@ -39,6 +44,6 @@ class Parsers(unittest.TestCase):
  def test_actual_process_memory_budget_rejects_complete_payload(self):
   import subprocess,json,os
   data=b'SYNTHETIC_BUDGET_CANARY '*1000000
-  result=subprocess.run([sys.executable,'-B',str(Path(__file__).parents[1]/'tools/parse_source.py'),'.txt'],input=data,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=30,env={**os.environ,'TMPDIR':'/private/tmp/lifeos-p3-147-obsidian-source-v1/.runtime'})
+  result=subprocess.run([sys.executable,'-B',str(Path(__file__).parents[1]/'tools/parse_source.py'),'.txt'],input=data,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=30,env={**os.environ,'TMPDIR':str(ROOT/'.runtime')})
   value=json.loads(result.stdout);self.assertEqual(value['reason'],'parse_memory_budget');self.assertEqual(value['segments'],[]);self.assertNotIn(b'CANARY',result.stdout+result.stderr)
 if __name__=='__main__':unittest.main()

@@ -1,0 +1,7 @@
+# P3-147 同合同双根接线 Closure
+
+PM预评审指出工程硬编码导致未修改候选无法在原卡独立根运行。本次只调整根权威与复跑接线，不新增IPC、真实权限或UI产品变化。原交付259文件及报告由 e5cb31a3072b8fd36b28e462404adde193128a55 Git blobs保全到history/pre-root-closure。
+
+单一root_profiles.json只声明engineering和independent-review两个精确literal及互不相同marker。构建必须显式LIFEOS_P3_147_BUILD_PROFILE，build.rs只读配置不探测root；所选profile/root编译入binary。运行时任何根override、未知profile、与compiled不符profile失败关闭；marker/root/runtime/fixtures由统一权威验证。Python/Node/Swift辅助入口使用同一配置，无任意路径输入。独立评审从固定Git blob建立自己的源码、缓存、DB、App和Evidence；不写工程candidate和Evidence。
+
+工程执行只在engineering根动态测试。review profile只纯配置与编译不执行，不访问/stat/create/cleanup真实review根；其实际动态行为留给独立会话。受影响根/文件/worker/IPC复跑，未改解析/Web策略历史明确复用；必要新binary原生证据重新取证。

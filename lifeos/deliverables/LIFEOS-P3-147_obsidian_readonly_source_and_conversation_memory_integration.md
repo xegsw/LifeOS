@@ -16,6 +16,14 @@ Settings → 数据与隐私 → 来源可连接本任务合成目录，自动�
 
 直接外链经独立目标授权后读取两类明确合成目标；Web复用注入Transport，最多2并发、连接10秒/总30秒、5跳、解压后20MiB，每跳目标/IP复检，无递归。没有真实HTTP/DNS/socket实现；无Provider、Keychain、真实目录/DB或旧Pilot接触。固定合成映射不是开放真实目录选择器或任意网址访问能力。
 
+## PM预评审后的双根Closure
+
+原交付把根分散硬编码到engineering root，无法在原卡允许的independent-review root运行未修改候选。PM要求留在同合同修正；不新增IPC或真实权限。原259项工程文件与报告由固定提交`e5cb31a3072b8fd36b28e462404adde193128a55`保全到`history/pre-root-closure/`，不改写旧Manifest/Evidence。
+
+`candidate/root_profiles.json`为唯一精确根清单；显式构建profile `engineering`或`independent-review`，编译后根固定。运行时profile不符、根override、marker身份/权限不符、runtime/fixtures链接或权限不符均失败关闭。原engine marker保留，新review marker使用独立owner，不能互换。Repository、FileGrant、worker、target、parser临时文件、Python/Node/Swift及App启动器统一接线；`--profile-info`为无文件访问的编译身份诊断，不是新增IPC。UI、25 IPC、Schema、Cargo.lock及Provider源码无语义变化。
+
+本会话仅使用工程根动态验证；review profile只纯配置和编译，不访问、stat、创建或清理实际review根。REPLAY提供固定40位Git提交→逐blob/hash验证→review-owned源码/helper/缓存/DB/App/Evidence的独立运行入口。该入口的review根动态执行留给独立会话，不借本工程自检宣称独立通过。
+
 ## 实际格式支持
 
 | 格式 | 当前行为 |
@@ -32,13 +40,13 @@ Settings → 数据与隐私 → 来源可连接本任务合成目录，自动�
 
 ## 验证与原生App
 
-71项自动测试通过：Rust14、解析11、注入Web14、Application/继承31（原30+新来源上下文1）、公共IPC完整生命周期1。构建、格式和UI生成另计。逐项原始证据和最后受影响复跑路径见`lifeos/engineering/LIFEOS-P3-147/evidence/AC_MATRIX.md`。
+双根Closure本轮复跑63项通过：Rust16、解析11、Application/继承31、公共IPC完整生命周期1、根profile4；另显式复用未改Web策略的14项历史结果，组合覆盖77项。review profile `cargo check --tests --locked --offline`通过，未知profile、缺少profile、任意root覆盖三类构建负门均拒绝。构建、格式和UI生成另计。逐项原始证据和最后受影响复跑路径见`lifeos/engineering/LIFEOS-P3-147/evidence/AC_MATRIX.md`。
 
 覆盖规模越旧上限、暂停/取消/恢复、原件身份替换/缺失、配置诱饵、预算失败、receipt故障回滚、目标父版本/撤权、旧packet重放、刷新后旧cursor拒绝。检索是有限词项匹配，不宣称语义向量检索或通用模型理解。
 
-最终运行二进制SHA256：`7b079c42588e454fc436bbcb8cc655864ee47d1f7cde98147b25bd588caad823`。直接启动PID38836（1280×949桌面）和39273（700×760窄窗口）形成最终同名AXWindow→AXWebArea→窗口截图/几何链；窗口从**该PID的AXMainWindow**读取，没有借用系统前台或别的PID。最后截图见`app-delivery-desktop-detail.*`、`app-delivery-desktop-disconnected.*`、`app-delivery-narrow-revoked-restart.*`、`app-delivery-narrow-empty-search.*`。
+最终运行二进制SHA256：`44f1ecbccf9aeacaadbcb3f5b600b8d4c46ef9946a0e2459733e338ef82e4700`。直接启动PID42432（1280×949桌面）和42528（700×760窄窗口）形成最终同名AXWindow→AXWebArea→窗口截图/几何链；窗口从**该PID的AXMainWindow**读取，没有借用系统前台或别的PID。最后截图见`app-root-closure-desktop-detail.*`、`app-root-closure-desktop-disconnected.*`、`app-root-closure-narrow-restart.*`、`app-root-closure-narrow-empty-search.*`。
 
-早期原生步骤已验证自动导入、保存自然表达后3条依据、具体合成网页目标正文、暂停/继续及取消/刷新。最终修正只补受影响UI。原先空白/AX无窗口及CUA noWindowsAvailable等记录保留；恢复后补取最终构建证据，未借环境失败重写历史或虚报通过。CUA自动重启的PID33031未用于正证据，已核对自身可执行路径后停止。
+早期原生步骤已验证自动导入、保存自然表达后3条依据、具体合成网页目标正文、暂停/继续及取消/刷新。此次根Closure重新验证新binary接入、两类目标正文获取、检索、原文、断开和重启，不重跑未改的全部早期视觉矩阵。原先空白/AX无窗口及CUA noWindowsAvailable等记录保留；恢复后补取最终构建证据，未借环境失败重写历史或虚报通过。CUA自动重启的PID33031未用于正证据，已核对自身可执行路径后停止。
 
 所有已知本任务App PID已停止；合成根及可操作App保留供PM复现，没有执行物理删除。App：`/private/tmp/lifeos-p3-147-obsidian-source-v1/LifeOS P3-147.app`。启动、首次夹具准备、离线复跑与marker清理入口见`lifeos/engineering/LIFEOS-P3-147/REPLAY.md`。
 

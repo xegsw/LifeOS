@@ -1,0 +1,53 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-147",
+  "attempt_id": "attempt-1",
+  "updated_at": "2026-09-08T03:59:26.093053+00:00",
+  "task_contract_sha256": "e3cd7fd3fb2990dd30622d56ee73de6b026aaea65962957f992d03f7b3b55b2e",
+  "candidate_sha256": "f43416472a81ddfdece5557ce9427459ea4d74234ed7297c455ff6f917a117ab",
+  "baseline_sha256": "f56223ad92f5b86c42f4bd60303ca6c892c3f9c1",
+  "stage": "source_lifecycle",
+  "status": "blocked",
+  "pause_class": "external_blocker",
+  "pause_reason_code": "public_api_user_approval_pending",
+  "completed_checks": [
+    "fixed_commit",
+    "219_manifest_entries",
+    "report_hash",
+    "clean_worktree",
+    "internal_design_checkpoint",
+    "owned_synthetic_root",
+    "internal_rust_11",
+    "parser_10",
+    "web_injected_14",
+    "inherited_30",
+    "final_locked_offline_build"
+  ],
+  "pending_checks": [
+    "public_api_user_approval",
+    "source_target_grant_integration",
+    "bounded_query_packet_integration",
+    "directory_alias_and_dynamic_scan_coverage",
+    "parser_resource_isolation",
+    "native_ui",
+    "privacy_mutations",
+    "final_manifest_acceptance",
+    "independent_security_gate",
+    "real_user_gate"
+  ],
+  "rerun_checks": [],
+  "excluded_artifacts": [],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "owned_retained"
+  },
+  "resume_from": "source_lifecycle",
+  "safe_to_resume": true,
+  "notes": "Partial engineering checkpoint. PM explicitly withheld public IPC approval pending user decision. No public wiring or App launch. Resume same task; existing synthetic root retained and no workers running."
+}

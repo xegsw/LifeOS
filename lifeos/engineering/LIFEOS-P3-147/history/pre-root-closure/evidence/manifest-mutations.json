@@ -1,0 +1,65 @@
+{
+  "in_memory_only": true,
+  "positive": true,
+  "mutations": [
+    {
+      "case": "changed_hash",
+      "rejected": true,
+      "errors": [
+        "file_integrity"
+      ]
+    },
+    {
+      "case": "candidate_identity",
+      "rejected": true,
+      "errors": [
+        "candidate_identity"
+      ]
+    },
+    {
+      "case": "missing_file",
+      "rejected": true,
+      "errors": [
+        "coverage"
+      ]
+    },
+    {
+      "case": "test_count",
+      "rejected": true,
+      "errors": [
+        "test_count",
+        "test_total"
+      ]
+    },
+    {
+      "case": "missing_native",
+      "rejected": true,
+      "errors": [
+        "native_coverage"
+      ]
+    },
+    {
+      "case": "wrong_binary",
+      "rejected": true,
+      "errors": [
+        "native_identity"
+      ]
+    },
+    {
+      "case": "wrong_geometry",
+      "rejected": true,
+      "errors": [
+        "native_coverage",
+        "native_geometry"
+      ]
+    },
+    {
+      "case": "premature_gate_pass",
+      "rejected": true,
+      "errors": [
+        "gate_overclaim"
+      ]
+    }
+  ],
+  "rejected": 8
+}

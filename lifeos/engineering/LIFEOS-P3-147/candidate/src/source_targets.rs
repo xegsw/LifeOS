@@ -11,7 +11,6 @@ use std::{
     fs::{self, File, OpenOptions},
     io::{Read, Write},
     os::unix::fs::OpenOptionsExt,
-    path::Path,
 };
 type R<T> = Result<T, Error>;
 fn err(s: &str) -> Error {
@@ -146,7 +145,7 @@ fn fetch(fixture: &str, link: &str, generation: i64) -> R<()> {
         return Err(err("target_grant_stale"));
     }
     source_store::check(&c, &l)?;
-    let root = Path::new("/private/tmp/lifeos-p3-147-obsidian-source-v1");
+    let root = crate::runtime_root::verify()?;
     let dir = root
         .join("artifacts")
         .join(format!("target-{}", &source_api::hex(fixture)[..16]));

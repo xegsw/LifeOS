@@ -2,9 +2,9 @@
   "schema": "lifeos.execution-checkpoint.v1",
   "task_id": "LIFEOS-P3-147",
   "attempt_id": "attempt-1",
-  "updated_at": "2026-09-08T05:05:36.515559+00:00",
+  "updated_at": "2026-09-08T05:32:28.151188+00:00",
   "task_contract_sha256": "6cfcd9c5c53fd91a847b003262f9b39b057c5cc4d65b268d050a0aef348e4e06",
-  "candidate_sha256": "d64a22c0d1d7f16eb41bd43be55021880aa683987dd62dc5be0b0032e65aacbe",
+  "candidate_sha256": "23349765174036d834261311232915dd1705431159e5dbeda1e1fbbaf2678d89",
   "baseline_sha256": "f56223ad92f5b86c42f4bd60303ca6c892c3f9c1",
   "stage": "manifest",
   "status": "completed_synthetic_engineering",
@@ -33,7 +33,14 @@
     "revoke_restart_native",
     "owned_writers_stopped",
     "history_integrity",
-    "manifest_linkage"
+    "manifest_linkage",
+    "dual_root_authority",
+    "root_negative_tests",
+    "review_profile_compile_only",
+    "root_closure_63_current_tests",
+    "14_web_evidence_reused",
+    "new_binary_native_desktop_narrow",
+    "root_closure_writers_stopped"
   ],
   "pending_checks": [
     "independent_security_gate",
@@ -43,7 +50,7 @@
   "rerun_checks": [],
   "excluded_artifacts": [],
   "prohibited_boundary_contact": false,
-  "candidate_or_history_mutated": false,
+  "candidate_or_history_mutated": true,
   "positive_evidence_separable": true,
   "runtime": {
     "app_running": false,
@@ -54,5 +61,7 @@
   },
   "resume_from": "independent_security_gate",
   "safe_to_resume": true,
-  "notes": "Synthetic engineering complete; final package verifier records integrity separately. Independent security and real-user gates pending."
+  "notes": "Root closure engineering complete: 63 current tests + 14 unchanged Web evidence; review compile-only, no review root contact. Independent dynamic review remains pending.",
+  "mutation_class": "authorized_same_contract_candidate_delta",
+  "historical_assets_mutated": false
 }
