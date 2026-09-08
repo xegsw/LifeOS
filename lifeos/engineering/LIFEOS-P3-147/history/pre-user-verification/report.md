@@ -2,13 +2,11 @@
 
 ## 当前结论
 
-**本地功能 User Verified，工程侧元数据收尾完成。** PM先核对固定候选e4b4aed9140e05541a23e7f871b89cfda8e71b85、已交付App二进制及签名，再打开专用App。用户报告“导入完成了”，随后对Memory检索/打开原文、关闭重开重新连接与无重复观察回复“正常”。本结论来自用户在PM会话中的陈述，不是Agent独立检查真实DB、全库完整性或实际格式覆盖。
-
-本轮仅读取PM非内容回执并更新报告/终局元数据；代码与已交付App不变。未重跑App、未读取/探测真实源或DB、未截图/AX采集、未获取真实内容hash，未清理或退出用户App。其当前进程状态未检查。
+普通工程接线与合成验证完成，专用App已打包，等待PM核对后由用户亲自点击真实连接。任务卡最新增补已批准唯一来源、非加密保存边界及source-pilot-1固定编译profile；不再等待或重复请求这些批准。工程会话没有启动专用真实App、访问/探测真实来源或真实输出根，也没有真实导入。
 
 **User-directed review waiver / No Independent Pass**。原IR-P0-147-001、工程修正、Rework与独立未完成8行保留；未运行或改写被平台拦截的安全评审。普通验证不等于独立通过、风险关闭、L3终局或Stage提升。
 
-## 已交付操作说明（供用户日常使用，不要求重做亲验）
+## 用户操作步骤
 
 1. 打开 /private/tmp/lifeos-p3-147-obsidian-source-v1/LifeOS Local Source.app。窗口标题为“LifeOS · 本地来源”；不要使用标题带“合成离线”的演练App。
 2. 初始显示Settings的来源说明。确认界面显示固定来源 /Users/xxe/IT-obstain 和已批准保存位置后，点击“连接此目录”。打开App和查看说明不探测来源、不建数据库。
@@ -30,26 +28,18 @@ source-pilot-1只绑定唯一只读来源与唯一输出根 /Users/xxe/Documents
 
 ## 验证与证据
 
-此前工程普通验证共10组：合成UI/导入生命周期6组、真实入口UI合成stub3组、source-pilot-1分支的Rust普通生命周期1组。Rust测试仅在cfg(test)把源和输出绑定工程fixtures，实际真实路径零接触；覆盖点击初始化、6文件导入、capture.sqlite权限、暂停/重新打开/继续、检索、刷新和断开。23个其他Rust测试被过滤，未运行安全反例或独立review runner。
+当前普通验证共10组：合成UI/导入生命周期6组、真实入口UI合成stub3组、source-pilot-1分支的Rust普通生命周期1组。Rust测试仅在cfg(test)把源和输出绑定工程fixtures，实际真实路径零接触；覆盖点击初始化、6文件导入、capture.sqlite权限、暂停/重新打开/继续、检索、刷新和断开。23个其他Rust测试被过滤，未运行安全反例或独立review runner。
 
 最终普通结果：evidence/checks-20260908T072044412392Z/；UI生成：checks-20260908T071937035501Z/；Rust真实分支合成测试：pilot-normal-20260908T072104Z/。中间UI stub语法失败及修正记录保留，不计为最终通过。
 
 合成App最终binary ac9c5c381635abc7a9260060835b5f7bd7aec0407bacbeb51a2554f3484d9c9b。实际桌面PID54593及窄屏54991形成同PID AXMainWindow→AXWindow→AXWebArea→截图/geometry，3份app-wire证据核对最终入口与合成状态；窄屏已视觉查看。两PID已停止，合成根与App保留。
 
-专用真实App最终binary（本地签名后）86243cac5c41abe04596662201f717dd765c04017bfd2d0ce3c1074e9832672a。打包记录evidence/pilot-package-20260908T072127Z/result.json，构建/cache/App均在工程自有根；上述打包记录是工程交付时“未启动”的历史事实；之后PM打开并由用户完成真实操作，如本报告当前结论所述。工程会话未采集真实App AX/截图，也未检查真实DB。
-
-## 用户亲验非内容回执
-
-PM原始回执：/Users/xxe/.codex/worktrees/5ed8/No.2/lifeos/reviews/LIFEOS-P3-147/pm-user-local-source-receipt.json；原样副本：evidence/pm-user-local-source-receipt.json。evidence_origin=user_statement_in_pm_conversation，local_functional_gate=User Verified；导入完成、检索/原文打开、重启重连/检索正常、未观察到重复四项均为用户陈述。
-
-PM记录其在交互前核对并打开上述固定binary，未在用户交互后检查进程。personal_content_collected=false，real_data_screenshot_or_hash_collected=false；未关闭风险、未推进Stage、未授权Git合并。不得将这份回执扩张为全库完整性证明或Independent Pass。
+专用真实App最终binary（本地签名后）86243cac5c41abe04596662201f717dd765c04017bfd2d0ce3c1074e9832672a。打包记录evidence/pilot-package-20260908T072127Z/result.json，构建/cache/App均在工程自有根；仅编译/打包，未启动、未采集真实App AX/截图、未创建真实DB。
 
 ## 角色、交付与剩余事项
 
 主责工程执行；普通功能和交付完整性可复核，独立安全无Pass。工程基线f53ea563及前序801e478a/640ebb6历史完整保留；本轮前报告/Manifest/检查点在history/pre-real-wiring。当前FINAL_MANIFEST只绑定代码、合成证据及App打包hash，不包含真实数据。
 
-本地普通功能已获用户亲验反馈，不再列为“等待用户首次点击”。尚未激活/验证的范围：真实网页和目录外文件获取、真实Provider/Keychain/模型发送、OCR/音视频转写、全格式语义理解；不把本地导入或原文检索描述成AI已理解全部资料。用户未观察到重复不等于机器证明全库去重/完整性，实际全库容量和格式分布没有独立核验。
+当前没有需要用户重复批准的同路径/存储问题。剩余步骤是PM核对普通工程交付后，用户亲自打开专用App点击连接；真实来源是否存在、实际权限/容量/格式分布尚未验证，不能假称真实闭环已经成功。最终PM验收及L3合并未完成，未push/merge。原独立评审未确认风险持续记录。
 
-需PM依据本非内容回执确认本地功能收尾；整体L3终局、风险/Stage和Git合并不由本报告改变。未push/merge，不提出自动后继或重复测试。原独立评审未确认风险持续记录。
-
-工程根：/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/。设计/接线说明：design/real-wiring.md；全量diff：evidence/real-wiring-diff.json；本次元数据完整性结果：evidence/user-verified-integrity.json；checkpoint resume_from=pm_local_functional_closeout。candidate/tools/verify_entry_release.py按e4b4aed9工程交付合同原样保留，本轮不运行它或访问App文件。
+工程根：/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/。设计/接线说明：design/real-wiring.md；全量diff：evidence/real-wiring-diff.json；当前校验入口：candidate/tools/verify_entry_release.py；checkpoint resume_from=user_click_real_source_in_app。

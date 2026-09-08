@@ -2,12 +2,12 @@
   "schema": "lifeos.execution-checkpoint.v1",
   "task_id": "LIFEOS-P3-147",
   "attempt_id": "attempt-1",
-  "updated_at": "2026-09-08T07:40:27.119789+00:00",
+  "updated_at": "2026-09-08T07:25:53.353457+00:00",
   "task_contract_sha256": "1067935878453ba2e5927d4d67b07a1b5722d8bec42f427029bb7b2049e99424",
   "candidate_sha256": "c87050b1e0890cb614db0c6caf959ac93d00ec4efafe6056a05d262553000e95",
   "baseline_sha256": "f56223ad92f5b86c42f4bd60303ca6c892c3f9c1",
-  "stage": "local_functional_user_verified",
-  "status": "metadata_closeout_complete",
+  "stage": "real_wiring_engineering_handoff",
+  "status": "engineering_complete_waiting_user_click",
   "pause_class": null,
   "pause_reason_code": null,
   "completed_checks": [
@@ -57,12 +57,11 @@
     "ordinary_engineering_flow_6",
     "ordinary_pilot_fixture_lifecycle_1",
     "real_app_packaged_not_launched",
-    "final_engineering_native_3",
-    "pm_non_content_receipt_bound_to_e4b4aed9",
-    "user_reported_local_functional_acceptance"
+    "final_engineering_native_3"
   ],
   "pending_checks": [
-    "pm_local_functional_closeout"
+    "user_real_connection",
+    "pm_final"
   ],
   "rerun_checks": [],
   "excluded_artifacts": [],
@@ -70,14 +69,15 @@
   "candidate_or_history_mutated": true,
   "positive_evidence_separable": true,
   "runtime": {
-    "previous_engineering_validation": "historical PIDs stopped as recorded in pre-user-verification checkpoint",
-    "current_user_app": "unknown_not_inspected_or_controlled",
-    "real_source_and_database": "not_inspected",
-    "cleanup_performed": false
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "owned_retained"
   },
-  "resume_from": "pm_local_functional_closeout",
+  "resume_from": "user_click_real_source_in_app",
   "safe_to_resume": true,
-  "notes": "User-reported functional acceptance only; no independent completeness/database inspection. User-directed review waiver / No Independent Pass.",
+  "notes": "Storage and fixed profile approved. User-directed review waiver / No Independent Pass. Real App packaged but not launched.",
   "mutation_class": "authorized_same_contract_artifact_safety_delta",
   "historical_assets_mutated": false
 }

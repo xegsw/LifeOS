@@ -1,17 +1,17 @@
 {
   "schema": "lifeos.p3-147.real-wiring-engineering-manifest.v1",
-  "phase": "local_functional_user_verified_metadata_closeout",
+  "phase": "real_wiring_waiting_user_click",
   "task": "LIFEOS-P3-147",
   "parent_commit": "f53ea56338f5a74645c8711cf1c76949d0678386",
-  "updated_at": "2026-09-08T07:40:27.119789+00:00",
+  "updated_at": "2026-09-08T07:28:05.189618+00:00",
   "gate_status": {
     "independent_security": "user_directed_waiver_no_independent_pass",
-    "real_activation": "user_verified_by_statement",
+    "real_activation": "ready_waiting_user_click",
     "pm_final": "pending"
   },
   "candidate_sha256": "c87050b1e0890cb614db0c6caf959ac93d00ec4efafe6056a05d262553000e95",
   "binary_sha256": "ac9c5c381635abc7a9260060835b5f7bd7aec0407bacbeb51a2554f3484d9c9b",
-  "report_sha256": "3126ed1c192e335b8726af7da8766099237a806c91e253f4ef3045bc4afd9bc5",
+  "report_sha256": "e5c75f081f46f2e4ddae64bf83ade1cfb71c4e8b4adce62a662d38cbb89a2ec6",
   "ordinary_flow": {
     "count": 6,
     "log": "evidence/checks-20260908T072044412392Z/entry_flow.log",
@@ -43,9 +43,10 @@
     }
   ],
   "historical_security_evidence": "history/pre-user-entry/FINAL_MANIFEST.json",
+  "current_verifier": "candidate/tools/verify_entry_release.py",
   "excluded": [
     "FINAL_MANIFEST.json",
-    "evidence/user-verified-integrity.json",
+    "evidence/entry-release-verification.json",
     "**/__pycache__/**",
     "**/*.pyc"
   ],
@@ -847,8 +848,8 @@
     },
     {
       "path": "evidence/checkpoint.json",
-      "bytes": 2962,
-      "sha256": "1f1a23cbba5f580c782941ec94260ff78eaf1b652a9bcf83955f612da5de63a0"
+      "bytes": 2765,
+      "sha256": "c20a4a288aa226a6b4c85c36a719257a3bba3a5ff2af0f5d97730453f0435239"
     },
     {
       "path": "evidence/checks-20260908T035657252730Z/build.log",
@@ -1341,11 +1342,6 @@
       "sha256": "06e1083758665ad398201e807252d6de6f849de340f7d5c902ca5c0791bf8b46"
     },
     {
-      "path": "evidence/entry-release-verification.json",
-      "bytes": 203,
-      "sha256": "8554bbc926b26813741d00bbfa29969a02da86c1441ebe6f472327d1aee4c9db"
-    },
-    {
       "path": "evidence/history-verification.json",
       "bytes": 121,
       "sha256": "bee0744d20d354384597c111ac1c00eb8e948bf81612d852d3327415718bff67"
@@ -1491,11 +1487,6 @@
       "sha256": "0fe3c4978e3bc0f4a69550198bafe87c15b3cab75fd6a10468fffdbb6e5b78aa"
     },
     {
-      "path": "evidence/local-functional-final-status.json",
-      "bytes": 1272,
-      "sha256": "fd81df1eeb19c2a9b67f89c1feb50e118c78a0873fbcdace361eadb667fb2c6e"
-    },
-    {
       "path": "evidence/manifest-mutations.json",
       "bytes": 1732,
       "sha256": "5c1c5de9a483c3a3c57a31bf8e73c4cf2d9f20f303b8dcac89806f85775a3e8b"
@@ -1559,11 +1550,6 @@
       "path": "evidence/pilot-package-20260908T072127Z/result.json",
       "bytes": 951,
       "sha256": "aefc6d5766d064dd621ccab1ab0fa36fc532e5b9aac3445a24dcfea73c270dd8"
-    },
-    {
-      "path": "evidence/pm-user-local-source-receipt.json",
-      "bytes": 1119,
-      "sha256": "9ae8078bde19820017e880d57f1284fc817c0f91f588d5a0b06659a45dfe6330"
     },
     {
       "path": "evidence/public-api-build-1.log",
@@ -3549,39 +3535,6 @@
       "path": "history/pre-user-entry/report.md",
       "bytes": 10575,
       "sha256": "61af930c58f9da8cbd5d52c25bc1ad977c8e1b77624625add7d2a87a6479a93c"
-    },
-    {
-      "path": "history/pre-user-verification/FINAL_MANIFEST.json",
-      "bytes": 131894,
-      "sha256": "d8652c40f65de7227390701f9b7fdafa1b9dd122f4682a6e824116125417bdb4"
-    },
-    {
-      "path": "history/pre-user-verification/evidence/checkpoint.json",
-      "bytes": 2765,
-      "sha256": "c20a4a288aa226a6b4c85c36a719257a3bba3a5ff2af0f5d97730453f0435239"
-    },
-    {
-      "path": "history/pre-user-verification/evidence/entry-release-verification.json",
-      "bytes": 203,
-      "sha256": "8554bbc926b26813741d00bbfa29969a02da86c1441ebe6f472327d1aee4c9db"
-    },
-    {
-      "path": "history/pre-user-verification/lineage.json",
-      "bytes": 624,
-      "sha256": "f330209e4faafdf955d9875595ec28160bbf5644f22ba7859dd0a305bfddc15a"
-    },
-    {
-      "path": "history/pre-user-verification/report.md",
-      "bytes": 6181,
-      "sha256": "e5c75f081f46f2e4ddae64bf83ade1cfb71c4e8b4adce62a662d38cbb89a2ec6"
     }
-  ],
-  "user_functional_acceptance": "evidence/pm-user-local-source-receipt.json",
-  "local_functional_status": "evidence/local-functional-final-status.json",
-  "local_functional_gate": "User Verified",
-  "engineering_verifier_at_fixed_commit": "candidate/tools/verify_entry_release.py",
-  "metadata_verification": {
-    "mode": "package files and historical metadata only; no App or real data access",
-    "result": "evidence/user-verified-integrity.json"
-  }
+  ]
 }
