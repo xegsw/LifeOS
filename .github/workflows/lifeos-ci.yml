@@ -75,6 +75,42 @@ jobs:
       - name: Run registered synthetic-only checks
         run: python3 lifeos/tools/lifeos_ci.py run-checks
 
+  p3-146-regression:
+    name: P3-146 offline conversation and memory regression
+    runs-on: macos-14
+    needs: governance-guard
+    timeout-minutes: 30
+    env:
+      CARGO_TARGET_DIR: /private/tmp/lifeos-p3-146-conversation-source-v1/initial-build-cache
+      TMPDIR: /private/tmp/lifeos-p3-146-conversation-source-v1/tmp
+      LIFEOS_P3_146_PROFILE: synthetic
+      PYTHONDONTWRITEBYTECODE: '1'
+    defaults:
+      run:
+        working-directory: lifeos/engineering/LIFEOS-P3-146/candidate
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            lifeos/engineering/LIFEOS-P3-146
+            lifeos/deliverables/LIFEOS-P3-146_natural_conversation_memory_and_source_integration.md
+            lifeos/ci
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Create exclusive synthetic root
+        run: python3 "$GITHUB_WORKSPACE/lifeos/ci/p3_146_ci.py" init
+      - name: Install build toolchain and fetch locked dependencies only
+        run: |
+          rustup toolchain install 1.98.0 --profile minimal --component rustfmt
+          cargo +1.98.0 fetch --locked
+      - name: Run without network or production credentials
+        run: python3 "$GITHUB_WORKSPACE/lifeos/ci/p3_146_ci.py" run
+      - name: Clean only this job synthetic root
+        if: always()
+        run: python3 "$GITHUB_WORKSPACE/lifeos/ci/p3_146_ci.py" cleanup
+
   promote-low-risk:
     if: >-
       github.event_name == 'push' &&
@@ -82,7 +118,7 @@ jobs:
        startsWith(github.ref_name, 'codex/l1-') ||
        startsWith(github.ref_name, 'codex/l2-'))
     runs-on: ubuntu-latest
-    needs: [governance-guard, deterministic-regression]
+    needs: [governance-guard, deterministic-regression, p3-146-regression]
     permissions:
       contents: write
     steps:
