@@ -63,6 +63,9 @@ fn verify_at(root: &Path, spec: &Value) -> Result<PathBuf, Error> {
     }
     Ok(root.to_path_buf())
 }
+pub fn expected_marker() -> Result<Value, Error> {
+    Ok(policy::select(PROFILE).map_err(err)?["marker"].clone())
+}
 pub fn profile_info() -> Result<Value, Error> {
     policy::validate_environment(PROFILE).map_err(err)?;
     Ok(serde_json::json!({"profile":PROFILE,"root":ROOT}))

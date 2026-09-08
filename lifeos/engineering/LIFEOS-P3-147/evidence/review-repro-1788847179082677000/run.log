@@ -1,0 +1,64 @@
+[
+  {
+    "id": "IR-TARGET-CONTROL",
+    "matrix": [
+      "M02",
+      "M04"
+    ],
+    "fixture": "ir-target-control-1788847179082981000",
+    "pid": 47639,
+    "attack": false,
+    "before": {
+      "mode": "0o750",
+      "files": {
+        "canary.txt": "d70711fff4e55810a34b8c702f31170dc6720027f1996435e9725e3099118ef7"
+      }
+    },
+    "after": {
+      "mode": "0o750",
+      "files": {
+        "canary.txt": "d70711fff4e55810a34b8c702f31170dc6720027f1996435e9725e3099118ef7"
+      }
+    },
+    "target_status": [
+      {
+        "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+        "status": "fetched",
+        "target": "https://synthetic.invalid/article"
+      }
+    ],
+    "expected": "successful target fetch",
+    "passed": true
+  },
+  {
+    "id": "IR-TARGET-LINK",
+    "matrix": [
+      "M02",
+      "M04"
+    ],
+    "fixture": "ir-target-link-1788847179082984000",
+    "pid": 47659,
+    "attack": true,
+    "before": {
+      "mode": "0o750",
+      "files": {
+        "canary.txt": "d70711fff4e55810a34b8c702f31170dc6720027f1996435e9725e3099118ef7"
+      }
+    },
+    "after": {
+      "mode": "0o750",
+      "files": {
+        "canary.txt": "d70711fff4e55810a34b8c702f31170dc6720027f1996435e9725e3099118ef7"
+      }
+    },
+    "target_status": [
+      {
+        "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+        "status": "unavailable:artifact_boundary_rejected",
+        "target": "https://synthetic.invalid/article"
+      }
+    ],
+    "expected": "reject symlink before chmod/create; sentinel unchanged",
+    "passed": true
+  }
+]

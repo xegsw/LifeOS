@@ -1,0 +1,135 @@
+test_local_control (__main__.TargetBoundaries.test_local_control) ... ERROR
+test_local_directory_link (__main__.TargetBoundaries.test_local_directory_link) ... ERROR
+test_local_file_link (__main__.TargetBoundaries.test_local_file_link) ... ERROR
+test_local_receipt_failure (__main__.TargetBoundaries.test_local_receipt_failure) ... ERROR
+test_local_staging_link (__main__.TargetBoundaries.test_local_staging_link) ... ERROR
+test_web_control (__main__.TargetBoundaries.test_web_control) ... ERROR
+test_web_directory_link (__main__.TargetBoundaries.test_web_directory_link) ... ERROR
+test_web_file_link (__main__.TargetBoundaries.test_web_file_link) ... ERROR
+test_web_receipt_failure (__main__.TargetBoundaries.test_web_receipt_failure) ... ERROR
+test_web_staging_link (__main__.TargetBoundaries.test_web_staging_link) ... ERROR
+
+======================================================================
+ERROR: test_local_control (__main__.TargetBoundaries.test_local_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 63, in <lambda>
+    setattr(TargetBoundaries,'test_'+kind+'_'+attack.replace('-','_'),lambda self,k=kind,a=attack:self.scenario(k,a))
+                                                                                                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 40, in scenario
+    grant=call('authorize_source_target',{'requestId':'grant','connectorId':'directory','expectedGeneration':s['generation'],'linkId':link,'decision':'grant'});self.assertIn('ok',grant)
+                                                                                                             ~^^^^^^^^^^^^^^
+KeyError: 'generation'
+
+======================================================================
+ERROR: test_local_directory_link (__main__.TargetBoundaries.test_local_directory_link)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 63, in <lambda>
+    setattr(TargetBoundaries,'test_'+kind+'_'+attack.replace('-','_'),lambda self,k=kind,a=attack:self.scenario(k,a))
+                                                                                                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 40, in scenario
+    grant=call('authorize_source_target',{'requestId':'grant','connectorId':'directory','expectedGeneration':s['generation'],'linkId':link,'decision':'grant'});self.assertIn('ok',grant)
+                                                                                                             ~^^^^^^^^^^^^^^
+KeyError: 'generation'
+
+======================================================================
+ERROR: test_local_file_link (__main__.TargetBoundaries.test_local_file_link)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 63, in <lambda>
+    setattr(TargetBoundaries,'test_'+kind+'_'+attack.replace('-','_'),lambda self,k=kind,a=attack:self.scenario(k,a))
+                                                                                                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 40, in scenario
+    grant=call('authorize_source_target',{'requestId':'grant','connectorId':'directory','expectedGeneration':s['generation'],'linkId':link,'decision':'grant'});self.assertIn('ok',grant)
+                                                                                                             ~^^^^^^^^^^^^^^
+KeyError: 'generation'
+
+======================================================================
+ERROR: test_local_receipt_failure (__main__.TargetBoundaries.test_local_receipt_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 63, in <lambda>
+    setattr(TargetBoundaries,'test_'+kind+'_'+attack.replace('-','_'),lambda self,k=kind,a=attack:self.scenario(k,a))
+                                                                                                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 40, in scenario
+    grant=call('authorize_source_target',{'requestId':'grant','connectorId':'directory','expectedGeneration':s['generation'],'linkId':link,'decision':'grant'});self.assertIn('ok',grant)
+                                                                                                             ~^^^^^^^^^^^^^^
+KeyError: 'generation'
+
+======================================================================
+ERROR: test_local_staging_link (__main__.TargetBoundaries.test_local_staging_link)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 63, in <lambda>
+    setattr(TargetBoundaries,'test_'+kind+'_'+attack.replace('-','_'),lambda self,k=kind,a=attack:self.scenario(k,a))
+                                                                                                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 40, in scenario
+    grant=call('authorize_source_target',{'requestId':'grant','connectorId':'directory','expectedGeneration':s['generation'],'linkId':link,'decision':'grant'});self.assertIn('ok',grant)
+                                                                                                             ~^^^^^^^^^^^^^^
+KeyError: 'generation'
+
+======================================================================
+ERROR: test_web_control (__main__.TargetBoundaries.test_web_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 63, in <lambda>
+    setattr(TargetBoundaries,'test_'+kind+'_'+attack.replace('-','_'),lambda self,k=kind,a=attack:self.scenario(k,a))
+                                                                                                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 40, in scenario
+    grant=call('authorize_source_target',{'requestId':'grant','connectorId':'directory','expectedGeneration':s['generation'],'linkId':link,'decision':'grant'});self.assertIn('ok',grant)
+                                                                                                             ~^^^^^^^^^^^^^^
+KeyError: 'generation'
+
+======================================================================
+ERROR: test_web_directory_link (__main__.TargetBoundaries.test_web_directory_link)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 63, in <lambda>
+    setattr(TargetBoundaries,'test_'+kind+'_'+attack.replace('-','_'),lambda self,k=kind,a=attack:self.scenario(k,a))
+                                                                                                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 40, in scenario
+    grant=call('authorize_source_target',{'requestId':'grant','connectorId':'directory','expectedGeneration':s['generation'],'linkId':link,'decision':'grant'});self.assertIn('ok',grant)
+                                                                                                             ~^^^^^^^^^^^^^^
+KeyError: 'generation'
+
+======================================================================
+ERROR: test_web_file_link (__main__.TargetBoundaries.test_web_file_link)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 63, in <lambda>
+    setattr(TargetBoundaries,'test_'+kind+'_'+attack.replace('-','_'),lambda self,k=kind,a=attack:self.scenario(k,a))
+                                                                                                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 40, in scenario
+    grant=call('authorize_source_target',{'requestId':'grant','connectorId':'directory','expectedGeneration':s['generation'],'linkId':link,'decision':'grant'});self.assertIn('ok',grant)
+                                                                                                             ~^^^^^^^^^^^^^^
+KeyError: 'generation'
+
+======================================================================
+ERROR: test_web_receipt_failure (__main__.TargetBoundaries.test_web_receipt_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 63, in <lambda>
+    setattr(TargetBoundaries,'test_'+kind+'_'+attack.replace('-','_'),lambda self,k=kind,a=attack:self.scenario(k,a))
+                                                                                                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 40, in scenario
+    grant=call('authorize_source_target',{'requestId':'grant','connectorId':'directory','expectedGeneration':s['generation'],'linkId':link,'decision':'grant'});self.assertIn('ok',grant)
+                                                                                                             ~^^^^^^^^^^^^^^
+KeyError: 'generation'
+
+======================================================================
+ERROR: test_web_staging_link (__main__.TargetBoundaries.test_web_staging_link)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 63, in <lambda>
+    setattr(TargetBoundaries,'test_'+kind+'_'+attack.replace('-','_'),lambda self,k=kind,a=attack:self.scenario(k,a))
+                                                                                                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-147/candidate/tools/test_target_boundaries.py", line 40, in scenario
+    grant=call('authorize_source_target',{'requestId':'grant','connectorId':'directory','expectedGeneration':s['generation'],'linkId':link,'decision':'grant'});self.assertIn('ok',grant)
+                                                                                                             ~^^^^^^^^^^^^^^
+KeyError: 'generation'
+
+----------------------------------------------------------------------
+Ran 10 tests in 3.314s
+
+FAILED (errors=10)

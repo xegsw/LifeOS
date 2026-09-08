@@ -7,11 +7,7 @@ use crate::{
 };
 use rusqlite::{params, Connection, OptionalExtension};
 use serde_json::{json, Value};
-use std::{
-    fs::{self, File, OpenOptions},
-    io::{Read, Write},
-    os::unix::fs::OpenOptionsExt,
-};
+use std::io::Write;
 type R<T> = Result<T, Error>;
 fn err(s: &str) -> Error {
     Error::new(s)
@@ -146,25 +142,17 @@ fn fetch(fixture: &str, link: &str, generation: i64) -> R<()> {
     }
     source_store::check(&c, &l)?;
     let root = crate::runtime_root::verify()?;
-    let dir = root
-        .join("artifacts")
-        .join(format!("target-{}", &source_api::hex(fixture)[..16]));
-    fs::create_dir_all(&dir).map_err(|_| err("artifact_unavailable"))?;
-    use std::os::unix::fs::PermissionsExt;
-    fs::set_permissions(&dir, fs::Permissions::from_mode(0o700))
-        .map_err(|_| err("artifact_unavailable"))?;
+    let dir = crate::artifact_io::Dir::root()?
+        .child("artifacts", false)?
+        .child(&format!("target-{}", &source_api::hex(fixture)[..16]), true)?;
     let token = format!("target-{}-{}", &source_api::hex(link)[..32], l.generation);
-    let path = dir.join(&token);
+    let mut staging = dir.create(&format!("{token}.staging"))?;
     let mut bytes = vec![];
     if target == "../external/approved.txt" {
         let grant = FileGrant::synthetic(&root.join("fixtures/external"))?;
         let identity = grant.identity("approved.txt")?;
-        grant.copy("approved.txt", &identity, &path)?;
-        File::open(&path)
-            .map_err(|_| err("artifact_unavailable"))?
-            .take(64 * 1024 * 1024 + 1)
-            .read_to_end(&mut bytes)
-            .map_err(|_| err("target_read_failed"))?;
+        grant.copy("approved.txt", &identity, &mut staging)?;
+        bytes = staging.read_limit(64 * 1024 * 1024)?;
     } else {
         // This transport is injected into the same WebSourceAdapter exercised by policy tests.
         let mut child = std::process::Command::new(
@@ -202,15 +190,8 @@ fn fetch(fixture: &str, link: &str, generation: i64) -> R<()> {
             .ok_or_else(|| err("target_unavailable"))?
             .as_bytes()
             .to_vec();
-        let mut f = OpenOptions::new()
-            .write(true)
-            .create_new(true)
-            .mode(0o600)
-            .open(&path)
-            .map_err(|_| err("artifact_unavailable"))?;
-        f.write_all(&bytes)
-            .and_then(|_| f.sync_all())
-            .map_err(|_| err("artifact_write_failed"))?;
+        staging.write_all(&bytes)?;
+        staging.sync()?;
     }
     if bytes.len() > 64 * 1024 * 1024 {
         return Err(err("parse_memory_budget"));
@@ -254,6 +235,8 @@ fn fetch(fixture: &str, link: &str, generation: i64) -> R<()> {
         segments,
         links: vec![],
     };
+    let published = staging.publish(&dir, &imported.artifact_ref)?;
+    published.validate()?;
     source_store::commit_batch(
         &mut c,
         &l,

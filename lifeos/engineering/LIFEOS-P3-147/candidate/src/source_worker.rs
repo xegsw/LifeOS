@@ -8,10 +8,10 @@ use repository::Error;
 use rusqlite::{params, Connection, OptionalExtension, TransactionBehavior};
 use serde_json::{json, Value};
 use sha2::{Digest, Sha256};
+#[cfg(test)]
+use std::fs;
 use std::{
-    fs::{self, File, OpenOptions},
-    io::Read,
-    os::unix::fs::{OpenOptionsExt, PermissionsExt},
+    fs::File,
     path::{Path, PathBuf},
     process::{Command, Stdio},
     time::{Duration, Instant},
@@ -144,45 +144,16 @@ pub fn scan_page(c: &mut Connection, l: &Lease) -> R<bool> {
     tx.commit()?;
     Ok(true)
 }
-fn artifact_dir(c: &Connection, l: &Lease) -> R<PathBuf> {
-    let base = Path::new(ROOT).join("artifacts");
-    if !base.exists() {
-        fs::create_dir(&base).map_err(|_| err("artifact_unavailable"))?;
-        fs::set_permissions(&base, fs::Permissions::from_mode(0o700))
-            .map_err(|_| err("artifact_unavailable"))?;
-    }
-    let bm = fs::symlink_metadata(&base).map_err(|_| err("artifact_unavailable"))?;
-    if !bm.is_dir() || bm.file_type().is_symlink() {
-        return Err(err("artifact_unavailable"));
-    }
-    let p = base.join(stable(&format!(
-        "{}:{}",
-        c.path().unwrap_or("memory"),
-        l.connector
-    )));
-    match fs::create_dir(&p) {
-        Ok(()) => fs::set_permissions(&p, fs::Permissions::from_mode(0o700))
-            .map_err(|_| err("artifact_unavailable"))?,
-        Err(e) if e.kind() == std::io::ErrorKind::AlreadyExists => (),
-        _ => return Err(err("artifact_unavailable")),
-    };
-    let m = fs::symlink_metadata(&p).map_err(|_| err("artifact_unavailable"))?;
-    if !m.is_dir() || m.file_type().is_symlink() || m.permissions().mode() & 0o777 != 0o700 {
-        return Err(err("artifact_unavailable"));
-    }
-    Ok(p)
+fn artifact_dir(c: &Connection, l: &Lease) -> R<crate::artifact_io::Dir> {
+    crate::artifact_io::Dir::root()?
+        .child("artifacts", false)?
+        .child(
+            &stable(&format!("{}:{}", c.path().unwrap_or("memory"), l.connector)),
+            true,
+        )
 }
-fn parse(file: File, ext: &str, output: &Path) -> R<Value> {
-    let verified_root = crate::runtime_root::verify()?;
-    if output.parent() != Some(verified_root.join(".runtime").as_path()) {
-        return Err(err("parser_output_failed"));
-    }
-    let out = OpenOptions::new()
-        .write(true)
-        .create_new(true)
-        .mode(0o600)
-        .open(output)
-        .map_err(|_| err("parser_output_failed"))?;
+fn parse(file: File, ext: &str, out: &mut crate::artifact_io::OwnedFile) -> R<Value> {
+    out.validate()?;
     let mut child = Command::new(
         "/Users/xxe/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
     )
@@ -192,9 +163,9 @@ fn parse(file: File, ext: &str, output: &Path) -> R<Value> {
         ext,
     ])
     .stdin(Stdio::from(file))
-    .stdout(Stdio::from(out))
+    .stdout(Stdio::from(out.descriptor()?))
     .stderr(Stdio::null())
-    .env("TMPDIR", verified_root.join(".runtime"))
+    .env("TMPDIR", Path::new(ROOT).join(".runtime"))
     .spawn()
     .map_err(|_| err("parser_dependency_missing"))?;
     let start = Instant::now();
@@ -216,24 +187,22 @@ fn parse(file: File, ext: &str, output: &Path) -> R<Value> {
             .ok()
             .and_then(|o| String::from_utf8(o.stdout).ok())
             .and_then(|s| s.trim().parse::<u64>().ok());
-        if rss.is_some_and(|kb| kb > 64 * 1024)
-            || fs::metadata(output).is_ok_and(|m| m.len() > 64 * 1024 * 1024)
-        {
+        let length = match out.len() {
+            Ok(n) => n,
+            Err(e) => {
+                let _ = child.kill();
+                let _ = child.wait();
+                return Err(e);
+            }
+        };
+        if rss.is_some_and(|kb| kb > 64 * 1024) || length > 64 * 1024 * 1024 {
             let _ = child.kill();
             let _ = child.wait();
             return Err(err("parse_memory_budget"));
         }
         std::thread::sleep(Duration::from_millis(10));
     }
-    let mut f = File::open(output).map_err(|_| err("parser_failed"))?;
-    let mut bytes = vec![];
-    f.by_ref()
-        .take(64 * 1024 * 1024 + 1)
-        .read_to_end(&mut bytes)
-        .map_err(|_| err("parser_failed"))?;
-    if bytes.len() > 64 * 1024 * 1024 {
-        return Err(err("parse_memory_budget"));
-    }
+    let bytes = out.read_limit(64 * 1024 * 1024)?;
     serde_json::from_slice(&bytes).map_err(|_| err("parser_failed"))
 }
 pub fn import_one(c: &mut Connection, l: &Lease) -> R<bool> {
@@ -271,14 +240,15 @@ pub fn import_one(c: &mut Connection, l: &Lease) -> R<bool> {
     let version = prior.map(|v| v.0 + 1).unwrap_or(1);
     let token = format!("{}-{version}-{}", id, l.epoch);
     let dir = artifact_dir(c, l)?;
-    let staging = dir.join(format!("{token}.staging"));
+    let staging_name = format!("{token}.staging");
     // Existing interrupted staging is isolated, never overwritten or treated as success.
-    if fs::symlink_metadata(&staging).is_ok() {
+    if dir.exists(&staging_name)? {
         c.execute("UPDATE import_jobs SET state='pending_recovery',counters='{\"reason\":\"staging_requires_recovery\"}' WHERE id=?",[&id])?;
         return Ok(true);
     }
     source_store::check(c, l)?;
-    let (fingerprint, bytes) = match grant.copy(reference, &identity, &staging) {
+    let mut staging = dir.create(&staging_name)?;
+    let (fingerprint, bytes) = match grant.copy(reference, &identity, &mut staging) {
         Ok(v) => v,
         Err(e) => {
             c.execute(
@@ -294,31 +264,19 @@ pub fn import_one(c: &mut Connection, l: &Lease) -> R<bool> {
         .and_then(|x| x.to_str())
         .map(|s| format!(".{}", s.to_lowercase()))
         .unwrap_or_default();
-    let runtime = Path::new(ROOT).join(".runtime");
-    if !runtime.exists() {
-        fs::create_dir(&runtime).map_err(|_| err("runtime_unavailable"))?;
-        fs::set_permissions(&runtime, fs::Permissions::from_mode(0o700))
-            .map_err(|_| err("runtime_unavailable"))?;
-    }
-    let metadata = fs::symlink_metadata(&runtime).map_err(|_| err("runtime_unavailable"))?;
-    if !metadata.is_dir() || metadata.permissions().mode() & 0o777 != 0o700 {
-        return Err(err("runtime_rejected"));
-    }
+    let runtime = crate::artifact_io::Dir::root()?.child(".runtime", false)?;
     let parsed = if bytes > 64 * 1024 * 1024 {
         json!({"status":"pending","reason":"parse_memory_budget","segments":[]})
     } else {
-        match parse(
-            File::open(&staging).map_err(|_| err("artifact_unavailable"))?,
-            &ext,
-            &runtime.join(format!(
-                "{}-{token}-{}.parsed",
-                dir.file_name().unwrap().to_string_lossy(),
-                std::time::SystemTime::now()
-                    .duration_since(std::time::UNIX_EPOCH)
-                    .unwrap()
-                    .as_nanos()
-            )),
-        ) {
+        let mut output = runtime.create(&format!(
+            "{}-{token}-{}.parsed",
+            stable(c.path().unwrap_or("memory")),
+            std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap()
+                .as_nanos()
+        ))?;
+        match parse(staging.descriptor()?, &ext, &mut output) {
             Ok(v) => v,
             Err(e) => json!({"status":"unparsed","reason":e.code,"segments":[]}),
         }
@@ -327,12 +285,8 @@ pub fn import_one(c: &mut Connection, l: &Lease) -> R<bool> {
     if grant.identity(reference)? != identity {
         return Err(err("source_changed"));
     }
-    // hard_link is an atomic no-overwrite publication; source remains as recoverable staging.
-    let final_path = dir.join(&token);
-    fs::hard_link(&staging, &final_path).map_err(|_| err("artifact_publish_failed"))?;
-    File::open(&dir)
-        .and_then(|f| f.sync_all())
-        .map_err(|_| err("artifact_sync_failed"))?;
+    // Exclusive final inode populated from the held staging FD; DB exposes it only after sync.
+    let published = staging.publish(&dir, &token)?;
     let segments = parsed["segments"]
         .as_array()
         .map(|a| {
@@ -363,6 +317,7 @@ pub fn import_one(c: &mut Connection, l: &Lease) -> R<bool> {
             })
             .unwrap_or_default(),
     };
+    published.validate()?;
     source_store::commit_batch(c, l, &[item], &format!("import:{}:{}", &id[..32], l.epoch))?;
     Ok(true)
 }
@@ -458,31 +413,14 @@ mod tests {
 pub fn recover(c: &Connection, l: &Lease) -> R<usize> {
     source_store::check(c, l)?;
     let dir = artifact_dir(c, l)?;
-    let quarantine = dir.join("quarantine");
-    match fs::create_dir(&quarantine) {
-        Ok(()) => fs::set_permissions(&quarantine, fs::Permissions::from_mode(0o700))
-            .map_err(|_| err("recovery_failed"))?,
-        Err(e) if e.kind() == std::io::ErrorKind::AlreadyExists => (),
-        _ => return Err(err("recovery_failed")),
-    };
-    let m = fs::symlink_metadata(&quarantine).map_err(|_| err("recovery_failed"))?;
-    if !m.is_dir() || m.file_type().is_symlink() {
-        return Err(err("recovery_failed"));
-    }
+    let quarantine = dir.child("quarantine", true)?;
     let mut count = 0;
-    for entry in fs::read_dir(&dir).map_err(|_| err("recovery_failed"))? {
-        let entry = entry.map_err(|_| err("recovery_failed"))?;
-        if entry.file_name() == "quarantine" {
+    for name in dir.entries()? {
+        if name == "quarantine" {
             continue;
         }
-        let meta = entry.file_type().map_err(|_| err("recovery_failed"))?;
-        if !meta.is_file() || meta.is_symlink() {
-            return Err(err("recovery_type_rejected"));
-        }
-        let name = entry
-            .file_name()
-            .into_string()
-            .map_err(|_| err("recovery_type_rejected"))?;
+        // Open/type/identity check on the anchored FD, never read_dir(entry.path()).
+        let file = dir.open(&name)?;
         let referenced: bool = c.query_row(
             "SELECT EXISTS(SELECT 1 FROM source_artifacts WHERE opaque_ref=?)",
             [&name],
@@ -491,17 +429,16 @@ pub fn recover(c: &Connection, l: &Lease) -> R<usize> {
         if referenced {
             continue;
         }
-        // Quarantine without overwrite; source filename is task-generated, never a source path.
-        let destination = quarantine.join(format!(
+        file.validate()?;
+        let destination = format!(
             "{}-{}",
             name,
             std::time::SystemTime::now()
                 .duration_since(std::time::UNIX_EPOCH)
                 .unwrap()
                 .as_nanos()
-        ));
-        fs::hard_link(entry.path(), &destination).map_err(|_| err("recovery_failed"))?;
-        fs::remove_file(entry.path()).map_err(|_| err("recovery_failed"))?;
+        );
+        dir.quarantine(&name, &quarantine, &destination)?;
         count += 1;
     }
     c.execute(

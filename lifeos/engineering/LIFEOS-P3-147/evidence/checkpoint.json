@@ -2,12 +2,12 @@
   "schema": "lifeos.execution-checkpoint.v1",
   "task_id": "LIFEOS-P3-147",
   "attempt_id": "attempt-1",
-  "updated_at": "2026-09-08T05:32:28.151188+00:00",
+  "updated_at": "2026-09-08T06:11:03.280300+00:00",
   "task_contract_sha256": "6cfcd9c5c53fd91a847b003262f9b39b057c5cc4d65b268d050a0aef348e4e06",
-  "candidate_sha256": "23349765174036d834261311232915dd1705431159e5dbeda1e1fbbaf2678d89",
+  "candidate_sha256": "61a944c5b568fd39b40efd8ec25bfcbf0656ca25352d6e8e4d6a75db4c49d79f",
   "baseline_sha256": "f56223ad92f5b86c42f4bd60303ca6c892c3f9c1",
-  "stage": "manifest",
-  "status": "completed_synthetic_engineering",
+  "stage": "engineering_handoff",
+  "status": "engineering_repair_complete_pending_independent_delta",
   "pause_class": null,
   "pause_reason_code": null,
   "completed_checks": [
@@ -40,10 +40,16 @@
     "root_closure_63_current_tests",
     "14_web_evidence_reused",
     "new_binary_native_desktop_narrow",
-    "root_closure_writers_stopped"
+    "root_closure_writers_stopped",
+    "artifact_fd_chain",
+    "65_current_tests",
+    "29_history_tests_reused",
+    "2_review_counterexample_engineering_reproductions",
+    "final_artifact_binary_desktop_narrow",
+    "artifact_closure_writers_stopped"
   ],
   "pending_checks": [
-    "independent_security_gate",
+    "independent_delta_and_8_unfinished_rows",
     "real_user_gate",
     "pm_final"
   ],
@@ -59,9 +65,9 @@
     "database_closed": true,
     "temporary_root_state": "owned_retained"
   },
-  "resume_from": "independent_security_gate",
+  "resume_from": "independent_delta_and_8_unfinished_rows",
   "safe_to_resume": true,
-  "notes": "Root closure engineering complete: 63 current tests + 14 unchanged Web evidence; review compile-only, no review root contact. Independent dynamic review remains pending.",
-  "mutation_class": "authorized_same_contract_candidate_delta",
+  "notes": "IR-P0-147-001 repaired and affected checks complete; original Rework retained; independent closure pending.",
+  "mutation_class": "authorized_same_contract_artifact_safety_delta",
   "historical_assets_mutated": false
 }

@@ -1,0 +1,25 @@
+{
+  "scope": "approved synthetic engineering checks; independent security and real-user gates separate",
+  "steps": [
+    {
+      "name": "format",
+      "exit_code": 0
+    },
+    {
+      "name": "build",
+      "exit_code": 0
+    },
+    {
+      "name": "rust",
+      "exit_code": 0
+    },
+    {
+      "name": "inherited",
+      "exit_code": 0
+    },
+    {
+      "name": "target_boundaries",
+      "exit_code": 1
+    }
+  ]
+}

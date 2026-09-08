@@ -1,4 +1,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+mod artifact_io;
 mod repository;
 mod runtime_root;
 mod source_api;

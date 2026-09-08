@@ -12,7 +12,7 @@ LIFEOS_P3_147_BUILD_PROFILE=engineering python3 -B lifeos/engineering/LIFEOS-P3-
 
 脚本校验/创建唯一合成根 marker，首次创建合成来源夹具；不覆盖既有来源。使用本机锁定离线 Cargo、Node/Python 和 Swift。每次结果写新的 `evidence/checks-时间/`。需要补跑时，脚本可接收逗号分隔阶段名，例如 `ui_build,build,public_api`，不重跑无关阶段。
 
-77项：Rust16、解析11、注入Web14、Application/继承31（原30+来源上下文1）、公共IPC生命周期1、root profile4。格式、UI生成、离线构建及别名辅助程序构建另计。
+94项：Rust23、解析11、注入Web14、Application/继承31（原30+来源上下文1）、公共IPC生命周期1、root profile4、target_boundaries10。此次实际复跑65项，解析11/Web14/root profile4共29项为未改历史复用；原review runner工程适配2例另计。可指定 `format,build,rust,inherited,target_boundaries,public_api` 复跑受影响链路。格式、UI生成、离线构建及别名辅助程序构建另计。
 
 ## 打开实际 App
 
@@ -61,3 +61,7 @@ python3 -B /private/tmp/lifeos-p3-147-independent-review-v1/work/candidate/tools
 如取原生Evidence，先在同一review根用 `swiftc -module-cache-path "$TMPDIR/../swift-cache" work/candidate/tools/native_evidence.swift -o "$TMPDIR/../native_evidence"`（工作目录为review根），再用副本 `record_app_evidence.py 唯一标签 直接启动PID`。不得复用工程PID/窗口/截图/DB。独立会话按自身合同保留或marker验证后清理，工程会话不操作review根。
 
 `history/pre-root-closure/`保全双根修复前259项工程文件和报告，其旧“工程完成”只为当时交付事实。Closure只修正评审可运行性；Independent/真实Gate/PM最终仍待完成。
+
+## artifact安全修正交付
+
+原640ebb6候选及独立P0历史保全在history/pre-artifact-closure；本次工程修正不覆盖原Rework。新固定提交须由PM重新绑定Independent Delta及原未完成8行。完整文件差异见evidence/artifact-closure-diff.json，代码差异使用该固定父提交与新提交之间的git diff。

@@ -1,0 +1,664 @@
+{
+  "binary_sha256": "06cddf367f1c58c9689630911c996de7591b95a83d67ad5f7d5c8650af88fe53",
+  "source_mutated": false,
+  "results": [
+    {
+      "id": "IR-TARGET-CONTROL",
+      "matrix": [
+        "M02",
+        "M04"
+      ],
+      "fixture": "ir-target-control",
+      "pid": 44705,
+      "attack": false,
+      "before": {
+        "mode": "0o750",
+        "files": {
+          "canary.txt": "d70711fff4e55810a34b8c702f31170dc6720027f1996435e9725e3099118ef7"
+        }
+      },
+      "after": {
+        "mode": "0o750",
+        "files": {
+          "canary.txt": "d70711fff4e55810a34b8c702f31170dc6720027f1996435e9725e3099118ef7"
+        }
+      },
+      "target_status": [
+        {
+          "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+          "status": "fetched",
+          "target": "https://synthetic.invalid/article"
+        }
+      ],
+      "expected": "successful target fetch",
+      "passed": true,
+      "events": [
+        {
+          "request": {
+            "ipc": "connect_source_directory",
+            "request": {
+              "version": 1,
+              "payload": {
+                "requestId": "ir-target-control-connect"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectorId": "directory",
+              "grantGeneration": 1,
+              "jobId": "job:directory:1",
+              "status": "active"
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 0,
+                  "error": null,
+                  "failed": 0,
+                  "files": [],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [],
+                  "parsed": 0,
+                  "pending": 0,
+                  "processed": 0,
+                  "scanComplete": false,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 1,
+                  "error": null,
+                  "failed": 0,
+                  "files": [],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [],
+                  "parsed": 0,
+                  "pending": 1,
+                  "processed": 0,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 1,
+                  "error": null,
+                  "failed": 0,
+                  "files": [],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [],
+                  "parsed": 0,
+                  "pending": 1,
+                  "processed": 0,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 1,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": null,
+                      "sourceRef": "b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58",
+                      "status": "parsed",
+                      "title": "review.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+                      "status": "awaiting_target_grant",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 1,
+                  "pending": 0,
+                  "processed": 1,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "authorize_source_target",
+            "request": {
+              "version": 1,
+              "payload": {
+                "requestId": "ir-target-control-grant",
+                "connectorId": "directory",
+                "expectedGeneration": 1,
+                "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+                "decision": "grant"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "grantGeneration": 1,
+              "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+              "status": "fetch_pending"
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 1,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": null,
+                      "sourceRef": "b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58",
+                      "status": "parsed",
+                      "title": "review.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+                      "status": "fetch_pending",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 1,
+                  "pending": 0,
+                  "processed": 1,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 1,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": null,
+                      "sourceRef": "b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58",
+                      "status": "parsed",
+                      "title": "review.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+                      "status": "fetch_pending",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 1,
+                  "pending": 0,
+                  "processed": 1,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 1,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": null,
+                      "sourceRef": "b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58",
+                      "status": "parsed",
+                      "title": "review.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+                      "status": "fetch_pending",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 1,
+                  "pending": 0,
+                  "processed": 1,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 1,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": null,
+                      "sourceRef": "b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58",
+                      "status": "parsed",
+                      "title": "review.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+                      "status": "fetched",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 1,
+                  "pending": 0,
+                  "processed": 1,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "IR-TARGET-LINK",
+      "matrix": [
+        "M02",
+        "M04"
+      ],
+      "fixture": "ir-target-link",
+      "pid": 44713,
+      "attack": true,
+      "before": {
+        "mode": "0o750",
+        "files": {
+          "canary.txt": "d70711fff4e55810a34b8c702f31170dc6720027f1996435e9725e3099118ef7"
+        }
+      },
+      "after": {
+        "mode": "0o700",
+        "files": {
+          "target-1f377adff16b2d3ce0a2dae20be0033f-1": "e672f371cd1bc5789371d7c0bec0cb3b7365bd75d259027858f632fb2534fc7e",
+          "canary.txt": "d70711fff4e55810a34b8c702f31170dc6720027f1996435e9725e3099118ef7"
+        }
+      },
+      "target_status": [
+        {
+          "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+          "status": "fetched",
+          "target": "https://synthetic.invalid/article"
+        }
+      ],
+      "expected": "reject symlink before chmod/create; sentinel unchanged",
+      "passed": false,
+      "events": [
+        {
+          "request": {
+            "ipc": "connect_source_directory",
+            "request": {
+              "version": 1,
+              "payload": {
+                "requestId": "ir-target-link-connect"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectorId": "directory",
+              "grantGeneration": 1,
+              "jobId": "job:directory:1",
+              "status": "active"
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 0,
+                  "error": null,
+                  "failed": 0,
+                  "files": [],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [],
+                  "parsed": 0,
+                  "pending": 0,
+                  "processed": 0,
+                  "scanComplete": false,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 1,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": null,
+                      "sourceRef": "b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58",
+                      "status": "parsed",
+                      "title": "review.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+                      "status": "awaiting_target_grant",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 1,
+                  "pending": 0,
+                  "processed": 1,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "authorize_source_target",
+            "request": {
+              "version": 1,
+              "payload": {
+                "requestId": "ir-target-link-grant",
+                "connectorId": "directory",
+                "expectedGeneration": 1,
+                "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+                "decision": "grant"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "grantGeneration": 1,
+              "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+              "status": "fetch_pending"
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 1,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": null,
+                      "sourceRef": "b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58",
+                      "status": "parsed",
+                      "title": "review.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+                      "status": "fetch_pending",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 1,
+                  "pending": 0,
+                  "processed": 1,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 1,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": null,
+                      "sourceRef": "b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58",
+                      "status": "parsed",
+                      "title": "review.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:b37e0805ed6fddb7839bbbff3a3b529bf799f67860bbad87f9d52030ed5e1d58:1:0",
+                      "status": "fetched",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 1,
+                  "pending": 0,
+                  "processed": 1,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "writers_stopped": true
+}

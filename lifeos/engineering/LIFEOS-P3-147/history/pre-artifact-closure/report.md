@@ -2,7 +2,7 @@
 
 ## 当前结论
 
-**IR-P0-147-001 同合同工程修正与受影响验证完成；原独立评审 Rework 保留，等待 Independent Delta、原未完成8行、真实亲验与PM终局。** 本报告不宣布真实能力、Frozen Schema、风险关闭或Stage提升。
+**已授权合成工程阶段完成，提交PM及独立安全Gate；P3-147整体仍待独立安全评审、真实亲验与PM终局。** 本报告不宣布真实能力、Frozen Schema、风险关闭或Stage提升。
 
 任务卡：`/Users/xxe/.codex/worktrees/5ed8/No.2/lifeos/tasks/LIFEOS-P3-147_obsidian_readonly_source_and_conversation_memory_integration.md`，顶部公共接口批准及Revision4优先。原待批准报告/候选/Manifest在`lifeos/engineering/LIFEOS-P3-147/history/pre-public-api/`保全。当前不再等待五项接口批准。
 
@@ -24,16 +24,6 @@ Settings → 数据与隐私 → 来源可连接本任务合成目录，自动�
 
 本会话仅使用工程根动态验证；review profile只纯配置和编译，不访问、stat、创建或清理实际review根。REPLAY提供固定40位Git提交→逐blob/hash验证→review-owned源码/helper/缓存/DB/App/Evidence的独立运行入口。该入口的review根动态执行留给独立会话，不借本工程自检宣称独立通过。
 
-## IR-P0-147-001 artifact安全Closure
-
-原固定提交 `640ebb6fe8d87398a05940b30f1263dad157dfa0` 的target artifact子目录链接可被字符串路径create/chmod跟随，导致哨兵0750变0700并写入，仍报fetched。这是有效候选P0，不是环境或Key问题。原566项工程文件逐Git blob归档在 `history/pre-artifact-closure/snapshot.tar.gz`，附旧Manifest、旧报告、lineage及原review/runner/results；旧历史不改写。
-
-新增 `artifact_io.rs` 持有从根逐组件打开的目录FD链；mkdirat/openat相对FD创建，O_NOFOLLOW、O_EXCL、0700/0600及inode/owner/mode检查，不chmod既有目录。Web与local target、worker staging、parser stdin/stdout和缓存读取、最终发布与recovery均使用持有FD；发布从staging FD复制到排他新文件，sync及验证后才提交数据库，不按路径重开staging。恢复使用两个目录FD间排他renameatx_np，不覆盖既有文件。
-
-确定性TOCTOU测试在生产检查与操作之间替换祖先/文件：FD操作至多作用于原持有inode，随后边界拒绝，不跟随替换链接或修改哨兵。10项Web/local控制、目录链接、最终文件链接、staging链接、DB回执故障覆盖内容和权限不变、失败无fetched；7项Rust新增覆盖祖先替换、parser、发布与隔离。原review反例2项仅适配到工程自有根执行，不能作为Independent Pass。
-
-失败发布或DB失败可保留无数据库引用的孤儿文件，待已有recovery处理；不声称文件系统与SQLite间有对任意同UID并发进程的全局原子事务。测试哨兵和所有写入仅在工程自有合成根；实际review根及真实根未访问。UI、25IPC、Schema、Provider和root配置未变。详细修正与限制见 `design/artifact-safety-closure.md`。
-
 ## 实际格式支持
 
 | 格式 | 当前行为 |
@@ -50,23 +40,23 @@ Settings → 数据与隐私 → 来源可连接本任务合成目录，自动�
 
 ## 验证与原生App
 
-本次artifact安全Closure实际复跑65项通过：Rust23、Application/继承31、目标边界10、公共IPC生命周期1；另用原review runner在工程根适配复现2例，正常与攻击均符合预期。显式复用未改解析11、Web策略14、根profile4，共29项历史结果；组合自动回归94项，原反例2例另计，不能称96项新测。当前review profile只做 `cargo check --tests --locked --offline`，通过且未接触review运行根；原四项构建门证据复用。格式和当前离线构建通过。证据路径见AC矩阵。
+双根Closure本轮复跑63项通过：Rust16、解析11、Application/继承31、公共IPC完整生命周期1、根profile4；另显式复用未改Web策略的14项历史结果，组合覆盖77项。review profile `cargo check --tests --locked --offline`通过，未知profile、缺少profile、任意root覆盖三类构建负门均拒绝。构建、格式和UI生成另计。逐项原始证据和最后受影响复跑路径见`lifeos/engineering/LIFEOS-P3-147/evidence/AC_MATRIX.md`。
 
 覆盖规模越旧上限、暂停/取消/恢复、原件身份替换/缺失、配置诱饵、预算失败、receipt故障回滚、目标父版本/撤权、旧packet重放、刷新后旧cursor拒绝。检索是有限词项匹配，不宣称语义向量检索或通用模型理解。
 
-最终运行二进制SHA256：`82d3de671bfbe855ab642daca8c8c9d1d4942f890bd7afdf4e43c2b22a236a64`。直接启动PID47688（1280×949桌面）和47780（700×760窄窗口）形成最终同名AXWindow→AXWebArea→窗口截图/几何链；窗口从**该PID的AXMainWindow**读取，没有借用系统前台或别的PID。最后截图见`app-artifact-desktop-detail.*`、`app-artifact-desktop-disconnected.*`、`app-artifact-narrow-restart.*`、`app-artifact-narrow-empty-search.*`。
+最终运行二进制SHA256：`44f1ecbccf9aeacaadbcb3f5b600b8d4c46ef9946a0e2459733e338ef82e4700`。直接启动PID42432（1280×949桌面）和42528（700×760窄窗口）形成最终同名AXWindow→AXWebArea→窗口截图/几何链；窗口从**该PID的AXMainWindow**读取，没有借用系统前台或别的PID。最后截图见`app-root-closure-desktop-detail.*`、`app-root-closure-desktop-disconnected.*`、`app-root-closure-narrow-restart.*`、`app-root-closure-narrow-empty-search.*`。
 
-早期原生步骤已验证自动导入、保存自然表达后3条依据、具体合成网页目标正文、暂停/继续及取消/刷新。此次artifact Closure重新验证新binary接入、两类目标正文获取、检索、原文、断开和重启，不重跑未改的全部早期视觉矩阵。原先空白/AX无窗口及CUA noWindowsAvailable等记录保留；恢复后补取最终构建证据，未借环境失败重写历史或虚报通过。CUA自动重启的PID33031未用于正证据，已核对自身可执行路径后停止。
+早期原生步骤已验证自动导入、保存自然表达后3条依据、具体合成网页目标正文、暂停/继续及取消/刷新。此次根Closure重新验证新binary接入、两类目标正文获取、检索、原文、断开和重启，不重跑未改的全部早期视觉矩阵。原先空白/AX无窗口及CUA noWindowsAvailable等记录保留；恢复后补取最终构建证据，未借环境失败重写历史或虚报通过。CUA自动重启的PID33031未用于正证据，已核对自身可执行路径后停止。
 
 所有已知本任务App PID已停止；合成根及可操作App保留供PM复现，没有执行物理删除。App：`/private/tmp/lifeos-p3-147-obsidian-source-v1/LifeOS P3-147.app`。启动、首次夹具准备、离线复跑与marker清理入口见`lifeos/engineering/LIFEOS-P3-147/REPLAY.md`。
 
 ## 角色、关卡及未关闭事项
 
-主责技术工程；数据/来源、AI信任安全、体验为执行侧检查视角。Gate2/3/4的合成工程自检证据已提交；原独立安全评审已发现有效P0并判Rework；本工程不能覆盖其结论。PM需将原Frozen ABF绑定新固定候选，安排Independent Delta和原未完成8行；真实亲验Gate5及PM终局仍Pending。本执行报告不冻结资产。
+主责技术工程；数据/来源、AI信任安全、体验为执行侧检查视角。Gate2/3/4的合成工程自检证据已提交；独立安全判断、真实亲验Gate5及PM最终验收尚未执行。正式ABF由PM在独立安全阶段绑定，本执行报告不冻结资产。
 
-IR-P0-147-001的工程修正自检通过，但独立关闭仍待确认；原评审P0=1及Not Implemented=8保持历史事实，不将未执行的独立行计为通过。已声明的不支持格式、未启用OCR/转写/真实网络是合同边界，不包装为已实现。非阻断P2：继承SPA切页时可能保留滚动位置；可滚回页首，新详情入口已自动定位，此既有导航体验可进入Backlog，非本次来源授权/正文正确性缺口。
+工程自检未发现未关闭P0/P1或已授权合成范围内的Unknown/Not Implemented。已声明的不支持格式、未启用OCR/转写/真实网络是合同边界，不包装为已实现。非阻断P2：继承SPA切页时可能保留滚动位置；可滚回页首，新详情入口已自动定位，此既有导航体验可进入Backlog，非本次来源授权/正文正确性缺口。
 
-需PM：核对修正包、完整diff与逐行矩阵，绑定新固定候选并安排Independent Delta及原未完成8行；独立Pass后再按用户授权安排真实亲验。当前无需Key，不启动后继任务，不修改PM账本，不推送或合并L3分支。
+需PM：核对工程包与逐行矩阵，绑定正式ABF并按任务卡分派独立安全评审；独立Pass后再按用户授权安排真实亲验。当前无需Key，不启动后继任务，不修改PM账本，不推送或合并L3分支。
 
 ## 交付与溯源
 

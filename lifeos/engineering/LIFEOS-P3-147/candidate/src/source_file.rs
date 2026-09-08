@@ -4,11 +4,11 @@ use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 use std::{
     ffi::{CStr, CString},
-    fs::{File, OpenOptions},
-    io::{Read, Write},
+    fs::File,
+    io::Read,
     os::{
         fd::{AsRawFd, FromRawFd},
-        unix::fs::{MetadataExt, OpenOptionsExt},
+        unix::fs::MetadataExt,
     },
     path::Path,
     time::{Duration, Instant},
@@ -61,11 +61,9 @@ impl FileGrant {
         {
             return Err(err("grant_rejected"));
         }
-        let mut f = OpenOptions::new()
-            .read(true)
-            .custom_flags(libc::O_DIRECTORY | libc::O_NOFOLLOW | libc::O_CLOEXEC)
-            .open(allowed)
-            .map_err(|_| err("grant_unavailable"))?;
+        let mut f = crate::artifact_io::Dir::root()?
+            .child("fixtures", false)?
+            .descriptor()?;
         for c in root.strip_prefix(allowed).unwrap().components() {
             f = openat(
                 &f,
@@ -286,19 +284,15 @@ impl FileGrant {
         &self,
         reference: &str,
         expected: &Identity,
-        destination: &Path,
+        out: &mut crate::artifact_io::OwnedFile,
     ) -> R<(String, u64)> {
         let mut f = self.file(reference)?;
+        if out.len()? != 0 {
+            return Err(err("artifact_unavailable"));
+        }
         if identity(&f)? != *expected {
             return Err(err("source_changed"));
         }
-        let mut out = OpenOptions::new()
-            .write(true)
-            .create_new(true)
-            .mode(0o600)
-            .custom_flags(libc::O_NOFOLLOW | libc::O_CLOEXEC)
-            .open(destination)
-            .map_err(|_| err("artifact_unavailable"))?;
         let start = Instant::now();
         let mut digest = Sha256::new();
         let mut bytes = 0;
@@ -308,8 +302,7 @@ impl FileGrant {
             if n == 0 {
                 break;
             }
-            out.write_all(&buf[..n])
-                .map_err(|_| err("artifact_write_failed"))?;
+            out.write_all(&buf[..n])?;
             digest.update(&buf[..n]);
             bytes += n as u64;
             if start.elapsed() > Duration::from_secs(30) {
@@ -319,7 +312,7 @@ impl FileGrant {
         if identity(&f)? != *expected || self.identity(reference)? != *expected {
             return Err(err("source_changed"));
         }
-        out.sync_all().map_err(|_| err("artifact_sync_failed"))?;
+        out.sync()?;
         Ok((format!("{:x}", digest.finalize()), bytes))
     }
 }
@@ -408,14 +401,29 @@ mod tests {
         let old = grant.identity("note-0.txt").unwrap();
         std::fs::write(p.join("note-0.txt"), b"changed synthetic").unwrap();
         assert!(grant
-            .copy("note-0.txt", &old, &p.join("copy-rejected"))
+            .copy(
+                "note-0.txt",
+                &old,
+                &mut crate::artifact_io::Dir::root()
+                    .unwrap()
+                    .child("artifacts", false)
+                    .unwrap()
+                    .create(&format!("copy-rejected-{}", std::process::id()))
+                    .unwrap()
+            )
             .is_err());
         assert!(!p.join("copy-rejected").exists());
         let now = grant.identity("note-0.txt").unwrap();
-        let copy = p.join("copy");
-        assert_eq!(grant.copy("note-0.txt", &now, &copy).unwrap().1, 17);
-        assert_eq!(std::fs::read(&copy).unwrap(), b"changed synthetic");
-        assert!(grant.copy("note-0.txt", &now, &copy).is_err());
+        let outdir = crate::artifact_io::Dir::root()
+            .unwrap()
+            .child("artifacts", false)
+            .unwrap();
+        let mut out = outdir
+            .create(&format!("copy-good-{}", std::process::id()))
+            .unwrap();
+        assert_eq!(grant.copy("note-0.txt", &now, &mut out).unwrap().1, 17);
+        assert_eq!(out.read_limit(100).unwrap(), b"changed synthetic");
+        assert!(grant.copy("note-0.txt", &now, &mut out).is_err());
     }
 }
 #[cfg(test)]
@@ -457,11 +465,28 @@ mod scale_tests {
         let expected = grant.identity(&r).unwrap();
         assert_eq!(
             grant
-                .copy(&r, &expected, &root.join("large-copy"))
+                .copy(
+                    &r,
+                    &expected,
+                    &mut crate::artifact_io::Dir::root()
+                        .unwrap()
+                        .child("artifacts", false)
+                        .unwrap()
+                        .create(&format!("large-copy-{}", std::process::id()))
+                        .unwrap()
+                )
                 .unwrap()
                 .1,
             300 * 1024
         );
-        assert_eq!(std::fs::read(root.join("large-copy")).unwrap(), content);
+        assert_eq!(
+            std::fs::read(
+                Path::new(crate::runtime_root::ROOT)
+                    .join("artifacts")
+                    .join(format!("large-copy-{}", std::process::id()))
+            )
+            .unwrap(),
+            content
+        );
     }
 }

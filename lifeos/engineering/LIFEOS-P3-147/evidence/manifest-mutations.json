@@ -1,10 +1,17 @@
 {
-  "scope": "in-memory manifest mutations only; candidate/history unchanged",
   "control_pass": true,
-  "count": 10,
+  "in_memory_only": true,
+  "count": 12,
   "results": [
     {
-      "mutation": "changed_file_hash",
+      "mutation": "missing_file",
+      "rejected": true,
+      "errors": [
+        "coverage"
+      ]
+    },
+    {
+      "mutation": "bad_hash",
       "rejected": true,
       "errors": [
         "file_integrity"
@@ -18,17 +25,41 @@
       ]
     },
     {
-      "mutation": "missing_file",
+      "mutation": "report_identity",
       "rejected": true,
       "errors": [
-        "coverage"
+        "report_integrity"
       ]
     },
     {
-      "mutation": "test_count",
+      "mutation": "binary_identity",
+      "rejected": true,
+      "errors": [
+        "artifact_targets",
+        "native_identity",
+        "review_repro"
+      ]
+    },
+    {
+      "mutation": "gate_overclaim",
+      "rejected": true,
+      "errors": [
+        "gate_overclaim"
+      ]
+    },
+    {
+      "mutation": "wrong_count",
       "rejected": true,
       "errors": [
         "test_count",
+        "test_total"
+      ]
+    },
+    {
+      "mutation": "missing_test_group",
+      "rejected": true,
+      "errors": [
+        "test_groups",
         "test_total"
       ]
     },
@@ -40,14 +71,7 @@
       ]
     },
     {
-      "mutation": "wrong_binary",
-      "rejected": true,
-      "errors": [
-        "native_identity"
-      ]
-    },
-    {
-      "mutation": "wrong_geometry",
+      "mutation": "wrong_width",
       "rejected": true,
       "errors": [
         "native_coverage",
@@ -55,26 +79,18 @@
       ]
     },
     {
-      "mutation": "premature_independent_pass",
+      "mutation": "failed_target_result",
       "rejected": true,
       "errors": [
-        "gate_overclaim"
+        "artifact_targets"
       ]
     },
     {
-      "mutation": "old_nonprofile_launch",
+      "mutation": "old_repro_result",
       "rejected": true,
       "errors": [
-        "native_identity",
-        "native_profile",
-        "runtime_source_drift"
-      ]
-    },
-    {
-      "mutation": "missing_root_build",
-      "rejected": true,
-      "errors": [
-        "FileNotFoundError"
+        "review_repro",
+        "review_repro_semantics"
       ]
     }
   ]

@@ -1,0 +1,1317 @@
+{
+  "binary_sha256": "82d3de671bfbe855ab642daca8c8c9d1d4942f890bd7afdf4e43c2b22a236a64",
+  "source_mutated": false,
+  "results": [
+    {
+      "id": "IR-TARGET-CONTROL",
+      "matrix": [
+        "M02",
+        "M04"
+      ],
+      "fixture": "ir-target-control-1788847179082981000",
+      "pid": 47639,
+      "attack": false,
+      "before": {
+        "mode": "0o750",
+        "files": {
+          "canary.txt": "d70711fff4e55810a34b8c702f31170dc6720027f1996435e9725e3099118ef7"
+        }
+      },
+      "after": {
+        "mode": "0o750",
+        "files": {
+          "canary.txt": "d70711fff4e55810a34b8c702f31170dc6720027f1996435e9725e3099118ef7"
+        }
+      },
+      "target_status": [
+        {
+          "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+          "status": "fetched",
+          "target": "https://synthetic.invalid/article"
+        }
+      ],
+      "expected": "successful target fetch",
+      "passed": true,
+      "events": [
+        {
+          "request": {
+            "ipc": "connect_source_directory",
+            "request": {
+              "version": 1,
+              "payload": {
+                "requestId": "ir-target-control-1788847179082981000-connect"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectorId": "directory",
+              "grantGeneration": 1,
+              "jobId": "job:directory:1",
+              "status": "active"
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 0,
+                  "error": null,
+                  "failed": 0,
+                  "files": [],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [],
+                  "parsed": 0,
+                  "pending": 0,
+                  "processed": 0,
+                  "scanComplete": false,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 5,
+                  "error": null,
+                  "failed": 0,
+                  "files": [],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [],
+                  "parsed": 0,
+                  "pending": 5,
+                  "processed": 0,
+                  "scanComplete": false,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [],
+                  "parsed": 0,
+                  "pending": 5,
+                  "processed": 1,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 1
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "configuration_excluded",
+                      "sourceRef": "5ee26c93af6e0558a2dd1ece811ed0b54f9a850859591137ec25784345ea2bcf",
+                      "status": "restricted",
+                      "title": ".obsidian/settings.json",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "70e784ed212b3550f7b2ca88468207e1cfe97f601a1811233e217c38ed4508c9",
+                      "status": "parsed",
+                      "title": "参考.md",
+                      "version": 1
+                    },
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [],
+                  "parsed": 1,
+                  "pending": 3,
+                  "processed": 3,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "configuration_excluded",
+                      "sourceRef": "5ee26c93af6e0558a2dd1ece811ed0b54f9a850859591137ec25784345ea2bcf",
+                      "status": "restricted",
+                      "title": ".obsidian/settings.json",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "70e784ed212b3550f7b2ca88468207e1cfe97f601a1811233e217c38ed4508c9",
+                      "status": "parsed",
+                      "title": "参考.md",
+                      "version": 1
+                    },
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09",
+                      "status": "parsed",
+                      "title": "项目计划.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:0",
+                      "status": "awaiting_target_grant",
+                      "target": "参考"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:1",
+                      "status": "awaiting_target_grant",
+                      "target": "../external/approved.txt"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+                      "status": "awaiting_target_grant",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 2,
+                  "pending": 2,
+                  "processed": 4,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "configuration_excluded",
+                      "sourceRef": "5ee26c93af6e0558a2dd1ece811ed0b54f9a850859591137ec25784345ea2bcf",
+                      "status": "restricted",
+                      "title": ".obsidian/settings.json",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "70e784ed212b3550f7b2ca88468207e1cfe97f601a1811233e217c38ed4508c9",
+                      "status": "parsed",
+                      "title": "参考.md",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "b16e28498c8545066b578f5029e91be4cf494b42f9b405cffbe8004a2b3d367e",
+                      "status": "parsed",
+                      "title": "长文.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09",
+                      "status": "parsed",
+                      "title": "项目计划.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:0",
+                      "status": "awaiting_target_grant",
+                      "target": "参考"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:1",
+                      "status": "awaiting_target_grant",
+                      "target": "../external/approved.txt"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+                      "status": "awaiting_target_grant",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 3,
+                  "pending": 1,
+                  "processed": 5,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "configuration_excluded",
+                      "sourceRef": "5ee26c93af6e0558a2dd1ece811ed0b54f9a850859591137ec25784345ea2bcf",
+                      "status": "restricted",
+                      "title": ".obsidian/settings.json",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "70e784ed212b3550f7b2ca88468207e1cfe97f601a1811233e217c38ed4508c9",
+                      "status": "parsed",
+                      "title": "参考.md",
+                      "version": 1
+                    },
+                    {
+                      "reason": "unsupported_encoding",
+                      "sourceRef": "e88d6d5ff54b52565a5e295d25f6cf0115107e407b48e722065de9716b2409c4",
+                      "status": "unparsed",
+                      "title": "坏编码.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "b16e28498c8545066b578f5029e91be4cf494b42f9b405cffbe8004a2b3d367e",
+                      "status": "parsed",
+                      "title": "长文.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09",
+                      "status": "parsed",
+                      "title": "项目计划.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:0",
+                      "status": "local_original_linked",
+                      "target": "参考"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:1",
+                      "status": "awaiting_target_grant",
+                      "target": "../external/approved.txt"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+                      "status": "awaiting_target_grant",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 3,
+                  "pending": 0,
+                  "processed": 6,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "authorize_source_target",
+            "request": {
+              "version": 1,
+              "payload": {
+                "requestId": "ir-target-control-1788847179082981000-grant",
+                "connectorId": "directory",
+                "expectedGeneration": 1,
+                "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+                "decision": "grant"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "grantGeneration": 1,
+              "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+              "status": "fetch_pending"
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "configuration_excluded",
+                      "sourceRef": "5ee26c93af6e0558a2dd1ece811ed0b54f9a850859591137ec25784345ea2bcf",
+                      "status": "restricted",
+                      "title": ".obsidian/settings.json",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "70e784ed212b3550f7b2ca88468207e1cfe97f601a1811233e217c38ed4508c9",
+                      "status": "parsed",
+                      "title": "参考.md",
+                      "version": 1
+                    },
+                    {
+                      "reason": "unsupported_encoding",
+                      "sourceRef": "e88d6d5ff54b52565a5e295d25f6cf0115107e407b48e722065de9716b2409c4",
+                      "status": "unparsed",
+                      "title": "坏编码.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "b16e28498c8545066b578f5029e91be4cf494b42f9b405cffbe8004a2b3d367e",
+                      "status": "parsed",
+                      "title": "长文.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09",
+                      "status": "parsed",
+                      "title": "项目计划.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:0",
+                      "status": "local_original_linked",
+                      "target": "参考"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:1",
+                      "status": "awaiting_target_grant",
+                      "target": "../external/approved.txt"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+                      "status": "fetch_pending",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 3,
+                  "pending": 0,
+                  "processed": 6,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "configuration_excluded",
+                      "sourceRef": "5ee26c93af6e0558a2dd1ece811ed0b54f9a850859591137ec25784345ea2bcf",
+                      "status": "restricted",
+                      "title": ".obsidian/settings.json",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "70e784ed212b3550f7b2ca88468207e1cfe97f601a1811233e217c38ed4508c9",
+                      "status": "parsed",
+                      "title": "参考.md",
+                      "version": 1
+                    },
+                    {
+                      "reason": "unsupported_encoding",
+                      "sourceRef": "e88d6d5ff54b52565a5e295d25f6cf0115107e407b48e722065de9716b2409c4",
+                      "status": "unparsed",
+                      "title": "坏编码.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "b16e28498c8545066b578f5029e91be4cf494b42f9b405cffbe8004a2b3d367e",
+                      "status": "parsed",
+                      "title": "长文.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09",
+                      "status": "parsed",
+                      "title": "项目计划.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:0",
+                      "status": "local_original_linked",
+                      "target": "参考"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:1",
+                      "status": "awaiting_target_grant",
+                      "target": "../external/approved.txt"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+                      "status": "fetched",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 3,
+                  "pending": 0,
+                  "processed": 6,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 3
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "IR-TARGET-LINK",
+      "matrix": [
+        "M02",
+        "M04"
+      ],
+      "fixture": "ir-target-link-1788847179082984000",
+      "pid": 47659,
+      "attack": true,
+      "before": {
+        "mode": "0o750",
+        "files": {
+          "canary.txt": "d70711fff4e55810a34b8c702f31170dc6720027f1996435e9725e3099118ef7"
+        }
+      },
+      "after": {
+        "mode": "0o750",
+        "files": {
+          "canary.txt": "d70711fff4e55810a34b8c702f31170dc6720027f1996435e9725e3099118ef7"
+        }
+      },
+      "target_status": [
+        {
+          "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+          "status": "unavailable:artifact_boundary_rejected",
+          "target": "https://synthetic.invalid/article"
+        }
+      ],
+      "expected": "reject symlink before chmod/create; sentinel unchanged",
+      "passed": true,
+      "events": [
+        {
+          "request": {
+            "ipc": "connect_source_directory",
+            "request": {
+              "version": 1,
+              "payload": {
+                "requestId": "ir-target-link-1788847179082984000-connect"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectorId": "directory",
+              "grantGeneration": 1,
+              "jobId": "job:directory:1",
+              "status": "active"
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 5,
+                  "error": null,
+                  "failed": 0,
+                  "files": [],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [],
+                  "parsed": 0,
+                  "pending": 5,
+                  "processed": 0,
+                  "scanComplete": false,
+                  "status": "active",
+                  "unparsed": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [],
+                  "parsed": 0,
+                  "pending": 5,
+                  "processed": 1,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 1
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "configuration_excluded",
+                      "sourceRef": "5ee26c93af6e0558a2dd1ece811ed0b54f9a850859591137ec25784345ea2bcf",
+                      "status": "restricted",
+                      "title": ".obsidian/settings.json",
+                      "version": 1
+                    },
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [],
+                  "parsed": 0,
+                  "pending": 4,
+                  "processed": 2,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "configuration_excluded",
+                      "sourceRef": "5ee26c93af6e0558a2dd1ece811ed0b54f9a850859591137ec25784345ea2bcf",
+                      "status": "restricted",
+                      "title": ".obsidian/settings.json",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "70e784ed212b3550f7b2ca88468207e1cfe97f601a1811233e217c38ed4508c9",
+                      "status": "parsed",
+                      "title": "参考.md",
+                      "version": 1
+                    },
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09",
+                      "status": "parsed",
+                      "title": "项目计划.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:0",
+                      "status": "awaiting_target_grant",
+                      "target": "参考"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:1",
+                      "status": "awaiting_target_grant",
+                      "target": "../external/approved.txt"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+                      "status": "awaiting_target_grant",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 2,
+                  "pending": 2,
+                  "processed": 4,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "configuration_excluded",
+                      "sourceRef": "5ee26c93af6e0558a2dd1ece811ed0b54f9a850859591137ec25784345ea2bcf",
+                      "status": "restricted",
+                      "title": ".obsidian/settings.json",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "70e784ed212b3550f7b2ca88468207e1cfe97f601a1811233e217c38ed4508c9",
+                      "status": "parsed",
+                      "title": "参考.md",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "b16e28498c8545066b578f5029e91be4cf494b42f9b405cffbe8004a2b3d367e",
+                      "status": "parsed",
+                      "title": "长文.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09",
+                      "status": "parsed",
+                      "title": "项目计划.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:0",
+                      "status": "awaiting_target_grant",
+                      "target": "参考"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:1",
+                      "status": "awaiting_target_grant",
+                      "target": "../external/approved.txt"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+                      "status": "awaiting_target_grant",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 3,
+                  "pending": 1,
+                  "processed": 5,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "configuration_excluded",
+                      "sourceRef": "5ee26c93af6e0558a2dd1ece811ed0b54f9a850859591137ec25784345ea2bcf",
+                      "status": "restricted",
+                      "title": ".obsidian/settings.json",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "70e784ed212b3550f7b2ca88468207e1cfe97f601a1811233e217c38ed4508c9",
+                      "status": "parsed",
+                      "title": "参考.md",
+                      "version": 1
+                    },
+                    {
+                      "reason": "unsupported_encoding",
+                      "sourceRef": "e88d6d5ff54b52565a5e295d25f6cf0115107e407b48e722065de9716b2409c4",
+                      "status": "unparsed",
+                      "title": "坏编码.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "b16e28498c8545066b578f5029e91be4cf494b42f9b405cffbe8004a2b3d367e",
+                      "status": "parsed",
+                      "title": "长文.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09",
+                      "status": "parsed",
+                      "title": "项目计划.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:0",
+                      "status": "local_original_linked",
+                      "target": "参考"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:1",
+                      "status": "awaiting_target_grant",
+                      "target": "../external/approved.txt"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+                      "status": "awaiting_target_grant",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 3,
+                  "pending": 0,
+                  "processed": 6,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "authorize_source_target",
+            "request": {
+              "version": 1,
+              "payload": {
+                "requestId": "ir-target-link-1788847179082984000-grant",
+                "connectorId": "directory",
+                "expectedGeneration": 1,
+                "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+                "decision": "grant"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "grantGeneration": 1,
+              "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+              "status": "fetch_pending"
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "configuration_excluded",
+                      "sourceRef": "5ee26c93af6e0558a2dd1ece811ed0b54f9a850859591137ec25784345ea2bcf",
+                      "status": "restricted",
+                      "title": ".obsidian/settings.json",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "70e784ed212b3550f7b2ca88468207e1cfe97f601a1811233e217c38ed4508c9",
+                      "status": "parsed",
+                      "title": "参考.md",
+                      "version": 1
+                    },
+                    {
+                      "reason": "unsupported_encoding",
+                      "sourceRef": "e88d6d5ff54b52565a5e295d25f6cf0115107e407b48e722065de9716b2409c4",
+                      "status": "unparsed",
+                      "title": "坏编码.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "b16e28498c8545066b578f5029e91be4cf494b42f9b405cffbe8004a2b3d367e",
+                      "status": "parsed",
+                      "title": "长文.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09",
+                      "status": "parsed",
+                      "title": "项目计划.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:0",
+                      "status": "local_original_linked",
+                      "target": "参考"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:1",
+                      "status": "awaiting_target_grant",
+                      "target": "../external/approved.txt"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+                      "status": "fetch_pending",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 3,
+                  "pending": 0,
+                  "processed": 6,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 3
+                }
+              ]
+            }
+          }
+        },
+        {
+          "request": {
+            "ipc": "get_source_status",
+            "request": {
+              "version": 1,
+              "payload": {
+                "connectorId": "directory"
+              }
+            }
+          },
+          "response": {
+            "ok": {
+              "connectors": [
+                {
+                  "connectorId": "directory",
+                  "discovered": 6,
+                  "error": null,
+                  "failed": 0,
+                  "files": [
+                    {
+                      "reason": "configuration_excluded",
+                      "sourceRef": "5ee26c93af6e0558a2dd1ece811ed0b54f9a850859591137ec25784345ea2bcf",
+                      "status": "restricted",
+                      "title": ".obsidian/settings.json",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "70e784ed212b3550f7b2ca88468207e1cfe97f601a1811233e217c38ed4508c9",
+                      "status": "parsed",
+                      "title": "参考.md",
+                      "version": 1
+                    },
+                    {
+                      "reason": "unsupported_encoding",
+                      "sourceRef": "e88d6d5ff54b52565a5e295d25f6cf0115107e407b48e722065de9716b2409c4",
+                      "status": "unparsed",
+                      "title": "坏编码.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "b16e28498c8545066b578f5029e91be4cf494b42f9b405cffbe8004a2b3d367e",
+                      "status": "parsed",
+                      "title": "长文.txt",
+                      "version": 1
+                    },
+                    {
+                      "reason": "original_only",
+                      "sourceRef": "2264ccd889486c200164c8d1b2697e8562cad5dd4831330d77e9af95a7abd8a3",
+                      "status": "unparsed",
+                      "title": "附件.bin",
+                      "version": 1
+                    },
+                    {
+                      "reason": null,
+                      "sourceRef": "a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09",
+                      "status": "parsed",
+                      "title": "项目计划.md",
+                      "version": 1
+                    }
+                  ],
+                  "grantGeneration": 1,
+                  "jobId": "job:directory:1",
+                  "links": [
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:0",
+                      "status": "local_original_linked",
+                      "target": "参考"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:1",
+                      "status": "awaiting_target_grant",
+                      "target": "../external/approved.txt"
+                    },
+                    {
+                      "linkId": "link:a3d9b36b1af62908bdc2817203e26242198601fd6a1062ac1c769e5a76ec5e09:1:2",
+                      "status": "unavailable:artifact_boundary_rejected",
+                      "target": "https://synthetic.invalid/article"
+                    }
+                  ],
+                  "parsed": 3,
+                  "pending": 0,
+                  "processed": 6,
+                  "scanComplete": true,
+                  "status": "active",
+                  "unparsed": 3
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "writers_stopped": true
+}
