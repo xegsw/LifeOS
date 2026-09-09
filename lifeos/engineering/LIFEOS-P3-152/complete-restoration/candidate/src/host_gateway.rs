@@ -14,13 +14,24 @@ impl ModelPort for SyntheticControlledModel {
 }
 pub fn dispatch(store:&Arc<Mutex<Store>>,command:&str,bytes:&[u8])->R<Value>{if crate::runtime_root::is_real(){dispatch_with_port(store,command,bytes,&mut crate::provider_transport::DeepSeekModel)}else{dispatch_with_port(store,command,bytes,&mut SyntheticControlledModel)}}
 pub(crate) fn dispatch_with_port(store:&Arc<Mutex<Store>>,command:&str,bytes:&[u8],port:&mut dyn ModelPort)->R<Value>{
+ if lifeos_source_engine::COMMANDS.contains(&command){
+  if bytes.len()>4096{return Err(Error::new("source_request_limit"));}let raw=std::str::from_utf8(bytes).map_err(|_|Error::new("source_contract_rejected"))?;crate::strict_json::parse(raw)?;
+  if crate::runtime_root::is_real(){return Err(Error::new("source_real_permission_required"));}
+  let s=store.lock().map_err(|_|Error::new("store_busy"))?;
+  let result=lifeos_source_engine::dispatch(command,bytes,&s.fixture()).map_err(|e|Error::new(&e.code))?;
+  if ["connect_source_directory","control_source_job","authorize_source_target"].contains(&command){s.invalidate_notes()?;}
+  return Ok(result)
+ }
  if command=="get_today"{return store.lock().map_err(|_|Error::new("store_busy"))?.health_view(bytes)}
  if bytes.len()>16384{return Err(Error::new("dto_rejected"));}let raw=std::str::from_utf8(bytes).map_err(|_|Error::new("dto_rejected"))?;let value=crate::strict_json::parse(raw)?;
  let mut guard=Some(store.lock().map_err(|_|Error::new("store_busy"))?);
  if command!="send_source_ai_request" {return guard.as_ref().unwrap().dispatch(command,bytes)}
  let r:crate::repository::Request=serde_json::from_value(value).map_err(|_|Error::new("dto_rejected"))?;if r.version!=5||r.operation!="confirm_send"{return Err(Error::new("operation_rejected"));}
  match guard.as_ref().unwrap().consume(r.payload)?{Start::Replay(v)=>Ok(v),Start::Send(plan)=>{
-  let result=port.generate_with_receipt(plan.preview["exactBody"].as_str().unwrap(),&plan.key,&mut||drop(guard.take()));drop(guard.take());
+  let refs=plan.preview["packet"]["snapshot"]["records"].as_array().unwrap().iter().filter(|r|plan.preview["inputRefs"].as_array().unwrap().iter().any(|rf|rf["id"]==r["id"])).filter_map(|r|r.get("engineRef").cloned()).collect::<Vec<_>>();
+  if crate::runtime_root::is_real()&&!refs.is_empty(){return Err(Error::new("source_real_permission_required"));}
+  let mut fence=match lifeos_source_engine::send_fence(&guard.as_ref().unwrap().fixture(),&refs){Ok(v)=>v,Err(_)=>{let result=guard.as_ref().unwrap().finish(&plan,Err(Error::new("source_context_stale")));return result;}};
+  let result=port.generate_with_receipt(plan.preview["exactBody"].as_str().unwrap(),&plan.key,&mut||{drop(fence.take());drop(guard.take());});drop(fence.take());drop(guard.take());
   store.lock().map_err(|_|Error::new("store_busy"))?.finish(&plan,result)
  }}
 }

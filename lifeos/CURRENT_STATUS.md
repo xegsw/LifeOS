@@ -1,6 +1,7 @@
 # LifeOS Current Status Index
 
 更新时间：2026-09-03
+增量更新时间：2026-09-09（D-0650，以下终局增量优先于旧P3-144执行指针；非全历史对账）
 最后校验时间：2026-09-03（D-0647：P3-144终局PM Pass获用户采纳，任务Complete并授权推送L3任务分支）
 
 本文件是 PM 日常上下文入口，用于减少重复读取大文件；它是状态索引，不替代主账本。
@@ -17,7 +18,11 @@
 - 来源优先级：`DECISION_LOG.md` / `FREEZE_STATUS.md` / `TASK_REGISTRY.md` > `CURRENT_STATUS.md` > 聊天记忆。
 - 冲突处理：若本文件与三类主账本冲突，以主账本为准并立即修正；若主账本之间冲突，停止推进并先做 PM 对账。
 
-## 当前阶段
+## 当前执行指针增量：P3-152终局
+
+P3-152 Accepted / Complete / PM Pass / User Accepted；用户已确认实际验证通过并授权同步。独立评审依用户例外继续暂停，不是Independent Pass。最终候选为b3f6工作树settings-baseline-restoration，详见`lifeos/reviews/LIFEOS-P3-152_pm_final_review.md`。本次待同步代码文档到任务分支，不自动合并main；不创建后继任务、不清理真实资产。下方旧P3-144“当前活动/下一步/指针”属于历史快照，不再作为当前执行指令。
+
+## 当前阶段（未改变）
 
 有限 Stage 3 / 自用 MVP 最小切片条件准入执行。技术架构V1.0已冻结为前向规范权威；V0.1作为Frozen历史保留并被取代其前向权威。P2-018的Pass with Conditions已由用户采纳；外部用户验证线仍暂停。
 

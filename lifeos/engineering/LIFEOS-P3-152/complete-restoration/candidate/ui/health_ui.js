@@ -1,3 +1,4 @@
+import { SourcesController, sourcesView } from './sources_view.js';
 import { Controller as HealthView, content as healthContent } from './health_aux.js';
 import { settingsView, settingView, proposedSettings, updatePolicy } from './settings_view.js';
 import { ControlledConversation, ControlledFlow } from './controlled_conversation.js';
@@ -30,6 +31,10 @@ function openHealth() {
     void c.initialize();
 }
 const flow = new ControlledFlow(app, ()=>render());
+const sources = new SourcesController((c, r)=>invoke(c, new TextEncoder().encode(JSON.stringify(r))), ()=>render());
+function openSources() {
+    if (flow.snapshot?.mode !== 'real') void sources.start();
+}
 const button = (action, label, id = '')=>`<button type="button" class="button secondary" data-action="${action}" data-id="${esc(id)}">${label}</button>`;
 const title = (name, sub)=>`<header class="page-head"><div><h1>${name}</h1><p class="subhead">${sub}</p></div></header>`;
 const label = (s)=>s.stateKey === 'available_time' ? `可用时间 · ${s.value} 分钟` : `自述睡眠 · ${s.value} 小时`;
@@ -43,11 +48,12 @@ const navLabel = (p)=>({
 const date = (v)=>new Date(v).toLocaleDateString('zh-CN');
 function body() {
     const s = flow.snapshot;
+    if (page === 'Sources') return '<div class="page-wrap">' + title('资料来源', '原文按需查看，引用在发送前由你确认。') + sourcesView(sources, s?.mode === 'real') + '</div>';
     if (page === 'HealthSource' && healthView) return '<div class="health-aux"><div class="page-wrap">' + button('health-back', '返回我') + healthContent(healthView) + '</div></div>';
-    if (page === 'Settings') return settingsView(s, esc, button);
+    if (page === 'Settings') return settingsView(s, esc, button, sourcesView(sources, s?.mode === 'real'));
     if (page === 'Me') return `<div class="page-wrap">${title('我', '你的明确表达，形成有时效的当前状态。')}<section class="panel"><h2>当前状态</h2>${s?.states?.length ? s.states.map((st)=>`<article class="record"><strong>${esc(label(st))}</strong><p class="quiet">${st.domain === 'health' ? '健康' : '工作'} · 用户${st.identity === 'user_self_report' ? '自述' : '明确表达'} · 有效至 ${new Date(st.validUntil).toLocaleString('zh-CN')}</p><p class="verbatim">${esc(st.rawText)}</p></article>`).join('') : '<p class="quiet">还没有当前状态。你可以在对话中说明或纠正。</p>'}<p class="tiny">这些短期状态不会自动成为长期记忆；自述不替代来源中的观察。</p>${button('health-open', '查看健康来源')}</section></div>`;
-    if (page === 'Memory') return `<div class="page-wrap">${title('记忆', '已确认的长期信息，与临时对话分开保留。')}<section class="panel">${(s?.memories || []).map((m)=>`<article class="record"><small>已确认记忆${s?.mode === 'real' ? '' : ' · 合成资料'}</small><p>${esc(m.text)}</p></article>`).join('')}<p class="tiny">普通回答只作为 AI 候选内容保存，不会自动写入这里。</p></section></div>`;
-    if (page === 'Contexts') return `<div class="page-wrap">${title('上下文', '相关资料随问题进入对话。')}<section class="panel"><p>直接提问即可。回答下的“查看依据”会展示本次用到的${s?.mode === 'real' ? '健康来源' : '合成来源'}和用户表达。</p><p class="quiet">本页面没有独立的上下文编辑功能。</p>${button('open-ai', '开始对话')}</section></div>`;
+    if (page === 'Memory') return `<div class="page-wrap">${title('记忆', '已确认的长期信息，与临时对话分开保留。')}${button('source-browser', '浏览来源原文')}<section class="panel">${(s?.memories || []).map((m)=>`<article class="record"><small>已确认记忆${s?.mode === 'real' ? '' : ' · 合成资料'}</small><p>${esc(m.text)}</p></article>`).join('')}<p class="tiny">普通回答只作为 AI 候选内容保存，不会自动写入这里。</p></section></div>`;
+    if (page === 'Contexts') return `<div class="page-wrap">${title('上下文', '相关资料随问题进入对话。')}<section class="panel"><p>直接提问即可。回答下的“查看依据”会展示本次用到的${s?.mode === 'real' ? '健康来源' : '合成来源'}和用户表达。</p><p class="quiet">本页面没有独立的上下文编辑功能。</p>${button('open-ai', '开始对话')}${button('source-browser', '查看资料来源')}</section></div>`;
     return `<div class="page-wrap"><section class="today-page"><header class="today-hero"><div><h1>你好。</h1><p class="today-subhead">给今天留一点从容。</p></div><div class="today-chrome"><span>${new Intl.DateTimeFormat('zh-CN', {
         month: 'long',
         day: 'numeric',
@@ -58,11 +64,13 @@ function chat() {
     const s = flow.snapshot;
     return `${s?.hasMore ? '<p class="tiny">显示最近的有限对话，较早记录仍在本地保留。</p>' : ''}${!s?.turns?.length ? '<p class="quiet">说说你想了解什么。</p>' : ''}${(s?.turns || []).map((t)=>{
         const q = s.questions.find((q)=>q.id === t.clarificationId && q.status === 'pending');
-        return `<article class="turn"><div class="ai-question"><small>你的原始表达</small><p class="verbatim">${esc(t.text)}</p></div><div class="ai-answer"><small>${t.answer?.startsWith('本地') ? '本地处理' : 'AI 候选回答'}${t.status === 'stale' ? ' · 旧依据已失效，保留历史' : ''}</small><p class="verbatim">${esc(t.answer)}</p>${t.refs.length ? `<details data-keep="${esc(t.turnId)}"><summary>查看依据 · ${t.refs.length} 条</summary>${t.refs.map((r)=>`<article class="record"><small>${r.identity === 'source_projection' ? s?.mode === 'real' ? '健康来源' : '合成来源' : r.identity === 'health_conversation_expression' ? '用户明确表达' : '已确认记忆'}${r.observedAt ? ` · ${date(r.observedAt)}` : ''}${r.estimated ? ' · 估计值' : ''}</small><p class="verbatim">${esc(r.text)}</p></article>`).join('')}</details>` : ''}${q ? `<div class="form-actions">${button('defer', '稍后再说', q.id)}${button('ignore', '忽略这个问题', q.id)}</div>` : ''}</div></article>`;
+        return `<article class="turn"><div class="ai-question"><small>你的原始表达</small><p class="verbatim">${esc(t.text)}</p></div><div class="ai-answer"><small>${t.answer?.startsWith('本地') ? '本地处理' : 'AI 候选回答'}${t.status === 'stale' ? ' · 旧依据已失效，保留历史' : ''}</small><p class="verbatim">${esc(t.answer)}</p>${t.refs.length ? `<details data-keep="${esc(t.turnId)}"><summary>查看依据 · ${t.refs.length} 条</summary>${t.refs.map((r)=>`<article class="record"><small>${r.identity === 'source_projection' ? r.engineRef ? '资料来源' : s?.mode === 'real' ? '健康来源' : '合成来源' : r.identity === 'health_conversation_expression' ? '用户明确表达' : '已确认记忆'}${r.observedAt ? ` · ${date(r.observedAt)}` : ''}${r.estimated ? ' · 估计值' : ''}</small><p class="verbatim">${esc(r.text)}</p></article>`).join('')}</details>` : ''}${q ? `<div class="form-actions">${button('defer', '稍后再说', q.id)}${button('ignore', '忽略这个问题', q.id)}</div>` : ''}</div></article>`;
     }).join('')}`;
 }
 function errorText(e) {
     const messages = {
+        source_context_stale: '来源已更新或撤权，请重新准备。',
+        source_real_permission_required: '此版本尚未获准处理该来源，请先确认范围。',
         provider_not_enabled: '当前主服务尚未接入发送。请在模型设置中选择可用的服务。',
         catalog_model_conflict: '主服务与模型设置不一致，请重新保存配置。',
         catalog_revision_conflict: '设置已在其他操作中更改，请重新打开设置后保存。',
@@ -149,8 +157,32 @@ document.addEventListener('click', async (e)=>{
     try {
         if (p) {
             closeHealth();
+            sources.dispose();
             page = p;
             aiOpen = false;
+            if (p === 'Settings' && settingView.section === '数据与隐私') openSources();
+        }
+        if (a === 'source-browser') {
+            closeHealth();
+            page = 'Sources';
+            aiOpen = false;
+            openSources();
+            render();
+            return;
+        }
+        if (a === 'source-ask') {
+            sources.dispose();
+            const question = '请根据我的来源资料，说明' + sources.query + '的相关内容。';
+            flow.edit(flow.draft.text ? flow.draft.text + '\n' + question : question);
+            aiOpen = true;
+            render();
+            editor.focus();
+            return;
+        }
+        if (a?.startsWith('source-') || a?.startsWith('apple-')) {
+            await sources.action(a, id);
+            render();
+            return;
         }
         if (a === 'health-open') {
             openHealth();
@@ -186,7 +218,9 @@ document.addEventListener('click', async (e)=>{
             settingView.mode = id;
         }
         if (a === 'settings-section') {
+            sources.dispose();
             settingView.section = id;
+            if (id === '数据与隐私') openSources();
         }
         if (a === 'open-ai') {
             aiOpen = true;
@@ -253,6 +287,7 @@ document.addEventListener('change', (e)=>{
 });
 document.addEventListener('input', (e)=>{
     const n = e.target;
+    if (n.id === 'source-query') sources.query = n.value;
     if (n.id === 'model') settingView.drafts[settingView.mode].model = n.value;
 });
 render();

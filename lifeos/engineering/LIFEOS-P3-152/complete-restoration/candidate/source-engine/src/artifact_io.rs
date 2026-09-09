@@ -93,7 +93,7 @@ impl Dir {
         for (i, p) in parts.iter().enumerate() {
             d = d.open_child(p, false, i + 1 == parts.len())?;
         }
-        let mut marker = d.open(".lifeos-p3-149-owner.json")?;
+        let mut marker = d.open(".owner.json")?;
         let bytes = marker.read_limit(4096)?;
         if serde_json::from_slice::<serde_json::Value>(&bytes).map_err(|_| err())?
             != runtime_root::expected_marker()?

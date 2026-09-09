@@ -92,12 +92,15 @@ fn run(fixture: &str) {
         let result = (|| -> R<()> {
             let mut c = repository::open(&key)?;
             source_store::init(&c)?;
+            {let _publish = crate::gate()?;
             if let Ok(l) = lease(&c, "directory") {
                 if source_store::check(&c, &l).is_ok() {
                     source_worker::recover(&c, &l)?;
                 }
             }
+            }
             loop {
+                let _publish = crate::gate()?;
                 let l = lease(&c, "directory")?;
                 if source_store::check(&c, &l).is_err() {
                     break;
@@ -220,18 +223,40 @@ pub fn dispatch(command: &str, r: Request, fixture: &str) -> R<Value> {
         },
         _ => unreachable!(),
     }
-    let _guard = crate::conversation_store::COORDINATOR
-        .lock()
-        .map_err(|_| error("database_unavailable"))?;
-    let mut c = crate::conversation_store::open_active(fixture)?;
-    if command == "authorize_source_target" {
-        return Err(error("external_targets_disabled"));
+    if crate::runtime_root::is_real() {
+        if command == "authorize_source_target" {
+            return Err(error("external_targets_disabled"));
+        }
+        if command == "connect_source_directory" {
+            id(p, "requestId")?;
+            crate::runtime_root::activate_from_user_click()?;
+        } else if !crate::runtime_root::active() {
+            return if command == "get_source_status" {
+                Ok(json!({"connectors":[]}))
+            } else {
+                Err(error("source_activation_required"))
+            };
+        }
     }
-    if command == "connect_source_directory" {
-        return Err(error("source_scan_disabled"));
-    }
-    if command == "control_source_job" && p["action"] != "disconnect" {
-        return Err(error("source_scan_disabled"));
+    let mut c = repository::open(fixture)?;
+    source_store::init(&c)?;
+    c.execute_batch("CREATE TABLE IF NOT EXISTS source_api_requests(id TEXT PRIMARY KEY,payload TEXT NOT NULL,result TEXT NOT NULL);CREATE TABLE IF NOT EXISTS source_runtime_errors(connector_id TEXT PRIMARY KEY,code TEXT NOT NULL);")?;
+    if crate::runtime_root::is_real() && command == "connect_source_directory" {
+        if let Ok(l) = lease(&c, "directory") {
+            if readable(&c, &l).is_ok() {
+                let state: String = c.query_row(
+                    "SELECT state FROM connectors WHERE id='directory'",
+                    [],
+                    |r| r.get(0),
+                )?;
+                if state == "active" {
+                    run(fixture);
+                }
+                return Ok(
+                    json!({"connectorId":"directory","grantGeneration":l.generation,"status":state,"jobId":format!("job:directory:{}",l.epoch)}),
+                );
+            }
+        }
     }
     if matches!(
         command,
