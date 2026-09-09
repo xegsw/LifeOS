@@ -20,6 +20,10 @@
 
 ## 当前执行指针增量：P3-152终局
 
+最新终局：P3-153已完成PM验收（含Closure-1时效修复），L2离线合成Accepted/Complete；最终权威为b3f6工程树P3-153/closure-1/candidate。详见reviews/LIFEOS-P3-153_pm_final_review.md。下方Ready记录为历史；未启动后继，当前真实App仍152，独立评审继续暂停，不改变真实权限/风险/冻结/Stage。
+
+2026-09-09最新执行增量：用户确认启动P3-153「持续理解与必要澄清闭环」，Ready，派发原工程会话顺序执行。合同见tasks/LIFEOS-P3-153_continuous_understanding_and_useful_clarification.md，仅离线合成，继承152完整候选；不接触真实数据/凭据/网络，不改变Stage/冻结/风险。152代码文档已同步2ee77475，main不变。以下152结束与旧指针为历史，不作为重启指令。
+
 P3-152 Accepted / Complete / PM Pass / User Accepted；用户已确认实际验证通过并授权同步。独立评审依用户例外继续暂停，不是Independent Pass。最终候选为b3f6工作树settings-baseline-restoration，详见`lifeos/reviews/LIFEOS-P3-152_pm_final_review.md`。本次待同步代码文档到任务分支，不自动合并main；不创建后继任务、不清理真实资产。下方旧P3-144“当前活动/下一步/指针”属于历史快照，不再作为当前执行指令。
 
 ## 当前阶段（未改变）
