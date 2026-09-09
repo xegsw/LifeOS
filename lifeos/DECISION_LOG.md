@@ -663,6 +663,10 @@
 | D-0646 | 2026-09-03 | PM完成P3-144真实自用、同任务Closure-4、全新隔离增量独立复核与终局验收，裁决Pass并等待用户L3最终采纳。 | P3-144 PM Pass / Independent Pass / User Final Confirmation Pending / ABF-P3-144-v1 Frozen / Not Product Frozen | 用户在actual Tauri App内完成最多3条低敏感Work范围的最小披露、逐次确认、单一DeepSeek请求、AI Understanding与反馈；真实正文、凭据和正文hash未进入Evidence。用户明确授权后，App停止写入，零字节`capture.sqlite`占位文件改名保全，实际DB无损迁移到合同文件名并收紧为普通文件0600。Closure-4同时关闭curl timeout误报、回答／反馈状态不可见与反馈重复消费。工程26/26、合同23/23；全新delta reviewer通过15项语义、10/10 mutation、direct-PID actual-Tauri、重启和19/19 Manifest。 | PM最终计数`0/0/3/0/0`；三个P2为可分离的历史review ledger、cleanup和重复反馈事件，均未造成真实内容／凭据／Provider／authority越界。Pilot-7、`capture.sqlite`、加密凭据及历史继续保留；不自动推送／合并L3分支，不关闭R-0055／R-0056，不冻结产品，不进入Stage4，不创建后继任务。PM Review `lifeos/reviews/LIFEOS-P3-144_pm_review.md`。 |
 | D-0647 | 2026-09-03 | 用户采纳P3-144终局PM Pass，并授权提交、推送当前L3任务分支。 | P3-144 Accepted / Complete / PM Pass / Independent Pass / User Adopted / ABF-P3-144-v1 Frozen / Not Product Frozen | 用户接受D-0646的唯一用户结果、独立复核和终局计数`0/0/3/0/0`；P3-144转为Complete和历史只读。本次授权覆盖治理状态提交及当前任务分支推送，不重放真实DeepSeek、不读取真实正文、不修改或清理Pilot-7、`capture.sqlite`与加密凭据。 | 不自动合并main，不关闭R-0055／R-0056，不冻结产品，不进入Stage4，不自动创建后继任务。后续动作等待用户另行决定。 |
 
+| D-0648 | 2026-09-09 | 用户明确要求将“继承完整产品工程再增量开发，不逐任务重造缺失功能的App”纳入治理。 | Accepted / Governance Increment / Not Product Frozen | 细化已有能力不回退：PM指定源码版本与构建入口，任务列继承清单，验收已有能力及增量，功能和UI同查；隔离环境不等于切碎产品，测试样机不得代替累积用户版。P3-152已发现设置持久化遗漏，仍在同任务修复，不由本决策声称完成。 | 规则见ACCEPTANCE_GOVERNANCE“累积产品与增量交付”；同步AGENTS、PM_OPERATING_MODEL、任务模板、CI_CD_GOVERNANCE及状态增量。没有重写Frozen资产、迁移数据、扩展网络权限、关闭风险或切换Stage；独立评审暂停不变。未宣称新增CI检查已实现；当前工作树历史索引滞后已披露，不重启历史任务。 |
+
+| D-0649 | 2026-09-09 | 用户要求将代码与行为测试为主、截图为辅的核验方式写入治理。 | Accepted / Governance Increment | 先比累积源码/配置/接线，再做影响面行为回归；视觉有影响才补合成截图，未受影响证据说明后复用。截图不能证明功能，代码相同不能证明渲染；不机械全页面重拍。 | 验收治理“核验顺序与证据适配”为执行依据，AGENTS/PM规则/模板/CI治理同步；不改历史Gate、真实采集权限或独立评审暂停，不宣称CI新增检查已实现。 |
+
 ## 记录规则
 
 - 决策一旦影响产品方向、技术路线、V1 范围或商业模式，必须记录。
