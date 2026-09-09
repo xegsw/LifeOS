@@ -669,6 +669,12 @@
 
 | D-0650 | 2026-09-09 | 用户确认P3-152实际验证通过并要求收尾同步。 | Accepted / Complete / PM Pass / User Accepted / Independent Review Paused by User Exception | 统一候选接回设置、来源管理/检索/有限对话、健康导入/查看；最终127项合成测试、受控安全切换及用户手动结果；PM复算195工程文件和10切换文件无不匹配。最终验收见lifeos/reviews/LIFEOS-P3-152_pm_final_review.md。 | 仅合同内收口，非Independent Pass或全产品冻结；历史回退/修复记录保留。授权代码文档任务分支同步，不合并main、不读取个人正文、不重放网络、不清理数据凭据，不关闭风险或切换Stage，不启动后继。 |
 
+| D-0651 | 2026-09-09 | 用户在P3-153完整合同展示后回复“启动吧”。 | Accepted / Ready | 授权单任务离线持续理解与必要澄清闭环，实现、测试、动态验证及同范围修复一并执行；继承152最终完整候选与D-0648/0649。 | 不授权真实目标、凭据、网络或关键Schema/API变化；独立评审继续暂停，不关闭风险/冻结/切换Stage。 |
+
+| D-0652 | 2026-09-09 | 用户明确允许P3-153协议补充。 | Accepted / Resume Authorized | 既有v4 clarification_decision新增reject/reopen及rejected JSON状态、逐次basisTurn问题ID，兼容旧操作和ID；最新生命周期抑制不因历史窗口失效，界面限既有问题内拒绝/重开。 | 无新增IPC/表/迁移/请求字段，公开预算不变；从检查点继续同任务离线工程，不接触真实数据/凭据/网络，不改冻结/风险/Stage。 |
+
+| D-0653 | 2026-09-09 | PM验收P3-153及同任务Closure-1为Pass。 | Accepted / Complete / L2 Offline | 核对生产差异、203项增量及231项历史，86项受影响回归和额外1项定向复跑记录通过；81项及6GUI按影响面复用。两项时效缺陷关闭，最终closure-1/candidate。 | 独立评审暂停，不声称真实启用/CI全绿/已推送，不改风险/冻结/Stage，不启动后继。 |
+
 ## 记录规则
 
 - 决策一旦影响产品方向、技术路线、V1 范围或商业模式，必须记录。

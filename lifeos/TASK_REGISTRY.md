@@ -199,6 +199,12 @@
 
 ## 使用规则
 
+### 启动增量（2026-09-09）
+
+- P3-153终局覆盖下方启动记录：PM Pass / Accepted / Complete（L2离线合成）；最终closure-1/candidate，时效两项缺陷同任务关闭。Review：lifeos/reviews/LIFEOS-P3-153_pm_final_review.md。独立评审暂停，真实启用/CI/推送不冒称完成。
+
+- P3-153：持续理解与必要澄清闭环；用户确认启动，Ready / L2离线合成增量，分派原工程会话。任务卡：`lifeos/tasks/LIFEOS-P3-153_continuous_understanding_and_useful_clarification.md`。继承P3-152最终累积候选；真实数据/凭据/网络及关键Schema/API变化未获授权。独立评审继续暂停；P3-152终局不变。
+
 - PM 主会话维护此表。
 - 专项任务会话不得自行修改任务状态，除非任务明确授权。
 - 每次任务验收后，PM 主会话更新状态、依赖和下一步。
