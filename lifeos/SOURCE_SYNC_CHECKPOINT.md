@@ -1,7 +1,7 @@
-# P3-153 source/document checkpoint
+# Source/document checkpoint 2026-09-10
 
-P3-153 is PM Accepted / Complete for L2 offline synthetic scope, including Closure-1 freshness fixes. Final source: lifeos/engineering/LIFEOS-P3-153/closure-1/candidate. P3-152 remains the last user-accepted real App; this source does not enable real data or Provider access. Independent review remains paused.
+Selected cumulative source and PM documents through P3-157 Closure-1. P3-154/155 user accepted; P3-156 accepted ONLY offline. P3-157 real acceptance FAILED, implementation STOPPED pending revised contract (D-0663). The P3-157 code is historical limited-rule implementation, NOT the corrected model-driven execution implementation or an accepted release.
 
-Selected source/docs only, not full Evidence or a portable release. Logs/screenshots/fixtures/Manifest packages stay local; local references do not promise remote replay readiness. No personal databases, credential material, runtime roots or binaries uploaded. Fictional key-header rejection test text is not a credential.
+Final source checkpoints: P3-154/closure-1/flow-stage/candidate; P3-155/candidate; P3-156/candidate; P3-157/closure-1/candidate. These are engineering checkpoints, not a new product baseline.
 
-Hosted CI not verified; main not merged. Follow D-0648/0649 for cumulative product inheritance and impact-scoped testing.
+No personal database, credential, runtime App, logs, screenshots, fixtures or Evidence package uploaded. Referenced local Evidence paths do not promise remote replay. No hosted CI green or main merge claim. Existing earlier snapshot files preserved.

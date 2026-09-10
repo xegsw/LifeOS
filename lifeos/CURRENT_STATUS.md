@@ -20,6 +20,28 @@
 
 ## 当前执行指针增量：P3-152终局
 
+最新产品更正（D-0663）：P3-157用户真实验收未通过，停止沿固定句式继续扩充；目标更正为模型理解候选→LifeOS校验→本地事务执行→回执反馈。见tasks/LIFEOS-P3-157_product_correction.md。新模型用途/协议完整合同待制定批准，暂不继续旧实现或切换真实App；不关闭任务为Pass，历史及数据保留。
+
+P3-157 Closure-1（D-0662）：用户批准有限识别与诚实保存反馈修正，工程继续同任务；原实际验收未通过，ABF08仍待结果，不启动后继。保持真实数据和凭据，不新增云端解析。
+
+最新活动：P3-157自然对话安排真实接入（D-0661），用户确认启动，L3；合同tasks/LIFEOS-P3-157_real_conversation_actions.md。156离线Complete，继承173文件完整基线；先安全合成验证，后已授权existing-only接入及正常切换，模型发送逐次确认，独立评审暂停。
+
+P3-156终局（2026-09-10）：PM Pass / Accepted / Complete，仅L2离线合成。最终173文件candidate，243检查记录及244项Manifest核对通过；未变UI观察按D-0649复用，不因最终锁屏重复取证。见reviews/LIFEOS-P3-156_pm_final_review.md。当前真实App仍未替换，真实启用未授权，后继未启动；下方156活动指针为历史。
+
+P3-156协议接续（2026-09-10，D-0660）：用户已批准精确最小v6及事件持久化提案，解除protocol_approval等待；仍仅L2离线合成，同任务继续，不操作当前真实App及资产，不重跑未受影响阶段。
+
+最新活动任务（2026-09-10，D-0659）：P3-156自然对话中的安排与进展闭环，L2离线合成，用户已授权启动。任务卡tasks/LIFEOS-P3-156_confirmed_next_action_loop.md；复用原工程会话，155完整候选增量开发。下方156 Draft为历史。155保持Complete，真实App/数据/凭据不操作，关键协议差异另审。
+
+2026-09-10路线收简：P3-156草案按D-0658改为自然对话中的安排与进展闭环，不要求任务卡按钮或逐项反馈；明确表达直接作为本地记录确认，仅歧义澄清。产品方向已确认，工程未启动；155 Complete及真实权限边界不变。
+
+2026-09-10最新终局：P3-155 PM Pass / Accepted / Complete / User Accepted（D-0657）。用户确认最小真实验收通过，剩余视觉及ABF-10收口。完整候选为b3f6树P3-155/candidate，见reviews/LIFEOS-P3-155_pm_final_review.md。停止155工程写入，App/数据/凭据保留；独立评审继续暂停，后继未启动。下方155活动指针为历史。
+
+最新活动任务：P3-155「资料更新与日常恢复闭环」，用户确认完整合同并授权启动（2026-09-09，D-0656）。合同及Task ABF Locked v1位于tasks；继承154最终flow-stage完整候选，原工程会话顺序执行。先合成验证，再合同内真实更新和安全切换；真实发送仍逐次确认。下方154及更早活动/待合同指针为历史，不重开旧任务，不改变风险/冻结/Stage。
+
+最新终局：P3-154已获用户真实闭环确认，PM Accepted/Complete，最终flow-stage完整candidate。见reviews/LIFEOS-P3-154_pm_final_review.md。154停止写入、当前App保留；用户要求后继，先准备完整合同，未将旧真实权限自动延续到新工程。下方154活动指针为历史。
+
+最新活动任务：P3-154，用户明确确认完整合同并启动（D-0654）。先执行完整累积基线接线与合成安全验证，再按合同切换真实App；真实发送仍由用户逐次确认。153已验收并同步4430e4af；不重开152/153，不迁移真实库、不重置凭据、不改变冻结/风险/Stage。当前任务卡tasks/LIFEOS-P3-154_real_continuous_understanding_integration.md优先于下方历史指针。
+
 最新终局：P3-153已完成PM验收（含Closure-1时效修复），L2离线合成Accepted/Complete；最终权威为b3f6工程树P3-153/closure-1/candidate。详见reviews/LIFEOS-P3-153_pm_final_review.md。下方Ready记录为历史；未启动后继，当前真实App仍152，独立评审继续暂停，不改变真实权限/风险/冻结/Stage。
 
 2026-09-09最新执行增量：用户确认启动P3-153「持续理解与必要澄清闭环」，Ready，派发原工程会话顺序执行。合同见tasks/LIFEOS-P3-153_continuous_understanding_and_useful_clarification.md，仅离线合成，继承152完整候选；不接触真实数据/凭据/网络，不改变Stage/冻结/风险。152代码文档已同步2ee77475，main不变。以下152结束与旧指针为历史，不作为重启指令。

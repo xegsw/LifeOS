@@ -201,7 +201,29 @@
 
 ### 启动增量（2026-09-09）
 
-- P3-154：已有资料与持续理解的真实使用闭环，L3 / Draft / 未启动。主合同tasks/LIFEOS-P3-154_real_continuous_understanding_integration.md及验收依据草案已形成；等待对精确真实目标读写、凭据复用、网络及App切换的一次确认，不继承旧任务授权自动执行。
+- P3-157 D-0663：实际验收未通过，Awaiting Revised Contract；停止固定句式扩充路线，产品目标为自然语言驱动本地操作。更正文件tasks/LIFEOS-P3-157_product_correction.md；新增云解析/协议尚未授权，旧Closure状态为历史。
+
+- P3-157 Closure-1 Authorized（D-0662）：用户允许精确有限语义修正；同任务回归与切换，ABF08待验收，不标Complete。
+
+- P3-157 Ready / Execution Authorized（D-0661）：自然对话安排真实接入，L3，完整合同tasks/LIFEOS-P3-157_real_conversation_actions.md；原会话顺序执行，先合成后切换，用户最终实际验收，非自动合并。
+
+- P3-156终局：PM Pass / Accepted / Complete（L2离线合成），见reviews/LIFEOS-P3-156_pm_final_review.md；最终173文件，未变UI观察复用，真实能力未启用。覆盖下方活动状态，独立评审暂停。
+
+- P3-156 D-0660：精确最小协议提案获用户批准，Resume Authorized；从协议检查点继续同一L2离线任务，14命令/v4/v5/物理Schema保持，真实边界不扩大。
+
+- 2026-09-10 P3-156 Ready / Execution Authorized（D-0659）：自然对话中的安排与进展闭环；L2离线合成，原工程会话顺序执行。完整任务卡已授权，覆盖下方Draft记录；不触碰真实资产、不替换当前App，关键Schema/API变化须明确批准。
+
+- P3-156交互修订（D-0658）：名称改为“自然对话中的安排与进展闭环”；用户确认去掉必经任务卡/操作按钮，以明确对话表达完成本地记录及更新，仅歧义澄清。仍Draft、未启动，以下原名称记录仅为草案历史。
+
+- 2026-09-10 P3-156 Draft：已确认下一步与行动反馈闭环，L2离线合成建议，待完整合同确认；任务卡tasks/LIFEOS-P3-156_confirmed_next_action_loop.md。不授权真实库/网络/凭据或关键Schema/API变化，155保持Complete。
+
+- 2026-09-10 P3-155终局：PM Pass / Accepted / Complete / User Accepted（D-0657），Review见reviews/LIFEOS-P3-155_pm_final_review.md。用户最小真实及视觉验收通过，当前合同内计数0/0/0/0/0；独立评审暂停。覆盖下方Ready状态，不启动后继、不清理真实资产。
+
+- P3-155：资料更新与日常恢复闭环，L3 / Ready / Execution Authorized（D-0656）。完整合同tasks/LIFEOS-P3-155_source_update_and_recovery.md及Task ABF Locked v1；用户确认合同内真实更新写入与安全切换，分派原工程会话顺序执行，复用154最终完整候选及已有机制。独立评审暂停，实际模型发送仍逐次确认。
+
+- P3-154终局：PM Pass / Accepted / Complete / User Accepted；用户确认显示恢复及真实闭环通过。最终flow-stage/candidate，Review见reviews/LIFEOS-P3-154_pm_final_review.md。覆盖下方Ready旧状态；独立评审暂停，不改变风险/冻结/Stage。
+
+- P3-154：已有资料与持续理解的真实使用闭环，L3 / Ready / 用户确认启动（D-0654），分派原工程会话。主合同tasks/LIFEOS-P3-154_real_continuous_understanding_integration.md及任务级Locked v1验收依据；先合成安全验证，再合同内真实切换，模型发送仍用户逐次确认。独立评审暂停，不宣称真实闭环已完成。
 
 - P3-153终局覆盖下方启动记录：PM Pass / Accepted / Complete（L2离线合成）；最终closure-1/candidate，时效两项缺陷同任务关闭。Review：lifeos/reviews/LIFEOS-P3-153_pm_final_review.md。独立评审暂停，真实启用/CI/推送不冒称完成。
 

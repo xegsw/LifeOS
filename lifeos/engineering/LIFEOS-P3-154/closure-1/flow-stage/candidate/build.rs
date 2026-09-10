@@ -1,0 +1,7 @@
+fn main(){
+ println!("cargo:rerun-if-env-changed=LIFEOS_P3_154_MODE");
+ let real=std::env::var_os("CARGO_FEATURE_CONTROLLED_REAL").is_some();
+ assert_eq!(std::env::var("LIFEOS_P3_154_MODE").as_deref(),Ok(if real{"real"}else{"synthetic"}),"build mode rejected");
+ assert!(!(real&&std::env::var_os("CARGO_FEATURE_SYNTHETIC_DRIVER").is_some()),"real driver forbidden");
+ tauri_build::build();
+}
