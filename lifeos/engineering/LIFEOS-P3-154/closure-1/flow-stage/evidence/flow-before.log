@@ -1,0 +1,152 @@
+✖ successful restoration clears earlier restore error (4.906083ms)
+✖ queued draft failure cannot survive successful prepare (0.280584ms)
+✖ late old draft failure cannot attach to new draft (0.147709ms)
+✖ saved result refresh failure retries only read and never prepares or sends again (0.161458ms)
+✖ new prepare failure belongs to new turn and revision, prior answer is unchanged (0.0965ms)
+✖ late completed cancel cannot erase newly edited draft (0.147958ms)
+✖ superseded snapshot rejection is ignored (0.123834ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 0
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 264.40625
+
+✖ failing tests:
+
+test at lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:7:1
+✖ successful restoration clears earlier restore error (4.906083ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + {
+  +   code: 'store_busy'
+  + }
+  - null
+  
+      at TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:7:235)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { code: 'store_busy' },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:8:1
+✖ queued draft failure cannot survive successful prepare (0.280584ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + {
+  +   code: 'store_busy'
+  + }
+  - null
+  
+      at TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:8:269)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { code: 'store_busy' },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:9:1
+✖ late old draft failure cannot attach to new draft (0.147709ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + {
+  +   code: 'store_busy'
+  + }
+  - null
+  
+      at TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:9:291)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { code: 'store_busy' },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:10:1
+✖ saved result refresh failure retries only read and never prepares or sends again (0.161458ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'failed'
+  - 'refresh-failed'
+  
+      at TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:10:293)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'refresh-failed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:11:1
+✖ new prepare failure belongs to new turn and revision, prior answer is unchanged (0.0965ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'f6404e18-3eca-4d83-a543-7222279b3f41'
+  
+      at TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:11:292)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'f6404e18-3eca-4d83-a543-7222279b3f41',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:12:1
+✖ late completed cancel cannot erase newly edited draft (0.147958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + ''
+  - 'synthetic later'
+  
+      at TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:12:307)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '',
+    expected: 'synthetic later',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:13:1
+✖ superseded snapshot rejection is ignored (0.123834ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted rejection.
+  Actual message: "undefined"
+      at async TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-154/closure-1/flow-stage/tests/flow_races.mjs:13:266)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { code: 'store_busy' },
+    expected: undefined,
+    operator: 'doesNotReject',
+    diff: 'simple'
+  }

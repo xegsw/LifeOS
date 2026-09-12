@@ -1,0 +1,27 @@
+{
+  "task": "P3-158",
+  "authorization": "D-0670",
+  "observedAt": "2026-09-10T10:04:05.501494+00:00",
+  "status": "Paused — Resumable",
+  "stage": "dedicated signing identity verification",
+  "verifiedFacts": {
+    "exactCertificateName": "LifeOS P3-158 Local Development Signing",
+    "exactDedicatedKeychain": "/Users/xxe/Library/Keychains/lifeos-p3-158-signing.keychain-db",
+    "dedicatedCertificateLookupFound": false,
+    "lookupExitCode": 44
+  },
+  "userReported": {
+    "certificateNameConfirmed": true,
+    "saveLocation": "possibly login keychain",
+    "locationIndependentlyVerified": false
+  },
+  "agentActions": {
+    "loginKeychainInspected": false,
+    "privateKeyReadOrExported": false,
+    "identityMovedOrDeleted": false,
+    "trustOrProviderAclChanged": false,
+    "newModelRequests": 0
+  },
+  "nextStep": "PM to define a bounded correction for the reported identity storage mismatch; do not create duplicate identity or migrate/delete private key under the existing dedicated-generation-only contract",
+  "offlineRegression": "17 steps passed; signing mismatch does not invalidate offline test evidence"
+}

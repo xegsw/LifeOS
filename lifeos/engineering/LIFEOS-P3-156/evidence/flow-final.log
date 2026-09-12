@@ -1,0 +1,22 @@
+✔ fixed codes distinguish storage, local commit and remote parser without raw error disclosure (0.357583ms)
+✔ unknown codes, inherited properties and arbitrary stages never render (0.068209ms)
+✔ actual application IPC wrapper preserves stage and excludes raw messages (0.340792ms)
+✔ prepare failure preserves draft and performs zero confirmation calls (1.269958ms)
+✔ remote protocol failure stays failed and does not automatically re-confirm (0.173042ms)
+✔ fixed code survives object or bounded string IPC envelope without raw fields (0.196458ms)
+✔ successful restoration clears earlier restore error (2.194875ms)
+✔ queued draft failure cannot survive successful prepare (0.198541ms)
+✔ late old draft failure cannot attach to new draft (0.099375ms)
+✔ saved result refresh failure retries only read and never prepares or sends again (0.382125ms)
+✔ new prepare failure belongs to new turn and revision, prior answer is unchanged (0.104209ms)
+✔ late completed cancel cannot erase newly edited draft (0.130792ms)
+✔ superseded snapshot rejection is ignored (0.099916ms)
+✔ actual status renderer offers read-only recovery after saved result (1.622959ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 41.9545

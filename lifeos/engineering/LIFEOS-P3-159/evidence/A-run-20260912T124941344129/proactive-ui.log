@@ -1,0 +1,25 @@
+✔ closing purpose is available during in-flight response and preserves input (4.528459ms)
+✔ a late old refresh cannot restore enabled UI after generation changes (1.508458ms)
+✔ projection acknowledgements update revision before response preparation (0.154583ms)
+✔ source/model text is escaped and never interpreted as markup (0.124416ms)
+✔ reload restores persisted pending response without resubmitting it (0.107208ms)
+✔ unchanged polling preserves the mounted page and unsaved selections (0.134333ms)
+✔ completed response does not erase a newer typed follow-up (0.088542ms)
+✔ unrelated response keeps original draft during completion and restart (0.116209ms)
+✔ topic switch uses existing ordinary preview without auto-confirming or changing suggestion (0.12975ms)
+✔ credential recovery never starts from polling or a forged click (0.141667ms)
+✔ credential recovery opens only native menu and cannot issue start, save or POST (0.133291ms)
+✔ credential check cancelled during menu open cannot restore late state (0.089584ms)
+✔ compact settings keeps scope and technical details out of default region (0.178042ms)
+✔ first enable opens disclosure without grant write; one-click disable preserves selected sources (0.121375ms)
+✔ credential entry errors retain only safe fixed code (0.068833ms)
+✔ turning off while scope is being edited retains the last saved permission set (0.0555ms)
+✔ historical credential success does not contradict current Host policy after resume or disable (0.05625ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 48.263333

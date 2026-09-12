@@ -1,0 +1,18 @@
+
+running 1 test
+test update_contract_tests::import_status_missing_schema_is_not_migrated ... FAILED
+
+failures:
+
+---- update_contract_tests::import_status_missing_schema_is_not_migrated stdout ----
+
+thread 'update_contract_tests::import_status_missing_schema_is_not_migrated' (21887767) panicked at source-engine/src/apple_health_api.rs:198:30:
+called `Result::unwrap_err()` on an `Ok` value: ()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    update_contract_tests::import_status_missing_schema_is_not_migrated
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 116 filtered out; finished in 0.00s
+

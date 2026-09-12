@@ -1,0 +1,36 @@
+✔ one file selection starts the sole raw IPC and status completes refresh (0.704666ms)
+✔ failed import remains visible and retry uses same file (0.189625ms)
+✔ starting or running cannot start another import (0.074958ms)
+✔ duplicate restores original import time without claiming new samples (8.7175ms)
+✔ HTML escaping applies to filename and unsupported types (0.148541ms)
+✔ unknown failed counts are not fabricated totals (0.051125ms)
+✔ Apple observation labels do not imply completeness, identity or revision (0.350083ms)
+✔ actual frontend resolver excludes Apple batches and states under all purposes (1.5785ms)
+✔ semantic partial success exposes skipped and unprojected without claiming complete coverage (0.092583ms)
+✔ U01 startup once; recovery never replaces typing during deferred open (2.302375ms)
+✔ U01 failure retains draft and only explicit retry opens (0.100833ms)
+✔ U02 local prepare does not send; exactly one explicit confirmation sends (0.207792ms)
+✔ U03 editing while preparing discards returned confirmation and preserves new draft (0.11725ms)
+✔ U03 removed source gets new packet; edit and cancel revoke UI confirmation (0.846584ms)
+✔ U03 current backend stale/revoked packet refuses send (0.114334ms)
+✔ U03 expiry removes button without automatic retry (22.202959ms)
+✔ U02/U04 unknown result is visible and never resent or requiring feedback (0.166708ms)
+✔ U06 startup repository requests only existing conversation recovery, no credential/model/scan calls (0.139459ms)
+✔ health excluded by actual resolver for every purpose, even active/status spoof (1.645917ms)
+✔ health view shows unmerged sources, observation freshness, and no fabricated zero (8.693416ms)
+✔ failed startup retry cannot overwrite typing between attempts (0.258458ms)
+✔ remove uses stored turn identity even public preview has no turnId, cancels before rebuilding (0.4935ms)
+✔ remove failure never leaves old send confirmation (0.098541ms)
+✔ edit during removal cannot resurrect returned confirmation (0.129084ms)
+✔ observation display uses envelope offset, receipt labels device time (0.113875ms)
+✔ window range and ambiguous source grouping remain explicit (8.657208ms)
+✔ pending integrity preserves prior state message and batch history (0.282125ms)
+✔ actual resolver excludes snapshot body and derived state for every purpose (1.239125ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 58.185542

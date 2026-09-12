@@ -1,0 +1,52 @@
+//! Fixed compile-time modes. No caller-selected paths or legacy fallback.
+use std::{path::{Path,PathBuf},fs,os::unix::fs::{MetadataExt,OpenOptionsExt,DirBuilderExt},io::Write};
+use crate::repository::Error;
+#[cfg(all(any(feature="controlled-real",feature="online-synthetic"),test))]compile_error!("real tests are forbidden; use synthetic branch tests");
+pub const REAL_ROOT:&str="/Users/xxe/Documents/LifeOS-Health-Conversation-Pilot-1";
+pub const HEALTH_DB:&str="/Users/xxe/Documents/LifeOS-Health-Import-Pilot-1/health-import.sqlite";
+pub fn is_real()->bool{cfg!(feature="controlled-real")}
+pub fn is_online()->bool{cfg!(feature="online-synthetic")}
+pub fn network_enabled()->bool{is_real()||is_online()}
+pub fn mode()->&'static str{if is_real(){"real"}else if is_online(){"online-synthetic"}else{"synthetic"}}
+fn rejected()->Error{Error::new("runtime_target_rejected")}
+fn check(p:&Path,dir:bool,mode:u32)->Result<(),Error>{let m=fs::symlink_metadata(p).map_err(|_|rejected())?;if m.file_type().is_symlink()||m.is_dir()!=dir||(!dir&&(!m.is_file()||m.nlink()!=1))||m.uid()!=unsafe{libc::getuid()}||m.mode()&0o777!=mode{return Err(rejected());}Ok(())}
+fn real_root_at(root:&Path)->Result<PathBuf,Error>{
+ let mut ancestor=PathBuf::new();for part in root.parent().ok_or_else(rejected)?.components(){ancestor.push(part);let m=fs::symlink_metadata(&ancestor).map_err(|_|rejected())?;if !m.is_dir()||m.file_type().is_symlink(){return Err(rejected());}}
+ let marker=root.join(".lifeos-p3-152-owner.json");let expected=serde_json::json!({"task":"P3-152","mode":"real","owner":"01a07f0e-dbbd-7d23-9e6d-68f2152f9484","root":root});
+ check(root,true,0o700)?;check(&marker,false,0o600)?;let bytes=fs::read(&marker).map_err(|_|rejected())?;if bytes.len()>1024||serde_json::from_slice::<serde_json::Value>(&bytes).ok()!=Some(expected){return Err(rejected());}
+ for entry in fs::read_dir(root).map_err(|_|rejected())?{let entry=entry.map_err(|_|rejected())?;let name=entry.file_name();let n=name.to_str().ok_or_else(rejected)?;if ![".lifeos-p3-152-owner.json",".runtime","tmp","conversation.sqlite","conversation.sqlite-wal","conversation.sqlite-shm","conversation.sqlite-journal","provider.sqlite","provider.sqlite-wal","provider.sqlite-shm","provider.sqlite-journal","source-engine-v1"].contains(&n){return Err(rejected());}check(&entry.path(),[".runtime","tmp","source-engine-v1"].contains(&n),if [".runtime","tmp","source-engine-v1"].contains(&n){0o700}else{0o600})?;}
+ for n in [".runtime","tmp","source-engine-v1"]{check(&root.join(n),true,0o700)?;}for n in ["conversation.sqlite","provider.sqlite"]{check(&root.join(n),false,0o600)?;}Ok(root.to_owned())
+}
+pub fn verify()->Result<PathBuf,Error>{if is_real(){real_root_at(Path::new(REAL_ROOT))}else{crate::health_conversation_host::verify_root()?;Ok(PathBuf::from(crate::health_conversation_host::ROOT).join("synthetic"))}}
+#[cfg(test)]mod tests{use super::*;#[test]fn new_root_and_foreign_conflict_fail_closed(){crate::health_conversation_host::verify_root().unwrap();let root=PathBuf::from(crate::health_conversation_host::ROOT).join(format!("root-test-{}-{}",std::process::id(),crate::conversation_store::uid("case")));seed_root(&root);assert_eq!(real_root_at(&root).unwrap(),root);assert_eq!(real_root_at(&root).unwrap(),root);fs::write(root.join("foreign"),b"synthetic-only").unwrap();assert!(real_root_at(&root).is_err());assert_eq!(fs::read(root.join("foreign")).unwrap(),b"synthetic-only");}#[test]fn real_root_constants_and_synthetic_mode(){assert!(!is_real());assert_eq!(REAL_ROOT,"/Users/xxe/Documents/LifeOS-Health-Conversation-Pilot-1");assert_eq!(HEALTH_DB,"/Users/xxe/Documents/LifeOS-Health-Import-Pilot-1/health-import.sqlite");}}
+
+#[cfg(test)]mod credential_root_tests {
+ use super::*;
+ #[test]fn source_child_preserves_parent_store_allowlist(){
+  crate::health_conversation_host::verify_root().unwrap();
+  let root=PathBuf::from(crate::health_conversation_host::ROOT).join(crate::conversation_store::uid("credential-root"));
+  seed_root(&root);real_root_at(&root).unwrap();
+
+  assert_eq!(real_root_at(&root).unwrap(),root);
+
+  assert_eq!(real_root_at(&root).unwrap(),root);
+  use std::os::unix::fs::PermissionsExt;
+  fs::set_permissions(root.join("source-engine-v1"),fs::Permissions::from_mode(0o755)).unwrap();
+  assert_eq!(real_root_at(&root).unwrap_err().code,"runtime_target_rejected");
+ }
+}
+
+#[cfg(test)]fn seed_root(root:&Path){
+ fs::DirBuilder::new().mode(0o700).create(root).unwrap();
+ let marker=serde_json::json!({"task":"P3-152","mode":"real","owner":"01a07f0e-dbbd-7d23-9e6d-68f2152f9484","root":root});
+ fs::write(root.join(".lifeos-p3-152-owner.json"),marker.to_string()).unwrap();
+ for n in [".runtime","tmp","source-engine-v1"]{fs::DirBuilder::new().mode(0o700).create(root.join(n)).unwrap();}
+ for n in ["conversation.sqlite","provider.sqlite"]{fs::OpenOptions::new().create_new(true).write(true).mode(0o600).open(root.join(n)).unwrap();}
+}
+
+#[cfg(test)]mod continuity_guards{
+ use super::*;
+ #[test]fn missing_existing_root_is_never_created(){let p=PathBuf::from(crate::health_conversation_host::ROOT).join(crate::conversation_store::uid("missing"));assert!(real_root_at(&p).is_err());assert!(!p.exists());}
+ #[test]fn missing_existing_database_is_never_rebuilt(){let p=PathBuf::from(crate::health_conversation_host::ROOT).join(crate::conversation_store::uid("missing-db"));seed_root(&p);let marker=fs::read(p.join(".lifeos-p3-152-owner.json")).unwrap();fs::remove_file(p.join("provider.sqlite")).unwrap();assert!(real_root_at(&p).is_err());assert!(!p.join("provider.sqlite").exists());assert_eq!(fs::read(p.join(".lifeos-p3-152-owner.json")).unwrap(),marker);}
+ #[test]fn foreign_owner_and_symlink_fail_without_repair(){let p=PathBuf::from(crate::health_conversation_host::ROOT).join(crate::conversation_store::uid("foreign"));seed_root(&p);let m=p.join(".lifeos-p3-152-owner.json");fs::write(&m,b"{}").unwrap();assert!(real_root_at(&p).is_err());assert_eq!(fs::read(m).unwrap(),b"{}");}
+}

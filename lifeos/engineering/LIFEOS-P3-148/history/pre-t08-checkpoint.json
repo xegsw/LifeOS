@@ -1,0 +1,52 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-148",
+  "attempt_id": "engineering-1",
+  "updated_at": "2026-09-08T09:56:51.983592+00:00",
+  "task_contract_sha256": "8dfda85f9a49b0c1d79fe9209b1ddb8b225bf8829548569bb15fb61068de8d99",
+  "candidate_sha256": "ccf5fde422e1f75ba33c1bcff835e40f2e34a01faed3b23ce11c1a3e8e9a4643",
+  "baseline_sha256": "0e9019ba6291fcd66ef247316f6693370c38fd20a1cfc697af2acd5016cde4db",
+  "stage": "engineering_delivery",
+  "status": "awaiting_PM_review",
+  "pause_class": null,
+  "pause_reason_code": null,
+  "completed_checks": [
+    "design_seal",
+    "E01_seal",
+    "offline_build",
+    "16_rust_tests",
+    "12_integration_groups",
+    "desktop_actual_app",
+    "earlier_narrow_app",
+    "ordinary_v2_functional_smoke",
+    "current_candidate_narrow_gui",
+    "engineering_manifest"
+  ],
+  "pending_checks": [
+    "PM_review_of_coverage_limits",
+    "independent_safety_gate",
+    "user_real_validation"
+  ],
+  "rerun_checks": [],
+  "excluded_artifacts": [
+    "app-resumednarrowrestart.png",
+    "app-resumednarrowrestart.json",
+    "app-resumednarrowpreview.png",
+    "app-resumednarrowpreview.json",
+    "app-resumednarrowconfirm.png",
+    "app-resumednarrowconfirm.json"
+  ],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "owned_synthetic_root_retained"
+  },
+  "resume_from": "PM_review",
+  "safe_to_resume": true,
+  "notes": "Unlocked and resumed same candidate. Current desktop/narrow binary hashes match. Incorrectly labelled initial startup captures excluded. All task Apps stopped; no real profile built or accessed."
+}

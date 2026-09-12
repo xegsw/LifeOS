@@ -1,0 +1,62 @@
+{
+  "task": "LIFEOS-P3-148",
+  "status": "pass",
+  "checks": [
+    {
+      "profile": "independent-review",
+      "step": "build",
+      "exit_code": 0,
+      "log": "e03-20260908T105845Z-independent-review-build.log"
+    },
+    {
+      "profile": "independent-review",
+      "step": "pure-tests",
+      "exit_code": 0,
+      "log": "e03-20260908T105845Z-independent-review-pure-tests.log"
+    },
+    {
+      "profile": "independent-review",
+      "step": "transport-mode",
+      "exit_code": 0,
+      "log": "e03-20260908T105845Z-independent-review-transport-mode.log"
+    },
+    {
+      "profile": "independent-review",
+      "step": "pure-profile-info",
+      "overrides_rejected": 8,
+      "binary_sha256": "64c07be4295d37e1ea399283a278bd994f209e18855ede41ec1ea85a5b1f0343",
+      "runtime_root_contact": false,
+      "gui_launched": false
+    },
+    {
+      "profile": "engineering",
+      "step": "build",
+      "exit_code": 0,
+      "log": "e03-20260908T105845Z-engineering-build.log"
+    },
+    {
+      "profile": "engineering",
+      "step": "pure-tests",
+      "exit_code": 0,
+      "log": "e03-20260908T105845Z-engineering-pure-tests.log"
+    },
+    {
+      "profile": "engineering",
+      "step": "transport-mode",
+      "exit_code": 0,
+      "log": "e03-20260908T105845Z-engineering-transport-mode.log"
+    },
+    {
+      "profile": "engineering",
+      "step": "pure-profile-info",
+      "overrides_rejected": 8,
+      "binary_sha256": "337f85809ef56048131d1e283329abdaa56c28687ba7df368ca7e4fd618fff4e",
+      "runtime_root_contact": false,
+      "gui_launched": false
+    }
+  ],
+  "cache_scope": "engineering root only",
+  "review_root_contact": false,
+  "review_app_launched": false,
+  "independent_pass": false
+}

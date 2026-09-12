@@ -1,0 +1,245 @@
+{
+  "schema": "p156.interaction-corpus.v1",
+  "status": "design_only_not_executed",
+  "note": "Expected behavior contract, not runtime PASS. Context names are synthetic preconditions. Model-only and silence cases must never become user input commits.",
+  "cases": [
+    {
+      "id": "create_explicit",
+      "raw": "我明天先整理报告结论。",
+      "context": "none",
+      "expected": "create",
+      "newActionEvents": 1
+    },
+    {
+      "id": "create_pronoun_unique",
+      "raw": "那我明天先做这个。",
+      "context": "one_current_suggestion",
+      "expected": "create",
+      "newActionEvents": 1
+    },
+    {
+      "id": "create_pronoun_multiple",
+      "raw": "那我明天先做这个。",
+      "context": "two_current_suggestions",
+      "expected": "clarify",
+      "newActionEvents": 0
+    },
+    {
+      "id": "complete_unique",
+      "raw": "报告结论做完了。",
+      "context": "one_matching_planned",
+      "expected": "complete",
+      "newActionEvents": 1
+    },
+    {
+      "id": "complete_pronoun_unique",
+      "raw": "做完了。",
+      "context": "one_explicit_current_target",
+      "expected": "complete",
+      "newActionEvents": 1
+    },
+    {
+      "id": "complete_multiple",
+      "raw": "做完了。",
+      "context": "two_planned_no_current_target",
+      "expected": "clarify",
+      "newActionEvents": 0
+    },
+    {
+      "id": "cancel_explicit",
+      "raw": "报告结论先不做了。",
+      "context": "one_matching_planned",
+      "expected": "cancel",
+      "newActionEvents": 1
+    },
+    {
+      "id": "adjust_explicit",
+      "raw": "把整理报告结论改成明天下午做。",
+      "context": "one_matching_planned",
+      "expected": "adjust",
+      "newActionEvents": 1
+    },
+    {
+      "id": "quote",
+      "raw": "他说“报告结论做完了”。",
+      "context": "one_matching_planned",
+      "expected": "no_action",
+      "newActionEvents": 0
+    },
+    {
+      "id": "hypothesis",
+      "raw": "假如报告结论做完了就好了。",
+      "context": "one_matching_planned",
+      "expected": "no_action",
+      "newActionEvents": 0
+    },
+    {
+      "id": "negated_completion",
+      "raw": "报告结论还没做完。",
+      "context": "one_matching_planned",
+      "expected": "no_action",
+      "newActionEvents": 0
+    },
+    {
+      "id": "negated_arrangement",
+      "raw": "我不打算明天整理报告结论。",
+      "context": "none",
+      "expected": "no_action",
+      "newActionEvents": 0
+    },
+    {
+      "id": "smalltalk",
+      "raw": "今天聊天挺有意思。",
+      "context": "one_planned",
+      "expected": "no_action",
+      "newActionEvents": 0
+    },
+    {
+      "id": "silence",
+      "raw": "",
+      "context": "one_suggestion",
+      "expected": "no_action",
+      "newActionEvents": 0
+    },
+    {
+      "id": "ambiguous_ok",
+      "raw": "好了。",
+      "context": "one_planned",
+      "expected": "clarify",
+      "newActionEvents": 0
+    },
+    {
+      "id": "suggestion_only",
+      "raw": "[offline model suggests整理报告]",
+      "context": "model_only",
+      "expected": "no_action",
+      "newActionEvents": 0
+    },
+    {
+      "id": "clarification_answer",
+      "raw": "报告结论那个。",
+      "context": "pending_two_targets_unchanged",
+      "expected": "complete",
+      "newActionEvents": 1
+    },
+    {
+      "id": "clarification_stale",
+      "raw": "报告结论那个。",
+      "context": "pending_target_version_changed",
+      "expected": "reject_stale",
+      "newActionEvents": 0
+    },
+    {
+      "id": "cancelled_no_reopen",
+      "raw": "这个做完了。",
+      "context": "cancelled_target",
+      "expected": "reject_terminal",
+      "newActionEvents": 0
+    },
+    {
+      "id": "completed_no_reopen",
+      "raw": "这个改到明天。",
+      "context": "completed_target",
+      "expected": "reject_terminal",
+      "newActionEvents": 0
+    },
+    {
+      "id": "retry_identical",
+      "raw": "我明天先整理报告结论。",
+      "context": "same_request_and_turn_committed",
+      "expected": "replay",
+      "newActionEvents": 0
+    },
+    {
+      "id": "retry_changed_payload",
+      "raw": "我明天先修改报告。",
+      "context": "same_request_other_payload",
+      "expected": "reject_conflict",
+      "newActionEvents": 0
+    },
+    {
+      "id": "late_version",
+      "raw": "报告结论做完了。",
+      "context": "packet_v1_current_v2",
+      "expected": "reject_stale",
+      "newActionEvents": 0
+    },
+    {
+      "id": "forged_model_target",
+      "raw": "报告结论做完了。",
+      "context": "model_selects_code_task",
+      "expected": "reject_candidate",
+      "newActionEvents": 0
+    },
+    {
+      "id": "forged_raw_span",
+      "raw": "今天聊天挺有意思。",
+      "context": "model_claims_explicit_create",
+      "expected": "reject_candidate",
+      "newActionEvents": 0
+    },
+    {
+      "id": "expired_ref_create",
+      "raw": "那我明天先做这个。",
+      "context": "unique_suggestion_source_expired",
+      "expected": "reject_basis",
+      "newActionEvents": 0
+    },
+    {
+      "id": "revoked_ref_read",
+      "raw": "",
+      "context": "existing_action_source_revoked",
+      "expected": "readonly_needs_judgment",
+      "newActionEvents": 0
+    },
+    {
+      "id": "corrected_ref_read",
+      "raw": "",
+      "context": "existing_action_source_version_changed",
+      "expected": "readonly_needs_judgment",
+      "newActionEvents": 0
+    },
+    {
+      "id": "cancel_invalid_basis",
+      "raw": "报告结论先不做了。",
+      "context": "existing_action_source_revoked",
+      "expected": "cancel",
+      "newActionEvents": 1
+    },
+    {
+      "id": "failure_draft",
+      "raw": "报告结论做完了。",
+      "context": "transaction_injected_failure",
+      "expected": "draft_retained",
+      "newActionEvents": 0
+    },
+    {
+      "id": "restore_after_lost_response",
+      "raw": "",
+      "context": "committed_response_lost",
+      "expected": "readonly_recover",
+      "newActionEvents": 0
+    },
+    {
+      "id": "restart_restore",
+      "raw": "",
+      "context": "persisted_action_and_feedback",
+      "expected": "readonly_recover",
+      "newActionEvents": 0
+    },
+    {
+      "id": "adapter_switch",
+      "raw": "",
+      "context": "OfflineA_to_OfflineB",
+      "expected": "readonly_same_identity",
+      "newActionEvents": 0
+    },
+    {
+      "id": "more_than_page_targets",
+      "raw": "做完了。",
+      "context": "multiple_targets_outside_first_page",
+      "expected": "clarify",
+      "newActionEvents": 0
+    }
+  ]
+}

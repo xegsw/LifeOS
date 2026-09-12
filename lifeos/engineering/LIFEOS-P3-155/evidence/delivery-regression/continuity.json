@@ -1,0 +1,47 @@
+{
+  "passed": 8,
+  "total": 8,
+  "networkCalls": 0,
+  "restartEvidence": {
+    "pids": [
+      74005,
+      74006,
+      74007
+    ],
+    "fixture": "p155-94bee327-7d3d-4b34-901b-aa1acb78c6ab"
+  },
+  "results": [
+    {
+      "name": "independent process reopen preserves answered state, raw refs and adapter continuity",
+      "pass": true
+    },
+    {
+      "name": "failure preserves raw draft and retry once commits once under concurrency",
+      "pass": true
+    },
+    {
+      "name": "hypothetical time and observation duration never become user state",
+      "pass": true
+    },
+    {
+      "name": "authorized selected source availability answers gap; denied, conflicting and irrelevant excluded",
+      "pass": true
+    },
+    {
+      "name": "reject survives more than eight new question instances and process restart, explicit reopen answers once",
+      "pass": true
+    },
+    {
+      "name": "defer survives independent restart without a prompt or state write",
+      "pass": true
+    },
+    {
+      "name": "ignore is only this occurrence; next request has a distinct question and preserves old turn",
+      "pass": true
+    },
+    {
+      "name": "already answered, rejected, deferred and silence cannot be confused",
+      "pass": true
+    }
+  ]
+}

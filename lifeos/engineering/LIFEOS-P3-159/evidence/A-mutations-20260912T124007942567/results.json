@@ -1,0 +1,30 @@
+{
+  "results": [
+    {
+      "id": "credential-native-grant-bypass",
+      "test": "credential_check_native_grant_is_single_use_and_cannot_be_forged",
+      "exitCode": 101,
+      "killedByAssertion": true,
+      "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-159/evidence/A-mutations-20260912T124007942567/credential-native-grant-bypass.log",
+      "mutatedSha256": "49f735c1aba73fe76d4afb36bc6f2be4e4856e160c8563aae5b8f7040bb57afd"
+    },
+    {
+      "id": "credential-late-binding-bypass",
+      "test": "credential_check_cancel_timeout_and_changed_binding_discard_late_result",
+      "exitCode": 101,
+      "killedByAssertion": true,
+      "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-159/evidence/A-mutations-20260912T124007942567/credential-late-binding-bypass.log",
+      "mutatedSha256": "9786acef9ee1c2a2c79e0ff12bacc7b313e2738bba7c11bd2aaa49628d340a43"
+    },
+    {
+      "id": "credential-raw-profile-regression",
+      "test": "credential_check_binds_effective_lifecycle_not_raw_legacy_enabled_field",
+      "exitCode": 101,
+      "killedByAssertion": true,
+      "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-159/evidence/A-mutations-20260912T124007942567/credential-raw-profile-regression.log",
+      "mutatedSha256": "ca88d2c1070c49f2ab047cca25710811b6dc08c66060e72926ceb0a798c7f21f"
+    }
+  ],
+  "canonicalUnchanged": true,
+  "runtime": "offline synthetic only"
+}

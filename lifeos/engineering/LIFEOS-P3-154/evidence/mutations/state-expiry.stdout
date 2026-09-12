@@ -1,0 +1,18 @@
+
+running 1 test
+test health_conversation_host::controlled_tests::c1_expired_state_blocks_confirm_before_adapter_call ... FAILED
+
+failures:
+
+---- health_conversation_host::controlled_tests::c1_expired_state_blocks_confirm_before_adapter_call stdout ----
+
+thread 'health_conversation_host::controlled_tests::c1_expired_state_blocks_confirm_before_adapter_call' (21759591) panicked at src/health_conversation_host/controlled_tests.rs:39:298:
+called `Result::unwrap_err()` on an `Ok` value: Object {"previewId": String("preview:v-c1-before-send"), "state": String("succeeded"), "turnId": String("c1-before-send")}
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    health_conversation_host::controlled_tests::c1_expired_state_blocks_confirm_before_adapter_call
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 103 filtered out; finished in 0.05s
+

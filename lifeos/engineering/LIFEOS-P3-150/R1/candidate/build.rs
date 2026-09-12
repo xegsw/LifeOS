@@ -1,0 +1,1 @@
+fn main(){println!("cargo:rerun-if-env-changed=LIFEOS_P3_150_MODE");let mode=std::env::var("LIFEOS_P3_150_MODE").expect("explicit mode");assert!(mode=="synthetic"||mode=="real");println!("cargo:rustc-env=P3_150_MODE={mode}");tauri_build::build();}

@@ -1,0 +1,88 @@
+{
+  "total": 243,
+  "suites": [
+    {
+      "suite": "rust",
+      "passed": 118,
+      "total": 118,
+      "log": "rust-final.log",
+      "sha256": "cbd3c2092b5285d97fdab99e9f8ed4d1b424244697737b7df6b1388d7ff8c816"
+    },
+    {
+      "suite": "ui",
+      "passed": 25,
+      "total": 25,
+      "log": "ui.log",
+      "sha256": "f637222dde0f38d3dd9aad3c3a9c33558a2b408c545393fbaffefcf11f404e31"
+    },
+    {
+      "suite": "integration",
+      "passed": 14,
+      "total": 14,
+      "log": "integration-final.log",
+      "sha256": "734e4b8a3ba3ddff2db8d1116fcd9e83f62c6c74259bd92cedafe8f6b25f0c18"
+    },
+    {
+      "suite": "combined",
+      "passed": 11,
+      "total": 11,
+      "log": "combined-final.log",
+      "sha256": "8324d426b134e61c5bff95dbc78fc707d7dd69d92b696b42ad1b66a92eb57f9a"
+    },
+    {
+      "suite": "continuity",
+      "passed": 8,
+      "total": 8,
+      "log": "continuity.log",
+      "sha256": "3f87f0fb6af5d17dc324e8f071350d00543281cd97231d2133ce55329b7f39ae"
+    },
+    {
+      "suite": "clarification-ui",
+      "passed": 5,
+      "total": 5,
+      "log": "clarification-ui.log",
+      "sha256": "60be686ad628a4fc9bc7dd3b91430ad70146e96421c4df45c7f795107df329d9"
+    },
+    {
+      "suite": "error-diagnostics",
+      "passed": 6,
+      "total": 6,
+      "log": "error-diagnostics.log",
+      "sha256": "eb054b50fc5211da515195e3bea16a67e8d9836aaa334b72ae2728f7e93b5e6a"
+    },
+    {
+      "suite": "flow-races",
+      "passed": 8,
+      "total": 8,
+      "log": "flow-races.log",
+      "sha256": "3fe595057533a8a6240775c02172621bd74347edc6ceb5ebedf95d968577c421"
+    },
+    {
+      "suite": "source-recovery",
+      "passed": 7,
+      "total": 7,
+      "log": "source-recovery.log",
+      "sha256": "416d4e8eeda23a8e67c2a4424c2dc923e88093631c7bd01f1f7f169ef9822f4d"
+    },
+    {
+      "suite": "freshness",
+      "passed": 6,
+      "total": 6,
+      "log": "freshness.log",
+      "sha256": "b3b7601c1b0a5add6e7371e2500e4db3e432b8f7e65aba7723e63b1169e12f05"
+    },
+    {
+      "suite": "actions",
+      "passed": 35,
+      "total": 35,
+      "log": "actions-final-35.log",
+      "sha256": "32c294fa0a0f5e37439d72a5dd54306dec265f49c26020d9ae36b6fa80c4400f"
+    }
+  ],
+  "notes": "Final actions35 covers the final isolated action guard delta. Prior rust118 and unaffected inherited suites reused; shared cancel/model integration and Flow rerun in affected-final. No duplicate retry count.",
+  "excluded": [
+    "build.log: initial module path failure, corrected",
+    "rust-regression.log: initial 116/118 due missing umask; root retry then full final118 passed",
+    "final CUA AX attempt: Mac locked, no positive window claim"
+  ]
+}

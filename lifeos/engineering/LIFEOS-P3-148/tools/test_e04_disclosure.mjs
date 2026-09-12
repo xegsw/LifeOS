@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+const source=readFileSync(new URL('../candidate/application/source_ui.ts',import.meta.url),'utf8');
+const fn=source.slice(source.indexOf('function disclosure()'),source.indexOf('function conversation()')).replaceAll('(i:any)','(i)');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const p={previewId:'p',state:'ready',provider:'DeepSeek',modelId:'synthetic-model',question:'问题 <原文>&',instructions:'固定说明 <不改变>',items:[{kind:'source',citationId:'C1',text:'笔记\n原文 & <>',source:{segmentId:'s1',locator:'L1'}},{kind:'correction',citationId:'F1',text:'用户纠正\n原样保留'}]};
+p.bodyJson=JSON.stringify({model:p.modelId,messages:[{role:'system',content:p.instructions},{role:'user',content:[p.question,...p.items.map(i=>i.text)].join('\n')}]});
+const render=new Function('flow','esc','mark','button',fn+';return disclosure()');
+const html=render({preview:p},esc,()=> '合成演练，未联网',(a,t)=>`<button data-action="${a}">${t}</button>`);
+for(const text of [p.question,p.instructions,...p.items.map(i=>i.text),p.bodyJson])assert(html.includes(esc(text)));
+assert(html.includes('1段相关笔记，以及1条用户纠正'));
+assert(!/<details[^>]*\bopen\b/.test(html));assert(!html.includes('token仅估算'));
+assert.equal((html.match(/data-action="send"/g)||[]).length,1);
+assert.equal(JSON.parse(p.bodyJson).messages[1].content,[p.question,...p.items.map(i=>i.text)].join('\n'));
+for(const state of ['no_match','stale'])assert(!render({preview:{...p,state}},esc,()=>'',(a,t)=>`<button data-action="${a}">${t}</button>`).includes('data-action="send"'));
+console.log('PASS U03 exact escaped question, source, correction, instructions and actual JSON; collapsed disclosure; one ready confirmation; no_match/stale cannot send');

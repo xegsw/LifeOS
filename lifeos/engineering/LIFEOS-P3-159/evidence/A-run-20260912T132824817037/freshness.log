@@ -1,0 +1,40 @@
+{
+  "passed": 6,
+  "total": 6,
+  "networkCalls": 0,
+  "restart": {
+    "fixture": "p158-c1-1d5fdebf-b28c-4315-8bc6-3b0dfa30cbd8",
+    "pids": [
+      64316,
+      64320
+    ],
+    "oldQuestion": "q:health:available_time:49952c55bb36c09efabe5e714375cf8b",
+    "newQuestion": "q:health:available_time:edce3c56aa8a4206274edbabfd7eb137"
+  },
+  "results": [
+    {
+      "name": "expired answered information opens one new gap; history untouched",
+      "pass": true
+    },
+    {
+      "name": "valid replacement state answers gap; expired or revoked state does not",
+      "pass": true
+    },
+    {
+      "name": "source availability is usable only when current and authorized",
+      "pass": true
+    },
+    {
+      "name": "reject remains durable; deferred and ignored respect their scope",
+      "pass": true
+    },
+    {
+      "name": "prior answered domain is not an authorization or domain for a new ambiguous request",
+      "pass": true
+    },
+    {
+      "name": "expired persisted state after independent restart permits new question and retains old answered row",
+      "pass": true
+    }
+  ]
+}

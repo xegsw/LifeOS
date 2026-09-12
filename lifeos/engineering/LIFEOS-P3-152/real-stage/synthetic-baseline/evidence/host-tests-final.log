@@ -1,0 +1,175 @@
+   Compiling lifeos-p3-152 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-152/candidate)
+warning: unused import: `SendPlan`
+   --> src/health_conversation_host.rs:142:98
+    |
+142 | #[path="health_conversation_host/controlled.rs"]mod controlled;pub(crate) use controlled::{Start,SendPlan};
+    |                                                                                                  ^^^^^^^^
+    |
+    = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Request`
+ --> src/conversation_contract.rs:2:32
+  |
+2 | use crate::repository::{Error, Request};
+  |                                ^^^^^^^
+
+warning: unused import: `json`
+ --> src/host_gateway.rs:2:24
+  |
+2 | use serde_json::{Value,json};use std::sync::{Arc,Mutex,OnceLock};
+  |                        ^^^^
+
+warning: function `text` is never used
+  --> src/conversation_contract.rs:39:8
+   |
+39 | pub fn text(v: &Value, k: &str, empty: bool) -> R<String> {
+   |        ^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `ids` is never used
+  --> src/conversation_contract.rs:46:8
+   |
+46 | pub fn ids(v: &Value, k: &str, max: usize) -> R<Vec<String>> {
+   |        ^^^
+
+warning: constant `P3_144_REFERENCE_PREFIX` is never used
+  --> src/secure_credentials.rs:16:7
+   |
+16 | const P3_144_REFERENCE_PREFIX: &str = "p3-144-key-";
+   |       ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: variant `P3_144` is never constructed
+  --> src/secure_credentials.rs:33:5
+   |
+32 | pub enum CredentialLineage {
+   |          ----------------- variant in this enum
+33 |     P3_144,
+   |     ^^^^^^
+   |
+   = note: `CredentialLineage` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: function `encrypt_with_port` is never used
+   --> src/secure_credentials.rs:248:8
+    |
+248 | pub fn encrypt_with_port<P: CredentialPort>(
+    |        ^^^^^^^^^^^^^^^^^
+
+warning: function `encrypt` is never used
+   --> src/secure_credentials.rs:283:8
+    |
+283 | pub fn encrypt(api_key: &str, aad: &[u8]) -> Result<EncryptedCredential, CredentialFailure> {
+    |        ^^^^^^^
+
+warning: struct `MemoryCredentialPort` is never constructed
+   --> src/secure_credentials.rs:341:12
+    |
+341 | pub struct MemoryCredentialPort {
+    |            ^^^^^^^^^^^^^^^^^^^^
+
+warning: methods `seed`, `fail_next_find`, and `calls` are never used
+   --> src/secure_credentials.rs:349:12
+    |
+348 | impl MemoryCredentialPort {
+    | ------------------------- methods in this implementation
+349 |     pub fn seed(&mut self, reference: &str, material: &[u8]) -> Result<(), CredentialFailure> {
+    |            ^^^^
+...
+358 |     pub fn fail_next_find(&mut self, failure: CredentialFailure) {
+    |            ^^^^^^^^^^^^^^
+...
+362 |     pub fn calls(&self) -> usize {
+    |            ^^^^^
+
+warning: function `encrypt_existing_reference_for_test` is never used
+   --> src/secure_credentials.rs:413:8
+    |
+413 | pub fn encrypt_existing_reference_for_test<P: CredentialPort>(
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `call` is never used
+  --> src/provider_transport.rs:17:4
+   |
+17 | fn call(path: &str, body: Option<&str>, key: &[u8]) -> R<Zeroizing<Vec<u8>>> {
+   |    ^^^^
+
+warning: field `usage` is never read
+ --> src/model_port.rs:7:9
+  |
+5 | pub struct ModelResponse {
+  |            ------------- field in this struct
+6 |     pub text: String,
+7 |     pub usage: Option<Value>,
+  |         ^^^^^
+
+warning: struct `SyntheticModel` is never constructed
+  --> src/model_port.rs:24:12
+   |
+24 | pub struct SyntheticModel;
+   |            ^^^^^^^^^^^^^^
+
+warning: function `citations` is never used
+  --> src/model_port.rs:42:8
+   |
+42 | pub fn citations(text: &str, items: &[Value]) -> (Vec<Value>, usize) {
+   |        ^^^^^^^^^
+
+warning: struct `Request` is never constructed
+  --> src/health_reader.rs:34:59
+   |
+34 | #[derive(Deserialize)]#[serde(deny_unknown_fields)]struct Request{version:u8,operation:String,payload:Query}
+   |                                                           ^^^^^^^
+
+warning: method `dispatch` is never used
+  --> src/health_reader.rs:45:9
+   |
+38 | impl Reader{
+   | ----------- method in this implementation
+...
+45 |  pub fn dispatch(&self,body:tauri::ipc::InvokeBody)->R<Value>{let tauri::ipc::InvokeBody::Raw(b)=body else{return Err(err("readonly_...
+   |         ^^^^^^^^
+
+warning: `lifeos-p3-152` (bin "lifeos-p3-152" test) generated 18 warnings (run `cargo fix --bin "lifeos-p3-152" -p lifeos-p3-152 --tests` to apply 3 suggestions)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.41s
+     Running unittests src/main.rs (/private/tmp/lifeos-p3-152-health-conversation-v1/target/debug/deps/lifeos_p3_152-a6496ef28f13cfdb)
+
+running 36 tests
+test health_conversation_host::controlled_tests::expired_preview_or_client_supplied_body_cannot_be_confirmed ... ok
+test health_conversation_host::controlled_tests::forged_confirmation_token_never_dispatches ... ok
+test health_conversation_host::controlled_tests::remote_key_echo_is_never_persisted_or_returned ... ok
+test health_conversation_host::controlled_tests::cancelled_preview_and_forged_body_are_rejected ... ok
+test health_conversation_host::controlled_tests::readonly_health_source_bytes_unchanged_and_changes_invalidate_preview ... ok
+test health_conversation_host::controlled_tests::exact_preview_body_is_only_body_sent_and_duplicate_consumes_once ... ok
+test health_conversation_host::controlled_tests::cancel_after_handoff_does_not_claim_remote_retraction ... ok
+test health_conversation_host::controlled_tests::concurrent_duplicate_while_transport_owns_body_does_not_send_twice ... ok
+test health_conversation_host::controlled_tests::future_or_wrong_metric_has_no_fabricated_health_projection ... ok
+test health_conversation_host::tests::arbitrary_state_and_question_binding_rejected ... ok
+test health_conversation_host::controlled_tests::second_store_instance_and_source_sidecar_fail_closed ... ok
+test health_conversation_host::tests::commit_atomic_once_and_same_turn_replay ... ok
+test health_conversation_host::tests::cancel_before_and_after_commit_is_honest ... ok
+test health_conversation_host::controlled_tests::unknown_estimated_and_multi_source_are_preserved_without_source_writes ... ok
+test health_conversation_host::tests::fixed_scope_only ... ok
+test health_conversation_host::controlled_tests::restart_inflight_stays_unknown_and_never_resends ... ok
+test health_conversation_host::tests::draft_revision_and_adapter_baseline_revalidated ... ok
+test health_conversation_host::tests::drafts_preserve_text_cas_and_idempotency ... ok
+test health_conversation_host::tests::duplicate_forged_generation_and_cross_domain_refs_rejected ... ok
+test health_conversation_host::tests::clarification_ignore_defer_do_not_write_state ... ok
+test health_conversation_host::controlled_tests::second_preview_replaces_confirmation_slot ... ok
+test health_conversation_host::tests::preflight_and_commit_revalidate_authorization ... ok
+test health_conversation_host::tests::historical_answer_hidden_when_any_health_input_becomes_unavailable ... ok
+test health_conversation_host::tests::raw_duplicate_unknown_null_and_mode_rejected ... ok
+test provider_store::p152_tests::persistent_encrypted_key_and_local_model_without_network ... ok
+test provider_store::p152_tests::tampered_cipher_revision_and_foreign_key_reference_fail_closed ... ok
+test provider_transport::p152_tests::synthetic_cannot_execute_real_transport ... ok
+test provider_transport::p152_tests::wire_errors_are_fixed_and_do_not_return_body ... ok
+test provider_store::p152_tests::replacement_retains_local_model_options ... ok
+test health_conversation_host::controlled_tests::old_projection_invalidated_even_after_large_unrelated_history ... ok
+test health_conversation_host::tests::restart_and_adapter_switch_keep_assets ... ok
+test health_conversation_host::tests::self_report_does_not_replace_sensor_projection ... ok
+test health_conversation_host::tests::scoped_authorized_current_candidates ... ok
+test health_conversation_host::tests::reply_and_correction_preserve_history_and_invalidate_dependents ... ok
+test health_conversation_host::controlled_tests::stale_model_draft_source_or_credential_never_reaches_adapter ... ok
+test health_conversation_host::tests::context_and_snapshot_budgets_are_enforced ... ok
+
+test result: ok. 36 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.80s
+

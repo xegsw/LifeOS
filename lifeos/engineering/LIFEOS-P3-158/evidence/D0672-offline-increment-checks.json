@@ -1,0 +1,39 @@
+{
+  "rust": 187,
+  "v8RustIncluded": 28,
+  "actualIpc": 7,
+  "frontendReceipts": 19,
+  "validMutationsKilled": 12,
+  "mutationRuns": [
+    "D0670-mutations-d3ad3e9c-492d-4990-9019-fefcc1ee77ca",
+    "D0672-host-mutations-1d9fc2bf-5018-4fe1-88f4-a99c43296908",
+    "D0672-intent-mutations-24e3c70c-ea63-4b12-bc27-10f6f62e4fdf"
+  ],
+  "regression": [
+    {
+      "step": "build",
+      "exitCode": 0,
+      "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/evidence/D0670-run-20260910T110255441888/build.log"
+    },
+    {
+      "step": "rust",
+      "exitCode": 0,
+      "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/evidence/D0670-run-20260910T110255441888/rust.log"
+    },
+    {
+      "step": "coordination-ipc",
+      "exitCode": 0,
+      "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/evidence/D0670-run-20260910T110255441888/coordination-ipc.log"
+    },
+    {
+      "step": "coordination-receipt",
+      "exitCode": 0,
+      "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/evidence/D0670-run-20260910T110255441888/coordination-receipt.log"
+    }
+  ],
+  "earlierUnchangedRegression": "evidence/D0670-run-20260910T095910358377",
+  "guiReceipt": "evidence/D0672-v8-gui-business-receipt.json",
+  "guiCandidate": "evidence/D0672-v8-offline-bundle.json",
+  "guiScope": "actual offline create/adjust and query->second confirmation->restart->condition+Action; final no-action guard tested by Rust+mutation; no claim that prior GUI package contains later guard",
+  "onlineModelRequests": 0
+}

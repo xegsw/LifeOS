@@ -1,0 +1,50 @@
+{
+  "task": "P3-149 S1",
+  "rust": {
+    "passed": 36,
+    "failed": 0,
+    "scope": "health modules and actual preview guards; 18 S1 tests plus 18 inherited impacted tests"
+  },
+  "ui": {
+    "passed": 19,
+    "failed": 0
+  },
+  "parent_161_preserved": true,
+  "original_report_preserved": true,
+  "binary_sha256": "02af1b89089587448b7fbc451bd00b40e5151921945eb128301bd5386340d5f7",
+  "live_pid": 93517,
+  "no_socket_at_check": true,
+  "new_ipc": 0,
+  "new_operations": 0,
+  "new_tables_columns": 0,
+  "actual_full_then_correction": [
+    120,
+    140
+  ],
+  "incomplete_170_preserves_140": true,
+  "restart_all_rows_equal": true,
+  "diff": {
+    "added": [
+      "src/health_snapshot.rs",
+      "src/health_snapshot/tests.rs",
+      "tools/test_snapshot_ui.mjs"
+    ],
+    "changed": [
+      "application/health_view.ts",
+      "src/conversation_ir_closure_tests.rs",
+      "src/health_ingestion.rs",
+      "src/main.rs",
+      "ui/health_view.js"
+    ],
+    "removed": []
+  },
+  "remaining_synthetic_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 0,
+    "NotImplemented": 0
+  },
+  "real_sync": "not attempted; not established",
+  "independent_review": "not started; user paused"
+}

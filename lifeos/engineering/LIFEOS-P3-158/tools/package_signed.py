@@ -1,0 +1,82 @@
+"""D-0667: reviewable full B bundle recipe; no signing without an explicit identity.
+Default prints a plan only. --execute requires the PM/user-authorized certificate
+SHA-1 identifier; never discovers identities, creates certificates, or changes ACL.
+No launch, replacement, timestamp server, notarization, or provider access.
+"""
+from pathlib import Path
+import argparse, hashlib, json, os, plistlib, re, shutil, subprocess
+
+BASE = Path(__file__).resolve().parents[1]
+ROOT = Path('/private/tmp/lifeos-p3-158-main-chain-v1')
+OWNER = dict(task='P3-158', root=str(ROOT), owner='01a07f0e-dbbd-7d23-9e6d-68f2152f9484')
+IDENTIFIER = 'local.lifeos.p3-158.main-chain'
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--identity-sha1', help='Explicitly authorized persistent signing certificate fingerprint; not a private key')
+    parser.add_argument('--execute', action='store_true')
+    parser.add_argument('--build-tag', default='D0667', help='New exclusive staging directory, never overwritten')
+    args = parser.parse_args()
+    if not re.fullmatch(r'[A-Za-z0-9_-]{1,48}', args.build_tag):
+        parser.error('invalid build tag')
+    if args.identity_sha1 and not re.fullmatch(r'[0-9A-Fa-f]{40}', args.identity_sha1):
+        parser.error('require exact certificate SHA-1 fingerprint; ad-hoc and ambiguous names are rejected')
+    if args.execute and not args.identity_sha1:
+        parser.error('persistent signing identity has not been explicitly supplied; no filesystem mutation or signing')
+    binary = ROOT/'build/online/debug/lifeos-p3-152'
+    helper = ROOT/'online-synthetic/source-engine/alias_metadata'
+    stage = ROOT/'build' / ('signed-' + args.build_tag)
+    app = stage/'LifeOS P3-158 Online Test.app'
+    identity = args.identity_sha1 or '<PM_OR_USER_AUTHORIZED_CERTIFICATE_SHA1>'
+    commands = [
+        ['/usr/bin/codesign', '--force', '--sign', identity, '--identifier', IDENTIFIER+'.alias-metadata', '--timestamp=none', str(app/'Contents/Resources/alias_metadata')],
+        ['/usr/bin/codesign', '--force', '--sign', identity, '--identifier', IDENTIFIER, '--timestamp=none', str(app)],
+        ['/usr/bin/codesign', '--verify', '--strict', '--verbose=2', str(app/'Contents/Resources/alias_metadata')],
+        ['/usr/bin/codesign', '--verify', '--strict', '--verbose=2', str(app)],
+        ['/usr/bin/codesign', '--display', '--verbose=4', '--requirements', '-', str(app)],
+    ]
+    plan = dict(mode='online-synthetic', identifier=IDENTIFIER, app=str(app), binarySource=str(binary), helperSource=str(helper), commands=commands,
+                executed=False, trustedKeychainAccess='Unknown; requires separate actual verification', replacesExistingApp=False)
+    if not args.execute:
+        print(json.dumps(plan, ensure_ascii=False, indent=2)); return
+    os.umask(0o077)
+    if ROOT.is_symlink() or json.loads((ROOT/'.owner.json').read_text()) != OWNER:
+        raise SystemExit('owner root mismatch')
+    if ROOT.stat().st_mode & 0o777 != 0o700:
+        raise SystemExit('root permissions mismatch')
+    for source in [binary, helper]:
+        if source.is_symlink() or not source.is_file() or not os.access(source, os.X_OK):
+            raise SystemExit('missing ordinary executable build input')
+    config = json.loads((BASE/'candidate/tauri.conf.json').read_text())
+    if config['identifier'] != IDENTIFIER:
+        raise SystemExit('compiled configuration identifier drift')
+    sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
+    receipt = json.loads((BASE/'evidence/D0667-build-identity.json').read_text())
+    current = {str(p.relative_to(BASE/'candidate')):sha(p) for p in sorted((BASE/'candidate').rglob('*')) if p.is_file()}
+    if receipt['candidateFiles'] != current or receipt['onlineBinarySha256'] != sha(binary) or receipt['helperSha256'] != sha(helper):
+        raise SystemExit('build identity changed; rebuild and record a fresh reviewed build receipt before signing')
+    # Exclusive staging: failed signing artifacts remain for diagnosis, never reused.
+    stage.mkdir()
+    (app/'Contents/MacOS').mkdir(parents=True)
+    (app/'Contents/Resources').mkdir()
+    shutil.copy2(binary, app/'Contents/MacOS/lifeos-p3-152')
+    shutil.copy2(helper, app/'Contents/Resources/alias_metadata')
+    (app/'Contents/Info.plist').write_bytes(plistlib.dumps(dict(
+        CFBundleExecutable='lifeos-p3-152', CFBundleIdentifier=IDENTIFIER,
+        CFBundleName='LifeOS P3-158 Online Test', CFBundlePackageType='APPL',
+        CFBundleVersion=config['version'], CFBundleShortVersionString=config['version'],
+        NSHighResolutionCapable=True)))
+    for index, command in enumerate(commands):
+        with (stage/f'codesign-{index}.log').open('w') as log:
+            subprocess.run(command, check=True, stdout=log, stderr=subprocess.STDOUT, timeout=120)
+    details = (stage/'codesign-4.log').read_text()
+    if 'Signature=adhoc' in details or 'Authority=' not in details or 'Sealed Resources=' not in details or 'Info.plist=not bound' in details:
+        raise SystemExit('full persistent signature metadata incomplete; app not approved')
+    sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
+    plan.update(executed=True, inputBinarySha256=sha(binary), inputHelperSha256=sha(helper),
+                bundleFiles={str(p.relative_to(app)):sha(p) for p in sorted(app.rglob('*')) if p.is_file()})
+    (stage/'manifest.json').write_text(json.dumps(plan, ensure_ascii=False, indent=2)+'\n')
+    print(json.dumps(dict(app=str(app), signatureVerified=True, launched=False, keychainTrust='Unknown')))
+
+if __name__ == '__main__':
+    main()

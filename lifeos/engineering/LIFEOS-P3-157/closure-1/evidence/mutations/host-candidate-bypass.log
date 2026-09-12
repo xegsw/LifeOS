@@ -1,0 +1,64 @@
+✔ no action for "他说“报告结论做完了”。" (0.619333ms)
+✔ no action for "假如报告结论做完了就好了。" (0.113708ms)
+✔ no action for "报告结论还没做完。" (0.575458ms)
+✔ no action for "我不打算明天整理报告结论。" (0.246084ms)
+✔ no action for "今天聊天挺有意思。" (0.071084ms)
+✔ no action for "" (0.054708ms)
+✔ no action for "我今天心情很好。" (0.38125ms)
+✔ no action for "我明天可以做什么？" (0.091375ms)
+✔ no action for "不要把报告标记为完成" (0.058083ms)
+✔ no action for "如果我明天做这个呢？" (0.075125ms)
+✔ natural conversation create adjust complete and immutable history (563.852ms)
+✔ same submission replay and different payload reject (19.93725ms)
+✔ multiple targets clarify, plain natural target response resolves once (26.555917ms)
+✔ single current target cancellation and terminal refusal (22.06925ms)
+✔ stale expected version rejects late commit (20.7925ms)
+✔ forged model intent and target rejected by real Host (19.967ms)
+✔ fault transaction rolls back all action assets and retains draft (72.450667ms)
+✔ restart restores identity feedback and status, reads have no writes (79.965958ms)
+✔ source expiry/revoke/correction preserves action and removes valid-basis claim (187.7975ms)
+✔ conversation authorization denies writes before action append (73.467584ms)
+✔ Application rejects fabricated model output before repository commit (0.227959ms)
+✔ read recovery after lost commit response never resends model or write (20.584166ms)
+✔ OfflineA and OfflineB operate same repository identity (20.096458ms)
+✔ Today single Focus escapes content and never adds action buttons (0.202083ms)
+✔ actual model suggestion stays candidate until explicit pronoun acceptance (1336.675542ms)
+✔ multiple targets beyond first page cannot imply one (142.493166ms)
+✔ expired packet and cancelled draft reject commits (58.368125ms)
+✔ snapshot is read-only and incompatible v6 fields fail closed (22.932792ms)
+✔ uncertain/historical expression does not create: 我明天整理报告吗 (0.183333ms)
+✔ uncertain/historical expression does not create: 我今天写报告很累 (0.05025ms)
+✔ uncertain/historical expression does not create: 我今天散步了 (0.046542ms)
+✔ uncertain/historical expression does not create: 我明天可能整理报告 (0.056875ms)
+✔ uncertain/historical expression does not create: 我明天整理报告，只是举例 (0.028125ms)
+✔ completed history does not obscure the only current planned target (31.56225ms)
+✔ stale model derivation cannot be accepted via pronoun (1344.952083ms)
+✖ Host refuses changing confirmed content inside an otherwise valid parsed create (19.500292ms)
+✔ closure generalized creation and exact withdrawal persist across restart (26.156709ms)
+✔ closure no target or multiple normalized targets cannot silently cancel (23.786625ms)
+✔ closure Host rejects arbitrary negativity and unsupported fallback forgery (23.569458ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 38
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4216.348375
+
+✖ failing tests:
+
+test at ../../../../../../private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/host-candidate-bypass/tests/actions.mjs:38:1
+✖ Host refuses changing confirmed content inside an otherwise valid parsed create (19.500292ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/host-candidate-bypass/tests/actions.mjs:38:166
+      at async run (file:///private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/host-candidate-bypass/tests/actions.mjs:15:43)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }

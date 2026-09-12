@@ -1,0 +1,16 @@
+{
+  "excluded": [
+    "source-before.log (expected pre-fix failure)",
+    "late-error.log (incomplete synthetic base tables, fixed before positive check)",
+    "mutations-run.log and mutations/3f45d687-563c-473b-81b4-0479c4ddb913 (one baseline test not yet valid; entire run excluded)",
+    "visual-gap.json (no visual pass)"
+  ],
+  "positive": [
+    "delivery-regression",
+    "rust-mutations",
+    "diagnostic-mutations.json",
+    "flow-mutations.json",
+    "source-isolation-mutation.json"
+  ],
+  "realContentCollected": false
+}

@@ -1,0 +1,772 @@
+warning: unused imports: `OptionalExtension` and `TransactionBehavior`
+ --> source-engine/src/repository.rs:2:36
+  |
+2 | use rusqlite::{params, Connection, OptionalExtension, TransactionBehavior};
+  |                                    ^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Sha256`
+ --> source-engine/src/repository.rs:5:20
+  |
+5 | use sha2::{Digest, Sha256};
+  |                    ^^^^^^
+
+warning: unused import: `self`
+ --> source-engine/src/apple_health.rs:5:18
+  |
+5 |     repository::{self, Error},
+  |                  ^^^^
+
+warning: unused import: `rusqlite::OptionalExtension`
+ --> source-engine/src/lib.rs:7:68
+  |
+7 | use serde_json::{Value,json};use std::sync::{Mutex,MutexGuard};use rusqlite::OptionalExtension;
+  |                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `path::Path`
+ --> source-engine/src/update_checks.rs:3:14
+  |
+3 | use std::{fs,path::Path,os::unix::fs::PermissionsExt};
+  |              ^^^^^^^^^^
+
+warning: unused import: `rusqlite::params`
+ --> source-engine/src/update_checks.rs:4:5
+  |
+4 | use rusqlite::params;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: unused import: `Digest`
+ --> source-engine/src/repository.rs:5:12
+  |
+5 | use sha2::{Digest, Sha256};
+  |            ^^^^^^
+
+warning: unused variable: `root`
+   --> source-engine/src/repository.rs:105:9
+    |
+105 |     let root = crate::runtime_root::verify()?;
+    |         ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> source-engine/src/apple_health.rs:167:5
+    |
+167 |     mut progress: impl FnMut(u64),
+    |     ----^^^^^^^^
+    |     |
+    |     help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `root`
+  --> source-engine/src/lib.rs:18:83
+   |
+18 | ...on<std::path::PathBuf>>{let root=runtime_root::verify()?;if fixture.is_empty()||fixture.len()>60||!fixture.bytes().all(|b|b.is_as...
+   |                                ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+
+warning: unused variable: `root`
+  --> source-engine/src/lib.rs:29:83
+   |
+29 | ...<Value>>{let _g=gate()?;let root=runtime_root::verify()?;let path=runtime_root::store_path(fixture)?;if !path.try_exists().map_er...
+   |                                ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+
+warning: struct `Request` is never constructed
+  --> source-engine/src/repository.rs:40:12
+   |
+40 | pub struct Request {
+   |            ^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `time` is never used
+  --> source-engine/src/repository.rs:49:4
+   |
+49 | fn time() -> i64 {
+   |    ^^^^
+
+warning: function `text` is never used
+  --> source-engine/src/repository.rs:55:4
+   |
+55 | fn text<'a>(v: &'a Value, k: &str) -> R<&'a str> {
+   |    ^^^^
+
+warning: function `number` is never used
+  --> source-engine/src/repository.rs:60:4
+   |
+60 | fn number(v: &Value, k: &str) -> R<i64> {
+   |    ^^^^^^
+
+warning: function `id` is never used
+  --> source-engine/src/repository.rs:65:4
+   |
+65 | fn id(v: &Value, k: &str) -> R<String> {
+   |    ^^
+
+warning: function `fields` is never used
+  --> source-engine/src/repository.rs:76:4
+   |
+76 | fn fields(v: &Value, allowed: &[&str]) -> R<()> {
+   |    ^^^^^^
+
+warning: function `body` is never used
+  --> source-engine/src/repository.rs:87:4
+   |
+87 | fn body(s: &str) -> R<()> {
+   |    ^^^^
+
+warning: method `new_child` is never used
+   --> source-engine/src/artifact_io.rs:171:12
+    |
+ 40 | impl Dir {
+    | -------- method in this implementation
+...
+171 |     pub fn new_child(&self, s: &str) -> R<Self> {
+    |            ^^^^^^^^^
+
+warning: function `dispatch_raw` is never used
+  --> source-engine/src/apple_health_api.rs:36:8
+   |
+36 | pub fn dispatch_raw(body: tauri::ipc::InvokeBody, fixture: &str) -> Result<Value, Error> {
+   |        ^^^^^^^^^^^^
+
+warning: constant `LIMIT` is never used
+ --> source-engine/src/health_domain.rs:6:11
+  |
+6 | pub const LIMIT: usize = 128 * 1024;
+  |           ^^^^^
+
+warning: constant `DAY` is never used
+ --> source-engine/src/health_domain.rs:7:11
+  |
+7 | pub const DAY: i64 = 86_400_000;
+  |           ^^^
+
+warning: type alias `R` is never used
+ --> source-engine/src/health_domain.rs:8:6
+  |
+8 | type R<T> = Result<T, Error>;
+  |      ^
+
+warning: struct `Source` is never constructed
+  --> source-engine/src/health_domain.rs:11:12
+   |
+11 | pub struct Source { pub id: String, pub name: String }
+   |            ^^^^^^
+
+warning: struct `Sample` is never constructed
+  --> source-engine/src/health_domain.rs:14:12
+   |
+14 | pub struct Sample { pub sample_id: String, pub revision: u32, pub metric: String, pub start_ms: i64, pub end_ms: i64, pub value: f64...
+   |            ^^^^^^
+
+warning: struct `Envelope` is never constructed
+  --> source-engine/src/health_domain.rs:17:12
+   |
+17 | pub struct Envelope { pub schema: String, pub batch_id: String, pub exported_at_ms: i64, pub window_start_ms: i64, pub window_end_ms...
+   |            ^^^^^^^^
+
+warning: struct `Observation` is never constructed
+  --> source-engine/src/health_domain.rs:20:12
+   |
+20 | pub struct Observation { pub source: Source, pub sample: Sample, pub offset: i32, pub received_at: i64 }
+   |            ^^^^^^^^^^^
+
+warning: methods `identity`, `record_id`, `same_content`, and `keys` are never used
+  --> source-engine/src/health_domain.rs:22:9
+   |
+21 | impl Observation {
+   | ---------------- methods in this implementation
+22 |  pub fn identity(&self) -> String { format!("{}:{}", self.source.id, self.sample.sample_id) }
+   |         ^^^^^^^^
+23 |  pub fn record_id(&self) -> String { format!("health:{}:{}", self.identity(), self.sample.revision) }
+   |         ^^^^^^^^^
+24 |  pub fn same_content(&self, other: &Self) -> bool { self.source == other.source && self.sample == other.sample && self.offset == oth...
+   |         ^^^^^^^^^^^^
+25 |  pub fn keys(&self) -> BTreeSet<Key> { let shift = self.offset as i64 * 60000; ((self.sample.start_ms+shift).div_euclid(DAY)..=(self...
+   |         ^^^^
+
+warning: struct `Key` is never constructed
+  --> source-engine/src/health_domain.rs:28:12
+   |
+28 | pub struct Key { pub day: i64, pub offset: i32, pub metric: String }
+   |            ^^^
+
+warning: method `id` is never used
+  --> source-engine/src/health_domain.rs:29:19
+   |
+29 | impl Key { pub fn id(&self)->String {format!("health:{}:{}:{}",self.metric,self.day,self.offset)} }
+   | --------          ^^
+   | |
+   | method in this implementation
+
+warning: function `bad` is never used
+  --> source-engine/src/health_domain.rs:30:4
+   |
+30 | fn bad()->Error {Error::new("health_envelope_rejected")}
+   |    ^^^
+
+warning: function `ident` is never used
+  --> source-engine/src/health_domain.rs:31:4
+   |
+31 | fn ident(s:&str)->bool {!s.is_empty() && s.len()<=80 && s.bytes().all(|b|b.is_ascii_alphanumeric() || b"_-".contains(&b))}
+   |    ^^^^^
+
+warning: function `parse` is never used
+  --> source-engine/src/health_domain.rs:32:8
+   |
+32 | pub fn parse(bytes:&[u8])->R<Envelope> {
+   |        ^^^^^
+
+warning: function `observations` is never used
+  --> source-engine/src/health_domain.rs:47:8
+   |
+47 | pub fn observations(e:&Envelope,received_at:i64)->Vec<Observation> {e.samples.iter().map(|sample|Observation{source:e.source.clone()...
+   |        ^^^^^^^^^^^^
+
+warning: function `union` is never used
+  --> source-engine/src/health_domain.rs:48:4
+   |
+48 | fn union(mut spans:Vec<(i64,i64)>)->i64 {spans.sort();let mut total=0;let mut end=i64::MIN;for(a,b)in spans{total+=b-a.max(end).min(...
+   |    ^^^^^
+
+warning: function `project` is never used
+  --> source-engine/src/health_domain.rs:49:8
+   |
+49 | pub fn project(k:&Key, all:&[Observation])->Value {
+   |        ^^^^^^^
+
+warning: type alias `R` is never used
+  --> source-engine/src/health_snapshot.rs:11:6
+   |
+11 | type R<T> = Result<T, Error>;
+   |      ^
+
+warning: struct `Source` is never constructed
+  --> source-engine/src/health_snapshot.rs:14:8
+   |
+14 | struct Source {
+   |        ^^^^^^
+
+warning: struct `Query` is never constructed
+  --> source-engine/src/health_snapshot.rs:21:8
+   |
+21 | struct Query {
+   |        ^^^^^
+
+warning: struct `Sample` is never constructed
+  --> source-engine/src/health_snapshot.rs:28:8
+   |
+28 | struct Sample {
+   |        ^^^^^^
+
+warning: struct `Snapshot` is never constructed
+  --> source-engine/src/health_snapshot.rs:36:8
+   |
+36 | struct Snapshot {
+   |        ^^^^^^^^
+
+warning: function `fail` is never used
+  --> source-engine/src/health_snapshot.rs:51:4
+   |
+51 | fn fail(s: &str) -> Error {
+   |    ^^^^
+
+warning: function `key` is never used
+  --> source-engine/src/health_snapshot.rs:54:4
+   |
+54 | fn key(s: &str) -> bool {
+   |    ^^^
+
+warning: function `hash` is never used
+  --> source-engine/src/health_snapshot.rs:60:4
+   |
+60 | fn hash(v: &Value) -> String {
+   |    ^^^^
+
+warning: function `parse` is never used
+  --> source-engine/src/health_snapshot.rs:63:4
+   |
+63 | fn parse(bytes: &[u8]) -> R<Snapshot> {
+   |    ^^^^^
+
+warning: function `overlaps` is never used
+   --> source-engine/src/health_snapshot.rs:101:4
+    |
+101 | fn overlaps(a: i64, b: i64, c: i64, d: i64) -> bool {
+    |    ^^^^^^^^
+
+warning: function `reject_v1_mixing` is never used
+   --> source-engine/src/health_snapshot.rs:104:8
+    |
+104 | pub fn reject_v1_mixing(c: &Connection, keys: &std::collections::BTreeSet<domain::Key>) -> R<()> {
+    |        ^^^^^^^^^^^^^^^^
+
+warning: function `projection` is never used
+   --> source-engine/src/health_snapshot.rs:124:4
+    |
+124 | fn projection(
+    |    ^^^^^^^^^^
+
+warning: function `receive` is never used
+   --> source-engine/src/health_snapshot.rs:149:8
+    |
+149 | pub fn receive(c: &mut Connection, bytes: &[u8], received: i64) -> R<Value> {
+    |        ^^^^^^^
+
+warning: trait `HealthRepository` is never used
+ --> source-engine/src/health_ingestion.rs:8:11
+  |
+8 | pub trait HealthRepository { fn receive(&mut self, e:&Envelope, received_at:i64)->R<Value>; }
+  |           ^^^^^^^^^^^^^^^^
+
+warning: struct `SqliteHealth` is never constructed
+ --> source-engine/src/health_ingestion.rs:9:12
+  |
+9 | pub struct SqliteHealth<'a>(pub &'a mut Connection);
+  |            ^^^^^^^^^^^^
+
+warning: function `rows` is never used
+  --> source-engine/src/health_ingestion.rs:10:15
+   |
+10 | pub(crate) fn rows(c:&Connection,table:&str,kind:&str)->R<Vec<Value>> {
+   |               ^^^^
+
+warning: function `ingest` is never used
+  --> source-engine/src/health_ingestion.rs:49:8
+   |
+49 | pub fn ingest(port:&mut impl HealthRepository, bytes:&[u8], received_at:i64)->R<Value> {let e=domain::parse(bytes)?;port.receive(&e,...
+   |        ^^^^^^
+
+warning: function `now` is never used
+  --> source-engine/src/health_ingestion.rs:50:4
+   |
+50 | fn now()->i64 {std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap_or_default().as_millis() as i64}
+   |    ^^^
+
+warning: function `read_file` is never used
+  --> source-engine/src/health_ingestion.rs:51:4
+   |
+51 | fn read_file(dir:&crate::artifact_io::Dir,name:&str)->R<Vec<u8>> {
+   |    ^^^^^^^^^
+
+warning: function `scan` is never used
+  --> source-engine/src/health_ingestion.rs:58:8
+   |
+58 | pub fn scan(fixture:&str)->R<Value> {
+   |        ^^^^
+
+warning: static `STATUS` is never used
+  --> source-engine/src/health_ingestion.rs:73:8
+   |
+73 | static STATUS: std::sync::OnceLock<std::sync::Mutex<Value>>=std::sync::OnceLock::new();
+   |        ^^^^^^
+
+warning: function `status` is never used
+  --> source-engine/src/health_ingestion.rs:74:8
+   |
+74 | pub fn status()->Value {let mut v=STATUS.get_or_init(||std::sync::Mutex::new(json!({"mode":"synthetic","files":[]}))).lock().unwrap(...
+   |        ^^^^^^
+
+warning: function `start` is never used
+  --> source-engine/src/health_ingestion.rs:75:8
+   |
+75 | pub fn start() {std::thread::spawn(||loop {let s=match scan("app"){Ok(v)=>v,Err(e)=>json!({"mode":"synthetic","error":e.code})};*STA...
+   |        ^^^^^
+
+warning: function `receive_bytes` is never used
+  --> source-engine/src/health_ingestion.rs:79:8
+   |
+79 | pub fn receive_bytes(c:&mut Connection,bytes:&[u8],at:i64)->R<Value>{if bytes.len()>domain::LIMIT{return Err(Error::new("health_batc...
+   |        ^^^^^^^^^^^^^
+
+warning: function `resume` is never used
+   --> source-engine/src/source_api.rs:507:8
+    |
+507 | pub fn resume(fixture: &str) -> R<()> {
+    |        ^^^^^^
+
+warning: function `make_cursor` is never used
+   --> source-engine/src/source_store.rs:552:8
+    |
+552 | pub fn make_cursor(
+    |        ^^^^^^^^^^^
+
+warning: function `progress` is never used
+   --> source-engine/src/source_worker.rs:363:8
+    |
+363 | pub fn progress(c: &Connection, l: &Lease) -> R<Value> {
+    |        ^^^^^^^^
+
+warning: `lifeos-source-engine` (lib) generated 63 warnings (run `cargo fix --lib -p lifeos-source-engine` to apply 10 suggestions)
+    Checking lifeos-p3-152 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/candidate)
+error[E0583]: file not found for module `contract`
+ --> src/health_conversation_host/coordination.rs:6:1
+  |
+6 | mod contract;mod fixtures;mod commit;
+  | ^^^^^^^^^^^^^
+  |
+  = help: to create the module `contract`, create file "src/health_conversation_host/contract.rs" or "src/health_conversation_host/contract/mod.rs"
+  = note: if there is a `mod contract` elsewhere in the crate already, import it with `use crate::...` instead
+
+error[E0583]: file not found for module `fixtures`
+ --> src/health_conversation_host/coordination.rs:6:14
+  |
+6 | mod contract;mod fixtures;mod commit;
+  |              ^^^^^^^^^^^^^
+  |
+  = help: to create the module `fixtures`, create file "src/health_conversation_host/fixtures.rs" or "src/health_conversation_host/fixtures/mod.rs"
+  = note: if there is a `mod fixtures` elsewhere in the crate already, import it with `use crate::...` instead
+
+error[E0583]: file not found for module `commit`
+ --> src/health_conversation_host/coordination.rs:6:27
+  |
+6 | mod contract;mod fixtures;mod commit;
+  |                           ^^^^^^^^^^^
+  |
+  = help: to create the module `commit`, create file "src/health_conversation_host/commit.rs" or "src/health_conversation_host/commit/mod.rs"
+  = note: if there is a `mod commit` elsewhere in the crate already, import it with `use crate::...` instead
+
+error[E0425]: cannot find function `fields` in this scope
+  --> src/health_conversation_host/coordination.rs:23:49
+   |
+23 |  ("capture_record","save_coordination_draft")=>{fields(&p,&["requestId","turnId","expectedDraftRevision","text"],&[])?;let rid=ident...
+   |                                                 ^^^^^^ not found in this scope
+   |
+help: consider importing this function
+   |
+ 2 + use crate::conversation_contract::fields;
+   |
+
+error[E0425]: cannot find value `MAX` in this scope
+  --> src/health_conversation_host/coordination.rs:23:228
+   |
+23 | ...?;let revision=number(&p,"expectedDraftRevision",0,MAX)?;let text=string(&p,"text",1,1000)?;self.tx(&rid,op,&p,|c|{let key=format...
+   |                                                       ^^^ not found in this scope
+   |
+help: consider importing one of these constants
+   |
+ 2 + use std::char::MAX;
+   |
+ 2 + use std::f32::MAX;
+   |
+ 2 + use std::f64::MAX;
+   |
+ 2 + use std::i128::MAX;
+   |
+   = and 11 other candidates
+
+error[E0425]: cannot find value `MAX` in this scope
+  --> src/health_conversation_host/coordination.rs:23:469
+   |
+23 | ...ref().map_or(0,|v|v["revision"].as_u64().unwrap_or(MAX))!=revision{return Err(error("revision_conflict"))}if revision==MAX{return...
+   |                                                       ^^^ not found in this scope
+   |
+help: consider importing one of these constants
+   |
+ 2 + use std::char::MAX;
+   |
+ 2 + use std::f32::MAX;
+   |
+ 2 + use std::f64::MAX;
+   |
+ 2 + use std::i128::MAX;
+   |
+   = and 11 other candidates
+
+error[E0425]: cannot find value `MAX` in this scope
+  --> src/health_conversation_host/coordination.rs:23:537
+   |
+23 | ...eturn Err(error("revision_conflict"))}if revision==MAX{return Err(error("revision_conflict"))}put(c,"drafts",&key,&json!({"id":ke...
+   |                                                       ^^^ not found in this scope
+   |
+help: consider importing one of these constants
+   |
+ 2 + use std::char::MAX;
+   |
+ 2 + use std::f32::MAX;
+   |
+ 2 + use std::f64::MAX;
+   |
+ 2 + use std::i128::MAX;
+   |
+   = and 11 other candidates
+
+error[E0425]: cannot find function `fields` in this scope
+  --> src/health_conversation_host/coordination.rs:25:56
+   |
+25 |  ("get_context_recovery","coordination_turn_status")=>{fields(&p,&["turnRequestId"],&[])?;Self::v8_status(&self.v8_get(&ident(&p,"tu...
+   |                                                        ^^^^^^ not found in this scope
+   |
+help: consider importing this function
+   |
+ 2 + use crate::conversation_contract::fields;
+   |
+
+error[E0425]: cannot find function `fields` in this scope
+  --> src/health_conversation_host/coordination.rs:26:53
+   |
+26 |  ("get_context_recovery","coordination_snapshot")=>{fields(&p,&["offset","limit"],&[])?;let offset=number(&p,"offset",0,10000)?;let ...
+   |                                                     ^^^^^^ not found in this scope
+   |
+help: consider importing this function
+   |
+ 2 + use crate::conversation_contract::fields;
+   |
+
+error[E0425]: cannot find function `fields` in this scope
+  --> src/health_conversation_host/coordination.rs:27:178
+   |
+27 | ...t_context","prepare_coordination_second_send")=>{fields(&p,&["requestId","turnRequestId","expectedTurnRevision"],&[])?;let rid=id...
+   |                                                     ^^^^^^ not found in this scope
+   |
+help: consider importing this function
+   |
+ 2 + use crate::conversation_contract::fields;
+   |
+
+error[E0425]: cannot find value `MAX` in this scope
+  --> src/health_conversation_host/coordination.rs:27:357
+   |
+27 | ...stId")?;let rev=number(&p,"expectedTurnRevision",1,MAX)?;self.tx(&rid,op,&p,|_|{let mut t=self.v8_get(&tid)?;if t["state"]=="comm...
+   |                                                       ^^^ not found in this scope
+   |
+help: consider importing one of these constants
+   |
+ 2 + use std::char::MAX;
+   |
+ 2 + use std::f32::MAX;
+   |
+ 2 + use std::f64::MAX;
+   |
+ 2 + use std::i128::MAX;
+   |
+   = and 11 other candidates
+
+error[E0425]: cannot find function `fields` in this scope
+  --> src/health_conversation_host/coordination.rs:28:41
+   |
+28 |  fn v8_prepare(&self,p:Value)->R<Value>{fields(&p,&["requestId","turnId","expectedDraftRevision"],&[])?;let rid=ident(&p,"requestId"...
+   |                                         ^^^^^^ not found in this scope
+   |
+help: consider importing this function
+   |
+ 2 + use crate::conversation_contract::fields;
+   |
+
+error[E0425]: cannot find value `MAX` in this scope
+  --> src/health_conversation_host/coordination.rs:28:213
+   |
+28 | ...?;let revision=number(&p,"expectedDraftRevision",1,MAX)?;let draft=get(&self.c,"drafts",&format!("draft:{tid}"))?.ok_or_else(||er...
+   |                                                       ^^^ not found in this scope
+   |
+help: consider importing one of these constants
+   |
+ 2 + use std::char::MAX;
+   |
+ 2 + use std::f32::MAX;
+   |
+ 2 + use std::f64::MAX;
+   |
+ 2 + use std::i128::MAX;
+   |
+   = and 11 other candidates
+
+error[E0425]: cannot find value `CAPABILITIES` in this scope
+  --> src/health_conversation_host/coordination.rs:31:76
+   |
+31 |  let mut caps=vec![];let mut cap_targets=serde_json::Map::new();for cap in CAPABILITIES{let rf=uid("fixture");cap_targets.insert(rf....
+   |                                                                            ^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `fields` in this scope
+  --> src/health_conversation_host/coordination.rs:36:97
+   |
+36 |  fn v8_consume_with_loader<F:FnOnce()->R<Zeroizing<Vec<u8>>>>(&self,p:Value,load:F)->R<V8Start>{fields(&p,&["requestId","sendPreview...
+   |                                                                                                 ^^^^^^ not found in this scope
+   |
+help: consider importing this function
+   |
+ 2 + use crate::conversation_contract::fields;
+   |
+
+error[E0425]: cannot find value `MAX` in this scope
+  --> src/health_conversation_host/coordination.rs:36:260
+   |
+36 | ...p,"sendPreviewId")?;number(&p,"expectedRevision",1,MAX)?;let link=get(&self.c,"packets",&pid)?.ok_or_else(||error("preview_stale"...
+   |                                                       ^^^ not found in this scope
+   |
+help: consider importing one of these constants
+   |
+ 2 + use std::char::MAX;
+   |
+ 2 + use std::f32::MAX;
+   |
+ 2 + use std::f64::MAX;
+   |
+ 2 + use std::i128::MAX;
+   |
+   = and 11 other candidates
+
+warning: unused import: `SendPlan`
+   --> src/health_conversation_host.rs:189:98
+    |
+189 | #[path="health_conversation_host/controlled.rs"]mod controlled;pub(crate) use controlled::{Start,SendPlan};
+    |                                                                                                  ^^^^^^^^
+    |
+    = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `contract::*`
+ --> src/health_conversation_host/coordination.rs:7:5
+  |
+7 | use contract::*;
+  |     ^^^^^^^^^^^
+
+warning: unused import: `contract::*`
+  --> src/health_conversation_host/coordination.rs:22:88
+   |
+22 |  pub(super) fn coordination_dispatch(&self,command:&str,op:&str,p:Value)->R<Value>{use contract::*;crate::runtime_root::verify()?;if...
+   |                                                                                        ^^^^^^^^^^^
+
+warning: unused import: `V8Plan`
+   --> src/health_conversation_host.rs:219:31
+    |
+219 | pub(crate) use coordination::{V8Plan,V8Start};
+    |                               ^^^^^^
+
+warning: unused import: `Request`
+ --> src/conversation_contract.rs:2:32
+  |
+2 | use crate::repository::{Error, Request};
+  |                                ^^^^^^^
+
+warning: unused import: `io::Write`
+ --> src/runtime_root.rs:2:92
+  |
+2 | use std::{path::{Path,PathBuf},fs,os::unix::fs::{MetadataExt,OpenOptionsExt,DirBuilderExt},io::Write};
+  |                                                                                            ^^^^^^^^^
+
+error[E0425]: cannot find function `ident` in this scope
+  --> src/health_conversation_host/coordination.rs:23:128
+   |
+23 | ...Id","expectedDraftRevision","text"],&[])?;let rid=ident(&p,"requestId")?;let tid=ident(&p,"turnId")?;let revision=number(&p,"expe...
+   |                                                      ^^^^^ not found in this scope
+
+error[E0425]: cannot find function `ident` in this scope
+  --> src/health_conversation_host/coordination.rs:23:159
+   |
+23 | ...xt"],&[])?;let rid=ident(&p,"requestId")?;let tid=ident(&p,"turnId")?;let revision=number(&p,"expectedDraftRevision",0,MAX)?;let ...
+   |                                                      ^^^^^ not found in this scope
+
+error[E0425]: cannot find function `number` in this scope
+  --> src/health_conversation_host/coordination.rs:23:192
+   |
+23 | ...stId")?;let tid=ident(&p,"turnId")?;let revision=number(&p,"expectedDraftRevision",0,MAX)?;let text=string(&p,"text",1,1000)?;sel...
+   |                                                     ^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `string` in this scope
+  --> src/health_conversation_host/coordination.rs:23:243
+   |
+23 | ...mber(&p,"expectedDraftRevision",0,MAX)?;let text=string(&p,"text",1,1000)?;self.tx(&rid,op,&p,|c|{let key=format!("draft:{tid}");...
+   |                                                     ^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `ident` in this scope
+  --> src/health_conversation_host/coordination.rs:25:121
+   |
+25 | ...rnRequestId"],&[])?;Self::v8_status(&self.v8_get(&ident(&p,"turnRequestId")?)?)},
+   |                                                      ^^^^^ not found in this scope
+
+error[E0425]: cannot find function `number` in this scope
+  --> src/health_conversation_host/coordination.rs:26:100
+   |
+26 |  ("get_context_recovery","coordination_snapshot")=>{fields(&p,&["offset","limit"],&[])?;let offset=number(&p,"offset",0,10000)?;let ...
+   |                                                                                                    ^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `number` in this scope
+  --> src/health_conversation_host/coordination.rs:26:139
+   |
+26 | ...et offset=number(&p,"offset",0,10000)?;let limit=number(&p,"limit",1,20)?;let mut stmt=self.c.prepare("SELECT body FROM packets W...
+   |                                                     ^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `ident` in this scope
+  --> src/health_conversation_host/coordination.rs:27:256
+   |
+27 | ...nRequestId","expectedTurnRevision"],&[])?;let rid=ident(&p,"requestId")?;let tid=ident(&p,"turnRequestId")?;let rev=number(&p,"ex...
+   |                                                      ^^^^^ not found in this scope
+
+error[E0425]: cannot find function `ident` in this scope
+  --> src/health_conversation_host/coordination.rs:27:287
+   |
+27 | ...on"],&[])?;let rid=ident(&p,"requestId")?;let tid=ident(&p,"turnRequestId")?;let rev=number(&p,"expectedTurnRevision",1,MAX)?;sel...
+   |                                                      ^^^^^ not found in this scope
+
+error[E0425]: cannot find function `number` in this scope
+  --> src/health_conversation_host/coordination.rs:27:322
+   |
+27 | ...Id")?;let tid=ident(&p,"turnRequestId")?;let rev=number(&p,"expectedTurnRevision",1,MAX)?;self.tx(&rid,op,&p,|_|{let mut t=self.v...
+   |                                                     ^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `ident` in this scope
+  --> src/health_conversation_host/coordination.rs:28:113
+   |
+28 | ...","turnId","expectedDraftRevision"],&[])?;let rid=ident(&p,"requestId")?;let tid=ident(&p,"turnId")?;let revision=number(&p,"expe...
+   |                                                      ^^^^^ not found in this scope
+
+error[E0425]: cannot find function `ident` in this scope
+  --> src/health_conversation_host/coordination.rs:28:144
+   |
+28 | ...on"],&[])?;let rid=ident(&p,"requestId")?;let tid=ident(&p,"turnId")?;let revision=number(&p,"expectedDraftRevision",1,MAX)?;let ...
+   |                                                      ^^^^^ not found in this scope
+
+error[E0425]: cannot find function `number` in this scope
+  --> src/health_conversation_host/coordination.rs:28:177
+   |
+28 | ...stId")?;let tid=ident(&p,"turnId")?;let revision=number(&p,"expectedDraftRevision",1,MAX)?;let draft=get(&self.c,"drafts",&format...
+   |                                                     ^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `ident` in this scope
+  --> src/health_conversation_host/coordination.rs:36:171
+   |
+36 | ..."sendPreviewId","expectedRevision"],&[])?;let rid=ident(&p,"requestId")?;let pid=ident(&p,"sendPreviewId")?;number(&p,"expectedRe...
+   |                                                      ^^^^^ not found in this scope
+
+error[E0425]: cannot find function `ident` in this scope
+  --> src/health_conversation_host/coordination.rs:36:202
+   |
+36 | ...on"],&[])?;let rid=ident(&p,"requestId")?;let pid=ident(&p,"sendPreviewId")?;number(&p,"expectedRevision",1,MAX)?;let link=get(&s...
+   |                                                      ^^^^^ not found in this scope
+
+error[E0425]: cannot find function `number` in this scope
+  --> src/health_conversation_host/coordination.rs:36:229
+   |
+36 | ..."requestId")?;let pid=ident(&p,"sendPreviewId")?;number(&p,"expectedRevision",1,MAX)?;let link=get(&self.c,"packets",&pid)?.ok_or...
+   |                                                     ^^^^^^ not found in this scope
+
+error[E0599]: no method named `v8_commit` found for reference `&health_conversation_host::Store` in the current scope
+  --> src/health_conversation_host/coordination.rs:48:19
+   |
+48 |  }else{match self.v8_commit(&t,response){Ok(v)=>Ok(v),Err(e)=>self.v8_fail(t,&e.code)}}}
+   |                   ^^^^^^^^^
+   |
+help: there is a method `commit` with a similar name
+   |
+48 -  }else{match self.v8_commit(&t,response){Ok(v)=>Ok(v),Err(e)=>self.v8_fail(t,&e.code)}}}
+48 +  }else{match self.commit(&t,response){Ok(v)=>Ok(v),Err(e)=>self.v8_fail(t,&e.code)}}}
+   |
+
+warning: unused import: `OpenOptionsExt`
+ --> src/runtime_root.rs:2:62
+  |
+2 | use std::{path::{Path,PathBuf},fs,os::unix::fs::{MetadataExt,OpenOptionsExt,DirBuilderExt},io::Write};
+  |                                                              ^^^^^^^^^^^^^^
+
+warning: unused import: `DirBuilderExt`
+ --> src/runtime_root.rs:2:77
+  |
+2 | use std::{path::{Path,PathBuf},fs,os::unix::fs::{MetadataExt,OpenOptionsExt,DirBuilderExt},io::Write};
+  |                                                                             ^^^^^^^^^^^^^
+
+Some errors have detailed explanations: E0425, E0583, E0599.
+For more information about an error, try `rustc --explain E0425`.
+warning: `lifeos-p3-152` (bin "lifeos-p3-152") generated 8 warnings
+error: could not compile `lifeos-p3-152` (bin "lifeos-p3-152") due to 33 previous errors; 8 warnings emitted

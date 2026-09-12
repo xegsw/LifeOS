@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/tools/package_D0672_signed.py", line 99, in <module>
+    main()
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/tools/package_D0672_signed.py", line 88, in main
+    subprocess.run(command, check=True, stdout=log, stderr=subprocess.STDOUT, timeout=120)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/codesign', '--force', '--sign', '7490dc97208f45420c4dfc9c48ddf6f59113b6f4', '--keychain', '/Users/xxe/Library/Keychains/login.keychain-db', '--requirements', 'designated => identifier "local.lifeos.p3-158.main-chain.alias-metadata" and anchor H"7490dc97208f45420c4dfc9c48ddf6f59113b6f4"', '--identifier', 'local.lifeos.p3-158.main-chain.alias-metadata', '--timestamp=none', '/private/tmp/lifeos-p3-158-main-chain-v1/build/signing-v1/D0672-first/LifeOS P3-158 Online Test.app/Contents/Resources/alias_metadata']' returned non-zero exit status 1.

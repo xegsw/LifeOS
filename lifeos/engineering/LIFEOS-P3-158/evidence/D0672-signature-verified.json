@@ -1,0 +1,36 @@
+{
+  "authorization": "D0672",
+  "verifiedAt": "2026-09-10T10:21:22.531228+00:00",
+  "app": "/private/tmp/lifeos-p3-158-main-chain-v1/build/signing-v1/D0672-second/LifeOS P3-158 Online Test.app",
+  "buildIdentity": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/evidence/D0672-build-identity.json",
+  "certificateSha1": "7490dc97208f45420c4dfc9c48ddf6f59113b6f4",
+  "certificateSha256": "77aeaaa16f719d1394d36442fbb9732f9d6e5ea7903954d292cd445df372357d",
+  "checks": [
+    {
+      "target": "helper",
+      "strictVerify": true,
+      "exactLeafCertificateVerified": true,
+      "designatedRequirement": "designated => identifier \"local.lifeos.p3-158.main-chain.alias-metadata\" and certificate root = H\"7490dc97208f45420c4dfc9c48ddf6f59113b6f4\""
+    },
+    {
+      "target": "app",
+      "strictVerify": true,
+      "exactLeafCertificateVerified": true,
+      "designatedRequirement": "designated => identifier \"local.lifeos.p3-158.main-chain\" and certificate root = H\"7490dc97208f45420c4dfc9c48ddf6f59113b6f4\""
+    }
+  ],
+  "bundleFiles": {
+    "Contents/Info.plist": "c9589c0fe15904ec42cbe78de1fe0f1e281aa042759c151febafae29e62a10b4",
+    "Contents/MacOS/lifeos-p3-152": "49840c5485e38e94a3b45159ea0e989e78d03334651e223cf8c610ecc77af664",
+    "Contents/Resources/alias_metadata": "2176b24b2d41ec881a58f5a30dada43d5393cfe24d2a4f96f69f3d644f493af1",
+    "Contents/_CodeSignature/CodeResources": "ee05dadf3ba9936ddacd0e7e10037d29b3e04f6fdd70b078942ed7a8c18e04ab"
+  },
+  "metadataCheckerRepair": "Sealed Resources version=2 is valid full resource seal; original false-negative log preserved; no re-sign",
+  "trustChanges": false,
+  "aclChanges": false,
+  "privateKeyReadOrExportedByAgent": false,
+  "launched": false,
+  "restartAndRebuild": "pending",
+  "providerCredentialExperience": "Unknown",
+  "newModelRequests": 0
+}

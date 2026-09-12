@@ -1,0 +1,17 @@
+file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/candidate/tools/test_legacy_functional.mjs:11
+createInterface({input:child.stdout}).on('line',line=>{const v=JSON.parse(line),q=queue.shift();v.error?q.reject(new Error(v.error.code)):q.resolve(v.ok)});
+                                                                                                                 ^
+
+Error: decision_rejected
+    at Interface.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/candidate/tools/test_legacy_functional.mjs:11:114)
+    at Interface.emit (node:events:509:28)
+    at [_onLine] [as _onLine] (node:internal/readline/interface:465:12)
+    at [_normalWrite] [as _normalWrite] (node:internal/readline/interface:647:22)
+    at Socket.ondata (node:internal/readline/interface:263:23)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+
+Node.js v24.19.0

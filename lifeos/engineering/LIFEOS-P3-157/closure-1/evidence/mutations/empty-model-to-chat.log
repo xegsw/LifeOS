@@ -1,0 +1,53 @@
+✔ strong-frame-unlisted-verb (0.591042ms)
+✔ strong-frame-another-verb (0.1965ms)
+✔ word-internal-negation (0.034792ms)
+✔ withdraw-unique (0.060916ms)
+✔ withdraw-no-target (0.068917ms)
+✔ withdraw-multiple (0.051083ms)
+✔ negative-new-intent (0.1605ms)
+✔ negative-not-withdrawal (0.079666ms)
+✔ cancelled-target (0.039167ms)
+✔ finished-target (0.070125ms)
+✔ quoted-withdrawal (0.034666ms)
+✔ hypothetical (0.026917ms)
+✔ question (0.026875ms)
+✔ uncertain (0.019ms)
+✔ conflicting-clauses (0.066ms)
+✔ unsupported-explicit (0.039458ms)
+✔ ordinary-chat (0.024375ms)
+✔ cloud-affirmation (0.025292ms)
+✖ parse-none cannot fall into chat for explicit intent (0.424958ms)
+✔ unsupported explicit input never prepares disclosure and keeps draft (1.851167ms)
+✔ unsupported no matching cancellation is honest local no-change (0.060917ms)
+✔ unsupported read restoration does not parse or write (0.2145ms)
+✔ late cancelled parsing cannot write (0.109459ms)
+✔ legacy explicit negative new intent never becomes cancellation (0.029042ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 23
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 42.282542
+
+✖ failing tests:
+
+test at ../../../../../../private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/empty-model-to-chat/tests/closure_cases.mjs:28:1
+✖ parse-none cannot fall into chat for explicit intent (0.424958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'chat'
+  - 'unsupported'
+  
+      at TestContext.<anonymous> (file:///private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/empty-model-to-chat/tests/closure_cases.mjs:28:291)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'chat',
+    expected: 'unsupported',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

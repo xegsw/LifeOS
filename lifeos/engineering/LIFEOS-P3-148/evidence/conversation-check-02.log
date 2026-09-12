@@ -1,0 +1,32 @@
+{
+  "fixture": "conversation-b1d39fcee7",
+  "results": [
+    {
+      "check": "E01_draft_restart_and_session_isolation",
+      "pass": true
+    },
+    {
+      "check": "draft_save_idempotency",
+      "pass": true
+    },
+    {
+      "check": "relevant_bounded_preview",
+      "pass": true
+    },
+    {
+      "check": "confirm_send_answer_citation",
+      "pass": true
+    },
+    {
+      "check": "correction_and_restart_persistence",
+      "pass": true
+    },
+    {
+      "check": "no_plain_secret_in_provider_store",
+      "pass": true
+    }
+  ],
+  "scope": "synthetic ordinary functional checks only",
+  "network_calls": 0,
+  "os_credential_calls": 0
+}

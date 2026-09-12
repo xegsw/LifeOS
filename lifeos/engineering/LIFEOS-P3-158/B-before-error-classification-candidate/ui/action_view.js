@@ -1,0 +1,11 @@
+const esc = (s)=>String(s ?? '').replace(/[&<>"']/g, (c)=>({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        })[c]);
+export function actionFocus(a) {
+    if (!a || a.status !== 'planned') return '';
+    return `<section class="panel action-focus" aria-label="已说定的安排"><small>已说定的安排</small><p class="verbatim">${esc(a.confirmedContent)}</p>${a.basisStatus === 'needs_user_judgment' ? '<p class="quiet">原依据已变化，这件安排仍保留，需要你判断是否调整。</p>' : ''}<details><summary>查看依据</summary><p class="tiny">来自你的明确表达 · 第 ${a.version} 版 · ${new Date(a.updatedAt).toLocaleDateString('zh-CN')}</p><p class="tiny">${a.sourceRefs.length ? `${a.sourceRefs.length} 条来源引用${a.basisStatus === 'valid' ? '仍有效' : '当前不可作为有效依据'}` : '由你直接说定，没有附加来源。'}</p></details></section>`;
+}

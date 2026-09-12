@@ -1,0 +1,20 @@
+
+running 1 test
+test update_contract_tests::source_update_unchanged_metadata_changed_missing_pause_restart_idempotency_and_revoke ... FAILED
+
+failures:
+
+---- update_contract_tests::source_update_unchanged_metadata_changed_missing_pause_restart_idempotency_and_revoke stdout ----
+
+thread 'update_contract_tests::source_update_unchanged_metadata_changed_missing_pause_restart_idempotency_and_revoke' (21886594) panicked at source-engine/src/update_checks.rs:20:77:
+assertion `left == right` failed
+  left: (2, "5541586a790faadc2c0a532b47a097c8cf5a9828c2d9cfe7eb566ec0e3faa9c2-2-3", 2)
+ right: (1, "5541586a790faadc2c0a532b47a097c8cf5a9828c2d9cfe7eb566ec0e3faa9c2-1-1", 1)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    update_contract_tests::source_update_unchanged_metadata_changed_missing_pause_restart_idempotency_and_revoke
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 116 filtered out; finished in 0.19s
+

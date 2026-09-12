@@ -1,0 +1,39 @@
+✔ PM canonical specification is inherited byte for byte (1.108792ms)
+✔ keyboard uses Host canonical id while preserving legacy correlation (0.663375ms)
+✔ active proactive response shares the port without falling back to a second send (0.799334ms)
+✔ Host-final output is delivered once and never requests speech without permission (0.104291ms)
+✔ an interruption is reported only to Host and cannot submit another business turn (0.137167ms)
+✔ shared wire fixtures traverse the TypeScript port without shape or identity rewriting (0.23275ms)
+✖ immutable voice A2 v2 sources and common interface remain exact (1.716042ms)
+✔ actual offline settings adapter denies all final/speech and never submits a business turn (0.531709ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 39.195959
+
+✖ failing tests:
+
+test at lifeos/engineering/LIFEOS-P3-159/tests/voice_integration.mjs:5:1
+✖ immutable voice A2 v2 sources and common interface remain exact (1.716042ms)
+  AssertionError [ERR_ASSERTION]: src/voice/native/AudioEngine.swift
+  + actual - expected
+  
+  + '627c3beef75c3338bd9d3365d330eb102b9c30f154ca060764a85023996b4310'
+  - '2acf198ab5be2b03c10a61e38ae543704fcf949f2e47b4879dbc9fe9fed32118'
+  
+      at TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-159/tests/voice_integration.mjs:5:335)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: '627c3beef75c3338bd9d3365d330eb102b9c30f154ca060764a85023996b4310',
+    expected: '2acf198ab5be2b03c10a61e38ae543704fcf949f2e47b4879dbc9fe9fed32118',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

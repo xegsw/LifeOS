@@ -1,0 +1,30 @@
+{
+  "mode": "synthetic",
+  "rows": [
+    [
+      "sources",
+      "proactive:request:recovery-entry-A-2",
+      {
+        "id": "proactive:request:recovery-entry-A-2",
+        "kind": "proactive_request",
+        "status": "failed",
+        "purpose": "proactive_analysis.v1",
+        "grantGeneration": 5,
+        "packetId": "proactive:packet:recovery-entry-A-2"
+      }
+    ],
+    [
+      "packets",
+      "proactive:packet:recovery-entry-A-2",
+      {
+        "id": "proactive:packet:recovery-entry-A-2",
+        "kind": "proactive_packet",
+        "payload": {
+          "outcome": {
+            "errorCode": "credential_unavailable"
+          }
+        }
+      }
+    ]
+  ]
+}

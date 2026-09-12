@@ -1,0 +1,184 @@
+test_attachments_never_parse (__main__.ParserTests) ... ok
+test_bad_root (__main__.ParserTests) ... ok
+test_bad_values_dates (__main__.ParserTests) ... ok
+test_chinese_not_asleep (__main__.ParserTests) ... ok
+test_entity_denied (__main__.ParserTests) ... ok
+test_escaping (__main__.ParserTests) ... ERROR
+test_external_dtd_denied (__main__.ParserTests) ... ok
+test_internal_entity_denied (__main__.ParserTests) ... ok
+test_limits (__main__.ParserTests) ... ok
+test_normal_inline_dtd_and_zip (__main__.ParserTests) ... ERROR
+test_offset_and_crossday (__main__.ParserTests) ... ERROR
+test_over_legacy_limits (__main__.ParserTests) ... ERROR
+test_sleep_identifiers (__main__.ParserTests) ... ERROR
+test_truncated (__main__.ParserTests) ... ok
+test_units (__main__.ParserTests) ... ERROR
+test_unknown_type (__main__.ParserTests) ... ok
+test_zip_ambiguous (__main__.ParserTests) ... ok
+test_zip_bomb_and_entries (__main__.ParserTests) ... ok
+test_zip_crc (__main__.ParserTests) ... ok
+test_zip_duplicates (__main__.ParserTests) ... ok
+test_zip_encrypted (__main__.ParserTests) ... ok
+test_zip_paths (__main__.ParserTests) ... ok
+test_zip_symlink (__main__.ParserTests) ... ok
+
+======================================================================
+ERROR: test_escaping (__main__.ParserTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 30, in timestamp
+    v=dt.datetime.fromisoformat(re.sub(r'\s([+-]\d{4})$',r'\1',s))
+ValueError: Invalid isoformat string: '2026-09-07 23:00:00+0800'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/test_parser.py", line 19, in test_escaping
+    def test_escaping(self):self.assertEqual(self.parse(doc([record(source='A &amp; B')]))[1]['source'],'A & B')
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/test_parser.py", line 9, in parse
+    out=[];p.run(io.BytesIO(data),{**p.DEFAULTS,**limits},out.append);return out
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 141, in run
+    parser.Parse(block,False)
+  File "/AppleInternal/Library/BuildRoots/4~CQH2ugAdEkxx3ZkrZolIWlkoB3pJrxMjVv7CK8s/Library/Caches/com.apple.xbs/TemporaryDirectory.1I3Zwu/Sources/python3/Python/Modules/pyexpat.c", line 407, in StartElement
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 92, in start
+    start_ms,offset=timestamp(a.get('startDate'));end_ms,end_offset=timestamp(a.get('endDate'))
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 33, in timestamp
+    except (ValueError,OverflowError): reject('health_date_rejected')
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 24, in reject
+    def reject(code): raise Rejected(code)
+parser.Rejected: health_date_rejected
+
+======================================================================
+ERROR: test_normal_inline_dtd_and_zip (__main__.ParserTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 30, in timestamp
+    v=dt.datetime.fromisoformat(re.sub(r'\s([+-]\d{4})$',r'\1',s))
+ValueError: Invalid isoformat string: '2026-09-07 23:00:00+0800'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/test_parser.py", line 13, in test_normal_inline_dtd_and_zip
+    d=doc([record()]);a=self.parse(d);b=self.parse(zipped(d,{'apple_health_export/route.gpx':b'ignored'}));self.assertEqual(a[1],b[1]);self.assertEqual(b[-1]['attachments'],1)
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/test_parser.py", line 9, in parse
+    out=[];p.run(io.BytesIO(data),{**p.DEFAULTS,**limits},out.append);return out
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 141, in run
+    parser.Parse(block,False)
+  File "/AppleInternal/Library/BuildRoots/4~CQH2ugAdEkxx3ZkrZolIWlkoB3pJrxMjVv7CK8s/Library/Caches/com.apple.xbs/TemporaryDirectory.1I3Zwu/Sources/python3/Python/Modules/pyexpat.c", line 407, in StartElement
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 92, in start
+    start_ms,offset=timestamp(a.get('startDate'));end_ms,end_offset=timestamp(a.get('endDate'))
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 33, in timestamp
+    except (ValueError,OverflowError): reject('health_date_rejected')
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 24, in reject
+    def reject(code): raise Rejected(code)
+parser.Rejected: health_date_rejected
+
+======================================================================
+ERROR: test_offset_and_crossday (__main__.ParserTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 30, in timestamp
+    v=dt.datetime.fromisoformat(re.sub(r'\s([+-]\d{4})$',r'\1',s))
+ValueError: Invalid isoformat string: '2026-09-07 23:00:00-0500'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/test_parser.py", line 34, in test_offset_and_crossday
+    r=self.parse(doc([record(start='2026-09-07 23:00:00 -0500',end='2026-09-08 01:00:00 -0500')]))[1];self.assertEqual(r['offset'],-300);self.assertEqual(r['endMs']-r['startMs'],7200000)
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/test_parser.py", line 9, in parse
+    out=[];p.run(io.BytesIO(data),{**p.DEFAULTS,**limits},out.append);return out
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 141, in run
+    parser.Parse(block,False)
+  File "/AppleInternal/Library/BuildRoots/4~CQH2ugAdEkxx3ZkrZolIWlkoB3pJrxMjVv7CK8s/Library/Caches/com.apple.xbs/TemporaryDirectory.1I3Zwu/Sources/python3/Python/Modules/pyexpat.c", line 407, in StartElement
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 92, in start
+    start_ms,offset=timestamp(a.get('startDate'));end_ms,end_offset=timestamp(a.get('endDate'))
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 33, in timestamp
+    except (ValueError,OverflowError): reject('health_date_rejected')
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 24, in reject
+    def reject(code): raise Rejected(code)
+parser.Rejected: health_date_rejected
+
+======================================================================
+ERROR: test_over_legacy_limits (__main__.ParserTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 30, in timestamp
+    v=dt.datetime.fromisoformat(re.sub(r'\s([+-]\d{4})$',r'\1',s))
+ValueError: Invalid isoformat string: '2026-09-08 10:00:00+0800'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/test_parser.py", line 15, in test_over_legacy_limits
+    d=make()['07-large.xml'];self.assertGreater(len(d),128*1024);self.assertEqual(self.parse(d)[-1]['supported'],1000)
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/test_parser.py", line 9, in parse
+    out=[];p.run(io.BytesIO(data),{**p.DEFAULTS,**limits},out.append);return out
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 141, in run
+    parser.Parse(block,False)
+  File "/AppleInternal/Library/BuildRoots/4~CQH2ugAdEkxx3ZkrZolIWlkoB3pJrxMjVv7CK8s/Library/Caches/com.apple.xbs/TemporaryDirectory.1I3Zwu/Sources/python3/Python/Modules/pyexpat.c", line 407, in StartElement
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 92, in start
+    start_ms,offset=timestamp(a.get('startDate'));end_ms,end_offset=timestamp(a.get('endDate'))
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 33, in timestamp
+    except (ValueError,OverflowError): reject('health_date_rejected')
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 24, in reject
+    def reject(code): raise Rejected(code)
+parser.Rejected: health_date_rejected
+
+======================================================================
+ERROR: test_sleep_identifiers (__main__.ParserTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 30, in timestamp
+    v=dt.datetime.fromisoformat(re.sub(r'\s([+-]\d{4})$',r'\1',s))
+ValueError: Invalid isoformat string: '2026-09-07 23:00:00+0800'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/test_parser.py", line 26, in test_sleep_identifiers
+    r=self.parse(doc([record('HKCategoryTypeIdentifierSleepAnalysis',value)]))[1];self.assertEqual(r['asleep'],value in p.ASLEEP)
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/test_parser.py", line 9, in parse
+    out=[];p.run(io.BytesIO(data),{**p.DEFAULTS,**limits},out.append);return out
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 141, in run
+    parser.Parse(block,False)
+  File "/AppleInternal/Library/BuildRoots/4~CQH2ugAdEkxx3ZkrZolIWlkoB3pJrxMjVv7CK8s/Library/Caches/com.apple.xbs/TemporaryDirectory.1I3Zwu/Sources/python3/Python/Modules/pyexpat.c", line 407, in StartElement
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 92, in start
+    start_ms,offset=timestamp(a.get('startDate'));end_ms,end_offset=timestamp(a.get('endDate'))
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 33, in timestamp
+    except (ValueError,OverflowError): reject('health_date_rejected')
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 24, in reject
+    def reject(code): raise Rejected(code)
+parser.Rejected: health_date_rejected
+
+======================================================================
+ERROR: test_units (__main__.ParserTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 30, in timestamp
+    v=dt.datetime.fromisoformat(re.sub(r'\s([+-]\d{4})$',r'\1',s))
+ValueError: Invalid isoformat string: '2026-09-07 23:00:00+0800'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/test_parser.py", line 28, in test_units
+    self.assertEqual(self.parse(doc([record('HKQuantityTypeIdentifierAppleExerciseTime','120','s')]))[1]['value'],2)
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/test_parser.py", line 9, in parse
+    out=[];p.run(io.BytesIO(data),{**p.DEFAULTS,**limits},out.append);return out
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 141, in run
+    parser.Parse(block,False)
+  File "/AppleInternal/Library/BuildRoots/4~CQH2ugAdEkxx3ZkrZolIWlkoB3pJrxMjVv7CK8s/Library/Caches/com.apple.xbs/TemporaryDirectory.1I3Zwu/Sources/python3/Python/Modules/pyexpat.c", line 407, in StartElement
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 92, in start
+    start_ms,offset=timestamp(a.get('startDate'));end_ms,end_offset=timestamp(a.get('endDate'))
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 33, in timestamp
+    except (ValueError,OverflowError): reject('health_date_rejected')
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/candidate/tools/apple_health_source.py", line 24, in reject
+    def reject(code): raise Rejected(code)
+parser.Rejected: health_date_rejected
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.006s
+
+FAILED (errors=6)

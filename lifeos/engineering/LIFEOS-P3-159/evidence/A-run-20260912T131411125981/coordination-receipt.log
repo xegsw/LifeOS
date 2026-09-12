@@ -1,0 +1,28 @@
+✔ valid receipt none// (0.777666ms)
+✔ valid receipt clarify// (0.073709ms)
+✔ valid receipt action// (0.067083ms)
+✔ valid receipt condition_only/unknown/condition_unknown (0.058875ms)
+✔ valid receipt condition_only/false/condition_false (0.125042ms)
+✔ valid receipt condition_only/true/record_only (0.059916ms)
+✔ valid receipt condition_and_action/true/ (0.049041ms)
+✔ production confirm rejects wrong-turn before success (0.253292ms)
+✔ production confirm rejects wrong-operation-identity before success (0.08475ms)
+✔ production confirm rejects missing-event before success (0.134ms)
+✔ production confirm rejects invalid-action-version before success (0.065ms)
+✔ production confirm rejects unexpected-permission before success (0.05875ms)
+✔ production confirm rejects false-action-condition before success (0.059084ms)
+✔ production confirm rejects false-business-change before success (0.040209ms)
+✔ production confirm rejects inconsistent-status before success (0.048417ms)
+✔ production confirm rejects extra-receipt-field before success (0.041292ms)
+✔ production confirm rejects oversized-reply before success (0.05625ms)
+✔ none cannot disguise an action event (0.046125ms)
+✔ condition-only reason must agree with truth (0.035666ms)
+✔ retry preparation preserves terminal provider failure without another send (0.413875ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 42.401417

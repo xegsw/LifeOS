@@ -1,0 +1,28 @@
+{
+  "status": "pass_for_named_synthetic_views",
+  "desktop_pid": 66415,
+  "narrow_pid": 68278,
+  "binary_sha256": "0962fbff03159678afb707f0e9ee9590566bdbb1c29e7d7e2a75506062aa4808",
+  "narrow_geometry": {
+    "width": 700,
+    "height": 760
+  },
+  "covered": [
+    "recovery",
+    "disclosure",
+    "confirmation",
+    "answer",
+    "settings"
+  ],
+  "excluded": [
+    "app-resumednarrowrestart.png",
+    "app-resumednarrowrestart.json",
+    "app-resumednarrowpreview.png",
+    "app-resumednarrowpreview.json",
+    "app-resumednarrowconfirm.png",
+    "app-resumednarrowconfirm.json"
+  ],
+  "reason": "initial helper rejected AXWindows; these labelled captures show startup, not claimed action",
+  "no_product_candidate_changes_during_resume": true,
+  "real_gui": "Not Run"
+}

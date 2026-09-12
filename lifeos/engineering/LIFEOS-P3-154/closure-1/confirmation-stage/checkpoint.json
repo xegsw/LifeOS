@@ -1,0 +1,45 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-154",
+  "attempt_id": "closure-1-confirmation-stage",
+  "updated_at": "2026-09-09T14:10:09.034255+00:00",
+  "task_contract_sha256": "c363c40f137fc0e460d716c0395f1b2ceef6d9fcde8d345dc336f9e1639d3047",
+  "candidate_sha256": "29b1908353dbf0a14156084c07aa6cd8e9c55a8c52a0e9f93f816d398d0f25c5",
+  "baseline_sha256": "6e4e2be788d1af9d3f0c4bfffcab2dfebe68647f479066eb2a637193fb0a6a61",
+  "stage": "failure_localization",
+  "status": "paused_resumable",
+  "completed_checks": [
+    "affected100",
+    "diagnostic_mutations3",
+    "real_build",
+    "prior216_preserved",
+    "safe_confirmation_diagnostic_switch"
+  ],
+  "pending_checks": [
+    "actual_fixed_code",
+    "business_failure_closure",
+    "user_real_result",
+    "PM_review"
+  ],
+  "rerun_checks": [],
+  "excluded_artifacts": [
+    "source-schema.log",
+    "source-schema-retry.log",
+    "source-schema-final.log"
+  ],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": true,
+    "direct_pid": 67268,
+    "writers_stopped": false,
+    "database_closed": false,
+    "temporary_root_state": "owned_154_retained"
+  },
+  "resume_from": "fixed_post_confirmation_code",
+  "safe_to_resume": true,
+  "notes": "User reported failure after confirmation. Real code unknown; no agent replay.",
+  "pause_class": "user_gate",
+  "pause_reason_code": "post_confirmation_code_pending"
+}

@@ -1,0 +1,112 @@
+{
+  "base": "149/S3/closure-3/candidate",
+  "overlay": "latest 148 application and generated UI modules; see reuse-map",
+  "files": {
+    "Cargo.lock": {
+      "before": "39d4ef89372d4f00bfc036e986a725629c51abdc7b164e37fed382b36a116766",
+      "after": "afbb0236bab9cace1038ff6354903422f00187b4cf730bb27bb661eda653d0a3",
+      "kind": "changed"
+    },
+    "Cargo.toml": {
+      "before": "e096363aaf18b6c3e859b068a1abeeff68228c106b24f57d4b5d65d99f6275c9",
+      "after": "d10a67b43ac178b0bf13749b76b9c344e2e96e5a0498058b51bd0e51a8c1fcc9",
+      "kind": "changed"
+    },
+    "application/core.ts": {
+      "before": "113f5448720532ee98d41b5489a60b731f36ef8a3568e5cd49d9e919fa9e73fe",
+      "after": "4ccd89bde846d5064ac014c3e19e45ce53b4a06a34038f3c90bdf8c7a5d3c6ed",
+      "kind": "changed"
+    },
+    "application/health_context.ts": {
+      "after": "8e1627e5f0db21b3e4e4de7bfc62f4ffd4715c9e8b0c9360374e23d5cc99a28d",
+      "kind": "added"
+    },
+    "application/health_conversation.ts": {
+      "after": "03f59d4ab5e68e66efd18c8ab8cf3a0bffae3d03e163baeac5902b0acff4d4ba",
+      "kind": "added"
+    },
+    "application/health_ui.ts": {
+      "after": "b281412e8e2496831592ce64cc24062a5387d11c760dba53abcd525f16ec6cda",
+      "kind": "added"
+    },
+    "application/source_conversation.ts": {
+      "before": "dc0870ede58d39bf5f1fc28d257a2242c3e25d34a83f2718783a6bf1919f9f11",
+      "after": "662569d2cf771221ec6810beb6aae68c2bb041eeaf2b47b0ea66e6a92fd32700",
+      "kind": "changed"
+    },
+    "application/source_ui.ts": {
+      "before": "4b12bd3eaefc49eb08fda298ec13b754b54659d64bf98295cebc32bea2f8d286",
+      "after": "9359ffd14f4b51376dd9c0920a11dd749502a994da24bd9f98ca8991a0a7f046",
+      "kind": "changed"
+    },
+    "build.rs": {
+      "before": "bd76682c2b842c3f3dc51d67601df2af9a0aa90bb8ff30ee5cfd195a096ddddf",
+      "after": "b15e2a748b170d1799f2bf490d748261b0744cb90d1ed011438e2d12d5661484",
+      "kind": "changed"
+    },
+    "capabilities/main.json": {
+      "before": "e032ea1b613ebf475a328d81eba2e10b3c4ef5a1e4d38713af94c1db5d33a617",
+      "after": "40fd45b80261ace5f2b9ecd342d77fddf43fb760f66c985c62d9bee960025c94",
+      "kind": "changed"
+    },
+    "gen/schemas/capabilities.json": {
+      "before": "557f9b9e21a006dec3a9502c1ef57e4885bcf5392b689254048557165f75df97",
+      "after": "578bf7df97c0f15c3083248e74fa3a487e38387ed68fc6786bd1786eb11b6e9d",
+      "kind": "changed"
+    },
+    "src/bin/synthetic_driver.rs": {
+      "after": "97de804d62d9f17418f9c681d3f3d64cdb8099a3db4d48b0e46ff88d4450d5a6",
+      "kind": "added"
+    },
+    "src/health_conversation_host/tests.rs": {
+      "after": "61cabd19d2634af31102b0058a449b02bec97f3114386c6b7f548be48ede829c",
+      "kind": "added"
+    },
+    "src/health_conversation_host.rs": {
+      "after": "fb3f87b2d3e9167beba442564281f94e3cf29fcc9ae4c9608a2f637ae21874da",
+      "kind": "added"
+    },
+    "src/main.rs": {
+      "before": "3c90364f2e54b824c1a6700f35839b3f300d34ff6cfc4da5c95fb01754a50654",
+      "after": "efc5cbc4251acb9b83557fa4412855716f886ac1921808f9e1cc02c06990e3f7",
+      "kind": "changed"
+    },
+    "src/strict_json.rs": {
+      "before": "4cfc56dbb987a4e515b1ea86bc5b3f0259859ab367e058f058f6325ebf651e07",
+      "after": "142ead94d87e9a19a41d53cbd494803c2997cf7db1f055bc934d07b566f799e8",
+      "kind": "changed"
+    },
+    "tauri.conf.json": {
+      "before": "10f8bc7d9a650a9052e901ed495a4e8972808d75f28481b38d59d54a48f0eff9",
+      "after": "e583470020c28ed85f829bbd7b6e77f53d31a69db5f10ea22fb2391309daed72",
+      "kind": "changed"
+    },
+    "ui/core.js": {
+      "before": "6ed85ca9a267a07d01ecdc6b837bb1874ef5bd792186685c48f7823a402c3896",
+      "after": "47bffbd1bd632bb301531d71cdb5b65eef7585c709276f3fbef9aef500364b21",
+      "kind": "changed"
+    },
+    "ui/health_context.js": {
+      "after": "a21a139a29598fa3b8633234caab5eea9f1170518381c521e64bdd1e39acab4d",
+      "kind": "added"
+    },
+    "ui/health_conversation.js": {
+      "after": "6d4c70f3c95d971cf0386ad0b68e34fddc31527ecaee6d4a6251a76f810d190b",
+      "kind": "added"
+    },
+    "ui/health_ui.js": {
+      "after": "8ac29b1b01fbf9aa548594bf113af64fbd5f2a69f75d9eb6d0a01b1b906b98a6",
+      "kind": "added"
+    },
+    "ui/index.html": {
+      "before": "7e3885dff1278359e10abf85b6d4cf317905aa146d1e74a3f1a17d9eccc99621",
+      "after": "01fdc54f48e48efb4dc3a2fee3a9907660efefe51cf2346ad6847631c64ffa4b",
+      "kind": "changed"
+    },
+    "ui/source_ui.js": {
+      "before": "470cbde6cc15b983094140670172eab12c2817799a778001208849411b0c03d8",
+      "after": "f43836a814347227b45a55e07a3a1bd84d757745f534d2c8eac8a00c4ce7136a",
+      "kind": "changed"
+    }
+  }
+}

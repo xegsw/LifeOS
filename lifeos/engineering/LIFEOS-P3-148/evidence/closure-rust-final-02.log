@@ -1,0 +1,79 @@
+   Compiling lifeos-p3-148 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/candidate)
+warning: method `new_child` is never used
+   --> src/artifact_io.rs:170:12
+    |
+ 40 | impl Dir {
+    | -------- method in this implementation
+...
+170 |     pub fn new_child(&self, s: &str) -> R<Self> {
+    |            ^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `P3_144_REFERENCE_PREFIX` is never used
+  --> src/secure_credentials.rs:16:7
+   |
+16 | const P3_144_REFERENCE_PREFIX: &str = "p3-144-key-";
+   |       ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `encrypt_with_port` is never used
+   --> src/secure_credentials.rs:248:8
+    |
+248 | pub fn encrypt_with_port<P: CredentialPort>(
+    |        ^^^^^^^^^^^^^^^^^
+
+warning: function `encrypt` is never used
+   --> src/secure_credentials.rs:283:8
+    |
+283 | pub fn encrypt(api_key: &str, aad: &[u8]) -> Result<EncryptedCredential, CredentialFailure> {
+    |        ^^^^^^^
+
+warning: function `resume` is never used
+   --> src/source_api.rs:481:8
+    |
+481 | pub fn resume(fixture: &str) -> R<()> {
+    |        ^^^^^^
+
+warning: `lifeos-p3-148` (bin "lifeos-p3-148" test) generated 5 warnings
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.30s
+     Running unittests src/main.rs (/private/tmp/lifeos-p3-148-source-ai-v1/target/debug/deps/lifeos_p3_148-f2229d6dbfc74cbf)
+
+running 35 tests
+test conversation_store::p148_tests::p148_closure_configuration_private_key_and_restricted_filters ... ok
+test conversation_store::p148_tests::p148_closure_crash_child ... ok
+test conversation_store::p148_tests::p148_closure_draft_revision_and_cross_session_writes ... ok
+test conversation_store::p148_tests::p148_closure_exact_serialized_budget_and_multiple_corrections ... ok
+test conversation_store::p148_tests::p148_closure_feedback_decisions_and_transaction_rollback ... ok
+test conversation_store::p148_tests::p148_closure_preview_operations_and_no_match ... ok
+test conversation_store::p148_tests::p148_closure_process_exit_after_dispatch_commit_and_explicit_retry ... ok
+test conversation_store::p148_tests::p148_closure_real_coordinator_duplicate_and_revocation_barriers ... ok
+test conversation_store::p148_tests::p148_closure_revocation_barrier_before_permission_consumption ... ok
+test conversation_store::p148_tests::p148_closure_source_query_returns_eight_at_most ... ok
+test conversation_store::p148_tests::p148_closure_structure_and_citation_version_rejection ... ok
+test conversation_store::p148_tests::p148_consumed_handoff_late_revocation_marks_answer_stale ... ok
+test conversation_store::p148_tests::p148_correction_scope_atomicity_and_overflow ... ok
+test conversation_store::p148_tests::p148_dispatch_commit_failure_and_revocation_zero_calls ... ok
+test conversation_store::p148_tests::p148_existing_store_open_has_no_ddl_or_seed ... ok
+test conversation_store::p148_tests::p148_preview_bytes_citations_and_duplicate_dispatch ... ok
+test conversation_store::p148_tests::p148_preview_invalidation_cases_zero_calls ... ok
+test conversation_store::p148_tests::p148_response_errors_are_fixed_states_and_never_resend ... ok
+test conversation_store::p148_tests::p148_source_filters_and_scalar_budgets ... ok
+test conversation_store::p148_tests::p148_strict_dto_duplicates_and_base64 ... ok
+test conversation_store::p148_tests::p148_timeout_and_result_persistence_fail_never_resend ... ok
+test ipc_boundary::tests::p148_public_errors_are_closed ... ok
+test ipc_boundary::tests::p148_raw_entry_rejects_before_dispatch_and_preserves_legacy ... ok
+test ipc_boundary::tests::p148_raw_operation_contract_table ... ok
+test provider_store::lifecycle_mock::p148_lifecycle_delete_windows_passive_and_explicit_recovery ... ok
+test provider_store::lifecycle_mock::p148_lifecycle_independent_key_persistence_and_replace_windows ... ok
+test provider_store::lifecycle_mock::p148_lifecycle_models_only_on_explicit_test_and_no_creation_on_reads ... ok
+test provider_store::p148_tests::p148_delete_cleanup_pending_is_explicit_and_replay_safe ... ok
+test provider_store::p148_tests::p148_model_selection_and_no_network_build ... ok
+test provider_store::p148_tests::p148_persistent_ciphertext_tamper_and_new_namespace_only ... ok
+test provider_store::p148_tests::p148_prepared_failure_passive_read_no_key_recovery_explicit ... ok
+test provider_transport::p148_transport_checks::p148_http_response_envelopes_are_bounded_and_fixed_errors ... ok
+test provider_transport::p148_transport_checks::p148_runtime_env_cannot_enable_transport ... ok
+test secure_credentials::p148_memory_port_checks::p148_memory_os_port_crypto_failures_do_not_fallback ... ok
+test strict_json::boundary_tests::p148_tauri_value_boundary_loses_duplicate_keys_before_request ... ok
+
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 27 filtered out; finished in 2.69s
+

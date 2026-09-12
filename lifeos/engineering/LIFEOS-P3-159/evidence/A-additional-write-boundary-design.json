@@ -1,0 +1,138 @@
+{
+  "createdAt": "2026-09-12T10:58:58.624157+00:00",
+  "cases": [
+    {
+      "case": "policy_sources",
+      "fault": "TEMP trigger abort before INSERT",
+      "expected": [
+        "all nine existing JSON tables unchanged",
+        "meta revision unchanged",
+        "request receipt absent",
+        "same request succeeds once after trigger removed"
+      ],
+      "scope": "A own synthetic store"
+    },
+    {
+      "case": "policy_requests",
+      "fault": "TEMP trigger abort before INSERT",
+      "expected": [
+        "all nine existing JSON tables unchanged",
+        "meta revision unchanged",
+        "request receipt absent",
+        "same request succeeds once after trigger removed"
+      ],
+      "scope": "A own synthetic store"
+    },
+    {
+      "case": "policy_meta",
+      "fault": "TEMP trigger abort before UPDATE",
+      "expected": [
+        "all nine existing JSON tables unchanged",
+        "meta revision unchanged",
+        "request receipt absent",
+        "same request succeeds once after trigger removed"
+      ],
+      "scope": "A own synthetic store"
+    },
+    {
+      "case": "shown_sources",
+      "fault": "TEMP trigger abort before INSERT",
+      "expected": [
+        "all nine existing JSON tables unchanged",
+        "meta revision unchanged",
+        "request receipt absent",
+        "same request succeeds once after trigger removed"
+      ],
+      "scope": "A own synthetic store"
+    },
+    {
+      "case": "shown_states",
+      "fault": "TEMP trigger abort before INSERT",
+      "expected": [
+        "all nine existing JSON tables unchanged",
+        "meta revision unchanged",
+        "request receipt absent",
+        "same request succeeds once after trigger removed"
+      ],
+      "scope": "A own synthetic store"
+    },
+    {
+      "case": "shown_requests",
+      "fault": "TEMP trigger abort before INSERT",
+      "expected": [
+        "all nine existing JSON tables unchanged",
+        "meta revision unchanged",
+        "request receipt absent",
+        "same request succeeds once after trigger removed"
+      ],
+      "scope": "A own synthetic store"
+    },
+    {
+      "case": "shown_meta",
+      "fault": "TEMP trigger abort before UPDATE",
+      "expected": [
+        "all nine existing JSON tables unchanged",
+        "meta revision unchanged",
+        "request receipt absent",
+        "same request succeeds once after trigger removed"
+      ],
+      "scope": "A own synthetic store"
+    },
+    {
+      "case": "response_capture_records",
+      "fault": "TEMP trigger abort before INSERT",
+      "expected": [
+        "all nine existing JSON tables unchanged",
+        "meta revision unchanged",
+        "request receipt absent",
+        "same request succeeds once after trigger removed"
+      ],
+      "scope": "A own synthetic store"
+    },
+    {
+      "case": "response_capture_sources",
+      "fault": "TEMP trigger abort before INSERT",
+      "expected": [
+        "all nine existing JSON tables unchanged",
+        "meta revision unchanged",
+        "request receipt absent",
+        "same request succeeds once after trigger removed"
+      ],
+      "scope": "A own synthetic store"
+    },
+    {
+      "case": "response_capture_packets",
+      "fault": "TEMP trigger abort before INSERT",
+      "expected": [
+        "all nine existing JSON tables unchanged",
+        "meta revision unchanged",
+        "request receipt absent",
+        "same request succeeds once after trigger removed"
+      ],
+      "scope": "A own synthetic store"
+    },
+    {
+      "case": "response_capture_requests",
+      "fault": "TEMP trigger abort before INSERT",
+      "expected": [
+        "all nine existing JSON tables unchanged",
+        "meta revision unchanged",
+        "request receipt absent",
+        "same request succeeds once after trigger removed"
+      ],
+      "scope": "A own synthetic store"
+    },
+    {
+      "case": "response_capture_meta",
+      "fault": "TEMP trigger abort before UPDATE",
+      "expected": [
+        "all nine existing JSON tables unchanged",
+        "meta revision unchanged",
+        "request receipt absent",
+        "same request succeeds once after trigger removed"
+      ],
+      "scope": "A own synthetic store"
+    }
+  ],
+  "noRealData": true
+}

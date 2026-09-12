@@ -1,0 +1,105 @@
+{
+  "pid": 93517,
+  "all_rows_equal": true,
+  "tables": [
+    "records",
+    "sources",
+    "states"
+  ],
+  "rows": {
+    "records": [
+      [
+        "health-batch:demo-phone:demo-phone-v1",
+        "{\"batchId\":\"demo-phone-v1\",\"changedStates\":1,\"contentHash\":\"7d579d3c2a35afedca265b4c69c8b058796aeff366b7ce2123e235e9bd873fcc\",\"id\":\"health-batch:demo-phone:demo-phone-v1\",\"inserted\":1,\"kind\":\"health_batch\",\"modelEligible\":false,\"receivedAt\":1788881060600,\"samples\":1,\"status\":\"observed\"}"
+      ],
+      [
+        "health-batch:demo-watch:demo-watch-correction",
+        "{\"batchId\":\"demo-watch-correction\",\"changedStates\":1,\"contentHash\":\"19e7ed09b1c24f31b099dafd92eb612768c72c08ae7b1f8393c45491ce0d22db\",\"id\":\"health-batch:demo-watch:demo-watch-correction\",\"inserted\":1,\"kind\":\"health_batch\",\"modelEligible\":false,\"receivedAt\":1788881297137,\"samples\":1,\"status\":\"observed\"}"
+      ],
+      [
+        "health-batch:demo-watch:demo-watch-v1",
+        "{\"batchId\":\"demo-watch-v1\",\"changedStates\":4,\"contentHash\":\"1ad056ed6944a0b4e29f79b0c202a78068e4020c2c25c06cfeb6e6d4db9f576c\",\"id\":\"health-batch:demo-watch:demo-watch-v1\",\"inserted\":3,\"kind\":\"health_batch\",\"modelEligible\":false,\"receivedAt\":1788881060597,\"samples\":3,\"status\":\"observed\"}"
+      ],
+      [
+        "health-snapshot:snapshot-watch-group:s1-demo-correction",
+        "{\"accepted\":true,\"batchHash\":\"316be8b948483a309b72091119ca109b076810b029a7e1a56ccc2561ccf822a2\",\"capturedAt\":1788884435058,\"contentHash\":\"8c9bd7b9d504161d1bd3b7735123502c5758f591a2878a288721336f0d20d540\",\"disposition\":\"accepted\",\"envelope\":{\"batchId\":\"s1-demo-correction\",\"capturedAtMs\":1788884435058,\"completeness\":\"complete\",\"completenessEvidence\":\"synthetic-fixture\",\"metric\":\"steps\",\"pagination\":\"complete\",\"query\":{\"intervalRule\":\"fully-contained\",\"key\":\"contained-steps\",\"sleepCategory\":\"not-applicable\"},\"samples\":[{\"endMs\":1788883500000,\"startMs\":1788883200000,\"unit\":\"count\",\"value\":140.0}],\"schema\":\"health-window-snapshot-v1\",\"source\":{\"identityStrategy\":\"configured-name-group\",\"key\":\"snapshot-watch-group\",\"name\":\"合成来源名称组\"},\"timezoneOffsetMinutes\":480,\"windowEndMs\":1788883800000,\"windowStartMs\":1788883200000},\"generation\":2,\"id\":\"health-snapshot:snapshot-watch-group:s1-demo-correction\",\"kind\":\"health_batch\",\"modelEligible\":false,\"projectionBatch\":\"health-snapshot:snapshot-watch-group:s1-demo-correction\",\"protocol\":\"snapshot-v1\",\"receivedAt\":1788884582815,\"scope\":\"46459df921b9e99fff48f7c7b29f9fb97a6cd15b0c21eac86acfeb4d5a1d8c3d\",\"sourceId\":\"health-source:snapshot-watch-group\",\"status\":\"observed\"}"
+      ],
+      [
+        "health-snapshot:snapshot-watch-group:s1-demo-full",
+        "{\"accepted\":true,\"batchHash\":\"cf6f9d3b0734a26f10ebaadcfbf1b7eed314b7e5f36b5153084416e5465b40e8\",\"capturedAt\":1788884434058,\"contentHash\":\"e8a98d94d082e19dd8d040f6637675599c4909cb2f26091335ffaa5655a597aa\",\"disposition\":\"accepted\",\"envelope\":{\"batchId\":\"s1-demo-full\",\"capturedAtMs\":1788884434058,\"completeness\":\"complete\",\"completenessEvidence\":\"synthetic-fixture\",\"metric\":\"steps\",\"pagination\":\"complete\",\"query\":{\"intervalRule\":\"fully-contained\",\"key\":\"contained-steps\",\"sleepCategory\":\"not-applicable\"},\"samples\":[{\"endMs\":1788883500000,\"startMs\":1788883200000,\"unit\":\"count\",\"value\":120.0}],\"schema\":\"health-window-snapshot-v1\",\"source\":{\"identityStrategy\":\"configured-name-group\",\"key\":\"snapshot-watch-group\",\"name\":\"合成来源名称组\"},\"timezoneOffsetMinutes\":480,\"windowEndMs\":1788883800000,\"windowStartMs\":1788883200000},\"generation\":1,\"id\":\"health-snapshot:snapshot-watch-group:s1-demo-full\",\"kind\":\"health_batch\",\"modelEligible\":false,\"projectionBatch\":\"health-snapshot:snapshot-watch-group:s1-demo-full\",\"protocol\":\"snapshot-v1\",\"receivedAt\":1788884579799,\"scope\":\"46459df921b9e99fff48f7c7b29f9fb97a6cd15b0c21eac86acfeb4d5a1d8c3d\",\"sourceId\":\"health-source:snapshot-watch-group\",\"status\":\"observed\"}"
+      ],
+      [
+        "health-snapshot:snapshot-watch-group:s1-demo-partial",
+        "{\"accepted\":false,\"batchHash\":\"00d4f5077230feeca2c3cf1841f84114e75a4d146eacc2302500d9f5e5141b4d\",\"capturedAt\":1788884436058,\"contentHash\":\"40d82a9ed7a386e3c0ec9ddc830ae78cf4462066930754f2d9a1464ef8ee8a78\",\"disposition\":\"waiting_incomplete\",\"envelope\":{\"batchId\":\"s1-demo-partial\",\"capturedAtMs\":1788884436058,\"completeness\":\"unknown\",\"completenessEvidence\":\"synthetic-fixture\",\"metric\":\"steps\",\"pagination\":\"complete\",\"query\":{\"intervalRule\":\"fully-contained\",\"key\":\"contained-steps\",\"sleepCategory\":\"not-applicable\"},\"samples\":[{\"endMs\":1788883500000,\"startMs\":1788883200000,\"unit\":\"count\",\"value\":170.0}],\"schema\":\"health-window-snapshot-v1\",\"source\":{\"identityStrategy\":\"configured-name-group\",\"key\":\"snapshot-watch-group\",\"name\":\"合成来源名称组\"},\"timezoneOffsetMinutes\":480,\"windowEndMs\":1788883800000,\"windowStartMs\":1788883200000},\"generation\":2,\"id\":\"health-snapshot:snapshot-watch-group:s1-demo-partial\",\"kind\":\"health_batch\",\"modelEligible\":false,\"projectionBatch\":\"health-snapshot:snapshot-watch-group:s1-demo-correction\",\"protocol\":\"snapshot-v1\",\"receivedAt\":1788884585826,\"scope\":\"46459df921b9e99fff48f7c7b29f9fb97a6cd15b0c21eac86acfeb4d5a1d8c3d\",\"sourceId\":\"health-source:snapshot-watch-group\",\"status\":\"observed\"}"
+      ],
+      [
+        "health:demo-phone:steps-1:1",
+        "{\"domain\":\"Health\",\"externalId\":\"steps-1\",\"id\":\"health:demo-phone:steps-1:1\",\"kind\":\"health_sample\",\"modelEligible\":false,\"observation\":{\"offset\":480,\"receivedAt\":1788881060600,\"sample\":{\"endMs\":1788829200000,\"metric\":\"steps\",\"revision\":1,\"sampleId\":\"steps-1\",\"startMs\":1788825600000,\"unit\":\"count\",\"value\":2800.0},\"source\":{\"id\":\"demo-phone\",\"name\":\"合成手机\"}},\"sourceId\":\"health-source:demo-phone\",\"status\":\"observed\",\"version\":1}"
+      ],
+      [
+        "health:demo-watch:exercise-1:1",
+        "{\"domain\":\"Health\",\"externalId\":\"exercise-1\",\"id\":\"health:demo-watch:exercise-1:1\",\"kind\":\"health_sample\",\"modelEligible\":false,\"observation\":{\"offset\":480,\"receivedAt\":1788881060597,\"sample\":{\"endMs\":1788832800000,\"metric\":\"exercise\",\"revision\":1,\"sampleId\":\"exercise-1\",\"startMs\":1788829200000,\"unit\":\"minutes\",\"value\":35.0},\"source\":{\"id\":\"demo-watch\",\"name\":\"合成手表\"}},\"sourceId\":\"health-source:demo-watch\",\"status\":\"observed\",\"version\":1}"
+      ],
+      [
+        "health:demo-watch:sleep-1:1",
+        "{\"domain\":\"Health\",\"externalId\":\"sleep-1\",\"id\":\"health:demo-watch:sleep-1:1\",\"kind\":\"health_sample\",\"modelEligible\":false,\"observation\":{\"offset\":480,\"receivedAt\":1788881060597,\"sample\":{\"endMs\":1788818400000,\"metric\":\"sleep\",\"revision\":1,\"sampleId\":\"sleep-1\",\"startMs\":1788793200000,\"unit\":\"milliseconds\",\"value\":25200000.0},\"source\":{\"id\":\"demo-watch\",\"name\":\"合成手表\"}},\"sourceId\":\"health-source:demo-watch\",\"status\":\"observed\",\"version\":1}"
+      ],
+      [
+        "health:demo-watch:steps-1:1",
+        "{\"domain\":\"Health\",\"externalId\":\"steps-1\",\"id\":\"health:demo-watch:steps-1:1\",\"kind\":\"health_sample\",\"modelEligible\":false,\"observation\":{\"offset\":480,\"receivedAt\":1788881060597,\"sample\":{\"endMs\":1788829200000,\"metric\":\"steps\",\"revision\":1,\"sampleId\":\"steps-1\",\"startMs\":1788825600000,\"unit\":\"count\",\"value\":3200.0},\"source\":{\"id\":\"demo-watch\",\"name\":\"合成手表\"}},\"sourceId\":\"health-source:demo-watch\",\"status\":\"observed\",\"version\":1}"
+      ],
+      [
+        "health:demo-watch:steps-1:2",
+        "{\"domain\":\"Health\",\"externalId\":\"steps-1\",\"id\":\"health:demo-watch:steps-1:2\",\"kind\":\"health_sample\",\"modelEligible\":false,\"observation\":{\"offset\":480,\"receivedAt\":1788881297137,\"sample\":{\"endMs\":1788829200000,\"metric\":\"steps\",\"revision\":2,\"sampleId\":\"steps-1\",\"startMs\":1788825600000,\"unit\":\"count\",\"value\":3400.0},\"source\":{\"id\":\"demo-watch\",\"name\":\"合成手表\"}},\"sourceId\":\"health-source:demo-watch\",\"status\":\"observed\",\"version\":2}"
+      ]
+    ],
+    "sources": [
+      [
+        "conversation",
+        "{\"authorized\":true,\"generation\":1,\"id\":\"conversation\",\"sourceType\":\"conversation\"}"
+      ],
+      [
+        "health-demo",
+        "{\"authorized\":true,\"generation\":1,\"id\":\"health-demo\",\"sourceType\":\"synthetic_health\"}"
+      ],
+      [
+        "health-source:demo-phone",
+        "{\"authorized\":false,\"externalSourceId\":\"demo-phone\",\"generation\":1,\"id\":\"health-source:demo-phone\",\"ingestAuthorized\":true,\"kind\":\"health_source\",\"modelEligible\":false,\"name\":\"合成手机\",\"observedAt\":1788829200000,\"receivedAt\":1788881060600}"
+      ],
+      [
+        "health-source:demo-watch",
+        "{\"authorized\":false,\"externalSourceId\":\"demo-watch\",\"generation\":1,\"id\":\"health-source:demo-watch\",\"ingestAuthorized\":true,\"kind\":\"health_source\",\"modelEligible\":false,\"name\":\"合成手表\",\"observedAt\":1788832800000,\"receivedAt\":1788881297137}"
+      ],
+      [
+        "health-source:snapshot-watch-group",
+        "{\"authorized\":false,\"externalSourceId\":\"snapshot-watch-group\",\"generation\":1,\"id\":\"health-source:snapshot-watch-group\",\"identityStrategy\":\"configured-name-group\",\"ingestAuthorized\":true,\"kind\":\"health_source\",\"modelEligible\":false,\"name\":\"合成来源名称组\",\"protocol\":\"snapshot-v1\",\"receivedAt\":1788884585826,\"snapshotStatus\":\"waiting_incomplete\"}"
+      ],
+      [
+        "obsidian-demo",
+        "{\"authorized\":true,\"generation\":1,\"id\":\"obsidian-demo\",\"sourceType\":\"synthetic_markdown\"}"
+      ]
+    ],
+    "states": [
+      [
+        "health-window:46459df921b9e99fff48f7c7b29f9fb97a6cd15b0c21eac86acfeb4d5a1d8c3d",
+        "{\"capturedAt\":1788884435058,\"completeness\":\"synthetic_complete_only\",\"dayIndex\":20705,\"domain\":\"Health\",\"estimated\":false,\"generation\":2,\"id\":\"health-window:46459df921b9e99fff48f7c7b29f9fb97a6cd15b0c21eac86acfeb4d5a1d8c3d\",\"kind\":\"health_current_state\",\"method\":\"window_nonoverlapping_samples\",\"metric\":\"steps\",\"modelEligible\":false,\"observedAt\":1788883500000,\"offsetMinutes\":480,\"protocol\":\"snapshot-v1\",\"query\":{\"intervalRule\":\"fully-contained\",\"key\":\"contained-steps\",\"sleepCategory\":\"not-applicable\"},\"receivedAt\":1788884582815,\"refs\":[{\"id\":\"health-snapshot:snapshot-watch-group:s1-demo-correction\",\"snapshot\":true,\"sourceId\":\"snapshot-watch-group\",\"version\":2}],\"scope\":\"46459df921b9e99fff48f7c7b29f9fb97a6cd15b0c21eac86acfeb4d5a1d8c3d\",\"sourceId\":\"health-source:snapshot-watch-group\",\"sources\":[{\"identityStrategy\":\"configured-name-group\",\"name\":\"合成来源名称组\",\"sourceId\":\"snapshot-watch-group\",\"uncertain\":false,\"value\":140.0}],\"status\":\"observed\",\"supersedesBatch\":\"health-snapshot:snapshot-watch-group:s1-demo-full\",\"unit\":\"count\",\"value\":140.0,\"windowEndMs\":1788883800000,\"windowStartMs\":1788883200000}"
+      ],
+      [
+        "health:exercise:20704:480",
+        "{\"dayIndex\":20704,\"domain\":\"Health\",\"estimated\":false,\"id\":\"health:exercise:20704:480\",\"kind\":\"health_current_state\",\"method\":\"nonoverlapping_source_samples\",\"metric\":\"exercise\",\"modelEligible\":false,\"observedAt\":1788832800000,\"offsetMinutes\":480,\"receivedAt\":1788881060597,\"refs\":[{\"id\":\"health:demo-watch:exercise-1:1\",\"sampleId\":\"exercise-1\",\"sourceId\":\"demo-watch\",\"version\":1}],\"sourceId\":\"health-projection\",\"sources\":[{\"estimated\":false,\"name\":\"合成手表\",\"sourceId\":\"demo-watch\",\"uncertain\":false,\"value\":35.0}],\"status\":\"observed\",\"unit\":\"minutes\",\"value\":35.0}"
+      ],
+      [
+        "health:sleep:20703:480",
+        "{\"dayIndex\":20703,\"domain\":\"Health\",\"estimated\":false,\"id\":\"health:sleep:20703:480\",\"kind\":\"health_current_state\",\"method\":\"sleep_interval_union\",\"metric\":\"sleep\",\"modelEligible\":false,\"observedAt\":1788818400000,\"offsetMinutes\":480,\"receivedAt\":1788881060597,\"refs\":[{\"id\":\"health:demo-watch:sleep-1:1\",\"sampleId\":\"sleep-1\",\"sourceId\":\"demo-watch\",\"version\":1}],\"sourceId\":\"health-projection\",\"sources\":[{\"estimated\":false,\"name\":\"合成手表\",\"sourceId\":\"demo-watch\",\"uncertain\":false,\"value\":60.0}],\"status\":\"observed\",\"unit\":\"minutes\",\"value\":60.0}"
+      ],
+      [
+        "health:sleep:20704:480",
+        "{\"dayIndex\":20704,\"domain\":\"Health\",\"estimated\":false,\"id\":\"health:sleep:20704:480\",\"kind\":\"health_current_state\",\"method\":\"sleep_interval_union\",\"metric\":\"sleep\",\"modelEligible\":false,\"observedAt\":1788818400000,\"offsetMinutes\":480,\"receivedAt\":1788881060597,\"refs\":[{\"id\":\"health:demo-watch:sleep-1:1\",\"sampleId\":\"sleep-1\",\"sourceId\":\"demo-watch\",\"version\":1}],\"sourceId\":\"health-projection\",\"sources\":[{\"estimated\":false,\"name\":\"合成手表\",\"sourceId\":\"demo-watch\",\"uncertain\":false,\"value\":360.0}],\"status\":\"observed\",\"unit\":\"minutes\",\"value\":360.0}"
+      ],
+      [
+        "health:steps:20704:480",
+        "{\"dayIndex\":20704,\"domain\":\"Health\",\"estimated\":false,\"id\":\"health:steps:20704:480\",\"kind\":\"health_current_state\",\"method\":\"per_source_unmerged\",\"metric\":\"steps\",\"modelEligible\":false,\"observedAt\":1788829200000,\"offsetMinutes\":480,\"receivedAt\":1788881297137,\"refs\":[{\"id\":\"health:demo-phone:steps-1:1\",\"sampleId\":\"steps-1\",\"sourceId\":\"demo-phone\",\"version\":1},{\"id\":\"health:demo-watch:steps-1:2\",\"sampleId\":\"steps-1\",\"sourceId\":\"demo-watch\",\"version\":2}],\"sourceId\":\"health-projection\",\"sources\":[{\"estimated\":false,\"name\":\"合成手机\",\"sourceId\":\"demo-phone\",\"uncertain\":false,\"value\":2800.0},{\"estimated\":false,\"name\":\"合成手表\",\"sourceId\":\"demo-watch\",\"uncertain\":false,\"value\":3400.0}],\"status\":\"observed\",\"unit\":\"count\",\"value\":null}"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-148",
+  "attempt_id": "engineering-1",
+  "updated_at": "2026-09-08T09:45:52.372411+00:00",
+  "task_contract_sha256": "8dfda85f9a49b0c1d79fe9209b1ddb8b225bf8829548569bb15fb61068de8d99",
+  "candidate_sha256": "ccf5fde422e1f75ba33c1bcff835e40f2e34a01faed3b23ce11c1a3e8e9a4643",
+  "baseline_sha256": "0e9019ba6291fcd66ef247316f6693370c38fd20a1cfc697af2acd5016cde4db",
+  "stage": "synthetic_gui",
+  "status": "Paused — Resumable",
+  "pause_class": "environment",
+  "pause_reason_code": "mac_locked",
+  "completed_checks": [
+    "design_seal",
+    "E01_seal",
+    "offline_build",
+    "16_rust_tests",
+    "12_integration_groups",
+    "desktop_actual_app",
+    "earlier_narrow_app",
+    "ordinary_v2_functional_smoke"
+  ],
+  "pending_checks": [
+    "current_candidate_narrow_gui",
+    "final_manifest",
+    "PM_independent_safety_gate",
+    "user_real_validation"
+  ],
+  "rerun_checks": [],
+  "excluded_artifacts": [],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "owned_synthetic_root_retained"
+  },
+  "resume_from": "synthetic_gui",
+  "safe_to_resume": true,
+  "notes": "Mac locked before current narrow GUI evidence. All task-launched Apps stopped. Resume with fresh task PID after manual unlock; no unrelated stage reruns. No real profile build/runtime or real data/OS/network contact."
+}

@@ -1,0 +1,84 @@
+TAP version 13
+# Subtest: successful restoration clears earlier restore error
+ok 1 - successful restoration clears earlier restore error
+  ---
+  duration_ms: 1.796292
+  type: 'test'
+  ...
+# Subtest: queued draft failure cannot survive successful prepare
+ok 2 - queued draft failure cannot survive successful prepare
+  ---
+  duration_ms: 0.187375
+  type: 'test'
+  ...
+# Subtest: late old draft failure cannot attach to new draft
+not ok 3 - late old draft failure cannot attach to new draft
+  ---
+  duration_ms: 0.545667
+  type: 'test'
+  location: '/private/tmp/lifeos-p3-154-real-continuity-v1/mutations/8c64484a-4541-4e42-9cb8-7d58445179aa/tests/flow_races.mjs:9:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   code: 'store_busy',
+    +   draftRevision: 2,
+    +   stage: undefined,
+    +   turnId: 'af20f99d-1f03-4c4d-88c8-67982cfcba1c'
+    + }
+    - null
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: ~
+  actual:
+    code: 'store_busy'
+    turnId: 'af20f99d-1f03-4c4d-88c8-67982cfcba1c'
+    draftRevision: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///private/tmp/lifeos-p3-154-real-continuity-v1/mutations/8c64484a-4541-4e42-9cb8-7d58445179aa/tests/flow_races.mjs:9:291)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: saved result refresh failure retries only read and never prepares or sends again
+ok 4 - saved result refresh failure retries only read and never prepares or sends again
+  ---
+  duration_ms: 0.375333
+  type: 'test'
+  ...
+# Subtest: new prepare failure belongs to new turn and revision, prior answer is unchanged
+ok 5 - new prepare failure belongs to new turn and revision, prior answer is unchanged
+  ---
+  duration_ms: 0.094292
+  type: 'test'
+  ...
+# Subtest: late completed cancel cannot erase newly edited draft
+ok 6 - late completed cancel cannot erase newly edited draft
+  ---
+  duration_ms: 0.111625
+  type: 'test'
+  ...
+# Subtest: superseded snapshot rejection is ignored
+ok 7 - superseded snapshot rejection is ignored
+  ---
+  duration_ms: 0.107458
+  type: 'test'
+  ...
+# Subtest: actual status renderer offers read-only recovery after saved result
+ok 8 - actual status renderer offers read-only recovery after saved result
+  ---
+  duration_ms: 0.933417
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 7
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 242.260584

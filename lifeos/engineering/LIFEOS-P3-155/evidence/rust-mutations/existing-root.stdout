@@ -1,0 +1,18 @@
+
+running 1 test
+test runtime_root::continuity_guards::missing_existing_database_is_never_rebuilt ... FAILED
+
+failures:
+
+---- runtime_root::continuity_guards::missing_existing_database_is_never_rebuilt stdout ----
+
+thread 'runtime_root::continuity_guards::missing_existing_database_is_never_rebuilt' (21893054) panicked at src/runtime_root.rs:48:299:
+assertion failed: real_root_at(&p).is_err()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    runtime_root::continuity_guards::missing_existing_database_is_never_rebuilt
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 116 filtered out; finished in 0.00s
+

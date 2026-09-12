@@ -1,0 +1,67 @@
+{
+  "case": "B-dev-06",
+  "attempts": [
+    {
+      "requestId": "op-request-2958ef0f34b49a78f1d7f91eba8689bc",
+      "operationId": "operation-974e6c0726bfd9afd9d0d6b8f8dd60ba",
+      "previewStatus": "cancelled",
+      "state": "cancelled_before_dispatch",
+      "errorCode": null,
+      "businessChanged": false,
+      "eventCount": 0,
+      "feedbackCount": 0,
+      "commitCount": 0,
+      "confirmationCount": 0,
+      "draftStatus": "cancelled",
+      "draftMatches": true
+    },
+    {
+      "requestId": "op-request-855b717e74542ac94a8d2e442dea06ba",
+      "operationId": "operation-a5389bab84387eb2623e66d95aac5db1",
+      "previewStatus": "stale",
+      "state": "ready",
+      "errorCode": null,
+      "businessChanged": false,
+      "eventCount": 0,
+      "feedbackCount": 0,
+      "commitCount": 0,
+      "confirmationCount": 0,
+      "draftStatus": "pending",
+      "draftMatches": true
+    },
+    {
+      "requestId": "op-request-a28b95b13b4bcd00aff8cfe873c7bc1c",
+      "operationId": "operation-1ca98cf12ca2b3def733881331932481",
+      "previewStatus": "stale",
+      "state": "failed",
+      "errorCode": "provider_unavailable",
+      "businessChanged": false,
+      "eventCount": 0,
+      "feedbackCount": 0,
+      "commitCount": 0,
+      "confirmationCount": 1,
+      "draftStatus": "pending",
+      "draftMatches": true
+    },
+    {
+      "requestId": "op-request-79eb6c8d7a2569e24862e75aee85cfc9",
+      "operationId": "operation-ae61611e562213c1acd5c07968f00c08",
+      "previewStatus": "failed",
+      "state": "failed",
+      "errorCode": "provider_unavailable",
+      "businessChanged": false,
+      "eventCount": 0,
+      "feedbackCount": 0,
+      "commitCount": 0,
+      "confirmationCount": 1,
+      "draftStatus": "pending",
+      "draftMatches": true
+    }
+  ],
+  "budget": {
+    "development": 8,
+    "unseen": 0,
+    "used": 8
+  },
+  "totalBusinessEvents": 5
+}

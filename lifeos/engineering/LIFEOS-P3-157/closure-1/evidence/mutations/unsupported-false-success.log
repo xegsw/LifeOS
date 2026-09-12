@@ -1,0 +1,68 @@
+✔ strong-frame-unlisted-verb (0.578709ms)
+✔ strong-frame-another-verb (0.175958ms)
+✔ word-internal-negation (0.035708ms)
+✔ withdraw-unique (0.06025ms)
+✔ withdraw-no-target (0.078459ms)
+✔ withdraw-multiple (0.043167ms)
+✔ negative-new-intent (0.150125ms)
+✔ negative-not-withdrawal (0.079583ms)
+✔ cancelled-target (0.07425ms)
+✔ finished-target (0.152083ms)
+✔ quoted-withdrawal (0.085333ms)
+✔ hypothetical (0.0415ms)
+✔ question (0.03125ms)
+✔ uncertain (0.024959ms)
+✔ conflicting-clauses (0.035833ms)
+✔ unsupported-explicit (0.035958ms)
+✔ ordinary-chat (0.025667ms)
+✔ cloud-affirmation (0.023459ms)
+✔ parse-none cannot fall into chat for explicit intent (0.097333ms)
+✖ unsupported explicit input never prepares disclosure and keeps draft (1.621458ms)
+✔ unsupported no matching cancellation is honest local no-change (0.290042ms)
+✖ unsupported read restoration does not parse or write (0.192042ms)
+✔ late cancelled parsing cannot write (0.080792ms)
+✔ legacy explicit negative new intent never becomes cancellation (0.022875ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 22
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 41.350041
+
+✖ failing tests:
+
+test at ../../../../../../private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/unsupported-false-success/tests/closure_cases.mjs:30:1
+✖ unsupported explicit input never prepares disclosure and keeps draft (1.621458ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '' !== '帮我把这件事安排一下。'
+  
+      at TestContext.<anonymous> (file:///private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/unsupported-false-success/tests/closure_cases.mjs:30:259)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '',
+    expected: '帮我把这件事安排一下。',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/unsupported-false-success/tests/closure_cases.mjs:32:1
+✖ unsupported read restoration does not parse or write (0.192042ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '' !== '帮我把这件事安排一下。'
+  
+      at TestContext.<anonymous> (file:///private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/unsupported-false-success/tests/closure_cases.mjs:32:278)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '',
+    expected: '帮我把这件事安排一下。',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

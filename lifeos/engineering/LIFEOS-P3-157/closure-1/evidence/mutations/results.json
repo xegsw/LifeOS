@@ -1,0 +1,43 @@
+{
+  "results": [
+    {
+      "name": "unsupported-to-chat",
+      "exitCode": 1,
+      "validMutation": true,
+      "killed": true
+    },
+    {
+      "name": "empty-model-to-chat",
+      "exitCode": 1,
+      "validMutation": true,
+      "killed": true
+    },
+    {
+      "name": "verb-whitelist-restored",
+      "exitCode": 1,
+      "validMutation": true,
+      "killed": true
+    },
+    {
+      "name": "nonunique-cancel",
+      "exitCode": 1,
+      "validMutation": true,
+      "killed": true,
+      "evidence": "nonunique-cancel-corrected.log",
+      "excludedAttempt": "initial mutation changed compatibility branch; did not test new unique-target guard"
+    },
+    {
+      "name": "unsupported-false-success",
+      "exitCode": 1,
+      "validMutation": true,
+      "killed": true
+    },
+    {
+      "name": "host-candidate-bypass",
+      "exitCode": 1,
+      "validMutation": true,
+      "killed": true
+    }
+  ],
+  "allKilled": true
+}

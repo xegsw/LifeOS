@@ -1,0 +1,34 @@
+✔ primary save persists catalog and credential, clears only acknowledged input (4.017208ms)
+✔ standalone credential save works without catalog or model (0.108458ms)
+✔ blank model rejects primary save and retains unsaved key (0.109666ms)
+✔ catalog success with credential failure is honest and preserves input (0.131584ms)
+✔ post-save model failure reloads credential CAS without resaving secret (0.106458ms)
+✔ CAS failure refreshes metadata, keeps input and never automatically retries (0.0885ms)
+✔ double click performs one mutation; user replacement draft survives acknowledgment (0.125667ms)
+✔ only allowlisted error codes appear; private messages and unknown codes are discarded (0.050833ms)
+✔ catalog saved alone does not claim an existing credential (0.331166ms)
+✔ default is lightweight and has one detail entry (23.761125ms)
+✔ freshness stays per metric and does not claim coverage (0.209042ms)
+✔ only one detail area and trend is secondary (2.484166ms)
+✔ no fake chat or AI state (0.225375ms)
+✔ initial calls are serial and keep existing contract (0.492375ms)
+✔ overview error never claims imported or exposes error body (0.127625ms)
+✔ null and absence remain gaps while zero stays real (0.086083ms)
+✔ source escaping and empty states retained (0.210375ms)
+✔ stale requests cannot replace the selected metric (0.110375ms)
+✔ inactive auxiliary does not query and exit stops remaining overview requests (0.1215ms)
+✔ exited detail request cannot publish late values (0.079083ms)
+✔ new entry has fresh instance and mode label never depends on global flag (0.158667ms)
+✔ entry is inert and exit rejects a late status (0.915583ms)
+✔ search results escape originals and source asking remains separate (0.49275ms)
+✔ disconnect requires distinct confirmation and supports reconnect (0.10825ms)
+✔ real restored controls display fixed targets without starting an operation (0.060417ms)
+✔ exit prevents late search from replacing prior results (0.094833ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 69.778042

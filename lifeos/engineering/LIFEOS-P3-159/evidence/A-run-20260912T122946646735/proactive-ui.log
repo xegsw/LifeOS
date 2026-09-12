@@ -1,0 +1,42 @@
+✔ closing purpose is available during in-flight response and preserves input (3.549125ms)
+✔ a late old refresh cannot restore enabled UI after generation changes (0.902083ms)
+✔ projection acknowledgements update revision before response preparation (0.14225ms)
+✔ source/model text is escaped and never interpreted as markup (0.106959ms)
+✔ reload restores persisted pending response without resubmitting it (0.113792ms)
+✔ unchanged polling preserves the mounted page and unsaved selections (0.133333ms)
+✔ completed response does not erase a newer typed follow-up (0.076166ms)
+✔ unrelated response keeps original draft during completion and restart (0.220125ms)
+✔ topic switch uses existing ordinary preview without auto-confirming or changing suggestion (0.271417ms)
+✔ credential recovery never starts from polling or a forged click (0.222542ms)
+✔ credential recovery opens only native menu and cannot issue start, save or POST (0.105333ms)
+✔ credential check cancelled during menu open cannot restore late state (0.051333ms)
+✔ compact settings keeps scope and technical details out of default region (0.14425ms)
+✖ first enable opens disclosure without grant write; one-click disable preserves selected sources (3.399416ms)
+✔ credential entry errors retain only safe fixed code (0.075916ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 14
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 48.27325
+
+✖ failing tests:
+
+test at lifeos/engineering/LIFEOS-P3-159/tests/proactive_ui.mjs:26:1
+✖ first enable opens disclosure without grant write; one-click disable preserves selected sources (3.399416ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert(app.selectedSources.has('shared-source'))
+  
+      at TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-159/tests/proactive_ui.mjs:26:649)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

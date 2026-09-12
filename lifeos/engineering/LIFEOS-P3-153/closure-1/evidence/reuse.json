@@ -1,0 +1,20 @@
+{
+  "parentManifestVerified": true,
+  "allParentPackageFilesUnchanged": true,
+  "unchangedUiRendererAndCss": true,
+  "reuse": "parent 25 UI, 11 combined, 5 clarification UI and 40 unaffected Rust tests; six native GUI states",
+  "affectedTests": {
+    "rustHost": 35,
+    "rustDisclosure": 23,
+    "integration": 14,
+    "continuity": 8,
+    "freshness": 6
+  },
+  "affectedTotal": 86,
+  "sourceExpiryFinalRerun": 1,
+  "sourceExpiryRerunCountedTwice": false,
+  "productionCandidateMatchesBuiltReplay": true,
+  "buildCopyDifferenceTestOnly": [
+    "candidate/src/health_conversation_host/tests.rs"
+  ]
+}

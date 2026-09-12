@@ -1,0 +1,99 @@
+     Locking 1 package to latest compatible version
+      Adding lifeos-source-engine v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-152/complete-restoration/candidate/source-engine)
+   Compiling lifeos-p3-152 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-152/complete-restoration/candidate)
+    Checking lifeos-source-engine v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-152/complete-restoration/candidate/source-engine)
+error[E0433]: cannot find `conversation_store` in `crate`
+   --> source-engine/src/source_api.rs:223:25
+    |
+223 |     let _guard = crate::conversation_store::COORDINATOR
+    |                         ^^^^^^^^^^^^^^^^^^ could not find `conversation_store` in the crate root
+
+error[E0433]: cannot find `conversation_store` in `crate`
+   --> source-engine/src/source_api.rs:226:24
+    |
+226 |     let mut c = crate::conversation_store::open_active(fixture)?;
+    |                        ^^^^^^^^^^^^^^^^^^ could not find `conversation_store` in the crate root
+
+error[E0425]: cannot find function `expected_marker` in module `runtime_root`
+  --> source-engine/src/artifact_io.rs:99:30
+   |
+99 |             != runtime_root::expected_marker()?
+   |                              ^^^^^^^^^^^^^^^ not found in `runtime_root`
+
+warning: unused imports: `OptionalExtension` and `TransactionBehavior`
+ --> source-engine/src/repository.rs:2:36
+  |
+2 | use rusqlite::{params, Connection, OptionalExtension, TransactionBehavior};
+  |                                    ^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Sha256`
+ --> source-engine/src/repository.rs:5:20
+  |
+5 | use sha2::{Digest, Sha256};
+  |                    ^^^^^^
+
+warning: unused import: `self`
+ --> source-engine/src/apple_health.rs:5:18
+  |
+5 |     repository::{self, Error},
+  |                  ^^^^
+
+warning: unused import: `json`
+ --> source-engine/src/lib.rs:5:24
+  |
+5 | use serde_json::{Value,json};use std::sync::{Mutex,MutexGuard};use rusqlite::OptionalExtension;
+  |                        ^^^^
+
+warning: unused import: `rusqlite::OptionalExtension`
+ --> source-engine/src/lib.rs:5:68
+  |
+5 | use serde_json::{Value,json};use std::sync::{Mutex,MutexGuard};use rusqlite::OptionalExtension;
+  |                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0277]: the size for values of type `str` cannot be known at compilation time
+   --> source-engine/src/source_api.rs:258:17
+    |
+258 |             for s in ids {
+    |                 ^ doesn't have a size known at compile-time
+    |
+    = help: the trait `Sized` is not implemented for `str`
+    = note: all local variables must have a statically known size
+
+error[E0277]: the size for values of type `str` cannot be known at compilation time
+   --> source-engine/src/source_api.rs:258:13
+    |
+258 | /             for s in ids {
+259 | |                 out.push(summary(&c, &lease(&c, &s)?)?)
+260 | |             }
+    | |_____________^ doesn't have a size known at compile-time
+    |
+    = help: the trait `Sized` is not implemented for `str`
+note: required by an implicit `Sized` bound in `std::option::Option`
+   --> /Users/xxe/.rustup/toolchains/1.98.0-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/option.rs:598:17
+    |
+598 | pub enum Option<T> {
+    |                 ^ required by the implicit `Sized` requirement on this type parameter in `Option`
+
+warning: unused import: `Digest`
+ --> source-engine/src/repository.rs:5:12
+  |
+5 | use sha2::{Digest, Sha256};
+  |            ^^^^^^
+
+warning: variable does not need to be mutable
+   --> source-engine/src/apple_health.rs:167:5
+    |
+167 |     mut progress: impl FnMut(u64),
+    |     ----^^^^^^^^
+    |     |
+    |     help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+Some errors have detailed explanations: E0277, E0425, E0433.
+For more information about an error, try `rustc --explain E0277`.
+warning: `lifeos-source-engine` (lib) generated 7 warnings
+error: could not compile `lifeos-source-engine` (lib) due to 5 previous errors; 7 warnings emitted
+warning: build failed, waiting for other jobs to finish...

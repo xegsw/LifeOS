@@ -1,0 +1,45 @@
+{
+  "candidate_modified": false,
+  "network": false,
+  "results": [
+    {
+      "name": "expiry",
+      "test": "expired_preview_or_client_supplied_body_cannot_be_confirmed",
+      "killed": true,
+      "exit_code": 101,
+      "mutation_file": "src/health_conversation_host/controlled.rs",
+      "old": "v[\"expiresAt\"].as_i64().unwrap_or(0)<=now()",
+      "new": "false",
+      "log": "/private/tmp/lifeos-p3-152-health-conversation-v1/mutations-1788932799743438000/expiry.log",
+      "log_sha256": "edf27da84d3d02bcaafbd5644df62af17886a99b41138eb0934fa7ef98eadd65",
+      "bundled_log": "evidence/mutation-expiry.log"
+    },
+    {
+      "name": "confirmation",
+      "test": "forged_confirmation_token_never_dispatches",
+      "killed": true,
+      "exit_code": 101,
+      "mutation_file": "src/health_conversation_host/controlled.rs",
+      "old": "v[\"revision\"]!=d.expected_preview_revision||v[\"confirmationToken\"]!=d.confirmation_token",
+      "new": "false",
+      "log": "/private/tmp/lifeos-p3-152-health-conversation-v1/mutations-1788932799743438000/confirmation.log",
+      "log_sha256": "732f63b4c09776a0182e7d519196ecfee04a98c4fbb866dc8699dc40ec1f8c85",
+      "bundled_log": "evidence/mutation-confirmation.log"
+    },
+    {
+      "name": "secret-echo",
+      "test": "remote_key_echo_is_never_persisted_or_returned",
+      "killed": true,
+      "exit_code": 101,
+      "mutation_file": "src/health_conversation_host/controlled.rs",
+      "old": "!secret.is_empty()&&response.text.contains(secret)",
+      "new": "false",
+      "log": "/private/tmp/lifeos-p3-152-health-conversation-v1/mutations-1788932799743438000/secret-echo.log",
+      "log_sha256": "d238e1d450c8867a09e97f3b171f518d28dde508ab54f4a0180abf00c2c016ab",
+      "bundled_log": "evidence/mutation-secret-echo.log"
+    }
+  ],
+  "passed": 3,
+  "total": 3,
+  "run_root": "/private/tmp/lifeos-p3-152-health-conversation-v1/mutations-1788932799743438000"
+}

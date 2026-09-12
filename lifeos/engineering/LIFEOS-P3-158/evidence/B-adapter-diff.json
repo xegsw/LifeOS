@@ -1,0 +1,102 @@
+{
+  "from": "stage-A/candidate",
+  "files": [
+    "application/health_ui.ts",
+    "src/health_conversation_host/catalog.rs",
+    "src/health_conversation_host/settings_lifecycle.rs",
+    "src/main.rs",
+    "src/provider_store.rs",
+    "ui/health_ui.js"
+  ],
+  "offlineRegression": [
+    {
+      "step": "build",
+      "exitCode": 0
+    },
+    {
+      "step": "rust",
+      "exitCode": 0
+    },
+    {
+      "step": "actions",
+      "exitCode": 0
+    },
+    {
+      "step": "operation-flow",
+      "exitCode": 0
+    },
+    {
+      "step": "operation-ipc",
+      "exitCode": 0
+    },
+    {
+      "step": "closure-cases",
+      "exitCode": 0
+    },
+    {
+      "step": "real-local",
+      "exitCode": 0
+    },
+    {
+      "step": "ui",
+      "exitCode": 0
+    },
+    {
+      "step": "integration",
+      "exitCode": 0
+    },
+    {
+      "step": "combined",
+      "exitCode": 0
+    },
+    {
+      "step": "continuity",
+      "exitCode": 0
+    },
+    {
+      "step": "clarification-ui",
+      "exitCode": 0
+    },
+    {
+      "step": "error-diagnostics",
+      "exitCode": 0
+    },
+    {
+      "step": "flow-races",
+      "exitCode": 0
+    },
+    {
+      "step": "source-recovery",
+      "exitCode": 0
+    },
+    {
+      "step": "freshness",
+      "exitCode": 0
+    }
+  ],
+  "modeGuards": [
+    {
+      "name": "wrong-mode",
+      "exitCode": 101,
+      "passed": true
+    },
+    {
+      "name": "online-driver",
+      "exitCode": 101,
+      "passed": true
+    },
+    {
+      "name": "real-driver",
+      "exitCode": 101,
+      "passed": true
+    },
+    {
+      "name": "mixed-online-real",
+      "exitCode": 101,
+      "passed": true
+    }
+  ],
+  "liveConfigurationRead": false,
+  "liveKeyAccess": false,
+  "posts": 0
+}

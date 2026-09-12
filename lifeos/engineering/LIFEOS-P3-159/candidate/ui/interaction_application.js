@@ -1,0 +1,84 @@
+export class InteractionApplication {
+    invoke;
+    delivered = new Set();
+    assistants = new Set();
+    speech = new Set();
+    constructor(invoke){
+        this.invoke = invoke;
+    }
+    async call(command, operation, payload) {
+        const r = await this.invoke(command, {
+            version: 'interaction-v1',
+            operation,
+            payload
+        });
+        if (r?.version !== 'interaction-v1' || r.operation !== operation || !r.result) throw {
+            code: 'interaction_contract_rejected'
+        };
+        return r.result;
+    }
+    async submitUserTurn(turn) {
+        const r = await this.call('capture_record', 'submit_user_turn', turn);
+        return r.receipt;
+    }
+    async submitKeyboard(text, correlationId, replyTo) {
+        const hints = replyTo ? {
+            replyTo,
+            presentedProactiveRef: replyTo
+        } : {};
+        const a = await this.call('resolve_request_context', 'allocate_user_turn', {
+            correlationId,
+            conversationRef: {
+                id: 'source-chat',
+                revision: 1
+            },
+            origin: {
+                kind: 'keyboard'
+            },
+            ...hints
+        });
+        const turn = {
+            schemaVersion: 'interaction-v1',
+            turnId: a.turnId,
+            conversationRef: a.conversationRef,
+            text,
+            origin: {
+                kind: 'keyboard'
+            },
+            finalizedAt: new Date(a.allocatedAt).toISOString(),
+            ...hints
+        };
+        const receipt = await this.submitUserTurn(turn);
+        if (receipt.status === 'rejected' || receipt.status === 'unknown') throw {
+            code: receipt.code
+        };
+        const status = await this.call('get_context_recovery', 'interaction_turn_status', {
+            turnId: turn.turnId
+        });
+        return {
+            turn,
+            receipt,
+            proactiveRequestId: status.proactiveRequestId
+        };
+    }
+    onAssistantTurn(listener) {
+        this.assistants.add(listener);
+        return ()=>this.assistants.delete(listener);
+    }
+    onSpeechOutputRequest(listener) {
+        this.speech.add(listener);
+        return ()=>this.speech.delete(listener);
+    }
+    reportSpeechInterrupted(event) {
+        return this.call('decide_understanding_feedback', 'speech_interrupted', event).then(()=>{});
+    }
+    async refreshOutputs() {
+        const output = await this.call('get_context_recovery', 'interaction_outputs', {});
+        for (const turn of output.turns){
+            const key = turn.turnRef.id + ':' + turn.turnRef.revision;
+            if (this.delivered.has(key)) continue;
+            this.delivered.add(key);
+            for (const listener of this.assistants)listener(turn);
+        }
+    }
+}

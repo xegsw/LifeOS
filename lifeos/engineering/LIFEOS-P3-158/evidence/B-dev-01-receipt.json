@@ -1,0 +1,22 @@
+{
+  "case": "B-dev-01",
+  "input": "明天下午去健身房",
+  "result": "explicit_success",
+  "operationId": "operation-2461862738fe7bc74c3e92e593ebeb68",
+  "actionId": "action:operation-2461862738fe7bc74c3e92e593ebeb68",
+  "version": 1,
+  "status": "planned",
+  "eventCount": 1,
+  "feedbackCount": 1,
+  "receiptCopiesEqual": true,
+  "idempotencyRows": 2,
+  "budget": {
+    "development": 1,
+    "unseen": 0,
+    "used": 1
+  },
+  "binarySha256": "d5d1d69e4d4fbe2b6ba319d66a700be8c5cf008a9168683669531d9ee8a32958",
+  "modelRoute": "online-synthetic build: host_gateway::DeepSeekModel; SyntheticControlledModel denies network-enabled mode",
+  "verification": "persistent receipt + event + feedback + request identities; no resend probe",
+  "postsEvidence": "persistent pretransport consumption 1; successful model-path transaction; no raw network log"
+}

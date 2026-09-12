@@ -1,0 +1,447 @@
+    Checking lifeos-source-engine v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/candidate/source-engine)
+warning: unused imports: `OptionalExtension` and `TransactionBehavior`
+ --> source-engine/src/repository.rs:2:36
+  |
+2 | use rusqlite::{params, Connection, OptionalExtension, TransactionBehavior};
+  |                                    ^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Sha256`
+ --> source-engine/src/repository.rs:5:20
+  |
+5 | use sha2::{Digest, Sha256};
+  |                    ^^^^^^
+
+warning: unused import: `self`
+ --> source-engine/src/apple_health.rs:5:18
+  |
+5 |     repository::{self, Error},
+  |                  ^^^^
+
+warning: unused import: `rusqlite::OptionalExtension`
+ --> source-engine/src/lib.rs:7:68
+  |
+7 | use serde_json::{Value,json};use std::sync::{Mutex,MutexGuard};use rusqlite::OptionalExtension;
+  |                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `path::Path`
+ --> source-engine/src/update_checks.rs:3:14
+  |
+3 | use std::{fs,path::Path,os::unix::fs::PermissionsExt};
+  |              ^^^^^^^^^^
+
+warning: unused import: `rusqlite::params`
+ --> source-engine/src/update_checks.rs:4:5
+  |
+4 | use rusqlite::params;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: unused import: `Digest`
+ --> source-engine/src/repository.rs:5:12
+  |
+5 | use sha2::{Digest, Sha256};
+  |            ^^^^^^
+
+warning: unused variable: `root`
+   --> source-engine/src/repository.rs:105:9
+    |
+105 |     let root = crate::runtime_root::verify()?;
+    |         ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> source-engine/src/apple_health.rs:167:5
+    |
+167 |     mut progress: impl FnMut(u64),
+    |     ----^^^^^^^^
+    |     |
+    |     help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `root`
+  --> source-engine/src/lib.rs:18:83
+   |
+18 | ...on<std::path::PathBuf>>{let root=runtime_root::verify()?;if fixture.is_empty()||fixture.len()>60||!fixture.bytes().all(|b|b.is_as...
+   |                                ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+
+warning: unused variable: `root`
+  --> source-engine/src/lib.rs:29:83
+   |
+29 | ...<Value>>{let _g=gate()?;let root=runtime_root::verify()?;let path=runtime_root::store_path(fixture)?;if !path.try_exists().map_er...
+   |                                ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+
+warning: struct `Request` is never constructed
+  --> source-engine/src/repository.rs:40:12
+   |
+40 | pub struct Request {
+   |            ^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `time` is never used
+  --> source-engine/src/repository.rs:49:4
+   |
+49 | fn time() -> i64 {
+   |    ^^^^
+
+warning: function `text` is never used
+  --> source-engine/src/repository.rs:55:4
+   |
+55 | fn text<'a>(v: &'a Value, k: &str) -> R<&'a str> {
+   |    ^^^^
+
+warning: function `number` is never used
+  --> source-engine/src/repository.rs:60:4
+   |
+60 | fn number(v: &Value, k: &str) -> R<i64> {
+   |    ^^^^^^
+
+warning: function `id` is never used
+  --> source-engine/src/repository.rs:65:4
+   |
+65 | fn id(v: &Value, k: &str) -> R<String> {
+   |    ^^
+
+warning: function `fields` is never used
+  --> source-engine/src/repository.rs:76:4
+   |
+76 | fn fields(v: &Value, allowed: &[&str]) -> R<()> {
+   |    ^^^^^^
+
+warning: function `body` is never used
+  --> source-engine/src/repository.rs:87:4
+   |
+87 | fn body(s: &str) -> R<()> {
+   |    ^^^^
+
+warning: method `new_child` is never used
+   --> source-engine/src/artifact_io.rs:171:12
+    |
+ 40 | impl Dir {
+    | -------- method in this implementation
+...
+171 |     pub fn new_child(&self, s: &str) -> R<Self> {
+    |            ^^^^^^^^^
+
+warning: function `dispatch_raw` is never used
+  --> source-engine/src/apple_health_api.rs:36:8
+   |
+36 | pub fn dispatch_raw(body: tauri::ipc::InvokeBody, fixture: &str) -> Result<Value, Error> {
+   |        ^^^^^^^^^^^^
+
+warning: constant `LIMIT` is never used
+ --> source-engine/src/health_domain.rs:6:11
+  |
+6 | pub const LIMIT: usize = 128 * 1024;
+  |           ^^^^^
+
+warning: constant `DAY` is never used
+ --> source-engine/src/health_domain.rs:7:11
+  |
+7 | pub const DAY: i64 = 86_400_000;
+  |           ^^^
+
+warning: type alias `R` is never used
+ --> source-engine/src/health_domain.rs:8:6
+  |
+8 | type R<T> = Result<T, Error>;
+  |      ^
+
+warning: struct `Source` is never constructed
+  --> source-engine/src/health_domain.rs:11:12
+   |
+11 | pub struct Source { pub id: String, pub name: String }
+   |            ^^^^^^
+
+warning: struct `Sample` is never constructed
+  --> source-engine/src/health_domain.rs:14:12
+   |
+14 | pub struct Sample { pub sample_id: String, pub revision: u32, pub metric: String, pub start_ms: i64, pub end_ms: i64, pub value: f64...
+   |            ^^^^^^
+
+warning: struct `Envelope` is never constructed
+  --> source-engine/src/health_domain.rs:17:12
+   |
+17 | pub struct Envelope { pub schema: String, pub batch_id: String, pub exported_at_ms: i64, pub window_start_ms: i64, pub window_end_ms...
+   |            ^^^^^^^^
+
+warning: struct `Observation` is never constructed
+  --> source-engine/src/health_domain.rs:20:12
+   |
+20 | pub struct Observation { pub source: Source, pub sample: Sample, pub offset: i32, pub received_at: i64 }
+   |            ^^^^^^^^^^^
+
+warning: methods `identity`, `record_id`, `same_content`, and `keys` are never used
+  --> source-engine/src/health_domain.rs:22:9
+   |
+21 | impl Observation {
+   | ---------------- methods in this implementation
+22 |  pub fn identity(&self) -> String { format!("{}:{}", self.source.id, self.sample.sample_id) }
+   |         ^^^^^^^^
+23 |  pub fn record_id(&self) -> String { format!("health:{}:{}", self.identity(), self.sample.revision) }
+   |         ^^^^^^^^^
+24 |  pub fn same_content(&self, other: &Self) -> bool { self.source == other.source && self.sample == other.sample && self.offset == oth...
+   |         ^^^^^^^^^^^^
+25 |  pub fn keys(&self) -> BTreeSet<Key> { let shift = self.offset as i64 * 60000; ((self.sample.start_ms+shift).div_euclid(DAY)..=(self...
+   |         ^^^^
+
+warning: struct `Key` is never constructed
+  --> source-engine/src/health_domain.rs:28:12
+   |
+28 | pub struct Key { pub day: i64, pub offset: i32, pub metric: String }
+   |            ^^^
+
+warning: method `id` is never used
+  --> source-engine/src/health_domain.rs:29:19
+   |
+29 | impl Key { pub fn id(&self)->String {format!("health:{}:{}:{}",self.metric,self.day,self.offset)} }
+   | --------          ^^
+   | |
+   | method in this implementation
+
+warning: function `bad` is never used
+  --> source-engine/src/health_domain.rs:30:4
+   |
+30 | fn bad()->Error {Error::new("health_envelope_rejected")}
+   |    ^^^
+
+warning: function `ident` is never used
+  --> source-engine/src/health_domain.rs:31:4
+   |
+31 | fn ident(s:&str)->bool {!s.is_empty() && s.len()<=80 && s.bytes().all(|b|b.is_ascii_alphanumeric() || b"_-".contains(&b))}
+   |    ^^^^^
+
+warning: function `parse` is never used
+  --> source-engine/src/health_domain.rs:32:8
+   |
+32 | pub fn parse(bytes:&[u8])->R<Envelope> {
+   |        ^^^^^
+
+warning: function `observations` is never used
+  --> source-engine/src/health_domain.rs:47:8
+   |
+47 | pub fn observations(e:&Envelope,received_at:i64)->Vec<Observation> {e.samples.iter().map(|sample|Observation{source:e.source.clone()...
+   |        ^^^^^^^^^^^^
+
+warning: function `union` is never used
+  --> source-engine/src/health_domain.rs:48:4
+   |
+48 | fn union(mut spans:Vec<(i64,i64)>)->i64 {spans.sort();let mut total=0;let mut end=i64::MIN;for(a,b)in spans{total+=b-a.max(end).min(...
+   |    ^^^^^
+
+warning: function `project` is never used
+  --> source-engine/src/health_domain.rs:49:8
+   |
+49 | pub fn project(k:&Key, all:&[Observation])->Value {
+   |        ^^^^^^^
+
+warning: type alias `R` is never used
+  --> source-engine/src/health_snapshot.rs:11:6
+   |
+11 | type R<T> = Result<T, Error>;
+   |      ^
+
+warning: struct `Source` is never constructed
+  --> source-engine/src/health_snapshot.rs:14:8
+   |
+14 | struct Source {
+   |        ^^^^^^
+
+warning: struct `Query` is never constructed
+  --> source-engine/src/health_snapshot.rs:21:8
+   |
+21 | struct Query {
+   |        ^^^^^
+
+warning: struct `Sample` is never constructed
+  --> source-engine/src/health_snapshot.rs:28:8
+   |
+28 | struct Sample {
+   |        ^^^^^^
+
+warning: struct `Snapshot` is never constructed
+  --> source-engine/src/health_snapshot.rs:36:8
+   |
+36 | struct Snapshot {
+   |        ^^^^^^^^
+
+warning: function `fail` is never used
+  --> source-engine/src/health_snapshot.rs:51:4
+   |
+51 | fn fail(s: &str) -> Error {
+   |    ^^^^
+
+warning: function `key` is never used
+  --> source-engine/src/health_snapshot.rs:54:4
+   |
+54 | fn key(s: &str) -> bool {
+   |    ^^^
+
+warning: function `hash` is never used
+  --> source-engine/src/health_snapshot.rs:60:4
+   |
+60 | fn hash(v: &Value) -> String {
+   |    ^^^^
+
+warning: function `parse` is never used
+  --> source-engine/src/health_snapshot.rs:63:4
+   |
+63 | fn parse(bytes: &[u8]) -> R<Snapshot> {
+   |    ^^^^^
+
+warning: function `overlaps` is never used
+   --> source-engine/src/health_snapshot.rs:101:4
+    |
+101 | fn overlaps(a: i64, b: i64, c: i64, d: i64) -> bool {
+    |    ^^^^^^^^
+
+warning: function `reject_v1_mixing` is never used
+   --> source-engine/src/health_snapshot.rs:104:8
+    |
+104 | pub fn reject_v1_mixing(c: &Connection, keys: &std::collections::BTreeSet<domain::Key>) -> R<()> {
+    |        ^^^^^^^^^^^^^^^^
+
+warning: function `projection` is never used
+   --> source-engine/src/health_snapshot.rs:124:4
+    |
+124 | fn projection(
+    |    ^^^^^^^^^^
+
+warning: function `receive` is never used
+   --> source-engine/src/health_snapshot.rs:149:8
+    |
+149 | pub fn receive(c: &mut Connection, bytes: &[u8], received: i64) -> R<Value> {
+    |        ^^^^^^^
+
+warning: trait `HealthRepository` is never used
+ --> source-engine/src/health_ingestion.rs:8:11
+  |
+8 | pub trait HealthRepository { fn receive(&mut self, e:&Envelope, received_at:i64)->R<Value>; }
+  |           ^^^^^^^^^^^^^^^^
+
+warning: struct `SqliteHealth` is never constructed
+ --> source-engine/src/health_ingestion.rs:9:12
+  |
+9 | pub struct SqliteHealth<'a>(pub &'a mut Connection);
+  |            ^^^^^^^^^^^^
+
+warning: function `rows` is never used
+  --> source-engine/src/health_ingestion.rs:10:15
+   |
+10 | pub(crate) fn rows(c:&Connection,table:&str,kind:&str)->R<Vec<Value>> {
+   |               ^^^^
+
+warning: function `ingest` is never used
+  --> source-engine/src/health_ingestion.rs:49:8
+   |
+49 | pub fn ingest(port:&mut impl HealthRepository, bytes:&[u8], received_at:i64)->R<Value> {let e=domain::parse(bytes)?;port.receive(&e,...
+   |        ^^^^^^
+
+warning: function `now` is never used
+  --> source-engine/src/health_ingestion.rs:50:4
+   |
+50 | fn now()->i64 {std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap_or_default().as_millis() as i64}
+   |    ^^^
+
+warning: function `read_file` is never used
+  --> source-engine/src/health_ingestion.rs:51:4
+   |
+51 | fn read_file(dir:&crate::artifact_io::Dir,name:&str)->R<Vec<u8>> {
+   |    ^^^^^^^^^
+
+warning: function `scan` is never used
+  --> source-engine/src/health_ingestion.rs:58:8
+   |
+58 | pub fn scan(fixture:&str)->R<Value> {
+   |        ^^^^
+
+warning: static `STATUS` is never used
+  --> source-engine/src/health_ingestion.rs:73:8
+   |
+73 | static STATUS: std::sync::OnceLock<std::sync::Mutex<Value>>=std::sync::OnceLock::new();
+   |        ^^^^^^
+
+warning: function `status` is never used
+  --> source-engine/src/health_ingestion.rs:74:8
+   |
+74 | pub fn status()->Value {let mut v=STATUS.get_or_init(||std::sync::Mutex::new(json!({"mode":"synthetic","files":[]}))).lock().unwrap(...
+   |        ^^^^^^
+
+warning: function `start` is never used
+  --> source-engine/src/health_ingestion.rs:75:8
+   |
+75 | pub fn start() {std::thread::spawn(||loop {let s=match scan("app"){Ok(v)=>v,Err(e)=>json!({"mode":"synthetic","error":e.code})};*STA...
+   |        ^^^^^
+
+warning: function `receive_bytes` is never used
+  --> source-engine/src/health_ingestion.rs:79:8
+   |
+79 | pub fn receive_bytes(c:&mut Connection,bytes:&[u8],at:i64)->R<Value>{if bytes.len()>domain::LIMIT{return Err(Error::new("health_batc...
+   |        ^^^^^^^^^^^^^
+
+warning: function `resume` is never used
+   --> source-engine/src/source_api.rs:507:8
+    |
+507 | pub fn resume(fixture: &str) -> R<()> {
+    |        ^^^^^^
+
+warning: function `make_cursor` is never used
+   --> source-engine/src/source_store.rs:552:8
+    |
+552 | pub fn make_cursor(
+    |        ^^^^^^^^^^^
+
+warning: function `progress` is never used
+   --> source-engine/src/source_worker.rs:363:8
+    |
+363 | pub fn progress(c: &Connection, l: &Lease) -> R<Value> {
+    |        ^^^^^^^^
+
+warning: `lifeos-source-engine` (lib) generated 63 warnings (run `cargo fix --lib -p lifeos-source-engine` to apply 10 suggestions)
+    Checking lifeos-p3-152 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/candidate)
+error: mismatched closing delimiter: `}`
+  --> src/bin/../health_conversation_host/coordination.rs:27:370
+   |
+27 | ...)=>{fields(&p,&["requestId","turnRequestId","expectedTurnRevision"],&[])?;let rid=ident(&p,"requestId")?;let tid=ident(&p,"turnRequestId")?;let rev=number(&p,"expectedTurnRevision",1,MAX)?;self.tx(&rid,op,&p,|_|{let mut t=self.v8_get(&tid)?;if t["state"]=="committed"{return Ok(json!({"turn":Self::v8_status(&t)}))}if t["revision"]!=rev{return Err(error("revision_conflict"))}if op=="cancel_coordination_turn"{t["permit"]["state"]=json!("cancelled");Self::v8_change(&mut t,"cancelled");t["errorCode"]=json!("turn_cancelled");self.v8_put(&t)?;return Ok(Self::v8_status(&t))}if ["cancelled","outcome_unknown","failed","first_inflight","second_inflight","query_inflight"].contains(&t["state"].as_str().unwrap_or("")){return Err(error("resume_rejected"))}let phase=if t.get("queryResult").is_some(){"second"}else{"first"};if op=="prepare_coordination_second_send"&&phase!="second"{return Err(error("resume_rejected"))}if t["modelCalls"].as_u64().unwrap()>=2{return Err(error("model_limit"))}let preview=self.v8_preview(&mut t,phase)?;self.v8_put(&t)?;Ok(if op=="prepare_coordination_second_send"{json!({"turn":Self::v8_status(&t),"preview":preview})}else{json!({"turn":Self::v8_status(&t)})})?},_=>return Err(error("operation_rejected"))};Ok...
+   |       - closing delimiter possibly meant for this                                                                                                                                                      ^ unclosed delimiter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^ mismatched closing delimiter
+
+error: this file contains an unclosed delimiter
+  --> src/bin/../health_conversation_host/coordination.rs:51:24
+   |
+14 | impl Store{
+   |           - unclosed delimiter
+...
+22 |  pub(super) fn coordination_dispatch(&self,command:&str,op:&str,p:Value)->R<Value>{use contract::*;crate::runtime_root::verify()?;if...
+   |                                                                                   - this delimiter might not be properly closed...
+...
+50 | }
+   | - ...as it matches this but it has different indentation
+51 | #[cfg(test)]mod tests;
+   |                       ^
+
+error: mismatched closing delimiter: `}`
+  --> src/health_conversation_host/coordination.rs:27:370
+   |
+27 | ...)=>{fields(&p,&["requestId","turnRequestId","expectedTurnRevision"],&[])?;let rid=ident(&p,"requestId")?;let tid=ident(&p,"turnRequestId")?;let rev=number(&p,"expectedTurnRevision",1,MAX)?;self.tx(&rid,op,&p,|_|{let mut t=self.v8_get(&tid)?;if t["state"]=="committed"{return Ok(json!({"turn":Self::v8_status(&t)}))}if t["revision"]!=rev{return Err(error("revision_conflict"))}if op=="cancel_coordination_turn"{t["permit"]["state"]=json!("cancelled");Self::v8_change(&mut t,"cancelled");t["errorCode"]=json!("turn_cancelled");self.v8_put(&t)?;return Ok(Self::v8_status(&t))}if ["cancelled","outcome_unknown","failed","first_inflight","second_inflight","query_inflight"].contains(&t["state"].as_str().unwrap_or("")){return Err(error("resume_rejected"))}let phase=if t.get("queryResult").is_some(){"second"}else{"first"};if op=="prepare_coordination_second_send"&&phase!="second"{return Err(error("resume_rejected"))}if t["modelCalls"].as_u64().unwrap()>=2{return Err(error("model_limit"))}let preview=self.v8_preview(&mut t,phase)?;self.v8_put(&t)?;Ok(if op=="prepare_coordination_second_send"{json!({"turn":Self::v8_status(&t),"preview":preview})}else{json!({"turn":Self::v8_status(&t)})})?},_=>return Err(error("operation_rejected"))};Ok...
+   |       - closing delimiter possibly meant for this                                                                                                                                                      ^ unclosed delimiter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^ mismatched closing delimiter
+
+error: this file contains an unclosed delimiter
+  --> src/health_conversation_host/coordination.rs:51:24
+   |
+14 | impl Store{
+   |           - unclosed delimiter
+...
+22 |  pub(super) fn coordination_dispatch(&self,command:&str,op:&str,p:Value)->R<Value>{use contract::*;crate::runtime_root::verify()?;if...
+   |                                                                                   - this delimiter might not be properly closed...
+...
+50 | }
+   | - ...as it matches this but it has different indentation
+51 | #[cfg(test)]mod tests;
+   |                       ^
+
+error: could not compile `lifeos-p3-152` (bin "synthetic-driver") due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `lifeos-p3-152` (bin "lifeos-p3-152") due to 2 previous errors

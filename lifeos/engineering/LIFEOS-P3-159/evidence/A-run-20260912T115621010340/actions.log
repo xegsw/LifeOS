@@ -1,0 +1,47 @@
+✔ no action for "他说“报告结论做完了”。" (0.571333ms)
+✔ no action for "假如报告结论做完了就好了。" (0.071791ms)
+✔ no action for "报告结论还没做完。" (0.294625ms)
+✔ no action for "我不打算明天整理报告结论。" (0.209125ms)
+✔ no action for "今天聊天挺有意思。" (0.059791ms)
+✔ no action for "" (0.090083ms)
+✔ no action for "我今天心情很好。" (0.043958ms)
+✔ no action for "我明天可以做什么？" (0.026875ms)
+✔ no action for "不要把报告标记为完成" (0.051166ms)
+✔ no action for "如果我明天做这个呢？" (0.071541ms)
+✔ natural conversation create adjust complete and immutable history (586.164708ms)
+✔ same submission replay and different payload reject (18.760833ms)
+✔ multiple targets clarify, plain natural target response resolves once (23.97825ms)
+✔ single current target cancellation and terminal refusal (21.27125ms)
+✔ stale expected version rejects late commit (22.589792ms)
+✔ forged model intent and target rejected by real Host (20.215334ms)
+✔ fault transaction rolls back all action assets and retains draft (71.807ms)
+✔ restart restores identity feedback and status, reads have no writes (108.822208ms)
+✔ source expiry/revoke/correction preserves action and removes valid-basis claim (201.645292ms)
+✔ conversation authorization denies writes before action append (67.202084ms)
+✔ Application rejects fabricated model output before repository commit (0.196125ms)
+✔ read recovery after lost commit response never resends model or write (19.415792ms)
+✔ OfflineA and OfflineB operate same repository identity (19.724875ms)
+✔ Today single Focus escapes content and never adds action buttons (0.180625ms)
+✔ actual model suggestion stays candidate until explicit pronoun acceptance (1314.061208ms)
+✔ multiple targets beyond first page cannot imply one (102.827125ms)
+✔ expired packet and cancelled draft reject commits (46.581458ms)
+✔ snapshot is read-only and incompatible v6 fields fail closed (16.704583ms)
+✔ uncertain/historical expression does not create: 我明天整理报告吗 (0.102875ms)
+✔ uncertain/historical expression does not create: 我今天写报告很累 (0.026792ms)
+✔ uncertain/historical expression does not create: 我今天散步了 (0.026625ms)
+✔ uncertain/historical expression does not create: 我明天可能整理报告 (0.0645ms)
+✔ uncertain/historical expression does not create: 我明天整理报告，只是举例 (0.015ms)
+✔ completed history does not obscure the only current planned target (25.610583ms)
+✔ stale model derivation cannot be accepted via pronoun (1320.190166ms)
+✔ Host refuses changing confirmed content inside an otherwise valid parsed create (17.908584ms)
+✔ closure generalized creation and exact withdrawal persist across restart (25.118583ms)
+✔ closure no target or multiple normalized targets cannot silently cancel (25.381834ms)
+✔ closure Host rejects arbitrary negativity and unsupported fallback forgery (22.983916ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4142.194708

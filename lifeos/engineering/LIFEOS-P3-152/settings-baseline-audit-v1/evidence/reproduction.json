@@ -1,0 +1,32 @@
+{
+  "scope": "synthetic-only defect reproduction, not product Pass",
+  "cases": 6,
+  "results": [
+    {
+      "case": "stored_suffix_returned_but_not_rendered",
+      "reproduced": true
+    },
+    {
+      "case": "manual_model_input_and_disabled_test",
+      "reproduced": true
+    },
+    {
+      "case": "untested_arbitrary_model_selection_enables_provider",
+      "reproduced": true
+    },
+    {
+      "case": "credential_change_does_not_require_retest",
+      "reproduced": true
+    },
+    {
+      "case": "manual_test_unavailable_in_public_host",
+      "reproduced": true,
+      "errorCode": "operation_rejected"
+    },
+    {
+      "case": "new_frontend_flow_keeps_saved_credential_metadata",
+      "reproduced": true,
+      "limit": "not an App or OS restart test"
+    }
+  ]
+}

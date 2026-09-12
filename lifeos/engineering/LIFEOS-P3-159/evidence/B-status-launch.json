@@ -1,0 +1,43 @@
+{
+  "task": "P3-159",
+  "case": "B01 controlled noninteractive attempt after user manual check",
+  "pid": 60742,
+  "app": "/private/tmp/lifeos-p3-159-unified-proactive-v1/build/B-20260912T125547452374/LifeOS Online Synthetic.app",
+  "signedBinarySha256": "724460fc2be7870876c9275b6f81e6cb738ad6b24ad768ce5b394ddf1bbe3670",
+  "at": "2026-09-12T12:56:48.779588+00:00",
+  "scenarioClock": 1789219389415,
+  "before": {
+    "proactive:policy": {
+      "analysisPerDay": 12,
+      "enabled": true,
+      "generation": 4,
+      "intervalMinutes": 30,
+      "kind": "proactive_policy",
+      "quietEnd": 8,
+      "quietStart": 22,
+      "responsePerDay": 20,
+      "revision": 4,
+      "schemaVersion": 1,
+      "showsPerDay": 3,
+      "sourceIds": [
+        "work-demo"
+      ],
+      "subjectIds": [
+        "work-report",
+        "work-code"
+      ]
+    },
+    "proactive:budget:production": {
+      "analysis": 3,
+      "highWater": 1789217589414,
+      "kind": "proactive_budget",
+      "lastAnalysis": 1789217589414,
+      "lastShow": 0,
+      "nextReset": 1789228800000,
+      "response": 0,
+      "shows": 0
+    },
+    "proactive:budget:B": null
+  },
+  "normalQuit": false
+}

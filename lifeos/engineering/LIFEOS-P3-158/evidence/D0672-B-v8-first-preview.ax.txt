@@ -1,0 +1,104 @@
+Window: "LifeOS P3-158 - Online Synthetic", App: LifeOS P3-158 Online Test.
+0 standard window LifeOS P3-158 - Online Synthetic, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: LifeOS, URL: tauri://localhost
+			3 link 跳到内容, Value: tauri://localhost#main
+			4 container 主导航
+				5 button 今日
+				6 button 我
+				7 button 上下文
+				8 button 记忆
+				9 button 设置
+			10 container
+				11 heading 你好。, Value: 1
+					12 text 你好。
+				13 text 给今天留一点从容。
+				14 text 9月10日 星期四
+				15 text 从你现在想聊的事开始。
+				16 text 一个想法，一件待办，或今天的感受。
+				17 button 与 LifeOS 聊聊
+				18 text 公开合成测试 · 发送需云端确认
+			19 container Global AI 对话
+				20 heading 与 LifeOS 对话, Value: 2
+					21 text 与 LifeOS 对话
+				22 text 公开合成测试 · deepseek-v4-pro
+				23 button 关闭对话
+				24 container
+					25 text 你的原始表达 明天下午去健身房 本地处理 本地记录：已记下：明天下午去健身房。
+				26 container
+					27 text 你的原始表达 健身房改到后天下午吧 本地处理 本地记录：已调整为：后天下午去健身房。
+				28 container
+					29 text 你的原始表达 算了，健身房不去了 本地处理 本地记录：已取消：后天下午去健身房。
+				30 container
+					31 text 你的原始表达 今晚把书桌整理一下 本地处理 本地记录：已记下：今晚整理书桌。
+				32 container
+					33 text 你的原始表达 书桌整理完了 本地处理 本地记录：已完成：今晚整理书桌。
+				34 container
+					35 text 你的原始表达 明天下午去图书馆 本地处理 本地记录：已记下：明天下午去图书馆。
+				36 container
+					37 text 你的原始表达 算了，不去了 本地处理 本地记录：已取消：明天下午去图书馆。
+				38 container
+					39 text 你的原始表达 那个改到周末吧 AI 候选回答 本轮未更改安排。
+Which arrangement do you mean?
+				40 container
+					41 text 你的原始表达 我明天要是下雨就不出门 AI 候选回答 本轮未更改安排。
+
+				42 container 本次发送预览
+					43 heading 发送前，请看一下, Value: 3
+						44 text 发送前，请看一下
+					45 text 理解本回合并提出回答、查询或本地候选
+					46 text 接收方：DeepSeek · deepseek-v4-pro
+					47 text 确认后发送给DeepSeek · 本次只包含下方问题与 0 条依据
+					48 heading 你的问题, Value: 3
+						49 text 你的问题
+					50 text 请查询公开合成笔记中与评审相关的内容，最多两条。依据查询结果作简短回答，本轮不要创建或修改安排。
+					51 text 本次没有健康来源观察，不会声称使用了健康依据。
+					52 heading 本次披露的对话、目标与来源, Value: 3
+						53 text 本次披露的对话、目标与来源
+					54 text {
+  "capabilities": [
+    {
+      "facts": [
+        "matches"
+      ],
+      "id": "fixture.note.lookup.v1",
+      "targets": [
+        {
+          "label": "公开合成测试资料",
+          "ref": "coord8-fixture-54a234e82e8a1416ab8d87f0668c860c"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "facts": [
+        "entries",
+        "available"
+      ],
+      "id": "fixture.schedule.lookup.v1",
+      "targets": [
+        {
+          "label": "公开合成测试资料",
+          "ref": "coord8-fixture-1903dceb1f93c33cff174315
+					55 summary 查看发送说明与完整内容, Value: off
+						56 text 查看发送说明与完整内容
+					57 button 确认发送给DeepSeek
+					58 button 取消
+				59 container
+					60 text 自然提问
+					61 text entry area (settable) 自然提问, Value: 请查询公开合成笔记中与评审相关的内容，最多两条。依据查询结果作简短回答，本轮不要创建或修改安排。, Placeholder: 问 LifeOS…
+						62 text (settable) 请查询公开合成笔记中与评审相关的内容，最多两条。依据查询结果作简短回答，本轮不要创建或修改安排。
+					63 button 发送
+	64 close button
+	65 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	66 minimize button
+	67 text LifeOS P3-158 - Online Synthetic
+68 menu bar
+	69 LifeOS P3-158 Online Test
+	70 File
+	71 Edit
+	72 View
+	73 Window
+	74 Help
+
+The focused UI element is 2 HTML content Description: LifeOS, URL: tauri://localhost

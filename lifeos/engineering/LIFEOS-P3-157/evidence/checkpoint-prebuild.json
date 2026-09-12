@@ -1,0 +1,41 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-157",
+  "attempt_id": "engineering-v1",
+  "updated_at": "2026-09-10T01:43:07.654472+00:00",
+  "task_contract_sha256": "7a6dd2e11730e0dc9a3d602ebca5431736e841d9e3803af1be9fead7cc1f3e55",
+  "candidate_sha256": "8970a41f8a9cd741888c143858f5960e939d910c5ee054b5e9e3008107f83e45",
+  "baseline_sha256": "5395207eaf9f100aa578c1d6654c57adc8a7b28a8e9679eb71d541ce513d846d",
+  "stage": "preflight",
+  "status": "in_progress",
+  "pause_class": null,
+  "pause_reason_code": null,
+  "completed_checks": [
+    "156 244 files and 173 candidate verified unchanged",
+    "exclusive 157 root and marker",
+    "D-0661 contract and ABF captured"
+  ],
+  "pending_checks": [
+    "existing-only guard",
+    "real-local action routing",
+    "synthetic regression and mutations",
+    "source-bound real build",
+    "normal switch",
+    "user result"
+  ],
+  "rerun_checks": [],
+  "excluded_artifacts": [],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "owned_synthetic_only"
+  },
+  "resume_from": "build_test",
+  "safe_to_resume": true,
+  "notes": "No real data/App access yet. Previous task histories read-only."
+}

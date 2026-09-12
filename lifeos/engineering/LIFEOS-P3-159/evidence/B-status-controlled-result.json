@@ -1,0 +1,65 @@
+{
+  "task": "P3-159",
+  "at": "2026-09-12T12:58:25.291252+00:00",
+  "case": "B01",
+  "status": "Paused - Resumable",
+  "pid": 60742,
+  "requestId": "proactive:request:proactive-reserve-43a37be348ae2326ccf586d5f944e793",
+  "grantGeneration": 4,
+  "requestStatus": "failed",
+  "usage": {
+    "elapsedMs": 10,
+    "status": "unknown"
+  },
+  "outcome": {
+    "errorCode": "credential_unavailable",
+    "status": "failed",
+    "kind": null
+  },
+  "currentUiStatus": "已暂停，现有凭据暂不可用。",
+  "productionBudget": {
+    "analysis": 4,
+    "highWater": 1789219389415,
+    "kind": "proactive_budget",
+    "lastAnalysis": 1789219389415,
+    "lastShow": 0,
+    "nextReset": 1789228800000,
+    "response": 0,
+    "shows": 0
+  },
+  "policy": {
+    "analysisPerDay": 12,
+    "enabled": true,
+    "generation": 4,
+    "intervalMinutes": 30,
+    "kind": "proactive_policy",
+    "quietEnd": 8,
+    "quietStart": 22,
+    "responsePerDay": 20,
+    "revision": 4,
+    "schemaVersion": 1,
+    "showsPerDay": 3,
+    "sourceIds": [
+      "work-demo"
+    ],
+    "subjectIds": [
+      "work-report",
+      "work-code"
+    ]
+  },
+  "networkBudget": null,
+  "actualPosts": 0,
+  "responseReserved": 0,
+  "manualCheckSuccessRemainsHistorical": true,
+  "backgroundCredentialSuccess": false,
+  "preciseOsCause": "Unknown; background receipt has no numeric OSStatus or diagnostic stage",
+  "semanticCases": "Not Executed; B01 stopped before model POST",
+  "automaticRetry": false,
+  "normalQuitRequested": true,
+  "pidAbsent": true,
+  "scenarioClockRemoved": true,
+  "prohibitedBoundaryContact": false,
+  "C": "not_started",
+  "sourceReceipt": "offline-verification.json",
+  "modeBuildReceipt": "A-mode-build-20260912T124959.json"
+}

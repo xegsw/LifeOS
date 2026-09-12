@@ -1,0 +1,63 @@
+{
+  "passed": 13,
+  "total": 14,
+  "results": [
+    {
+      "name": "Preview is inert, exact personal data visible, explicit confirmation creates one answer",
+      "pass": true
+    },
+    {
+      "name": "Local clarification and explicit state do not require configured network model",
+      "pass": true
+    },
+    {
+      "name": "Model change invalidates the previous preview without a send",
+      "pass": true
+    },
+    {
+      "name": "Credential deletion blocks confirmation and retains conversation assets",
+      "pass": true
+    },
+    {
+      "name": "Failed response preserves draft; manual retry creates new preview and no duplicate turn",
+      "pass": true
+    },
+    {
+      "name": "Cancel after dispatch is honest; late output cannot replace new question",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /无法保证撤回/. Input:\n\n''\n\n    at file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-157/closure-1/tools/integration_tests.mjs:14:298\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async test (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-157/closure-1/tools/integration_tests.mjs:8:81)\n    at async file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-157/closure-1/tools/integration_tests.mjs:14:1"
+    },
+    {
+      "name": "Editing preview invalidates it; restoration keeps the new draft",
+      "pass": true
+    },
+    {
+      "name": "Unknown question uses no hidden history and models remain local choices",
+      "pass": true
+    },
+    {
+      "name": "Settings shell retains 142 sections, cloud/local options and persistent selection",
+      "pass": true
+    },
+    {
+      "name": "Configuration before credential persists without synthetic key or send",
+      "pass": true
+    },
+    {
+      "name": "Auxiliary IPC keeps draft and settings unchanged without credential or model send",
+      "pass": true
+    },
+    {
+      "name": "Auxiliary IPC refuses old snapshot, injected fields and unsupported metrics",
+      "pass": true
+    },
+    {
+      "name": "Primary save action persists fictional key and config through Host",
+      "pass": true
+    },
+    {
+      "name": "Empty catalog credential save, real Host CAS rejection and user retry",
+      "pass": true
+    }
+  ]
+}

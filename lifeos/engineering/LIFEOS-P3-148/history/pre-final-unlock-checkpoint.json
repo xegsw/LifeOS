@@ -1,0 +1,63 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-148",
+  "attempt_id": "engineering-1",
+  "updated_at": "2026-09-08T10:42:59.057255+00:00",
+  "task_contract_sha256": "8dfda85f9a49b0c1d79fe9209b1ddb8b225bf8829548569bb15fb61068de8d99",
+  "candidate_sha256": "0ca225f3558fd79b96af1af85dee398da9e0352171b8f0ed075765ab615722d0",
+  "baseline_sha256": "0e9019ba6291fcd66ef247316f6693370c38fd20a1cfc697af2acd5016cde4db",
+  "stage": "synthetic_gui_final_binding",
+  "status": "Paused — Resumable",
+  "pause_class": "environment",
+  "pause_reason_code": "desktop_locked",
+  "completed_checks": [
+    "design_seal",
+    "E01_seal",
+    "offline_build",
+    "16_rust_tests",
+    "12_integration_groups",
+    "desktop_actual_app",
+    "earlier_narrow_app",
+    "ordinary_v2_functional_smoke",
+    "current_candidate_narrow_gui",
+    "engineering_manifest",
+    "E02_raw_entry",
+    "E02_actual_Tauri_normal_flow",
+    "35_rust_entries",
+    "13_integration_groups",
+    "finite_contract_closure_mapping",
+    "desktop_fault_GUI",
+    "temporary_GUI_triggers_removed"
+  ],
+  "pending_checks": [
+    "final_binary_normal_Tauri_flow_and_narrow_binding",
+    "manifest_refresh_after_GUI",
+    "PM_review",
+    "independent_safety_gate",
+    "user_real_validation"
+  ],
+  "rerun_checks": [
+    "final_binary_GUI_only"
+  ],
+  "excluded_artifacts": [
+    "app-resumednarrowrestart.png",
+    "app-resumednarrowrestart.json",
+    "app-resumednarrowpreview.png",
+    "app-resumednarrowpreview.json",
+    "app-resumednarrowconfirm.png",
+    "app-resumednarrowconfirm.json"
+  ],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "owned_synthetic_root_retained"
+  },
+  "resume_from": "synthetic_gui",
+  "safe_to_resume": true,
+  "notes": "All finite ordinary contract assertions mapped and supplemented. Final GUI was interrupted by a new screen lock. Latest launch PID73403 stopped; no positive evidence from that launch. No true data/credentials/network or forbidden test contact."
+}

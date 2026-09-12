@@ -1,0 +1,48 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-156",
+  "attempt_id": "engineering-v1",
+  "updated_at": "2026-09-10T01:22:11.549801+00:00",
+  "task_contract_sha256": "ab8a39ea99a05f5e2834a4c1bc40db74d84e94dd3c2d31bca8bd8d410826a1d5",
+  "candidate_sha256": "8970a41f8a9cd741888c143858f5960e939d910c5ee054b5e9e3008107f83e45",
+  "baseline_sha256": "22954f3f3ab1bb5b5bd880ec742c7f1ebc26252ee35ba2a64988ab8df6cefb49",
+  "stage": "manifest",
+  "status": "paused_resumable",
+  "pause_class": "recoverable_environment",
+  "pause_reason_code": "final_native_window_locked",
+  "completed_checks": [
+    "155 parent 315 files preserved",
+    "155 real-switch 14 files preserved",
+    "166 candidate files verified and copied unchanged",
+    "exclusive synthetic root and owner created",
+    "capability mapping and concrete protocol proposal sent to PM",
+    "34 synthetic interaction cases designed (not executed)",
+    "rerunnable baseline/owner verification passed",
+    "D-0660 exact protocol approval preserved",
+    "173-file complete candidate, 7 added/14 changed/0 removed",
+    "243 unique checks passed",
+    "synthetic actual App conversation/create/complete/narrow window/restart observed",
+    "final source-bound synthetic App launch and direct PID verified"
+  ],
+  "pending_checks": [
+    "PM acceptance",
+    "final native AX only if PM requires beyond unchanged-UI reuse"
+  ],
+  "rerun_checks": [
+    "final native window observation only if required"
+  ],
+  "excluded_artifacts": [],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": true,
+    "direct_pid": 80426,
+    "writers_stopped": false,
+    "database_closed": false,
+    "temporary_root_state": "owned_synthetic_only_app_idle"
+  },
+  "resume_from": "final_native_window",
+  "safe_to_resume": true,
+  "notes": "Engineering and packaging complete. Final App idle; no automatic external jobs. CUA final AX paused by locked desktop. Prior actual App UI evidence reused: only action derivation status guard changed afterwards, UI unchanged. Do not rebuild/retest unaffected stages on unlock. PM acceptance pending; no real App/data access."
+}

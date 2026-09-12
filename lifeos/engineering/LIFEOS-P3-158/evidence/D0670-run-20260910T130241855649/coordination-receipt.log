@@ -1,0 +1,43 @@
+✔ valid receipt none// (0.639959ms)
+✔ valid receipt clarify// (0.063834ms)
+✔ valid receipt action// (0.064333ms)
+✔ valid receipt condition_only/unknown/condition_unknown (0.061125ms)
+✔ valid receipt condition_only/false/condition_false (0.051458ms)
+✔ valid receipt condition_only/true/record_only (0.037292ms)
+✔ valid receipt condition_and_action/true/ (0.038917ms)
+✔ production confirm rejects wrong-turn before success (0.513625ms)
+✔ production confirm rejects wrong-operation-identity before success (0.08025ms)
+✔ production confirm rejects missing-event before success (0.119ms)
+✔ production confirm rejects invalid-action-version before success (0.067291ms)
+✔ production confirm rejects unexpected-permission before success (0.051875ms)
+✔ production confirm rejects false-action-condition before success (0.05075ms)
+✔ production confirm rejects false-business-change before success (0.039334ms)
+✔ production confirm rejects inconsistent-status before success (0.038334ms)
+✔ production confirm rejects extra-receipt-field before success (0.054208ms)
+✔ production confirm rejects oversized-reply before success (0.057459ms)
+✔ none cannot disguise an action event (0.040959ms)
+✔ condition-only reason must agree with truth (0.033625ms)
+✖ retry preparation preserves terminal provider failure without another send (0.362833ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 19
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 42.122208
+
+✖ failing tests:
+
+test at lifeos/engineering/LIFEOS-P3-158/tests/coordination_receipt.mjs:26:1
+✖ retry preparation preserves terminal provider failure without another send (0.362833ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/tests/coordination_receipt.mjs:28:2)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }

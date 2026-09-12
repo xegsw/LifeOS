@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {segments,chart,Controller,content,esc,date} from '../candidate/ui/readonly.js';
+const ps=[{day:1,present:true,value:1},{day:2,present:true,value:null},{day:3,present:false,value:null},{day:4,present:true,value:0},{day:5,present:true,value:2}];
+assert.deepEqual(segments(ps).map(x=>x.length),[1,2]);
+assert.equal((chart({metric:'steps',points:ps}).match(/<polyline/g)||[]).length,1);
+assert.equal((chart({metric:'steps',points:ps}).match(/<circle/g)||[]).length,3);
+assert.equal(date(0),'1970-01-01');assert.equal(esc('<a>'),'&lt;a&gt;');
+let pending=[];const c=new Controller(()=>new Promise((resolve,reject)=>pending.push({resolve,reject})),()=>{});
+const a=c.load();const b=c.load({metric:'sleep'});pending[1].resolve({metric:'sleep',points:[]});await b;pending[0].resolve({metric:'steps'});await a;assert.equal(c.data.metric,'sleep');
+const d=c.load();assert.match(content(c),/正在读取/);pending[2].reject(Error('secret'));await d;assert.match(content(c),/读取未完成/);assert.ok(!content(c).includes('secret'));
+console.log(JSON.stringify({status:'pass',assertions:9}));

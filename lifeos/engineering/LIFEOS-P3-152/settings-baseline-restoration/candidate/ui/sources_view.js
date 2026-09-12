@@ -1,0 +1,209 @@
+import { appleImportView } from './apple_import.js';
+const esc = (v)=>String(v ?? '').replace(/[&<>"']/g, (c)=>({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        })[c]);
+const button = (a, s, id = '')=>`<button class="button secondary" data-action="${a}" data-id="${esc(id)}">${s}</button>`;
+const labels = {
+    active: '已连接',
+    paused: '已暂停',
+    cancelled: '已取消',
+    disconnected: '已断开',
+    parsed: '正文已解析',
+    restricted: '配置受限',
+    unparsed: '正文未解析',
+    pending: '待处理',
+    fetched: '已获取',
+    revoked: '已撤权',
+    missing: '原件缺失',
+    available: '原文可用',
+    awaiting_target_grant: '等待授权',
+    local_original_linked: '内部原件已关联',
+    parent_stale: '父来源已更新',
+    fetch_pending: '正在获取'
+};
+export class SourcesController {
+    call;
+    changed;
+    active = false;
+    busy = false;
+    status = null;
+    rows = [];
+    detail = null;
+    query = '';
+    error = '';
+    disconnectPending = false;
+    importState = {
+        status: {
+            status: 'idle'
+        },
+        picker: null,
+        error: '',
+        loading: false
+    };
+    serial = 0;
+    timer;
+    constructor(call, changed){
+        this.call = call;
+        this.changed = changed;
+    }
+    dispose() {
+        this.active = false;
+        this.serial++;
+        clearTimeout(this.timer);
+    }
+    async start() {
+        this.active = true;
+        const n = ++this.serial;
+        try {
+            const s = await this.call('get_source_status', {
+                version: 1,
+                payload: {}
+            });
+            if (!this.active || n !== this.serial) return;
+            this.status = s.connectors[0] || null;
+            const v = await this.call('import_apple_health_file', {
+                version: 1,
+                payload: {
+                    action: 'status'
+                }
+            });
+            if (!this.active || n !== this.serial) return;
+            this.importState.status = v;
+            this.error = '';
+        } catch  {
+            if (this.active && n === this.serial) this.error = '来源暂时不可用，请重试。';
+        } finally{
+            if (this.active && n === this.serial) {
+                this.changed();
+                this.pollSoon();
+            }
+        }
+    }
+    pollSoon() {
+        clearTimeout(this.timer);
+        if (this.active && (this.importState.status.status === 'running' || this.status?.status === 'active' && (!this.status.scanComplete || this.status.pending > 0))) this.timer = setTimeout(()=>void this.start(), 700);
+    }
+    async action(a, id = '') {
+        if (this.busy || !this.active) return;
+        this.busy = true;
+        clearTimeout(this.timer);
+        const n = ++this.serial;
+        this.error = '';
+        try {
+            const call = (c, p)=>this.call(c, {
+                    version: 1,
+                    payload: p
+                }), s = this.status;
+            if (a === 'source-connect') await call('connect_source_directory', {
+                requestId: crypto.randomUUID()
+            });
+            if (a === 'source-disconnect') {
+                this.disconnectPending = true;
+                return;
+            }
+            if (a === 'source-disconnect-cancel') {
+                this.disconnectPending = false;
+                return;
+            }
+            if ([
+                'source-refresh',
+                'source-pause',
+                'source-resume',
+                'source-cancel',
+                'source-disconnect-confirm'
+            ].includes(a)) {
+                await call('control_source_job', {
+                    requestId: crypto.randomUUID(),
+                    connectorId: s.connectorId,
+                    expectedGeneration: s.grantGeneration,
+                    action: a === 'source-disconnect-confirm' ? 'disconnect' : a.slice(7)
+                });
+                this.rows = [];
+                this.detail = null;
+                this.disconnectPending = false;
+            }
+            if (a === 'source-grant' || a === 'source-revoke') {
+                await call('authorize_source_target', {
+                    requestId: crypto.randomUUID(),
+                    connectorId: s.connectorId,
+                    expectedGeneration: s.grantGeneration,
+                    linkId: id,
+                    decision: a === 'source-grant' ? 'grant' : 'revoke'
+                });
+                this.rows = [];
+                this.detail = null;
+            }
+            if (a === 'source-search') {
+                const r = await call('get_source_evidence', {
+                    mode: 'search',
+                    connectorId: s.connectorId,
+                    expectedGeneration: s.grantGeneration,
+                    query: this.query.trim()
+                });
+                if (this.active && n === this.serial) {
+                    this.rows = r.results;
+                    this.detail = null;
+                }
+            }
+            if (a === 'source-detail' || a === 'source-more') {
+                const r = this.rows.find((r)=>r.sourceRef === id) || s.files.find((r)=>r.sourceRef === id);
+                const p = a === 'source-more' ? {
+                    mode: 'detail',
+                    connectorId: this.detail.sourceIdentity.connectorId,
+                    sourceRef: this.detail.sourceIdentity.sourceRef,
+                    expectedVersion: this.detail.version,
+                    cursor: this.detail.nextCursor
+                } : {
+                    mode: 'detail',
+                    connectorId: r.sourceId || s.connectorId,
+                    sourceRef: id,
+                    expectedVersion: r.version
+                };
+                const detail = await call('get_source_evidence', p);
+                if (this.active && n === this.serial) this.detail = detail;
+            }
+            if (a === 'apple-open') {
+                const r = await call('import_apple_health_file', {
+                    action: 'list'
+                });
+                if (this.active && n === this.serial) this.importState.picker = r.files;
+            }
+            if (a === 'apple-close') this.importState.picker = null;
+            if (a === 'apple-select' || a === 'apple-retry') {
+                this.importState.picker = null;
+                const file = a === 'apple-retry' ? this.importState.status.file : id;
+                const r = await call('import_apple_health_file', {
+                    action: 'start',
+                    file
+                });
+                if (this.active && n === this.serial) this.importState.status = r;
+            }
+        } catch  {
+            if (this.active && n === this.serial) this.error = '操作未完成。请核对来源状态后重试；已有资料保留。';
+        } finally{
+            this.busy = false;
+            if (this.active && n === this.serial) {
+                this.changed();
+                if (![
+                    'source-search',
+                    'source-detail',
+                    'source-more',
+                    'apple-open',
+                    'apple-close',
+                    'source-disconnect',
+                    'source-disconnect-cancel'
+                ].includes(a)) void this.start();
+                else this.pollSoon();
+            }
+        }
+    }
+}
+export function sourcesView(c, real = false) {
+    const s = c.status;
+    return `<div class="source-restoration"><p class="tiny">${real ? '资料原件只读 · 仅手动读取 · 不下载外链' : '合成来源演练 · 原件只读 · 不连接网络'}</p><section class="config-card"><h2>本地资料</h2>${!s ? `<p>${real ? '资料目录：/Users/xxe/IT-obstain。点击连接后开始读取；重启不自动继续。' : '尚未连接合成目录。'}</p>${button('source-connect', real ? '连接资料目录' : '连接合成目录')}` : `<p>${esc(labels[s.status] || s.status)} · 已发现 ${s.discovered ?? 0} · 已解析 ${s.parsed ?? 0} · 待处理 ${s.pending ?? 0}</p>${s.status === 'disconnected' ? button('source-connect', real ? '重新连接资料目录' : '重新连接合成目录') : ''}<div class="form-actions">${button('source-refresh', '刷新来源')}${s.status === 'paused' ? button('source-resume', '继续处理') : button('source-pause', '暂停处理')}${button('source-cancel', '取消处理')}${button('source-disconnect', '断开来源')}</div>${c.disconnectPending ? `<p>断开后来源不再参与检索或对话，原件和历史保留。</p>${button('source-disconnect-confirm', '确认断开')}${button('source-disconnect-cancel', '保留连接')}` : ''}<details><summary>文件与处理状态</summary>${(s.files || []).map((f)=>`<article class="record"><p>${esc(f.title || f.externalRef || f.sourceRef)}</p><small>${esc(labels[f.status] || f.status || f.parseState)} · v${f.version}</small>${button('source-detail', '查看原文', f.sourceRef)}</article>`).join('')}</details><details><summary>引用目标与授权</summary>${(s.links || []).map((l)=>`<article class="record"><p>${esc(l.targetRef || l.target)}</p><small>${esc(labels[l.status] || l.status || l.state)}</small>${l.status === 'local_original_linked' || real ? '' : button('source-grant', '授权此合成目标', l.linkId || l.id) + button('source-revoke', '撤回目标授权', l.linkId || l.id)}</article>`).join('') || '<p>暂无外部引用。</p>'}</details>`}</section>
+ <section class="config-card"><h2>检索原文依据</h2><label>本地检索<input id="source-query" value="${esc(c.query)}" placeholder="例如：项目星舟"></label>${s ? button('source-search', '检索来源') : '<p>连接来源后可检索。</p>'}${c.rows.map((r)=>`<article class="record"><p class="verbatim">${esc(r.text)}</p><small>来源原文 · v${r.version} · ${esc(r.locator)}</small><div class="form-actions">${button('source-detail', '查看原文依据', r.sourceRef)}${button('source-ask', '在对话中询问', r.sourceRef)}</div></article>`).join('')}${c.detail ? `<section aria-label="来源原文"><h3>${esc(c.detail.title)} · v${c.detail.version}</h3><p>${esc(labels[c.detail.status] || c.detail.status)}</p>${(c.detail.segments || []).map((r)=>`<small>${esc(r.locator)}</small><pre class="source-original">${esc(r.text)}</pre>`).join('')}${c.detail.nextCursor ? button('source-more', '继续读取原文') : ''}</section>` : ''}</section>${appleImportView(c.importState, real)}<p class="notice" role="status">${esc(c.error)}</p></div>`;
+}

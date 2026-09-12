@@ -1,0 +1,1077 @@
+{
+  "schema": "lifeos.p3-148.actual-app.v1",
+  "label": "e04narrowpreview2",
+  "pid": 79996,
+  "window_attribute": "AXWindows",
+  "timestamp": "2026-09-08T12:50:52Z",
+  "window": {
+    "geometry": {
+      "height": 760,
+      "width": 700,
+      "x": 406,
+      "y": 81
+    },
+    "nodes": [
+      {
+        "description": "LifeOS",
+        "role": "AXWebArea",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "Today",
+        "role": "AXButton",
+        "title": "Today"
+      },
+      {
+        "description": "Me",
+        "role": "AXButton",
+        "title": "Me"
+      },
+      {
+        "description": "Contexts",
+        "role": "AXButton",
+        "title": "Contexts"
+      },
+      {
+        "description": "Memory",
+        "role": "AXButton",
+        "title": "Memory"
+      },
+      {
+        "description": "Settings",
+        "role": "AXButton",
+        "title": "Settings"
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXButton",
+        "title": "继续对话"
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXButton",
+        "title": "找回原文依据"
+      },
+      {
+        "description": "Global AI",
+        "role": "AXButton",
+        "title": "Global AI"
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXTextArea",
+        "title": "自然提问"
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXButton",
+        "title": "发送"
+      },
+      {
+        "description": "",
+        "role": "AXButton",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXButton",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXButton",
+        "title": ""
+      },
+      {
+        "description": "",
+        "role": "AXStaticText",
+        "title": ""
+      }
+    ],
+    "title": "LifeOS P3-148 - Synthetic Offline"
+  },
+  "window_id": 105113,
+  "image_sha256": "8366785722d132e4fa27813cffa16fd801ba8e0095c4fc44f3645ff2079510b8",
+  "counts": {
+    "records": 15,
+    "states": 0,
+    "memories": 0,
+    "questions": 0,
+    "packets": 18,
+    "derivations": 11,
+    "drafts": 5,
+    "feedback": 2,
+    "audit": 27,
+    "requests": 37,
+    "source_ai_questions": 10
+  },
+  "synthetic_objects": {
+    "records": [
+      {
+        "affectedInputRefs": [
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-0:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-1:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-2:1:0",
+            "version": 1
+          }
+        ],
+        "conversationId": "source-chat",
+        "correctsAnswerId": "answer:e8081e8cd1036ef56ad3ffa45283c4c1",
+        "createdAt": 1788859247169,
+        "id": "correction:2533dff40c88d57a6b0382ac39d958bd",
+        "intent": "correction",
+        "kind": "source_ai_correction",
+        "schemaVersion": 3,
+        "sourceId": "conversation",
+        "status": "active",
+        "text": "请按材料类型整理，保留图纸日期。",
+        "turnId": "turn:469f5dbfdf748e54ebc4a533c6323876",
+        "version": 1
+      },
+      {
+        "id": "p148-gui-closure-auth-question",
+        "schemaVersion": 3,
+        "kind": "source_ai_question",
+        "intent": "question",
+        "sourceId": "conversation",
+        "conversationId": "source-chat",
+        "turnId": "p148-gui-closure-auth",
+        "text": "虚构故障界面检查：auth",
+        "version": 1,
+        "status": "active",
+        "createdAt": 1788863408860
+      },
+      {
+        "id": "p148-gui-closure-empty-question",
+        "schemaVersion": 3,
+        "kind": "source_ai_question",
+        "intent": "question",
+        "sourceId": "conversation",
+        "conversationId": "source-chat",
+        "turnId": "p148-gui-closure-empty",
+        "text": "虚构故障界面检查：empty",
+        "version": 1,
+        "status": "active",
+        "createdAt": 1788863408863
+      },
+      {
+        "id": "p148-gui-closure-limit-question",
+        "schemaVersion": 3,
+        "kind": "source_ai_question",
+        "intent": "question",
+        "sourceId": "conversation",
+        "conversationId": "source-chat",
+        "turnId": "p148-gui-closure-limit",
+        "text": "虚构故障界面检查：limit",
+        "version": 1,
+        "status": "active",
+        "createdAt": 1788863408864
+      },
+      {
+        "id": "p148-gui-closure-literal-question",
+        "schemaVersion": 3,
+        "kind": "source_ai_question",
+        "intent": "question",
+        "sourceId": "conversation",
+        "conversationId": "source-chat",
+        "turnId": "p148-gui-closure-literal",
+        "text": "虚构故障界面检查：literal",
+        "version": 1,
+        "status": "active",
+        "createdAt": 1788863408866
+      },
+      {
+        "id": "p148-gui-closure-model-question",
+        "schemaVersion": 3,
+        "kind": "source_ai_question",
+        "intent": "question",
+        "sourceId": "conversation",
+        "conversationId": "source-chat",
+        "turnId": "p148-gui-closure-model",
+        "text": "虚构故障界面检查：model",
+        "version": 1,
+        "status": "active",
+        "createdAt": 1788863408862
+      },
+      {
+        "id": "p148-gui-closure-unknown-question",
+        "schemaVersion": 3,
+        "kind": "source_ai_question",
+        "intent": "question",
+        "sourceId": "conversation",
+        "conversationId": "source-chat",
+        "turnId": "p148-gui-closure-unknown",
+        "text": "虚构故障界面检查：unknown",
+        "version": 1,
+        "status": "active",
+        "createdAt": 1788863408865
+      },
+      {
+        "conversationId": "source-chat",
+        "createdAt": 1788871717295,
+        "id": "question:17761d72bfdb68dc928853868fa95353",
+        "intent": "question",
+        "kind": "source_ai_question",
+        "schemaVersion": 3,
+        "sourceId": "conversation",
+        "status": "active",
+        "text": "纸鹤图纸：E04合成核对，应该如何整理？",
+        "turnId": "4d19476d-ec87-4fa4-91ef-237b007229b0",
+        "version": 1
+      },
+      {
+        "conversationId": "source-chat",
+        "createdAt": 1788863326605,
+        "id": "question:1a1b8191d573fc3314388b99ebd8a1b3",
+        "intent": "question",
+        "kind": "source_ai_question",
+        "schemaVersion": 3,
+        "sourceId": "conversation",
+        "status": "active",
+        "text": "纸鹤图纸：保存失败仍保留的虚构问题",
+        "turnId": "5cf2c779-3b91-4837-95a0-1d7a4e3b3f5f",
+        "version": 1
+      },
+      {
+        "conversationId": "source-chat",
+        "createdAt": 1788863562495,
+        "id": "question:b909a4e2a34b85d99f05a30b3e8aacb5",
+        "intent": "question",
+        "kind": "source_ai_question",
+        "schemaVersion": 3,
+        "sourceId": "conversation",
+        "status": "active",
+        "text": "纸鹤图纸：准备失败后继续的虚构问题",
+        "turnId": "1dab8eee-563b-4c63-921f-bfccb7a47fea",
+        "version": 1
+      },
+      {
+        "conversationId": "source-chat",
+        "createdAt": 1788857761920,
+        "id": "question:eed416aa60c9371fadb5a518f6a2b6ce",
+        "intent": "question",
+        "kind": "source_ai_question",
+        "schemaVersion": 3,
+        "sourceId": "conversation",
+        "status": "active",
+        "text": "纸鹤项目图纸如何整理？",
+        "turnId": "16204511-0270-445e-858e-be8344c6233a",
+        "version": 1
+      },
+      {
+        "id": "seg:fixture-file-0:1:0",
+        "sourceId": "directory",
+        "externalId": "fiction-0:0",
+        "version": 1,
+        "text": "纸鹤项目星期四整理图纸，先按日期分类。",
+        "domain": "person",
+        "status": "active",
+        "intent": "source",
+        "observedAt": 1,
+        "sourceFile": "fixture-file-0",
+        "locator": "line:1",
+        "confirmed": false
+      },
+      {
+        "id": "seg:fixture-file-1:1:0",
+        "sourceId": "directory",
+        "externalId": "fiction-1:0",
+        "version": 1,
+        "text": "纸鹤项目图纸复核由林岚完成。",
+        "domain": "person",
+        "status": "active",
+        "intent": "source",
+        "observedAt": 1,
+        "sourceFile": "fixture-file-1",
+        "locator": "line:1",
+        "confirmed": false
+      },
+      {
+        "id": "seg:fixture-file-2:1:0",
+        "sourceId": "directory",
+        "externalId": "fiction-2:0",
+        "version": 1,
+        "text": "纸鹤项目每周一更新清单。",
+        "domain": "person",
+        "status": "active",
+        "intent": "source",
+        "observedAt": 1,
+        "sourceFile": "fixture-file-2",
+        "locator": "line:1",
+        "confirmed": false
+      },
+      {
+        "id": "seg:fixture-file-3:1:0",
+        "sourceId": "directory",
+        "externalId": "fiction-3:0",
+        "version": 1,
+        "text": "花园的向日葵需要浇水。",
+        "domain": "person",
+        "status": "active",
+        "intent": "source",
+        "observedAt": 1,
+        "sourceFile": "fixture-file-3",
+        "locator": "line:1",
+        "confirmed": false
+      }
+    ],
+    "states": [],
+    "memories": [],
+    "questions": [],
+    "derivations": [
+      {
+        "answerId": "answer:1688d8b4415df98566de63c3aa755998",
+        "citations": [
+          {
+            "availability": "available",
+            "citationId": "C1",
+            "source": {
+              "authorizationGeneration": 1,
+              "connectorId": "directory",
+              "endScalar": 19,
+              "locator": "line:1",
+              "recordId": "seg:fixture-file-0:1:0",
+              "scanEpoch": 1,
+              "segmentId": "seg:fixture-file-0:1:0",
+              "sourceRef": "fixture-file-0",
+              "startScalar": 0,
+              "version": 1
+            }
+          }
+        ],
+        "confirmed": false,
+        "conversationId": "source-chat",
+        "dispatchId": "dispatch:1fc0e5dc5050fed97a2edafc6cfd0d8c",
+        "finishedAt": 1788864485765,
+        "id": "answer:1688d8b4415df98566de63c3aa755998",
+        "inputRefs": [
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-0:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-1:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-2:1:0",
+            "version": 1
+          }
+        ],
+        "invalidCitationCount": 0,
+        "kind": "source_ai_answer",
+        "modelId": "deepseek-synthetic-v1",
+        "provider": "DeepSeek",
+        "revision": 1,
+        "schemaVersion": 3,
+        "startedAt": 1788864485765,
+        "state": "succeeded",
+        "status": "candidate",
+        "text": "合成离线演练：本次提交的来源片段为「纸鹤项目星期四整理图纸，先按日期分类。」[C1]。此回答用于验证发送、引用和反馈流程，不代表真实模型理解。",
+        "turnId": "1dab8eee-563b-4c63-921f-bfccb7a47fea"
+      },
+      {
+        "answerId": "answer:4e23917e533a6c35de3a0ad81c7650b9",
+        "citations": [
+          {
+            "availability": "available",
+            "citationId": "C1",
+            "source": {
+              "authorizationGeneration": 1,
+              "connectorId": "directory",
+              "endScalar": 19,
+              "locator": "line:1",
+              "recordId": "seg:fixture-file-0:1:0",
+              "scanEpoch": 1,
+              "segmentId": "seg:fixture-file-0:1:0",
+              "sourceRef": "fixture-file-0",
+              "startScalar": 0,
+              "version": 1
+            }
+          }
+        ],
+        "confirmed": false,
+        "conversationId": "source-chat",
+        "dispatchId": "dispatch:eaaf64606ae55cb610beb8ff8f71ef97",
+        "finishedAt": 1788859283807,
+        "id": "answer:4e23917e533a6c35de3a0ad81c7650b9",
+        "inputRefs": [
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-0:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-1:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-2:1:0",
+            "version": 1
+          }
+        ],
+        "invalidCitationCount": 0,
+        "kind": "source_ai_answer",
+        "modelId": "deepseek-synthetic-v1",
+        "provider": "DeepSeek",
+        "revision": 1,
+        "schemaVersion": 3,
+        "startedAt": 1788859283807,
+        "state": "succeeded",
+        "status": "candidate",
+        "text": "合成离线演练：本次提交的来源片段为「纸鹤项目星期四整理图纸，先按日期分类。」[C1]。此回答用于验证发送、引用和反馈流程，不代表真实模型理解。",
+        "turnId": "16204511-0270-445e-858e-be8344c6233a"
+      },
+      {
+        "answerId": "answer:5a672a75486c555c6d6d87581e3474ac",
+        "citations": [
+          {
+            "availability": "available",
+            "citationId": "C1",
+            "source": {
+              "authorizationGeneration": 1,
+              "connectorId": "directory",
+              "endScalar": 19,
+              "locator": "line:1",
+              "recordId": "seg:fixture-file-0:1:0",
+              "scanEpoch": 1,
+              "segmentId": "seg:fixture-file-0:1:0",
+              "sourceRef": "fixture-file-0",
+              "startScalar": 0,
+              "version": 1
+            }
+          }
+        ],
+        "confirmed": false,
+        "conversationId": "source-chat",
+        "dispatchId": "dispatch:82907c3487b8b0a6740b4d6786bcc981",
+        "finishedAt": 1788871732296,
+        "id": "answer:5a672a75486c555c6d6d87581e3474ac",
+        "inputRefs": [
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-0:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-1:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-2:1:0",
+            "version": 1
+          }
+        ],
+        "invalidCitationCount": 0,
+        "kind": "source_ai_answer",
+        "modelId": "deepseek-synthetic-v1",
+        "provider": "DeepSeek",
+        "revision": 1,
+        "schemaVersion": 3,
+        "startedAt": 1788871732296,
+        "state": "succeeded",
+        "status": "candidate",
+        "text": "合成离线演练：本次提交的来源片段为「纸鹤项目星期四整理图纸，先按日期分类。」[C1]。此回答用于验证发送、引用和反馈流程，不代表真实模型理解。",
+        "turnId": "4d19476d-ec87-4fa4-91ef-237b007229b0"
+      },
+      {
+        "answerId": "answer:7781fdf79362bf197b1d42af7995e0c3",
+        "citations": [
+          {
+            "availability": "available",
+            "citationId": "C1",
+            "source": {
+              "authorizationGeneration": 1,
+              "connectorId": "directory",
+              "endScalar": 19,
+              "locator": "line:1",
+              "recordId": "seg:fixture-file-0:1:0",
+              "scanEpoch": 1,
+              "segmentId": "seg:fixture-file-0:1:0",
+              "sourceRef": "fixture-file-0",
+              "startScalar": 0,
+              "version": 1
+            }
+          }
+        ],
+        "confirmed": false,
+        "conversationId": "source-chat",
+        "dispatchId": "dispatch:a71bcc26db0d6d7218e4387abf5dfeb5",
+        "finishedAt": 1788867644796,
+        "id": "answer:7781fdf79362bf197b1d42af7995e0c3",
+        "inputRefs": [
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-0:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-1:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-2:1:0",
+            "version": 1
+          }
+        ],
+        "invalidCitationCount": 0,
+        "kind": "source_ai_answer",
+        "modelId": "deepseek-synthetic-v1",
+        "provider": "DeepSeek",
+        "revision": 2,
+        "schemaVersion": 3,
+        "startedAt": 1788867644796,
+        "state": "succeeded",
+        "status": "candidate",
+        "text": "合成离线演练：本次提交的来源片段为「纸鹤项目星期四整理图纸，先按日期分类。」[C1]。此回答用于验证发送、引用和反馈流程，不代表真实模型理解。",
+        "turnId": "1dab8eee-563b-4c63-921f-bfccb7a47fea"
+      },
+      {
+        "answerId": "answer:8ad3fede88367eb3ada989f6bce5b290",
+        "citations": [
+          {
+            "availability": "available",
+            "citationId": "C1",
+            "source": {
+              "authorizationGeneration": 1,
+              "connectorId": "directory",
+              "endScalar": 19,
+              "locator": "line:1",
+              "recordId": "seg:fixture-file-0:1:0",
+              "scanEpoch": 1,
+              "segmentId": "seg:fixture-file-0:1:0",
+              "sourceRef": "fixture-file-0",
+              "startScalar": 0,
+              "version": 1
+            }
+          }
+        ],
+        "confirmed": false,
+        "conversationId": "source-chat",
+        "dispatchId": "dispatch:10722058e3eba47aea87691d7436b2e8",
+        "finishedAt": 1788862204502,
+        "id": "answer:8ad3fede88367eb3ada989f6bce5b290",
+        "inputRefs": [
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-0:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-1:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-2:1:0",
+            "version": 1
+          }
+        ],
+        "invalidCitationCount": 0,
+        "kind": "source_ai_answer",
+        "modelId": "deepseek-synthetic-v1",
+        "provider": "DeepSeek",
+        "revision": 1,
+        "schemaVersion": 3,
+        "startedAt": 1788862204502,
+        "state": "succeeded",
+        "status": "candidate",
+        "text": "合成离线演练：本次提交的来源片段为「纸鹤项目星期四整理图纸，先按日期分类。」[C1]。此回答用于验证发送、引用和反馈流程，不代表真实模型理解。",
+        "turnId": "16204511-0270-445e-858e-be8344c6233a"
+      },
+      {
+        "answerId": "answer:8de723d2d60e331666ea4ecfcfb5942a",
+        "citations": [
+          {
+            "availability": "available",
+            "citationId": "C1",
+            "source": {
+              "authorizationGeneration": 1,
+              "connectorId": "directory",
+              "endScalar": 19,
+              "locator": "line:1",
+              "recordId": "seg:fixture-file-0:1:0",
+              "scanEpoch": 1,
+              "segmentId": "seg:fixture-file-0:1:0",
+              "sourceRef": "fixture-file-0",
+              "startScalar": 0,
+              "version": 1
+            }
+          }
+        ],
+        "confirmed": false,
+        "conversationId": "source-chat",
+        "dispatchId": "dispatch:a60df56220093b89350f16590317ee9f",
+        "finishedAt": 1788859829242,
+        "id": "answer:8de723d2d60e331666ea4ecfcfb5942a",
+        "inputRefs": [
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-0:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-1:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-2:1:0",
+            "version": 1
+          }
+        ],
+        "invalidCitationCount": 0,
+        "kind": "source_ai_answer",
+        "modelId": "deepseek-synthetic-v1",
+        "provider": "DeepSeek",
+        "revision": 1,
+        "schemaVersion": 3,
+        "startedAt": 1788859829242,
+        "state": "succeeded",
+        "status": "candidate",
+        "text": "合成离线演练：本次提交的来源片段为「纸鹤项目星期四整理图纸，先按日期分类。」[C1]。此回答用于验证发送、引用和反馈流程，不代表真实模型理解。",
+        "turnId": "16204511-0270-445e-858e-be8344c6233a"
+      },
+      {
+        "answerId": "answer:91032581b14d26b052f2fdafc16dd116",
+        "citations": [
+          {
+            "availability": "available",
+            "citationId": "C1",
+            "source": {
+              "authorizationGeneration": 1,
+              "connectorId": "directory",
+              "endScalar": 19,
+              "locator": "line:1",
+              "recordId": "seg:fixture-file-0:1:0",
+              "scanEpoch": 1,
+              "segmentId": "seg:fixture-file-0:1:0",
+              "sourceRef": "fixture-file-0",
+              "startScalar": 0,
+              "version": 1
+            }
+          }
+        ],
+        "confirmed": false,
+        "conversationId": "source-chat",
+        "dispatchId": "dispatch:cba947df538f97118d74584742249ed7",
+        "finishedAt": 1788860288370,
+        "id": "answer:91032581b14d26b052f2fdafc16dd116",
+        "inputRefs": [
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-0:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-1:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-2:1:0",
+            "version": 1
+          }
+        ],
+        "invalidCitationCount": 0,
+        "kind": "source_ai_answer",
+        "modelId": "deepseek-synthetic-v1",
+        "provider": "DeepSeek",
+        "revision": 1,
+        "schemaVersion": 3,
+        "startedAt": 1788860288370,
+        "state": "succeeded",
+        "status": "candidate",
+        "text": "合成离线演练：本次提交的来源片段为「纸鹤项目星期四整理图纸，先按日期分类。」[C1]。此回答用于验证发送、引用和反馈流程，不代表真实模型理解。",
+        "turnId": "16204511-0270-445e-858e-be8344c6233a"
+      },
+      {
+        "answerId": "answer:ca65d16624667d09beee66b62066ae26",
+        "citations": [
+          {
+            "availability": "available",
+            "citationId": "C1",
+            "source": {
+              "authorizationGeneration": 1,
+              "connectorId": "directory",
+              "endScalar": 19,
+              "locator": "line:1",
+              "recordId": "seg:fixture-file-0:1:0",
+              "scanEpoch": 1,
+              "segmentId": "seg:fixture-file-0:1:0",
+              "sourceRef": "fixture-file-0",
+              "startScalar": 0,
+              "version": 1
+            }
+          }
+        ],
+        "confirmed": false,
+        "conversationId": "source-chat",
+        "dispatchId": "dispatch:454c1d1b04954c72f2e3ac766f04328b",
+        "finishedAt": 1788863642579,
+        "id": "answer:ca65d16624667d09beee66b62066ae26",
+        "inputRefs": [
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-0:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-1:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-2:1:0",
+            "version": 1
+          }
+        ],
+        "invalidCitationCount": 0,
+        "kind": "source_ai_answer",
+        "modelId": "deepseek-synthetic-v1",
+        "provider": "DeepSeek",
+        "revision": 1,
+        "schemaVersion": 3,
+        "startedAt": 1788863642579,
+        "state": "succeeded",
+        "status": "candidate",
+        "text": "合成离线演练：本次提交的来源片段为「纸鹤项目星期四整理图纸，先按日期分类。」[C1]。此回答用于验证发送、引用和反馈流程，不代表真实模型理解。",
+        "turnId": "1dab8eee-563b-4c63-921f-bfccb7a47fea"
+      },
+      {
+        "answerId": "answer:e8081e8cd1036ef56ad3ffa45283c4c1",
+        "citations": [
+          {
+            "availability": "available",
+            "citationId": "C1",
+            "source": {
+              "authorizationGeneration": 1,
+              "connectorId": "directory",
+              "endScalar": 19,
+              "locator": "line:1",
+              "recordId": "seg:fixture-file-0:1:0",
+              "scanEpoch": 1,
+              "segmentId": "seg:fixture-file-0:1:0",
+              "sourceRef": "fixture-file-0",
+              "startScalar": 0,
+              "version": 1
+            }
+          }
+        ],
+        "confirmed": false,
+        "conversationId": "source-chat",
+        "dispatchId": "dispatch:70fc58f92ee75b39b0ff93daff7758e9",
+        "finishedAt": 1788857799276,
+        "id": "answer:e8081e8cd1036ef56ad3ffa45283c4c1",
+        "inputRefs": [
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-0:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-1:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-2:1:0",
+            "version": 1
+          }
+        ],
+        "invalidCitationCount": 0,
+        "kind": "source_ai_answer",
+        "modelId": "deepseek-synthetic-v1",
+        "provider": "DeepSeek",
+        "revision": 2,
+        "schemaVersion": 3,
+        "startedAt": 1788857799276,
+        "state": "succeeded",
+        "status": "stale",
+        "text": "合成离线演练：本次提交的来源片段为「纸鹤项目星期四整理图纸，先按日期分类。」[C1]。此回答用于验证发送、引用和反馈流程，不代表真实模型理解。",
+        "turnId": "16204511-0270-445e-858e-be8344c6233a"
+      },
+      {
+        "answerId": "answer:efb4a2633e9322cc179ee9b854f0439c",
+        "citations": [
+          {
+            "availability": "available",
+            "citationId": "C1",
+            "source": {
+              "authorizationGeneration": 1,
+              "connectorId": "directory",
+              "endScalar": 19,
+              "locator": "line:1",
+              "recordId": "seg:fixture-file-0:1:0",
+              "scanEpoch": 1,
+              "segmentId": "seg:fixture-file-0:1:0",
+              "sourceRef": "fixture-file-0",
+              "startScalar": 0,
+              "version": 1
+            }
+          }
+        ],
+        "confirmed": false,
+        "conversationId": "source-chat",
+        "dispatchId": "dispatch:8c320e66af14731dc89b9bec69d95503",
+        "finishedAt": 1788861315809,
+        "id": "answer:efb4a2633e9322cc179ee9b854f0439c",
+        "inputRefs": [
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-0:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-1:1:0",
+            "version": 1
+          },
+          {
+            "authorizationGeneration": 1,
+            "id": "seg:fixture-file-2:1:0",
+            "version": 1
+          }
+        ],
+        "invalidCitationCount": 0,
+        "kind": "source_ai_answer",
+        "modelId": "deepseek-synthetic-v1",
+        "provider": "DeepSeek",
+        "revision": 1,
+        "schemaVersion": 3,
+        "startedAt": 1788861315809,
+        "state": "succeeded",
+        "status": "candidate",
+        "text": "合成离线演练：本次提交的来源片段为「纸鹤项目星期四整理图纸，先按日期分类。」[C1]。此回答用于验证发送、引用和反馈流程，不代表真实模型理解。",
+        "turnId": "16204511-0270-445e-858e-be8344c6233a"
+      },
+      {
+        "id": "p148-gui-closure-literal-answer",
+        "answerId": "p148-gui-closure-literal-answer",
+        "kind": "source_ai_answer",
+        "schemaVersion": 3,
+        "dispatchId": "p148-gui-closure-literal-dispatch",
+        "state": "succeeded",
+        "revision": 1,
+        "text": "纯文本检查 <img src=\"https://example.invalid/pixel\"> <b>不是HTML</b> [C99]",
+        "citations": [],
+        "invalidCitationCount": 1,
+        "status": "candidate",
+        "confirmed": false,
+        "provider": "DeepSeek",
+        "modelId": "deepseek-synthetic-v1",
+        "startedAt": 1,
+        "finishedAt": 2,
+        "inputRefs": [],
+        "conversationId": "source-chat",
+        "turnId": "p148-gui-closure-literal"
+      }
+    ],
+    "drafts": [
+      {
+        "conversationId": "source-chat",
+        "draftId": "draft:16204511-0270-445e-858e-be8344c6233a",
+        "id": "draft:16204511-0270-445e-858e-be8344c6233a",
+        "kind": "source_ai_draft",
+        "requestId": "d7001870-7afa-43af-a53c-ee2b216ca2ec",
+        "resultRef": "question:eed416aa60c9371fadb5a518f6a2b6ce",
+        "revision": 3,
+        "schemaVersion": 3,
+        "status": "committed",
+        "text": "纸鹤项目图纸如何整理？",
+        "turnId": "16204511-0270-445e-858e-be8344c6233a",
+        "updatedAt": 1788857755482
+      },
+      {
+        "conversationId": "source-chat",
+        "draftId": "draft:1dab8eee-563b-4c63-921f-bfccb7a47fea",
+        "id": "draft:1dab8eee-563b-4c63-921f-bfccb7a47fea",
+        "kind": "source_ai_draft",
+        "requestId": "af9c3a19-1643-4bc5-9a04-293b58523e72",
+        "resultRef": "question:b909a4e2a34b85d99f05a30b3e8aacb5",
+        "revision": 3,
+        "schemaVersion": 3,
+        "status": "committed",
+        "text": "纸鹤图纸：准备失败后继续的虚构问题",
+        "turnId": "1dab8eee-563b-4c63-921f-bfccb7a47fea",
+        "updatedAt": 1788863555916
+      },
+      {
+        "conversationId": "source-chat",
+        "draftId": "draft:4d19476d-ec87-4fa4-91ef-237b007229b0",
+        "id": "draft:4d19476d-ec87-4fa4-91ef-237b007229b0",
+        "kind": "source_ai_draft",
+        "requestId": "aaf6b723-a43a-4c41-8d23-f6fdc768938d",
+        "resultRef": "question:17761d72bfdb68dc928853868fa95353",
+        "revision": 3,
+        "schemaVersion": 3,
+        "status": "committed",
+        "text": "纸鹤图纸：E04合成核对，应该如何整理？",
+        "turnId": "4d19476d-ec87-4fa4-91ef-237b007229b0",
+        "updatedAt": 1788871699314
+      },
+      {
+        "conversationId": "source-chat",
+        "draftId": "draft:5cf2c779-3b91-4837-95a0-1d7a4e3b3f5f",
+        "id": "draft:5cf2c779-3b91-4837-95a0-1d7a4e3b3f5f",
+        "kind": "source_ai_draft",
+        "requestId": "789ad29f-7798-48c2-8c89-5b78b9169eea",
+        "resultRef": "question:1a1b8191d573fc3314388b99ebd8a1b3",
+        "revision": 3,
+        "schemaVersion": 3,
+        "status": "committed",
+        "text": "纸鹤图纸：保存失败仍保留的虚构问题",
+        "turnId": "5cf2c779-3b91-4837-95a0-1d7a4e3b3f5f",
+        "updatedAt": 1788863293229
+      },
+      {
+        "conversationId": "source-chat",
+        "draftId": "draft:ebeb5603-b126-4655-bed5-8e8dde462f1a",
+        "id": "draft:ebeb5603-b126-4655-bed5-8e8dde462f1a",
+        "kind": "source_ai_draft",
+        "requestId": "89d6cf52-6047-45b4-9121-73baadd66d76",
+        "revision": 5,
+        "schemaVersion": 3,
+        "status": "pending",
+        "text": "纸鹤图纸：窄屏键盘准备验证",
+        "turnId": "ebeb5603-b126-4655-bed5-8e8dde462f1a",
+        "updatedAt": 1788871835102
+      }
+    ],
+    "sources": [
+      {
+        "authorized": true,
+        "generation": 1,
+        "id": "conversation",
+        "sourceType": "conversation"
+      },
+      {
+        "id": "directory",
+        "authorized": true,
+        "generation": 1,
+        "sourceType": "local_file"
+      },
+      {
+        "authorized": true,
+        "generation": 1,
+        "id": "health-demo",
+        "sourceType": "synthetic_health"
+      },
+      {
+        "authorized": true,
+        "generation": 1,
+        "id": "obsidian-demo",
+        "sourceType": "synthetic_markdown"
+      }
+    ]
+  }
+}

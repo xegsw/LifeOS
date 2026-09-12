@@ -1,0 +1,9 @@
+lifeos/engineering/LIFEOS-P3-148/tools/e04_keyboard.swift:8:65: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect. [#DeprecatedDeclaration]
+ 6 | let app=AXUIElementCreateApplication(pid)
+ 7 | guard let w=attr(app,kAXWindowsAttribute) as? [AXUIElement],w.count==1,attr(w[0],kAXTitleAttribute) as? String == "LifeOS P3-148 - Synthetic Offline" else{exit(3)}
+ 8 | NSRunningApplication(processIdentifier:pid)?.activate(options:[.activateIgnoringOtherApps])
+   |                                                                 `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect. [#DeprecatedDeclaration]
+ 9 | let keys:[String:CGKeyCode]=["enter":36,"tab":48,"escape":53,"left":123,"right":124]
+10 | guard let key=keys[a[2]] else{exit(4)}
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>

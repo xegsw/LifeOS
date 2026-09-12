@@ -1,0 +1,15 @@
+✔ historical v7 conversation entry only drafts and prepares v7, no local parser or v5 fallback (1.710625ms)
+✔ lost confirmation response recovers read only without another model invocation (0.120625ms)
+✔ forged request and false success cannot clear input (0.105625ms)
+✔ none receipt cannot impersonate committed action (0.046125ms)
+✔ Flow clears draft only after request bound commit then reads stored state (0.285625ms)
+✔ Flow failed result keeps draft and unknown status never means success (0.132833ms)
+✔ clarification UI state uses persisted variable reply without translation replacement (0.191666ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 38.712583

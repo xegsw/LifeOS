@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/candidate/tools/test_conversation_extended.py", line 55, in <module>
+    if __name__=='__main__':print(json.dumps(run(),ensure_ascii=True,indent=2))
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/candidate/tools/test_conversation_extended.py", line 17, in run
+    other.call('get_context_recovery','open_conversation',{'requestId':'open','conversationId':'source-chat'},expect='instance_conflict')
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/candidate/tools/test_source_conversation.py", line 19, in call
+    assert out.get('error',{}).get('code')==expect,(expect,out);return out
+AssertionError: ('instance_conflict', {'error': {'code': 'database_unavailable'}})

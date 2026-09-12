@@ -1,0 +1,149 @@
+{
+  "status": "design_only_not_executed",
+  "cases": [
+    {
+      "id": "strong-frame-unlisted-verb",
+      "syntheticText": "我明天先买合成材料。",
+      "context": "empty",
+      "expected": "supported_create"
+    },
+    {
+      "id": "strong-frame-another-verb",
+      "syntheticText": "我接下来先寄合成样品。",
+      "context": "empty",
+      "expected": "supported_create"
+    },
+    {
+      "id": "word-internal-negation",
+      "syntheticText": "我明天先买不锈钢合成材料。",
+      "context": "empty",
+      "expected": "supported_create"
+    },
+    {
+      "id": "withdraw-unique",
+      "syntheticText": "先不买合成材料了。",
+      "context": "one_exact_planned",
+      "expected": "supported_cancel"
+    },
+    {
+      "id": "withdraw-no-target",
+      "syntheticText": "先不买合成材料了。",
+      "context": "empty",
+      "expected": "local_no_change"
+    },
+    {
+      "id": "withdraw-multiple",
+      "syntheticText": "先不买合成材料了。",
+      "context": "two_exact_planned",
+      "expected": "clarify_one_target"
+    },
+    {
+      "id": "negative-new-intent",
+      "syntheticText": "我不打算买合成材料。",
+      "context": "empty",
+      "expected": "no_action_write"
+    },
+    {
+      "id": "negative-not-withdrawal",
+      "syntheticText": "我不打算买合成材料。",
+      "context": "one_exact_planned",
+      "expected": "no_implicit_cancel"
+    },
+    {
+      "id": "cancelled-target",
+      "syntheticText": "先不买合成材料了。",
+      "context": "one_cancelled",
+      "expected": "local_no_change"
+    },
+    {
+      "id": "finished-target",
+      "syntheticText": "先不买合成材料了。",
+      "context": "one_completed",
+      "expected": "local_no_change"
+    },
+    {
+      "id": "quoted-withdrawal",
+      "syntheticText": "他说“先不买合成材料了”。",
+      "context": "one_planned",
+      "expected": "chat_no_write"
+    },
+    {
+      "id": "hypothetical",
+      "syntheticText": "如果先不买合成材料了，会怎样？",
+      "context": "one_planned",
+      "expected": "chat_no_write"
+    },
+    {
+      "id": "question",
+      "syntheticText": "我明天先买合成材料好吗？",
+      "context": "empty",
+      "expected": "chat_no_write"
+    },
+    {
+      "id": "uncertain",
+      "syntheticText": "我明天可能先买合成材料。",
+      "context": "empty",
+      "expected": "no_write"
+    },
+    {
+      "id": "conflicting-clauses",
+      "syntheticText": "我明天先买合成材料，但还没决定。",
+      "context": "empty",
+      "expected": "unsupported_local_no_write"
+    },
+    {
+      "id": "unsupported-explicit",
+      "syntheticText": "帮我把这件事安排一下。",
+      "context": "ambiguous_context",
+      "expected": "local_clarify_not_cloud"
+    },
+    {
+      "id": "ordinary-chat",
+      "syntheticText": "今天聊天挺有意思。",
+      "context": "one_planned",
+      "expected": "chat"
+    },
+    {
+      "id": "stale-version",
+      "syntheticText": "先不买合成材料了。",
+      "context": "packet_version_old",
+      "expected": "reject_no_write"
+    },
+    {
+      "id": "parse-none",
+      "syntheticText": "我明天先买合成材料。",
+      "context": "model_returns_undefined",
+      "expected": "local_no_write_not_cloud"
+    },
+    {
+      "id": "cloud-affirmation",
+      "syntheticText": "好的，已经安排好了。",
+      "context": "model_output_only",
+      "expected": "no_local_success_no_write"
+    },
+    {
+      "id": "same-submit",
+      "syntheticText": "我明天先买合成材料。",
+      "context": "same_turn_retry",
+      "expected": "one_event"
+    },
+    {
+      "id": "read-recovery",
+      "syntheticText": "",
+      "context": "saved_reply_lost",
+      "expected": "readonly_no_resubmit"
+    },
+    {
+      "id": "restart",
+      "syntheticText": "",
+      "context": "saved_action_and_feedback",
+      "expected": "same_identity_status"
+    },
+    {
+      "id": "transaction-failure",
+      "syntheticText": "先不买合成材料了。",
+      "context": "forced_failure",
+      "expected": "draft_retained_no_partial_write"
+    }
+  ]
+}

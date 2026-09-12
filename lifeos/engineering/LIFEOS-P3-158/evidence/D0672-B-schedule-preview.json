@@ -1,0 +1,22 @@
+{
+  "case": "schedule_available_then_local_action",
+  "question": "请查询公开合成日程在2026年9月10日20:00至21:00（北京时间，UTC+8）是否有空。如果有空，就在LifeOS里创建一项本地安排：今晚20:00整理评审资料；如果没空，不创建安排。仅使用公开合成测试资料，不访问真实日历。",
+  "pid": 18897,
+  "turnRequestId": "coord8-turn-6aa8d8a9abeddc5babbc05fc19ba2ea8",
+  "previewId": "coord8-preview-df96aac5bca54ce36a0779a39d29d634",
+  "expiresAt": 1789041906938,
+  "budget": {
+    "models": 3,
+    "queries": 1,
+    "turns": 3
+  },
+  "expectedQuery": {
+    "capabilityId": "fixture.schedule.lookup.v1",
+    "start": 1789041600000,
+    "end": 1789045200000
+  },
+  "fixtureExpectedAvailable": true,
+  "expectedResult": "condition_and_action: true condition plus one local create in the same transaction; exact time retained",
+  "agentModelConfirmations": 0,
+  "realCalendarAccess": false
+}

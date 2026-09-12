@@ -1,0 +1,88 @@
+Window: "LifeOS P3-158 - Synthetic Conversation", App: LifeOS P3-158 v8 Offline.
+0 standard window LifeOS P3-158 - Synthetic Conversation, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: LifeOS, URL: tauri://localhost
+			3 link 跳到内容, Value: tauri://localhost#main
+			4 container 主导航
+				5 button 今日
+				6 button 我
+				7 button 上下文
+				8 button 记忆
+				9 button 设置
+			10 container
+				11 heading 你好。, Value: 1
+					12 text 你好。
+				13 text 给今天留一点从容。
+				14 text 9月10日 星期四
+				15 container 已说定的安排
+					16 text 已说定的安排
+					17 text 后天下午去健身房
+					18 summary 查看依据, Value: off
+						19 text 查看依据
+				20 text 从你现在想聊的事开始。
+				21 text 一个想法，一件待办，或今天的感受。
+				22 button 与 LifeOS 聊聊
+				23 text 合成预览 · 未联网
+			24 container Global AI 对话
+				25 heading 与 LifeOS 对话, Value: 2
+					26 text 与 LifeOS 对话
+				27 text 合成预览 · user-synthetic-model
+				28 button 关闭对话
+				29 container
+					30 text 你的原始表达 明天下午去健身房 本地处理 本地记录：已记下：明天下午去健身房。
+				31 container
+					32 text 你的原始表达 挪到后天吧 本地处理 本地记录：已调整为：后天下午去健身房。
+				33 container 本次发送预览
+					34 heading 发送前，请看一下, Value: 3
+						35 text 发送前，请看一下
+					36 text 依据本回合获准查询结果回答并提出本地候选
+					37 text 接收方：DeepSeek · user-synthetic-model
+					38 text 合成演练，未联网 · 本次只包含下方问题与 0 条依据
+					39 heading 你的问题, Value: 3
+						40 text 你的问题
+					41 text 如果合成预报下雨，就安排室内阅读
+					42 text 本次没有健康来源观察，不会声称使用了健康依据。
+					43 heading 本次披露的对话、目标与来源, Value: 3
+						44 text 本次披露的对话、目标与来源
+					45 text {
+  "capabilities": [],
+  "conditions": [],
+  "conversation": [],
+  "currentUser": {
+    "ref": "current",
+    "text": "如果合成预报下雨，就安排室内阅读"
+  },
+  "queryResults": [
+    {
+      "authorizationGeneration": 1,
+      "capabilityId": "fixture.forecast.lookup.v1",
+      "capabilityVersion": 1,
+      "facts": [
+        {
+          "name": "rainExpected",
+          "ref": "coord8-fact-e07d91221bac3f52a7d1bfe70fe3946b",
+          "sourceRef": "coord8-source-bfe579c755718c306c362b21d62193f2",
+          "sourceVersion":
+					46 summary 查看发送说明与完整内容, Value: off
+						47 text 查看发送说明与完整内容
+					48 button 确认演练发送
+					49 button 取消
+				50 text 已读取公开合成资料。请核对本次查询结果的发送内容。
+				51 container
+					52 text 自然提问
+					53 text entry area (settable) 自然提问, Value: 如果合成预报下雨，就安排室内阅读, Placeholder: 问 LifeOS…
+						54 text (settable) 如果合成预报下雨，就安排室内阅读
+					55 button 发送
+	56 close button
+	57 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	58 minimize button
+	59 text LifeOS P3-158 - Synthetic Conversation
+60 menu bar
+	61 LifeOS P3-158 v8 Offline
+	62 File
+	63 Edit
+	64 View
+	65 Window
+	66 Help
+
+The focused UI element is 2 HTML content Description: LifeOS, URL: tauri://localhost

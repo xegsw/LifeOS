@@ -1,0 +1,282 @@
+{
+  "task": "P3-159",
+  "status": "A deterministic evidence assembled; all three mode builds and four final-source mutations passed; B/C not executed",
+  "updatedAt": "2026-09-12T11:36:03.557206+00:00",
+  "rows": [
+    {
+      "id": "AC-01",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_default_off_and_frontend_cannot_forge_domain_event"
+      ],
+      "evidenceNote": "baseline182 + inherited 23 entry regression; C user check pending",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-02",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_committed_source_cursor_updates_once_and_preserves_scope",
+        "proactive_success_is_durable_single_focus_and_shown_only_once",
+        "proactive_restarts_unknown_send_is_not_retried"
+      ],
+      "evidenceNote": "event merging and restart; B production semantics pending",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-03",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_metadata_never_contains_disclosure_and_read_polling_never_writes",
+        "proactive_controls_do_not_consume_legacy_pagination",
+        "proactive_unknown_fields_and_health_scope_rejected",
+        "proactive_control_history_never_hides_permanent_suppression"
+      ],
+      "evidenceNote": "bounded source payload and metadata filtering; selective active history query",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-04",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [],
+      "evidenceNote": "A structural model port only; genuine model semantics B pending",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-05",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_invalid_candidate_shapes_never_create_visible_state"
+      ],
+      "evidenceNote": "A valid suggestion and silence gates; paired B value judgments pending",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-06",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_success_is_durable_single_focus_and_shown_only_once",
+        "proactive_invalid_model_and_source_change_do_not_write_suggestion"
+      ],
+      "evidenceNote": "single focus and basis identity; native attempts4-7",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-07",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_constraint_can_adjust_advice_in_same_response_without_second_request",
+        "proactive_current_limit_and_snooze_are_compatible_in_either_order"
+      ],
+      "evidenceNote": "current limit feedback without Action; natural semantics B/C pending",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-08",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_snooze_persists_and_due_never_restores_old_words",
+        "proactive_no_send_when_hidden_or_dnd_and_clock_rollback_does_not_reset",
+        "proactive_timezone_change_and_clock_rollback_do_not_reset_usage"
+      ],
+      "evidenceNote": "persisted control clock; actual Store reopen covered by due_action",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-09",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_due_action_rechecks_completed_cancelled_expired_and_revoked_after_reopen",
+        "proactive_due_reconcile_write_faults_keep_snooze_and_event_atomic"
+      ],
+      "evidenceNote": "completed/cancelled/expired/revoked/valid due branches after actual Store reopen",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-10",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_suppression_survives_foreground_and_same_subject_rephrasing",
+        "proactive_control_history_never_hides_permanent_suppression"
+      ],
+      "evidenceNote": "permanent stable identity across repeated foreground/history; B wording pending",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-11",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_correction_retains_original_and_supplies_explicit_replacement"
+      ],
+      "evidenceNote": "replacement preserves original; B ambiguity semantics pending",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-12",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_success_is_durable_single_focus_and_shown_only_once",
+        "proactive_no_send_when_hidden_or_dnd_and_clock_rollback_does_not_reset"
+      ],
+      "evidenceNote": "single shown acknowledgement, DND/no-response; native focus noninterruption",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-13",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_response_preserves_second_subject_identity_and_reference_order"
+      ],
+      "evidenceNote": "second target identity; ordinary topic native attempt7; B ambiguity pending",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-14",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_mixed_feedback_uses_original_action_transaction"
+      ],
+      "evidenceNote": "original Action transaction and pending confirmation; B Action POST budget interpretation requested",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-15",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_each_projection_write_boundary_rolls_back_and_can_retry_same_receipt",
+        "proactive_feedback_transaction_faults_preserve_raw_and_all_prior_state",
+        "proactive_analysis_reservation_faults_rollback_consumed_events_and_budget",
+        "proactive_policy_each_write_fault_is_atomic_and_same_request_replays",
+        "proactive_shown_each_write_fault_cannot_consume_a_show",
+        "proactive_capture_each_write_fault_preserves_input_and_idempotency",
+        "proactive_recovery_write_faults_never_partially_mark_unknown",
+        "proactive_usage_write_faults_preserve_unknown_and_do_not_resend"
+      ],
+      "evidenceNote": "projection/capture/feedback/reservation/policy/show/due/recovery/usage transaction faults; final source four semantic mutations killed by assertions",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-16",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_generation_change_rejects_late_result_preserves_budget",
+        "proactive_action_handoff_rechecks_basis_before_original_transaction",
+        "proactive_response_rechecks_changed_current_constraints",
+        "proactive_constraint_expiry_during_response_rejects_late_result",
+        "proactive_due_action_rechecks_completed_cancelled_expired_and_revoked_after_reopen"
+      ],
+      "evidenceNote": "late generation/basis/current-limit, conversation revocation",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-17",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_default_off_and_frontend_cannot_forge_domain_event",
+        "proactive_unknown_fields_and_health_scope_rejected",
+        "proactive_disable_cancels_queued_response_without_replay_after_reenable"
+      ],
+      "evidenceNote": "purpose guard and default off; C user enable pending",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-18",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_online_quotas_are_separate_persistent_and_nonrefundable",
+        "proactive_no_send_when_hidden_or_dnd_and_clock_rollback_does_not_reset",
+        "proactive_timezone_change_and_clock_rollback_do_not_reset_usage",
+        "proactive_online_unseen_is_separate_and_shares_daily_limit"
+      ],
+      "evidenceNote": "new purpose and old v8 cumulative pools share outer144/day48; daily concurrency, rollback, nonrefund, phase/missing history guards",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-19",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_restarts_unknown_send_is_not_retried",
+        "proactive_invalid_model_and_source_change_do_not_write_suggestion",
+        "proactive_invalid_candidate_shapes_never_create_visible_state"
+      ],
+      "evidenceNote": "bad DTO/unknown outcome never auto replay; inherited D0674 recovery tests",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-20",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_metadata_never_contains_disclosure_and_read_polling_never_writes",
+        "proactive_controls_do_not_consume_legacy_pagination"
+      ],
+      "evidenceNote": "old rows preserved, control namespaces no DDL; C unopened",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-21",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_committed_source_cursor_updates_once_and_preserves_scope"
+      ],
+      "evidenceNote": "legacy import/health/source/UI regression; native attempts2/5/6/7",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-22",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [],
+      "evidenceNote": "latest offline/online/real full builds passed; GUI identity7 proves unchanged UI; C never launched",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-23",
+      "A": "A shared-model-port fixtures verified; actual semantic examples remain B/C",
+      "tests": [],
+      "evidenceNote": "B complete and unseen semantics not executed; C not started",
+      "B": "not executed",
+      "C": "not executed"
+    },
+    {
+      "id": "AC-24",
+      "A": "deterministic implementation and regression verified; PM gate assessment pending",
+      "tests": [
+        "proactive_generation_change_rejects_late_result_preserves_budget",
+        "proactive_credential_failure_pauses_until_explicit_restore_without_budget_reset",
+        "proactive_disable_cancels_queued_response_without_replay_after_reenable"
+      ],
+      "evidenceNote": "disable cancels queued/inflight; existing decisions remain; C pending",
+      "B": "not executed",
+      "C": "not executed"
+    }
+  ],
+  "independentReview": "User Exception / Paused",
+  "actualModelPosts": 0,
+  "currentFullReceipt": "offline-verification.json",
+  "currentFullRegression": "A-run-20260912T113326724315",
+  "rustResults": {
+    "passed": 290,
+    "failed": 0
+  }
+}

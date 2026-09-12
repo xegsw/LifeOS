@@ -1,0 +1,98 @@
+{
+  "baseline": "health-view-restoration/candidate",
+  "added": {
+    "ui/sources_view.js": "780547a9ce08b716eb42272d3306a2aa967b9a8981209265d2664e39ad3ca7c6",
+    "source-engine/Cargo.toml": "aff9912e3d81ecc7f809dcb8386c58e5ac2b924c14605bf344580da0d80a1562",
+    "source-engine/apple_health_limits.json": "1d9cec2ee47e98c871b07ee39ef48a6c3a487b429a7abe92cbf61f391f01b9a4",
+    "source-engine/ui/web_source.js": "c898b46cc7c92ba05cbf2ab8fced31808afafa668b40e00ed1636e734d2c0faa",
+    "source-engine/tools/apple_health_source.py": "9daabcedab685d9efe2059caf268bdfe773ceaefc6a9df2f609ec5d6c47abfec",
+    "source-engine/tools/parse_source.py": "4823ba44b033020d5c08e051f5877bfa67ef545737e4a87c7bccb89bf4501b6e",
+    "source-engine/tools/alias_metadata.swift": "27595bc6e1c64438150b1d476e3a538cc01cf270f68e484c2a9b8ce1df59207a",
+    "source-engine/tools/fetch_source.mjs": "d485bc779f0d0612a4321bc886547853c04db86ff2d1697aed5fa6083240c284",
+    "source-engine/src/source_api.rs": "0aba52b70c99ec6fd27c588052e0e83675ff171efcacd35b4b362805a93c5450",
+    "source-engine/src/runtime_root.rs": "ba92f4fe46d444745abcd34890c68d9bc3fbabb83489932521bc3a01f3b1f751",
+    "source-engine/src/lib.rs": "821717697dde9381ff5f1c99c9737eef216898ca0fa198d416ee1e182f91c83f",
+    "source-engine/src/health_domain.rs": "e4e660eaf267760e3fb733e55fd60e92d6619b42a5b594e1cff53de0ca7cbe9e",
+    "source-engine/src/apple_health.rs": "4024920fd86d59acd2e817fe5bcae227787391972ed65c034140f6f9b730db73",
+    "source-engine/src/source_targets.rs": "07162a674733819b8407450c69f055a1d3eb95dc1dea7bcbe20d8e61b68c22ce",
+    "source-engine/src/strict_json.rs": "4cfc56dbb987a4e515b1ea86bc5b3f0259859ab367e058f058f6325ebf651e07",
+    "source-engine/src/health_ingestion.rs": "1e07f067d31d24b41ea5521b31be461972b5e4e2329c83a6103fb33c6e4c2eea",
+    "source-engine/src/health_snapshot.rs": "8029db21addc3bd82ec325f1218bcda8a9b50d06c130c0b95bac4626742f8b20",
+    "source-engine/src/source_worker.rs": "d8d090e968fe59974960caa6585e7a3029ea044b39f342008120edab53105721",
+    "source-engine/src/repository.rs": "9514b9e17f47dec356ebb933a463a8032a4d818bbfb5be6d445773aa9523b700",
+    "source-engine/src/source_store.rs": "c6b4bc15f44a923cdf2c7eecbca10dd86ae3b427de3dae998785d07afa1f4d16",
+    "source-engine/src/artifact_io.rs": "8d8c309ee9403a715ae2858f9f3b652c6c81dfa0c498716e7f20602179f8516c",
+    "source-engine/src/source_file.rs": "da5413b68e3bc7bed9ed311931fd352b5d4c698b12fcae5fa3a27b2922c9f451",
+    "source-engine/src/apple_health_api.rs": "b653d14320603644a19c143dea9d10c0c131fb10b55eaa92b21e27cc25492ae8",
+    "application/sources_view.ts": "3fd83f1378c42ce52ab637193fc36813740627f0a949e8cd95f388e2035c4173",
+    "src/source_restoration_tests.rs": "458b767fdf1a0be4d7e301f63ae62f99f4cb1b907a01324be9932b15bd56e90d",
+    "src/health_conversation_host/source_bridge.rs": "5eab2ccbbabd8f7d017cf34a334790a7aa682487127cb6f342fdc3ff36302db4"
+  },
+  "changed": {
+    "Cargo.toml": {
+      "before": "70657e1c4f8e06cea6194acc161dae0fee9203b273d52730fc905db7f76e9799",
+      "after": "e50f334a495589608c0efcbb40c747451dd68694bcd06602fee086354eed6242"
+    },
+    "Cargo.lock": {
+      "before": "ee32ad73ec6b19b571de3b46492db98a8167b7be7f1e00170510be62b0403005",
+      "after": "f67da9f37fd261daba247d55198c08860845ba18d010acad56c70bd7f7c082e7"
+    },
+    "ui/health_ui.js": {
+      "before": "3ee17984fc9c4233d47668b0a7fc0bb78aa11034bdb4665deb0c673f97c20940",
+      "after": "0c5695ceaa7acf8df06b07252c9388f108a93f65992bd043c196f722f4e3d008"
+    },
+    "ui/apple_import.js": {
+      "before": "43ccb8fad27566fa92176133e7dc24a8a262222dfa6dda6e22f4cb0b0059d94b",
+      "after": "5599ce3cfb560d4c7095c31f21c259d794d33c13078360ef3ff2ce3487232ab9"
+    },
+    "ui/health_context.js": {
+      "before": "a21a139a29598fa3b8633234caab5eea9f1170518381c521e64bdd1e39acab4d",
+      "after": "f00ceaf85cfdb84839cf81b1531fa9f1d9b781be12be7a8a5ab036da9633673c"
+    },
+    "ui/settings_view.js": {
+      "before": "d97c30d010a211bcc1e1238009226aca67390f5ec77ab380961dea1846afd097",
+      "after": "219e84fbfbae4c3908317f35998a6b55311f7f7f1921fdce9e52445a4152a346"
+    },
+    "ui/conversation.css": {
+      "before": "b666295e6674670c1d5b4d35aa5a850cfb14261e8e390888eca9bf05daa2b38a",
+      "after": "fa5bece5f454314ba01e6d5ffa7b4f894c0c84a38532e6836ed81a68d8232331"
+    },
+    "application/health_context.ts": {
+      "before": "8e1627e5f0db21b3e4e4de7bfc62f4ffd4715c9e8b0c9360374e23d5cc99a28d",
+      "after": "1a74d852094b7c1a7f6e53881648e4e6e976b4a1227d3542e14cda4170a80053"
+    },
+    "application/settings_view.ts": {
+      "before": "0b73b579546f8fe598c89b1b8f61edf3ccc5b62427ed416c9ed395a737a4e364",
+      "after": "5d2f03a13fb8429e02e0a3cdcd70b133354de879d3ea939d49f2d99c18e22059"
+    },
+    "application/health_ui.ts": {
+      "before": "84c719da51c90e7522a2127ca3543e992681389056db0f5a3858abd1b83595fd",
+      "after": "8699b75c79f36826d25f8a539e9c81f10a3c4d2de51baaffc713dbc55b37eb03"
+    },
+    "application/apple_import.ts": {
+      "before": "02a06c4ae625941b82ddb539dd778b197d65410c76eca9a436b13594ee31aaab",
+      "after": "d3bbb8700b033c489d1ef1e54fabb9aa42c345e0da54fdef53970049b114037e"
+    },
+    "src/health_conversation_host.rs": {
+      "before": "a26ae735a951d951793d07d978dafa970eea6e9d894c7fa7c50b8a3e4644797d",
+      "after": "08e6848b2040ee053ee863cf8c3a6c1540b2cd4e843e317d8e9534845cf94b3e"
+    },
+    "src/host_gateway.rs": {
+      "before": "39bc5bd07963004b697a82919a5b8f89343fc4f75594e05bb81a45d419a227ca",
+      "after": "9557cc734e929685cee31a8e19a4e93c08d5b548d34c530891769ff6d82f5956"
+    },
+    "src/health_source.rs": {
+      "before": "34263f10cc2dce0e3a101605300c0b3599b0aa27b8470d63b08ee6712567f432",
+      "after": "986257e7bf28b810e83ba0d7188a08434269eff511bd14dbf69d7c1e3ba43c8c"
+    },
+    "src/main.rs": {
+      "before": "d1450dee9fc210f0081c1bcd57a65415f47c377e4d3c1fba501965213722c482",
+      "after": "7cf33334dbd46bc4cb5bfbbcf87e0f9918150d6d4fd467d7e7d575145136f206"
+    },
+    "src/health_conversation_host/controlled.rs": {
+      "before": "a5d4bbe9a0c519da0fcda54a576bf0fddc7c0cf04b674ef0dd1e8bbb91fc1205",
+      "after": "ce3567c08b048d4303d8aa7254b6dff31ba4b00e328d8037d088949b7a212963"
+    }
+  },
+  "removed": {}
+}

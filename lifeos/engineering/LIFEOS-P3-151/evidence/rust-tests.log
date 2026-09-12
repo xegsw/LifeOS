@@ -1,0 +1,24 @@
+   Compiling lifeos-p3-151 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-151/candidate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.91s
+     Running unittests src/main.rs (/private/tmp/lifeos-p3-151-health-conversation-v1/target/debug/deps/lifeos_p3_151-b5327bd3ddda95c3)
+
+running 16 tests
+test health_conversation_host::tests::fixed_scope_only ... ok
+test health_conversation_host::tests::drafts_preserve_text_cas_and_idempotency ... ok
+test health_conversation_host::tests::arbitrary_state_and_question_binding_rejected ... ok
+test health_conversation_host::tests::preflight_and_commit_revalidate_authorization ... ok
+test health_conversation_host::tests::commit_atomic_once_and_same_turn_replay ... ok
+test health_conversation_host::tests::historical_answer_hidden_when_any_health_input_becomes_unavailable ... ok
+test health_conversation_host::tests::duplicate_forged_generation_and_cross_domain_refs_rejected ... ok
+test health_conversation_host::tests::draft_revision_and_adapter_baseline_revalidated ... ok
+test health_conversation_host::tests::cancel_before_and_after_commit_is_honest ... ok
+test health_conversation_host::tests::raw_duplicate_unknown_null_and_mode_rejected ... ok
+test health_conversation_host::tests::restart_and_adapter_switch_keep_assets ... ok
+test health_conversation_host::tests::self_report_does_not_replace_sensor_projection ... ok
+test health_conversation_host::tests::scoped_authorized_current_candidates ... ok
+test health_conversation_host::tests::clarification_ignore_defer_do_not_write_state ... ok
+test health_conversation_host::tests::reply_and_correction_preserve_history_and_invalidate_dependents ... ok
+test health_conversation_host::tests::context_and_snapshot_budgets_are_enforced ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s
+

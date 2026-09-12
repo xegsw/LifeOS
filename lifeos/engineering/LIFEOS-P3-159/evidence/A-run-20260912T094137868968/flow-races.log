@@ -1,0 +1,33 @@
+✔ successful restoration clears earlier restore error (1.571791ms)
+✔ queued draft failure cannot survive successful prepare (0.205042ms)
+✔ late old draft failure cannot attach to new draft (0.104167ms)
+✔ saved result refresh failure retries only read and never prepares or sends again (0.418ms)
+✔ new prepare failure belongs to new turn and revision, prior answer is unchanged (0.105792ms)
+✔ late completed cancel cannot erase newly edited draft (0.120459ms)
+✔ superseded snapshot rejection is ignored (0.099042ms)
+✖ actual status renderer offers read-only recovery after saved result (1.789375ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 41.936125
+
+✖ failing tests:
+
+test at lifeos/engineering/LIFEOS-P3-159/tests/flow_races.mjs:15:1
+✖ actual status renderer offers read-only recovery after saved result (1.789375ms)
+  evalmachine.<anonymous>:3
+      const shown = document.querySelector('[data-proactive-shown]');
+                    ^
+  
+  ReferenceError: document is not defined
+      at evalmachine.<anonymous>:3:19
+      at Script.runInContext (node:vm:149:12)
+      at Script.runInNewContext (node:vm:154:17)
+      at Module.runInNewContext (node:vm:310:38)
+      at TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-159/tests/flow_races.mjs:18:41)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

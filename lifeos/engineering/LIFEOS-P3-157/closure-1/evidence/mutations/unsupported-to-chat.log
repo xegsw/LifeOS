@@ -1,0 +1,77 @@
+✔ strong-frame-unlisted-verb (0.598959ms)
+✔ strong-frame-another-verb (0.172833ms)
+✔ word-internal-negation (0.038625ms)
+✔ withdraw-unique (0.060209ms)
+✔ withdraw-no-target (0.070917ms)
+✔ withdraw-multiple (0.047041ms)
+✔ negative-new-intent (0.154166ms)
+✔ negative-not-withdrawal (0.072083ms)
+✔ cancelled-target (0.041833ms)
+✔ finished-target (0.075084ms)
+✔ quoted-withdrawal (0.05325ms)
+✔ hypothetical (0.026916ms)
+✔ question (0.031458ms)
+✔ uncertain (0.019167ms)
+✔ conflicting-clauses (0.025ms)
+✔ unsupported-explicit (0.037459ms)
+✔ ordinary-chat (0.025709ms)
+✔ cloud-affirmation (0.036958ms)
+✔ parse-none cannot fall into chat for explicit intent (0.089625ms)
+✖ unsupported explicit input never prepares disclosure and keeps draft (1.653667ms)
+✖ unsupported no matching cancellation is honest local no-change (0.115833ms)
+✖ unsupported read restoration does not parse or write (0.597125ms)
+✔ late cancelled parsing cannot write (0.085792ms)
+✔ legacy explicit negative new intent never becomes cancellation (0.024875ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 21
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 45.8265
+
+✖ failing tests:
+
+test at ../../../../../../private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/unsupported-to-chat/tests/closure_cases.mjs:30:1
+✖ unsupported explicit input never prepares disclosure and keeps draft (1.653667ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /没有记入/. Input:
+  
+  ''
+  
+      at TestContext.<anonymous> (file:///private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/unsupported-to-chat/tests/closure_cases.mjs:30:300)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '',
+    expected: /没有记入/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/unsupported-to-chat/tests/closure_cases.mjs:31:1
+✖ unsupported no matching cancellation is honest local no-change (0.115833ms)
+  { code: 'ipc_error_envelope_invalid', stage: 'prepare_turn' }
+
+test at ../../../../../../private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/unsupported-to-chat/tests/closure_cases.mjs:32:1
+✖ unsupported read restoration does not parse or write (0.597125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   cloud: 1,
+  -   cloud: 0,
+      writes: 0
+    }
+  
+      at TestContext.<anonymous> (file:///private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/unsupported-to-chat/tests/closure_cases.mjs:32:232)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { cloud: 1, writes: 0 },
+    expected: { cloud: 0, writes: 0 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

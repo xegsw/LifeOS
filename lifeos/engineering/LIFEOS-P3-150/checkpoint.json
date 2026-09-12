@@ -1,0 +1,41 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-150",
+  "attempt_id": "health-view-v1",
+  "updated_at": "2026-09-09T03:07:44.548834+00:00",
+  "task_contract_sha256": "0425602e535cb98d5aaa8d23630ec2085d65b10d941f0a3c0e5bb0b24960b23c",
+  "candidate_sha256": "9f2d35f060f2cae0922ee4ad86aef85071482c3b5306ded017655b8dacec27ec",
+  "baseline_sha256": "974ded8442c396dc85438224c13cdfe7ffcfdd3cfb828a1dba702436533a2541",
+  "stage": "manifest",
+  "status": "completed",
+  "pause_class": null,
+  "pause_reason_code": null,
+  "completed_checks": [
+    "synthetic_tests",
+    "native_gui",
+    "keyboard",
+    "lifecycle",
+    "history_preservation",
+    "real_readonly_launch"
+  ],
+  "pending_checks": [
+    "pm_user_acceptance"
+  ],
+  "rerun_checks": [],
+  "excluded_artifacts": [],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": true,
+    "direct_pid": 13316,
+    "writers_stopped": true,
+    "database_closed": false,
+    "temporary_root_state": "owned_0700"
+  },
+  "resume_from": "pm_user_acceptance",
+  "safe_to_resume": false,
+  "notes": "Real window running. Do not use GUI/AX/screenshot tools. User views locally. No real values or database hash in evidence.",
+  "real_database_accessed": true,
+  "real_access_mode": "local_app_readonly_only"
+}

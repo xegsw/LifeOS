@@ -1,0 +1,31 @@
+{
+  "task": "P3-149 S3 closure-2",
+  "engineering": "format/resource/resume implemented and tested",
+  "real_retry_count": 1,
+  "real_outcome": "failed_closed",
+  "reason_code": "health_interval_rejected",
+  "target_verified": true,
+  "inserted": 0,
+  "source_and_target_retained": true,
+  "no_automatic_retry": true,
+  "tests": {
+    "parser": 35,
+    "rust_unique": 66,
+    "frontend": 27,
+    "build": "passed",
+    "ci": "not run"
+  },
+  "candidate_unchanged_during_execution": true,
+  "real_member_paths_in_artifacts": false,
+  "real_health_body_values_or_hashes_in_artifacts": false,
+  "findings": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown": 1,
+    "Not_Implemented": 0
+  },
+  "unknown": "existing interval guard covers non-positive duration, duration over 7 days, or start/end offset mismatch; no content diagnostic performed",
+  "independent_review": "paused by user; not Pass",
+  "pm_acceptance": "pending"
+}

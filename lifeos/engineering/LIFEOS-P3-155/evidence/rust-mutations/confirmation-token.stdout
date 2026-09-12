@@ -1,0 +1,18 @@
+
+running 1 test
+test health_conversation_host::controlled_tests::forged_confirmation_token_never_dispatches ... FAILED
+
+failures:
+
+---- health_conversation_host::controlled_tests::forged_confirmation_token_never_dispatches stdout ----
+
+thread 'health_conversation_host::controlled_tests::forged_confirmation_token_never_dispatches' (21888114) panicked at src/health_conversation_host/controlled_tests.rs:26:189:
+assertion failed: s.consume(forged).is_err()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    health_conversation_host::controlled_tests::forged_confirmation_token_never_dispatches
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 116 filtered out; finished in 0.07s
+

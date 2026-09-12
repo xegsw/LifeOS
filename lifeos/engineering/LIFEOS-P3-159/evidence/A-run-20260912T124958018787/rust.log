@@ -1,0 +1,1164 @@
+warning: unused imports: `OptionalExtension` and `TransactionBehavior`
+ --> source-engine/src/repository.rs:2:36
+  |
+2 | use rusqlite::{params, Connection, OptionalExtension, TransactionBehavior};
+  |                                    ^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Sha256`
+ --> source-engine/src/repository.rs:5:20
+  |
+5 | use sha2::{Digest, Sha256};
+  |                    ^^^^^^
+
+warning: unused import: `self`
+ --> source-engine/src/apple_health.rs:5:18
+  |
+5 |     repository::{self, Error},
+  |                  ^^^^
+
+warning: unused import: `path::Path`
+ --> source-engine/src/update_checks.rs:3:14
+  |
+3 | use std::{fs,path::Path,os::unix::fs::PermissionsExt};
+  |              ^^^^^^^^^^
+
+warning: unused import: `rusqlite::params`
+ --> source-engine/src/update_checks.rs:4:5
+  |
+4 | use rusqlite::params;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: unused import: `Digest`
+ --> source-engine/src/repository.rs:5:12
+  |
+5 | use sha2::{Digest, Sha256};
+  |            ^^^^^^
+
+warning: unused variable: `root`
+   --> source-engine/src/repository.rs:105:9
+    |
+105 |     let root = crate::runtime_root::verify()?;
+    |         ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> source-engine/src/apple_health.rs:167:5
+    |
+167 |     mut progress: impl FnMut(u64),
+    |     ----^^^^^^^^
+    |     |
+    |     help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `root`
+  --> source-engine/src/lib.rs:18:83
+   |
+18 | ...on<std::path::PathBuf>>{let root=runtime_root::verify()?;if fixture.is_empty()||fixture.len()>60||!fixture.bytes().all(|b|b.is_as...
+   |                                ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+
+warning: unused variable: `root`
+  --> source-engine/src/lib.rs:29:83
+   |
+29 | ...<Value>>{let _g=gate()?;let root=runtime_root::verify()?;let path=runtime_root::store_path(fixture)?;if !path.try_exists().map_er...
+   |                                ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+
+warning: struct `Request` is never constructed
+  --> source-engine/src/repository.rs:40:12
+   |
+40 | pub struct Request {
+   |            ^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `time` is never used
+  --> source-engine/src/repository.rs:49:4
+   |
+49 | fn time() -> i64 {
+   |    ^^^^
+
+warning: function `text` is never used
+  --> source-engine/src/repository.rs:55:4
+   |
+55 | fn text<'a>(v: &'a Value, k: &str) -> R<&'a str> {
+   |    ^^^^
+
+warning: function `number` is never used
+  --> source-engine/src/repository.rs:60:4
+   |
+60 | fn number(v: &Value, k: &str) -> R<i64> {
+   |    ^^^^^^
+
+warning: function `id` is never used
+  --> source-engine/src/repository.rs:65:4
+   |
+65 | fn id(v: &Value, k: &str) -> R<String> {
+   |    ^^
+
+warning: function `fields` is never used
+  --> source-engine/src/repository.rs:76:4
+   |
+76 | fn fields(v: &Value, allowed: &[&str]) -> R<()> {
+   |    ^^^^^^
+
+warning: function `body` is never used
+  --> source-engine/src/repository.rs:87:4
+   |
+87 | fn body(s: &str) -> R<()> {
+   |    ^^^^
+
+warning: method `new_child` is never used
+   --> source-engine/src/artifact_io.rs:171:12
+    |
+ 40 | impl Dir {
+    | -------- method in this implementation
+...
+171 |     pub fn new_child(&self, s: &str) -> R<Self> {
+    |            ^^^^^^^^^
+
+warning: function `dispatch_raw` is never used
+  --> source-engine/src/apple_health_api.rs:36:8
+   |
+36 | pub fn dispatch_raw(body: tauri::ipc::InvokeBody, fixture: &str) -> Result<Value, Error> {
+   |        ^^^^^^^^^^^^
+
+warning: constant `LIMIT` is never used
+ --> source-engine/src/health_domain.rs:6:11
+  |
+6 | pub const LIMIT: usize = 128 * 1024;
+  |           ^^^^^
+
+warning: constant `DAY` is never used
+ --> source-engine/src/health_domain.rs:7:11
+  |
+7 | pub const DAY: i64 = 86_400_000;
+  |           ^^^
+
+warning: type alias `R` is never used
+ --> source-engine/src/health_domain.rs:8:6
+  |
+8 | type R<T> = Result<T, Error>;
+  |      ^
+
+warning: struct `Source` is never constructed
+  --> source-engine/src/health_domain.rs:11:12
+   |
+11 | pub struct Source { pub id: String, pub name: String }
+   |            ^^^^^^
+
+warning: struct `Sample` is never constructed
+  --> source-engine/src/health_domain.rs:14:12
+   |
+14 | pub struct Sample { pub sample_id: String, pub revision: u32, pub metric: String, pub start_ms: i64, pub end_ms: i64, pub value: f64...
+   |            ^^^^^^
+
+warning: struct `Envelope` is never constructed
+  --> source-engine/src/health_domain.rs:17:12
+   |
+17 | pub struct Envelope { pub schema: String, pub batch_id: String, pub exported_at_ms: i64, pub window_start_ms: i64, pub window_end_ms...
+   |            ^^^^^^^^
+
+warning: struct `Observation` is never constructed
+  --> source-engine/src/health_domain.rs:20:12
+   |
+20 | pub struct Observation { pub source: Source, pub sample: Sample, pub offset: i32, pub received_at: i64 }
+   |            ^^^^^^^^^^^
+
+warning: methods `identity`, `record_id`, `same_content`, and `keys` are never used
+  --> source-engine/src/health_domain.rs:22:9
+   |
+21 | impl Observation {
+   | ---------------- methods in this implementation
+22 |  pub fn identity(&self) -> String { format!("{}:{}", self.source.id, self.sample.sample_id) }
+   |         ^^^^^^^^
+23 |  pub fn record_id(&self) -> String { format!("health:{}:{}", self.identity(), self.sample.revision) }
+   |         ^^^^^^^^^
+24 |  pub fn same_content(&self, other: &Self) -> bool { self.source == other.source && self.sample == other.sample && self.offset == oth...
+   |         ^^^^^^^^^^^^
+25 |  pub fn keys(&self) -> BTreeSet<Key> { let shift = self.offset as i64 * 60000; ((self.sample.start_ms+shift).div_euclid(DAY)..=(self...
+   |         ^^^^
+
+warning: struct `Key` is never constructed
+  --> source-engine/src/health_domain.rs:28:12
+   |
+28 | pub struct Key { pub day: i64, pub offset: i32, pub metric: String }
+   |            ^^^
+
+warning: method `id` is never used
+  --> source-engine/src/health_domain.rs:29:19
+   |
+29 | impl Key { pub fn id(&self)->String {format!("health:{}:{}:{}",self.metric,self.day,self.offset)} }
+   | --------          ^^
+   | |
+   | method in this implementation
+
+warning: function `bad` is never used
+  --> source-engine/src/health_domain.rs:30:4
+   |
+30 | fn bad()->Error {Error::new("health_envelope_rejected")}
+   |    ^^^
+
+warning: function `ident` is never used
+  --> source-engine/src/health_domain.rs:31:4
+   |
+31 | fn ident(s:&str)->bool {!s.is_empty() && s.len()<=80 && s.bytes().all(|b|b.is_ascii_alphanumeric() || b"_-".contains(&b))}
+   |    ^^^^^
+
+warning: function `parse` is never used
+  --> source-engine/src/health_domain.rs:32:8
+   |
+32 | pub fn parse(bytes:&[u8])->R<Envelope> {
+   |        ^^^^^
+
+warning: function `observations` is never used
+  --> source-engine/src/health_domain.rs:47:8
+   |
+47 | pub fn observations(e:&Envelope,received_at:i64)->Vec<Observation> {e.samples.iter().map(|sample|Observation{source:e.source.clone()...
+   |        ^^^^^^^^^^^^
+
+warning: function `union` is never used
+  --> source-engine/src/health_domain.rs:48:4
+   |
+48 | fn union(mut spans:Vec<(i64,i64)>)->i64 {spans.sort();let mut total=0;let mut end=i64::MIN;for(a,b)in spans{total+=b-a.max(end).min(...
+   |    ^^^^^
+
+warning: function `project` is never used
+  --> source-engine/src/health_domain.rs:49:8
+   |
+49 | pub fn project(k:&Key, all:&[Observation])->Value {
+   |        ^^^^^^^
+
+warning: type alias `R` is never used
+  --> source-engine/src/health_snapshot.rs:11:6
+   |
+11 | type R<T> = Result<T, Error>;
+   |      ^
+
+warning: struct `Source` is never constructed
+  --> source-engine/src/health_snapshot.rs:14:8
+   |
+14 | struct Source {
+   |        ^^^^^^
+
+warning: struct `Query` is never constructed
+  --> source-engine/src/health_snapshot.rs:21:8
+   |
+21 | struct Query {
+   |        ^^^^^
+
+warning: struct `Sample` is never constructed
+  --> source-engine/src/health_snapshot.rs:28:8
+   |
+28 | struct Sample {
+   |        ^^^^^^
+
+warning: struct `Snapshot` is never constructed
+  --> source-engine/src/health_snapshot.rs:36:8
+   |
+36 | struct Snapshot {
+   |        ^^^^^^^^
+
+warning: function `fail` is never used
+  --> source-engine/src/health_snapshot.rs:51:4
+   |
+51 | fn fail(s: &str) -> Error {
+   |    ^^^^
+
+warning: function `key` is never used
+  --> source-engine/src/health_snapshot.rs:54:4
+   |
+54 | fn key(s: &str) -> bool {
+   |    ^^^
+
+warning: function `hash` is never used
+  --> source-engine/src/health_snapshot.rs:60:4
+   |
+60 | fn hash(v: &Value) -> String {
+   |    ^^^^
+
+warning: function `parse` is never used
+  --> source-engine/src/health_snapshot.rs:63:4
+   |
+63 | fn parse(bytes: &[u8]) -> R<Snapshot> {
+   |    ^^^^^
+
+warning: function `overlaps` is never used
+   --> source-engine/src/health_snapshot.rs:101:4
+    |
+101 | fn overlaps(a: i64, b: i64, c: i64, d: i64) -> bool {
+    |    ^^^^^^^^
+
+warning: function `reject_v1_mixing` is never used
+   --> source-engine/src/health_snapshot.rs:104:8
+    |
+104 | pub fn reject_v1_mixing(c: &Connection, keys: &std::collections::BTreeSet<domain::Key>) -> R<()> {
+    |        ^^^^^^^^^^^^^^^^
+
+warning: function `projection` is never used
+   --> source-engine/src/health_snapshot.rs:124:4
+    |
+124 | fn projection(
+    |    ^^^^^^^^^^
+
+warning: function `receive` is never used
+   --> source-engine/src/health_snapshot.rs:149:8
+    |
+149 | pub fn receive(c: &mut Connection, bytes: &[u8], received: i64) -> R<Value> {
+    |        ^^^^^^^
+
+warning: trait `HealthRepository` is never used
+ --> source-engine/src/health_ingestion.rs:8:11
+  |
+8 | pub trait HealthRepository { fn receive(&mut self, e:&Envelope, received_at:i64)->R<Value>; }
+  |           ^^^^^^^^^^^^^^^^
+
+warning: struct `SqliteHealth` is never constructed
+ --> source-engine/src/health_ingestion.rs:9:12
+  |
+9 | pub struct SqliteHealth<'a>(pub &'a mut Connection);
+  |            ^^^^^^^^^^^^
+
+warning: function `rows` is never used
+  --> source-engine/src/health_ingestion.rs:10:15
+   |
+10 | pub(crate) fn rows(c:&Connection,table:&str,kind:&str)->R<Vec<Value>> {
+   |               ^^^^
+
+warning: function `ingest` is never used
+  --> source-engine/src/health_ingestion.rs:49:8
+   |
+49 | pub fn ingest(port:&mut impl HealthRepository, bytes:&[u8], received_at:i64)->R<Value> {let e=domain::parse(bytes)?;port.receive(&e,...
+   |        ^^^^^^
+
+warning: function `now` is never used
+  --> source-engine/src/health_ingestion.rs:50:4
+   |
+50 | fn now()->i64 {std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap_or_default().as_millis() as i64}
+   |    ^^^
+
+warning: function `read_file` is never used
+  --> source-engine/src/health_ingestion.rs:51:4
+   |
+51 | fn read_file(dir:&crate::artifact_io::Dir,name:&str)->R<Vec<u8>> {
+   |    ^^^^^^^^^
+
+warning: function `scan` is never used
+  --> source-engine/src/health_ingestion.rs:58:8
+   |
+58 | pub fn scan(fixture:&str)->R<Value> {
+   |        ^^^^
+
+warning: static `STATUS` is never used
+  --> source-engine/src/health_ingestion.rs:73:8
+   |
+73 | static STATUS: std::sync::OnceLock<std::sync::Mutex<Value>>=std::sync::OnceLock::new();
+   |        ^^^^^^
+
+warning: function `status` is never used
+  --> source-engine/src/health_ingestion.rs:74:8
+   |
+74 | pub fn status()->Value {let mut v=STATUS.get_or_init(||std::sync::Mutex::new(json!({"mode":"synthetic","files":[]}))).lock().unwrap(...
+   |        ^^^^^^
+
+warning: function `start` is never used
+  --> source-engine/src/health_ingestion.rs:75:8
+   |
+75 | pub fn start() {std::thread::spawn(||loop {let s=match scan("app"){Ok(v)=>v,Err(e)=>json!({"mode":"synthetic","error":e.code})};*STA...
+   |        ^^^^^
+
+warning: function `receive_bytes` is never used
+  --> source-engine/src/health_ingestion.rs:79:8
+   |
+79 | pub fn receive_bytes(c:&mut Connection,bytes:&[u8],at:i64)->R<Value>{if bytes.len()>domain::LIMIT{return Err(Error::new("health_batc...
+   |        ^^^^^^^^^^^^^
+
+warning: function `resume` is never used
+   --> source-engine/src/source_api.rs:507:8
+    |
+507 | pub fn resume(fixture: &str) -> R<()> {
+    |        ^^^^^^
+
+warning: function `make_cursor` is never used
+   --> source-engine/src/source_store.rs:552:8
+    |
+552 | pub fn make_cursor(
+    |        ^^^^^^^^^^^
+
+warning: function `progress` is never used
+   --> source-engine/src/source_worker.rs:363:8
+    |
+363 | pub fn progress(c: &Connection, l: &Lease) -> R<Value> {
+    |        ^^^^^^^^
+
+warning: `lifeos-source-engine` (lib) generated 62 warnings (run `cargo fix --lib -p lifeos-source-engine` to apply 9 suggestions)
+   Compiling lifeos-p3-152 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-159/candidate)
+warning: unexpected `cfg` condition value: `voice-native-tests`
+   --> src/voice/native.rs:376:17
+    |
+376 | #[cfg(all(test, feature = "voice-native-tests"))]
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: expected values for `feature` are: `controlled-real`, `online-synthetic`, and `synthetic-driver`
+    = help: consider adding `voice-native-tests` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: `#[warn(unexpected_cfgs)]` on by default
+
+warning: unused import: `SendPlan`
+   --> src/health_conversation_host.rs:192:98
+    |
+192 | #[path="health_conversation_host/controlled.rs"]mod controlled;pub(crate) use controlled::{Start,SendPlan};
+    |                                                                                                  ^^^^^^^^
+    |
+    = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `contract::*`
+ --> src/health_conversation_host/coordination/fixtures.rs:2:5
+  |
+2 | use contract::*;
+  |     ^^^^^^^^^^^
+
+warning: unused import: `V8Plan`
+   --> src/health_conversation_host.rs:222:31
+    |
+222 | pub(crate) use coordination::{V8Plan,V8Start};
+    |                               ^^^^^^
+
+warning: unused import: `Request`
+ --> src/conversation_contract.rs:2:32
+  |
+2 | use crate::repository::{Error, Request};
+  |                                ^^^^^^^
+
+warning: unused import: `io::Write`
+ --> src/runtime_root.rs:2:92
+  |
+2 | use std::{path::{Path,PathBuf},fs,os::unix::fs::{MetadataExt,OpenOptionsExt,DirBuilderExt},io::Write};
+  |                                                                                            ^^^^^^^^^
+
+warning: variable does not need to be mutable
+   --> src/health_conversation_host/coordination.rs:558:17
+    |
+558 |             let mut model_started = Instant::now();
+    |                 ----^^^^^^^^^^^^^
+    |                 |
+    |                 help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: variants `Data` and `Failure` are never constructed
+  --> src/voice/gateway.rs:24:5
+   |
+21 | pub enum Frame {
+   |          ----- variants in this enum
+...
+24 |     Data(Vec<u8>),
+   |     ^^^^
+25 |     Eof,
+26 |     Failure,
+   |     ^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `0` is never read
+  --> src/voice/gateway.rs:35:11
+   |
+35 |     Parts(Vec<Part>),
+   |     ----- ^^^^^^^^^
+   |     |
+   |     field in this variant
+   |
+help: consider changing the field to be of unit type to suppress this warning while preserving the field numbering, or remove the field
+   |
+35 -     Parts(Vec<Part>),
+35 +     Parts(()),
+   |
+
+warning: field `0` is never read
+  --> src/voice/gateway.rs:36:11
+   |
+36 |     Final(String),
+   |     ----- ^^^^^^
+   |     |
+   |     field in this variant
+   |
+help: consider changing the field to be of unit type to suppress this warning while preserving the field numbering, or remove the field
+   |
+36 -     Final(String),
+36 +     Final(()),
+   |
+
+warning: field `0` is never read
+   --> src/voice/mimo.rs:104:10
+    |
+104 |     Text(String),
+    |     ---- ^^^^^^
+    |     |
+    |     field in this variant
+    |
+help: consider changing the field to be of unit type to suppress this warning while preserving the field numbering, or remove the field
+    |
+104 -     Text(String),
+104 +     Text(()),
+    |
+
+warning: enum `Input` is never used
+  --> src/voice/native.rs:57:10
+   |
+57 | pub enum Input {
+   |          ^^^^^
+
+warning: struct `AudioContext` is never constructed
+  --> src/voice/native.rs:61:8
+   |
+61 | struct AudioContext {
+   |        ^^^^^^^^^^^^
+
+warning: function `samples` is never used
+  --> src/voice/native.rs:65:15
+   |
+65 | extern "C" fn samples(ctx: *mut c_void, pcm: *const f32, n: i32) {
+   |               ^^^^^^^
+
+warning: function `device_event` is never used
+  --> src/voice/native.rs:75:15
+   |
+75 | extern "C" fn device_event(ctx: *mut c_void, code: i32) {
+   |               ^^^^^^^^^^^^
+
+warning: struct `NativeAudio` is never constructed
+  --> src/voice/native.rs:84:12
+   |
+84 | pub struct NativeAudio {
+   |            ^^^^^^^^^^^
+
+warning: associated items `new`, `start`, `stop`, `interrupt`, `enqueue`, and `healthy` are never used
+   --> src/voice/native.rs:92:12
+    |
+ 91 | impl NativeAudio {
+    | ---------------- associated items in this implementation
+ 92 |     pub fn new() -> Result<Self, &'static str> {
+    |            ^^^
+...
+114 |     pub fn start(&mut self) -> Result<(), &'static str> {
+    |            ^^^^^
+...
+121 |     pub fn stop(&mut self) {
+    |            ^^^^
+...
+130 |     pub fn interrupt(&mut self) {
+    |            ^^^^^^^^^
+...
+133 |     pub fn enqueue(&mut self, pcm: &[u8]) -> Result<(), &'static str> {
+    |            ^^^^^^^
+...
+151 |     pub fn healthy(&mut self) -> bool {
+    |            ^^^^^^^
+
+warning: struct `DetectorAssets` is never constructed
+   --> src/voice/native.rs:168:12
+    |
+168 | pub struct DetectorAssets {
+    |            ^^^^^^^^^^^^^^
+
+warning: struct `Detector` is never constructed
+   --> src/voice/native.rs:176:8
+    |
+176 | struct Detector {
+    |        ^^^^^^^^
+
+warning: struct `NativeWake` is never constructed
+   --> src/voice/native.rs:184:12
+    |
+184 | pub struct NativeWake(std::rc::Rc<Detector>);
+    |            ^^^^^^^^^^
+
+warning: struct `NativeVad` is never constructed
+   --> src/voice/native.rs:185:12
+    |
+185 | pub struct NativeVad(std::rc::Rc<Detector>);
+    |            ^^^^^^^^^
+
+warning: function `detectors` is never used
+   --> src/voice/native.rs:186:8
+    |
+186 | pub fn detectors(a: &DetectorAssets) -> Result<(NativeWake, NativeVad), &'static str> {
+    |        ^^^^^^^^^
+
+warning: trait `CredentialAccess` is never used
+   --> src/voice/native.rs:233:11
+    |
+233 | pub trait CredentialAccess {
+    |           ^^^^^^^^^^^^^^^^
+
+warning: struct `HttpContext` is never constructed
+   --> src/voice/native.rs:240:8
+    |
+240 | struct HttpContext {
+    |        ^^^^^^^^^^^
+
+warning: function `http_event` is never used
+   --> src/voice/native.rs:245:15
+    |
+245 | extern "C" fn http_event(ctx: *mut c_void, code: i32, data: *const u8, n: i32) -> i32 {
+    |               ^^^^^^^^^^
+
+warning: struct `Request` is never constructed
+   --> src/voice/native.rs:269:8
+    |
+269 | struct Request {
+    |        ^^^^^^^
+
+warning: struct `NativeTransport` is never constructed
+   --> src/voice/native.rs:281:12
+    |
+281 | pub struct NativeTransport<C: CredentialAccess> {
+    |            ^^^^^^^^^^^^^^^
+
+warning: associated items `new`, `healthy`, and `completed` are never used
+   --> src/voice/native.rs:289:12
+    |
+288 | impl<C: CredentialAccess> NativeTransport<C> {
+    | -------------------------------------------- associated items in this implementation
+289 |     pub fn new(credential: C) -> Self {
+    |            ^^^
+...
+299 |     pub fn healthy(&mut self) -> bool {
+    |            ^^^^^^^
+...
+307 |     pub fn completed(&mut self, id: &str) {
+    |            ^^^^^^^^^
+
+warning: function `lifeos_voice_http_available` is never used
+  --> src/voice/native.rs:19:8
+   |
+19 |     fn lifeos_voice_http_available() -> i32;
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_voice_audio_create` is never used
+  --> src/voice/native.rs:20:8
+   |
+20 |     fn lifeos_voice_audio_create(
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_voice_audio_start` is never used
+  --> src/voice/native.rs:25:8
+   |
+25 |     fn lifeos_voice_audio_start(p: *mut c_void) -> i32;
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_voice_audio_stop` is never used
+  --> src/voice/native.rs:26:8
+   |
+26 |     fn lifeos_voice_audio_stop(p: *mut c_void);
+   |        ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_voice_audio_interrupt` is never used
+  --> src/voice/native.rs:27:8
+   |
+27 |     fn lifeos_voice_audio_interrupt(p: *mut c_void) -> u64;
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_voice_audio_push` is never used
+  --> src/voice/native.rs:28:8
+   |
+28 |     fn lifeos_voice_audio_push(p: *mut c_void, b: *const u8, n: i32, g: u64) -> i32;
+   |        ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_voice_audio_destroy` is never used
+  --> src/voice/native.rs:29:8
+   |
+29 |     fn lifeos_voice_audio_destroy(p: *mut c_void);
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_voice_http_create` is never used
+  --> src/voice/native.rs:30:8
+   |
+30 |     fn lifeos_voice_http_create(
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_voice_http_start` is never used
+  --> src/voice/native.rs:35:8
+   |
+35 |     fn lifeos_voice_http_start(
+   |        ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_voice_http_cancel` is never used
+  --> src/voice/native.rs:43:8
+   |
+43 |     fn lifeos_voice_http_cancel(p: *mut c_void);
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_voice_http_destroy` is never used
+  --> src/voice/native.rs:44:8
+   |
+44 |     fn lifeos_voice_http_destroy(p: *mut c_void);
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_detector_create` is never used
+  --> src/voice/native.rs:45:8
+   |
+45 |     fn lifeos_detector_create(
+   |        ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_detector_accept` is never used
+  --> src/voice/native.rs:53:8
+   |
+53 |     fn lifeos_detector_accept(p: *mut c_void, pcm: *const f32, n: i32, wake: i32) -> i32;
+   |        ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_detector_reset` is never used
+  --> src/voice/native.rs:54:8
+   |
+54 |     fn lifeos_detector_reset(p: *mut c_void);
+   |        ^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `lifeos_detector_destroy` is never used
+  --> src/voice/native.rs:55:8
+   |
+55 |     fn lifeos_detector_destroy(p: *mut c_void);
+   |        ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: method `fail` is never used
+   --> src/voice/session.rs:166:12
+    |
+ 32 | impl Session {
+    | ------------ method in this implementation
+...
+166 |     pub fn fail(&mut self, now: u64) {
+    |            ^^^^
+
+warning: field `generation` is never read
+ --> src/voice/worker.rs:9:12
+  |
+9 |     Woke { generation: u64 },
+  |     ----   ^^^^^^^^^^
+  |     |
+  |     field in this variant
+
+warning: field `generation` is never read
+  --> src/voice/worker.rs:11:17
+   |
+11 |     Utterance { generation: u64, audio: Audio },
+   |     ---------   ^^^^^^^^^^
+   |     |
+   |     field in this variant
+
+warning: field `0` is never read
+  --> src/voice/worker.rs:12:11
+   |
+12 |     Error(&'static str),
+   |     ----- ^^^^^^^^^^^^
+   |     |
+   |     field in this variant
+   |
+help: consider changing the field to be of unit type to suppress this warning while preserving the field numbering, or remove the field
+   |
+12 -     Error(&'static str),
+12 +     Error(()),
+   |
+
+warning: associated function `open_driver` is never used
+  --> src/health_conversation_host.rs:47:44
+   |
+45 | impl Store{
+   | ---------- associated function in this implementation
+46 |  pub(crate) fn fixture(&self)->String{Path::new(self.c.path().unwrap()).file_stem().unwrap().to_str().unwrap().replace('_',"-")}
+47 |  #[cfg(feature="synthetic-driver")] pub fn open_driver()->R<Self>{let args:Vec<String>=std::env::args().skip(1).collect();
+   |                                            ^^^^^^^^^^^
+
+warning: function `text` is never used
+  --> src/conversation_contract.rs:39:8
+   |
+39 | pub fn text(v: &Value, k: &str, empty: bool) -> R<String> {
+   |        ^^^^
+
+warning: function `ids` is never used
+  --> src/conversation_contract.rs:46:8
+   |
+46 | pub fn ids(v: &Value, k: &str, max: usize) -> R<Vec<String>> {
+   |        ^^^
+
+warning: constant `P3_144_REFERENCE_PREFIX` is never used
+  --> src/secure_credentials.rs:16:7
+   |
+16 | const P3_144_REFERENCE_PREFIX: &str = "p3-144-key-";
+   |       ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: variant `P3_144` is never constructed
+  --> src/secure_credentials.rs:34:5
+   |
+33 | pub enum CredentialLineage {
+   |          ----------------- variant in this enum
+34 |     P3_144,
+   |     ^^^^^^
+   |
+   = note: `CredentialLineage` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: function `encrypt_with_port` is never used
+   --> src/secure_credentials.rs:308:8
+    |
+308 | pub fn encrypt_with_port<P: CredentialPort>(
+    |        ^^^^^^^^^^^^^^^^^
+
+warning: function `encrypt` is never used
+   --> src/secure_credentials.rs:343:8
+    |
+343 | pub fn encrypt(api_key: &str, aad: &[u8]) -> Result<EncryptedCredential, CredentialFailure> {
+    |        ^^^^^^^
+
+warning: method `fail_next_find` is never used
+   --> src/secure_credentials.rs:418:12
+    |
+408 | impl MemoryCredentialPort {
+    | ------------------------- method in this implementation
+...
+418 |     pub fn fail_next_find(&mut self, failure: CredentialFailure) {
+    |            ^^^^^^^^^^^^^^
+
+warning: struct `SyntheticModel` is never constructed
+  --> src/model_port.rs:49:12
+   |
+49 | pub struct SyntheticModel;
+   |            ^^^^^^^^^^^^^^
+
+warning: function `citations` is never used
+  --> src/model_port.rs:67:8
+   |
+67 | pub fn citations(text: &str, items: &[Value]) -> (Vec<Value>, usize) {
+   |        ^^^^^^^^^
+
+warning: function `v7_B_partition_and_C_budget_boundaries_do_not_share_an_unlimited_mode` should have a snake case name
+  --> src/health_conversation_host/operations_tests.rs:36:11
+   |
+36 | #[test]fn v7_B_partition_and_C_budget_boundaries_do_not_share_an_unlimited_mode(){
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: convert the identifier to snake case: `v7_b_partition_and_c_budget_boundaries_do_not_share_an_unlimited_mode`
+   |
+   = note: `#[warn(non_snake_case)]` (part of `#[warn(nonstandard_style)]`) on by default
+
+warning: unused `Result` that must be used
+  --> src/health_reader/aux_tests.rs:19:107
+   |
+19 | ...ap();let t=Instant::now();r.c.progress_handler(1000,Some(move||t.elapsed()>Duration::from_millis(20)));let result=r.c.query_row("...
+   |                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: this `Result` may be an `Err` variant, which should be handled
+   = note: `#[warn(unused_must_use)]` (part of `#[warn(unused)]`) on by default
+help: use `let _ = ...` to ignore the resulting value
+   |
+19 | #[test]fn sqlite_progress_deadline(){let p=fixture();let r=Reader::open(&p).unwrap();let t=Instant::now();let _ = r.c.progress_handler(1000,Some(move||t.elapsed()>Duration::from_millis(20)));let result=r.c.query_row("WITH RECURSIVE n(x) AS (VALUES(1) UNION ALL SELECT x+1 FROM n WHERE x<100000000) SELECT sum(x) FROM n",[],|r|r.get::<_,i64>(0));assert!(result.is_err());assert!(t.elapsed()<Duration::from_secs(1));}
+   |                                                                                                           +++++++
+
+warning: `lifeos-p3-152` (bin "lifeos-p3-152" test) generated 59 warnings (run `cargo fix --bin "lifeos-p3-152" -p lifeos-p3-152 --tests` to apply 5 suggestions)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.38s
+     Running unittests src/main.rs (/private/tmp/lifeos-p3-159-unified-proactive-v1/build/offline/debug/deps/lifeos_p3_152-e2d221edd6352e01)
+
+running 303 tests
+test credential_recovery::tests::credential_check_background_and_grant_change_reject_before_read ... ok
+test credential_recovery::tests::credential_check_cancel_timeout_and_changed_binding_discard_late_result ... ok
+test credential_recovery::tests::credential_check_ipc_cannot_supply_authorization_key_reference_or_start ... ok
+test credential_recovery::tests::credential_check_native_grant_is_single_use_and_cannot_be_forged ... ok
+test credential_recovery::tests::credential_check_returns_only_fixed_diagnostic_and_never_key_or_error_description ... ok
+test credential_recovery::tests::credential_check_status_is_inert_and_success_does_not_resume_background ... ok
+test failed_import_start_never_publishes_running ... ok
+test health_conversation_host::controlled_tests::c154_confirm_derivation_write_failure_rolls_back_and_preserves_old_rows ... ok
+test health_conversation_host::controlled_tests::c154_confirm_keychain_unavailable_is_before_adapter_and_keeps_old_ciphertext ... ok
+test health_conversation_host::controlled_tests::c154_confirm_production_parser_failures_are_consumed_without_resend ... ok
+test health_conversation_host::controlled_tests::c154_confirm_storage_lock_before_consumption_has_zero_adapter_calls ... ok
+test health_conversation_host::controlled_tests::c154_confirm_store_busy_after_response_is_not_network_failure_and_restart_never_resends ... ok
+test health_conversation_host::controlled_tests::c1_expired_state_blocks_confirm_before_adapter_call ... ok
+test health_conversation_host::controlled_tests::c1_state_expiry_during_adapter_marks_late_response_stale ... ok
+test health_conversation_host::controlled_tests::cancel_after_handoff_does_not_claim_remote_retraction ... ok
+test health_conversation_host::controlled_tests::cancelled_preview_and_forged_body_are_rejected ... ok
+test health_conversation_host::controlled_tests::catalog_change_invalidates_old_confirmation ... ok
+test health_conversation_host::controlled_tests::catalog_cloud_local_persist_restart_and_cas ... ok
+test health_conversation_host::controlled_tests::catalog_metadata_and_forged_reserved_sources_never_enter_context ... ok
+test health_conversation_host::controlled_tests::catalog_strict_secret_endpoint_and_range_rejected ... ok
+test health_conversation_host::controlled_tests::concurrent_duplicate_while_transport_owns_body_does_not_send_twice ... ok
+test health_conversation_host::controlled_tests::credential_check_binds_effective_lifecycle_not_raw_legacy_enabled_field ... ok
+test health_conversation_host::controlled_tests::exact_preview_body_is_only_body_sent_and_duplicate_consumes_once ... ok
+test health_conversation_host::controlled_tests::expired_preview_or_client_supplied_body_cannot_be_confirmed ... ok
+test health_conversation_host::controlled_tests::forged_confirmation_token_never_dispatches ... ok
+test health_conversation_host::controlled_tests::future_or_wrong_metric_has_no_fabricated_health_projection ... ok
+test health_conversation_host::controlled_tests::old_projection_invalidated_even_after_large_unrelated_history ... ok
+test health_conversation_host::controlled_tests::readonly_health_source_bytes_unchanged_and_changes_invalidate_preview ... ok
+test health_conversation_host::controlled_tests::real_initial_state_contains_no_synthetic_personal_rows ... ok
+test health_conversation_host::controlled_tests::real_local_response_never_uses_client_answer ... ok
+test health_conversation_host::controlled_tests::remote_key_echo_is_never_persisted_or_returned ... ok
+test health_conversation_host::controlled_tests::restart_inflight_stays_unknown_and_never_resends ... ok
+test health_conversation_host::controlled_tests::second_preview_replaces_confirmation_slot ... ok
+test health_conversation_host::controlled_tests::second_store_instance_and_source_sidecar_fail_closed ... ok
+test health_conversation_host::controlled_tests::stale_model_draft_source_or_credential_never_reaches_adapter ... ok
+test health_conversation_host::controlled_tests::unknown_estimated_and_multi_source_are_preserved_without_source_writes ... ok
+test health_conversation_host::coordination::online_budget::tests::online_local_turn_does_not_count_as_model_post ... ok
+test health_conversation_host::coordination::online_budget::tests::online_old_and_proactive_pools_share_outer_count_without_transfer ... ok
+test health_conversation_host::coordination::online_budget::tests::online_old_budget_unknown_is_not_new_allowance ... ok
+test health_conversation_host::coordination::online_budget::tests::online_outer_last_daily_allowance_is_shared_under_concurrency ... ok
+test health_conversation_host::coordination::online_budget::tests::online_outer_total_ceiling_includes_old_purpose_and_rolls_back ... ok
+test health_conversation_host::coordination::real_local::tests::real_local_existing_budget_missing_and_corrupt_never_default_to_zero ... ok
+test health_conversation_host::coordination::real_local::tests::real_local_failed_send_reopen_never_refunds_or_sends_twice ... ok
+test health_conversation_host::coordination::real_local::tests::real_local_old_synthetic_receipt_cannot_replay_resume_or_project ... ok
+test health_conversation_host::coordination::real_local::tests::real_local_second_query_mode_and_fixture_state_spoof_rejected ... ok
+test health_conversation_host::coordination::real_local::tests::real_local_shared_v7_primitive_and_v8_budget_compete_for_last_allowance ... ok
+test health_conversation_host::coordination::real_local::tests::real_local_without_queries_supports_answer_and_action_with_shared_budget ... ok
+test health_conversation_host::coordination::tests::d0673_gateway_diagnostics_are_metadata_only_and_replay_does_not_send ... ok
+test health_conversation_host::coordination::tests::d0673_output_defaults_are_only_for_v8_online ... ok
+test health_conversation_host::coordination::tests::d0674_elapsed_activity_does_not_override_persistent_call_limits ... ok
+test health_conversation_host::coordination::tests::d0674_host_journal_crash_preserves_resumable_draft ... ok
+test health_conversation_host::coordination::tests::d0674_host_work_over_old_total_can_commit_once ... ok
+test health_conversation_host::coordination::tests::d0674_initial_host_crash_keeps_input_and_allows_prepare ... ok
+test health_conversation_host::coordination::tests::d0674_resume_above_old_budget_keeps_counts_and_rechecks_permissions ... ok
+test health_conversation_host::coordination::tests::d0674_single_request_deadline_preserves_error_and_rejects_late_success ... ok
+test health_conversation_host::coordination::tests::v8_cancellation_during_credential_wait_prevents_plan ... ok
+test health_conversation_host::coordination::tests::v8_cancelled_inflight_ignores_late_action_response ... ok
+test health_conversation_host::coordination::tests::v8_condition_and_action_are_atomic_on_failure ... ok
+test health_conversation_host::coordination::tests::v8_condition_projection_uses_latest_version_and_detects_concurrent_correction ... ok
+test health_conversation_host::coordination::tests::v8_condition_three_values_and_record_only ... ok
+test health_conversation_host::coordination::tests::v8_condition_type_confusion_and_unknown_are_not_true ... ok
+test health_conversation_host::coordination::tests::v8_create_replay_and_normal_restart ... ok
+test health_conversation_host::coordination::tests::v8_credential_wait_has_no_sql_transaction_or_host_reservation ... ok
+test health_conversation_host::coordination::tests::v8_current_nonexecution_constraint_overrides_forged_model_intent ... ok
+test health_conversation_host::coordination::tests::v8_expired_query_cannot_be_renewed_by_resume ... ok
+test health_conversation_host::coordination::tests::v8_manual_wait_over_three_minutes_preserves_activity_budget ... ok
+test health_conversation_host::coordination::tests::v8_query_receipt_is_persistent_and_not_a_model_permission ... ok
+test health_conversation_host::coordination::tests::v8_query_result_contract_rejects_forged_fields_facts_and_coverage ... ok
+test health_conversation_host::coordination::tests::v8_quotes_cannot_authorize_conditional_or_direct_actions ... ok
+test health_conversation_host::coordination::tests::v8_remaining_activity_budget_reaches_transport_before_dispatch ... ok
+test health_conversation_host::coordination::tests::v8_restart_inflight_is_unknown_not_resent ... ok
+test health_conversation_host::coordination::tests::v8_second_query_is_rejected_and_no_extra_tool ... ok
+test health_conversation_host::coordination::tests::v8_stale_cancellation_cannot_cancel_another_revision ... ok
+test health_conversation_host::coordination::tests::v8_status_and_snapshot_do_not_disclose_after_revocation ... ok
+test health_conversation_host::coordination::tests::v8_strict_dtos_and_forged_targets_reject_without_model ... ok
+test health_conversation_host::coordination::tests::v8_three_public_adapters_share_one_query_and_second_confirmation ... ok
+test health_conversation_host::coordination::tests::v8_tool_read_permission_does_not_imply_model_processing ... ok
+test health_conversation_host::coordination::tests::v8_wait_expiry_resume_does_not_reset_budget ... ok
+test health_conversation_host::coordination::tests::v8_waited_credentials_revalidate_before_consumption ... ok
+test health_conversation_host::existing_schema::tests::every_required_table_missing_fails_before_any_write ... ok
+test health_conversation_host::existing_schema::tests::existing_complete_schema_is_readonly ... ok
+test health_conversation_host::existing_schema::tests::existing_only_existing_file_is_not_changed ... ok
+test health_conversation_host::existing_schema::tests::existing_only_missing_file_is_never_created ... ok
+test health_conversation_host::existing_schema::tests::view_wrong_column_type_or_key_is_not_repaired ... ok
+test health_conversation_host::health_view_tests::auxiliary_does_not_write_or_use_model ... ok
+test health_conversation_host::health_view_tests::existing_health_authorization_required_including_synthetic ... ok
+test health_conversation_host::health_view_tests::imported_observation_spoof_does_not_expand_model_eligibility ... ok
+test health_conversation_host::health_view_tests::invalid_request_rejected_before_missing_source_open ... ok
+test health_conversation_host::interaction::tests::interaction_changed_text_canonical_and_conversation_are_rejected ... ok
+test health_conversation_host::interaction::tests::interaction_host_allocates_canonical_and_keeps_legacy_ids ... ok
+test health_conversation_host::interaction::tests::interaction_metadata_does_not_consume_old_pages ... ok
+test health_conversation_host::interaction::tests::interaction_partial_and_ungranted_voice_never_submit ... ok
+test health_conversation_host::interaction::tests::interaction_pending_mapping_recovers_after_downstream_fault ... ok
+test health_conversation_host::interaction::tests::interaction_user_turn_mirror_roundtrips_without_business_fields ... ok
+test health_conversation_host::operations::tests::d0667_last_transport_boundary_rejects_new_authorization_race ... ok
+test health_conversation_host::operations::tests::d0667_pretransport_cancel_preserves_original_receipt ... ok
+test health_conversation_host::operations::tests::d0667_unchanged_credential_wait_allows_one_plan ... ok
+test health_conversation_host::operations::tests::d0667_waited_credential_rechecks_expiry_revoke_profile_enabled_and_target ... ok
+test health_conversation_host::operations::tests::v7_B_partition_and_C_budget_boundaries_do_not_share_an_unlimited_mode ... ok
+test health_conversation_host::operations::tests::v7_budget_cannot_be_reset_by_new_preview_or_restart ... ok
+test health_conversation_host::operations::tests::v7_cancel_after_dispatch_discards_late_candidate ... ok
+test health_conversation_host::operations::tests::v7_cancel_before_confirm_has_zero_calls ... ok
+test health_conversation_host::operations::tests::v7_chinese_prompt_and_variable_clarification_text_are_preserved ... ok
+test health_conversation_host::operations::tests::v7_clarification_diagnostics_keep_strict_fields_refs_and_spans ... ok
+test health_conversation_host::operations::tests::v7_conditional_quote_and_vague_pause_cannot_be_model_authority ... ok
+test health_conversation_host::operations::tests::v7_elapsed_time_preserves_topic_but_not_send_authorization ... ok
+test health_conversation_host::operations::tests::v7_empty_nonjson_duplicate_fields_null_extra_permission_are_rejected ... ok
+test health_conversation_host::operations::tests::v7_empty_target_clarification_is_valid_and_persisted ... ok
+test health_conversation_host::operations::tests::v7_explicit_short_state_and_existing_source_context_are_retained ... ok
+test health_conversation_host::operations::tests::v7_forged_confirm_fields_or_request_cannot_send ... ok
+test health_conversation_host::operations::tests::v7_late_deadline_or_authorization_change_never_executes ... ok
+test health_conversation_host::operations::tests::v7_lost_return_and_restart_read_same_receipt_no_resend ... ok
+test health_conversation_host::operations::tests::v7_public_cancellation_uses_existing_identity ... ok
+test health_conversation_host::operations::tests::v7_public_create_adjust_complete_identity_replay_and_disclosure ... ok
+test health_conversation_host::operations::tests::v7_response_truncation_and_timeout_are_consumed_without_business_change ... ok
+test health_conversation_host::operations::tests::v7_restart_inflight_never_resends_or_reinterprets ... ok
+test health_conversation_host::operations::tests::v7_safe_transport_error_classes_are_preserved_without_resend ... ok
+test health_conversation_host::operations::tests::v7_source_text_and_old_message_cannot_supply_current_evidence ... ok
+test health_conversation_host::operations::tests::v7_target_version_race_cannot_overwrite_new_action ... ok
+test health_conversation_host::operations::tests::v7_terminal_action_does_not_keep_automatic_topic_alive ... ok
+test health_conversation_host::operations::tests::v7_terminal_targets_are_not_retrieved_by_lexical_similarity ... ok
+test health_conversation_host::operations::tests::v7_topic_switch_breaks_implicit_target ... ok
+test health_conversation_host::operations::tests::v7_transaction_fault_rolls_back_action_feedback_and_receipt ... ok
+test health_conversation_host::operations::tests::v7_two_possible_targets_do_not_follow_single_history_shortcut ... ok
+test health_conversation_host::operations::tests::v7_unicode_scalar_offsets_and_oversize_budget ... ok
+test health_conversation_host::operations::tests::v7_untrusted_transport_error_text_is_not_persisted ... ok
+test health_conversation_host::proactive::civil_clock::tests::local_day_handles_dst_without_changing_machine_timezone ... ok
+test health_conversation_host::proactive::tests::proactive_action_handoff_rechecks_basis_before_original_transaction ... ok
+test health_conversation_host::proactive::tests::proactive_analysis_reservation_faults_rollback_consumed_events_and_budget ... ok
+test health_conversation_host::proactive::tests::proactive_capture_each_write_fault_preserves_input_and_idempotency ... ok
+test health_conversation_host::proactive::tests::proactive_committed_source_cursor_updates_once_and_preserves_scope ... ok
+test health_conversation_host::proactive::tests::proactive_constraint_can_adjust_advice_in_same_response_without_second_request ... ok
+test health_conversation_host::proactive::tests::proactive_constraint_expiry_during_response_rejects_late_result ... ok
+test health_conversation_host::proactive::tests::proactive_control_history_never_hides_permanent_suppression ... ok
+test health_conversation_host::proactive::tests::proactive_controls_do_not_consume_legacy_pagination ... ok
+test health_conversation_host::proactive::tests::proactive_correction_retains_original_and_supplies_explicit_replacement ... ok
+test health_conversation_host::proactive::tests::proactive_credential_failure_pauses_until_explicit_restore_without_budget_reset ... ok
+test health_conversation_host::proactive::tests::proactive_current_limit_and_snooze_are_compatible_in_either_order ... ok
+test health_conversation_host::proactive::tests::proactive_default_off_and_frontend_cannot_forge_domain_event ... ok
+test health_conversation_host::proactive::tests::proactive_disable_cancels_queued_response_without_replay_after_reenable ... ok
+test health_conversation_host::proactive::tests::proactive_due_action_rechecks_completed_cancelled_expired_and_revoked_after_reopen ... ok
+test health_conversation_host::proactive::tests::proactive_due_reconcile_write_faults_keep_snooze_and_event_atomic ... ok
+test health_conversation_host::proactive::tests::proactive_each_projection_write_boundary_rolls_back_and_can_retry_same_receipt ... ok
+test health_conversation_host::proactive::tests::proactive_feedback_rejects_forged_span_without_partial_write ... ok
+test health_conversation_host::proactive::tests::proactive_feedback_transaction_faults_preserve_raw_and_all_prior_state ... ok
+test health_conversation_host::proactive::tests::proactive_generation_change_rejects_late_result_preserves_budget ... ok
+test health_conversation_host::proactive::tests::proactive_invalid_candidate_shapes_never_create_visible_state ... ok
+test health_conversation_host::proactive::tests::proactive_invalid_model_and_source_change_do_not_write_suggestion ... ok
+test health_conversation_host::proactive::tests::proactive_metadata_never_contains_disclosure_and_read_polling_never_writes ... ok
+test health_conversation_host::proactive::tests::proactive_mixed_feedback_fault_rolls_back_original_action ... ok
+test health_conversation_host::proactive::tests::proactive_mixed_feedback_uses_original_action_transaction ... ok
+test health_conversation_host::proactive::tests::proactive_no_send_when_hidden_or_dnd_and_clock_rollback_does_not_reset ... ok
+test health_conversation_host::proactive::tests::proactive_online_quotas_are_separate_persistent_and_nonrefundable ... ok
+test health_conversation_host::proactive::tests::proactive_online_unseen_is_separate_and_shares_daily_limit ... ok
+test health_conversation_host::proactive::tests::proactive_policy_each_write_fault_is_atomic_and_same_request_replays ... ok
+test health_conversation_host::proactive::tests::proactive_post_credential_rechecks_grant_basis_and_profile ... ok
+test health_conversation_host::proactive::tests::proactive_recovery_write_faults_never_partially_mark_unknown ... ok
+test health_conversation_host::proactive::tests::proactive_response_preserves_second_subject_identity_and_reference_order ... ok
+test health_conversation_host::proactive::tests::proactive_response_rechecks_changed_current_constraints ... ok
+test health_conversation_host::proactive::tests::proactive_restarts_unknown_send_is_not_retried ... ok
+test health_conversation_host::proactive::tests::proactive_shown_each_write_fault_cannot_consume_a_show ... ok
+test health_conversation_host::proactive::tests::proactive_snooze_persists_and_due_never_restores_old_words ... ok
+test health_conversation_host::proactive::tests::proactive_success_is_durable_single_focus_and_shown_only_once ... ok
+test health_conversation_host::proactive::tests::proactive_suppression_survives_foreground_and_same_subject_rephrasing ... ok
+test health_conversation_host::proactive::tests::proactive_timezone_change_and_clock_rollback_do_not_reset_usage ... ok
+test health_conversation_host::proactive::tests::proactive_unknown_fields_and_health_scope_rejected ... ok
+test health_conversation_host::proactive::tests::proactive_usage_write_faults_preserve_unknown_and_do_not_resend ... ok
+test health_conversation_host::settings_lifecycle::tests::actual_catalog_changes_disable_and_unapproved_endpoint_is_rejected ... ok
+test health_conversation_host::settings_lifecycle::tests::all_revision_cas_and_raw_errors_fail_closed ... ok
+test health_conversation_host::settings_lifecycle::tests::credentials_receipt_and_config_revision_are_bound ... ok
+test health_conversation_host::settings_lifecycle::tests::duplicate_test_calls_once_and_unknown_never_retries ... ok
+test health_conversation_host::settings_lifecycle::tests::full_lifecycle_switch_retest_and_restart ... ok
+test health_conversation_host::settings_lifecycle::tests::legacy_auto_enabled_directory_has_no_authority ... ok
+test health_conversation_host::settings_lifecycle::tests::reserved_lifecycle_never_enters_context_or_receipt_secret ... ok
+test health_conversation_host::settings_lifecycle::tests::strict_dto_cannot_inject_transport_or_nulls ... ok
+test health_conversation_host::tests::arbitrary_state_and_question_binding_rejected ... ok
+test health_conversation_host::tests::c154_legacy_health_schema_has_specific_error_and_no_migration ... ok
+test health_conversation_host::tests::c154_legacy_health_sidecar_has_specific_error_without_write ... ok
+test health_conversation_host::tests::c154_real_local_policy_preserves_legacy_question_and_restart ... ok
+test health_conversation_host::tests::c154_real_policy_cannot_commit_arbitrary_offline_answer ... ok
+test health_conversation_host::tests::c1_expired_answer_allows_new_gap_without_overwriting_history ... ok
+test health_conversation_host::tests::c1_expiry_alone_does_not_rewrite_answered_history ... ok
+test health_conversation_host::tests::c1_reject_outlives_time_without_timer_or_state_write ... ok
+test health_conversation_host::tests::c1_source_changes_after_prepare_fail_closed ... ok
+test health_conversation_host::tests::c1_source_replacement_validity_and_authorization_matrix ... ok
+test health_conversation_host::tests::c1_state_expiring_during_pending_packet_is_rejected ... ok
+test health_conversation_host::tests::c1_state_revoke_or_tombstone_enables_gap_without_resurrection ... ok
+test health_conversation_host::tests::c1_valid_replacement_state_suppresses_repeat ... ok
+test health_conversation_host::tests::cancel_before_and_after_commit_is_honest ... ok
+test health_conversation_host::tests::clarification_ignore_defer_do_not_write_state ... ok
+test health_conversation_host::tests::commit_atomic_once_and_same_turn_replay ... ok
+test health_conversation_host::tests::context_and_snapshot_budgets_are_enforced ... ok
+test health_conversation_host::tests::draft_revision_and_adapter_baseline_revalidated ... ok
+test health_conversation_host::tests::drafts_preserve_text_cas_and_idempotency ... ok
+test health_conversation_host::tests::duplicate_forged_generation_and_cross_domain_refs_rejected ... ok
+test health_conversation_host::tests::fixed_scope_only ... ok
+test health_conversation_host::tests::historical_answer_hidden_when_any_health_input_becomes_unavailable ... ok
+test health_conversation_host::tests::p153_answer_history_remains_resolved_but_new_gap_can_be_asked ... ok
+test health_conversation_host::tests::p153_correction_without_domain_cannot_guess_between_two_active_domains ... ok
+test health_conversation_host::tests::p153_defer_retries_only_after_recorded_time_with_new_instance ... ok
+test health_conversation_host::tests::p153_known_authorized_source_prevents_unnecessary_time_question ... ok
+test health_conversation_host::tests::p153_legacy_id_compatibility_and_no_implicit_reopen ... ok
+test health_conversation_host::tests::p153_negative_and_fractional_time_cannot_be_silently_truncated ... ok
+test health_conversation_host::tests::p153_no_value_gap_cannot_be_injected_by_client ... ok
+test health_conversation_host::tests::p153_reject_during_prepared_turn_and_revoke_prevent_late_question ... ok
+test health_conversation_host::tests::p153_reject_persists_beyond_history_window_and_reopen_is_explicit ... ok
+test health_conversation_host::tests::p153_silence_is_readonly_and_correction_ends_old_validity_selectively ... ok
+test health_conversation_host::tests::p153_voluntary_answer_can_resolve_deferred_question_before_retry_time ... ok
+test health_conversation_host::tests::preflight_and_commit_revalidate_authorization ... ok
+test health_conversation_host::tests::raw_duplicate_unknown_null_and_mode_rejected ... ok
+test health_conversation_host::tests::reply_and_correction_preserve_history_and_invalidate_dependents ... ok
+test health_conversation_host::tests::restart_and_adapter_switch_keep_assets ... ok
+test health_conversation_host::tests::scoped_authorized_current_candidates ... ok
+test health_conversation_host::tests::self_report_does_not_replace_sensor_projection ... ok
+test health_conversation_host::voice_host::final_tests::voice_final_has_one_canonical_turn_and_recovers_across_reopen ... ok
+test health_conversation_host::voice_host::final_tests::voice_late_final_and_unsubmitted_turn_fail_after_generation_or_policy_change ... ok
+test health_conversation_host::voice_host::final_tests::voice_partial_conflicting_text_and_arbitrary_correlation_cannot_duplicate ... ok
+test health_conversation_host::voice_host::tests::voice_budget_missing_corrupt_and_cas_fail_closed ... ok
+test health_conversation_host::voice_host::tests::voice_budget_reopen_retains_reservation_without_action_or_raw_write ... ok
+test health_conversation_host::voice_host::tests::voice_offline_controls_reject_permission_spoof_and_never_initialize_budget ... ok
+test health_reader::aux_tests::busy_fails_bounded ... ok
+test health_reader::aux_tests::changed_database_rejected ... ok
+test health_reader::aux_tests::dto_bounds_and_no_json_fallback ... ok
+test health_reader::aux_tests::duplicate_projection_fails_closed ... ok
+test health_reader::aux_tests::large_fixture_bounded ... ok
+test health_reader::aux_tests::offset_group_isolation ... ok
+test health_reader::aux_tests::permissions_rejected ... ok
+test health_reader::aux_tests::readonly_lifecycle ... ok
+test health_reader::aux_tests::sidecar_and_symlink_rejected ... ok
+test health_reader::aux_tests::sqlite_progress_deadline ... ok
+test health_reader::aux_tests::stable_group_pagination ... ok
+test health_reader::aux_tests::strict_requests ... ok
+test health_reader::aux_tests::unknown_group_and_empty_range ... ok
+test health_reader::aux_tests::wal_header_and_hardlink_fail_closed ... ok
+test health_reader::aux_tests::windows_and_gaps ... ok
+test host_gateway::proactive_credential_wait_tests::proactive_credential_timeout_is_bounded_and_no_second_worker_or_late_send ... ok
+test integration_guards::source_existing_schema_rejects_missing_table_without_migration ... ok
+test interaction_contract::tests::interaction_closed_literals_and_authority_fields_rejected ... ok
+test interaction_contract::tests::interaction_public_union_wire_fixtures_roundtrip ... ok
+test provider_store::credential_check_tests::credential_check_selected_profile_is_read_only_and_stale_profile_never_reads_key ... ok
+test provider_store::credential_fixed_error_tests::keychain_failure_is_fixed_and_contains_no_backend_detail ... ok
+test provider_store::online_configuration_tests::missing_or_oversized_metadata_fails_closed ... ok
+test provider_store::online_configuration_tests::offline_cannot_open_real_configuration ... ok
+test provider_store::online_configuration_tests::only_two_fixed_metadata_rows_are_returned ... ok
+test provider_store::optional_online_catalog_test::absent_catalog_preserves_existing_default_without_writes ... ok
+test provider_store::p152_tests::persistent_encrypted_key_and_local_model_without_network ... ok
+test provider_store::p152_tests::replacement_retains_local_model_options ... ok
+test provider_store::p152_tests::tampered_cipher_revision_and_foreign_key_reference_fail_closed ... ok
+test provider_transport::d0673_tests::diagnostics_drop_all_content_and_preserve_only_bounded_metadata ... ok
+test provider_transport::d0673_tests::truncated_metadata_remains_available_without_accepting_response ... ok
+test provider_transport::models_tests::model_directory_is_bounded_distinct_and_never_echoes_key ... ok
+test provider_transport::models_tests::synthetic_transport_cannot_access_models_network ... ok
+test provider_transport::p152_tests::synthetic_cannot_execute_real_transport ... ok
+test provider_transport::p152_tests::wire_errors_are_fixed_and_do_not_return_body ... ok
+test provider_transport::proactive_limits_tests::proactive_response_limit_does_not_expand_ordinary_chat ... ok
+test runtime_root::continuity_guards::foreign_owner_and_symlink_fail_without_repair ... ok
+test runtime_root::continuity_guards::missing_existing_database_is_never_rebuilt ... ok
+test runtime_root::continuity_guards::missing_existing_root_is_never_created ... ok
+test runtime_root::credential_root_tests::source_child_preserves_parent_store_allowlist ... ok
+test runtime_root::tests::new_root_and_foreign_conflict_fail_closed ... ok
+test runtime_root::tests::real_root_constants_and_synthetic_mode ... ok
+test secure_credentials::continuity_guards::legacy_and_malformed_accounts_never_reach_keychain ... ok
+test secure_credentials::continuity_guards::missing_key_never_adds_deletes_or_falls_back ... ok
+test secure_credentials::continuity_guards::old_ciphertext_aad_survives_port_reopen_without_rotation ... ok
+test secure_credentials::noninteractive_policy_tests::credential_check_manual_read_never_enables_prior_disabled_policy ... ok
+test secure_credentials::noninteractive_policy_tests::noninteractive_and_manual_operations_are_serialized_without_policy_leak ... ok
+test secure_credentials::noninteractive_policy_tests::noninteractive_restores_prior_policy_after_success_error_and_unwind ... ok
+test source_restart_status_and_late_worker_error_are_owned ... ok
+test source_restoration_tests::fixed_health_target_append_rollback_locks_and_schema ... ok
+test source_restoration_tests::raw_file_edit_invalidates_reference_without_refresh ... ok
+test source_restoration_tests::source_identity_mutations_and_send_fence ... ok
+test update_contract_tests::import_status_missing_schema_is_not_migrated ... ok
+test update_contract_tests::source_update_unchanged_metadata_changed_missing_pause_restart_idempotency_and_revoke ... ok
+test voice::audio::tests::bounded_wake_history ... ok
+test voice::audio::tests::interruption_and_backpressure ... ok
+test voice::audio::tests::preserves_onset_and_sixty_second_boundary ... ok
+test voice::audio::tests::silence_and_noise_do_not_form_intent ... ok
+test voice::audio::tests::vad_tail_and_release ... ok
+test voice::budget::tests::clock_and_storage_fail_closed ... ok
+test voice::budget::tests::failed_unknown_never_refunded_across_restart ... ok
+test voice::budget::tests::purpose_and_unseen_are_separate ... ok
+test voice::budget::tests::rolling_minute_and_day ... ok
+test voice::gateway::tests::parallel_asr_tts_but_not_two_of_each ... ok
+test voice::gateway::tests::provider_errors_consume_reserved_budget ... ok
+test voice::gateway::tests::timeout_revocation_and_late_result_no_retry ... ok
+test voice::gateway::tests::zero_transport_calls_when_denied ... ok
+test voice::mimo::tests::asr_every_byte_split_and_real_final_only ... ok
+test voice::mimo::tests::base64_canonical_and_request_minimization ... ok
+test voice::mimo::tests::broken_partial_and_length_never_final ... ok
+test voice::mimo::tests::duplicate_json_and_missing_done_fail_closed ... ok
+test voice::mimo::tests::mismatch_and_tools_rejected ... ok
+test voice::mimo::tests::tts_emits_before_completion ... ok
+test voice::session::tests::all_off_by_default ... ok
+test voice::session::tests::end_and_lock_discard_late_voice_only ... ok
+test voice::session::tests::interruption_keeps_business_wait ... ok
+test voice::session::tests::no_idle_timeout_during_processing_recording_playback ... ok
+test voice::session::tests::proactive_hidden_and_unwoken_silent ... ok
+test voice::session::tests::purpose_revocation_isolates_late_final ... ok
+test voice::worker::tests::barge_in_stops_before_utterance_and_preserves_opening ... ok
+test voice::worker::tests::discarded_short_noise_does_not_disable_next_barge_in ... ok
+test voice::worker::tests::external_session_reset_discards_partial_old_frame ... ok
+test voice::worker::tests::invalid_float_fails_closed_and_releases_pending ... ok
+test voice::worker::tests::wake_frame_never_enters_upload_and_first_postwake_frame_kept ... ok
+
+test result: ok. 303 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 19.61s
+

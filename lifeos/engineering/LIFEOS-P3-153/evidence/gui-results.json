@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "launch": {
+    "pid": 56561,
+    "bundle": "/private/tmp/lifeos-p3-153-continuous-understanding-v1/LifeOS P3-153 Synthetic.app",
+    "binary": "/private/tmp/lifeos-p3-153-continuous-understanding-v1/LifeOS P3-153 Synthetic.app/Contents/MacOS/LifeOS-P3-153",
+    "sha256": "7f30a1cc8b9259e03434961f7cde41da0b6323975899e05ad90004ffc9f7353e",
+    "mode": "synthetic",
+    "root": "/private/tmp/lifeos-p3-153-continuous-understanding-v1",
+    "fixture": "fresh conversation.sqlite after preserving initial fixture"
+  },
+  "binding": "direct launch plus exact unique bundle path, window title, tauri://localhost AX content",
+  "nativeAppStopped": true,
+  "checks": [
+    "desktop pending actions",
+    "desktop reject state",
+    "narrow reject and reopen reachable",
+    "narrow three actions and composer visible",
+    "corrected response and old self-response stale label",
+    "current state 5 minutes"
+  ],
+  "screenshots": [
+    {
+      "path": "evidence/gui-desktop-pending.jpg",
+      "rasterPixels": [
+        1036,
+        768
+      ],
+      "sha256": "75f076c7ffba78db70074a3f58763af2d8bba302f0bd11224f66b52f2cada6b5"
+    },
+    {
+      "path": "evidence/gui-desktop-rejected.jpg",
+      "rasterPixels": [
+        1036,
+        768
+      ],
+      "sha256": "0331fe2608b98f579e4514979ffd232e2642a01e3cd113613038a41ee327a1a0"
+    },
+    {
+      "path": "evidence/gui-narrow-corrected.jpg",
+      "rasterPixels": [
+        560,
+        801
+      ],
+      "sha256": "79da35b42b410e5a3a85fc397f481409d51df6e445078cc5cbd8c2290cc9aaa4"
+    },
+    {
+      "path": "evidence/gui-narrow-current-state.jpg",
+      "rasterPixels": [
+        560,
+        801
+      ],
+      "sha256": "bc37d91017fe81c657a352516633a4e37e90f81c20bbc69e1644c6bc17a4687e"
+    },
+    {
+      "path": "evidence/gui-narrow-rejected.jpg",
+      "rasterPixels": [
+        560,
+        801
+      ],
+      "sha256": "fb9adc3d652c5951fc479c7da4ce30ee17f9faab9d7aad3e34cb5615269adf35"
+    },
+    {
+      "path": "evidence/gui-narrow-reopened.jpg",
+      "rasterPixels": [
+        560,
+        801
+      ],
+      "sha256": "b596c0c6972da0bfd80d4ff6864c8e8dab2e12c93a4838b01cd74bf22b2b9d50"
+    }
+  ],
+  "persisted": {
+    "turns": 3,
+    "activeStateValue": 5,
+    "questionStatus": "answered",
+    "feedback": [
+      "reject",
+      "reopen"
+    ],
+    "staleAnswers": 1
+  },
+  "reuseAfterCapture": "Chat renderer/layout unchanged after GUI proof. Subsequent changes only accept voluntary deferred answers and reject negative/fractional/overflow time; covered by final 88 Rust and 8 continuity tests. Unaffected visual evidence reused.",
+  "rendererSha256": "7e8299f674ac8f38273a17a82969b4d91ebebe631db25a6d499f0b48fbf10fae",
+  "deliveredAppBinarySha256": "eb41b7b8be58be73f4b07b0966904af6ebb089dc56e382bb9f6cb4cf53a24515",
+  "initialEvidenceExcluded": "evidence/gui-initial/EXCLUDED.md"
+}

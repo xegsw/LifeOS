@@ -1,0 +1,141 @@
+{
+  "task": "P3-158",
+  "authorization": "D-0665",
+  "stage": "B schedule truncated; output budget revision proposal pending approval",
+  "status": "Paused — Resumable",
+  "resume_from": "approved_output_budget_revision_only",
+  "updated_at": "2026-09-10T12:09:46.585022+00:00",
+  "A": "bounded_offline_increment_checks_passed_pending_PM_review",
+  "B": "paused_no_more_retries_at_1024",
+  "C": "not_started",
+  "budget": {
+    "Bdevelopment": 14,
+    "Bunseen": 0,
+    "C": 0
+  },
+  "realAccess": "Host read-only bound approved provider and fixed metadata; no Agent real data access",
+  "currentApp": "P3-157 C1 retained; no lifecycle access during A",
+  "completed_checks": [
+    "contract and baseline identity read",
+    "174 candidate copied and hash verified",
+    "v7 Host 14 scenarios passed",
+    "production Flow 6 scenarios passed",
+    "production IPC create/adjust/cancel/restart and none passed",
+    "A full App create/adjust/normal restart",
+    "B fixed metadata reader 3 offline tests",
+    "latest full regression and 4 build-mode guards",
+    "D0667 operation regression 32 passed",
+    "D0667 actual IPC and production Flow 9 passed",
+    "D0667 synthetic and online-synthetic offline builds passed",
+    "D0667 signing dry-run and missing/invalid identity rejection passed"
+  ],
+  "pending_checks": [
+    "PM review of v8 offline increment and B resume",
+    "user-confirmed B development model cases",
+    "PM unseen samples after fixed candidate",
+    "C v8 remains not authorized"
+  ],
+  "authorizationSupplement": "D-0670",
+  "safe_to_resume": true,
+  "prohibitedBoundaryContact": false,
+  "newNetworkRequestsThisIncrement": 0,
+  "sourceBuildIdentity": "evidence/D0672-B-notice-build-identity.json",
+  "runningAppIdentity": {
+    "source": "evidence/D0672-B-notice-launch.json",
+    "lastKnownPid": 18897,
+    "signed": true
+  },
+  "excluded_artifacts": [
+    "Historical failed B requests are retained and counted, not positive semantic evidence",
+    "D0667 signing plan is dry-run only, not signed App proof"
+  ],
+  "generalCoordination": "v8 implemented; offline regression passed; contract audit and final evidence pending",
+  "D0670": {
+    "fixedContractsVerified": true,
+    "candidateFiles": 176,
+    "inputSnapshot": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/D0670-input",
+    "signature": "D0672 system strict signature, same-bundle restart, same-identity rebuild and launch verified",
+    "newBudgetsConsumed": {
+      "development": {
+        "turns": 3,
+        "queries": 1,
+        "models": 4
+      },
+      "unseen": {
+        "turns": 0,
+        "queries": 0,
+        "models": 0
+      }
+    },
+    "realInterfacesAndC": "not_authorized",
+    "offlineRegression": {
+      "steps": 17,
+      "passed": 17,
+      "summary": "evidence/D0672-offline-increment-checks.json",
+      "logDirectory": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/evidence/D0670-run-20260910T095910358377"
+    },
+    "remaining": [
+      "PM review of v8 offline increment and B resume",
+      "user-confirmed B development model cases",
+      "PM unseen samples after fixed candidate",
+      "C v8 remains not authorized"
+    ],
+    "signingLocationReceipt": "signing/location-mismatch-receipt.json",
+    "affectedChecks": {
+      "rust": 187,
+      "v8RustIncluded": 28,
+      "actualIpc": 7,
+      "frontendReceipts": 19,
+      "validMutationsKilled": 12,
+      "mutationRuns": [
+        "D0670-mutations-d3ad3e9c-492d-4990-9019-fefcc1ee77ca",
+        "D0672-host-mutations-1d9fc2bf-5018-4fe1-88f4-a99c43296908",
+        "D0672-intent-mutations-24e3c70c-ea63-4b12-bc27-10f6f62e4fdf"
+      ],
+      "regression": [
+        {
+          "step": "build",
+          "exitCode": 0,
+          "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/evidence/D0670-run-20260910T110255441888/build.log"
+        },
+        {
+          "step": "rust",
+          "exitCode": 0,
+          "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/evidence/D0670-run-20260910T110255441888/rust.log"
+        },
+        {
+          "step": "coordination-ipc",
+          "exitCode": 0,
+          "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/evidence/D0670-run-20260910T110255441888/coordination-ipc.log"
+        },
+        {
+          "step": "coordination-receipt",
+          "exitCode": 0,
+          "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/evidence/D0670-run-20260910T110255441888/coordination-receipt.log"
+        }
+      ],
+      "earlierUnchangedRegression": "evidence/D0670-run-20260910T095910358377",
+      "guiReceipt": "evidence/D0672-v8-gui-business-receipt.json",
+      "guiCandidate": "evidence/D0672-v8-offline-bundle.json",
+      "guiScope": "actual offline create/adjust and query->second confirmation->restart->condition+Action; final no-action guard tested by Rust+mutation; no claim that prior GUI package contains later guard",
+      "onlineModelRequests": 0
+    },
+    "currentCandidateFiles": 182
+  },
+  "D0672": {
+    "authorization": "/Users/xxe/.codex/worktrees/5ed8/No.2/lifeos/tasks/LIFEOS-P3-158_D0672_login_identity_signing.md",
+    "signingPassed": true,
+    "sameBundleRestartPassed": true,
+    "rebuildDrAndLaunchPassed": true,
+    "providerCredentialExperience": "Unknown; not tested",
+    "rawAxPidExposedByCua": false,
+    "screenshotPixels": [
+      1036,
+      768
+    ],
+    "report": "lifeos/deliverables/LIFEOS-P3-158_D0672_signing_result.md",
+    "finalSignedApp": "/private/tmp/lifeos-p3-158-main-chain-v1/build/signing-v1/D0672-final/LifeOS P3-158 Online Test.app",
+    "finalSignedAppLaunched": true
+  },
+  "previewReceipt": "evidence/D0672-B-schedule-preview.json"
+}

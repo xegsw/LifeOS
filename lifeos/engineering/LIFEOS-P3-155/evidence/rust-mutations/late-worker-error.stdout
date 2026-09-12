@@ -1,0 +1,20 @@
+
+running 1 test
+test source_restart_status_and_late_worker_error_are_owned ... FAILED
+
+failures:
+
+---- source_restart_status_and_late_worker_error_are_owned stdout ----
+
+thread 'source_restart_status_and_late_worker_error_are_owned' (21887182) panicked at source-engine/src/source_api.rs:538:58:
+assertion `left == right` failed
+  left: 1
+ right: 0
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    source_restart_status_and_late_worker_error_are_owned
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 116 filtered out; finished in 0.01s
+

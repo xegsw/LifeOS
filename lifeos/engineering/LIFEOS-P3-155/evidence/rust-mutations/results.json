@@ -1,0 +1,53 @@
+{
+  "results": [
+    {
+      "mutation": "content-reuse",
+      "test": "source_update_unchanged_metadata_changed_missing_pause_restart_idempotency_and_revoke",
+      "killed": true,
+      "exitCode": 101
+    },
+    {
+      "mutation": "late-worker-error",
+      "test": "source_restart_status_and_late_worker_error_are_owned",
+      "killed": true,
+      "exitCode": 101
+    },
+    {
+      "mutation": "missing-status-migration",
+      "test": "import_status_missing_schema_is_not_migrated",
+      "killed": true,
+      "exitCode": 101
+    },
+    {
+      "mutation": "confirmation-token",
+      "test": "forged_confirmation_token_never_dispatches",
+      "killed": true,
+      "exitCode": 101
+    },
+    {
+      "mutation": "state-expiry",
+      "test": "c1_expired_state_blocks_confirm_before_adapter_call",
+      "killed": true,
+      "exitCode": 101
+    },
+    {
+      "mutation": "remote-key-echo",
+      "test": "remote_key_echo_is_never_persisted_or_returned",
+      "killed": true,
+      "exitCode": 101
+    },
+    {
+      "mutation": "existing-root",
+      "test": "missing_existing_database_is_never_rebuilt",
+      "killed": true,
+      "exitCode": 101
+    },
+    {
+      "mutation": "legacy-account",
+      "test": "legacy_and_malformed_accounts_never_reach_keychain",
+      "killed": true,
+      "exitCode": 101
+    }
+  ],
+  "allKilled": true
+}

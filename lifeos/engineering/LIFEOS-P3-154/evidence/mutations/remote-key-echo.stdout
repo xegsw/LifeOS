@@ -1,0 +1,20 @@
+
+running 1 test
+test health_conversation_host::controlled_tests::remote_key_echo_is_never_persisted_or_returned ... FAILED
+
+failures:
+
+---- health_conversation_host::controlled_tests::remote_key_echo_is_never_persisted_or_returned stdout ----
+
+thread 'health_conversation_host::controlled_tests::remote_key_echo_is_never_persisted_or_returned' (21759935) panicked at src/health_conversation_host/controlled_tests.rs:16:287:
+assertion `left == right` failed
+  left: Null
+ right: "provider_response_rejected"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    health_conversation_host::controlled_tests::remote_key_echo_is_never_persisted_or_returned
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 103 filtered out; finished in 0.05s
+

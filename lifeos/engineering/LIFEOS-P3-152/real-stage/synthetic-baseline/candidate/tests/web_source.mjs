@@ -1,0 +1,14 @@
+import {stripTypeScriptTypes} from 'node:module';
+import {readFileSync} from 'node:fs';
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+const src=stripTypeScriptTypes(readFileSync(new URL('../application/web_source.ts',import.meta.url),'utf8'),{mode:'transform'});
+const {WebSourceAdapter,publicAddress}=await import('data:text/javascript;base64,'+Buffer.from(src).toString('base64'));
+const target='https://synthetic.invalid/note';const grant=()=>({active:true,generation:1,targets:new Set([target])});
+const good=()=>({status:200,peer:'93.184.216.34',contentType:'text/html',body:new TextEncoder().encode('<p>synthetic target body</p>'),decodedBytes:28,elapsedMs:1});
+const response=()=>{const r=good();r.decodedBytes=r.body.length;return r};
+test('public address rejects SSRF representations and private/reserved space',()=>{for(const ip of ['127.0.0.1','10.0.0.1','172.16.1.1','192.168.1.1','169.254.169.254','100.64.0.1','0.0.0.0','2130706433','0177.0.0.1','::1','::ffff:127.0.0.1','198.18.0.1'])assert.equal(publicAddress(ip),false,ip);assert(publicAddress('93.184.216.34'))});
+test('direct target body and lineage; no recursive requests',async()=>{let calls=0;const g=grant();const a=new WebSourceAdapter({resolve:async()=>[{ip:'93.184.216.34'}],get:async()=>{calls++;return response()}});const r=await a.read(target,g,()=>g);assert.equal(r.finalUrl,target);assert.equal(r.recursive,false);assert.equal(calls,1);assert.match(new TextDecoder().decode(r.body),/target body/)});
+for(const mode of ['not-granted','query','private','peer','revoke','size','404','auth','timeout','mime'])test('fail closed '+mode,async()=>{let g=grant(),url=target;if(mode==='not-granted')g.targets.clear();if(mode==='query'){url+='?token=canary';g.targets.add(url)}const a=new WebSourceAdapter({resolve:async()=>[{ip:mode==='private'?'10.0.0.1':'93.184.216.34'}],get:async()=>{const r=response();if(mode==='peer')r.peer='127.0.0.1';if(mode==='revoke')g={...g,active:false,generation:2};if(mode==='size')r.decodedBytes=21*1024*1024;if(mode==='404')r.status=404;if(mode==='auth')r.status=401;if(mode==='timeout')r.elapsedMs=31000;if(mode==='mime')r.contentType='application/octet-stream';return r}});await assert.rejects(a.read(url,g,()=>g))});
+test('each redirect requires its own grant',async()=>{const g=grant();let calls=0;const a=new WebSourceAdapter({resolve:async()=>[{ip:'93.184.216.34'}],get:async()=>{calls++;return {...response(),status:302,location:'/unapproved'}}});await assert.rejects(a.read(target,g,()=>g),/target_not_authorized/);assert.equal(calls,1)});
+test('redirect bound and cycle',async()=>{const g=grant();for(let i=0;i<8;i++)g.targets.add('https://synthetic.invalid/'+i);let n=0;const a=new WebSourceAdapter({resolve:async()=>[{ip:'93.184.216.34'}],get:async()=>({...response(),status:302,location:'/'+n++})});await assert.rejects(a.read(target,g,()=>g),/redirect_limit/);assert.equal(n,6)});

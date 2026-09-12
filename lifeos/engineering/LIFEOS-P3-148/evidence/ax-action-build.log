@@ -1,0 +1,7 @@
+lifeos/engineering/LIFEOS-P3-148/candidate/tools/conversation_ax.swift:6:124: error: '==' is not a postfix unary operator
+ 4 | guard args.count>=4, let pid=pid_t(args[1]) else {exit(2)}
+ 5 | let app=AXUIElementCreateApplication(pid)
+ 6 | func attr(_ n:AXUIElement,_ k:String)->AnyObject?{var v:CFTypeRef?;return AXUIElementCopyAttributeValue(n,k as CFString,&v)==.success ? v:nil}
+   |                                                                                                                            `- error: '==' is not a postfix unary operator
+ 7 | let windows=attr(app,kAXWindowsAttribute) as? [AXUIElement] ?? []
+ 8 | guard windows.count==1, attr(windows[0],kAXTitleAttribute) as? String == "LifeOS P3-148 - Synthetic Offline" else {print("target_window_rejected");exit(3)}

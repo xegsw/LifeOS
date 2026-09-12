@@ -1,0 +1,247 @@
+{
+  "users": [
+    {
+      "schemaVersion": "interaction-v1",
+      "turnId": "canonical",
+      "conversationRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "text": "合成输入",
+      "origin": {
+        "kind": "keyboard"
+      },
+      "finalizedAt": "2026-09-12T10:00:00Z"
+    },
+    {
+      "schemaVersion": "interaction-v1",
+      "turnId": "canonical",
+      "conversationRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "text": "合成输入",
+      "origin": {
+        "kind": "voice",
+        "sessionId": "session",
+        "segmentId": "segment",
+        "asrRequestId": "asr",
+        "language": "zh-CN"
+      },
+      "finalizedAt": "2026-09-12T10:00:00Z"
+    }
+  ],
+  "assistants": [
+    {
+      "schemaVersion": "interaction-v1",
+      "turnRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "conversationRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "origin": "conversation",
+      "content": {
+        "kind": "response",
+        "text": "合成终局"
+      },
+      "finalizedAt": "2026-09-12T10:00:00Z"
+    },
+    {
+      "schemaVersion": "interaction-v1",
+      "turnRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "conversationRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "origin": "conversation",
+      "content": {
+        "kind": "question",
+        "text": "合成问题"
+      },
+      "finalizedAt": "2026-09-12T10:00:00Z"
+    },
+    {
+      "schemaVersion": "interaction-v1",
+      "turnRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "conversationRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "origin": "conversation",
+      "content": {
+        "kind": "suggestion",
+        "text": "合成建议",
+        "whyNow": "合成依据",
+        "evidenceRefs": [
+          {
+            "id": "fixture-ref",
+            "revision": 1
+          }
+        ],
+        "inferenceFlags": [
+          "inference"
+        ]
+      },
+      "finalizedAt": "2026-09-12T10:00:00Z"
+    },
+    {
+      "schemaVersion": "interaction-v1",
+      "turnRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "conversationRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "origin": "conversation",
+      "content": {
+        "kind": "receipt",
+        "text": "合成回执",
+        "receiptRef": {
+          "id": "fixture-ref",
+          "revision": 1
+        }
+      },
+      "finalizedAt": "2026-09-12T10:00:00Z"
+    },
+    {
+      "schemaVersion": "interaction-v1",
+      "turnRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "conversationRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "origin": "conversation",
+      "content": {
+        "kind": "error",
+        "text": "未完成",
+        "code": "synthetic_error"
+      },
+      "finalizedAt": "2026-09-12T10:00:00Z"
+    }
+  ],
+  "receipts": [
+    {
+      "turnId": "canonical",
+      "status": "accepted",
+      "recordRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      }
+    },
+    {
+      "turnId": "canonical",
+      "status": "duplicate",
+      "recordRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      }
+    },
+    {
+      "turnId": "canonical",
+      "status": "pending_authorization",
+      "code": "synthetic_only"
+    },
+    {
+      "turnId": "canonical",
+      "status": "rejected",
+      "code": "synthetic_only"
+    },
+    {
+      "turnId": "canonical",
+      "status": "unknown",
+      "code": "synthetic_only"
+    }
+  ],
+  "decisions": [
+    {
+      "schemaVersion": "interaction-v1",
+      "decisionRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "kind": "silence",
+      "reasonCode": "no_value"
+    },
+    {
+      "schemaVersion": "interaction-v1",
+      "decisionRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "kind": "surface",
+      "proactiveRef": {
+        "id": "fixture-ref",
+        "revision": 1
+      },
+      "assistantTurn": {
+        "schemaVersion": "interaction-v1",
+        "turnRef": {
+          "id": "fixture-ref",
+          "revision": 1
+        },
+        "conversationRef": {
+          "id": "fixture-ref",
+          "revision": 1
+        },
+        "origin": "conversation",
+        "content": {
+          "kind": "response",
+          "text": "合成终局"
+        },
+        "finalizedAt": "2026-09-12T10:00:00Z"
+      }
+    }
+  ],
+  "speech": {
+    "schemaVersion": "interaction-v1",
+    "requestId": "speech",
+    "sessionId": "session",
+    "sessionGeneration": 1,
+    "assistantTurnRef": {
+      "id": "fixture-ref",
+      "revision": 1
+    },
+    "projectionRef": {
+      "id": "fixture-ref",
+      "revision": 1
+    },
+    "policyRevision": 1,
+    "voice": "mimo_default",
+    "language": "zh-CN"
+  },
+  "interrupted": {
+    "schemaVersion": "interaction-v1",
+    "eventId": "interrupted",
+    "sessionId": "session",
+    "sessionGeneration": 1,
+    "speechRequestId": "speech",
+    "assistantTurnRef": {
+      "id": "fixture-ref",
+      "revision": 1
+    },
+    "reason": "user_stop",
+    "occurredAt": "2026-09-12T10:00:00Z"
+  },
+  "candidate": {
+    "schemaVersion": "interaction-v1",
+    "evaluationId": "evaluation",
+    "candidate": {
+      "kind": "silence",
+      "reasonCode": "no_new_value"
+    }
+  }
+}

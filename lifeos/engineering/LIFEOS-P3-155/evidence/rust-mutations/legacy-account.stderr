@@ -1,0 +1,521 @@
+   Compiling lifeos-p3-152 v0.1.0 (/private/tmp/lifeos-p3-155-source-update-v1/mutations/a2d1bb18-0d84-4f8e-82b6-2da12fba353b/legacy-account)
+warning: unused imports: `OptionalExtension` and `TransactionBehavior`
+ --> source-engine/src/repository.rs:2:36
+  |
+2 | use rusqlite::{params, Connection, OptionalExtension, TransactionBehavior};
+  |                                    ^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Sha256`
+ --> source-engine/src/repository.rs:5:20
+  |
+5 | use sha2::{Digest, Sha256};
+  |                    ^^^^^^
+
+warning: unused import: `self`
+ --> source-engine/src/apple_health.rs:5:18
+  |
+5 |     repository::{self, Error},
+  |                  ^^^^
+
+warning: unused import: `rusqlite::OptionalExtension`
+ --> source-engine/src/lib.rs:7:68
+  |
+7 | use serde_json::{Value,json};use std::sync::{Mutex,MutexGuard};use rusqlite::OptionalExtension;
+  |                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `path::Path`
+ --> source-engine/src/update_checks.rs:3:14
+  |
+3 | use std::{fs,path::Path,os::unix::fs::PermissionsExt};
+  |              ^^^^^^^^^^
+
+warning: unused import: `rusqlite::params`
+ --> source-engine/src/update_checks.rs:4:5
+  |
+4 | use rusqlite::params;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: unused import: `Digest`
+ --> source-engine/src/repository.rs:5:12
+  |
+5 | use sha2::{Digest, Sha256};
+  |            ^^^^^^
+
+warning: unused variable: `root`
+   --> source-engine/src/repository.rs:105:9
+    |
+105 |     let root = crate::runtime_root::verify()?;
+    |         ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> source-engine/src/apple_health.rs:167:5
+    |
+167 |     mut progress: impl FnMut(u64),
+    |     ----^^^^^^^^
+    |     |
+    |     help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `root`
+  --> source-engine/src/lib.rs:18:83
+   |
+18 | ...on<std::path::PathBuf>>{let root=runtime_root::verify()?;if fixture.is_empty()||fixture.len()>60||!fixture.bytes().all(|b|b.is_as...
+   |                                ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+
+warning: unused variable: `root`
+  --> source-engine/src/lib.rs:29:83
+   |
+29 | ...<Value>>{let _g=gate()?;let root=runtime_root::verify()?;let path=runtime_root::store_path(fixture)?;if !path.try_exists().map_er...
+   |                                ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+
+warning: struct `Request` is never constructed
+  --> source-engine/src/repository.rs:40:12
+   |
+40 | pub struct Request {
+   |            ^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `time` is never used
+  --> source-engine/src/repository.rs:49:4
+   |
+49 | fn time() -> i64 {
+   |    ^^^^
+
+warning: function `text` is never used
+  --> source-engine/src/repository.rs:55:4
+   |
+55 | fn text<'a>(v: &'a Value, k: &str) -> R<&'a str> {
+   |    ^^^^
+
+warning: function `number` is never used
+  --> source-engine/src/repository.rs:60:4
+   |
+60 | fn number(v: &Value, k: &str) -> R<i64> {
+   |    ^^^^^^
+
+warning: function `id` is never used
+  --> source-engine/src/repository.rs:65:4
+   |
+65 | fn id(v: &Value, k: &str) -> R<String> {
+   |    ^^
+
+warning: function `fields` is never used
+  --> source-engine/src/repository.rs:76:4
+   |
+76 | fn fields(v: &Value, allowed: &[&str]) -> R<()> {
+   |    ^^^^^^
+
+warning: function `body` is never used
+  --> source-engine/src/repository.rs:87:4
+   |
+87 | fn body(s: &str) -> R<()> {
+   |    ^^^^
+
+warning: method `new_child` is never used
+   --> source-engine/src/artifact_io.rs:171:12
+    |
+ 40 | impl Dir {
+    | -------- method in this implementation
+...
+171 |     pub fn new_child(&self, s: &str) -> R<Self> {
+    |            ^^^^^^^^^
+
+warning: function `dispatch_raw` is never used
+  --> source-engine/src/apple_health_api.rs:36:8
+   |
+36 | pub fn dispatch_raw(body: tauri::ipc::InvokeBody, fixture: &str) -> Result<Value, Error> {
+   |        ^^^^^^^^^^^^
+
+warning: constant `LIMIT` is never used
+ --> source-engine/src/health_domain.rs:6:11
+  |
+6 | pub const LIMIT: usize = 128 * 1024;
+  |           ^^^^^
+
+warning: constant `DAY` is never used
+ --> source-engine/src/health_domain.rs:7:11
+  |
+7 | pub const DAY: i64 = 86_400_000;
+  |           ^^^
+
+warning: type alias `R` is never used
+ --> source-engine/src/health_domain.rs:8:6
+  |
+8 | type R<T> = Result<T, Error>;
+  |      ^
+
+warning: struct `Source` is never constructed
+  --> source-engine/src/health_domain.rs:11:12
+   |
+11 | pub struct Source { pub id: String, pub name: String }
+   |            ^^^^^^
+
+warning: struct `Sample` is never constructed
+  --> source-engine/src/health_domain.rs:14:12
+   |
+14 | pub struct Sample { pub sample_id: String, pub revision: u32, pub metric: String, pub start_ms: i64, pub end_ms: i64, pub value: f64...
+   |            ^^^^^^
+
+warning: struct `Envelope` is never constructed
+  --> source-engine/src/health_domain.rs:17:12
+   |
+17 | pub struct Envelope { pub schema: String, pub batch_id: String, pub exported_at_ms: i64, pub window_start_ms: i64, pub window_end_ms...
+   |            ^^^^^^^^
+
+warning: struct `Observation` is never constructed
+  --> source-engine/src/health_domain.rs:20:12
+   |
+20 | pub struct Observation { pub source: Source, pub sample: Sample, pub offset: i32, pub received_at: i64 }
+   |            ^^^^^^^^^^^
+
+warning: methods `identity`, `record_id`, `same_content`, and `keys` are never used
+  --> source-engine/src/health_domain.rs:22:9
+   |
+21 | impl Observation {
+   | ---------------- methods in this implementation
+22 |  pub fn identity(&self) -> String { format!("{}:{}", self.source.id, self.sample.sample_id) }
+   |         ^^^^^^^^
+23 |  pub fn record_id(&self) -> String { format!("health:{}:{}", self.identity(), self.sample.revision) }
+   |         ^^^^^^^^^
+24 |  pub fn same_content(&self, other: &Self) -> bool { self.source == other.source && self.sample == other.sample && self.offset == oth...
+   |         ^^^^^^^^^^^^
+25 |  pub fn keys(&self) -> BTreeSet<Key> { let shift = self.offset as i64 * 60000; ((self.sample.start_ms+shift).div_euclid(DAY)..=(self...
+   |         ^^^^
+
+warning: struct `Key` is never constructed
+  --> source-engine/src/health_domain.rs:28:12
+   |
+28 | pub struct Key { pub day: i64, pub offset: i32, pub metric: String }
+   |            ^^^
+
+warning: method `id` is never used
+  --> source-engine/src/health_domain.rs:29:19
+   |
+29 | impl Key { pub fn id(&self)->String {format!("health:{}:{}:{}",self.metric,self.day,self.offset)} }
+   | --------          ^^
+   | |
+   | method in this implementation
+
+warning: function `bad` is never used
+  --> source-engine/src/health_domain.rs:30:4
+   |
+30 | fn bad()->Error {Error::new("health_envelope_rejected")}
+   |    ^^^
+
+warning: function `ident` is never used
+  --> source-engine/src/health_domain.rs:31:4
+   |
+31 | fn ident(s:&str)->bool {!s.is_empty() && s.len()<=80 && s.bytes().all(|b|b.is_ascii_alphanumeric() || b"_-".contains(&b))}
+   |    ^^^^^
+
+warning: function `parse` is never used
+  --> source-engine/src/health_domain.rs:32:8
+   |
+32 | pub fn parse(bytes:&[u8])->R<Envelope> {
+   |        ^^^^^
+
+warning: function `observations` is never used
+  --> source-engine/src/health_domain.rs:47:8
+   |
+47 | pub fn observations(e:&Envelope,received_at:i64)->Vec<Observation> {e.samples.iter().map(|sample|Observation{source:e.source.clone()...
+   |        ^^^^^^^^^^^^
+
+warning: function `union` is never used
+  --> source-engine/src/health_domain.rs:48:4
+   |
+48 | fn union(mut spans:Vec<(i64,i64)>)->i64 {spans.sort();let mut total=0;let mut end=i64::MIN;for(a,b)in spans{total+=b-a.max(end).min(...
+   |    ^^^^^
+
+warning: function `project` is never used
+  --> source-engine/src/health_domain.rs:49:8
+   |
+49 | pub fn project(k:&Key, all:&[Observation])->Value {
+   |        ^^^^^^^
+
+warning: type alias `R` is never used
+  --> source-engine/src/health_snapshot.rs:11:6
+   |
+11 | type R<T> = Result<T, Error>;
+   |      ^
+
+warning: struct `Source` is never constructed
+  --> source-engine/src/health_snapshot.rs:14:8
+   |
+14 | struct Source {
+   |        ^^^^^^
+
+warning: struct `Query` is never constructed
+  --> source-engine/src/health_snapshot.rs:21:8
+   |
+21 | struct Query {
+   |        ^^^^^
+
+warning: struct `Sample` is never constructed
+  --> source-engine/src/health_snapshot.rs:28:8
+   |
+28 | struct Sample {
+   |        ^^^^^^
+
+warning: struct `Snapshot` is never constructed
+  --> source-engine/src/health_snapshot.rs:36:8
+   |
+36 | struct Snapshot {
+   |        ^^^^^^^^
+
+warning: function `fail` is never used
+  --> source-engine/src/health_snapshot.rs:51:4
+   |
+51 | fn fail(s: &str) -> Error {
+   |    ^^^^
+
+warning: function `key` is never used
+  --> source-engine/src/health_snapshot.rs:54:4
+   |
+54 | fn key(s: &str) -> bool {
+   |    ^^^
+
+warning: function `hash` is never used
+  --> source-engine/src/health_snapshot.rs:60:4
+   |
+60 | fn hash(v: &Value) -> String {
+   |    ^^^^
+
+warning: function `parse` is never used
+  --> source-engine/src/health_snapshot.rs:63:4
+   |
+63 | fn parse(bytes: &[u8]) -> R<Snapshot> {
+   |    ^^^^^
+
+warning: function `overlaps` is never used
+   --> source-engine/src/health_snapshot.rs:101:4
+    |
+101 | fn overlaps(a: i64, b: i64, c: i64, d: i64) -> bool {
+    |    ^^^^^^^^
+
+warning: function `reject_v1_mixing` is never used
+   --> source-engine/src/health_snapshot.rs:104:8
+    |
+104 | pub fn reject_v1_mixing(c: &Connection, keys: &std::collections::BTreeSet<domain::Key>) -> R<()> {
+    |        ^^^^^^^^^^^^^^^^
+
+warning: function `projection` is never used
+   --> source-engine/src/health_snapshot.rs:124:4
+    |
+124 | fn projection(
+    |    ^^^^^^^^^^
+
+warning: function `receive` is never used
+   --> source-engine/src/health_snapshot.rs:149:8
+    |
+149 | pub fn receive(c: &mut Connection, bytes: &[u8], received: i64) -> R<Value> {
+    |        ^^^^^^^
+
+warning: trait `HealthRepository` is never used
+ --> source-engine/src/health_ingestion.rs:8:11
+  |
+8 | pub trait HealthRepository { fn receive(&mut self, e:&Envelope, received_at:i64)->R<Value>; }
+  |           ^^^^^^^^^^^^^^^^
+
+warning: struct `SqliteHealth` is never constructed
+ --> source-engine/src/health_ingestion.rs:9:12
+  |
+9 | pub struct SqliteHealth<'a>(pub &'a mut Connection);
+  |            ^^^^^^^^^^^^
+
+warning: function `rows` is never used
+  --> source-engine/src/health_ingestion.rs:10:15
+   |
+10 | pub(crate) fn rows(c:&Connection,table:&str,kind:&str)->R<Vec<Value>> {
+   |               ^^^^
+
+warning: function `ingest` is never used
+  --> source-engine/src/health_ingestion.rs:49:8
+   |
+49 | pub fn ingest(port:&mut impl HealthRepository, bytes:&[u8], received_at:i64)->R<Value> {let e=domain::parse(bytes)?;port.receive(&e,...
+   |        ^^^^^^
+
+warning: function `now` is never used
+  --> source-engine/src/health_ingestion.rs:50:4
+   |
+50 | fn now()->i64 {std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap_or_default().as_millis() as i64}
+   |    ^^^
+
+warning: function `read_file` is never used
+  --> source-engine/src/health_ingestion.rs:51:4
+   |
+51 | fn read_file(dir:&crate::artifact_io::Dir,name:&str)->R<Vec<u8>> {
+   |    ^^^^^^^^^
+
+warning: function `scan` is never used
+  --> source-engine/src/health_ingestion.rs:58:8
+   |
+58 | pub fn scan(fixture:&str)->R<Value> {
+   |        ^^^^
+
+warning: static `STATUS` is never used
+  --> source-engine/src/health_ingestion.rs:73:8
+   |
+73 | static STATUS: std::sync::OnceLock<std::sync::Mutex<Value>>=std::sync::OnceLock::new();
+   |        ^^^^^^
+
+warning: function `status` is never used
+  --> source-engine/src/health_ingestion.rs:74:8
+   |
+74 | pub fn status()->Value {let mut v=STATUS.get_or_init(||std::sync::Mutex::new(json!({"mode":"synthetic","files":[]}))).lock().unwrap(...
+   |        ^^^^^^
+
+warning: function `start` is never used
+  --> source-engine/src/health_ingestion.rs:75:8
+   |
+75 | pub fn start() {std::thread::spawn(||loop {let s=match scan("app"){Ok(v)=>v,Err(e)=>json!({"mode":"synthetic","error":e.code})};*STA...
+   |        ^^^^^
+
+warning: function `receive_bytes` is never used
+  --> source-engine/src/health_ingestion.rs:79:8
+   |
+79 | pub fn receive_bytes(c:&mut Connection,bytes:&[u8],at:i64)->R<Value>{if bytes.len()>domain::LIMIT{return Err(Error::new("health_batc...
+   |        ^^^^^^^^^^^^^
+
+warning: function `resume` is never used
+   --> source-engine/src/source_api.rs:506:8
+    |
+506 | pub fn resume(fixture: &str) -> R<()> {
+    |        ^^^^^^
+
+warning: function `make_cursor` is never used
+   --> source-engine/src/source_store.rs:552:8
+    |
+552 | pub fn make_cursor(
+    |        ^^^^^^^^^^^
+
+warning: function `progress` is never used
+   --> source-engine/src/source_worker.rs:363:8
+    |
+363 | pub fn progress(c: &Connection, l: &Lease) -> R<Value> {
+    |        ^^^^^^^^
+
+warning: `lifeos-source-engine` (lib) generated 63 warnings (run `cargo fix --lib -p lifeos-source-engine` to apply 10 suggestions)
+warning: unused import: `SendPlan`
+   --> src/health_conversation_host.rs:185:98
+    |
+185 | #[path="health_conversation_host/controlled.rs"]mod controlled;pub(crate) use controlled::{Start,SendPlan};
+    |                                                                                                  ^^^^^^^^
+    |
+    = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Request`
+ --> src/conversation_contract.rs:2:32
+  |
+2 | use crate::repository::{Error, Request};
+  |                                ^^^^^^^
+
+warning: unused import: `json`
+ --> src/host_gateway.rs:2:24
+  |
+2 | use serde_json::{Value,json};use std::sync::{Arc,Mutex,OnceLock};
+  |                        ^^^^
+
+warning: unused import: `io::Write`
+ --> src/runtime_root.rs:2:92
+  |
+2 | use std::{path::{Path,PathBuf},fs,os::unix::fs::{MetadataExt,OpenOptionsExt,DirBuilderExt},io::Write};
+  |                                                                                            ^^^^^^^^^
+
+warning: associated function `open_driver` is never used
+  --> src/health_conversation_host.rs:46:44
+   |
+44 | impl Store{
+   | ---------- associated function in this implementation
+45 |  pub(crate) fn fixture(&self)->String{Path::new(self.c.path().unwrap()).file_stem().unwrap().to_str().unwrap().replace('_',"-")}
+46 |  #[cfg(feature="synthetic-driver")] pub fn open_driver()->R<Self>{let args:Vec<String>=std::env::args().skip(1).collect();
+   |                                            ^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `text` is never used
+  --> src/conversation_contract.rs:39:8
+   |
+39 | pub fn text(v: &Value, k: &str, empty: bool) -> R<String> {
+   |        ^^^^
+
+warning: function `ids` is never used
+  --> src/conversation_contract.rs:46:8
+   |
+46 | pub fn ids(v: &Value, k: &str, max: usize) -> R<Vec<String>> {
+   |        ^^^
+
+warning: variant `P3_144` is never constructed
+  --> src/secure_credentials.rs:33:5
+   |
+32 | pub enum CredentialLineage {
+   |          ----------------- variant in this enum
+33 |     P3_144,
+   |     ^^^^^^
+   |
+   = note: `CredentialLineage` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: function `encrypt_with_port` is never used
+   --> src/secure_credentials.rs:248:8
+    |
+248 | pub fn encrypt_with_port<P: CredentialPort>(
+    |        ^^^^^^^^^^^^^^^^^
+
+warning: function `encrypt` is never used
+   --> src/secure_credentials.rs:283:8
+    |
+283 | pub fn encrypt(api_key: &str, aad: &[u8]) -> Result<EncryptedCredential, CredentialFailure> {
+    |        ^^^^^^^
+
+warning: method `fail_next_find` is never used
+   --> src/secure_credentials.rs:358:12
+    |
+348 | impl MemoryCredentialPort {
+    | ------------------------- method in this implementation
+...
+358 |     pub fn fail_next_find(&mut self, failure: CredentialFailure) {
+    |            ^^^^^^^^^^^^^^
+
+warning: field `usage` is never read
+ --> src/model_port.rs:7:9
+  |
+5 | pub struct ModelResponse {
+  |            ------------- field in this struct
+6 |     pub text: String,
+7 |     pub usage: Option<Value>,
+  |         ^^^^^
+
+warning: struct `SyntheticModel` is never constructed
+  --> src/model_port.rs:24:12
+   |
+24 | pub struct SyntheticModel;
+   |            ^^^^^^^^^^^^^^
+
+warning: function `citations` is never used
+  --> src/model_port.rs:42:8
+   |
+42 | pub fn citations(text: &str, items: &[Value]) -> (Vec<Value>, usize) {
+   |        ^^^^^^^^^
+
+warning: unused `Result` that must be used
+  --> src/health_reader/aux_tests.rs:19:107
+   |
+19 | ...ap();let t=Instant::now();r.c.progress_handler(1000,Some(move||t.elapsed()>Duration::from_millis(20)));let result=r.c.query_row("...
+   |                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: this `Result` may be an `Err` variant, which should be handled
+   = note: `#[warn(unused_must_use)]` (part of `#[warn(unused)]`) on by default
+help: use `let _ = ...` to ignore the resulting value
+   |
+19 | #[test]fn sqlite_progress_deadline(){let p=fixture();let r=Reader::open(&p).unwrap();let t=Instant::now();let _ = r.c.progress_handler(1000,Some(move||t.elapsed()>Duration::from_millis(20)));let result=r.c.query_row("WITH RECURSIVE n(x) AS (VALUES(1) UNION ALL SELECT x+1 FROM n WHERE x<100000000) SELECT sum(x) FROM n",[],|r|r.get::<_,i64>(0));assert!(result.is_err());assert!(t.elapsed()<Duration::from_secs(1));}
+   |                                                                                                           +++++++
+
+warning: `lifeos-p3-152` (bin "lifeos-p3-152" test) generated 15 warnings (run `cargo fix --bin "lifeos-p3-152" -p lifeos-p3-152 --tests` to apply 3 suggestions)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.24s
+     Running unittests src/main.rs (/private/tmp/lifeos-p3-155-source-update-v1/target/debug/deps/lifeos_p3_152-e2d221edd6352e01)
+error: test failed, to rerun pass `--bin lifeos-p3-152`

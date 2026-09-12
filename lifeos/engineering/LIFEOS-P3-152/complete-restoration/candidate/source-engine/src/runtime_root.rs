@@ -1,0 +1,10 @@
+//! Private synthetic SourcePort root. No legacy roots or real fallback.
+use crate::repository::Error;use std::{path::{Path,PathBuf},fs,os::unix::fs::MetadataExt};
+pub const ROOT:&str="/private/tmp/lifeos-p3-152-health-conversation-v1/complete-source-engine";
+pub fn is_real()->bool{false}pub fn active()->bool{true}
+pub fn source_path()->PathBuf{Path::new(ROOT).join("fixtures/app-source")}
+pub fn activate_from_user_click()->Result<(),Error>{verify().map(|_|())}
+pub fn verify()->Result<PathBuf,Error>{let p=Path::new(ROOT);let m=fs::symlink_metadata(p).map_err(|_|Error::new("engine_root_missing"))?;if !m.is_dir()||m.file_type().is_symlink()||m.uid()!=unsafe{libc::getuid()}||m.mode()&0o777!=0o700||fs::canonicalize(p).ok().as_deref()!=Some(p){return Err(Error::new("engine_root_rejected"))}let marker=p.join(".owner.json");let m=fs::symlink_metadata(&marker).map_err(|_|Error::new("engine_marker_rejected"))?;if !m.is_file()||m.file_type().is_symlink()||m.uid()!=unsafe{libc::getuid()}||m.mode()&0o777!=0o600||m.nlink()!=1||m.len()>4096{return Err(Error::new("engine_marker_rejected"))}let v:serde_json::Value=serde_json::from_slice(&fs::read(marker).map_err(|_|Error::new("engine_marker_rejected"))?).map_err(|_|Error::new("engine_marker_rejected"))?;if v!=serde_json::json!({"task":"P3-152","owner":"01a07f0e-dbbd-7d23-9e6d-68f2152f9484","root":ROOT,"kind":"synthetic-source-engine"}){return Err(Error::new("engine_marker_rejected"))}Ok(p.into())}
+pub fn helper(name:&str)->Result<PathBuf,Error>{if name=="parse_source.py"{Ok(Path::new(env!("CARGO_MANIFEST_DIR")).join("tools/parse_source.py"))}else if name=="alias_metadata"{Ok(Path::new(ROOT).join("alias_metadata"))}else{Err(Error::new("helper_unavailable"))}}
+
+pub fn expected_marker()->Result<serde_json::Value,Error>{Ok(serde_json::json!({"task":"P3-152","owner":"01a07f0e-dbbd-7d23-9e6d-68f2152f9484","root":ROOT,"kind":"synthetic-source-engine"}))}

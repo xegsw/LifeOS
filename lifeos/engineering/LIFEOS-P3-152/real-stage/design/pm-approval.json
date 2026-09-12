@@ -1,0 +1,13 @@
+{
+  "source_thread": "01a0290d-4255-7c52-8e62-6b888d2d678a",
+  "approved": "R01-R08 and exact implementation/bundle/launch paths; launch after synthetic regression and build success without additional permission",
+  "proposal_sha256": "1d94ba77e577319a3af5fab76844c59c7829077aa4c65fadf452a0fb419b928b",
+  "constraints": [
+    "No agent real AX/screenshots/content reads/network tests/confirm-send",
+    "No legacy credentials",
+    "Keychain read only for user-confirmed send; settings metadata only",
+    "No global OS changes; own process core limit only",
+    "Foreign target conflict stops without overwrite"
+  ],
+  "status": "Approved before real launch"
+}

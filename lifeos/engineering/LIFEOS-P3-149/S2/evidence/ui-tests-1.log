@@ -1,0 +1,35 @@
+✔ one file selection starts the sole raw IPC and status completes refresh (1.391417ms)
+✔ failed import remains visible and retry uses same file (0.255084ms)
+✔ starting or running cannot start another import (0.110292ms)
+✔ duplicate restores original import time without claiming new samples (17.930792ms)
+✔ HTML escaping applies to filename and unsupported types (0.143458ms)
+✔ unknown failed counts are not fabricated totals (0.046042ms)
+✔ Apple observation labels do not imply completeness, identity or revision (0.360583ms)
+✔ actual frontend resolver excludes Apple batches and states under all purposes (1.596917ms)
+✔ U01 startup once; recovery never replaces typing during deferred open (3.231834ms)
+✔ U01 failure retains draft and only explicit retry opens (0.107041ms)
+✔ U02 local prepare does not send; exactly one explicit confirmation sends (0.226333ms)
+✔ U03 editing while preparing discards returned confirmation and preserves new draft (0.118542ms)
+✔ U03 removed source gets new packet; edit and cancel revoke UI confirmation (0.836583ms)
+✔ U03 current backend stale/revoked packet refuses send (0.111792ms)
+✔ U03 expiry removes button without automatic retry (20.758458ms)
+✔ U02/U04 unknown result is visible and never resent or requiring feedback (0.170042ms)
+✔ U06 startup repository requests only existing conversation recovery, no credential/model/scan calls (0.15275ms)
+✔ health excluded by actual resolver for every purpose, even active/status spoof (2.608958ms)
+✔ health view shows unmerged sources, observation freshness, and no fabricated zero (17.090042ms)
+✔ failed startup retry cannot overwrite typing between attempts (0.253833ms)
+✔ remove uses stored turn identity even public preview has no turnId, cancels before rebuilding (0.46775ms)
+✔ remove failure never leaves old send confirmation (0.101375ms)
+✔ edit during removal cannot resurrect returned confirmation (0.118833ms)
+✔ observation display uses envelope offset, receipt labels device time (0.1085ms)
+✔ window range and ambiguous source grouping remain explicit (20.926375ms)
+✔ pending integrity preserves prior state message and batch history (0.280125ms)
+✔ actual resolver excludes snapshot body and derived state for every purpose (1.283083ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 59.28575

@@ -1,0 +1,22 @@
+✔ U01 startup once; recovery never replaces typing during deferred open (1.837375ms)
+✔ U01 failure retains draft and only explicit retry opens (0.106667ms)
+✔ U02 local prepare does not send; exactly one explicit confirmation sends (0.212041ms)
+✔ U03 editing while preparing discards returned confirmation and preserves new draft (0.127292ms)
+✔ U03 removed source gets new packet; edit and cancel revoke UI confirmation (0.701542ms)
+✔ U03 current backend stale/revoked packet refuses send (0.114125ms)
+✔ U03 expiry removes button without automatic retry (21.336833ms)
+✔ U02/U04 unknown result is visible and never resent or requiring feedback (0.175834ms)
+✔ U06 startup repository requests only existing conversation recovery, no credential/model/scan calls (0.15375ms)
+✔ IR-D2-001 failed open, user edit, successful retry with OLD pendingDraft (2.286917ms)
+✔ multiple failures and edits keep last user input including intentional empty draft (0.11425ms)
+✔ successful first recovery without edits restores stored draft (0.053916ms)
+✔ failed retries without edits still recover stored draft (0.075417ms)
+✔ input before initial start takes priority over persisted draft (0.082833ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 57.601292

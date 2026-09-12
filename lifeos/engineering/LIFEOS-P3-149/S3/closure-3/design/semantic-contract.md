@@ -1,0 +1,13 @@
+# Closure-3 semantic compatibility and bounded completion
+
+The latest user authorization covers category-only local diagnosis, same-source/same-target compatibility repair, synthetic regression and up to three necessary real attempts. Old attempts are retained; no repeated permission requests for in-scope engineering choices. Structural ZIP/XML/CRC/entity/resource errors still abort the whole transaction.
+
+Compare record endpoints as absolute times. Inverted/invalid dates, invalid supported values/units/source labels and zero-length sleep are semantic skips with fixed reason counts. Unsupported types/categories remain unsupported counts. Each top-level scanned object belongs exactly once to accepted, skipped or unsupported; skipped rows count toward the hard record budget. No raw attributes or unsupported type names leave private mode.
+
+Zero-length steps/exercise remain source observations with original quantity and time, but no daily projection/division. Offset transitions are retained with both endpoint offsets and explicitly unprojected rather than guessing timezone day boundaries. Long positive intervals are not rejected by a seven-day rule: intervals over31days, or sleep over24hours, remain unprojected source observations. Other daily projections preserve previous bounded estimation/overlap rules. All unprojected observations carry a reason and an empty projection-days list. Unknown does not become zero.
+
+A complete structurally-valid file commits every valid observation in one atomic batch, returns successful_with_skips when semantic skips exist, and records skipped/unprojected counts. Same file retry is idempotent, with original batch counts retained. Damaged tail/resource failure still rolls back all valid rows as well as projections.
+
+Retain 768MiB XML/256MiB file/2million records/ratio200/4096 entries/depth32/token64KiB/DB~1GiB/128 sources/10000 projected groups/300s work budget. Cache at most128 source summaries per transaction to avoid per-row repeated source writes; no unbounded full-file load. Prior target creation window, exact path, permission, schema/empty-state checks remain; allow only validated prior closure markers plus three sequential new attempt markers. Foreign data, altered markers and exhausted retry budget fail closed.
+
+Real preflight reports only accepted/skipped/unsupported counts, fixed semantic categories and attachment count. Import receipts omit actual dates, values, source names, member paths and content fingerprints. No model/network/credentials/UI content capture. Original source, database and attempts retained; no migration/cleanup/overwrite.

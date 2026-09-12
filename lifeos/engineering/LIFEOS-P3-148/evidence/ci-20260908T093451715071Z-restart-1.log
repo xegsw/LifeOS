@@ -1,0 +1,22 @@
+{
+  "fixture": "extended-4e4157bd8e",
+  "results": [
+    {
+      "check": "passive_no_provider_creation_existing_schema_and_148_lock",
+      "pass": true
+    },
+    {
+      "check": "50_51_pagination_cursor_revision_and_legacy_isolation",
+      "pass": true
+    },
+    {
+      "check": "save_transaction_failure_keeps_draft_then_same_request_recovers",
+      "pass": true
+    },
+    {
+      "check": "cross_process_dispatch_recovery_never_resends",
+      "pass": true
+    }
+  ],
+  "scope": "new synthetic ordinary fixtures only; no network or OS credential adapter"
+}

@@ -1,0 +1,17 @@
+✔ U01 startup once; recovery never replaces typing during deferred open (4.627583ms)
+✔ U01 failure retains draft and only explicit retry opens (0.167167ms)
+✔ U02 local prepare does not send; exactly one explicit confirmation sends (0.233167ms)
+✔ U03 editing while preparing discards returned confirmation and preserves new draft (0.126291ms)
+✔ U03 removed source gets new packet; edit and cancel revoke UI confirmation (1.296375ms)
+✔ U03 current backend stale/revoked packet refuses send (0.120959ms)
+✔ U03 expiry removes button without automatic retry (21.7455ms)
+✔ U02/U04 unknown result is visible and never resent or requiring feedback (0.196834ms)
+✔ U06 startup repository requests only existing conversation recovery, no credential/model/scan calls (0.160541ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 74.063291

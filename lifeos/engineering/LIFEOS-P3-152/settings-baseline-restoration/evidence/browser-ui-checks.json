@@ -1,0 +1,49 @@
+{
+  "surface": "isolated localhost browser, exact candidate UI with synthetic Host bridge; not native Tauri evidence",
+  "url": "http://127.0.0.1:18752",
+  "driver_pid": 42140,
+  "real_app_accessed": false,
+  "checks": [
+    {
+      "stage": "save configuration and fictional key",
+      "observed": "fixed mask plus four tail characters; waiting for test; no automatic selection/enable"
+    },
+    {
+      "stage": "explicit test",
+      "select_button_enabled": false,
+      "enable_button_enabled": false,
+      "models": 3
+    },
+    {
+      "stage": "explicit selection",
+      "enable_button_enabled": true,
+      "disable_button_enabled": false
+    },
+    {
+      "stage": "explicit enable",
+      "disable_button_enabled": true
+    },
+    {
+      "stage": "change selected model and confirm",
+      "disabled": true,
+      "retest_notice_visible": true
+    },
+    {
+      "stage": "retest then select other model then enable",
+      "completed": true
+    },
+    {
+      "stage": "reload frontend",
+      "enablement_retained": true,
+      "mask_retained": true
+    },
+    {
+      "stage": "minimum native supported width simulated in browser",
+      "viewport_width": 560,
+      "document_width": 560,
+      "form_button_right_max": 458,
+      "horizontal_overflow": false
+    }
+  ],
+  "visual_inspection": "browser-only screenshots observed at default1280x720 and 560x640; no real window screenshot"
+}

@@ -1,0 +1,70 @@
+{
+  "task": "P3-159",
+  "at": "2026-09-12T12:41:54.734375+00:00",
+  "confirmedDefect": "raw profile enabled/modelId was used instead of lifecycle effective provider_view",
+  "oldRuntimeFailure": "fixed error discarded by old UI; exact historical runtime branch Unknown",
+  "fix": "bind effective provider_view plus exact raw credential profile; safe error categories; native Store wait in worker",
+  "sourceChanges": [
+    {
+      "path": "application/health_ui.ts",
+      "before": "5dc124c39ea299695b7350da154373a2dd4674bb5185b98a9f1b16832bcbbed6",
+      "after": "0b0e05320d511721d4695884ea0bbfae5c91c8573492c14167f357d8715abb54"
+    },
+    {
+      "path": "application/proactive_application.ts",
+      "before": "6863b5fd76aad0e53df50b8bd2f91a09ae7e410ed53f44e396296621519f8c2e",
+      "after": "b3b7238072dd367110718ab2cc950840339aecc2341535a499b7c7d04752a60c"
+    },
+    {
+      "path": "src/credential_recovery.rs",
+      "before": "7e5ce2b1dd0a53a4636976819dbcfb6481a3c4da82bf697a5b2161a298c36de7",
+      "after": "803f3b75f84df00ac8996ee39cc625d95d0c9c82429919a033f8f1886fc4dd2e"
+    },
+    {
+      "path": "src/health_conversation_host/controlled_tests.rs",
+      "before": "f38719710adb8b42341e223fd05716257dd9ed2916ca9e7b86e835108c59d68f",
+      "after": "0560cae955e7dafbc2404abd44c63c1c7c3c0bbcc3ade201af38bb137e57a0be"
+    },
+    {
+      "path": "ui/health_ui.js",
+      "before": "f211e4269021302cde854efacc6aae0b55eb1e8cde2b37591deed376e5d9a139",
+      "after": "a79790ded56ea2c0de54944ccc2a62ea01769be71c2ea348db78bfb878276e3a"
+    },
+    {
+      "path": "ui/proactive_application.js",
+      "before": "cb8143fcee73ca77c3dd93bf3314731d208cac8420bb83a4298612831d1a778c",
+      "after": "04932f36ba8995d49832340a0d574b3257deb20b39d548a8c04698712a94375d"
+    }
+  ],
+  "ui": "compact default; explicit range consent; independent source permission; single credential action; detailed codes collapsed",
+  "tests": {
+    "fullSteps": 23,
+    "rustPassed": 303,
+    "proactiveUiPassed": 16
+  },
+  "mutations": "evidence/A-mutations-20260912T124007942567/results.json",
+  "mutationsKilled": 3,
+  "native": [
+    "A-recovery-compact-native.json",
+    "A-recovery-final-native.json"
+  ],
+  "B": {
+    "task": "P3-159",
+    "app": "/private/tmp/lifeos-p3-159-unified-proactive-v1/build/B-20260912T123713279683/LifeOS Online Synthetic.app",
+    "pid": 59580,
+    "mode": "online-synthetic",
+    "signedBinarySha256": "075f3bdfe2394c1b0eaffb8b43bcdb949baa785c235804dbeddb25bb57cb6aeb",
+    "at": "2026-09-12T12:39:06.950564+00:00",
+    "agentCredentialRead": false,
+    "purpose": "show compact settings and repaired user-only entry; no policy changes"
+  },
+  "productionReservations": 3,
+  "actualPosts": 0,
+  "agentClickedBEntry": false,
+  "agentReadRealCredential": false,
+  "manualRealSuccess": "Unknown; user action pending",
+  "backgroundStableSuccess": "Unknown",
+  "C": "NotStarted",
+  "countsNotReset": true,
+  "oldEvidencePreserved": true
+}

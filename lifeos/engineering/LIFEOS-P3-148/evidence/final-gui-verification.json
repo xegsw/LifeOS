@@ -1,0 +1,32 @@
+{
+  "task": "LIFEOS-P3-148",
+  "timestamp": "2026-09-08T10:52:03.374089+00:00",
+  "status": "synthetic_engineering_GUI_verified",
+  "binary_sha256": "d542d40e473b375f1bbb1405a6cf6d85adc03e46beb68adca584ca0e1d530139",
+  "labels_to_direct_pid": {
+    "finalnarrowpreview": 73617,
+    "finalnarrowanswer": 73617,
+    "finalnarrowsettings": 73617,
+    "finaldesktoprestart": 73741,
+    "finalunlockeddesktopsettings": 73741
+  },
+  "narrow_geometry": [
+    700,
+    760
+  ],
+  "desktop_geometry": [
+    1280,
+    949
+  ],
+  "images_visually_reviewed": true,
+  "answer_derivations_increment": 1,
+  "restart_objects_and_counts_equal": true,
+  "all_launch_pids_stopped": true,
+  "temporary_fault_triggers": 0,
+  "notes": [
+    "Desktop AX first action target_count_0; retried after foreground app ready state.",
+    "Existing finaldesktopsettings artifact protected against overwrite; used unique finalunlockeddesktopsettings.",
+    "No code changes or unrelated test/build reruns."
+  ],
+  "no_real_access": true
+}

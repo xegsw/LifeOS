@@ -1,0 +1,24 @@
+✔ U01 startup once; recovery never replaces typing during deferred open (1.869625ms)
+✔ U01 failure retains draft and only explicit retry opens (0.119209ms)
+✔ U02 local prepare does not send; exactly one explicit confirmation sends (0.212417ms)
+✔ U03 editing while preparing discards returned confirmation and preserves new draft (0.11575ms)
+✔ U03 removed source gets new packet; edit and cancel revoke UI confirmation (0.828458ms)
+✔ U03 current backend stale/revoked packet refuses send (0.113042ms)
+✔ U03 expiry removes button without automatic retry (21.912958ms)
+✔ U02/U04 unknown result is visible and never resent or requiring feedback (0.201791ms)
+✔ U06 startup repository requests only existing conversation recovery, no credential/model/scan calls (0.163542ms)
+✔ health excluded by actual resolver for every purpose, even active/status spoof (2.001292ms)
+✔ health view shows unmerged sources, observation freshness, and no fabricated zero (7.96775ms)
+✔ failed startup retry cannot overwrite typing between attempts (0.271709ms)
+✔ remove uses stored turn identity even public preview has no turnId, cancels before rebuilding (0.491292ms)
+✔ remove failure never leaves old send confirmation (0.09625ms)
+✔ edit during removal cannot resurrect returned confirmation (0.123541ms)
+✔ observation display uses envelope offset, receipt labels device time (0.130417ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 59.75

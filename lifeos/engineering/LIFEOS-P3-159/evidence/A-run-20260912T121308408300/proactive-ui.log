@@ -1,0 +1,20 @@
+✔ closing purpose is available during in-flight response and preserves input (4.022958ms)
+✔ a late old refresh cannot restore enabled UI after generation changes (0.415958ms)
+✔ projection acknowledgements update revision before response preparation (0.503334ms)
+✔ source/model text is escaped and never interpreted as markup (0.10725ms)
+✔ reload restores persisted pending response without resubmitting it (0.103833ms)
+✔ unchanged polling preserves the mounted page and unsaved selections (0.1285ms)
+✔ completed response does not erase a newer typed follow-up (0.070708ms)
+✔ unrelated response keeps original draft during completion and restart (0.388791ms)
+✔ topic switch uses existing ordinary preview without auto-confirming or changing suggestion (0.163542ms)
+✔ credential recovery never starts from polling or a forged click (0.167708ms)
+✔ credential recovery opens only native menu and cannot issue start, save or POST (0.089333ms)
+✔ credential check cancelled during menu open cannot restore late state (0.062208ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 48.981916

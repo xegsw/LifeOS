@@ -1,0 +1,24 @@
+{
+  "task": "P3-149 S3 closure-1",
+  "stage": "fixed_xml_selection",
+  "status": "stopped",
+  "reason": "expected_xml_selection_not_unique",
+  "real_retry_count": 0,
+  "target_database_contact": false,
+  "source_member_body_read": false,
+  "completed": [
+    "size_metadata",
+    "resource_policy_patch",
+    "32_parser_tests"
+  ],
+  "pending": [
+    "unique_fixed_xml_selection",
+    "target_ownership_validation",
+    "bound_retry_implementation",
+    "integration_tests",
+    "single_real_retry"
+  ],
+  "resume_from": null,
+  "automatic_retry": false,
+  "S3_preserved_files": 135
+}

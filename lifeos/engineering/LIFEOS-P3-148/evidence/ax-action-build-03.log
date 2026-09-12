@@ -1,0 +1,9 @@
+lifeos/engineering/LIFEOS-P3-148/candidate/tools/conversation_ax.swift:15:66: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect. [#DeprecatedDeclaration]
+13 | if action=="press"{print(AXUIElementPerformAction(matches[0],kAXPressAction as CFString).rawValue)}
+14 | else if action=="type"{
+15 |  NSRunningApplication(processIdentifier:pid)?.activate(options:[.activateIgnoringOtherApps])
+   |                                                                  `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect. [#DeprecatedDeclaration]
+16 |  AXUIElementSetAttributeValue(matches[0],kAXFocusedAttribute as CFString,kCFBooleanTrue)
+17 |  let setResult=AXUIElementSetAttributeValue(matches[0],kAXValueAttribute as CFString,label as CFString)
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>

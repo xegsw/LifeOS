@@ -1,0 +1,15 @@
+# P3-158 D0673 活动额度提示只读诊断
+
+Partial / Diagnosis Only；按PM本轮要求只读候选和公开合成计时/计数，不重试、不发送、不换App、不修改合同或代码。主责Codex工程诊断，待PM确认后续修复安排；不是独立评审或任务Pass。
+
+结论：不是180秒总活动预算耗尽。失败时usedMs=91139，随后一次宿主状态处理增至91148，reservedMs=0。第二模型阶段从1789044418871到诊断1789044478883共60012毫秒，达到单次60000毫秒预留。coordination.rs:642的elapsed > reserved分支先于response错误处理调用v8_fail(activity_budget_exceeded)，把单次模型时限错误归为总额度耗尽。v8_fail按预留60000记账，因此约31139+60000=91139，不是180000。
+
+时间归属：新turn创建1789044105600；第一次确认受理1789044306396，间隔200796毫秒，而此时usedMs仅20，说明前次人工等待未算入活动。首模型诊断1789044337490，阶段31094毫秒；finish_reason=stop，usage prompt1098/completion2722/total3820，证明首请求成功到达Provider并完整返回。公开合成查询1789044337502至4337507，仅5毫秒且成功。第二确认1789044418871，距查询完成81364毫秒，确认前累计仅31139，第二次人工等待同样未计入。凭据加载在v8_consume_with_loader两个v8_host_run之间，计时器与事务均已结束；没有独立凭据等待时间戳，不能报告其精确耗时。未见恢复预览继承旧失败活动预算：此turn初次模型仅used20。
+
+第二次POST结论须保留Unknown：已消费第二模型许可且记录约60秒模型阶段，符合单次网络超时路径；但当前诊断没有保存传输是否spawn、HTTP状态或具体底层错误，finish_reason与usage均Unknown，不能证明服务端收到POST，也不能断言没有发送。transport deadline还可能返回dispatch_outcome_unknown，或curl退出28映射provider_timeout；这两者均会先被v8_finish的elapsed分支覆盖。不能将推断写成确定的provider_timeout。
+
+本回合model2/query1；新开发累计turn4/query2/model6，旧B14保持，未见未启动。精确operationId对应records/feedback/derivations均0，turn failed、无receipt：没有Action或条件业务提交，草稿保留。失败与次数保留，不自动重放。
+
+最小修复建议：在不改变60秒单次/180秒总预算的前提下，区分单次模型截止与总活动耗尽；保留底层固定超时/发送结果未知错误，仍禁止接受迟到响应或写入。仅当总活动确已耗尽时展示activity_budget_exceeded。增加离线边界测试：先用约31秒、第二阶段60012毫秒，错误不能宣称总180秒耗尽且无业务写入；总预算真正耗尽仍失败关闭。需要准确分辨POST阶段时可另评估增加固定枚举传输阶段/错误元数据，不记录正文或网络凭据。本轮未实施任何修复。
+
+证据：lifeos/engineering/LIFEOS-P3-158/evidence/D0673-activity-diagnosis.json。代码定位：candidate/src/health_conversation_host/coordination.rs:636；candidate/src/provider_transport.rs:160；candidate/src/health_conversation_host/coordination.rs:541（凭据等待）。运行包及候选保持原D0673。

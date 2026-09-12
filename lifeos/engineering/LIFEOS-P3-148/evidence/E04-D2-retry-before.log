@@ -1,0 +1,93 @@
+✖ IR-D2-001 failed open, user edit, successful retry with OLD pendingDraft (7.048334ms)
+✖ multiple failures and edits keep last user input including intentional empty draft (0.198291ms)
+✔ successful first recovery without edits restores stored draft (0.1755ms)
+✔ failed retries without edits still recover stored draft (0.095083ms)
+✖ input before initial start takes priority over persisted draft (0.165208ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 2
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 52.703958
+
+✖ failing tests:
+
+test at lifeos/engineering/LIFEOS-P3-148/tools/test_e04_retry.mjs:6:1
+✖ IR-D2-001 failed open, user edit, successful retry with OLD pendingDraft (7.048334ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      conversationId: 'source-chat',
+  +   draftId: 'old-draft',
+  +   requestId: 'old',
+  +   revision: 4,
+  +   text: 'old persisted draft',
+  +   turnId: 'old-turn'
+  -   draftId: 'draft:7674303f-141b-4589-8ca9-d94471e62dac',
+  -   requestId: 'e6fd620a-f000-433b-8d0c-b5a9a78b55de',
+  -   revision: 2,
+  -   text: 'new local draft',
+  -   turnId: '7674303f-141b-4589-8ca9-d94471e62dac'
+    }
+  
+      at TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/tools/test_e04_retry.mjs:6:253)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { requestId: 'old', draftId: 'old-draft', conversationId: 'source-chat', turnId: 'old-turn', revision: 4, text: 'old persisted draft' },
+    expected: { requestId: 'e6fd620a-f000-433b-8d0c-b5a9a78b55de', draftId: 'draft:7674303f-141b-4589-8ca9-d94471e62dac', conversationId: 'source-chat', turnId: '7674303f-141b-4589-8ca9-d94471e62dac', revision: 2, text: 'new local draft' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at lifeos/engineering/LIFEOS-P3-148/tools/test_e04_retry.mjs:7:1
+✖ multiple failures and edits keep last user input including intentional empty draft (0.198291ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      conversationId: 'source-chat',
+  +   draftId: 'old-draft',
+  +   requestId: 'old',
+  -   draftId: 'draft:399700d4-edaa-4faa-9e6c-8d1619d43e07',
+  -   requestId: 'd91a2d40-a1e1-4197-8a4d-9ec54569c725',
+      revision: 4,
+  +   text: 'old persisted draft',
+  +   turnId: 'old-turn'
+  -   text: '',
+  -   turnId: '399700d4-edaa-4faa-9e6c-8d1619d43e07'
+    }
+  
+      at TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/tools/test_e04_retry.mjs:7:294)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { requestId: 'old', draftId: 'old-draft', conversationId: 'source-chat', turnId: 'old-turn', revision: 4, text: 'old persisted draft' },
+    expected: { requestId: 'd91a2d40-a1e1-4197-8a4d-9ec54569c725', draftId: 'draft:399700d4-edaa-4faa-9e6c-8d1619d43e07', conversationId: 'source-chat', turnId: '399700d4-edaa-4faa-9e6c-8d1619d43e07', revision: 4, text: '' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at lifeos/engineering/LIFEOS-P3-148/tools/test_e04_retry.mjs:10:1
+✖ input before initial start takes priority over persisted draft (0.165208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'old persisted draft'
+  - 'typed before open'
+  
+      at TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/tools/test_e04_retry.mjs:10:164)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'old persisted draft',
+    expected: 'typed before open',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

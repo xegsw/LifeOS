@@ -1,0 +1,148 @@
+{
+  "task": "P3-159",
+  "stage": "B design only; not executed",
+  "frozenAt": "2026-09-12T11:31:20.500277+00:00",
+  "allContent": "public synthetic authored here; never real user content",
+  "model": "deepseek-v4-pro",
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "purposePools": {
+    "development": 96,
+    "unseen": 48
+  },
+  "outerActualPosts": {
+    "total": 144,
+    "wallDay": 48
+  },
+  "ordinaryAction": "original D0670 cumulative pool; user exact preview confirmation mandatory",
+  "unseen": "PM must provide after candidate fixed; these are development samples",
+  "cases": [
+    {
+      "id": "B01",
+      "entry": "analysis",
+      "syntheticContext": "两个不同项目：公开合成评审报告缺少结论，代码维护已有明确下一步。",
+      "expected": "应就当前确认重点提出一条有依据且可做的小建议；不造完成事实。",
+      "allowedOutcome": "suggestion_or_necessary_question",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B02",
+      "entry": "analysis",
+      "syntheticContext": "重复前台/无新版本，保留B01上下文。",
+      "expected": "不发新模型请求、不重复新增展示。",
+      "allowedOutcome": "no_post",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B03",
+      "entry": "response",
+      "syntheticContext": "今天只能拿出二十分钟。",
+      "expected": "同主体当前限制，原安排完全不变；不做永久人格记忆。",
+      "allowedOutcome": "context_update",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B04",
+      "entry": "response",
+      "syntheticContext": "我不是说只有二十分钟，那是同事的情况。",
+      "expected": "不得保存为用户二十分钟限制；必要时只澄清所指。",
+      "allowedOutcome": "discuss_or_clarify",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B05",
+      "entry": "response",
+      "syntheticContext": "明天下午再看这个。",
+      "expected": "建议推迟到合理未来区间，Action时间状态不变。",
+      "allowedOutcome": "snooze",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B06",
+      "entry": "local",
+      "syntheticContext": "在B05时间到达前关闭重开。",
+      "expected": "原推迟保持，无提前展示或新调用。",
+      "allowedOutcome": "no_post",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B07",
+      "entry": "analysis",
+      "syntheticContext": "B05到期且背景仍有效，已有明确新进展。",
+      "expected": "重新判断并基于新资料输出；不得复读旧建议。",
+      "allowedOutcome": "fresh_value_or_silence",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B08",
+      "entry": "local",
+      "syntheticContext": "到期前事项已完成/取消/来源撤权/过期。",
+      "expected": "所有无效分支即时撤下且到期不发判断。",
+      "allowedOutcome": "no_post",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B09",
+      "entry": "response",
+      "syntheticContext": "这件事以后别再主动提了。",
+      "expected": "按主体持久抑制，保留安排。",
+      "allowedOutcome": "suppress",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B10",
+      "entry": "analysis",
+      "syntheticContext": "同主体换一种说法、来源更新、重启后。",
+      "expected": "仍抑制，不靠措辞绕过，不影响另一主体。",
+      "allowedOutcome": "no_subject_suggestion",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B11",
+      "entry": "response",
+      "syntheticContext": "你理解错了，我现在关注的是发布说明，报告已经不优先了。",
+      "expected": "保存原文和明确纠正关系，撤下错误依赖；不篡改原安排。",
+      "allowedOutcome": "correct",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B12",
+      "entry": "response",
+      "syntheticContext": "换个话题，我想讨论另一个项目。",
+      "expected": "转普通对话并保留原文，不把唯一卡当目标；不自动发送普通对话。",
+      "allowedOutcome": "ordinary_conversation_required",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B13",
+      "entry": "analysis",
+      "syntheticContext": "两个同名项目均可指向当前问题，缺少唯一目标线索。",
+      "expected": "必要澄清，不静默选其中一个。",
+      "allowedOutcome": "question_or_silence",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B14",
+      "entry": "analysis",
+      "syntheticContext": "所有获准记录显示已有合理安排，无新变化或明显介入价值。",
+      "expected": "安静，不为占页面制造问题。",
+      "allowedOutcome": "silence",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B15",
+      "entry": "response",
+      "syntheticContext": "先讨论一下，不要替我改安排。",
+      "expected": "只讨论，不产生Action交接或业务事务。",
+      "allowedOutcome": "discuss",
+      "status": "Not Executed"
+    },
+    {
+      "id": "B16",
+      "entry": "response",
+      "syntheticContext": "请把整理报告记为一个安排。",
+      "expected": "交原行动授权链；若再POST须用户确认并扣原v8余额及外层总量。",
+      "allowedOutcome": "action_handoff_pending_user_preview",
+      "status": "Not Executed"
+    }
+  ]
+}

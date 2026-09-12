@@ -1,0 +1,96 @@
+{
+  "publicSyntheticOnly": true,
+  "results": [
+    {
+      "question": "如果合成预报下雨，就安排室内阅读",
+      "turnRequestId": "coord8-turn-74686612315116b48a566675099b271c",
+      "operationId": "coord8-operation-69b6f01f10302f5335906ae27cc51ecb",
+      "state": "committed",
+      "modelCalls": 2,
+      "queryCalls": 1,
+      "activityBudget": {
+        "activeStage": "none",
+        "limitMs": 180000,
+        "reservedMs": 0,
+        "usedMs": 29
+      },
+      "result": {
+        "applied": {
+          "action": {
+            "id": "action:coord8-operation-69b6f01f10302f5335906ae27cc51ecb",
+            "version": 1
+          },
+          "eventRef": "action-event:coord8-operation-69b6f01f10302f5335906ae27cc51ecb",
+          "operation": "create"
+        },
+        "businessChanged": true,
+        "condition": {
+          "id": "coord8:condition:coord8-operation-69b6f01f10302f5335906ae27cc51ecb",
+          "version": 1
+        },
+        "kind": "condition_and_action",
+        "truth": "true"
+      },
+      "actionEvents": 1,
+      "conditionEvents": 1
+    },
+    {
+      "question": "明天去合成健身房",
+      "turnRequestId": "coord8-turn-bb0ccc4a8d180cfae3063eacf7ff3112",
+      "operationId": "coord8-operation-a4f5f6a51944d83dd213a6eab4477745",
+      "state": "committed",
+      "modelCalls": 1,
+      "queryCalls": 0,
+      "activityBudget": {
+        "activeStage": "none",
+        "limitMs": 180000,
+        "reservedMs": 0,
+        "usedMs": 16
+      },
+      "result": {
+        "applied": {
+          "action": {
+            "id": "action:coord8-operation-a4f5f6a51944d83dd213a6eab4477745",
+            "version": 1
+          },
+          "eventRef": "action-event:coord8-operation-a4f5f6a51944d83dd213a6eab4477745",
+          "operation": "create"
+        },
+        "businessChanged": true,
+        "kind": "action"
+      },
+      "actionEvents": 1,
+      "conditionEvents": 0
+    },
+    {
+      "question": "改到后天吧",
+      "turnRequestId": "coord8-turn-05cc08639d6d2bf21e76a0260c25453a",
+      "operationId": "coord8-operation-e9ea42e33371c1f81e85ee30be942fe7",
+      "state": "committed",
+      "modelCalls": 1,
+      "queryCalls": 0,
+      "activityBudget": {
+        "activeStage": "none",
+        "limitMs": 180000,
+        "reservedMs": 0,
+        "usedMs": 12
+      },
+      "result": {
+        "applied": {
+          "action": {
+            "id": "action:coord8-operation-a4f5f6a51944d83dd213a6eab4477745",
+            "version": 2
+          },
+          "eventRef": "action-event:coord8-operation-e9ea42e33371c1f81e85ee30be942fe7",
+          "operation": "adjust"
+        },
+        "businessChanged": true,
+        "kind": "action"
+      },
+      "actionEvents": 1,
+      "conditionEvents": 0
+    }
+  ],
+  "sameActionIdentity": true,
+  "restartDidNotReplayQuery": true
+}

@@ -1,0 +1,43 @@
+{
+  "task": "P3-149 S3 closure-3",
+  "engineering": "complete",
+  "real_result": {
+    "attachments_unprocessed": 46,
+    "duplicates": 6,
+    "failed": 0,
+    "inserted": 250589,
+    "model": false,
+    "network": false,
+    "retained": true,
+    "skipped": 1,
+    "status": "successful_with_skips",
+    "supported": 250595,
+    "target_verified": true,
+    "unprojected": 0,
+    "unsupported": 1090375
+  },
+  "diagnostic_count_conservation": true,
+  "scanned_supported_plus_skipped_plus_unsupported": 1340971,
+  "real_import_attempts": 1,
+  "max_authorized_attempts": 3,
+  "remaining_attempts_not_used": 2,
+  "candidate_unchanged_during_import": true,
+  "tests": {
+    "parser": 40,
+    "rust_unique": 68,
+    "frontend": 28,
+    "offline_build": "pass",
+    "ci": "not run"
+  },
+  "findings": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "Unknown_in_authorized_result": 0,
+    "Not_Implemented_in_authorized_result": 0
+  },
+  "limits": "One semantic skip explicitly retained as count; unsupported types/attachments not imported; not full-health-library support",
+  "independent_review": "paused by user; not Pass",
+  "pm_acceptance": "pending",
+  "real_body_values_member_names_or_content_hashes_in_evidence": false
+}

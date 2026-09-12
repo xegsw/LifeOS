@@ -1,0 +1,185 @@
+✔ valid receipt none// (0.471291ms)
+✔ valid receipt clarify// (0.054458ms)
+✔ valid receipt action// (0.041583ms)
+✔ valid receipt condition_only/unknown/condition_unknown (0.036ms)
+✔ valid receipt condition_only/false/condition_false (0.049041ms)
+✔ valid receipt condition_only/true/record_only (0.040042ms)
+✔ valid receipt condition_and_action/true/ (0.035875ms)
+✖ production confirm rejects wrong-turn before success (0.85625ms)
+✖ production confirm rejects wrong-operation-identity before success (0.1ms)
+✖ production confirm rejects missing-event before success (0.128ms)
+✖ production confirm rejects invalid-action-version before success (0.075167ms)
+✖ production confirm rejects unexpected-permission before success (0.061416ms)
+✖ production confirm rejects false-action-condition before success (0.063917ms)
+✖ production confirm rejects false-business-change before success (0.069542ms)
+✖ production confirm rejects inconsistent-status before success (0.048ms)
+✖ production confirm rejects extra-receipt-field before success (0.050375ms)
+✖ production confirm rejects oversized-reply before success (0.056917ms)
+✖ none cannot disguise an action event (0.05675ms)
+✖ condition-only reason must agree with truth (0.041959ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 7
+ℹ fail 12
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 49.416583
+
+✖ failing tests:
+
+test at ../../../../../../private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:38
+✖ production confirm rejects wrong-turn before success (0.85625ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:161)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:38
+✖ production confirm rejects wrong-operation-identity before success (0.1ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:161)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:38
+✖ production confirm rejects missing-event before success (0.128ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:161)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:38
+✖ production confirm rejects invalid-action-version before success (0.075167ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:161)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:38
+✖ production confirm rejects unexpected-permission before success (0.061416ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:161)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:38
+✖ production confirm rejects false-action-condition before success (0.063917ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:161)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:38
+✖ production confirm rejects false-business-change before success (0.069542ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:161)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:38
+✖ production confirm rejects inconsistent-status before success (0.048ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:161)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:38
+✖ production confirm rejects extra-receipt-field before success (0.050375ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:161)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:38
+✖ production confirm rejects oversized-reply before success (0.056917ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:22:161)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:23:1
+✖ none cannot disguise an action event (0.05675ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:23:115)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:24:1
+✖ condition-only reason must agree with truth (0.041959ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///private/tmp/lifeos-p3-158-main-chain-v1/build/D0670-mutations-9a17b0a8-109b-4516-95a6-6049235bc31c/frontend-success-receipt/tests/coordination_receipt.mjs:24:173)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }

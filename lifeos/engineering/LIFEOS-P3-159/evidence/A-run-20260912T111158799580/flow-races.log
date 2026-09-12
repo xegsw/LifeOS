@@ -1,0 +1,16 @@
+✔ successful restoration clears earlier restore error (1.596708ms)
+✔ queued draft failure cannot survive successful prepare (0.209375ms)
+✔ late old draft failure cannot attach to new draft (0.110917ms)
+✔ saved result refresh failure retries only read and never prepares or sends again (0.416083ms)
+✔ new prepare failure belongs to new turn and revision, prior answer is unchanged (0.103792ms)
+✔ late completed cancel cannot erase newly edited draft (0.118292ms)
+✔ superseded snapshot rejection is ignored (0.093ms)
+✔ actual status renderer offers read-only recovery after saved result (1.126416ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 40.286

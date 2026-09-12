@@ -1,0 +1,156 @@
+   Compiling lifeos-p3-149 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/candidate)
+warning: method `new_child` is never used
+   --> src/artifact_io.rs:170:12
+    |
+ 40 | impl Dir {
+    | -------- method in this implementation
+...
+170 |     pub fn new_child(&self, s: &str) -> R<Self> {
+    |            ^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `P3_144_REFERENCE_PREFIX` is never used
+  --> src/secure_credentials.rs:16:7
+   |
+16 | const P3_144_REFERENCE_PREFIX: &str = "p3-144-key-";
+   |       ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `encrypt_with_port` is never used
+   --> src/secure_credentials.rs:248:8
+    |
+248 | pub fn encrypt_with_port<P: CredentialPort>(
+    |        ^^^^^^^^^^^^^^^^^
+
+warning: function `encrypt` is never used
+   --> src/secure_credentials.rs:283:8
+    |
+283 | pub fn encrypt(api_key: &str, aad: &[u8]) -> Result<EncryptedCredential, CredentialFailure> {
+    |        ^^^^^^^
+
+warning: function `resume` is never used
+   --> src/source_api.rs:481:8
+    |
+481 | pub fn resume(fixture: &str) -> R<()> {
+    |        ^^^^^^
+
+warning: `lifeos-p3-149` (bin "lifeos-p3-149" test) generated 5 warnings
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.98s
+     Running unittests src/main.rs (/private/tmp/lifeos-p3-149-health-source-v1/target/debug/deps/lifeos_p3_149-474cf4f89b49c2cc)
+
+running 85 tests
+test artifact_io::tests::ancestor_replaced_after_check_create_uses_old_fd_and_rejects ... ok
+test artifact_io::tests::directory_and_file_symlinks_reject_without_chmod ... ok
+test artifact_io::tests::file_replaced_after_check_write_never_follows_replacement ... ok
+test artifact_io::tests::normal_fd_copy_publication_and_quarantine ... ok
+test artifact_io::tests::parser_fd_output_and_reopen_reject_after_name_replacement ... ok
+test artifact_io::tests::quarantine_directory_swap_never_moves_into_sentinel ... ok
+test artifact_io::tests::staging_replacement_cannot_publish_or_reopen ... ok
+test conversation_store::p149_tests::p149_closure_configuration_private_key_and_restricted_filters ... ok
+test conversation_store::p149_tests::p149_closure_crash_child ... ok
+test conversation_store::p149_tests::p149_closure_draft_revision_and_cross_session_writes ... ok
+test conversation_store::p149_tests::p149_closure_exact_serialized_budget_and_multiple_corrections ... ok
+test conversation_store::p149_tests::p149_closure_feedback_decisions_and_transaction_rollback ... ok
+test conversation_store::p149_tests::p149_closure_preview_operations_and_no_match ... ok
+test conversation_store::p149_tests::p149_closure_process_exit_after_dispatch_commit_and_explicit_retry ... ok
+test conversation_store::p149_tests::p149_closure_real_coordinator_duplicate_and_revocation_barriers ... ok
+test conversation_store::p149_tests::p149_closure_revocation_barrier_before_permission_consumption ... ok
+test conversation_store::p149_tests::p149_closure_source_query_returns_eight_at_most ... ok
+test conversation_store::p149_tests::p149_closure_structure_and_citation_version_rejection ... ok
+test conversation_store::p149_tests::p149_consumed_handoff_late_revocation_marks_answer_stale ... ok
+test conversation_store::p149_tests::p149_correction_scope_atomicity_and_overflow ... ok
+test conversation_store::p149_tests::p149_dispatch_commit_failure_and_revocation_zero_calls ... ok
+test conversation_store::p149_tests::p149_existing_store_open_has_no_ddl_or_seed ... ok
+test conversation_store::p149_tests::p149_health_samples_are_not_disclosed_by_public_source_preview ... ok
+test conversation_store::p149_tests::p149_ir001_preview_replay_projects_current_packet ... ok
+test conversation_store::p149_tests::p149_ir002_feedback_turn_and_conversation_recovery ... ok
+test conversation_store::p149_tests::p149_ir003_bound_reference_variants_and_epoch_response ... ok
+test conversation_store::p149_tests::p149_ir003_epoch_change_after_success_invalidates_read ... ok
+test conversation_store::p149_tests::p149_ir004_transport_receipt_holds_then_releases_coordinator ... ok
+test conversation_store::p149_tests::p149_preview_bytes_citations_and_duplicate_dispatch ... ok
+test conversation_store::p149_tests::p149_preview_invalidation_cases_zero_calls ... ok
+test conversation_store::p149_tests::p149_response_errors_are_fixed_states_and_never_resend ... ok
+test conversation_store::p149_tests::p149_source_filters_and_scalar_budgets ... ok
+test conversation_store::p149_tests::p149_strict_dto_duplicates_and_base64 ... ok
+test conversation_store::p149_tests::p149_timeout_and_result_persistence_fail_never_resend ... ok
+test health_ingestion::tests::batch_internal_conflicts_and_duplicates_deterministic ... ok
+test health_ingestion::tests::conflicting_batch_or_sample_rolls_back_every_row ... ok
+test health_ingestion::tests::cross_midnight_proration_explicit_and_offsets_separate ... ok
+test health_ingestion::tests::exercise_rejects_impossible_duration ... ok
+test health_ingestion::tests::higher_revision_corrects_old_and_new_day_only ... ok
+test health_ingestion::tests::invalid_fields_units_times_limits_leave_zero_writes ... ok
+test health_ingestion::tests::lower_revision_late_and_empty_do_not_erase_current ... ok
+test health_ingestion::tests::missing_metric_is_absent_not_zero ... ok
+test health_ingestion::tests::multi_revision_batch_order_does_not_change_projection ... ok
+test health_ingestion::tests::multi_source_count_never_max_or_sum ... ok
+test health_ingestion::tests::overlapping_count_same_source_is_uncertain ... ok
+test health_ingestion::tests::same_version_in_new_batch_does_not_refresh_observed_or_received_state ... ok
+test health_ingestion::tests::sleep_union_only_explicit_sleep_intervals ... ok
+test health_ingestion::tests::transaction_failure_rolls_back_and_retry_succeeds ... ok
+test health_ingestion::tests::valid_receive_and_replay_are_atomic_idempotent ... ok
+test ipc_boundary::tests::p149_public_errors_are_closed ... ok
+test ipc_boundary::tests::p149_raw_entry_rejects_before_dispatch_and_preserves_legacy ... ok
+test ipc_boundary::tests::p149_raw_operation_contract_table ... ok
+test provider_store::lifecycle_mock::p149_lifecycle_delete_windows_passive_and_explicit_recovery ... ok
+test provider_store::lifecycle_mock::p149_lifecycle_independent_key_persistence_and_replace_windows ... ok
+test provider_store::lifecycle_mock::p149_lifecycle_models_only_on_explicit_test_and_no_creation_on_reads ... ok
+test provider_store::p149_e03_checks::p149_e03_synthetic_ports_without_root_or_os ... ok
+test provider_store::p149_tests::p149_delete_cleanup_pending_is_explicit_and_replay_safe ... ok
+test provider_store::p149_tests::p149_model_selection_and_no_network_build ... ok
+test provider_store::p149_tests::p149_persistent_ciphertext_tamper_and_new_namespace_only ... ok
+test provider_store::p149_tests::p149_prepared_failure_passive_read_no_key_recovery_explicit ... ok
+test provider_transport::p149_transport_checks::p149_http_response_envelopes_are_bounded_and_fixed_errors ... ok
+test provider_transport::p149_transport_checks::p149_runtime_env_cannot_enable_transport ... ok
+test runtime_root::p149_e03_checks::p149_e03_fixed_configuration_without_filesystem ... ok
+test runtime_root::tests::exact_profiles_and_mixing_without_contact ... ok
+test runtime_root::tests::injected_root_marker_and_runtime_fail_closed ... ok
+test runtime_root::tests::pilot_normal_lifecycle ... ok
+test secure_credentials::p149_memory_port_checks::p149_memory_os_port_crypto_failures_do_not_fallback ... ok
+test secure_credentials::tests::lookup_error_classification_distinguishes_missing_from_unavailable ... ok
+test secure_credentials::tests::reference_lineage_is_exact_and_does_not_probe_unknown_services ... FAILED
+test secure_credentials::tests::synthetic_port_routes_legacy_and_current_credentials_exactly ... FAILED
+test source_file::scale_tests::beyond_old_count_depth_and_size_limits ... ok
+test source_file::tests::anchored_read_pages_special_links_and_changed ... ok
+test source_store::failure_tests::failed_new_parse_preserves_old_effective_version ... ok
+test source_store::tests::cursor_owner_version_generation_and_restricted ... ok
+test source_store::tests::dto_boundaries_and_batch_atomicity ... ok
+test source_store::tests::long_source_is_not_confirmation_and_missing_invalidates ... ok
+test source_store::tests::target_publication_parent_replacement_and_receipt_failure_are_atomic ... ok
+test source_store::tests::transactions_versions_and_fault ... ok
+test source_store::tests::worker_pause_cancel_disconnect_replay ... ok
+test source_worker::lifecycle_tests::refresh_missing_version_root_swap_and_local_link ... ok
+test source_worker::recovery_tests::publish_receipt_failure_quarantine_retry ... ok
+test source_worker::scan_change_tests::bookmark_aliases_and_directory_symlink_cycles_are_bounded ... FAILED
+test source_worker::scan_change_tests::changed_directory_stops_before_missing_or_partial_success ... ok
+test source_worker::tests::persisted_scan_import_resume_and_revoke ... ok
+test strict_json::boundary_tests::p149_tauri_value_boundary_loses_duplicate_keys_before_request ... ok
+
+failures:
+
+---- secure_credentials::tests::reference_lineage_is_exact_and_does_not_probe_unknown_services stdout ----
+
+thread 'secure_credentials::tests::reference_lineage_is_exact_and_does_not_probe_unknown_services' (20639925) panicked at src/secure_credentials.rs:432:9:
+assertion `left == right` failed
+  left: Err(KeyReferenceRejected)
+ right: Ok(P3_144)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- secure_credentials::tests::synthetic_port_routes_legacy_and_current_credentials_exactly stdout ----
+
+thread 'secure_credentials::tests::synthetic_port_routes_legacy_and_current_credentials_exactly' (20639926) panicked at src/secure_credentials.rs:467:47:
+called `Result::unwrap()` on an `Err` value: KeyReferenceRejected
+
+---- source_worker::scan_change_tests::bookmark_aliases_and_directory_symlink_cycles_are_bounded stdout ----
+
+thread 'source_worker::scan_change_tests::bookmark_aliases_and_directory_symlink_cycles_are_bounded' (20639956) panicked at src/source_worker.rs:671:14:
+called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: "No such file or directory" }
+
+
+failures:
+    secure_credentials::tests::reference_lineage_is_exact_and_does_not_probe_unknown_services
+    secure_credentials::tests::synthetic_port_routes_legacy_and_current_credentials_exactly
+    source_worker::scan_change_tests::bookmark_aliases_and_directory_symlink_cycles_are_bounded
+
+test result: FAILED. 82 passed; 3 failed; 0 ignored; 0 measured; 0 filtered out; finished in 8.36s
+
+error: test failed, to rerun pass `--bin lifeos-p3-149`

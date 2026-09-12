@@ -1,0 +1,17 @@
+/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/tools/health_ax.swift:12:65: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect. [#DeprecatedDeclaration]
+10 | func nodes(_ n:AXUIElement)->[AXUIElement]{var result=[n];for child in attr(n,kAXChildrenAttribute) as? [AXUIElement] ?? []{result+=nodes(child)};return result}
+11 | let all=nodes(windows[0]);let action=args[2];let label=args[3]
+12 | NSRunningApplication(processIdentifier:pid)?.activate(options:[.activateIgnoringOtherApps])
+   |                                                                 `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect. [#DeprecatedDeclaration]
+13 | if action == "resize" {let parts=label.split(separator:"x").compactMap{Double($0)};guard parts.count==2 else{exit(4)};var size=CGSize(width:parts[0],height:parts[1]);print(AXUIElementSetAttributeValue(windows[0],kAXSizeAttribute as CFString,AXValueCreate(.cgSize,&size)!).rawValue);exit(0)}
+14 | if action == "scroll" {let bars=all.filter{attr($0,kAXRoleAttribute) as? String == "AXScrollBar"};guard bars.count == 1, let v=Double(label) else{exit(4)};print(AXUIElementSetAttributeValue(bars[0],kAXValueAttribute as CFString,NSNumber(value:v)).rawValue);exit(0)}
+
+/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/tools/health_ax.swift:19:66: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect. [#DeprecatedDeclaration]
+17 | if action=="press"{print(AXUIElementPerformAction(matches[0],kAXPressAction as CFString).rawValue)}
+18 | else if action=="type" || action=="query"{
+19 |  NSRunningApplication(processIdentifier:pid)?.activate(options:[.activateIgnoringOtherApps])
+   |                                                                  `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect. [#DeprecatedDeclaration]
+20 |  AXUIElementSetAttributeValue(matches[0],kAXFocusedAttribute as CFString,kCFBooleanTrue)
+21 |  let setResult=AXUIElementSetAttributeValue(matches[0],kAXValueAttribute as CFString,label as CFString)
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>

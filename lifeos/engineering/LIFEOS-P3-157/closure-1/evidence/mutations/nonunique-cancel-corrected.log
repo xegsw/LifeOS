@@ -1,0 +1,57 @@
+✔ strong-frame-unlisted-verb (0.735875ms)
+✔ strong-frame-another-verb (0.26075ms)
+✔ word-internal-negation (0.039041ms)
+✔ withdraw-unique (0.067917ms)
+✔ withdraw-no-target (0.103166ms)
+✖ withdraw-multiple (0.412417ms)
+✔ negative-new-intent (0.183375ms)
+✔ negative-not-withdrawal (0.081459ms)
+✔ cancelled-target (0.043583ms)
+✔ finished-target (0.077042ms)
+✔ quoted-withdrawal (0.04275ms)
+✔ hypothetical (0.025667ms)
+✔ question (0.021291ms)
+✔ uncertain (0.028416ms)
+✔ conflicting-clauses (0.019333ms)
+✔ unsupported-explicit (0.035291ms)
+✔ ordinary-chat (0.032167ms)
+✔ cloud-affirmation (0.035542ms)
+✔ parse-none cannot fall into chat for explicit intent (0.119625ms)
+✔ unsupported explicit input never prepares disclosure and keeps draft (1.767917ms)
+✔ unsupported no matching cancellation is honest local no-change (0.067292ms)
+✔ unsupported read restoration does not parse or write (0.12575ms)
+✔ late cancelled parsing cannot write (0.089459ms)
+✔ legacy explicit negative new intent never becomes cancellation (0.025ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 23
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 45.736625
+
+✖ failing tests:
+
+test at ../../../../../../private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/nonunique-cancel-corrected/tests/closure_cases.mjs:27:45
+✖ withdraw-multiple (0.412417ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'supported_action'
+  - 'ambiguous_action'
+  
+      at TestContext.<anonymous> (file:///private/tmp/lifeos-p3-157-real-actions-v1/closure-1/closure-mutations/nonunique-cancel-corrected/tests/closure_cases.mjs:27:109)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'supported_action',
+    expected: 'ambiguous_action',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

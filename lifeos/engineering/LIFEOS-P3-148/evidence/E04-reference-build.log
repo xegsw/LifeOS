@@ -1,0 +1,43 @@
+lifeos/engineering/LIFEOS-P3-148/tools/e04_reference.swift:19:81: error: class declaration cannot close over value 'width' defined in outer scope
+ 2 | import WebKit
+ 3 | let args=CommandLine.arguments
+ 4 | guard args.count==5, let width=Double(args[2]),let height=Double(args[3]),[700.0,1280.0].contains(width),[728.0,917.0].contains(height),["116","142"].contains(args[1]) else{exit(2)}
+   |                          `- note: 'width' declared here
+ 5 | let base="/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/evidence/visual-reference/"
+ 6 | let input=URL(fileURLWithPath:base+args[1]+"/index.html")
+   :
+11 | let view=WKWebView(frame:NSRect(x:0,y:0,width:width,height:height),configuration:config)
+12 | let window=NSWindow(contentRect:view.frame,styleMask:[.borderless],backing:.buffered,defer:false);window.contentView=view;window.orderFront(nil)
+13 | class Delegate:NSObject,WKNavigationDelegate{
+   |       `- note: type declared here
+14 |  func webView(_ w:WKWebView,decidePolicyFor action:WKNavigationAction,decisionHandler:@escaping(WKNavigationActionPolicy)->Void){decisionHandler(action.request.url?.isFileURL==true ? .allow:.cancel)}
+15 |  func webView(_ w:WKWebView,didFinish navigation:WKNavigation!){
+   :
+17 |   w.evaluateJavaScript(action){_,_ in DispatchQueue.main.asyncAfter(deadline:.now()+0.5){
+18 |    w.takeSnapshot(with:nil){im,err in guard let im=im,let tiff=im.tiffRepresentation,let rep=NSBitmapImageRep(data:tiff),let data=rep.representation(using:.png,properties:[:]) else{exit(4)}
+19 |     do{try data.write(to:output);print("reference_only \(output.path) content=\(width)x\(height) pixels=\(rep.pixelsWide)x\(rep.pixelsHigh)");exit(0)}catch{exit(5)}
+   |                                                                                 `- error: class declaration cannot close over value 'width' defined in outer scope
+20 |    }
+21 |   }}
+
+lifeos/engineering/LIFEOS-P3-148/tools/e04_reference.swift:19:90: error: class declaration cannot close over value 'height' defined in outer scope
+ 2 | import WebKit
+ 3 | let args=CommandLine.arguments
+ 4 | guard args.count==5, let width=Double(args[2]),let height=Double(args[3]),[700.0,1280.0].contains(width),[728.0,917.0].contains(height),["116","142"].contains(args[1]) else{exit(2)}
+   |                                                    `- note: 'height' declared here
+ 5 | let base="/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/evidence/visual-reference/"
+ 6 | let input=URL(fileURLWithPath:base+args[1]+"/index.html")
+   :
+11 | let view=WKWebView(frame:NSRect(x:0,y:0,width:width,height:height),configuration:config)
+12 | let window=NSWindow(contentRect:view.frame,styleMask:[.borderless],backing:.buffered,defer:false);window.contentView=view;window.orderFront(nil)
+13 | class Delegate:NSObject,WKNavigationDelegate{
+   |       `- note: type declared here
+14 |  func webView(_ w:WKWebView,decidePolicyFor action:WKNavigationAction,decisionHandler:@escaping(WKNavigationActionPolicy)->Void){decisionHandler(action.request.url?.isFileURL==true ? .allow:.cancel)}
+15 |  func webView(_ w:WKWebView,didFinish navigation:WKNavigation!){
+   :
+17 |   w.evaluateJavaScript(action){_,_ in DispatchQueue.main.asyncAfter(deadline:.now()+0.5){
+18 |    w.takeSnapshot(with:nil){im,err in guard let im=im,let tiff=im.tiffRepresentation,let rep=NSBitmapImageRep(data:tiff),let data=rep.representation(using:.png,properties:[:]) else{exit(4)}
+19 |     do{try data.write(to:output);print("reference_only \(output.path) content=\(width)x\(height) pixels=\(rep.pixelsWide)x\(rep.pixelsHigh)");exit(0)}catch{exit(5)}
+   |                                                                                          `- error: class declaration cannot close over value 'height' defined in outer scope
+20 |    }
+21 |   }}

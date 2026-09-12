@@ -1,0 +1,30 @@
+{
+  "schema": "health-window-snapshot-v1",
+  "batchId": "s1-demo-partial",
+  "capturedAtMs": 1788884436058,
+  "windowStartMs": 1788883200000,
+  "windowEndMs": 1788883800000,
+  "timezoneOffsetMinutes": 480,
+  "metric": "steps",
+  "source": {
+    "key": "snapshot-watch-group",
+    "name": "合成来源名称组",
+    "identityStrategy": "configured-name-group"
+  },
+  "query": {
+    "key": "contained-steps",
+    "intervalRule": "fully-contained",
+    "sleepCategory": "not-applicable"
+  },
+  "completeness": "unknown",
+  "pagination": "complete",
+  "completenessEvidence": "synthetic-fixture",
+  "samples": [
+    {
+      "startMs": 1788883200000,
+      "endMs": 1788883500000,
+      "value": 170,
+      "unit": "count"
+    }
+  ]
+}

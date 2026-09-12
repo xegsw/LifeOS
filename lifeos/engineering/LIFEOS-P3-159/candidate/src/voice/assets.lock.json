@@ -1,0 +1,52 @@
+{
+  "schema": "voice-assets-v1",
+  "code": "sherpa-onnx v1.13.7",
+  "assets": [
+    {
+      "path": "kws/README.md",
+      "url": "https://www.modelscope.cn/api/v1/models/pkufool/sherpa-onnx-kws-zipformer-wenetspeech-3.3M-2024-01-01/repo?Revision=3787015f084cb241dfa0e4ba237703a2d4322d50&FilePath=README.md",
+      "revision": "3787015f084cb241dfa0e4ba237703a2d4322d50",
+      "sha256": "dd0ec68b5d9ee736f016fc982078bd3cdbccc69057e9910bdd45580992d13367",
+      "license": "Apache-2.0 per author model README"
+    },
+    {
+      "path": "kws/tokens.txt",
+      "url": "https://www.modelscope.cn/api/v1/models/pkufool/sherpa-onnx-kws-zipformer-wenetspeech-3.3M-2024-01-01/repo?Revision=c7f531779e2324b104e58899d2d7727ea98e0b19&FilePath=tokens.txt",
+      "revision": "c7f531779e2324b104e58899d2d7727ea98e0b19",
+      "sha256": "72316508d9119696145abc6f1f8cdc46287535c34e5ce7e595f845cb1499cf2e",
+      "license": "Apache-2.0 per author model README"
+    },
+    {
+      "path": "kws/encoder-epoch-12-avg-2-chunk-16-left-64.int8.onnx",
+      "url": "https://www.modelscope.cn/api/v1/models/pkufool/sherpa-onnx-kws-zipformer-wenetspeech-3.3M-2024-01-01/repo?Revision=f360c3af05b218887669bf03d69d63042a1cd4e6&FilePath=encoder-epoch-12-avg-2-chunk-16-left-64.int8.onnx",
+      "revision": "f360c3af05b218887669bf03d69d63042a1cd4e6",
+      "sha256": "017af32f2c0138f931d05fbc009ee864295e910aff304f77d2f563815fc834fb",
+      "license": "Apache-2.0 per author model README"
+    },
+    {
+      "path": "kws/decoder-epoch-12-avg-2-chunk-16-left-64.onnx",
+      "url": "https://www.modelscope.cn/api/v1/models/pkufool/sherpa-onnx-kws-zipformer-wenetspeech-3.3M-2024-01-01/repo?Revision=c7f531779e2324b104e58899d2d7727ea98e0b19&FilePath=decoder-epoch-12-avg-2-chunk-16-left-64.onnx",
+      "revision": "c7f531779e2324b104e58899d2d7727ea98e0b19",
+      "sha256": "bb3d8640cc6a495088707173bc1707a8a4ffe014594fc9adcba8389e27d0339f",
+      "license": "Apache-2.0 per author model README"
+    },
+    {
+      "path": "kws/joiner-epoch-12-avg-2-chunk-16-left-64.int8.onnx",
+      "url": "https://www.modelscope.cn/api/v1/models/pkufool/sherpa-onnx-kws-zipformer-wenetspeech-3.3M-2024-01-01/repo?Revision=f360c3af05b218887669bf03d69d63042a1cd4e6&FilePath=joiner-epoch-12-avg-2-chunk-16-left-64.int8.onnx",
+      "revision": "f360c3af05b218887669bf03d69d63042a1cd4e6",
+      "sha256": "431de10b554f134ef8af320feea2db337e641290449a3d3f6cb6e5f5fd2c9c3d",
+      "license": "Apache-2.0 per author model README"
+    },
+    {
+      "path": "silero-v5.1.onnx",
+      "url": "https://raw.githubusercontent.com/snakers4/silero-vad/84768cefdf5a3852400e9d8237f7315d14b64a08/src/silero_vad/data/silero_vad.onnx",
+      "revision": "84768cefdf5a3852400e9d8237f7315d14b64a08",
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "license": "MIT",
+      "hash_provenance": "locally computed from official immutable Git commit; no independent release sha256"
+    }
+  ],
+  "keyword": "你好，小欧",
+  "tokens": "n ǐ h ǎo x iǎo ōu @你好小欧",
+  "validated": "local synthetic only; real acoustic pending"
+}

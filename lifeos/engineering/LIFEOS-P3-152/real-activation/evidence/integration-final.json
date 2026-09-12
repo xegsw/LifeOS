@@ -1,0 +1,54 @@
+{
+  "passed": 12,
+  "total": 12,
+  "results": [
+    {
+      "name": "Preview is inert, exact personal data visible, explicit confirmation creates one answer",
+      "pass": true
+    },
+    {
+      "name": "Local clarification and explicit state do not require configured network model",
+      "pass": true
+    },
+    {
+      "name": "Model change invalidates the previous preview without a send",
+      "pass": true
+    },
+    {
+      "name": "Credential deletion blocks confirmation and retains conversation assets",
+      "pass": true
+    },
+    {
+      "name": "Failed response preserves draft; manual retry creates new preview and no duplicate turn",
+      "pass": true
+    },
+    {
+      "name": "Cancel after dispatch is honest; late output cannot replace new question",
+      "pass": true
+    },
+    {
+      "name": "Editing preview invalidates it; restoration keeps the new draft",
+      "pass": true
+    },
+    {
+      "name": "Unknown question uses no hidden history and models remain local choices",
+      "pass": true
+    },
+    {
+      "name": "Settings shell retains 142 sections, cloud/local options and persistent selection",
+      "pass": true
+    },
+    {
+      "name": "Configuration before credential persists without synthetic key or send",
+      "pass": true
+    },
+    {
+      "name": "Auxiliary IPC keeps draft and settings unchanged without credential or model send",
+      "pass": true
+    },
+    {
+      "name": "Auxiliary IPC refuses old snapshot, injected fields and unsupported metrics",
+      "pass": true
+    }
+  ]
+}

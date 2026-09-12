@@ -1,0 +1,27 @@
+{
+  "task": "LIFEOS-P3-148",
+  "stage": "readonly_contract_design",
+  "checks": {
+    "existing_ipc_exact_25": true,
+    "five_design_files_present": true,
+    "acceptance_T01_T25_complete": true,
+    "acceptance_A01_A09_present": true,
+    "fixtures_F01_F07_present": true,
+    "fixed_head": true,
+    "tracked_files_unchanged": true,
+    "five_report_design_links_exact": true
+  },
+  "scope": "Static documentation consistency only; no product tests, build, App, runtime root, real DB, source, credentials or network access.",
+  "dynamic_validation": "Not Run",
+  "complete_task_pass": false,
+  "pm_consistency_amendment": {
+    "scope": "Documentation only; no dynamic rerun or product execution.",
+    "checks": {
+      "recovery_operation_explicit": true,
+      "no_old_startup_os_recovery_clause": true,
+      "startup_and_passive_os_denial_in_matrix": true,
+      "lock_limit_consistent": true,
+      "tracked_files_unchanged": true
+    }
+  }
+}

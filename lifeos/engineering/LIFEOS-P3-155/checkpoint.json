@@ -1,0 +1,46 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-155",
+  "attempt_id": "increment-1",
+  "updated_at": "2026-09-09T15:02:05.737366+00:00",
+  "task_contract_sha256": "3d7696dbbf8175132cae7507ccb2a622c778465c5663ae67198438e4cabaa013",
+  "abf_sha256": "09e1f91d2cac566afb07f5d34af93bf6ea1349c833a1d42004574c1eb81dd8a2",
+  "candidate_sha256": "feb8e775d4e3ca491055d75c085a6b0756a445d4ff3f797cca3e418a1eddf18d",
+  "baseline_sha256": "d19db2ec26858e0edd189f5a6a1ff29545e30a4ed3fe4ec8d81740ade7314474",
+  "stage": "synthetic_visual_disposition",
+  "status": "paused_resumable",
+  "pause_class": "recoverable_environment",
+  "pause_reason_code": "browser_url_policy_rejected",
+  "completed_checks": [
+    "165 baseline preservation",
+    "166 full candidate build",
+    "208 regression checks",
+    "13 valid mutations",
+    "fixed-root existing-only and 14 IPC invariants",
+    "complete real bundle packaged, not launched"
+  ],
+  "pending_checks": [
+    "PM visual evidence disposition (specific attributes in impact-map)",
+    "ABF-09 identity-bound real switch",
+    "ABF-10 user real update and restart result"
+  ],
+  "rerun_checks": [],
+  "excluded_artifacts": [
+    "first mutation run before corrected fixture",
+    "pre-fix expected failures",
+    "browser visual attempt with no screenshot"
+  ],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "owned synthetic only"
+  },
+  "resume_from": "pm_visual_disposition",
+  "safe_to_resume": true,
+  "notes": "No bypass of browser policy. Old154 App untouched. New155 bundle not launched. No real data/log/AX/screenshot/hash collected."
+}

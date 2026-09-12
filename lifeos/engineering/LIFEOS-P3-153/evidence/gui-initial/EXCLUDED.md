@@ -1,0 +1,1 @@
+Earlier GUI capture, excluded from final positive evidence: correction reply used new state but historical self-response lacked stale label. Fixed userInputRef invalidation and repeated affected GUI phase. Synthetic database preserved under gui-before-fix prefix; real App untouched.

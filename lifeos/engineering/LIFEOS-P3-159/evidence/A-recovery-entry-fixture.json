@@ -1,0 +1,31 @@
+{
+  "mode": "synthetic",
+  "purpose": "explicit offline credential-paused UI fixture; not actual credential failure",
+  "rows": [
+    [
+      "sources",
+      "proactive:request:recovery-entry-A-1",
+      {
+        "id": "proactive:request:recovery-entry-A-1",
+        "kind": "proactive_request",
+        "status": "failed",
+        "purpose": "proactive_analysis.v1",
+        "grantGeneration": 3,
+        "packetId": "proactive:packet:recovery-entry-A-1"
+      }
+    ],
+    [
+      "packets",
+      "proactive:packet:recovery-entry-A-1",
+      {
+        "id": "proactive:packet:recovery-entry-A-1",
+        "kind": "proactive_packet",
+        "payload": {
+          "outcome": {
+            "errorCode": "credential_unavailable"
+          }
+        }
+      }
+    ]
+  ]
+}

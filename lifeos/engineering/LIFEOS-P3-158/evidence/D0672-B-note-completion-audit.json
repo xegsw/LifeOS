@@ -1,0 +1,117 @@
+{
+  "task": "P3-158",
+  "publicSyntheticOnly": true,
+  "turnRequestId": "coord8-turn-69cb0d51e561323458a3814e6c91e665",
+  "modelConfirmations": [
+    {
+      "requestId": "confirm:coord8-preview-afc3ee9d33d6673536d5e733771fbd2c",
+      "payload": {
+        "expectedRevision": 1,
+        "requestId": "confirm:coord8-preview-afc3ee9d33d6673536d5e733771fbd2c",
+        "sendPreviewId": "coord8-preview-afc3ee9d33d6673536d5e733771fbd2c"
+      },
+      "acceptedState": "first_inflight",
+      "consumedAt": 1789040277310
+    },
+    {
+      "requestId": "confirm:coord8-preview-b7034f0dc4cc085b55e74e8d87922c60",
+      "payload": {
+        "expectedRevision": 1,
+        "requestId": "confirm:coord8-preview-b7034f0dc4cc085b55e74e8d87922c60",
+        "sendPreviewId": "coord8-preview-b7034f0dc4cc085b55e74e8d87922c60"
+      },
+      "acceptedState": "second_inflight",
+      "consumedAt": 1789040372056
+    }
+  ],
+  "queryReceipt": {
+    "finishedAt": 1789040283249,
+    "queryId": "coord8-query-8b509617abe93f6b1c69c6c82ff882df",
+    "result": {
+      "authorizationGeneration": 1,
+      "capabilityId": "fixture.note.lookup.v1",
+      "capabilityVersion": 1,
+      "facts": [
+        {
+          "name": "matches",
+          "ref": "coord8-fact-ad19344677e46be460818cda3faa5f95",
+          "sourceRef": "coord8-source-e01de0d505ea5df179c12a86593fcea7",
+          "sourceVersion": 1,
+          "validFrom": 1789040283244,
+          "validUntil": 1789040583244,
+          "value": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      ],
+      "fetchedAt": 1789040283244,
+      "observedAt": 1789040283244,
+      "queryId": "coord8-query-8b509617abe93f6b1c69c6c82ff882df",
+      "sourceRef": "coord8-source-e01de0d505ea5df179c12a86593fcea7",
+      "sourceVersion": 1,
+      "status": "ok",
+      "timezone": "UTC",
+      "truncated": false,
+      "typedFacts": {
+        "matches": [
+          {
+            "modifiedAt": 1789040283244,
+            "ref": "coord8-note-4f2369287bdb28d9e90d7e308299de95",
+            "text": "合成项目的评审地点是蓝色会议室。",
+            "title": "公开合成设计笔记",
+            "version": 1
+          },
+          {
+            "modifiedAt": 1789040283244,
+            "ref": "coord8-note-73ee02a1d4229c90401e4c9192a4c6e2",
+            "text": "合成资料建议先整理评审结论。",
+            "title": "公开合成整理笔记",
+            "version": 1
+          }
+        ]
+      },
+      "validFrom": 1789040283244,
+      "validUntil": 1789040583244
+    },
+    "startedAt": 1789040283242,
+    "state": "succeeded"
+  },
+  "secondPermit": {
+    "authorizationGeneration": 1,
+    "catalogRevision": 0,
+    "consumedAt": 1789040372056,
+    "credentialRevision": 4,
+    "disclosureRevision": 6,
+    "expiresAt": 1789040583257,
+    "id": "coord8-permit-4020d8ef3528ded6ad4ff0347c7e491c",
+    "phase": "second",
+    "previewId": "coord8-preview-b7034f0dc4cc085b55e74e8d87922c60",
+    "previewRevision": 1,
+    "profileRevision": 5,
+    "sessionId": "session-b264c3f44218cc8d8fdb39c5d098f03c",
+    "state": "consumed",
+    "turnRequestId": "coord8-turn-69cb0d51e561323458a3814e6c91e665"
+  },
+  "finalReceipt": {
+    "committedAt": 1789040377097,
+    "operationId": "coord8-operation-a305fd99b760cf8890d49041458177af",
+    "reply": "本轮未更改安排。\n查到两条相关公开合成笔记：1）合成项目的评审地点是蓝色会议室；2）合成资料建议先整理评审结论。",
+    "result": {
+      "businessChanged": false,
+      "kind": "none"
+    },
+    "state": "committed",
+    "turnId": "f345e215-8a5b-4aa3-88c5-ed9dd56d0202",
+    "turnRequestId": "coord8-turn-69cb0d51e561323458a3814e6c91e665"
+  },
+  "actionEvents": 0,
+  "secondDisclosureEqualsStoredQuery": true,
+  "counters": {
+    "turns": 2,
+    "queries": 1,
+    "models": 3
+  },
+  "physicalClickTimestamp": "not independently captured; consumedAt is Host acceptance timestamp, not raw mouse event",
+  "oldTruncatedRequestPreserved": true
+}

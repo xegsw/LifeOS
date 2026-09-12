@@ -1,0 +1,52 @@
+{
+  "task": "P3-158",
+  "authorization": "D-0665",
+  "stage": "B",
+  "status": "Paused — Resumable",
+  "resume_from": "explicit_persistent_signing_identity_then_bound_bundle_verification",
+  "updated_at": "2026-09-10T08:37:10.554807+00:00",
+  "A": "engineering_checks_passed",
+  "B": "paused_no_new_preview_or_send_pending_signature_verification",
+  "C": "not_started",
+  "budget": {
+    "Bdevelopment": 14,
+    "Bunseen": 0,
+    "C": 0
+  },
+  "realAccess": "Host read-only bound approved provider and fixed metadata; no Agent real data access",
+  "currentApp": "P3-157 C1 retained; no lifecycle access during A",
+  "completed_checks": [
+    "contract and baseline identity read",
+    "174 candidate copied and hash verified",
+    "v7 Host 14 scenarios passed",
+    "production Flow 6 scenarios passed",
+    "production IPC create/adjust/cancel/restart and none passed",
+    "A full App create/adjust/normal restart",
+    "B fixed metadata reader 3 offline tests",
+    "latest full regression and 4 build-mode guards",
+    "D0667 operation regression 32 passed",
+    "D0667 actual IPC and production Flow 9 passed",
+    "D0667 synthetic and online-synthetic offline builds passed",
+    "D0667 signing dry-run and missing/invalid identity rejection passed"
+  ],
+  "pending_checks": [
+    "explicit persistent signing identity and actual signed bundle verification",
+    "B remaining development and PM unseen set after pause is resolved",
+    "C user validation after A/B completion"
+  ],
+  "authorizationSupplement": "D-0666 / D-0667",
+  "safe_to_resume": false,
+  "prohibitedBoundaryContact": false,
+  "newNetworkRequestsThisIncrement": 0,
+  "sourceBuildIdentity": "evidence/D0667-build-identity.json",
+  "runningAppIdentity": {
+    "source": "evidence/B-chinese-launch.json",
+    "lastKnownPid": 7017,
+    "notRevalidatedThisIncrement": true,
+    "containsD0667Changes": false
+  },
+  "excluded_artifacts": [
+    "Historical failed B requests are retained and counted, not positive semantic evidence",
+    "D0667 signing plan is dry-run only, not signed App proof"
+  ]
+}

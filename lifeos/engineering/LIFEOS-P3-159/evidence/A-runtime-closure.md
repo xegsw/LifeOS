@@ -1,0 +1,11 @@
+# A Host 统一语音循环离线组合
+
+当前完整候选230文件；P3-160 a38a90cf的18文件清单保持逐项一致，182基线保持不变。VoiceRuntime组合原Worker、Host ASR producer、Gateway、SpeechOutput registry及NativeAudio播放适配；不新增业务规则或Action事务。音频回调串行处理，barge-in先interrupt native播放，再交Host停止语音事件；ASR仅完整final进入原interaction预览。HTTP按requestId分流、终端释放NativeTransport请求，TTS EOF只到draining，消费排空后Host才complete。
+
+每个tick即使没有新音频也复核Host session/policy，撤权/端口错误shutdown；用户停止只停语音不改业务。启动失败保留原Host的failed终态与预算，不把它错误强制改成interrupted。Drop清理本地设备/网关/worker；正常生命周期使用显式shutdown更新Host。新3项循环组合测试与此前2项producer测试都通过。
+
+最终24步完整回归、332 Rust、同App Rust→Swift3项和双模式构建成功；source stable。首次失败测试曾错误期待启动失败为interrupted，而原Host正确写failed；调整断言为原合同终态，失败日志保留，没有改生产错误语义迎合测试。
+
+边界：循环已在同候选编译并以真实Store/假音频假Transport验证，但尚未从App启用入口构造真实设备/Detector/CredentialAccess。公开语音控制仍返回disabled/unavailable；Swift编译分支仍A硬禁用。真实麦克风、实际声学KWS、MiMo、播放及真实联合验收未执行，不称完整语音可用或Joint Pass。激活仍依原语音合同用户批准、合规声学资产与后续验证，不能用此结果越过权限。
+
+B一次元数据检查已结束，首次新增raw配置门槛缺陷已经共享原effective_view逻辑修正并以忠实Store/同C fake FFI验证；没有再次真实访问。-25293根因和后台恢复仍Unknown。P3-159整体未完成，PM和真实验收仍待后续裁决；独立评审保持Paused。

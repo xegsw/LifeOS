@@ -1,0 +1,65 @@
+Window: "LifeOS P3-158 - Online Synthetic", App: LifeOS P3-158 Online Test.
+0 standard window LifeOS P3-158 - Online Synthetic, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: LifeOS, URL: tauri://localhost
+			3 link 跳到内容, Value: tauri://localhost#main
+			4 container 主导航
+				5 button 今日
+				6 button 我
+				7 button 上下文
+				8 button 记忆
+				9 button 设置
+			10 container
+				11 heading 你好。, Value: 1
+					12 text 你好。
+				13 text 给今天留一点从容。
+				14 text 9月10日 星期四
+				15 text 从你现在想聊的事开始。
+				16 text 一个想法，一件待办，或今天的感受。
+				17 button 与 LifeOS 聊聊
+				18 text 公开合成测试 · 发送需云端确认
+			19 container Global AI 对话
+				20 heading 与 LifeOS 对话, Value: 2
+					21 text 与 LifeOS 对话
+				22 text 公开合成测试 · deepseek-v4-pro
+				23 button 关闭对话
+				24 container
+					25 text 你的原始表达 明天下午去健身房 本地处理 本地记录：已记下：明天下午去健身房。
+				26 container
+					27 text 你的原始表达 健身房改到后天下午吧 本地处理 本地记录：已调整为：后天下午去健身房。
+				28 container
+					29 text 你的原始表达 算了，健身房不去了 本地处理 本地记录：已取消：后天下午去健身房。
+				30 container
+					31 text 你的原始表达 今晚把书桌整理一下 本地处理 本地记录：已记下：今晚整理书桌。
+				32 container
+					33 text 你的原始表达 书桌整理完了 本地处理 本地记录：已完成：今晚整理书桌。
+				34 container
+					35 text 你的原始表达 明天下午去图书馆 本地处理 本地记录：已记下：明天下午去图书馆。
+				36 container
+					37 text 你的原始表达 算了，不去了 本地处理 本地记录：已取消：明天下午去图书馆。
+				38 container
+					39 text 你的原始表达 那个改到周末吧 AI 候选回答 本轮未更改安排。
+Which arrangement do you mean?
+				40 container
+					41 text 你的原始表达 我明天要是下雨就不出门 AI 候选回答 本轮未更改安排。
+
+				42 container
+					43 text 你的原始表达 请查询公开合成笔记中与评审相关的内容，最多两条。依据查询结果作简短回答，本轮不要创建或修改安排。回答简短即可。 AI 候选回答 本轮未更改安排。
+查到两条相关公开合成笔记：1）合成项目的评审地点是蓝色会议室；2）合成资料建议先整理评审结论。
+				44 text 已读取公开合成资料。请核对本次查询结果的发送内容。
+				45 container
+					46 text 自然提问
+					47 text entry area (settable) 自然提问, Placeholder: 问 LifeOS…
+						48 text 问 LifeOS…
+					49 button 发送
+	50 close button
+	51 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	52 minimize button
+	53 text LifeOS P3-158 - Online Synthetic
+54 menu bar
+	55 LifeOS P3-158 Online Test
+	56 File
+	57 Edit
+	58 View
+	59 Window
+	60 Help

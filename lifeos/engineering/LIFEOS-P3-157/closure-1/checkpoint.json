@@ -1,0 +1,43 @@
+{
+  "task": "P3-157",
+  "closure": "closure-1",
+  "stage": "user_validation",
+  "status": "paused_resumable",
+  "updatedAt": "2026-09-10T02:24:50.786259+00:00",
+  "proposalSha256": "4aeb731e3305b8f15cc8832c24a2d2fd59ab69daabe6fc87cc54d2749d9f60f1",
+  "reproducedFailures": 2,
+  "syntheticReproductionCases": 7,
+  "designedCases": 24,
+  "candidateChanged": true,
+  "realAppAccess": "authorized code identity and normal lifecycle only",
+  "networkCalls": 0,
+  "resumeFrom": "user_actual_actions_validation",
+  "authorization": "D-0662",
+  "newClassificationTestsPassed": 24,
+  "updated_at": "2026-09-10T02:24:25.653739+00:00",
+  "pause_class": "user_validation",
+  "pause_reason_code": "user_result_pending",
+  "resume_from": "user_actual_actions_validation",
+  "safe_to_resume": true,
+  "runtime": {
+    "app_running": true,
+    "direct_pid": 89047,
+    "writers_stopped": false,
+    "database_closed": false,
+    "temporary_root_state": "owned; real App uses existing-only authorized root"
+  },
+  "completed_checks": [
+    "279 behavior checks",
+    "2 compile isolation guards",
+    "6 effective mutations killed",
+    "original 157 and 156 history verification",
+    "normal exact PID84364 exit; single new PID89047 startup"
+  ],
+  "pending_checks": [
+    "ABF08 user actual actions validation",
+    "PM final acceptance"
+  ],
+  "notes": "No true content, Key, AX, screenshot, content log or data hash collected. No refresh/import/send. Do not relaunch on unlock; inspect existing claim and fixed identity only.",
+  "realContentAccess": false,
+  "candidateDigest": "dfbcb0ff17701fa668b58c84e4924bbf7213e2355a132c22021559dd0c0cb8e6"
+}

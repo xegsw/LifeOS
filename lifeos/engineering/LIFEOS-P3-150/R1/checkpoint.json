@@ -1,0 +1,41 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-150-R1",
+  "attempt_id": "r1",
+  "updated_at": "2026-09-09T03:22:29.298961+00:00",
+  "task_contract_sha256": "f3b9d88931efa2de8b1851943fa3d566eadcd9249801975f5cb1a588fa4a7a6b",
+  "candidate_sha256": "0c55d1eb7c86ce8b8e7f1075c92e41d5c5170367b82762e4e14fce6a0257a7a7",
+  "baseline_sha256": "0c9745fc65c5db3660dbda9d18da86e84627e7e2bd23ba56ca888dbeb9faa7e0",
+  "stage": "manifest",
+  "status": "completed",
+  "pause_class": null,
+  "pause_reason_code": null,
+  "completed_checks": [
+    "ui_tests",
+    "rust_regression",
+    "synthetic_gui",
+    "old_viewer_identity_close",
+    "real_launch",
+    "original_preservation"
+  ],
+  "pending_checks": [
+    "pm_user_acceptance"
+  ],
+  "rerun_checks": [],
+  "excluded_artifacts": [],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": true,
+    "direct_pid": 16052,
+    "writers_stopped": true,
+    "database_closed": false,
+    "temporary_root_state": "owned_0700"
+  },
+  "resume_from": "pm_user_acceptance",
+  "safe_to_resume": false,
+  "notes": "R1 real readonly window running. No GUI/AX/screenshot access. Natural conversation and Context integration remain outside R1.",
+  "real_database_accessed": true,
+  "real_access_mode": "local_app_readonly_only"
+}

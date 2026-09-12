@@ -1,0 +1,14 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {LegacyControlledConversation as ControlledConversation,ControlledFlow} from '../candidate/ui/controlled_conversation.js';
+import {readFileSync} from 'node:fs';
+// Synthetic DTO doubles only. No real provider, process, path or credential contact.
+function repo(){let writes=0,cloud=0,read=0;let d;let action;return {counts:()=>({writes,cloud,read}),invoke:async(c,r)=>{if(c==='send_source_ai_request'||r.operation==='prepare_disclosure'){cloud++;throw Error('cloud forbidden in local action test')}
+ if(r.operation==='draft_turn'){d=r.payload;return {revision:d.revision}}
+ if(r.operation==='prepare_action_turn')return {id:'p',raw:d.text,actions:[],suggestions:[],revision:1,expiresAt:Date.now()+10000};
+ if(r.operation==='commit_action_turn'){writes++;action={id:'a',version:1,confirmedContent:d.text,status:'planned'};return {status:'committed'}}
+ if(r.operation==='conversation_snapshot'){read++;return {mode:'real',revision:writes,pendingDraft:writes?null:d,turns:[],questions:[],states:[],memories:[],provider:{credentialState:'absent'},catalog:{revision:0}}}
+ if(r.operation==='action_snapshot'){read++;return {revision:writes,actions:action?[action]:[],focus:action,turns:action?[{turnId:d.turnId,text:d.text,answer:'本地记录：已记下',createdAt:1,refs:[]}]:[]}}
+ throw Error('unexpected '+r.operation)}}}
+test('real-mode DTO renders actions and local save never consults cloud or key',async()=>{const r=repo(),a=new ControlledConversation(r);const d={requestId:'d',turnId:'t',revision:1,text:'我明天先整理报告。'};assert.equal((await a.prepare(d,()=>true)).kind,'local');const s=await a.read();assert.equal(s.mode,'real');assert.equal(s.actions.length,1);assert.equal(s.actionFocus.id,'a');assert.equal(s.turns.length,1);assert.deepEqual(r.counts(),{writes:1,cloud:0,read:2})});
+test('real-mode restoration never calls prepare/model/write',async()=>{const r=repo(),f=new ControlledFlow(new ControlledConversation(r),()=>{});await f.start();await f.restore();assert.equal(r.counts().writes,0);assert.equal(r.counts().cloud,0);f.dispose()});
+test('source contract settings transport and credential identifiers stay inherited',()=>{const base=new URL('../candidate/',import.meta.url);const main=readFileSync(new URL('src/main.rs',base),'utf8');assert.equal((main.match(/#\[tauri::command\]/g)||[]).length,14);const guard=readFileSync(new URL('build.rs',base),'utf8');assert(guard.includes('network driver forbidden'));const wire=readFileSync(new URL('src/secure_credentials.rs',base),'utf8');assert(wire.includes('com.lifeos.p3-152.aead-key.v1'));assert(wire.includes('p3-152-key-'));const actions=readFileSync(new URL('src/health_conversation_host/actions.rs',base),'utf8');assert(actions.includes('Self::validate_existing_schema(&self.c)?'));assert(!actions.includes('provider_transport'));});

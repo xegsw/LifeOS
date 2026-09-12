@@ -1,0 +1,39 @@
+   Compiling lifeos-p3-149 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/candidate)
+error[E0425]: cannot find value `r` in this scope
+   --> src/runtime_root.rs:269:64
+    |
+269 |             verify_at(Path::new(e["root"].as_str().unwrap()), &r)
+    |                                                                ^
+    |
+help: a local variable with a similar name exists
+    |
+269 -             verify_at(Path::new(e["root"].as_str().unwrap()), &r)
+269 +             verify_at(Path::new(e["root"].as_str().unwrap()), &e)
+    |
+
+error[E0425]: cannot find value `r` in this scope
+   --> src/runtime_root.rs:275:33
+    |
+275 |             verify_at(Path::new(r["root"].as_str().unwrap()), &e)
+    |                                 ^
+    |
+help: a local variable with a similar name exists
+    |
+275 -             verify_at(Path::new(r["root"].as_str().unwrap()), &e)
+275 +             verify_at(Path::new(e["root"].as_str().unwrap()), &e)
+    |
+
+error[E0425]: cannot find value `r` in this scope
+   --> src/runtime_root.rs:286:33
+    |
+286 |         assert_ne!(e["marker"], r["marker"]);
+    |                                 ^
+    |
+help: a local variable with a similar name exists
+    |
+286 -         assert_ne!(e["marker"], r["marker"]);
+286 +         assert_ne!(e["marker"], e["marker"]);
+    |
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `lifeos-p3-149` (bin "lifeos-p3-149" test) due to 3 previous errors

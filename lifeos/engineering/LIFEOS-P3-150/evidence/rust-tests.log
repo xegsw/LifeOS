@@ -1,0 +1,38 @@
+   Compiling lifeos-p3-150 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-150/candidate)
+warning: unused `Result` that must be used
+  --> src/health_reader/tests.rs:19:107
+   |
+19 | ...ap();let t=Instant::now();r.c.progress_handler(1000,Some(move||t.elapsed()>Duration::from_millis(20)));let result=r.c.query_row("...
+   |                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: this `Result` may be an `Err` variant, which should be handled
+   = note: `#[warn(unused_must_use)]` (part of `#[warn(unused)]`) on by default
+help: use `let _ = ...` to ignore the resulting value
+   |
+19 | #[test]fn sqlite_progress_deadline(){let p=fixture();let r=Reader::open(&p).unwrap();let t=Instant::now();let _ = r.c.progress_handler(1000,Some(move||t.elapsed()>Duration::from_millis(20)));let result=r.c.query_row("WITH RECURSIVE n(x) AS (VALUES(1) UNION ALL SELECT x+1 FROM n WHERE x<100000000) SELECT sum(x) FROM n",[],|r|r.get::<_,i64>(0));assert!(result.is_err());assert!(t.elapsed()<Duration::from_secs(1));}
+   |                                                                                                           +++++++
+
+warning: `lifeos-p3-150` (bin "lifeos-p3-150" test) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.12s
+     Running unittests src/main.rs (/private/tmp/lifeos-p3-150-health-view-v1/target-synthetic/debug/deps/lifeos_p3_150-b76c85f7346251a8)
+
+running 16 tests
+test health_reader::tests::large_fixture_bounded ... ok
+test health_reader::tests::permissions_rejected ... ok
+test health_reader::tests::changed_database_rejected ... ok
+test health_reader::tests::duplicate_projection_fails_closed ... ok
+test health_reader::tests::offset_group_isolation ... ok
+test health_reader::tests::dto_bounds_and_no_json_fallback ... ok
+test strict_json::tests::duplicate_and_trailing_rejected ... ok
+test health_reader::tests::readonly_lifecycle ... ok
+test health_reader::tests::sqlite_progress_deadline ... ok
+test health_reader::tests::stable_group_pagination ... ok
+test health_reader::tests::busy_fails_bounded ... ok
+test health_reader::tests::sidecar_and_symlink_rejected ... ok
+test health_reader::tests::windows_and_gaps ... ok
+test health_reader::tests::strict_requests ... ok
+test health_reader::tests::unknown_group_and_empty_range ... ok
+test health_reader::tests::wal_header_and_hardlink_fail_closed ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.35s
+

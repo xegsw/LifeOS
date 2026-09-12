@@ -1,0 +1,215 @@
+//! P3-152 synthetic Repository Adapter. No legacy runtime, provider, scanner or real path.
+use crate::repository::Error;
+use rusqlite::{Connection,OptionalExtension,params};
+use serde::{Deserialize,Serialize};
+use serde_json::{Value,json};
+use std::{path::{Path,PathBuf},fs,os::unix::fs::{MetadataExt,OpenOptionsExt},time::{SystemTime,UNIX_EPOCH}};
+#[cfg(not(feature="online-synthetic"))]pub(crate) const ROOT:&str="/private/tmp/lifeos-p3-158-main-chain-v1/offline";
+#[cfg(feature="online-synthetic")]pub(crate) const ROOT:&str="/private/tmp/lifeos-p3-158-main-chain-v1/online-synthetic";
+const TABLES:[&str;9]=["records","memories","states","drafts","questions","packets","derivations","feedback","sources"];
+type R<T>=Result<T,Error>;
+fn error(s:&str)->Error{Error::new(s)}
+#[cfg(test)] thread_local!{static TEST_NOW:std::cell::Cell<Option<i64>>=const{std::cell::Cell::new(None)};}
+fn now()->i64{#[cfg(test)] if let Some(at)=TEST_NOW.with(|c|c.get()){return at;}SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_millis() as i64}
+fn get(c:&Connection,t:&str,id:&str)->R<Option<Value>>{let s:Option<String>=c.query_row(&format!("SELECT body FROM {t} WHERE id=?1"),[id],|r|r.get(0)).optional()?;s.map(|s|serde_json::from_str(&s).map_err(|_|error("store_contract_rejected"))).transpose()}
+fn put(c:&Connection,t:&str,id:&str,v:&Value)->R<()>{c.execute(&format!("INSERT INTO {t}(id,body) VALUES(?1,?2) ON CONFLICT(id) DO UPDATE SET body=excluded.body"),params![id,v.to_string()])?;Ok(())}
+fn list(c:&Connection,t:&str,limit:i64)->R<Vec<Value>>{let mut s=c.prepare(&format!("SELECT body FROM {t} ORDER BY rowid DESC LIMIT ?1"))?;let rows=s.query_map([limit],|r|r.get::<_,String>(0))?.collect::<Result<Vec<_>,_>>()?;rows.into_iter().map(|r|serde_json::from_str(&r).map_err(|_|error("store_contract_rejected"))).collect()}
+fn id(s:&str)->R<()>{if s.is_empty()||s.len()>120||!s.bytes().all(|b|b.is_ascii_alphanumeric()||b"-_ :".contains(&b)&&b!=b' '){return Err(error("dto_rejected"));}Ok(())}
+fn text(s:&str,max:usize)->R<()>{if s.trim().is_empty()||s.chars().count()>2000||s.len()>max{return Err(error("text_rejected"));}Ok(())}
+fn no_null(v:&Value)->bool{match v{Value::Null=>false,Value::Array(a)=>a.iter().all(no_null),Value::Object(o)=>o.values().all(no_null),_=>true}}
+#[derive(Deserialize)]#[serde(deny_unknown_fields)]struct Request{version:u8,operation:String,payload:Value}
+#[derive(Deserialize)]#[serde(rename_all="camelCase",deny_unknown_fields)]struct Draft{request_id:String,turn_id:String,revision:u64,text:String}
+#[derive(Deserialize)]#[serde(rename_all="camelCase",deny_unknown_fields)]struct Prepare{request_id:String,turn_id:String,expected_draft_revision:u64}
+#[derive(Deserialize,Serialize,Clone,Debug)]#[serde(rename_all="camelCase",deny_unknown_fields)]struct Ref{id:String,version:u64,authorization_generation:u64}
+#[derive(Deserialize,Serialize)]#[serde(deny_unknown_fields)]struct StateInput{key:String,value:f64,domain:String}
+#[derive(Deserialize,Serialize)]#[serde(deny_unknown_fields)]struct Clarification{field:String}
+#[derive(Deserialize)]#[serde(rename_all="camelCase",deny_unknown_fields)]struct Commit{request_id:String,turn_id:String,packet_id:String,model_id:String,text:String,input_refs:Vec<Ref>,clarification:Option<Clarification>,state:Option<StateInput>,answer_to:Option<String>,corrects:Option<String>}
+#[derive(Deserialize)]#[serde(rename_all="camelCase",deny_unknown_fields)]struct Cancel{request_id:String,turn_id:String}
+#[derive(Deserialize)]#[serde(rename_all="camelCase",deny_unknown_fields)]struct Decision{request_id:String,question_id:String,decision:String}
+#[derive(Deserialize)]#[serde(rename_all="camelCase",deny_unknown_fields)]struct Model{request_id:String,model_id:String}
+fn decode<T:serde::de::DeserializeOwned>(v:Value)->R<T>{serde_json::from_value(v).map_err(|_|error("dto_rejected"))}
+fn enabled(c:&Connection,source:&str)->R<bool>{if source.starts_with("_"){return Ok(false)}Ok(get(c,"sources",source)?.is_some_and(|s|s["authorized"]==true))}
+fn allowed(c:&Connection,r:&Value,at:i64)->R<bool>{if let Some(sr)=r.get("engineRef"){let fixture=Path::new(c.path().unwrap()).file_stem().unwrap().to_str().unwrap().replace('_',"-");if !lifeos_source_engine::valid(&fixture,sr){return Ok(false)}}Ok(r["status"]=="active"&&r["validUntil"].as_i64().map_or(true,|v|v>at)&&enabled(c,r["sourceId"].as_str().unwrap_or(""))?&&(r["domain"]!="health"||enabled(c,"health-demo")?))}
+fn active_states(c:&Connection,at:i64)->R<Vec<Value>>{let mut out=vec![];for s in list(c,"states",16)?{if s["status"]=="active"&&s["validUntil"].as_i64().unwrap_or(0)>at{if let Some(r)=get(c,"records",s["rawId"].as_str().unwrap_or(""))?{if allowed(c,&r,at)?{out.push(s);}}}}Ok(out)}
+fn quantity(s:&str,unit:&str)->Option<f64>{let end=s.find(unit)?;let before=&s[..end];let number=before.trim_end().chars().rev().take_while(|c|c.is_ascii_digit()||*c=='.'||*c=='-'||*c=='−').collect::<String>().chars().rev().collect::<String>();number.parse().ok()}
+fn has(s:&str,words:&[&str])->bool{words.iter().any(|w|s.contains(w))}
+fn domain(c:&Connection,s:&str)->R<String>{let s=s.to_lowercase();let h=has(&s,&["健康","睡眠","睡了","步数","散步","走路","运动","锻炼","精力","疲惫","活动","health","sleep","exercise","steps"]);let w=has(&s,&["工作","项目","报告","会议","任务","编程","work","project","report"]);if h&&!w{return Ok("health".into())}if w&&!h{return Ok("work".into())}
+ if !h&&!w&&(quantity(&s,"分钟").is_some()||quantity(&s,"min").is_some()) {let qs=Store::questions(c,now())?;let pending:Vec<_>=qs.iter().filter(|q|q["field"]=="available_time"&&(q["status"]=="pending"||q["status"]=="deferred")).collect();if pending.len()==1{return Ok(pending[0]["domain"].as_str().unwrap_or("ambiguous").into())}if pending.len()>1{return Ok("ambiguous".into())}if has(&s,&["纠正","改为","更正","不是"]){let st=active_states(c,now())?;let available:Vec<_>=st.iter().filter(|v|v["stateKey"]=="available_time").collect();if available.len()==1{return Ok(available[0]["domain"].as_str().unwrap_or("ambiguous").into())}}}{let found:bool=c.query_row("SELECT EXISTS(SELECT 1 FROM records WHERE json_extract(body,'$.engineRef') IS NOT NULL AND json_extract(body,'$.status')='active' AND json_extract(body,'$.bridgeQuestion')=?1)",[&s],|r|r.get(0))?;if found{return Ok("source".into())}}Ok("ambiguous".into())}
+fn settings(c:&Connection)->R<String>{Ok(get(c,"sources","_settings")?.and_then(|v|v["modelId"].as_str().map(str::to_string)).unwrap_or("OfflineA".into()))}
+pub(crate) fn verify_root()->R<()>{
+  let root=Path::new(ROOT);let marker=root.parent().unwrap().join(".owner.json");for p in [root.to_path_buf(),root.join("synthetic")]{let m=fs::symlink_metadata(p).map_err(|_|error("root_rejected"))?;if !m.is_dir()||m.file_type().is_symlink()||m.uid()!=unsafe{libc::getuid()}||m.mode()&0o777!=0o700{return Err(error("root_rejected"));}}
+  let m=fs::symlink_metadata(&marker).map_err(|_|error("root_rejected"))?;if !m.is_file()||m.file_type().is_symlink()||m.mode()&0o777!=0o600||m.uid()!=unsafe{libc::getuid()}||m.nlink()!=1{return Err(error("root_rejected"));}let owner:Value=serde_json::from_slice(&fs::read(marker).map_err(|_|error("root_rejected"))?).map_err(|_|error("root_rejected"))?;if owner!=json!({"task":"P3-158","root":"/private/tmp/lifeos-p3-158-main-chain-v1","owner":"01a07f0e-dbbd-7d23-9e6d-68f2152f9484"}){return Err(error("root_rejected"));}
+ Ok(())
+}
+pub struct Store{c:Connection,session:String,source_connected:bool,_lease:fs::File}
+impl Store{
+ pub(crate) fn fixture(&self)->String{Path::new(self.c.path().unwrap()).file_stem().unwrap().to_str().unwrap().replace('_',"-")}
+ #[cfg(feature="synthetic-driver")] pub fn open_driver()->R<Self>{let args:Vec<String>=std::env::args().skip(1).collect();
+ let fixture=if args.is_empty(){format!("driver-{}",std::process::id())}else if args.len()==2&&args[0]=="--synthetic-fixture"&&args[1].starts_with("p158-")&&args[1].len()<=50&&args[1].bytes().all(|b|b.is_ascii_alphanumeric()||b==b'-'){args[1].clone()}else{return Err(error("fixture_rejected"))};
+ let mut s=Self::open(&PathBuf::from(ROOT).join(format!("synthetic/{fixture}.sqlite")))?;s.connect_source()?;Ok(s)}
+ pub fn open_fixed()->R<Self>{let mut s=Self::open(&crate::runtime_root::verify()?.join("conversation.sqlite"))?;if crate::runtime_root::is_real(){lifeos_source_engine::validate_existing_storage("conversation").map_err(|e|error(&e.code))?;s.provider_view()?;}s.connect_source()?;Ok(s)}
+ fn open(path:&Path)->R<Self>{
+  let root=crate::runtime_root::verify()?;if path.parent()!=Some(root.as_path()){return Err(error("root_rejected"));}
+  let lease=fs::OpenOptions::new().create(true).write(true).mode(0o600).custom_flags(libc::O_NOFOLLOW|libc::O_CLOEXEC).open(if crate::runtime_root::is_real(){root.join(".runtime/conversation.lock")}else{path.with_extension("lock")}).map_err(|_|error("store_busy"))?;
+  let lm=lease.metadata().map_err(|_|error("store_busy"))?;if !lm.is_file()||lm.uid()!=unsafe{libc::getuid()}||lm.mode()&0o777!=0o600||lm.nlink()!=1{return Err(error("store_busy"));}if unsafe{libc::flock(std::os::fd::AsRawFd::as_raw_fd(&lease),libc::LOCK_EX|libc::LOCK_NB)}!=0{return Err(error("store_busy"));}
+  let fresh=Self::prepare_database_file(path,crate::runtime_root::is_real())?;
+  for suffix in ["","-wal","-shm","-journal"]{let p=PathBuf::from(format!("{}{suffix}",path.display()));match fs::symlink_metadata(p){Ok(m)=>if !m.is_file()||m.file_type().is_symlink()||m.uid()!=unsafe{libc::getuid()}||m.mode()&0o777!=0o600||m.nlink()!=1{return Err(error("store_rejected"));},Err(e)=>if e.kind()!=std::io::ErrorKind::NotFound{return Err(error("store_rejected"));}}}
+  let c=Connection::open_with_flags(path,rusqlite::OpenFlags::SQLITE_OPEN_READ_WRITE|rusqlite::OpenFlags::SQLITE_OPEN_NOFOLLOW)?;c.busy_timeout(std::time::Duration::from_millis(200))?;
+  if fresh{c.execute_batch("CREATE TABLE meta(id INTEGER PRIMARY KEY CHECK(id=1),revision INTEGER NOT NULL);INSERT INTO meta VALUES(1,0);CREATE TABLE requests(id TEXT PRIMARY KEY,operation TEXT NOT NULL,payload TEXT NOT NULL,result TEXT NOT NULL);CREATE TABLE audit(id INTEGER PRIMARY KEY,event TEXT NOT NULL,ref TEXT NOT NULL,at INTEGER NOT NULL);")?;for t in TABLES{c.execute_batch(&format!("CREATE TABLE {t}(id TEXT PRIMARY KEY,body TEXT NOT NULL CHECK(json_valid(body)));"))?;}put(&c,"sources","_p152_owner",&json!({"task":"P3-152"}))?;if crate::runtime_root::is_real(){Self::seed_real(&c)?;}else{Self::seed(&c)?;}}
+  Self::validate_existing_schema(&c)?;
+  if !fresh&&get(&c,"sources","_p152_owner")?.is_none_or(|v|v["task"]!="P3-152"){return Err(error("store_contract_rejected"));}
+  if let Some(active)=get(&c,"sources","active-dispatch")?{if let Some(mut v)=get(&c,"packets",active["previewId"].as_str().unwrap_or(""))?{if v["deliveryState"]=="dispatching"{v["deliveryState"]=json!("outcome_unknown");v["errorCode"]=json!("dispatch_outcome_unknown");put(&c,"packets",v["id"].as_str().unwrap(),&v)?;}}}
+  if let Some(active)=get(&c,"sources","operation-active")?{if let Some(pid)=active["previewId"].as_str(){if let Some(mut v)=get(&c,"packets",pid)?{if v["status"]=="dispatching"{v["status"]=json!("outcome_unknown");put(&c,"packets",pid,&v)?;put(&c,"packets",&format!("operation-status:{}",v["requestId"].as_str().unwrap()),&json!({"requestId":v["requestId"],"operationId":v["operationId"],"previewId":pid,"state":"outcome_unknown","businessChanged":false,"errorCode":"dispatch_outcome_unknown"}))?;}}}}
+  Ok(Self{c,session:crate::conversation_store::uid("session"),source_connected:false,_lease:lease})
+ }
+ fn local_reply(d:&Commit)->R<String>{if let Some(cl)=&d.clarification{return Ok(if cl.field=="domain"{"本地澄清：你想讨论健康活动，还是工作安排？"}else{"本地澄清：你现在有多少分钟可以安排？"}.into());}if d.state.is_some(){return Ok("本地记录：已按你的明确表达保存短期状态，不会自动成为长期记忆。".into());}if d.answer_to.is_some(){return Ok("本地记录：已保存这次澄清，你可以继续提问。".into());}Err(error("real_answer_requires_model_port"))}
+ fn seed_real(c:&Connection)->R<()>{for source in ["health-demo","conversation"]{put(c,"sources",source,&json!({"id":source,"authorized":true,"generation":1,"synthetic":false}))?;}put(c,"sources","_settings",&json!({"modelId":"OfflineA"}))?;Ok(())}
+ fn seed(c:&Connection)->R<()>{let at=now();for (id,auth) in [("health-demo",true),("work-demo",true),("health-denied",false),("conversation",true)]{put(c,"sources",id,&json!({"id":id,"authorized":auth,"generation":1,"synthetic":true}))?;}
+  for (id,domain,source,metric,body,value,age,until) in [("sleep-1","health","health-demo","sleep","睡眠区间观察为 360 分钟；合成来源 Synthetic Watch。",Some(360.0),86400000,86400000),("steps-1","health","health-demo","steps","步数观察为 6200 步；合成来源 Synthetic Watch。",Some(6200.0),86400000,86400000),("exercise-1","health","health-demo","exercise","运动区间为 18 分钟，按区间分配的估算；合成来源。",Some(18.0),86400000,86400000),("sleep-unknown","health","health-demo","sleep","睡眠观察无法可靠合并，值未知，不当作零。",None,172800000,86400000),("expired-health","health","health-demo","sleep","过期合成睡眠观察，不可用。",Some(420.0),864000000,-1),("denied-health","health","health-denied","sleep","未授权合成睡眠观察，不得披露。",Some(500.0),1000,86400000),("work-report","work","work-demo","","工作项目：整理设计评审报告，先完善报告结论。",None,1000,2592000000),("work-code","work","work-demo","","工作任务：修复编程测试中的小问题。",None,2000,2592000000)]{
+   put(c,"records",id,&json!({"id":id,"schemaVersion":4,"kind":"source_projection","domain":domain,"sourceId":source,"metric":metric,"text":body,"value":value,"estimated":metric=="exercise","version":1,"status":"active","observedAt":at-age,"validUntil":at+until,"dayIndex":(at-age)/86400000,"offsetMinutes":480,"sources":[{"name":"Synthetic Watch"}]}))?;
+  }
+  for (d,source,body) in [("health","health-demo","已确认的合成偏好：喜欢轻松散步。"),("work","work-demo","已确认的合成偏好：先做短小明确的工作。")]{let id=format!("memory-raw-{d}");put(c,"records",&id,&json!({"id":id,"kind":"confirmed_memory","domain":d,"sourceId":source,"text":body,"version":1,"status":"active","observedAt":at-1000}))?;let mid=format!("memory-{d}");put(c,"memories",&mid,&json!({"id":mid,"rawId":id,"domain":d,"confirmed":true,"status":"active","scope":"person"}))?;}
+  put(c,"sources","_settings",&json!({"modelId":"OfflineA"}))?;Ok(())
+ }
+ fn tx<F>(&self,rid:&str,op:&str,p:&Value,f:F)->R<Value>where F:FnOnce(&Connection)->R<Value>{id(rid)?;let canonical=p.to_string();self.c.execute_batch("BEGIN IMMEDIATE")?;let result=(||{let old:Option<(String,String,String)>=self.c.query_row("SELECT operation,payload,result FROM requests WHERE id=?1",[rid],|r|Ok((r.get(0)?,r.get(1)?,r.get(2)?))).optional()?;if let Some((o,b,v))=old{if o!=op||b!=canonical{return Err(error("idempotency_conflict"));}return serde_json::from_str(&v).map_err(|_|error("store_contract_rejected"));}
+   let v=f(&self.c)?;self.c.execute("INSERT INTO requests VALUES(?1,?2,?3,?4)",params![rid,op,canonical,v.to_string()])?;self.c.execute("UPDATE meta SET revision=revision+1 WHERE id=1",[])?;Ok(v)})();match result{Ok(v)=>{self.c.execute_batch("COMMIT")?;Ok(v)},Err(e)=>{let _=self.c.execute_batch("ROLLBACK");Err(e)}}}
+ // health-demo is the existing persisted health authorization identity in both modes.
+ // Its historical name never grants synthetic or real access by itself.
+ pub(crate) fn health_view(&self,bytes:&[u8])->R<Value>{
+  let q=crate::health_reader::Reader::parse_body(tauri::ipc::InvokeBody::Raw(bytes.to_vec()))?;
+  if !self.source_connected||!enabled(&self.c,"health-demo")?{return Err(error("source_not_authorized"));}
+  let path=crate::health_source::path(&self.fixture())?;
+  crate::health_reader::Reader::open(&path)?.validated_query(q)
+ }
+ pub fn dispatch(&self,command:&str,bytes:&[u8])->R<Value>{if bytes.len()>16384{return Err(error("dto_rejected"));}let raw=std::str::from_utf8(bytes).map_err(|_|error("dto_rejected"))?;let v=crate::strict_json::parse(raw)?;if v["version"]==5&&(v["operation"]=="read_local_catalog"||v["operation"]=="save_local_catalog"){let r:Request=decode(v)?;return self.controlled(command,&r.operation,r.payload)}if !no_null(&v){return Err(error("dto_rejected"));}let r:Request=decode(v)?;if r.version==7{return self.operation_dispatch(command,&r.operation,r.payload)}if r.version==6{return self.action_dispatch(command,&r.operation,r.payload)}if r.version==5{return self.controlled(command,&r.operation,r.payload)}if r.version!=4{return Err(error("dto_rejected"));}let p=r.payload;match(command,r.operation.as_str()){
+  ("capture_record","draft_turn")=>self.draft(decode(p.clone())?,p),
+  ("get_context_recovery","conversation_snapshot")=>{if p!=json!({}){return Err(error("dto_rejected"));}self.snapshot()},
+  ("resolve_request_context","prepare_turn")=>self.prepare(decode(p.clone())?,p),
+  ("resolve_request_context","commit_turn")=>self.commit(decode(p.clone())?,p),
+  ("resolve_request_context","cancel_turn")=>self.cancel(decode(p.clone())?,p),
+  ("decide_understanding_feedback","clarification_decision")=>self.decide(decode(p.clone())?,p),
+  ("save_ai_provider_settings","select_offline_adapter")=>{let d:Model=decode(p.clone())?;if !["OfflineA","OfflineB"].contains(&d.model_id.as_str()){return Err(error("dto_rejected"));}self.tx(&d.request_id,"adapter",&p,|c|{put(c,"sources","_settings",&json!({"modelId":d.model_id}))?;Ok(json!({"status":"selected","modelId":d.model_id}))})},
+  _=>Err(error("operation_rejected"))}}
+ fn draft(&self,d:Draft,p:Value)->R<Value>{id(&d.turn_id)?;if d.revision==0||d.revision>9007199254740991||d.text.len()>8192||d.text.chars().count()>2000{return Err(error("dto_rejected"));}self.tx(&d.request_id,"draft",&p,|c|{let key=format!("draft:{}",d.turn_id);if let Some(old)=get(c,"drafts",&key)?{if old["status"]=="committed"{return Err(error("turn_committed"));}let rev=old["revision"].as_u64().unwrap_or(0);if rev>d.revision||rev==d.revision&&old["text"]!=d.text{return Err(error("draft_revision_conflict"));}}
+  put(c,"drafts",&key,&json!({"id":key,"schemaVersion":4,"kind":"health_conversation_draft","turnId":d.turn_id,"revision":d.revision,"text":d.text,"status":"pending","updatedAt":now()}))?;Ok(json!({"status":"draft_saved","revision":d.revision}))})}
+ // Latest lifecycle per permitted field/domain, before applying public bounds.
+ // Historical rows remain intact; a refusal cannot fall out of a recent-row window.
+ fn questions(c:&Connection,_at:i64)->R<Vec<Value>>{
+  let mut stmt=c.prepare("SELECT body FROM (SELECT body,rowid,ROW_NUMBER() OVER (PARTITION BY json_extract(body,'$.domain'),json_extract(body,'$.field') ORDER BY rowid DESC) AS n FROM questions WHERE (json_extract(body,'$.field')='domain' AND json_extract(body,'$.domain')='ambiguous') OR (json_extract(body,'$.field')='available_time' AND json_extract(body,'$.domain') IN ('health','work'))) WHERE n=1 ORDER BY rowid DESC LIMIT 3")?;
+  let rows=stmt.query_map([],|r|r.get::<_,String>(0))?.collect::<Result<Vec<_>,_>>()?;let mut out=vec![];
+  for body in rows{let q:Value=serde_json::from_str(&body).map_err(|_|error("store_contract_rejected"))?;if q["domain"]!="health"||enabled(c,"health-demo")?{out.push(q)}}Ok(out)
+ }
+ fn question_id(purpose:&str,field:&str,turn:&str)->String{use sha2::{Digest,Sha256};let suffix=format!("{:x}",Sha256::digest(turn.as_bytes()));format!("q:{purpose}:{field}:{}",&suffix[..32])}
+
+ fn prepare(&self,d:Prepare,p:Value)->R<Value>{id(&d.turn_id)?;let draft=get(&self.c,"drafts",&format!("draft:{}",d.turn_id))?.ok_or_else(||error("draft_missing"))?;self.refresh_source(draft["text"].as_str().unwrap_or(""))?;let packet_id=format!("packet:{}",d.turn_id);let result=self.tx(&d.request_id,"prepare",&p,|c|{
+  if let Some(old)=get(c,"packets",&packet_id)?{if !self.source_connected||old["status"]!="ready"{Self::validate_packet(c,&old)?;return Ok(old)}if Self::validate_packet(c,&old).is_ok(){return Ok(old)}}
+  let draft=get(c,"drafts",&format!("draft:{}",d.turn_id))?.ok_or_else(||error("draft_missing"))?;if draft["revision"]!=d.expected_draft_revision||draft["status"]!="pending"{return Err(error("draft_revision_conflict"));}let question=draft["text"].as_str().ok_or_else(||error("draft_missing"))?;text(question,8192)?;let purpose=domain(c,question)?;let at=now();let mut records=vec![];let mut states=vec![];let mut memories=vec![];
+  if purpose!="ambiguous"&&(purpose!="health"||enabled(c,"health-demo")?){
+   let mut stmt=c.prepare("SELECT body FROM records WHERE json_extract(body,'$.kind')='source_projection' AND json_extract(body,'$.domain')=?1 AND json_extract(body,'$.status')='active' AND (json_extract(body,'$.validUntil') IS NULL OR json_extract(body,'$.validUntil')>?2) ORDER BY json_extract(body,'$.observedAt') DESC,id LIMIT 16")?;
+   let rows=stmt.query_map(params![purpose,at],|r|r.get::<_,String>(0))?.collect::<Result<Vec<_>,_>>()?;for body in rows{let r:Value=serde_json::from_str(&body).map_err(|_|error("store_contract_rejected"))?;if allowed(c,&r,at)?&&(purpose!="health"||!self.source_connected||crate::health_source::relevant(question,r["metric"].as_str().unwrap_or(""))){records.push(r);}}
+   for s in active_states(c,at)?.into_iter().filter(|s|s["domain"]==purpose).take(2){let raw=get(c,"records",s["rawId"].as_str().unwrap())?.unwrap();records.push(raw);states.push(s);}
+   for m in list(c,"memories",8)?{if memories.len()+states.len()>=2{break}if m["confirmed"]==true&&m["status"]=="active"&&m["domain"]==purpose{if let Some(raw)=get(c,"records",m["rawId"].as_str().unwrap_or(""))?{if allowed(c,&raw,at)?{records.push(raw);memories.push(m)}}}}
+  }
+  // Reserve required state/memory first; bound source candidates before exposing a DTO.
+  while records.len()>16{let i=records.iter().rposition(|r|r["kind"]=="source_projection").ok_or_else(||error("context_budget_rejected"))?;records.remove(i);}
+  while serde_json::to_vec(&records).unwrap().len()>8192{let i=records.iter().rposition(|r|r["kind"]=="source_projection").ok_or_else(||error("context_budget_rejected"))?;records.remove(i);}
+  let mut sources=vec![];for r in &records{let key=r["sourceId"].as_str().unwrap();if !sources.iter().any(|s:&Value|s["id"]==key){sources.push(get(c,"sources",key)?.ok_or_else(||error("context_stale"))?);}}
+  let snap=json!({"revision":0,"now":at,"records":records,"states":states,"memories":memories,"sources":sources,"questions":[],"packets":[],"derivations":[],"feedback":[],"drafts":[]});
+  let packet=json!({"id":packet_id,"schemaVersion":4,"kind":"health_conversation_packet","turnId":d.turn_id,"draftRevision":d.expected_draft_revision,"question":question,"domain":purpose,"now":at,"expiresAt":at+300000,"modelId":settings(c)?,"status":"ready","snapshot":snap,"questions":Self::questions(c,at)?});put(c,"packets",&packet_id,&packet)?;Ok(packet)
+ })?;Self::validate_packet(&self.c,&result)?;if result["draftRevision"]!=d.expected_draft_revision{return Err(error("draft_revision_conflict"));}Ok(result)}
+ fn validate_packet(c:&Connection,p:&Value)->R<()>{if p["status"]!="ready"||p["expiresAt"].as_i64().unwrap_or(0)<=now(){return Err(error("context_stale"));}let turn=p["turnId"].as_str().ok_or_else(||error("context_stale"))?;let current=get(c,"packets",p["id"].as_str().unwrap_or(""))?.ok_or_else(||error("context_stale"))?;if current["status"]!="ready"{return Err(error("turn_cancelled"));}
+  let draft=get(c,"drafts",&format!("draft:{turn}"))?.ok_or_else(||error("context_stale"))?;if draft["revision"]!=p["draftRevision"]||draft["text"]!=p["question"]||draft["status"]!="pending"||settings(c)?!=p["modelId"]{return Err(error("context_stale"));}
+  if domain(c,p["question"].as_str().unwrap())?!=p["domain"]{return Err(error("context_stale"));}
+  for r in p["snapshot"]["records"].as_array().ok_or_else(||error("context_stale"))?{let live=get(c,"records",r["id"].as_str().unwrap_or(""))?.ok_or_else(||error("context_stale"))?;let src=get(c,"sources",r["sourceId"].as_str().unwrap_or(""))?.ok_or_else(||error("context_stale"))?;let old=p["snapshot"]["sources"].as_array().unwrap().iter().find(|s|s["id"]==r["sourceId"]).ok_or_else(||error("context_stale"))?;if !allowed(c,&live,now())?||live!=*r||src["generation"]!=old["generation"]||r["domain"]!=p["domain"]{return Err(error("context_stale"));}}
+  for m in p["snapshot"]["memories"].as_array().unwrap(){if get(c,"memories",m["id"].as_str().unwrap())?.as_ref()!=Some(m){return Err(error("context_stale"));}}
+  for s in p["snapshot"]["states"].as_array().unwrap(){if s["status"]!="active"||s["validUntil"].as_i64().unwrap_or(0)<=now()||get(c,"states",s["id"].as_str().unwrap())?.as_ref()!=Some(s){return Err(error("context_stale"));}}Ok(())
+ }
+ fn commit(&self,d:Commit,p:Value)->R<Value>{self.commit_with_policy(d,p,crate::runtime_root::is_real())}
+ fn commit_with_policy(&self,mut d:Commit,p:Value,real_local:bool)->R<Value>{id(&d.turn_id)?;id(&d.packet_id)?;text(&d.text,8192)?;if !d.text.starts_with("合成演练 · ")||d.input_refs.len()>5{return Err(error("dto_rejected"));}
+  if real_local{d.text=Self::local_reply(&d)?;}
+  self.tx(&d.request_id,"commit",&p,|c|{let raw_id=format!("raw:{}",d.turn_id);if let Some(existing)=get(c,"records",&raw_id)?{let answer=get(c,"derivations",&format!("answer:{}",d.turn_id))?.ok_or_else(||error("store_contract_rejected"))?;let mut replay=p.clone();replay["requestId"]=answer["commitPayload"]["requestId"].clone();if answer["commitPayload"]!=replay||existing["turnId"]!=d.turn_id{return Err(error("turn_conflict"));}return Ok(json!({"status":"completed","turnId":d.turn_id}));}
+   let mut packet=get(c,"packets",&d.packet_id)?.ok_or_else(||error("context_stale"))?;Self::validate_packet(c,&packet)?;if packet["turnId"]!=d.turn_id||packet["modelId"]!=d.model_id{return Err(error("context_stale"));}let purpose=packet["domain"].as_str().unwrap();let question=packet["question"].as_str().unwrap().to_string();let at=now();let mut used=std::collections::HashSet::new();let mut selected=vec![];let(mut src_count,mut required_count)=(0,0);
+   for rf in &d.input_refs{id(&rf.id)?;if !used.insert(rf.id.clone()){return Err(error("reference_rejected"));}let row=packet["snapshot"]["records"].as_array().unwrap().iter().find(|v|v["id"]==rf.id).ok_or_else(||error("reference_rejected"))?;let source=packet["snapshot"]["sources"].as_array().unwrap().iter().find(|v|v["id"]==row["sourceId"]).ok_or_else(||error("reference_rejected"))?;if row["version"]!=rf.version||source["generation"]!=rf.authorization_generation||row["domain"]!=purpose||purpose=="ambiguous"{return Err(error("reference_rejected"));}
+    let layer=if row["kind"]=="source_projection"{src_count+=1;"L3"}else if packet["snapshot"]["memories"].as_array().unwrap().iter().any(|m|m["rawId"]==rf.id){required_count+=1;"L1"}else if packet["snapshot"]["states"].as_array().unwrap().iter().any(|m|m["rawId"]==rf.id){required_count+=1;"L2"}else{return Err(error("reference_rejected"));};selected.push(json!({"id":rf.id,"version":rf.version,"authorizationGeneration":rf.authorization_generation,"layer":layer,"text":row["text"],"domain":row["domain"]}));
+   }
+   if src_count>3||required_count>2||serde_json::to_vec(&selected).unwrap().len()>4096{return Err(error("context_budget_rejected"));}
+   let mut prior_states=vec![];
+   if let Some(st)=&d.state{if st.domain!=purpose||purpose=="ambiguous"||!st.value.is_finite()||has(&question,&["如果","假如","假设","分钟吗","分钟？","小时吗","小时？"]){return Err(error("state_claim_rejected"));}
+    let pending=if let Some(qid)=&d.answer_to{get(c,"questions",qid)?}else{None};
+    let value=match st.key.as_str(){"available_time"=>{let explicit=has(&question,&["我有","只有","有空","可用","能拿出","可以留出"])||((question.starts_with("纠正")||question.starts_with("更正"))&&d.corrects.is_some())||pending.as_ref().is_some_and(|q|q["field"]=="available_time"&&(q["status"]=="pending"||q["status"]=="deferred"));if !explicit||st.value<1.0||st.value>240.0||st.value.fract()!=0.0{return Err(error("state_claim_rejected"));}quantity(&question,"分钟").or_else(||quantity(&question,"min"))},"sleep_hours"=>{if purpose!="health"||!has(&question,&["我","自己"])||!has(&question,&["睡了","睡眠"])||st.value<0.0||st.value>24.0{return Err(error("state_claim_rejected"));}quantity(&question,"小时").or_else(||quantity(&question,"h"))},_=>return Err(error("state_claim_rejected"))};if value!=Some(st.value){return Err(error("state_claim_rejected"));}
+    prior_states=active_states(c,at)?.into_iter().filter(|s|s["stateKey"]==st.key&&s["domain"]==st.domain).collect();if let Some(corrects)=&d.corrects{if !has(&question,&["纠正","改为","更正","不是"])||!prior_states.iter().any(|s|s["id"]==*corrects){return Err(error("correction_rejected"));}}
+    if prior_states.iter().any(|s|d.input_refs.iter().any(|r|s["rawId"]==r.id)){return Err(error("state_context_conflict"));}
+   }else if d.corrects.is_some(){return Err(error("correction_rejected"));}
+   if let Some(qid)=&d.answer_to{let q=get(c,"questions",qid)?.ok_or_else(||error("clarification_rejected"))?;if (q["status"]!="pending"&&q["status"]!="deferred")||!(q["field"]=="domain"&&purpose!="ambiguous"||q["field"]=="available_time"&&q["domain"]==purpose&&d.state.as_ref().is_some_and(|s|s.key=="available_time")){return Err(error("clarification_rejected"));}}
+   if let Some(cl)=&d.clarification{
+    let advice=has(&question.to_lowercase(),&["安排","建议","怎么开始","如何开始","计划","plan","suggest","recommend"]);
+    let domain_needed=has(&question.to_lowercase(),&["安排","计划","工作","健康","work","health","plan"]);
+    let mut known=vec![];for row in &selected{let body=row["text"].as_str().unwrap_or("");if row["layer"]=="L3"&&has(body,&["我有","我只有","我有空","我的可用时间","我能拿出","我可以留出"])&&!has(body,&["如果","假如","假设","?","？"]){if let Some(n)=quantity(body,"分钟").or_else(||quantity(body,"min")){if (1.0..=240.0).contains(&n)&&n.fract()==0.0&&!known.contains(&n){known.push(n);}}}}
+    if cl.field=="available_time"&&(!advice||known.len()==1)||cl.field=="domain"&&!domain_needed{return Err(error("clarification_rejected"));}
+    if !["domain","available_time"].contains(&cl.field.as_str())||d.state.is_some(){return Err(error("clarification_rejected"));}if cl.field=="domain"&&purpose!="ambiguous"||cl.field=="available_time"&&(purpose=="ambiguous"||selected.is_empty()||active_states(c,at)?.iter().any(|s|s["domain"]==purpose&&s["stateKey"]=="available_time")){return Err(error("clarification_rejected"));}if let Some(q)=Self::questions(c,at)?.iter().find(|q|q["domain"]==purpose&&q["field"]==cl.field){if q["status"]=="pending"||q["status"]=="rejected"||q["status"]=="ignored"&&q["basisTurn"]==d.turn_id||q["status"]=="deferred"&&q["resumeAt"].as_i64().unwrap_or(i64::MAX)>at{return Err(error("clarification_suppressed"));}}}
+   put(c,"records",&raw_id,&json!({"id":raw_id,"schemaVersion":4,"kind":"health_conversation_expression","turnId":d.turn_id,"text":question,"sourceId":"conversation","domain":purpose,"status":"active","version":1,"observedAt":at,"corrects":d.corrects}))?;
+   for mut old in prior_states{old["status"]=json!("superseded");old["validUntil"]=json!(at);let old_id=old["id"].as_str().unwrap().to_string();put(c,"states",&old_id,&old)?;Self::invalidate(c,old["rawId"].as_str().unwrap())?;}
+   if let Some(st)=&d.state{let sid=format!("state:{}",d.turn_id);put(c,"states",&sid,&json!({"id":sid,"rawId":raw_id,"stateKey":st.key,"value":st.value,"domain":st.domain,"generation":1,"status":"active","observedAt":at,"validUntil":at+86400000,"identity":if st.key=="sleep_hours"{"user_self_report"}else{"user_statement"}}))?;}
+   if let Some(qid)=&d.answer_to{let mut q=get(c,"questions",qid)?.unwrap();q["status"]=json!("answered");q["answerRef"]=json!(raw_id);q["answeredAt"]=json!(at);put(c,"questions",qid,&q)?;}
+   let clarification_id=d.clarification.as_ref().map(|cl|Self::question_id(purpose,&cl.field,&d.turn_id));if let Some(cl)=&d.clarification{let qid=clarification_id.as_ref().unwrap();put(c,"questions",qid,&json!({"id":qid,"field":cl.field,"domain":purpose,"status":"pending","basisTurn":d.turn_id,"createdAt":at,"generation":1}))?;}
+   let aid=format!("answer:{}",d.turn_id);put(c,"derivations",&aid,&json!({"id":aid,"schemaVersion":4,"kind":"health_conversation_answer","turnId":d.turn_id,"userInputRef":raw_id,"text":d.text,"inputRefs":d.input_refs,"modelId":d.model_id,"status":"candidate","confirmed":false,"createdAt":at,"clarificationId":clarification_id,"commitPayload":p}))?;
+   let mut draft=get(c,"drafts",&format!("draft:{}",d.turn_id))?.unwrap();draft["status"]=json!("committed");put(c,"drafts",&format!("draft:{}",d.turn_id),&draft)?;packet["status"]=json!("completed");put(c,"packets",&d.packet_id,&packet)?;Ok(json!({"status":"completed","turnId":d.turn_id}))
+  })
+ }
+ fn invalidate(c:&Connection,raw:&str)->R<()>{for table in ["packets","derivations"]{let mut stmt=c.prepare(&format!("SELECT id,body FROM {table} WHERE json_extract(body,'$.userInputRef')=?1 OR EXISTS(SELECT 1 FROM json_each(body,'$.inputRefs') j WHERE json_extract(j.value,'$.id')=?1) OR EXISTS(SELECT 1 FROM json_each(body,'$.snapshot.states') j WHERE json_extract(j.value,'$.rawId')=?1)"))?;let rows=stmt.query_map([raw],|r|Ok((r.get::<_,String>(0)?,r.get::<_,String>(1)?)))?.collect::<Result<Vec<_>,_>>()?;for (key,body) in rows{let mut v:Value=serde_json::from_str(&body).map_err(|_|error("store_contract_rejected"))?;v["status"]=json!("stale");put(c,table,&key,&v)?;}}Ok(())}
+ fn cancel(&self,d:Cancel,p:Value)->R<Value>{id(&d.turn_id)?;self.tx(&d.request_id,"cancel",&p,|c|{let key=format!("packet:{}",d.turn_id);if get(c,"derivations",&format!("answer:{}",d.turn_id))?.is_some()||get(c,"derivations",&format!("action-answer:{}",d.turn_id))?.is_some(){return Ok(json!({"status":"completed","turnId":d.turn_id}));}let mut packet=get(c,"packets",&key)?.unwrap_or(json!({"id":key,"turnId":d.turn_id}));packet["status"]=json!("cancelled");put(c,"packets",&key,&packet)?;if let Some(mut draft)=get(c,"drafts",&format!("draft:{}",d.turn_id))?{draft["status"]=json!("cancelled");put(c,"drafts",&format!("draft:{}",d.turn_id),&draft)?;}Ok(json!({"status":"cancelled","turnId":d.turn_id}))})}
+ fn decide(&self,d:Decision,p:Value)->R<Value>{
+  id(&d.question_id)?;if !["ignore","defer","reject","reopen"].contains(&d.decision.as_str()){return Err(error("dto_rejected"));}
+  self.tx(&d.request_id,"clarification_decision",&p,|c|{
+   let mut q=get(c,"questions",&d.question_id)?.ok_or_else(||error("clarification_rejected"))?;
+   let latest=Self::questions(c,now())?;if !latest.iter().any(|v|v["id"]==d.question_id){return Err(error("clarification_stale"));}
+   if d.decision=="reopen"{if q["status"]!="rejected"{return Err(error("clarification_rejected"));}q["status"]=json!("pending");}
+   else {if q["status"]!="pending"&&q["status"]!="deferred"&&q["status"]!="ignored"{return Ok(json!({"status":q["status"]}));}
+    q["status"]=json!(match d.decision.as_str(){"ignore"=>"ignored","defer"=>"deferred",_=>"rejected"});
+    if d.decision=="defer"{q["resumeAt"]=json!(now()+1800000);}
+   }
+   put(c,"questions",&d.question_id,&q)?;
+   put(c,"feedback",&format!("decision:{}",d.request_id),&json!({"kind":"clarification_decision","questionId":d.question_id,"decision":d.decision,"createdAt":now()}))?;
+   Ok(json!({"status":q["status"]}))
+  })
+ }
+
+ fn snapshot(&self)->R<Value>{let c=&self.c;let at=now();let health=enabled(c,"health-demo")?;let mut turns=vec![];for answer in list(c,"derivations",31)?{if answer["kind"]!="health_conversation_answer"{continue;}let raw=get(c,"records",answer["userInputRef"].as_str().unwrap_or(""))?.ok_or_else(||error("store_contract_rejected"))?;let permitted=raw["domain"]!="health"||health;let mut refs=vec![];if permitted{for rf in answer["inputRefs"].as_array().unwrap(){if let Some(r)=get(c,"records",rf["id"].as_str().unwrap_or(""))?{if allowed(c,&r,at)?&&r["version"]==rf["version"]&&get(c,"sources",r["sourceId"].as_str().unwrap())?.is_some_and(|s|s["generation"]==rf["authorizationGeneration"]){refs.push(json!({"id":r["id"],"version":r["version"],"identity":r["kind"],"text":r["text"],"observedAt":r["observedAt"],"estimated":r["estimated"],"domain":r["domain"],"engineRef":r.get("engineRef")}));}}}}
+   let answer_permitted=permitted&&refs.len()==answer["inputRefs"].as_array().unwrap().len();
+   turns.push(json!({"turnId":raw["turnId"],"text":if permitted{raw["text"].clone()}else{json!("健康对话当前未获准展示。")},"answer":if answer_permitted{answer["text"].clone()}else{json!("来源授权已变更，此回答不可用。")},"modelId":answer["modelId"],"status":if answer_permitted{answer["status"].clone()}else{json!("unavailable")},"refs":refs,"clarificationId":if permitted{answer["clarificationId"].clone()}else{Value::Null},"createdAt":answer["createdAt"]}));}
+  let mut states=vec![];for st in active_states(c,at)?.into_iter().take(2){let raw=get(c,"records",st["rawId"].as_str().unwrap())?.unwrap();states.push(json!({"id":st["id"],"stateKey":st["stateKey"],"value":st["value"],"domain":st["domain"],"identity":st["identity"],"rawText":raw["text"],"validUntil":st["validUntil"]}));}
+  let mut memories=vec![];for m in list(c,"memories",8)?{if memories.len()>=2{break}if m["confirmed"]==true&&m["status"]=="active"{if let Some(raw)=get(c,"records",m["rawId"].as_str().unwrap_or(""))?{if allowed(c,&raw,at)?{memories.push(json!({"id":m["id"],"text":raw["text"],"confirmed":true,"domain":raw["domain"]}));}}}}
+  let pending=list(c,"drafts",1)?.into_iter().next().filter(|d|d["status"]!="committed");let pending=pending.filter(|d|health||domain(c,d["text"].as_str().unwrap_or("")).ok().as_deref()!=Some("health"));let mut questions=Self::questions(c,at)?;questions.truncate(3);let mut has_more=turns.len()>30;turns.truncate(30);turns.reverse();let revision:i64=c.query_row("SELECT revision FROM meta WHERE id=1",[],|r|r.get(0))?;let mut v=json!({"revision":revision,"turns":turns,"states":states,"memories":memories,"questions":questions,"pendingDraft":pending,"modelId":settings(c)?,"provider":self.provider_view()?,"catalog":self.catalog()?,"mode":crate::runtime_root::mode(),"hasMore":has_more,"limits":{"maxTurns":30,"maxBytes":32768,"maxItems":40}});
+  while serde_json::to_vec(&v).unwrap().len()>32768||v["turns"].as_array().unwrap().iter().map(|t|1+t["refs"].as_array().unwrap().len()).sum::<usize>()+v["states"].as_array().unwrap().len()+v["memories"].as_array().unwrap().len()+v["questions"].as_array().unwrap().len()+usize::from(!v["pendingDraft"].is_null())>40{let a=v["turns"].as_array_mut().unwrap();if a.is_empty(){return Err(error("response_budget_rejected"));}a.remove(0);has_more=true;v["hasMore"]=json!(has_more);}Ok(v)
+ }
+}
+#[cfg(test)]mod tests;
+
+#[path="health_conversation_host/controlled.rs"]mod controlled;pub(crate) use controlled::{Start,SendPlan};
+
+impl Store {
+ fn connect_source(&mut self)->R<()>{if !crate::runtime_root::is_real(){crate::health_source::initialize_fixture(&self.fixture())?;}self.source_connected=true;Ok(())}
+ fn refresh_source(&self,question:&str)->R<()>{self.refresh_notes(question)?;if !self.source_connected||domain(&self.c,question)?!="health"||!enabled(&self.c,"health-demo")?{return Ok(())}let rows=crate::health_source::read(&self.fixture(),question)?;
+  let prior={let mut q=self.c.prepare("SELECT body FROM records WHERE json_extract(body,'$.kind')='source_projection' AND json_extract(body,'$.sourceId')='health-demo' LIMIT 129")?;let rows=q.query_map([],|r|r.get::<_,String>(0))?.collect::<Result<Vec<_>,_>>()?;if rows.len()>128{return Err(error("source_budget_rejected"));}rows.into_iter().map(|r|serde_json::from_str::<Value>(&r).map_err(|_|error("store_contract_rejected"))).collect::<R<Vec<_>>>()?};
+  for mut old in prior{if old["kind"]=="source_projection"&&old["domain"]=="health"&&old["sourceId"]=="health-demo" {let keep=rows.iter().any(|r|old["id"]==format!("health-source-{}",r["metric"].as_str().unwrap()));if !keep&&old["status"]=="active"&&(!old["id"].as_str().unwrap_or("").starts_with("health-source-")||crate::health_source::relevant(question,old["metric"].as_str().unwrap_or(""))){old["status"]=json!("unavailable");put(&self.c,"records",old["id"].as_str().unwrap(),&old)?;}}}
+  for r in rows {let key=format!("health-source-{}",r["metric"].as_str().unwrap());let old=get(&self.c,"records",&key)?;let version=old.as_ref().and_then(|v|v["version"].as_u64()).unwrap_or(1);let mut record=json!({"id":key,"kind":"source_projection","domain":"health","sourceId":"health-demo","version":version,"status":"active","metric":r["metric"],"text":r["text"],"value":r["value"],"observedAt":r["observedAt"],"estimated":r["estimated"],"dayIndex":r["dayIndex"],"offsetMinutes":r["offsetMinutes"],"sources":[{"name":r["sourceName"]}]});if let Some(old)=old{if old!=record{record["version"]=json!(version+1)}}put(&self.c,"records",&key,&record)?;}
+  Ok(())
+ }
+}
+
+#[cfg(test)]mod controlled_tests;
+
+#[path="health_conversation_host/catalog.rs"]mod catalog;
+
+#[cfg(test)]mod health_view_tests;
+
+#[path="health_conversation_host/source_bridge.rs"]mod source_bridge;
+
+#[path="health_conversation_host/settings_lifecycle.rs"]mod settings_lifecycle;
+
+#[path="health_conversation_host/actions.rs"]mod actions;
+
+#[path="health_conversation_host/existing_schema.rs"]mod existing_schema;
+
+#[path="health_conversation_host/operations.rs"]mod operations;
+pub(crate) use operations::OperationStart;

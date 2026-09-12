@@ -1,0 +1,108 @@
+{
+  "turnRequestId": "coord8-turn-2f4e5a0a097a6c1b4a6475fe88ba2cf8",
+  "observedAt": "2026-09-10T12:52:11.232519+00:00",
+  "turn": {
+    "state": "failed",
+    "createdAt": 1789044105600,
+    "updatedAt": 1789044478887,
+    "modelCalls": 2,
+    "queryCalls": 1,
+    "activityBudget": {
+      "activeStage": "none",
+      "limitMs": 180000,
+      "reservedMs": 0,
+      "usedMs": 91148
+    },
+    "errorCode": "activity_budget_exceeded"
+  },
+  "confirmationStates": [
+    {
+      "state": "first_inflight",
+      "updatedAt": 1789044306396,
+      "modelCalls": 1,
+      "queryCalls": 0,
+      "activityBudget": {
+        "activeStage": "model_first",
+        "limitMs": 180000,
+        "reservedMs": 60000,
+        "usedMs": 20
+      }
+    },
+    {
+      "state": "second_inflight",
+      "updatedAt": 1789044418871,
+      "modelCalls": 2,
+      "queryCalls": 1,
+      "activityBudget": {
+        "activeStage": "model_second",
+        "limitMs": 180000,
+        "reservedMs": 60000,
+        "usedMs": 31139
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "phase": "first",
+      "recordedAt": 1789044337490,
+      "requestOutput": {
+        "kind": "provider_default"
+      },
+      "diagnostics": {
+        "completion_tokens": 2722,
+        "finish_reason": "stop",
+        "prompt_tokens": 1098,
+        "total_tokens": 3820
+      }
+    },
+    {
+      "phase": "second",
+      "recordedAt": 1789044478883,
+      "requestOutput": {
+        "kind": "provider_default"
+      },
+      "diagnostics": {
+        "completion_tokens": null,
+        "finish_reason": null,
+        "prompt_tokens": null,
+        "total_tokens": null
+      }
+    }
+  ],
+  "businessCounts": {
+    "records": 0,
+    "feedback": 0,
+    "derivations": 0
+  },
+  "queryTiming": {
+    "startedAt": 1789044337502,
+    "finishedAt": 1789044337507,
+    "state": "succeeded"
+  },
+  "budget": {
+    "coord8:budget:development": {
+      "models": 6,
+      "queries": 2,
+      "turns": 4
+    },
+    "operation-budget-B": {
+      "development": 14,
+      "unseen": 0,
+      "used": 14
+    }
+  },
+  "conclusions": {
+    "total180sExhausted": false,
+    "firstModelWallMs": 31094,
+    "secondModelWallMs": 60012,
+    "firstPreviewToAcceptedConfirmationMs": 200796,
+    "queryFinishedToSecondAcceptedConfirmationMs": 81364,
+    "humanWaitCounted": false,
+    "credentialWaitExactDuration": "Unknown; not separately journaled; code excludes load from stage timer",
+    "firstRequestReachedProvider": true,
+    "secondPostReceivedByProvider": "Unknown; dispatch budget consumed and 60s model stage observed, no persisted transport receipt/status",
+    "newAgentRequests": 0,
+    "businessChanged": false,
+    "branch": "coordination.rs v8_finish elapsed > reserved (60000), before response error handling; mislabels per-call timeout as whole activity budget exhaustion"
+  }
+}

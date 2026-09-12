@@ -1,0 +1,17 @@
+{
+  "reproduced": true,
+  "cases": [
+    {
+      "name": "expired answered state with fresh user request",
+      "expected": "new necessary clarification permitted",
+      "actual": "clarification_suppressed"
+    },
+    {
+      "name": "state expiry between prepare and commit",
+      "expected": "context_stale",
+      "actual": "completed"
+    }
+  ],
+  "positiveAcceptanceEvidence": false,
+  "scope": "test-owned synthetic stores and cfg(test) clock only"
+}

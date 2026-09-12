@@ -1,0 +1,17 @@
+✔ actual conversation entry only drafts and prepares v7, no local parser or v5 fallback (3.400292ms)
+✔ lost confirmation response recovers read only without another model invocation (0.142333ms)
+✔ forged request and false success cannot clear input (0.111709ms)
+✔ none receipt cannot impersonate committed action (0.047541ms)
+✔ Flow clears draft only after request bound commit then reads stored state (0.282917ms)
+✔ Flow failed result keeps draft and unknown status never means success (0.116541ms)
+✔ clarification UI state uses persisted variable reply without translation replacement (0.136959ms)
+✔ actual IPC and production Flow create adjust cancel and independent process restart (701.187458ms)
+✔ ordinary conversation uses same v7 and explicitly reports no operation (41.231958ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 787.700625

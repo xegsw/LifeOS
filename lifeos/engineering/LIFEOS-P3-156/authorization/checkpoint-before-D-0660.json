@@ -1,0 +1,44 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-156",
+  "attempt_id": "engineering-v1",
+  "updated_at": "2026-09-10T00:57:59.264419+00:00",
+  "task_contract_sha256": "ec1f548d7c319741d86bdef13a50809e8d59d62d8cc0b3ccd9a80194c10f0e8b",
+  "candidate_sha256": "28d227769fcb7428dd1042e8f4678095f54a449f48521c577cdbe373844f40e6",
+  "baseline_sha256": "22954f3f3ab1bb5b5bd880ec742c7f1ebc26252ee35ba2a64988ab8df6cefb49",
+  "stage": "preflight",
+  "status": "paused_resumable",
+  "pause_class": "authorization_dependency",
+  "pause_reason_code": "minimal_protocol_approval_pending",
+  "completed_checks": [
+    "155 parent 315 files preserved",
+    "155 real-switch 14 files preserved",
+    "166 candidate files verified and copied unchanged",
+    "exclusive synthetic root and owner created",
+    "capability mapping and concrete protocol proposal sent to PM",
+    "34 synthetic interaction cases designed (not executed)",
+    "rerunnable baseline/owner verification passed"
+  ],
+  "pending_checks": [
+    "minimal protocol approval",
+    "implementation",
+    "behavior regression",
+    "synthetic App binding",
+    "affected visual verification"
+  ],
+  "rerun_checks": [],
+  "excluded_artifacts": [],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "owned_no_database"
+  },
+  "resume_from": "protocol_approval",
+  "safe_to_resume": false,
+  "notes": "Only protocol-dependent implementation is paused. Explicit PM/authorized approval is required by task card. No code execution, databases, App launch, network/provider or real data contact. Existing copied candidate still contains P3-155 runtime literals and must not be run before adaptation."
+}

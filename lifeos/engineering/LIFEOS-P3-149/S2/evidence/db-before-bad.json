@@ -1,0 +1,241 @@
+{
+  "records": {
+    "count": 11,
+    "digest": "ae18335d7bcb35fb50402bc8a92c33c30899aec20fe03b4ec715d1f0029b76fb",
+    "kinds": {
+      "health_batch": 2,
+      "health_apple_observation": 3,
+      "health_apple_membership": 6
+    },
+    "summary": [
+      {
+        "attachments": 1,
+        "duplicates": 3,
+        "file": "02-synthetic-export.zip",
+        "id": "health-apple-batch:86de5d603d2ebcfba26090cd05ef307104a3fb631b0e7933774d0cd8638462b1",
+        "inserted": 0,
+        "kind": "health_batch",
+        "modelEligible": false,
+        "protocol": "apple-file-v1",
+        "receivedAt": 1788915914164,
+        "result": {
+          "attachments": 1,
+          "changedStates": 5,
+          "duplicates": 3,
+          "failed": 0,
+          "file": "02-synthetic-export.zip",
+          "importedAt": 1788915914164,
+          "inserted": 0,
+          "status": "completed",
+          "unsupported": 1,
+          "unsupportedTypes": {
+            "HKQuantityTypeIdentifierHeartRate": 1
+          }
+        },
+        "sources": [
+          "health-apple-source:26c6a993459e7b1bef6a4ad0d520b2fd4bc3c21c02ca9c6380ffbcbe9fac5c66"
+        ],
+        "status": "observed",
+        "unsupported": 1,
+        "unsupportedTypes": {
+          "HKQuantityTypeIdentifierHeartRate": 1
+        }
+      },
+      {
+        "attachments": 0,
+        "duplicates": 0,
+        "file": "01-synthetic-export.xml",
+        "id": "health-apple-batch:a8424070eb771ddb7e512ce355ddef6e9bb83491720836dee59416d9f03bb1ed",
+        "inserted": 3,
+        "kind": "health_batch",
+        "modelEligible": false,
+        "protocol": "apple-file-v1",
+        "receivedAt": 1788915895501,
+        "result": {
+          "attachments": 0,
+          "changedStates": 5,
+          "duplicates": 0,
+          "failed": 0,
+          "file": "01-synthetic-export.xml",
+          "importedAt": 1788915895501,
+          "inserted": 3,
+          "status": "completed",
+          "unsupported": 1,
+          "unsupportedTypes": {
+            "HKQuantityTypeIdentifierHeartRate": 1
+          }
+        },
+        "sources": [
+          "health-apple-source:26c6a993459e7b1bef6a4ad0d520b2fd4bc3c21c02ca9c6380ffbcbe9fac5c66"
+        ],
+        "status": "observed",
+        "unsupported": 1,
+        "unsupportedTypes": {
+          "HKQuantityTypeIdentifierHeartRate": 1
+        }
+      }
+    ]
+  },
+  "sources": {
+    "count": 1,
+    "digest": "24bdfc44b3a880e2c61c7e1e16899ac7b49ccfc2ccf96afd4ac1a3a91578e0a7",
+    "kinds": {
+      "health_source": 1
+    },
+    "summary": [
+      {
+        "authorized": false,
+        "externalSourceId": "health-apple-source:26c6a993459e7b1bef6a4ad0d520b2fd4bc3c21c02ca9c6380ffbcbe9fac5c66",
+        "generation": 1,
+        "id": "health-apple-source:26c6a993459e7b1bef6a4ad0d520b2fd4bc3c21c02ca9c6380ffbcbe9fac5c66",
+        "identityStrategy": "source-name-group",
+        "ingestAuthorized": true,
+        "kind": "health_source",
+        "modelEligible": false,
+        "name": "Synthetic Watch",
+        "observedAt": 1788826200000,
+        "protocol": "apple-file-v1",
+        "receivedAt": 1788915914164
+      }
+    ]
+  },
+  "states": {
+    "count": 5,
+    "digest": "4c00fd8488a2c4989c48205d608ef28b400584ab2d2895f4204872a16232aa31",
+    "kinds": {
+      "health_current_state": 5
+    },
+    "summary": [
+      {
+        "coverage": "unknown",
+        "dayIndex": 20704,
+        "domain": "Health",
+        "estimated": false,
+        "id": "health-apple-state:2210fba628a733571d1e07d6c0700de939d541dc0ebbd0a3d242cdcd971fc2a6",
+        "kind": "health_current_state",
+        "method": "file_observation_subset",
+        "metric": "sleep",
+        "modelEligible": false,
+        "observationCount": 1,
+        "observedAt": 1788822000000,
+        "offsetMinutes": 480,
+        "protocol": "apple-file-v1",
+        "receivedAt": 1788915895501,
+        "refs": [],
+        "sources": [
+          {
+            "name": "Synthetic Watch",
+            "value": 420.0
+          }
+        ],
+        "status": "observed",
+        "unit": "minutes",
+        "value": 420.0
+      },
+      {
+        "coverage": "unknown",
+        "dayIndex": 20704,
+        "domain": "Health",
+        "estimated": false,
+        "id": "health-apple-state:2b38ec69e417707599b3b389ac5c2ce2d3e70dd75034044acf636a67bcac9509",
+        "kind": "health_current_state",
+        "method": "file_observation_subset",
+        "metric": "exercise",
+        "modelEligible": false,
+        "observationCount": 1,
+        "observedAt": 1788826200000,
+        "offsetMinutes": 480,
+        "protocol": "apple-file-v1",
+        "receivedAt": 1788915895501,
+        "refs": [],
+        "sources": [
+          {
+            "name": "Synthetic Watch",
+            "value": 10.0
+          }
+        ],
+        "status": "observed",
+        "unit": "minutes",
+        "value": 10.0
+      },
+      {
+        "coverage": "unknown",
+        "dayIndex": 20703,
+        "domain": "Health",
+        "estimated": false,
+        "id": "health-apple-state:97563f43677c98cfe7f0f6269fb0f1fc817f9ce52a3fe53a581c7ec4a87d13f5",
+        "kind": "health_current_state",
+        "method": "file_observation_subset",
+        "metric": "sleep",
+        "modelEligible": false,
+        "observationCount": 1,
+        "observedAt": 1788822000000,
+        "offsetMinutes": 480,
+        "protocol": "apple-file-v1",
+        "receivedAt": 1788915895501,
+        "refs": [],
+        "sources": [
+          {
+            "name": "Synthetic Watch",
+            "value": 60.0
+          }
+        ],
+        "status": "observed",
+        "unit": "minutes",
+        "value": 60.0
+      },
+      {
+        "coverage": "unknown",
+        "dayIndex": 20703,
+        "domain": "Health",
+        "estimated": true,
+        "id": "health-apple-state:9dbfe1a627095407e4c27d91cd2226fe191910d6f1c49367ad71b96b5811ce28",
+        "kind": "health_current_state",
+        "method": "file_observation_subset",
+        "metric": "steps",
+        "modelEligible": false,
+        "observationCount": 1,
+        "observedAt": 1788800400000,
+        "offsetMinutes": 480,
+        "protocol": "apple-file-v1",
+        "receivedAt": 1788915895501,
+        "refs": [],
+        "sources": [
+          {
+            "name": "Synthetic Watch",
+            "value": 60.0
+          }
+        ],
+        "status": "observed",
+        "unit": "count",
+        "value": 60.0
+      },
+      {
+        "coverage": "unknown",
+        "dayIndex": 20704,
+        "domain": "Health",
+        "estimated": true,
+        "id": "health-apple-state:dab9cc13ff5ff9726c72292ac680a076a6caf9d7f8fcab88ebb00c23b58dfaa8",
+        "kind": "health_current_state",
+        "method": "file_observation_subset",
+        "metric": "steps",
+        "modelEligible": false,
+        "observationCount": 1,
+        "observedAt": 1788800400000,
+        "offsetMinutes": 480,
+        "protocol": "apple-file-v1",
+        "receivedAt": 1788915895501,
+        "refs": [],
+        "sources": [
+          {
+            "name": "Synthetic Watch",
+            "value": 60.0
+          }
+        ],
+        "status": "observed",
+        "unit": "count",
+        "value": 60.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+test_attachments_never_parse (__main__.ParserTests) ... ok
+test_bad_root (__main__.ParserTests) ... ok
+test_bad_values_dates (__main__.ParserTests) ... ok
+test_chinese_not_asleep (__main__.ParserTests) ... ok
+test_entity_denied (__main__.ParserTests) ... ok
+test_escaping (__main__.ParserTests) ... ok
+test_external_dtd_denied (__main__.ParserTests) ... ok
+test_internal_entity_denied (__main__.ParserTests) ... ok
+test_limits (__main__.ParserTests) ... ok
+test_normal_inline_dtd_and_zip (__main__.ParserTests) ... ok
+test_offset_and_crossday (__main__.ParserTests) ... ok
+test_over_legacy_limits (__main__.ParserTests) ... FAIL
+test_sleep_identifiers (__main__.ParserTests) ... ok
+test_truncated (__main__.ParserTests) ... ok
+test_units (__main__.ParserTests) ... ok
+test_unknown_type (__main__.ParserTests) ... ok
+test_zip_ambiguous (__main__.ParserTests) ... ok
+test_zip_bomb_and_entries (__main__.ParserTests) ... ok
+test_zip_crc (__main__.ParserTests) ... ok
+test_zip_duplicates (__main__.ParserTests) ... ok
+test_zip_encrypted (__main__.ParserTests) ... ok
+test_zip_paths (__main__.ParserTests) ... ok
+test_zip_symlink (__main__.ParserTests) ... ok
+
+======================================================================
+FAIL: test_over_legacy_limits (__main__.ParserTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/test_parser.py", line 15, in test_over_legacy_limits
+    d=make()['07-large.xml'];self.assertGreater(len(d),128*1024);self.assertEqual(self.parse(d)[-1]['supported'],1000)
+  File "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-149/S2/tools/make_fixtures.py", line 22, in make
+    if p.exists():assert p.read_bytes()==data
+AssertionError
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.003s
+
+FAILED (failures=1)

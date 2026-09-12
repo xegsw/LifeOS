@@ -1,0 +1,31 @@
+{
+  "syntax": "pass",
+  "dryRun": "pass",
+  "rejectionChecks": [
+    {
+      "args": [
+        "--execute"
+      ],
+      "exitCode": 2,
+      "rejectedBeforeSigning": true
+    },
+    {
+      "args": [
+        "--identity-sha1",
+        "-",
+        "--execute"
+      ],
+      "exitCode": 2,
+      "rejectedBeforeSigning": true
+    },
+    {
+      "args": [
+        "--build-tag",
+        "../escape"
+      ],
+      "exitCode": 2,
+      "rejectedBeforeSigning": true
+    }
+  ],
+  "actualSigning": "not_executed"
+}

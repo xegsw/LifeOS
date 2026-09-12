@@ -1,0 +1,33 @@
+
+running 28 tests
+test health_conversation_host::controlled_tests::c154_confirm_derivation_write_failure_rolls_back_and_preserves_old_rows ... ok
+test health_conversation_host::controlled_tests::c154_confirm_keychain_unavailable_is_before_adapter_and_keeps_old_ciphertext ... ok
+test health_conversation_host::controlled_tests::c154_confirm_production_parser_failures_are_consumed_without_resend ... ok
+test health_conversation_host::controlled_tests::c154_confirm_storage_lock_before_consumption_has_zero_adapter_calls ... ok
+test health_conversation_host::controlled_tests::c154_confirm_store_busy_after_response_is_not_network_failure_and_restart_never_resends ... ok
+test health_conversation_host::controlled_tests::c1_expired_state_blocks_confirm_before_adapter_call ... ok
+test health_conversation_host::controlled_tests::c1_state_expiry_during_adapter_marks_late_response_stale ... ok
+test health_conversation_host::controlled_tests::cancel_after_handoff_does_not_claim_remote_retraction ... ok
+test health_conversation_host::controlled_tests::cancelled_preview_and_forged_body_are_rejected ... ok
+test health_conversation_host::controlled_tests::catalog_change_invalidates_old_confirmation ... ok
+test health_conversation_host::controlled_tests::catalog_cloud_local_persist_restart_and_cas ... ok
+test health_conversation_host::controlled_tests::catalog_metadata_and_forged_reserved_sources_never_enter_context ... ok
+test health_conversation_host::controlled_tests::catalog_strict_secret_endpoint_and_range_rejected ... ok
+test health_conversation_host::controlled_tests::concurrent_duplicate_while_transport_owns_body_does_not_send_twice ... ok
+test health_conversation_host::controlled_tests::exact_preview_body_is_only_body_sent_and_duplicate_consumes_once ... ok
+test health_conversation_host::controlled_tests::expired_preview_or_client_supplied_body_cannot_be_confirmed ... ok
+test health_conversation_host::controlled_tests::forged_confirmation_token_never_dispatches ... ok
+test health_conversation_host::controlled_tests::future_or_wrong_metric_has_no_fabricated_health_projection ... ok
+test health_conversation_host::controlled_tests::old_projection_invalidated_even_after_large_unrelated_history ... ok
+test health_conversation_host::controlled_tests::readonly_health_source_bytes_unchanged_and_changes_invalidate_preview ... ok
+test health_conversation_host::controlled_tests::real_initial_state_contains_no_synthetic_personal_rows ... ok
+test health_conversation_host::controlled_tests::real_local_response_never_uses_client_answer ... ok
+test health_conversation_host::controlled_tests::remote_key_echo_is_never_persisted_or_returned ... ok
+test health_conversation_host::controlled_tests::restart_inflight_stays_unknown_and_never_resends ... ok
+test health_conversation_host::controlled_tests::second_preview_replaces_confirmation_slot ... ok
+test health_conversation_host::controlled_tests::second_store_instance_and_source_sidecar_fail_closed ... ok
+test health_conversation_host::controlled_tests::stale_model_draft_source_or_credential_never_reaches_adapter ... ok
+test health_conversation_host::controlled_tests::unknown_estimated_and_multi_source_are_preserved_without_source_writes ... ok
+
+test result: ok. 28 passed; 0 failed; 0 ignored; 0 measured; 86 filtered out; finished in 1.70s
+

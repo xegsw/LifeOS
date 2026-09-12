@@ -1,0 +1,97 @@
+   Compiling lifeos-p3-152 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/candidate)
+    Checking lifeos-source-engine v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/candidate/source-engine)
+error: real boundary tests forbidden
+ --> source-engine/src/lib.rs:2:1
+  |
+2 | compile_error!("real boundary tests forbidden");
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `OptionalExtension` and `TransactionBehavior`
+ --> source-engine/src/repository.rs:2:36
+  |
+2 | use rusqlite::{params, Connection, OptionalExtension, TransactionBehavior};
+  |                                    ^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Sha256`
+ --> source-engine/src/repository.rs:5:20
+  |
+5 | use sha2::{Digest, Sha256};
+  |                    ^^^^^^
+
+warning: unused import: `self`
+ --> source-engine/src/apple_health.rs:5:18
+  |
+5 |     repository::{self, Error},
+  |                  ^^^^
+
+warning: unused import: `rusqlite::OptionalExtension`
+ --> source-engine/src/lib.rs:7:68
+  |
+7 | use serde_json::{Value,json};use std::sync::{Mutex,MutexGuard};use rusqlite::OptionalExtension;
+  |                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `path::Path`
+ --> source-engine/src/update_checks.rs:3:14
+  |
+3 | use std::{fs,path::Path,os::unix::fs::PermissionsExt};
+  |              ^^^^^^^^^^
+
+warning: unused import: `rusqlite::params`
+ --> source-engine/src/update_checks.rs:4:5
+  |
+4 | use rusqlite::params;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: unused import: `Digest`
+ --> source-engine/src/repository.rs:5:12
+  |
+5 | use sha2::{Digest, Sha256};
+  |            ^^^^^^
+
+warning: unused variable: `root`
+   --> source-engine/src/repository.rs:105:9
+    |
+105 |     let root = crate::runtime_root::verify()?;
+    |         ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> source-engine/src/apple_health.rs:167:5
+    |
+167 |     mut progress: impl FnMut(u64),
+    |     ----^^^^^^^^
+    |     |
+    |     help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `root`
+  --> source-engine/src/lib.rs:18:83
+   |
+18 | ...on<std::path::PathBuf>>{let root=runtime_root::verify()?;if fixture.is_empty()||fixture.len()>60||!fixture.bytes().all(|b|b.is_as...
+   |                                ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+
+warning: unused variable: `root`
+  --> source-engine/src/lib.rs:29:83
+   |
+29 | ...<Value>>{let _g=gate()?;let root=runtime_root::verify()?;let path=runtime_root::store_path(fixture)?;if !path.try_exists().map_er...
+   |                                ^^^^ help: if this is intentional, prefix it with an underscore: `_root`
+
+error: failed to run custom build command for `lifeos-p3-152 v0.1.0 (/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-158/candidate)`
+
+Caused by:
+  process didn't exit successfully: `/private/tmp/lifeos-p3-158-main-chain-v1/build/guards/debug/build/lifeos-p3-152-5c7da529d402bb72/build-script-build` (exit status: 101)
+  --- stdout
+  cargo:rerun-if-env-changed=LIFEOS_P3_158_MODE
+
+  --- stderr
+
+  thread 'main' (22399335) panicked at build.rs:7:2:
+  network driver forbidden
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+warning: build failed, waiting for other jobs to finish...
+warning: `lifeos-source-engine` (lib) generated 11 warnings
+error: could not compile `lifeos-source-engine` (lib) due to 1 previous error; 11 warnings emitted

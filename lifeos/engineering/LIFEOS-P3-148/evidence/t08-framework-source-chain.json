@@ -1,0 +1,107 @@
+{
+  "task": "LIFEOS-P3-148",
+  "scope": "read_only_local_framework_source_and_synthetic_value_boundary",
+  "live_tauri_invoke_test": false,
+  "finding": "duplicate keys collapse before application Request on JSON IPC",
+  "sources": [
+    {
+      "path": "/Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-2.11.5/src/ipc/protocol.rs",
+      "sha256": "f9748a000d2946863ed4bad304de9145fb3dc1e87abbe8c0143011e7b9a1e8de",
+      "excerpts": [
+        {
+          "start": 235,
+          "end": 249,
+          "text": "\n  #[derive(Deserialize)]\n  struct Message {\n    cmd: String,\n    callback: CallbackFn,\n    error: CallbackFn,\n    payload: serde_json::Value,\n    options: Option<RequestOptions>,\n    #[serde(rename = \"__TAURI_INVOKE_KEY__\")]\n    invoke_key: String,\n  }\n\n  #[allow(unused_mut)]\n  let mut invoke_message: Option<crate::Result<Message>> = None;\n"
+        },
+        {
+          "start": 289,
+          "end": 311,
+          "text": "  }\n\n  let message = invoke_message.unwrap_or_else(|| {\n    #[cfg(feature = \"tracing\")]\n    let _span = tracing::trace_span!(\"ipc::request::deserialize\").entered();\n    serde_json::from_str::<Message>(request.body()).map_err(Into::into)\n  });\n\n  match message {\n    Ok(message) => {\n      let options = message.options.unwrap_or_default();\n\n      let request = InvokeRequest {\n        cmd: message.cmd,\n        callback: message.callback,\n        error: message.error,\n        url: Url::parse(&request.uri().to_string()).expect(\"invalid IPC request URL\"),\n        body: message.payload.into(),\n        headers: options.headers.0,\n        invoke_key: message.invoke_key,\n      };\n\n      #[cfg(feature = \"tracing\")]"
+        },
+        {
+          "start": 520,
+          "end": 535,
+          "text": "  let span = tracing::trace_span!(\"ipc::request::deserialize\").entered();\n\n  let body = if content_type == mime::APPLICATION_OCTET_STREAM {\n    body.into()\n  } else if content_type == mime::APPLICATION_JSON {\n    // if the platform does not support request body, we ignore it\n    if has_payload {\n      serde_json::from_slice::<serde_json::Value>(&body)\n        .map_err(|e| e.to_string())?\n        .into()\n    } else {\n      serde_json::Value::Object(Default::default()).into()\n    }\n  } else {\n    return Err(format!(\"content type {content_type} is not implemented\"));\n  };"
+        }
+      ]
+    },
+    {
+      "path": "/Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-2.11.5/src/ipc/command.rs",
+      "sha256": "d611effb696608cf698d25c203fae99b05f862ef2321fef1d71ee75aa54e470b",
+      "excerpts": [
+        {
+          "start": 60,
+          "end": 69,
+          "text": "\n/// Automatically implement [`CommandArg`] for any type that can be deserialized.\nimpl<'de, D: Deserialize<'de>, R: Runtime> CommandArg<'de, R> for D {\n  fn from_command(command: CommandItem<'de, R>) -> Result<D, InvokeError> {\n    let name = command.name;\n    let arg = command.key;\n    #[cfg(feature = \"tracing\")]\n    let _span = tracing::trace_span!(\"ipc::request::deserialize_arg\", arg = arg).entered();\n    Self::deserialize(command).map_err(|e| crate::Error::InvalidArgs(name, arg, e).into())\n  }"
+        },
+        {
+          "start": 83,
+          "end": 106,
+          "text": "impl<'a, R: Runtime> CommandItem<'a, R> {\n  fn deserialize_json(self) -> serde_json::Result<&'a serde_json::Value> {\n    if self.key.is_empty() {\n      return Err(serde_json::Error::custom(format!(\n        \"command {} has an argument with no name with a non-optional value\",\n        self.name\n      )));\n    }\n\n    match &self.message.payload {\n      InvokeBody::Raw(_body) => Err(serde_json::Error::custom(format!(\n        \"command {} expected a value for key {} but the IPC call used a bytes payload\",\n        self.name, self.key\n      ))),\n      InvokeBody::Json(v) => match v.get(self.key) {\n        Some(value) => Ok(value),\n        None => Err(serde_json::Error::custom(format!(\n          \"command {} missing required key {}\",\n          self.name, self.key\n        ))),\n      },\n    }\n  }\n}"
+        }
+      ]
+    },
+    {
+      "path": "/Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-2.11.5/src/ipc/mod.rs",
+      "sha256": "8c18c612897de97dc4e1b3c1aa62869b66d610e85093e2015b1b6abc3418364d",
+      "excerpts": [
+        {
+          "start": 59,
+          "end": 64,
+          "text": "pub enum InvokeBody {\n  /// Json payload.\n  Json(JsonValue),\n  /// Bytes payload.\n  Raw(Vec<u8>),\n}"
+        },
+        {
+          "start": 145,
+          "end": 174,
+          "text": "/// Includes the `body` and `headers` parameters of a Tauri command invocation.\n/// This allows commands to accept raw bytes - on all platforms except Android.\n#[derive(Debug)]\npub struct Request<'a> {\n  body: &'a InvokeBody,\n  headers: &'a HeaderMap,\n}\n\nimpl Request<'_> {\n  /// The request body.\n  pub fn body(&self) -> &InvokeBody {\n    self.body\n  }\n\n  /// Thr request headers.\n  pub fn headers(&self) -> &HeaderMap {\n    self.headers\n  }\n}\n\nimpl<'a, R: Runtime> CommandArg<'a, R> for Request<'a> {\n  /// Returns the invoke [`Request`].\n  fn from_command(command: CommandItem<'a, R>) -> Result<Self, InvokeError> {\n    Ok(Self {\n      body: command.message.payload(),\n      headers: command.message.headers(),\n    })\n  }\n}\n"
+        }
+      ]
+    },
+    {
+      "path": "/Users/xxe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_json-1.0.151/src/value/de.rs",
+      "sha256": "ceda1bf415aafde89caa83bf275811b70d393717d4e1038e0c61822d2da02993",
+      "excerpts": [
+        {
+          "start": 121,
+          "end": 148,
+          "text": "            fn visit_map<V>(self, mut visitor: V) -> Result<Value, V::Error>\n            where\n                V: MapAccess<'de>,\n            {\n                match tri!(visitor.next_key_seed(KeyClassifier)) {\n                    #[cfg(feature = \"arbitrary_precision\")]\n                    Some(KeyClass::Number) => {\n                        let number: NumberFromString = tri!(visitor.next_value());\n                        Ok(Value::Number(number.value))\n                    }\n                    #[cfg(feature = \"raw_value\")]\n                    Some(KeyClass::RawValue) => {\n                        let value = tri!(visitor.next_value_seed(crate::raw::BoxedFromString));\n                        crate::from_str(value.get()).map_err(de::Error::custom)\n                    }\n                    Some(KeyClass::Map(first_key)) => {\n                        let mut values = Map::new();\n\n                        values.insert(first_key, tri!(visitor.next_value()));\n                        while let Some((key, value)) = tri!(visitor.next_entry()) {\n                            values.insert(key, value);\n                        }\n\n                        Ok(Value::Object(values))\n                    }\n                    None => Ok(Value::Object(Map::new())),\n                }\n            }"
+        }
+      ]
+    },
+    {
+      "path": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/candidate/src/main.rs",
+      "sha256": "dc519c9c77d7c0a03c65c1588abd28292c7c82ed2c4ca9bfa7d72fb673fbc369",
+      "excerpts": [
+        {
+          "start": 20,
+          "end": 34,
+          "text": "use std::io::{self, BufRead};\n// Host work runs off the UI thread; the compiled engineering profile denies real transport.\nmacro_rules! command {\n    ($name:ident) => {\n        #[tauri::command]\n        async fn $name(request: Request) -> Result<Value, Error> {\n            tauri::async_runtime::spawn_blocking(move || {\n                if request.version == 3 || stringify!($name) == \"send_source_ai_request\" {\n                    conversation_store::dispatch(stringify!($name), request, \"app\")\n                } else {\n                    repository::dispatch(stringify!($name), request, \"app\")\n                }\n            })\n            .await\n            .map_err(|_| Error::new(\"operation_failed\"))?"
+        }
+      ]
+    },
+    {
+      "path": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/candidate/src/repository.rs",
+      "sha256": "a0f209a63284d51d22bd539d97d0b191b8d30d8585fe9f60ccc6396e32d2af17",
+      "excerpts": [
+        {
+          "start": 38,
+          "end": 45,
+          "text": "#[derive(Debug, Deserialize)]\n#[serde(deny_unknown_fields)]\npub struct Request {\n    pub version: u8,\n    pub operation: String,\n    #[serde(default)]\n    pub payload: Value,\n}"
+        }
+      ]
+    },
+    {
+      "path": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-148/candidate/application/source_ui.ts",
+      "sha256": "564e240102434b3d54a1f39abf1e5b78b185ed7ee4031d0a2902be2436ba0363",
+      "excerpts": [
+        {
+          "start": 1,
+          "end": 6,
+          "text": "import {SourceConversation} from './source_conversation.ts';\nconst real=(window as any).__LIFEOS_REAL_SOURCE__===true;\nconst sendLabel=real?'确认并发送':'确认并发送（合成）';\nconst testLabel=real?'测试连接':'测试连接（合成）';\nconst invoke=(window as any).__TAURI__.core.invoke;\nconst app=new SourceConversation({invoke:(command,request)=>invoke(command,{request})});"
+        }
+      ]
+    }
+  ],
+  "test_log": "t08-framework-boundary.log",
+  "test_result": "1 passed; 43 filtered; finding reproduced, T08 not passed"
+}

@@ -1,0 +1,29 @@
+{
+  "case": "B-dev-04",
+  "result": "create_succeeded_after_one_failed_consumption",
+  "requestId": "op-request-e41f67c9a0fdd51c16810ffd6546d208",
+  "operationId": "operation-a678f6cb4d2785a7e9493b91a0feb264",
+  "actionId": "action:operation-a678f6cb4d2785a7e9493b91a0feb264",
+  "version": 1,
+  "status": "planned",
+  "eventsTotal": 4,
+  "receiptCopiesEqual": true,
+  "feedbackMatches": true,
+  "idempotencyRows": 2,
+  "subsequentCompleteExists": false,
+  "failedAttempts": [
+    {
+      "requestId": "op-request-9906251510f890da6de83c872f84c4de",
+      "operationId": "operation-1873991f3b634b819d5172a6d7fb3217",
+      "state": "failed",
+      "code": null,
+      "errorCode": "provider_unavailable",
+      "businessChanged": false
+    }
+  ],
+  "budget": {
+    "development": 5,
+    "unseen": 0,
+    "used": 5
+  }
+}

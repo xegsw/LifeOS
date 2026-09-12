@@ -1,0 +1,103 @@
+{
+  "task": "P3-149 S2",
+  "scope": "synthetic offline L2",
+  "engineering_acceptance": {
+    "S2-01": "Pass",
+    "S2-02": "Pass",
+    "S2-03": "Pass",
+    "S2-04": "Pass",
+    "S2-05": "Pass",
+    "S2-06": "Pass",
+    "S2-07": "Pass",
+    "S2-08": "Pass"
+  },
+  "findings": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 1,
+    "Unknown_in_scope": 0,
+    "Not_Implemented_in_scope": 0
+  },
+  "P2": [
+    {
+      "id": "S2-P2-01",
+      "fact": "错误主文案附有未本地化技术代码；文件失败、未导入和重试操作已明确。",
+      "impact": "可读性小缺口，不影响失败关闭、数据保留或重试。"
+    }
+  ],
+  "tests": {
+    "parser": {
+      "passed": 26,
+      "log": "parser-final.log"
+    },
+    "rust": {
+      "passed_unique": 60,
+      "log": "rerun-20260909T005241908432Z.log",
+      "filters": [
+        "health (59)",
+        "p149_apple_import (1)"
+      ]
+    },
+    "frontend": {
+      "passed": 27,
+      "log": "ui-tests-1.log"
+    },
+    "build": "build-final.log",
+    "ci": "not run",
+    "unaffected_historical_rust_tests_not_rerun": 69
+  },
+  "actual_app": {
+    "first_pid": 2095,
+    "restart_pid": 2358,
+    "binary_sha256": "f996a53251d61f030265421cf6fbd9341d5e3d24d3e51b8592bcc473f9d01304",
+    "candidate_sha256": "afac56f6757f57ccc7ee9d97f126b5e7b9673a65517534aaea69c52f26f89c3e",
+    "xml_zip_same_ui": true,
+    "duplicate_whole_file_no_extra_batch": true,
+    "failed_import_and_retry_health_namespace_identical": true,
+    "restart_health_namespace_identical": true,
+    "records": {
+      "health_batch": 4,
+      "health_apple_observation": 1004,
+      "health_apple_membership": 1008
+    },
+    "sources": 2,
+    "states": 6,
+    "large_fixture_rows": 1000,
+    "large_fixture_bytes": 177247,
+    "progress_capture": "s2-progress.png",
+    "viewports_logical": [
+      [
+        1280,
+        949
+      ],
+      [
+        700,
+        760
+      ]
+    ],
+    "viewports_physical": [
+      [
+        2560,
+        1898
+      ],
+      [
+        1400,
+        1520
+      ]
+    ],
+    "restart_capture": "s2-restart.png",
+    "startup_transient": "first restart AX call preceded completed render; no artifact written, retried on same PID after ready; not candidate failure"
+  },
+  "ipc": {
+    "before": 26,
+    "after": 27,
+    "added": [
+      "import_apple_health_file"
+    ]
+  },
+  "history_preservation": "preservation-final.json",
+  "candidate_diff": "candidate-diff.json",
+  "real_data_network_provider_credentials": "not accessed",
+  "independent_review": "not requested per contract",
+  "pm_acceptance": "pending"
+}

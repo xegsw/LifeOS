@@ -1,0 +1,38 @@
+{
+  "at": "2026-09-12T13:06:40.944614+00:00",
+  "reason": "PM explicit D0675 B-only single diagnostic verification coordination",
+  "entry": "actual B Settings 调整 → 确认保存范围, unchanged scope; host policy IPC",
+  "beforeGeneration": 4,
+  "afterPolicy": {
+    "analysisPerDay": 12,
+    "enabled": true,
+    "generation": 5,
+    "intervalMinutes": 30,
+    "kind": "proactive_policy",
+    "quietEnd": 8,
+    "quietStart": 22,
+    "responsePerDay": 20,
+    "revision": 5,
+    "schemaVersion": 1,
+    "showsPerDay": 3,
+    "sourceIds": [
+      "work-demo"
+    ],
+    "subjectIds": [
+      "work-report",
+      "work-code"
+    ]
+  },
+  "beforeBudget": {
+    "analysis": 4,
+    "highWater": 1789219389415,
+    "kind": "proactive_budget",
+    "lastAnalysis": 1789219389415,
+    "lastShow": 0,
+    "nextReset": 1789228800000,
+    "response": 0,
+    "shows": 0
+  },
+  "actualPostsBefore": 0,
+  "noDirectDbWrite": true
+}

@@ -1,0 +1,38 @@
+{
+  "passed": 8,
+  "total": 8,
+  "results": [
+    {
+      "name": "Preview is inert, exact personal data visible, explicit confirmation creates one answer",
+      "pass": true
+    },
+    {
+      "name": "Local clarification and explicit state do not require configured network model",
+      "pass": true
+    },
+    {
+      "name": "Model change invalidates the previous preview without a send",
+      "pass": true
+    },
+    {
+      "name": "Credential deletion blocks confirmation and retains conversation assets",
+      "pass": true
+    },
+    {
+      "name": "Failed response preserves draft; manual retry creates new preview and no duplicate turn",
+      "pass": true
+    },
+    {
+      "name": "Cancel after dispatch is honest; late output cannot replace new question",
+      "pass": true
+    },
+    {
+      "name": "Editing preview invalidates it; restoration keeps the new draft",
+      "pass": true
+    },
+    {
+      "name": "Unknown question uses no hidden history and models remain local choices",
+      "pass": true
+    }
+  ]
+}

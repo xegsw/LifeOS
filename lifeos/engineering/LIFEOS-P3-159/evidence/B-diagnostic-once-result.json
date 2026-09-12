@@ -1,0 +1,37 @@
+{
+  "task": "P3-159",
+  "at": "2026-09-12T13:08:20.716529+00:00",
+  "mode": "online-synthetic",
+  "pid": 61815,
+  "singleAttempt": true,
+  "policyGeneration": 5,
+  "restoration": "PM coordinated existing host save policy, original scope; no direct DB change",
+  "requestId": "proactive:request:proactive-reserve-5f3a90999c2387a1827cf386bd06c8b0",
+  "status": "failed",
+  "credentialDiagnostic": {
+    "osStatus": -25293,
+    "stage": "single_item_read"
+  },
+  "usage": {
+    "elapsedMs": 10,
+    "status": "unknown"
+  },
+  "outcome": {
+    "status": "failed",
+    "errorCode": "credential_unavailable"
+  },
+  "analysisBefore": 4,
+  "analysisAfter": 5,
+  "responseReserved": 0,
+  "actualPosts": 0,
+  "modelSemantics": "Not Executed; credential failure before POST",
+  "normalQuitRequested": true,
+  "pidAbsent": true,
+  "scenarioClockRemoved": true,
+  "retry": false,
+  "manualCredentialRead": false,
+  "uiDeviation": "After async pause changed AX indexes, attempted detail navigation opened only native check menu. No native Check item selected; Escape then explicit Cancel; AX confirmed cancelled. No credential read was started. This navigation is excluded as positive detail evidence. Subsequent fresh-index details showed judgment5/response0.",
+  "captureGap": "one transient ScreenCaptureKit -3811 while navigating Settings; next AX recovered; no restart or credentials used",
+  "prohibitedBoundaryContact": false,
+  "C": "not_started"
+}

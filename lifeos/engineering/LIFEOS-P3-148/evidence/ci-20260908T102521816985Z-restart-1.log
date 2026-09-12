@@ -1,0 +1,34 @@
+{
+  "fixture": "extended-49c4f56d12",
+  "results": [
+    {
+      "check": "passive_no_provider_creation_existing_schema_and_148_lock",
+      "pass": true
+    },
+    {
+      "check": "legacy_snapshot_unavailable_and_offline_provider_routes",
+      "pass": true
+    },
+    {
+      "check": "50_51_pagination_cursor_revision_and_legacy_isolation",
+      "pass": true
+    },
+    {
+      "check": "save_transaction_failure_keeps_draft_then_same_request_recovers",
+      "pass": true
+    },
+    {
+      "check": "cross_process_dispatch_recovery_never_resends",
+      "pass": true
+    },
+    {
+      "check": "five_source_ipc_allowed_and_disabled_branches",
+      "pass": true
+    },
+    {
+      "check": "three_800_scalar_windows_and_json_escape_overhead_limit",
+      "pass": true
+    }
+  ],
+  "scope": "new synthetic ordinary fixtures only; no network or OS credential adapter"
+}

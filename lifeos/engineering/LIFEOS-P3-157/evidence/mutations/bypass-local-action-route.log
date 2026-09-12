@@ -1,0 +1,17 @@
+✖ real-mode DTO renders actions and local save never consults cloud or key (1.853041ms)
+✔ real-mode restoration never calls prepare/model/write (0.213833ms)
+✔ source contract settings transport and credential identifiers stay inherited (0.311125ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 38.879291
+
+✖ failing tests:
+
+test at ../../../../../../private/tmp/lifeos-p3-157-real-actions-v1/mutations/bypass-local-action-route/tests/real_local_routing.mjs:12:1
+✖ real-mode DTO renders actions and local save never consults cloud or key (1.853041ms)
+  { code: 'ipc_error_envelope_invalid', stage: 'prepare_turn' }

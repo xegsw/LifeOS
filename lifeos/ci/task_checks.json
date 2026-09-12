@@ -61,6 +61,21 @@
         ["python3", "../../../ci/p3_144_ci.py"],
         ["node", "tests/offline_contract.mjs"]
       ]
+    },
+    {
+      "task_id": "LIFEOS-P3-159",
+      "working_directory": "lifeos/engineering/LIFEOS-P3-159",
+      "environment": {
+        "LIFEOS_P3_159_MODE": "synthetic",
+        "CARGO_NET_OFFLINE": "true"
+      },
+      "commands": [
+        [
+          "python3",
+          "tools/verify_proactive.py",
+          "--offline"
+        ]
+      ]
     }
   ]
 }

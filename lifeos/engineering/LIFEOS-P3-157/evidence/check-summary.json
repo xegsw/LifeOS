@@ -1,0 +1,106 @@
+{
+  "checks": 254,
+  "suites": [
+    {
+      "suite": "rust",
+      "passed": 123,
+      "total": 123,
+      "log": "evidence/rust-final.log",
+      "sha256": "6768d1ddc5f678e1eec44a819293520e01553fdd85b7842fd99c0c9141ddffb9"
+    },
+    {
+      "suite": "actions",
+      "passed": 36,
+      "total": 36,
+      "log": "evidence/actions-final.log",
+      "sha256": "0a899439461a6b9c9808a2b53ffefdc89807b01dcc4e47e69cf885571e957b7b"
+    },
+    {
+      "suite": "real-local",
+      "passed": 3,
+      "total": 3,
+      "log": "evidence/real-local-final.log",
+      "sha256": "b3b3db1a8e18be1ef3bbcc96793d78cdaf588cf3a64564d5c9647d71fc5c30e8"
+    },
+    {
+      "suite": "ui",
+      "passed": 25,
+      "total": 25,
+      "log": "evidence/ui-final.log",
+      "sha256": "4bd0ca8e407b2a615e9b8fe4df367787fb04d7cdd8fdd2f60856fe028d0fa25b"
+    },
+    {
+      "suite": "integration",
+      "passed": 14,
+      "total": 14,
+      "log": "evidence/integration-final.log",
+      "sha256": "734e4b8a3ba3ddff2db8d1116fcd9e83f62c6c74259bd92cedafe8f6b25f0c18"
+    },
+    {
+      "suite": "combined",
+      "passed": 11,
+      "total": 11,
+      "log": "evidence/combined-final.log",
+      "sha256": "8324d426b134e61c5bff95dbc78fc707d7dd69d92b696b42ad1b66a92eb57f9a"
+    },
+    {
+      "suite": "continuity",
+      "passed": 8,
+      "total": 8,
+      "log": "evidence/continuity-final.log",
+      "sha256": "5f6079c5e9b5b4fae8d7aee2e3b3496e8aee20e3b4e3c46b6493f0eb4ace0e52"
+    },
+    {
+      "suite": "clarification-ui",
+      "passed": 5,
+      "total": 5,
+      "log": "evidence/clarification-ui-final.log",
+      "sha256": "a3508529b6be631c0c82ca0e52084cb9d57a70b5123306e05212d7751cb561ac"
+    },
+    {
+      "suite": "error-diagnostics",
+      "passed": 6,
+      "total": 6,
+      "log": "evidence/error-diagnostics-final.log",
+      "sha256": "091a8d9738d871d6a5dc9e4f17f63a67345bfbf645f59a49681bace6c1728610"
+    },
+    {
+      "suite": "flow-races",
+      "passed": 8,
+      "total": 8,
+      "log": "evidence/flow-races-final.log",
+      "sha256": "348f61c491f4d50c92d3b807a31cf11bdc74ccff1641e0e1074213a3aa940603"
+    },
+    {
+      "suite": "source-recovery",
+      "passed": 7,
+      "total": 7,
+      "log": "evidence/source-recovery-final.log",
+      "sha256": "81dad99b9b067d6890d2d0416da99b7bc6b7327e81f434af4c42438b73e04aee"
+    },
+    {
+      "suite": "freshness",
+      "passed": 6,
+      "total": 6,
+      "log": "evidence/freshness-final.log",
+      "sha256": "9ceb50543d430363d6b934713daef63febe337a9a8358f0b0500049affc30cb2"
+    }
+  ],
+  "mutations": 5,
+  "mutationResults": "evidence/mutations/results.json",
+  "realRuntimeTested": false,
+  "buildModeGuards": [
+    {
+      "name": "wrong-mode",
+      "expectedCompileRejection": true,
+      "exitCode": 101,
+      "passed": true
+    },
+    {
+      "name": "real-driver-mix",
+      "expectedCompileRejection": true,
+      "exitCode": 101,
+      "passed": true
+    }
+  ]
+}

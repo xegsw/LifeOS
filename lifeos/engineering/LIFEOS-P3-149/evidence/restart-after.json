@@ -1,0 +1,26 @@
+{
+  "pid": 91380,
+  "states": [
+    [
+      "health:exercise:20704:480",
+      "{\"dayIndex\":20704,\"domain\":\"Health\",\"estimated\":false,\"id\":\"health:exercise:20704:480\",\"kind\":\"health_current_state\",\"method\":\"nonoverlapping_source_samples\",\"metric\":\"exercise\",\"modelEligible\":false,\"observedAt\":1788832800000,\"offsetMinutes\":480,\"receivedAt\":1788881060597,\"refs\":[{\"id\":\"health:demo-watch:exercise-1:1\",\"sampleId\":\"exercise-1\",\"sourceId\":\"demo-watch\",\"version\":1}],\"sourceId\":\"health-projection\",\"sources\":[{\"estimated\":false,\"name\":\"合成手表\",\"sourceId\":\"demo-watch\",\"uncertain\":false,\"value\":35.0}],\"status\":\"observed\",\"unit\":\"minutes\",\"value\":35.0}"
+    ],
+    [
+      "health:sleep:20703:480",
+      "{\"dayIndex\":20703,\"domain\":\"Health\",\"estimated\":false,\"id\":\"health:sleep:20703:480\",\"kind\":\"health_current_state\",\"method\":\"sleep_interval_union\",\"metric\":\"sleep\",\"modelEligible\":false,\"observedAt\":1788818400000,\"offsetMinutes\":480,\"receivedAt\":1788881060597,\"refs\":[{\"id\":\"health:demo-watch:sleep-1:1\",\"sampleId\":\"sleep-1\",\"sourceId\":\"demo-watch\",\"version\":1}],\"sourceId\":\"health-projection\",\"sources\":[{\"estimated\":false,\"name\":\"合成手表\",\"sourceId\":\"demo-watch\",\"uncertain\":false,\"value\":60.0}],\"status\":\"observed\",\"unit\":\"minutes\",\"value\":60.0}"
+    ],
+    [
+      "health:sleep:20704:480",
+      "{\"dayIndex\":20704,\"domain\":\"Health\",\"estimated\":false,\"id\":\"health:sleep:20704:480\",\"kind\":\"health_current_state\",\"method\":\"sleep_interval_union\",\"metric\":\"sleep\",\"modelEligible\":false,\"observedAt\":1788818400000,\"offsetMinutes\":480,\"receivedAt\":1788881060597,\"refs\":[{\"id\":\"health:demo-watch:sleep-1:1\",\"sampleId\":\"sleep-1\",\"sourceId\":\"demo-watch\",\"version\":1}],\"sourceId\":\"health-projection\",\"sources\":[{\"estimated\":false,\"name\":\"合成手表\",\"sourceId\":\"demo-watch\",\"uncertain\":false,\"value\":360.0}],\"status\":\"observed\",\"unit\":\"minutes\",\"value\":360.0}"
+    ],
+    [
+      "health:steps:20704:480",
+      "{\"dayIndex\":20704,\"domain\":\"Health\",\"estimated\":false,\"id\":\"health:steps:20704:480\",\"kind\":\"health_current_state\",\"method\":\"per_source_unmerged\",\"metric\":\"steps\",\"modelEligible\":false,\"observedAt\":1788829200000,\"offsetMinutes\":480,\"receivedAt\":1788881297137,\"refs\":[{\"id\":\"health:demo-phone:steps-1:1\",\"sampleId\":\"steps-1\",\"sourceId\":\"demo-phone\",\"version\":1},{\"id\":\"health:demo-watch:steps-1:2\",\"sampleId\":\"steps-1\",\"sourceId\":\"demo-watch\",\"version\":2}],\"sourceId\":\"health-projection\",\"sources\":[{\"estimated\":false,\"name\":\"合成手机\",\"sourceId\":\"demo-phone\",\"uncertain\":false,\"value\":2800.0},{\"estimated\":false,\"name\":\"合成手表\",\"sourceId\":\"demo-watch\",\"uncertain\":false,\"value\":3400.0}],\"status\":\"observed\",\"unit\":\"count\",\"value\":null}"
+    ]
+  ],
+  "only_changed": [
+    "health:steps:20704:480"
+  ],
+  "retained_other_states": 3,
+  "version_2": true
+}

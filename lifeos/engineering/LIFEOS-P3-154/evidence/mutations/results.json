@@ -1,0 +1,35 @@
+{
+  "results": [
+    {
+      "mutation": "confirmation-token",
+      "test": "forged_confirmation_token_never_dispatches",
+      "killed": true,
+      "exitCode": 101
+    },
+    {
+      "mutation": "state-expiry",
+      "test": "c1_expired_state_blocks_confirm_before_adapter_call",
+      "killed": true,
+      "exitCode": 101
+    },
+    {
+      "mutation": "remote-key-echo",
+      "test": "remote_key_echo_is_never_persisted_or_returned",
+      "killed": true,
+      "exitCode": 101
+    },
+    {
+      "mutation": "existing-root",
+      "test": "missing_existing_database_is_never_rebuilt",
+      "killed": true,
+      "exitCode": 101
+    },
+    {
+      "mutation": "legacy-account",
+      "test": "legacy_and_malformed_accounts_never_reach_keychain",
+      "killed": true,
+      "exitCode": 101
+    }
+  ],
+  "allKilled": true
+}

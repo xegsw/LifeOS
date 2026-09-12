@@ -1,0 +1,30 @@
+{
+  "results": [
+    {
+      "id": "voice-speech-visibility-loss",
+      "test": "proactive_speech_requires_current_surface_visibility_and_rechecks_before_sink",
+      "exitCode": 101,
+      "killedByAssertion": true,
+      "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-159/evidence/A-mutations-20260912T132824737436/voice-speech-visibility-loss.log",
+      "mutatedSha256": "57f7479b996da54699ffe1040e1f9678c4dc1db3220e0cd6c6d72e579b308448"
+    },
+    {
+      "id": "voice-speech-cancel-asr-regression",
+      "test": "voice_speech_interrupt_preserves_concurrent_asr_and_stale_stop_cannot_cancel_new_output",
+      "exitCode": 101,
+      "killedByAssertion": true,
+      "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-159/evidence/A-mutations-20260912T132824737436/voice-speech-cancel-asr-regression.log",
+      "mutatedSha256": "1859c67f76d28c71648cd8dd450a6f3e9ea41b46dc15fe6ba3429d7717973f6e"
+    },
+    {
+      "id": "voice-speech-eof-completion-regression",
+      "test": "voice_speech_pcm_rechecked_at_sink_and_eof_is_not_playback_completion",
+      "exitCode": 101,
+      "killedByAssertion": true,
+      "log": "/Users/xxe/.codex/worktrees/b3f6/No.2/lifeos/engineering/LIFEOS-P3-159/evidence/A-mutations-20260912T132824737436/voice-speech-eof-completion-regression.log",
+      "mutatedSha256": "e10cd93cf20a989c5e98a76bf1572008049a001038a30beecf54ff22755f1cd1"
+    }
+  ],
+  "canonicalUnchanged": true,
+  "runtime": "offline synthetic only"
+}

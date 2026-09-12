@@ -1,0 +1,109 @@
+{
+  "status": "confirmed_defect_reproduction_not_product_pass",
+  "cases": [
+    {
+      "name": "unsupported-create",
+      "syntheticRaw": "我明天先买合成材料。",
+      "candidateOperation": null,
+      "applicationResult": "preview",
+      "actionEvents": 0,
+      "ordinaryDisclosurePath": true,
+      "calls": [
+        "draft_turn",
+        "prepare_action_turn",
+        "prepare_turn",
+        "read_local",
+        "prepare_disclosure"
+      ]
+    },
+    {
+      "name": "unsupported-cancel",
+      "syntheticRaw": "先不买合成材料了。",
+      "candidateOperation": null,
+      "applicationResult": "preview",
+      "actionEvents": 0,
+      "ordinaryDisclosurePath": true,
+      "calls": [
+        "draft_turn",
+        "prepare_action_turn",
+        "prepare_turn",
+        "read_local",
+        "prepare_disclosure"
+      ]
+    },
+    {
+      "name": "supported-create",
+      "syntheticRaw": "我明天先整理合成材料。",
+      "candidateOperation": "create",
+      "applicationResult": "local",
+      "actionEvents": 1,
+      "ordinaryDisclosurePath": false,
+      "calls": [
+        "draft_turn",
+        "prepare_action_turn",
+        "commit_action_turn"
+      ]
+    },
+    {
+      "name": "canonical-cancel",
+      "syntheticRaw": "合成材料先不做了。",
+      "candidateOperation": "cancel",
+      "applicationResult": "local",
+      "actionEvents": 1,
+      "ordinaryDisclosurePath": false,
+      "calls": [
+        "draft_turn",
+        "prepare_action_turn",
+        "commit_action_turn"
+      ]
+    },
+    {
+      "name": "negative-new-intent",
+      "syntheticRaw": "我不打算买合成材料。",
+      "candidateOperation": null,
+      "applicationResult": "preview",
+      "actionEvents": 0,
+      "ordinaryDisclosurePath": true,
+      "calls": [
+        "draft_turn",
+        "prepare_action_turn",
+        "prepare_turn",
+        "read_local",
+        "prepare_disclosure"
+      ]
+    },
+    {
+      "name": "quoted",
+      "syntheticRaw": "他说“先不买合成材料了”。",
+      "candidateOperation": null,
+      "applicationResult": "preview",
+      "actionEvents": 0,
+      "ordinaryDisclosurePath": true,
+      "calls": [
+        "draft_turn",
+        "prepare_action_turn",
+        "prepare_turn",
+        "read_local",
+        "prepare_disclosure"
+      ]
+    },
+    {
+      "name": "ambiguous-target",
+      "syntheticRaw": "做完了。",
+      "candidateOperation": "clarify",
+      "applicationResult": "local",
+      "actionEvents": 0,
+      "ordinaryDisclosurePath": false,
+      "calls": [
+        "draft_turn",
+        "prepare_action_turn",
+        "commit_action_turn"
+      ]
+    }
+  ],
+  "caseCount": 7,
+  "realDataAccess": false,
+  "networkCalls": 0,
+  "realAppAccess": false,
+  "note": "Immutable delivered JS plus synthetic Repository doubles; no database or provider process was opened."
+}

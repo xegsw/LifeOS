@@ -1,0 +1,15 @@
+✔ independent process restore is read-only until manual resume and request replay is idempotent (657.366917ms)
+✔ health status failure leaves work source usable and isolated error (0.687083ms)
+✔ work status failure does not skip healthy import status (0.0945ms)
+✔ failed apple action stays in health section after status refresh (0.230584ms)
+✔ late prior page status cannot overwrite a reopened source page (0.107166ms)
+✔ late source mutation completion cannot clear results or unlock a new action (1.541583ms)
+✔ paused and partial statuses expose independent recovery and honest counts (0.115208ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 692.165916
