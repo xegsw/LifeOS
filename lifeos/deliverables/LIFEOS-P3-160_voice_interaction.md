@@ -49,3 +49,7 @@ P3-157真实失败、P3-159自身未完成项和原独立评审暂停事实均�
 ## 同任务增量：离线 worker 修正
 
 原交付快照保持只读。本次修复短噪声后打断失效及会话重置后旧残帧复用，旧实现2反例失败，修复后30 Rust测试通过；仅worker.rs修改，无公共端口变更。详见 `lifeos/engineering/LIFEOS-P3-160/worker_closure_report.md`、`delta_since_0d8a5345.json`、`delta_manifest_v3.json`。A3/B/C状态不变。
+
+## A3 同任务协作：native producer / TTS 端口
+
+已核验159的3份稳定接口拷贝，仅在inputs保留，不读活跃源码。最小接线建议与4项纯fake测试见 `lifeos/engineering/LIFEOS-P3-160/A3_native_playback_adapter.md`。本次生产源码增量为空；TTS registry/投影尚未由159实现，A3与真实验收仍Pending。

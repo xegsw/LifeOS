@@ -2,7 +2,7 @@
   "schema": "lifeos.execution-checkpoint.v1",
   "task_id": "LIFEOS-P3-160",
   "attempt_id": "offline-A-1",
-  "updated_at": "2026-09-12T11:03:09.630387+00:00",
+  "updated_at": "2026-09-12T13:21:52.366180+00:00",
   "task_contract_sha256": "dbbe17ea74119656837f7286911a40702b19b586bee23ae499b8d2b2c9dd01ca",
   "candidate_sha256": "38b4fd357047bd0ce70c47a707c4de702dd936b8664ecf50240c2245fe75f289",
   "baseline_sha256": "27e0dbc86579157fbf148c3959fdb3e6beb4f73de77b9bf03e56e7747b719879",
@@ -18,13 +18,15 @@
     "3 semantic mutations killed",
     "real KWS/VAD synthetic positives and negatives",
     "model license/version/hash/token verification",
-    "Worker closure: 2 red regressions; full 30 Rust green"
+    "Worker closure: 2 red regressions; full 30 Rust green",
+    "A3 stable host inputs hash-verified; 4 pure-fake native-producer/playback port tests"
   ],
   "pending_checks": [
     "A3 production host joint integration",
     "legacy UI 2 failures owner reconciliation",
     "B authorization and real microphone/AEC/p95/MiMo",
-    "C authorization and sameApp user joint acceptance"
+    "C authorization and sameApp user joint acceptance",
+    "159 stable SpeechOutput/TTS registry projection and native playback completion/backpressure integration"
   ],
   "rerun_checks": [],
   "excluded_artifacts": [
@@ -74,6 +76,7 @@
   "line_source_manifest_sha256": "3efec421544fdad1650c364a977a29eda57c0440278fff0cb02cab18bb6d9f71",
   "nonpass_evidence": [
     "20260912T103703627457Z/legacy-ui.log and subsequent reruns",
-    "worker-closure-red.log: old implementation failures, fixed in worker closure"
+    "worker-closure-red.log: old implementation failures, fixed in worker closure",
+    "A3-playback-ports-fixture-invalid.log: malformed fake SSE corrected; not positive evidence"
   ]
 }
