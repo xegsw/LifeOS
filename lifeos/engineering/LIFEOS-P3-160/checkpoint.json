@@ -1,0 +1,77 @@
+{
+  "schema": "lifeos.execution-checkpoint.v1",
+  "task_id": "LIFEOS-P3-160",
+  "attempt_id": "offline-A-1",
+  "updated_at": "2026-09-12T10:55:11.922245+00:00",
+  "task_contract_sha256": "dbbe17ea74119656837f7286911a40702b19b586bee23ae499b8d2b2c9dd01ca",
+  "candidate_sha256": "5636a1f509b50965d6ec863eeb0d73d6ef3cf4fbc7e4d92af04604dcf13bdfab",
+  "baseline_sha256": "27e0dbc86579157fbf148c3959fdb3e6beb4f73de77b9bf03e56e7747b719879",
+  "stage": "A2_delivery_A3_pending",
+  "status": "in_progress",
+  "pause_class": null,
+  "pause_reason_code": null,
+  "completed_checks": [
+    "A0 full182inheritance",
+    "28Rust/7TS offline tests",
+    "2Rust-native A-denial tests before credentials",
+    "native compile/link",
+    "3 semantic mutations killed",
+    "real KWS/VAD synthetic positives and negatives",
+    "model license/version/hash/token verification"
+  ],
+  "pending_checks": [
+    "A3 production host joint integration",
+    "legacy UI 2 failures owner reconciliation",
+    "B authorization and real microphone/AEC/p95/MiMo",
+    "C authorization and sameApp user joint acceptance"
+  ],
+  "rerun_checks": [],
+  "excluded_artifacts": [
+    "initial Rust compile error fixed",
+    "initial Node strip-only syntax error fixed"
+  ],
+  "prohibited_boundary_contact": false,
+  "candidate_or_history_mutated": false,
+  "positive_evidence_separable": true,
+  "runtime": {
+    "app_running": false,
+    "direct_pid": null,
+    "writers_stopped": true,
+    "database_closed": true,
+    "temporary_root_state": "synthetic-only marker; public dependencies, synthetic fixtures and build caches retained"
+  },
+  "resume_from": "A3_integrated_candidate_and_legacy_reconciliation",
+  "safe_to_resume": true,
+  "notes": "Authorized voice candidate delta only; readonly baseline/history unchanged. No real device/network/credential/data contact. A3 must use latest159 and production host ports.",
+  "input_hashes": {
+    "baseline_identity.json": "04b9ab9d186c6a254136db35304b57caa613420a8560506a70d536fcc2f69f2b",
+    "LIFEOS-P3-160_voice_interaction_workflow.md": "dbbe17ea74119656837f7286911a40702b19b586bee23ae499b8d2b2c9dd01ca",
+    "LIFEOS-P3-160_acceptance_basis.md": "fc73d897dd05bf8fedeb7e474e23ab28efbb3c895b381e695481dca5cb9cbecc",
+    "LIFEOS-INTERACTION-V1.md": "8dfdda556dfc05274d1cdf155614023122601f17d765725e56fd163a48a547f7",
+    "LIFEOS-INTERACTION-V1.ts": "8234e7eb9523f5b8ea7114f50ef24acece5cbadfce8b98d92cdcc6b14b2bbafc"
+  },
+  "common_ancestor": "46829c74eeb83c270a3258949c5d27db5bdea296",
+  "line_commit": null,
+  "merged_source": null,
+  "actual_posts": {
+    "ASR": 0,
+    "TTS": 0,
+    "DeepSeek": 0
+  },
+  "microphone_opened": false,
+  "test_root": "/private/tmp/lifeos-p3-160-voice-v1/",
+  "ownership": {
+    "voice": [
+      "candidate/src/voice/",
+      "candidate/application/voice/",
+      "tools/",
+      "evidence/"
+    ],
+    "shared": "P3-159 sole integrator; no writes to shared baseline files"
+  },
+  "line_previous_snapshot_commit": "f5a64094943c72701625f77f74c2064d81a1745d",
+  "line_source_manifest_sha256": "88e3ca54f0b2b8ae7a33a735fc516762049e0e730ea8941d5436a2d9c5dc7c1f",
+  "nonpass_evidence": [
+    "20260912T103703627457Z/legacy-ui.log and subsequent reruns"
+  ]
+}

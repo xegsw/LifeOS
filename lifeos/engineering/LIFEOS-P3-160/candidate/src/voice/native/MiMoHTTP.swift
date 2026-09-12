@@ -70,3 +70,10 @@ final class MiMoHTTP: NSObject, URLSessionDataDelegate, URLSessionTaskDelegate {
 @_cdecl("lifeos_voice_http_cancel") public func cancelHTTP(_ p:UnsafeMutableRawPointer){Unmanaged<MiMoHTTP>.fromOpaque(p).takeUnretainedValue().cancel()}
 @_cdecl("lifeos_voice_http_resume") public func resumeHTTP(_ p:UnsafeMutableRawPointer){Unmanaged<MiMoHTTP>.fromOpaque(p).takeUnretainedValue().resume()}
 @_cdecl("lifeos_voice_http_destroy") public func destroyHTTP(_ p:UnsafeMutableRawPointer){let h=Unmanaged<MiMoHTTP>.fromOpaque(p);h.takeUnretainedValue().cancel();h.release()}
+@_cdecl("lifeos_voice_http_available") public func availableHTTP()->Int32{
+    #if LIFEOS_VOICE_REAL
+    return 1
+    #else
+    return 0
+    #endif
+}

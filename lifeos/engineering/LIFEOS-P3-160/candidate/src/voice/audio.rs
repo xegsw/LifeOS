@@ -255,6 +255,7 @@ mod tests {
         assert_eq!(p.push(g, &[0, 0]), Err("stale_audio"));
         let n = p.begin();
         assert!(n > g);
+        assert_eq!(p.push(g, &[0, 0]), Err("stale_audio"));
         assert_eq!(p.push(n, &[0]), Err("pcm_alignment"));
     }
 }

@@ -397,4 +397,21 @@ mod tests {
         assert_eq!(v["audio"]["optimize_text_preview"], false);
         assert!(tts_request(&"字".repeat(4001)).is_err());
     }
+    #[test]
+    fn duplicate_json_and_missing_done_fail_closed() {
+        let mut s = Sse::new(Mode::Asr);
+        let raw = String::from_utf8(event(
+            Mode::Asr,
+            json!({"content":"synthetic"}),
+            json!("stop"),
+        ))
+        .unwrap();
+        let duplicate = raw.replace("\"index\":0", "\"index\":1,\"index\":0");
+        assert!(s.push(duplicate.as_bytes()).is_err());
+        let mut s = Sse::new(Mode::Asr);
+        s.push(raw.as_bytes()).unwrap();
+        assert!(s.finish().is_err());
+        s.push(b"data: [DONE]\n\n").unwrap();
+        assert_eq!(s.finish().unwrap(), Some("synthetic"));
+    }
 }

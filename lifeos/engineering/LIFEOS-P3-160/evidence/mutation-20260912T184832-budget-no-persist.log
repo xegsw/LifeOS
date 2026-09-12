@@ -1,0 +1,93 @@
+
+running 28 tests
+test budget::tests::purpose_and_unseen_are_separate ... ok
+test gateway::tests::provider_errors_consume_reserved_budget ... FAILED
+test budget::tests::rolling_minute_and_day ... FAILED
+test budget::tests::clock_and_storage_fail_closed ... FAILED
+test budget::tests::failed_unknown_never_refunded_across_restart ... FAILED
+test gateway::tests::timeout_revocation_and_late_result_no_retry ... FAILED
+test gateway::tests::zero_transport_calls_when_denied ... ok
+test mimo::tests::broken_partial_and_length_never_final ... ok
+test mimo::tests::duplicate_json_and_missing_done_fail_closed ... ok
+test mimo::tests::mismatch_and_tools_rejected ... ok
+test session::tests::all_off_by_default ... ok
+test mimo::tests::tts_emits_before_completion ... ok
+test session::tests::end_and_lock_discard_late_voice_only ... ok
+test session::tests::interruption_keeps_business_wait ... ok
+test gateway::tests::parallel_asr_tts_but_not_two_of_each ... ok
+test session::tests::no_idle_timeout_during_processing_recording_playback ... ok
+test session::tests::proactive_hidden_and_unwoken_silent ... ok
+test audio::tests::vad_tail_and_release ... ok
+test session::tests::purpose_revocation_isolates_late_final ... ok
+test worker::tests::invalid_float_fails_closed_and_releases_pending ... ok
+test worker::tests::barge_in_stops_before_utterance_and_preserves_opening ... ok
+test audio::tests::interruption_and_backpressure ... ok
+test audio::tests::bounded_wake_history ... ok
+test worker::tests::wake_frame_never_enters_upload_and_first_postwake_frame_kept ... ok
+test mimo::tests::base64_canonical_and_request_minimization ... ok
+test mimo::tests::asr_every_byte_split_and_real_final_only ... ok
+test audio::tests::preserves_onset_and_sixty_second_boundary ... ok
+test audio::tests::silence_and_noise_do_not_form_intent ... ok
+
+failures:
+
+---- gateway::tests::provider_errors_consume_reserved_budget stdout ----
+
+thread 'gateway::tests::provider_errors_consume_reserved_budget' (23661082) panicked at src/gateway.rs:408:13:
+assertion `left == right` failed
+  left: 0
+ right: 1
+
+---- budget::tests::rolling_minute_and_day stdout ----
+
+thread 'budget::tests::rolling_minute_and_day' (23661080) panicked at src/budget.rs:193:9:
+assertion `left == right` failed
+  left: Ok(())
+ right: Err("minute_budget")
+
+---- budget::tests::clock_and_storage_fail_closed stdout ----
+
+thread 'budget::tests::clock_and_storage_fail_closed' (23661077) panicked at src/budget.rs:165:9:
+assertion `left == right` failed
+  left: Ok(())
+ right: Err("clock_rollback")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- budget::tests::failed_unknown_never_refunded_across_restart stdout ----
+
+thread 'budget::tests::failed_unknown_never_refunded_across_restart' (23661078) panicked at src/budget.rs:158:9:
+assertion `left == right` failed
+  left: Ok(())
+ right: Err("b_post_budget")
+
+---- gateway::tests::timeout_revocation_and_late_result_no_retry stdout ----
+
+thread 'gateway::tests::timeout_revocation_and_late_result_no_retry' (23661083) panicked at src/gateway.rs:357:9:
+assertion `left == right` failed
+  left: 0
+ right: 1
+
+
+failures:
+    budget::tests::clock_and_storage_fail_closed
+    budget::tests::failed_unknown_never_refunded_across_restart
+    budget::tests::rolling_minute_and_day
+    gateway::tests::provider_errors_consume_reserved_budget
+    gateway::tests::timeout_revocation_and_late_result_no_retry
+
+test result: FAILED. 23 passed; 5 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+   Compiling lifeos-voice-offline-tests v0.1.0 (/private/tmp/lifeos-p3-160-voice-v1/mutations-20260912T184832/budget-no-persist)
+warning: unused variable: `rev`
+   --> src/budget.rs:109:9
+    |
+109 |     let rev = l.revision;
+    |         ^^^ help: if this is intentional, prefix it with an underscore: `_rev`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `lifeos-voice-offline-tests` (lib) generated 1 warning (run `cargo fix --lib -p lifeos-voice-offline-tests` to apply 1 suggestion)
+warning: `lifeos-voice-offline-tests` (lib test) generated 1 warning (1 duplicate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.67s
+     Running unittests src/mod.rs (/private/tmp/lifeos-p3-160-voice-v1/mutations-20260912T184832/target/debug/deps/lifeos_voice_offline_tests-e665fe427a6f67f0)
+error: test failed, to rerun pass `--lib`

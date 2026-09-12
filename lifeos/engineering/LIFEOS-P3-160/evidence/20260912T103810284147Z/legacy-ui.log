@@ -1,0 +1,63 @@
+file:///Users/xxe/.codex/worktrees/0142/No.2/lifeos/engineering/LIFEOS-P3-160/candidate/tools/test_apple_ui.mjs:2
+import {AppleImportController,appleImportView} from '../ui/apple_import.js';
+        ^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: The requested module '../ui/apple_import.js' does not provide an export named 'AppleImportController'
+    at #asyncInstantiate (node:internal/modules/esm/module_job:327:21)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:431:5)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.19.0
+✖ /Users/xxe/.codex/worktrees/0142/No.2/lifeos/engineering/LIFEOS-P3-160/candidate/tools/test_apple_ui.mjs (28.487417ms)
+✔ U01 startup once; recovery never replaces typing during deferred open (4.629042ms)
+✔ U01 failure retains draft and only explicit retry opens (0.132459ms)
+✔ U02 local prepare does not send; exactly one explicit confirmation sends (0.254083ms)
+✔ U03 editing while preparing discards returned confirmation and preserves new draft (0.133917ms)
+✔ U03 removed source gets new packet; edit and cancel revoke UI confirmation (0.90275ms)
+✔ U03 current backend stale/revoked packet refuses send (0.129209ms)
+✔ U03 expiry removes button without automatic retry (22.863ms)
+✔ U02/U04 unknown result is visible and never resent or requiring feedback (0.204583ms)
+✔ U06 startup repository requests only existing conversation recovery, no credential/model/scan calls (0.170416ms)
+✖ health excluded by actual resolver for every purpose, even active/status spoof (2.330333ms)
+✔ health view shows unmerged sources, observation freshness, and no fabricated zero (8.502458ms)
+✔ failed startup retry cannot overwrite typing between attempts (0.348292ms)
+✔ remove uses stored turn identity even public preview has no turnId, cancels before rebuilding (0.470958ms)
+✔ remove failure never leaves old send confirmation (0.09575ms)
+✔ edit during removal cannot resurrect returned confirmation (0.21075ms)
+✔ observation display uses envelope offset, receipt labels device time (0.19675ms)
+✔ window range and ambiguous source grouping remain explicit (10.267875ms)
+✔ pending integrity preserves prior state message and batch history (0.418625ms)
+✔ actual resolver excludes snapshot body and derived state for every purpose (1.474459ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 18
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 65.56575
+
+✖ failing tests:
+
+test at tools/test_apple_ui.mjs:1:1
+✖ /Users/xxe/.codex/worktrees/0142/No.2/lifeos/engineering/LIFEOS-P3-160/candidate/tools/test_apple_ui.mjs (28.487417ms)
+  'test failed'
+
+test at tools/test_health_ui.mjs:7:1
+✖ health excluded by actual resolver for every purpose, even active/status spoof (2.330333ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///Users/xxe/.codex/worktrees/0142/No.2/lifeos/engineering/LIFEOS-P3-160/candidate/tools/test_health_ui.mjs:7:306)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

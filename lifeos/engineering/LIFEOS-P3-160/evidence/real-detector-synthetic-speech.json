@@ -1,0 +1,28 @@
+[
+  {
+    "fixture": "wake-local-synthetic.wav",
+    "sha256": "035846d4bd2a1e182beb4546eb590fe40f30ecf3800dde49eef08f7a4117f5bc",
+    "source": "local macOS Tingting synthesis, rate160; test-only, not MiMo/microphone; not bundled or redistributed",
+    "exit": 0,
+    "result": {
+      "real_model_loaded": true,
+      "local_synthetic_speech": true,
+      "wake_events": 1,
+      "vad_speech_frames": 105,
+      "microphone_opened": false
+    }
+  },
+  {
+    "fixture": "negative-local-synthetic.wav",
+    "sha256": "a1001ce7f3f042b3168e4426272e79efda82457b886007db427accc4dcf237b3",
+    "source": "local macOS Tingting synthesis, rate160; test-only, not MiMo/microphone; not bundled or redistributed",
+    "exit": 0,
+    "result": {
+      "real_model_loaded": true,
+      "local_synthetic_speech": true,
+      "wake_events": 0,
+      "vad_speech_frames": 150,
+      "microphone_opened": false
+    }
+  }
+]
