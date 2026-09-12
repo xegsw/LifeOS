@@ -2,9 +2,9 @@
   "schema": "lifeos.execution-checkpoint.v1",
   "task_id": "LIFEOS-P3-160",
   "attempt_id": "offline-A-1",
-  "updated_at": "2026-09-12T13:21:52.366180+00:00",
+  "updated_at": "2026-09-12T13:33:28.725778+00:00",
   "task_contract_sha256": "dbbe17ea74119656837f7286911a40702b19b586bee23ae499b8d2b2c9dd01ca",
-  "candidate_sha256": "38b4fd357047bd0ce70c47a707c4de702dd936b8664ecf50240c2245fe75f289",
+  "candidate_sha256": "a546707133b923b338a38f6f3eb0b85ab5e9ea617891a89e2f65d2c41513df83",
   "baseline_sha256": "27e0dbc86579157fbf148c3959fdb3e6beb4f73de77b9bf03e56e7747b719879",
   "stage": "A2_delivery_A3_pending",
   "status": "in_progress",
@@ -19,14 +19,15 @@
     "real KWS/VAD synthetic positives and negatives",
     "model license/version/hash/token verification",
     "Worker closure: 2 red regressions; full 30 Rust green",
-    "A3 stable host inputs hash-verified; 4 pure-fake native-producer/playback port tests"
+    "A3 stable host inputs hash-verified; 4 pure-fake native-producer/playback port tests",
+    "Native playback ledger fake + 3 native A/fake tests + 3 compiled semantic mutations killed"
   ],
   "pending_checks": [
     "A3 production host joint integration",
     "legacy UI 2 failures owner reconciliation",
     "B authorization and real microphone/AEC/p95/MiMo",
     "C authorization and sameApp user joint acceptance",
-    "159 stable SpeechOutput/TTS registry projection and native playback completion/backpressure integration"
+    "159 integrates native feedback with stable SpeechOutput projection; full App offline joint acceptance pending"
   ],
   "rerun_checks": [],
   "excluded_artifacts": [
@@ -54,7 +55,7 @@
     "LIFEOS-INTERACTION-V1.ts": "8234e7eb9523f5b8ea7114f50ef24acece5cbadfce8b98d92cdcc6b14b2bbafc"
   },
   "common_ancestor": "46829c74eeb83c270a3258949c5d27db5bdea296",
-  "line_commit": "93c98bb0826b98778dbf4b3daa9ccf102e61de69",
+  "line_commit": "a38a90cf4f9a95bcec524c77cfb99985e75f108d",
   "merged_source": null,
   "actual_posts": {
     "ASR": 0,
@@ -72,8 +73,8 @@
     ],
     "shared": "P3-159 sole integrator; no writes to shared baseline files"
   },
-  "line_previous_snapshot_commit": "0d8a53453954a672f91635214a3e539a33e844ac",
-  "line_source_manifest_sha256": "3efec421544fdad1650c364a977a29eda57c0440278fff0cb02cab18bb6d9f71",
+  "line_previous_snapshot_commit": "93c98bb0826b98778dbf4b3daa9ccf102e61de69",
+  "line_source_manifest_sha256": "c71fa2b9a92c64eef99223fe9d99c45f116e7df41e1d37f585a323bb7e4af8eb",
   "nonpass_evidence": [
     "20260912T103703627457Z/legacy-ui.log and subsequent reruns",
     "worker-closure-red.log: old implementation failures, fixed in worker closure",
