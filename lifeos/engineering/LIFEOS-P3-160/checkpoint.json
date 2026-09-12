@@ -2,7 +2,7 @@
   "schema": "lifeos.execution-checkpoint.v1",
   "task_id": "LIFEOS-P3-160",
   "attempt_id": "offline-A-1",
-  "updated_at": "2026-09-12T10:55:11.922245+00:00",
+  "updated_at": "2026-09-12T10:58:24.022848+00:00",
   "task_contract_sha256": "dbbe17ea74119656837f7286911a40702b19b586bee23ae499b8d2b2c9dd01ca",
   "candidate_sha256": "5636a1f509b50965d6ec863eeb0d73d6ef3cf4fbc7e4d92af04604dcf13bdfab",
   "baseline_sha256": "27e0dbc86579157fbf148c3959fdb3e6beb4f73de77b9bf03e56e7747b719879",
@@ -42,7 +42,7 @@
   },
   "resume_from": "A3_integrated_candidate_and_legacy_reconciliation",
   "safe_to_resume": true,
-  "notes": "Authorized voice candidate delta only; readonly baseline/history unchanged. No real device/network/credential/data contact. A3 must use latest159 and production host ports.",
+  "notes": "Authorized voice candidate delta only; readonly baseline/history unchanged. No real microphone, Provider POST, credential or personal data contact. Public dependency/document GETs only. A3 must use latest159 and production host ports. Raw test log whitespace preserved; staged source whitespace checks passed.",
   "input_hashes": {
     "baseline_identity.json": "04b9ab9d186c6a254136db35304b57caa613420a8560506a70d536fcc2f69f2b",
     "LIFEOS-P3-160_voice_interaction_workflow.md": "dbbe17ea74119656837f7286911a40702b19b586bee23ae499b8d2b2c9dd01ca",
@@ -51,7 +51,7 @@
     "LIFEOS-INTERACTION-V1.ts": "8234e7eb9523f5b8ea7114f50ef24acece5cbadfce8b98d92cdcc6b14b2bbafc"
   },
   "common_ancestor": "46829c74eeb83c270a3258949c5d27db5bdea296",
-  "line_commit": null,
+  "line_commit": "0d8a53453954a672f91635214a3e539a33e844ac",
   "merged_source": null,
   "actual_posts": {
     "ASR": 0,
