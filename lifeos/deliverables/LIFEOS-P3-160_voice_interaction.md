@@ -45,3 +45,7 @@ P3-157真实失败、P3-159自身未完成项和原独立评审暂停事实均�
 检查点`engineering/LIFEOS-P3-160/checkpoint.json`包含合同/基底/协议/候选摘要、已完成/未完成、计数、排除失败和resume_from。A3需要159阶段边界的生产InteractionPort/完整候选接线回执；收到后只重跑受影响联合测试。B/C新真实麦克风/MiMo/凭据/会话自动发送/真实联合切换未批准，继续保持ASR/TTS/DeepSeek实际POST=0，无真实数据/凭据访问，无真实App切换。
 
 需PM：接收固定增量并继续协调159同App联合验证与两项旧回归判定；真实阶段沿当前完整合同取得一次批准。无需重复A开工授权，无新任务建议。
+
+## 同任务增量：离线 worker 修正
+
+原交付快照保持只读。本次修复短噪声后打断失效及会话重置后旧残帧复用，旧实现2反例失败，修复后30 Rust测试通过；仅worker.rs修改，无公共端口变更。详见 `lifeos/engineering/LIFEOS-P3-160/worker_closure_report.md`、`delta_since_0d8a5345.json`、`delta_manifest_v3.json`。A3/B/C状态不变。

@@ -17,6 +17,7 @@ pub struct Worker<W: WakeDetector, V: VadDetector> {
     vad: V,
     pending: Vec<f32>,
     utterance_active: bool,
+    observed_generation: u64,
 }
 impl<W: WakeDetector, V: VadDetector> Worker<W, V> {
     pub fn new(wake: W, vad: V) -> Self {
@@ -26,6 +27,7 @@ impl<W: WakeDetector, V: VadDetector> Worker<W, V> {
             vad,
             pending: Vec::new(),
             utterance_active: false,
+            observed_generation: 0,
         }
     }
     pub fn release(&mut self) {
@@ -35,8 +37,19 @@ impl<W: WakeDetector, V: VadDetector> Worker<W, V> {
         self.wake.reset();
         self.vad.reset();
         self.session.suspend();
+        self.observed_generation = self.session.generation;
     }
     pub fn accept(&mut self, pcm: &[f32], now: u64) -> Vec<AudioEvent> {
+        // Host may reset/revoke the public session between callbacks, even without
+        // an intervening disabled callback. Old partial frames must not cross it.
+        if self.observed_generation != self.session.generation {
+            self.pending.zeroize();
+            self.pending.clear();
+            self.utterance_active = false;
+            self.wake.reset();
+            self.vad.reset();
+            self.observed_generation = self.session.generation;
+        }
         if matches!(self.session.state, State::Disabled | State::Recovering) {
             self.pending.zeroize();
             self.pending.clear();
@@ -59,6 +72,7 @@ impl<W: WakeDetector, V: VadDetector> Worker<W, V> {
                 match self.wake.accept(&frame) {
                     Ok(true) => {
                         if let Ok(g) = self.session.wake(now) {
+                            self.observed_generation = g;
                             self.wake.reset();
                             self.vad.reset();
                             self.utterance_active = false;
@@ -86,12 +100,23 @@ impl<W: WakeDetector, V: VadDetector> Worker<W, V> {
                             }
                         }
                         // Segmenter buffers post-wake onset; no pre-wake ring is ever passed to ASR.
-                        if let Ok(Some(audio)) = self.session.segmenter.accept(&i16frame, speech) {
-                            self.utterance_active = false;
-                            result.push(AudioEvent::Utterance {
-                                generation: self.session.generation,
-                                audio,
-                            });
+                        match self.session.segmenter.accept(&i16frame, speech) {
+                            Ok(audio) => {
+                                // A short/noise segment can end without producing audio.
+                                if self.session.segmenter.buffered() == 0 {
+                                    self.utterance_active = false;
+                                }
+                                if let Some(audio) = audio {
+                                    result.push(AudioEvent::Utterance {
+                                        generation: self.session.generation,
+                                        audio,
+                                    });
+                                }
+                            }
+                            Err(e) => {
+                                self.release();
+                                result.push(AudioEvent::Error(e));
+                            }
                         }
                     }
                     Err(e) => {
@@ -198,4 +223,39 @@ mod tests {
         assert!(w.pending.is_empty());
         assert_eq!(w.session.state, State::Recovering);
     }
+    #[test]
+    fn discarded_short_noise_does_not_disable_next_barge_in() {
+        let mut w = worker();
+        w.accept(&[0.1; FRAME], 0);
+        w.accept(&[0.2; FRAME], 20);
+        w.vad.speech = false;
+        for _ in 0..40 {
+            assert!(w.accept(&[0.0; FRAME], 40).is_empty());
+        }
+        assert_eq!(w.session.segmenter.buffered(), 0);
+        let g = w.session.generation;
+        let pg = w.session.speak(g, 1, false, true).unwrap();
+        w.session.playback.push(pg, &[1, 0]).unwrap();
+        w.vad.speech = true;
+        let events = w.accept(&[0.3; FRAME], 1000);
+        assert!(matches!(events.first(), Some(AudioEvent::Interrupted)));
+        assert_eq!(w.session.playback.queued(), 0);
+        assert_eq!(w.session.segmenter.buffered(), FRAME);
+    }
+    #[test]
+    fn external_session_reset_discards_partial_old_frame() {
+        let mut w = worker();
+        w.accept(&[0.1; FRAME], 0);
+        w.accept(&[0.9; 100], 20);
+        assert_eq!(w.pending.len(), 100);
+        w.session.suspend();
+        w.session.ready(true, true, true).unwrap();
+        w.wake.fires = true;
+        assert!(w.accept(&[0.0; FRAME - 100], 40).is_empty());
+        assert_eq!(w.session.state, State::WakeListening);
+        assert_eq!(w.pending.len(), FRAME - 100);
+        assert!(matches!(w.accept(&[0.0; 100], 60).first(), Some(AudioEvent::Woke { .. })));
+        assert_eq!(w.session.segmenter.buffered(), 0);
+    }
+
 }

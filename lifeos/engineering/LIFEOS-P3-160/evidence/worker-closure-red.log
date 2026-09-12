@@ -1,0 +1,44 @@
+
+running 5 tests
+test worker::tests::invalid_float_fails_closed_and_releases_pending ... ok
+test worker::tests::barge_in_stops_before_utterance_and_preserves_opening ... ok
+test worker::tests::external_session_reset_discards_partial_old_frame ... FAILED
+test worker::tests::discarded_short_noise_does_not_disable_next_barge_in ... FAILED
+test worker::tests::wake_frame_never_enters_upload_and_first_postwake_frame_kept ... ok
+
+failures:
+
+---- worker::tests::external_session_reset_discards_partial_old_frame stdout ----
+
+thread 'worker::tests::external_session_reset_discards_partial_old_frame' (23691452) panicked at ../../candidate/src/voice/worker.rs:229:9:
+assertion failed: w.accept(&[0.0; FRAME - 100], 40).is_empty()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- worker::tests::discarded_short_noise_does_not_disable_next_barge_in stdout ----
+
+thread 'worker::tests::discarded_short_noise_does_not_disable_next_barge_in' (23691451) panicked at ../../candidate/src/voice/worker.rs:216:9:
+assertion failed: matches!(events.first(), Some(AudioEvent::Interrupted))
+
+
+failures:
+    worker::tests::discarded_short_noise_does_not_disable_next_barge_in
+    worker::tests::external_session_reset_discards_partial_old_frame
+
+test result: FAILED. 3 passed; 2 failed; 0 ignored; 0 measured; 25 filtered out; finished in 0.00s
+
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.47
+   Compiling serde_core v1.0.229
+   Compiling zmij v1.0.23
+   Compiling serde v1.0.229
+   Compiling serde_json v1.0.151
+   Compiling memchr v2.8.3
+   Compiling itoa v1.0.18
+   Compiling zeroize v1.8.1
+   Compiling syn v3.0.3
+   Compiling serde_derive v1.0.229
+   Compiling lifeos-voice-offline-tests v0.1.0 (/Users/xxe/.codex/worktrees/0142/No.2/lifeos/engineering/LIFEOS-P3-160/tools/rust-tests)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.50s
+     Running unittests ../../candidate/src/voice/mod.rs (/private/tmp/lifeos-p3-160-voice-v1/worker-closure-target/debug/deps/lifeos_voice_offline_tests-e665fe427a6f67f0)
+error: test failed, to rerun pass `--lib`

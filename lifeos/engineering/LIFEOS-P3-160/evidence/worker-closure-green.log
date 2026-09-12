@@ -1,0 +1,44 @@
+
+running 30 tests
+test budget::tests::clock_and_storage_fail_closed ... ok
+test budget::tests::rolling_minute_and_day ... ok
+test budget::tests::purpose_and_unseen_are_separate ... ok
+test gateway::tests::provider_errors_consume_reserved_budget ... ok
+test gateway::tests::timeout_revocation_and_late_result_no_retry ... ok
+test gateway::tests::zero_transport_calls_when_denied ... ok
+test budget::tests::failed_unknown_never_refunded_across_restart ... ok
+test audio::tests::vad_tail_and_release ... ok
+test mimo::tests::broken_partial_and_length_never_final ... ok
+test gateway::tests::parallel_asr_tts_but_not_two_of_each ... ok
+test mimo::tests::duplicate_json_and_missing_done_fail_closed ... ok
+test mimo::tests::mismatch_and_tools_rejected ... ok
+test session::tests::all_off_by_default ... ok
+test session::tests::end_and_lock_discard_late_voice_only ... ok
+test mimo::tests::tts_emits_before_completion ... ok
+test session::tests::interruption_keeps_business_wait ... ok
+test session::tests::proactive_hidden_and_unwoken_silent ... ok
+test session::tests::no_idle_timeout_during_processing_recording_playback ... ok
+test session::tests::purpose_revocation_isolates_late_final ... ok
+test worker::tests::external_session_reset_discards_partial_old_frame ... ok
+test worker::tests::invalid_float_fails_closed_and_releases_pending ... ok
+test worker::tests::barge_in_stops_before_utterance_and_preserves_opening ... ok
+test audio::tests::interruption_and_backpressure ... ok
+test audio::tests::bounded_wake_history ... ok
+test worker::tests::wake_frame_never_enters_upload_and_first_postwake_frame_kept ... ok
+test mimo::tests::base64_canonical_and_request_minimization ... ok
+test worker::tests::discarded_short_noise_does_not_disable_next_barge_in ... ok
+test mimo::tests::asr_every_byte_split_and_real_final_only ... ok
+test audio::tests::preserves_onset_and_sixty_second_boundary ... ok
+test audio::tests::silence_and_noise_do_not_form_intent ... ok
+
+test result: ok. 30 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling lifeos-voice-offline-tests v0.1.0 (/Users/xxe/.codex/worktrees/0142/No.2/lifeos/engineering/LIFEOS-P3-160/tools/rust-tests)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.43s
+     Running unittests ../../candidate/src/voice/mod.rs (/private/tmp/lifeos-p3-160-voice-v1/worker-closure-target/debug/deps/lifeos_voice_offline_tests-e665fe427a6f67f0)
+   Doc-tests lifeos_voice_offline_tests
