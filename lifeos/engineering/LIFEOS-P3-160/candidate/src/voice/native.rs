@@ -17,15 +17,19 @@ use std::{
 };
 unsafe extern "C" {
     fn lifeos_voice_http_available() -> i32;
-    fn lifeos_voice_audio_create(
+    fn lifeos_voice_audio_create_v2(
         ctx: *mut c_void,
         samples: extern "C" fn(*mut c_void, *const f32, i32),
         event: extern "C" fn(*mut c_void, i32),
+        playback: extern "C" fn(*mut c_void, u64, u64, u64, i32, i32),
     ) -> *mut c_void;
     fn lifeos_voice_audio_start(p: *mut c_void) -> i32;
     fn lifeos_voice_audio_stop(p: *mut c_void);
     fn lifeos_voice_audio_interrupt(p: *mut c_void) -> u64;
-    fn lifeos_voice_audio_push(p: *mut c_void, b: *const u8, n: i32, g: u64) -> i32;
+    fn lifeos_voice_audio_push_v2(p: *mut c_void, b: *const u8, n: i32, g: u64, token: *mut u64) -> i32;
+    fn lifeos_voice_audio_finish_stream(p: *mut c_void, g: u64) -> i32;
+    fn lifeos_voice_audio_generation(p: *mut c_void) -> u64;
+    fn lifeos_voice_audio_playback_status(p: *mut c_void, g: u64, queued: *mut i32, consumed: *mut u64, state: *mut i32) -> i32;
     fn lifeos_voice_audio_destroy(p: *mut c_void);
     fn lifeos_voice_http_create(
         ctx: *mut c_void,
@@ -58,8 +62,26 @@ pub enum Input {
     Samples(Vec<f32>),
     DeviceStopped(i32),
 }
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct PlaybackFeedback {
+    pub generation: u64,
+    pub buffer_token: u64,
+    pub consumed_samples: u64,
+    pub queued_samples: u32,
+    pub drained: bool,
+}
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct PlaybackStatus {
+    pub generation: u64,
+    pub consumed_samples: u64,
+    pub queued_samples: u32,
+    pub available_samples: u32,
+    pub sealed: bool,
+    pub drained: bool,
+}
 struct AudioContext {
     sender: SyncSender<Input>,
+    playback_sender: SyncSender<PlaybackFeedback>,
     overflow: Arc<AtomicBool>,
 }
 extern "C" fn samples(ctx: *mut c_void, pcm: *const f32, n: i32) {
@@ -81,32 +103,48 @@ extern "C" fn device_event(ctx: *mut c_void, code: i32) {
         c.overflow.store(true, Ordering::Release);
     }
 }
+extern "C" fn playback_event(ctx: *mut c_void, generation: u64, token: u64, consumed: u64, queued: i32, kind: i32) {
+    if ctx.is_null() { return; }
+    let c = unsafe { &*(ctx as *const AudioContext) };
+    if !(0..=48000).contains(&queued) || !matches!(kind, 1 | 2)
+        || (kind == 1 && token == 0) || (kind == 2 && (token != 0 || queued != 0)) {
+        c.overflow.store(true, Ordering::Release); return;
+    }
+    let f = PlaybackFeedback { generation, buffer_token: token, consumed_samples: consumed,
+        queued_samples: queued as u32, drained: kind == 2 };
+    if c.playback_sender.try_send(f).is_err() { c.overflow.store(true, Ordering::Release); }
+}
 pub struct NativeAudio {
     handle: NonNull<c_void>,
     _context: Box<AudioContext>,
     pub events: Receiver<Input>,
+    playback_events: Receiver<PlaybackFeedback>,
     overflow: Arc<AtomicBool>,
     play_generation: u64,
 }
 impl NativeAudio {
     pub fn new() -> Result<Self, &'static str> {
         let (sender, events) = sync_channel(8);
+        let (playback_sender, playback_events) = sync_channel(8);
         let overflow = Arc::new(AtomicBool::new(false));
         let mut context = Box::new(AudioContext {
             sender,
+            playback_sender,
             overflow: overflow.clone(),
         });
         let p = unsafe {
-            lifeos_voice_audio_create(
+            lifeos_voice_audio_create_v2(
                 (&mut *context as *mut AudioContext).cast(),
                 samples,
                 device_event,
+                playback_event,
             )
         };
         Ok(Self {
             handle: NonNull::new(p).ok_or("native_audio_unavailable")?,
             _context: context,
             events,
+            playback_events,
             overflow,
             play_generation: 0,
         })
@@ -120,6 +158,8 @@ impl NativeAudio {
     }
     pub fn stop(&mut self) {
         unsafe { lifeos_voice_audio_stop(self.handle.as_ptr()) };
+        self.play_generation = unsafe { lifeos_voice_audio_generation(self.handle.as_ptr()) };
+        while self.playback_events.try_recv().is_ok() {}
         while let Ok(v) = self.events.try_recv() {
             if let Input::Samples(mut p) = v {
                 use zeroize::Zeroize;
@@ -129,24 +169,41 @@ impl NativeAudio {
     }
     pub fn interrupt(&mut self) {
         self.play_generation = unsafe { lifeos_voice_audio_interrupt(self.handle.as_ptr()) };
+        while self.playback_events.try_recv().is_ok() {}
     }
+    /// Compatibility helper. New host routing must use enqueue_for with its saved epoch.
     pub fn enqueue(&mut self, pcm: &[u8]) -> Result<(), &'static str> {
-        if pcm.len() > 96000 {
-            return Err("playback_backpressure");
+        self.enqueue_for(self.play_generation, pcm).map(|_| ())
+    }
+    pub fn playback_generation(&self) -> u64 { self.play_generation }
+    pub fn enqueue_for(&mut self, generation: u64, pcm: &[u8]) -> Result<u64, &'static str> {
+        if generation != self.play_generation { return Err("stale_audio"); }
+        if pcm.is_empty() || pcm.len() % 2 != 0 || pcm.len() > 96000 { return Err("playback_backpressure"); }
+        let mut token = 0;
+        if unsafe { lifeos_voice_audio_push_v2(self.handle.as_ptr(), pcm.as_ptr(), pcm.len() as i32, generation, &mut token) } == 0 {
+            Ok(token)
+        } else { Err("native_playback_rejected") }
+    }
+    /// Mark HTTP-complete only after all verified PCM has been enqueued; not playback completion.
+    pub fn finish_stream(&mut self, generation: u64) -> Result<(), &'static str> {
+        if generation != self.play_generation { return Err("stale_audio"); }
+        if unsafe { lifeos_voice_audio_finish_stream(self.handle.as_ptr(), generation) } == 0 { Ok(()) }
+        else { Err("native_playback_rejected") }
+    }
+    pub fn playback_status(&self, generation: u64) -> Result<PlaybackStatus, &'static str> {
+        if generation != self.play_generation { return Err("stale_audio"); }
+        let (mut queued, mut consumed, mut state) = (0, 0, 0);
+        if unsafe { lifeos_voice_audio_playback_status(self.handle.as_ptr(), generation, &mut queued, &mut consumed, &mut state) } != 0
+            || !(0..=48000).contains(&queued) || !(0..=2).contains(&state) { return Err("native_playback_rejected"); }
+        Ok(PlaybackStatus { generation, consumed_samples: consumed, queued_samples: queued as u32,
+            available_samples: 48000 - queued as u32, sealed: state > 0, drained: state == 2 })
+    }
+    /// Old generations already queued before cancellation are filtered as well.
+    pub fn poll_playback(&mut self) -> Option<PlaybackFeedback> {
+        while let Ok(f) = self.playback_events.try_recv() {
+            if f.generation == self.play_generation { return Some(f); }
         }
-        if unsafe {
-            lifeos_voice_audio_push(
-                self.handle.as_ptr(),
-                pcm.as_ptr(),
-                pcm.len() as i32,
-                self.play_generation,
-            )
-        } == 0
-        {
-            Ok(())
-        } else {
-            Err("native_playback_rejected")
-        }
+        None
     }
     pub fn healthy(&mut self) -> bool {
         if self.overflow.swap(false, Ordering::AcqRel) {
@@ -406,4 +463,30 @@ mod tests {
         assert!(n.requests.is_empty());
         assert!(n.events.try_recv().is_err());
     }
+    #[test]
+    fn native_playback_feedback_epochs_and_overflow_without_devices() {
+        let mut n = NativeAudio::new().unwrap();
+        let old = n.playback_generation();
+        assert_eq!(n.playback_status(old).unwrap().available_samples, 48000);
+        assert!(n.enqueue_for(old, &[0, 0]).is_err());
+        assert!(n.finish_stream(old).is_err());
+        let ctx = (&mut *n._context as *mut AudioContext).cast();
+        // Fake callbacks only. No enqueue succeeds, no start, no hardware audio.
+        playback_event(ctx, old, 1, 12, 0, 1);
+        n.interrupt();
+        let fresh = n.playback_generation();
+        assert!(fresh > old && n.poll_playback().is_none());
+        playback_event(ctx, old, 2, 24, 0, 1);
+        assert!(n.poll_playback().is_none());
+        assert!(n.playback_status(old).is_err());
+        assert!(n.enqueue_for(old, &[0, 0]).is_err());
+        playback_event(ctx, fresh, 3, 32, 0, 1);
+        let f = n.poll_playback().unwrap();
+        assert_eq!((f.generation, f.buffer_token, f.consumed_samples), (fresh, 3, 32));
+        for token in 10..20 { playback_event(ctx, fresh, token, 32, 0, 1); }
+        assert!(!n.healthy());
+        assert!(n.poll_playback().is_none());
+        assert_eq!(n.playback_status(n.playback_generation()).unwrap().queued_samples, 0);
+    }
+
 }

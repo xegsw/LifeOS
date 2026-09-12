@@ -53,3 +53,7 @@ P3-157真实失败、P3-159自身未完成项和原独立评审暂停事实均�
 ## A3 同任务协作：native producer / TTS 端口
 
 已核验159的3份稳定接口拷贝，仅在inputs保留，不读活跃源码。最小接线建议与4项纯fake测试见 `lifeos/engineering/LIFEOS-P3-160/A3_native_playback_adapter.md`。本次生产源码增量为空；TTS registry/投影尚未由159实现，A3与真实验收仍Pending。
+
+## A3 native播放完成与背压增量
+
+按159端口需求新增generation/token消费反馈、2秒队列快照、显式finish_stream与仅实际buffer完成后的drained信号。相对93c98bb0仅1新增2修改。详见 `lifeos/engineering/LIFEOS-P3-160/native_playback_report.md` 和 `delta_manifest_v4.json`。纯fake/原生A拒绝与3项mutation通过，真实播放和联合验收仍未通过。

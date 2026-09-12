@@ -1,0 +1,57 @@
+{
+  "steps": [
+    {
+      "name": "ledger-build",
+      "exit": 0
+    },
+    {
+      "name": "ledger-fake",
+      "exit": 0
+    },
+    {
+      "name": "swift-build",
+      "exit": 0
+    },
+    {
+      "name": "real-typecheck",
+      "exit": 0
+    },
+    {
+      "name": "rust-native-tests",
+      "exit": 0
+    },
+    {
+      "name": "mutation-build-capacity",
+      "exit": 0
+    },
+    {
+      "name": "mutation-build-stale-seal",
+      "exit": 0
+    },
+    {
+      "name": "mutation-build-premature-drain",
+      "exit": 0
+    }
+  ],
+  "mutations": [
+    {
+      "name": "capacity",
+      "exit": -5,
+      "killed_by_precondition": true
+    },
+    {
+      "name": "stale-seal",
+      "exit": -5,
+      "killed_by_precondition": true
+    },
+    {
+      "name": "premature-drain",
+      "exit": -5,
+      "killed_by_precondition": true
+    }
+  ],
+  "device_starts": 0,
+  "actual_playback": 0,
+  "POST": 0,
+  "scope": "native ledger pure fake, native A-denial and callback fake, real compile only"
+}
