@@ -27,7 +27,7 @@ jobs:
   governance-guard:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           filter: blob:none
           sparse-checkout-cone-mode: false
@@ -56,7 +56,7 @@ jobs:
     runs-on: macos-latest
     needs: governance-guard
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           filter: blob:none
           sparse-checkout-cone-mode: false
@@ -94,7 +94,7 @@ jobs:
       run:
         working-directory: lifeos/engineering/LIFEOS-P3-146/candidate
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           sparse-checkout: |
             lifeos/engineering/LIFEOS-P3-146
@@ -129,7 +129,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           filter: blob:none
           fetch-depth: 0
@@ -149,7 +149,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [governance-guard, deterministic-regression]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           filter: blob:none
           sparse-checkout-cone-mode: false
