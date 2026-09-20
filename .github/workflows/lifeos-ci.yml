@@ -166,7 +166,7 @@ jobs:
             -czf dist/lifeos-p3-141-synthetic-source-${GITHUB_SHA}.tar.gz \
             lifeos/engineering/LIFEOS-P3-141/revision-3-model-settings/candidate
           shasum -a 256 dist/*.tar.gz > dist/SHA256SUMS
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: lifeos-synthetic-candidate-${{ github.sha }}
           path: dist/
