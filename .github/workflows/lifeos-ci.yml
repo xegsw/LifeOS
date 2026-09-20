@@ -101,7 +101,7 @@ jobs:
             lifeos/deliverables/LIFEOS-P3-146_natural_conversation_memory_and_source_integration.md
             lifeos/ci
           sparse-checkout-cone-mode: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '24'
       - name: Create exclusive synthetic root
